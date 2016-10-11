@@ -21,6 +21,7 @@ find_package(PkgConfig)
 pkg_check_modules(DEPS REQUIRED
     gtk+-3.0
     granite
+    libxml-2.0
 )
 add_definitions(${DEPS_CFLAGS})
 link_libraries(${DEPS_LIBRARIES} m)
@@ -42,6 +43,7 @@ PACKAGES
     granite
     posix
     libparted
+    libxml-2.0
 OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
 )

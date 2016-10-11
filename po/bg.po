@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-11 19:52+0200\n"
-"PO-Revision-Date: 2016-10-11 19:52+0200\n"
+"POT-Creation-Date: 2016-10-12 01:32+0200\n"
+"PO-Revision-Date: 2016-10-12 01:32+0200\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: \n"
 "Language: bg\n"
@@ -26,13 +26,12 @@ msgstr ""
 "  felroric https://launchpad.net/~toddi222\n"
 "  Адмирал АнимЕ https://launchpad.net/~aeternus-arcis"
 
-#: ../src/LanguageView.vala:30
+#: ../src/LanguageView.vala:88
 msgid "Select a Language"
-msgstr ""
+msgstr "Изберете език"
 
-#: ../src/LanguageView.vala:84
-msgid "Use English"
-msgstr "Използвайте български"
+#~ msgid "Use English"
+#~ msgstr "Използвайте български"
 
 #~ msgid "Calculator"
 #~ msgstr "Сметало"
