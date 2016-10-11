@@ -4,7 +4,7 @@ services:
  - docker
 
 env:
- - DEPENDENCY_PACKAGES="cmake intltool libgranite-dev libgtk-3-dev valac"
+ - DEPENDENCY_PACKAGES="cmake desktop-file-utils intltool libgranite-dev libgtk-3-dev valac"
 
 install:
  - docker pull elementary/docker:loki
