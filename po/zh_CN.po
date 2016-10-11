@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-11 19:54+0200\n"
+"PO-Revision-Date: 2016-10-11 19:54+0200\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: ../src/Application.vala:28
+msgid "Installer"
+msgstr ""
+
+#: ../src/Application.vala:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  colindemian https://launchpad.net/~colindemian"
+
+#: ../src/LanguageView.vala:30
+msgid "Select a Language"
+msgstr ""
+
+#: ../src/LanguageView.vala:84
+msgid "Use English"
+msgstr "中国使用"
+
+#~ msgid "Calculator"
+#~ msgstr "计算器"
+
+#~ msgid "History"
+#~ msgstr "历史"
+
+#~ msgid "Value to add:"
+#~ msgstr "添加的值："
+
+#~ msgid "Result"
+#~ msgstr "结果"
+
+#~ msgid "Expression"
+#~ msgstr "表达式"
+
+#~ msgid "Close"
+#~ msgstr "关闭"
+
+#~ msgid "Add"
+#~ msgstr "加"
+
+#~ msgid "Show extended functionality"
+#~ msgstr "高级"
+
+#~ msgid "Calculate Result"
+#~ msgstr "等于"
+
+#~ msgid "Add last result"
+#~ msgstr "添加上一次结果"
+
+#~ msgid "Backspace"
+#~ msgstr "回删"
+
+#~ msgid "Clear entry"
+#~ msgstr "清除"
+
+#~ msgid "Subtract"
+#~ msgstr "减"
+
+#~ msgid "Multiply"
+#~ msgstr "乘"
+
+#~ msgid "Divide"
+#~ msgstr "除"
+
+#~ msgid "Percentage"
+#~ msgstr "百分数"
+
+#~ msgid "Start Group"
+#~ msgstr "左括弧"
+
+#~ msgid "End Group"
+#~ msgstr "右括弧"
+
+#~ msgid "Exponent"
+#~ msgstr "指数"
+
+#~ msgid "Root"
+#~ msgstr "根"
+
+#~ msgid "Sine"
+#~ msgstr "正弦"
+
+#~ msgid "Hyperbolic Sine"
+#~ msgstr "双曲正弦"
+
+#~ msgid "Cosine"
+#~ msgstr "余弦"
+
+#~ msgid "Hyperbolic Cosine"
+#~ msgstr "双曲余弦"
+
+#~ msgid "Tangent"
+#~ msgstr "正切"
+
+#~ msgid "Hyperbolic Tangent"
+#~ msgstr "双曲正切"
+
+#~ msgid "Pi"
+#~ msgstr "π"
+
+#~ msgid "Euler's Number"
+#~ msgstr "欧拉数"
+
+#~ msgid "Hide extended functionality"
+#~ msgstr "简单"
+
+#~ msgid "'%s' is invalid."
+#~ msgstr "'%s' 无效"
+
+#~ msgid "'%s' is unknown."
+#~ msgstr "'%s' 未知"

@@ -1,0 +1,9 @@
+[Desktop Entry]
+_Name=Install elementary OS
+_Comment=Install the system
+Exec=pantheon-installer
+Icon=ubiquity
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;System;

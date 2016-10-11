@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-11 19:33+0200\n"
+"PO-Revision-Date: 2016-10-11 19:33+0200\n"
+"Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: ../src/Application.vala:28
+msgid "Installer"
+msgstr ""
+
+#: ../src/Application.vala:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) https://launchpad.net/~balloon\n"
+"  J.S.Sebastian https://launchpad.net/~j-s-sebastian-x\n"
+"  Jun Takeda https://launchpad.net/~takeda-jun\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Ryota Goto https://launchpad.net/~sarcaphx510"
+
+#: ../src/LanguageView.vala:30
+msgid "Select a Language"
+msgstr ""
+
+#: ../src/LanguageView.vala:84
+msgid "Use English"
+msgstr "日本語を使う"
+
+#~ msgid "Calculator"
+#~ msgstr "計算機"
+
+#~ msgid "History"
+#~ msgstr "履歴"
+
+#~ msgid "Value to add:"
+#~ msgstr "追加する値："
+
+#~ msgid "Result"
+#~ msgstr "結果"
+
+#~ msgid "Expression"
+#~ msgstr "式"
+
+#~ msgid "Close"
+#~ msgstr "閉じる"
+
+#~ msgid "Add"
+#~ msgstr "足し算"
+
+#~ msgid "Show extended functionality"
+#~ msgstr "追加機能を表示する"
+
+#~ msgid "Calculate Result"
+#~ msgstr "計算結果"
+
+#~ msgid "Add last result"
+#~ msgstr "最後の結果を追加"
+
+#~ msgid "Backspace"
+#~ msgstr "左の一文字文字を削除"
+
+#~ msgid "Clear entry"
+#~ msgstr "エントリーのクリア"
+
+#~ msgid "Subtract"
+#~ msgstr "引き算"
+
+#~ msgid "Multiply"
+#~ msgstr "掛け算"
+
+#~ msgid "Divide"
+#~ msgstr "割り算"
+
+#~ msgid "Percentage"
+#~ msgstr "パーセント"
+
+#~ msgid "Start Group"
+#~ msgstr "括弧"
+
+#~ msgid "End Group"
+#~ msgstr "括弧閉じる"
+
+#~ msgid "Exponent"
+#~ msgstr "指数"
+
+#~ msgid "Root"
+#~ msgstr "平方根"
+
+#~ msgid "Sine"
+#~ msgstr "サイン"
+
+#~ msgid "Hyperbolic Sine"
+#~ msgstr "ハイパボリックサイン"
+
+#~ msgid "Cosine"
+#~ msgstr "コサイン"
+
+#~ msgid "Hyperbolic Cosine"
+#~ msgstr "ハイパボリックコサイン"
+
+#~ msgid "Tangent"
+#~ msgstr "タンジェント"
+
+#~ msgid "Hyperbolic Tangent"
+#~ msgstr "ハイパボリックタンジェント"
+
+#~ msgid "Pi"
+#~ msgstr "円周率"
+
+#~ msgid "Euler's Number"
+#~ msgstr "自然対数の底"
+
+#~ msgid "Hide extended functionality"
+#~ msgstr "追加機能を隠す"
+
+#~ msgid "'%s' is invalid."
+#~ msgstr "'%s' は不正です。"
+
+#~ msgid "'%s' is unknown."
+#~ msgstr "'%s' は不明です。"

@@ -1,0 +1,146 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-02 13:40-0700\n"
+"PO-Revision-Date: 2016-05-27 15:29+0000\n"
+"Last-Translator: Maxwell Barvian <Unknown>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
+"X-Generator: Launchpad (build 18204)\n"
+
+#: ../src/PantheonCalculator.vala:27 ../src/MainWindow.vala:73
+msgid "Calculator"
+msgstr "Kalkulator"
+
+#: ../src/PantheonCalculator.vala:44
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Anuar Muhammad https://launchpad.net/~anuartechnology\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  TMUkmkd https://launchpad.net/~tmukmkd\n"
+"  abuyop https://launchpad.net/~abuyop"
+
+#: ../src/HistoryDialog.vala:35 ../src/MainWindow.vala:86
+msgid "History"
+msgstr "Sejarah"
+
+#: ../src/HistoryDialog.vala:84
+msgid "Value to add:"
+msgstr "Nilai untuk ditambah"
+
+#: ../src/HistoryDialog.vala:88
+msgid "Result"
+msgstr "Hasil"
+
+#: ../src/HistoryDialog.vala:92
+msgid "Expression"
+msgstr "Ungkapan"
+
+#: ../src/HistoryDialog.vala:98
+msgid "Close"
+msgstr "Tutup"
+
+#: ../src/HistoryDialog.vala:99 ../src/MainWindow.vala:133
+msgid "Add"
+msgstr "Tambah"
+
+#: ../src/MainWindow.vala:81 ../src/MainWindow.vala:376
+msgid "Show extended functionality"
+msgstr "Paparkan fungsi tambahan"
+
+#: ../src/MainWindow.vala:124
+msgid "Calculate Result"
+msgstr "Kira Hasil"
+
+#: ../src/MainWindow.vala:127
+msgid "Add last result"
+msgstr "Tambah hasil terakhir"
+
+#: ../src/MainWindow.vala:129
+msgid "Backspace"
+msgstr "Padam"
+
+#: ../src/MainWindow.vala:130
+msgid "Clear entry"
+msgstr "Kosongkan kemasukan"
+
+#: ../src/MainWindow.vala:136
+msgid "Subtract"
+msgstr "Tolak"
+
+#: ../src/MainWindow.vala:139
+msgid "Multiply"
+msgstr "Darab"
+
+#: ../src/MainWindow.vala:142
+msgid "Divide"
+msgstr "Bahagi"
+
+#: ../src/MainWindow.vala:148
+msgid "Percentage"
+msgstr "Peratus"
+
+#: ../src/MainWindow.vala:219
+msgid "Start Group"
+msgstr "Mula Kumpulan"
+
+#: ../src/MainWindow.vala:220
+msgid "End Group"
+msgstr "Tamat Kumpulan"
+
+#: ../src/MainWindow.vala:221
+msgid "Exponent"
+msgstr "Eksponen"
+
+#: ../src/MainWindow.vala:223
+msgid "Root"
+msgstr "Kuasa"
+
+#: ../src/MainWindow.vala:224
+msgid "Sine"
+msgstr "Sinus"
+
+#: ../src/MainWindow.vala:225
+msgid "Hyperbolic Sine"
+msgstr "Sinus Hiperbolik"
+
+#: ../src/MainWindow.vala:226
+msgid "Cosine"
+msgstr "Kosinus"
+
+#: ../src/MainWindow.vala:227
+msgid "Hyperbolic Cosine"
+msgstr "Kosinus Hiperbolik"
+
+#: ../src/MainWindow.vala:228
+msgid "Tangent"
+msgstr "Tangen"
+
+#: ../src/MainWindow.vala:229
+msgid "Hyperbolic Tangent"
+msgstr "Tangen Hiperbolik"
+
+#: ../src/MainWindow.vala:230
+msgid "Pi"
+msgstr "Pi"
+
+#: ../src/MainWindow.vala:231
+msgid "Euler's Number"
+msgstr "Nombor Euler"
+
+#: ../src/MainWindow.vala:371
+msgid "Hide extended functionality"
+msgstr "Sembunyikan fungsi tambahan"
+
+#: ../src/Core/Scanner.vala:80
+msgid "'%s' is invalid."
+msgstr "%s tidak sah"
+
+#: ../src/Core/Scanner.vala:164
+msgid "'%s' is unknown."
+msgstr "%s tidak diketahui"

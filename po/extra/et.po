@@ -1,0 +1,35 @@
+# Estonian translation for pantheon-calculator
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# This file is distributed under the same license as the pantheon-calculator package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pantheon-calculator\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2016-08-02 13:40-0700\n"
+"PO-Revision-Date: 2016-08-04 00:05+0000\n"
+"Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
+"Language-Team: Estonian <et@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
+"X-Generator: Launchpad (build 18204)\n"
+
+msgid "Calculator"
+msgstr "Kalkulaator"
+
+msgid "Solve simple equations"
+msgstr "lahenda lihtne võrrand"
+
+msgid "About Calculator"
+msgstr "Kalkulaatorist lähemalt"
+
+msgid ""
+"A simple calculator for everyday use. It supports basic and some scientific "
+"calculations including trigonometry functions, sin, cos, and tan."
+msgstr ""
+"Lihtne kalkulaator igapäevasteks arvutusteks. Toetab baas- ning mõningaid "
+"teaduslike funktsioone, kaasaarvatud trigonomeetrilise funktsioone, nagu "
+"sin, cos ja tan."

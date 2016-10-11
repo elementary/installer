@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-02 13:40-0700\n"
+"PO-Revision-Date: 2016-05-27 15:28+0000\n"
+"Last-Translator: Maxwell Barvian <Unknown>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-09-27 06:39+0000\n"
+"X-Generator: Launchpad (build 18204)\n"
+
+#: ../src/PantheonCalculator.vala:27 ../src/MainWindow.vala:73
+msgid "Calculator"
+msgstr "Հաշվիչ"
+
+#: ../src/PantheonCalculator.vala:44
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Karen Yeghiazaryan https://launchpad.net/~kareneghiazaryan\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
+
+#: ../src/HistoryDialog.vala:35 ../src/MainWindow.vala:86
+msgid "History"
+msgstr "Պատմություն"
+
+#: ../src/HistoryDialog.vala:84
+msgid "Value to add:"
+msgstr ""
+
+#: ../src/HistoryDialog.vala:88
+msgid "Result"
+msgstr "Արդյունք"
+
+#: ../src/HistoryDialog.vala:92
+msgid "Expression"
+msgstr "Արտահայտություն"
+
+#: ../src/HistoryDialog.vala:98
+msgid "Close"
+msgstr "Փակել"
+
+#: ../src/HistoryDialog.vala:99 ../src/MainWindow.vala:133
+msgid "Add"
+msgstr ""
+
+#: ../src/MainWindow.vala:81 ../src/MainWindow.vala:376
+msgid "Show extended functionality"
+msgstr "Ցուցադրել ընդլայնված ֆունկցիաներ"
+
+#: ../src/MainWindow.vala:124
+msgid "Calculate Result"
+msgstr ""
+
+#: ../src/MainWindow.vala:127
+msgid "Add last result"
+msgstr "Ավելացնել վերջին արդյունքը"
+
+#: ../src/MainWindow.vala:129
+msgid "Backspace"
+msgstr "Ետ"
+
+#: ../src/MainWindow.vala:130
+msgid "Clear entry"
+msgstr ""
+
+#: ../src/MainWindow.vala:136
+msgid "Subtract"
+msgstr ""
+
+#: ../src/MainWindow.vala:139
+msgid "Multiply"
+msgstr ""
+
+#: ../src/MainWindow.vala:142
+msgid "Divide"
+msgstr ""
+
+#: ../src/MainWindow.vala:148
+msgid "Percentage"
+msgstr ""
+
+#: ../src/MainWindow.vala:219
+msgid "Start Group"
+msgstr ""
+
+#: ../src/MainWindow.vala:220
+msgid "End Group"
+msgstr ""
+
+#: ../src/MainWindow.vala:221
+msgid "Exponent"
+msgstr ""
+
+#: ../src/MainWindow.vala:223
+msgid "Root"
+msgstr ""
+
+#: ../src/MainWindow.vala:224
+msgid "Sine"
+msgstr ""
+
+#: ../src/MainWindow.vala:225
+msgid "Hyperbolic Sine"
+msgstr ""
+
+#: ../src/MainWindow.vala:226
+msgid "Cosine"
+msgstr ""
+
+#: ../src/MainWindow.vala:227
+msgid "Hyperbolic Cosine"
+msgstr ""
+
+#: ../src/MainWindow.vala:228
+msgid "Tangent"
+msgstr ""
+
+#: ../src/MainWindow.vala:229
+msgid "Hyperbolic Tangent"
+msgstr ""
+
+#: ../src/MainWindow.vala:230
+msgid "Pi"
+msgstr ""
+
+#: ../src/MainWindow.vala:231
+msgid "Euler's Number"
+msgstr ""
+
+#: ../src/MainWindow.vala:371
+msgid "Hide extended functionality"
+msgstr ""
+
+#: ../src/Core/Scanner.vala:80
+msgid "'%s' is invalid."
+msgstr ""
+
+#: ../src/Core/Scanner.vala:164
+msgid "'%s' is unknown."
+msgstr "'%s' անհայտ է"

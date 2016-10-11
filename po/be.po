@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-11 19:51+0200\n"
+"PO-Revision-Date: 2016-10-11 19:51+0200\n"
+"Last-Translator: Maxwell Barvian <Unknown>\n"
+"Language-Team: \n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: ../src/Application.vala:28
+msgid "Installer"
+msgstr ""
+
+#: ../src/Application.vala:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Viktuk https://launchpad.net/~register885"
+
+#: ../src/LanguageView.vala:30
+msgid "Select a Language"
+msgstr ""
+
+#: ../src/LanguageView.vala:84
+msgid "Use English"
+msgstr "Выкарыстоўвайце беларуску"
+
+#~ msgid "Calculator"
+#~ msgstr "Калькулятар"
+
+#~ msgid "History"
+#~ msgstr "Гісторыя"
+
+#~ msgid "Value to add:"
+#~ msgstr "Дадаць значэнне:"
+
+#~ msgid "Result"
+#~ msgstr "Вынік"
+
+#~ msgid "Expression"
+#~ msgstr "Выраз"
+
+#~ msgid "Close"
+#~ msgstr "Зачыніць"
+
+#~ msgid "Add"
+#~ msgstr "Дадаць"
+
+#~ msgid "Show extended functionality"
+#~ msgstr "Паказаць пашыраную функцыянальнасць"
+
+#~ msgid "Add last result"
+#~ msgstr "Дадаць апошні вынік"
+
+#~ msgid "Backspace"
+#~ msgstr "Вярнуцца"
+
+#~ msgid "Clear entry"
+#~ msgstr "Ачысьціць запіс"
+
+#~ msgid "Hide extended functionality"
+#~ msgstr "Схаваць пашыраны функцыянал"
+
+#~ msgid "'%s' is invalid."
+#~ msgstr "'%s'  з'яўляецца несапраўдным."
+
+#~ msgid "'%s' is unknown."
+#~ msgstr "'%s' невядомы."

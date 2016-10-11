@@ -1,0 +1,145 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-02 13:40-0700\n"
+"PO-Revision-Date: 2016-05-27 15:28+0000\n"
+"Last-Translator: Maxwell Barvian <Unknown>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-09-27 06:39+0000\n"
+"X-Generator: Launchpad (build 18204)\n"
+
+#: ../src/PantheonCalculator.vala:27 ../src/MainWindow.vala:73
+msgid "Calculator"
+msgstr "Makinë Llogaritëse"
+
+#: ../src/PantheonCalculator.vala:44
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Indrit Bashkimi https://launchpad.net/~indritbsh\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  xh3n1 https://launchpad.net/~xh3n1"
+
+#: ../src/HistoryDialog.vala:35 ../src/MainWindow.vala:86
+msgid "History"
+msgstr "Historia"
+
+#: ../src/HistoryDialog.vala:84
+msgid "Value to add:"
+msgstr "Vlera për të shtuar:"
+
+#: ../src/HistoryDialog.vala:88
+msgid "Result"
+msgstr "Rezultati"
+
+#: ../src/HistoryDialog.vala:92
+msgid "Expression"
+msgstr "Shprehja"
+
+#: ../src/HistoryDialog.vala:98
+msgid "Close"
+msgstr "Mbyll"
+
+#: ../src/HistoryDialog.vala:99 ../src/MainWindow.vala:133
+msgid "Add"
+msgstr "Shto"
+
+#: ../src/MainWindow.vala:81 ../src/MainWindow.vala:376
+msgid "Show extended functionality"
+msgstr "Shfaq funksione shtesë"
+
+#: ../src/MainWindow.vala:124
+msgid "Calculate Result"
+msgstr "Llogarit rezultatin"
+
+#: ../src/MainWindow.vala:127
+msgid "Add last result"
+msgstr "Shto rezultatin e fundit"
+
+#: ../src/MainWindow.vala:129
+msgid "Backspace"
+msgstr "Fshi"
+
+#: ../src/MainWindow.vala:130
+msgid "Clear entry"
+msgstr "Fshije futjen"
+
+#: ../src/MainWindow.vala:136
+msgid "Subtract"
+msgstr "Zbrit"
+
+#: ../src/MainWindow.vala:139
+msgid "Multiply"
+msgstr "Shumëfisho"
+
+#: ../src/MainWindow.vala:142
+msgid "Divide"
+msgstr "Pjesëto"
+
+#: ../src/MainWindow.vala:148
+msgid "Percentage"
+msgstr "Përqindja"
+
+#: ../src/MainWindow.vala:219
+msgid "Start Group"
+msgstr "Grupi i fillimit"
+
+#: ../src/MainWindow.vala:220
+msgid "End Group"
+msgstr "Grupi i mbarimit"
+
+#: ../src/MainWindow.vala:221
+msgid "Exponent"
+msgstr "Eksponenti"
+
+#: ../src/MainWindow.vala:223
+msgid "Root"
+msgstr "Rrënja"
+
+#: ../src/MainWindow.vala:224
+msgid "Sine"
+msgstr "Sinus"
+
+#: ../src/MainWindow.vala:225
+msgid "Hyperbolic Sine"
+msgstr "Sinus Hiperbolik"
+
+#: ../src/MainWindow.vala:226
+msgid "Cosine"
+msgstr "Kosinus"
+
+#: ../src/MainWindow.vala:227
+msgid "Hyperbolic Cosine"
+msgstr "Kosinus Hiperbolik"
+
+#: ../src/MainWindow.vala:228
+msgid "Tangent"
+msgstr "Tangjent"
+
+#: ../src/MainWindow.vala:229
+msgid "Hyperbolic Tangent"
+msgstr "Tangjente Hiperbolike"
+
+#: ../src/MainWindow.vala:230
+msgid "Pi"
+msgstr "Pi"
+
+#: ../src/MainWindow.vala:231
+msgid "Euler's Number"
+msgstr "Numri i Eulerit"
+
+#: ../src/MainWindow.vala:371
+msgid "Hide extended functionality"
+msgstr "Fsheh funksionet shtesë"
+
+#: ../src/Core/Scanner.vala:80
+msgid "'%s' is invalid."
+msgstr "'%s' nuk është i vlefshëm."
+
+#: ../src/Core/Scanner.vala:164
+msgid "'%s' is unknown."
+msgstr "'%s' është i panjohur."

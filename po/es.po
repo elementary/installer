@@ -1,0 +1,137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-11 18:49+0200\n"
+"PO-Revision-Date: 2016-10-11 18:50+0200\n"
+"Last-Translator: Félix Brezo <felixbrezo@gmail.com>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: ../src/Application.vala:28
+msgid "Installer"
+msgstr ""
+
+#: ../src/Application.vala:39
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Adolfo Jayme https://launchpad.net/~fitojb\n"
+"  Félix Brezo https://launchpad.net/~febrezo\n"
+"  Jorge Chaclán https://launchpad.net/~kukugt\n"
+"  Juan Mantilla https://launchpad.net/~judamalo77\n"
+"  Luis Oropeza https://launchpad.net/~luis-oropeza-129\n"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+"  Miguel R P https://launchpad.net/~miguelonrp2001\n"
+"  Oscar Miranda https://launchpad.net/~oscarmiranda3615\n"
+"  Ricardo Canul https://launchpad.net/~ricardocanul7\n"
+"  Rybun https://launchpad.net/~mail-rybun\n"
+"  avijo https://launchpad.net/~oscarj-ms\n"
+"  bitseater https://launchpad.net/~bitseater\n"
+"  hector https://launchpad.net/~hector-aa"
+
+#: ../src/LanguageView.vala:30
+msgid "Select a Language"
+msgstr ""
+
+#: ../src/LanguageView.vala:76
+msgid "Use English"
+msgstr "Utilice español"
+
+#~ msgid "Calculator"
+#~ msgstr "Calculadora"
+
+#~ msgid "History"
+#~ msgstr "Historial"
+
+#~ msgid "Value to add:"
+#~ msgstr "Valor que sumar:"
+
+#~ msgid "Result"
+#~ msgstr "Resultado"
+
+#~ msgid "Expression"
+#~ msgstr "Expresión"
+
+#~ msgid "Close"
+#~ msgstr "Cerrar"
+
+#~ msgid "Add"
+#~ msgstr "Sumar"
+
+#~ msgid "Show extended functionality"
+#~ msgstr "Mostrar más funciones"
+
+#~ msgid "Calculate Result"
+#~ msgstr "Calcular resultado"
+
+#~ msgid "Add last result"
+#~ msgstr "Sumar el último resultado"
+
+#~ msgid "Backspace"
+#~ msgstr "Retroceso"
+
+#~ msgid "Clear entry"
+#~ msgstr "Borrar entrada"
+
+#~ msgid "Subtract"
+#~ msgstr "Restar"
+
+#~ msgid "Multiply"
+#~ msgstr "Multiplicar"
+
+#~ msgid "Divide"
+#~ msgstr "Dividir"
+
+#~ msgid "Percentage"
+#~ msgstr "Porcentaje"
+
+#~ msgid "Start Group"
+#~ msgstr "Abrir grupo"
+
+#~ msgid "End Group"
+#~ msgstr "Cerrar grupo"
+
+#~ msgid "Exponent"
+#~ msgstr "Exponencial"
+
+#~ msgid "Root"
+#~ msgstr "Raíz cuadrada"
+
+#~ msgid "Sine"
+#~ msgstr "Seno"
+
+#~ msgid "Hyperbolic Sine"
+#~ msgstr "Seno hiperbólico"
+
+#~ msgid "Cosine"
+#~ msgstr "Coseno"
+
+#~ msgid "Hyperbolic Cosine"
+#~ msgstr "Coseno hiperbólico"
+
+#~ msgid "Tangent"
+#~ msgstr "Tangente"
+
+#~ msgid "Hyperbolic Tangent"
+#~ msgstr "Tangente hiperbólica"
+
+#~ msgid "Pi"
+#~ msgstr "Pi"
+
+#~ msgid "Euler's Number"
+#~ msgstr "Número de Euler"
+
+#~ msgid "Hide extended functionality"
+#~ msgstr "Ocultar funciones adicionales"
+
+#~ msgid "'%s' is invalid."
+#~ msgstr "«%s» no es válido."
+
+#~ msgid "'%s' is unknown."
+#~ msgstr "«%s» es desconocido."
