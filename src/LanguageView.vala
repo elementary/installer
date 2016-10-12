@@ -34,9 +34,11 @@ public class Installer.LanguageView : Gtk.Grid {
         select_stack.get_style_context ().add_class ("h1");
         select_stack.margin = 12;
         select_stack.margin_top = 0;
+        select_stack.height_request = 64;
         select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         select_label = new Gtk.Label (null);
         select_label.halign = Gtk.Align.CENTER;
+        select_label.valign = Gtk.Align.CENTER;
         select_stack.add (select_label);
         select_stack.notify["transition-running"].connect (() => {
             if (!select_stack.transition_running) {
