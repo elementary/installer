@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-11 19:38+0200\n"
-"PO-Revision-Date: 2016-10-11 19:38+0200\n"
+"PO-Revision-Date: 2016-10-12 01:29+0200\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: \n"
 "Language: af\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: ../src/LanguageView.vala:30
 msgid "Select a Language"
-msgstr ""
+msgstr "Kies 'n taal"
 
 #: ../src/LanguageView.vala:84
 msgid "Use English"
