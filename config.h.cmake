@@ -7,5 +7,6 @@
 #cmakedefine RELEASE_NAME "@RELEASE_NAME@"
 #cmakedefine VERSION "@VERSION@"
 #cmakedefine VERSION_INFO "@VERSION_INFO@"
+#cmakedefine LANG_LIST "@LANG_LIST@"
 
 #endif // CONFIG_H

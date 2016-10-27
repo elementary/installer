@@ -58,18 +58,9 @@ public class Installer.LanguageView : Gtk.Grid {
         scrolled.add (list_box);
         scrolled.expand = true;
 
-        var current_lang = Environment.get_variable ("LANGUAGE");
         foreach (var lang_entry in load_languagelist ().entries) {
-            Environment.set_variable ("LANGUAGE", lang_entry.key, true);
-            Intl.textdomain ("pantheon-installer");
             var langrow = new LangRow (lang_entry.key, lang_entry.value);
             list_box.add (langrow);
-        }
-
-        if (current_lang != null) {
-            Environment.set_variable ("LANGUAGE", current_lang, true);
-        } else {
-            Environment.unset_variable ("LANGUAGE");
         }
 
         add (select_stack);
@@ -103,29 +94,39 @@ public class Installer.LanguageView : Gtk.Grid {
     }
 
     Gee.HashMap<string, string> load_languagelist () {
-        var file = File.new_for_path ("/usr/share/i18n/SUPPORTED");
-        var lang_supported = new Gee.HashSet<string> ();
         var langlist = new Gee.HashMap<string, string> ();
-        try {
-            var dis = new DataInputStream (file.read ());
-            string line;
-            while ((line = dis.read_line (null)) != null) {
-                var first_part = line.split (" ", 2)[0];
-                var first_part2 = first_part.split (".", 2)[0];
-                var lang_familly_part = first_part2.split ("_", 2)[0];
-                lang_supported.add (lang_familly_part);
-            }
-        } catch (Error e) {
-            critical ("%s", e.message);
-        }
 
         unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/xml/iso-codes/iso_639_3.xml");
         Xml.Node* root = doc->get_root_element ();
         if (root == null) {
             delete doc;
         } else {
-            foreach (var lang in lang_supported) {
-                langlist.set (lang, get_iso_639_3_name (lang, root));
+            var current_lang = Environment.get_variable ("LANGUAGE");
+            foreach (unowned string lang in Build.LANG_LIST.split (";")) {
+                // We need to distinguish between pt and pt_BR
+                if ("_" in lang) {
+                    var parts = lang.split ("_", 2);
+                    var name = get_iso_639_3_name (parts[0], root);
+                    if (name != lang) {
+                        Environment.set_variable ("LANGUAGE", lang, true);
+                        Intl.textdomain ("pantheon-installer");
+                        var country_name = get_country_name (parts[1]);
+                        langlist.set (lang, "%s (%s)".printf (dgettext ("iso_639_3", name), dgettext ("iso_3166", country_name)));
+                    }
+                } else {
+                    var name = get_iso_639_3_name (lang, root);
+                    if (name != lang) {
+                        Environment.set_variable ("LANGUAGE", lang, true);
+                        Intl.textdomain ("pantheon-installer");
+                        langlist.set (lang, dgettext ("iso_639_3", name));
+                    }
+                }
+            }
+
+            if (current_lang != null) {
+                Environment.set_variable ("LANGUAGE", current_lang, true);
+            } else {
+                Environment.unset_variable ("LANGUAGE");
             }
         }
 
@@ -151,12 +152,37 @@ public class Installer.LanguageView : Gtk.Grid {
         return lang_code;
     }
 
+    private string get_country_name (string country_code) {
+        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/xml/iso-codes/iso_3166.xml");
+        Xml.Node* root = doc->get_root_element ();
+        if (root == null) {
+            delete doc;
+        } else {
+            for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
+                if (iter->type == Xml.ElementType.ELEMENT_NODE) {
+                    if (iter->name == "iso_3166_entry") {
+                        string? id = iter->get_prop ("alpha_2_code");
+                        if (id != country_code) {
+                            id = iter->get_prop ("alpha_3_code");
+                        }
+
+                        if (id == country_code) {
+                            return iter->get_prop ("name");
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
     public class LangRow : Gtk.ListBoxRow {
         public string lang;
-        public LangRow (string lang, string english_name) {
+        public LangRow (string lang, string translated_name) {
             this.lang = lang;
 
-            var label = new Gtk.Label (dgettext ("iso_639_3", english_name));
+            var label = new Gtk.Label (translated_name);
             label.margin = 6;
             label.get_style_context ().add_class ("h3");
             label.halign = Gtk.Align.CENTER;

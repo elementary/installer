@@ -16,6 +16,21 @@ if (BUILD_TESTING)
     add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/io.elementary.installer.desktop)    
 endif ()
 
+# We won't show the languages that aren't available for the installer
+file (GLOB languages_list
+    "po/*.po"
+)
+
+set (LANG_LIST "")
+foreach (lang_file ${languages_list})
+    get_filename_component(LANG ${lang_file} NAME_WE)
+    if (LANG_LIST STREQUAL "")
+        set (LANG_LIST ${LANG})
+    else ()
+        set (LANG_LIST "${LANG_LIST};${LANG}")
+    endif ()
+endforeach()
+
 configure_file (${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
 add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 add_definitions (-w)
@@ -52,6 +67,8 @@ PACKAGES
     libxml-2.0
 OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
+CUSTOM_VAPIS
+    ${CMAKE_SOURCE_DIR}/vapi/config.vapi
 )
 
 add_subdirectory (po)
