@@ -26,9 +26,17 @@ public class Installer.MainWindow : Gtk.Dialog {
     construct {
         deletable = false;
         var stack = new Gtk.Stack ();
+        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         get_content_area ().add (stack);
         var language_view = new LanguageView ();
         stack.add_named (language_view, "language");
         set_default_geometry (800, 600);
+        
+        language_view.next_step.connect ((lang) => {
+            var disk_view = new DiskView ();
+            stack.add_named (disk_view, "disk");
+            stack.set_visible_child_name ("disk");
+            disk_view.load.begin ();
+        });
     }
 }

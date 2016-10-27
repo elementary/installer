@@ -59,22 +59,27 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Application.vala
     src/MainWindow.vala
     src/LanguageView.vala
+    src/DiskView/DiskView.vala
+    src/DiskView/DiskGrid.vala
+    src/DiskView/org.freedesktop.udisks2.vala
 PACKAGES
     gtk+-3.0>=3.12
     granite
-    posix
-    libparted
     libxml-2.0
+    posix
 OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
 CUSTOM_VAPIS
     ${CMAKE_SOURCE_DIR}/vapi/config.vapi
 )
 
+include (GResource)
+glib_compile_resources (GLIB_RESOURCES_OS_ICONS SOURCE data/os-icons/os-icons.gresource.xml)
+
 add_subdirectory (po)
 
 # tell cmake what to call the executable we just made
-add_executable(${EXEC_NAME} ${VALA_C})
+add_executable(${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_OS_ICONS})
 
 # install the binaries we just made
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)

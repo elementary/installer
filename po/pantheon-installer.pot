@@ -8,14 +8,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-12 01:30+0200\n"
+"POT-Creation-Date: 2016-10-28 19:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/DiskView/DiskView.vala:45
+msgid "Getting the current configuration…"
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:67
+msgid "Clean Install"
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:67
+msgid ""
+"Erase everything on your device and install a fresh copy of elementary OS."
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:68
+msgid "Upgrade"
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:68
+msgid ""
+"An older version of elementary OS was detected on your system. Upgrade "
+"without losing any of your data or settings."
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:129
+msgid "Disk:"
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:132
+msgid "Multiple operating systems were detected on your system"
+msgstr ""
+
+#: ../src/LanguageView.vala:70 ../src/LanguageView.vala:97
+msgid "Next"
+msgstr ""
+
+#: ../src/LanguageView.vala:116
+msgid "Select a Language"
+msgstr ""
 
 #: ../src/Application.vala:28
 msgid "Installer"
@@ -23,8 +62,4 @@ msgstr ""
 
 #: ../src/Application.vala:39
 msgid "translator-credits"
-msgstr ""
-
-#: ../src/LanguageView.vala:88
-msgid "Select a Language"
 msgstr ""
