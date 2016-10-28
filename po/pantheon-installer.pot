@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-29 01:30+0200\n"
+"POT-Creation-Date: 2016-10-29 01:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,8 +61,8 @@ msgid ""
 "to data loss."
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:98 ../src/LanguageView.vala:70
-#: ../src/LanguageView.vala:97
+#: ../src/DiskView/DiskView.vala:98 ../src/LanguageView.vala:71
+#: ../src/LanguageView.vala:99
 msgid "Next"
 msgstr ""
 
@@ -74,8 +74,9 @@ msgstr ""
 msgid "Multiple operating systems were detected on your system"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:189
-msgid "Cancel"
+#: ../src/DiskView/DiskView.vala:189 ../src/CheckView.vala:198
+#: ../src/CheckView.vala:219 ../src/CheckView.vala:243
+msgid "Cancel Installation"
 msgstr ""
 
 #: ../src/CheckView.vala:197
@@ -86,11 +87,6 @@ msgstr ""
 msgid ""
 "There is not enough room on your device to install elementary. We recommend "
 "a minimum of %s of storage."
-msgstr ""
-
-#: ../src/CheckView.vala:198 ../src/CheckView.vala:219
-#: ../src/CheckView.vala:243
-msgid "Cancel Installation"
 msgstr ""
 
 #: ../src/CheckView.vala:213
@@ -133,7 +129,7 @@ msgstr ""
 msgid "Memory:"
 msgstr ""
 
-#: ../src/LanguageView.vala:116
+#: ../src/LanguageView.vala:118
 msgid "Select a Language"
 msgstr ""
 

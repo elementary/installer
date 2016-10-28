@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-29 01:30+0200\n"
-"PO-Revision-Date: 2016-10-29 01:30+0200\n"
+"POT-Creation-Date: 2016-10-29 01:57+0200\n"
+"PO-Revision-Date: 2016-10-29 01:57+0200\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -63,8 +63,8 @@ msgstr ""
 "Créez, redimensionnez et configurez manuellement les partitions du disque. "
 "Cette méthode peut entraîner des pertes de données."
 
-#: ../src/DiskView/DiskView.vala:98 ../src/LanguageView.vala:70
-#: ../src/LanguageView.vala:97
+#: ../src/DiskView/DiskView.vala:98 ../src/LanguageView.vala:71
+#: ../src/LanguageView.vala:99
 msgid "Next"
 msgstr "Suivant"
 
@@ -76,9 +76,10 @@ msgstr "Disque :"
 msgid "Multiple operating systems were detected on your system"
 msgstr "Plusieurs systèmes d'exploitation ont été détectés sur votre appareil"
 
-#: ../src/DiskView/DiskView.vala:189
-msgid "Cancel"
-msgstr "Annuler"
+#: ../src/DiskView/DiskView.vala:189 ../src/CheckView.vala:198
+#: ../src/CheckView.vala:219 ../src/CheckView.vala:243
+msgid "Cancel Installation"
+msgstr "Annuler l'installation"
 
 #: ../src/CheckView.vala:197
 msgid "Not Enough Space"
@@ -91,11 +92,6 @@ msgid ""
 msgstr ""
 "Il n'y a pas assez d'espace sur votre périphérique pour installer "
 "elementary. Nous recommandons un minimum de %s d'espace disque."
-
-#: ../src/CheckView.vala:198 ../src/CheckView.vala:219
-#: ../src/CheckView.vala:243
-msgid "Cancel Installation"
-msgstr "Annuler l'installation"
 
 #: ../src/CheckView.vala:213
 msgid "Your Device May Be Too Slow"
@@ -143,7 +139,7 @@ msgstr "Processeur :"
 msgid "Memory:"
 msgstr "Mémoire :"
 
-#: ../src/LanguageView.vala:116
+#: ../src/LanguageView.vala:118
 msgid "Select a Language"
 msgstr "Sélectionner une langue"
 
@@ -162,6 +158,9 @@ msgstr ""
 "  Samuel Cardoso https://launchpad.net/~samu-cadoso\n"
 "  mbodj https://launchpad.net/~toundembodj24\n"
 "  Éfrit https://launchpad.net/~efrit"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
 
 #~ msgid "Skip"
 #~ msgstr "Ignorer"
