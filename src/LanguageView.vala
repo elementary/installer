@@ -56,6 +56,7 @@ public class Installer.LanguageView : Gtk.Grid {
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         list_box = new Gtk.ListBox ();
+        list_box.activate_on_single_click = false;
         list_box.set_sort_func ((row1, row2) => {
             return ((LangRow) row1).lang.collate (((LangRow) row2).lang);
         });
@@ -75,6 +76,7 @@ public class Installer.LanguageView : Gtk.Grid {
 
         list_box.row_selected.connect (row_selected);
         list_box.select_row (list_box.get_row_at_index (0));
+        list_box.row_activated.connect ((row) => next_button.clicked ());
 
         next_button.clicked.connect (() => {
             unowned Gtk.ListBoxRow row = list_box.get_selected_row ();
