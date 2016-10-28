@@ -75,29 +75,36 @@ public class Installer.DiskView : Gtk.Grid {
         var clean_choice = new ChoiceItem (_("Clean Install"),
                                            _("Erase everything on your device and install a fresh copy of elementary OS."),
                                            new ThemedIcon ("system-os-install"),
-                                           null,
-                                           _("Erase and install"));
-        clean_choice.selected.connect ((text) => {next_button.label = text;});
+                                           null);
+        clean_choice.selected.connect ((text) => {
+            next_button.label = _("Erase and install");
+            next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        });
                                              /// TRANSLATORS: This is a title telling the user that it's possible to upgrade.
         var upgrade_choice = new ChoiceItem (C_("action", "Upgrade"),
                                              _("An older version of elementary OS was detected on your system. Upgrade without losing any of your data or settings."),
                                              new ThemedIcon ("system-software-update"),
-                                             clean_choice,
+                                             clean_choice);
                                              /// TRANSLATORS: This is the content of a button, this is actionable.
-                                             C_("actionable", "Upgrade"));
-        upgrade_choice.selected.connect ((text) => {next_button.label = text;});
+        upgrade_choice.selected.connect ((text) => {
+            next_button.label = C_("actionable", "Upgrade");
+            next_button.get_style_context ().remove_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        });
         var advanced_choice = new ChoiceItem (_("Advanced Install"),
                                               _("Create, resize and manually configure disk partitions. This method may lead to data loss."),
                                               new ThemedIcon ("system-run"),
-                                              upgrade_choice,
-                                              _("Next"));
-        advanced_choice.selected.connect ((text) => {next_button.label = text;});
+                                              upgrade_choice);
+        advanced_choice.selected.connect ((text) => {
+            next_button.label = _("Next");
+            next_button.get_style_context ().remove_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        });
         choice_grid.add (clean_choice);
         choice_grid.add (upgrade_choice);
         choice_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         choice_grid.add (advanced_choice);
 
         next_button = new Gtk.Button.with_label (_("Erase and install"));
+        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         add (load_stack);
         show_all ();
@@ -201,11 +208,9 @@ public class Installer.DiskView : Gtk.Grid {
     }
 
     public class ChoiceItem : Gtk.Grid {
-        public signal void selected (string next);
+        public signal void selected ();
         public unowned SList<Gtk.RadioButton> group;
-        private string next_button;
-        public ChoiceItem (string title, string subtitle, GLib.Icon icon, ChoiceItem? previous, string next_button) {
-            this.next_button = next_button;
+        public ChoiceItem (string title, string subtitle, GLib.Icon icon, ChoiceItem? previous) {
             margin = 12;
             row_spacing = 6;
             column_spacing = 6;
@@ -227,7 +232,7 @@ public class Installer.DiskView : Gtk.Grid {
             attach (subtitle_label, 2, 1, 1, 1);
             radio.toggled.connect (() => {
                 if (radio.active) {
-                    selected (next_button);
+                    selected ();
                 }
             });
         }

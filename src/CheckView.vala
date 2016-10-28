@@ -213,9 +213,9 @@ public class Installer.CheckView : Gtk.Stack {
                 var grid = setup_grid (_("Your Device May Be Too Slow"), _("Your device doesn't meet the recommended hardware requirements. This may cause it to run slowly or freeze."), "application-x-firmware");
                 var comparison_grid = get_comparison_grid ();
                 grid.attach (comparison_grid, 1, 2, 1, 1);
-                var skip_button = new Gtk.Button.with_label (_("Skip"));
-                skip_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-                skip_button.clicked.connect (() => show_next ());
+                var ignore_button = new Gtk.Button.with_label (_("Ignore"));
+                ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+                ignore_button.clicked.connect (() => show_next ());
                 var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
                 cancel_button.clicked.connect (() => cancel ());
                 var button_grid = new Gtk.Grid ();
@@ -225,7 +225,7 @@ public class Installer.CheckView : Gtk.Stack {
                 button_grid.valign = Gtk.Align.END;
                 button_grid.margin_end = 6;
                 button_grid.add (cancel_button);
-                button_grid.add (skip_button);
+                button_grid.add (ignore_button);
                 var out_grid = new Gtk.Grid ();
                 out_grid.expand = true;
                 out_grid.orientation = Gtk.Orientation.VERTICAL;
@@ -237,9 +237,9 @@ public class Installer.CheckView : Gtk.Stack {
                 break;
             case State.POWERED:
                 var grid = setup_grid (_("Connect to a Power Source"), _("Your device is running on battery power. It's recommended to be plugged in while installing elementary OS."), "battery-ac-adapter");
-                var skip_button = new Gtk.Button.with_label (_("Skip"));
-                skip_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-                skip_button.clicked.connect (() => show_next ());
+                var ignore_button = new Gtk.Button.with_label (_("Ignore"));
+                ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+                ignore_button.clicked.connect (() => show_next ());
                 var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
                 cancel_button.clicked.connect (() => cancel ());
                 var button_grid = new Gtk.Grid ();
@@ -249,7 +249,7 @@ public class Installer.CheckView : Gtk.Stack {
                 button_grid.valign = Gtk.Align.END;
                 button_grid.margin_end = 6;
                 button_grid.add (cancel_button);
-                button_grid.add (skip_button);
+                button_grid.add (ignore_button);
                 var out_grid = new Gtk.Grid ();
                 out_grid.expand = true;
                 out_grid.orientation = Gtk.Orientation.VERTICAL;

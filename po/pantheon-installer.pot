@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-29 00:42+0200\n"
+"POT-Creation-Date: 2016-10-29 01:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,61 +21,60 @@ msgstr ""
 msgid "Getting the current configuration…"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:73
+#: ../src/DiskView/DiskView.vala:75
 msgid "Clean Install"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:74
+#: ../src/DiskView/DiskView.vala:76
 msgid ""
 "Erase everything on your device and install a fresh copy of elementary OS."
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:77 ../src/DiskView/DiskView.vala:98
+#: ../src/DiskView/DiskView.vala:80 ../src/DiskView/DiskView.vala:106
 msgid "Erase and install"
 msgstr ""
 
 #. / TRANSLATORS: This is a title telling the user that it's possible to upgrade.
-#: ../src/DiskView/DiskView.vala:80
+#: ../src/DiskView/DiskView.vala:84
 msgctxt "action"
 msgid "Upgrade"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:81
+#: ../src/DiskView/DiskView.vala:85
 msgid ""
 "An older version of elementary OS was detected on your system. Upgrade "
 "without losing any of your data or settings."
 msgstr ""
 
-#. / TRANSLATORS: This is the content of a button, this is actionable.
-#: ../src/DiskView/DiskView.vala:85
+#: ../src/DiskView/DiskView.vala:90
 msgctxt "actionable"
 msgid "Upgrade"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:87
+#: ../src/DiskView/DiskView.vala:93
 msgid "Advanced Install"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:88
+#: ../src/DiskView/DiskView.vala:94
 msgid ""
 "Create, resize and manually configure disk partitions. This method may lead "
 "to data loss."
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:91 ../src/LanguageView.vala:70
+#: ../src/DiskView/DiskView.vala:98 ../src/LanguageView.vala:70
 #: ../src/LanguageView.vala:97
 msgid "Next"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:157
+#: ../src/DiskView/DiskView.vala:166
 msgid "Disk:"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:160
+#: ../src/DiskView/DiskView.vala:169
 msgid "Multiple operating systems were detected on your system"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:171
+#: ../src/DiskView/DiskView.vala:189
 msgid "Cancel"
 msgstr ""
 
@@ -105,7 +104,7 @@ msgid ""
 msgstr ""
 
 #: ../src/CheckView.vala:216 ../src/CheckView.vala:240
-msgid "Skip"
+msgid "Ignore"
 msgstr ""
 
 #: ../src/CheckView.vala:239
