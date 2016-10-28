@@ -52,19 +52,24 @@ public class Installer.LanguageView : Gtk.Grid {
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         list_box = new Gtk.ListBox ();
+        list_box.expand = true;
         list_box.set_sort_func ((row1, row2) => {
             return ((LangRow) row1).lang.collate (((LangRow) row2).lang);
         });
         scrolled.add (list_box);
-        scrolled.expand = true;
+        scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
 
         foreach (var lang_entry in load_languagelist ().entries) {
             var langrow = new LangRow (lang_entry.key, lang_entry.value);
             list_box.add (langrow);
         }
 
+        var frame = new Gtk.Frame (null);
+        frame.add (scrolled);
+        frame.halign = Gtk.Align.CENTER;
+
         add (select_stack);
-        add (scrolled);
+        add (frame);
         timeout ();
     }
 
@@ -185,7 +190,7 @@ public class Installer.LanguageView : Gtk.Grid {
             var label = new Gtk.Label (translated_name);
             label.margin = 6;
             label.get_style_context ().add_class ("h3");
-            label.halign = Gtk.Align.CENTER;
+            label.xalign = 0;
             add (label);
         }
     }
