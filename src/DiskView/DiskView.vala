@@ -165,9 +165,18 @@ public class Installer.DiskView : Gtk.Grid {
                 disk_grid.attach (disk_stack, 0, 2, 2, 1);
                 disk_grid.attach (choice_grid, 0, 3, 2, 1);
                 if (disk_stack.get_children ().length () > 1) {
-                    disk_grid.attach (multiple_os_detected, 0, 0, 2, 1);
                     disk_grid.attach (disk_label, 0, 1, 1, 1);
                     disk_grid.attach (disk_combo, 1, 1, 1, 1);
+                }
+
+                // Check for multiple OS across all the disks.
+                int number = 0;
+                foreach (var grid in disk_grids) {
+                    number += grid.buttons.size;
+                }
+
+                if (number > 1) {
+                    disk_grid.attach (multiple_os_detected, 0, 0, 2, 1);
                 }
 
                 var cancel_button = new Gtk.Button.with_label (_("Cancel"));

@@ -20,7 +20,7 @@
 
 public class Installer.DiskGrid : Gtk.Grid {
     public UDisks2.Drive drive;
-    private Gee.LinkedList<ToggleOSButton> buttons;
+    public Gee.LinkedList<ToggleOSButton> buttons;
     public DiskGrid (UDisks2.Drive drive) {
         this.drive = drive;
         show_all ();
