@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-28 19:34+0200\n"
+"POT-Creation-Date: 2016-10-29 00:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,39 +17,121 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/DiskView/DiskView.vala:45
+#: ../src/DiskView/DiskView.vala:48
 msgid "Getting the current configuration…"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:67
+#: ../src/DiskView/DiskView.vala:73
 msgid "Clean Install"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:67
+#: ../src/DiskView/DiskView.vala:74
 msgid ""
 "Erase everything on your device and install a fresh copy of elementary OS."
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:68
+#: ../src/DiskView/DiskView.vala:77 ../src/DiskView/DiskView.vala:98
+msgid "Erase and install"
+msgstr ""
+
+#. / TRANSLATORS: This is a title telling the user that it's possible to upgrade.
+#: ../src/DiskView/DiskView.vala:80
+msgctxt "action"
 msgid "Upgrade"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:68
+#: ../src/DiskView/DiskView.vala:81
 msgid ""
 "An older version of elementary OS was detected on your system. Upgrade "
 "without losing any of your data or settings."
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:129
+#. / TRANSLATORS: This is the content of a button, this is actionable.
+#: ../src/DiskView/DiskView.vala:85
+msgctxt "actionable"
+msgid "Upgrade"
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:87
+msgid "Advanced Install"
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:88
+msgid ""
+"Create, resize and manually configure disk partitions. This method may lead "
+"to data loss."
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:91 ../src/LanguageView.vala:70
+#: ../src/LanguageView.vala:97
+msgid "Next"
+msgstr ""
+
+#: ../src/DiskView/DiskView.vala:157
 msgid "Disk:"
 msgstr ""
 
-#: ../src/DiskView/DiskView.vala:132
+#: ../src/DiskView/DiskView.vala:160
 msgid "Multiple operating systems were detected on your system"
 msgstr ""
 
-#: ../src/LanguageView.vala:70 ../src/LanguageView.vala:97
-msgid "Next"
+#: ../src/DiskView/DiskView.vala:171
+msgid "Cancel"
+msgstr ""
+
+#: ../src/CheckView.vala:197
+msgid "Not Enough Space"
+msgstr ""
+
+#: ../src/CheckView.vala:197
+msgid ""
+"There is not enough room on your device to install elementary. We recommend "
+"a minimum of %s of storage."
+msgstr ""
+
+#: ../src/CheckView.vala:198 ../src/CheckView.vala:219
+#: ../src/CheckView.vala:243
+msgid "Cancel Installation"
+msgstr ""
+
+#: ../src/CheckView.vala:213
+msgid "Your Device May Be Too Slow"
+msgstr ""
+
+#: ../src/CheckView.vala:213
+msgid ""
+"Your device doesn't meet the recommended hardware requirements. This may "
+"cause it to run slowly or freeze."
+msgstr ""
+
+#: ../src/CheckView.vala:216 ../src/CheckView.vala:240
+msgid "Skip"
+msgstr ""
+
+#: ../src/CheckView.vala:239
+msgid "Connect to a Power Source"
+msgstr ""
+
+#: ../src/CheckView.vala:239
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing elementary OS."
+msgstr ""
+
+#: ../src/CheckView.vala:296
+msgid "Recommended:"
+msgstr ""
+
+#: ../src/CheckView.vala:300
+msgid "Your Device:"
+msgstr ""
+
+#: ../src/CheckView.vala:304 ../src/CheckView.vala:306
+msgid "Processor:"
+msgstr ""
+
+#: ../src/CheckView.vala:312 ../src/CheckView.vala:314
+msgid "Memory:"
 msgstr ""
 
 #: ../src/LanguageView.vala:116

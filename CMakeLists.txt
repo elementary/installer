@@ -59,6 +59,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Application.vala
     src/MainWindow.vala
     src/LanguageView.vala
+    src/CheckView.vala
     src/DiskView/DiskView.vala
     src/DiskView/DiskGrid.vala
     src/DiskView/org.freedesktop.udisks2.vala

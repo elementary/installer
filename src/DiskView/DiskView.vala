@@ -19,11 +19,14 @@
  */
 
 public class Installer.DiskView : Gtk.Grid {
+    public signal void cancel ();
+
     Gtk.Stack load_stack;
     Gtk.Stack disk_stack;
     Gtk.ComboBoxText disk_combo;
     Gee.LinkedList<DiskGrid> disk_grids;
     Gtk.Grid choice_grid;
+    Gtk.Button next_button;
 
     public DiskView () {
         
@@ -63,11 +66,38 @@ public class Installer.DiskView : Gtk.Grid {
 
         choice_grid = new Gtk.Grid ();
         choice_grid.orientation = Gtk.Orientation.VERTICAL;
+        choice_grid.expand = true;
+        choice_grid.valign = Gtk.Align.CENTER;
+        choice_grid.halign = Gtk.Align.CENTER;
+        choice_grid.margin_start = 48;
+        choice_grid.margin_end = 48;
         var group = new SList<Gtk.RadioButton> ();
-        var clean_choice = new ChoiceItem (_("Clean Install"), _("Erase everything on your device and install a fresh copy of elementary OS."), new ThemedIcon ("ubiquity"), null);
-        var upgrade_choice = new ChoiceItem (_("Upgrade"), _("An older version of elementary OS was detected on your system. Upgrade without losing any of your data or settings."), new ThemedIcon ("system-software-update"), clean_choice);
+        var clean_choice = new ChoiceItem (_("Clean Install"),
+                                           _("Erase everything on your device and install a fresh copy of elementary OS."),
+                                           new ThemedIcon ("system-os-install"),
+                                           null,
+                                           _("Erase and install"));
+        clean_choice.selected.connect ((text) => {next_button.label = text;});
+                                             /// TRANSLATORS: This is a title telling the user that it's possible to upgrade.
+        var upgrade_choice = new ChoiceItem (C_("action", "Upgrade"),
+                                             _("An older version of elementary OS was detected on your system. Upgrade without losing any of your data or settings."),
+                                             new ThemedIcon ("system-software-update"),
+                                             clean_choice,
+                                             /// TRANSLATORS: This is the content of a button, this is actionable.
+                                             C_("actionable", "Upgrade"));
+        upgrade_choice.selected.connect ((text) => {next_button.label = text;});
+        var advanced_choice = new ChoiceItem (_("Advanced Install"),
+                                              _("Create, resize and manually configure disk partitions. This method may lead to data loss."),
+                                              new ThemedIcon ("system-run"),
+                                              upgrade_choice,
+                                              _("Next"));
+        advanced_choice.selected.connect ((text) => {next_button.label = text;});
         choice_grid.add (clean_choice);
         choice_grid.add (upgrade_choice);
+        choice_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        choice_grid.add (advanced_choice);
+
+        next_button = new Gtk.Button.with_label (_("Erase and install"));
 
         add (load_stack);
         show_all ();
@@ -140,6 +170,17 @@ public class Installer.DiskView : Gtk.Grid {
                     disk_grid.attach (disk_combo, 1, 1, 1, 1);
                 }
 
+                var cancel_button = new Gtk.Button.with_label (_("Cancel"));
+                cancel_button.clicked.connect (() => cancel ());
+
+                var button_grid = new Gtk.Grid ();
+                button_grid.margin_end = 12;
+                button_grid.column_spacing = 6;
+                button_grid.halign = Gtk.Align.END;
+                button_grid.add (cancel_button);
+                button_grid.add (next_button);
+                disk_grid.attach (button_grid, 0, 4, 2, 1);
+                
                 load_stack.add_named (disk_grid, "disk");
                 disk_grid.show_all ();
                 load_stack.set_visible_child (disk_grid);
@@ -151,11 +192,12 @@ public class Installer.DiskView : Gtk.Grid {
     }
 
     public class ChoiceItem : Gtk.Grid {
+        public signal void selected (string next);
         public unowned SList<Gtk.RadioButton> group;
-        public ChoiceItem (string title, string subtitle, GLib.Icon icon, ChoiceItem? previous) {
+        private string next_button;
+        public ChoiceItem (string title, string subtitle, GLib.Icon icon, ChoiceItem? previous, string next_button) {
+            this.next_button = next_button;
             margin = 12;
-            margin_start = 48;
-            margin_end = 48;
             row_spacing = 6;
             column_spacing = 6;
             valign = Gtk.Align.CENTER;
@@ -174,6 +216,11 @@ public class Installer.DiskView : Gtk.Grid {
             attach (image, 1, 0, 1, 2);
             attach (title_label, 2, 0, 1, 1);
             attach (subtitle_label, 2, 1, 1, 1);
+            radio.toggled.connect (() => {
+                if (radio.active) {
+                    selected (next_button);
+                }
+            });
         }
     }
 }

@@ -77,7 +77,6 @@ public class Installer.DiskGrid : Gtk.Grid {
             mount_point = builder.str;
         }
 
-        warning (mount_point);
         var file = GLib.File.new_for_path (mount_point);
         var togglebutton = detect_system (file, block, filesystem);
         if (togglebutton != null) {

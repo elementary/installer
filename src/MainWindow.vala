@@ -19,24 +19,40 @@
  */
 
 public class Installer.MainWindow : Gtk.Dialog {
+    Gtk.Stack stack;
     public MainWindow () {
         
     }
 
     construct {
         deletable = false;
-        var stack = new Gtk.Stack ();
+        stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         get_content_area ().add (stack);
         var language_view = new LanguageView ();
         stack.add_named (language_view, "language");
         set_default_geometry (800, 600);
-        
-        language_view.next_step.connect ((lang) => {
-            var disk_view = new DiskView ();
-            stack.add_named (disk_view, "disk");
-            stack.set_visible_child_name ("disk");
-            disk_view.load.begin ();
-        });
+
+        language_view.next_step.connect ((lang) => load_checkview ());
+    }
+    
+    private void load_checkview () {
+        var check_view = new Installer.CheckView ();
+        if (check_view.check_requirements ()) {
+            load_diskview ();
+        } else {
+            check_view.next_step.connect (() => load_diskview ());
+            check_view.cancel.connect (() => destroy ());
+            stack.add_named (check_view, "check");
+            stack.set_visible_child_name ("check");
+        }
+    }
+    
+    private void load_diskview () {
+        var disk_view = new DiskView ();
+        disk_view.cancel.connect (() => destroy ());
+        stack.add_named (disk_view, "disk");
+        stack.set_visible_child_name ("disk");
+        disk_view.load.begin ();
     }
 }
