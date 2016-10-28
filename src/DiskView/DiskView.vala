@@ -169,7 +169,6 @@ public class Installer.DiskView : Gtk.Grid {
                 var multiple_os_detected = new Gtk.Label (_("Multiple operating systems were detected on your system"));
                 multiple_os_detected.hexpand = true;
                 multiple_os_detected.get_style_context ().add_class ("category-label");
-                disk_grid.attach (disk_stack, 0, 2, 2, 1);
                 disk_grid.attach (choice_grid, 0, 3, 2, 1);
                 if (disk_stack.get_children ().length () > 1) {
                     disk_grid.attach (disk_label, 0, 1, 1, 1);
@@ -184,6 +183,7 @@ public class Installer.DiskView : Gtk.Grid {
 
                 if (number > 1) {
                     disk_grid.attach (multiple_os_detected, 0, 0, 2, 1);
+                    disk_grid.attach (disk_stack, 0, 2, 2, 1);
                 }
 
                 var cancel_button = new Gtk.Button.with_label (_("Cancel"));
