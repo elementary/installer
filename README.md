@@ -25,17 +25,22 @@ You'll need the following dependencies:
  - libxml2-utils
  - valac
 
-It's recommended to create a clean build environment
+Create a clean build environment
 
-    mkdir build
-    cd build/
+    mkdir build && cd build
     
-Run `cmake` to configure the build environment and then `make all test` to build and run automated tests
+Configure the build environment
 
     cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+
+Build and run automated tests
+
     make all test
     
-To install, use `make install`, then execute with `pantheon-installer`
+Install
 
     sudo make install
+
+Execute
+
     pantheon-installer
