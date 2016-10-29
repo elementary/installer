@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/pantheon/installer/icons/os">
+    <file alias="os-linux-arch.svg" compressed="true" preprocess="xml-stripblanks">Arch.svg</file>
+    <file alias="os-linux-debian.svg" compressed="true" preprocess="xml-stripblanks">Debian.svg</file>
+    <file alias="os-linux-fedora.svg" compressed="true" preprocess="xml-stripblanks">fedora.svg</file>
+    <file alias="os-linux-manjaro.svg" compressed="true" preprocess="xml-stripblanks">Manjaro.svg</file>
+    <file alias="os-linux-mint.svg" compressed="true" preprocess="xml-stripblanks">Mint.svg</file>
+    <file alias="os-linux-opensuse.svg" compressed="true" preprocess="xml-stripblanks">OpenSUSE.svg</file>
+    <file alias="os-linux-ubuntu.svg" compressed="true" preprocess="xml-stripblanks">ubuntu.svg</file>
+    <file alias="os-linux-elementary.svg" compressed="true" preprocess="xml-stripblanks">elementary.svg</file>
+    <file alias="os-linux.svg" compressed="true" preprocess="xml-stripblanks">Linux.svg</file>
+    <file alias="os-windows.svg" compressed="true" preprocess="xml-stripblanks">Windows.svg</file>
+    <file alias="os-unix-mac.svg" compressed="true" preprocess="xml-stripblanks">macos.svg</file>
+  </gresource>
+</gresources>
