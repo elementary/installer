@@ -36,8 +36,6 @@ public class Installer.LanguageView : Gtk.Grid {
 
         select_stack = new Gtk.Stack ();
         select_stack.get_style_context ().add_class ("h1");
-        select_stack.margin = 12;
-        select_stack.margin_top = 0;
         select_stack.height_request = 64;
         select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         select_label = new Gtk.Label (null);
@@ -121,6 +119,8 @@ public class Installer.LanguageView : Gtk.Grid {
         Environment.set_variable ("LANGUAGE", ((LangRow) row).lang, true);
         Intl.textdomain ("pantheon-installer");
         select_label = new Gtk.Label (_("Select a Language"));
+        select_label.margin = 12;
+        select_label.margin_top = 0;
         select_label.show_all ();
         select_stack.add (select_label);
         select_stack.set_visible_child (select_label);
