@@ -76,8 +76,8 @@ public class Installer.LanguageView : Gtk.Grid {
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.halign = Gtk.Align.END;
-        next_button.margin_end = 6;
-        next_button.margin_top = 6;
+        next_button.margin_end = 12;
+        next_button.margin_top = 12;
 
         list_box.row_selected.connect (row_selected);
         list_box.select_row (list_box.get_row_at_index (0));
