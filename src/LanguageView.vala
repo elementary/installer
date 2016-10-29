@@ -22,7 +22,11 @@ public class Installer.LanguageView : Gtk.Grid {
     Gtk.Label select_label;
     Gtk.Stack select_stack;
     Gtk.ListBox list_box;
+    Gtk.Button next_button;
     int select_number = 0;
+
+    public signal void next_step (string lang);
+
     public LanguageView () {
         GLib.Timeout.add_seconds (3, timeout);
     }
@@ -52,6 +56,7 @@ public class Installer.LanguageView : Gtk.Grid {
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         list_box = new Gtk.ListBox ();
+        list_box.activate_on_single_click = false;
         list_box.expand = true;
         list_box.set_sort_func ((row1, row2) => {
             return ((LangRow) row1).lang.collate (((LangRow) row2).lang);
@@ -68,9 +73,41 @@ public class Installer.LanguageView : Gtk.Grid {
         frame.add (scrolled);
         frame.halign = Gtk.Align.CENTER;
 
+        next_button = new Gtk.Button.with_label (_("Next"));
+        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.halign = Gtk.Align.END;
+        next_button.margin_end = 6;
+        next_button.margin_top = 6;
+
+        list_box.row_selected.connect (row_selected);
+        list_box.select_row (list_box.get_row_at_index (0));
+        list_box.row_activated.connect ((row) => next_button.clicked ());
+
+        next_button.clicked.connect (() => {
+            unowned Gtk.ListBoxRow row = list_box.get_selected_row ();
+            unowned string lang = ((LangRow) row).lang;
+            Environment.set_variable ("LANGUAGE", lang, true);
+            next_step (lang);
+        });
+
         add (select_stack);
         add (frame);
+        add (next_button);
         timeout ();
+    }
+
+    private void row_selected (Gtk.ListBoxRow? row) {
+        var current_lang = Environment.get_variable ("LANGUAGE");
+        Environment.set_variable ("LANGUAGE", ((LangRow) row).lang, true);
+        Intl.textdomain ("pantheon-installer");
+
+        next_button.label = _("Next");
+
+        if (current_lang != null) {
+            Environment.set_variable ("LANGUAGE", current_lang, true);
+        } else {
+            Environment.unset_variable ("LANGUAGE");
+        }
     }
 
     private bool timeout () {
