@@ -269,6 +269,7 @@ public class Installer.CheckView : Gtk.Stack {
         grid.expand = true;
         grid.vexpand = true;
         grid.column_spacing = 12;
+        grid.row_spacing = 6;
         grid.margin = 48;
         grid.halign = Gtk.Align.CENTER;
         grid.valign = Gtk.Align.CENTER;
@@ -281,7 +282,7 @@ public class Installer.CheckView : Gtk.Stack {
         description_label.xalign = 0;
         description_label.valign = Gtk.Align.START;
         var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.CENTER;
+        image.valign = Gtk.Align.START;
         grid.attach (image, 0, 0, 1, 2);
         grid.attach (title_label, 1, 0, 1, 1);
         grid.attach (description_label, 1, 1, 1, 1);
