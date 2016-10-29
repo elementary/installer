@@ -57,22 +57,27 @@ public class Installer.LanguageView : Gtk.Grid {
         var scrolled = new Gtk.ScrolledWindow (null, null);
         list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = false;
+        list_box.expand = true;
         list_box.set_sort_func ((row1, row2) => {
             return ((LangRow) row1).lang.collate (((LangRow) row2).lang);
         });
         scrolled.add (list_box);
-        scrolled.expand = true;
+        scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
 
         foreach (var lang_entry in load_languagelist ().entries) {
             var langrow = new LangRow (lang_entry.key, lang_entry.value);
             list_box.add (langrow);
         }
 
+        var frame = new Gtk.Frame (null);
+        frame.add (scrolled);
+        frame.halign = Gtk.Align.CENTER;
+
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.halign = Gtk.Align.END;
-        next_button.margin_end = 6;
-        next_button.margin_top = 6;
+        next_button.margin_end = 12;
+        next_button.margin_top = 12;
 
         list_box.row_selected.connect (row_selected);
         list_box.select_row (list_box.get_row_at_index (0));
@@ -86,7 +91,7 @@ public class Installer.LanguageView : Gtk.Grid {
         });
 
         add (select_stack);
-        add (scrolled);
+        add (frame);
         add (next_button);
         timeout ();
     }
@@ -222,7 +227,7 @@ public class Installer.LanguageView : Gtk.Grid {
             var label = new Gtk.Label (translated_name);
             label.margin = 6;
             label.get_style_context ().add_class ("h3");
-            label.halign = Gtk.Align.CENTER;
+            label.xalign = 0;
             add (label);
         }
     }
