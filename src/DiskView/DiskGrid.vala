@@ -39,7 +39,7 @@ public class Installer.DiskGrid : Gtk.Grid {
         foreach (var block in received_blocks) {
             if (block.drive == ((DBusProxy) drive).g_object_path) {
                 blocks.add (block);
-                process_block.begin (block);
+                yield process_block (block);
             }
         }
 
