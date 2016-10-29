@@ -77,7 +77,7 @@ public class Installer.DiskView : Gtk.Grid {
                                            new ThemedIcon ("system-os-install"),
                                            null);
         clean_choice.selected.connect ((text) => {
-            next_button.label = _("Erase and install");
+            next_button.label = _("Erase and Install");
             next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         });
                                              /// TRANSLATORS: This is a title telling the user that it's possible to upgrade.
@@ -103,7 +103,7 @@ public class Installer.DiskView : Gtk.Grid {
         choice_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         choice_grid.add (advanced_choice);
 
-        next_button = new Gtk.Button.with_label (_("Erase and install"));
+        next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         add (load_stack);

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-29 01:56+0200\n"
+"POT-Creation-Date: 2016-10-29 02:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 
 #: ../src/DiskView/DiskView.vala:80 ../src/DiskView/DiskView.vala:106
-msgid "Erase and install"
+msgid "Erase and Install"
 msgstr ""
 
 #. / TRANSLATORS: This is a title telling the user that it's possible to upgrade.

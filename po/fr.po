@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-29 01:57+0200\n"
-"PO-Revision-Date: 2016-10-29 01:57+0200\n"
+"POT-Creation-Date: 2016-10-29 02:09+0200\n"
+"PO-Revision-Date: 2016-10-29 02:09+0200\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -29,7 +29,7 @@ msgstr ""
 "OS."
 
 #: ../src/DiskView/DiskView.vala:80 ../src/DiskView/DiskView.vala:106
-msgid "Erase and install"
+msgid "Erase and Install"
 msgstr "Supprimer et installer"
 
 #. / TRANSLATORS: This is a title telling the user that it's possible to upgrade.
@@ -158,6 +158,9 @@ msgstr ""
 "  Samuel Cardoso https://launchpad.net/~samu-cadoso\n"
 "  mbodj https://launchpad.net/~toundembodj24\n"
 "  Éfrit https://launchpad.net/~efrit"
+
+#~ msgid "Erase and install"
+#~ msgstr "Supprimer et installer"
 
 #~ msgid "Cancel"
 #~ msgstr "Annuler"
