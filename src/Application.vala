@@ -26,6 +26,7 @@ public class Installer.App : Granite.Application {
         Intl.setlocale (LocaleCategory.ALL, "");
 
         program_name = _("Installer");
+        build_version = Build.VERSION;
         app_years = "2016";
         app_icon = "system-os-install";
 
