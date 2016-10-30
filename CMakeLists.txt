@@ -75,7 +75,7 @@ CUSTOM_VAPIS
 )
 
 include (GResource)
-glib_compile_resources (GLIB_RESOURCES_OS_ICONS SOURCE data/os-icons/os-icons.gresource.xml)
+glib_compile_resources (GLIB_RESOURCES_OS_ICONS data/os-icons/os-icons.gresource.xml)
 
 add_subdirectory (po)
 
