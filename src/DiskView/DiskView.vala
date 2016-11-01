@@ -24,7 +24,6 @@ public class Installer.DiskView : Gtk.Grid {
     Gtk.Stack load_stack;
     Gtk.Stack disk_stack;
     Gtk.ComboBoxText disk_combo;
-    Gee.LinkedList<DiskGrid> disk_grids;
     Gtk.Grid choice_grid;
     Gtk.Button next_button;
 
@@ -61,8 +60,6 @@ public class Installer.DiskView : Gtk.Grid {
 
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/pantheon/installer/icons/os");
-
-        disk_grids = new Gee.LinkedList<DiskGrid> ();
 
         choice_grid = new Gtk.Grid ();
         choice_grid.orientation = Gtk.Orientation.VERTICAL;
@@ -112,100 +109,80 @@ public class Installer.DiskView : Gtk.Grid {
 
     // If possible, open devices in a different thread so that the interface stays awake.
     public async void load () {
-        var blocks = new Gee.LinkedList<UDisks2.Block> ();
-        try {
-            var client = yield DBusObjectManagerClient.new_for_bus (BusType.SYSTEM, GLib.DBusObjectManagerClientFlags.NONE,
-                                                            "org.freedesktop.UDisks2", "/org/freedesktop/UDisks2", null);
-            client.get_objects ().foreach ((object) => {
-                var drive_interface = object.get_interface ("org.freedesktop.UDisks2.Drive");
-                if (drive_interface != null) {
-                    try {
-                        UDisks2.Drive drive = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UDisks2", object.get_object_path ());
-                        if (drive.removable) {
-                            return;
-                        }
-
-                        var grid = new DiskGrid (drive);
-                        disk_grids.add (grid);
-                    } catch (Error e) {
-                        warning (e.message);
-                    }
-                } else {
-                    var block_interface = object.get_interface ("org.freedesktop.UDisks2.Block");
-                    if (block_interface != null) {
-                        try {
-                            UDisks2.Block block = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UDisks2", object.get_object_path ());
-                            // Make sure that it is a filesystem and not a partition table.
-                            var filesystem_interface = object.get_interface ("org.freedesktop.UDisks2.Filesystem");
-                            if (filesystem_interface != null) {
-                                blocks.add (block);
-                            }
-                        } catch (Error e) {
-                            warning (e.message);
+        var disks = yield Installer.Disk.get_disks ();
+        foreach (var disk in disks) {
+            DiskGrid grid = null;
+            var partitions = disk.partitions;
+            foreach (var partition in partitions) {
+                if (partition == null) {
+                    warning ("OHHHH");
+                    continue;
+                }
+                string name;
+                string? version;
+                GLib.Icon icon;
+                if (yield partition.detect_operating_system (out name, out version, out icon)) {
+                    if (grid == null) {
+                        grid = new DiskGrid (disk);
+                        var disk_id = disk.get_id ();
+                        disk_combo.append (disk_id, "%s (%s)".printf (disk.get_label_name (), GLib.format_size (disk.get_size ())));
+                        disk_stack.add_named (grid, disk_id);
+                        if (disk_combo.active_id == null) {
+                            disk_combo.active_id = disk_id;
                         }
                     }
-                }
-            });
 
-            foreach (var grid in disk_grids) {
-                yield grid.add_blocks (blocks);
-                var drive = grid.drive;
-                var drive_id = drive.id;
-                disk_combo.append (drive_id, "%s (%s)".printf (drive.model.replace ("_", " "), GLib.format_size (drive.size)));
-                disk_stack.add_named (grid, drive_id);
-                if (disk_combo.active_id == null) {
-                    disk_combo.active_id = drive_id;
+                    grid.add_button (name, version, icon, partition);
                 }
+                
+            }
+        }
+
+        Idle.add (() => {
+            var disk_grid = new Gtk.Grid ();
+            disk_grid.orientation = Gtk.Orientation.VERTICAL;
+            disk_grid.row_spacing = 12;
+            disk_grid.column_spacing = 6;
+            var disk_label = new Gtk.Label (_("Disk:"));
+            disk_label.halign = Gtk.Align.END;
+            disk_combo.halign = Gtk.Align.START;
+            var multiple_os_detected = new Gtk.Label (_("Multiple operating systems were detected on your system"));
+            multiple_os_detected.hexpand = true;
+            multiple_os_detected.get_style_context ().add_class ("category-label");
+            disk_grid.attach (choice_grid, 0, 3, 2, 1);
+            if (disk_stack.get_children ().length () > 1) {
+                disk_grid.attach (disk_label, 0, 1, 1, 1);
+                disk_grid.attach (disk_combo, 1, 1, 1, 1);
             }
 
-            Idle.add (() => {
-                var disk_grid = new Gtk.Grid ();
-                disk_grid.orientation = Gtk.Orientation.VERTICAL;
-                disk_grid.row_spacing = 12;
-                disk_grid.column_spacing = 6;
-                var disk_label = new Gtk.Label (_("Disk:"));
-                disk_label.halign = Gtk.Align.END;
-                disk_combo.halign = Gtk.Align.START;
-                var multiple_os_detected = new Gtk.Label (_("Multiple operating systems were detected on your system"));
-                multiple_os_detected.hexpand = true;
-                multiple_os_detected.get_style_context ().add_class ("category-label");
-                disk_grid.attach (choice_grid, 0, 3, 2, 1);
-                if (disk_stack.get_children ().length () > 1) {
-                    disk_grid.attach (disk_label, 0, 1, 1, 1);
-                    disk_grid.attach (disk_combo, 1, 1, 1, 1);
-                }
-
-                // Check for multiple OS across all the disks.
-                int number = 0;
-                foreach (var grid in disk_grids) {
-                    number += grid.buttons.size;
-                }
-
-                if (number > 1) {
-                    disk_grid.attach (multiple_os_detected, 0, 0, 2, 1);
-                    disk_grid.attach (disk_stack, 0, 2, 2, 1);
-                }
-
-                var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-                cancel_button.clicked.connect (() => cancel ());
-
-                var button_grid = new Gtk.Grid ();
-                button_grid.margin_end = 12;
-                button_grid.column_spacing = 6;
-                button_grid.column_homogeneous = true;
-                button_grid.halign = Gtk.Align.END;
-                button_grid.add (cancel_button);
-                button_grid.add (next_button);
-                disk_grid.attach (button_grid, 0, 4, 2, 1);
-                
-                load_stack.add_named (disk_grid, "disk");
-                disk_grid.show_all ();
-                load_stack.set_visible_child (disk_grid);
-                return Source.REMOVE;
+            // Check for multiple OS across all the disks.
+            int number = 0;
+            disk_stack.get_children ().foreach ((child) => {
+                number += ((DiskGrid)child).buttons.size;
             });
-        } catch (Error e) {
-            warning (e.message);
-        }
+
+            if (number > 1) {
+                disk_grid.attach (multiple_os_detected, 0, 0, 2, 1);
+                disk_grid.attach (disk_stack, 0, 2, 2, 1);
+            }
+
+            var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
+            cancel_button.clicked.connect (() => cancel ());
+
+            var button_grid = new Gtk.Grid ();
+            button_grid.margin_end = 12;
+            button_grid.column_spacing = 6;
+            button_grid.column_homogeneous = true;
+            button_grid.halign = Gtk.Align.END;
+            button_grid.add (cancel_button);
+            button_grid.add (next_button);
+            disk_grid.attach (button_grid, 0, 4, 2, 1);
+
+            load_stack.add_named (disk_grid, "disk");
+            disk_grid.show_all ();
+            load_stack.set_visible_child (disk_grid);
+            return Source.REMOVE;
+        });
     }
 
     public class ChoiceItem : Gtk.Grid {

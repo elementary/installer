@@ -82,6 +82,8 @@ public class Installer.LanguageView : Gtk.Grid {
         list_box.row_activated.connect ((row) => next_button.clicked ());
 
         next_button.clicked.connect (() => {
+            // We need to disconnect the signal otherwise it's called several time when destroying the window…
+            list_box.row_selected.disconnect (row_selected);
             unowned Gtk.ListBoxRow row = list_box.get_selected_row ();
             unowned string lang = ((LangRow) row).lang;
             Environment.set_variable ("LANGUAGE", lang, true);

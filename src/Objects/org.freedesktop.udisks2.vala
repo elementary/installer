@@ -1,5 +1,6 @@
 
 namespace UDisks2 {
+	public const string DBUS_NAME = "org.freedesktop.UDisks2";
 
 	[DBus (name = "org.freedesktop.UDisks2.PartitionTable")]
 	public interface PartitionTable : GLib.Object {
