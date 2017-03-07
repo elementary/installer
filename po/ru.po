@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-11 19:26+0200\n"
-"PO-Revision-Date: 2017-03-07 16:05+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
+"PO-Revision-Date: 2017-03-07 19:53+0000\n"
+"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian "
 "<http://weblate.elementary.io/projects/desktop/installer/ru/>\n"
 "Language: ru\n"
@@ -18,36 +18,19 @@ msgstr ""
 
 #: ../src/Application.vala:28
 msgid "Installer"
-msgstr ""
+msgstr "Установщик"
 
 #: ../src/Application.vala:39
 msgid "translator-credits"
 msgstr ""
-"Launchpad Contributions:\n"
-"  AnMo https://launchpad.net/~therealanmo\n"
-"  Andrei Filinov https://launchpad.net/~kryhtas\n"
-"  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
-"  Dmitriy https://launchpad.net/~shamrik-dmitriy\n"
-"  Enmergal https://launchpad.net/~artem07-11\n"
-"  Igor https://launchpad.net/~gg0sha\n"
-"  Igor https://launchpad.net/~igortrefilov\n"
-"  Ilya Bizyaev https://launchpad.net/~bizyaev-game\n"
-"  Lesha Ogonkov https://launchpad.net/~ogonkov\n"
-"  Maxim Taranov https://launchpad.net/~png2378\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  Sergei https://launchpad.net/~ink-dude\n"
-"  Xantalion https://launchpad.net/~xantalion\n"
-"  Yuly Nesterov https://launchpad.net/~inpr1se\n"
-"  mindcore https://launchpad.net/~nytroforce\n"
-"  redfork https://launchpad.net/~redfork-mail\n"
-"  zEvilz https://launchpad.net/~zevilz13"
+"Kirill Romanov <djaler1@gmail.com>, 2017.\n"
+"Maxim Taranov <png2378@gmail.com>, 2017."
 
 #: ../src/LanguageView.vala:30
 msgid "Select a Language"
 msgstr "Выберите язык"
 
 #: ../src/LanguageView.vala:84
-#, fuzzy
 msgid "Use English"
 msgstr "Использовать русский"
 
