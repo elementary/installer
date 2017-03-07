@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-11 18:49+0200\n"
-"PO-Revision-Date: 2017-03-07 03:58+0000\n"
+"PO-Revision-Date: 2017-03-07 04:03+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Spanish "
 "<http://weblate.elementary.io/projects/desktop/installer/es/>\n"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../src/LanguageView.vala:76
 msgid "Use English"
-msgstr "Utilice Ingles"
+msgstr "Utilice Inglés"
 
 #~ msgid "Calculator"
 #~ msgstr "Calculadora"
