@@ -3,14 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 13:40-0700\n"
-"PO-Revision-Date: 2016-05-27 15:29+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-04-08 10:05+0000\n"
+"Last-Translator: Jonathan Moerman <jonathanmoerman@gmail.com>\n"
+"Language-Team: Dutch "
+"<http://weblate.elementary.io/projects/desktop/installer/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: ../src/PantheonCalculator.vala:27 ../src/MainWindow.vala:73
 msgid "Calculator"
@@ -57,7 +60,7 @@ msgstr "Toon uitgebreide functionaliteit"
 
 #: ../src/MainWindow.vala:124
 msgid "Calculate Result"
-msgstr ""
+msgstr "Bereken resultaat"
 
 #: ../src/MainWindow.vala:127
 msgid "Add last result"
@@ -73,19 +76,19 @@ msgstr "Invoer wissen"
 
 #: ../src/MainWindow.vala:136
 msgid "Subtract"
-msgstr ""
+msgstr "Aftrekken"
 
 #: ../src/MainWindow.vala:139
 msgid "Multiply"
-msgstr ""
+msgstr "Vermenigvuldigen"
 
 #: ../src/MainWindow.vala:142
 msgid "Divide"
-msgstr ""
+msgstr "Delen"
 
 #: ../src/MainWindow.vala:148
 msgid "Percentage"
-msgstr ""
+msgstr "Percentage"
 
 #: ../src/MainWindow.vala:219
 msgid "Start Group"
@@ -97,43 +100,47 @@ msgstr ""
 
 #: ../src/MainWindow.vala:221
 msgid "Exponent"
-msgstr ""
+msgstr "Exponent"
 
 #: ../src/MainWindow.vala:223
 msgid "Root"
-msgstr ""
+msgstr "Wortel"
 
 #: ../src/MainWindow.vala:224
 msgid "Sine"
-msgstr ""
+msgstr "Sinus"
 
 #: ../src/MainWindow.vala:225
+#, fuzzy
 msgid "Hyperbolic Sine"
-msgstr ""
+msgstr "Hyperbolische sinus"
 
 #: ../src/MainWindow.vala:226
 msgid "Cosine"
-msgstr ""
+msgstr "Cosinus"
 
 #: ../src/MainWindow.vala:227
+#, fuzzy
 msgid "Hyperbolic Cosine"
-msgstr ""
+msgstr "Hyperbolische cosinus"
 
 #: ../src/MainWindow.vala:228
 msgid "Tangent"
-msgstr ""
+msgstr "Tangens"
 
 #: ../src/MainWindow.vala:229
+#, fuzzy
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "Hyperbolische tangens"
 
 #: ../src/MainWindow.vala:230
 msgid "Pi"
-msgstr ""
+msgstr "Pi"
 
 #: ../src/MainWindow.vala:231
+#, fuzzy
 msgid "Euler's Number"
-msgstr ""
+msgstr "Getal van Euler"
 
 #: ../src/MainWindow.vala:371
 msgid "Hide extended functionality"
@@ -141,8 +148,8 @@ msgstr "Verberg uitgebreide functionaliteit"
 
 #: ../src/Core/Scanner.vala:80
 msgid "'%s' is invalid."
-msgstr "'%s' is ongeldig"
+msgstr "'%s' is ongeldig."
 
 #: ../src/Core/Scanner.vala:164
 msgid "'%s' is unknown."
-msgstr "'%s' is onbekend"
+msgstr "'%s' is onbekend."
