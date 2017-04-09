@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 13:40-0700\n"
-"PO-Revision-Date: 2017-04-08 10:05+0000\n"
-"Last-Translator: Jonathan Moerman <jonathanmoerman@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 18:16+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<http://weblate.elementary.io/projects/desktop/installer/nl/>\n"
 "Language: nl\n"
@@ -36,7 +36,7 @@ msgstr "Geschiedenis"
 
 #: ../src/HistoryDialog.vala:84
 msgid "Value to add:"
-msgstr "Waarde om toe te voegen:"
+msgstr "Waarde om op te tellen:"
 
 #: ../src/HistoryDialog.vala:88
 msgid "Result"
@@ -52,7 +52,7 @@ msgstr "Sluiten"
 
 #: ../src/HistoryDialog.vala:99 ../src/MainWindow.vala:133
 msgid "Add"
-msgstr "Toevoegen"
+msgstr "Optellen"
 
 #: ../src/MainWindow.vala:81 ../src/MainWindow.vala:376
 msgid "Show extended functionality"
@@ -92,11 +92,11 @@ msgstr "Percentage"
 
 #: ../src/MainWindow.vala:219
 msgid "Start Group"
-msgstr ""
+msgstr "Startgroep"
 
 #: ../src/MainWindow.vala:220
 msgid "End Group"
-msgstr ""
+msgstr "Eindgroep"
 
 #: ../src/MainWindow.vala:221
 msgid "Exponent"
@@ -111,34 +111,30 @@ msgid "Sine"
 msgstr "Sinus"
 
 #: ../src/MainWindow.vala:225
-#, fuzzy
 msgid "Hyperbolic Sine"
-msgstr "Hyperbolische sinus"
+msgstr "Sinus hyperbolicus"
 
 #: ../src/MainWindow.vala:226
 msgid "Cosine"
 msgstr "Cosinus"
 
 #: ../src/MainWindow.vala:227
-#, fuzzy
 msgid "Hyperbolic Cosine"
-msgstr "Hyperbolische cosinus"
+msgstr "Cosinus hyperbolicus"
 
 #: ../src/MainWindow.vala:228
 msgid "Tangent"
 msgstr "Tangens"
 
 #: ../src/MainWindow.vala:229
-#, fuzzy
 msgid "Hyperbolic Tangent"
-msgstr "Hyperbolische tangens"
+msgstr "Tangens hyperbolicus"
 
 #: ../src/MainWindow.vala:230
 msgid "Pi"
 msgstr "Pi"
 
 #: ../src/MainWindow.vala:231
-#, fuzzy
 msgid "Euler's Number"
 msgstr "Getal van Euler"
 
