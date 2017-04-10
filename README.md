@@ -1,5 +1,5 @@
 # Pantheon Installer
-[![Translation status](http://weblate.elementary.io/widgets/installer/-/svg-badge.svg)](http://weblate.elementary.io/engage/installer/?utm_source=widget)
+[![Translation status](https://l10n.elementary.io/widgets/installer/-/svg-badge.svg)](https://l10n.elementary.io/engage/installer/?utm_source=widget)
 [![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=46189108)](https://www.bountysource.com/trackers/46189108-elementary-pantheon-installer)
 
 The installer for elementary OS. The installation experience should be attractive and effortless to reassure new users that elementary OS is the right choice. The process should feel safe and should only highlight risk when necessary (e.g. when data will be destroyed). This installer intends to cater to:
