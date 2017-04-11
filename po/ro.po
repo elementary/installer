@@ -38,7 +38,7 @@ msgstr "Istorie"
 
 #: ../src/HistoryDialog.vala:84
 msgid "Value to add:"
-msgstr "Valoare de adăugat"
+msgstr "Valoare de adăugat:"
 
 #: ../src/HistoryDialog.vala:88
 msgid "Result"
