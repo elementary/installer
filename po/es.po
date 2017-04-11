@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-11 18:49+0200\n"
-"PO-Revision-Date: 2017-04-11 06:43+0000\n"
+"PO-Revision-Date: 2017-04-11 06:44+0000\n"
 "Last-Translator: Damian Rguez <damian@randombrains.com>\n"
 "Language-Team: Spanish "
 "<https://l10n.elementary.io/projects/installer/installer/es/>\n"
@@ -43,7 +43,7 @@ msgstr "Selecciona un Idioma"
 
 #: ../src/LanguageView.vala:76
 msgid "Use English"
-msgstr "Utilice Inglés"
+msgstr "Usar Inglés"
 
 #~ msgid "Calculator"
 #~ msgstr "Calculadora"
