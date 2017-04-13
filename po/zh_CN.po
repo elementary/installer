@@ -32,7 +32,7 @@ msgstr "选择语言"
 
 #: ../src/LanguageView.vala:84
 msgid "Use English"
-msgstr "中国使用"
+msgstr "使用英语"
 
 #~ msgid "Calculator"
 #~ msgstr "计算器"
