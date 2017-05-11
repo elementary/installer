@@ -3,18 +3,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 13:40-0700\n"
-"PO-Revision-Date: 2016-05-27 15:29+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-05-11 20:48+0000\n"
+"Last-Translator: Akbar Hamaminatu <agusmurwanto50@gmail.com>\n"
+"Language-Team: Indonesian "
+"<https://l10n.elementary.io/projects/installer/installer/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: ../src/PantheonCalculator.vala:27 ../src/MainWindow.vala:73
 msgid "Calculator"
-msgstr ""
+msgstr "Kalkulator"
 
 #: ../src/PantheonCalculator.vala:44
 msgid "translator-credits"
@@ -31,15 +34,15 @@ msgstr ""
 
 #: ../src/HistoryDialog.vala:35 ../src/MainWindow.vala:86
 msgid "History"
-msgstr ""
+msgstr "Riwayat"
 
 #: ../src/HistoryDialog.vala:84
 msgid "Value to add:"
-msgstr ""
+msgstr "Nilai untuk ditambahkan:"
 
 #: ../src/HistoryDialog.vala:88
 msgid "Result"
-msgstr ""
+msgstr "Hasil"
 
 #: ../src/HistoryDialog.vala:92
 msgid "Expression"
@@ -47,11 +50,11 @@ msgstr ""
 
 #: ../src/HistoryDialog.vala:98
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 #: ../src/HistoryDialog.vala:99 ../src/MainWindow.vala:133
 msgid "Add"
-msgstr ""
+msgstr "Tambah"
 
 #: ../src/MainWindow.vala:81 ../src/MainWindow.vala:376
 msgid "Show extended functionality"
@@ -67,27 +70,27 @@ msgstr ""
 
 #: ../src/MainWindow.vala:129
 msgid "Backspace"
-msgstr ""
+msgstr "Hapus"
 
 #: ../src/MainWindow.vala:130
 msgid "Clear entry"
-msgstr ""
+msgstr "Hapus masukan"
 
 #: ../src/MainWindow.vala:136
 msgid "Subtract"
-msgstr ""
+msgstr "Kurangi"
 
 #: ../src/MainWindow.vala:139
 msgid "Multiply"
-msgstr ""
+msgstr "Kali"
 
 #: ../src/MainWindow.vala:142
 msgid "Divide"
-msgstr ""
+msgstr "Bagi"
 
 #: ../src/MainWindow.vala:148
 msgid "Percentage"
-msgstr ""
+msgstr "Persentasi"
 
 #: ../src/MainWindow.vala:219
 msgid "Start Group"
