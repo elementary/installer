@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 13:40-0700\n"
-"PO-Revision-Date: 2017-06-20 14:29+0700\n"
+"PO-Revision-Date: 2017-06-20 07:37+0000\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian "
 "<https://l10n.elementary.io/projects/installer/installer/id/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: ../src/PantheonCalculator.vala:27 ../src/MainWindow.vala:73
@@ -146,8 +146,8 @@ msgstr "Sembunyikan fungsionalitas yang diperluas"
 
 #: ../src/Core/Scanner.vala:80
 msgid "'%s' is invalid."
-msgstr "'%a' tidak valid"
+msgstr "'%s' tidak valid."
 
 #: ../src/Core/Scanner.vala:164
 msgid "'%s' is unknown."
-msgstr "'%s' tidak diketahui"
+msgstr "'%s' tidak diketahui."
