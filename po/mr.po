@@ -32,7 +32,7 @@ msgstr "इतिहास"
 
 #: ../src/HistoryDialog.vala:84
 msgid "Value to add:"
-msgstr "मूल्य जोडा"
+msgstr "मूल्य जोडा:"
 
 #: ../src/HistoryDialog.vala:88
 msgid "Result"
