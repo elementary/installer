@@ -3,14 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 13:40-0700\n"
-"PO-Revision-Date: 2016-05-27 15:29+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-07-01 13:46+0000\n"
+"Last-Translator: Abhijeet <hargange68b@gmail.com>\n"
+"Language-Team: Marathi "
+"<https://l10n.elementary.io/projects/installer/installer/mr/>\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: ../src/PantheonCalculator.vala:27 ../src/MainWindow.vala:73
 msgid "Calculator"
@@ -53,7 +56,7 @@ msgstr "विस्तारित कार्यक्षमतेला द�
 
 #: ../src/MainWindow.vala:124
 msgid "Calculate Result"
-msgstr ""
+msgstr "निकाल मोजा"
 
 #: ../src/MainWindow.vala:127
 msgid "Add last result"
@@ -69,67 +72,67 @@ msgstr "नोंद खोडा"
 
 #: ../src/MainWindow.vala:136
 msgid "Subtract"
-msgstr ""
+msgstr "वजा"
 
 #: ../src/MainWindow.vala:139
 msgid "Multiply"
-msgstr ""
+msgstr "गुणिले"
 
 #: ../src/MainWindow.vala:142
 msgid "Divide"
-msgstr ""
+msgstr "भागिले"
 
 #: ../src/MainWindow.vala:148
 msgid "Percentage"
-msgstr ""
+msgstr "टक्केवारी"
 
 #: ../src/MainWindow.vala:219
 msgid "Start Group"
-msgstr ""
+msgstr "सुरू संच"
 
 #: ../src/MainWindow.vala:220
 msgid "End Group"
-msgstr ""
+msgstr "शेवट संच"
 
 #: ../src/MainWindow.vala:221
 msgid "Exponent"
-msgstr ""
+msgstr "एक्सपोनंट"
 
 #: ../src/MainWindow.vala:223
 msgid "Root"
-msgstr ""
+msgstr "रूट"
 
 #: ../src/MainWindow.vala:224
 msgid "Sine"
-msgstr ""
+msgstr "साईन"
 
 #: ../src/MainWindow.vala:225
 msgid "Hyperbolic Sine"
-msgstr ""
+msgstr "हायपरबोलीक साईन"
 
 #: ../src/MainWindow.vala:226
 msgid "Cosine"
-msgstr ""
+msgstr "कोसाईन"
 
 #: ../src/MainWindow.vala:227
 msgid "Hyperbolic Cosine"
-msgstr ""
+msgstr "हायपर्बोलिक कोसाईन"
 
 #: ../src/MainWindow.vala:228
 msgid "Tangent"
-msgstr ""
+msgstr "टँजंट"
 
 #: ../src/MainWindow.vala:229
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "हायपरबोलीक टँजंट"
 
 #: ../src/MainWindow.vala:230
 msgid "Pi"
-msgstr ""
+msgstr "पाय"
 
 #: ../src/MainWindow.vala:231
 msgid "Euler's Number"
-msgstr ""
+msgstr "युलरचा नंबर"
 
 #: ../src/MainWindow.vala:371
 msgid "Hide extended functionality"
