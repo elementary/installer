@@ -102,16 +102,10 @@ public class Installer.Disk : GLib.Object {
 
     // Get the partitions from the list that are in this table.
     public async void insert_own_partitions (Gee.LinkedList<Partition> given_partitions) {
-
-        for (int position = given_partitions.size; position > 0; position--) {
-            var partition = given_partitions.remove_at (given_partitions.size - 1);
-            given_partitions.insert (given_partitions.size - position + 1, partition);
-        }
-
         foreach (var partition in given_partitions) {
             var partition_path = yield partition.get_disk_object_path ();
             if (partition_path == dbus_path) {
-                partitions.add (partition);
+                partitions.insert (0, partition);
             }
         }
 
