@@ -81,12 +81,10 @@ namespace Utils {
                     icon = new GLib.ThemedIcon ("os-linux-elementary");
                     break;
                 default:
-                    try {
-                        icon = new Gdk.Pixbuf.from_file_at_scale (
-                                    mount_point.get_child (".VolumeIcon.png").get_path (),
-                                    -1, 96, true);
-                    } catch (Error e) {
-                        stdout.printf ("Error: %s\n", e.message);
+                    GLib.File icon_file = mount_point.get_child (".VolumeIcon.png");
+                    if (icon_file.query_exists ()) {
+                        icon = new GLib.FileIcon (icon_file);
+                    } else {
                         icon = new GLib.ThemedIcon ("os-linux");
                     }
                     break;
