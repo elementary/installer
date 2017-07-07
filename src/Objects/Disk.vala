@@ -105,7 +105,7 @@ public class Installer.Disk : GLib.Object {
         foreach (var partition in given_partitions) {
             var partition_path = yield partition.get_disk_object_path ();
             if (partition_path == dbus_path) {
-                partitions.add (partition);
+                partitions.insert (0, partition);
             }
         }
 
