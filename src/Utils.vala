@@ -81,7 +81,12 @@ namespace Utils {
                     icon = new GLib.ThemedIcon ("os-linux-elementary");
                     break;
                 default:
-                    icon = new GLib.ThemedIcon ("os-linux");
+                    GLib.File icon_file = mount_point.get_child (".VolumeIcon.png");
+                    if (icon_file.query_exists ()) {
+                        icon = new GLib.FileIcon (icon_file);
+                    } else {
+                        icon = new GLib.ThemedIcon ("os-linux");
+                    }
                     break;
             }
             return true;
