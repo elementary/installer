@@ -2,7 +2,7 @@
 [![Translation status](https://l10n.elementary.io/widgets/installer/-/svg-badge.svg)](https://l10n.elementary.io/projects/installer/?utm_source=widget)
 [![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=46189108)](https://www.bountysource.com/trackers/46189108-elementary-pantheon-installer)
 
-Note: this is the work-in-progress installer and has not been released yet. For the current installer, see [Ubiquity](https://wiki.ubuntu.com/Ubiquity).
+> Note: this is the work-in-progress installer and has not been released yet. For the current installer, see [Ubiquity](https://wiki.ubuntu.com/Ubiquity).
 
 The installer for elementary OS. The installation experience should be attractive and effortless to reassure new users that elementary OS is the right choice. The process should feel safe and should only highlight risk when necessary (e.g. when data will be destroyed). This installer intends to cater to:
 - New users with no understanding of the nature of an operating system.
