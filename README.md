@@ -12,7 +12,7 @@ The installer for elementary OS. The installation experience should be attractiv
 
 For the sake of providing a single installer experience, we assume that every install is an OEM install. What that means is that additional setup (like creating users) will happen after the first boot into the clean system and not in the installer.
 
-[Read The Full Specification For More Info](https://docs.google.com/document/d/1Sw07eNjORV1rBEGhlWJmD39BgNBVNbJEJhLzrc_6T0w/edit)
+[Read The Full Specification on Google Docs](https://docs.google.com/document/d/1Sw07eNjORV1rBEGhlWJmD39BgNBVNbJEJhLzrc_6T0w/edit)
 
 ## Building, Testing, and Installation
 
