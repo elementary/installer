@@ -71,7 +71,7 @@ public class Installer.DiskView : Gtk.Grid {
         var group = new SList<Gtk.RadioButton> ();
         var clean_choice = new ChoiceItem (_("Clean Install"),
                                            _("Erase everything on your device and install a fresh copy of elementary OS."),
-                                           new ThemedIcon ("system-os-install"),
+                                           new ThemedIcon ("system-os-installer"),
                                            null);
         clean_choice.selected.connect ((text) => {
             next_button.label = _("Erase and Install");
