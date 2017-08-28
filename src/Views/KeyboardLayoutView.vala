@@ -60,6 +60,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         stack.add (keyboard_layout_grid);
 
         var keyboard_map_button = new Gtk.Button.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        keyboard_map_button.tooltip_text = (_("Show keyboard map"));
 
         var action_bar = new Gtk.ActionBar ();
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
