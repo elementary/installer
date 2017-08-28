@@ -16,7 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public abstract class KeyboardLayoutView : AbstractInstallerView {
+public class KeyboardLayoutView : AbstractInstallerView {
+    public signal void next_step ();
+
     construct {
         var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
 
@@ -27,5 +29,6 @@ public abstract class KeyboardLayoutView : AbstractInstallerView {
         action_area.add (next_button);
 
         cancel_button.clicked.connect (() => cancel ());
+        next_button.clicked.connect (() => next_step ());
     }
 }
