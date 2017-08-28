@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.LanguageView : Gtk.Grid {
+public class Installer.LanguageView : AbstractInstallerView {
     Gtk.Label select_label;
     Gtk.Stack select_stack;
     Gtk.ListBox list_box;
@@ -26,7 +26,6 @@ public class Installer.LanguageView : Gtk.Grid {
     int select_number = 0;
 
     public signal void next_step (string lang);
-    public signal void cancel ();
 
     public LanguageView () {
         GLib.Timeout.add_seconds (3, timeout);
@@ -79,13 +78,8 @@ public class Installer.LanguageView : Gtk.Grid {
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        var button_box = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-        button_box.layout_style = Gtk.ButtonBoxStyle.END;
-        button_box.margin_end = 10;
-        button_box.margin_top = 24;
-        button_box.spacing = 6;
-        button_box.add (cancel_button);
-        button_box.add (next_button);
+        action_area.add (cancel_button);
+        action_area.add (next_button);
 
         list_box.row_selected.connect (row_selected);
         list_box.select_row (list_box.get_row_at_index (0));
@@ -102,9 +96,8 @@ public class Installer.LanguageView : Gtk.Grid {
             next_step (lang);
         });
 
-        add (select_stack);
-        add (frame);
-        add (button_box);
+        content_area.add (select_stack);
+        content_area.add (frame);
         timeout ();
     }
 
