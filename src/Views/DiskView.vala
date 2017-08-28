@@ -34,16 +34,19 @@ public class Installer.DiskView : Gtk.Grid {
     construct {
         load_stack = new Gtk.Stack ();
         load_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+
         var load_grid = new Gtk.Grid ();
         load_grid.row_spacing = 12;
         load_grid.expand = true;
         load_grid.orientation = Gtk.Orientation.VERTICAL;
         load_grid.valign = Gtk.Align.CENTER;
         load_grid.halign = Gtk.Align.CENTER;
+
         var load_spinner = new Gtk.Spinner ();
         load_spinner.width_request = 48;
         load_spinner.height_request = 48;
         load_spinner.start ();
+
         var load_label = new Gtk.Label (_("Getting the current configuration…"));
         load_label.get_style_context ().add_class ("h2");
         load_grid.add (load_spinner);
@@ -61,18 +64,13 @@ public class Installer.DiskView : Gtk.Grid {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/pantheon/installer/icons/os");
 
-        choice_grid = new Gtk.Grid ();
-        choice_grid.orientation = Gtk.Orientation.VERTICAL;
-        choice_grid.expand = true;
-        choice_grid.valign = Gtk.Align.CENTER;
-        choice_grid.halign = Gtk.Align.CENTER;
-        choice_grid.margin_start = 48;
-        choice_grid.margin_end = 48;
         var group = new SList<Gtk.RadioButton> ();
+
         var clean_choice = new ChoiceItem (_("Clean Install"),
                                            _("Erase everything on your device and install a fresh copy of elementary OS."),
                                            new ThemedIcon ("system-os-installer"),
                                            null);
+
         clean_choice.selected.connect ((text) => {
             next_button.label = _("Erase and Install");
             next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
@@ -87,14 +85,24 @@ public class Installer.DiskView : Gtk.Grid {
             next_button.label = C_("actionable", "Upgrade");
             next_button.get_style_context ().remove_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         });
+
         var advanced_choice = new ChoiceItem (_("Advanced Install"),
                                               _("Create, resize and manually configure disk partitions. This method may lead to data loss."),
                                               new ThemedIcon ("system-run"),
                                               upgrade_choice);
+
         advanced_choice.selected.connect ((text) => {
             next_button.label = _("Next");
             next_button.get_style_context ().remove_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         });
+
+        choice_grid = new Gtk.Grid ();
+        choice_grid.orientation = Gtk.Orientation.VERTICAL;
+        choice_grid.expand = true;
+        choice_grid.valign = Gtk.Align.CENTER;
+        choice_grid.halign = Gtk.Align.CENTER;
+        choice_grid.margin_start = 48;
+        choice_grid.margin_end = 48;
         choice_grid.add (clean_choice);
         choice_grid.add (upgrade_choice);
         choice_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
@@ -139,16 +147,29 @@ public class Installer.DiskView : Gtk.Grid {
         }
 
         Idle.add (() => {
+            var disk_label = new Gtk.Label (_("Disk:"));
+            disk_label.halign = Gtk.Align.END;
+            disk_combo.halign = Gtk.Align.START;
+
+            var multiple_os_detected = new Gtk.Label (_("Multiple operating systems were detected on your system"));
+            multiple_os_detected.hexpand = true;
+            multiple_os_detected.get_style_context ().add_class ("category-label");
+
+            var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
+            cancel_button.clicked.connect (() => cancel ());
+
+            var button_box = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
+            button_box.layout_style = Gtk.ButtonBoxStyle.END;
+            button_box.margin = 10;
+            button_box.margin_top = 24;
+            button_box.spacing = 6;
+            button_box.add (cancel_button);
+            button_box.add (next_button);
+
             var disk_grid = new Gtk.Grid ();
             disk_grid.orientation = Gtk.Orientation.VERTICAL;
             disk_grid.row_spacing = 12;
             disk_grid.column_spacing = 6;
-            var disk_label = new Gtk.Label (_("Disk:"));
-            disk_label.halign = Gtk.Align.END;
-            disk_combo.halign = Gtk.Align.START;
-            var multiple_os_detected = new Gtk.Label (_("Multiple operating systems were detected on your system"));
-            multiple_os_detected.hexpand = true;
-            multiple_os_detected.get_style_context ().add_class ("category-label");
             disk_grid.attach (choice_grid, 0, 3, 2, 1);
             if (disk_stack.get_children ().length () > 1) {
                 disk_grid.attach (disk_label, 0, 1, 1, 1);
@@ -166,18 +187,7 @@ public class Installer.DiskView : Gtk.Grid {
                 disk_grid.attach (disk_stack, 0, 2, 2, 1);
             }
 
-            var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-            cancel_button.clicked.connect (() => cancel ());
-
-            var button_grid = new Gtk.Grid ();
-            button_grid.column_spacing = 6;
-            button_grid.column_homogeneous = true;
-            button_grid.halign = Gtk.Align.END;
-            button_grid.margin = 10;
-            button_grid.margin_top = 10;
-            button_grid.add (cancel_button);
-            button_grid.add (next_button);
-            disk_grid.attach (button_grid, 0, 4, 2, 1);
+            disk_grid.attach (button_box, 0, 4, 2, 1);
 
             load_stack.add_named (disk_grid, "disk");
             disk_grid.show_all ();
