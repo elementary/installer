@@ -28,11 +28,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         title_label.valign = Gtk.Align.START;
 
         var input_language_list_box = new Gtk.ListBox ();
-        input_language_list_box.add (new Gtk.Label ("test_layout"));
-        input_language_list_box.add (new Gtk.Label ("test_layout"));
-        input_language_list_box.add (new Gtk.Label ("test_layout"));
-        input_language_list_box.add (new Gtk.Label ("test_layout"));
-        input_language_list_box.add (new Gtk.Label ("test_layout"));
+        input_language_list_box.add (new LayoutRow ("English (US)"));
 
         var back_button = new Gtk.Button.with_label (_("Input Language"));
         back_button.halign = Gtk.Align.START;
@@ -41,8 +37,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
         var keyboard_layout_list_box = new Gtk.ListBox ();
         keyboard_layout_list_box.expand = true;
-        keyboard_layout_list_box.add (new Gtk.Label ("test_variant"));
-        keyboard_layout_list_box.add (new Gtk.Label ("test_variant"));
+        keyboard_layout_list_box.add (new LayoutRow ("English (US)"));
+        keyboard_layout_list_box.add (new LayoutRow ("English (US) - Cherokee"));
+        keyboard_layout_list_box.add (new LayoutRow ("English (US) - English (Colemak)"));
+        keyboard_layout_list_box.add (new LayoutRow ("English (US) - English (Dvorak)"));
 
         var keyboard_layout_grid = new Gtk.Grid ();
         keyboard_layout_grid.orientation = Gtk.Orientation.VERTICAL;
@@ -96,5 +94,15 @@ public class KeyboardLayoutView : AbstractInstallerView {
         input_language_list_box.row_activated.connect (() => {
             stack.visible_child = keyboard_layout_grid;
         });
+    }
+
+    private class LayoutRow : Gtk.ListBoxRow {
+        public LayoutRow (string name) {
+            var label = new Gtk.Label (name);
+            label.margin = 6;
+            label.xalign = 0;
+            label.get_style_context ().add_class ("h3");
+            add (label);
+        }
     }
 }
