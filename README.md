@@ -45,4 +45,4 @@ Install
 
 Execute
 
-    pantheon-installer
+    io.elementary.installer
