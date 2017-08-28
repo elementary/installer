@@ -160,7 +160,7 @@ public class Installer.DiskView : Gtk.Grid {
 
             var button_box = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
             button_box.layout_style = Gtk.ButtonBoxStyle.END;
-            button_box.margin_end = 10;
+            button_box.margin = 10;
             button_box.margin_top = 24;
             button_box.spacing = 6;
             button_box.add (cancel_button);
