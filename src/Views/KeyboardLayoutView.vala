@@ -35,19 +35,23 @@ public class KeyboardLayoutView : AbstractInstallerView {
         back_button.margin = 6;
         back_button.get_style_context ().add_class ("back-button");
 
+        var keyboard_layout_list_title = new Gtk.Label ("<b>%s</b>".printf ("English (US)"));
+        keyboard_layout_list_title.use_markup = true;
+
         var keyboard_layout_list_box = new Gtk.ListBox ();
         keyboard_layout_list_box.expand = true;
-        keyboard_layout_list_box.add (new LayoutRow ("English (US)"));
-        keyboard_layout_list_box.add (new LayoutRow ("English (US) - Cherokee"));
-        keyboard_layout_list_box.add (new LayoutRow ("English (US) - English (Colemak)"));
-        keyboard_layout_list_box.add (new LayoutRow ("English (US) - English (Dvorak)"));
+        keyboard_layout_list_box.add (new LayoutRow ("Default"));
+        keyboard_layout_list_box.add (new LayoutRow ("Cherokee"));
+        keyboard_layout_list_box.add (new LayoutRow ("English (Colemak)"));
+        keyboard_layout_list_box.add (new LayoutRow ("English (Dvorak)"));
 
         var keyboard_layout_grid = new Gtk.Grid ();
-        keyboard_layout_grid.orientation = Gtk.Orientation.VERTICAL;
+        keyboard_layout_grid.column_homogeneous = true;
         keyboard_layout_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        keyboard_layout_grid.add (back_button);
-        keyboard_layout_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        keyboard_layout_grid.add (keyboard_layout_list_box);
+        keyboard_layout_grid.attach (back_button, 0, 0, 1, 1);
+        keyboard_layout_grid.attach (keyboard_layout_list_title, 1, 0, 1, 1);
+        keyboard_layout_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 3, 1);
+        keyboard_layout_grid.attach (keyboard_layout_list_box, 0, 2, 3, 1);
 
         var stack = new Gtk.Stack ();
         stack.expand = true;
