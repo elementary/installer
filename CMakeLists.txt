@@ -69,6 +69,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Objects/Partition.vala
     src/Objects/PartitionTable.vala
     src/Views/AbstractInstallerView.vala
+    src/Views/KeyboardLayoutView.vala
 PACKAGES
     gtk+-3.0>=3.12
     granite
