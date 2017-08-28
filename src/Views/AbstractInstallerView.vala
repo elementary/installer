@@ -17,19 +17,24 @@
  */
 
 public abstract class AbstractInstallerView : Gtk.Grid {
-    public signal void next_step ();
     public signal void cancel ();
+
+    protected Gtk.Grid content_area;
+    protected Gtk.ButtonBox action_area;
 
     public AbstractInstallerView () {
         Object (row_spacing: 24);
     }
     
     construct {
-        var content_area = new Gtk.Grid ();
+        content_area = new Gtk.Grid ();
         content_area.column_spacing = 12;
         content_area.row_spacing = 12;
+        content_area.orientation = Gtk.Orientation.VERTICAL;
 
-        var action_area = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
+        action_area = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
+        action_area.margin_end = 10;
+        action_area.spacing = 6;
         action_area.layout_style = Gtk.ButtonBoxStyle.END;
 
         orientation = Gtk.Orientation.VERTICAL;
