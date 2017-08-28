@@ -59,17 +59,17 @@ include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
     src/Application.vala
     src/MainWindow.vala
-    src/LanguageView.vala
-    src/CheckView.vala
     src/Utils.vala
-    src/DiskView/DiskView.vala
     src/DiskView/DiskGrid.vala
     src/Objects/org.freedesktop.udisks2.vala
     src/Objects/Disk.vala
     src/Objects/Partition.vala
     src/Objects/PartitionTable.vala
     src/Views/AbstractInstallerView.vala
+    src/Views/CheckView.vala
+    src/Views/DiskView.vala
     src/Views/KeyboardLayoutView.vala
+    src/Views/LanguageView.vala
 PACKAGES
     gtk+-3.0>=3.12
     granite
