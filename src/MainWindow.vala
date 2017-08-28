@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.MainWindow : Gtk.Dialog {
+public class Installer.MainWindow : Gtk.Window {
     private CheckView check_view;
     private Gtk.Stack stack;
 
@@ -36,8 +36,16 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (language_view, "language");
         stack.add_named (keyboard_layout_view, "keyboard-layout");
 
+        var titlebar = new Gtk.HeaderBar ();
+
+        var titlebar_style_context = titlebar.get_style_context ();
+        titlebar_style_context.add_class (Gtk.STYLE_CLASS_FLAT);
+        titlebar_style_context.add_class ("default-decoration");
+
+        get_style_context ().add_class ("rounded");
+        set_titlebar (titlebar);
         set_default_geometry (800, 600);
-        get_content_area ().add (stack);
+        add (stack);
 
         check_view.next_step.connect (() => load_diskview ());
         check_view.cancel.connect (() => destroy ());

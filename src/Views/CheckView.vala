@@ -218,14 +218,17 @@ public class Installer.CheckView : Gtk.Stack {
                 ignore_button.clicked.connect (() => show_next ());
                 var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
                 cancel_button.clicked.connect (() => cancel ());
+
                 var button_grid = new Gtk.Grid ();
                 button_grid.column_homogeneous = true;
                 button_grid.column_spacing = 6;
                 button_grid.halign = Gtk.Align.END;
                 button_grid.valign = Gtk.Align.END;
-                button_grid.margin_end = 6;
+                button_grid.margin = 10;
+                button_grid.margin_top = 10;
                 button_grid.add (cancel_button);
                 button_grid.add (ignore_button);
+
                 var out_grid = new Gtk.Grid ();
                 out_grid.expand = true;
                 out_grid.orientation = Gtk.Orientation.VERTICAL;
@@ -242,14 +245,17 @@ public class Installer.CheckView : Gtk.Stack {
                 ignore_button.clicked.connect (() => show_next ());
                 var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
                 cancel_button.clicked.connect (() => cancel ());
+
                 var button_grid = new Gtk.Grid ();
                 button_grid.column_homogeneous = true;
                 button_grid.column_spacing = 6;
                 button_grid.halign = Gtk.Align.END;
                 button_grid.valign = Gtk.Align.END;
-                button_grid.margin_end = 6;
+                button_grid.margin = 10;
+                button_grid.margin_top = 10;
                 button_grid.add (cancel_button);
                 button_grid.add (ignore_button);
+
                 var out_grid = new Gtk.Grid ();
                 out_grid.expand = true;
                 out_grid.orientation = Gtk.Orientation.VERTICAL;

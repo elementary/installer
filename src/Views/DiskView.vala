@@ -170,10 +170,11 @@ public class Installer.DiskView : Gtk.Grid {
             cancel_button.clicked.connect (() => cancel ());
 
             var button_grid = new Gtk.Grid ();
-            button_grid.margin_end = 12;
             button_grid.column_spacing = 6;
             button_grid.column_homogeneous = true;
             button_grid.halign = Gtk.Align.END;
+            button_grid.margin = 10;
+            button_grid.margin_top = 10;
             button_grid.add (cancel_button);
             button_grid.add (next_button);
             disk_grid.attach (button_grid, 0, 4, 2, 1);
