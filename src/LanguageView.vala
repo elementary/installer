@@ -26,6 +26,7 @@ public class Installer.LanguageView : Gtk.Grid {
     int select_number = 0;
 
     public signal void next_step (string lang);
+    public signal void cancel ();
 
     public LanguageView () {
         GLib.Timeout.add_seconds (3, timeout);
@@ -38,6 +39,7 @@ public class Installer.LanguageView : Gtk.Grid {
         select_stack.get_style_context ().add_class ("h1");
         select_stack.height_request = 64;
         select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+
         select_label = new Gtk.Label (null);
         select_label.halign = Gtk.Align.CENTER;
         select_label.valign = Gtk.Align.CENTER;
@@ -52,13 +54,14 @@ public class Installer.LanguageView : Gtk.Grid {
             }
         });
 
-        var scrolled = new Gtk.ScrolledWindow (null, null);
         list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = false;
         list_box.expand = true;
         list_box.set_sort_func ((row1, row2) => {
             return ((LangRow) row1).lang.collate (((LangRow) row2).lang);
         });
+
+        var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.add (list_box);
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
 
@@ -71,15 +74,24 @@ public class Installer.LanguageView : Gtk.Grid {
         frame.add (scrolled);
         frame.halign = Gtk.Align.CENTER;
 
+        var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
+
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        next_button.halign = Gtk.Align.END;
-        next_button.margin_end = 12;
-        next_button.margin_top = 12;
+
+        var button_box = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
+        button_box.layout_style = Gtk.ButtonBoxStyle.END;
+        button_box.margin_end = 10;
+        button_box.margin_top = 24;
+        button_box.spacing = 6;
+        button_box.add (cancel_button);
+        button_box.add (next_button);
 
         list_box.row_selected.connect (row_selected);
         list_box.select_row (list_box.get_row_at_index (0));
         list_box.row_activated.connect ((row) => next_button.clicked ());
+
+        cancel_button.clicked.connect (() => cancel ());
 
         next_button.clicked.connect (() => {
             // We need to disconnect the signal otherwise it's called several time when destroying the window…
@@ -92,7 +104,7 @@ public class Installer.LanguageView : Gtk.Grid {
 
         add (select_stack);
         add (frame);
-        add (next_button);
+        add (button_box);
         timeout ();
     }
 
