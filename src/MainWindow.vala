@@ -30,6 +30,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         get_content_area ().add (stack);
         var language_view = new LanguageView ();
+        language_view.cancel.connect (() => destroy ());
         stack.add_named (language_view, "language");
         set_default_geometry (800, 600);
 
