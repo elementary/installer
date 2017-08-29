@@ -96,14 +96,4 @@ public class TryInstallView : AbstractInstallerView {
         cancel_button.clicked.connect (() => cancel ());
         next_button.clicked.connect (() => next_step ());
     }
-
-    private class LayoutRow : Gtk.ListBoxRow {
-        public LayoutRow (string name) {
-            var label = new Gtk.Label (name);
-            label.margin = 6;
-            label.xalign = 0;
-            label.get_style_context ().add_class ("h3");
-            add (label);
-        }
-    }
 }
