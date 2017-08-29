@@ -71,7 +71,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         });
     }
 
-    private string get_os_release () {
+    private static string get_os_release () {
         string pretty_name;
         const string ETC_OS_RELEASE = "/etc/os-release";
 
