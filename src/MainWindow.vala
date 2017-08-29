@@ -30,6 +30,7 @@ public class Installer.MainWindow : Gtk.Window {
         check_view = new Installer.CheckView ();
         var keyboard_layout_view = new KeyboardLayoutView ();
         var language_view = new LanguageView ();
+        var progress_view = new ProgressView ();
         var try_install_view = new TryInstallView ();
 
         stack = new Gtk.Stack ();
@@ -37,6 +38,7 @@ public class Installer.MainWindow : Gtk.Window {
         stack.add_named (language_view, "language");
         stack.add_named (keyboard_layout_view, "keyboard-layout");
         stack.add_named (try_install_view, "try-install");
+        stack.add_named (progress_view, "progress-view");
 
         var titlebar = new Gtk.HeaderBar ();
 
@@ -77,5 +79,9 @@ public class Installer.MainWindow : Gtk.Window {
         stack.add_named (disk_view, "disk");
         stack.set_visible_child_name ("disk");
         disk_view.load.begin ();
+
+        disk_view.next_step.connect (() => {
+            stack.set_visible_child_name ("progress-view");
+        });
     }
 }
