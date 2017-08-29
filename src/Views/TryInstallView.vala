@@ -53,7 +53,6 @@ public class TryInstallView : AbstractInstallerView {
         var nosaving_label = new Gtk.Label (_("Any changes you make before installing will not be saved.").printf (os_name));
         nosaving_label.valign = Gtk.Align.START;
         nosaving_label.wrap = true;
-        nosaving_label.justify = Gtk.Justify.CENTER;
 
         var nosaving_image = new Gtk.Image.from_icon_name ("document-revert", Gtk.IconSize.DIALOG);
         nosaving_image.valign = Gtk.Align.START;
