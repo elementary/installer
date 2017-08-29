@@ -47,13 +47,13 @@ public class Installer.MainWindow : Gtk.Dialog {
         check_view.next_step.connect (() => load_diskview ());
         check_view.cancel.connect (() => destroy ());
 
-        try_install_view.next_step.connect(() => load_checkview ());
+        try_install_view.next_step.connect (() => load_checkview ());
 
         keyboard_layout_view.next_step.connect ((lang) => stack.set_visible_child_name ("try-install-view"));
 
         language_view.next_step.connect ((lang) => stack.set_visible_child_name ("keyboard-layout"));
     }
-    
+
     private void load_checkview () {
         if (check_view.check_requirements ()) {
             load_diskview ();
