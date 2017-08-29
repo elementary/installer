@@ -48,8 +48,11 @@ public class Installer.MainWindow : Gtk.Dialog {
         check_view.cancel.connect (() => destroy ());
 
         keyboard_layout_view.next_step.connect (load_checkview);
-
-        language_view.next_step.connect ((lang) => stack.set_visible_child_name ("keyboard-layout"));
+    
+        language_view.next_step.connect ((lang) => {
+            stack.set_visible_child_name ("keyboard-layout");
+            keyboard_layout_view.set_language (lang);
+        });
     }
     
     private void load_checkview () {
