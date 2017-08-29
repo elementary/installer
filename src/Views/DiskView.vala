@@ -20,6 +20,7 @@
 
 public class Installer.DiskView : Gtk.Grid {
     public signal void cancel ();
+    public signal void next_step ();
 
     Gtk.Stack load_stack;
     Gtk.Stack disk_stack;
@@ -110,6 +111,7 @@ public class Installer.DiskView : Gtk.Grid {
 
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        next_button.clicked.connect (() => next_step ());
 
         add (load_stack);
         show_all ();
