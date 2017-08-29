@@ -113,6 +113,14 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         next_button.label = _("Next");
 
+        foreach (Gtk.Widget child in list_box.get_children ()) {
+            if (((LangRow) child).lang == ((LangRow) row).lang) {
+                ((LangRow) child).selected = true;
+            } else {
+                ((LangRow) child).selected = false;
+            }
+        }
+
         if (current_lang != null) {
             Environment.set_variable ("LANGUAGE", current_lang, true);
         } else {
@@ -230,15 +238,45 @@ public class Installer.LanguageView : AbstractInstallerView {
     }
 
     public class LangRow : Gtk.ListBoxRow {
+        private Gtk.Image image;
         public string lang;
+
+        private bool _selected;
+        public bool selected {
+            get {
+                return _selected;
+            }
+            set {
+                if (value) {
+                    image.icon_name = "selection-checked";
+                    image.tooltip_text = _("Currently active language");
+                } else {
+                    image.tooltip_text = "";
+                    image.clear ();
+                }
+                _selected = value;
+            }
+        }
+
         public LangRow (string lang, string translated_name) {
             this.lang = lang;
 
+            image = new Gtk.Image ();
+            image.hexpand = true;
+            image.halign = Gtk.Align.END;
+            image.icon_size = Gtk.IconSize.BUTTON;
+
             var label = new Gtk.Label (translated_name);
-            label.margin = 6;
             label.get_style_context ().add_class ("h3");
             label.xalign = 0;
-            add (label);
+
+            var grid = new Gtk.Grid ();
+            grid.column_spacing = 6;
+            grid.margin = 6;
+            grid.add (label);
+            grid.add (image);
+
+            add (grid);
         }
     }
 }
