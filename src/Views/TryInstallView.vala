@@ -33,7 +33,7 @@ public class TryInstallView : AbstractInstallerView {
         description_label.max_width_chars = 60;
         description_label.halign = Gtk.Align.CENTER;
 
-        var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged until you install.").printf (os_name));
+        var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged until you install."));
         nochanges_label.wrap = true;
 
         var nochanges_image = new Gtk.Image.from_icon_name ("computer", Gtk.IconSize.DIALOG);
@@ -50,14 +50,14 @@ public class TryInstallView : AbstractInstallerView {
         nochanges_overlay.height_request = 51;
         nochanges_overlay.width_request = 60;
 
-        var nosaving_label = new Gtk.Label (_("Any changes you make before installing will not be saved.").printf (os_name));
+        var nosaving_label = new Gtk.Label (_("Any changes you make before installing will not be saved."));
         nosaving_label.valign = Gtk.Align.START;
         nosaving_label.wrap = true;
 
         var nosaving_image = new Gtk.Image.from_icon_name ("document-revert", Gtk.IconSize.DIALOG);
         nosaving_image.valign = Gtk.Align.START;
 
-        var return_label = new Gtk.Label (_("If you cancel, you can always return to the installer by selecting the Install icon.").printf (os_name));
+        var return_label = new Gtk.Label (_("If you cancel, you can always return to the installer by selecting the Install icon."));
         return_label.valign = Gtk.Align.START;
         return_label.wrap = true;
 
