@@ -19,12 +19,14 @@
 public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
 
+    // replace this with actual content when the type is ready.
+
     construct {
         var title_label = new Gtk.Label (_("Welcome"));
         title_label.get_style_context ().add_class ("h2");
         title_label.valign = Gtk.Align.START;
 
-        var description_label = new Gtk.Label (_("You can try out OS_NAME before you install it.\n\nReady to take the plunge? Click the Install button."));
+        var description_label = new Gtk.Label (_("You can try out OS_NAME before you install it. If you're ready, you can install it any time."));
         title_label.valign = Gtk.Align.START;
 
         var image = new Gtk.Image.from_icon_name ("distributor-logo", Gtk.IconSize.DIALOG);
@@ -32,7 +34,6 @@ public class TryInstallView : AbstractInstallerView {
 
         var selection_grid = new Gtk.Grid ();
         selection_grid.orientation = Gtk.Orientation.VERTICAL;
-        selection_grid.add (title_label);
         selection_grid.add (description_label);
         selection_grid.add (image);
 
@@ -41,8 +42,9 @@ public class TryInstallView : AbstractInstallerView {
         content_area.margin_start = 10;
         content_area.attach (image, 0, 0, 1, 1);
         content_area.attach (title_label, 0, 1, 1, 1);
+        content_area.attach (selection_grid, 0, 1, 1, 1);
 
-        var cancel_button = new Gtk.Button.with_label (_("Try out OS_NAME"));
+        var cancel_button = new Gtk.Button.with_label (_("Cancel installation"));
 
         var next_button = new Gtk.Button.with_label (_("Install OS_NAME"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
