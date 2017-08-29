@@ -72,7 +72,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     private static string get_pretty_name () {
-        string pretty_name;
+        string pretty_name = _("Operating System");;
         const string ETC_OS_RELEASE = "/etc/os-release";
 
         try {
@@ -86,12 +86,14 @@ public class Installer.MainWindow : Gtk.Dialog {
                 if (osrel_component.length == 2) {
                     osrel[osrel_component[0]] = osrel_component[1].replace ("\"", "");
                 }
-            }
 
-            pretty_name = osrel["PRETTY_NAME"];
+                if (osrel_component[0] == "PRETTY_NAME") {
+                    pretty_name = osrel_component[1].replace ("\"", "");
+                    break;
+                }
+            }
         } catch (Error e) {
             warning ("Couldn't read os-release file: %s", e.message);
-            pretty_name = _("Operating System");
         }
 
         return pretty_name;
