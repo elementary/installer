@@ -31,11 +31,13 @@ public class Installer.MainWindow : Gtk.Dialog {
         var keyboard_layout_view = new KeyboardLayoutView ();
         var language_view = new LanguageView ();
         var progress_view = new ProgressView ();
+        var try_install_view = new TryInstallView ();
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add_named (language_view, "language");
         stack.add_named (keyboard_layout_view, "keyboard-layout");
+        stack.add_named (try_install_view, "try-install");
         stack.add_named (progress_view, "progress-view");
 
         set_default_geometry (800, 600);
@@ -44,8 +46,13 @@ public class Installer.MainWindow : Gtk.Dialog {
         check_view.next_step.connect (() => load_diskview ());
         check_view.cancel.connect (() => destroy ());
 
-        keyboard_layout_view.next_step.connect (load_checkview);
+        try_install_view.cancel.connect (() => destroy ());
+        try_install_view.next_step.connect (load_checkview);
 
+        keyboard_layout_view.cancel.connect (() => destroy ());
+        keyboard_layout_view.next_step.connect ((lang) => stack.set_visible_child_name ("try-install"));
+    
+        language_view.cancel.connect (() => destroy ());
         language_view.next_step.connect ((lang) => stack.set_visible_child_name ("keyboard-layout"));
     }
     
