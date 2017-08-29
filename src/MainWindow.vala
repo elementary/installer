@@ -76,18 +76,12 @@ public class Installer.MainWindow : Gtk.Dialog {
         const string ETC_OS_RELEASE = "/etc/os-release";
 
         try {
-            var osrel = new Gee.HashMap<string, string> ();
             var data_stream = new DataInputStream (File.new_for_path (ETC_OS_RELEASE).read ());
 
             string line;
             while ((line = data_stream.read_line (null)) != null) {
                 var osrel_component = line.split ("=", 2);
-
-                if (osrel_component.length == 2) {
-                    osrel[osrel_component[0]] = osrel_component[1].replace ("\"", "");
-                }
-
-                if (osrel_component[0] == "PRETTY_NAME") {
+                if (osrel_component.length == 2 && osrel_component[0] == "PRETTY_NAME") {
                     pretty_name = osrel_component[1].replace ("\"", "");
                     break;
                 }
