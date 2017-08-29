@@ -22,14 +22,8 @@ public class Installer.MainWindow : Gtk.Dialog {
     private CheckView check_view;
     private Gtk.Stack stack;
 
-    public static string os_pretty_name;
-
     public MainWindow () {
         Object (deletable: false);
-    }
-
-    static construct {
-        os_pretty_name = Utils.get_pretty_name ();
     }
 
     construct {
@@ -46,7 +40,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (progress_view, "progress-view");
         stack.add_named (success_view, "success-view");
 
-        title = _("Install %s").printf (MainWindow.os_pretty_name);
+        title = _("Install %s").printf (Utils.get_pretty_name ());
         set_default_geometry (800, 600);
         get_content_area ().add (stack);
 
