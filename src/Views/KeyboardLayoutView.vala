@@ -110,12 +110,17 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         input_language_list_box.row_activated.connect ((row) => {
+            var layout = ((LayoutRow) row).layout;
+            var variants = layout.variants;
+            if (variants.is_empty) {
+                return;
+            }
+
             keyboard_layout_list_box.get_children ().foreach ((child) => {
                 child.destroy ();
             });
 
-            keyboard_layout_list_title.label = "<b>%s</b>".printf (((LayoutRow) row).layout.description);
-            var variants = ((LayoutRow) row).layout.variants;
+            keyboard_layout_list_title.label = "<b>%s</b>".printf (layout.description);
             keyboard_layout_list_box.add (new VariantRow ("", _("Default")));
 
             foreach (var variant in variants.entries) {
