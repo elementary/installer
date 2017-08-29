@@ -38,7 +38,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (keyboard_layout_view, "keyboard-layout");
         stack.add_named (progress_view, "progress-view");
 
-        title = _("Install %s").printf (get_os_release ());
+        title = _("Install %s").printf (get_pretty_name ());
         set_default_geometry (800, 600);
         get_content_area ().add (stack);
 
@@ -71,7 +71,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         });
     }
 
-    private static string get_os_release () {
+    private static string get_pretty_name () {
         string pretty_name;
         const string ETC_OS_RELEASE = "/etc/os-release";
 
