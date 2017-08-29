@@ -95,6 +95,14 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         keyboard_layout_list_box.set_sort_func ((row1, row2) => {
+            if (((VariantRow) row1).code == "") {
+                return -1;
+            }
+
+            if (((VariantRow) row2).code == "") {
+                return 1;
+            }
+
             return ((VariantRow) row1).description.collate (((VariantRow) row2).description);
         });
 
@@ -112,6 +120,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
             keyboard_layout_list_title.label = "<b>%s</b>".printf (((LayoutRow) row).layout.description);
             var variants = ((LayoutRow) row).layout.variants;
+            keyboard_layout_list_box.add (new VariantRow ("", _("Default")));
+
             foreach (var variant in variants.entries) {
                 keyboard_layout_list_box.add (new VariantRow (variant.key, variant.value));
             }
