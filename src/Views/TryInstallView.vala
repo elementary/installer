@@ -83,15 +83,11 @@ public class TryInstallView : AbstractInstallerView {
         content_area.add (description_label);
         content_area.add (help_grid);
 
-        var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-
         var next_button = new Gtk.Button.with_label (_("Install OS"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (cancel_button);
         action_area.add (next_button);
 
-        cancel_button.clicked.connect (() => cancel ());
         next_button.clicked.connect (() => next_step ());
     }
 }
