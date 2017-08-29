@@ -95,8 +95,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
             return ((VariantRow) row1).description.collate (((VariantRow) row2).description);
         });
 
-        cancel_button.clicked.connect (() => cancel ());
-
         next_button.clicked.connect (() => next_step ());
 
         back_button.clicked.connect (() => {
