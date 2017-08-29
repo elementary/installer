@@ -78,12 +78,12 @@ public class TryInstallView : AbstractInstallerView {
 
         content_area.margin_top = 12;
         content_area.margin_end = 12;
-        content_area.margin_start = 10;
+        content_area.margin_start = 12;
         content_area.add (title_label);
         content_area.add (description_label);
         content_area.add (help_grid);
 
-        var next_button = new Gtk.Button.with_label (_("Install OS"));
+        var next_button = new Gtk.Button.with_label (_("Install %s").printf (os_name));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (next_button);
