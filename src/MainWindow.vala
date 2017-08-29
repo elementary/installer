@@ -31,12 +31,14 @@ public class Installer.MainWindow : Gtk.Dialog {
         var keyboard_layout_view = new KeyboardLayoutView ();
         var language_view = new LanguageView ();
         var progress_view = new ProgressView ();
+        var success_view = new SuccessView ();
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add_named (language_view, "language");
         stack.add_named (keyboard_layout_view, "keyboard-layout");
         stack.add_named (progress_view, "progress-view");
+        stack.add_named (success_view, "success-view");
 
         title = _("Install %s").printf (get_pretty_name ());
         set_default_geometry (800, 600);
