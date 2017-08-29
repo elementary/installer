@@ -55,18 +55,18 @@ public class TryInstallView : AbstractInstallerView {
         help_grid.orientation = Gtk.Orientation.VERTICAL;
         help_grid.column_homogeneous = true;
         help_grid.vexpand = true;
-        help_grid.margin_end = 10;
-        help_grid.margin_start = 10;
+        help_grid.margin_end = 60;
+        help_grid.margin_start = 60;
         help_grid.row_spacing = 10;
-        help_grid.
+        help_grid.column_spacing = 24;
+        help_grid.margin_top = 150;
+
         help_grid.attach (nochanges_image, 0, 0, 1, 1);
         help_grid.attach (nochanges_label, 0, 1, 1, 1);
         help_grid.attach (nosaving_image, 1, 0, 1, 1);
         help_grid.attach (nosaving_label, 1, 1, 1, 1);
         help_grid.attach (return_image, 2, 0, 1, 1);
         help_grid.attach (return_label, 2, 1, 1, 1);
-
-
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 10;
