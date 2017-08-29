@@ -22,31 +22,62 @@ public class TryInstallView : AbstractInstallerView {
     // replace this with actual content when the type is ready.
 
     construct {
-        var title_label = new Gtk.Label (_("Welcome"));
-        title_label.get_style_context ().add_class ("h2");
+        var title_label = new Gtk.Label (_("Install OS"));
+        title_label.get_style_context ().add_class ("h1");
         title_label.valign = Gtk.Align.START;
 
-        var description_label = new Gtk.Label (_("You can try out OS_NAME before you install it. If you're ready, you can install it any time."));
-        title_label.valign = Gtk.Align.START;
+        var description_label = new Gtk.Label (_("You can install OS on this device now, or cancel the installation to try it without installing. "));
+        description_label.valign = Gtk.Align.START;
+        description_label.hexpand = true;
 
-        var image = new Gtk.Image.from_icon_name ("distributor-logo", Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.END;
+        var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged until you install OS"));
+        nochanges_label.valign = Gtk.Align.START;
+        nochanges_label.wrap = true;
 
-        var selection_grid = new Gtk.Grid ();
-        selection_grid.orientation = Gtk.Orientation.VERTICAL;
-        selection_grid.add (description_label);
-        selection_grid.add (image);
+        var nochanges_image = new Gtk.Image.from_icon_name ("checkmark", Gtk.IconSize.DIALOG);
+        nochanges_image.valign = Gtk.Align.START;
+
+        var nosaving_label = new Gtk.Label (_("Any changes you make in OS before installing will not be saved"));
+        nosaving_label.valign = Gtk.Align.START;
+        nosaving_label.wrap = true;
+
+        var nosaving_image = new Gtk.Image.from_icon_name ("edit-undo", Gtk.IconSize.DIALOG);
+        nosaving_image.valign = Gtk.Align.START;
+
+        var return_label = new Gtk.Label (_("If you cancel, you can always return to the installer by selecting the Install OS icon"));
+        return_label.valign = Gtk.Align.START;
+        return_label.wrap = true;
+
+        var return_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
+        return_image.valign = Gtk.Align.END;
+
+        var help_grid = new Gtk.Grid ();
+        help_grid.orientation = Gtk.Orientation.VERTICAL;
+        help_grid.column_homogeneous = true;
+        help_grid.vexpand = true;
+        help_grid.margin_end = 10;
+        help_grid.margin_start = 10;
+        help_grid.row_spacing = 10;
+        help_grid.
+        help_grid.attach (nochanges_image, 0, 0, 1, 1);
+        help_grid.attach (nochanges_label, 0, 1, 1, 1);
+        help_grid.attach (nosaving_image, 1, 0, 1, 1);
+        help_grid.attach (nosaving_label, 1, 1, 1, 1);
+        help_grid.attach (return_image, 2, 0, 1, 1);
+        help_grid.attach (return_label, 2, 1, 1, 1);
+
+
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 10;
         content_area.margin_start = 10;
-        content_area.attach (image, 0, 0, 1, 1);
-        content_area.attach (title_label, 0, 1, 1, 1);
-        content_area.attach (selection_grid, 0, 1, 1, 1);
+        content_area.attach (title_label, 0, 0, 1, 1);
+        content_area.attach (description_label, 0, 1, 1, 1);
+        content_area.attach (help_grid, 0, 2, 1, 1);
 
         var cancel_button = new Gtk.Button.with_label (_("Cancel installation"));
 
-        var next_button = new Gtk.Button.with_label (_("Install OS_NAME"));
+        var next_button = new Gtk.Button.with_label (_("Install OS"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (cancel_button);
