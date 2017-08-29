@@ -44,7 +44,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         check_view.next_step.connect (() => load_diskview ());
         check_view.cancel.connect (() => destroy ());
 
-        keyboard_layout_view.cancel.connect (() => destroy ());
         keyboard_layout_view.next_step.connect (load_checkview);
     
         language_view.cancel.connect (() => destroy ());
