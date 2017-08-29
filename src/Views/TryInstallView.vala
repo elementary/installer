@@ -19,23 +19,22 @@
 public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
 
-    // replace this with actual content when the type is ready.
-
     construct {
-        var title_label = new Gtk.Label (_("Install OS"));
+        string os_name = "OS";
+
+        var title_label = new Gtk.Label (_("Install %s").printf (os_name));
         title_label.get_style_context ().add_class ("h1");
         title_label.valign = Gtk.Align.START;
 
-        var description_label = new Gtk.Label (_("You can install OS on this device now, or cancel the installation to try it without installing. "));
-        description_label.valign = Gtk.Align.START;
+        var description_label = new Gtk.Label (_("You can install %s on this device now, or cancel the installation to try it without installing. ").printf (os_name));
         description_label.hexpand = true;
 
-        var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged until you install OS"));
-        nochanges_label.valign = Gtk.Align.START;
+        var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged until you install %s").printf (os_name));
         nochanges_label.wrap = true;
 
         var nochanges_image = new Gtk.Image.from_icon_name ("computer", Gtk.IconSize.DIALOG);
         nochanges_image.valign = Gtk.Align.START;
+
         var nochanges_emblem = new Gtk.Image.from_icon_name ("emblem-default", Gtk.IconSize.LARGE_TOOLBAR);
         nochanges_emblem.valign = Gtk.Align.END;
         nochanges_emblem.halign = Gtk.Align.END;
@@ -44,9 +43,10 @@ public class TryInstallView : AbstractInstallerView {
         nochanges_overlay.add_overlay (nochanges_image);
         nochanges_overlay.add_overlay (nochanges_emblem);
         nochanges_overlay.halign = Gtk.Align.CENTER;
-        nochanges_overlay.width_request = 48;
+        nochanges_overlay.height_request = 51;
+        nochanges_overlay.width_request = 60;
 
-        var nosaving_label = new Gtk.Label (_("Any changes you make in OS before installing will not be saved"));
+        var nosaving_label = new Gtk.Label (_("Any changes you make in %s before installing will not be saved").printf (os_name));
         nosaving_label.valign = Gtk.Align.START;
         nosaving_label.wrap = true;
 
@@ -64,11 +64,10 @@ public class TryInstallView : AbstractInstallerView {
         help_grid.orientation = Gtk.Orientation.VERTICAL;
         help_grid.column_homogeneous = true;
         help_grid.vexpand = true;
-        help_grid.margin_end = 60;
-        help_grid.margin_start = 60;
-        help_grid.row_spacing = 10;
+        help_grid.valign = Gtk.Align.CENTER;
+        help_grid.halign = Gtk.Align.CENTER;
+        help_grid.row_spacing = 12;
         help_grid.column_spacing = 24;
-        help_grid.margin_top = 150;
 
         help_grid.attach (nochanges_overlay, 0, 0, 1, 1);
         help_grid.attach (nochanges_label, 0, 1, 1, 1);
@@ -77,13 +76,12 @@ public class TryInstallView : AbstractInstallerView {
         help_grid.attach (return_image, 2, 0, 1, 1);
         help_grid.attach (return_label, 2, 1, 1, 1);
 
-        content_area.column_homogeneous = true;
-        content_area.margin_top = 10;
-        content_area.margin_end = 10;
+        content_area.margin_top = 12;
+        content_area.margin_end = 12;
         content_area.margin_start = 10;
-        content_area.attach (title_label, 0, 0, 1, 1);
-        content_area.attach (description_label, 0, 1, 1, 1);
-        content_area.attach (help_grid, 0, 2, 1, 1);
+        content_area.add (title_label);
+        content_area.add (description_label);
+        content_area.add (help_grid);
 
         var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
 
