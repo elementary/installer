@@ -142,6 +142,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         Xml.Node* root = doc->get_root_element ();
         Xml.Node* layout_list_node = get_xml_node_by_name (root, "layoutList");
         if (layout_list_node == null) {
+            delete doc;
             return;
         }
 
@@ -180,6 +181,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 }
             }
         }
+
+        delete doc;
     }
 
     private static Xml.Node* get_xml_node_by_name (Xml.Node* root, string name) {
