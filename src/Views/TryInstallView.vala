@@ -20,7 +20,7 @@ public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
 
     construct {
-        string os_name = "OS";
+        string os_name = Utils.get_pretty_name ();
 
         var title_label = new Gtk.Label (_("Install %s").printf (os_name));
         title_label.get_style_context ().add_class ("h1");
