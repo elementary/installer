@@ -149,4 +149,26 @@ namespace Utils {
 
         return false;
     }
+
+    private static string get_pretty_name () {
+        string pretty_name = _("Operating System");
+        const string ETC_OS_RELEASE = "/etc/os-release";
+
+        try {
+            var data_stream = new DataInputStream (File.new_for_path (ETC_OS_RELEASE).read ());
+
+            string line;
+            while ((line = data_stream.read_line (null)) != null) {
+                var osrel_component = line.split ("=", 2);
+                if (osrel_component.length == 2 && osrel_component[0] == "PRETTY_NAME") {
+                    pretty_name = osrel_component[1].replace ("\"", "");
+                    break;
+                }
+            }
+        } catch (Error e) {
+            warning ("Couldn't read os-release file: %s", e.message);
+        }
+
+        return pretty_name;
+    }
 }
