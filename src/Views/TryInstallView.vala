@@ -29,6 +29,9 @@ public class TryInstallView : AbstractInstallerView {
         var description_label = new Gtk.Label (_("You can install %s on this device now, or cancel the installation to try it without installing.").printf (os_name));
         description_label.hexpand = true;
         description_label.margin_bottom = 12;
+        description_label.wrap = true;
+        description_label.max_width_chars = 60;
+        description_label.halign = Gtk.Align.CENTER;
 
         var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged until you install %s.").printf (os_name));
         nochanges_label.wrap = true;
