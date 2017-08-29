@@ -38,6 +38,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (keyboard_layout_view, "keyboard-layout");
         stack.add_named (progress_view, "progress-view");
 
+        title = _("Install %s").printf (get_os_release ());
         set_default_geometry (800, 600);
         get_content_area ().add (stack);
 
@@ -68,5 +69,30 @@ public class Installer.MainWindow : Gtk.Dialog {
         disk_view.next_step.connect (() => {
             stack.set_visible_child_name ("progress-view");
         });
+    }
+
+    private string get_os_release () {
+        string os;
+        var file = File.new_for_path("/etc/os-release");
+
+        try {
+            var osrel = new Gee.HashMap<string, string> ();
+            var dis = new DataInputStream (file.read ());
+            string line;
+            // Read lines until end of file (null) is reached
+            while ((line = dis.read_line (null)) != null) {
+                var osrel_component = line.split ("=", 2);
+                if ( osrel_component.length == 2 ) {
+                    osrel[osrel_component[0]] = osrel_component[1].replace ("\"", "");
+                }
+            }
+
+            os = osrel["PRETTY_NAME"];
+        } catch (Error e) {
+            warning("Couldn't read os-release file, assuming elementary OS");
+            os = "elementary OS";
+        }
+
+        return os;
     }
 }
