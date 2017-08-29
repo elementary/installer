@@ -19,6 +19,7 @@
 public class SuccessView : AbstractInstallerView {
     construct {
         const string OS_NAME = "elementary OS";
+
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
