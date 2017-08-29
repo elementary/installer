@@ -21,11 +21,11 @@ public class SuccessView : AbstractInstallerView {
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
-        var primary_label = new Gtk.Label (_("Restart your device because reasons"));
+        var primary_label = new Gtk.Label (_("Restart your device to continue setting up"));
         primary_label.xalign = 0;
         primary_label.get_style_context ().add_class ("h2");
 
-        var secondary_label = new Gtk.Label (_("Installation has been completed. Your device will automatically restart in 30 seconds to set up a new user."));
+        var secondary_label = new Gtk.Label (_("OS has been installed. Your device will automatically restart in 30 seconds to set up a new user, or you can shut down now and set a user up later."));
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
@@ -47,3 +47,4 @@ public class SuccessView : AbstractInstallerView {
         action_area.add (restart_button);
     }
 }
+
