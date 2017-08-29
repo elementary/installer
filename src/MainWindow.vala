@@ -72,27 +72,28 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     private string get_os_release () {
-        string os;
-        var file = File.new_for_path("/etc/os-release");
+        string pretty_name;
+        const string ETC_OS_RELEASE = "/etc/os-release";
 
         try {
             var osrel = new Gee.HashMap<string, string> ();
-            var dis = new DataInputStream (file.read ());
+            var data_stream = new DataInputStream (File.new_for_path (ETC_OS_RELEASE).read ());
+
             string line;
-            // Read lines until end of file (null) is reached
-            while ((line = dis.read_line (null)) != null) {
+            while ((line = data_stream.read_line (null)) != null) {
                 var osrel_component = line.split ("=", 2);
-                if ( osrel_component.length == 2 ) {
+
+                if (osrel_component.length == 2) {
                     osrel[osrel_component[0]] = osrel_component[1].replace ("\"", "");
                 }
             }
 
-            os = osrel["PRETTY_NAME"];
+            pretty_name = osrel["PRETTY_NAME"];
         } catch (Error e) {
-            warning("Couldn't read os-release file, assuming elementary OS");
-            os = "elementary OS";
+            warning("Couldn't read os-release file: %s", e.message);
+            pretty_name = _("Operating System");
         }
 
-        return os;
+        return pretty_name;
     }
 }
