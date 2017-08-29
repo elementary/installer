@@ -38,7 +38,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (language_view, "language");
         stack.add_named (keyboard_layout_view, "keyboard-layout");
         stack.add_named (progress_view, "progress-view");
-        stack.add_named (try_install_view, "try-install");
+        stack.add_named (try_install_view, "try-install-view");
 
         set_default_geometry (800, 600);
         get_content_area ().add (stack);
@@ -48,7 +48,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         try_install_view.next_step.connect(() => load_checkview ());
 
-        keyboard_layout_view.next_step.connect ((lang) => stack.set_visible_child_name ("try-install"));
+        keyboard_layout_view.next_step.connect ((lang) => stack.set_visible_child_name ("try-install-view"));
 
         language_view.next_step.connect ((lang) => stack.set_visible_child_name ("keyboard-layout"));
     }
