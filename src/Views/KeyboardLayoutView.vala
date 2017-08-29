@@ -82,12 +82,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
         content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (frame, 1, 0, 1, 2);
 
-        var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-
         var next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (cancel_button);
         action_area.add (next_button);
 
         input_language_list_box.set_sort_func ((row1, row2) => {
@@ -106,7 +103,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
             return ((VariantRow) row1).description.collate (((VariantRow) row2).description);
         });
 
-        cancel_button.clicked.connect (() => cancel ());
         next_button.clicked.connect (() => next_step ());
 
         back_button.clicked.connect (() => {
