@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.MainWindow : Gtk.Window {
+public class Installer.MainWindow : Gtk.Dialog {
     private CheckView check_view;
     private Gtk.Stack stack;
 
@@ -40,16 +40,8 @@ public class Installer.MainWindow : Gtk.Window {
         stack.add_named (try_install_view, "try-install");
         stack.add_named (progress_view, "progress-view");
 
-        var titlebar = new Gtk.HeaderBar ();
-
-        var titlebar_style_context = titlebar.get_style_context ();
-        titlebar_style_context.add_class (Gtk.STYLE_CLASS_FLAT);
-        titlebar_style_context.add_class ("default-decoration");
-
-        get_style_context ().add_class ("rounded");
-        set_titlebar (titlebar);
         set_default_geometry (800, 600);
-        add (stack);
+        get_content_area ().add (stack);
 
         check_view.next_step.connect (() => load_diskview ());
         check_view.cancel.connect (() => destroy ());
