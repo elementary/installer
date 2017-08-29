@@ -28,7 +28,7 @@ public class Installer.App : Granite.Application {
         program_name = _("Installer");
         build_version = Build.VERSION;
         app_years = "2016";
-        app_icon = "system-os-install";
+        app_icon = "system-os-installer";
 
         app_launcher = "io.elementary.installer.desktop";
         main_url = "https://launchpad.net/pantheon-installer";

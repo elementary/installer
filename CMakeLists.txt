@@ -1,4 +1,4 @@
-project (pantheon-installer)
+project (io.elementary.installer)
 
 cmake_minimum_required (VERSION 2.8)
 
@@ -14,7 +14,7 @@ set (VERSION 1.0)
 # CTest
 include (CTest)
 if (BUILD_TESTING)
-    add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/io.elementary.installer.desktop)    
+    add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/${CMAKE_PROJECT_NAME}.desktop)    
 endif ()
 
 # We won't show the languages that aren't available for the installer
@@ -59,15 +59,17 @@ include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
     src/Application.vala
     src/MainWindow.vala
-    src/LanguageView.vala
-    src/CheckView.vala
     src/Utils.vala
-    src/DiskView/DiskView.vala
     src/DiskView/DiskGrid.vala
     src/Objects/org.freedesktop.udisks2.vala
     src/Objects/Disk.vala
     src/Objects/Partition.vala
     src/Objects/PartitionTable.vala
+    src/Views/AbstractInstallerView.vala
+    src/Views/CheckView.vala
+    src/Views/DiskView.vala
+    src/Views/KeyboardLayoutView.vala
+    src/Views/LanguageView.vala
 PACKAGES
     gtk+-3.0>=3.12
     granite
