@@ -18,6 +18,7 @@
 
 public class SuccessView : AbstractInstallerView {
     construct {
+        const string OS_NAME = "elementary OS";
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
@@ -25,7 +26,7 @@ public class SuccessView : AbstractInstallerView {
         primary_label.xalign = 0;
         primary_label.get_style_context ().add_class ("h2");
 
-        var secondary_label = new Gtk.Label (_("OS has been installed. Your device will automatically restart in 30 seconds to set up a new user, or you can shut down now and set a user up later."));
+        var secondary_label = new Gtk.Label (_("%s has been installed. Your device will automatically restart in 30 seconds to set up a new user, or you can shut down now and set a user up later.").printf (OS_NAME));
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
