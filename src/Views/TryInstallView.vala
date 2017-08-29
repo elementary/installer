@@ -28,6 +28,7 @@ public class TryInstallView : AbstractInstallerView {
 
         var description_label = new Gtk.Label (_("You can install %s on this device now, or cancel the installation to try it without installing.").printf (os_name));
         description_label.hexpand = true;
+        description_label.margin_bottom = 12;
 
         var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged until you install %s.").printf (os_name));
         nochanges_label.wrap = true;
@@ -60,28 +61,19 @@ public class TryInstallView : AbstractInstallerView {
         var return_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         return_image.valign = Gtk.Align.END;
 
-        var help_grid = new Gtk.Grid ();
-        help_grid.orientation = Gtk.Orientation.VERTICAL;
-        help_grid.column_homogeneous = true;
-        help_grid.vexpand = true;
-        help_grid.valign = Gtk.Align.CENTER;
-        help_grid.halign = Gtk.Align.CENTER;
-        help_grid.row_spacing = 12;
-        help_grid.column_spacing = 24;
-
-        help_grid.attach (nochanges_overlay, 0, 0, 1, 1);
-        help_grid.attach (nochanges_label, 0, 1, 1, 1);
-        help_grid.attach (nosaving_image, 1, 0, 1, 1);
-        help_grid.attach (nosaving_label, 1, 1, 1, 1);
-        help_grid.attach (return_image, 2, 0, 1, 1);
-        help_grid.attach (return_label, 2, 1, 1, 1);
-
-        content_area.margin_top = 12;
-        content_area.margin_end = 12;
-        content_area.margin_start = 12;
-        content_area.add (title_label);
-        content_area.add (description_label);
-        content_area.add (help_grid);
+        //var content_area = new Gtk.Grid ();
+        content_area.column_homogeneous = true;
+        content_area.vexpand = true;
+        content_area.valign = Gtk.Align.CENTER;
+        content_area.halign = Gtk.Align.CENTER;
+        content_area.attach (title_label, 0, 0, 3, 1);
+        content_area.attach (description_label, 0, 1, 3, 1);
+        content_area.attach (nochanges_overlay, 0, 2, 1, 1);
+        content_area.attach (nochanges_label, 0, 3, 1, 1);
+        content_area.attach (nosaving_image, 1, 2, 1, 1);
+        content_area.attach (nosaving_label, 1, 3, 1, 1);
+        content_area.attach (return_image, 2, 2, 1, 1);
+        content_area.attach (return_label, 2, 3, 1, 1);
 
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (os_name));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
