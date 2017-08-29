@@ -73,19 +73,14 @@ public class Installer.LanguageView : AbstractInstallerView {
         frame.add (scrolled);
         frame.halign = Gtk.Align.CENTER;
 
-        var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (cancel_button);
         action_area.add (next_button);
 
         list_box.row_selected.connect (row_selected);
         list_box.select_row (list_box.get_row_at_index (0));
         list_box.row_activated.connect ((row) => next_button.clicked ());
-
-        cancel_button.clicked.connect (() => cancel ());
 
         next_button.clicked.connect (() => {
             // We need to disconnect the signal otherwise it's called several time when destroying the window…
