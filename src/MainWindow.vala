@@ -90,7 +90,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
             pretty_name = osrel["PRETTY_NAME"];
         } catch (Error e) {
-            warning("Couldn't read os-release file: %s", e.message);
+            warning ("Couldn't read os-release file: %s", e.message);
             pretty_name = _("Operating System");
         }
 
