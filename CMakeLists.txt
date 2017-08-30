@@ -44,6 +44,8 @@ pkg_check_modules(DEPS REQUIRED
     gtk+-3.0
     granite
     libxml-2.0
+    libgnomekbd
+    libgnomekbdui
 )
 add_definitions(${DEPS_CFLAGS})
 link_libraries(${DEPS_LIBRARIES} m)
@@ -73,10 +75,12 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Views/ProgressView.vala
     src/Views/TryInstallView.vala
     src/Views/SuccessView.vala
+    src/Views/LayoutWidget.vala
 PACKAGES
     gtk+-3.0>=3.12
     granite
     libxml-2.0
+    libgnomekbd
     posix
 OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
