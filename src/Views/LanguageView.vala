@@ -113,10 +113,14 @@ public class Installer.LanguageView : AbstractInstallerView {
         next_button.label = _("Next");
 
         foreach (Gtk.Widget child in list_box.get_children ()) {
-            if (((LangRow) child).lang == ((LangRow) row).lang) {
-                ((LangRow) child).selected = true;
-            } else {
-                ((LangRow) child).selected = false;
+            if (child is LangRow) {
+                var lang_row = (LangRow) child;
+
+                if (lang_row.lang == ((LangRow) row).lang) {
+                    lang_row.selected = true;
+                } else {
+                    lang_row.selected = false;
+                }
             }
         }
 
