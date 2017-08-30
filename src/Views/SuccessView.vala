@@ -17,6 +17,8 @@
  */
 
 public class SuccessView : AbstractInstallerView {
+    private Utils.SystemInterface system_interface;
+
     construct {
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
@@ -48,6 +50,22 @@ public class SuccessView : AbstractInstallerView {
 
         action_area.add (shutdown_button);
         action_area.add (restart_button);
+
+        restart_button.clicked.connect (() => {
+            try {
+                system_interface.reboot (false);
+            } catch (IOError e) {
+                stderr.printf ("%s\n", e.message);
+            }
+        });
+
+        shutdown_button.clicked.connect (() => {
+            try {
+                system_interface.power_off (false);
+            } catch (IOError e) {
+                stderr.printf ("%s\n", e.message);
+            }
+        });
     }
 }
-
+    
