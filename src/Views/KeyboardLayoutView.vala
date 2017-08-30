@@ -131,6 +131,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
             stack.visible_child = keyboard_layout_grid;
         });
 
+        keyboard_test_entry.icon_release.connect (() => {
+            var popover = new Gtk.Popover (keyboard_test_entry);
+            var layout = new LayoutWidget ();
+            popover.add (layout);
+            popover.show_all ();
+        });
+
         load_layouts ();
     }
 
