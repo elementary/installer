@@ -248,8 +248,8 @@ public class Installer.CheckView : AbstractInstallerView  {
                 stack.set_visible_child (grid);
                 break;
         }
-        show_all ();
 
+        show_all ();
         current_state = next_state;
     }
     
