@@ -76,7 +76,6 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         var frame = new Gtk.Frame (null);
         frame.add (scrolled);
-        frame.halign = Gtk.Align.CENTER;
 
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
