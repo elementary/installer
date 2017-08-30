@@ -20,6 +20,12 @@ public class SuccessView : AbstractInstallerView {
     private Utils.SystemInterface system_interface;
 
     construct {
+        try {
+            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+        } catch (IOError e) {
+                warning ("%s", e.message);
+        }
+
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
@@ -55,7 +61,7 @@ public class SuccessView : AbstractInstallerView {
             try {
                 system_interface.reboot (false);
             } catch (IOError e) {
-                stderr.printf ("%s\n", e.message);
+                warning ("%s", e.message);
             }
         });
 
@@ -63,7 +69,7 @@ public class SuccessView : AbstractInstallerView {
             try {
                 system_interface.power_off (false);
             } catch (IOError e) {
-                stderr.printf ("%s\n", e.message);
+                warning ("%s", e.message);
             }
         });
     }
