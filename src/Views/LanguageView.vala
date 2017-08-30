@@ -1,4 +1,3 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
  * Copyright (c) 2016 elementary LLC. (https://elementary.io)
  *
@@ -32,17 +31,19 @@ public class Installer.LanguageView : AbstractInstallerView {
     }
 
     construct {
-        orientation = Gtk.Orientation.VERTICAL;
-
-        select_stack = new Gtk.Stack ();
-        select_stack.get_style_context ().add_class ("h1");
-        select_stack.height_request = 64;
-        select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        var image = new Gtk.Image.from_icon_name ("preferences-desktop-locale", Gtk.IconSize.DIALOG);
+        image.valign = Gtk.Align.END;
 
         select_label = new Gtk.Label (null);
         select_label.halign = Gtk.Align.CENTER;
-        select_label.valign = Gtk.Align.CENTER;
+        select_label.wrap = true;
+
+        select_stack = new Gtk.Stack ();
+        select_stack.valign = Gtk.Align.START;
+        select_stack.get_style_context ().add_class ("h2");
+        select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         select_stack.add (select_label);
+
         select_stack.notify["transition-running"].connect (() => {
             if (!select_stack.transition_running) {
                 select_stack.get_children ().foreach ((child) => {
@@ -52,6 +53,10 @@ public class Installer.LanguageView : AbstractInstallerView {
                 });
             }
         });
+
+        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
+        size_group.add_widget (select_stack);
+        size_group.add_widget (image);
 
         list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = false;
@@ -73,19 +78,14 @@ public class Installer.LanguageView : AbstractInstallerView {
         frame.add (scrolled);
         frame.halign = Gtk.Align.CENTER;
 
-        var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (cancel_button);
         action_area.add (next_button);
 
         list_box.row_selected.connect (row_selected);
         list_box.select_row (list_box.get_row_at_index (0));
         list_box.row_activated.connect ((row) => next_button.clicked ());
-
-        cancel_button.clicked.connect (() => cancel ());
 
         next_button.clicked.connect (() => {
             // We need to disconnect the signal otherwise it's called several time when destroying the window…
@@ -96,8 +96,13 @@ public class Installer.LanguageView : AbstractInstallerView {
             next_step (lang);
         });
 
-        content_area.add (select_stack);
-        content_area.add (frame);
+        content_area.column_homogeneous = true;
+        content_area.margin_end = 10;
+        content_area.margin_start = 10;
+        content_area.attach (image, 0, 0, 1, 1);
+        content_area.attach (select_stack, 0, 1, 1, 1);
+        content_area.attach (frame, 1, 0, 1, 2);
+
         timeout ();
     }
 
@@ -126,8 +131,6 @@ public class Installer.LanguageView : AbstractInstallerView {
         Environment.set_variable ("LANGUAGE", ((LangRow) row).lang, true);
         Intl.textdomain ("pantheon-installer");
         select_label = new Gtk.Label (_("Select a Language"));
-        select_label.margin = 12;
-        select_label.margin_top = 0;
         select_label.show_all ();
         select_stack.add (select_label);
         select_stack.set_visible_child (select_label);
