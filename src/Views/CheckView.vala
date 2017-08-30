@@ -236,7 +236,7 @@ public class Installer.CheckView : Gtk.Stack {
                 set_visible_child (out_grid);
                 break;
             case State.POWERED:
-                var grid = setup_grid (_("Connect to a Power Source"), _("Your device is running on battery power. It's recommended to be plugged in while installing elementary OS."), "battery-ac-adapter");
+                var grid = setup_grid (_("Connect to a Power Source"), _("Your device is running on battery power. It's recommended to be plugged in while installing."), "battery-ac-adapter");
                 var ignore_button = new Gtk.Button.with_label (_("Ignore"));
                 ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
                 ignore_button.clicked.connect (() => show_next ());
