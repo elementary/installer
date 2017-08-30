@@ -20,13 +20,11 @@ public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
 
     construct {
-        string os_name = Utils.get_pretty_name ();
-
-        var title_label = new Gtk.Label (_("Install %s").printf (os_name));
+        var title_label = new Gtk.Label (_("Install %s").printf (Utils.get_pretty_name ()));
         title_label.get_style_context ().add_class ("h1");
         title_label.valign = Gtk.Align.START;
 
-        var description_label = new Gtk.Label (_("You can install %s on this device now, or cancel the installation to try it without installing.").printf (os_name));
+        var description_label = new Gtk.Label (_("You can install %s on this device now, or cancel the installation to try it without installing.").printf (Utils.get_pretty_name ()));
         description_label.hexpand = true;
         description_label.margin_bottom = 12;
         description_label.wrap = true;
@@ -68,7 +66,6 @@ public class TryInstallView : AbstractInstallerView {
         var return_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         return_image.valign = Gtk.Align.END;
 
-        //var content_area = new Gtk.Grid ();
         content_area.column_homogeneous = true;
         content_area.vexpand = true;
         content_area.valign = Gtk.Align.CENTER;
@@ -82,7 +79,7 @@ public class TryInstallView : AbstractInstallerView {
         content_area.attach (return_image, 2, 2, 1, 1);
         content_area.attach (return_label, 2, 3, 1, 1);
 
-        var next_button = new Gtk.Button.with_label (_("Install %s").printf (os_name));
+        var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (next_button);
