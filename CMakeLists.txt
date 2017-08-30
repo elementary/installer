@@ -14,7 +14,7 @@ set (VERSION 1.0)
 # CTest
 include (CTest)
 if (BUILD_TESTING)
-    add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/${CMAKE_PROJECT_NAME}.desktop)    
+    add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/${CMAKE_PROJECT_NAME}.desktop)
 endif ()
 
 # We won't show the languages that aren't available for the installer
@@ -68,6 +68,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Views/AbstractInstallerView.vala
     src/Views/CheckView.vala
     src/Views/DiskView.vala
+    src/Views/ErrorView.vala
     src/Views/KeyboardLayoutView.vala
     src/Views/LanguageView.vala
     src/Views/ProgressView.vala
