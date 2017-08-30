@@ -216,7 +216,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
         public Layout layout;
         public LayoutRow (Layout layout) {
             this.layout = layout;
-            var label = new Gtk.Label (layout.description);
+
+            string layout_description = layout.description;
+            if (!layout.variants.is_empty) {
+                layout_description = _("%s…").printf (layout_description);
+            };
+
+            var label = new Gtk.Label (layout_description);
             label.margin = 6;
             label.xalign = 0;
             label.get_style_context ().add_class ("h3");
