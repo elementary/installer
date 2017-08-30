@@ -28,12 +28,13 @@ public class ErrorView : AbstractInstallerView {
         primary_label.get_style_context ().add_class ("h2");
 
         var secondary_label = new Gtk.Label (_("The installation failed, so your device may not restart properly. You can try one of the following:
-Try the installation again
-Launch a session and try to manually recover
-Restart your device to boot from another drive"));
+• Try the installation again
+• Launch a session and try to manually recover
+• Restart your device to boot from another drive"));
         secondary_label.max_width_chars = 60;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
+        secondary_label.use_markup = true;
 
         content_area.halign = Gtk.Align.CENTER;
         content_area.valign = Gtk.Align.CENTER;
@@ -44,13 +45,16 @@ Restart your device to boot from another drive"));
         content_area.attach (primary_label, 1, 0, 1, 1);
         content_area.attach (secondary_label, 1, 1, 1, 1);
 
-        var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
+        var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 
-        var restart_button = new Gtk.Button.with_label (_("Restart"));
-        restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        var session_button = new Gtk.Button.with_label (_("Launch Session"));
 
-        action_area.add (shutdown_button);
+        var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
+        install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
         action_area.add (restart_button);
+        action_area.add (session_button);
+        action_area.add (install_button);
     }
 }
 
