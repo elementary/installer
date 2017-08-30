@@ -62,10 +62,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         get_content_area ().add (stack);
 
         check_view.next_step.connect (() => load_diskview ());
-        check_view.cancel.connect (() => destroy ());
 
         try_install_view.next_step.connect (() => load_checkview());
-        try_install_view.cancel.connect (() => destroy ());
 
         keyboard_layout_view.next_step.connect (() => stack.set_visible_child_name (TRY_INSTALL_VIEW));
 
@@ -86,7 +84,6 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     private void load_diskview () {
         var disk_view = new DiskView ();
-        disk_view.cancel.connect (() => destroy ());
         stack.add_named (disk_view, DISK_VIEW);
         stack.set_visible_child_name (DISK_VIEW);
         disk_view.load.begin ();
