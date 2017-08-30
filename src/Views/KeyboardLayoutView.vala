@@ -162,6 +162,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
                     layout.description = dgettext ("xkeyboard-config", description_node->children->content);
                     var variants = new Gee.HashMap<string, string> ();
                     layout.variants = variants;
+
                     if (variant_node != null) {
                         for (Xml.Node* variant_iter = variant_node->children; variant_iter != null; variant_iter = variant_iter->next) {
                             if (variant_iter->name == "variant") {
@@ -175,6 +176,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
                                 }
                             }
                         }
+                    }
+
+                    if (!layout.variants.is_empty) {
+                        layout.description += "…";
                     }
 
                     input_language_list_box.add (new LayoutRow (layout));
