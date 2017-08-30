@@ -44,9 +44,11 @@ public abstract class AbstractInstallerView : Gtk.Grid {
 
         if (cancellable) {
             var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-            cancel_button.clicked.connect (() => cancel ());
+            cancel_button.clicked.connect (() => {
+                get_toplevel ().destroy ();
+            });
 
-            action_area.add (cancel_button); 
+            action_area.add (cancel_button);
         }
 
         orientation = Gtk.Orientation.VERTICAL;
