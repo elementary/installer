@@ -23,7 +23,12 @@ public class Installer.MainWindow : Gtk.Dialog {
     private Gtk.Stack stack;
 
     public MainWindow () {
-        Object (deletable: false);
+        Object (
+            deletable: false,
+            height_request: 700,
+            resizable: false,
+            width_request: 800
+        );
     }
 
     construct {
@@ -45,7 +50,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (error_view, "error-view");
 
         title = _("Install %s").printf (Utils.get_pretty_name ());
-        set_default_geometry (800, 600);
         get_content_area ().add (stack);
 
         check_view.next_step.connect (() => load_diskview ());
