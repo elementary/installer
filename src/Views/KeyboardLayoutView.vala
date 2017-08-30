@@ -60,32 +60,28 @@ public class KeyboardLayoutView : AbstractInstallerView {
         stack.add (input_language_scrolled);
         stack.add (keyboard_layout_grid);
 
-        var keyboard_map_button = new Gtk.Button.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-        keyboard_map_button.tooltip_text = (_("Show keyboard layout"));
+        var frame = new Gtk.Frame (null);
+        frame.add (stack);
 
         var keyboard_test_entry = new Gtk.Entry ();
         keyboard_test_entry.hexpand = true;
-        keyboard_test_entry.set_placeholder_text (_("Type to test your layout"));
+        keyboard_test_entry.placeholder_text = _("Type to test your layout");
+        keyboard_test_entry.secondary_icon_activatable = true;
+        keyboard_test_entry.secondary_icon_name = "input-keyboard-symbolic";
+        keyboard_test_entry.secondary_icon_tooltip_text = _("Show keyboard layout");
 
-        var action_bar = new Gtk.ActionBar ();
-        action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-        action_bar.add (keyboard_map_button);
-        action_bar.add (keyboard_test_entry);
-
-        var selection_grid = new Gtk.Grid ();
-        selection_grid.orientation = Gtk.Orientation.VERTICAL;
-        selection_grid.add (stack);
-        selection_grid.add (action_bar);
-
-        var frame = new Gtk.Frame (null);
-        frame.add (selection_grid);
+        var stack_grid = new Gtk.Grid ();
+        stack_grid.orientation = Gtk.Orientation.VERTICAL;
+        stack_grid.row_spacing = 12;
+        stack_grid.add (frame);
+        stack_grid.add (keyboard_test_entry);
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 10;
         content_area.margin_start = 10;
         content_area.attach (image, 0, 0, 1, 1);
         content_area.attach (title_label, 0, 1, 1, 1);
-        content_area.attach (frame, 1, 0, 1, 2);
+        content_area.attach (stack_grid, 1, 0, 1, 2);
 
         var next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
