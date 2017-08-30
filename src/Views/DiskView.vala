@@ -26,6 +26,10 @@ public class Installer.DiskView : AbstractInstallerView {
     private Gtk.ComboBoxText disk_combo;
     private Gtk.Button next_button;
 
+    public DiskView () {
+        Object (cancellable: true);
+    }
+
     construct {
         var load_spinner = new Gtk.Spinner ();
         load_spinner.width_request = 48;
@@ -65,10 +69,6 @@ public class Installer.DiskView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.clicked.connect (() => next_step ());
 
-        var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-        cancel_button.clicked.connect (() => cancel ());
-
-        action_area.add (cancel_button);
         action_area.add (next_button);
         show_all ();
     }

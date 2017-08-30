@@ -50,6 +50,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         check_view.cancel.connect (() => destroy ());
 
         try_install_view.next_step.connect (() => load_checkview());
+        try_install_view.cancel.connect (() => destroy ());
 
         keyboard_layout_view.next_step.connect (() => stack.set_visible_child_name ("try-install-view"));
 

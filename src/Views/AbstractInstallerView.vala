@@ -18,12 +18,16 @@
 
 public abstract class AbstractInstallerView : Gtk.Grid {
     public signal void cancel ();
+    public bool cancellable { get; construct; }
 
     protected Gtk.Grid content_area;
     protected Gtk.ButtonBox action_area;
 
-    public AbstractInstallerView () {
-        Object (row_spacing: 24);
+    public AbstractInstallerView (bool cancellable = false) {
+        Object (
+            cancellable: cancellable,
+            row_spacing: 24
+        );
     }
     
     construct {
@@ -37,6 +41,13 @@ public abstract class AbstractInstallerView : Gtk.Grid {
         action_area.margin_end = 10;
         action_area.spacing = 6;
         action_area.layout_style = Gtk.ButtonBoxStyle.END;
+
+        if (cancellable) {
+            var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
+            cancel_button.clicked.connect (() => cancel ());
+
+            action_area.add (cancel_button); 
+        }
 
         orientation = Gtk.Orientation.VERTICAL;
         add (content_area);
