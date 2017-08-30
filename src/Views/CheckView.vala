@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2016-2017 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.CheckView : Gtk.Stack {
+public class Installer.CheckView : AbstractInstallerView  {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     public static uint64 ONE_GB = 1000 * 1000 * 1000;
     // Minimum 5 GB
@@ -29,7 +29,6 @@ public class Installer.CheckView : Gtk.Stack {
     public static uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
     public signal void next_step ();
-    public signal void cancel ();
 
     bool enough_space = true;
     bool enough_power = true;
@@ -45,14 +44,25 @@ public class Installer.CheckView : Gtk.Stack {
         POWERED
     }
 
-    State current_state = State.NONE;
-
-    public CheckView () {
-        show_all ();
-    }
+    private State current_state = State.NONE;
+    private Gtk.Button ignore_button;
+    private Gtk.Stack stack;
 
     construct {
-        transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        stack = new Gtk.Stack ();
+        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+
+        content_area.add (stack);
+
+        var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
+        cancel_button.clicked.connect (() => cancel ());
+
+        ignore_button = new Gtk.Button.with_label (_("Ignore"));
+        ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        ignore_button.clicked.connect (() => show_next ());
+
+        action_area.add (cancel_button);
+        show_all ();
     }
 
     // If all the requirements are met, skip this view (return true);
@@ -194,73 +204,52 @@ public class Installer.CheckView : Gtk.Stack {
 
         switch (next_state) {
             case State.SPACE:
-                var grid = setup_grid (_("Not Enough Space"), _("There is not enough room on your device to install elementary. We recommend a minimum of %s of storage.".printf (GLib.format_size (MINIMUM_SPACE))), "drive-harddisk");
-                var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-                cancel_button.clicked.connect (() => cancel ());
-                cancel_button.halign = Gtk.Align.END;
-                cancel_button.valign = Gtk.Align.END;
-                cancel_button.margin_end = 6;
-                var out_grid = new Gtk.Grid ();
-                out_grid.expand = true;
-                out_grid.orientation = Gtk.Orientation.VERTICAL;
-                out_grid.add (grid);
-                out_grid.add (cancel_button);
-                add (out_grid);
-                out_grid.show_all ();
-                set_visible_child (out_grid);
+                var grid = setup_grid (
+                    _("Not Enough Space"),
+                    _("There is not enough room on your device to install %s. We recommend a minimum of %s of storage.".printf (Utils.get_pretty_name (), GLib.format_size (MINIMUM_SPACE))),
+                    "drive-harddisk"
+                );
+                grid.show_all ();
+
+                stack.add (grid);
+                stack.set_visible_child (grid);
                 break;
+
             case State.SPECS:
-                var grid = setup_grid (_("Your Device May Be Too Slow"), _("Your device doesn't meet the recommended hardware requirements. This may cause it to run slowly or freeze."), "application-x-firmware");
-                var comparison_grid = get_comparison_grid ();
-                grid.attach (comparison_grid, 1, 2, 1, 1);
-                var ignore_button = new Gtk.Button.with_label (_("Ignore"));
-                ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-                ignore_button.clicked.connect (() => show_next ());
-                var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-                cancel_button.clicked.connect (() => cancel ());
-                var button_grid = new Gtk.Grid ();
-                button_grid.column_homogeneous = true;
-                button_grid.column_spacing = 6;
-                button_grid.halign = Gtk.Align.END;
-                button_grid.valign = Gtk.Align.END;
-                button_grid.margin_end = 6;
-                button_grid.add (cancel_button);
-                button_grid.add (ignore_button);
-                var out_grid = new Gtk.Grid ();
-                out_grid.expand = true;
-                out_grid.orientation = Gtk.Orientation.VERTICAL;
-                out_grid.add (grid);
-                out_grid.add (button_grid);
-                add (out_grid);
-                out_grid.show_all ();
-                set_visible_child (out_grid);
+                var grid = setup_grid (
+                    _("Your Device May Be Too Slow"),
+                    _("Your device doesn't meet the recommended hardware requirements. This may cause it to run slowly or freeze."),
+                    "application-x-firmware"
+                );
+                grid.attach (get_comparison_grid (), 1, 2, 1, 1);
+                grid.show_all ();
+
+                if (ignore_button.parent == null) {
+                    action_area.add (ignore_button);
+                }
+
+                stack.add (grid);
+                stack.set_visible_child (grid);
                 break;
+
             case State.POWERED:
-                var grid = setup_grid (_("Connect to a Power Source"), _("Your device is running on battery power. It's recommended to be plugged in while installing."), "battery-ac-adapter");
-                var ignore_button = new Gtk.Button.with_label (_("Ignore"));
-                ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-                ignore_button.clicked.connect (() => show_next ());
-                var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-                cancel_button.clicked.connect (() => cancel ());
-                var button_grid = new Gtk.Grid ();
-                button_grid.column_homogeneous = true;
-                button_grid.column_spacing = 6;
-                button_grid.halign = Gtk.Align.END;
-                button_grid.valign = Gtk.Align.END;
-                button_grid.margin_end = 6;
-                button_grid.add (cancel_button);
-                button_grid.add (ignore_button);
-                var out_grid = new Gtk.Grid ();
-                out_grid.expand = true;
-                out_grid.orientation = Gtk.Orientation.VERTICAL;
-                out_grid.add (grid);
-                out_grid.add (button_grid);
-                add (out_grid);
-                out_grid.show_all ();
-                set_visible_child (out_grid);
+                var grid = setup_grid (
+                    _("Connect to a Power Source"),
+                    _("Your device is running on battery power. It's recommended to be plugged in while installing."),
+                    "battery-ac-adapter"
+                );
+                grid.show_all ();
+
+                if (ignore_button.parent == null) {
+                    action_area.add (ignore_button);
+                }
+
+                stack.add (grid);
+                stack.set_visible_child (grid);
                 break;
         }
 
+        show_all ();
         current_state = next_state;
     }
     
@@ -351,8 +340,6 @@ public class Installer.CheckView : Gtk.Stack {
         }
     }
 }
-
-
 
 [DBus (name = "org.freedesktop.UPower")]
 public interface UPower : GLib.Object {
