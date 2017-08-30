@@ -84,6 +84,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         content_area.attach (stack_grid, 1, 0, 1, 2);
 
         var next_button = new Gtk.Button.with_label (_("Next"));
+        next_button.sensitive = false;
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (next_button);
@@ -107,6 +108,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         next_button.clicked.connect (() => next_step ());
 
         back_button.clicked.connect (() => {
+            next_button.sensitive = false;
             stack.visible_child = input_language_scrolled;
         });
 
@@ -114,6 +116,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             var layout = ((LayoutRow) row).layout;
             var variants = layout.variants;
             if (variants.is_empty) {
+                next_button.sensitive = true;
                 return;
             }
 
@@ -131,6 +134,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
             stack.visible_child = keyboard_layout_grid;
         });
 
+        keyboard_layout_list_box.row_selected.connect ((row) => {
+            next_button.sensitive = true;
+        });
+        
         keyboard_test_entry.icon_release.connect (() => {
             var popover = new Gtk.Popover (keyboard_test_entry);
             var layout = new LayoutWidget ();
@@ -209,7 +216,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
         public Layout layout;
         public LayoutRow (Layout layout) {
             this.layout = layout;
-            var label = new Gtk.Label (layout.description);
+
+            string layout_description = layout.description;
+            if (!layout.variants.is_empty) {
+                layout_description = _("%s…").printf (layout_description);
+            };
+
+            var label = new Gtk.Label (layout_description);
             label.margin = 6;
             label.xalign = 0;
             label.get_style_context ().add_class ("h3");
