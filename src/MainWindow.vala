@@ -35,6 +35,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         Object (
             deletable: false,
             height_request: 700,
+            icon_name: "system-os-installer",
             resizable: false,
             title: _("Install %s").printf (Utils.get_pretty_name ()),
             width_request: 800
