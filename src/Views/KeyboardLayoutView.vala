@@ -137,6 +137,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
         keyboard_layout_list_box.row_selected.connect ((row) => {
             next_button.sensitive = true;
         });
+        
+        keyboard_test_entry.icon_release.connect (() => {
+            var popover = new Gtk.Popover (keyboard_test_entry);
+            var layout = new LayoutWidget ();
+            popover.add (layout);
+            popover.show_all ();
+        });
 
         load_layouts ();
     }
