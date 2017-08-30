@@ -18,22 +18,50 @@
 
 public class LayoutWidget : Gtk.Grid {
     private Gkbd.KeyboardDrawing gkbd_drawing;
+
+    static Gkbd.KeyboardDrawingGroupLevel top_left = Gkbd.KeyboardDrawingGroupLevel ();
+    static Gkbd.KeyboardDrawingGroupLevel top_right = Gkbd.KeyboardDrawingGroupLevel ();
+    static Gkbd.KeyboardDrawingGroupLevel bottom_left = Gkbd.KeyboardDrawingGroupLevel ();
+    static Gkbd.KeyboardDrawingGroupLevel bottom_right = Gkbd.KeyboardDrawingGroupLevel ();
+    static (unowned Gkbd.KeyboardDrawingGroupLevel)[] group = {top_left, top_right, bottom_left, bottom_right};
+
+    static construct {
+        top_left.group = 0;
+        top_left.level = 1;
+
+        top_right.group = 0;
+        top_right.level = 3;
+
+        bottom_left.group = 0;
+        bottom_left.level = 0;
+
+        bottom_right.group = 0;
+        bottom_right.level = 2;
+    }
+
     construct {
         gkbd_drawing = new Gkbd.KeyboardDrawing ();
+        gkbd_drawing.parent = this;
         width_request = 600;
         height_request = 230;
+        gkbd_drawing.set_groups_levels (group);
         set_layout ("gb\tcolemak");
+        gkbd_drawing.show_all ();
     }
 
     public void set_layout (string layout_id) {
-        
+        gkbd_drawing.set_layout (layout_id);
     }
 
     public override bool draw (Cairo.Context cr) {
-        var pango_context = Gdk.pango_context_get ();
-        var layout = new Pango.Layout (pango_context);
         var scale_factor = get_scale_factor ();
-        gkbd_drawing.render (cr, layout, 0, 0, get_allocated_width (), get_allocated_height (), scale_factor, scale_factor);
+        gkbd_drawing.render (cr,
+        Pango.cairo_create_layout (cr), 0, 0,
+            get_allocated_width (),
+            get_allocated_height (),
+            scale_factor,
+            scale_factor
+        );
         return true;
     }
 }

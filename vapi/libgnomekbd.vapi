@@ -67,7 +67,7 @@ namespace Gkbd {
 		public unowned string get_types ();
 		public void print (Gtk.Window parent_window, string description);
 		public bool render (Cairo.Context cr, Pango.Layout layout, double x, double y, double width, double height, double dpi_x, double dpi_y);
-		public void set_groups_levels (Gkbd.KeyboardDrawingGroupLevel groupLevels);
+		public void set_groups_levels ([CCode (array_length = false)] (unowned Gkbd.KeyboardDrawingGroupLevel)[] groupLevels);
 		public void set_layout (string id);
 		public void set_track_config (bool enable);
 		public void set_track_modifiers (bool enable);
@@ -158,21 +158,21 @@ namespace Gkbd {
 		public void term ();
 		public string to_string ();
 	}
-	[CCode (cheader_filename = "Gkbd-3.0.h", has_type_id = false)]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-keyboard-drawing.h", has_type_id = false)]
 	public struct KeyboardDrawingDoodad {
 	}
-	[CCode (cheader_filename = "Gkbd-3.0.h", has_type_id = false)]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-keyboard-drawing.h", has_type_id = false)]
 	public struct KeyboardDrawingGroupLevel {
 		public int group;
 		public int level;
 	}
-	[CCode (cheader_filename = "Gkbd-3.0.h", has_type_id = false)]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-keyboard-drawing.h", has_type_id = false)]
 	public struct KeyboardDrawingItem {
 	}
-	[CCode (cheader_filename = "Gkbd-3.0.h", has_type_id = false)]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-keyboard-drawing.h", has_type_id = false)]
 	public struct KeyboardDrawingKey {
 	}
-	[CCode (cheader_filename = "Gkbd-3.0.h", has_type_id = false)]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-keyboard-drawing.h", has_type_id = false)]
 	public struct KeyboardDrawingRenderContext {
 		public weak Cairo.Context cr;
 		public int angle;
@@ -182,7 +182,7 @@ namespace Gkbd {
 		public int scale_denominator;
 		public Gdk.RGBA dark_color;
 	}
-	[CCode (cheader_filename = "Gkbd-3.0.h", cprefix = "GKBD_KEYBOARD_DRAWING_POS_", has_type_id = false)]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-keyboard-drawing.h", cprefix = "GKBD_KEYBOARD_DRAWING_POS_", has_type_id = false)]
 	public enum KeyboardDrawingGroupLevelPosition {
 		TOPLEFT,
 		TOPRIGHT,
@@ -192,29 +192,23 @@ namespace Gkbd {
 		FIRST,
 		LAST
 	}
-	[CCode (cheader_filename = "Gkbd-3.0.h", cprefix = "GKBD_KEYBOARD_DRAWING_ITEM_TYPE_", has_type_id = false)]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-keyboard-drawing.h", cprefix = "GKBD_KEYBOARD_DRAWING_ITEM_TYPE_", has_type_id = false)]
 	public enum KeyboardDrawingItemType {
 		INVALID,
 		KEY,
 		KEY_EXTRA,
 		DOODAD
 	}
-	[CCode (cheader_filename = "Gkbd-3.0.h", cname = "GKBD_DESKTOP_SCHEMA")]
-	public const string DESKTOP_SCHEMA;
-	[CCode (cheader_filename = "Gkbd-3.0.h", cname = "GKBD_KEYBOARD_DRAWING_H")]
-	public const int KEYBOARD_DRAWING_H;
-	[CCode (cheader_filename = "Gkbd-3.0.h", cname = "GKBD_KEYBOARD_SCHEMA")]
-	public const string KEYBOARD_SCHEMA;
-	[CCode (cheader_filename = "Gkbd-3.0.h")]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-util.h")]
 	public static void install_glib_log_appender ();
-	[CCode (cheader_filename = "Gkbd-3.0.h")]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-util.h")]
 	public static Gdk.Rectangle? preview_load_position ();
-	[CCode (cheader_filename = "Gkbd-3.0.h")]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-util.h")]
 	public static void preview_save_position (Gdk.Rectangle rect);
-	[CCode (array_length = false, array_null_terminated = true, cheader_filename = "Gkbd-3.0.h")]
+	[CCode (array_length = false, array_null_terminated = true, cheader_filename = "libgnomekbd/gkbd-util.h")]
 	public static string[] strv_append (string arr, string element);
-	[CCode (cheader_filename = "Gkbd-3.0.h")]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-util.h")]
 	public static void strv_behead (string arr);
-	[CCode (cheader_filename = "Gkbd-3.0.h")]
+	[CCode (cheader_filename = "libgnomekbd/gkbd-util.h")]
 	public static bool strv_remove (string arr, string element);
 }
