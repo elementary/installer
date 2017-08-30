@@ -19,18 +19,14 @@
 public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
 
-    public TryInstallView () {
-        Object (cancellable: true);
-    }
-
     construct {
         var title_label = new Gtk.Label (_("Install %s").printf (Utils.get_pretty_name ()));
         title_label.get_style_context ().add_class ("h1");
-        title_label.valign = Gtk.Align.START;
 
         var description_label = new Gtk.Label (_("You can install %s on this device now, or cancel the installation to try it without installing.").printf (Utils.get_pretty_name ()));
+        description_label.get_style_context ().add_class ("h2");
         description_label.hexpand = true;
-        description_label.margin_bottom = 12;
+        description_label.margin_bottom = 24;
         description_label.wrap = true;
         description_label.max_width_chars = 60;
         description_label.halign = Gtk.Align.CENTER;
@@ -41,34 +37,27 @@ public class TryInstallView : AbstractInstallerView {
         nochanges_label.set_justify (Gtk.Justification.CENTER);
 
         var nochanges_image = new Gtk.Image.from_icon_name ("computer", Gtk.IconSize.DIALOG);
-        nochanges_image.valign = Gtk.Align.START;
 
         var nochanges_emblem = new Gtk.Image.from_icon_name ("emblem-default", Gtk.IconSize.LARGE_TOOLBAR);
         nochanges_emblem.valign = Gtk.Align.END;
         nochanges_emblem.halign = Gtk.Align.END;
 
         var nochanges_overlay = new Gtk.Overlay ();
-        nochanges_overlay.add_overlay (nochanges_image);
+        nochanges_overlay.add (nochanges_image);
         nochanges_overlay.add_overlay (nochanges_emblem);
         nochanges_overlay.halign = Gtk.Align.CENTER;
-        nochanges_overlay.height_request = 51;
-        nochanges_overlay.width_request = 60;
 
         var nosaving_label = new Gtk.Label (_("Any changes you make before installing will not be saved."));
-        nosaving_label.valign = Gtk.Align.START;
         nosaving_label.wrap = true;
         nosaving_label.set_justify (Gtk.Justification.CENTER);
 
         var nosaving_image = new Gtk.Image.from_icon_name ("document-revert", Gtk.IconSize.DIALOG);
-        nosaving_image.valign = Gtk.Align.START;
 
         var return_label = new Gtk.Label (_("If you cancel, you can always return to the installer by selecting the Install icon."));
-        return_label.valign = Gtk.Align.START;
         return_label.wrap = true;
         return_label.set_justify (Gtk.Justification.CENTER);
 
         var return_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
-        return_image.valign = Gtk.Align.END;
 
         content_area.column_homogeneous = true;
         content_area.vexpand = true;
