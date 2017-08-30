@@ -163,7 +163,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
                     layout.description = dgettext ("xkeyboard-config", description_node->children->content);
                     var variants = new Gee.HashMap<string, string> ();
                     layout.variants = variants;
-
                     if (variant_node != null) {
                         for (Xml.Node* variant_iter = variant_node->children; variant_iter != null; variant_iter = variant_iter->next) {
                             if (variant_iter->name == "variant") {
