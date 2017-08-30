@@ -1,8 +1,8 @@
 [Desktop Entry]
 _Name=Install elementary OS
 _Comment=Install the system
-Exec=pantheon-installer
-Icon=ubiquity
+Exec=io.elementary.installer
+Icon=system-os-installer
 Terminal=false
 Type=Application
 StartupNotify=true
