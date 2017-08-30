@@ -36,6 +36,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             deletable: false,
             height_request: 700,
             resizable: false,
+            title: _("Install %s").printf (Utils.get_pretty_name ()),
             width_request: 800
         );
     }
@@ -58,7 +59,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (success_view, SUCCESS_VIEW);
         stack.add_named (error_view, ERROR_VIEW);
 
-        title = _("Install %s").printf (Utils.get_pretty_name ());
         get_content_area ().add (stack);
 
         check_view.next_step.connect (() => load_diskview ());
