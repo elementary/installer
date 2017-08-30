@@ -42,7 +42,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (try_install_view, "try-install-view");
         stack.add_named (success_view, "success-view");
 
-
         title = _("Install %s").printf (Utils.get_pretty_name ());
         set_default_geometry (800, 600);
         get_content_area ().add (stack);
