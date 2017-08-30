@@ -236,7 +236,7 @@ public class Installer.CheckView : Gtk.Stack {
                 set_visible_child (out_grid);
                 break;
             case State.POWERED:
-                var grid = setup_grid (_("Connect to a Power Source"), _("Your device is running on battery power. It's recommended to be plugged in while installing elementary OS."), "battery-ac-adapter");
+                var grid = setup_grid (_("Connect to a Power Source"), _("Your device is running on battery power. It's recommended to be plugged in while installing."), "battery-ac-adapter");
                 var ignore_button = new Gtk.Button.with_label (_("Ignore"));
                 ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
                 ignore_button.clicked.connect (() => show_next ());
@@ -265,6 +265,22 @@ public class Installer.CheckView : Gtk.Stack {
     }
     
     private Gtk.Grid setup_grid (string title, string description, string icon_name) {
+        var title_label = new Gtk.Label (title);
+        title_label.get_style_context ().add_class ("h2");
+        title_label.wrap = true;
+        title_label.max_width_chars = 60;
+        title_label.xalign = 0;
+        title_label.valign = Gtk.Align.END;
+
+        var description_label = new Gtk.Label (description);
+        description_label.wrap = true;
+        description_label.max_width_chars = 60;
+        description_label.xalign = 0;
+        description_label.valign = Gtk.Align.START;
+
+        var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
+        image.valign = Gtk.Align.START;
+
         var grid = new Gtk.Grid ();
         grid.expand = true;
         grid.vexpand = true;
@@ -273,19 +289,10 @@ public class Installer.CheckView : Gtk.Stack {
         grid.margin = 48;
         grid.halign = Gtk.Align.CENTER;
         grid.valign = Gtk.Align.CENTER;
-        var title_label = new Gtk.Label (title);
-        title_label.get_style_context ().add_class ("h2");
-        title_label.xalign = 0;
-        title_label.valign = Gtk.Align.END;
-        var description_label = new Gtk.Label (description);
-        description_label.wrap = true;
-        description_label.xalign = 0;
-        description_label.valign = Gtk.Align.START;
-        var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.START;
         grid.attach (image, 0, 0, 1, 2);
         grid.attach (title_label, 1, 0, 1, 1);
         grid.attach (description_label, 1, 1, 1, 1);
+
         return grid;
     }
 
