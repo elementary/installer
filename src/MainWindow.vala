@@ -93,4 +93,6 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.set_visible_child_name (PROGRESS_VIEW);
         });
     }
+
+    public override void close () {}
 }
