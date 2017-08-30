@@ -20,7 +20,10 @@ public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
 
     public TryInstallView () {
-        Object (cancellable: true);
+        Object (
+            cancellable: true,
+            previous_pane: Installer.MainWindow.KEYBOARD_LAYOUT_VIEW
+        );
     }
 
     construct {

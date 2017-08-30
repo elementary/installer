@@ -58,6 +58,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (success_view, SUCCESS_VIEW);
         stack.add_named (error_view, ERROR_VIEW);
 
+        try_install_view.stack = stack;
+
         title = _("Install %s").printf (Utils.get_pretty_name ());
         get_content_area ().add (stack);
 
