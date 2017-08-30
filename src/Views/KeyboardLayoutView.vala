@@ -63,9 +63,14 @@ public class KeyboardLayoutView : AbstractInstallerView {
         var keyboard_map_button = new Gtk.Button.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
         keyboard_map_button.tooltip_text = (_("Show keyboard layout"));
 
+        var keyboard_test_entry = new Gtk.Entry ();
+        keyboard_test_entry.hexpand = true;
+        keyboard_test_entry.set_placeholder_text (_("Type to test your layout"));
+
         var action_bar = new Gtk.ActionBar ();
         action_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
         action_bar.add (keyboard_map_button);
+        action_bar.add (keyboard_test_entry);
 
         var selection_grid = new Gtk.Grid ();
         selection_grid.orientation = Gtk.Orientation.VERTICAL;
