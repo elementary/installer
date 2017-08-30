@@ -38,6 +38,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         var progress_view = new ProgressView ();
         var try_install_view = new TryInstallView ();
         var success_view = new SuccessView ();
+        var error_view = new ErrorView ();
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
@@ -46,6 +47,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (progress_view, "progress-view");
         stack.add_named (try_install_view, "try-install-view");
         stack.add_named (success_view, "success-view");
+        stack.add_named (error_view, "error-view");
 
         title = _("Install %s").printf (Utils.get_pretty_name ());
         get_content_area ().add (stack);
@@ -72,7 +74,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.set_visible_child_name ("check");
         }
     }
-    
+
     private void load_diskview () {
         var disk_view = new DiskView ();
         disk_view.cancel.connect (() => destroy ());
