@@ -17,6 +17,9 @@
  */
 
 public class ProgressView : AbstractInstallerView {
+    public signal void on_success ();
+    public signal void on_error ();
+
     construct {
         var logo = new Gtk.Image ();
         logo.icon_name = "distributor-logo-symbolic";
@@ -56,5 +59,17 @@ public class ProgressView : AbstractInstallerView {
                 logo_stack.visible_child = logo;
             }
         });
+
+        Timeout.add_seconds (20, () => {
+            if (terminal_button.active) {
+                on_error ();
+            } else {
+                on_success ();
+            }
+
+            return GLib.Source.REMOVE;
+        });
+
+        show_all ();
     }
 }

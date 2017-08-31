@@ -68,9 +68,11 @@ public class ErrorView : AbstractInstallerView {
             try {
                 system_interface.reboot (false);
             } catch (IOError e) {
-                warning ("%s", e.message);
+                critical (e.message);
             }
         });
+
+        show_all ();
     }
 }
 
