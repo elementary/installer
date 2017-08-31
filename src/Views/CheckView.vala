@@ -48,20 +48,20 @@ public class Installer.CheckView : AbstractInstallerView  {
     private Gtk.Button ignore_button;
     private Gtk.Stack stack;
 
+    public CheckView () {
+        Object (cancellable: true);
+    }
+
     construct {
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
 
         content_area.add (stack);
 
-        var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-        cancel_button.clicked.connect (() => cancel ());
-
         ignore_button = new Gtk.Button.with_label (_("Ignore"));
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (() => show_next ());
 
-        action_area.add (cancel_button);
         show_all ();
     }
 
