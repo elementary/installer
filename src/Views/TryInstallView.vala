@@ -103,5 +103,7 @@ public class TryInstallView : AbstractInstallerView {
                 warning ("%s", e.message);
             }
         });
+
+        show_all ();
     }
 }

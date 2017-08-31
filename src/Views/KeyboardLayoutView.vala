@@ -154,6 +154,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         load_layouts ();
+        show_all ();
     }
 
     public void set_language (string lang) {
