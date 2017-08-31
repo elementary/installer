@@ -19,13 +19,16 @@
 public abstract class AbstractInstallerView : Gtk.Grid {
     public signal void cancel ();
     public bool cancellable { get; construct; }
+    public string previous_pane{ get; construct; }
+    public Gtk.Stack stack { get; set; }
 
     protected Gtk.Grid content_area;
     protected Gtk.ButtonBox action_area;
 
-    public AbstractInstallerView (bool cancellable = false) {
+    public AbstractInstallerView (bool cancellable = false, string previous_pane = "") {
         Object (
             cancellable: cancellable,
+            previous_pane: previous_pane,
             row_spacing: 24
         );
     }
@@ -42,6 +45,13 @@ public abstract class AbstractInstallerView : Gtk.Grid {
         action_area.margin_start = 10;
         action_area.spacing = 6;
         action_area.layout_style = Gtk.ButtonBoxStyle.END;
+
+        if (previous_pane != "") {
+            var back_button = new Gtk.Button.with_label (_("Back"));
+            back_button.clicked.connect (() => stack.visible_child_name = previous_pane);
+
+            action_area.add (back_button);
+        }
 
         if (cancellable) {
             var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));

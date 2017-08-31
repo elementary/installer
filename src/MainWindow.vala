@@ -60,6 +60,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add_named (success_view, SUCCESS_VIEW);
         stack.add_named (error_view, ERROR_VIEW);
 
+        try_install_view.stack = stack;
+
         get_content_area ().add (stack);
 
         check_view.next_step.connect (() => load_diskview ());
