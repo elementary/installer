@@ -21,8 +21,6 @@
 public class Installer.MainWindow : Gtk.Dialog {
     private Gtk.Stack stack;
 
-    public const string TRY_INSTALL_VIEW = "try-install-view";
-
     private LanguageView language_view;
     private KeyboardLayoutView keyboard_layout_view;
     private TryInstallView try_install_view;
@@ -78,7 +76,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         try_install_view = new TryInstallView ();
-        stack.add_named (try_install_view, TRY_INSTALL_VIEW);
+        stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
         try_install_view.next_step.connect (() => load_checkview ());
@@ -106,6 +104,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         disk_view = new DiskView ();
+        disk_view.previous_view = try_install_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
         disk_view.load.begin ();
