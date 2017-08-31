@@ -277,7 +277,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
         }
 
-        return null;
+        return "";
     }
 
     public class LangRow : Gtk.ListBoxRow {
