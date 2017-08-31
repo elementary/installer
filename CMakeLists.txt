@@ -60,6 +60,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Utils.vala
     src/DiskView/DiskGrid.vala
     src/Objects/org.freedesktop.udisks2.vala
+    src/Objects/Configuration.vala
     src/Objects/Disk.vala
     src/Objects/Partition.vala
     src/Objects/PartitionTable.vala
