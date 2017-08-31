@@ -22,14 +22,10 @@ file (GLOB languages_list
     "po/*.po"
 )
 
-set (LANG_LIST "")
+set (LANG_LIST "en_US")
 foreach (lang_file ${languages_list})
     get_filename_component(LANG ${lang_file} NAME_WE)
-    if (LANG_LIST STREQUAL "")
-        set (LANG_LIST ${LANG})
-    else ()
-        set (LANG_LIST "${LANG_LIST};${LANG}")
-    endif ()
+    set (LANG_LIST "${LANG_LIST};${LANG}")
 endforeach()
 
 configure_file (${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
