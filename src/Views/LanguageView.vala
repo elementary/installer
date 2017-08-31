@@ -88,8 +88,8 @@ public class Installer.LanguageView : AbstractInstallerView {
                     var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
                     separator.show_all ();
                     separator.margin = 3;
-                    separator.margin_end = 6
-                    separator.margin_start = 6
+                    separator.margin_end = 6;
+                    separator.margin_start = 6;
                     row.set_header (separator);
                 }
             }
