@@ -24,6 +24,7 @@ public class ProgressView : AbstractInstallerView {
         var logo = new Gtk.Image ();
         logo.icon_name = "distributor-logo";
         logo.pixel_size = 128;
+        logo.get_style_context ().add_class ("logo");
 
         var terminal_output = new Gtk.Frame (null);
         terminal_output.expand = true;
@@ -51,6 +52,8 @@ public class ProgressView : AbstractInstallerView {
         content_area.attach (progressbar_label, 0, 1, 1, 1);
         content_area.attach (terminal_button, 1, 1, 1, 1);
         content_area.attach (progressbar, 0, 2, 2, 1);
+
+        get_style_context ().add_class ("progress-view");
 
         terminal_button.toggled.connect (() => {
             if (terminal_button.active) {
