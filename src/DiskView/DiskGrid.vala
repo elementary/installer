@@ -27,17 +27,21 @@ public class Installer.DiskButton : Gtk.ToggleButton {
     construct {
         margin = 12;
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        var disk_image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
+
+        var name_label = new Gtk.Label (disk.get_label_name ());
+        name_label.hexpand = true;
+
+        var size_label = new Gtk.Label ("<small>%s</small>".printf (GLib.format_size (disk.get_size ())));
+        size_label.use_markup = true;
+        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
         var grid = new Gtk.Grid ();
         grid.margin = 12;
         grid.column_spacing = 12;
         grid.row_spacing = 6;
         grid.orientation = Gtk.Orientation.VERTICAL;
-        var disk_image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
-        var name_label = new Gtk.Label (disk.get_label_name ());
-        name_label.xalign = 0.5f;
-        name_label.hexpand = true;
-        var size_label = new Gtk.Label (GLib.format_size (disk.get_size ()));
-        size_label.xalign = 0.5f;
         grid.attach (disk_image, 0, 0, 1, 1);
         grid.attach (name_label, 0, 1, 1, 1);
         grid.attach (size_label, 0, 2, 1, 1);
