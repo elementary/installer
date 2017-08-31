@@ -33,10 +33,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
         var input_language_scrolled = new Gtk.ScrolledWindow (null, null);
         input_language_scrolled.add (input_language_list_box);
 
-        var back_button = new Gtk.Button.with_label (_("Input Language"));
-        back_button.halign = Gtk.Align.START;
-        back_button.margin = 6;
-        back_button.get_style_context ().add_class ("back-button");
+        var layout_back_button = new Gtk.Button.with_label (_("Input Language"));
+        layout_back_button.halign = Gtk.Align.START;
+        layout_back_button.margin = 6;
+        layout_back_button.get_style_context ().add_class ("back-button");
 
         var keyboard_layout_list_title = new Gtk.Label (null);
         keyboard_layout_list_title.ellipsize = Pango.EllipsizeMode.END;
@@ -51,12 +51,12 @@ public class KeyboardLayoutView : AbstractInstallerView {
         var keyboard_layout_spacer = new Gtk.Grid ();
 
         var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-        size_group.add_widget (back_button);
+        size_group.add_widget (layout_back_button);
         size_group.add_widget (keyboard_layout_spacer);
 
         var keyboard_layout_grid = new Gtk.Grid ();
         keyboard_layout_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        keyboard_layout_grid.attach (back_button, 0, 0, 1, 1);
+        keyboard_layout_grid.attach (layout_back_button, 0, 0, 1, 1);
         keyboard_layout_grid.attach (keyboard_layout_list_title, 1, 0, 1, 1);
         keyboard_layout_grid.attach (keyboard_layout_spacer, 2, 0, 1, 1);
         keyboard_layout_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 3, 1);
@@ -91,10 +91,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
         content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (stack_grid, 1, 0, 1, 2);
 
-        var next_button = new Gtk.Button.with_label (_("Next"));
+        var back_button = new Gtk.Button.with_label (_("Back"));
+
+        var next_button = new Gtk.Button.with_label (_("Select"));
         next_button.sensitive = false;
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
+        action_area.add (back_button);
         action_area.add (next_button);
 
         input_language_list_box.set_sort_func ((row1, row2) => {
@@ -113,9 +116,11 @@ public class KeyboardLayoutView : AbstractInstallerView {
             return ((VariantRow) row1).description.collate (((VariantRow) row2).description);
         });
 
+        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
+
         next_button.clicked.connect (() => next_step ());
 
-        back_button.clicked.connect (() => {
+        layout_back_button.clicked.connect (() => {
             next_button.sensitive = false;
             stack.visible_child = input_language_scrolled;
         });

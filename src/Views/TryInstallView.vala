@@ -79,6 +79,8 @@ public class TryInstallView : AbstractInstallerView {
         content_area.attach (return_image, 2, 2, 1, 1);
         content_area.attach (return_label, 2, 3, 1, 1);
 
+        var back_button = new Gtk.Button.with_label (_("Back"));
+
         var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
 
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
@@ -89,10 +91,13 @@ public class TryInstallView : AbstractInstallerView {
         shutdown_button.get_style_context ().add_class ("circular");
 
         action_area.add (shutdown_button);
+        action_area.add (back_button);
         action_area.add (demo_button);
         action_area.add (next_button);
         action_area.set_child_secondary (shutdown_button, true);
         action_area.set_child_non_homogeneous (shutdown_button, true);
+
+        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
         next_button.clicked.connect (() => next_step ());
 
