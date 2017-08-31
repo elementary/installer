@@ -33,11 +33,11 @@ public class Installer.DiskView : AbstractInstallerView {
         disk_grid = new Gtk.Grid ();
         disk_grid.column_spacing = 12;
         disk_grid.halign = Gtk.Align.CENTER;
-        disk_grid.orientation = Gtk.Orientation.VERTICAL;
+        disk_grid.orientation = Gtk.Orientation.HORIZONTAL;
 
         var disk_scrolled = new Gtk.ScrolledWindow (null, null);
-        disk_scrolled.expand = true;
-        disk_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        disk_scrolled.hexpand = true;
+        disk_scrolled.vscrollbar_policy = Gtk.PolicyType.NEVER;
 #if GTK_3_22
         disk_scrolled.propagate_natural_height = true;
 #endif
@@ -77,13 +77,17 @@ public class Installer.DiskView : AbstractInstallerView {
         load_stack.add_named (load_grid, "loading");
         load_stack.add_named (disk_scrolled, "disk");
 
-        content_area.halign = Gtk.Align.CENTER;
+        var title_grid = new Gtk.Grid ();
+        title_grid.column_spacing = 12;
+        title_grid.row_spacing = 6;
+        title_grid.halign = Gtk.Align.CENTER;
+        title_grid.attach (install_image, 0, 0, 1, 2);
+        title_grid.attach (install_label, 1, 0, 1, 1);
+        title_grid.attach (install_desc_label, 1, 1, 1, 1);
+
         content_area.valign = Gtk.Align.CENTER;
-        content_area.row_spacing = 6;
-        content_area.attach (install_image, 0, 0, 1, 2);
-        content_area.attach (install_label, 1, 0, 1, 1);
-        content_area.attach (install_desc_label, 1, 1, 1, 1);
-        content_area.attach (load_stack, 0, 2, 2, 1);
+        content_area.attach (title_grid, 0, 0, 1, 1);
+        content_area.attach (load_stack, 0, 1, 1, 1);
 
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
