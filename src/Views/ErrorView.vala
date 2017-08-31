@@ -17,7 +17,15 @@
  */
 
 public class ErrorView : AbstractInstallerView {
+    private Utils.SystemInterface system_interface;
+
     construct {
+        try {
+            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+        } catch (IOError e) {
+                warning ("%s", e.message);
+        }
+
         var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
@@ -55,6 +63,14 @@ public class ErrorView : AbstractInstallerView {
         action_area.add (restart_button);
         action_area.add (session_button);
         action_area.add (install_button);
+
+        restart_button.clicked.connect (() => {
+            try {
+                system_interface.reboot (false);
+            } catch (IOError e) {
+                warning ("%s", e.message);
+            }
+        });
     }
 }
 

@@ -173,4 +173,10 @@ namespace Utils {
         }
         return os_pretty_name;
     }
+
+    [DBus (name = "org.freedesktop.login1.Manager")]
+    interface SystemInterface : Object {
+        public abstract void reboot (bool interactive) throws IOError;
+        public abstract void power_off (bool interactive) throws IOError;
+    }
 }
