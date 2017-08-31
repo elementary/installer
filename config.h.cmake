@@ -8,5 +8,6 @@
 #cmakedefine VERSION "@VERSION@"
 #cmakedefine VERSION_INFO "@VERSION_INFO@"
 #cmakedefine LANG_LIST "@LANG_LIST@"
+#cmakedefine PREFERRED_LANG_LIST "@PREFERRED_LANG_LIST@"
 
 #endif // CONFIG_H

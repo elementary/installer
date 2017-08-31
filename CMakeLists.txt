@@ -22,11 +22,14 @@ file (GLOB languages_list
     "po/*.po"
 )
 
-set (LANG_LIST "en_US")
+set (LANG_LIST "en;en_US")
 foreach (lang_file ${languages_list})
     get_filename_component(LANG ${lang_file} NAME_WE)
     set (LANG_LIST "${LANG_LIST};${LANG}")
 endforeach()
+
+# This list is prioritized, do not sort it alphabetically
+set (PREFERRED_LANG_LIST "en;zh;es;fr;pt;ru;de")
 
 configure_file (${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
 add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")

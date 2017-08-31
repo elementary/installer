@@ -23,6 +23,7 @@ public class Installer.LanguageView : AbstractInstallerView {
     Gtk.ListBox list_box;
     Gtk.Button next_button;
     int select_number = 0;
+    Gee.LinkedList<string> preferred_langs;
 
     public signal void next_step ();
 
@@ -31,6 +32,11 @@ public class Installer.LanguageView : AbstractInstallerView {
     }
 
     construct {
+        preferred_langs = new Gee.LinkedList<string> ();
+        foreach (var lang in Build.PREFERRED_LANG_LIST.split (";")) {
+            preferred_langs.add (lang);
+        }
+
         var image = new Gtk.Image.from_icon_name ("preferences-desktop-locale", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
@@ -62,7 +68,31 @@ public class Installer.LanguageView : AbstractInstallerView {
         list_box.activate_on_single_click = false;
         list_box.expand = true;
         list_box.set_sort_func ((row1, row2) => {
-            return ((LangRow) row1).lang.collate (((LangRow) row2).lang);
+            var langrow1 = (LangRow) row1;
+            var langrow2 = (LangRow) row2;
+            if (langrow1.preferred_row && langrow2.preferred_row == false) {
+                return -1;
+            } else if (langrow2.preferred_row && langrow1.preferred_row == false) {
+                return 1;
+            } else if (langrow1.preferred_row && langrow2.preferred_row) {
+                return preferred_langs.index_of (langrow1.lang) - preferred_langs.index_of (langrow2.lang);
+            }
+
+            return langrow1.lang.collate (langrow2.lang);
+        });
+
+        list_box.set_header_func ((row, before) => {
+            row.set_header (null);
+            if (!((LangRow)row).preferred_row) {
+                if (before != null && ((LangRow)before).preferred_row) {
+                    var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+                    separator.show_all ();
+                    separator.margin = 3;
+                    separator.margin_end = 6;
+                    separator.margin_start = 6;
+                    row.set_header (separator);
+                }
+            }
         });
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
@@ -70,6 +100,12 @@ public class Installer.LanguageView : AbstractInstallerView {
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
 
         foreach (var lang_entry in load_languagelist ().entries) {
+            if (lang_entry.key in preferred_langs) {
+                var pref_langrow = new LangRow (lang_entry.key, lang_entry.value);
+                pref_langrow.preferred_row = true;
+                list_box.add (pref_langrow);
+            }
+
             var langrow = new LangRow (lang_entry.key, lang_entry.value);
             list_box.add (langrow);
         }
@@ -87,13 +123,16 @@ public class Installer.LanguageView : AbstractInstallerView {
         list_box.row_activated.connect ((row) => next_button.clicked ());
 
         next_button.clicked.connect (() => {
-            // We need to disconnect the signal otherwise it's called several time when destroying the window…
-            list_box.row_selected.disconnect (row_selected);
             unowned Gtk.ListBoxRow row = list_box.get_selected_row ();
             unowned string lang = ((LangRow) row).lang;
             Environment.set_variable ("LANGUAGE", lang, true);
             Configuration.get_default ().lang = lang;
             next_step ();
+        });
+
+        destroy.connect (() => {
+            // We need to disconnect the signal otherwise it's called several time when destroying the window…
+            list_box.row_selected.disconnect (row_selected);
         });
 
         content_area.column_homogeneous = true;
@@ -244,6 +283,7 @@ public class Installer.LanguageView : AbstractInstallerView {
     public class LangRow : Gtk.ListBoxRow {
         private Gtk.Image image;
         public string lang;
+        public bool preferred_row { get; set; default=false; }
 
         private bool _selected;
         public bool selected {
