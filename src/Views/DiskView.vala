@@ -44,13 +44,15 @@ public class Installer.DiskView : AbstractInstallerView {
         var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         install_image.valign = Gtk.Align.START;
 
-        var install_label = new Gtk.Label (_("Install on the selected disk"));
+        var install_label = new Gtk.Label (_("Select a drive to use for installation"));
         install_label.hexpand = true;
         install_label.get_style_context ().add_class ("h2");
         install_label.xalign = 0;
 
-        var install_desc_label = new Gtk.Label (_("This will erase your data"));
+        var install_desc_label = new Gtk.Label (_("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode."));
         install_desc_label.hexpand = true;
+        install_desc_label.max_width_chars = 60;
+        install_desc_label.wrap = true;
         install_desc_label.xalign = 0;
 
         var load_spinner = new Gtk.Spinner ();
