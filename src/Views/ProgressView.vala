@@ -17,6 +17,13 @@
  */
 
 public class ProgressView : AbstractInstallerView {
+    public ProgressView (Gtk.Stack navigation_stack) {
+        Object (
+            row_spacing: 24,
+            navigation_stack: navigation_stack
+        );
+    }
+
     construct {
         var logo = new Gtk.Image ();
         logo.icon_name = "distributor-logo-symbolic";

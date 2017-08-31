@@ -26,7 +26,12 @@ public class Installer.LanguageView : AbstractInstallerView {
 
     public signal void next_step (string lang);
 
-    public LanguageView () {
+    public LanguageView (Gtk.Stack navigation_stack) {
+        Object (
+            row_spacing: 24,
+            navigation_stack: navigation_stack
+        );
+
         GLib.Timeout.add_seconds (3, timeout);
     }
 

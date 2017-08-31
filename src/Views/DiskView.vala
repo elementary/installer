@@ -26,8 +26,12 @@ public class Installer.DiskView : AbstractInstallerView {
     private Gtk.ComboBoxText disk_combo;
     private Gtk.Button next_button;
 
-    public DiskView () {
-        Object (cancellable: true);
+    public DiskView (Gtk.Stack navigation_stack) {
+        Object (
+            cancellable: true,
+            row_spacing: 24,
+            navigation_stack: navigation_stack
+        );
     }
 
     construct {
@@ -70,7 +74,6 @@ public class Installer.DiskView : AbstractInstallerView {
         next_button.clicked.connect (() => next_step ());
 
         action_area.add (next_button);
-        show_all ();
     }
 
     // If possible, open devices in a different thread so that the interface stays awake.
