@@ -49,6 +49,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (language_view);
 
         get_content_area ().add (stack);
+        get_style_context ().add_class ("os-installer");
 
         language_view.next_step.connect (() => load_keyboard_view ());
     }
