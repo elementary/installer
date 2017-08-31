@@ -24,7 +24,7 @@ public class Installer.LanguageView : AbstractInstallerView {
     Gtk.Button next_button;
     int select_number = 0;
 
-    public signal void next_step (string lang);
+    public signal void next_step ();
 
     public LanguageView () {
         GLib.Timeout.add_seconds (3, timeout);
@@ -92,7 +92,8 @@ public class Installer.LanguageView : AbstractInstallerView {
             unowned Gtk.ListBoxRow row = list_box.get_selected_row ();
             unowned string lang = ((LangRow) row).lang;
             Environment.set_variable ("LANGUAGE", lang, true);
-            next_step (lang);
+            Configuration.get_default ().lang = lang;
+            next_step ();
         });
 
         content_area.column_homogeneous = true;
