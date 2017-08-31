@@ -64,6 +64,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         keyboard_layout_view = new KeyboardLayoutView ();
+        keyboard_layout_view.previous_view = language_view;
         stack.add (keyboard_layout_view);
         stack.visible_child = keyboard_layout_view;
 
@@ -76,6 +77,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         try_install_view = new TryInstallView ();
+        try_install_view.previous_view = keyboard_layout_view;
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
@@ -88,7 +90,9 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         check_view = new Installer.CheckView ();
+        check_view.previous_view = try_install_view;
         check_view.next_step.connect (() => load_diskview ());
+
         if (check_view.check_requirements ()) {
             load_diskview ();
         } else {
@@ -103,6 +107,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         disk_view = new DiskView ();
+        disk_view.previous_view = try_install_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
         disk_view.load.begin ();
