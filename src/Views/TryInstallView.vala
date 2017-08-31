@@ -91,7 +91,10 @@ public class TryInstallView : AbstractInstallerView {
         action_area.add (next_button);
         action_area.set_child_secondary (shutdown_button, true);
 
+        demo_button.clicked.connect (() => get_toplevel ().destroy ());
+
         next_button.clicked.connect (() => next_step ());
+
         shutdown_button.clicked.connect (() => {
             try {
                 system_interface.power_off (false);
