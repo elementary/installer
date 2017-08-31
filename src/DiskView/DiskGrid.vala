@@ -28,7 +28,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         margin = 12;
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var disk_image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
+        var disk_image = new Gtk.Image.from_icon_name (disk.get_icon_name (), Gtk.IconSize.DIALOG);
 
         var name_label = new Gtk.Label (disk.get_label_name ());
         name_label.hexpand = true;
