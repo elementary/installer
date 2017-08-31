@@ -18,66 +18,29 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.DiskGrid : Gtk.Grid {
-    public Disk disk;
-    public Gee.LinkedList<ToggleOSButton> buttons;
-    public DiskGrid (Disk disk) {
-        this.disk = disk;
-        show_all ();
+public class Installer.DiskButton : Gtk.ToggleButton {
+    public Disk disk { get; construct; }
+    public DiskButton (Disk disk) {
+        Object (disk: disk);
     }
 
     construct {
         margin = 12;
-        column_spacing = 6;
-        orientation = Gtk.Orientation.HORIZONTAL;
-        halign = Gtk.Align.CENTER;
-        buttons = new Gee.LinkedList<ToggleOSButton> ();
-    }
-
-    public void add_button (string name, string? version, GLib.Icon icon, Partition partition) {
-        var button = new ToggleOSButton (name, version, icon, partition);
-        button.show_all ();
-        buttons.add (button);
-        add (button);
-    }
-
-    public class ToggleOSButton : Gtk.ToggleButton {
-        unowned Partition partition;
-        Gtk.Label description;
-        Gtk.Label size;
-        Gtk.Image icon_image;
-        Gtk.Grid grid;
-        public ToggleOSButton (string name, string? version, GLib.Icon icon, Partition partition) {
-            this.partition = partition;
-            if (version != null) {
-                description.label = "%s %s".printf (name, version);
-            } else {
-                description.label = name;
-            }
-
-            size.label = "(%s)".printf (GLib.format_size (partition.get_size ()));
-            icon_image.gicon = icon;
-            show_all ();
-        }
-        
-        construct {
-            get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-            grid = new Gtk.Grid ();
-            grid.margin = 6;
-            grid.column_spacing = 6;
-            grid.row_spacing = 12;
-            description = new Gtk.Label (null);
-            description.xalign = 1;
-            size = new Gtk.Label (null);
-            size.xalign = 0;
-            size.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            icon_image = new Gtk.Image ();
-            icon_image.halign = Gtk.Align.CENTER;
-            icon_image.icon_size = Gtk.IconSize.DIALOG;
-            grid.attach (icon_image, 0, 0, 2, 1);
-            grid.attach (description, 0, 1, 1, 1);
-            grid.attach (size, 1, 1, 1, 1);
-            add (grid);
-        }
+        get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        var grid = new Gtk.Grid ();
+        grid.margin = 12;
+        grid.column_spacing = 12;
+        grid.row_spacing = 6;
+        grid.orientation = Gtk.Orientation.VERTICAL;
+        var disk_image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
+        var name_label = new Gtk.Label (disk.get_label_name ());
+        name_label.xalign = 0;
+        name_label.hexpand = true;
+        var size_label = new Gtk.Label (GLib.format_size (disk.get_size ()));
+        size_label.xalign = 0;
+        grid.attach (disk_image, 0, 0, 1, 2);
+        grid.attach (name_label, 1, 0, 1, 1);
+        grid.attach (size_label, 1, 1, 1, 1);
+        add (grid);
     }
 }

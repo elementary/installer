@@ -93,6 +93,10 @@ public class Installer.Disk : GLib.Object {
     }
 
     public string get_label_name () {
+        if (drive.model == "") {
+            return drive.id;
+        }
+
         return drive.model.replace ("_", " ");
     }
 
