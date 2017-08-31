@@ -19,6 +19,13 @@
 public class SuccessView : AbstractInstallerView {
     private Utils.SystemInterface system_interface;
 
+    public SuccessView (Gtk.Stack navigation_stack) {
+        Object (
+            row_spacing: 24,
+            navigation_stack: navigation_stack
+        );
+    }
+
     construct {
         try {
             system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");

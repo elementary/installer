@@ -20,6 +20,7 @@
 
 public class Installer.MainWindow : Gtk.Dialog {
     private CheckView check_view;
+    private DiskView disk_view;
     private Gtk.Stack stack;
 
     public const string CHECK_VIEW = "check-view";
@@ -43,28 +44,36 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     construct {
-        check_view = new Installer.CheckView ();
-        var keyboard_layout_view = new KeyboardLayoutView ();
-        var language_view = new LanguageView ();
-        var progress_view = new ProgressView ();
-        var try_install_view = new TryInstallView ();
-        var success_view = new SuccessView ();
-        var error_view = new ErrorView ();
-
         stack = new Gtk.Stack ();
+
+        check_view = new Installer.CheckView (stack);
+        disk_view = new DiskView (stack);
+        var keyboard_layout_view = new KeyboardLayoutView (stack);
+        var language_view = new LanguageView (stack);
+        var progress_view = new ProgressView (stack);
+        var try_install_view = new TryInstallView (stack);
+        var success_view = new SuccessView (stack);
+        var error_view = new ErrorView (stack);
+
+        disk_view.load.begin ();
+
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add_named (language_view, LANGUAGE_VIEW);
         stack.add_named (keyboard_layout_view, KEYBOARD_LAYOUT_VIEW);
         stack.add_named (try_install_view, TRY_INSTALL_VIEW);
+        stack.add_named (check_view, CHECK_VIEW);
+        stack.add_named (disk_view, DISK_VIEW);
         stack.add_named (progress_view, PROGRESS_VIEW);
         stack.add_named (success_view, SUCCESS_VIEW);
         stack.add_named (error_view, ERROR_VIEW);
 
         get_content_area ().add (stack);
 
-        check_view.next_step.connect (() => load_diskview ());
+        check_view.next_step.connect (() => stack.set_visible_child_name (DISK_VIEW));
 
-        try_install_view.next_step.connect (() => load_checkview());
+        disk_view.next_step.connect (() => stack.set_visible_child_name (PROGRESS_VIEW));
+
+        try_install_view.next_step.connect (() => load_checkview ());
 
         keyboard_layout_view.next_step.connect (() => stack.set_visible_child_name (TRY_INSTALL_VIEW));
 
@@ -76,22 +85,10 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     private void load_checkview () {
         if (check_view.check_requirements ()) {
-            load_diskview ();
+            stack.set_visible_child_name (DISK_VIEW);
         } else {
-            stack.add_named (check_view, CHECK_VIEW);
             stack.set_visible_child_name (CHECK_VIEW);
         }
-    }
-
-    private void load_diskview () {
-        var disk_view = new DiskView ();
-        stack.add_named (disk_view, DISK_VIEW);
-        stack.set_visible_child_name (DISK_VIEW);
-        disk_view.load.begin ();
-
-        disk_view.next_step.connect (() => {
-            stack.set_visible_child_name (PROGRESS_VIEW);
-        });
     }
 
     public override void close () {}

@@ -20,6 +20,13 @@ public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
     private Utils.SystemInterface system_interface;
 
+    public TryInstallView (Gtk.Stack navigation_stack) {
+        Object (
+            row_spacing: 24,
+            navigation_stack: navigation_stack
+        );
+    }
+
     construct {
         var title_label = new Gtk.Label (_("Install %s").printf (Utils.get_pretty_name ()));
         title_label.wrap = true;

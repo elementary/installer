@@ -21,6 +21,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
     private Gtk.ListBox input_language_list_box;
 
+    public KeyboardLayoutView (Gtk.Stack navigation_stack) {
+        Object (
+            row_spacing: 24,
+            navigation_stack: navigation_stack
+        );
+    }
+
     construct {
         var image = new Gtk.Image.from_icon_name ("input-keyboard", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
