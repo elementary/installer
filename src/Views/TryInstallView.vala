@@ -85,6 +85,10 @@ public class TryInstallView : AbstractInstallerView {
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
+        var shutdown_button = new Gtk.Button.with_label (_("Shut Down…"));
+
+        action_area.add (shutdown_button);
+        action_area.set_child_secondary(shutdown_button, true);
         action_area.add (next_button);
 
         next_button.clicked.connect (() => next_step ());
