@@ -22,7 +22,7 @@ public class ProgressView : AbstractInstallerView {
 
     construct {
         var logo = new Gtk.Image ();
-        logo.icon_name = "distributor-logo-symbolic";
+        logo.icon_name = "distributor-logo";
         logo.pixel_size = 128;
 
         var terminal_output = new Gtk.Frame (null);
