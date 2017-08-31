@@ -87,5 +87,6 @@ public class TryInstallView : AbstractInstallerView {
         action_area.add (next_button);
 
         next_button.clicked.connect (() => next_step ());
+        show_all ();
     }
 }

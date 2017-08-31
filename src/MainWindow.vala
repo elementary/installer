@@ -19,7 +19,6 @@
  */
 
 public class Installer.MainWindow : Gtk.Dialog {
-    private CheckView check_view;
     private Gtk.Stack stack;
 
     public const string CHECK_VIEW = "check-view";
@@ -43,55 +42,74 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     construct {
-        check_view = new Installer.CheckView ();
-        var keyboard_layout_view = new KeyboardLayoutView ();
         var language_view = new LanguageView ();
-        var progress_view = new ProgressView ();
-        var try_install_view = new TryInstallView ();
-        var success_view = new SuccessView ();
-        var error_view = new ErrorView ();
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add_named (language_view, LANGUAGE_VIEW);
-        stack.add_named (keyboard_layout_view, KEYBOARD_LAYOUT_VIEW);
-        stack.add_named (try_install_view, TRY_INSTALL_VIEW);
-        stack.add_named (progress_view, PROGRESS_VIEW);
-        stack.add_named (success_view, SUCCESS_VIEW);
-        stack.add_named (error_view, ERROR_VIEW);
 
         get_content_area ().add (stack);
 
-        check_view.next_step.connect (() => load_diskview ());
+        language_view.next_step.connect (() => load_keyboard_view ());
+    }
 
-        try_install_view.next_step.connect (() => load_checkview());
+    // We need to load all the view after the language has being chosen and set.
 
-        keyboard_layout_view.next_step.connect (() => stack.set_visible_child_name (TRY_INSTALL_VIEW));
+    private void load_keyboard_view () {
+        var keyboard_layout_view = new KeyboardLayoutView ();
+        stack.add_named (keyboard_layout_view, KEYBOARD_LAYOUT_VIEW);
+        stack.visible_child = keyboard_layout_view;
 
-        language_view.next_step.connect ((lang) => {
-            stack.set_visible_child_name (KEYBOARD_LAYOUT_VIEW);
-            keyboard_layout_view.set_language (lang);
-        });
+        keyboard_layout_view.next_step.connect (() => load_try_install_view ());
+    }
+
+    private void load_try_install_view () {
+        var try_install_view = new TryInstallView ();
+        stack.add_named (try_install_view, TRY_INSTALL_VIEW);
+        stack.visible_child = try_install_view;
+
+        try_install_view.next_step.connect (() => load_checkview ());
     }
 
     private void load_checkview () {
+        var check_view = new Installer.CheckView ();
+        check_view.next_step.connect (() => load_diskview ());
         if (check_view.check_requirements ()) {
             load_diskview ();
         } else {
             stack.add_named (check_view, CHECK_VIEW);
-            stack.set_visible_child_name (CHECK_VIEW);
+            stack.visible_child = check_view;
         }
     }
 
     private void load_diskview () {
         var disk_view = new DiskView ();
         stack.add_named (disk_view, DISK_VIEW);
-        stack.set_visible_child_name (DISK_VIEW);
+        stack.visible_child = disk_view;
         disk_view.load.begin ();
 
-        disk_view.next_step.connect (() => {
-            stack.set_visible_child_name (PROGRESS_VIEW);
-        });
+        disk_view.next_step.connect (() => load_progress_view ());
+    }
+
+    private void load_progress_view () {
+        var progress_view = new ProgressView ();
+        stack.add_named (progress_view, PROGRESS_VIEW);
+        stack.visible_child = progress_view;
+
+        progress_view.on_success.connect (() => load_success_view ());
+        progress_view.on_error.connect (() => load_error_view ());
+    }
+
+    private void load_success_view () {
+        var success_view = new SuccessView ();
+        stack.add_named (success_view, SUCCESS_VIEW);
+        stack.visible_child = success_view;
+    }
+
+    private void load_error_view () {
+        var error_view = new ErrorView ();
+        stack.add_named (error_view, ERROR_VIEW);
+        stack.visible_child = error_view;
     }
 
     public override void close () {}
