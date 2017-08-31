@@ -94,8 +94,6 @@ public class TryInstallView : AbstractInstallerView {
         action_area.set_child_secondary (shutdown_button, true);
         action_area.set_child_non_homogeneous (shutdown_button, true);
 
-        demo_button.clicked.connect (() => get_toplevel ().destroy ());
-
         next_button.clicked.connect (() => next_step ());
 
         shutdown_button.clicked.connect (() => {
