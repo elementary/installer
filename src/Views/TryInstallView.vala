@@ -84,14 +84,18 @@ public class TryInstallView : AbstractInstallerView {
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
+        var shutdown_button = new Gtk.Button.from_icon_name ("system-shutdown-symbolic", Gtk.IconSize.BUTTON);
+        shutdown_button.tooltip_text = _("Shut Down");
+        shutdown_button.get_style_context ().add_class ("circular");
 
         action_area.add (shutdown_button);
         action_area.add (demo_button);
         action_area.add (next_button);
         action_area.set_child_secondary (shutdown_button, true);
+        action_area.set_child_non_homogeneous (shutdown_button, true);
 
         next_button.clicked.connect (() => next_step ());
+
         shutdown_button.clicked.connect (() => {
             try {
                 system_interface.power_off (false);
