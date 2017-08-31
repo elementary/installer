@@ -77,7 +77,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         var frame = new Gtk.Frame (null);
         frame.add (scrolled);
 
-        next_button = new Gtk.Button.with_label (_("Next"));
+        next_button = new Gtk.Button.with_label (_("Select"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (next_button);
@@ -111,7 +111,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         Environment.set_variable ("LANGUAGE", ((LangRow) row).lang, true);
         Intl.textdomain ("pantheon-installer");
 
-        next_button.label = _("Next");
+        next_button.label = _("Select");
 
         foreach (Gtk.Widget child in list_box.get_children ()) {
             if (child is LangRow) {
