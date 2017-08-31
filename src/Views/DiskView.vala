@@ -21,19 +21,41 @@
 public class Installer.DiskView : AbstractInstallerView {
     public signal void next_step ();
 
-    private Gtk.Stack load_stack;
-    private Gtk.Stack disk_stack;
-    private Gtk.ComboBoxText disk_combo;
     private Gtk.Button next_button;
+    private Gtk.Grid disk_grid;
+    private Gtk.Stack load_stack;
 
     public DiskView () {
         Object (cancellable: true);
     }
 
     construct {
+        disk_grid = new Gtk.Grid ();
+        disk_grid.column_spacing = 12;
+        disk_grid.halign = Gtk.Align.CENTER;
+        disk_grid.orientation = Gtk.Orientation.VERTICAL;
+
+        var disk_scrolled = new Gtk.ScrolledWindow (null, null);
+        disk_scrolled.expand = true;
+        disk_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        disk_scrolled.propagate_natural_height = true;
+        disk_scrolled.add (disk_grid);
+
+        var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
+        install_image.valign = Gtk.Align.START;
+
+        var install_label = new Gtk.Label (_("Install on the selected disk"));
+        install_label.hexpand = true;
+        install_label.get_style_context ().add_class ("h2");
+        install_label.xalign = 0;
+
+        var install_desc_label = new Gtk.Label (_("This will erase your data"));
+        install_desc_label.hexpand = true;
+        install_desc_label.xalign = 0;
+
         var load_spinner = new Gtk.Spinner ();
-        load_spinner.width_request = 48;
-        load_spinner.height_request = 48;
+        load_spinner.halign = Gtk.Align.CENTER;
+        load_spinner.valign = Gtk.Align.CENTER;
         load_spinner.start ();
 
         var load_label = new Gtk.Label (_("Getting the current configuration…"));
@@ -51,25 +73,23 @@ public class Installer.DiskView : AbstractInstallerView {
         load_stack = new Gtk.Stack ();
         load_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         load_stack.add_named (load_grid, "loading");
+        load_stack.add_named (disk_scrolled, "disk");
 
-        content_area.add (load_stack);
-
-        disk_stack = new Gtk.Stack ();
-        disk_stack.transition_type = Gtk.StackTransitionType.SLIDE_UP_DOWN;
-
-        disk_combo = new Gtk.ComboBoxText ();
-        disk_combo.changed.connect (() => {
-            disk_stack.set_visible_child_name (disk_combo.active_id);
-        });
-
-        weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-        default_theme.add_resource_path ("/io/pantheon/installer/icons/os");
+        content_area.halign = Gtk.Align.CENTER;
+        content_area.valign = Gtk.Align.CENTER;
+        content_area.row_spacing = 6;
+        content_area.attach (install_image, 0, 0, 1, 2);
+        content_area.attach (install_label, 1, 0, 1, 1);
+        content_area.attach (install_desc_label, 1, 1, 1, 1);
+        content_area.attach (load_stack, 0, 2, 2, 1);
 
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        next_button.sensitive = false;
         next_button.clicked.connect (() => next_step ());
 
         action_area.add (next_button);
+
         show_all ();
     }
 
@@ -77,66 +97,22 @@ public class Installer.DiskView : AbstractInstallerView {
     public async void load () {
         var disks = yield Installer.Disk.get_disks ();
         foreach (var disk in disks) {
-            DiskGrid grid = null;
-            var partitions = disk.partitions;
-            foreach (var partition in partitions) {
-                if (partition == null) {
-                    warning ("OHHHH");
-                    continue;
-                }
-                string name;
-                string? version;
-                GLib.Icon icon;
-                if (yield partition.detect_operating_system (out name, out version, out icon)) {
-                    if (grid == null) {
-                        grid = new DiskGrid (disk);
-                        var disk_id = disk.get_id ();
-                        disk_combo.append (disk_id, "%s (%s)".printf (disk.get_label_name (), GLib.format_size (disk.get_size ())));
-                        disk_stack.add_named (grid, disk_id);
-                        if (disk_combo.active_id == null) {
-                            disk_combo.active_id = disk_id;
-                        }
-                    }
+            var disk_button = new DiskButton (disk);
+            disk_grid.add (disk_button);
+            disk_button.clicked.connect (() => {
+                if (disk_button.active) {
+                    disk_grid.get_children ().foreach ((child) => {
+                        ((Gtk.ToggleButton)child).active = child == disk_button;
+                    });
 
-                    grid.add_button (name, version, icon, partition);
+                    next_button.sensitive = true;
+                } else {
+                    next_button.sensitive = false;
                 }
-                
-            }
+            });
         }
 
-        Idle.add (() => {
-            var disk_label = new Gtk.Label (_("Disk:"));
-            disk_label.halign = Gtk.Align.END;
-            disk_combo.halign = Gtk.Align.START;
-
-            var multiple_os_detected = new Gtk.Label (_("Multiple disks were detected on your system"));
-            multiple_os_detected.hexpand = true;
-            multiple_os_detected.get_style_context ().add_class ("category-label");
-
-            var disk_grid = new Gtk.Grid ();
-            disk_grid.orientation = Gtk.Orientation.VERTICAL;
-            disk_grid.row_spacing = 12;
-            disk_grid.column_spacing = 6;
-            if (disk_stack.get_children ().length () > 1) {
-                disk_grid.attach (disk_label, 0, 1, 1, 1);
-                disk_grid.attach (disk_combo, 1, 1, 1, 1);
-            }
-
-            // Check for multiple OS across all the disks.
-            int number = 0;
-            disk_stack.get_children ().foreach ((child) => {
-                number += ((DiskGrid)child).buttons.size;
-            });
-
-            if (number > 1) {
-                disk_grid.attach (multiple_os_detected, 0, 0, 2, 1);
-                disk_grid.attach (disk_stack, 0, 2, 2, 1);
-            }
-
-            load_stack.add_named (disk_grid, "disk");
-            disk_grid.show_all ();
-            load_stack.set_visible_child (disk_grid);
-            return Source.REMOVE;
-        });
+        disk_grid.show_all ();
+        load_stack.set_visible_child_name ("disk");
     }
 }
