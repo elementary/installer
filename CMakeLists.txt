@@ -51,6 +51,18 @@ add_definitions(${DEPS_CFLAGS})
 link_libraries(${DEPS_LIBRARIES} m)
 link_directories(${DEPS_LIBRARY_DIRS})
 
+pkg_check_modules(GTK_3_22 QUIET
+    gtk+-3.0>=3.22
+)
+
+if (GTK_3_22_FOUND)
+    set (GTK_3_22_VALA_FLAGS
+        -D GTK_3_22
+    )
+else ()
+    set (GTK_3_22_VALA_FLAGS "")
+endif ()
+
 # make sure we have vala
 find_package(Vala REQUIRED)
 include(ValaVersion)
@@ -85,6 +97,7 @@ PACKAGES
     posix
 OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
+    ${GTK_3_22_VALA_FLAGS}
 CUSTOM_VAPIS
     ${CMAKE_SOURCE_DIR}/vapi/config.vapi
 )
