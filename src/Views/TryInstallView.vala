@@ -18,6 +18,7 @@
 
 public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
+    private Utils.SystemInterface system_interface;
 
     public TryInstallView () {
         Object (cancellable: true);
@@ -88,9 +89,16 @@ public class TryInstallView : AbstractInstallerView {
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down…"));
 
         action_area.add (shutdown_button);
-        action_area.set_child_secondary(shutdown_button, true);
+        action_area.set_child_secondary (shutdown_button, true);
         action_area.add (next_button);
 
         next_button.clicked.connect (() => next_step ());
+        shutdown_button.clicked.connect (() => {
+            try {
+                system_interface.power_off (false);
+            } catch (IOError e) {
+                warning ("%s", e.message);
+            }
+        });
     }
 }
