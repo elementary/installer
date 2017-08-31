@@ -39,6 +39,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
         back_button.get_style_context ().add_class ("back-button");
 
         var keyboard_layout_list_title = new Gtk.Label (null);
+        keyboard_layout_list_title.ellipsize = Pango.EllipsizeMode.END;
+        keyboard_layout_list_title.max_width_chars = 20;
         keyboard_layout_list_title.use_markup = true;
 
         var keyboard_layout_list_box = new Gtk.ListBox ();
@@ -46,11 +48,17 @@ public class KeyboardLayoutView : AbstractInstallerView {
         keyboard_layout_scrolled.expand = true;
         keyboard_layout_scrolled.add (keyboard_layout_list_box);
 
+        var keyboard_layout_spacer = new Gtk.Grid ();
+
+        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        size_group.add_widget (back_button);
+        size_group.add_widget (keyboard_layout_spacer);
+
         var keyboard_layout_grid = new Gtk.Grid ();
-        keyboard_layout_grid.column_homogeneous = true;
         keyboard_layout_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         keyboard_layout_grid.attach (back_button, 0, 0, 1, 1);
         keyboard_layout_grid.attach (keyboard_layout_list_title, 1, 0, 1, 1);
+        keyboard_layout_grid.attach (keyboard_layout_spacer, 2, 0, 1, 1);
         keyboard_layout_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 3, 1);
         keyboard_layout_grid.attach (keyboard_layout_scrolled, 0, 2, 3, 1);
 
@@ -84,6 +92,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         content_area.attach (stack_grid, 1, 0, 1, 2);
 
         var next_button = new Gtk.Button.with_label (_("Next"));
+        next_button.sensitive = false;
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (next_button);
@@ -107,6 +116,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         next_button.clicked.connect (() => next_step ());
 
         back_button.clicked.connect (() => {
+            next_button.sensitive = false;
             stack.visible_child = input_language_scrolled;
         });
 
@@ -114,6 +124,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             var layout = ((LayoutRow) row).layout;
             var variants = layout.variants;
             if (variants.is_empty) {
+                next_button.sensitive = true;
                 return;
             }
 
@@ -129,6 +140,17 @@ public class KeyboardLayoutView : AbstractInstallerView {
             }
 
             stack.visible_child = keyboard_layout_grid;
+        });
+
+        keyboard_layout_list_box.row_selected.connect ((row) => {
+            next_button.sensitive = true;
+        });
+        
+        keyboard_test_entry.icon_release.connect (() => {
+            var popover = new Gtk.Popover (keyboard_test_entry);
+            var layout = new LayoutWidget ();
+            popover.add (layout);
+            popover.show_all ();
         });
 
         load_layouts ();
@@ -202,7 +224,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
         public Layout layout;
         public LayoutRow (Layout layout) {
             this.layout = layout;
-            var label = new Gtk.Label (layout.description);
+
+            string layout_description = layout.description;
+            if (!layout.variants.is_empty) {
+                layout_description = _("%s…").printf (layout_description);
+            };
+
+            var label = new Gtk.Label (layout_description);
             label.margin = 6;
             label.xalign = 0;
             label.get_style_context ().add_class ("h3");
