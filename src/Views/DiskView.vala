@@ -38,7 +38,9 @@ public class Installer.DiskView : AbstractInstallerView {
         var disk_scrolled = new Gtk.ScrolledWindow (null, null);
         disk_scrolled.expand = true;
         disk_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+#if GTK_3_22
         disk_scrolled.propagate_natural_height = true;
+#endif
         disk_scrolled.add (disk_grid);
 
         var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
