@@ -21,7 +21,6 @@ public class TryInstallView : AbstractInstallerView {
 
     public TryInstallView () {
         Object (
-            cancellable: true,
             previous_pane: Installer.MainWindow.KEYBOARD_LAYOUT_VIEW
         );
     }
@@ -32,13 +31,13 @@ public class TryInstallView : AbstractInstallerView {
         title_label.max_width_chars = 60;
         title_label.get_style_context ().add_class ("h1");
 
-        var description_label = new Gtk.Label (_("You can install %s on this device now, or cancel the installation to try it without installing.").printf (Utils.get_pretty_name ()));
+        var description_label = new Gtk.Label (_("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ()));
         description_label.margin_bottom = 48;
         description_label.wrap = true;
         description_label.max_width_chars = 60;
         description_label.set_justify (Gtk.Justification.CENTER);
 
-        var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged until you install."));
+        var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged in Demo Mode."));
         nochanges_label.max_width_chars = 40;
         nochanges_label.wrap = true;
         nochanges_label.set_justify (Gtk.Justification.CENTER);
@@ -56,7 +55,7 @@ public class TryInstallView : AbstractInstallerView {
         nochanges_overlay.height_request = 51;
         nochanges_overlay.width_request = 60;
 
-        var nosaving_label = new Gtk.Label (_("Any changes you make before installing will not be saved."));
+        var nosaving_label = new Gtk.Label (_("Any changes you make in Demo Mode will not be saved."));
         nosaving_label.valign = Gtk.Align.START;
         nosaving_label.max_width_chars = 40;
         nosaving_label.wrap = true;
@@ -64,7 +63,7 @@ public class TryInstallView : AbstractInstallerView {
 
         var nosaving_image = new Gtk.Image.from_icon_name ("document-revert", Gtk.IconSize.DIALOG);
 
-        var return_label = new Gtk.Label (_("If you cancel, you can always return to the installer by selecting the Install icon."));
+        var return_label = new Gtk.Label (_("You can always return from Demo Mode to the installer by selecting the Install icon."));
         return_label.max_width_chars = 40;
         return_label.valign = Gtk.Align.START;
         return_label.wrap = true;
@@ -85,9 +84,12 @@ public class TryInstallView : AbstractInstallerView {
         content_area.attach (return_image, 2, 2, 1, 1);
         content_area.attach (return_label, 2, 3, 1, 1);
 
+        var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
+
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
+        action_area.add (demo_button);
         action_area.add (next_button);
 
         next_button.clicked.connect (() => next_step ());
