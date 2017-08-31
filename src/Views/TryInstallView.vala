@@ -21,6 +21,12 @@ public class TryInstallView : AbstractInstallerView {
     private Utils.SystemInterface system_interface;
 
     construct {
+        try {
+            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+        } catch (IOError e) {
+            critical (e.message);
+        }
+
         var title_label = new Gtk.Label (_("Install %s").printf (Utils.get_pretty_name ()));
         title_label.wrap = true;
         title_label.max_width_chars = 60;
