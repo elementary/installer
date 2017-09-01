@@ -47,7 +47,7 @@ public class ErrorView : AbstractInstallerView {
         try_label.xalign = 0;
         try_label.use_markup = true;
 
-        var launch_label = new Gtk.Label (_("• Launch a session and try to manually recover"));
+        var launch_label = new Gtk.Label (_("• Use Demo Mode and try to manually recover"));
         launch_label.max_width_chars = 60;
         launch_label.wrap = true;
         launch_label.xalign = 0;
@@ -73,7 +73,7 @@ public class ErrorView : AbstractInstallerView {
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 
-        var session_button = new Gtk.Button.with_label (_("Launch Session"));
+        var session_button = new Gtk.Button.with_label (_("Try Demo Mode"));
 
         var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
         install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
