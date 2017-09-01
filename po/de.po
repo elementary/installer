@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-11 19:57+0200\n"
-"PO-Revision-Date: 2017-03-08 21:38+0000\n"
-"Last-Translator: Fabian Thoma <fabian@elementaryos.org>\n"
+"PO-Revision-Date: 2017-05-21 21:22+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German "
-"<http://weblate.elementary.io/projects/desktop/installer/de/>\n"
+"<https://l10n.elementary.io/projects/installer/installer/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.12\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: ../src/Application.vala:28
@@ -38,7 +38,7 @@ msgstr ""
 
 #: ../src/LanguageView.vala:30
 msgid "Select a Language"
-msgstr "Wähle eine Sprache aus"
+msgstr "Sprache wählen"
 
 #: ../src/LanguageView.vala:84
 msgid "Use English"

@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 13:40-0700\n"
-"PO-Revision-Date: 2017-04-02 18:03+0000\n"
-"Last-Translator: Plugaru Tudor <plugaru.tudor@gmail.com>\n"
+"PO-Revision-Date: 2017-04-11 09:26+0000\n"
+"Last-Translator: Sorin Fatu <sorin.fatu@gmail.com>\n"
 "Language-Team: Romanian "
-"<http://weblate.elementary.io/projects/desktop/installer/ro/>\n"
+"<https://l10n.elementary.io/projects/installer/installer/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,7 @@ msgstr "Istorie"
 
 #: ../src/HistoryDialog.vala:84
 msgid "Value to add:"
-msgstr "Valoare de adăugat"
+msgstr "Valoare de adăugat:"
 
 #: ../src/HistoryDialog.vala:88
 msgid "Result"
@@ -62,7 +62,7 @@ msgstr "Afişează facilități extinse"
 
 #: ../src/MainWindow.vala:124
 msgid "Calculate Result"
-msgstr ""
+msgstr "Calculare rezultat"
 
 #: ../src/MainWindow.vala:127
 msgid "Add last result"
@@ -78,7 +78,7 @@ msgstr "Șterge valoarea"
 
 #: ../src/MainWindow.vala:136
 msgid "Subtract"
-msgstr ""
+msgstr "Scade"
 
 #: ../src/MainWindow.vala:139
 msgid "Multiply"
@@ -94,51 +94,51 @@ msgstr "Procentaj"
 
 #: ../src/MainWindow.vala:219
 msgid "Start Group"
-msgstr ""
+msgstr "Inceput de grup"
 
 #: ../src/MainWindow.vala:220
 msgid "End Group"
-msgstr ""
+msgstr "Sfarsit de grup"
 
 #: ../src/MainWindow.vala:221
 msgid "Exponent"
-msgstr ""
+msgstr "Exponent"
 
 #: ../src/MainWindow.vala:223
 msgid "Root"
-msgstr ""
+msgstr "Radacina"
 
 #: ../src/MainWindow.vala:224
 msgid "Sine"
-msgstr ""
+msgstr "Sinus"
 
 #: ../src/MainWindow.vala:225
 msgid "Hyperbolic Sine"
-msgstr ""
+msgstr "Sinus hiperbolic"
 
 #: ../src/MainWindow.vala:226
 msgid "Cosine"
-msgstr ""
+msgstr "Cosinus"
 
 #: ../src/MainWindow.vala:227
 msgid "Hyperbolic Cosine"
-msgstr ""
+msgstr "Cosinus hiperbolic"
 
 #: ../src/MainWindow.vala:228
 msgid "Tangent"
-msgstr ""
+msgstr "Tangenta"
 
 #: ../src/MainWindow.vala:229
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "Tangenta hiperbolica"
 
 #: ../src/MainWindow.vala:230
 msgid "Pi"
-msgstr ""
+msgstr "Pi"
 
 #: ../src/MainWindow.vala:231
 msgid "Euler's Number"
-msgstr ""
+msgstr "numărul lui Euler"
 
 #: ../src/MainWindow.vala:371
 msgid "Hide extended functionality"
@@ -146,7 +146,7 @@ msgstr "Ascunde funcționalitățile extinse"
 
 #: ../src/Core/Scanner.vala:80
 msgid "'%s' is invalid."
-msgstr "'%s' este nevalabil."
+msgstr "'%s' nu este valid."
 
 #: ../src/Core/Scanner.vala:164
 msgid "'%s' is unknown."
