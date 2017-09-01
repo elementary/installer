@@ -3,14 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-02 13:40-0700\n"
-"PO-Revision-Date: 2016-05-27 15:29+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-05-17 23:16+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"Language-Team: Czech "
+"<https://l10n.elementary.io/projects/installer/installer/cs/>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: ../src/PantheonCalculator.vala:27 ../src/MainWindow.vala:73
 msgid "Calculator"
@@ -57,7 +60,7 @@ msgstr "Zobrazit rozšířené možnosti"
 
 #: ../src/MainWindow.vala:124
 msgid "Calculate Result"
-msgstr ""
+msgstr "Spočítat výsledek"
 
 #: ../src/MainWindow.vala:127
 msgid "Add last result"
@@ -73,67 +76,67 @@ msgstr "Vymazat pole"
 
 #: ../src/MainWindow.vala:136
 msgid "Subtract"
-msgstr ""
+msgstr "Odečíst"
 
 #: ../src/MainWindow.vala:139
 msgid "Multiply"
-msgstr ""
+msgstr "Násobit"
 
 #: ../src/MainWindow.vala:142
 msgid "Divide"
-msgstr ""
+msgstr "Dělit"
 
 #: ../src/MainWindow.vala:148
 msgid "Percentage"
-msgstr ""
+msgstr "Procenta"
 
 #: ../src/MainWindow.vala:219
 msgid "Start Group"
-msgstr ""
+msgstr "Začátek skupiny"
 
 #: ../src/MainWindow.vala:220
 msgid "End Group"
-msgstr ""
+msgstr "Konec skupiny"
 
 #: ../src/MainWindow.vala:221
 msgid "Exponent"
-msgstr ""
+msgstr "Mocnina"
 
 #: ../src/MainWindow.vala:223
 msgid "Root"
-msgstr ""
+msgstr "Kořen"
 
 #: ../src/MainWindow.vala:224
 msgid "Sine"
-msgstr ""
+msgstr "Sinus"
 
 #: ../src/MainWindow.vala:225
 msgid "Hyperbolic Sine"
-msgstr ""
+msgstr "Hyperbolický sinus"
 
 #: ../src/MainWindow.vala:226
 msgid "Cosine"
-msgstr ""
+msgstr "Kosinus"
 
 #: ../src/MainWindow.vala:227
 msgid "Hyperbolic Cosine"
-msgstr ""
+msgstr "Hyperbolický kosinus"
 
 #: ../src/MainWindow.vala:228
 msgid "Tangent"
-msgstr ""
+msgstr "Tangens"
 
 #: ../src/MainWindow.vala:229
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "Hyperbolický tangens"
 
 #: ../src/MainWindow.vala:230
 msgid "Pi"
-msgstr ""
+msgstr "Pí"
 
 #: ../src/MainWindow.vala:231
 msgid "Euler's Number"
-msgstr ""
+msgstr "Eulerovo číslo"
 
 #: ../src/MainWindow.vala:371
 msgid "Hide extended functionality"
