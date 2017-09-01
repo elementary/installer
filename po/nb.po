@@ -3,19 +3,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-01 14:30-0600\n"
-"PO-Revision-Date: 2016-05-27 15:29+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-09-01 21:35+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål "
+"<https://weblate.elementary.io/projects/installer/installer/nb/>\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: ../src/Application.vala:28
 msgid "Installer"
-msgstr ""
+msgstr "Installer"
 
 #: ../src/Application.vala:40
 msgid "translator-credits"
@@ -26,211 +28,229 @@ msgstr ""
 
 #: ../src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "Er du sikker på at du vil avslutte?"
 
 #: ../src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "Dette vil avbryte installasjonen og skru av enheten."
 
 #: ../src/Dialogs/EndSessionDialog.vala:66 ../src/Views/SuccessView.vala:54
 msgid "Restart"
-msgstr ""
+msgstr "Start på nytt"
 
 #: ../src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: ../src/Dialogs/EndSessionDialog.vala:70 ../src/Views/SuccessView.vala:52
 #: ../src/Views/TryInstallView.vala:103
 msgid "Shut Down"
-msgstr ""
+msgstr "Avslutt"
 
 #: ../src/Helpers/LocaleHelper.vala:114
 #: ../src/Views/KeyboardLayoutView.vala:133
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: ../src/MainWindow.vala:39 ../src/Views/TryInstallView.vala:37
 #: ../src/Views/TryInstallView.vala:99
 msgid "Install %s"
-msgstr ""
+msgstr "Installer %s"
 
 #: ../src/Utils.vala:156
 msgid "Operating System"
-msgstr ""
+msgstr "Operativsystem"
 
 #: ../src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Avbryt installasjon"
 
 #: ../src/Views/CheckView.vala:61
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorer"
 
 #: ../src/Views/CheckView.vala:208
 msgid "Not Enough Space"
-msgstr ""
+msgstr "Ikke nok plass"
 
 #: ../src/Views/CheckView.vala:209
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"Det er ikke nok ledig plass på enheten din til å installere %s. Vi anbefaler "
+"minimum %s lagringsplass."
 
 #: ../src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Din enhet kan være for treg"
 
 #: ../src/Views/CheckView.vala:221
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"Din enhet svarer ikke til de anbefalte maskinvarekravene. Dette kan "
+"forårsake at ting går tregt eller henger."
 
 #: ../src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "Koble til strømkilde"
 
 #: ../src/Views/CheckView.vala:238
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"Enheten din kjører på batteridrift. Det anbefales å være koblet lysnettet "
+"under installasjon."
 
 #: ../src/Views/CheckView.vala:293
 msgid "Recommended:"
-msgstr ""
+msgstr "Anbefalt:"
 
 #: ../src/Views/CheckView.vala:297
 msgid "Your Device:"
-msgstr ""
+msgstr "Enheten din:"
 
 #: ../src/Views/CheckView.vala:301 ../src/Views/CheckView.vala:303
 msgid "Processor:"
-msgstr ""
+msgstr "Prosessor:"
 
 #: ../src/Views/CheckView.vala:309 ../src/Views/CheckView.vala:311
 msgid "Memory:"
-msgstr ""
+msgstr "Minne:"
 
 #: ../src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "Velg en lagringsenhet å bruke for installasjon"
 
 #: ../src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Dette vil slette all data på valgt lagringsstasjon. Hvis du ikke har "
+"sikkerhetskopiert dataen din, kan du avbryte installasjonen og bruke demo-"
+"modus."
 
 #: ../src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Henter korrekt oppsett…"
 
 #: ../src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr ""
+msgstr "Slett og installer"
 
 #: ../src/Views/ErrorView.vala:39
 msgid "Could not install %s"
-msgstr ""
+msgstr "Kunne ikke installere %s"
 
 #: ../src/Views/ErrorView.vala:45
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
+"Installasjonen mislyktes, så enheten din kan ha problemer med å starte på "
+"nytt. Prøv én av følgende:"
 
 #: ../src/Views/ErrorView.vala:51
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Prøv å installere igjen"
 
 #: ../src/Views/ErrorView.vala:57
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• Bruk demo-modus for å prøve å tilbakestille manuelt"
 
 #: ../src/Views/ErrorView.vala:63
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Start din enhet på nytt for å starte opp fra en annen lagringsstasjon"
 
 #: ../src/Views/ErrorView.vala:81
 msgid "Restart Device"
-msgstr ""
+msgstr "Start enhet på nytt"
 
 #: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Prøv demo-modus"
 
 #: ../src/Views/ErrorView.vala:85
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Prøv å installere igjen"
 
 #: ../src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Tastaturoppsett"
 
 #: ../src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Skriv for å teste ditt oppsett"
 
 #: ../src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Vis tastaturoppsett"
 
 #: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:95
 #, fuzzy
 msgid "Back"
-msgstr "Rettetast"
+msgstr "Tilbake"
 
 #: ../src/Views/KeyboardLayoutView.vala:56 ../src/Views/LanguageView.vala:110
 #: ../src/Views/LanguageView.vala:147
 msgid "Select"
-msgstr ""
+msgstr "Velg"
 
 #: ../src/Views/KeyboardLayoutView.vala:96
 msgid "Default"
-msgstr ""
+msgstr "Forvalg"
 
 #: ../src/Views/KeyboardLayoutView.vala:101
 msgid "Input Language"
-msgstr ""
+msgstr "Inndataspråk"
 
 #: ../src/Views/LanguageView.vala:178
 msgid "Select a Language"
-msgstr ""
+msgstr "Velg et språk"
 
 #: ../src/Views/LanguageView.vala:206
 msgid "Currently active language"
-msgstr ""
+msgstr "Aktivt språk nå"
 
 #: ../src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr ""
+msgstr "Start din enhet på nytt for å fortsette oppsett"
 
 #: ../src/Views/SuccessView.vala:38
 msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
+"%s har blitt installert. Din enhet vil automatisk starte på nytt om 30 "
+"sekunder for å sette opp en ny bruker, eller du avslutte nå, og sette opp en "
+"ny bruker senere."
 
 #: ../src/Views/TryInstallView.vala:42
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Du kan installere %s på denne enheten nå, eller prøve demo-moduset uten å "
+"installere."
 
 #: ../src/Views/TryInstallView.vala:48
 msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr ""
+msgstr "Data fra ditt tidligere operativsystem forblir uendret i demo-modus."
 
 #: ../src/Views/TryInstallView.vala:66
 msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
+msgstr "Ingen endringer du gjør i demo-modus vil bli lagret."
 
 #: ../src/Views/TryInstallView.vala:74
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
 msgstr ""
+"Du kan alltid gå tilbake fra demo-modus til installasjonsmenyen ved å velge "
+"\"Installer\"-ikonet."
 
 #~ msgid "Calculator"
 #~ msgstr "Kalkulator"
