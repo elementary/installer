@@ -18,8 +18,22 @@
 
 public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
+    private Utils.SeatInterface? seat;
+    private Utils.SystemInterface system_interface;
 
     construct {
+        try {
+            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+        } catch (IOError e) {
+            critical (e.message);
+        }
+
+        try {
+            seat = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.DisplayManager", Environment.get_variable ("XDG_SEAT_PATH"), DBusProxyFlags.NONE);
+        } catch (IOError e) {
+            critical ("DisplayManager.Seat error: %s", e.message);
+        }
+
         var title_label = new Gtk.Label (_("Install %s").printf (Utils.get_pretty_name ()));
         title_label.wrap = true;
         title_label.max_width_chars = 60;
@@ -97,6 +111,14 @@ public class TryInstallView : AbstractInstallerView {
         action_area.set_child_non_homogeneous (shutdown_button, true);
 
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
+
+        demo_button.clicked.connect (() => {
+            try {
+                seat.switch_to_guest ("");
+            } catch (IOError e) {
+                stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+            }
+        });
 
         next_button.clicked.connect (() => next_step ());
 
