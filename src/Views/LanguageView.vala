@@ -96,7 +96,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
         });
 
-        foreach (var lang_entry in load_languagelist ().entries) {
+        foreach (var lang_entry in LocaleHelper.load_languagelist ().entries) {
             if (lang_entry.key in preferred_langs) {
                 var pref_langrow = new LangRow (lang_entry.key, lang_entry.value);
                 pref_langrow.preferred_row = true;
@@ -188,90 +188,6 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         select_number++;
         return GLib.Source.CONTINUE;
-    }
-
-    Gee.HashMap<string, string> load_languagelist () {
-        var langlist = new Gee.HashMap<string, string> ();
-
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/xml/iso-codes/iso_639_3.xml");
-        Xml.Node* root = doc->get_root_element ();
-        if (root == null) {
-            delete doc;
-        } else {
-            var current_lang = Environment.get_variable ("LANGUAGE");
-            foreach (unowned string lang in Build.LANG_LIST.split (";")) {
-                // We need to distinguish between pt and pt_BR
-                if ("_" in lang) {
-                    var parts = lang.split ("_", 2);
-                    var name = get_iso_639_3_name (parts[0], root);
-                    if (name != lang) {
-                        Environment.set_variable ("LANGUAGE", lang, true);
-                        Intl.textdomain ("pantheon-installer");
-                        var country_name = get_country_name (parts[1]);
-                        langlist.set (lang, "%s (%s)".printf (dgettext ("iso_639_3", name), dgettext ("iso_3166", country_name)));
-                    }
-                } else {
-                    var name = get_iso_639_3_name (lang, root);
-                    if (name != lang) {
-                        Environment.set_variable ("LANGUAGE", lang, true);
-                        Intl.textdomain ("pantheon-installer");
-                        langlist.set (lang, dgettext ("iso_639_3", name));
-                    }
-                }
-            }
-
-            if (current_lang != null) {
-                Environment.set_variable ("LANGUAGE", current_lang, true);
-            } else {
-                Environment.unset_variable ("LANGUAGE");
-            }
-        }
-
-        return langlist;
-    }
-
-    private string get_iso_639_3_name (string lang_code, Xml.Node* root) {
-        for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-            if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (iter->name == "iso_639_3_entry") {
-                    string? id = iter->get_prop ("id");
-                    if (id != lang_code) {
-                        id = iter->get_prop ("part1_code");
-                    }
-
-                    if (id == lang_code) {
-                        return iter->get_prop ("name");
-                    }
-                }
-            }
-        }
-
-        return lang_code;
-    }
-
-    private string get_country_name (string country_code) {
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/xml/iso-codes/iso_3166.xml");
-        Xml.Node* root = doc->get_root_element ();
-        if (root == null) {
-            delete doc;
-        } else {
-            for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-                if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                    if (iter->name == "iso_3166_entry") {
-                        string? id = iter->get_prop ("alpha_2_code");
-                        if (id != country_code) {
-                            id = iter->get_prop ("alpha_3_code");
-                        }
-
-                        if (id == country_code) {
-                            return iter->get_prop ("name");
-                        }
-                    }
-                }
-            }
-        }
-
-        return "";
     }
 
     public class LangRow : Gtk.ListBoxRow {

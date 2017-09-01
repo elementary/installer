@@ -112,7 +112,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
             popover.show_all ();
         });
 
-        load_layouts ();
+        foreach (var layout in KeyboardLayoutHelper.get_layouts ()) {
+            input_variant_widget.main_listbox.add (new LayoutRow (layout));
+        }
+
         show_all ();
     }
 
@@ -120,69 +123,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
         
     }
 
-    private void load_layouts () {
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/X11/xkb/rules/base.xml");
-        Xml.Node* root = doc->get_root_element ();
-        Xml.Node* layout_list_node = get_xml_node_by_name (root, "layoutList");
-        if (layout_list_node == null) {
-            delete doc;
-            return;
-        }
-
-        for (Xml.Node* layout_iter = layout_list_node->children; layout_iter != null; layout_iter = layout_iter->next) {
-            if (layout_iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (layout_iter->name == "layout") {
-                    Xml.Node* config_node = get_xml_node_by_name (layout_iter, "configItem");
-                    Xml.Node* variant_node = get_xml_node_by_name (layout_iter, "variantList");
-                    Xml.Node* description_node = get_xml_node_by_name (config_node, "description");
-                    Xml.Node* name_node = get_xml_node_by_name (config_node, "name");
-                    if (name_node == null || description_node == null) {
-                        continue;
-                    }
-
-                    var layout = Layout ();
-                    layout.name = name_node->children->content;
-                    layout.description = dgettext ("xkeyboard-config", description_node->children->content);
-                    var variants = new Gee.HashMap<string, string> ();
-                    layout.variants = variants;
-                    if (variant_node != null) {
-                        for (Xml.Node* variant_iter = variant_node->children; variant_iter != null; variant_iter = variant_iter->next) {
-                            if (variant_iter->name == "variant") {
-                                Xml.Node* variant_config_node = get_xml_node_by_name (variant_iter, "configItem");
-                                if (variant_config_node != null) {
-                                    Xml.Node* variant_description_node = get_xml_node_by_name (variant_config_node, "description");
-                                    Xml.Node* variant_name_node = get_xml_node_by_name (variant_config_node, "name");
-                                    if (variant_description_node != null && variant_name_node != null) {
-                                        variants[variant_name_node->children->content] = dgettext ("xkeyboard-config", variant_description_node->children->content);
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    input_variant_widget.main_listbox.add (new LayoutRow (layout));
-                }
-            }
-        }
-
-        delete doc;
-    }
-
-    private static Xml.Node* get_xml_node_by_name (Xml.Node* root, string name) {
-        for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-            if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (iter->name == name) {
-                    return iter;
-                }
-            }
-        }
-
-        return null;
-    }
-
     private class LayoutRow : Gtk.ListBoxRow {
-        public Layout layout;
-        public LayoutRow (Layout layout) {
+        public KeyboardLayoutHelper.Layout layout;
+        public LayoutRow (KeyboardLayoutHelper.Layout layout) {
             this.layout = layout;
 
             string layout_description = layout.description;
@@ -212,11 +155,5 @@ public class KeyboardLayoutView : AbstractInstallerView {
             add (label);
             show_all ();
         }
-    }
-
-    private struct Layout {
-        public string name;
-        public string description;
-        public Gee.HashMap<string, string> variants;
     }
 }
