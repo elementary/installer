@@ -90,6 +90,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Views/SuccessView.vala
     src/Widgets/DiskGrid.vala
     src/Widgets/LayoutWidget.vala
+    src/Widgets/VariantWidget.vala
 PACKAGES
     gtk+-3.0>=3.12
     granite
