@@ -18,15 +18,8 @@
 
 public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
-    private Utils.SystemInterface system_interface;
 
     construct {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-            critical (e.message);
-        }
-
         var title_label = new Gtk.Label (_("Install %s").printf (Utils.get_pretty_name ()));
         title_label.wrap = true;
         title_label.max_width_chars = 60;
@@ -108,11 +101,9 @@ public class TryInstallView : AbstractInstallerView {
         next_button.clicked.connect (() => next_step ());
 
         shutdown_button.clicked.connect (() => {
-            try {
-                system_interface.power_off (false);
-            } catch (IOError e) {
-                warning ("%s", e.message);
-            }
+            var end_session_dialog = new EndSessionDialog ();
+            end_session_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            end_session_dialog.run ();
         });
 
         show_all ();

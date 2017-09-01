@@ -73,6 +73,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Application.vala
     src/MainWindow.vala
     src/Utils.vala
+    src/Dialogs/EndSessionDialog.vala
     src/Objects/org.freedesktop.udisks2.vala
     src/Objects/Configuration.vala
     src/Objects/Disk.vala
