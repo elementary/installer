@@ -118,9 +118,12 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         next_button.clicked.connect (() => {
             unowned Gtk.ListBoxRow row = lang_variant_widget.main_listbox.get_selected_row ();
-            string lang = ((LangRow) row).lang_entry.get_code ();
-            Environment.set_variable ("LANGUAGE", lang, true);
-            Configuration.get_default ().lang = lang;
+            if (row != null) {
+                string lang = ((LangRow) row).lang_entry.get_code ();
+                Environment.set_variable ("LANGUAGE", lang, true);
+                Configuration.get_default ().lang = lang;
+            }
+            
             next_step ();
         });
 
@@ -170,6 +173,10 @@ public class Installer.LanguageView : AbstractInstallerView {
         if (row == null) {
             select_number = 0;
             row = lang_variant_widget.main_listbox.get_row_at_index (select_number);
+        }
+
+        if (row == null) {
+            return Source.REMOVE;
         }
 
         var current_lang = Environment.get_variable ("LANGUAGE");
