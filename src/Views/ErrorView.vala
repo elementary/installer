@@ -35,23 +35,41 @@ public class ErrorView : AbstractInstallerView {
         primary_label.xalign = 0;
         primary_label.get_style_context ().add_class ("h2");
 
-        var secondary_label = new Gtk.Label (_("The installation failed, so your device may not restart properly. You can try one of the following:
-• Try the installation again
-• Launch a session and try to manually recover
-• Restart your device to boot from another drive"));
+        var secondary_label = new Gtk.Label (_("The installation failed, so your device may not restart properly. You can try one of the following:"));
         secondary_label.max_width_chars = 60;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
         secondary_label.use_markup = true;
+
+        var try_label = new Gtk.Label (_("• Try the installation again"));
+        try_label.max_width_chars = 60;
+        try_label.wrap = true;
+        try_label.xalign = 0;
+        try_label.use_markup = true;
+
+        var launch_label = new Gtk.Label (_("• Launch a session and try to manually recover"));
+        launch_label.max_width_chars = 60;
+        launch_label.wrap = true;
+        launch_label.xalign = 0;
+        launch_label.use_markup = true;
+
+        var restart_label = new Gtk.Label (_("• Restart your device to boot from another drive"));
+        restart_label.max_width_chars = 60;
+        restart_label.wrap = true;
+        restart_label.xalign = 0;
+        restart_label.use_markup = true;
 
         content_area.halign = Gtk.Align.CENTER;
         content_area.valign = Gtk.Align.CENTER;
         content_area.margin_end = 22;
         content_area.margin_start = 22;
         content_area.row_spacing = 6;
-        content_area.attach (image, 0, 0, 1, 2);
+        content_area.attach (image, 0, 0, 1, 4);
         content_area.attach (primary_label, 1, 0, 1, 1);
         content_area.attach (secondary_label, 1, 1, 1, 1);
+        content_area.attach (try_label , 1, 2, 1, 1);
+        content_area.attach (launch_label, 1, 3, 1, 1);
+        content_area.attach (restart_label, 1, 4, 1, 1);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 
