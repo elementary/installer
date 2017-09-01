@@ -105,6 +105,10 @@ public class ErrorView : AbstractInstallerView {
             }
         });
 
+        install_button.clicked.connect (() => {
+            ((Gtk.Stack) get_parent ()).visible_child = previous_view;
+        });
+
         show_all ();
     }
 }
