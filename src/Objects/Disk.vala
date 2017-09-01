@@ -104,6 +104,18 @@ public class Installer.Disk : GLib.Object {
         return drive.size;
     }
 
+    public string get_icon_name () {
+        if (drive.media == "thumb") {
+            return "drive-removable-media-usb";
+        } else if (drive.media == "flash_sd") {
+            return "media-memory-sd";
+        } else if (drive.removable) {
+            return "drive-removable-media";
+        } else {
+            return "drive-harddisk";
+        }
+    }
+
     // Get the partitions from the list that are in this table.
     public async void insert_own_partitions (Gee.LinkedList<Partition> given_partitions) {
         foreach (var partition in given_partitions) {
