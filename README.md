@@ -21,8 +21,10 @@ You'll need the following dependencies:
  - cmake
  - desktop-file-utils
  - intltool
+ - libgnomekbd-dev
  - libgranite-dev
  - libgtk-3-dev
+ - libjson-glib-dev
  - libxml2-dev
  - libxml2-utils
  - valac
