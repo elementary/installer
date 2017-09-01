@@ -19,7 +19,7 @@
 public class KeyboardLayoutView : AbstractInstallerView {
     public signal void next_step ();
 
-    private Gtk.ListBox input_language_list_box;
+    private VariantWidget input_variant_widget;
 
     construct {
         var image = new Gtk.Image.from_icon_name ("input-keyboard", Gtk.IconSize.DIALOG);
@@ -29,47 +29,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         title_label.get_style_context ().add_class ("h2");
         title_label.valign = Gtk.Align.START;
 
-        input_language_list_box = new Gtk.ListBox ();
-        var input_language_scrolled = new Gtk.ScrolledWindow (null, null);
-        input_language_scrolled.add (input_language_list_box);
-
-        var layout_back_button = new Gtk.Button.with_label (_("Input Language"));
-        layout_back_button.halign = Gtk.Align.START;
-        layout_back_button.margin = 6;
-        layout_back_button.get_style_context ().add_class ("back-button");
-
-        var keyboard_layout_list_title = new Gtk.Label (null);
-        keyboard_layout_list_title.ellipsize = Pango.EllipsizeMode.END;
-        keyboard_layout_list_title.max_width_chars = 20;
-        keyboard_layout_list_title.use_markup = true;
-
-        var keyboard_layout_list_box = new Gtk.ListBox ();
-        var keyboard_layout_scrolled = new Gtk.ScrolledWindow (null, null);
-        keyboard_layout_scrolled.expand = true;
-        keyboard_layout_scrolled.add (keyboard_layout_list_box);
-
-        var keyboard_layout_spacer = new Gtk.Grid ();
-
-        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-        size_group.add_widget (layout_back_button);
-        size_group.add_widget (keyboard_layout_spacer);
-
-        var keyboard_layout_grid = new Gtk.Grid ();
-        keyboard_layout_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        keyboard_layout_grid.attach (layout_back_button, 0, 0, 1, 1);
-        keyboard_layout_grid.attach (keyboard_layout_list_title, 1, 0, 1, 1);
-        keyboard_layout_grid.attach (keyboard_layout_spacer, 2, 0, 1, 1);
-        keyboard_layout_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 3, 1);
-        keyboard_layout_grid.attach (keyboard_layout_scrolled, 0, 2, 3, 1);
-
-        var stack = new Gtk.Stack ();
-        stack.expand = true;
-        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.add (input_language_scrolled);
-        stack.add (keyboard_layout_grid);
-
-        var frame = new Gtk.Frame (null);
-        frame.add (stack);
+        input_variant_widget = new VariantWidget ();
 
         var keyboard_test_entry = new Gtk.Entry ();
         keyboard_test_entry.hexpand = true;
@@ -81,12 +41,12 @@ public class KeyboardLayoutView : AbstractInstallerView {
         var stack_grid = new Gtk.Grid ();
         stack_grid.orientation = Gtk.Orientation.VERTICAL;
         stack_grid.row_spacing = 12;
-        stack_grid.add (frame);
+        stack_grid.add (input_variant_widget);
         stack_grid.add (keyboard_test_entry);
 
         content_area.column_homogeneous = true;
-        content_area.margin_end = 10;
-        content_area.margin_start = 10;
+        content_area.margin_end = 12;
+        content_area.margin_start = 12;
         content_area.attach (image, 0, 0, 1, 1);
         content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (stack_grid, 1, 0, 1, 2);
@@ -100,11 +60,11 @@ public class KeyboardLayoutView : AbstractInstallerView {
         action_area.add (back_button);
         action_area.add (next_button);
 
-        input_language_list_box.set_sort_func ((row1, row2) => {
+        input_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
             return ((LayoutRow) row1).layout.description.collate (((LayoutRow) row2).layout.description);
         });
 
-        keyboard_layout_list_box.set_sort_func ((row1, row2) => {
+        input_variant_widget.variant_listbox.set_sort_func ((row1, row2) => {
             if (((VariantRow) row1).code == "") {
                 return -1;
             }
@@ -120,12 +80,11 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
         next_button.clicked.connect (() => next_step ());
 
-        layout_back_button.clicked.connect (() => {
+        input_variant_widget.going_to_main.connect (() => {
             next_button.sensitive = false;
-            stack.visible_child = input_language_scrolled;
         });
 
-        input_language_list_box.row_activated.connect ((row) => {
+        input_variant_widget.main_listbox.row_activated.connect ((row) => {
             var layout = ((LayoutRow) row).layout;
             var variants = layout.variants;
             if (variants.is_empty) {
@@ -133,21 +92,16 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 return;
             }
 
-            keyboard_layout_list_box.get_children ().foreach ((child) => {
-                child.destroy ();
-            });
-
-            keyboard_layout_list_title.label = "<b>%s</b>".printf (layout.description);
-            keyboard_layout_list_box.add (new VariantRow ("", _("Default")));
-
+            input_variant_widget.clear_variants ();
+            input_variant_widget.variant_listbox.add (new VariantRow ("", _("Default")));
             foreach (var variant in variants.entries) {
-                keyboard_layout_list_box.add (new VariantRow (variant.key, variant.value));
+                input_variant_widget.variant_listbox.add (new VariantRow (variant.key, variant.value));
             }
 
-            stack.visible_child = keyboard_layout_grid;
+            input_variant_widget.show_variants (_("Input Language"), "<b>%s</b>".printf (layout.description));
         });
 
-        keyboard_layout_list_box.row_selected.connect ((row) => {
+        input_variant_widget.variant_listbox.row_selected.connect ((row) => {
             next_button.sensitive = true;
         });
         
@@ -158,7 +112,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
             popover.show_all ();
         });
 
-        load_layouts ();
+        foreach (var layout in KeyboardLayoutHelper.get_layouts ()) {
+            input_variant_widget.main_listbox.add (new LayoutRow (layout));
+        }
+
         show_all ();
     }
 
@@ -166,69 +123,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
         
     }
 
-    private void load_layouts () {
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/X11/xkb/rules/base.xml");
-        Xml.Node* root = doc->get_root_element ();
-        Xml.Node* layout_list_node = get_xml_node_by_name (root, "layoutList");
-        if (layout_list_node == null) {
-            delete doc;
-            return;
-        }
-
-        for (Xml.Node* layout_iter = layout_list_node->children; layout_iter != null; layout_iter = layout_iter->next) {
-            if (layout_iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (layout_iter->name == "layout") {
-                    Xml.Node* config_node = get_xml_node_by_name (layout_iter, "configItem");
-                    Xml.Node* variant_node = get_xml_node_by_name (layout_iter, "variantList");
-                    Xml.Node* description_node = get_xml_node_by_name (config_node, "description");
-                    Xml.Node* name_node = get_xml_node_by_name (config_node, "name");
-                    if (name_node == null || description_node == null) {
-                        continue;
-                    }
-
-                    var layout = Layout ();
-                    layout.name = name_node->children->content;
-                    layout.description = dgettext ("xkeyboard-config", description_node->children->content);
-                    var variants = new Gee.HashMap<string, string> ();
-                    layout.variants = variants;
-                    if (variant_node != null) {
-                        for (Xml.Node* variant_iter = variant_node->children; variant_iter != null; variant_iter = variant_iter->next) {
-                            if (variant_iter->name == "variant") {
-                                Xml.Node* variant_config_node = get_xml_node_by_name (variant_iter, "configItem");
-                                if (variant_config_node != null) {
-                                    Xml.Node* variant_description_node = get_xml_node_by_name (variant_config_node, "description");
-                                    Xml.Node* variant_name_node = get_xml_node_by_name (variant_config_node, "name");
-                                    if (variant_description_node != null && variant_name_node != null) {
-                                        variants[variant_name_node->children->content] = dgettext ("xkeyboard-config", variant_description_node->children->content);
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    input_language_list_box.add (new LayoutRow (layout));
-                }
-            }
-        }
-
-        delete doc;
-    }
-
-    private static Xml.Node* get_xml_node_by_name (Xml.Node* root, string name) {
-        for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-            if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (iter->name == name) {
-                    return iter;
-                }
-            }
-        }
-
-        return null;
-    }
-
     private class LayoutRow : Gtk.ListBoxRow {
-        public Layout layout;
-        public LayoutRow (Layout layout) {
+        public KeyboardLayoutHelper.Layout layout;
+        public LayoutRow (KeyboardLayoutHelper.Layout layout) {
             this.layout = layout;
 
             string layout_description = layout.description;
@@ -258,11 +155,5 @@ public class KeyboardLayoutView : AbstractInstallerView {
             add (label);
             show_all ();
         }
-    }
-
-    private struct Layout {
-        public string name;
-        public string description;
-        public Gee.HashMap<string, string> variants;
     }
 }

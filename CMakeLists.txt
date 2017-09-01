@@ -73,6 +73,9 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Application.vala
     src/MainWindow.vala
     src/Utils.vala
+    src/Helpers/KeyboardLayoutHelper.vala
+    src/Helpers/LocaleHelper.vala
+    src/Dialogs/EndSessionDialog.vala
     src/Objects/org.freedesktop.udisks2.vala
     src/Objects/Configuration.vala
     src/Objects/Disk.vala
@@ -89,6 +92,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Views/SuccessView.vala
     src/Widgets/DiskGrid.vala
     src/Widgets/LayoutWidget.vala
+    src/Widgets/VariantWidget.vala
 PACKAGES
     gtk+-3.0>=3.12
     granite

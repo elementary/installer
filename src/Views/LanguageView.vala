@@ -20,10 +20,11 @@
 public class Installer.LanguageView : AbstractInstallerView {
     Gtk.Label select_label;
     Gtk.Stack select_stack;
-    Gtk.ListBox list_box;
     Gtk.Button next_button;
     int select_number = 0;
     Gee.LinkedList<string> preferred_langs;
+
+    private VariantWidget lang_variant_widget;
 
     public signal void next_step ();
 
@@ -64,10 +65,10 @@ public class Installer.LanguageView : AbstractInstallerView {
         size_group.add_widget (select_stack);
         size_group.add_widget (image);
 
-        list_box = new Gtk.ListBox ();
-        list_box.activate_on_single_click = false;
-        list_box.expand = true;
-        list_box.set_sort_func ((row1, row2) => {
+        lang_variant_widget = new VariantWidget ();
+        lang_variant_widget.main_listbox.activate_on_single_click = false;
+
+        lang_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
             var langrow1 = (LangRow) row1;
             var langrow2 = (LangRow) row2;
             if (langrow1.preferred_row && langrow2.preferred_row == false) {
@@ -81,7 +82,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             return langrow1.lang.collate (langrow2.lang);
         });
 
-        list_box.set_header_func ((row, before) => {
+        lang_variant_widget.main_listbox.set_header_func ((row, before) => {
             row.set_header (null);
             if (!((LangRow)row).preferred_row) {
                 if (before != null && ((LangRow)before).preferred_row) {
@@ -95,35 +96,28 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
         });
 
-        var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.add (list_box);
-        scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-
-        foreach (var lang_entry in load_languagelist ().entries) {
+        foreach (var lang_entry in LocaleHelper.load_languagelist ().entries) {
             if (lang_entry.key in preferred_langs) {
                 var pref_langrow = new LangRow (lang_entry.key, lang_entry.value);
                 pref_langrow.preferred_row = true;
-                list_box.add (pref_langrow);
+                lang_variant_widget.main_listbox.add (pref_langrow);
             }
 
             var langrow = new LangRow (lang_entry.key, lang_entry.value);
-            list_box.add (langrow);
+            lang_variant_widget.main_listbox.add (langrow);
         }
-
-        var frame = new Gtk.Frame (null);
-        frame.add (scrolled);
 
         next_button = new Gtk.Button.with_label (_("Select"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (next_button);
 
-        list_box.row_selected.connect (row_selected);
-        list_box.select_row (list_box.get_row_at_index (0));
-        list_box.row_activated.connect ((row) => next_button.clicked ());
+        lang_variant_widget.main_listbox.row_selected.connect (row_selected);
+        lang_variant_widget.main_listbox.select_row (lang_variant_widget.main_listbox.get_row_at_index (0));
+        lang_variant_widget.main_listbox.row_activated.connect ((row) => next_button.clicked ());
 
         next_button.clicked.connect (() => {
-            unowned Gtk.ListBoxRow row = list_box.get_selected_row ();
+            unowned Gtk.ListBoxRow row = lang_variant_widget.main_listbox.get_selected_row ();
             unowned string lang = ((LangRow) row).lang;
             Environment.set_variable ("LANGUAGE", lang, true);
             Configuration.get_default ().lang = lang;
@@ -132,7 +126,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         destroy.connect (() => {
             // We need to disconnect the signal otherwise it's called several time when destroying the window…
-            list_box.row_selected.disconnect (row_selected);
+            lang_variant_widget.main_listbox.row_selected.disconnect (row_selected);
         });
 
         content_area.column_homogeneous = true;
@@ -140,7 +134,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         content_area.margin_start = 10;
         content_area.attach (image, 0, 0, 1, 1);
         content_area.attach (select_stack, 0, 1, 1, 1);
-        content_area.attach (frame, 1, 0, 1, 2);
+        content_area.attach (lang_variant_widget, 1, 0, 1, 2);
 
         timeout ();
     }
@@ -152,7 +146,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         next_button.label = _("Select");
 
-        foreach (Gtk.Widget child in list_box.get_children ()) {
+        foreach (Gtk.Widget child in lang_variant_widget.main_listbox.get_children ()) {
             if (child is LangRow) {
                 var lang_row = (LangRow) child;
 
@@ -172,10 +166,10 @@ public class Installer.LanguageView : AbstractInstallerView {
     }
 
     private bool timeout () {
-        var row = list_box.get_row_at_index (select_number);
+        var row = lang_variant_widget.main_listbox.get_row_at_index (select_number);
         if (row == null) {
             select_number = 0;
-            row = list_box.get_row_at_index (select_number);
+            row = lang_variant_widget.main_listbox.get_row_at_index (select_number);
         }
 
         var current_lang = Environment.get_variable ("LANGUAGE");
@@ -194,90 +188,6 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         select_number++;
         return GLib.Source.CONTINUE;
-    }
-
-    Gee.HashMap<string, string> load_languagelist () {
-        var langlist = new Gee.HashMap<string, string> ();
-
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/xml/iso-codes/iso_639_3.xml");
-        Xml.Node* root = doc->get_root_element ();
-        if (root == null) {
-            delete doc;
-        } else {
-            var current_lang = Environment.get_variable ("LANGUAGE");
-            foreach (unowned string lang in Build.LANG_LIST.split (";")) {
-                // We need to distinguish between pt and pt_BR
-                if ("_" in lang) {
-                    var parts = lang.split ("_", 2);
-                    var name = get_iso_639_3_name (parts[0], root);
-                    if (name != lang) {
-                        Environment.set_variable ("LANGUAGE", lang, true);
-                        Intl.textdomain ("pantheon-installer");
-                        var country_name = get_country_name (parts[1]);
-                        langlist.set (lang, "%s (%s)".printf (dgettext ("iso_639_3", name), dgettext ("iso_3166", country_name)));
-                    }
-                } else {
-                    var name = get_iso_639_3_name (lang, root);
-                    if (name != lang) {
-                        Environment.set_variable ("LANGUAGE", lang, true);
-                        Intl.textdomain ("pantheon-installer");
-                        langlist.set (lang, dgettext ("iso_639_3", name));
-                    }
-                }
-            }
-
-            if (current_lang != null) {
-                Environment.set_variable ("LANGUAGE", current_lang, true);
-            } else {
-                Environment.unset_variable ("LANGUAGE");
-            }
-        }
-
-        return langlist;
-    }
-
-    private string get_iso_639_3_name (string lang_code, Xml.Node* root) {
-        for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-            if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (iter->name == "iso_639_3_entry") {
-                    string? id = iter->get_prop ("id");
-                    if (id != lang_code) {
-                        id = iter->get_prop ("part1_code");
-                    }
-
-                    if (id == lang_code) {
-                        return iter->get_prop ("name");
-                    }
-                }
-            }
-        }
-
-        return lang_code;
-    }
-
-    private string get_country_name (string country_code) {
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/xml/iso-codes/iso_3166.xml");
-        Xml.Node* root = doc->get_root_element ();
-        if (root == null) {
-            delete doc;
-        } else {
-            for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-                if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                    if (iter->name == "iso_3166_entry") {
-                        string? id = iter->get_prop ("alpha_2_code");
-                        if (id != country_code) {
-                            id = iter->get_prop ("alpha_3_code");
-                        }
-
-                        if (id == country_code) {
-                            return iter->get_prop ("name");
-                        }
-                    }
-                }
-            }
-        }
-
-        return "";
     }
 
     public class LangRow : Gtk.ListBoxRow {

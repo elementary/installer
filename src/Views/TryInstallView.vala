@@ -18,6 +18,7 @@
 
 public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
+    private Utils.SeatInterface? seat;
     private Utils.SystemInterface system_interface;
 
     construct {
@@ -25,6 +26,12 @@ public class TryInstallView : AbstractInstallerView {
             system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
         } catch (IOError e) {
             critical (e.message);
+        }
+
+        try {
+            seat = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.DisplayManager", Environment.get_variable ("XDG_SEAT_PATH"), DBusProxyFlags.NONE);
+        } catch (IOError e) {
+            critical ("DisplayManager.Seat error: %s", e.message);
         }
 
         var title_label = new Gtk.Label (_("Install %s").printf (Utils.get_pretty_name ()));
@@ -105,14 +112,20 @@ public class TryInstallView : AbstractInstallerView {
 
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
+        demo_button.clicked.connect (() => {
+            try {
+                seat.switch_to_guest ("");
+            } catch (IOError e) {
+                stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+            }
+        });
+
         next_button.clicked.connect (() => next_step ());
 
         shutdown_button.clicked.connect (() => {
-            try {
-                system_interface.power_off (false);
-            } catch (IOError e) {
-                warning ("%s", e.message);
-            }
+            var end_session_dialog = new EndSessionDialog ();
+            end_session_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            end_session_dialog.run ();
         });
 
         show_all ();
