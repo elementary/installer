@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-29 02:09+0200\n"
+"POT-Creation-Date: 2017-09-01 14:30-0600\n"
 "PO-Revision-Date: 2016-10-29 02:09+0200\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: \n"
@@ -13,141 +13,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: ../src/DiskView/DiskView.vala:48
-msgid "Getting the current configuration…"
-msgstr "Vérification de la configuration actuelle…"
-
-#: ../src/DiskView/DiskView.vala:75
-msgid "Clean Install"
-msgstr "Réinstallation"
-
-#: ../src/DiskView/DiskView.vala:76
-msgid ""
-"Erase everything on your device and install a fresh copy of elementary OS."
-msgstr ""
-"Supprime tout sur votre appareil et installe une version vierge d'elementary "
-"OS."
-
-#: ../src/DiskView/DiskView.vala:80 ../src/DiskView/DiskView.vala:106
-msgid "Erase and Install"
-msgstr "Supprimer et installer"
-
-#. / TRANSLATORS: This is a title telling the user that it's possible to upgrade.
-#: ../src/DiskView/DiskView.vala:84
-msgctxt "action"
-msgid "Upgrade"
-msgstr "Mise à jour"
-
-#: ../src/DiskView/DiskView.vala:85
-msgid ""
-"An older version of elementary OS was detected on your system. Upgrade "
-"without losing any of your data or settings."
-msgstr ""
-"Une ancienne version d'elementary OS a été détectée sur votre système. "
-"Mettez à jour sans perdre aucune donnée ou aucun paramètre."
-
-#: ../src/DiskView/DiskView.vala:90
-msgctxt "actionable"
-msgid "Upgrade"
-msgstr "Mettre à jour"
-
-#: ../src/DiskView/DiskView.vala:93
-msgid "Advanced Install"
-msgstr "Installation avancée"
-
-#: ../src/DiskView/DiskView.vala:94
-msgid ""
-"Create, resize and manually configure disk partitions. This method may lead "
-"to data loss."
-msgstr ""
-"Créez, redimensionnez et configurez manuellement les partitions du disque. "
-"Cette méthode peut entraîner des pertes de données."
-
-#: ../src/DiskView/DiskView.vala:98 ../src/LanguageView.vala:71
-#: ../src/LanguageView.vala:99
-msgid "Next"
-msgstr "Suivant"
-
-#: ../src/DiskView/DiskView.vala:166
-msgid "Disk:"
-msgstr "Disque :"
-
-#: ../src/DiskView/DiskView.vala:169
-msgid "Multiple operating systems were detected on your system"
-msgstr "Plusieurs systèmes d'exploitation ont été détectés sur votre appareil"
-
-#: ../src/DiskView/DiskView.vala:189 ../src/CheckView.vala:198
-#: ../src/CheckView.vala:219 ../src/CheckView.vala:243
-msgid "Cancel Installation"
-msgstr "Annuler l'installation"
-
-#: ../src/CheckView.vala:197
-msgid "Not Enough Space"
-msgstr "Pas assez d'espace"
-
-#: ../src/CheckView.vala:197
-msgid ""
-"There is not enough room on your device to install elementary. We recommend "
-"a minimum of %s of storage."
-msgstr ""
-"Il n'y a pas assez d'espace sur votre périphérique pour installer "
-"elementary. Nous recommandons un minimum de %s d'espace disque."
-
-#: ../src/CheckView.vala:213
-msgid "Your Device May Be Too Slow"
-msgstr "Votre matériel est sans-doute trop lent"
-
-#: ../src/CheckView.vala:213
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
-msgstr ""
-"Votre matériel ne satisfait pas à la configuration minimale requise. Ceci "
-"peut entraîner des lenteurs ou des plantages lors de l'exécution de "
-"certaines tâches."
-
-#: ../src/CheckView.vala:216 ../src/CheckView.vala:240
-msgid "Ignore"
-msgstr "Ignorer"
-
-#: ../src/CheckView.vala:239
-msgid "Connect to a Power Source"
-msgstr "Connecter à une source d'alimentation"
-
-#: ../src/CheckView.vala:239
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing elementary OS."
-msgstr ""
-"Votre périphérique est actuellement sur batterie. Il est recommandé de le "
-"maintenir branché à une source d'alimentation pendant l'installation "
-"d'elementary OS."
-
-#: ../src/CheckView.vala:296
-msgid "Recommended:"
-msgstr "Recommandé :"
-
-#: ../src/CheckView.vala:300
-msgid "Your Device:"
-msgstr "Votre périphérique :"
-
-#: ../src/CheckView.vala:304 ../src/CheckView.vala:306
-msgid "Processor:"
-msgstr "Processeur :"
-
-#: ../src/CheckView.vala:312 ../src/CheckView.vala:314
-msgid "Memory:"
-msgstr "Mémoire :"
-
-#: ../src/LanguageView.vala:118
-msgid "Select a Language"
-msgstr "Sélectionner une langue"
-
 #: ../src/Application.vala:28
 msgid "Installer"
 msgstr "Installateur"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -159,11 +29,271 @@ msgstr ""
 "  mbodj https://launchpad.net/~toundembodj24\n"
 "  Éfrit https://launchpad.net/~efrit"
 
+#: ../src/Dialogs/EndSessionDialog.vala:43
+msgid "Are you sure you want to Shut Down?"
+msgstr ""
+
+#: ../src/Dialogs/EndSessionDialog.vala:50
+msgid "This will cancel installation and turn off this device."
+msgstr ""
+
+#: ../src/Dialogs/EndSessionDialog.vala:66 ../src/Views/SuccessView.vala:54
+msgid "Restart"
+msgstr ""
+
+#: ../src/Dialogs/EndSessionDialog.vala:68
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../src/Dialogs/EndSessionDialog.vala:70 ../src/Views/SuccessView.vala:52
+#: ../src/Views/TryInstallView.vala:103
+msgid "Shut Down"
+msgstr ""
+
+#: ../src/Helpers/LocaleHelper.vala:114
+#: ../src/Views/KeyboardLayoutView.vala:133
+msgid "%s…"
+msgstr ""
+
+#: ../src/MainWindow.vala:39 ../src/Views/TryInstallView.vala:37
+#: ../src/Views/TryInstallView.vala:99
+#, fuzzy
+msgid "Install %s"
+msgstr "Installateur"
+
+#: ../src/Utils.vala:156
+msgid "Operating System"
+msgstr ""
+
+#: ../src/Views/AbstractInstallerView.vala:47
+msgid "Cancel Installation"
+msgstr "Annuler l'installation"
+
+#: ../src/Views/CheckView.vala:61
+msgid "Ignore"
+msgstr "Ignorer"
+
+#: ../src/Views/CheckView.vala:208
+msgid "Not Enough Space"
+msgstr "Pas assez d'espace"
+
+#: ../src/Views/CheckView.vala:209
+#, fuzzy
+msgid ""
+"There is not enough room on your device to install %s. We recommend a "
+"minimum of %s of storage."
+msgstr ""
+"Il n'y a pas assez d'espace sur votre périphérique pour installer "
+"elementary. Nous recommandons un minimum de %s d'espace disque."
+
+#: ../src/Views/CheckView.vala:220
+msgid "Your Device May Be Too Slow"
+msgstr "Votre matériel est sans-doute trop lent"
+
+#: ../src/Views/CheckView.vala:221
+msgid ""
+"Your device doesn't meet the recommended hardware requirements. This may "
+"cause it to run slowly or freeze."
+msgstr ""
+"Votre matériel ne satisfait pas à la configuration minimale requise. Ceci "
+"peut entraîner des lenteurs ou des plantages lors de l'exécution de "
+"certaines tâches."
+
+#: ../src/Views/CheckView.vala:237
+msgid "Connect to a Power Source"
+msgstr "Connecter à une source d'alimentation"
+
+#: ../src/Views/CheckView.vala:238
+#, fuzzy
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"Votre périphérique est actuellement sur batterie. Il est recommandé de le "
+"maintenir branché à une source d'alimentation pendant l'installation "
+"d'elementary OS."
+
+#: ../src/Views/CheckView.vala:293
+msgid "Recommended:"
+msgstr "Recommandé :"
+
+#: ../src/Views/CheckView.vala:297
+msgid "Your Device:"
+msgstr "Votre périphérique :"
+
+#: ../src/Views/CheckView.vala:301 ../src/Views/CheckView.vala:303
+msgid "Processor:"
+msgstr "Processeur :"
+
+#: ../src/Views/CheckView.vala:309 ../src/Views/CheckView.vala:311
+msgid "Memory:"
+msgstr "Mémoire :"
+
+#: ../src/Views/DiskView.vala:49
+msgid "Select a drive to use for installation"
+msgstr ""
+
+#: ../src/Views/DiskView.vala:54
+msgid ""
+"This will erase all data on the selected drive. If you have not backed your "
+"data up, you can cancel the installation and use Demo Mode."
+msgstr ""
+
+#: ../src/Views/DiskView.vala:65
+msgid "Getting the current configuration…"
+msgstr "Vérification de la configuration actuelle…"
+
+#: ../src/Views/DiskView.vala:94
+msgid "Erase and Install"
+msgstr "Supprimer et installer"
+
+#: ../src/Views/ErrorView.vala:39
+#, fuzzy
+msgid "Could not install %s"
+msgstr "Réinstallation"
+
+#: ../src/Views/ErrorView.vala:45
+msgid ""
+"The installation failed, so your device may not restart properly. You can "
+"try one of the following:"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:51
+msgid "• Try the installation again"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:57
+msgid "• Use Demo Mode and try to manually recover"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:63
+msgid "• Restart your device to boot from another drive"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:81
+#, fuzzy
+msgid "Restart Device"
+msgstr "Votre périphérique :"
+
+#: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
+msgid "Try Demo Mode"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:85
+msgid "Try Installing Again"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:28
+msgid "Keyboard Layout"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:36
+msgid "Type to test your layout"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:39
+msgid "Show keyboard layout"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:95
+#, fuzzy
+msgid "Back"
+msgstr "Retour arrière"
+
+#: ../src/Views/KeyboardLayoutView.vala:56 ../src/Views/LanguageView.vala:110
+#: ../src/Views/LanguageView.vala:147
+msgid "Select"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:96
+msgid "Default"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:101
+#, fuzzy
+msgid "Input Language"
+msgstr "Sélectionner une langue"
+
+#: ../src/Views/LanguageView.vala:178
+msgid "Select a Language"
+msgstr "Sélectionner une langue"
+
+#: ../src/Views/LanguageView.vala:206
+msgid "Currently active language"
+msgstr ""
+
+#: ../src/Views/SuccessView.vala:32
+msgid "Restart your device to continue setting up"
+msgstr ""
+
+#: ../src/Views/SuccessView.vala:38
+msgid ""
+"%s has been installed. Your device will automatically restart in 30 seconds "
+"to set up a new user, or you can shut down now and set a user up later."
+msgstr ""
+
+#: ../src/Views/TryInstallView.vala:42
+msgid ""
+"You can install %s on this device now, or try Demo Mode without installing."
+msgstr ""
+
+#: ../src/Views/TryInstallView.vala:48
+msgid "Data from your previous operating system is unchanged in Demo Mode."
+msgstr ""
+
+#: ../src/Views/TryInstallView.vala:66
+msgid "Any changes you make in Demo Mode will not be saved."
+msgstr ""
+
+#: ../src/Views/TryInstallView.vala:74
+msgid ""
+"You can always return from Demo Mode to the installer by selecting the "
+"Install icon."
+msgstr ""
+
+#~ msgid ""
+#~ "Erase everything on your device and install a fresh copy of elementary OS."
+#~ msgstr ""
+#~ "Supprime tout sur votre appareil et installe une version vierge "
+#~ "d'elementary OS."
+
+#~ msgctxt "action"
+#~ msgid "Upgrade"
+#~ msgstr "Mise à jour"
+
+#~ msgid ""
+#~ "An older version of elementary OS was detected on your system. Upgrade "
+#~ "without losing any of your data or settings."
+#~ msgstr ""
+#~ "Une ancienne version d'elementary OS a été détectée sur votre système. "
+#~ "Mettez à jour sans perdre aucune donnée ou aucun paramètre."
+
+#~ msgctxt "actionable"
+#~ msgid "Upgrade"
+#~ msgstr "Mettre à jour"
+
+#~ msgid "Advanced Install"
+#~ msgstr "Installation avancée"
+
+#~ msgid ""
+#~ "Create, resize and manually configure disk partitions. This method may "
+#~ "lead to data loss."
+#~ msgstr ""
+#~ "Créez, redimensionnez et configurez manuellement les partitions du "
+#~ "disque. Cette méthode peut entraîner des pertes de données."
+
+#~ msgid "Next"
+#~ msgstr "Suivant"
+
+#~ msgid "Disk:"
+#~ msgstr "Disque :"
+
+#~ msgid "Multiple operating systems were detected on your system"
+#~ msgstr ""
+#~ "Plusieurs systèmes d'exploitation ont été détectés sur votre appareil"
+
 #~ msgid "Erase and install"
 #~ msgstr "Supprimer et installer"
-
-#~ msgid "Cancel"
-#~ msgstr "Annuler"
 
 #~ msgid "Skip"
 #~ msgstr "Ignorer"
@@ -206,9 +336,6 @@ msgstr ""
 
 #~ msgid "Add last result"
 #~ msgstr "Ajouter le dernier résultat"
-
-#~ msgid "Backspace"
-#~ msgstr "Retour arrière"
 
 #~ msgid "Clear entry"
 #~ msgstr "Effacer l'entrée"

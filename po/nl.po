@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-02 13:40-0700\n"
+"POT-Creation-Date: 2017-09-01 14:30-0600\n"
 "PO-Revision-Date: 2017-04-09 18:16+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
-"Language-Team: Dutch "
-"<http://weblate.elementary.io/projects/desktop/installer/nl/>\n"
+"Language-Team: Dutch <http://weblate.elementary.io/projects/desktop/"
+"installer/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,11 +15,11 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: ../src/PantheonCalculator.vala:27 ../src/MainWindow.vala:73
-msgid "Calculator"
-msgstr "Rekenmachine"
+#: ../src/Application.vala:28
+msgid "Installer"
+msgstr ""
 
-#: ../src/PantheonCalculator.vala:44
+#: ../src/Application.vala:40
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -30,122 +30,300 @@ msgstr ""
 "  Stefan Cloudt https://launchpad.net/~stefan-cloudt\n"
 "  Thomas Berends https://launchpad.net/~thomasberends"
 
-#: ../src/HistoryDialog.vala:35 ../src/MainWindow.vala:86
-msgid "History"
-msgstr "Geschiedenis"
+#: ../src/Dialogs/EndSessionDialog.vala:43
+msgid "Are you sure you want to Shut Down?"
+msgstr ""
 
-#: ../src/HistoryDialog.vala:84
-msgid "Value to add:"
-msgstr "Waarde om op te tellen:"
+#: ../src/Dialogs/EndSessionDialog.vala:50
+msgid "This will cancel installation and turn off this device."
+msgstr ""
 
-#: ../src/HistoryDialog.vala:88
-msgid "Result"
-msgstr "Resultaat"
+#: ../src/Dialogs/EndSessionDialog.vala:66 ../src/Views/SuccessView.vala:54
+msgid "Restart"
+msgstr ""
 
-#: ../src/HistoryDialog.vala:92
-msgid "Expression"
-msgstr "Uitdrukking"
+#: ../src/Dialogs/EndSessionDialog.vala:68
+msgid "Cancel"
+msgstr ""
 
-#: ../src/HistoryDialog.vala:98
-msgid "Close"
-msgstr "Sluiten"
+#: ../src/Dialogs/EndSessionDialog.vala:70 ../src/Views/SuccessView.vala:52
+#: ../src/Views/TryInstallView.vala:103
+msgid "Shut Down"
+msgstr ""
 
-#: ../src/HistoryDialog.vala:99 ../src/MainWindow.vala:133
-msgid "Add"
-msgstr "Optellen"
+#: ../src/Helpers/LocaleHelper.vala:114
+#: ../src/Views/KeyboardLayoutView.vala:133
+msgid "%s…"
+msgstr ""
 
-#: ../src/MainWindow.vala:81 ../src/MainWindow.vala:376
-msgid "Show extended functionality"
-msgstr "Toon uitgebreide functionaliteit"
+#: ../src/MainWindow.vala:39 ../src/Views/TryInstallView.vala:37
+#: ../src/Views/TryInstallView.vala:99
+msgid "Install %s"
+msgstr ""
 
-#: ../src/MainWindow.vala:124
-msgid "Calculate Result"
-msgstr "Bereken resultaat"
+#: ../src/Utils.vala:156
+msgid "Operating System"
+msgstr ""
 
-#: ../src/MainWindow.vala:127
-msgid "Add last result"
-msgstr "Voeg laatste resultaat toe"
+#: ../src/Views/AbstractInstallerView.vala:47
+msgid "Cancel Installation"
+msgstr ""
 
-#: ../src/MainWindow.vala:129
-msgid "Backspace"
+#: ../src/Views/CheckView.vala:61
+msgid "Ignore"
+msgstr ""
+
+#: ../src/Views/CheckView.vala:208
+msgid "Not Enough Space"
+msgstr ""
+
+#: ../src/Views/CheckView.vala:209
+msgid ""
+"There is not enough room on your device to install %s. We recommend a "
+"minimum of %s of storage."
+msgstr ""
+
+#: ../src/Views/CheckView.vala:220
+msgid "Your Device May Be Too Slow"
+msgstr ""
+
+#: ../src/Views/CheckView.vala:221
+msgid ""
+"Your device doesn't meet the recommended hardware requirements. This may "
+"cause it to run slowly or freeze."
+msgstr ""
+
+#: ../src/Views/CheckView.vala:237
+msgid "Connect to a Power Source"
+msgstr ""
+
+#: ../src/Views/CheckView.vala:238
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+
+#: ../src/Views/CheckView.vala:293
+msgid "Recommended:"
+msgstr ""
+
+#: ../src/Views/CheckView.vala:297
+msgid "Your Device:"
+msgstr ""
+
+#: ../src/Views/CheckView.vala:301 ../src/Views/CheckView.vala:303
+msgid "Processor:"
+msgstr ""
+
+#: ../src/Views/CheckView.vala:309 ../src/Views/CheckView.vala:311
+msgid "Memory:"
+msgstr ""
+
+#: ../src/Views/DiskView.vala:49
+msgid "Select a drive to use for installation"
+msgstr ""
+
+#: ../src/Views/DiskView.vala:54
+msgid ""
+"This will erase all data on the selected drive. If you have not backed your "
+"data up, you can cancel the installation and use Demo Mode."
+msgstr ""
+
+#: ../src/Views/DiskView.vala:65
+msgid "Getting the current configuration…"
+msgstr ""
+
+#: ../src/Views/DiskView.vala:94
+msgid "Erase and Install"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:39
+msgid "Could not install %s"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:45
+msgid ""
+"The installation failed, so your device may not restart properly. You can "
+"try one of the following:"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:51
+msgid "• Try the installation again"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:57
+msgid "• Use Demo Mode and try to manually recover"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:63
+msgid "• Restart your device to boot from another drive"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:81
+msgid "Restart Device"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
+msgid "Try Demo Mode"
+msgstr ""
+
+#: ../src/Views/ErrorView.vala:85
+msgid "Try Installing Again"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:28
+msgid "Keyboard Layout"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:36
+msgid "Type to test your layout"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:39
+msgid "Show keyboard layout"
+msgstr ""
+
+#: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:95
+#, fuzzy
+msgid "Back"
 msgstr "Backspace"
 
-#: ../src/MainWindow.vala:130
-msgid "Clear entry"
-msgstr "Invoer wissen"
+#: ../src/Views/KeyboardLayoutView.vala:56 ../src/Views/LanguageView.vala:110
+#: ../src/Views/LanguageView.vala:147
+msgid "Select"
+msgstr ""
 
-#: ../src/MainWindow.vala:136
-msgid "Subtract"
-msgstr "Aftrekken"
+#: ../src/Views/KeyboardLayoutView.vala:96
+msgid "Default"
+msgstr ""
 
-#: ../src/MainWindow.vala:139
-msgid "Multiply"
-msgstr "Vermenigvuldigen"
+#: ../src/Views/KeyboardLayoutView.vala:101
+msgid "Input Language"
+msgstr ""
 
-#: ../src/MainWindow.vala:142
-msgid "Divide"
-msgstr "Delen"
+#: ../src/Views/LanguageView.vala:178
+msgid "Select a Language"
+msgstr ""
 
-#: ../src/MainWindow.vala:148
-msgid "Percentage"
-msgstr "Percentage"
+#: ../src/Views/LanguageView.vala:206
+msgid "Currently active language"
+msgstr ""
 
-#: ../src/MainWindow.vala:219
-msgid "Start Group"
-msgstr "Startgroep"
+#: ../src/Views/SuccessView.vala:32
+msgid "Restart your device to continue setting up"
+msgstr ""
 
-#: ../src/MainWindow.vala:220
-msgid "End Group"
-msgstr "Eindgroep"
+#: ../src/Views/SuccessView.vala:38
+msgid ""
+"%s has been installed. Your device will automatically restart in 30 seconds "
+"to set up a new user, or you can shut down now and set a user up later."
+msgstr ""
 
-#: ../src/MainWindow.vala:221
-msgid "Exponent"
-msgstr "Exponent"
+#: ../src/Views/TryInstallView.vala:42
+msgid ""
+"You can install %s on this device now, or try Demo Mode without installing."
+msgstr ""
 
-#: ../src/MainWindow.vala:223
-msgid "Root"
-msgstr "Wortel"
+#: ../src/Views/TryInstallView.vala:48
+msgid "Data from your previous operating system is unchanged in Demo Mode."
+msgstr ""
 
-#: ../src/MainWindow.vala:224
-msgid "Sine"
-msgstr "Sinus"
+#: ../src/Views/TryInstallView.vala:66
+msgid "Any changes you make in Demo Mode will not be saved."
+msgstr ""
 
-#: ../src/MainWindow.vala:225
-msgid "Hyperbolic Sine"
-msgstr "Sinus hyperbolicus"
+#: ../src/Views/TryInstallView.vala:74
+msgid ""
+"You can always return from Demo Mode to the installer by selecting the "
+"Install icon."
+msgstr ""
 
-#: ../src/MainWindow.vala:226
-msgid "Cosine"
-msgstr "Cosinus"
+#~ msgid "Calculator"
+#~ msgstr "Rekenmachine"
 
-#: ../src/MainWindow.vala:227
-msgid "Hyperbolic Cosine"
-msgstr "Cosinus hyperbolicus"
+#~ msgid "History"
+#~ msgstr "Geschiedenis"
 
-#: ../src/MainWindow.vala:228
-msgid "Tangent"
-msgstr "Tangens"
+#~ msgid "Value to add:"
+#~ msgstr "Waarde om op te tellen:"
 
-#: ../src/MainWindow.vala:229
-msgid "Hyperbolic Tangent"
-msgstr "Tangens hyperbolicus"
+#~ msgid "Result"
+#~ msgstr "Resultaat"
 
-#: ../src/MainWindow.vala:230
-msgid "Pi"
-msgstr "Pi"
+#~ msgid "Expression"
+#~ msgstr "Uitdrukking"
 
-#: ../src/MainWindow.vala:231
-msgid "Euler's Number"
-msgstr "Getal van Euler"
+#~ msgid "Close"
+#~ msgstr "Sluiten"
 
-#: ../src/MainWindow.vala:371
-msgid "Hide extended functionality"
-msgstr "Verberg uitgebreide functionaliteit"
+#~ msgid "Add"
+#~ msgstr "Optellen"
 
-#: ../src/Core/Scanner.vala:80
-msgid "'%s' is invalid."
-msgstr "'%s' is ongeldig."
+#~ msgid "Show extended functionality"
+#~ msgstr "Toon uitgebreide functionaliteit"
 
-#: ../src/Core/Scanner.vala:164
-msgid "'%s' is unknown."
-msgstr "'%s' is onbekend."
+#~ msgid "Calculate Result"
+#~ msgstr "Bereken resultaat"
+
+#~ msgid "Add last result"
+#~ msgstr "Voeg laatste resultaat toe"
+
+#~ msgid "Clear entry"
+#~ msgstr "Invoer wissen"
+
+#~ msgid "Subtract"
+#~ msgstr "Aftrekken"
+
+#~ msgid "Multiply"
+#~ msgstr "Vermenigvuldigen"
+
+#~ msgid "Divide"
+#~ msgstr "Delen"
+
+#~ msgid "Percentage"
+#~ msgstr "Percentage"
+
+#~ msgid "Start Group"
+#~ msgstr "Startgroep"
+
+#~ msgid "End Group"
+#~ msgstr "Eindgroep"
+
+#~ msgid "Exponent"
+#~ msgstr "Exponent"
+
+#~ msgid "Root"
+#~ msgstr "Wortel"
+
+#~ msgid "Sine"
+#~ msgstr "Sinus"
+
+#~ msgid "Hyperbolic Sine"
+#~ msgstr "Sinus hyperbolicus"
+
+#~ msgid "Cosine"
+#~ msgstr "Cosinus"
+
+#~ msgid "Hyperbolic Cosine"
+#~ msgstr "Cosinus hyperbolicus"
+
+#~ msgid "Tangent"
+#~ msgstr "Tangens"
+
+#~ msgid "Hyperbolic Tangent"
+#~ msgstr "Tangens hyperbolicus"
+
+#~ msgid "Pi"
+#~ msgstr "Pi"
+
+#~ msgid "Euler's Number"
+#~ msgstr "Getal van Euler"
+
+#~ msgid "Hide extended functionality"
+#~ msgstr "Verberg uitgebreide functionaliteit"
+
+#~ msgid "'%s' is invalid."
+#~ msgstr "'%s' is ongeldig."
+
+#~ msgid "'%s' is unknown."
+#~ msgstr "'%s' is onbekend."
