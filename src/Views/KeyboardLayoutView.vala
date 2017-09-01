@@ -38,35 +38,32 @@ public class KeyboardLayoutView : AbstractInstallerView {
         layout_back_button.margin = 6;
         layout_back_button.get_style_context ().add_class ("back-button");
 
-        var keyboard_layout_list_title = new Gtk.Label (null);
-        keyboard_layout_list_title.ellipsize = Pango.EllipsizeMode.END;
-        keyboard_layout_list_title.max_width_chars = 20;
-        keyboard_layout_list_title.use_markup = true;
+        var layout_list_title = new Gtk.Label (null);
+        layout_list_title.ellipsize = Pango.EllipsizeMode.END;
+        layout_list_title.max_width_chars = 20;
+        layout_list_title.use_markup = true;
 
-        var keyboard_layout_list_box = new Gtk.ListBox ();
-        var keyboard_layout_scrolled = new Gtk.ScrolledWindow (null, null);
-        keyboard_layout_scrolled.expand = true;
-        keyboard_layout_scrolled.add (keyboard_layout_list_box);
+        var layout_list_box = new Gtk.ListBox ();
+        var layout_scrolled = new Gtk.ScrolledWindow (null, null);
+        layout_scrolled.expand = true;
+        layout_scrolled.add (layout_list_box);
 
-        var keyboard_layout_spacer = new Gtk.Grid ();
+        var layout_header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        layout_header_box.add (layout_back_button);
+        layout_header_box.set_center_widget (layout_list_title);
 
-        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-        size_group.add_widget (layout_back_button);
-        size_group.add_widget (keyboard_layout_spacer);
-
-        var keyboard_layout_grid = new Gtk.Grid ();
-        keyboard_layout_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        keyboard_layout_grid.attach (layout_back_button, 0, 0, 1, 1);
-        keyboard_layout_grid.attach (keyboard_layout_list_title, 1, 0, 1, 1);
-        keyboard_layout_grid.attach (keyboard_layout_spacer, 2, 0, 1, 1);
-        keyboard_layout_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 3, 1);
-        keyboard_layout_grid.attach (keyboard_layout_scrolled, 0, 2, 3, 1);
+        var layout_grid = new Gtk.Grid ();
+        layout_grid.orientation = Gtk.Orientation.VERTICAL;
+        layout_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        layout_grid.add (layout_header_box);
+        layout_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        layout_grid.add (layout_scrolled);
 
         var stack = new Gtk.Stack ();
         stack.expand = true;
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (input_language_scrolled);
-        stack.add (keyboard_layout_grid);
+        stack.add (layout_grid);
 
         var frame = new Gtk.Frame (null);
         frame.add (stack);
@@ -85,8 +82,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
         stack_grid.add (keyboard_test_entry);
 
         content_area.column_homogeneous = true;
-        content_area.margin_end = 10;
-        content_area.margin_start = 10;
+        content_area.margin_end = 12;
+        content_area.margin_start = 12;
         content_area.attach (image, 0, 0, 1, 1);
         content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (stack_grid, 1, 0, 1, 2);
@@ -104,7 +101,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             return ((LayoutRow) row1).layout.description.collate (((LayoutRow) row2).layout.description);
         });
 
-        keyboard_layout_list_box.set_sort_func ((row1, row2) => {
+        layout_list_box.set_sort_func ((row1, row2) => {
             if (((VariantRow) row1).code == "") {
                 return -1;
             }
@@ -133,21 +130,21 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 return;
             }
 
-            keyboard_layout_list_box.get_children ().foreach ((child) => {
+            layout_list_box.get_children ().foreach ((child) => {
                 child.destroy ();
             });
 
-            keyboard_layout_list_title.label = "<b>%s</b>".printf (layout.description);
-            keyboard_layout_list_box.add (new VariantRow ("", _("Default")));
+            layout_list_title.label = "<b>%s</b>".printf (layout.description);
+            layout_list_box.add (new VariantRow ("", _("Default")));
 
             foreach (var variant in variants.entries) {
-                keyboard_layout_list_box.add (new VariantRow (variant.key, variant.value));
+                layout_list_box.add (new VariantRow (variant.key, variant.value));
             }
 
-            stack.visible_child = keyboard_layout_grid;
+            stack.visible_child = layout_grid;
         });
 
-        keyboard_layout_list_box.row_selected.connect ((row) => {
+        layout_list_box.row_selected.connect ((row) => {
             next_button.sensitive = true;
         });
         
