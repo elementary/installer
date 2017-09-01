@@ -17,7 +17,6 @@
  */
 
 public class ErrorView : AbstractInstallerView {
-    private Utils.SeatInterface? seat;
     private Utils.SystemInterface system_interface;
 
     construct {
@@ -25,12 +24,6 @@ public class ErrorView : AbstractInstallerView {
             system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
         } catch (IOError e) {
                 warning ("%s", e.message);
-        }
-
-        try {
-            seat = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.DisplayManager", Environment.get_variable ("XDG_SEAT_PATH"), DBusProxyFlags.NONE);
-        } catch (IOError e) {
-            critical ("DisplayManager.Seat error: %s", e.message);
         }
 
         var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG);
