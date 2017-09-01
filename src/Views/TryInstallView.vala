@@ -123,11 +123,9 @@ public class TryInstallView : AbstractInstallerView {
         next_button.clicked.connect (() => next_step ());
 
         shutdown_button.clicked.connect (() => {
-            try {
-                system_interface.power_off (false);
-            } catch (IOError e) {
-                warning ("%s", e.message);
-            }
+            var end_session_dialog = new EndSessionDialog ();
+            end_session_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            end_session_dialog.run ();
         });
 
         show_all ();
