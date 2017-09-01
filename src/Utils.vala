@@ -181,8 +181,21 @@ namespace Utils {
     }
 
     [DBus (name = "org.freedesktop.DisplayManager.Seat")]
-    interface SeatInterface : Object {
+    public interface SeatInterface : Object {
         public abstract bool has_guest_account { get; }
         public abstract void switch_to_guest (string session_name) throws IOError;
+    }
+
+    private static SeatInterface? seat_instance;
+    public static unowned SeatInterface? get_seat_instance () {
+        if (seat_instance == null) {
+            try {
+                seat_instance = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.DisplayManager", Environment.get_variable ("XDG_SEAT_PATH"), DBusProxyFlags.NONE);
+            } catch (IOError e) {
+                critical ("DisplayManager.Seat error: %s", e.message);
+            }
+        }
+
+        return seat_instance;
     }
 }
