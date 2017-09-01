@@ -147,6 +147,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         error_view = new ErrorView ();
         stack.add (error_view);
         stack.visible_child = error_view;
+
+        error_view.previous_view = disk_view;
     }
 
     public override void close () {}
