@@ -57,13 +57,7 @@ public class SuccessView : AbstractInstallerView {
         action_area.add (shutdown_button);
         action_area.add (restart_button);
 
-        restart_button.clicked.connect (() => {
-            try {
-                system_interface.reboot (false);
-            } catch (IOError e) {
-                critical (e.message);
-            }
-        });
+        restart_button.clicked.connect (session_restart);
 
         shutdown_button.clicked.connect (() => {
             try {
@@ -74,11 +68,19 @@ public class SuccessView : AbstractInstallerView {
         });
 
         Timeout.add_seconds (30, () => {
-            restart_button.activate ();
+            session_restart ();
             return GLib.Source.REMOVE;
         });
 
         show_all ();
+    }
+
+    private void session_restart () {
+        try {
+            system_interface.reboot (false);
+        } catch (IOError e) {
+            critical (e.message);
+        }        
     }
 }
     
