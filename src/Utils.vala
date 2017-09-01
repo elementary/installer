@@ -179,4 +179,10 @@ namespace Utils {
         public abstract void reboot (bool interactive) throws IOError;
         public abstract void power_off (bool interactive) throws IOError;
     }
+
+    [DBus (name = "org.freedesktop.DisplayManager.Seat")]
+    interface SeatInterface : Object {
+        public abstract bool has_guest_account { get; }
+        public abstract void switch_to_guest (string session_name) throws IOError;
+    }
 }
