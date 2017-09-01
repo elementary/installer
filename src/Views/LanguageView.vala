@@ -76,10 +76,10 @@ public class Installer.LanguageView : AbstractInstallerView {
             } else if (langrow2.preferred_row && langrow1.preferred_row == false) {
                 return 1;
             } else if (langrow1.preferred_row && langrow2.preferred_row) {
-                return preferred_langs.index_of (langrow1.lang) - preferred_langs.index_of (langrow2.lang);
+                return preferred_langs.index_of (langrow1.lang_entry.get_code ()) - preferred_langs.index_of (langrow2.lang_entry.get_code ());
             }
 
-            return langrow1.lang.collate (langrow2.lang);
+            return langrow1.lang_entry.name.collate (langrow2.lang_entry.name);
         });
 
         lang_variant_widget.main_listbox.set_header_func ((row, before) => {
@@ -96,14 +96,14 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
         });
 
-        foreach (var lang_entry in LocaleHelper.load_languagelist ().entries) {
+        foreach (var lang_entry in LocaleHelper.get_lang_entries ().entries) {
             if (lang_entry.key in preferred_langs) {
-                var pref_langrow = new LangRow (lang_entry.key, lang_entry.value);
+                var pref_langrow = new LangRow (lang_entry.value);
                 pref_langrow.preferred_row = true;
                 lang_variant_widget.main_listbox.add (pref_langrow);
             }
 
-            var langrow = new LangRow (lang_entry.key, lang_entry.value);
+            var langrow = new LangRow (lang_entry.value);
             lang_variant_widget.main_listbox.add (langrow);
         }
 
@@ -118,7 +118,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         next_button.clicked.connect (() => {
             unowned Gtk.ListBoxRow row = lang_variant_widget.main_listbox.get_selected_row ();
-            unowned string lang = ((LangRow) row).lang;
+            string lang = ((LangRow) row).lang_entry.get_code ();
             Environment.set_variable ("LANGUAGE", lang, true);
             Configuration.get_default ().lang = lang;
             next_step ();
@@ -141,7 +141,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
     private void row_selected (Gtk.ListBoxRow? row) {
         var current_lang = Environment.get_variable ("LANGUAGE");
-        Environment.set_variable ("LANGUAGE", ((LangRow) row).lang, true);
+        Environment.set_variable ("LANGUAGE", ((LangRow) row).lang_entry.get_code (), true);
         Intl.textdomain ("pantheon-installer");
 
         next_button.label = _("Select");
@@ -150,7 +150,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             if (child is LangRow) {
                 var lang_row = (LangRow) child;
 
-                if (lang_row.lang == ((LangRow) row).lang) {
+                if (lang_row.lang_entry.get_code () == ((LangRow) row).lang_entry.get_code ()) {
                     lang_row.selected = true;
                 } else {
                     lang_row.selected = false;
@@ -173,7 +173,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         }
 
         var current_lang = Environment.get_variable ("LANGUAGE");
-        Environment.set_variable ("LANGUAGE", ((LangRow) row).lang, true);
+        Environment.set_variable ("LANGUAGE", ((LangRow) row).lang_entry.get_code (), true);
         Intl.textdomain ("pantheon-installer");
         select_label = new Gtk.Label (_("Select a Language"));
         select_label.show_all ();
@@ -192,7 +192,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
     public class LangRow : Gtk.ListBoxRow {
         private Gtk.Image image;
-        public string lang;
+        public LocaleHelper.LangEntry lang_entry;
         public bool preferred_row { get; set; default=false; }
 
         private bool _selected;
@@ -212,15 +212,15 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
         }
 
-        public LangRow (string lang, string translated_name) {
-            this.lang = lang;
+        public LangRow (LocaleHelper.LangEntry lang_entry) {
+            this.lang_entry = lang_entry;
 
             image = new Gtk.Image ();
             image.hexpand = true;
             image.halign = Gtk.Align.END;
             image.icon_size = Gtk.IconSize.BUTTON;
 
-            var label = new Gtk.Label (translated_name);
+            var label = new Gtk.Label (lang_entry.name);
             label.get_style_context ().add_class ("h3");
             label.xalign = 0;
 

@@ -17,33 +17,106 @@
  */
 
 namespace LocaleHelper {
-    public static Gee.HashMap<string, string> load_languagelist () {
-        var langlist = new Gee.HashMap<string, string> ();
+    public class LangEntry {
+        public string alpha_3;
+        public string? alpha_2;
+        public string name;
+        public CountryEntry[] countries;
 
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/xml/iso-codes/iso_639_3.xml");
-        Xml.Node* root = doc->get_root_element ();
-        if (root == null) {
-            delete doc;
-        } else {
+        public LangEntry () {
+            countries = {};
+        }
+
+        public string get_code () {
+            return alpha_2 ?? alpha_3;
+        }
+
+        public void add_country (CountryEntry country_entry) {
+            var _countries = countries;
+            _countries += country_entry;
+            countries = _countries;
+        }
+    }
+
+    public struct CountryEntry {
+        public string alpha_2;
+        public string alpha_3;
+        public string name;
+    }
+
+    private static Gee.HashMap<string, LangEntry?> lang_entries;
+    public static Gee.HashMap<string, LangEntry?> get_lang_entries () {
+        if (lang_entries == null) {
+            lang_entries = new Gee.HashMap<string, LangEntry?> ();
+            var langs = Build.LANG_LIST.split (";");
+
+            var parser = new Json.Parser ();
+            try {
+                parser.load_from_file ("/usr/share/iso-codes/json/iso_639-3.json");
+                weak Json.Object root_object = parser.get_root ().get_object ();
+                weak Json.Array 639_3_array = root_object.get_array_member ("639-3");
+                foreach (unowned Json.Node element in 639_3_array.get_elements ()) {
+                    weak Json.Object object = element.get_object ();
+                    var entry = new LangEntry ();
+                    entry.alpha_3 = object.get_string_member ("alpha_3");
+                    if (object.has_member ("alpha_2")) {
+                        entry.alpha_2 = object.get_string_member ("alpha_2");
+                    }
+
+                    var key_string = entry.get_code ();
+                    entry.name = object.get_string_member ("name");
+                    if (key_string in langs) {
+                        lang_entries[key_string] = entry;
+                    }
+                }
+            } catch (Error e) {
+                critical (e.message);
+            }
+
+            var countries = new Gee.HashMap<string, CountryEntry?> ();
+            parser = new Json.Parser ();
+            try {
+                parser.load_from_file ("/usr/share/iso-codes/json/iso_3166-1.json");
+                weak Json.Object root_object = parser.get_root ().get_object ();
+                weak Json.Array 639_3_array = root_object.get_array_member ("3166-1");
+                foreach (unowned Json.Node element in 639_3_array.get_elements ()) {
+                    weak Json.Object object = element.get_object ();
+                    var entry = CountryEntry ();
+                    entry.alpha_3 = object.get_string_member ("alpha_3");
+                    entry.alpha_2 = object.get_string_member ("alpha_2");
+                    entry.name = object.get_string_member ("name");
+                    countries[entry.alpha_2] = entry;
+                }
+            } catch (Error e) {
+                critical (e.message);
+            }
+
+            foreach (var lang in langs) {
+                if (!("_" in lang)) {
+                    continue;
+                }
+
+                var parts = lang.split ("_", 2);
+                var lang_entry = lang_entries[parts[0]];
+                var country = countries[parts[1]];
+                if (country != null && lang_entry != null) {
+                    lang_entry.add_country (country);
+                }
+            }
+
+            // Now translate the labels in their original language.
             var current_lang = Environment.get_variable ("LANGUAGE");
-            foreach (unowned string lang in Build.LANG_LIST.split (";")) {
-                // We need to distinguish between pt and pt_BR
-                if ("_" in lang) {
-                    var parts = lang.split ("_", 2);
-                    var name = get_iso_639_3_name (parts[0], root);
-                    if (name != lang) {
-                        Environment.set_variable ("LANGUAGE", lang, true);
-                        Intl.textdomain ("pantheon-installer");
-                        var country_name = get_country_name (parts[1]);
-                        langlist.set (lang, "%s (%s)".printf (dgettext ("iso_639_3", name), dgettext ("iso_3166", country_name)));
-                    }
-                } else {
-                    var name = get_iso_639_3_name (lang, root);
-                    if (name != lang) {
-                        Environment.set_variable ("LANGUAGE", lang, true);
-                        Intl.textdomain ("pantheon-installer");
-                        langlist.set (lang, dgettext ("iso_639_3", name));
-                    }
+            foreach (var lang_entry in lang_entries.values) {
+                var lang_code = lang_entry.get_code ();
+                Environment.set_variable ("LANGUAGE", lang_code, true);
+                lang_entry.name = dgettext ("iso_639_3", lang_entry.name);
+                if (lang_entry.countries.length > 0) {
+                    lang_entry.name = _("%s…").printf (lang_entry.name);
+                }
+
+                foreach (var country in lang_entry.countries) {
+                    Environment.set_variable ("LANGUAGE", lang_code + "_" + country.alpha_2, true);
+                    country.name = dgettext ("iso_3166", country.name);
                 }
             }
 
@@ -54,53 +127,68 @@ namespace LocaleHelper {
             }
         }
 
-        return langlist;
+        return lang_entries;
     }
 
-    public static string get_iso_639_3_name (string lang_code, Xml.Node* root) {
-        for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-            if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (iter->name == "iso_639_3_entry") {
-                    string? id = iter->get_prop ("id");
-                    if (id != lang_code) {
-                        id = iter->get_prop ("part1_code");
-                    }
-
-                    if (id == lang_code) {
-                        return iter->get_prop ("name");
-                    }
-                }
-            }
+    // Taken from the /usr/share/language-tools/main-countries script.
+    public static string? get_main_country (string lang_prefix) {
+        switch (lang_prefix) {
+            case "aa":
+                return "ET";
+            case "ar":
+                return "EG";
+            case "bn":
+                return "BD";
+            case "ca":
+                return "ES";
+            case "de":
+                return "DE";
+            case "el":
+                return "GR";
+            case "en":
+                return "US";
+            case "es":
+                return "ES";
+            case "eu":
+                return "ES";
+            case "fr":
+                return "FR";
+            case "fy":
+                return "NL";
+            case "it":
+                return "IT";
+            case "li":
+                return "NL";
+            case "nl":
+                return "NL";
+            case "om":
+                return "ET";
+            case "pa":
+                return "PK";
+            case "pt":
+                return "PT";
+            case "ru":
+                return "RU";
+            case "so":
+                return "SO";
+            case "sr":
+                return "RS";
+            case "sv":
+                return "SE";
+            case "ti":
+                return "ER";
+            case "tr":
+                return "TR";
         }
 
-        return lang_code;
-    }
-
-    public static string get_country_name (string country_code) {
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/xml/iso-codes/iso_3166.xml");
-        Xml.Node* root = doc->get_root_element ();
-        if (root == null) {
-            delete doc;
-        } else {
-            for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-                if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                    if (iter->name == "iso_3166_entry") {
-                        string? id = iter->get_prop ("alpha_2_code");
-                        if (id != country_code) {
-                            id = iter->get_prop ("alpha_3_code");
-                        }
-
-                        if (id == country_code) {
-                            var country_name = iter->get_prop ("name");
-                            delete doc;
-                            return country_name;
-                        }
-                    }
-                }
-            }
+        // We fallback to whatever is available in the lang list.
+        var lang_prefixed = lang_prefix + "_";
+        if (lang_prefixed in Build.LANG_LIST) {
+            var parts = Build.LANG_LIST.split (lang_prefixed, 2);
+            var country_part = parts[1].split (";", 2);
+            return country_part[0];
         }
 
-        delete doc;
-        return "";
+        return null;
     }
 }
