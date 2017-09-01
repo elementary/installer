@@ -17,6 +17,7 @@
  */
 
 public class ErrorView : AbstractInstallerView {
+    private Utils.SeatInterface? seat;
     private Utils.SystemInterface system_interface;
 
     construct {
@@ -24,6 +25,12 @@ public class ErrorView : AbstractInstallerView {
             system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
         } catch (IOError e) {
                 warning ("%s", e.message);
+        }
+
+        try {
+            seat = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.DisplayManager", Environment.get_variable ("XDG_SEAT_PATH"), DBusProxyFlags.NONE);
+        } catch (IOError e) {
+            critical ("DisplayManager.Seat error: %s", e.message);
         }
 
         var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG);
@@ -73,13 +80,13 @@ public class ErrorView : AbstractInstallerView {
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 
-        var session_button = new Gtk.Button.with_label (_("Try Demo Mode"));
+        var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
 
         var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
         install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (restart_button);
-        action_area.add (session_button);
+        action_area.add (demo_button);
         action_area.add (install_button);
 
         restart_button.clicked.connect (() => {
@@ -87,6 +94,14 @@ public class ErrorView : AbstractInstallerView {
                 system_interface.reboot (false);
             } catch (IOError e) {
                 critical (e.message);
+            }
+        });
+
+        demo_button.clicked.connect (() => {
+            try {
+                seat.switch_to_guest ("");
+            } catch (IOError e) {
+                stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
             }
         });
 
