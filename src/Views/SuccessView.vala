@@ -74,8 +74,7 @@ public class SuccessView : AbstractInstallerView {
         });
 
         Timeout.add_seconds (30, () => {
-            shutdown_button.activate ();
-
+            restart_button.activate ();
             return GLib.Source.REMOVE;
         });
 
