@@ -29,10 +29,12 @@ public class VariantWidget : Gtk.Frame {
     construct {
         main_listbox = new Gtk.ListBox ();
         var main_scrolled = new Gtk.ScrolledWindow (null, null);
+        main_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         main_scrolled.add (main_listbox);
 
         variant_listbox = new Gtk.ListBox ();
         var variant_scrolled = new Gtk.ScrolledWindow (null, null);
+        variant_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         variant_scrolled.vexpand = true;
         variant_scrolled.add (variant_listbox);
 
