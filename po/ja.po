@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-01 14:30-0600\n"
-"PO-Revision-Date: 2017-04-11 08:57+0000\n"
-"Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
-"installer/ja/>\n"
+"PO-Revision-Date: 2017-09-02 12:59+0000\n"
+"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
+"Language-Team: Japanese "
+"<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: ../src/Application.vala:28
@@ -30,52 +30,54 @@ msgstr ""
 "  Ryota Goto https://launchpad.net/~sarcaphx510"
 
 #: ../src/Dialogs/EndSessionDialog.vala:43
+#, fuzzy
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "本当にシャットダウンしますか？"
 
 #: ../src/Dialogs/EndSessionDialog.vala:50
+#, fuzzy
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "これはインストールをキャンセルし、このデバイスの電源を切ります。"
 
 #: ../src/Dialogs/EndSessionDialog.vala:66 ../src/Views/SuccessView.vala:54
 msgid "Restart"
-msgstr ""
+msgstr "再起動"
 
 #: ../src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "キャンセル"
 
 #: ../src/Dialogs/EndSessionDialog.vala:70 ../src/Views/SuccessView.vala:52
 #: ../src/Views/TryInstallView.vala:103
 msgid "Shut Down"
-msgstr ""
+msgstr "シャットダウン"
 
 #: ../src/Helpers/LocaleHelper.vala:114
 #: ../src/Views/KeyboardLayoutView.vala:133
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: ../src/MainWindow.vala:39 ../src/Views/TryInstallView.vala:37
 #: ../src/Views/TryInstallView.vala:99
-#, fuzzy
 msgid "Install %s"
-msgstr "インストーラー"
+msgstr "%s をインストール"
 
 #: ../src/Utils.vala:156
 msgid "Operating System"
-msgstr ""
+msgstr "オペレーティングシステム"
 
 #: ../src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "インストールをキャンセル"
 
 #: ../src/Views/CheckView.vala:61
 msgid "Ignore"
-msgstr ""
+msgstr "無視"
 
 #: ../src/Views/CheckView.vala:208
+#, fuzzy
 msgid "Not Enough Space"
-msgstr ""
+msgstr "空き容量が十分にありません"
 
 #: ../src/Views/CheckView.vala:209
 msgid ""
@@ -84,24 +86,28 @@ msgid ""
 msgstr ""
 
 #: ../src/Views/CheckView.vala:220
+#, fuzzy
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "お使いのデバイスは遅すぎるようです"
 
 #: ../src/Views/CheckView.vala:221
+#, fuzzy
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
-msgstr ""
+msgstr "お使いのデバイスはハードウェアの推奨要件を満たしていません。これにより処理が遅くなったりフリーズすることがあります。"
 
 #: ../src/Views/CheckView.vala:237
+#, fuzzy
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "電源に接続してください"
 
 #: ../src/Views/CheckView.vala:238
+#, fuzzy
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
-msgstr ""
+msgstr "お使いのデバイスはバッテリーの電力で動作しています。インストールの間は電源に接続することをお勧めします。"
 
 #: ../src/Views/CheckView.vala:293
 msgid "Recommended:"
@@ -109,25 +115,29 @@ msgstr ""
 
 #: ../src/Views/CheckView.vala:297
 msgid "Your Device:"
-msgstr ""
+msgstr "お使いのデバイス："
 
 #: ../src/Views/CheckView.vala:301 ../src/Views/CheckView.vala:303
 msgid "Processor:"
-msgstr ""
+msgstr "プロセッサー："
 
 #: ../src/Views/CheckView.vala:309 ../src/Views/CheckView.vala:311
 msgid "Memory:"
-msgstr ""
+msgstr "メモリー："
 
 #: ../src/Views/DiskView.vala:49
+#, fuzzy
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "インストールに使用するドライブを選択してください"
 
 #: ../src/Views/DiskView.vala:54
+#, fuzzy
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"これは選択されたドライブ上のすべてのデータを削除します。もしデータをバックアップしない場合は、インストールをキャンセルしてデモモードを使用することができま"
+"す。"
 
 #: ../src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
@@ -135,72 +145,77 @@ msgstr ""
 
 #: ../src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr ""
+msgstr "削除してインストール"
 
 #: ../src/Views/ErrorView.vala:39
 msgid "Could not install %s"
-msgstr ""
+msgstr "%s をインストールできません"
 
 #: ../src/Views/ErrorView.vala:45
+#, fuzzy
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
-msgstr ""
+msgstr "インストールは失敗したため、お使いのデバイスは正しく再起動しない可能性があります。以下のどれか一つを試すことができます："
 
 #: ../src/Views/ErrorView.vala:51
+#, fuzzy
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• もう一度インストールしてみる"
 
 #: ../src/Views/ErrorView.vala:57
 msgid "• Use Demo Mode and try to manually recover"
 msgstr ""
 
 #: ../src/Views/ErrorView.vala:63
+#, fuzzy
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• お使いのデバイスを再起動して別のドライブから起動する"
 
 #: ../src/Views/ErrorView.vala:81
 msgid "Restart Device"
-msgstr ""
+msgstr "デバイスを再起動"
 
 #: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
+#, fuzzy
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "デモモードを試す"
 
 #: ../src/Views/ErrorView.vala:85
+#, fuzzy
 msgid "Try Installing Again"
-msgstr ""
+msgstr "もう一度インストールしてみる"
 
 #: ../src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "キーボードレイアウト"
 
 #: ../src/Views/KeyboardLayoutView.vala:36
+#, fuzzy
 msgid "Type to test your layout"
-msgstr ""
+msgstr "レイアウトを調べるにはタイプしてください"
 
 #: ../src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "キーボードレイアウトを表示"
 
 #: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:95
-#, fuzzy
 msgid "Back"
-msgstr "左の一文字文字を削除"
+msgstr ""
 
 #: ../src/Views/KeyboardLayoutView.vala:56 ../src/Views/LanguageView.vala:110
 #: ../src/Views/LanguageView.vala:147
 msgid "Select"
-msgstr ""
+msgstr "選択"
 
 #: ../src/Views/KeyboardLayoutView.vala:96
 msgid "Default"
-msgstr ""
+msgstr "規定"
 
 #: ../src/Views/KeyboardLayoutView.vala:101
 #, fuzzy
 msgid "Input Language"
-msgstr "言語の選択"
+msgstr "言語の入力"
 
 #: ../src/Views/LanguageView.vala:178
 msgid "Select a Language"
@@ -211,33 +226,41 @@ msgid "Currently active language"
 msgstr ""
 
 #: ../src/Views/SuccessView.vala:32
+#, fuzzy
 msgid "Restart your device to continue setting up"
-msgstr ""
+msgstr "セットアップを続行するにはお使いのデバイスを再起動してください"
 
 #: ../src/Views/SuccessView.vala:38
+#, fuzzy
 msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
+"%s はインストールされました。お使いのデバイスは新しいユーザーをセットアップするために30秒以内に自動的に再起動します。あるいはシャットダウンしてユーザ"
+"ーを後でセットアップすることができます。"
 
 #: ../src/Views/TryInstallView.vala:42
+#, fuzzy
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
+msgstr "%s をお使いのデバイスに今すぐインストールするか、インストールせずにデモモードを試すことができます。"
 
 #: ../src/Views/TryInstallView.vala:48
+#, fuzzy
 msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr ""
+msgstr "デモモードでは以前のオペレーティングシステムのデータは変更されません。"
 
 #: ../src/Views/TryInstallView.vala:66
+#, fuzzy
 msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
+msgstr "デモモードで行った一切の変更は保存されません。"
 
 #: ../src/Views/TryInstallView.vala:74
+#, fuzzy
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
-msgstr ""
+msgstr "インストールアイコンを選択することでいつでもデモモードからインストーラーに戻ることができます。"
 
 #~ msgid "Use English"
 #~ msgstr "英語を使う"
