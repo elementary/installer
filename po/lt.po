@@ -3,19 +3,22 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-01 14:30-0600\n"
-"PO-Revision-Date: 2016-08-04 20:47+0000\n"
+"PO-Revision-Date: 2017-09-02 10:35+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language-Team: Lithuanian "
+"<https://weblate.elementary.io/projects/installer/installer/lt/>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || "
+"n%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
+"X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: ../src/Application.vala:28
 msgid "Installer"
-msgstr ""
+msgstr "Diegimo programa"
 
 #: ../src/Application.vala:40
 msgid "translator-credits"
@@ -27,211 +30,230 @@ msgstr ""
 
 #: ../src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "Ar tikrai norite išjungti?"
 
 #: ../src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "Tai atsisakys įdiegimo ir išjungs šį įrenginį."
 
 #: ../src/Dialogs/EndSessionDialog.vala:66 ../src/Views/SuccessView.vala:54
 msgid "Restart"
-msgstr ""
+msgstr "Paleisti iš naujo"
 
 #: ../src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "Atsisakyti"
 
 #: ../src/Dialogs/EndSessionDialog.vala:70 ../src/Views/SuccessView.vala:52
 #: ../src/Views/TryInstallView.vala:103
 msgid "Shut Down"
-msgstr ""
+msgstr "Išjungti"
 
 #: ../src/Helpers/LocaleHelper.vala:114
 #: ../src/Views/KeyboardLayoutView.vala:133
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: ../src/MainWindow.vala:39 ../src/Views/TryInstallView.vala:37
 #: ../src/Views/TryInstallView.vala:99
 msgid "Install %s"
-msgstr ""
+msgstr "Įdiegti %s"
 
 #: ../src/Utils.vala:156
 msgid "Operating System"
-msgstr ""
+msgstr "Operacinė sistema"
 
 #: ../src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Atsisakyti įdiegimo"
 
 #: ../src/Views/CheckView.vala:61
 msgid "Ignore"
-msgstr ""
+msgstr "Nepaisyti"
 
 #: ../src/Views/CheckView.vala:208
 msgid "Not Enough Space"
-msgstr ""
+msgstr "Trūksta vietos"
 
 #: ../src/Views/CheckView.vala:209
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"Jūsų įrenginyje trūksta vietos %s įdiegimui. Rekomenduojame mažiausiai %s "
+"kaupiklio vietos."
 
 #: ../src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Jūsų įrenginys gali būti per lėtas"
 
 #: ../src/Views/CheckView.vala:221
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"Jūsų įrenginys neatitinka rekomenduojamų aparatinės įrangos reikalavimų. Tai "
+"gali būti lėto įrenginio darbo ir strigčių priežastimi."
 
 #: ../src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "Prisijunkite prie elektros maitinimo šaltinio"
 
 #: ../src/Views/CheckView.vala:238
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"Jūsų įrenginys veikia, naudodamas baterijos energiją. Įdiegiant sistemą, "
+"rekomenduojama jį prijungti prie elektros maitinimo šaltinio."
 
 #: ../src/Views/CheckView.vala:293
 msgid "Recommended:"
-msgstr ""
+msgstr "Rekomenduojami:"
 
 #: ../src/Views/CheckView.vala:297
 msgid "Your Device:"
-msgstr ""
+msgstr "Jūsų įrenginio:"
 
 #: ../src/Views/CheckView.vala:301 ../src/Views/CheckView.vala:303
 msgid "Processor:"
-msgstr ""
+msgstr "Procesorius:"
 
 #: ../src/Views/CheckView.vala:309 ../src/Views/CheckView.vala:311
 msgid "Memory:"
-msgstr ""
+msgstr "Atmintis:"
 
 #: ../src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "Pasirinkite įdiegimui naudojamą diską"
 
 #: ../src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Tai ištrins visus pasirinktame diske esančius duomenis. Jeigu nesate "
+"pasidarę atsarginės savo duomenų kopijos, galite atsisakyti įdiegimo ir "
+"naudoti demonstracinę veikseną."
 
 #: ../src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Gaunama esama konfigūracija…"
 
 #: ../src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr ""
+msgstr "Ištrinti ir įdiegti"
 
 #: ../src/Views/ErrorView.vala:39
 msgid "Could not install %s"
-msgstr ""
+msgstr "Nepavyko įdiegti %s"
 
 #: ../src/Views/ErrorView.vala:45
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
+"Įdiegimas nepavyko, taigi, jūsų įrenginiui gali nepavykti tinkamai "
+"pasileisti iš naujo. Galite pabandyti vieną iš šių variantų:"
 
 #: ../src/Views/ErrorView.vala:51
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Bandyti įdiegti dar kartą"
 
 #: ../src/Views/ErrorView.vala:57
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• Naudoti demonstracinę veikseną ir bandyti atkurti rankiniu būdu"
 
 #: ../src/Views/ErrorView.vala:63
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Paleisti savo įrenginį iš naujo, norint jį paleisti iš kito disko"
 
 #: ../src/Views/ErrorView.vala:81
 msgid "Restart Device"
-msgstr ""
+msgstr "Paleisti įrenginį iš naujo"
 
 #: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Išbandyti demonstracinę veikseną"
 
 #: ../src/Views/ErrorView.vala:85
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Bandyti įdiegti dar kartą"
 
 #: ../src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Klaviatūros išdėstymas"
 
 #: ../src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Rašykite, norėdami išbandyti savo išdėstymą"
 
 #: ../src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Rodyti klaviatūros išdėstymą"
 
 #: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:95
-#, fuzzy
 msgid "Back"
-msgstr "Naikinti"
+msgstr "Atgal"
 
 #: ../src/Views/KeyboardLayoutView.vala:56 ../src/Views/LanguageView.vala:110
 #: ../src/Views/LanguageView.vala:147
 msgid "Select"
-msgstr ""
+msgstr "Pasirinkti"
 
 #: ../src/Views/KeyboardLayoutView.vala:96
 msgid "Default"
-msgstr ""
+msgstr "Numatytasis"
 
 #: ../src/Views/KeyboardLayoutView.vala:101
 msgid "Input Language"
-msgstr ""
+msgstr "Įvesties kalba"
 
 #: ../src/Views/LanguageView.vala:178
 msgid "Select a Language"
-msgstr ""
+msgstr "Pasirinkite kalbą"
 
 #: ../src/Views/LanguageView.vala:206
 msgid "Currently active language"
-msgstr ""
+msgstr "Šiuo metu aktyvi kalba"
 
 #: ../src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr ""
+msgstr "Norėdami tęsti nustatymą, paleiskite savo įrenginį iš naujo"
 
 #: ../src/Views/SuccessView.vala:38
 msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
+"%s buvo įdiegta. Siekiant atlikti naudotojo sąranką, jūsų įrenginys po 30 "
+"sekundžių bus automatiškai paleistas iš naujo, arba galite dabar jį išjungti "
+"ir nustatyti naudotoją vėliau."
 
 #: ../src/Views/TryInstallView.vala:42
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Jūs galite įdiegti %s šiame įrenginyje dabar arba neįdiegiant išbandyti "
+"demonstracinę veikseną."
 
 #: ../src/Views/TryInstallView.vala:48
 msgid "Data from your previous operating system is unchanged in Demo Mode."
 msgstr ""
+"Demonstracinėje veiksenoje duomenys iš jūsų ankstesnės operacinės sistemos "
+"lieka nepakitę."
 
 #: ../src/Views/TryInstallView.vala:66
 msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
+msgstr "Bet kokie demonstracinėje veiksenoje atlikti pakeitimai nebus įrašyti."
 
 #: ../src/Views/TryInstallView.vala:74
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
 msgstr ""
+"Jūs visada galite grįžti iš demonstracinės veiksenos į diegimo programą, "
+"pasirinkę įdiegimo piktogramą."
 
 #~ msgid "Calculator"
 #~ msgstr "Skaičiuotuvas"
