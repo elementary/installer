@@ -173,10 +173,10 @@ public class Installer.LanguageView : AbstractInstallerView {
         if (row == null) {
             select_number = 0;
             row = lang_variant_widget.main_listbox.get_row_at_index (select_number);
-        }
 
-        if (row == null) {
-            return Source.REMOVE;
+            if (row == null) {
+                return Source.REMOVE;
+            }
         }
 
         var current_lang = Environment.get_variable ("LANGUAGE");
