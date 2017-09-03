@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-01 14:30-0600\n"
-"PO-Revision-Date: 2017-09-03 14:55+0000\n"
+"PO-Revision-Date: 2017-09-03 15:00+0000\n"
 "Last-Translator: Tomáš Havlík <me@tomires.eu>\n"
 "Language-Team: Czech "
 "<https://weblate.elementary.io/projects/installer/installer/cs/>\n"
@@ -106,26 +106,29 @@ msgid "Connect to a Power Source"
 msgstr "Připojte napájení"
 
 #: ../src/Views/CheckView.vala:238
+#, fuzzy
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"Vaše zařízení užívá baterii. Doporučujeme jej po čas instalace připojit k "
+"elektrické síti."
 
 #: ../src/Views/CheckView.vala:293
 msgid "Recommended:"
-msgstr ""
+msgstr "Doporučeno:"
 
 #: ../src/Views/CheckView.vala:297
 msgid "Your Device:"
-msgstr ""
+msgstr "Vaše zařízení:"
 
 #: ../src/Views/CheckView.vala:301 ../src/Views/CheckView.vala:303
 msgid "Processor:"
-msgstr ""
+msgstr "Procesor:"
 
 #: ../src/Views/CheckView.vala:309 ../src/Views/CheckView.vala:311
 msgid "Memory:"
-msgstr ""
+msgstr "Operační paměť:"
 
 #: ../src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
@@ -147,7 +150,7 @@ msgstr ""
 
 #: ../src/Views/ErrorView.vala:39
 msgid "Could not install %s"
-msgstr ""
+msgstr "Nelze nainstalovat %s"
 
 #: ../src/Views/ErrorView.vala:45
 msgid ""
@@ -169,7 +172,7 @@ msgstr ""
 
 #: ../src/Views/ErrorView.vala:81
 msgid "Restart Device"
-msgstr ""
+msgstr "Restartovat zařízení"
 
 #: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
 msgid "Try Demo Mode"
