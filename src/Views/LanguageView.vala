@@ -66,7 +66,6 @@ public class Installer.LanguageView : AbstractInstallerView {
         size_group.add_widget (image);
 
         lang_variant_widget = new VariantWidget ();
-        lang_variant_widget.main_listbox.activate_on_single_click = false;
 
         lang_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
             var langrow1 = (LangRow) row1;
@@ -114,7 +113,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         lang_variant_widget.main_listbox.row_selected.connect (row_selected);
         lang_variant_widget.main_listbox.select_row (lang_variant_widget.main_listbox.get_row_at_index (0));
-        lang_variant_widget.main_listbox.row_activated.connect ((row) => next_button.clicked ());
+        lang_variant_widget.main_listbox.row_activated.connect (row_activated);
 
         next_button.clicked.connect (() => {
             unowned Gtk.ListBoxRow row = lang_variant_widget.main_listbox.get_selected_row ();
@@ -141,16 +140,16 @@ public class Installer.LanguageView : AbstractInstallerView {
 
     private void row_selected (Gtk.ListBoxRow? row) {
         var current_lang = Environment.get_variable ("LANGUAGE");
-        Environment.set_variable ("LANGUAGE", ((LangRow) row).lang_entry.get_code (), true);
-        Intl.textdomain ("pantheon-installer");
+        var lang_entry = ((LangRow) row).lang_entry;
+        Environment.set_variable ("LANGUAGE", lang_entry.get_code (), true);
+        Intl.textdomain (Build.GETTEXT_PACKAGE);
 
         next_button.label = _("Select");
 
         foreach (Gtk.Widget child in lang_variant_widget.main_listbox.get_children ()) {
             if (child is LangRow) {
                 var lang_row = (LangRow) child;
-
-                if (lang_row.lang_entry.get_code () == ((LangRow) row).lang_entry.get_code ()) {
+                if (lang_row.lang_entry.get_code () == lang_entry.get_code ()) {
                     lang_row.selected = true;
                 } else {
                     lang_row.selected = false;
@@ -165,6 +164,40 @@ public class Installer.LanguageView : AbstractInstallerView {
         }
     }
 
+    private void variant_row_selected (Gtk.ListBoxRow? row) {
+        var country_entry = ((CountryRow) row).country_entry;
+        foreach (Gtk.Widget child in lang_variant_widget.variant_listbox.get_children ()) {
+            if (child is CountryRow) {
+                var country_row = (CountryRow) child;
+                if (country_row.country_entry.alpha_2 == country_entry.alpha_2) {
+                    country_row.selected = true;
+                } else {
+                    country_row.selected = false;
+                }
+            }
+        }
+    }
+
+    private void row_activated (Gtk.ListBoxRow row) {
+            var lang_entry = ((LangRow) row).lang_entry;
+            var countries = lang_entry.countries;
+            if (countries.length == 0) {
+                return;
+            }
+
+            lang_variant_widget.variant_listbox.row_selected.disconnect (variant_row_selected);
+            lang_variant_widget.clear_variants ();
+            lang_variant_widget.variant_listbox.row_selected.connect (variant_row_selected);
+            foreach (var country in countries) {
+                lang_variant_widget.variant_listbox.add (new CountryRow (country));
+            }
+
+            lang_variant_widget.variant_listbox.show_all ();
+            Environment.set_variable ("LANGUAGE", lang_entry.get_code (), true);
+            Intl.textdomain (Build.GETTEXT_PACKAGE);
+            lang_variant_widget.show_variants (_("Languages"), "<b>%s</b>".printf (lang_entry.name));
+    }
+
     private bool timeout () {
         var row = lang_variant_widget.main_listbox.get_row_at_index (select_number);
         if (row == null) {
@@ -174,7 +207,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         var current_lang = Environment.get_variable ("LANGUAGE");
         Environment.set_variable ("LANGUAGE", ((LangRow) row).lang_entry.get_code (), true);
-        Intl.textdomain ("pantheon-installer");
+        Intl.textdomain (Build.GETTEXT_PACKAGE);
         select_label = new Gtk.Label (_("Select a Language"));
         select_label.show_all ();
         select_stack.add (select_label);
@@ -221,6 +254,48 @@ public class Installer.LanguageView : AbstractInstallerView {
             image.icon_size = Gtk.IconSize.BUTTON;
 
             var label = new Gtk.Label (lang_entry.name);
+            label.get_style_context ().add_class ("h3");
+            label.xalign = 0;
+
+            var grid = new Gtk.Grid ();
+            grid.column_spacing = 6;
+            grid.margin = 6;
+            grid.add (label);
+            grid.add (image);
+
+            add (grid);
+        }
+    }
+
+    public class CountryRow : Gtk.ListBoxRow {
+        public LocaleHelper.CountryEntry country_entry;
+        private Gtk.Image image;
+
+        private bool _selected;
+        public bool selected {
+            get {
+                return _selected;
+            }
+            set {
+                if (value) {
+                    image.icon_name = "selection-checked";
+                    image.tooltip_text = _("Currently active language");
+                } else {
+                    image.tooltip_text = "";
+                    image.clear ();
+                }
+                _selected = value;
+            }
+        }
+
+        public CountryRow (LocaleHelper.CountryEntry country_entry) {
+            this.country_entry = country_entry;
+            image = new Gtk.Image ();
+            image.hexpand = true;
+            image.halign = Gtk.Align.END;
+            image.icon_size = Gtk.IconSize.BUTTON;
+
+            var label = new Gtk.Label (country_entry.name);
             label.get_style_context ().add_class ("h3");
             label.xalign = 0;
 
