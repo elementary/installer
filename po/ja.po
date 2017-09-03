@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-01 14:30-0600\n"
-"PO-Revision-Date: 2017-09-02 12:59+0000\n"
+"PO-Revision-Date: 2017-09-03 00:32+0000\n"
 "Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
@@ -80,10 +80,11 @@ msgid "Not Enough Space"
 msgstr "空き容量が十分にありません"
 
 #: ../src/Views/CheckView.vala:209
+#, fuzzy
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
-msgstr ""
+msgstr "お使いのデバイスは %s をインストールするのに十分な空き容量がありません。ストレージには最低 %s をお勧めします。"
 
 #: ../src/Views/CheckView.vala:220
 #, fuzzy
@@ -193,7 +194,7 @@ msgstr "キーボードレイアウト"
 #: ../src/Views/KeyboardLayoutView.vala:36
 #, fuzzy
 msgid "Type to test your layout"
-msgstr "レイアウトを調べるにはタイプしてください"
+msgstr "入力してレイアウトを試してください"
 
 #: ../src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
@@ -223,7 +224,7 @@ msgstr "言語の選択"
 
 #: ../src/Views/LanguageView.vala:206
 msgid "Currently active language"
-msgstr ""
+msgstr "現在使用可能な言語"
 
 #: ../src/Views/SuccessView.vala:32
 #, fuzzy
