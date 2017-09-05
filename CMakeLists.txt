@@ -40,6 +40,7 @@ find_package(PkgConfig)
 
 # now let's actually check for the required dependencies
 pkg_check_modules(DEPS REQUIRED
+    distinst
     gtk+-3.0
     granite
     json-glib-1.0
@@ -95,6 +96,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/Widgets/LayoutWidget.vala
     src/Widgets/VariantWidget.vala
 PACKAGES
+    distinst
     gtk+-3.0>=3.12
     granite
     json-glib-1.0
