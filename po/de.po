@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-01 14:30-0600\n"
-"PO-Revision-Date: 2017-05-21 21:22+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/installer/"
-"installer/de/>\n"
+"PO-Revision-Date: 2017-09-06 14:01+0000\n"
+"Last-Translator: Lloyd Carr <l.carr@gmx.de>\n"
+"Language-Team: German "
+"<https://weblate.elementary.io/projects/installer/installer/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: ../src/Application.vala:28
@@ -38,176 +38,187 @@ msgstr ""
 
 #: ../src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "Sind Sie sicher, dass Sie den Rechner herunterfahren wollen?"
 
 #: ../src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "Dies wird die Installation abbrechen und den Rechner ausschalten."
 
 #: ../src/Dialogs/EndSessionDialog.vala:66 ../src/Views/SuccessView.vala:54
 msgid "Restart"
-msgstr ""
+msgstr "Neu starten"
 
 #: ../src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: ../src/Dialogs/EndSessionDialog.vala:70 ../src/Views/SuccessView.vala:52
 #: ../src/Views/TryInstallView.vala:103
 msgid "Shut Down"
-msgstr ""
+msgstr "Herunterfahren"
 
 #: ../src/Helpers/LocaleHelper.vala:114
 #: ../src/Views/KeyboardLayoutView.vala:133
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: ../src/MainWindow.vala:39 ../src/Views/TryInstallView.vala:37
 #: ../src/Views/TryInstallView.vala:99
-#, fuzzy
 msgid "Install %s"
-msgstr "Installieren"
+msgstr "Installieren %s"
 
 #: ../src/Utils.vala:156
 msgid "Operating System"
-msgstr ""
+msgstr "Betriebssystem"
 
 #: ../src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Installation abbrechen"
 
 #: ../src/Views/CheckView.vala:61
 msgid "Ignore"
-msgstr ""
+msgstr "ignorieren"
 
 #: ../src/Views/CheckView.vala:208
 msgid "Not Enough Space"
-msgstr ""
+msgstr "nicht genügend Speicherplatz"
 
 #: ../src/Views/CheckView.vala:209
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"Es ist nicht genügend freier Speicherplatz vorhanden, um %s zu installieren. "
+"Es sollten mindestens %s des Speicherplatzes zur Verfügung stehen."
 
 #: ../src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Ihr Rechner ist unter Umständen zu langsam"
 
 #: ../src/Views/CheckView.vala:221
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"Ihr Rechner erfüllt nicht die empfohlenen Hardware-Anforderungen. Dies kann "
+"dafür verantwortlich sein, dass er langsam läuft oder sich aufhängt."
 
 #: ../src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "Schließen Sie die Stromversorgung an"
 
 #: ../src/Views/CheckView.vala:238
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"Ihr Rechner läuft im Akkubetrieb. Es wird empfohlen, die Stromversorgung "
+"während der Installation anzuschließen."
 
 #: ../src/Views/CheckView.vala:293
 msgid "Recommended:"
-msgstr ""
+msgstr "Empfohlen:"
 
 #: ../src/Views/CheckView.vala:297
 msgid "Your Device:"
-msgstr ""
+msgstr "Ihr Rechner:"
 
 #: ../src/Views/CheckView.vala:301 ../src/Views/CheckView.vala:303
 msgid "Processor:"
-msgstr ""
+msgstr "Prozessor:"
 
 #: ../src/Views/CheckView.vala:309 ../src/Views/CheckView.vala:311
 msgid "Memory:"
-msgstr ""
+msgstr "Arbeitsspeicher:"
 
 #: ../src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "Wählen Sie eine Festplatte für die Installation aus"
 
 #: ../src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Dies wird alle Daten auf der gewählten Festplatte löschen. Wenn Sie Ihre "
+"Daten noch nicht gesichert haben, können Sie die Installation abbrechen und "
+"den Demo-Modus verwenden."
 
 #: ../src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Lädt die aktuelle Konfiguration…"
 
 #: ../src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr ""
+msgstr "löschen und installieren"
 
 #: ../src/Views/ErrorView.vala:39
 msgid "Could not install %s"
-msgstr ""
+msgstr "%s konnte nicht installiert werden"
 
 #: ../src/Views/ErrorView.vala:45
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
+"Die Installation ist fehlgeschlagen! Ihr Rechner kann aus diesem Grund unter "
+"Umständen nicht korrekt neu starten. Bitte probieren Sie Folgendes:"
 
 #: ../src/Views/ErrorView.vala:51
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Versuchen Sie die Installation erneut"
 
 #: ../src/Views/ErrorView.vala:57
 msgid "• Use Demo Mode and try to manually recover"
 msgstr ""
+"• Verwenden Sie den Demo-Modus und versuchen Sie eine manuelle "
+"Wiederherstellung"
 
 #: ../src/Views/ErrorView.vala:63
 msgid "• Restart your device to boot from another drive"
 msgstr ""
+"• Starten Sie Ihren Rechner neu, um von einem anderen Laufwerk zu booten"
 
 #: ../src/Views/ErrorView.vala:81
 msgid "Restart Device"
-msgstr ""
+msgstr "Rechner neu starten"
 
 #: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Versuchen Sie den Demo-Modus"
 
 #: ../src/Views/ErrorView.vala:85
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Versuchen Sie die Installation erneut"
 
 #: ../src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Tastaturbelegung"
 
 #: ../src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Tippen Sie, um Ihr Layout zu testen"
 
 #: ../src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Tastaturbelegung zeigen"
 
 #: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:95
-#, fuzzy
 msgid "Back"
-msgstr "Rücktaste"
+msgstr "Zurück"
 
 #: ../src/Views/KeyboardLayoutView.vala:56 ../src/Views/LanguageView.vala:110
 #: ../src/Views/LanguageView.vala:147
 msgid "Select"
-msgstr ""
+msgstr "auswählen"
 
 #: ../src/Views/KeyboardLayoutView.vala:96
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: ../src/Views/KeyboardLayoutView.vala:101
-#, fuzzy
 msgid "Input Language"
-msgstr "Sprache wählen"
+msgstr "Eingabesprache"
 
 #: ../src/Views/LanguageView.vala:178
 msgid "Select a Language"
@@ -215,36 +226,44 @@ msgstr "Sprache wählen"
 
 #: ../src/Views/LanguageView.vala:206
 msgid "Currently active language"
-msgstr ""
+msgstr "Aktuell eingestellte Sprache"
 
 #: ../src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr ""
+msgstr "Starten Sie Ihren Rechner neu, um die Einrichtung fortzusetzen"
 
 #: ../src/Views/SuccessView.vala:38
 msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
+"%s wurde installiert. Ihr Rechner wird in 30 Sekunden automatisch neu "
+"gestartet, um den neuen Benutzer einzurichten. Alternativ können Sie den "
+"Rechner jetzt herunterfahren und den Benutzer später einrichten."
 
 #: ../src/Views/TryInstallView.vala:42
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Sie können %s jetzt auf diesem Rechner installieren, oder den Demo-Modus "
+"ohne Installation ausprobieren."
 
 #: ../src/Views/TryInstallView.vala:48
 msgid "Data from your previous operating system is unchanged in Demo Mode."
 msgstr ""
+"Die Daten ihres vorherigen Betriebssystems bleiben im Demo-Modus unverändert."
 
 #: ../src/Views/TryInstallView.vala:66
 msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
+msgstr "Im Demo-Modus werden keine Änderungen gespeichert."
 
 #: ../src/Views/TryInstallView.vala:74
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
 msgstr ""
+"Sie können im Demo-Modus jederzeit zum Installationsprogramm zurückkehren, "
+"indem Sie auf das Installieren-Symbol klicken."
 
 #~ msgid "Use English"
 #~ msgstr "Deutsch verwenden"
