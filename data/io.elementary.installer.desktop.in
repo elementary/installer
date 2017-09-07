@@ -1,6 +1,6 @@
 [Desktop Entry]
-_Name=Install elementary OS
-_Comment=Install the system
+Name=Install elementary OS
+Comment=Install the system
 Exec=io.elementary.installer
 Icon=system-os-installer
 Terminal=false
