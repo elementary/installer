@@ -54,6 +54,10 @@ public class Installer.PartitionTable : GLib.Object {
         this.dbus_path = dbus_path;
     }
 
+    public string get_block_device () {
+        return (string) block.device;
+    }
+
     public async GLib.ObjectPath get_disk_object_path () {
         if (_block == null) {
             try {

@@ -9,5 +9,6 @@
 #cmakedefine VERSION_INFO "@VERSION_INFO@"
 #cmakedefine LANG_LIST "@LANG_LIST@"
 #cmakedefine PREFERRED_LANG_LIST "@PREFERRED_LANG_LIST@"
+#cmakedefine SQUASHFS_PATH "@SQUASHFS_PATH@"
 
 #endif // CONFIG_H

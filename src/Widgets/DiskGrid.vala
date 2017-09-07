@@ -46,5 +46,11 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         grid.attach (name_label, 0, 1, 1, 1);
         grid.attach (size_label, 0, 2, 1, 1);
         add (grid);
+        notify["active"].connect (() => {
+            if (active) {
+                unowned Configuration config = Configuration.get_default ();
+                config.disk = disk.partition_table.get_block_device ();
+            }
+        });
     }
 }

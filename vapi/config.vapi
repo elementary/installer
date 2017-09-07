@@ -8,4 +8,5 @@ namespace Build {
 	public const string VERSION_INFO;
 	public const string LANG_LIST;
 	public const string PREFERRED_LANG_LIST;
+	public const string SQUASHFS_PATH;
 }
