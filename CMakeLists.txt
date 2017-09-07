@@ -108,6 +108,7 @@ PACKAGES
 OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
     ${GTK_3_22_VALA_FLAGS}
+    --target-glib=2.32
 CUSTOM_VAPIS
     ${CMAKE_SOURCE_DIR}/vapi/config.vapi
 )
