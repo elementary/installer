@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-01 14:30-0600\n"
+"POT-Creation-Date: 2017-09-07 10:26-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgid "Cancel"
 msgstr ""
 
 #: ../src/Dialogs/EndSessionDialog.vala:70 ../src/Views/SuccessView.vala:52
-#: ../src/Views/TryInstallView.vala:103
+#: ../src/Views/TryInstallView.vala:96
 msgid "Shut Down"
 msgstr ""
 
@@ -51,8 +51,8 @@ msgstr ""
 msgid "%s…"
 msgstr ""
 
-#: ../src/MainWindow.vala:39 ../src/Views/TryInstallView.vala:37
-#: ../src/Views/TryInstallView.vala:99
+#: ../src/MainWindow.vala:39 ../src/Views/TryInstallView.vala:30
+#: ../src/Views/TryInstallView.vala:92
 msgid "Install %s"
 msgstr ""
 
@@ -132,37 +132,37 @@ msgstr ""
 msgid "Erase and Install"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:39
+#: ../src/Views/ErrorView.vala:32
 msgid "Could not install %s"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:45
+#: ../src/Views/ErrorView.vala:38
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:51
+#: ../src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:57
+#: ../src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:63
+#: ../src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:81
+#: ../src/Views/ErrorView.vala:74
 msgid "Restart Device"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
+#: ../src/Views/ErrorView.vala:76 ../src/Views/TryInstallView.vala:90
 msgid "Try Demo Mode"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:85
+#: ../src/Views/ErrorView.vala:78
 msgid "Try Installing Again"
 msgstr ""
 
@@ -178,12 +178,12 @@ msgstr ""
 msgid "Show keyboard layout"
 msgstr ""
 
-#: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:95
+#: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:88
 msgid "Back"
 msgstr ""
 
-#: ../src/Views/KeyboardLayoutView.vala:56 ../src/Views/LanguageView.vala:110
-#: ../src/Views/LanguageView.vala:147
+#: ../src/Views/KeyboardLayoutView.vala:56 ../src/Views/LanguageView.vala:109
+#: ../src/Views/LanguageView.vala:150
 msgid "Select"
 msgstr ""
 
@@ -195,12 +195,36 @@ msgstr ""
 msgid "Input Language"
 msgstr ""
 
-#: ../src/Views/LanguageView.vala:178
+#: ../src/Views/LanguageView.vala:201
+msgid "Languages"
+msgstr ""
+
+#: ../src/Views/LanguageView.vala:218
 msgid "Select a Language"
 msgstr ""
 
-#: ../src/Views/LanguageView.vala:206
+#: ../src/Views/LanguageView.vala:246 ../src/Views/LanguageView.vala:289
 msgid "Currently active language"
+msgstr ""
+
+#: ../src/Views/ProgressView.vala:98
+msgid "Formating Drive"
+msgstr ""
+
+#: ../src/Views/ProgressView.vala:102
+msgid "Partitioning Drive"
+msgstr ""
+
+#: ../src/Views/ProgressView.vala:106
+msgid "Extracting Files"
+msgstr ""
+
+#: ../src/Views/ProgressView.vala:110
+msgid "Configuring the System"
+msgstr ""
+
+#: ../src/Views/ProgressView.vala:114
+msgid "Finishing the Installation"
 msgstr ""
 
 #: ../src/Views/SuccessView.vala:32
@@ -213,20 +237,20 @@ msgid ""
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
 
-#: ../src/Views/TryInstallView.vala:42
+#: ../src/Views/TryInstallView.vala:35
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
 
-#: ../src/Views/TryInstallView.vala:48
+#: ../src/Views/TryInstallView.vala:41
 msgid "Data from your previous operating system is unchanged in Demo Mode."
 msgstr ""
 
-#: ../src/Views/TryInstallView.vala:66
+#: ../src/Views/TryInstallView.vala:59
 msgid "Any changes you make in Demo Mode will not be saved."
 msgstr ""
 
-#: ../src/Views/TryInstallView.vala:74
+#: ../src/Views/TryInstallView.vala:67
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
