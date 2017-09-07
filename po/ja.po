@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-01 14:30-0600\n"
-"PO-Revision-Date: 2017-09-03 00:32+0000\n"
+"PO-Revision-Date: 2017-09-06 08:35+0000\n"
 "Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
@@ -112,7 +112,7 @@ msgstr "お使いのデバイスはバッテリーの電力で動作していま
 
 #: ../src/Views/CheckView.vala:293
 msgid "Recommended:"
-msgstr ""
+msgstr "推奨要件："
 
 #: ../src/Views/CheckView.vala:297
 msgid "Your Device:"

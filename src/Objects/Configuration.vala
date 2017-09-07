@@ -29,6 +29,7 @@ public class Configuration : GLib.Object {
     }
 
     public string lang { get; set; }
+    public string? country { get; set; default = null; }
     public string keyboard { get; set; }
     public string disk { get; set; }
 }
