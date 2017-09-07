@@ -30,4 +30,5 @@ public class Configuration : GLib.Object {
 
     public string lang { get; set; }
     public string keyboard { get; set; }
+    public string disk { get; set; }
 }

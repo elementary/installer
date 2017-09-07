@@ -127,6 +127,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         progress_view.on_success.connect (() => load_success_view ());
         progress_view.on_error.connect (() => load_error_view ());
+        progress_view.start_installation ();
     }
 
     private void load_success_view () {

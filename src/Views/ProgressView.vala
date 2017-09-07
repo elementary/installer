@@ -20,6 +20,9 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
+    private Gtk.ProgressBar progressbar;
+    private Gtk.Label progressbar_label;
+
     construct {
         var logo = new Gtk.Image ();
         logo.icon_name = "distributor-logo";
@@ -39,11 +42,11 @@ public class ProgressView : AbstractInstallerView {
         terminal_button.image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
         terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var progressbar_label = new Gtk.Label ("Partitioning drives");
+        progressbar_label = new Gtk.Label (null);
         progressbar_label.xalign = 0;
         progressbar_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var progressbar = new Gtk.ProgressBar ();
+        progressbar = new Gtk.ProgressBar ();
         progressbar.hexpand = true;
 
         content_area.margin_end = 22;
@@ -63,16 +66,48 @@ public class ProgressView : AbstractInstallerView {
             }
         });
 
-        Timeout.add_seconds (20, () => {
-            if (terminal_button.active) {
-                on_error ();
-            } else {
-                on_success ();
-            }
-
-            return GLib.Source.REMOVE;
-        });
-
         show_all ();
+    }
+
+    public void start_installation () {
+        var installer = new Distinst.Installer ();
+        installer.on_error (installation_error_callback);
+        installer.on_status (installation_status_callback);
+        var config = Distinst.Config ();
+        unowned Configuration current_config = Configuration.get_default ();
+        config.squashfs = Build.SQUASHFS_PATH;
+        // Here the API want us to provide "sda" instead of "/dev/sda"
+        config.drive = current_config.disk.replace ("/dev/", "");
+        installer.install (config);
+    }
+
+    private void installation_status_callback (Distinst.Status status) {
+        if (status.percent == 100) {
+            on_success ();
+            return;
+        }
+
+        progressbar.fraction = ((double) status.percent)/100;
+        switch (status.step) {
+            case Distinst.Step.PARTITION:
+                progressbar_label.label = _("Partitioning Drive");
+                break;
+            case Distinst.Step.FORMAT:
+                progressbar_label.label = _("Formating Drive");
+                break;
+            case Distinst.Step.EXTRACT:
+                progressbar_label.label = _("Extracting Files");
+                break;
+            case Distinst.Step.CONFIGURE:
+                progressbar_label.label = _("Configuring the System");
+                break;
+            case Distinst.Step.BOOTLOADER:
+                progressbar_label.label = _("Finishing the Installation");
+                break;
+        }
+    }
+
+    private void installation_error_callback (Distinst.Error error) {
+        on_error ();
     }
 }
