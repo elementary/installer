@@ -29,7 +29,7 @@ You'll need the following dependencies:
  - [distinst](https://github.com/system76/distinst/)
  - valac
 
-Run `meson build` to configure the build environment, change to the build directory, and run `ninja test` to build and run automated tests
+Run `meson build` to configure the build environment. Change to the build directory and run `ninja test` to build and run automated tests
 
     meson build --prefix=/usr
     cd build
