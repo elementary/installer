@@ -18,27 +18,11 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.App : Granite.Application {
+public class Installer.App : Gtk.Application {
     construct {
         application_id = "io.elementary.installer";
         flags = ApplicationFlags.FLAGS_NONE;
-
         Intl.setlocale (LocaleCategory.ALL, "");
-
-        program_name = _("Installer");
-        build_version = Build.VERSION;
-        app_years = "2016";
-        app_icon = "system-os-installer";
-
-        app_launcher = "io.elementary.installer.desktop";
-        main_url = "https://launchpad.net/pantheon-installer";
-        bug_url = "https://bugs.launchpad.net/pantheon-installer";
-        help_url = "https://answers.launchpad.net/pantheon-installer"; 
-        translate_url = "https://translations.launchpad.net/pantheon-installer";
-        about_authors = { "Corentin Noël <corentin@elementary.io>" };
-        about_comments = "";
-        about_translators = _("translator-credits");
-        about_license_type = Gtk.License.GPL_3_0;
     }
 
     public override void activate () {
