@@ -1,18 +1,17 @@
 Source: io.elementary.installer
 Section: utils
 Maintainer: Cody Garver <cody@elementary.io>
-Build-Depends: cmake,
-               debhelper (>= 9),
+Build-Depends: debhelper (>= 9),
                desktop-file-utils,
-               intltool,
+               gettext,
                libdistinst-dev,
                libgee-0.8-dev,
                libgnomekbd-dev,
-               libgranite-dev,
                libgtk-3-dev,
                libjson-glib-dev,
                libxml2-dev,
                libxml2-utils,
+               meson,
                valac (>= 0.26)
 Standards-Version: 3.9.6
 Homepage: https://github.com/elementary/installer
