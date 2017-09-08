@@ -18,33 +18,24 @@ For the sake of providing a single installer experience, we assume that every in
 
 You'll need the following dependencies:
 
- - cmake
+ - meson
  - desktop-file-utils
- - intltool
+ - gettext
  - libgnomekbd-dev
- - libgranite-dev
  - libgtk-3-dev
  - libjson-glib-dev
  - libxml2-dev
  - libxml2-utils
+ - [distinst](https://github.com/system76/distinst/)
  - valac
 
-Create a clean build environment
+Run `meson build` to configure the build environment, change to the build directory, and run `ninja test` to build and run automated tests
 
-    mkdir build && cd build
-    
-Configure the build environment
+    meson build --prefix=/usr
+    cd build
+    ninja test
 
-    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+To install, use `ninja install`, then execute with `io.elementary.installer`
 
-Build and run automated tests
-
-    make all test
-    
-Install
-
-    sudo make install
-
-Execute
-
+    sudo ninja install
     io.elementary.installer
