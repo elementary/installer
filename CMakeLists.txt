@@ -31,7 +31,7 @@ endforeach()
 # This list is prioritized, do not sort it alphabetically
 set (PREFERRED_LANG_LIST "en;zh;es;fr;pt;ru;de")
 
-set (SQUASHFS_PATH "/casper/filesystem.squashfs")
+set (SQUASHFS_PATH "/cdrom/casper/filesystem.squashfs")
 
 configure_file (${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
 add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
