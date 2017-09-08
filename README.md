@@ -39,3 +39,5 @@ To install, use `ninja install`, then execute with `io.elementary.installer`
 
     sudo ninja install
     io.elementary.installer
+
+To test, use `ninja test`
