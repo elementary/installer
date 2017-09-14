@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-01 14:30-0600\n"
-"PO-Revision-Date: 2017-09-14 10:35+0000\n"
-"Last-Translator: Kamil Bach <me@kamilbach.com>\n"
+"PO-Revision-Date: 2017-09-14 11:27+0000\n"
+"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/installer/installer/pl/>\n"
 "Language: pl\n"
@@ -130,17 +130,20 @@ msgstr "Pamięć:"
 
 #: ../src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "Wybierz napęd do użycia w instalacji"
 
 #: ../src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Spowoduje to usunięcie wszystkich danych z wybranego dysku. Jeśli nie "
+"wykonałeś kopii zapasowej swoich danych, możesz anulować instalację i użyć "
+"trybu demonstracyjnego."
 
 #: ../src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr "Pobieranie bieżącej konfiguracji..."
+msgstr "Pobieranie bieżącej konfiguracji…"
 
 #: ../src/Views/DiskView.vala:94
 msgid "Erase and Install"
@@ -155,6 +158,8 @@ msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
+"Instalacja nie powiodła się, więc urządzenie może nie uruchomić się "
+"ponownie. Możesz spróbować wykonać jedną z następujących czynności:"
 
 #: ../src/Views/ErrorView.vala:51
 msgid "• Try the installation again"
@@ -174,7 +179,7 @@ msgstr "Uruchom urządzenie ponownie"
 
 #: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Wypróbuj tryb demonstracyjny"
 
 #: ../src/Views/ErrorView.vala:85
 msgid "Try Installing Again"
@@ -186,14 +191,13 @@ msgstr "Układ klawiatury"
 
 #: ../src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Napisz, aby wypróbować swój układ"
 
 #: ../src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
 msgstr "Pokaż układ klawiatury"
 
 #: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:95
-#, fuzzy
 msgid "Back"
 msgstr "Cofnij"
 
@@ -208,7 +212,7 @@ msgstr "Domyślny"
 
 #: ../src/Views/KeyboardLayoutView.vala:101
 msgid "Input Language"
-msgstr ""
+msgstr "Wpisz język"
 
 #: ../src/Views/LanguageView.vala:178
 msgid "Select a Language"
@@ -235,20 +239,26 @@ msgstr ""
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Możesz teraz zainstalować %s na tym urządzeniu lub spróbować trybu "
+"demonstracyjnego bez instalacji."
 
 #: ../src/Views/TryInstallView.vala:48
 msgid "Data from your previous operating system is unchanged in Demo Mode."
 msgstr ""
+"Dane z poprzedniego systemu operacyjnego są niezmienione w trybie "
+"demonstracyjnym."
 
 #: ../src/Views/TryInstallView.vala:66
 msgid "Any changes you make in Demo Mode will not be saved."
-msgstr "Zmiany dokonane w Trybie Demo nie zostaną zapisane."
+msgstr "Zmiany dokonane w trybie demonstracyjnym nie zostaną zapisane."
 
 #: ../src/Views/TryInstallView.vala:74
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
 msgstr ""
+"Zawsze możesz wrócić z trybu demonstracyjnego do instalatora, wybierając "
+"ikonę Instaluj."
 
 #~ msgid "Calculator"
 #~ msgstr "Kalkulator"
