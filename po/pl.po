@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-01 14:30-0600\n"
 "PO-Revision-Date: 2017-09-14 10:35+0000\n"
-"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
+"Last-Translator: Kamil Bach <me@kamilbach.com>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/installer/installer/pl/>\n"
 "Language: pl\n"
@@ -242,7 +242,7 @@ msgstr ""
 
 #: ../src/Views/TryInstallView.vala:66
 msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
+msgstr "Zmiany dokonane w Trybie Demo nie zostaną zapisane."
 
 #: ../src/Views/TryInstallView.vala:74
 msgid ""
