@@ -3,6 +3,7 @@ src/MainWindow.vala
 src/Utils.vala
 src/Helpers/KeyboardLayoutHelper.vala
 src/Helpers/LocaleHelper.vala
+src/Helpers/LogHelper.vala
 src/Dialogs/EndSessionDialog.vala
 src/Objects/org.freedesktop.udisks2.vala
 src/Objects/Configuration.vala
