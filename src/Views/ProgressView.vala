@@ -30,8 +30,18 @@ public class ProgressView : AbstractInstallerView {
         logo.pixel_size = 128;
         logo.get_style_context ().add_class ("logo");
 
-        var terminal_output = new Gtk.Frame (null);
+        unowned LogHelper log_helper = LogHelper.get_default ();
+        var terminal_view = new Gtk.TextView.with_buffer (log_helper.buffer);
+        terminal_view.editable = false;
+        terminal_view.cursor_visible = true;
+        terminal_view.monospace = true;
+        terminal_view.wrap_mode = Gtk.WrapMode.WORD_CHAR;
+        terminal_view.get_style_context ().add_class ("terminal");
+
+        var terminal_output = new Gtk.ScrolledWindow (null, null);
+        terminal_output.hscrollbar_policy = Gtk.PolicyType.NEVER;
         terminal_output.expand = true;
+        terminal_output.add (terminal_view);
 
         var logo_stack = new Gtk.Stack ();
         logo_stack.transition_type = Gtk.StackTransitionType.OVER_UP_DOWN;
