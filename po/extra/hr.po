@@ -6,30 +6,44 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 13:40-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-20 23:39+0200\n"
 "PO-Revision-Date: 2016-08-04 19:42+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 "X-Generator: Launchpad (build 18204)\n"
 
-msgid "Calculator"
-msgstr "Kalkulator"
-
-msgid "Solve simple equations"
-msgstr "Riješite jednostavne jednadžbe"
-
-msgid "About Calculator"
-msgstr "O Kalkulatoru"
-
-msgid ""
-"A simple calculator for everyday use. It supports basic and some scientific "
-"calculations including trigonometry functions, sin, cos, and tan."
+#: data/io.elementary.installer.desktop.in:3
+msgid "Install elementary OS"
 msgstr ""
-"Jednostavan kalkulator za svakodnevno korištenje. Podržava jednostavne i "
-"određene znanstvene proračune uključujući trigonometrijske funkcije sin, cos "
-"i tan."
+
+#: data/io.elementary.installer.desktop.in:4
+msgid "Install the system"
+msgstr ""
+
+#: data/io.elementary.installer.desktop.in:6
+msgid "system-os-installer"
+msgstr ""
+
+#~ msgid "Calculator"
+#~ msgstr "Kalkulator"
+
+#~ msgid "Solve simple equations"
+#~ msgstr "Riješite jednostavne jednadžbe"
+
+#~ msgid "About Calculator"
+#~ msgstr "O Kalkulatoru"
+
+#~ msgid ""
+#~ "A simple calculator for everyday use. It supports basic and some "
+#~ "scientific calculations including trigonometry functions, sin, cos, and "
+#~ "tan."
+#~ msgstr ""
+#~ "Jednostavan kalkulator za svakodnevno korištenje. Podržava jednostavne i "
+#~ "određene znanstvene proračune uključujući trigonometrijske funkcije sin, "
+#~ "cos i tan."

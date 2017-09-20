@@ -6,27 +6,43 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-08-02 13:40-0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-20 23:39+0200\n"
 "PO-Revision-Date: 2016-08-06 09:37+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 "X-Generator: Launchpad (build 18204)\n"
 
-msgid "Calculator"
-msgstr "計算機"
+#: data/io.elementary.installer.desktop.in:3
+msgid "Install elementary OS"
+msgstr ""
 
-msgid "Solve simple equations"
-msgstr "解決簡單運算"
+#: data/io.elementary.installer.desktop.in:4
+msgid "Install the system"
+msgstr ""
 
-msgid "About Calculator"
-msgstr "關於計算機"
+#: data/io.elementary.installer.desktop.in:6
+msgid "system-os-installer"
+msgstr ""
 
-msgid ""
-"A simple calculator for everyday use. It supports basic and some scientific "
-"calculations including trigonometry functions, sin, cos, and tan."
-msgstr "日用的簡單計算機。支援基本計算和一些科學計算，包括三角函數，如 sin、cos、和 tan 等。"
+#~ msgid "Calculator"
+#~ msgstr "計算機"
+
+#~ msgid "Solve simple equations"
+#~ msgstr "解決簡單運算"
+
+#~ msgid "About Calculator"
+#~ msgstr "關於計算機"
+
+#~ msgid ""
+#~ "A simple calculator for everyday use. It supports basic and some "
+#~ "scientific calculations including trigonometry functions, sin, cos, and "
+#~ "tan."
+#~ msgstr ""
+#~ "日用的簡單計算機。支援基本計算和一些科學計算，包括三角函數，如 sin、cos、"
+#~ "和 tan 等。"

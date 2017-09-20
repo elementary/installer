@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-01 14:30-0600\n"
+"POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2016-09-13 07:28+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,225 +13,257 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 "X-Generator: Launchpad (build 18204)\n"
 
-#: ../src/Application.vala:28
-msgid "Installer"
-msgstr ""
-
-#: ../src/Application.vala:40
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Haval Abdulkarim https://launchpad.net/~haval-abdulkarim\n"
-"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-"  qezwan https://launchpad.net/~qezwan\n"
-"  rasti https://launchpad.net/~rasti"
-
-#: ../src/Dialogs/EndSessionDialog.vala:43
-msgid "Are you sure you want to Shut Down?"
-msgstr ""
-
-#: ../src/Dialogs/EndSessionDialog.vala:50
-msgid "This will cancel installation and turn off this device."
-msgstr ""
-
-#: ../src/Dialogs/EndSessionDialog.vala:66 ../src/Views/SuccessView.vala:54
-msgid "Restart"
-msgstr ""
-
-#: ../src/Dialogs/EndSessionDialog.vala:68
-msgid "Cancel"
-msgstr ""
-
-#: ../src/Dialogs/EndSessionDialog.vala:70 ../src/Views/SuccessView.vala:52
-#: ../src/Views/TryInstallView.vala:103
-msgid "Shut Down"
-msgstr ""
-
-#: ../src/Helpers/LocaleHelper.vala:114
-#: ../src/Views/KeyboardLayoutView.vala:133
-msgid "%s…"
-msgstr ""
-
-#: ../src/MainWindow.vala:39 ../src/Views/TryInstallView.vala:37
-#: ../src/Views/TryInstallView.vala:99
+#: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
+#: src/Views/TryInstallView.vala:92
+#, c-format
 msgid "Install %s"
 msgstr ""
 
-#: ../src/Utils.vala:156
+#: src/Utils.vala:156
 msgid "Operating System"
 msgstr ""
 
-#: ../src/Views/AbstractInstallerView.vala:47
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
+#, c-format
+msgid "%s…"
+msgstr ""
+
+#: src/Helpers/LogHelper.vala:35
+msgid "Unable to change the Distinst log domain name"
+msgstr ""
+
+#: src/Helpers/LogHelper.vala:37
+msgid "Starting installation\n"
+msgstr ""
+
+#: src/Dialogs/EndSessionDialog.vala:43
+msgid "Are you sure you want to Shut Down?"
+msgstr ""
+
+#: src/Dialogs/EndSessionDialog.vala:50
+msgid "This will cancel installation and turn off this device."
+msgstr ""
+
+#: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
+msgid "Restart"
+msgstr ""
+
+#: src/Dialogs/EndSessionDialog.vala:68
+msgid "Cancel"
+msgstr ""
+
+#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
+#: src/Views/SuccessView.vala:52
+msgid "Shut Down"
+msgstr ""
+
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr ""
 
-#: ../src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:61
 msgid "Ignore"
 msgstr ""
 
-#: ../src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:208
 msgid "Not Enough Space"
 msgstr ""
 
-#: ../src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:209
+#, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
 
-#: ../src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
 msgstr ""
 
-#: ../src/Views/CheckView.vala:221
+#: src/Views/CheckView.vala:221
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
 
-#: ../src/Views/CheckView.vala:237
+#: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
 msgstr ""
 
-#: ../src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:238
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
 
-#: ../src/Views/CheckView.vala:293
+#: src/Views/CheckView.vala:293
 msgid "Recommended:"
 msgstr ""
 
-#: ../src/Views/CheckView.vala:297
+#: src/Views/CheckView.vala:297
 msgid "Your Device:"
 msgstr ""
 
-#: ../src/Views/CheckView.vala:301 ../src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
 msgid "Processor:"
 msgstr ""
 
-#: ../src/Views/CheckView.vala:309 ../src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
 msgid "Memory:"
 msgstr ""
 
-#: ../src/Views/DiskView.vala:49
+#: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
 msgstr ""
 
-#: ../src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
 
-#: ../src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
 msgstr ""
 
-#: ../src/Views/DiskView.vala:94
+#: src/Views/DiskView.vala:94
 msgid "Erase and Install"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:39
+#: src/Views/ErrorView.vala:32
+#, c-format
 msgid "Could not install %s"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:45
+#: src/Views/ErrorView.vala:38
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:51
+#: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:63
+#: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:81
+#: src/Views/ErrorView.vala:74
 msgid "Restart Device"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:83 ../src/Views/TryInstallView.vala:97
+#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
 msgid "Try Demo Mode"
 msgstr ""
 
-#: ../src/Views/ErrorView.vala:85
+#: src/Views/ErrorView.vala:78
 msgid "Try Installing Again"
 msgstr ""
 
-#: ../src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
 msgstr ""
 
-#: ../src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
 msgstr ""
 
-#: ../src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
 msgstr ""
 
-#: ../src/Views/KeyboardLayoutView.vala:54 ../src/Views/TryInstallView.vala:95
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
 msgid "Back"
 msgstr ""
 
-#: ../src/Views/KeyboardLayoutView.vala:56 ../src/Views/LanguageView.vala:110
-#: ../src/Views/LanguageView.vala:147
+#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
+#: src/Views/LanguageView.vala:150
 msgid "Select"
 msgstr ""
 
-#: ../src/Views/KeyboardLayoutView.vala:96
+#: src/Views/KeyboardLayoutView.vala:96
 msgid "Default"
 msgstr ""
 
-#: ../src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:101
 msgid "Input Language"
 msgstr ""
 
-#: ../src/Views/LanguageView.vala:178
+#: src/Views/LanguageView.vala:201
+msgid "Languages"
+msgstr ""
+
+#: src/Views/LanguageView.vala:218
 msgid "Select a Language"
 msgstr ""
 
-#: ../src/Views/LanguageView.vala:206
+#: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
 msgstr ""
 
-#: ../src/Views/SuccessView.vala:32
+#: src/Views/ProgressView.vala:108
+msgid "Formating Drive"
+msgstr ""
+
+#: src/Views/ProgressView.vala:112
+msgid "Partitioning Drive"
+msgstr ""
+
+#: src/Views/ProgressView.vala:116
+msgid "Extracting Files"
+msgstr ""
+
+#: src/Views/ProgressView.vala:120
+msgid "Configuring the System"
+msgstr ""
+
+#: src/Views/ProgressView.vala:124
+msgid "Finishing the Installation"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:35
+#, c-format
+msgid ""
+"You can install %s on this device now, or try Demo Mode without installing."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:41
+msgid "Data from your previous operating system is unchanged in Demo Mode."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:59
+msgid "Any changes you make in Demo Mode will not be saved."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:67
+msgid ""
+"You can always return from Demo Mode to the installer by selecting the "
+"Install icon."
+msgstr ""
+
+#: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
 msgstr ""
 
-#: ../src/Views/SuccessView.vala:38
+#: src/Views/SuccessView.vala:38
+#, c-format
 msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
 
-#: ../src/Views/TryInstallView.vala:42
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-
-#: ../src/Views/TryInstallView.vala:48
-msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr ""
-
-#: ../src/Views/TryInstallView.vala:66
-msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
-
-#: ../src/Views/TryInstallView.vala:74
-msgid ""
-"You can always return from Demo Mode to the installer by selecting the "
-"Install icon."
-msgstr ""
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Haval Abdulkarim https://launchpad.net/~haval-abdulkarim\n"
+#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
+#~ "  qezwan https://launchpad.net/~qezwan\n"
+#~ "  rasti https://launchpad.net/~rasti"
 
 #~ msgid "Calculator"
 #~ msgstr "ژمێرەر"
