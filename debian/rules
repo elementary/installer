@@ -10,26 +10,11 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@
-
-override_dh_auto_clean:
-	rm -rf debian/build
-
-override_dh_auto_configure:
-	mkdir -p debian/build
-	cd debian/build && meson --prefix=/usr ../..
-
-override_dh_auto_build:
-	cd debian/build && ninja -v
-
-override_dh_auto_test:
-	cd debian/build && ninja test
-
-override_dh_auto_install:
-	cd debian/build && DESTDIR=${CURDIR}/debian/tmp ninja install
+	dh $@ --buildsystem=meson
 
 override_dh_install:
 	dh_install --fail-missing
 
-override_dh_strip:
-	dh_strip --dbgsym-migration='io.elementary.installer-dbg'
+override_dh_auto_install:
+	dh_auto_install
+	find . -name "extra.mo" -delete
