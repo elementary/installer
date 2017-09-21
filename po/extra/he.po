@@ -2,18 +2,25 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:39+0200\n"
+"PO-Revision-Date: 2017-09-21 08:45+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew "
+"<https://weblate.elementary.io/projects/installer/extra/he/>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.16\n"
 
 #: data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
-msgstr ""
+msgstr "התקנת elementary OS"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
-msgstr ""
+msgstr "התקנת המערכת"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr ""
+msgstr "system-os-installer"
