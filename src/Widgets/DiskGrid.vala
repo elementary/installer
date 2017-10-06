@@ -49,7 +49,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         notify["active"].connect (() => {
             if (active) {
                 unowned Configuration config = Configuration.get_default ();
-                config.disk = disk.partition_table.get_block_device ();
+                config.disk = disk.get_dev_path ();
             }
         });
     }
