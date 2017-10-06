@@ -19,7 +19,7 @@ install_data(
 
 install_data(
     'io.elementary.installer.policy',
-    install_dir: join_paths(get_option('datadir'), 'polkit-1', 'actions'
+    install_dir: join_paths(get_option('datadir'), 'polkit-1', 'actions')
 )
 
 # Test the desktop file
