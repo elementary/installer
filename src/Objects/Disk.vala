@@ -116,6 +116,37 @@ public class Installer.Disk : GLib.Object {
         }
     }
 
+    public string? get_dev_path () {
+        DBusObjectManagerClient client = null;
+        try {
+            client = new DBusObjectManagerClient.for_bus_sync (BusType.SYSTEM, GLib.DBusObjectManagerClientFlags.NONE,
+                                                            "org.freedesktop.UDisks2", "/org/freedesktop/UDisks2", null);
+        } catch (Error e) {
+            critical (e.message);
+            return null;
+        }
+
+        UDisks2.Block udisk2_block;
+        foreach (unowned GLib.DBusObject object in client.get_objects ()) {
+            if (object.get_interface ("org.freedesktop.UDisks2.Block") != null) {
+                if (object.get_interface ("org.freedesktop.UDisks2.Filesystem") != null) {
+                    continue;
+                }
+
+                try {
+                    udisk2_block = GLib.Bus.get_proxy_sync (BusType.SYSTEM, UDisks2.DBUS_NAME, object.get_object_path ());
+                    if (udisk2_block.drive == ((GLib.DBusProxy) drive).get_object_path ()) {
+                        return (string) udisk2_block.device;
+                    }
+                } catch (Error e) {
+                    critical (e.message);
+                }
+            }
+        }
+
+        return null;
+    }
+
     // Get the partitions from the list that are in this table.
     public async void insert_own_partitions (Gee.LinkedList<Partition> given_partitions) {
         foreach (var partition in given_partitions) {
