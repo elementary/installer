@@ -17,6 +17,11 @@ install_data(
     install_dir: join_paths(get_option('datadir'), 'gnome-session', 'sessions')
 )
 
+install_data(
+    'io.elementary.installer.policy',
+    install_dir: join_paths(get_option('datadir'), 'polkit-1', 'actions')
+)
+
 # Test the desktop file
 validate_desktop_exe = find_program('desktop-file-validate')
 test ('Validate desktop file', validate_desktop_exe,
