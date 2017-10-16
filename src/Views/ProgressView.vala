@@ -32,6 +32,7 @@ public class ProgressView : AbstractInstallerView {
 
         unowned LogHelper log_helper = LogHelper.get_default ();
         var terminal_view = new Gtk.TextView.with_buffer (log_helper.buffer);
+        terminal_view.bottom_margin = terminal_view.top_margin = terminal_view.left_margin = terminal_view.right_margin = 12;
         terminal_view.editable = false;
         terminal_view.cursor_visible = true;
         terminal_view.monospace = true;

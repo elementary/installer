@@ -18,5 +18,9 @@
 textview.terminal {
     background-color: #252e32;
     color: #94a3a5;
-    padding: 12px;
+}
+
+textview.terminal selection {
+    background-color: #93a1a1;
+    color: #252e32; 
 }
