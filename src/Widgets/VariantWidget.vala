@@ -38,7 +38,7 @@ public class VariantWidget : Gtk.Frame {
         variant_scrolled.vexpand = true;
         variant_scrolled.add (variant_listbox);
 
-        back_button = new Gtk.Button.with_label (null);
+        back_button = new Gtk.Button ();
         back_button.halign = Gtk.Align.START;
         back_button.margin = 6;
         back_button.get_style_context ().add_class ("back-button");
