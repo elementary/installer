@@ -29,6 +29,12 @@ dependencies = [
     gnome_keyboard_ui_dep
 ]
 
+asresources = gnome.compile_resources(
+    'as-resources', 'data/' + meson.project_name() + '.gresource.xml',
+    source_dir: 'data',
+    c_name: 'as'
+)
+
 subdir('po')
 subdir('src')
 subdir('data')
