@@ -29,6 +29,10 @@ public class Installer.App : Gtk.Application {
         var window = new MainWindow ();
         window.show_all ();
         this.add_window (window);
+
+        var css_provider = new Gtk.CssProvider ();
+        css_provider.load_from_resource ("io/elementary/installer/application.css");
+        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 }
 
