@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-11-04 19:47+0000\n"
-"Last-Translator: Francesco <forzanoto@gmail.com>\n"
+"PO-Revision-Date: 2017-11-04 19:48+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -162,7 +162,7 @@ msgstr "• Provare ad eseguire nuovamente l'installazione"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Usare la Modalità Demo e provare a recuperare manualmente"
+msgstr "• Usare la modalità Demo e provare a recuperare manualmente"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
