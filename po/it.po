@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-11-04 19:41+0000\n"
-"Last-Translator: Mirko Brombin <brombinmirko@gmail.com>\n"
+"Last-Translator: Francesco <forzanoto@gmail.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -84,7 +84,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Il tuo dispositivo potrebbe diventare molto lento"
 
 #: src/Views/CheckView.vala:221
 msgid ""
