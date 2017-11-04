@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-11-04 20:05+0000\n"
-"Last-Translator: Francesco <forzanoto@gmail.com>\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -44,7 +44,7 @@ msgstr "Vuoi davvero spegnere?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "Questo annullerà l'installazione e spegnerà il dispositivo"
+msgstr "Questo annullerà l'installazione e spegnerà il dispositivo."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
