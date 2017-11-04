@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-11-04 19:57+0000\n"
-"Last-Translator: Mirko Brombin <brombinmirko@gmail.com>\n"
+"PO-Revision-Date: 2017-11-04 19:59+0000\n"
+"Last-Translator: Francesco <forzanoto@gmail.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -199,15 +199,15 @@ msgstr "Indietro"
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:150
 msgid "Select"
-msgstr ""
+msgstr "Seleziona"
 
 #: src/Views/KeyboardLayoutView.vala:96
 msgid "Default"
-msgstr ""
+msgstr "Predefinito"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Input Language"
-msgstr ""
+msgstr "Lingua d'uso"
 
 #: src/Views/LanguageView.vala:201
 msgid "Languages"
