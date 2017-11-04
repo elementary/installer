@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-11-04 19:50+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"PO-Revision-Date: 2017-11-04 19:57+0000\n"
+"Last-Translator: Mirko Brombin <brombinmirko@gmail.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -193,9 +193,8 @@ msgid "Show keyboard layout"
 msgstr "Mostra la disposizione della tastiera"
 
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
-#, fuzzy
 msgid "Back"
-msgstr "Cancella una cifra"
+msgstr "Indietro"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:150
