@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-11-04 19:44+0000\n"
-"Last-Translator: Francesco <forzanoto@gmail.com>\n"
+"Last-Translator: Mirko Brombin <brombinmirko@gmail.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -124,7 +124,7 @@ msgstr "Memoria:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "Seleziona un dispositivo da usare per l'installazione"
 
 #: src/Views/DiskView.vala:54
 msgid ""
