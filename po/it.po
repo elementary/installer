@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-11-04 20:00+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Last-Translator: Mirko Brombin <brombinmirko@gmail.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -223,23 +223,23 @@ msgstr "Lingua selezionata correntemente"
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
-msgstr ""
+msgstr "Formattando il disco"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Partizionando il disco"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
-msgstr ""
+msgstr "Estraendo i file"
 
 #: src/Views/ProgressView.vala:120
 msgid "Configuring the System"
-msgstr ""
+msgstr "Configurando il sistema"
 
 #: src/Views/ProgressView.vala:124
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Ultimando l'installazione"
 
 #: src/Views/TryInstallView.vala:35
 #, c-format
