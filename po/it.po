@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-11-04 20:00+0000\n"
-"Last-Translator: Francesco <forzanoto@gmail.com>\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -219,7 +219,7 @@ msgstr "Seleziona una lingua"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
-msgstr "Lingua corrente selezionata"
+msgstr "Lingua selezionata correntemente"
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
