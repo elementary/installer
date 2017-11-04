@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-11-04 19:35+0000\n"
-"Last-Translator: Mirko Brombin <brombinmirko@gmail.com>\n"
+"PO-Revision-Date: 2017-11-04 19:38+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -36,15 +36,17 @@ msgstr "Impossibile modificare il nome del dominio del Distinst log"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr "Avvio installazione"
+msgstr "Avvio installazione\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "Vuoi davvero spegnere?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
 msgstr ""
+"Ciò comporterà l'annullamento dell'installazione e lo spegnimento del "
+"dispositivo."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
