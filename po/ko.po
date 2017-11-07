@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-11-07 07:02+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-11-07 13:30+0000\n"
+"Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean "
 "<https://weblate.elementary.io/projects/installer/installer/ko/>\n"
 "Language: ko\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: src/Views/TryInstallView.vala:92
 #, c-format
 msgid "Install %s"
-msgstr "%s를 설치합니다."
+msgstr "%s를 설치합니다"
 
 #: src/Utils.vala:156
 msgid "Operating System"
@@ -28,59 +28,59 @@ msgstr "운영체제"
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
 #, c-format
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:35
 msgid "Unable to change the Distinst log domain name"
-msgstr "도메인 이름을 변경할수 없습니다"
+msgstr "도메인 이름을 변경할 수 없습니다"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr ""
+msgstr "설치 시작합니다\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "정말 컴퓨터를 끄시겠습니까?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "이 작업은 설치를 취소하고 컴퓨터를 끄게 됩니다."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
-msgstr ""
+msgstr "다시 시작"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
-msgstr ""
+msgstr "컴퓨터 끄기"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "설치 취소"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
-msgstr ""
+msgstr "그냥 넘기기"
 
 #: src/Views/CheckView.vala:208
 msgid "Not Enough Space"
-msgstr ""
+msgstr "공간이 충분치 않습니다"
 
 #: src/Views/CheckView.vala:209
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
-msgstr ""
+msgstr "컴퓨터에 %s의 설치에 필요한 공간이 충분하지 않습니다. 최소한 %s 정도의 저장 용량을 권장합니다."
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "컴퓨터가 꽤 느린 것 같아요"
 
 #: src/Views/CheckView.vala:221
 msgid ""
@@ -90,7 +90,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "전원에 연결하세요"
 
 #: src/Views/CheckView.vala:238
 msgid ""
