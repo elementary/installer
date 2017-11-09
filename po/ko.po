@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-11-09 09:06+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-11-09 14:34+0000\n"
+"Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean "
 "<https://weblate.elementary.io/projects/installer/installer/ko/>\n"
 "Language: ko\n"
@@ -36,7 +36,7 @@ msgstr "도메인 이름을 변경할 수 없습니다"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr "설치를 시작합니다"
+msgstr "설치를 시작합니다\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -80,7 +80,7 @@ msgstr "컴퓨터에 %s의 설치에 필요한 공간이 충분하지 않습니�
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
-msgstr "컴퓨터가 꽤 느린 것 같아요"
+msgstr "컴퓨터가 꽤 느려질 수 있습니다"
 
 #: src/Views/CheckView.vala:221
 msgid ""
@@ -104,7 +104,7 @@ msgstr "권장 사양:"
 
 #: src/Views/CheckView.vala:297
 msgid "Your Device:"
-msgstr "사용하시는 장비:"
+msgstr "여러분의 컴퓨터:"
 
 #: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
 msgid "Processor:"
@@ -143,7 +143,7 @@ msgstr "%s 설치할 수 없습니다"
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
-msgstr "설치를 실패해서, 사용 중인 장비가 제대로 다시 시작하지 않을 수 있습니다. 다음 중 한 가지를 수행해 보세요:"
+msgstr "설치에 실패해서, 컴퓨터가 제대로 다시 시작하지 않을 수 있습니다. 다음 중 한 가지를 수행해 보세요:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -155,11 +155,11 @@ msgstr "• 데모 모드를 사용해서 수동으로 복구해보기"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr "• 다른 드라이브에서 장비를 다시 시작해보기"
+msgstr "• 다른 드라이브에서 컴퓨터를 다시 시작해보기"
 
 #: src/Views/ErrorView.vala:74
 msgid "Restart Device"
-msgstr "장비를 다시 시작하기"
+msgstr "컴퓨터를 다시 시작하기"
 
 #: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
 msgid "Try Demo Mode"
@@ -234,7 +234,7 @@ msgstr "설치 마무리 하기"
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
-msgstr "지금 %s를 이 장비에 설치하실 수 있습니다, 또는 설치하지 않고 데모 모드로 사용해 보실 수 있습니다."
+msgstr "지금 %s를 이 컴퓨터에 설치하실 수 있습니다, 또는 설치하지 않고 데모 모드로 사용해 보실 수 있습니다."
 
 #: src/Views/TryInstallView.vala:41
 msgid "Data from your previous operating system is unchanged in Demo Mode."
@@ -252,7 +252,7 @@ msgstr "언제든지 설치 아이콘을 눌러서 데모 모드에서 나와 �
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr "장비의 설정을 계속 이어가시려면 다시 시작해주세요"
+msgstr "설정을 계속 이어가시려면 다시 시작해주세요"
 
 #: src/Views/SuccessView.vala:38
 #, c-format
