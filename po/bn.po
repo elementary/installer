@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-11-16 19:56+0000\n"
+"PO-Revision-Date: 2017-11-17 05:22+0000\n"
 "Last-Translator: Subhadeep Jasu <subhajasu@gmail.com>\n"
 "Language-Team: Bengali "
 "<https://weblate.elementary.io/projects/installer/installer/bn/>\n"
@@ -48,16 +48,16 @@ msgstr "এটি ইনস্টলেশন বন্ধ করে দেব�
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
-msgstr ""
+msgstr "পুনরারম্ভ"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "বাতিল"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
-msgstr ""
+msgstr "বন্ধ"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
@@ -185,12 +185,10 @@ msgid "Keyboard Layout"
 msgstr "কিবোর্ডের ভিত্তি ধরণ"
 
 #: src/Views/KeyboardLayoutView.vala:36
-#, fuzzy
 msgid "Type to test your layout"
 msgstr "কিবোর্ডের ভিত্তি ধরণ পরীক্ষা করে দেখবার জন্য টাইপ করুন"
 
 #: src/Views/KeyboardLayoutView.vala:39
-#, fuzzy
 msgid "Show keyboard layout"
 msgstr "কিবোর্ডের ভিত্তি ধরণ দেখাও"
 
@@ -220,7 +218,6 @@ msgid "Select a Language"
 msgstr "একটি ভাষা বেছে নিন"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
-#, fuzzy
 msgid "Currently active language"
 msgstr "বর্তমানে সক্রিয় ভাষা"
 
