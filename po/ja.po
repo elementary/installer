@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-04 11:36+0000\n"
-"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
@@ -217,9 +217,8 @@ msgid "Default"
 msgstr "規定"
 
 #: src/Views/KeyboardLayoutView.vala:101
-#, fuzzy
 msgid "Input Language"
-msgstr "言語の入力"
+msgstr "入力する言語"
 
 #: src/Views/LanguageView.vala:201
 #, fuzzy
