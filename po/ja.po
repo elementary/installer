@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-04 11:35+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-04 11:36+0000\n"
+"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
@@ -167,8 +167,9 @@ msgid "• Try the installation again"
 msgstr "• もう一度インストールしてみる"
 
 #: src/Views/ErrorView.vala:50
+#, fuzzy
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "デモモードを使用し、手動で回復します。"
+msgstr "• デモモードを使用し、手動で回復します。"
 
 #: src/Views/ErrorView.vala:56
 #, fuzzy
