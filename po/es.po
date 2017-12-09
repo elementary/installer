@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-09 17:34+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-09 17:35+0000\n"
+"Last-Translator: haloes123 <haloes123@gmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/installer/installer/es/>\n"
 "Language: es\n"
@@ -225,7 +225,7 @@ msgstr ""
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Particionando disco"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
