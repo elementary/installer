@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-09 17:24+0000\n"
-"Last-Translator: Juan Pablo Garay <jpablo.garay@gmail.com>\n"
+"PO-Revision-Date: 2017-12-09 17:34+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/installer/installer/es/>\n"
 "Language: es\n"
@@ -208,9 +208,8 @@ msgid "Input Language"
 msgstr "Idioma de escritura"
 
 #: src/Views/LanguageView.vala:201
-#, fuzzy
 msgid "Languages"
-msgstr "Idioma de escritura"
+msgstr "Idiomas"
 
 #: src/Views/LanguageView.vala:218
 msgid "Select a Language"
