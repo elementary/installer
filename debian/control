@@ -1,0 +1,32 @@
+Source: io.elementary.installer
+Section: utils
+Maintainer: Cody Garver <cody@elementary.io>
+Build-Depends: debhelper (>= 9),
+               desktop-file-utils,
+               gettext,
+               libdistinst-dev,
+               libgee-0.8-dev,
+               libgnomekbd-dev,
+               libgtk-3-dev,
+               libjson-glib-dev,
+               libxml2-dev,
+               libxml2-utils,
+               meson,
+               valac (>= 0.26)
+Standards-Version: 3.9.6
+Homepage: https://github.com/elementary/installer
+
+Package: io.elementary.installer
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: io.elementary.installer-session
+Description: Distribution installer
+ Installs distros with ease, all installs are treated as OEM.
+
+Package: io.elementary.installer-session
+Architecture: any
+Priority: extra
+Depends: io.elementary.installer
+Description: Dedicated installer session
+ Launches io.elementary.installer in a dedicated session.
