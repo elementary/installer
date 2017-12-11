@@ -1,0 +1,17 @@
+##########################
+# installer settings #
+##########################
+[org.gnome.desktop.interface:installer]
+gtk-theme = "Pop"
+icon-theme = "Pop"
+cursor-theme = "Pop"
+font-name = "Fira Sans Semi-Light 10"
+document-font-name = "Roboto Slab 11"
+monospace-font-name = "Fira Mono 11"
+clock-show-date=true
+clock-format = '12h'
+
+[org.gnome.desktop.wm.preferences:installer]
+theme = "Pop"
+titlebar-font = 'Fira Sans Semi-Bold 10'
+titlebar-uses-system-font = false

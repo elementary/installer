@@ -1,6 +1,9 @@
 [Desktop Entry]
 Name=Installer
-Comment=This session provides elementary experience
-Exec=gnome-session --session=installer
-DesktopNames=Installer
+Comment=This session provides an installer interface
+Exec=env GNOME_SHELL_SESSION_MODE=installer gnome-session --session=installer
+TryExec=gnome-shell
+Icon=
 Type=Application
+DesktopNames=pop:GNOME
+X-Ubuntu-Gettext-Domain=gnome-session-3.0

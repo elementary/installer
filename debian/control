@@ -1,0 +1,32 @@
+Source: pop-installer
+Section: utils
+Maintainer: Jeremy Soller <jeremy@system76.com>
+Build-Depends: debhelper (>= 9),
+               desktop-file-utils,
+               gettext,
+               libdistinst-dev,
+               libgee-0.8-dev,
+               libgnomekbd-dev,
+               libgtk-3-dev,
+               libjson-glib-dev,
+               libxml2-dev,
+               libxml2-utils,
+               meson,
+               valac (>= 0.26)
+Standards-Version: 3.9.6
+Homepage: https://github.com/pop-os/installer
+
+Package: pop-installer
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: pop-installer-session
+Description: Distribution installer
+ Installs distros with ease, all installs are treated as OEM.
+
+Package: pop-installer-session
+Architecture: any
+Priority: extra
+Depends: pop-installer
+Description: Dedicated installer session
+ Launches pop-installer in a dedicated session.
