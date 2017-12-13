@@ -3,7 +3,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:39+0200\n"
 "PO-Revision-Date: 2017-12-13 03:52+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Joe Osborne <reachjoe.o@gmail.com>\n"
 "Language-Team: English (United Kingdom) "
 "<https://weblate.elementary.io/projects/installer/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -19,8 +19,8 @@ msgstr "Install elementary OS"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
-msgstr ""
+msgstr "Install the System"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr ""
+msgstr "system-os-installer"
