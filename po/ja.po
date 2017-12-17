@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-17 08:45+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-20 00:05+0000\n"
+"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
@@ -72,16 +72,13 @@ msgid "Not Enough Space"
 msgstr "空き容量が十分にありません"
 
 #: src/Views/CheckView.vala:209
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
-msgstr ""
-"お使いのデバイスは %s をインストールするのに十分な空き容量がありません。スト"
-"レージには最低 %s をお勧めします。"
+msgstr "お使いのデバイスは %s をインストールするのに十分な空き容量がありません。ストレージには最低 %s をお勧めします。"
 
 #: src/Views/CheckView.vala:220
-#, fuzzy
 msgid "Your Device May Be Too Slow"
 msgstr "お使いのデバイスは遅すぎるようです"
 
@@ -96,13 +93,10 @@ msgid "Connect to a Power Source"
 msgstr "電源に接続してください"
 
 #: src/Views/CheckView.vala:238
-#, fuzzy
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
-msgstr ""
-"お使いのデバイスはバッテリーの電力で動作しています。インストールの間は電源に"
-"接続することをお勧めします。"
+msgstr "お使いのデバイスはバッテリーの電力で動作しています。インストールの間は電源に接続することをお勧めします。"
 
 #: src/Views/CheckView.vala:293
 msgid "Recommended:"
@@ -125,14 +119,12 @@ msgid "Select a drive to use for installation"
 msgstr "インストールに使用するドライブを選択してください"
 
 #: src/Views/DiskView.vala:54
-#, fuzzy
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"これは選択されたドライブ上のすべてのデータを削除します。もしデータをバック"
-"アップしない場合は、インストールをキャンセルしてデモモードを使用することがで"
-"きます。"
+"これは選択されたドライブ上のすべてのデータを削除します。もしデータをバックアップしていない場合、インストールをキャンセルしてデモモードを使用することができ"
+"ます。"
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
@@ -235,9 +227,8 @@ msgid "Configuring the System"
 msgstr ""
 
 #: src/Views/ProgressView.vala:124
-#, fuzzy
 msgid "Finishing the Installation"
-msgstr "インストールをキャンセル"
+msgstr ""
 
 #: src/Views/TryInstallView.vala:35
 #, c-format
@@ -254,28 +245,23 @@ msgid "Any changes you make in Demo Mode will not be saved."
 msgstr "デモモードで行った変更は保存されません。"
 
 #: src/Views/TryInstallView.vala:67
-#, fuzzy
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
-msgstr ""
-"インストールアイコンを選択することでいつでもデモモードからインストーラーに戻"
-"ることができます。"
+msgstr "インストールアイコンを選択することでいつでもデモモードからインストーラーに戻ることができます。"
 
 #: src/Views/SuccessView.vala:32
-#, fuzzy
 msgid "Restart your device to continue setting up"
 msgstr "セットアップを続行するにはお使いのデバイスを再起動してください"
 
 #: src/Views/SuccessView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
-"%s はインストールされました。お使いのデバイスは新しいユーザーをセットアップす"
-"るために30秒以内に自動的に再起動します。あるいはシャットダウンしてユーザーを"
-"後でセットアップすることができます。"
+"%s はインストールされました。お使いのデバイスは新しいユーザーをセットアップするために30秒以内に自動的に再起動します。あるいはシャットダウンしてユーザ"
+"ーを後でセットアップすることができます。"
 
 #~ msgid "Installer"
 #~ msgstr "インストーラー"
