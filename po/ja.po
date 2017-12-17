@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-17 08:45+0000\n"
-"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
@@ -250,9 +250,8 @@ msgid "Data from your previous operating system is unchanged in Demo Mode."
 msgstr "デモモードでは以前のオペレーティングシステムのデータは変更されません。"
 
 #: src/Views/TryInstallView.vala:59
-#, fuzzy
 msgid "Any changes you make in Demo Mode will not be saved."
-msgstr "デモモードで行った変更は一切保存されません。"
+msgstr "デモモードで行った変更は保存されません。"
 
 #: src/Views/TryInstallView.vala:67
 #, fuzzy
