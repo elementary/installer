@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-05 00:09+0000\n"
+"PO-Revision-Date: 2017-12-17 08:45+0000\n"
 "Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18-dev\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
@@ -39,12 +39,10 @@ msgid "Starting installation\n"
 msgstr "インストールの開始\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
-#, fuzzy
 msgid "Are you sure you want to Shut Down?"
 msgstr "本当にシャットダウンしますか？"
 
 #: src/Dialogs/EndSessionDialog.vala:50
-#, fuzzy
 msgid "This will cancel installation and turn off this device."
 msgstr "インストールをキャンセルし、このデバイスの電源を切ります。"
 
@@ -70,7 +68,6 @@ msgid "Ignore"
 msgstr "無視"
 
 #: src/Views/CheckView.vala:208
-#, fuzzy
 msgid "Not Enough Space"
 msgstr "空き容量が十分にありません"
 
@@ -89,16 +86,12 @@ msgid "Your Device May Be Too Slow"
 msgstr "お使いのデバイスは遅すぎるようです"
 
 #: src/Views/CheckView.vala:221
-#, fuzzy
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
-msgstr ""
-"お使いのデバイスはハードウェアの推奨要件を満たしていません。これにより処理が"
-"遅くなったりフリーズすることがあります。"
+msgstr "お使いのデバイスはハードウェアの推奨要件を満たしていません。これにより処理が遅くなったりフリーズすることがあります。"
 
 #: src/Views/CheckView.vala:237
-#, fuzzy
 msgid "Connect to a Power Source"
 msgstr "電源に接続してください"
 
@@ -128,7 +121,6 @@ msgid "Memory:"
 msgstr "メモリー："
 
 #: src/Views/DiskView.vala:49
-#, fuzzy
 msgid "Select a drive to use for installation"
 msgstr "インストールに使用するドライブを選択してください"
 
@@ -162,31 +154,26 @@ msgid ""
 msgstr "インストールは失敗したため、お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すことができます："
 
 #: src/Views/ErrorView.vala:44
-#, fuzzy
 msgid "• Try the installation again"
 msgstr "• もう一度インストールしてみる"
 
 #: src/Views/ErrorView.vala:50
-#, fuzzy
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• デモモードを使用し、手動で回復します。"
+msgstr "• デモモードを使用し、手動で回復する"
 
 #: src/Views/ErrorView.vala:56
-#, fuzzy
 msgid "• Restart your device to boot from another drive"
-msgstr "• お使いのデバイスを再起動して別のドライブから起動する"
+msgstr "• デバイスを再起動して別のドライブから起動する"
 
 #: src/Views/ErrorView.vala:74
 msgid "Restart Device"
 msgstr "デバイスを再起動"
 
 #: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
-#, fuzzy
 msgid "Try Demo Mode"
 msgstr "デモモードを試す"
 
 #: src/Views/ErrorView.vala:78
-#, fuzzy
 msgid "Try Installing Again"
 msgstr "もう一度インストールしてみる"
 
@@ -195,7 +182,6 @@ msgid "Keyboard Layout"
 msgstr "キーボードレイアウト"
 
 #: src/Views/KeyboardLayoutView.vala:36
-#, fuzzy
 msgid "Type to test your layout"
 msgstr "入力してレイアウトを試してください"
 
@@ -217,7 +203,6 @@ msgid "Default"
 msgstr "規定"
 
 #: src/Views/KeyboardLayoutView.vala:101
-#, fuzzy
 msgid "Input Language"
 msgstr "入力する言語"
 
@@ -255,15 +240,12 @@ msgid "Finishing the Installation"
 msgstr "インストールをキャンセル"
 
 #: src/Views/TryInstallView.vala:35
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-"%s をお使いのデバイスに今すぐインストールするか、インストールせずにデモモード"
-"を試すことができます。"
+msgstr "%s をお使いのデバイスに今すぐインストールするか、インストールせずにデモモードを試すことができます。"
 
 #: src/Views/TryInstallView.vala:41
-#, fuzzy
 msgid "Data from your previous operating system is unchanged in Demo Mode."
 msgstr "デモモードでは以前のオペレーティングシステムのデータは変更されません。"
 
