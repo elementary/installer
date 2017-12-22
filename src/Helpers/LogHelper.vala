@@ -16,8 +16,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+static string level_name (Distinst.LogLevel level) {
+    switch(level) {
+    case Distinst.LogLevel.TRACE:
+        return "TRACE";
+    case Distinst.LogLevel.DEBUG:
+        return "DEBUG";
+    case Distinst.LogLevel.INFO:
+        return "INFO";
+    case Distinst.LogLevel.WARN:
+        return "WARN";
+    case Distinst.LogLevel.ERROR:
+        return "ERROR";
+    default:
+        return "UNKNOWN";
+    }
+}
+
 public class LogHelper : GLib.Object {
-    public const string DISTINST_LOG_DOMAIN = "io.elementary.installer.distinst";
     public Gtk.TextBuffer buffer { public get; construct; }
 
     private static LogHelper _instance;
@@ -31,16 +47,19 @@ public class LogHelper : GLib.Object {
 
     construct {
         buffer = new Gtk.TextBuffer (null);
-        if (Distinst.log (DISTINST_LOG_DOMAIN) != 0) {
-            buffer.text = _("Unable to change the Distinst log domain name");
+        buffer.text = "";
+        if (Distinst.log (log_func) != 0) {
+            log_func(Distinst.LogLevel.ERROR, _("Unable to set the Distinst log callback"));
         } else {
-            buffer.text = _("Starting installation\n");
+            log_func(Distinst.LogLevel.INFO, _("Starting installation"));
         }
-
-        GLib.Log.set_handler (DISTINST_LOG_DOMAIN, GLib.LogLevelFlags.FLAG_RECURSION|GLib.LogLevelFlags.FLAG_FATAL|GLib.LogLevelFlags.LEVEL_MASK, log_func);
     }
 
-    private void log_func (string? log_domain, GLib.LogLevelFlags log_levels, string message) {
-        buffer.text += message;
+    private void log_func (Distinst.LogLevel level, string message) {
+        stdout.printf("log: %s: %s\n", level_name(level), message);
+        Idle.add (() => {
+            buffer.text += level_name(level) + ": " + message + "\n";
+            return GLib.Source.REMOVE;
+        });
     }
 }
