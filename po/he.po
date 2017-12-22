@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-09-21 08:49+0000\n"
+"PO-Revision-Date: 2017-11-19 20:09+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew "
 "<https://weblate.elementary.io/projects/installer/installer/he/>\n"
@@ -32,7 +32,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:35
 msgid "Unable to change the Distinst log domain name"
-msgstr ""
+msgstr "לא ניתן לשנות את שם המתחם הייחודי"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"

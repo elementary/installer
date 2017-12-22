@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-09-08 06:49+0000\n"
-"Last-Translator: Julio García <yllelder@gmail.com>\n"
-"Language-Team: Spanish <https://weblate.elementary.io/projects/installer/"
-"installer/es/>\n"
+"PO-Revision-Date: 2017-12-22 19:07+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: Spanish "
+"<https://weblate.elementary.io/projects/installer/installer/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
@@ -23,7 +23,7 @@ msgstr "Instalar %s"
 
 #: src/Utils.vala:156
 msgid "Operating System"
-msgstr "Sistema operativo"
+msgstr "Sistema Operativo"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
 #, c-format
@@ -32,20 +32,19 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:35
 msgid "Unable to change the Distinst log domain name"
-msgstr ""
+msgstr "No se puede cambiar el nombre de dominio de registro Distinst"
 
 #: src/Helpers/LogHelper.vala:37
-#, fuzzy
 msgid "Starting installation\n"
-msgstr "Cancelar instalación"
+msgstr "Iniciando Instalación\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr "¿Estás seguro que quieres apagar?"
+msgstr "¿Estás seguro de que quieres apagar?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "Ésto cancelará la instalación y apagará el dispositivo."
+msgstr "Ésto cancelará la instalación y apagará este dispositivo."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
@@ -62,7 +61,7 @@ msgstr "Apagar"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr "Cancelar instalación"
+msgstr "Cancelar Instalación"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -140,7 +139,7 @@ msgstr "Obteniendo la configuración actual…"
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr "Borrar e instalar"
+msgstr "Borrar e Instalar"
 
 #: src/Views/ErrorView.vala:32
 #, c-format
@@ -177,11 +176,11 @@ msgstr "Probar modo Demo"
 
 #: src/Views/ErrorView.vala:78
 msgid "Try Installing Again"
-msgstr "Probar a instalar de nuevo"
+msgstr "Intente Instalar Nuevamente"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr "Disposición del teclado"
+msgstr "Diseño de Teclado"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
@@ -209,9 +208,8 @@ msgid "Input Language"
 msgstr "Idioma de escritura"
 
 #: src/Views/LanguageView.vala:201
-#, fuzzy
 msgid "Languages"
-msgstr "Idioma de escritura"
+msgstr "Idioma"
 
 #: src/Views/LanguageView.vala:218
 msgid "Select a Language"
@@ -223,24 +221,23 @@ msgstr "Idioma elegido actualmente"
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
-msgstr ""
+msgstr "Formateando la Unidad"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Particionando disco"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
-msgstr ""
+msgstr "Extrayendo Archivos"
 
 #: src/Views/ProgressView.vala:120
 msgid "Configuring the System"
-msgstr ""
+msgstr "Configurando el Sistema"
 
 #: src/Views/ProgressView.vala:124
-#, fuzzy
 msgid "Finishing the Installation"
-msgstr "Cancelar instalación"
+msgstr "Finalizando la instalación"
 
 #: src/Views/TryInstallView.vala:35
 #, c-format
