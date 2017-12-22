@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-22 19:07+0000\n"
-"Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/installer/installer/es/>\n"
 "Language: es\n"
@@ -32,7 +32,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:35
 msgid "Unable to change the Distinst log domain name"
-msgstr "No se puede cambiar el nombre de dominio del registro Distinst"
+msgstr "No se puede cambiar el nombre de dominio de registro Distinst"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
