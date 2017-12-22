@@ -89,7 +89,7 @@ public class ProgressView : AbstractInstallerView {
         unowned Configuration current_config = Configuration.get_default ();
         config.squashfs = Build.SQUASHFS_PATH;
         // Here the API want us to provide "sda" instead of "/dev/sda"
-        config.drive = current_config.disk.replace ("/dev/", "");
+        config.disk = current_config.disk.replace ("/dev/", "");
         new Thread<void*> (null, () => {
             installer.install (config);
             return null;
