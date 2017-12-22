@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-22 00:07+0000\n"
+"PO-Revision-Date: 2017-12-22 19:07+0000\n"
 "Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/installer/installer/es/>\n"
@@ -36,7 +36,7 @@ msgstr "No se puede cambiar el nombre de dominio del registro Distinst"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr "Iniciando Instalación: "
+msgstr "Iniciando Instalación\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -209,7 +209,7 @@ msgstr "Idioma de escritura"
 
 #: src/Views/LanguageView.vala:201
 msgid "Languages"
-msgstr "Idiomas"
+msgstr "Idioma"
 
 #: src/Views/LanguageView.vala:218
 msgid "Select a Language"
@@ -221,7 +221,7 @@ msgstr "Idioma elegido actualmente"
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
-msgstr ""
+msgstr "Formateando la Unidad"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
