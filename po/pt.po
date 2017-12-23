@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-23 21:48+0000\n"
-"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
+"PO-Revision-Date: 2017-12-23 21:51+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
 "Language: pt\n"
@@ -48,28 +48,28 @@ msgstr "Isto irá cancelar a instalação e encerrar este dispositivo."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
-msgstr ""
+msgstr "Reiniciar"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
-msgstr ""
+msgstr "Encerrar"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Cancelar a Instalação"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorar"
 
 #: src/Views/CheckView.vala:208
 msgid "Not Enough Space"
-msgstr ""
+msgstr "Espaço Insuficiente"
 
 #: src/Views/CheckView.vala:209
 #, c-format
@@ -77,6 +77,8 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"O dispositivo não tem espaço suficiente para instalar %s. Recomentamos o "
+"mínimo de %s de espaço."
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
