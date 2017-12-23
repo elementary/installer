@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-23 22:11+0000\n"
-"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
 "Language: pt\n"
@@ -114,15 +114,15 @@ msgstr "O seu Dispositivo:"
 
 #: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
 msgid "Processor:"
-msgstr ""
+msgstr "Processador:"
 
 #: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
 msgid "Memory:"
-msgstr ""
+msgstr "Memória:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "Seleciona uma unidade para a instalação"
 
 #: src/Views/DiskView.vala:54
 msgid ""
