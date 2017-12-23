@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-23 22:25+0000\n"
-"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
 "Language: pt\n"
@@ -227,7 +227,7 @@ msgstr "A Formatar a Unidade"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "A Particionar a Unidade"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
