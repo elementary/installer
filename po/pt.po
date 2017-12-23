@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-23 22:17+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-23 22:18+0000\n"
+"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
 "Language: pt\n"
@@ -159,7 +159,7 @@ msgstr "• Tente instalar de novo"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Usa o Modo Demo e tenta recuperar manualmente"
+msgstr "• Use o Modo de Demonstração e tente recuperar manualmente"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
