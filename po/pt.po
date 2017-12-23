@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-23 22:21+0000\n"
+"PO-Revision-Date: 2017-12-23 22:22+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
@@ -199,21 +199,19 @@ msgstr "Retroceder"
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:150
 msgid "Select"
-msgstr ""
+msgstr "Selecionar"
 
 #: src/Views/KeyboardLayoutView.vala:96
 msgid "Default"
-msgstr ""
+msgstr "Padrão"
 
 #: src/Views/KeyboardLayoutView.vala:101
-#, fuzzy
 msgid "Input Language"
-msgstr "Selecionar um idioma"
+msgstr "Selecionar um Idioma"
 
 #: src/Views/LanguageView.vala:201
-#, fuzzy
 msgid "Languages"
-msgstr "Selecionar um idioma"
+msgstr "Idiomas"
 
 #: src/Views/LanguageView.vala:218
 msgid "Select a Language"
