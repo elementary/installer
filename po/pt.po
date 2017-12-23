@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-23 22:25+0000\n"
-"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
+"PO-Revision-Date: 2017-12-23 22:26+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
 "Language: pt\n"
@@ -235,17 +235,19 @@ msgstr "A extrair os Ficheiros"
 
 #: src/Views/ProgressView.vala:120
 msgid "Configuring the System"
-msgstr ""
+msgstr "A Configurar o Sistema"
 
 #: src/Views/ProgressView.vala:124
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "A Finalizar a Instalação"
 
 #: src/Views/TryInstallView.vala:35
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Podes instalar %s neste dispositivo, ou experimentar o Modo Demo sem "
+"instalar."
 
 #: src/Views/TryInstallView.vala:41
 msgid "Data from your previous operating system is unchanged in Demo Mode."
