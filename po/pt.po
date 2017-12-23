@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-23 22:19+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-23 22:20+0000\n"
+"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
 "Language: pt\n"
@@ -177,7 +177,7 @@ msgstr "Experimentar o Modo de Demonstração"
 
 #: src/Views/ErrorView.vala:78
 msgid "Try Installing Again"
-msgstr "Tenta Instalar de Novo"
+msgstr "Tentar Instalar de Novo"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
