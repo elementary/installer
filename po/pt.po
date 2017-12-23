@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-23 22:09+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-23 22:10+0000\n"
+"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
 "Language: pt\n"
@@ -94,14 +94,14 @@ msgstr ""
 
 #: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr "Liga o dispositivo a uma Fonte de Alimentação"
+msgstr "Ligue uma Fonte de Alimentação"
 
 #: src/Views/CheckView.vala:238
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"O teu dispositivo está a funcionar com a bateria. É recomendado que o ligues "
+"O seu dispositivo está a funcionar com a bateria. É recomendado que o ligue "
 "a uma tomada durante a instalação."
 
 #: src/Views/CheckView.vala:293
