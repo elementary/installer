@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:39+0200\n"
-"PO-Revision-Date: 2017-12-22 20:04+0000\n"
+"PO-Revision-Date: 2017-12-25 00:07+0000\n"
 "Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/installer/extra/es/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
-msgstr "Instalar elementary OS "
+msgstr "Instalar elementary OS"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
