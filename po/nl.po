@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-25 21:43+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
 "Language: nl\n"
@@ -135,7 +135,7 @@ msgstr ""
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Huidige configuratie aan het ophalen..."
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
