@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-25 21:46+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
 "Language: nl\n"
@@ -160,7 +160,7 @@ msgstr "• Probeer de installatie opnieuw"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Gebruik Demo Mode en probeer manueel te herstellen"
+msgstr "• Gebruik de demomodus en probeer manueel te herstellen"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
