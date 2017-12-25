@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-25 21:40+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
 "Language: nl\n"
@@ -106,7 +106,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:293
 msgid "Recommended:"
-msgstr ""
+msgstr "Aanbevolen: "
 
 #: src/Views/CheckView.vala:297
 msgid "Your Device:"
