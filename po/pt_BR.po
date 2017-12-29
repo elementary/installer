@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-29 15:33+0000\n"
-"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
+"PO-Revision-Date: 2017-12-29 15:34+0000\n"
+"Last-Translator: Deleted User <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -201,19 +201,19 @@ msgstr "Selecionar"
 
 #: src/Views/KeyboardLayoutView.vala:96
 msgid "Default"
-msgstr ""
+msgstr "Padrão"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Input Language"
-msgstr ""
+msgstr "Idioma de Entrada"
 
 #: src/Views/LanguageView.vala:201
 msgid "Languages"
-msgstr ""
+msgstr "Idiomas"
 
 #: src/Views/LanguageView.vala:218
 msgid "Select a Language"
-msgstr ""
+msgstr "Escolha o Idioma"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
-msgstr ""
+msgstr "Formatando o Disco"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
@@ -229,15 +229,15 @@ msgstr ""
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
-msgstr ""
+msgstr "Extraindo Arquivos"
 
 #: src/Views/ProgressView.vala:120
 msgid "Configuring the System"
-msgstr ""
+msgstr "Configurando o Sistema"
 
 #: src/Views/ProgressView.vala:124
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Terminando a Instalação"
 
 #: src/Views/TryInstallView.vala:35
 #, c-format
