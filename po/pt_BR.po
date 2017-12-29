@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-29 15:31+0000\n"
-"Last-Translator: Gabriel Rodrigues <ansiosocraft@gmail.com>\n"
+"Last-Translator: Deleted User <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -129,10 +129,12 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Isto vai apagar todos os dados que está na unidade selecionada. Se não fez "
+"backup, você pode cancelar a instalação e usar o Modo de Demonstração."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Obtendo a configuração atual..."
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
