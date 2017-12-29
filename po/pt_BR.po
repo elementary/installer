@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-29 15:31+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Deleted User <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -118,7 +118,7 @@ msgstr "Processador:"
 
 #: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
 msgid "Memory:"
-msgstr ""
+msgstr "Memória:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
