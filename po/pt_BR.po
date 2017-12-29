@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-29 15:27+0000\n"
-"Last-Translator: Gabriel Rodrigues <ansiosocraft@gmail.com>\n"
+"PO-Revision-Date: 2017-12-29 15:29+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -82,13 +82,15 @@ msgstr ""
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Seu dispositivo pode ser muito lento"
 
 #: src/Views/CheckView.vala:221
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"Seu dispositivo não atende aos requisitos recomendados. Isso pode tornar-lo "
+"lento ou congelar-lo."
 
 #: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
