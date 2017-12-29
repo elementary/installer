@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-29 15:26+0000\n"
-"Last-Translator: Jerônimo Luiz Pereira <jeronimolpereira@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -48,16 +48,16 @@ msgstr "Isto vai cancelar a instalação e desligar este dispositivo."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
-msgstr ""
+msgstr "Reiniciar"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
-msgstr ""
+msgstr "Desligar"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
