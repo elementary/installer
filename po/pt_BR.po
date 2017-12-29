@@ -3,21 +3,23 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2016-05-27 15:29+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-12-29 15:23+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: Portuguese (Brazil) "
+"<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
 #: src/Views/TryInstallView.vala:92
 #, c-format
 msgid "Install %s"
-msgstr ""
+msgstr "Instalar %s"
 
 #: src/Utils.vala:156
 msgid "Operating System"
