@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-29 15:34+0000\n"
-"Last-Translator: Deleted User <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-29 15:41+0000\n"
+"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -143,7 +143,7 @@ msgstr "Apagar e Instalar"
 #: src/Views/ErrorView.vala:32
 #, c-format
 msgid "Could not install %s"
-msgstr ""
+msgstr "Não foi possível instalar %s"
 
 #: src/Views/ErrorView.vala:38
 msgid ""
@@ -167,32 +167,31 @@ msgstr "• Reiniciar o dispositivo para iniciar de outra unidade"
 
 #: src/Views/ErrorView.vala:74
 msgid "Restart Device"
-msgstr ""
+msgstr "Reiniciar dispositivo"
 
 #: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Tentar modo de demonstração"
 
 #: src/Views/ErrorView.vala:78
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Tentar instalar novamente"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Layout de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Digite para testar seu layout"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Mostrar layout de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
-#, fuzzy
 msgid "Back"
-msgstr "Espaço"
+msgstr "Voltar"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:150
@@ -217,7 +216,7 @@ msgstr "Escolha o Idioma"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
-msgstr ""
+msgstr "Linguagem atualmente ativa"
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
@@ -225,7 +224,7 @@ msgstr "Formatando o Disco"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Particionando unidade"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
@@ -244,24 +243,30 @@ msgstr "Terminando a Instalação"
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Você pode instalar %s nesse dispositivo agora, ou experimentar o modo de "
+"demonstração sem instalar."
 
 #: src/Views/TryInstallView.vala:41
 msgid "Data from your previous operating system is unchanged in Demo Mode."
 msgstr ""
+"Dados do seu sistema operacional anterior não serão mudadas no modo de "
+"demonstração."
 
 #: src/Views/TryInstallView.vala:59
 msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
+msgstr "Qualquer mudança feita no modo de demonstração não será salva."
 
 #: src/Views/TryInstallView.vala:67
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
 msgstr ""
+"Você pode sempre retornar do modo de demonstração para o instalador "
+"selecionando o ícone de instalação."
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr ""
+msgstr "Reinicie seu dispositivo para continuar a configuração"
 
 #: src/Views/SuccessView.vala:38
 #, c-format
@@ -269,6 +274,8 @@ msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
+"%s foi instalado. Seu dispositivo será reiniciado em 30 segundos para criar "
+"um novo usuário, ou você pode desligar agora e criar um usuário depois."
 
 #~ msgid "translator-credits"
 #~ msgstr ""
