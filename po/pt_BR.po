@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2017-12-29 15:33+0000\n"
-"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
+"Last-Translator: Deleted User <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -163,7 +163,7 @@ msgstr "• Usar o Modo de Demonstração e tentar recuperar manualmente"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Reinicie o dispositivo para iniciar de outra unidade"
 
 #: src/Views/ErrorView.vala:74
 msgid "Restart Device"
