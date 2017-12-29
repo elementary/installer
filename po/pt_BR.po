@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-29 15:26+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-29 15:27+0000\n"
+"Last-Translator: Gabriel Rodrigues <ansiosocraft@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -69,7 +69,7 @@ msgstr "Ignorar"
 
 #: src/Views/CheckView.vala:208
 msgid "Not Enough Space"
-msgstr ""
+msgstr "Não há espaço suficiente"
 
 #: src/Views/CheckView.vala:209
 #, c-format
@@ -77,6 +77,8 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"Não há espaço suficiente no seu dispositivo para instalar %s. Recomendamos "
+"um mínimo de %s de armazenamento."
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
