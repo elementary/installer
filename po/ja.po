@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-31 00:41+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-31 00:43+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr "現在の設定を取得中..."
+msgstr "現在の設定を取得中…"
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
@@ -183,7 +183,7 @@ msgstr "キーボードレイアウトを表示"
 
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:150
@@ -212,23 +212,23 @@ msgstr "現在使用可能な言語"
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
-msgstr ""
+msgstr "ドライブをフォーマットしています"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "ドライブをパーティショニングしています"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
-msgstr ""
+msgstr "ファイルを展開しています"
 
 #: src/Views/ProgressView.vala:120
 msgid "Configuring the System"
-msgstr ""
+msgstr "システムを設定しています"
 
 #: src/Views/ProgressView.vala:124
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "インストールを終了しています"
 
 #: src/Views/TryInstallView.vala:35
 #, c-format
