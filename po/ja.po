@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-24 00:03+0000\n"
-"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
+"PO-Revision-Date: 2017-12-31 00:41+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "現在の設定を取得中..."
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
