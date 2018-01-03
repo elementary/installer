@@ -90,6 +90,8 @@ public class ProgressView : AbstractInstallerView {
         config.squashfs = Build.SQUASHFS_PATH;
         // Here the API want us to provide "sda" instead of "/dev/sda"
         config.disk = current_config.disk.replace ("/dev/", "");
+        config.lang = "en_US.UTF-8";
+        config.remove = Build.MANIFEST_REMOVE_PATH;
         new Thread<void*> (null, () => {
             installer.install (config);
             return null;
@@ -126,6 +128,7 @@ public class ProgressView : AbstractInstallerView {
                     break;
             }
 
+            progressbar_label.label +=  " (%d%%)".printf(status.percent);
             progressbar.fraction = fraction;
             return GLib.Source.REMOVE;
         });
