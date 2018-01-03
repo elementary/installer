@@ -107,12 +107,12 @@ public class ProgressView : AbstractInstallerView {
 
             double fraction = ((double) status.percent)/(100.0 * NUM_STEP);
             switch (status.step) {
-                case Distinst.Step.FORMAT:
-                    progressbar_label.label = _("Formating Drive");
-                    break;
                 case Distinst.Step.PARTITION:
-                    fraction += (1.0/NUM_STEP);
                     progressbar_label.label = _("Partitioning Drive");
+                    break;
+                case Distinst.Step.FORMAT:
+                    fraction += (1.0/NUM_STEP);
+                    progressbar_label.label = _("Formating Drive");
                     break;
                 case Distinst.Step.EXTRACT:
                     fraction += 2*(1.0/NUM_STEP);
