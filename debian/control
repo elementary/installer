@@ -1,6 +1,6 @@
-Source: io.elementary.installer
+Source: pop-installer
 Section: utils
-Maintainer: Cody Garver <cody@elementary.io>
+Maintainer: Jeremy Soller <jeremy@system76.com>
 Build-Depends: debhelper (>= 9),
                desktop-file-utils,
                gettext,
@@ -14,19 +14,11 @@ Build-Depends: debhelper (>= 9),
                meson,
                valac (>= 0.26)
 Standards-Version: 3.9.6
-Homepage: https://github.com/elementary/installer
+Homepage: https://github.com/pop-os/installer
 
-Package: io.elementary.installer
+Package: pop-installer
 Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Recommends: io.elementary.installer-session
 Description: Distribution installer
  Installs distros with ease, all installs are treated as OEM.
-
-Package: io.elementary.installer-session
-Architecture: any
-Priority: extra
-Depends: io.elementary.installer
-Description: Dedicated installer session
- Launches io.elementary.installer in a dedicated session.

@@ -19,8 +19,8 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 
 #: data/io.elementary.installer.desktop.in:3
-msgid "Install elementary OS"
-msgstr "Installer elementary OS"
+msgid "Install Pop!_OS"
+msgstr "Installer Pop!_OS"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
@@ -30,8 +30,8 @@ msgstr "Installer le système"
 msgid "system-os-installer"
 msgstr ""
 
-#~ msgid "Install elementary OS on your machine"
-#~ msgstr "Installer elementary OS sur votre machine"
+#~ msgid "Install Pop!_OS on your machine"
+#~ msgstr "Installer Pop!_OS sur votre machine"
 
 #~ msgid "Authentication is required to install your machine"
 #~ msgstr "L'authentification est requise pour installer sur votre machine"

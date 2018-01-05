@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Install elementary OS
+Name=Install Pop!_OS
 Comment=Install the system
 Exec=pkexec io.elementary.installer
 Icon=system-os-installer

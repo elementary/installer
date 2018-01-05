@@ -1,5 +1,5 @@
-io.elementary.installer (1.0) xenial; urgency=medium
+pop-installer (0.0.1) bionic; urgency=medium
 
-  * Initial Release.
+  * Initial release.
 
- -- Cody Garver <cody@elementary.io>  Fri, 01 Sep 2017 13:53:54 -0500
+ -- Jeremy Soller <jeremy@system76.com>  Fri, 05 Jan 2018 10:41:04 -0700
