@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-01-08 20:37+0000\n"
-"Last-Translator: stefan t <s.tomeij@gmail.com>\n"
+"PO-Revision-Date: 2018-01-09 00:17+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
 "Language: nl\n"
@@ -269,7 +269,7 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr "Herstart uw toestel om verder te gaan met de installatie."
+msgstr "Herstart uw toestel om verder te gaan met de installatie"
 
 #: src/Views/SuccessView.vala:38
 #, c-format
@@ -277,7 +277,7 @@ msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
-"%s is geïnstalleerd, uw apparaat zal automatisch opnieuw opstarten in 30 "
+"%s is geïnstalleerd. Uw toestel zal automatisch opnieuw opstarten in 30 "
 "seconden om een nieuwe gebruiker aan te maken, of zet uw apparaat uit om "
 "later een gebruiker aan te maken."
 
