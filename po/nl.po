@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-01-08 20:36+0000\n"
-"Last-Translator: stefan t <s.tomeij@gmail.com>\n"
+"PO-Revision-Date: 2018-01-08 20:37+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
 "Language: nl\n"
@@ -269,7 +269,7 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr "Herstart uw apparaat om verder te gaan met de installatie."
+msgstr "Herstart uw toestel om verder te gaan met de installatie."
 
 #: src/Views/SuccessView.vala:38
 #, c-format
