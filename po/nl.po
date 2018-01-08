@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2018-01-08 20:34+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"Last-Translator: stefan t <s.tomeij@gmail.com>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
 "Language: nl\n"
@@ -250,6 +250,8 @@ msgstr ""
 #: src/Views/TryInstallView.vala:41
 msgid "Data from your previous operating system is unchanged in Demo Mode."
 msgstr ""
+"Gegevens van uw vorige besturing systeem blijft onveranderd in de "
+"demonstratiemodus."
 
 #: src/Views/TryInstallView.vala:59
 msgid "Any changes you make in Demo Mode will not be saved."
