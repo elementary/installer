@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-01-08 20:31+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-01-08 20:32+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
 "Language: nl\n"
@@ -221,11 +221,11 @@ msgstr ""
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
-msgstr ""
+msgstr "Schijf formatteren"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Schijf partitioneren"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
