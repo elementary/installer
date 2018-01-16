@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-01-16 04:21+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-01-16 04:22+0000\n"
+"Last-Translator: SteffenL <steffenl@protonmail.com>\n"
 "Language-Team: German "
 "<https://weblate.elementary.io/projects/installer/installer/de/>\n"
 "Language: de\n"
@@ -37,7 +37,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:35
 msgid "Unable to change the Distinst log domain name"
-msgstr "Das Ändern des \"Distinst log domain\"-Namen ist nicht möglich"
+msgstr "Änderung des Distinst-Log-Domainnamens nicht möglich"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
