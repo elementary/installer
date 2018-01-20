@@ -16,6 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Distinst;
+
 extern void exit(int exit_code);
 
 public class ProgressView : AbstractInstallerView {
@@ -90,7 +92,7 @@ public class ProgressView : AbstractInstallerView {
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
         
-        var config = Distinst.Config ();
+        var config = Config ();
         unowned Configuration current_config = Configuration.get_default ();
         config.squashfs = Build.SQUASHFS_PATH;
         config.lang = "en_US.UTF-8";
@@ -98,77 +100,77 @@ public class ProgressView : AbstractInstallerView {
         
         // User-defined partition configurations are generated here.
         // TODO: The following code is an example of API usage.
-        Distinst.Disk disk = new Distinst.Disk ("/dev/sda");
+        Disk disk = new Disk ("/dev/sda");
         if (disk == null) {
             stderr.printf("could not find /dev/sda.");
             exit(1);
         }
         
-        Distinst.PartitionTable bootloader = Distinst.bootloader_detect ();
+        PartitionTable bootloader = bootloader_detect ();
         
         switch (bootloader) {
-            case Distinst.PartitionTable.MSDOS:
+            case PartitionTable.MSDOS:
                 if (disk.mklabel (bootloader) != 0) {
                     stderr.printf("unable to write MSDOS partition table to /dev/sda");
                     exit(1);
                 }
                 
-                var start = disk.get_sector (Distinst.Sector.start());
-                var end = disk.get_sector (Distinst.Sector.end());
+                var start = disk.get_sector (Sector.start());
+                var end = disk.get_sector (Sector.end());
 
                 int result = disk.add_partition(
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
-                        .set_partition_type(Distinst.PartitionType.PRIMARY)
-                        .add_flag(Distinst.PartitionFlag.BOOT)
-                        .set_mount("/")
+                    new PartitionBuilder (start, end, FileSystemType.EXT4)
+                        .set_partition_type (PartitionType.PRIMARY)
+                        .add_flag (PartitionFlag.BOOT)
+                        .set_mount ("/")
                 );
                 
                 if (result != 0) {
-                    stderr.printf("unable to add partition to disk");
+                    stderr.printf ("unable to add partition to disk");
                     exit(1);
                 }
                 
                 break;
-            case Distinst.PartitionTable.GPT:
+            case PartitionTable.GPT:
                 if (disk.mklabel (bootloader) != 0) {
-                    stderr.printf("unable to write GPT partition table to /dev/sda");
-                    exit(1);
+                    stderr.printf ("unable to write GPT partition table to /dev/sda");
+                    exit (1);
                 }
                 
-                var start = disk.get_sector (Distinst.Sector.start());
-                var end = disk.get_sector (Distinst.Sector.megabyte (512));
+                var start = disk.get_sector (Sector.start());
+                var end = disk.get_sector (Sector.megabyte (512));
 
                 int result = disk.add_partition(
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
-                        .set_partition_type(Distinst.PartitionType.PRIMARY)
-                        .add_flag(Distinst.PartitionFlag.ESP)
-                        .set_mount("/boot/efi")
+                    new PartitionBuilder (start, end, FileSystemType.FAT32)
+                        .set_partition_type (PartitionType.PRIMARY)
+                        .add_flag (PartitionFlag.ESP)
+                        .set_mount ("/boot/efi")
                 );
                 
                 if (result != 0) {
-                    stderr.printf("unable to add EFI partition to disk");
-                    exit(1);
+                    stderr.printf ("unable to add EFI partition to disk");
+                    exit (1);
                 }
                 
-                start = disk.get_sector (Distinst.Sector.megabyte (512));
-                end = disk.get_sector (Distinst.Sector.end());
+                start = disk.get_sector (Sector.megabyte (512));
+                end = disk.get_sector (Sector.end ());
 
-                result = disk.add_partition(
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
-                        .set_partition_type(Distinst.PartitionType.PRIMARY)
-                        .set_mount("/")
+                result = disk.add_partition (
+                    new PartitionBuilder (start, end, FileSystemType.EXT4)
+                        .set_partition_type (PartitionType.PRIMARY)
+                        .set_mount ("/")
                 );
                 
                 if (result != 0) {
-                    stderr.printf("unable to add / partition to disk");
-                    exit(1);
+                    stderr.printf ("unable to add / partition to disk");
+                    exit (1);
                 }
                 
                 break;
         }
         
-        Distinst.Disks disks = Distinst.Disks.with_capacity(1);
-        disks.push(disk);
+        Disks disks = Disks.with_capacity (1);
+        disks.push (disk);
         
         new Thread<void*> (null, () => {
             installer.install (disks, config);
@@ -176,27 +178,27 @@ public class ProgressView : AbstractInstallerView {
         });
     }
 
-    private void installation_status_callback (Distinst.Status status) {
+    private void installation_status_callback (Status status) {
         Idle.add (() => {
-            if (status.percent == 100 && status.step == Distinst.Step.BOOTLOADER) {
+            if (status.percent == 100 && status.step == Step.BOOTLOADER) {
                 on_success ();
                 return GLib.Source.REMOVE;
             }
 
             double fraction = ((double) status.percent)/(100.0 * NUM_STEP);
             switch (status.step) {
-                case Distinst.Step.PARTITION:
+                case Step.PARTITION:
                     progressbar_label.label = _("Partitioning Drive");
                     break;
-                case Distinst.Step.EXTRACT:
+                case Step.EXTRACT:
                     fraction += 2*(1.0/NUM_STEP);
                     progressbar_label.label = _("Extracting Files");
                     break;
-                case Distinst.Step.CONFIGURE:
+                case Step.CONFIGURE:
                     fraction += 3*(1.0/NUM_STEP);
                     progressbar_label.label = _("Configuring the System");
                     break;
-                case Distinst.Step.BOOTLOADER:
+                case Step.BOOTLOADER:
                     fraction += 4*(1.0/NUM_STEP);
                     progressbar_label.label = _("Finishing the Installation");
                     break;
