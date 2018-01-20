@@ -16,6 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+extern void exit(int exit_code);
+
 public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
@@ -81,19 +83,95 @@ public class ProgressView : AbstractInstallerView {
         show_all ();
     }
 
+    // TODO: This should receive the disk configuration from the user.
+    // For now, it is hard-coded as an example.
     public void start_installation () {
         var installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
+        
         var config = Distinst.Config ();
         unowned Configuration current_config = Configuration.get_default ();
         config.squashfs = Build.SQUASHFS_PATH;
-        // Here the API want us to provide "sda" instead of "/dev/sda"
-        config.disk = current_config.disk.replace ("/dev/", "");
         config.lang = "en_US.UTF-8";
         config.remove = Build.MANIFEST_REMOVE_PATH;
+        
+        // User-defined partition configurations are generated here.
+        // TODO: The following code is an example of API usage.
+        Distinst.Disk disk = new Distinst.Disk ("/dev/sda");
+        if (disk == null) {
+            stderr.printf("could not find /dev/sda.");
+            exit(1);
+        }
+        
+        Distinst.PartitionTable bootloader = Distinst.bootloader_detect ();
+        
+        switch (bootloader) {
+            case Distinst.PartitionTable.MSDOS:
+                if (disk.mklabel (bootloader) != 0) {
+                    stderr.printf("unable to write MSDOS partition table to /dev/sda");
+                    exit(1);
+                }
+                
+                var start = disk.get_sector (Distinst.Sector.start());
+                var end = disk.get_sector (Distinst.Sector.end());
+
+                int result = disk.add_partition(
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                        .set_partition_type(Distinst.PartitionType.PRIMARY)
+                        .add_flag(Distinst.PartitionFlag.BOOT)
+                        .set_mount("/")
+                );
+                
+                if (result != 0) {
+                    stderr.printf("unable to add partition to disk");
+                    exit(1);
+                }
+                
+                break;
+            case Distinst.PartitionTable.GPT:
+                if (disk.mklabel (bootloader) != 0) {
+                    stderr.printf("unable to write GPT partition table to /dev/sda");
+                    exit(1);
+                }
+                
+                var start = disk.get_sector (Distinst.Sector.start());
+                var end = disk.get_sector (Distinst.Sector.megabyte (512));
+
+                int result = disk.add_partition(
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
+                        .set_partition_type(Distinst.PartitionType.PRIMARY)
+                        .add_flag(Distinst.PartitionFlag.ESP)
+                        .set_mount("/boot/efi")
+                );
+                
+                if (result != 0) {
+                    stderr.printf("unable to add EFI partition to disk");
+                    exit(1);
+                }
+                
+                start = disk.get_sector (Distinst.Sector.megabyte (512));
+                end = disk.get_sector (Distinst.Sector.end());
+
+                result = disk.add_partition(
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                        .set_partition_type(Distinst.PartitionType.PRIMARY)
+                        .set_mount("/")
+                );
+                
+                if (result != 0) {
+                    stderr.printf("unable to add / partition to disk");
+                    exit(1);
+                }
+                
+                break;
+        }
+        
+        Distinst.Disks disks = Distinst.Disks.with_capacity(1);
+        disks.push(disk);
+        
         new Thread<void*> (null, () => {
-            installer.install (config);
+            installer.install (disks, config);
             return null;
         });
     }
@@ -109,10 +187,6 @@ public class ProgressView : AbstractInstallerView {
             switch (status.step) {
                 case Distinst.Step.PARTITION:
                     progressbar_label.label = _("Partitioning Drive");
-                    break;
-                case Distinst.Step.FORMAT:
-                    fraction += (1.0/NUM_STEP);
-                    progressbar_label.label = _("Formating Drive");
                     break;
                 case Distinst.Step.EXTRACT:
                     fraction += 2*(1.0/NUM_STEP);
