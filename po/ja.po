@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-01-04 00:14+0000\n"
+"PO-Revision-Date: 2018-01-23 00:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
@@ -40,11 +40,11 @@ msgstr "インストールの開始\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr "本当にシャットダウンしますか？"
+msgstr "シャットダウンしてよろしいですか？"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "インストールをキャンセルし、このデバイスの電源を切ります。"
+msgstr "続行すると、インストールをキャンセルしてこのデバイスの電源を切ります。"
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
@@ -124,8 +124,8 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"これは選択されたドライブ上のすべてのデータを削除します。もしデータをバックアップしていない場合、インストールをキャンセルしてデモモードを使用することができ"
-"ます。"
+"続行すると、選択されたドライブ上のすべてのデータを削除します。もしデータをバックアップしていない場合、インストールをキャンセルしてデモモードを使用すること"
+"ができます。"
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
