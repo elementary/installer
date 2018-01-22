@@ -91,13 +91,13 @@ public class ProgressView : AbstractInstallerView {
         var installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
-        
+
         var config = Config ();
         unowned Configuration current_config = Configuration.get_default ();
         config.squashfs = Build.SQUASHFS_PATH;
         config.lang = "en_US.UTF-8";
         config.remove = Build.MANIFEST_REMOVE_PATH;
-        
+
         // User-defined partition configurations are generated here.
         // TODO: The following code is an example of API usage.
         Disk disk = new Disk ("/dev/sda");
@@ -105,16 +105,16 @@ public class ProgressView : AbstractInstallerView {
             stderr.printf("could not find /dev/sda.");
             exit(1);
         }
-        
+
         PartitionTable bootloader = bootloader_detect ();
-        
+
         switch (bootloader) {
             case PartitionTable.MSDOS:
                 if (disk.mklabel (bootloader) != 0) {
                     stderr.printf("unable to write MSDOS partition table to /dev/sda");
                     exit(1);
                 }
-                
+
                 var start = disk.get_sector (Sector.start());
                 var end = disk.get_sector (Sector.end());
 
@@ -124,21 +124,26 @@ public class ProgressView : AbstractInstallerView {
                         .add_flag (PartitionFlag.BOOT)
                         .set_mount ("/")
                 );
-                
+
                 if (result != 0) {
                     stderr.printf ("unable to add partition to disk");
                     exit(1);
                 }
-                
+
                 break;
             case PartitionTable.GPT:
                 if (disk.mklabel (bootloader) != 0) {
                     stderr.printf ("unable to write GPT partition table to /dev/sda");
                     exit (1);
                 }
-                
+
+                var efi_sector = Sector() {
+                    flag = SectorKind.MEGABYTE,
+                    value = 512
+                };
+
                 var start = disk.get_sector (Sector.start());
-                var end = disk.get_sector (Sector.megabyte (512));
+                var end = disk.get_sector (efi_sector);
 
                 int result = disk.add_partition(
                     new PartitionBuilder (start, end, FileSystemType.FAT32)
@@ -146,13 +151,13 @@ public class ProgressView : AbstractInstallerView {
                         .add_flag (PartitionFlag.ESP)
                         .set_mount ("/boot/efi")
                 );
-                
+
                 if (result != 0) {
                     stderr.printf ("unable to add EFI partition to disk");
                     exit (1);
                 }
-                
-                start = disk.get_sector (Sector.megabyte (512));
+
+                start = disk.get_sector (efi_sector);
                 end = disk.get_sector (Sector.end ());
 
                 result = disk.add_partition (
@@ -160,18 +165,18 @@ public class ProgressView : AbstractInstallerView {
                         .set_partition_type (PartitionType.PRIMARY)
                         .set_mount ("/")
                 );
-                
+
                 if (result != 0) {
                     stderr.printf ("unable to add / partition to disk");
                     exit (1);
                 }
-                
+
                 break;
         }
-        
+
         Disks disks = Disks.with_capacity (1);
         disks.push (disk);
-        
+
         new Thread<void*> (null, () => {
             installer.install (disks, config);
             return null;
