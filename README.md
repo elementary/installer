@@ -25,6 +25,7 @@ You'll need the following dependencies:
  - libgranite-dev >= 0.5
  - libgtk-3-dev
  - libjson-glib-dev
+ - libpwquality-dev
  - libxml2-dev
  - libxml2-utils
  - [distinst](https://github.com/system76/distinst/)
