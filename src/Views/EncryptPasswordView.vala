@@ -30,7 +30,7 @@ public class EncryptPasswordView : AbstractInstallerView {
         var image = new Gtk.Image.from_icon_name ("dialog-password", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
-        var title_label = new Gtk.Label (_("Choose Password"));
+        var title_label = new Gtk.Label (_("Encryption Password"));
         title_label.get_style_context ().add_class ("h2");
         title_label.valign = Gtk.Align.START;
 
@@ -87,8 +87,9 @@ public class EncryptPasswordView : AbstractInstallerView {
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
-        next_button = new Gtk.Button.with_label (_("Encrypt"));
+        next_button = new Gtk.Button.with_label (_("Install"));
         next_button.sensitive = false;
+        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (back_button);
         action_area.add (next_button);
