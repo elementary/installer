@@ -100,18 +100,20 @@ public class ProgressView : AbstractInstallerView {
 
         // User-defined partition configurations are generated here.
         // TODO: The following code is an example of API usage.
-        Disk disk = new Disk ("/dev/sda");
+        stderr.printf("get disk %s\n", current_config.disk);
+        Disk disk = new Disk (current_config.disk);
         if (disk == null) {
-            stderr.printf("could not find /dev/sda.");
+            stderr.printf("could not find %s\n", current_config.disk);
             exit(1);
         }
 
+        stderr.printf("detect bootloader\n");
         PartitionTable bootloader = bootloader_detect ();
 
         switch (bootloader) {
             case PartitionTable.MSDOS:
                 if (disk.mklabel (bootloader) != 0) {
-                    stderr.printf("unable to write MSDOS partition table to /dev/sda");
+                    stderr.printf("unable to write MSDOS partition table to %s\n", current_config.disk);
                     exit(1);
                 }
 
@@ -120,23 +122,25 @@ public class ProgressView : AbstractInstallerView {
 
                 int result = disk.add_partition(
                     new PartitionBuilder (start, end, FileSystemType.EXT4)
-                        .set_partition_type (PartitionType.PRIMARY)
-                        .add_flag (PartitionFlag.BOOT)
-                        .set_mount ("/")
+                        .partition_type (PartitionType.PRIMARY)
+                        .flag (PartitionFlag.BOOT)
+                        .mount ("/")
                 );
 
                 if (result != 0) {
-                    stderr.printf ("unable to add partition to disk");
+                    stderr.printf ("unable to add partition to %s\n", current_config.disk);
                     exit(1);
                 }
 
                 break;
             case PartitionTable.GPT:
+                stderr.printf("mklabel\n");
                 if (disk.mklabel (bootloader) != 0) {
-                    stderr.printf ("unable to write GPT partition table to /dev/sda");
+                    stderr.printf ("unable to write GPT partition table to %s\n", current_config.disk);
                     exit (1);
                 }
 
+                stderr.printf("sector\n");
                 var efi_sector = Sector() {
                     flag = SectorKind.MEGABYTE,
                     value = 512
@@ -145,36 +149,38 @@ public class ProgressView : AbstractInstallerView {
                 var start = disk.get_sector (Sector.start());
                 var end = disk.get_sector (efi_sector);
 
+                stderr.printf("add EFI partition\n");
                 int result = disk.add_partition(
                     new PartitionBuilder (start, end, FileSystemType.FAT32)
-                        .set_partition_type (PartitionType.PRIMARY)
-                        .add_flag (PartitionFlag.ESP)
-                        .set_mount ("/boot/efi")
+                        .partition_type (PartitionType.PRIMARY)
+                        .flag (PartitionFlag.ESP)
+                        .mount ("/boot/efi")
                 );
 
                 if (result != 0) {
-                    stderr.printf ("unable to add EFI partition to disk");
+                    stderr.printf ("unable to add EFI partition to %s\n", current_config.disk);
                     exit (1);
                 }
 
                 start = disk.get_sector (efi_sector);
                 end = disk.get_sector (Sector.end ());
 
+                stderr.printf("add root partition\n");
                 result = disk.add_partition (
                     new PartitionBuilder (start, end, FileSystemType.EXT4)
-                        .set_partition_type (PartitionType.PRIMARY)
-                        .set_mount ("/")
+                        .partition_type (PartitionType.PRIMARY)
+                        .mount ("/")
                 );
 
                 if (result != 0) {
-                    stderr.printf ("unable to add / partition to disk");
+                    stderr.printf ("unable to add / partition to %s\n", current_config.disk);
                     exit (1);
                 }
 
                 break;
         }
 
-        Disks disks = Disks.with_capacity (1);
+        Disks disks = new Disks ();
         disks.push (disk);
 
         new Thread<void*> (null, () => {
