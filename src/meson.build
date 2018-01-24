@@ -15,6 +15,7 @@ vala_files = [
     'Views/AbstractInstallerView.vala',
     'Views/CheckView.vala',
     'Views/DiskView.vala',
+    'Views/EncryptView.vala',
     'Views/ErrorView.vala',
     'Views/KeyboardLayoutView.vala',
     'Views/LanguageView.vala',
