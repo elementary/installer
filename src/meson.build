@@ -16,6 +16,7 @@ vala_files = [
     'Views/CheckView.vala',
     'Views/DiskView.vala',
     'Views/EncryptView.vala',
+    'Views/EncryptPasswordView.vala',
     'Views/ErrorView.vala',
     'Views/KeyboardLayoutView.vala',
     'Views/LanguageView.vala',

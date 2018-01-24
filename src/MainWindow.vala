@@ -28,6 +28,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private DiskView disk_view;
     private ProgressView progress_view;
     private SuccessView success_view;
+    private EncryptView encrypt_view;
     private ErrorView error_view;
 
     public MainWindow () {
@@ -44,14 +45,25 @@ public class Installer.MainWindow : Gtk.Dialog {
     construct {
         language_view = new LanguageView ();
 
+        encrypt_view = new EncryptView ();
+
+        var encrypt_password_view = new EncryptPasswordView ();
+        encrypt_password_view.previous_view = encrypt_view;
+
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        stack.add (encrypt_view);
+        stack.add (encrypt_password_view);
         stack.add (language_view);
 
         get_content_area ().add (stack);
         get_style_context ().add_class ("os-installer");
 
         language_view.next_step.connect (() => load_keyboard_view ());
+
+        encrypt_view.next_step.connect (() => {
+            stack.visible_child = encrypt_password_view;
+        });
     }
 
     /*
