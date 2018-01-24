@@ -26,7 +26,7 @@ You'll need the following dependencies:
  - libjson-glib-dev
  - libxml2-dev
  - libxml2-utils
- - [distinst](https://github.com/system76/distinst/)
+ - [distinst](https://github.com/pop-os/distinst/)
  - valac
 
 Run `meson build` to configure the build environment. Change to the build directory and run `ninja test` to build and run automated tests
