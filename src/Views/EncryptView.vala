@@ -19,14 +19,10 @@
 public class EncryptView : AbstractInstallerView {
     public signal void next_step ();
 
-    private Gtk.Button next_button;
-    private Gtk.RadioButton encrypt_radio;
-    private Gtk.RadioButton no_encrypt_radio;
-
     construct {
         var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
 
-        var overlay_image = new Gtk.Image.from_icon_name ("locked", Gtk.IconSize.LARGE_TOOLBAR);
+        var overlay_image = new Gtk.Image.from_icon_name ("locked", Gtk.IconSize.DND);
         overlay_image.halign = Gtk.Align.END;
         overlay_image.valign = Gtk.Align.END;
 
@@ -37,30 +33,37 @@ public class EncryptView : AbstractInstallerView {
         overlay.add (image);
         overlay.add_overlay (overlay_image);
 
-        var title_label = new Gtk.Label (_("Encryption"));
+        var title_label = new Gtk.Label (_("Disk Encryption"));
         title_label.get_style_context ().add_class ("h2");
         title_label.valign = Gtk.Align.START;
 
-        var choice_description = new Gtk.Label (_("Much secure. Your workplace might require encryption. Words. Lorem ipsum dolor sit amet."));
-        choice_description.margin_bottom = 12;
+        var choice_description = new Gtk.Label (_("Encrypting this disk protects data from being read by others with physical access to this device."));
         choice_description.max_width_chars = 60;
         choice_description.wrap = true;
         choice_description.xalign = 0;
 
-        var default_button = new Gtk.RadioButton (null);
+        var choice_description2 = new Gtk.Label (_("The encryption password will be required each time you turn on this device or restart."));
+        choice_description2.max_width_chars = 60;
+        choice_description2.wrap = true;
+        choice_description2.xalign = 0;
 
-        encrypt_radio = new Gtk.RadioButton.with_label_from_widget (default_button, _("Encrypt"));
-
-        no_encrypt_radio = new Gtk.RadioButton.with_label_from_widget (default_button, _("Don't Encrypt"));
+        var choice_description3 = new Gtk.Label (_("Disk encryption may minimally impact read and write speed when performing intense tasks."));
+        choice_description3.max_width_chars = 60;
+        choice_description3.wrap = true;
+        choice_description3.xalign = 0;
 
         var choice_grid = new Gtk.Grid ();
         choice_grid.orientation = Gtk.Orientation.VERTICAL;
-        choice_grid.row_spacing = 12;
+        choice_grid.column_spacing = 12;
+        choice_grid.row_spacing = 32;
         choice_grid.valign = Gtk.Align.CENTER;
         choice_grid.vexpand = true;
-        choice_grid.add (choice_description);
-        choice_grid.add (encrypt_radio);
-        choice_grid.add (no_encrypt_radio);
+        choice_grid.attach (new Gtk.Image.from_icon_name ("emoji-body-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 0, 1, 1);
+        choice_grid.attach (choice_description, 1, 0, 1, 1);
+        choice_grid.attach (new Gtk.Image.from_icon_name ("rotation-allowed-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 1, 1, 1);
+        choice_grid.attach (choice_description2, 1, 1, 1, 1);
+        choice_grid.attach (new Gtk.Image.from_icon_name ("emoji-objects-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 2, 1, 1);
+        choice_grid.attach (choice_description3, 1, 2, 1, 1);
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;
@@ -69,30 +72,23 @@ public class EncryptView : AbstractInstallerView {
         content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (choice_grid, 1, 0, 1, 2);
 
+        var no_encrypt_button = new Gtk.Button.with_label (_("Don't Encrypt"));
+
         var back_button = new Gtk.Button.with_label (_("Back"));
 
-        next_button = new Gtk.Button.with_label (_("Don't Encrypt"));
-        next_button.sensitive = false;
+        var next_button = new Gtk.Button.with_label (_("Choose Password"));
+        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
+        action_area.add (no_encrypt_button);
         action_area.add (back_button);
         action_area.add (next_button);
 
+        next_button.grab_focus ();
+
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
-        encrypt_radio.toggled.connect (radio_toggled);
-        no_encrypt_radio.toggled.connect (radio_toggled);
+        next_button.clicked.connect (() => next_step ());
 
         show_all ();
-    }
-
-    private void radio_toggled () {
-        if (encrypt_radio.active) {
-            next_button.label = _("Choose Password");
-        } else if (no_encrypt_radio.active) {
-            next_button.label = _("Don't Encrypt");
-        }
-
-        next_button.clicked.connect (() => next_step ());
-        next_button.sensitive = true;
     }
 }

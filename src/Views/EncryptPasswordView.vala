@@ -34,13 +34,14 @@ public class EncryptPasswordView : AbstractInstallerView {
         title_label.get_style_context ().add_class ("h2");
         title_label.valign = Gtk.Align.START;
 
-        var description = new Gtk.Label (_("Choose an encryption password. You will be prompted at boot. If you forget this password, you can't recover data. This is not the password for your user account."));
+        var description = new Gtk.Label (_("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account."));
         description.margin_bottom = 12;
         description.max_width_chars = 60;
+        description.use_markup = true;
         description.wrap = true;
         description.xalign = 0;
 
-        var pw_label = new Granite.HeaderLabel (_("Choose a Password"));
+        var pw_label = new Granite.HeaderLabel (_("Choose Encryption Password"));
 
         pw_error_revealer = new ErrorRevealer (".");
         pw_error_revealer.label_widget.get_style_context ().add_class (Gtk.STYLE_CLASS_WARNING);
@@ -87,7 +88,7 @@ public class EncryptPasswordView : AbstractInstallerView {
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
-        next_button = new Gtk.Button.with_label (_("Install"));
+        next_button = new Gtk.Button.with_label (_("Select Disk"));
         next_button.sensitive = false;
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
