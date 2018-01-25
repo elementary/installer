@@ -104,7 +104,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         input_variant_widget.variant_listbox.row_selected.connect ((row) => {
             next_button.sensitive = true;
         });
-        
+
         keyboard_test_entry.icon_release.connect (() => {
             var popover = new Gtk.Popover (keyboard_test_entry);
             var layout = new LayoutWidget ();
@@ -120,7 +120,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
     }
 
     public void set_language (string lang) {
-        
+
     }
 
     private class LayoutRow : Gtk.ListBoxRow {
