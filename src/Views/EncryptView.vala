@@ -60,10 +60,10 @@ public class EncryptView : AbstractInstallerView {
         choice_grid.vexpand = true;
         choice_grid.attach (new Gtk.Image.from_icon_name ("emoji-body-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 0, 1, 1);
         choice_grid.attach (choice_description, 1, 0, 1, 1);
-        choice_grid.attach (new Gtk.Image.from_icon_name ("rotation-allowed-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 1, 1, 1);
-        choice_grid.attach (choice_description2, 1, 1, 1, 1);
-        choice_grid.attach (new Gtk.Image.from_icon_name ("emoji-objects-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 2, 1, 1);
-        choice_grid.attach (choice_description3, 1, 2, 1, 1);
+        choice_grid.attach (new Gtk.Image.from_icon_name ("emoji-objects-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 1, 1, 1);
+        choice_grid.attach (choice_description3, 1, 1, 1, 1);
+        choice_grid.attach (new Gtk.Image.from_icon_name ("rotation-allowed-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 2, 1, 1);
+        choice_grid.attach (choice_description2, 1, 2, 1, 1);
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;
