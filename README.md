@@ -39,3 +39,7 @@ To install, use `ninja install`, then execute with `io.elementary.installer`
 
     sudo ninja install
     io.elementary.installer
+    
+## User Flow
+
+![Flow](flow.png)
