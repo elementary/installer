@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-12-20 00:05+0000\n"
-"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
+"PO-Revision-Date: 2018-01-23 00:06+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
@@ -32,7 +32,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:35
 msgid "Unable to change the Distinst log domain name"
-msgstr ""
+msgstr "Distinst ログドメイン名を変更できません"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
@@ -40,11 +40,11 @@ msgstr "インストールの開始\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr "本当にシャットダウンしますか？"
+msgstr "シャットダウンしてよろしいですか？"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "インストールをキャンセルし、このデバイスの電源を切ります。"
+msgstr "続行すると、インストールをキャンセルしてこのデバイスの電源を切ります。"
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
@@ -76,7 +76,8 @@ msgstr "空き容量が十分にありません"
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
-msgstr "お使いのデバイスは %s をインストールするのに十分な空き容量がありません。ストレージには最低 %s をお勧めします。"
+msgstr ""
+"お使いのデバイスは %s をインストールするのに十分な空き容量がありません。インストールするにはストレージに最低でも %s ある状態が望ましいです。"
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
@@ -123,12 +124,12 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"これは選択されたドライブ上のすべてのデータを削除します。もしデータをバックアップしていない場合、インストールをキャンセルしてデモモードを使用することができ"
-"ます。"
+"続行すると、選択されたドライブ上のすべてのデータを削除します。もしデータをバックアップしていない場合、インストールをキャンセルしてデモモードを使用すること"
+"ができます。"
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "現在の設定を取得中…"
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
@@ -143,7 +144,7 @@ msgstr "%s をインストールできません"
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
-msgstr "インストールは失敗したため、お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すことができます："
+msgstr "インストールが失敗したため、お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すことができます。"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -151,7 +152,7 @@ msgstr "• もう一度インストールしてみる"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• デモモードを使用し、手動で回復する"
+msgstr "• デモモードを使用し、手動で回復してみる"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
@@ -183,7 +184,7 @@ msgstr "キーボードレイアウトを表示"
 
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:150
@@ -212,23 +213,23 @@ msgstr "現在使用可能な言語"
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
-msgstr ""
+msgstr "ドライブをフォーマットしています"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "ドライブをパーティショニングしています"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
-msgstr ""
+msgstr "ファイルを展開しています"
 
 #: src/Views/ProgressView.vala:120
 msgid "Configuring the System"
-msgstr ""
+msgstr "システムを設定しています"
 
 #: src/Views/ProgressView.vala:124
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "インストールを終了しています"
 
 #: src/Views/TryInstallView.vala:35
 #, c-format
