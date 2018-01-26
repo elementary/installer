@@ -4,15 +4,7 @@
 
 > Note: this is the work-in-progress installer and has not been released yet. For the current installer, see [Ubiquity](https://wiki.ubuntu.com/Ubiquity).
 
-The installer for open-source operating systems. The installation experience should be attractive and effortless to reassure new users that their new OS is the right choice. The process should feel safe and should only highlight risk when necessary (e.g. when data will be destroyed). This installer intends to cater to:
-- New users with no understanding of the nature of an operating system.
-- Average users who want to perform typical installations like dual-boot in a hands-off manner.
-- Expert users who have very specific configuration requirements.
-- OEM-like users who are performing the OS installation, but leaving user-specific details for the final end user.
-
-For the sake of providing a single installer experience, we assume that every install is an OEM install. What that means is that additional setup (like creating users) will happen after the first boot into the clean system and not in the installer.
-
-[Read The Full Specification on Google Docs](https://docs.google.com/document/d/1Sw07eNjORV1rBEGhlWJmD39BgNBVNbJEJhLzrc_6T0w/edit)
+An installer for open-source operating systems. See the [wiki](https://github.com/elementary/installer/wiki) for goals, design spec, user flow, and details about each step.
 
 ## Building, Testing, and Installation
 
