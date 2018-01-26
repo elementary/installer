@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-11-30 19:39+0000\n"
+"PO-Revision-Date: 2018-01-09 00:17+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
@@ -23,53 +23,53 @@ msgstr "Installeer %s"
 
 #: src/Utils.vala:156
 msgid "Operating System"
-msgstr ""
+msgstr "Besturingssysteem"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
 #, c-format
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:35
 msgid "Unable to change the Distinst log domain name"
-msgstr ""
+msgstr "Kan de Distinst log domeinnaam niet wijzigen"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr ""
+msgstr "Installatie starten\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "Bent u zeker dat u het systeem wilt afsluiten?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "Dit zal de installatie annuleren en dit toestel afsluiten."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
-msgstr ""
+msgstr "Herstart"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleer"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
-msgstr ""
+msgstr "Afsluiten"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Annuleer installatie"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
-msgstr ""
+msgstr "Negeer"
 
 #: src/Views/CheckView.vala:208
 msgid "Not Enough Space"
-msgstr ""
+msgstr "Onvoldoende ruimte"
 
 #: src/Views/CheckView.vala:209
 #, c-format
@@ -77,99 +77,110 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"Er is onvoldoende ruimte op uw toestel om %s te installeren. We bevelen een "
+"minimum opslagruimte aan van %s."
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Uw toestel is mogelijk te traag"
 
 #: src/Views/CheckView.vala:221
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"Uw toestel voldoet niet aan de hardware vereisten. Hierdoor kan deze "
+"langzaam lopen of bevriezen."
 
 #: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "Maak verbinding met een voedingsbron"
 
 #: src/Views/CheckView.vala:238
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"Uw toestel loopt op batterijvoeding. Tijdens de installatie wordt netvoeding "
+"aanbevolen."
 
 #: src/Views/CheckView.vala:293
 msgid "Recommended:"
-msgstr ""
+msgstr "Aanbevolen:"
 
 #: src/Views/CheckView.vala:297
 msgid "Your Device:"
-msgstr ""
+msgstr "Uw toestel:"
 
 #: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
 msgid "Processor:"
-msgstr ""
+msgstr "Processor:"
 
 #: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
 msgid "Memory:"
-msgstr ""
+msgstr "Geheugen:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "Selecteer een schijf voor installatie"
 
 #: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Dit zal alle data op de geselecteerde schijf wissen. Als u geen back-up "
+"heeft van uw data, dan kan u de installatie annuleren en de demomodus "
+"gebruiken."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Huidige configuratie aan het ophalen…"
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr ""
+msgstr "Wis en installeer"
 
 #: src/Views/ErrorView.vala:32
 #, c-format
 msgid "Could not install %s"
-msgstr ""
+msgstr "Kon %s niet installeren"
 
 #: src/Views/ErrorView.vala:38
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
+"De installatie is mislukt. Mogelijk herstart uw toestel niet correct. U kan "
+"één van de volgende opties proberen:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Probeer de installatie opnieuw"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• Gebruik de demomodus en probeer manueel te herstellen"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Herstart toestel om van een ander station op te starten"
 
 #: src/Views/ErrorView.vala:74
 msgid "Restart Device"
-msgstr ""
+msgstr "Herstart toestel"
 
 #: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Probeer de demonstratiemodus"
 
 #: src/Views/ErrorView.vala:78
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Probeer de installatie opnieuw"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Toetsenbordindeling"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
@@ -210,47 +221,55 @@ msgstr ""
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
-msgstr ""
+msgstr "Schijf formatteren"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Schijf partitioneren"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
-msgstr ""
+msgstr "Bestanden uitpakken"
 
 #: src/Views/ProgressView.vala:120
 msgid "Configuring the System"
-msgstr ""
+msgstr "Systeem configureren"
 
 #: src/Views/ProgressView.vala:124
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Installatie afronden"
 
 #: src/Views/TryInstallView.vala:35
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"U kunt nu %s installeren op uw toestel, of probeer de demonstratiemodus uit "
+"zonder installatie."
 
 #: src/Views/TryInstallView.vala:41
 msgid "Data from your previous operating system is unchanged in Demo Mode."
 msgstr ""
+"Gegevens van uw vorige besturingssysteem blijven onveranderd in de "
+"demonstratiemodus."
 
 #: src/Views/TryInstallView.vala:59
 msgid "Any changes you make in Demo Mode will not be saved."
 msgstr ""
+"Elke verandering die u maakt tijdens de demonstratiemodus worden niet "
+"opgeslagen."
 
 #: src/Views/TryInstallView.vala:67
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
 msgstr ""
+"U kan altijd terug van de demonstratiemodus naar het installatieprogramma "
+"door het installatie-icoon te selecteren."
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr ""
+msgstr "Herstart uw toestel om verder te gaan met de installatie"
 
 #: src/Views/SuccessView.vala:38
 #, c-format
@@ -258,6 +277,9 @@ msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
+"%s is geïnstalleerd. Uw toestel zal automatisch opnieuw opstarten in 30 "
+"seconden om een nieuwe gebruiker aan te maken, of zet uw apparaat uit om "
+"later een gebruiker aan te maken."
 
 #~ msgid "translator-credits"
 #~ msgstr ""
