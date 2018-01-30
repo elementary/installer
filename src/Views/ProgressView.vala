@@ -95,6 +95,8 @@ public class ProgressView : AbstractInstallerView {
         var config = Config ();
         unowned Configuration current_config = Configuration.get_default ();
 
+        config.hostname = "todo";
+
         config.squashfs = Build.SQUASHFS_PATH;
 
         config.lang = "en_US.UTF-8";
