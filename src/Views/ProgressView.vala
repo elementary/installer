@@ -16,6 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Distinst;
+
+extern void exit(int exit_code);
+
 public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
@@ -81,51 +85,169 @@ public class ProgressView : AbstractInstallerView {
         show_all ();
     }
 
+    // TODO: This should receive the disk configuration from the user.
+    // For now, it is hard-coded as an example.
     public void start_installation () {
         var installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
-        var config = Distinst.Config ();
+
+        var config = Config ();
         unowned Configuration current_config = Configuration.get_default ();
         config.squashfs = Build.SQUASHFS_PATH;
-        // Here the API want us to provide "sda" instead of "/dev/sda"
-        config.disk = current_config.disk.replace ("/dev/", "");
+        config.lang = "en_US.UTF-8";
+        config.remove = Build.MANIFEST_REMOVE_PATH;
+
+        // TODO: The following code is an example of API usage. Disk configurations should be
+        // passed as a parameter into this method, rather than being hard-coded as it is below.
+
+        // Reads all of the information regarding the specified device and creates an in-memory
+        // representation of the disk that actions can be performed against. Any changes made to
+        // this disk object will not be written to the disk until after it has been passed into
+        // the instal method, along with other disks.
+        Disk disk = new Disk (current_config.disk);
+        if (disk == null) {
+            stderr.printf("could not find %s\n", current_config.disk);
+            exit(1);
+        }
+
+        // Obtains the preferred partition table based on what the system is currently loaded with.
+        // EFI partitions will need to have both an EFI partition with an `esp` flag, and a root
+        // partition; whereas MBR-based installations only require a root partition.
+        PartitionTable bootloader = bootloader_detect ();
+
+        // Identify the start of disk by sector
+        var start_sector = Sector() {
+            flag = SectorKind.START,
+            value = 0
+        };
+
+        // Identify the end of disk
+        var end_sector = Sector() {
+            flag = SectorKind.END,
+            value = 0
+        };
+
+        switch (bootloader) {
+            case PartitionTable.MSDOS:
+                // Wipes the partition table clean with a brand new MSDOS partition table.
+                if (disk.mklabel (bootloader) != 0) {
+                    stderr.printf("unable to write MSDOS partition table to %s\n", current_config.disk);
+                    exit(1);
+                }
+
+                // Obtains the start and end values using a human-readable abstraction.
+                var start = disk.get_sector (start_sector);
+                var end = disk.get_sector (end_sector);
+
+                // Adds a newly-created partition builder object to the disk. This object is
+                // defined as an EXT4 partition with the `boot` partition flag, and shall be
+                // mounted to `/` within the `/etc/fstab` of the installed system.
+                int result = disk.add_partition(
+                    new PartitionBuilder (start, end, FileSystemType.EXT4)
+                        .partition_type (PartitionType.PRIMARY)
+                        .flag (PartitionFlag.BOOT)
+                        .mount ("/")
+                );
+
+                if (result != 0) {
+                    stderr.printf ("unable to add partition to %s\n", current_config.disk);
+                    exit(1);
+                }
+
+                break;
+            case PartitionTable.GPT:
+                stderr.printf("mklabel\n");
+                if (disk.mklabel (bootloader) != 0) {
+                    stderr.printf ("unable to write GPT partition table to %s\n", current_config.disk);
+                    exit (1);
+                }
+
+                // Sectors may also be constructed using different units of measurements, such as
+                // by megabytes and percents. The library author can choose whichever unit makes
+                // more sense for their use cases.
+                var efi_sector = Sector() {
+                    flag = SectorKind.MEGABYTE,
+                    value = 512
+                };
+
+                var start = disk.get_sector (start_sector);
+                var end = disk.get_sector (efi_sector);
+
+                // Adds a new partitition builder object which is defined to be a FAT partition
+                // with the `esp` flag, and shall be mounted to `/boot/efi` after install. This
+                // meets the requirement for an EFI partition with an EFI install.
+                int result = disk.add_partition(
+                    new PartitionBuilder (start, end, FileSystemType.FAT32)
+                        .partition_type (PartitionType.PRIMARY)
+                        .flag (PartitionFlag.ESP)
+                        .mount ("/boot/efi")
+                );
+
+                if (result != 0) {
+                    stderr.printf ("unable to add EFI partition to %s\n", current_config.disk);
+                    exit (1);
+                }
+
+                start = disk.get_sector (efi_sector);
+                end = disk.get_sector (end_sector);
+
+                // EFI installs require both an EFI and root partition, so this add a new EXT4
+                // partition that is configured to start at the end of the EFI sector, and
+                // continue to the end of the disk.
+                result = disk.add_partition (
+                    new PartitionBuilder (start, end, FileSystemType.EXT4)
+                        .partition_type (PartitionType.PRIMARY)
+                        .mount ("/")
+                );
+
+                if (result != 0) {
+                    stderr.printf ("unable to add / partition to %s\n", current_config.disk);
+                    exit (1);
+                }
+
+                break;
+        }
+
+        // Each disk that will have changes made to it should be added to a Disks object. This
+        // object will be passed to the install method, and used as a blueprint for how changes
+        // to each disk should be made, and where critical partitions are located.
+        Disks disks = new Disks ();
+        disks.push (disk);
+
         new Thread<void*> (null, () => {
-            installer.install (config);
+            installer.install (disks, config);
             return null;
         });
     }
 
-    private void installation_status_callback (Distinst.Status status) {
+    private void installation_status_callback (Status status) {
         Idle.add (() => {
-            if (status.percent == 100 && status.step == Distinst.Step.BOOTLOADER) {
+            if (status.percent == 100 && status.step == Step.BOOTLOADER) {
                 on_success ();
                 return GLib.Source.REMOVE;
             }
 
             double fraction = ((double) status.percent)/(100.0 * NUM_STEP);
             switch (status.step) {
-                case Distinst.Step.FORMAT:
-                    progressbar_label.label = _("Formating Drive");
-                    break;
-                case Distinst.Step.PARTITION:
-                    fraction += (1.0/NUM_STEP);
+                case Step.PARTITION:
                     progressbar_label.label = _("Partitioning Drive");
                     break;
-                case Distinst.Step.EXTRACT:
+                case Step.EXTRACT:
                     fraction += 2*(1.0/NUM_STEP);
                     progressbar_label.label = _("Extracting Files");
                     break;
-                case Distinst.Step.CONFIGURE:
+                case Step.CONFIGURE:
                     fraction += 3*(1.0/NUM_STEP);
                     progressbar_label.label = _("Configuring the System");
                     break;
-                case Distinst.Step.BOOTLOADER:
+                case Step.BOOTLOADER:
                     fraction += 4*(1.0/NUM_STEP);
                     progressbar_label.label = _("Finishing the Installation");
                     break;
             }
 
+            progressbar_label.label +=  " (%d%%)".printf(status.percent);
             progressbar.fraction = fraction;
             return GLib.Source.REMOVE;
         });
