@@ -94,8 +94,28 @@ public class ProgressView : AbstractInstallerView {
 
         var config = Config ();
         unowned Configuration current_config = Configuration.get_default ();
+
         config.squashfs = Build.SQUASHFS_PATH;
+
         config.lang = "en_US.UTF-8";
+
+        //TODO: Use the following
+        stderr.printf("language: %s\n", current_config.lang);
+        if (current_config.country != null) {
+            stderr.printf("country: %s\n", current_config.country);
+        } else {
+            stderr.printf("no country\n");
+        }
+
+        config.keyboard = current_config.keyboard_layout;
+        stderr.printf("keyboard: %s\n", current_config.keyboard_layout);
+        if (current_config.keyboard_variant != null) {
+            stderr.printf("variant: %s\n", current_config.keyboard_variant);
+            config.keyboard += "-" + current_config.keyboard_variant;
+        } else {
+            stderr.printf("no variant\n");
+        }
+
         config.remove = Build.MANIFEST_REMOVE_PATH;
 
         // TODO: The following code is an example of API usage. Disk configurations should be
@@ -105,6 +125,7 @@ public class ProgressView : AbstractInstallerView {
         // representation of the disk that actions can be performed against. Any changes made to
         // this disk object will not be written to the disk until after it has been passed into
         // the instal method, along with other disks.
+        stderr.printf("disk: %s\n", current_config.disk);
         Disk disk = new Disk (current_config.disk);
         if (disk == null) {
             stderr.printf("could not find %s\n", current_config.disk);
