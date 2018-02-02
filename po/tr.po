@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2018-02-02 14:44+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
 "Language-Team: Turkish "
 "<https://weblate.elementary.io/projects/installer/installer/tr/>\n"
 "Language: tr\n"
@@ -52,7 +52,7 @@ msgstr "Yeniden başlat"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "İptal Et"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
 #: src/Views/SuccessView.vala:52
