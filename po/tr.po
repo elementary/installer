@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2018-02-02 14:46+0000\n"
-"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Turkish "
 "<https://weblate.elementary.io/projects/installer/installer/tr/>\n"
 "Language: tr\n"
@@ -89,10 +89,12 @@ msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"Cihazınız önerilen sistem gereksinimlerini karşılamamaktadır. Bu, "
+"cihazınızın yavaş çalışmasına veya donmasına sebep olabilir."
 
 #: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "Güç Kaynağına Bağlan"
 
 #: src/Views/CheckView.vala:238
 msgid ""
