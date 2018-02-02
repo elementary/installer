@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-02-02 14:46+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-02-02 14:52+0000\n"
+"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
 "Language-Team: Turkish "
 "<https://weblate.elementary.io/projects/installer/installer/tr/>\n"
 "Language: tr\n"
@@ -94,13 +94,14 @@ msgstr ""
 
 #: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr "Güç Kaynağına Bağlan"
+msgstr "Güç Kaynağına Bağla"
 
 #: src/Views/CheckView.vala:238
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"Cihazınız pil gücü ile çalışıyor. Yükleme esnasında şarja takmanız önerilir."
 
 #: src/Views/CheckView.vala:293
 msgid "Recommended:"
