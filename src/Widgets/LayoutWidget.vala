@@ -23,7 +23,7 @@ public class LayoutWidget : Gtk.Grid {
     static Gkbd.KeyboardDrawingGroupLevel top_right = { 0, 3 };
     static Gkbd.KeyboardDrawingGroupLevel bottom_left = { 0, 0 };
     static Gkbd.KeyboardDrawingGroupLevel bottom_right = { 0, 2 };
-    Gkbd.KeyboardDrawingGroupLevel*[] group = { &top_left, &top_right, &bottom_left, &bottom_right };
+    static Gkbd.KeyboardDrawingGroupLevel*[] group = { &top_left, &top_right, &bottom_left, &bottom_right };
 
     construct {
         gkbd_drawing = new Gkbd.KeyboardDrawing ();
