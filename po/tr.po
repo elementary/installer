@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-02-02 14:54+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-02-02 21:21+0000\n"
+"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
 "Language-Team: Turkish "
 "<https://weblate.elementary.io/projects/installer/installer/tr/>\n"
 "Language: tr\n"
@@ -36,7 +36,7 @@ msgstr "Distinst günlüğünün alan adı değiştirilemedi"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr "Yükleme başlatılıyor\n"
+msgstr "Kurulum başlatılıyor\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -44,7 +44,7 @@ msgstr "Kapatmak istediğinizden emin misiniz?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "Bu yüklemenizi iptal edecek ve cihazınız kapatılacak."
+msgstr "Bu kurulumu iptal edecek ve cihazınız kapatılacak."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
@@ -61,7 +61,7 @@ msgstr "Kapat"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr "Yüklemeyi İptal Et"
+msgstr "Kurulumu İptal Et"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -77,7 +77,7 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"%s'i yüklemek için cihazınızda yeterli alan yok. Minimum %s alan ayrılmasını "
+"%s'i kurmak için cihazınızda yeterli alan yok. Minimum %s alan ayrılmasını "
 "öneriyoruz."
 
 #: src/Views/CheckView.vala:220
@@ -101,7 +101,7 @@ msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"Cihazınız pil gücü ile çalışıyor. Yükleme esnasında şarja takmanız önerilir."
+"Cihazınız pil gücü ile çalışıyor. Kurulum esnasında şarja takmanız önerilir."
 
 #: src/Views/CheckView.vala:293
 msgid "Recommended:"
@@ -117,11 +117,11 @@ msgstr "İşlemci:"
 
 #: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
 msgid "Memory:"
-msgstr ""
+msgstr "Bellek:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr "Yükleme sırasında kullanılacak bir sürücü seçin"
+msgstr "Kurulum sırasında kullanılacak bir sürücü seçin"
 
 #: src/Views/DiskView.vala:54
 msgid ""
@@ -133,132 +133,135 @@ msgstr ""
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Geçerli yapılandırma alınıyor…"
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr ""
+msgstr "Sil ve Kur"
 
 #: src/Views/ErrorView.vala:32
 #, c-format
 msgid "Could not install %s"
-msgstr ""
+msgstr "%s yüklenemedi"
 
 #: src/Views/ErrorView.vala:38
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
+"Kurulum başarısız oldu, bu nedenle cihazınız düzgün şekilde "
+"başlatılamayabilir. Aşağıdakilerden birini deneyebilirsiniz:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Kurulumu tekrarlayın"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• Demo Modu'nu kullanın ve elle kurtarmayı deneyin"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Başka bir sürücüden başlatmak için cihazınızı yeniden başlatın"
 
 #: src/Views/ErrorView.vala:74
 msgid "Restart Device"
-msgstr ""
+msgstr "Cihazı Yeniden Başlatın"
 
 #: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Demo Modu'nu Deneyin"
 
 #: src/Views/ErrorView.vala:78
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Tekrar Yüklemeyi Deneyin"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Klavye Düzeni"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Düzeni test etmek için yazın"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Klavye düzenini göster"
 
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
-#, fuzzy
 msgid "Back"
-msgstr "Geri al tuşu"
+msgstr "Geri"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:150
 msgid "Select"
-msgstr ""
+msgstr "Seç"
 
 #: src/Views/KeyboardLayoutView.vala:96
 msgid "Default"
-msgstr ""
+msgstr "Varsayılan"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Input Language"
-msgstr ""
+msgstr "Giriş Dili"
 
 #: src/Views/LanguageView.vala:201
 msgid "Languages"
-msgstr ""
+msgstr "Diller"
 
 #: src/Views/LanguageView.vala:218
 msgid "Select a Language"
-msgstr ""
+msgstr "Bir Dil Seçin"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
-msgstr ""
+msgstr "Şuan aktif olan dil"
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
-msgstr ""
+msgstr "Sürücü Biçimlendiriliyor"
 
 #: src/Views/ProgressView.vala:112
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Sürücü Bölümleniyor"
 
 #: src/Views/ProgressView.vala:116
 msgid "Extracting Files"
-msgstr ""
+msgstr "Dosyalar Ayıklanıyor"
 
 #: src/Views/ProgressView.vala:120
 msgid "Configuring the System"
-msgstr ""
+msgstr "Sistem Yapılandırılıyor"
 
 #: src/Views/ProgressView.vala:124
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Kurulum Sonlandırılıyor"
 
 #: src/Views/TryInstallView.vala:35
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Şimdi bu cihaza %s yükleyebilir veya kurmadan Demo Modu'nu deneyebilirsiniz."
 
 #: src/Views/TryInstallView.vala:41
 msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr ""
+msgstr "Demo Modu'nda önceki işletim sisteminizdeki veriler değişmez."
 
 #: src/Views/TryInstallView.vala:59
 msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
+msgstr "Demo Modu'nda yaptığınız değişiklikler kaydedilmez."
 
 #: src/Views/TryInstallView.vala:67
 msgid ""
 "You can always return from Demo Mode to the installer by selecting the "
 "Install icon."
 msgstr ""
+"Kurulum simgesini seçerek daima Demo Modu'ndan yükleyiciye dönebilirsiniz."
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr ""
+msgstr "Kuruluma devam etmek için cihazınızı yeniden başlatın"
 
 #: src/Views/SuccessView.vala:38
 #, c-format
@@ -266,6 +269,9 @@ msgid ""
 "%s has been installed. Your device will automatically restart in 30 seconds "
 "to set up a new user, or you can shut down now and set a user up later."
 msgstr ""
+"%s kuruldu. Cihazınız yeni bir kullanıcı oluşturmak için otomatik olarak 30 "
+"saniye içinde yeniden başlayacak veya şimdi kapatıp kullanıcıyı daha sonra "
+"ayarlayabilirsiniz."
 
 #~ msgid "translator-credits"
 #~ msgstr ""
