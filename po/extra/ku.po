@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:39+0200\n"
-"PO-Revision-Date: 2018-02-04 00:07+0000\n"
+"PO-Revision-Date: 2018-02-04 22:34+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish "
 "<https://weblate.elementary.io/projects/installer/extra/ku/>\n"
@@ -19,8 +19,8 @@ msgstr "elementary OS Saz bike"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
-msgstr ""
+msgstr "Sîstem Saz bike"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr ""
+msgstr "sazkere-sîstem"
