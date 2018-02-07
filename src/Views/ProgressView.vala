@@ -18,8 +18,6 @@
 
 using Distinst;
 
-extern void exit(int exit_code);
-
 public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
@@ -131,7 +129,8 @@ public class ProgressView : AbstractInstallerView {
         Disk disk = new Disk (current_config.disk);
         if (disk == null) {
             stderr.printf("could not find %s\n", current_config.disk);
-            exit(1);
+            on_error();
+            return;
         }
 
         // Obtains the preferred partition table based on what the system is currently loaded with.
@@ -156,7 +155,8 @@ public class ProgressView : AbstractInstallerView {
                 // Wipes the partition table clean with a brand new MSDOS partition table.
                 if (disk.mklabel (bootloader) != 0) {
                     stderr.printf("unable to write MSDOS partition table to %s\n", current_config.disk);
-                    exit(1);
+                    on_error();
+                    return;
                 }
 
                 // Obtains the start and end values using a human-readable abstraction.
@@ -175,7 +175,8 @@ public class ProgressView : AbstractInstallerView {
 
                 if (result != 0) {
                     stderr.printf ("unable to add partition to %s\n", current_config.disk);
-                    exit(1);
+                    on_error();
+                    return;
                 }
 
                 break;
@@ -183,7 +184,8 @@ public class ProgressView : AbstractInstallerView {
                 stderr.printf("mklabel\n");
                 if (disk.mklabel (bootloader) != 0) {
                     stderr.printf ("unable to write GPT partition table to %s\n", current_config.disk);
-                    exit (1);
+                    on_error();
+                    return;
                 }
 
                 // Sectors may also be constructed using different units of measurements, such as
@@ -209,7 +211,8 @@ public class ProgressView : AbstractInstallerView {
 
                 if (result != 0) {
                     stderr.printf ("unable to add EFI partition to %s\n", current_config.disk);
-                    exit (1);
+                    on_error();
+                    return;
                 }
 
                 start = disk.get_sector (efi_sector);
@@ -226,7 +229,8 @@ public class ProgressView : AbstractInstallerView {
 
                 if (result != 0) {
                     stderr.printf ("unable to add / partition to %s\n", current_config.disk);
-                    exit (1);
+                    on_error();
+                    return;
                 }
 
                 break;
