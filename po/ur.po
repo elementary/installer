@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-02-02 00:11+0000\n"
+"PO-Revision-Date: 2018-02-04 22:34+0000\n"
 "Last-Translator: Yasir Rehman <HazardDroidOfficial@gmail.com>\n"
 "Language-Team: Urdu "
 "<https://weblate.elementary.io/projects/installer/installer/ur/>\n"
@@ -122,32 +122,37 @@ msgstr "میموری:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "انسٹایشن کرنے کیلئے ایک ڈرائیو کا انتخاب کریں"
 
 #: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"یہ منتخب کردہ ڈرائیو کے تمام ڈیٹا کو ختم کردے گا. اگر آپ نے اپنے ڈیٹا کو بیک "
+"اپ نہیں کیا ہے، تو آپ انسٹال کو منسوخ کرسکتے ہیں اور ڈیمو موڈ استعمال کرسکتے "
+"ہیں."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "موجودہ کونفیگریشن حاصل کیا جا رہا ہے …"
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr ""
+msgstr "حذف کریں اور انسٹال کریں"
 
 #: src/Views/ErrorView.vala:32
 #, c-format
 msgid "Could not install %s"
-msgstr ""
+msgstr "انسٹال نہیں کیا جا سکا %s 1"
 
 #: src/Views/ErrorView.vala:38
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
+"انسٹالیشن ناکام ہوگئی ہے، لہذا آپ کا ڈیواءیس مناسب طریقے سے دوبارہ شروع نہیں "
+"کرسکتا. آپ مندرجہ ذیل میں سے ایک کوشش کر سکتے ہیں:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
