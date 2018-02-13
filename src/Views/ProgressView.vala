@@ -16,8 +16,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Distinst;
-
 public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
@@ -90,7 +88,7 @@ public class ProgressView : AbstractInstallerView {
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
 
-        var config = Config ();
+        var config = Distinst.Config ();
         unowned Configuration current_config = Configuration.get_default ();
 
         config.hostname = "todo";
@@ -126,7 +124,7 @@ public class ProgressView : AbstractInstallerView {
         // this disk object will not be written to the disk until after it has been passed into
         // the instal method, along with other disks.
         stderr.printf("disk: %s\n", current_config.disk);
-        Disk disk = new Disk (current_config.disk);
+        var disk = new Distinst.Disk (current_config.disk);
         if (disk == null) {
             stderr.printf("could not find %s\n", current_config.disk);
             on_error();
@@ -136,22 +134,22 @@ public class ProgressView : AbstractInstallerView {
         // Obtains the preferred partition table based on what the system is currently loaded with.
         // EFI partitions will need to have both an EFI partition with an `esp` flag, and a root
         // partition; whereas MBR-based installations only require a root partition.
-        PartitionTable bootloader = bootloader_detect ();
+        var bootloader = Distinst.bootloader_detect ();
 
         // Identify the start of disk by sector
-        var start_sector = Sector() {
-            flag = SectorKind.START,
+        var start_sector = Distinst.Sector() {
+            flag = Distinst.SectorKind.START,
             value = 0
         };
 
         // Identify the end of disk
-        var end_sector = Sector() {
-            flag = SectorKind.END,
+        var end_sector = Distinst.Sector() {
+            flag = Distinst.SectorKind.END,
             value = 0
         };
 
         switch (bootloader) {
-            case PartitionTable.MSDOS:
+            case Distinst.PartitionTable.MSDOS:
                 // Wipes the partition table clean with a brand new MSDOS partition table.
                 if (disk.mklabel (bootloader) != 0) {
                     stderr.printf("unable to write MSDOS partition table to %s\n", current_config.disk);
@@ -167,9 +165,9 @@ public class ProgressView : AbstractInstallerView {
                 // defined as an EXT4 partition with the `boot` partition flag, and shall be
                 // mounted to `/` within the `/etc/fstab` of the installed system.
                 int result = disk.add_partition(
-                    new PartitionBuilder (start, end, FileSystemType.EXT4)
-                        .partition_type (PartitionType.PRIMARY)
-                        .flag (PartitionFlag.BOOT)
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                        .partition_type (Distinst.PartitionType.PRIMARY)
+                        .flag (Distinst.PartitionFlag.BOOT)
                         .mount ("/")
                 );
 
@@ -180,7 +178,7 @@ public class ProgressView : AbstractInstallerView {
                 }
 
                 break;
-            case PartitionTable.GPT:
+            case Distinst.PartitionTable.GPT:
                 stderr.printf("mklabel\n");
                 if (disk.mklabel (bootloader) != 0) {
                     stderr.printf ("unable to write GPT partition table to %s\n", current_config.disk);
@@ -191,8 +189,8 @@ public class ProgressView : AbstractInstallerView {
                 // Sectors may also be constructed using different units of measurements, such as
                 // by megabytes and percents. The library author can choose whichever unit makes
                 // more sense for their use cases.
-                var efi_sector = Sector() {
-                    flag = SectorKind.MEGABYTE,
+                var efi_sector = Distinst.Sector() {
+                    flag = Distinst.SectorKind.MEGABYTE,
                     value = 512
                 };
 
@@ -203,9 +201,9 @@ public class ProgressView : AbstractInstallerView {
                 // with the `esp` flag, and shall be mounted to `/boot/efi` after install. This
                 // meets the requirement for an EFI partition with an EFI install.
                 int result = disk.add_partition(
-                    new PartitionBuilder (start, end, FileSystemType.FAT32)
-                        .partition_type (PartitionType.PRIMARY)
-                        .flag (PartitionFlag.ESP)
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
+                        .partition_type (Distinst.PartitionType.PRIMARY)
+                        .flag (Distinst.PartitionFlag.ESP)
                         .mount ("/boot/efi")
                 );
 
@@ -222,8 +220,8 @@ public class ProgressView : AbstractInstallerView {
                 // partition that is configured to start at the end of the EFI sector, and
                 // continue to the end of the disk.
                 result = disk.add_partition (
-                    new PartitionBuilder (start, end, FileSystemType.EXT4)
-                        .partition_type (PartitionType.PRIMARY)
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                        .partition_type (Distinst.PartitionType.PRIMARY)
                         .mount ("/")
                 );
 
@@ -239,7 +237,7 @@ public class ProgressView : AbstractInstallerView {
         // Each disk that will have changes made to it should be added to a Disks object. This
         // object will be passed to the install method, and used as a blueprint for how changes
         // to each disk should be made, and where critical partitions are located.
-        Disks disks = new Disks ();
+        var disks = new Distinst.Disks ();
         disks.push (disk);
 
         new Thread<void*> (null, () => {
@@ -248,27 +246,27 @@ public class ProgressView : AbstractInstallerView {
         });
     }
 
-    private void installation_status_callback (Status status) {
+    private void installation_status_callback (Distinst.Status status) {
         Idle.add (() => {
-            if (status.percent == 100 && status.step == Step.BOOTLOADER) {
+            if (status.percent == 100 && status.step == Distinst.Step.BOOTLOADER) {
                 on_success ();
                 return GLib.Source.REMOVE;
             }
 
             double fraction = ((double) status.percent)/(100.0 * NUM_STEP);
             switch (status.step) {
-                case Step.PARTITION:
+                case Distinst.Step.PARTITION:
                     progressbar_label.label = _("Partitioning Drive");
                     break;
-                case Step.EXTRACT:
+                case Distinst.Step.EXTRACT:
                     fraction += 2*(1.0/NUM_STEP);
                     progressbar_label.label = _("Extracting Files");
                     break;
-                case Step.CONFIGURE:
+                case Distinst.Step.CONFIGURE:
                     fraction += 3*(1.0/NUM_STEP);
                     progressbar_label.label = _("Configuring the System");
                     break;
-                case Step.BOOTLOADER:
+                case Distinst.Step.BOOTLOADER:
                     fraction += 4*(1.0/NUM_STEP);
                     progressbar_label.label = _("Finishing the Installation");
                     break;
