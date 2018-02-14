@@ -81,17 +81,166 @@ public class ProgressView : AbstractInstallerView {
         show_all ();
     }
 
+    // TODO: This should receive the disk configuration from the user.
+    // For now, it is hard-coded as an example.
     public void start_installation () {
         var installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
+
         var config = Distinst.Config ();
         unowned Configuration current_config = Configuration.get_default ();
+
+        config.hostname = "todo";
+
         config.squashfs = Build.SQUASHFS_PATH;
-        // Here the API want us to provide "sda" instead of "/dev/sda"
-        config.disk = current_config.disk.replace ("/dev/", "");
+
+        config.lang = "en_US.UTF-8";
+
+        //TODO: Use the following
+        debug ("language: %s\n", current_config.lang);
+        if (current_config.country != null) {
+            debug ("country: %s\n", current_config.country);
+        } else {
+            debug ("no country\n");
+        }
+
+        config.keyboard = current_config.keyboard_layout;
+        debug ("keyboard: %s\n", current_config.keyboard_layout);
+        if (current_config.keyboard_variant != null) {
+            debug ("variant: %s\n", current_config.keyboard_variant);
+            config.keyboard += "-" + current_config.keyboard_variant;
+        } else {
+            debug ("no variant\n");
+        }
+
+        config.remove = Build.MANIFEST_REMOVE_PATH;
+
+        // TODO: The following code is an example of API usage. Disk configurations should be
+        // passed as a parameter into this method, rather than being hard-coded as it is below.
+
+        // Reads all of the information regarding the specified device and creates an in-memory
+        // representation of the disk that actions can be performed against. Any changes made to
+        // this disk object will not be written to the disk until after it has been passed into
+        // the instal method, along with other disks.
+        debug ("disk: %s\n", current_config.disk);
+        var disk = new Distinst.Disk (current_config.disk);
+        if (disk == null) {
+            debug ("could not find %s\n", current_config.disk);
+            on_error ();
+            return;
+        }
+
+        // Obtains the preferred partition table based on what the system is currently loaded with.
+        // EFI partitions will need to have both an EFI partition with an `esp` flag, and a root
+        // partition; whereas MBR-based installations only require a root partition.
+        var bootloader = Distinst.bootloader_detect ();
+
+        // Identify the start of disk by sector
+        var start_sector = Distinst.Sector () {
+            flag = Distinst.SectorKind.START,
+            value = 0
+        };
+
+        // Identify the end of disk
+        var end_sector = Distinst.Sector () {
+            flag = Distinst.SectorKind.END,
+            value = 0
+        };
+
+        switch (bootloader) {
+            case Distinst.PartitionTable.MSDOS:
+                // Wipes the partition table clean with a brand new MSDOS partition table.
+                if (disk.mklabel (bootloader) != 0) {
+                    debug ("unable to write MSDOS partition table to %s\n", current_config.disk);
+                    on_error ();
+                    return;
+                }
+
+                // Obtains the start and end values using a human-readable abstraction.
+                var start = disk.get_sector (start_sector);
+                var end = disk.get_sector (end_sector);
+
+                // Adds a newly-created partition builder object to the disk. This object is
+                // defined as an EXT4 partition with the `boot` partition flag, and shall be
+                // mounted to `/` within the `/etc/fstab` of the installed system.
+                int result = disk.add_partition (
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                        .partition_type (Distinst.PartitionType.PRIMARY)
+                        .flag (Distinst.PartitionFlag.BOOT)
+                        .mount ("/")
+                );
+
+                if (result != 0) {
+                    debug ("unable to add partition to %s\n", current_config.disk);
+                    on_error ();
+                    return;
+                }
+
+                break;
+            case Distinst.PartitionTable.GPT:
+                if (disk.mklabel (bootloader) != 0) {
+                    debug ("unable to write GPT partition table to %s\n", current_config.disk);
+                    on_error ();
+                    return;
+                }
+
+                // Sectors may also be constructed using different units of measurements, such as
+                // by megabytes and percents. The library author can choose whichever unit makes
+                // more sense for their use cases.
+                var efi_sector = Distinst.Sector () {
+                    flag = Distinst.SectorKind.MEGABYTE,
+                    value = 512
+                };
+
+                var start = disk.get_sector (start_sector);
+                var end = disk.get_sector (efi_sector);
+
+                // Adds a new partitition builder object which is defined to be a FAT partition
+                // with the `esp` flag, and shall be mounted to `/boot/efi` after install. This
+                // meets the requirement for an EFI partition with an EFI install.
+                int result = disk.add_partition (
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
+                        .partition_type (Distinst.PartitionType.PRIMARY)
+                        .flag (Distinst.PartitionFlag.ESP)
+                        .mount ("/boot/efi")
+                );
+
+                if (result != 0) {
+                    debug ("unable to add EFI partition to %s\n", current_config.disk);
+                    on_error ();
+                    return;
+                }
+
+                start = disk.get_sector (efi_sector);
+                end = disk.get_sector (end_sector);
+
+                // EFI installs require both an EFI and root partition, so this add a new EXT4
+                // partition that is configured to start at the end of the EFI sector, and
+                // continue to the end of the disk.
+                result = disk.add_partition (
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                        .partition_type (Distinst.PartitionType.PRIMARY)
+                        .mount ("/")
+                );
+
+                if (result != 0) {
+                    debug ("unable to add / partition to %s\n", current_config.disk);
+                    on_error ();
+                    return;
+                }
+
+                break;
+        }
+
+        // Each disk that will have changes made to it should be added to a Disks object. This
+        // object will be passed to the install method, and used as a blueprint for how changes
+        // to each disk should be made, and where critical partitions are located.
+        var disks = new Distinst.Disks ();
+        disks.push (disk);
+
         new Thread<void*> (null, () => {
-            installer.install (config);
+            installer.install (disks, config);
             return null;
         });
     }
@@ -105,11 +254,7 @@ public class ProgressView : AbstractInstallerView {
 
             double fraction = ((double) status.percent)/(100.0 * NUM_STEP);
             switch (status.step) {
-                case Distinst.Step.FORMAT:
-                    progressbar_label.label = _("Formating Drive");
-                    break;
                 case Distinst.Step.PARTITION:
-                    fraction += (1.0/NUM_STEP);
                     progressbar_label.label = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
@@ -126,6 +271,7 @@ public class ProgressView : AbstractInstallerView {
                     break;
             }
 
+            progressbar_label.label +=  " (%d%%)".printf (status.percent);
             progressbar.fraction = fraction;
             return GLib.Source.REMOVE;
         });
