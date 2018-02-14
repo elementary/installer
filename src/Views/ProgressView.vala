@@ -98,20 +98,20 @@ public class ProgressView : AbstractInstallerView {
         config.lang = "en_US.UTF-8";
 
         //TODO: Use the following
-        stderr.printf("language: %s\n", current_config.lang);
+        debug ("language: %s\n", current_config.lang);
         if (current_config.country != null) {
-            stderr.printf("country: %s\n", current_config.country);
+            debug ("country: %s\n", current_config.country);
         } else {
-            stderr.printf("no country\n");
+            debug ("no country\n");
         }
 
         config.keyboard = current_config.keyboard_layout;
-        stderr.printf("keyboard: %s\n", current_config.keyboard_layout);
+        debug ("keyboard: %s\n", current_config.keyboard_layout);
         if (current_config.keyboard_variant != null) {
-            stderr.printf("variant: %s\n", current_config.keyboard_variant);
+            debug ("variant: %s\n", current_config.keyboard_variant);
             config.keyboard += "-" + current_config.keyboard_variant;
         } else {
-            stderr.printf("no variant\n");
+            debug ("no variant\n");
         }
 
         config.remove = Build.MANIFEST_REMOVE_PATH;
@@ -123,11 +123,11 @@ public class ProgressView : AbstractInstallerView {
         // representation of the disk that actions can be performed against. Any changes made to
         // this disk object will not be written to the disk until after it has been passed into
         // the instal method, along with other disks.
-        stderr.printf("disk: %s\n", current_config.disk);
+        debug ("disk: %s\n", current_config.disk);
         var disk = new Distinst.Disk (current_config.disk);
         if (disk == null) {
-            stderr.printf("could not find %s\n", current_config.disk);
-            on_error();
+            debug ("could not find %s\n", current_config.disk);
+            on_error ();
             return;
         }
 
@@ -137,13 +137,13 @@ public class ProgressView : AbstractInstallerView {
         var bootloader = Distinst.bootloader_detect ();
 
         // Identify the start of disk by sector
-        var start_sector = Distinst.Sector() {
+        var start_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.START,
             value = 0
         };
 
         // Identify the end of disk
-        var end_sector = Distinst.Sector() {
+        var end_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.END,
             value = 0
         };
@@ -152,8 +152,8 @@ public class ProgressView : AbstractInstallerView {
             case Distinst.PartitionTable.MSDOS:
                 // Wipes the partition table clean with a brand new MSDOS partition table.
                 if (disk.mklabel (bootloader) != 0) {
-                    stderr.printf("unable to write MSDOS partition table to %s\n", current_config.disk);
-                    on_error();
+                    debug ("unable to write MSDOS partition table to %s\n", current_config.disk);
+                    on_error ();
                     return;
                 }
 
@@ -164,7 +164,7 @@ public class ProgressView : AbstractInstallerView {
                 // Adds a newly-created partition builder object to the disk. This object is
                 // defined as an EXT4 partition with the `boot` partition flag, and shall be
                 // mounted to `/` within the `/etc/fstab` of the installed system.
-                int result = disk.add_partition(
+                int result = disk.add_partition (
                     new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
                         .partition_type (Distinst.PartitionType.PRIMARY)
                         .flag (Distinst.PartitionFlag.BOOT)
@@ -172,24 +172,23 @@ public class ProgressView : AbstractInstallerView {
                 );
 
                 if (result != 0) {
-                    stderr.printf ("unable to add partition to %s\n", current_config.disk);
-                    on_error();
+                    debug ("unable to add partition to %s\n", current_config.disk);
+                    on_error ();
                     return;
                 }
 
                 break;
             case Distinst.PartitionTable.GPT:
-                stderr.printf("mklabel\n");
                 if (disk.mklabel (bootloader) != 0) {
-                    stderr.printf ("unable to write GPT partition table to %s\n", current_config.disk);
-                    on_error();
+                    debug ("unable to write GPT partition table to %s\n", current_config.disk);
+                    on_error ();
                     return;
                 }
 
                 // Sectors may also be constructed using different units of measurements, such as
                 // by megabytes and percents. The library author can choose whichever unit makes
                 // more sense for their use cases.
-                var efi_sector = Distinst.Sector() {
+                var efi_sector = Distinst.Sector () {
                     flag = Distinst.SectorKind.MEGABYTE,
                     value = 512
                 };
@@ -200,7 +199,7 @@ public class ProgressView : AbstractInstallerView {
                 // Adds a new partitition builder object which is defined to be a FAT partition
                 // with the `esp` flag, and shall be mounted to `/boot/efi` after install. This
                 // meets the requirement for an EFI partition with an EFI install.
-                int result = disk.add_partition(
+                int result = disk.add_partition (
                     new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
                         .partition_type (Distinst.PartitionType.PRIMARY)
                         .flag (Distinst.PartitionFlag.ESP)
@@ -208,8 +207,8 @@ public class ProgressView : AbstractInstallerView {
                 );
 
                 if (result != 0) {
-                    stderr.printf ("unable to add EFI partition to %s\n", current_config.disk);
-                    on_error();
+                    debug ("unable to add EFI partition to %s\n", current_config.disk);
+                    on_error ();
                     return;
                 }
 
@@ -226,8 +225,8 @@ public class ProgressView : AbstractInstallerView {
                 );
 
                 if (result != 0) {
-                    stderr.printf ("unable to add / partition to %s\n", current_config.disk);
-                    on_error();
+                    debug ("unable to add / partition to %s\n", current_config.disk);
+                    on_error ();
                     return;
                 }
 
@@ -272,7 +271,7 @@ public class ProgressView : AbstractInstallerView {
                     break;
             }
 
-            progressbar_label.label +=  " (%d%%)".printf(status.percent);
+            progressbar_label.label +=  " (%d%%)".printf (status.percent);
             progressbar.fraction = fraction;
             return GLib.Source.REMOVE;
         });
