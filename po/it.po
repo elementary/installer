@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
 "PO-Revision-Date: 2018-02-18 18:57+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Last-Translator: 413Michele <galimbertimichele@gmail.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -36,7 +36,7 @@ msgstr "Impossibile modificare il nome del dominio del Distinst log"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr "Avvio installazione\n"
+msgstr "Avvio dell'installazione\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
