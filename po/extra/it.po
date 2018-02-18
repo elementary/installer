@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:39+0200\n"
 "PO-Revision-Date: 2018-02-18 18:38+0000\n"
-"Last-Translator: Mirko Brombin <brombinmirko@gmail.com>\n"
+"Last-Translator: Dave <dave9000@cheapnet.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/extra/it/>\n"
 "Language: it\n"
@@ -30,7 +30,7 @@ msgstr "Installa il sistema"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr "system-os-installer"
+msgstr "programma-installazione-os"
 
 #~ msgid "Calculator"
 #~ msgstr "Calcolatrice"
