@@ -122,6 +122,17 @@ public class KeyboardLayoutView : AbstractInstallerView {
         keyboard_test_entry.icon_release.connect (() => {
             var popover = new Gtk.Popover (keyboard_test_entry);
             var layout = new LayoutWidget ();
+
+            var layout_string = "us";
+            unowned Configuration config = Configuration.get_default ();
+            if (config.keyboard_layout != null) {
+                layout_string = config.keyboard_layout;
+                if (config.keyboard_variant != null) {
+                    layout_string += "\t" + config.keyboard_variant;
+                }
+            }
+
+            layout.set_layout (layout_string);
             popover.add (layout);
             popover.show_all ();
         });
