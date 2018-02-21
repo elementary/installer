@@ -65,11 +65,11 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         input_variant_widget.variant_listbox.set_sort_func ((row1, row2) => {
-            if (((VariantRow) row1).code == "") {
+            if (((VariantRow) row1).code == null) {
                 return -1;
             }
 
-            if (((VariantRow) row2).code == "") {
+            if (((VariantRow) row2).code == null) {
                 return 1;
             }
 
@@ -86,6 +86,11 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
         input_variant_widget.main_listbox.row_activated.connect ((row) => {
             var layout = ((LayoutRow) row).layout;
+
+            unowned Configuration config = Configuration.get_default ();
+            config.keyboard_layout = layout.name;
+            config.keyboard_variant = null;
+
             var variants = layout.variants;
             if (variants.is_empty) {
                 next_button.sensitive = true;
@@ -93,21 +98,41 @@ public class KeyboardLayoutView : AbstractInstallerView {
             }
 
             input_variant_widget.clear_variants ();
-            input_variant_widget.variant_listbox.add (new VariantRow ("", _("Default")));
+            input_variant_widget.variant_listbox.add (new VariantRow (null, _("Default")));
             foreach (var variant in variants.entries) {
                 input_variant_widget.variant_listbox.add (new VariantRow (variant.key, variant.value));
             }
+
+            input_variant_widget.variant_listbox.select_row(input_variant_widget.variant_listbox.get_row_at_index(0));
 
             input_variant_widget.show_variants (_("Input Language"), "<b>%s</b>".printf (layout.description));
         });
 
         input_variant_widget.variant_listbox.row_selected.connect ((row) => {
+            unowned Configuration config = Configuration.get_default ();
+            if (row != null) {
+                config.keyboard_variant = ((VariantRow) row).code;
+            } else {
+                config.keyboard_variant = null;
+            }
+
             next_button.sensitive = true;
         });
-        
+
         keyboard_test_entry.icon_release.connect (() => {
             var popover = new Gtk.Popover (keyboard_test_entry);
             var layout = new LayoutWidget ();
+
+            var layout_string = "us";
+            unowned Configuration config = Configuration.get_default ();
+            if (config.keyboard_layout != null) {
+                layout_string = config.keyboard_layout;
+                if (config.keyboard_variant != null) {
+                    layout_string += "\t" + config.keyboard_variant;
+                }
+            }
+
+            layout.set_layout (layout_string);
             popover.add (layout);
             popover.show_all ();
         });
@@ -117,10 +142,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
         }
 
         show_all ();
-    }
-
-    public void set_language (string lang) {
-        
     }
 
     private class LayoutRow : Gtk.ListBoxRow {
@@ -143,9 +164,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
     }
 
     private class VariantRow : Gtk.ListBoxRow {
-        public string code;
+        public string? code;
         public string description;
-        public VariantRow (string code, string description) {
+        public VariantRow (string? code, string description) {
             this.code = code;
             this.description = description;
             var label = new Gtk.Label (description);

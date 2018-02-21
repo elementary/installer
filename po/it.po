@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2017-11-04 20:05+0000\n"
+"PO-Revision-Date: 2018-02-20 00:21+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
@@ -23,7 +23,7 @@ msgstr "Installa %s"
 
 #: src/Utils.vala:156
 msgid "Operating System"
-msgstr "Sistema operativo"
+msgstr "Sistema Operativo"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
 #, c-format
@@ -36,7 +36,7 @@ msgstr "Impossibile modificare il nome del dominio del Distinst log"
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr "Avvio installazione\n"
+msgstr "Avvio dell'installazione\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -94,15 +94,15 @@ msgstr ""
 
 #: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr "Connettiti ad una fonte di alimentazione"
+msgstr "Connettiti a una fonte di alimentazione"
 
 #: src/Views/CheckView.vala:238
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"Il tuo dispositivo è alimentato da una batteria. Durante l'installazione è "
-"consigliato collegarlo all'alimentazione."
+"Il tuo dispositivo è alimentato da una batteria. Durante l'installazione si "
+"consiglia di collegarlo all'alimentazione."
 
 #: src/Views/CheckView.vala:293
 msgid "Recommended:"
@@ -122,7 +122,7 @@ msgstr "Memoria:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr "Seleziona un dispositivo da usare per l'installazione"
+msgstr "Seleziona un disco da usare per l'installazione"
 
 #: src/Views/DiskView.vala:54
 msgid ""
@@ -205,7 +205,7 @@ msgstr "Predefinito"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Input Language"
-msgstr "Lingua d'uso"
+msgstr "Lingua di inserimento"
 
 #: src/Views/LanguageView.vala:201
 msgid "Languages"
@@ -217,7 +217,7 @@ msgstr "Seleziona una lingua"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
-msgstr "Lingua selezionata correntemente"
+msgstr "Lingua correntemente selezionata"
 
 #: src/Views/ProgressView.vala:108
 msgid "Formating Drive"
