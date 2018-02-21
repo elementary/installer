@@ -94,10 +94,10 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         check_view = new Installer.CheckView ();
         check_view.previous_view = try_install_view;
-        check_view.next_step.connect (() => load_diskview ());
+        check_view.next_step.connect (() => load_encryptview ());
 
         if (check_view.check_requirements ()) {
-            load_diskview ();
+            load_encryptview ();
         } else {
             stack.add (check_view);
             stack.visible_child = check_view;
@@ -113,7 +113,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         encrypt_view.previous_view = try_install_view;
         stack.add (encrypt_view);
         stack.visible_child = encrypt_view;
-        encrypt_view.load.begin ();
 
         encrypt_view.next_step.connect (() => load_diskview ());
     }
