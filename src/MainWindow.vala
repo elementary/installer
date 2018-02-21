@@ -47,7 +47,6 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.add (encrypt_view);
         stack.add (language_view);
 
         get_content_area ().add (stack);
