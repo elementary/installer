@@ -45,8 +45,6 @@ public class Installer.MainWindow : Gtk.Dialog {
     construct {
         language_view = new LanguageView ();
 
-        encrypt_view = new EncryptView ();
-
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (encrypt_view);
@@ -106,13 +104,27 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
     }
 
+    private void load_encryptview () {
+        if (encrypt_view != null) {
+            encrypt_view.destroy ();
+        }
+
+        encrypt_view = new EncryptView ();
+        encrypt_view.previous_view = try_install_view;
+        stack.add (encrypt_view);
+        stack.visible_child = encrypt_view;
+        encrypt_view.load.begin ();
+
+        encrypt_view.next_step.connect (() => load_diskview ());
+    }
+
     private void load_diskview () {
         if (disk_view != null) {
             disk_view.destroy ();
         }
 
         disk_view = new DiskView ();
-        disk_view.previous_view = try_install_view;
+        disk_view.previous_view = encrypt_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
         disk_view.load.begin ();
