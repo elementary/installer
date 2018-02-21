@@ -141,6 +141,10 @@ public class EncryptView : AbstractInstallerView {
 
         next_button.grab_focus ();
 
+        no_encrypt_button.clicked.connect (() => {
+                next_step ();
+        });
+
         back_button.clicked.connect (() => {
             if (stack.visible_child == choice_grid) {
                 ((Gtk.Stack) get_parent ()).visible_child = previous_view;
