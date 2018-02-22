@@ -17,6 +17,8 @@
  */
 
 public class SuccessView : AbstractInstallerView {
+    public static int RESTART_TIMEOUT = 30;
+
     private Utils.SystemInterface system_interface;
 
     construct {
@@ -35,7 +37,7 @@ public class SuccessView : AbstractInstallerView {
         primary_label.xalign = 0;
         primary_label.get_style_context ().add_class ("h2");
 
-        var secondary_label = new Gtk.Label (_("Your device will automatically restart to %s in 30 seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name ()));
+        var secondary_label = new Gtk.Label (_("Your device will automatically restart to %s in %i seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name (), RESTART_TIMEOUT));
         secondary_label.max_width_chars = 60;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
@@ -61,13 +63,15 @@ public class SuccessView : AbstractInstallerView {
 
         shutdown_button.clicked.connect (() => {
             try {
-                system_interface.power_off (false);
+                // FIXME: Disabled while in development
+                // system_interface.power_off (false);
+                critical ("Fake power off");
             } catch (IOError e) {
                 critical (e.message);
             }
         });
 
-        Timeout.add_seconds (30, () => {
+        Timeout.add_seconds (RESTART_TIMEOUT, () => {
             session_restart ();
             return GLib.Source.REMOVE;
         });
@@ -77,7 +81,9 @@ public class SuccessView : AbstractInstallerView {
 
     private void session_restart () {
         try {
-            system_interface.reboot (false);
+            // FIXME: Disabled while in development
+            // system_interface.reboot (false);
+            critical ("Fake restart");
         } catch (IOError e) {
             critical (e.message);
         }        
