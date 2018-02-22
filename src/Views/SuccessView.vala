@@ -31,29 +31,31 @@ public class SuccessView : AbstractInstallerView {
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
-        var primary_label = new Gtk.Label (_("Restart your device to continue setting up"));
-        primary_label.max_width_chars = 60;
-        primary_label.wrap = true;
-        primary_label.xalign = 0;
-        primary_label.get_style_context ().add_class ("h2");
+        var title_label = new Gtk.Label (_("Continue Setting Up"));
+        title_label.halign = Gtk.Align.CENTER;
+        title_label.max_width_chars = 60;
+        title_label.wrap = true;
+        title_label.xalign = 0;
+        title_label.get_style_context ().add_class ("h2");
 
-        var secondary_label = new Gtk.Label (_("Your device will automatically restart to %s in %i seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name (), RESTART_TIMEOUT));
-        secondary_label.max_width_chars = 60;
-        secondary_label.wrap = true;
-        secondary_label.xalign = 0;
+        var description_label = new Gtk.Label (_("Your device will automatically restart to %s in %i seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name (), RESTART_TIMEOUT));
+        description_label.max_width_chars = 60;
+        description_label.wrap = true;
+        description_label.xalign = 0;
 
+        content_area.column_homogeneous = true;
         content_area.halign = Gtk.Align.CENTER;
+        content_area.margin = 48;
+        content_area.margin_start = content_area.margin_end = 12;
         content_area.valign = Gtk.Align.CENTER;
-        content_area.margin_end = 22;
-        content_area.margin_start = 22;
-        content_area.row_spacing = 6;
-        content_area.attach (image, 0, 0, 1, 2);
-        content_area.attach (primary_label, 1, 0, 1, 1);
-        content_area.attach (secondary_label, 1, 1, 1, 1);
+
+        content_area.attach (image, 0, 0, 1, 1);
+        content_area.attach (title_label, 0, 1, 1, 1);
+        content_area.attach (description_label, 1, 0, 1, 2);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
 
-        var restart_button = new Gtk.Button.with_label (_("Restart"));
+        var restart_button = new Gtk.Button.with_label (_("Restart Device"));
         restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (shutdown_button);
