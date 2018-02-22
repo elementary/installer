@@ -30,7 +30,7 @@ public class TryInstallView : AbstractInstallerView {
         var image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
-        var title_label = new Gtk.Label (_("Install"));
+        var title_label = new Gtk.Label (_("Install or Demo Mode"));
         title_label.max_width_chars = 60;
         title_label.valign = Gtk.Align.START;
         title_label.get_style_context ().add_class ("h2");
