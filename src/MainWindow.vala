@@ -53,6 +53,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         language_view.next_step.connect (() => load_keyboard_view ());
 
+        // FIXME: Remove this override
         load_success_view ();
     }
 
