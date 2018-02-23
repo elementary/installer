@@ -73,19 +73,19 @@ public class TryInstallView : AbstractInstallerView {
         grid.column_spacing = 12;
         grid.row_spacing = 32;
 
-        grid.attach (choice_image,   0, 1, 1, 1);
-        grid.attach (choice_label,   1, 1, 1, 1);
-        grid.attach (implications_image,    0, 2, 1, 1);
-        grid.attach (implications_label,    1, 2, 1, 1);
-        grid.attach (return_image,      0, 3, 1, 1);
-        grid.attach (return_label,      1, 3, 1, 1);
+        grid.attach (choice_image, 0, 1, 1, 1);
+        grid.attach (choice_label, 1, 1, 1, 1);
+        grid.attach (implications_image, 0, 2, 1, 1);
+        grid.attach (implications_label, 1, 2, 1, 1);
+        grid.attach (return_image, 0, 3, 1, 1);
+        grid.attach (return_label, 1, 3, 1, 1);
 
         content_area.column_homogeneous = true;
         content_area.valign = Gtk.Align.CENTER;
 
-        content_area.attach (image,       0, 0, 1, 1);
+        content_area.attach (image, 0, 0, 1, 1);
         content_area.attach (title_label, 0, 1, 1, 1);
-        content_area.attach (grid,        1, 0, 1, 2);
+        content_area.attach (grid, 1, 0, 1, 2);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
