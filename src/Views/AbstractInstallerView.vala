@@ -29,7 +29,7 @@ public abstract class AbstractInstallerView : Gtk.Grid {
             row_spacing: 24
         );
     }
-    
+
     construct {
         content_area = new Gtk.Grid ();
         content_area.column_spacing = 12;
