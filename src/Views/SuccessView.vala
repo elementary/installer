@@ -88,7 +88,7 @@ public class SuccessView : AbstractInstallerView {
             critical ("Fake restart");
         } catch (IOError e) {
             critical (e.message);
-        }        
+        }
     }
 }
-    
+
