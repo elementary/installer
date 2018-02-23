@@ -122,7 +122,7 @@ public class Installer.LanguageView : AbstractInstallerView {
                 Environment.set_variable ("LANGUAGE", lang, true);
                 Configuration.get_default ().lang = lang;
             }
-            
+
             next_step ();
         });
 

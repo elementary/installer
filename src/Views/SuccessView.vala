@@ -80,7 +80,7 @@ public class SuccessView : AbstractInstallerView {
             system_interface.reboot (false);
         } catch (IOError e) {
             critical (e.message);
-        }        
+        }
     }
 }
-    
+
