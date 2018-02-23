@@ -35,10 +35,6 @@ public class TryInstallView : AbstractInstallerView {
         title_label.valign = Gtk.Align.START;
         title_label.get_style_context ().add_class ("h2");
 
-        // var description_label = new Gtk.Label (_("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ()));
-        // description_label.wrap = true;
-        // description_label.max_width_chars = 60;
-
         var choice_image = new Gtk.Image.from_icon_name ("computer-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
         choice_image.halign = Gtk.Align.END;
         choice_image.valign = Gtk.Align.START;
@@ -77,7 +73,6 @@ public class TryInstallView : AbstractInstallerView {
         grid.column_spacing = 12;
         grid.row_spacing = 32;
 
-        // grid.attach (description_label, 0, 0, 2, 1);
         grid.attach (choice_image,   0, 1, 1, 1);
         grid.attach (choice_label,   1, 1, 1, 1);
         grid.attach (implications_image,    0, 2, 1, 1);
