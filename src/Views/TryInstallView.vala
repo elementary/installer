@@ -30,39 +30,42 @@ public class TryInstallView : AbstractInstallerView {
         var image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
-        var title_label = new Gtk.Label (_("Install or Demo Mode"));
+        var title_label = new Gtk.Label (_("Install or Try Demo Mode"));
         title_label.max_width_chars = 60;
         title_label.valign = Gtk.Align.START;
         title_label.get_style_context ().add_class ("h2");
 
-        var description_label = new Gtk.Label (_("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ()));
-        description_label.wrap = true;
-        description_label.max_width_chars = 60;
+        // var description_label = new Gtk.Label (_("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ()));
+        // description_label.wrap = true;
+        // description_label.max_width_chars = 60;
 
-        var nochanges_image = new Gtk.Image.from_icon_name ("computer-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-        nochanges_image.halign = Gtk.Align.END;
+        var choice_image = new Gtk.Image.from_icon_name ("computer-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        choice_image.halign = Gtk.Align.END;
+        choice_image.valign = Gtk.Align.START;
 
-        var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged in Demo Mode."));
-        nochanges_label.halign = Gtk.Align.START;
-        nochanges_label.max_width_chars = 52;
-        nochanges_label.valign = Gtk.Align.START;
-        nochanges_label.wrap = true;
-        nochanges_label.xalign = 0;
+        var choice_label = new Gtk.Label (_("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ()));
+        choice_label.halign = Gtk.Align.START;
+        choice_label.max_width_chars = 52;
+        choice_label.valign = Gtk.Align.START;
+        choice_label.wrap = true;
+        choice_label.xalign = 0;
 
-        var nosaving_image = new Gtk.Image.from_icon_name ("document-revert-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-        nosaving_image.halign = Gtk.Align.END;
+        var implications_image = new Gtk.Image.from_icon_name ("document-revert-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        implications_image.halign = Gtk.Align.END;
+        implications_image.valign = Gtk.Align.START;
 
-        var nosaving_label = new Gtk.Label (_("Any changes you make in Demo Mode will not be saved."));
-        nosaving_label.halign = Gtk.Align.START;
-        nosaving_label.max_width_chars = 52;
-        nosaving_label.valign = Gtk.Align.START;
-        nosaving_label.wrap = true;
-        nosaving_label.xalign = 0;
+        var implications_label = new Gtk.Label (_("In Demo Mode, changes you make will not be saved and data from your previous operating system will be unchanged."));
+        implications_label.halign = Gtk.Align.START;
+        implications_label.max_width_chars = 52;
+        implications_label.valign = Gtk.Align.START;
+        implications_label.wrap = true;
+        implications_label.xalign = 0;
 
         var return_image = new Gtk.Image.from_icon_name ("go-home-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
         return_image.halign = Gtk.Align.END;
+        return_image.valign = Gtk.Align.START;
 
-        var return_label = new Gtk.Label (_("You can always return from Demo Mode to the installer by selecting the Install icon."));
+        var return_label = new Gtk.Label (_("You can always return to the installer from Demo Mode by selecting the Install icon."));
         return_label.halign = Gtk.Align.START;
         return_label.max_width_chars = 52;
         return_label.valign = Gtk.Align.START;
@@ -74,11 +77,11 @@ public class TryInstallView : AbstractInstallerView {
         grid.column_spacing = 12;
         grid.row_spacing = 32;
 
-        grid.attach (description_label, 0, 0, 2, 1);
-        grid.attach (nochanges_image,   0, 1, 1, 1);
-        grid.attach (nochanges_label,   1, 1, 1, 1);
-        grid.attach (nosaving_image,    0, 2, 1, 1);
-        grid.attach (nosaving_label,    1, 2, 1, 1);
+        // grid.attach (description_label, 0, 0, 2, 1);
+        grid.attach (choice_image,   0, 1, 1, 1);
+        grid.attach (choice_label,   1, 1, 1, 1);
+        grid.attach (implications_image,    0, 2, 1, 1);
+        grid.attach (implications_label,    1, 2, 1, 1);
         grid.attach (return_image,      0, 3, 1, 1);
         grid.attach (return_label,      1, 3, 1, 1);
 
