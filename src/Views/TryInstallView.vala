@@ -27,63 +27,64 @@ public class TryInstallView : AbstractInstallerView {
             critical (e.message);
         }
 
-        var title_label = new Gtk.Label (_("Install %s").printf (Utils.get_pretty_name ()));
-        title_label.wrap = true;
+        var image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
+        image.valign = Gtk.Align.END;
+
+        var title_label = new Gtk.Label (_("Install or Try Demo Mode"));
         title_label.max_width_chars = 60;
-        title_label.get_style_context ().add_class ("h1");
+        title_label.valign = Gtk.Align.START;
+        title_label.get_style_context ().add_class ("h2");
 
-        var description_label = new Gtk.Label (_("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ()));
-        description_label.margin_bottom = 48;
-        description_label.wrap = true;
-        description_label.max_width_chars = 60;
-        description_label.set_justify (Gtk.Justification.CENTER);
+        var choice_image = new Gtk.Image.from_icon_name ("computer-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        choice_image.halign = Gtk.Align.END;
+        choice_image.valign = Gtk.Align.START;
 
-        var nochanges_label = new Gtk.Label (_("Data from your previous operating system is unchanged in Demo Mode."));
-        nochanges_label.max_width_chars = 40;
-        nochanges_label.wrap = true;
-        nochanges_label.set_justify (Gtk.Justification.CENTER);
+        var choice_label = new Gtk.Label (_("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ()));
+        choice_label.halign = Gtk.Align.START;
+        choice_label.max_width_chars = 52;
+        choice_label.valign = Gtk.Align.START;
+        choice_label.wrap = true;
+        choice_label.xalign = 0;
 
-        var nochanges_image = new Gtk.Image.from_icon_name ("computer", Gtk.IconSize.DIALOG);
+        var implications_image = new Gtk.Image.from_icon_name ("document-revert-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        implications_image.halign = Gtk.Align.END;
+        implications_image.valign = Gtk.Align.START;
 
-        var nochanges_emblem = new Gtk.Image.from_icon_name ("emblem-default", Gtk.IconSize.LARGE_TOOLBAR);
-        nochanges_emblem.valign = Gtk.Align.END;
-        nochanges_emblem.halign = Gtk.Align.END;
+        var implications_label = new Gtk.Label (_("In Demo Mode, changes you make will not be saved and data from your previous operating system will be unchanged."));
+        implications_label.halign = Gtk.Align.START;
+        implications_label.max_width_chars = 52;
+        implications_label.valign = Gtk.Align.START;
+        implications_label.wrap = true;
+        implications_label.xalign = 0;
 
-        var nochanges_overlay = new Gtk.Overlay ();
-        nochanges_overlay.add_overlay (nochanges_image);
-        nochanges_overlay.add_overlay (nochanges_emblem);
-        nochanges_overlay.halign = Gtk.Align.CENTER;
-        nochanges_overlay.height_request = 51;
-        nochanges_overlay.width_request = 60;
+        var return_image = new Gtk.Image.from_icon_name ("go-home-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        return_image.halign = Gtk.Align.END;
+        return_image.valign = Gtk.Align.START;
 
-        var nosaving_label = new Gtk.Label (_("Any changes you make in Demo Mode will not be saved."));
-        nosaving_label.valign = Gtk.Align.START;
-        nosaving_label.max_width_chars = 40;
-        nosaving_label.wrap = true;
-        nosaving_label.set_justify (Gtk.Justification.CENTER);
-
-        var nosaving_image = new Gtk.Image.from_icon_name ("document-revert", Gtk.IconSize.DIALOG);
-
-        var return_label = new Gtk.Label (_("You can always return from Demo Mode to the installer by selecting the Install icon."));
-        return_label.max_width_chars = 40;
+        var return_label = new Gtk.Label (_("You can always return to the installer from Demo Mode by selecting the Install icon."));
+        return_label.halign = Gtk.Align.START;
+        return_label.max_width_chars = 52;
         return_label.valign = Gtk.Align.START;
         return_label.wrap = true;
-        return_label.set_justify (Gtk.Justification.CENTER);
+        return_label.xalign = 0;
 
-        var return_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = 12;
+        grid.row_spacing = 32;
+
+        grid.attach (choice_image, 0, 1, 1, 1);
+        grid.attach (choice_label, 1, 1, 1, 1);
+        grid.attach (implications_image, 0, 2, 1, 1);
+        grid.attach (implications_label, 1, 2, 1, 1);
+        grid.attach (return_image, 0, 3, 1, 1);
+        grid.attach (return_label, 1, 3, 1, 1);
 
         content_area.column_homogeneous = true;
-        content_area.margin_end = 10;
-        content_area.margin_start = 10;
         content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (title_label, 0, 0, 3, 1);
-        content_area.attach (description_label, 0, 1, 3, 1);
-        content_area.attach (nochanges_overlay, 0, 2, 1, 1);
-        content_area.attach (nochanges_label, 0, 3, 1, 1);
-        content_area.attach (nosaving_image, 1, 2, 1, 1);
-        content_area.attach (nosaving_label, 1, 3, 1, 1);
-        content_area.attach (return_image, 2, 2, 1, 1);
-        content_area.attach (return_label, 2, 3, 1, 1);
+
+        content_area.attach (image, 0, 0, 1, 1);
+        content_area.attach (title_label, 0, 1, 1, 1);
+        content_area.attach (grid, 1, 0, 1, 2);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
