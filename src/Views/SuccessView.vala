@@ -29,19 +29,33 @@ public class SuccessView : AbstractInstallerView {
         }
 
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.START;
+        image.valign = Gtk.Align.END;
 
         var title_label = new Gtk.Label (_("Continue Setting Up"));
         title_label.halign = Gtk.Align.CENTER;
         title_label.max_width_chars = 60;
+        title_label.valign = Gtk.Align.START;
         title_label.wrap = true;
         title_label.xalign = 0;
         title_label.get_style_context ().add_class ("h2");
 
-        var description_label = new Gtk.Label (_("Your device will automatically restart to %s in %i seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name (), RESTART_TIMEOUT));
+        var primary_label = new Gtk.Label (_("Restarting in %i seconds…").printf (RESTART_TIMEOUT));
+        primary_label.halign = Gtk.Align.START;
+        primary_label.valign = Gtk.Align.END;
+        primary_label.get_style_context ().add_class ("primary");
+
+        var description_label = new Gtk.Label (_("Your device will automatically restart to %s to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name ()));
         description_label.max_width_chars = 60;
+        description_label.valign = Gtk.Align.START;
         description_label.wrap = true;
         description_label.xalign = 0;
+
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = grid.row_spacing = 12;
+        grid.valign = Gtk.Align.CENTER;
+
+        grid.attach (primary_label, 0, 0, 1, 1);
+        grid.attach (description_label, 0, 1, 1, 1);
 
         content_area.column_homogeneous = true;
         content_area.halign = Gtk.Align.CENTER;
@@ -51,7 +65,7 @@ public class SuccessView : AbstractInstallerView {
 
         content_area.attach (image, 0, 0, 1, 1);
         content_area.attach (title_label, 0, 1, 1, 1);
-        content_area.attach (description_label, 1, 0, 1, 2);
+        content_area.attach (grid, 1, 0, 1, 2);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
 
