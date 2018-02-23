@@ -69,7 +69,6 @@ public class TryInstallView : AbstractInstallerView {
         return_label.xalign = 0;
 
         var grid = new Gtk.Grid ();
-        grid.orientation = Gtk.Orientation.VERTICAL;
         grid.column_spacing = 12;
         grid.row_spacing = 32;
 
