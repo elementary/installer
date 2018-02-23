@@ -49,15 +49,15 @@ public class EncryptView : AbstractInstallerView {
         choice_description.wrap = true;
         choice_description.xalign = 0;
 
-        var choice_description2 = new Gtk.Label (_("The encryption password will be required each time you turn on this device or restart."));
-        choice_description2.max_width_chars = 52;
-        choice_description2.wrap = true;
-        choice_description2.xalign = 0;
+        var restart_label = new Gtk.Label (_("The encryption password will be required each time you turn on this device or restart."));
+        restart_label.max_width_chars = 52;
+        restart_label.wrap = true;
+        restart_label.xalign = 0;
 
-        var choice_description3 = new Gtk.Label (_("Disk encryption may minimally impact read and write speed when performing intense tasks."));
-        choice_description3.max_width_chars = 52;
-        choice_description3.wrap = true;
-        choice_description3.xalign = 0;
+        var performance_label = new Gtk.Label (_("Disk encryption may minimally impact read and write speed when performing intense tasks."));
+        performance_label.max_width_chars = 52;
+        performance_label.wrap = true;
+        performance_label.xalign = 0;
 
         var choice_grid = new Gtk.Grid ();
         choice_grid.orientation = Gtk.Orientation.VERTICAL;
@@ -66,9 +66,9 @@ public class EncryptView : AbstractInstallerView {
         choice_grid.attach (new Gtk.Image.from_icon_name ("emoji-body-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 0, 1, 1);
         choice_grid.attach (choice_description, 1, 0, 1, 1);
         choice_grid.attach (new Gtk.Image.from_icon_name ("emoji-objects-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 1, 1, 1);
-        choice_grid.attach (choice_description3, 1, 1, 1, 1);
+        choice_grid.attach (performance_label, 1, 1, 1, 1);
         choice_grid.attach (new Gtk.Image.from_icon_name ("rotation-allowed-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 2, 1, 1);
-        choice_grid.attach (choice_description2, 1, 2, 1, 1);
+        choice_grid.attach (restart_label, 1, 2, 1, 1);
 
         var description = new Gtk.Label (_("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account."));
         description.margin_bottom = 12;
