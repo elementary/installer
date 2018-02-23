@@ -252,7 +252,7 @@ public class Installer.CheckView : AbstractInstallerView  {
         show_all ();
         current_state = next_state;
     }
-    
+
     private Gtk.Grid setup_grid (string title, string description, string icon_name) {
         var title_label = new Gtk.Label (title);
         title_label.get_style_context ().add_class ("h2");
@@ -332,7 +332,7 @@ public class Installer.CheckView : AbstractInstallerView  {
         comparison_grid.attach (memory_val_2, 4, 4, 1, 1);
         return comparison_grid;
     }
-    
+
     private static string get_frequency_string (int freq) {
         if (freq >= 1000000) {
             return "%.1f GHz".printf (((float)freq)/1000000);
@@ -346,5 +346,5 @@ public class Installer.CheckView : AbstractInstallerView  {
 
 [DBus (name = "org.freedesktop.UPower")]
 public interface UPower : GLib.Object {
-	public abstract bool on_battery { owned get; set; }
+    public abstract bool on_battery { owned get; set; }
 }
