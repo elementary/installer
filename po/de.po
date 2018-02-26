@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-02-26 09:48+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-02-26 09:49+0000\n"
+"Last-Translator: SteffenL <steffenl@protonmail.com>\n"
 "Language-Team: German "
 "<https://weblate.elementary.io/projects/installer/installer/de/>\n"
 "Language: de\n"
@@ -49,7 +49,7 @@ msgstr "Sind Sie sicher, dass Sie den Rechner herunterfahren wollen?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "Dies wird die Installation abbrechen und den Rechner ausschalten."
+msgstr "Dies wird die Installation abbrechen und dieses Gerät ausschalten."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
