@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-01-16 04:23+0000\n"
+"PO-Revision-Date: 2018-02-26 09:46+0000\n"
 "Last-Translator: SteffenL <steffenl@protonmail.com>\n"
 "Language-Team: German "
 "<https://weblate.elementary.io/projects/installer/installer/de/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: src/Views/TryInstallView.vala:92
 #, c-format
 msgid "Install %s"
-msgstr "Installieren %s"
+msgstr "Installiere %s"
 
 #: src/Utils.vala:156
 msgid "Operating System"
