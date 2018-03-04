@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-03-04 00:53+0000\n"
-"Last-Translator: mIcHy AmRaNe <marseillaisanonymous@gmail.com>\n"
+"PO-Revision-Date: 2018-03-04 00:54+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French "
 "<https://weblate.elementary.io/projects/installer/installer/fr/>\n"
 "Language: fr\n"
@@ -111,7 +111,7 @@ msgstr "Recommandé :"
 
 #: src/Views/CheckView.vala:297
 msgid "Your Device:"
-msgstr "Votre appareil:"
+msgstr "Votre appareil :"
 
 #: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
 msgid "Processor:"
