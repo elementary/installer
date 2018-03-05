@@ -16,6 +16,7 @@ You'll need the following dependencies:
  - libgnomekbd-dev
  - libgranite-dev >= 0.5
  - libgtk-3-dev
+ - libgee-0.8-dev
  - libjson-glib-dev
  - libpwquality-dev
  - libxml2-dev

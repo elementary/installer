@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-01-16 04:23+0000\n"
+"PO-Revision-Date: 2018-02-26 09:49+0000\n"
 "Last-Translator: SteffenL <steffenl@protonmail.com>\n"
 "Language-Team: German "
 "<https://weblate.elementary.io/projects/installer/installer/de/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: src/Views/TryInstallView.vala:92
 #, c-format
 msgid "Install %s"
-msgstr "Installieren %s"
+msgstr "Installiere %s"
 
 #: src/Utils.vala:156
 msgid "Operating System"
@@ -37,11 +37,11 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:35
 msgid "Unable to change the Distinst log domain name"
-msgstr "Änderung des Distinst-Log-Domainnamens nicht möglich"
+msgstr "Der Distinst-Log-Domainname konnte nicht geändert werden."
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr "Starte Installation\n"
+msgstr "Beginne die Installation ..."
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -49,7 +49,7 @@ msgstr "Sind Sie sicher, dass Sie den Rechner herunterfahren wollen?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "Dies wird die Installation abbrechen und den Rechner ausschalten."
+msgstr "Dies wird die Installation abbrechen und dieses Gerät ausschalten."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
