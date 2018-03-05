@@ -52,9 +52,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         get_style_context ().add_class ("os-installer");
 
         language_view.next_step.connect (() => load_keyboard_view ());
-
-        // FIXME: Remove this override
-        load_error_view ();
     }
 
     /*
