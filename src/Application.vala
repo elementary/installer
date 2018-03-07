@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2016–2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,11 +18,28 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.App : Gtk.Application {
+public class Installer.App : Granite.Application {
+    public const OptionEntry[] INSTALLER_OPTIONS =  {
+        { "test-mode", 't', 0, OptionArg.NONE, out test_mode,
+        "Test mode", null},
+        { null }
+    };
+    
+    public static bool test_mode;
+
     construct {
         application_id = "io.elementary.installer";
         flags = ApplicationFlags.FLAGS_NONE;
         Intl.setlocale (LocaleCategory.ALL, "");
+        add_main_option_entries (INSTALLER_OPTIONS);
+        
+        var test_mode_action = new SimpleAction ("test-mode", null);
+        test_mode_action.activate.connect(() => {
+            test_mode = true;
+            activate ();
+        });
+        
+        add_action (test_mode_action);
     }
 
     public override void activate () {

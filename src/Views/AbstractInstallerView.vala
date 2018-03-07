@@ -51,6 +51,11 @@ public abstract class AbstractInstallerView : Gtk.Grid {
 
             action_area.add (cancel_button);
         }
+        
+        if (Installer.App.test_mode) {
+            var test_label = new Gtk.Label (_("Test Mode"));
+            action_area.add (test_label);
+        }
 
         orientation = Gtk.Orientation.VERTICAL;
         add (content_area);

@@ -9,6 +9,7 @@ i18n = import('i18n')
 
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
+granite_dep = dependency('granite')
 gtk_dep = dependency('gtk+-3.0')
 gee_dep = dependency('gee-0.8')
 distinst_dep = dependency('distinst')
@@ -20,6 +21,7 @@ gnome_keyboard_ui_dep = meson.get_compiler('c').find_library('libgnomekbdui')
 dependencies = [
     glib_dep,
     gobject_dep,
+    granite_dep,
     gtk_dep,
     gee_dep,
     distinst_dep,
