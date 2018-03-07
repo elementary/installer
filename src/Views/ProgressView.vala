@@ -114,10 +114,17 @@ public class ProgressView : AbstractInstallerView {
             debug ("no variant\n");
         }
 
+        Distinst.LvmEncryption? encryption;
         if (current_config.encryption_password != null) {
             debug ("encrypting");
+            encryption = Distinst.LvmEncryption () {
+                physical_volume = "cryptdata",
+                password = current_config.encryption_password,
+                keydata = null
+            };
         } else {
             debug ("not encrypting");
+            encryption = null;
         }
 
         config.remove = Build.MANIFEST_REMOVE_PATH;
@@ -132,7 +139,7 @@ public class ProgressView : AbstractInstallerView {
         debug ("disk: %s\n", current_config.disk);
         var disk = new Distinst.Disk (current_config.disk);
         if (disk == null) {
-            debug ("could not find %s\n", current_config.disk);
+            warning ("could not find %s\n", current_config.disk);
             on_error ();
             return;
         }
@@ -153,12 +160,17 @@ public class ProgressView : AbstractInstallerView {
             flag = Distinst.SectorKind.END,
             value = 0
         };
+        
+        // Each disk that will have changes made to it should be added to a Disks object. This
+        // object will be passed to the install method, and used as a blueprint for how changes
+        // to each disk should be made, and where critical partitions are located.
+        var disks = new Distinst.Disks ();
 
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
                 // Wipes the partition table clean with a brand new MSDOS partition table.
                 if (disk.mklabel (bootloader) != 0) {
-                    debug ("unable to write MSDOS partition table to %s\n", current_config.disk);
+                    warning ("unable to write MSDOS partition table to %s\n", current_config.disk);
                     on_error ();
                     return;
                 }
@@ -178,15 +190,19 @@ public class ProgressView : AbstractInstallerView {
                 );
 
                 if (result != 0) {
-                    debug ("unable to add partition to %s\n", current_config.disk);
+                    warning ("unable to add partition to %s\n", current_config.disk);
                     on_error ();
                     return;
                 }
+                
+                disks.push (disk);
+                
+                //TODO: encryption on BIOS
 
                 break;
             case Distinst.PartitionTable.GPT:
                 if (disk.mklabel (bootloader) != 0) {
-                    debug ("unable to write GPT partition table to %s\n", current_config.disk);
+                    warning ("unable to write GPT partition table to %s\n", current_config.disk);
                     on_error ();
                     return;
                 }
@@ -213,7 +229,7 @@ public class ProgressView : AbstractInstallerView {
                 );
 
                 if (result != 0) {
-                    debug ("unable to add EFI partition to %s\n", current_config.disk);
+                    warning ("unable to add EFI partition to %s\n", current_config.disk);
                     on_error ();
                     return;
                 }
@@ -225,25 +241,52 @@ public class ProgressView : AbstractInstallerView {
                 // partition that is configured to start at the end of the EFI sector, and
                 // continue to the end of the disk.
                 result = disk.add_partition (
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
                         .partition_type (Distinst.PartitionType.PRIMARY)
-                        .mount ("/")
+                        .logical_volume ("data", encryption)
                 );
 
                 if (result != 0) {
-                    debug ("unable to add / partition to %s\n", current_config.disk);
+                    warning ("unable to add lvm partition to %s\n", current_config.disk);
+                    on_error ();
+                    return;
+                }
+                
+                disks.push (disk);
+                
+                result = disks.initialize_volume_groups ();
+                
+                if (result != 0) {
+                    warning ("unable to initialize volume groups on %s\n", current_config.disk);
+                    on_error ();
+                    return;
+                }
+                
+                unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume ("data");
+                
+                if (lvm_device == null) {
+                    warning ("unable to find 'data' volume group on %s\n", current_config.disk);
+                    on_error ();
+                    return;
+                }
+                
+                start = lvm_device.get_sector (ref start_sector);
+                end = lvm_device.get_sector (ref end_sector);
+                
+                result = lvm_device.add_partition(
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                        .name("root")
+                        .mount ("/")
+                );
+                
+                if (result != 0) {
+                    warning ("unable to add / partition to lvm on %s\n", current_config.disk);
                     on_error ();
                     return;
                 }
 
                 break;
         }
-
-        // Each disk that will have changes made to it should be added to a Disks object. This
-        // object will be passed to the install method, and used as a blueprint for how changes
-        // to each disk should be made, and where critical partitions are located.
-        var disks = new Distinst.Disks ();
-        disks.push (disk);
 
         new Thread<void*> (null, () => {
             installer.install (disks, config);
