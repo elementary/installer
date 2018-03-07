@@ -20,8 +20,7 @@
 
 public class Installer.App : Granite.Application {
     public const OptionEntry[] INSTALLER_OPTIONS =  {
-        { "test", 't', 0, OptionArg.NONE, out test_mode,
-        "Test mode", null},
+        { "test", 't', 0, OptionArg.NONE, out test_mode, "Test mode", null},
         { null }
     };
     
