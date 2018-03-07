@@ -14,9 +14,11 @@ You'll need the following dependencies:
  - desktop-file-utils
  - gettext
  - libgnomekbd-dev
+ - libgranite-dev >= 0.5
  - libgtk-3-dev
  - libgee-0.8-dev
  - libjson-glib-dev
+ - libpwquality-dev
  - libxml2-dev
  - libxml2-utils
  - [distinst](https://github.com/pop-os/distinst/)

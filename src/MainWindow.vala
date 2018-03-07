@@ -28,6 +28,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private DiskView disk_view;
     private ProgressView progress_view;
     private SuccessView success_view;
+    private EncryptView encrypt_view;
     private ErrorView error_view;
 
     public MainWindow () {
@@ -44,8 +45,11 @@ public class Installer.MainWindow : Gtk.Dialog {
     construct {
         language_view = new LanguageView ();
 
+        encrypt_view = new EncryptView ();
+
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        stack.add (encrypt_view);
         stack.add (language_view);
 
         get_content_area ().add (stack);
