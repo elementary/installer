@@ -14,6 +14,7 @@ You'll need the following dependencies:
  - desktop-file-utils
  - gettext
  - libgnomekbd-dev
+ - libgranite-dev >= 0.5
  - libgtk-3-dev
  - libgee-0.8-dev
  - libjson-glib-dev
