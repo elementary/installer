@@ -60,10 +60,14 @@ public class SuccessView : AbstractInstallerView {
         restart_button.clicked.connect (session_restart);
 
         shutdown_button.clicked.connect (() => {
-            try {
-                system_interface.power_off (false);
-            } catch (IOError e) {
-                critical (e.message);
+            if (Installer.App.test_mode) {
+                critical (_("Test mode shutdown"));
+            } else {
+                try {
+                    system_interface.power_off (false);
+                } catch (IOError e) {
+                    critical (e.message);
+                }
             }
         });
 
@@ -76,10 +80,14 @@ public class SuccessView : AbstractInstallerView {
     }
 
     private void session_restart () {
-        try {
-            system_interface.reboot (false);
-        } catch (IOError e) {
-            critical (e.message);
+        if (Installer.App.test_mode) {
+            critical (_("Test mode reboot"));
+        } else {
+            try {
+                system_interface.reboot (false);
+            } catch (IOError e) {
+                critical (e.message);
+            }
         }
     }
 }
