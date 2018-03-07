@@ -31,14 +31,6 @@ public class Installer.App : Granite.Application {
         flags = ApplicationFlags.FLAGS_NONE;
         Intl.setlocale (LocaleCategory.ALL, "");
         add_main_option_entries (INSTALLER_OPTIONS);
-        
-        var test_mode_action = new SimpleAction ("test-mode", null);
-        test_mode_action.activate.connect(() => {
-            test_mode = true;
-            activate ();
-        });
-        
-        add_action (test_mode_action);
     }
 
     public override void activate () {
