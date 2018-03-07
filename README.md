@@ -33,13 +33,7 @@ To install, use `ninja install`, then execute with `io.elementary.installer`
     sudo ninja install
     io.elementary.installer
     
-## Debugging
-
-See debug messages:
-
-`io.elementary.installer -d` or `io.elementary.installer --debug`
-
-Test mode (don't be destructive):
+You can also use test mode for development to disable some destructive behaviors like restarting and shutting down:
 
 `io.elementary.installer -t` or `io.elementary.installer --test`
 
