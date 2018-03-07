@@ -114,6 +114,12 @@ public class ProgressView : AbstractInstallerView {
             debug ("no variant\n");
         }
 
+        if (current_config.encryption_password != null) {
+            debug ("encrypting");
+        } else {
+            debug ("not encrypting");
+        }
+
         config.remove = Build.MANIFEST_REMOVE_PATH;
 
         // TODO: The following code is an example of API usage. Disk configurations should be

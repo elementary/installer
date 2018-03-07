@@ -167,6 +167,7 @@ public class EncryptView : AbstractInstallerView {
                 next_button.label = _("Select Disk");
                 update_next_button ();
             } else if (stack.visible_child == password_grid) {
+                Configuration.get_default ().encryption_password = pw_entry.text;
                 next_step ();
             }
         });
