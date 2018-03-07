@@ -252,35 +252,38 @@ public class Installer.CheckView : AbstractInstallerView  {
         show_all ();
         current_state = next_state;
     }
-    
+
     private Gtk.Grid setup_grid (string title, string description, string icon_name) {
         var title_label = new Gtk.Label (title);
         title_label.get_style_context ().add_class ("h2");
         title_label.wrap = true;
         title_label.max_width_chars = 60;
-        title_label.xalign = 0;
-        title_label.valign = Gtk.Align.END;
+        title_label.valign = Gtk.Align.START;
 
         var description_label = new Gtk.Label (description);
         description_label.wrap = true;
         description_label.max_width_chars = 60;
         description_label.xalign = 0;
-        description_label.valign = Gtk.Align.START;
+        description_label.valign = Gtk.Align.CENTER;
+        description_label.vexpand = true;
 
         var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.START;
+        image.valign = Gtk.Align.END;
 
         var grid = new Gtk.Grid ();
-        grid.expand = true;
-        grid.vexpand = true;
+        grid.column_homogeneous = true;
         grid.column_spacing = 12;
-        grid.row_spacing = 6;
-        grid.margin = 48;
+        grid.expand = true;
         grid.halign = Gtk.Align.CENTER;
+        grid.margin = 48;
+        grid.margin_start = grid.margin_end = 12;
+        grid.row_spacing = 6;
         grid.valign = Gtk.Align.CENTER;
-        grid.attach (image, 0, 0, 1, 2);
-        grid.attach (title_label, 1, 0, 1, 1);
-        grid.attach (description_label, 1, 1, 1, 1);
+        grid.vexpand = true;
+
+        grid.attach (image, 0, 0, 1, 1);
+        grid.attach (title_label, 0, 1, 1, 1);
+        grid.attach (description_label, 1, 0, 1, 2);
 
         return grid;
     }
@@ -329,7 +332,7 @@ public class Installer.CheckView : AbstractInstallerView  {
         comparison_grid.attach (memory_val_2, 4, 4, 1, 1);
         return comparison_grid;
     }
-    
+
     private static string get_frequency_string (int freq) {
         if (freq >= 1000000) {
             return "%.1f GHz".printf (((float)freq)/1000000);
@@ -343,5 +346,5 @@ public class Installer.CheckView : AbstractInstallerView  {
 
 [DBus (name = "org.freedesktop.UPower")]
 public interface UPower : GLib.Object {
-	public abstract bool on_battery { owned get; set; }
+    public abstract bool on_battery { owned get; set; }
 }

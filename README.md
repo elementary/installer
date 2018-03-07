@@ -15,6 +15,7 @@ You'll need the following dependencies:
  - gettext
  - libgnomekbd-dev
  - libgtk-3-dev
+ - libgee-0.8-dev
  - libjson-glib-dev
  - libxml2-dev
  - libxml2-utils
