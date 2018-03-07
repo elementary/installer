@@ -32,5 +32,6 @@ public class Configuration : GLib.Object {
     public string? country { get; set; default = null; }
     public string keyboard_layout { get; set; }
     public string? keyboard_variant { get; set; default = null; }
+    public string? encryption_password { get; set; default = null; }
     public string disk { get; set; }
 }

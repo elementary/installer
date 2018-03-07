@@ -44,31 +44,37 @@ public class EncryptView : AbstractInstallerView {
         title_label.get_style_context ().add_class ("h2");
         title_label.valign = Gtk.Align.START;
 
-        var choice_description = new Gtk.Label (_("Encrypting this disk protects data from being read by others with physical access to this device."));
-        choice_description.max_width_chars = 52;
-        choice_description.wrap = true;
-        choice_description.xalign = 0;
+        var protect_image = new Gtk.Image.from_icon_name ("emoji-body-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
-        var choice_description2 = new Gtk.Label (_("The encryption password will be required each time you turn on this device or restart."));
-        choice_description2.max_width_chars = 52;
-        choice_description2.wrap = true;
-        choice_description2.xalign = 0;
+        var protect_label = new Gtk.Label (_("Encrypting this disk protects data from being read by others with physical access to this device."));
+        protect_label.max_width_chars = 52;
+        protect_label.wrap = true;
+        protect_label.xalign = 0;
 
-        var choice_description3 = new Gtk.Label (_("Disk encryption may minimally impact read and write speed when performing intense tasks."));
-        choice_description3.max_width_chars = 52;
-        choice_description3.wrap = true;
-        choice_description3.xalign = 0;
+        var performance_image = new Gtk.Image.from_icon_name ("emoji-objects-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+
+        var performance_label = new Gtk.Label (_("Disk encryption may minimally impact read and write speed when performing intense tasks."));
+        performance_label.max_width_chars = 52;
+        performance_label.wrap = true;
+        performance_label.xalign = 0;
+
+        var restart_image = new Gtk.Image.from_icon_name ("rotation-allowed-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+
+        var restart_label = new Gtk.Label (_("The encryption password will be required each time you turn on this device or restart."));
+        restart_label.max_width_chars = 52;
+        restart_label.wrap = true;
+        restart_label.xalign = 0;
 
         var choice_grid = new Gtk.Grid ();
         choice_grid.orientation = Gtk.Orientation.VERTICAL;
         choice_grid.column_spacing = 12;
         choice_grid.row_spacing = 32;
-        choice_grid.attach (new Gtk.Image.from_icon_name ("emoji-body-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 0, 1, 1);
-        choice_grid.attach (choice_description, 1, 0, 1, 1);
-        choice_grid.attach (new Gtk.Image.from_icon_name ("emoji-objects-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 1, 1, 1);
-        choice_grid.attach (choice_description3, 1, 1, 1, 1);
-        choice_grid.attach (new Gtk.Image.from_icon_name ("rotation-allowed-symbolic", Gtk.IconSize.LARGE_TOOLBAR), 0, 2, 1, 1);
-        choice_grid.attach (choice_description2, 1, 2, 1, 1);
+        choice_grid.attach (protect_image, 0, 0, 1, 1);
+        choice_grid.attach (protect_label, 1, 0, 1, 1);
+        choice_grid.attach (performance_image, 0, 1, 1, 1);
+        choice_grid.attach (performance_label, 1, 1, 1, 1);
+        choice_grid.attach (restart_image, 0, 2, 1, 1);
+        choice_grid.attach (restart_label, 1, 2, 1, 1);
 
         var description = new Gtk.Label (_("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account."));
         description.margin_bottom = 12;
@@ -141,6 +147,10 @@ public class EncryptView : AbstractInstallerView {
 
         next_button.grab_focus ();
 
+        no_encrypt_button.clicked.connect (() => {
+                next_step ();
+        });
+
         back_button.clicked.connect (() => {
             if (stack.visible_child == choice_grid) {
                 ((Gtk.Stack) get_parent ()).visible_child = previous_view;
@@ -157,6 +167,7 @@ public class EncryptView : AbstractInstallerView {
                 next_button.label = _("Select Disk");
                 update_next_button ();
             } else if (stack.visible_child == password_grid) {
+                Configuration.get_default ().encryption_password = pw_entry.text;
                 next_step ();
             }
         });
