@@ -4,11 +4,12 @@ services:
  - docker
 
 env:
- - DEPENDENCY_PACKAGES="meson desktop-file-utils gettext libdistinst-dev libgtk-3-dev libgee-0.8-dev libxml2-dev libjson-glib-dev libgnomekbd-dev libxml2-utils valac"
+ - DEPENDENCY_PACKAGES="meson desktop-file-utils elementary-os-overlay gettext libdistinst-dev libgtk-3-dev libgee-0.8-dev libxml2-dev libjson-glib-dev libgnomekbd-dev libxml2-utils valac"
 
 install:
  - docker pull ubuntu:18.04
- - docker run ubuntu:18.04 /bin/sh -c "apt-get update && apt-get -y install gnupg-agent software-properties-common && add-apt-repository -y ppa:elementary-os/daily && add-apt-repository -y ppa:system76/proposed"
+ - docker run ubuntu:18.04 /bin/sh -c "apt-get update && apt-get -y install gnupg-agent software-properties-common"
+ - docker run ubuntu:18.04 /bin/sh -c "add-apt-repository -y ppa:elementary-os/daily && add-apt-repository -y ppa:elementary-os/os-patches && add-apt-repository -y ppa:system76/proposed"
  - docker run ubuntu:18.04 /bin/sh -c "apt-get update && env DEBIAN_FRONTEND noninteractive apt-get -y install $DEPENDENCY_PACKAGES"
  - docker run -v "$PWD":/tmp/build-dir ubuntu:18.04 /bin/sh -c "cd /tmp/build-dir && meson build --prefix=/usr && cd build && ninja && ninja test"
 
