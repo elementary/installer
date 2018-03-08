@@ -83,20 +83,28 @@ public class ErrorView : AbstractInstallerView {
         action_area.add (install_button);
 
         restart_button.clicked.connect (() => {
-            try {
-                system_interface.reboot (false);
-            } catch (IOError e) {
-                critical (e.message);
+            if (Installer.App.test_mode) {
+                critical (_("Test mode reboot"));
+            } else {
+                try {
+                    system_interface.reboot (false);
+                } catch (IOError e) {
+                    critical (e.message);
+                }
             }
         });
 
         demo_button.clicked.connect (() => {
-            var seat = Utils.get_seat_instance ();
-            if (seat != null) {
-                try {
-                    seat.switch_to_guest ("");
-                } catch (IOError e) {
-                    stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+            if (Installer.App.test_mode) {
+                critical (_("Test mode switch user"));
+            } else {
+                var seat = Utils.get_seat_instance ();
+                if (seat != null) {
+                    try {
+                        seat.switch_to_guest ("");
+                    } catch (IOError e) {
+                        stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+                    }
                 }
             }
         });
