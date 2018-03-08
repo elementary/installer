@@ -40,20 +40,20 @@ public class EncryptView : AbstractInstallerView {
         overlay.add (image);
         overlay.add_overlay (overlay_image);
 
-        var title_label = new Gtk.Label (_("Disk Encryption"));
+        var title_label = new Gtk.Label (_("Drive Encryption"));
         title_label.get_style_context ().add_class ("h2");
         title_label.valign = Gtk.Align.START;
 
         var protect_image = new Gtk.Image.from_icon_name ("emoji-body-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
-        var protect_label = new Gtk.Label (_("Encrypting this disk protects data from being read by others with physical access to this device."));
+        var protect_label = new Gtk.Label (_("Encrypting this drive protects data from being read by others with physical access to this device."));
         protect_label.max_width_chars = 52;
         protect_label.wrap = true;
         protect_label.xalign = 0;
 
         var performance_image = new Gtk.Image.from_icon_name ("emoji-objects-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
-        var performance_label = new Gtk.Label (_("Disk encryption may minimally impact read and write speed when performing intense tasks."));
+        var performance_label = new Gtk.Label (_("Drive encryption may minimally impact read and write speed when performing intense tasks."));
         performance_label.max_width_chars = 52;
         performance_label.wrap = true;
         performance_label.xalign = 0;
@@ -164,7 +164,7 @@ public class EncryptView : AbstractInstallerView {
         next_button.clicked.connect (() => {
             if (stack.visible_child == choice_grid) {
                 stack.visible_child = password_grid;
-                next_button.label = _("Select Disk");
+                next_button.label = _("Select Drive");
                 update_next_button ();
             } else if (stack.visible_child == password_grid) {
                 Configuration.get_default ().encryption_password = pw_entry.text;
