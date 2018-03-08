@@ -8,7 +8,7 @@ env:
 
 install:
  - docker pull ubuntu:18.04
- - docker run -v "$PWD":/tmp/build-dir ubuntu:18.04 /bin/sh -c "apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade && apt-get -y install software-properties-common && add-apt-repository -u -y ppa:elementary-os/daily && add-apt-repository -u -y ppa:elementary-os/os-patches && add-apt-repository -u -y ppa:system76/proposed && DEBIAN_FRONTEND=noninteractive apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && meson build --prefix=/usr && cd build && ninja && ninja test"
+ - docker run -v "$PWD":/tmp/build-dir ubuntu:18.04 /bin/sh -c "export DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get -y install software-properties-common && add-apt-repository -u -y ppa:elementary-os/daily && add-apt-repository -u -y ppa:elementary-os/os-patches && add-apt-repository -u -y ppa:system76/proposed && apt-get -y dist-upgrade && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && meson build --prefix=/usr && cd build && ninja && ninja test"
 
 script:
  - echo BUILDS PASSED
