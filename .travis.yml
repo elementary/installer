@@ -4,7 +4,7 @@ services:
  - docker
 
 env:
- - DEPENDENCY_PACKAGES="meson desktop-file-utils gettext libdistinst-dev libgtk-3-dev libgee-0.8-dev libxml2-dev libjson-glib-dev libgnomekbd-dev libxml2-utils valac clang libparted-dev"
+ - DEPENDENCY_PACKAGES="meson desktop-file-utils gettext libdistinst-dev libgtk-3-dev libgee-0.8-dev libxml2-dev libjson-glib-dev libgnomekbd-dev libxml2-utils valac clang libparted-dev git"
  - INSTALL_DISTINST="git clone https://github.com/pop-os/distinst.git && cd distinst && curl https://sh.rustup.rs -sSf | sh -s -- -y && make && make install"
 
 install:
