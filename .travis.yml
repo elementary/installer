@@ -8,10 +8,7 @@ env:
 
 install:
  - docker pull ubuntu:18.04
- - docker run ubuntu:18.04 /bin/sh -c "apt-get update && apt-get -y install gnupg-agent software-properties-common"
- - docker run ubuntu:18.04 /bin/sh -c "add-apt-repository -y ppa:elementary-os/daily && add-apt-repository -y ppa:elementary-os/os-patches && add-apt-repository -y ppa:system76/proposed"
- - docker run ubuntu:18.04 /bin/sh -c "apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install $DEPENDENCY_PACKAGES"
- - docker run -v "$PWD":/tmp/build-dir ubuntu:18.04 /bin/sh -c "cd /tmp/build-dir && meson build --prefix=/usr && cd build && ninja && ninja test"
+ - docker run -v "$PWD":/tmp/build-dir ubuntu:18.04 /bin/sh -c "apt-get update && apt-get -y install gnupg-agent software-properties-common && add-apt-repository -y ppa:elementary-os/daily && add-apt-repository -y ppa:elementary-os/os-patches && add-apt-repository -y ppa:system76/proposed && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && meson build --prefix=/usr && cd build && ninja && ninja test"
 
 script:
  - echo BUILDS PASSED
