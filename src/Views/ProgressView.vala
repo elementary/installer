@@ -158,8 +158,8 @@ public class ProgressView : AbstractInstallerView {
                 }
 
                 // Obtains the start and end values using a human-readable abstraction.
-                var start = disk.get_sector (start_sector);
-                var end = disk.get_sector (end_sector);
+                var start = disk.get_sector (ref start_sector);
+                var end = disk.get_sector (ref end_sector);
 
                 // Adds a newly-created partition builder object to the disk. This object is
                 // defined as an EXT4 partition with the `boot` partition flag, and shall be
@@ -193,8 +193,8 @@ public class ProgressView : AbstractInstallerView {
                     value = 512
                 };
 
-                var start = disk.get_sector (start_sector);
-                var end = disk.get_sector (efi_sector);
+                var start = disk.get_sector (ref start_sector);
+                var end = disk.get_sector (ref efi_sector);
 
                 // Adds a new partitition builder object which is defined to be a FAT partition
                 // with the `esp` flag, and shall be mounted to `/boot/efi` after install. This
@@ -212,8 +212,8 @@ public class ProgressView : AbstractInstallerView {
                     return;
                 }
 
-                start = disk.get_sector (efi_sector);
-                end = disk.get_sector (end_sector);
+                start = disk.get_sector (ref efi_sector);
+                end = disk.get_sector (ref end_sector);
 
                 // EFI installs require both an EFI and root partition, so this add a new EXT4
                 // partition that is configured to start at the end of the EFI sector, and
