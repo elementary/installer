@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2017–2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -78,12 +78,14 @@ public class SuccessView : AbstractInstallerView {
         restart_button.clicked.connect (session_restart);
 
         shutdown_button.clicked.connect (() => {
-            try {
-                // FIXME: Disabled while in development
-                // system_interface.power_off (false);
-                critical ("Fake power off");
-            } catch (IOError e) {
-                critical (e.message);
+            if (Installer.App.test_mode) {
+                critical (_("Test mode shutdown"));
+            } else {
+                try {
+                    system_interface.power_off (false);
+                } catch (IOError e) {
+                    critical (e.message);
+                }
             }
         });
 
@@ -96,12 +98,14 @@ public class SuccessView : AbstractInstallerView {
     }
 
     private void session_restart () {
-        try {
-            // FIXME: Disabled while in development
-            // system_interface.reboot (false);
-            critical ("Fake restart");
-        } catch (IOError e) {
-            critical (e.message);
+        if (Installer.App.test_mode) {
+            critical (_("Test mode reboot"));
+        } else {
+            try {
+                system_interface.reboot (false);
+            } catch (IOError e) {
+                critical (e.message);
+            }
         }
     }
 }
