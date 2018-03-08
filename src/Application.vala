@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2016–2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,10 +19,18 @@
  */
 
 public class Installer.App : Gtk.Application {
+    public const OptionEntry[] INSTALLER_OPTIONS =  {
+        { "test", 't', 0, OptionArg.NONE, out test_mode, "Non-destructive test mode", null},
+        { null }
+    };
+    
+    public static bool test_mode;
+
     construct {
         application_id = "io.elementary.installer";
         flags = ApplicationFlags.FLAGS_NONE;
         Intl.setlocale (LocaleCategory.ALL, "");
+        add_main_option_entries (INSTALLER_OPTIONS);
     }
 
     public override void activate () {
