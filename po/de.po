@@ -41,7 +41,7 @@ msgstr "Der Distinst-Log-Domainname konnte nicht geändert werden."
 
 #: src/Helpers/LogHelper.vala:37
 msgid "Starting installation\n"
-msgstr "Beginne die Installation ..."
+msgstr "Beginne die Installation ...\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
