@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2017–2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,6 +50,11 @@ public abstract class AbstractInstallerView : Gtk.Grid {
             });
 
             action_area.add (cancel_button);
+        }
+        
+        if (Installer.App.test_mode) {
+            var test_label = new Gtk.Label (_("Test Mode"));
+            action_area.add (test_label);
         }
 
         orientation = Gtk.Orientation.VERTICAL;
