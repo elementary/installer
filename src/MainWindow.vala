@@ -28,6 +28,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private DiskView disk_view;
     private ProgressView progress_view;
     private SuccessView success_view;
+    private EncryptView encrypt_view;
     private ErrorView error_view;
 
     public MainWindow () {
@@ -95,14 +96,27 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         check_view = new Installer.CheckView ();
         check_view.previous_view = try_install_view;
-        check_view.next_step.connect (() => load_diskview ());
+        check_view.next_step.connect (() => load_encryptview ());
 
         if (check_view.check_requirements ()) {
-            load_diskview ();
+            load_encryptview ();
         } else {
             stack.add (check_view);
             stack.visible_child = check_view;
         }
+    }
+
+    private void load_encryptview () {
+        if (encrypt_view != null) {
+            encrypt_view.destroy ();
+        }
+
+        encrypt_view = new EncryptView ();
+        encrypt_view.previous_view = try_install_view;
+        stack.add (encrypt_view);
+        stack.visible_child = encrypt_view;
+
+        encrypt_view.next_step.connect (() => load_diskview ());
     }
 
     private void load_diskview () {
@@ -111,7 +125,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         disk_view = new DiskView ();
-        disk_view.previous_view = try_install_view;
+        disk_view.previous_view = encrypt_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
         disk_view.load.begin ();
