@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-09 19:48+0000\n"
-"Last-Translator: Donato <donato.madalese@gmail.com>\n"
+"PO-Revision-Date: 2018-03-10 00:03+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -221,7 +221,7 @@ msgstr "Seleziona una lingua"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
-msgstr "lingua attualmente in uso"
+msgstr "Lingua attualmente in uso"
 
 #: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
