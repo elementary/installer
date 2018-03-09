@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-20 23:38+0200\n"
+"POT-Creation-Date: 2018-03-09 09:59-0600\n"
 "PO-Revision-Date: 2017-11-17 05:22+0000\n"
 "Last-Translator: Subhadeep Jasu <subhajasu@gmail.com>\n"
-"Language-Team: Bengali "
-"<https://weblate.elementary.io/projects/installer/installer/bn/>\n"
+"Language-Team: Bengali <https://weblate.elementary.io/projects/installer/"
+"installer/bn/>\n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,8 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
-#: src/Views/TryInstallView.vala:92
+#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "%s ইনস্টল করুন"
@@ -25,17 +24,18 @@ msgstr "%s ইনস্টল করুন"
 msgid "Operating System"
 msgstr "অপারেটিং সিস্টেম"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
 #, c-format
 msgid "%s…"
 msgstr ""
 
-#: src/Helpers/LogHelper.vala:35
-msgid "Unable to change the Distinst log domain name"
+#: src/Helpers/LogHelper.vala:52
+msgid "Unable to set the Distinst log callback"
 msgstr ""
 
-#: src/Helpers/LogHelper.vala:37
-msgid "Starting installation\n"
+#: src/Helpers/LogHelper.vala:54
+#, fuzzy
+msgid "Starting installation"
 msgstr "ইনস্টলেশন শুরু হচ্ছে\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
@@ -54,7 +54,7 @@ msgstr "পুনরারম্ভ"
 msgid "Cancel"
 msgstr "বাতিল"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
+#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
 msgstr "বন্ধ"
@@ -62,6 +62,11 @@ msgstr "বন্ধ"
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "ইনস্টলেশন বাতিল করুন"
+
+#: src/Views/AbstractInstallerView.vala:56
+#, fuzzy
+msgid "Test Mode"
+msgstr "ডেমো মোড ব্যবহার করে দেখুন"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -78,8 +83,8 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"আপনার ডিভাইসে %s ইনস্টল করার জন্য যথেষ্ট জায়গা নেই। আমরা সুপারিশ করি যে আপনা"
-"র ডিভাইসে কমপক্ষে %s জায়গা রয়েছে বা থাকা দরকার।"
+"আপনার ডিভাইসে %s ইনস্টল করার জন্য যথেষ্ট জায়গা নেই। আমরা সুপারিশ করি যে আপনার "
+"ডিভাইসে কমপক্ষে %s জায়গা রয়েছে বা থাকা দরকার।"
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
@@ -90,8 +95,8 @@ msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"আপনার ডিভাইসে প্রস্তাবিত হার্ডওয়্যার নেই। এই কারণে, আপনার ডিভাইস ধীরে চলতে "
-"পারে অথবা বিকল হতে পারে।"
+"আপনার ডিভাইসে প্রস্তাবিত হার্ডওয়্যার নেই। এই কারণে, আপনার ডিভাইস ধীরে চলতে পারে "
+"অথবা বিকল হতে পারে।"
 
 #: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
@@ -105,19 +110,19 @@ msgstr ""
 "আপনার ডিভাইসটি  ব্যাটারিতে চলছে। এটি প্রস্তাবিত যে ইন্সটলেশনের সময় আপনি এই "
 "ডিভাইসটি বৈদ্যুতিক উৎসে বা প্লাগে কানেক্ট করুন।"
 
-#: src/Views/CheckView.vala:293
+#: src/Views/CheckView.vala:296
 msgid "Recommended:"
 msgstr "প্রস্তাবিত:"
 
-#: src/Views/CheckView.vala:297
+#: src/Views/CheckView.vala:300
 msgid "Your Device:"
 msgstr "আপনার ডিভাইস:"
 
-#: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
 msgstr "প্রসেসর:"
 
-#: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
 #, fuzzy
 msgid "Memory:"
 msgstr "মেমরি (RAM):"
@@ -131,9 +136,9 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"এই পদক্ষেপটি এই ড্রাইভের সমস্ত ডেটা মুছে ফেলবে। আপনি যদি আপনার প্রয়োজনীয় ডাটা"
-" সুরক্ষিত উপায় সংরক্ষিত না করে থাকেন, তাহলে আপনি ইন্টিস্টল্যাশন বাতিল করে "
-"ডেমো মোড ব্যাবহার করতে পারেন।"
+"এই পদক্ষেপটি এই ড্রাইভের সমস্ত ডেটা মুছে ফেলবে। আপনি যদি আপনার প্রয়োজনীয় ডাটা "
+"সুরক্ষিত উপায় সংরক্ষিত না করে থাকেন, তাহলে আপনি ইন্টিস্টল্যাশন বাতিল করে ডেমো মোড "
+"ব্যাবহার করতে পারেন।"
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
@@ -153,8 +158,8 @@ msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
-"ইনস্টলেশন ব্যর্থ হয়েছে, তাই আপনার ডিভাইস সঠিকভাবে রিস্টার্ট হতে নাও পারে। "
-"আপনি নিম্নলিখিত বিকল্পগুলির মধ্যে একটি চেষ্টা করে দেখতে পারেন:"
+"ইনস্টলেশন ব্যর্থ হয়েছে, তাই আপনার ডিভাইস সঠিকভাবে রিস্টার্ট হতে নাও পারে। আপনি "
+"নিম্নলিখিত বিকল্পগুলির মধ্যে একটি চেষ্টা করে দেখতে পারেন:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -172,7 +177,7 @@ msgstr "• ডিভাইস রিস্টার্ট করে অন্�
 msgid "Restart Device"
 msgstr "ডিভাইস রিস্টার্ট করুন"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
+#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "ডেমো মোড ব্যবহার করে দেখুন"
 
@@ -192,7 +197,7 @@ msgstr "কিবোর্ডের ভিত্তি ধরণ পরীক্
 msgid "Show keyboard layout"
 msgstr "কিবোর্ডের ভিত্তি ধরণ দেখাও"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
 msgid "Back"
 msgstr "ব্যাক"
 
@@ -201,11 +206,11 @@ msgstr "ব্যাক"
 msgid "Select"
 msgstr "সিলেক্ট"
 
-#: src/Views/KeyboardLayoutView.vala:96
+#: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
 msgstr "ডিফল্ট"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
 msgstr "ইনপুটের জন্য ভাষা"
 
@@ -221,27 +226,28 @@ msgstr "একটি ভাষা বেছে নিন"
 msgid "Currently active language"
 msgstr "বর্তমানে সক্রিয় ভাষা"
 
-#: src/Views/ProgressView.vala:108
-msgid "Formating Drive"
-msgstr "ড্রাইভ ফরম্যাট করা হচ্ছে"
-
-#: src/Views/ProgressView.vala:112
+#: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
 msgstr "ড্রাইভ বিভক্ত করা হচ্ছে"
 
-#: src/Views/ProgressView.vala:116
+#: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
 msgstr "ফাইলগুলি নির্যাস করা হচ্ছে"
 
-#: src/Views/ProgressView.vala:120
+#: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
 msgstr "সিস্টেম কনফিগার করা হচ্ছে"
 
-#: src/Views/ProgressView.vala:124
+#: src/Views/ProgressView.vala:319
 msgid "Finishing the Installation"
 msgstr "ইনস্টলেশন সম্পন্ন হচ্ছে"
 
-#: src/Views/TryInstallView.vala:35
+#: src/Views/TryInstallView.vala:33
+#, fuzzy
+msgid "Install or Try Demo Mode"
+msgstr "ডেমো মোড ব্যবহার করে দেখুন"
+
+#: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
@@ -249,35 +255,51 @@ msgstr ""
 "আপনি এখন %s এই ডিভাইসে ইনস্টল করতে পারেন, অথবা ডেমো মোড ব্যাবহার করে দেখতে "
 "পারেন কোনো ইনস্টলেশন ছাড়া।"
 
-#: src/Views/TryInstallView.vala:41
-msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr "ডেমো মোডে আপনার আগের অপারেটিং সিস্টেমের সমস্ত ডাটা অপরিবর্তিত থাকবে।"
-
-#: src/Views/TryInstallView.vala:59
-msgid "Any changes you make in Demo Mode will not be saved."
-msgstr "ডেমো মোডে আপনার করা কোনও পরিবর্তন সংরক্ষণ করা হবে না।"
-
-#: src/Views/TryInstallView.vala:67
+#: src/Views/TryInstallView.vala:53
 msgid ""
-"You can always return from Demo Mode to the installer by selecting the "
+"In Demo Mode, changes you make will not be saved and data from your previous "
+"operating system will be unchanged."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:64
+#, fuzzy
+msgid ""
+"You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"আপনি যেকোন সময় ইনস্টল (Install) আইকনটি সিলেক্ট করে ডেমো মোড থেকে ইনস্টলারে "
-"ফিরে যেতে পারেন।"
+"আপনি যেকোন সময় ইনস্টল (Install) আইকনটি সিলেক্ট করে ডেমো মোড থেকে ইনস্টলারে ফিরে "
+"যেতে পারেন।"
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
 msgstr "সেট আপ বজায় রাখার জন্য আপনার ডিভাইস পুনরায় চালু করুন"
 
 #: src/Views/SuccessView.vala:38
-#, c-format
+#, fuzzy, c-format
 msgid ""
-"%s has been installed. Your device will automatically restart in 30 seconds "
-"to set up a new user, or you can shut down now and set a user up later."
+"Your device will automatically restart to %s in 30 seconds to set up a new "
+"user, or you can shut down now and set a user up later."
 msgstr ""
-"%s _এর ইনস্টলেশন সম্পন্ন হয়েছে। আপনার ডিভাইসটি নিজে থেকেই ৩০ সেকেন্ড পর পুনরা"
-"য় চালু হবে নতুন ব্যবহারকারী স্থাপন করার জন্য, অথবা আপনি এখন ডিভাইসটিকে বন্ধ "
-"করে অন্য কোনো সময় নতুন ব্যাবহারকারী স্থাপন করতে পারেন।"
+"%s _এর ইনস্টলেশন সম্পন্ন হয়েছে। আপনার ডিভাইসটি নিজে থেকেই ৩০ সেকেন্ড পর পুনরায় "
+"চালু হবে নতুন ব্যবহারকারী স্থাপন করার জন্য, অথবা আপনি এখন ডিভাইসটিকে বন্ধ করে অন্য "
+"কোনো সময় নতুন ব্যাবহারকারী স্থাপন করতে পারেন।"
+
+#: src/Views/SuccessView.vala:64
+msgid "Test mode shutdown"
+msgstr ""
+
+#: src/Views/SuccessView.vala:84
+msgid "Test mode reboot"
+msgstr ""
+
+#~ msgid "Formating Drive"
+#~ msgstr "ড্রাইভ ফরম্যাট করা হচ্ছে"
+
+#~ msgid "Data from your previous operating system is unchanged in Demo Mode."
+#~ msgstr "ডেমো মোডে আপনার আগের অপারেটিং সিস্টেমের সমস্ত ডাটা অপরিবর্তিত থাকবে।"
+
+#~ msgid "Any changes you make in Demo Mode will not be saved."
+#~ msgstr "ডেমো মোডে আপনার করা কোনও পরিবর্তন সংরক্ষণ করা হবে না।"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

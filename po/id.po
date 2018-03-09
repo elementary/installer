@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-20 23:38+0200\n"
+"POT-Creation-Date: 2018-03-09 09:59-0600\n"
 "PO-Revision-Date: 2018-01-23 07:36+0000\n"
 "Last-Translator: Deo Valiandro. M <vaeloox@gmail.com>\n"
-"Language-Team: Indonesian "
-"<https://weblate.elementary.io/projects/installer/installer/id/>\n"
+"Language-Team: Indonesian <https://weblate.elementary.io/projects/installer/"
+"installer/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,8 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
-#: src/Views/TryInstallView.vala:92
+#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Pasang %s"
@@ -25,17 +24,19 @@ msgstr "Pasang %s"
 msgid "Operating System"
 msgstr "Sistem Operasi"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Helpers/LogHelper.vala:35
-msgid "Unable to change the Distinst log domain name"
+#: src/Helpers/LogHelper.vala:52
+#, fuzzy
+msgid "Unable to set the Distinst log callback"
 msgstr "Tidak dapat mengubah nama domain log Berbeda"
 
-#: src/Helpers/LogHelper.vala:37
-msgid "Starting installation\n"
+#: src/Helpers/LogHelper.vala:54
+#, fuzzy
+msgid "Starting installation"
 msgstr "Mulai Pemasangan\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
@@ -54,7 +55,7 @@ msgstr "Menyalakan ulang"
 msgid "Cancel"
 msgstr "Batal"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
+#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
 msgstr "Matikan"
@@ -62,6 +63,11 @@ msgstr "Matikan"
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Batalkan Pemasangan"
+
+#: src/Views/AbstractInstallerView.vala:56
+#, fuzzy
+msgid "Test Mode"
+msgstr "Coba Mode Demo"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -105,19 +111,19 @@ msgstr ""
 "Perangkat Anda beroperasi dengan daya baterai. Dianjurkan untuk dipasang ke "
 "sumber daya saat memasang."
 
-#: src/Views/CheckView.vala:293
+#: src/Views/CheckView.vala:296
 msgid "Recommended:"
 msgstr "Direkomendasikan:"
 
-#: src/Views/CheckView.vala:297
+#: src/Views/CheckView.vala:300
 msgid "Your Device:"
 msgstr "Perangkat Anda:"
 
-#: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
 msgstr "Prosesor:"
 
-#: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
 msgid "Memory:"
 msgstr "Memori:"
 
@@ -172,7 +178,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr "Menyalakan Ulang Perangkat"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
+#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "Coba Mode Demo"
 
@@ -192,7 +198,7 @@ msgstr "Ketik untuk menguji tata letak Anda"
 msgid "Show keyboard layout"
 msgstr "Tampilkan tata letak papan tik"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
 msgid "Back"
 msgstr "Kembali"
 
@@ -201,11 +207,11 @@ msgstr "Kembali"
 msgid "Select"
 msgstr "Pilih"
 
-#: src/Views/KeyboardLayoutView.vala:96
+#: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
 msgstr "Bawaan"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
 msgstr "Bahasa Masukan"
 
@@ -221,27 +227,28 @@ msgstr "Pilih Bahasa"
 msgid "Currently active language"
 msgstr "Bahasa yang Aktif Saat Ini"
 
-#: src/Views/ProgressView.vala:108
-msgid "Formating Drive"
-msgstr "Memformat Drive"
-
-#: src/Views/ProgressView.vala:112
+#: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
 msgstr "Mempartisi Drive"
 
-#: src/Views/ProgressView.vala:116
+#: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
 msgstr "Ekstrak File"
 
-#: src/Views/ProgressView.vala:120
+#: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
 msgstr "Mengkonfigurasi Sistem"
 
-#: src/Views/ProgressView.vala:124
+#: src/Views/ProgressView.vala:319
 msgid "Finishing the Installation"
 msgstr "Selesaikan Pemasangan"
 
-#: src/Views/TryInstallView.vala:35
+#: src/Views/TryInstallView.vala:33
+#, fuzzy
+msgid "Install or Try Demo Mode"
+msgstr "Coba Mode Demo"
+
+#: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
@@ -249,17 +256,16 @@ msgstr ""
 "Anda dapat memasang %s pada perangkat ini sekarang atau mencoba Mode Demo "
 "tanpa memasang."
 
-#: src/Views/TryInstallView.vala:41
-msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr "Data dari sistem operasi sebelumnya tidak berubah dalam Mode Demo."
-
-#: src/Views/TryInstallView.vala:59
-msgid "Any changes you make in Demo Mode will not be saved."
-msgstr "Setiap perubahan yang Anda buat dalam Mode Demo tidak akan disimpan."
-
-#: src/Views/TryInstallView.vala:67
+#: src/Views/TryInstallView.vala:53
 msgid ""
-"You can always return from Demo Mode to the installer by selecting the "
+"In Demo Mode, changes you make will not be saved and data from your previous "
+"operating system will be unchanged."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:64
+#, fuzzy
+msgid ""
+"You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
 "Anda dapat selalu kembali dari Mode Demo ke pemasang dengan memilih ikon "
@@ -270,14 +276,32 @@ msgid "Restart your device to continue setting up"
 msgstr "Menyalakan ulang perangkat Anda untuk melanjutkan penyiapan"
 
 #: src/Views/SuccessView.vala:38
-#, c-format
+#, fuzzy, c-format
 msgid ""
-"%s has been installed. Your device will automatically restart in 30 seconds "
-"to set up a new user, or you can shut down now and set a user up later."
+"Your device will automatically restart to %s in 30 seconds to set up a new "
+"user, or you can shut down now and set a user up later."
 msgstr ""
 "%s telah terpasang. Perangkat Anda akan secara otomatis menyala ulang dalam "
 "30 detik untuk membuat pengguna baru, atau Anda dapat mematikannya sekarang "
 "dan mengatur pengguna nanti."
+
+#: src/Views/SuccessView.vala:64
+msgid "Test mode shutdown"
+msgstr ""
+
+#: src/Views/SuccessView.vala:84
+msgid "Test mode reboot"
+msgstr ""
+
+#~ msgid "Formating Drive"
+#~ msgstr "Memformat Drive"
+
+#~ msgid "Data from your previous operating system is unchanged in Demo Mode."
+#~ msgstr "Data dari sistem operasi sebelumnya tidak berubah dalam Mode Demo."
+
+#~ msgid "Any changes you make in Demo Mode will not be saved."
+#~ msgstr ""
+#~ "Setiap perubahan yang Anda buat dalam Mode Demo tidak akan disimpan."
 
 #~ msgid "Installer"
 #~ msgstr "Pemasang"
