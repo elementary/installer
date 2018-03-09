@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-20 23:38+0200\n"
+"POT-Creation-Date: 2018-03-09 09:59-0600\n"
 "PO-Revision-Date: 2017-09-26 22:27+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål "
-"<https://weblate.elementary.io/projects/installer/installer/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
+"installer/installer/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,8 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
-#: src/Views/TryInstallView.vala:92
+#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Installer %s"
@@ -25,18 +24,19 @@ msgstr "Installer %s"
 msgid "Operating System"
 msgstr "Operativsystem"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Helpers/LogHelper.vala:35
-msgid "Unable to change the Distinst log domain name"
+#: src/Helpers/LogHelper.vala:52
+#, fuzzy
+msgid "Unable to set the Distinst log callback"
 msgstr "Kunne ikke endre domenenavn for Distinst-logg"
 
-#: src/Helpers/LogHelper.vala:37
+#: src/Helpers/LogHelper.vala:54
 #, fuzzy
-msgid "Starting installation\n"
+msgid "Starting installation"
 msgstr "Avbryt installasjon"
 
 #: src/Dialogs/EndSessionDialog.vala:43
@@ -55,7 +55,7 @@ msgstr "Start på nytt"
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
+#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
 msgstr "Avslutt"
@@ -63,6 +63,11 @@ msgstr "Avslutt"
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Avbryt installasjon"
+
+#: src/Views/AbstractInstallerView.vala:56
+#, fuzzy
+msgid "Test Mode"
+msgstr "Prøv demo-modus"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -105,19 +110,19 @@ msgstr ""
 "Enheten din kjører på batteridrift. Det anbefales å være koblet lysnettet "
 "under installasjon."
 
-#: src/Views/CheckView.vala:293
+#: src/Views/CheckView.vala:296
 msgid "Recommended:"
 msgstr "Anbefalt:"
 
-#: src/Views/CheckView.vala:297
+#: src/Views/CheckView.vala:300
 msgid "Your Device:"
 msgstr "Enheten din:"
 
-#: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
 msgstr "Prosessor:"
 
-#: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
 msgid "Memory:"
 msgstr "Minne:"
 
@@ -172,7 +177,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr "Start enhet på nytt"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
+#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "Prøv demo-modus"
 
@@ -192,7 +197,7 @@ msgstr "Skriv for å teste ditt oppsett"
 msgid "Show keyboard layout"
 msgstr "Vis tastaturoppsett"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
 #, fuzzy
 msgid "Back"
 msgstr "Tilbake"
@@ -202,11 +207,11 @@ msgstr "Tilbake"
 msgid "Select"
 msgstr "Velg"
 
-#: src/Views/KeyboardLayoutView.vala:96
+#: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
 msgstr "Forvalg"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
 msgstr "Inndataspråk"
 
@@ -223,28 +228,29 @@ msgstr "Velg et språk"
 msgid "Currently active language"
 msgstr "Aktivt språk nå"
 
-#: src/Views/ProgressView.vala:108
-msgid "Formating Drive"
-msgstr "Formaterer enhet"
-
-#: src/Views/ProgressView.vala:112
+#: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
 msgstr "Partisjonerer enhet"
 
-#: src/Views/ProgressView.vala:116
+#: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
 msgstr "Pakker ut filer"
 
-#: src/Views/ProgressView.vala:120
+#: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
 msgstr "Setter opp systemet"
 
-#: src/Views/ProgressView.vala:124
+#: src/Views/ProgressView.vala:319
 #, fuzzy
 msgid "Finishing the Installation"
 msgstr "Avbryt installasjon"
 
-#: src/Views/TryInstallView.vala:35
+#: src/Views/TryInstallView.vala:33
+#, fuzzy
+msgid "Install or Try Demo Mode"
+msgstr "Prøv demo-modus"
+
+#: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
@@ -252,17 +258,16 @@ msgstr ""
 "Du kan installere %s på denne enheten nå, eller prøve demo-moduset uten å "
 "installere."
 
-#: src/Views/TryInstallView.vala:41
-msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr "Data fra ditt tidligere operativsystem forblir uendret i demo-modus."
-
-#: src/Views/TryInstallView.vala:59
-msgid "Any changes you make in Demo Mode will not be saved."
-msgstr "Ingen endringer du gjør i demo-modus vil bli lagret."
-
-#: src/Views/TryInstallView.vala:67
+#: src/Views/TryInstallView.vala:53
 msgid ""
-"You can always return from Demo Mode to the installer by selecting the "
+"In Demo Mode, changes you make will not be saved and data from your previous "
+"operating system will be unchanged."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:64
+#, fuzzy
+msgid ""
+"You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
 "Du kan alltid gå tilbake fra demo-modus til installasjonsmenyen ved å velge "
@@ -273,14 +278,32 @@ msgid "Restart your device to continue setting up"
 msgstr "Start din enhet på nytt for å fortsette oppsett"
 
 #: src/Views/SuccessView.vala:38
-#, c-format
+#, fuzzy, c-format
 msgid ""
-"%s has been installed. Your device will automatically restart in 30 seconds "
-"to set up a new user, or you can shut down now and set a user up later."
+"Your device will automatically restart to %s in 30 seconds to set up a new "
+"user, or you can shut down now and set a user up later."
 msgstr ""
 "%s har blitt installert. Din enhet vil automatisk starte på nytt om 30 "
 "sekunder for å sette opp en ny bruker, eller du avslutte nå, og sette opp en "
 "ny bruker senere."
+
+#: src/Views/SuccessView.vala:64
+msgid "Test mode shutdown"
+msgstr ""
+
+#: src/Views/SuccessView.vala:84
+msgid "Test mode reboot"
+msgstr ""
+
+#~ msgid "Formating Drive"
+#~ msgstr "Formaterer enhet"
+
+#~ msgid "Data from your previous operating system is unchanged in Demo Mode."
+#~ msgstr ""
+#~ "Data fra ditt tidligere operativsystem forblir uendret i demo-modus."
+
+#~ msgid "Any changes you make in Demo Mode will not be saved."
+#~ msgstr "Ingen endringer du gjør i demo-modus vil bli lagret."
 
 #~ msgid "Installer"
 #~ msgstr "Installer"

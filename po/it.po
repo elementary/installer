@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-02-20 00:21+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"POT-Creation-Date: 2018-03-09 09:59-0600\n"
+"PO-Revision-Date: 2018-03-09 19:48+0000\n"
+"Last-Translator: Donato <donato.madalese@gmail.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -15,8 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
-#: src/Views/TryInstallView.vala:92
+#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Installa %s"
@@ -25,18 +24,19 @@ msgstr "Installa %s"
 msgid "Operating System"
 msgstr "Sistema Operativo"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Helpers/LogHelper.vala:35
-msgid "Unable to change the Distinst log domain name"
+#: src/Helpers/LogHelper.vala:52
+#, fuzzy
+msgid "Unable to set the Distinst log callback"
 msgstr "Impossibile modificare il nome del dominio del Distinst log"
 
-#: src/Helpers/LogHelper.vala:37
-msgid "Starting installation\n"
-msgstr "Avvio dell'installazione\n"
+#: src/Helpers/LogHelper.vala:54
+msgid "Starting installation"
+msgstr "Avvio installazione"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -44,7 +44,7 @@ msgstr "Vuoi davvero spegnere?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "Questo annullerà l'installazione e spegnerà il dispositivo."
+msgstr "Ciò annullerà l'installazione e spegnerà il dispositivo."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
@@ -54,7 +54,7 @@ msgstr "Riavvia"
 msgid "Cancel"
 msgstr "Annulla"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
+#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
 msgstr "Arresta"
@@ -62,6 +62,10 @@ msgstr "Arresta"
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Annulla l'installazione"
+
+#: src/Views/AbstractInstallerView.vala:56
+msgid "Test Mode"
+msgstr "Modalità Test"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -104,19 +108,19 @@ msgstr ""
 "Il tuo dispositivo è alimentato da una batteria. Durante l'installazione si "
 "consiglia di collegarlo all'alimentazione."
 
-#: src/Views/CheckView.vala:293
+#: src/Views/CheckView.vala:296
 msgid "Recommended:"
 msgstr "Raccomandato:"
 
-#: src/Views/CheckView.vala:297
+#: src/Views/CheckView.vala:300
 msgid "Your Device:"
 msgstr "Il tuo dispositivo:"
 
-#: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
 msgstr "Processore:"
 
-#: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
 msgid "Memory:"
 msgstr "Memoria:"
 
@@ -170,7 +174,7 @@ msgstr "• Riavviare il tuo dispositivo per l'avvio da un'altra unità"
 msgid "Restart Device"
 msgstr "Riavvia il dispositivo"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
+#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "Prova la Modalità Demo"
 
@@ -190,7 +194,7 @@ msgstr "Digita per testare la tua disposizione"
 msgid "Show keyboard layout"
 msgstr "Mostra la disposizione della tastiera"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
 msgid "Back"
 msgstr "Indietro"
 
@@ -199,11 +203,11 @@ msgstr "Indietro"
 msgid "Select"
 msgstr "Seleziona"
 
-#: src/Views/KeyboardLayoutView.vala:96
+#: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
 msgstr "Predefinito"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
 msgstr "Lingua di inserimento"
 
@@ -217,29 +221,29 @@ msgstr "Seleziona una lingua"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
-msgstr "Lingua correntemente selezionata"
+msgstr "lingua attualmente in uso"
 
-#: src/Views/ProgressView.vala:108
-msgid "Formating Drive"
-msgstr "Formattando il disco"
-
-#: src/Views/ProgressView.vala:112
+#: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
 msgstr "Partizionando il disco"
 
-#: src/Views/ProgressView.vala:116
+#: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
 msgstr "Estraendo i file"
 
-#: src/Views/ProgressView.vala:120
+#: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
 msgstr "Configurando il sistema"
 
-#: src/Views/ProgressView.vala:124
+#: src/Views/ProgressView.vala:319
 msgid "Finishing the Installation"
 msgstr "Ultimando l'installazione"
 
-#: src/Views/TryInstallView.vala:35
+#: src/Views/TryInstallView.vala:33
+msgid "Install or Try Demo Mode"
+msgstr "Installa o prova la Modalità Demo"
+
+#: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
@@ -247,19 +251,17 @@ msgstr ""
 "Puoi installare subito %s su questo dispositivo oppure provare la Modalità "
 "Demo senza installazione."
 
-#: src/Views/TryInstallView.vala:41
-msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr ""
-"Utilizzando la Modalità Demo i dati del tuo precedente sistema operativo non "
-"verranno alterati."
-
-#: src/Views/TryInstallView.vala:59
-msgid "Any changes you make in Demo Mode will not be saved."
-msgstr "Qualsiasi modifica tu faccia nella Modalità Demo non verrà salvata."
-
-#: src/Views/TryInstallView.vala:67
+#: src/Views/TryInstallView.vala:53
 msgid ""
-"You can always return from Demo Mode to the installer by selecting the "
+"In Demo Mode, changes you make will not be saved and data from your previous "
+"operating system will be unchanged."
+msgstr ""
+"In Modalità Demo, le modifiche apportate non verranno salvate e i dati del "
+"tuo precedente sistema operativo rimarranno inalterati."
+
+#: src/Views/TryInstallView.vala:64
+msgid ""
+"You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
 "Puoi passare dalla Modalità Demo al programma di installazione in qualsiasi "
@@ -272,12 +274,31 @@ msgstr "Riavvia il tuo dispositivo per continuare l'installazione"
 #: src/Views/SuccessView.vala:38
 #, c-format
 msgid ""
-"%s has been installed. Your device will automatically restart in 30 seconds "
-"to set up a new user, or you can shut down now and set a user up later."
+"Your device will automatically restart to %s in 30 seconds to set up a new "
+"user, or you can shut down now and set a user up later."
 msgstr ""
-"%s è stato installato. Il tuo dispositivo si riavvierà automaticamente tra "
-"30 secondi per impostare un nuovo profilo utente, o puoi spegnerlo ora e "
-"impostare il nuovo profilo utente più tardi."
+"Il tuo dispositivo si riavvierà automaticamente in %s tra 30 secondi per "
+"impostare un nuovo profilo utente, o puoi spegnerlo ora e impostare il nuovo "
+"profilo utente più tardi."
+
+#: src/Views/SuccessView.vala:64
+msgid "Test mode shutdown"
+msgstr "Arresto della Modalità Test"
+
+#: src/Views/SuccessView.vala:84
+msgid "Test mode reboot"
+msgstr "Riavvio della Modalità Test"
+
+#~ msgid "Formating Drive"
+#~ msgstr "Formattando il disco"
+
+#~ msgid "Data from your previous operating system is unchanged in Demo Mode."
+#~ msgstr ""
+#~ "Utilizzando la Modalità Demo i dati del tuo precedente sistema operativo "
+#~ "non verranno alterati."
+
+#~ msgid "Any changes you make in Demo Mode will not be saved."
+#~ msgstr "Qualsiasi modifica tu faccia nella Modalità Demo non verrà salvata."
 
 #~ msgid "translator-credits"
 #~ msgstr ""
