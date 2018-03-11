@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2017-11-19 20:09+0000\n"
+"PO-Revision-Date: 2018-03-12 00:09+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://weblate.elementary.io/projects/installer/"
-"installer/he/>\n"
+"Language-Team: Hebrew "
+"<https://weblate.elementary.io/projects/installer/installer/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
@@ -35,9 +35,8 @@ msgid "Unable to set the Distinst log callback"
 msgstr "לא ניתן לשנות את שם המתחם הייחודי"
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "ההתקנה מתחילה\n"
+msgstr "ההתקנה מתחילה"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -65,9 +64,8 @@ msgid "Cancel Installation"
 msgstr "ביטול ההתקנה"
 
 #: src/Views/AbstractInstallerView.vala:56
-#, fuzzy
 msgid "Test Mode"
-msgstr "התנסות במצב הדגמה"
+msgstr "מצב התנסות"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -238,9 +236,8 @@ msgid "Finishing the Installation"
 msgstr "ההתקנה מסתיימת"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "התנסות במצב הדגמה"
+msgstr "התקנה או התנסות במצב הדגמה"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -253,9 +250,10 @@ msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged."
 msgstr ""
+"במצב הדגמה, השינויים שייערכו לא יישמרו ונתונים ממערכת ההפעלה הקודמת שלך לא "
+"יושפעו."
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
@@ -266,21 +264,21 @@ msgid "Restart your device to continue setting up"
 msgstr "יש להפעיל את ההתקן שלך מחדש כדי להמשיך בהתקנה"
 
 #: src/Views/SuccessView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
 msgstr ""
-"המערכת %s הותקנה. ההתקן שלך יופעל אוטומטית בעוד 30 שניות כדי להקים משתמש "
+"ההתקן שלך יופעל מחדש אוטומטית הישר לתוך %s בעוד 30 שניות כדי להקים משתמש "
 "חדש, או שניתן לכבות את ההתקן כעת ולהקים משתמש חדש מאוחר יותר."
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "כיבוי במצב בדיקה"
 
 #: src/Views/SuccessView.vala:84
 msgid "Test mode reboot"
-msgstr ""
+msgstr "הפעלה מחדש במצב בדיקה"
 
 #~ msgid "Formating Drive"
 #~ msgstr "הכונן עובר אתחול"
