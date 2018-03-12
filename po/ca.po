@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-08 21:41+0000\n"
+"PO-Revision-Date: 2018-03-12 15:49+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://weblate.elementary.io/projects/installer/"
-"installer/ca/>\n"
+"Language-Team: Catalan "
+"<https://weblate.elementary.io/projects/installer/installer/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,14 +30,12 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "No es pot canviar el nom de domini del registre Distinst"
+msgstr "No es pot establir la crida del registre de Distinst."
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "S'inicia la instal·lació\n"
+msgstr "S'inicia la instal·lació"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -65,9 +63,8 @@ msgid "Cancel Installation"
 msgstr "Cancel·la la instal·lació"
 
 #: src/Views/AbstractInstallerView.vala:56
-#, fuzzy
 msgid "Test Mode"
-msgstr "Proveu el mode Demo"
+msgstr "Mode de prova"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -241,9 +238,8 @@ msgid "Finishing the Installation"
 msgstr "S'acaba la instal·lació"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "Proveu el mode Demo"
+msgstr "Instal·leu-lo o useu el mode de prova"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -258,37 +254,37 @@ msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged."
 msgstr ""
+"Al mode de prova, els canvis que feu no es desaran i les dades del sistema "
+"operatiu anterior es mantindran sense canviar."
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"Des del mode Demo sempre podeu tornar a l'instal·lador seleccionant la icona "
-"d'instal·lació."
+"Des del mode de prova sempre podeu tornar a l'instal·lador seleccionant la "
+"icona d'instal·lació."
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
 msgstr "Reinicieu el dispositiu per continuar la configuració"
 
 #: src/Views/SuccessView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
 msgstr ""
-"%s s'ha instal·lat. El dispositiu es reiniciarà automàticament d'aquí 30 "
-"segons per establir l'usuari nou o bé podeu aturar-lo ara i establir-lo més "
-"tard."
+"El dispositiu es reiniciarà automàticament amb %s d'aquí a 30 segons per "
+"establir un usuari nou, o bé podeu aturar-lo ara i establir-lo més tard."
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Aturada del mode de prova"
 
 #: src/Views/SuccessView.vala:84
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Reinici del mode de prova"
 
 #~ msgid "Formating Drive"
 #~ msgstr "Es formata el dispositiu"
