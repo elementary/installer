@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-02-21 00:07+0000\n"
+"PO-Revision-Date: 2018-03-10 00:17+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
-"installer/ja/>\n"
+"Language-Team: Japanese "
+"<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,14 +30,12 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "Distinst ログドメイン名を変更できません"
+msgstr "Distinst ログコールバックを設定できません"
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "インストールの開始\n"
+msgstr "インストールを開始しています"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -65,9 +63,8 @@ msgid "Cancel Installation"
 msgstr "インストールをキャンセル"
 
 #: src/Views/AbstractInstallerView.vala:56
-#, fuzzy
 msgid "Test Mode"
-msgstr "デモモードを試す"
+msgstr "テストモード"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -242,9 +239,8 @@ msgid "Finishing the Installation"
 msgstr "インストールを終了しています"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "デモモードを試す"
+msgstr "インストールするかデモモードを試す"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -258,38 +254,34 @@ msgstr ""
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged."
-msgstr ""
+msgstr "デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデータは変更されません。"
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
-msgstr ""
-"インストールアイコンを選択することでいつでもデモモードからインストーラーに戻"
-"ることができます。"
+msgstr "インストールアイコンを選択することで、いつでもデモモードからインストーラーに戻ることができます。"
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
 msgstr "セットアップを続行するにはお使いのデバイスを再起動してください"
 
 #: src/Views/SuccessView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
 msgstr ""
-"%s はインストールされました。お使いのデバイスは30秒以内に自動的に再起動し、新"
-"しいユーザーをセットアップします。あるいは、今はシャットダウンして、後でユー"
-"ザーをセットアップすることもできます。"
+"お使いのデバイスは30秒後に自動的に %s "
+"を再起動し、新しいユーザーをセットアップします。あるいは、今はシャットダウンして、後でユーザーをセットアップすることもできます。"
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "テストモードのシャットダウン"
 
 #: src/Views/SuccessView.vala:84
 msgid "Test mode reboot"
-msgstr ""
+msgstr "テストモードの再起動"
 
 #~ msgid "Formating Drive"
 #~ msgstr "ドライブをフォーマットしています"

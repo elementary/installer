@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2017-12-25 03:02+0000\n"
+"PO-Revision-Date: 2018-03-13 09:41+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
-"installer/installer/zh_TW/>\n"
+"Language-Team: Chinese (Traditional) "
+"<https://weblate.elementary.io/projects/installer/installer/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,14 +30,12 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "無法變更 Distinst 記錄領域名稱"
+msgstr "無法設定 Distinst log callback"
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "開始安裝\n"
+msgstr "開始安裝"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -65,9 +63,8 @@ msgid "Cancel Installation"
 msgstr "取消安裝"
 
 #: src/Views/AbstractInstallerView.vala:56
-#, fuzzy
 msgid "Test Mode"
-msgstr "嘗試展示模式"
+msgstr "測試模式"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -233,9 +230,8 @@ msgid "Finishing the Installation"
 msgstr "完成安裝"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "嘗試展示模式"
+msgstr "安裝或試用展示模式"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -247,35 +243,32 @@ msgstr "您可以立刻在此裝置上安裝 %s，或是在不安裝的情況下
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged."
-msgstr ""
+msgstr "在展示模式中，您所做的變更不會儲存，電腦中先前的作業系統也不會更動。"
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
-msgstr "只要選取安裝圖示，您都可以從展示模式再返回安裝程式。"
+msgstr "只要選取「安裝」圖示，您都可以從展示模式再返回安裝程式。"
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
 msgstr "重新啟動您的裝置以繼續設置"
 
 #: src/Views/SuccessView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
-msgstr ""
-"%s 已經安裝。您的裝置將在 30 秒內自動重新啟動以設置新使用者，或者您可以立刻關"
-"機並稍後設置使用者。"
+msgstr "您的裝置將在 30 秒內自動重新啟動至 %s 以設置新使用者，或者您可以立刻關機並稍後設置使用者。"
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "測試模式關機"
 
 #: src/Views/SuccessView.vala:84
 msgid "Test mode reboot"
-msgstr ""
+msgstr "測試模式重新開機"
 
 #~ msgid "Formating Drive"
 #~ msgstr "格式化裝置"
