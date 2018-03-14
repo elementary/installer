@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-05 00:06+0000\n"
-"Last-Translator: mIcHy AmRaNe <marseillaisanonymous@gmail.com>\n"
-"Language-Team: French <https://weblate.elementary.io/projects/installer/"
-"installer/fr/>\n"
+"PO-Revision-Date: 2018-03-14 18:33+0000\n"
+"Last-Translator: Romain De Filippi <romain@defilippi.fr>\n"
+"Language-Team: French "
+"<https://weblate.elementary.io/projects/installer/installer/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,9 +65,8 @@ msgid "Cancel Installation"
 msgstr "Annuler l'installation"
 
 #: src/Views/AbstractInstallerView.vala:56
-#, fuzzy
 msgid "Test Mode"
-msgstr "Essayer le mode de démonstration"
+msgstr "Tester"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -243,9 +242,8 @@ msgid "Finishing the Installation"
 msgstr "Finition de l'installation"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "Essayer le mode de démonstration"
+msgstr "Installer ou Tester"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -262,12 +260,11 @@ msgid ""
 msgstr ""
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"Vous pouvez toujours revenir du mode de démonstration en sélectionnant "
+"Vous pouvez toujours revenir au processus d'installation en sélectionnant "
 "l'icône d'installation."
 
 #: src/Views/SuccessView.vala:32
@@ -275,14 +272,14 @@ msgid "Restart your device to continue setting up"
 msgstr "Redémarrez votre périphérique pour continuer la configuration"
 
 #: src/Views/SuccessView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
 msgstr ""
-"%s est maintenant installé. Votre périphérique redémarrera automatiquement "
-"dans 30 secondes pour configurer un nouvel utilisateur, vous pouvez aussi "
-"l'éteindre maintenant et configurer l'utilisateur plus tard."
+"Votre appareil redémarrera automatiquement sur %s dans 30 secondes pour "
+"créer un nouvel utilisateur, mais vous pouvez l'éteindre maintenant et créer "
+"le compte ultérieurement."
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
