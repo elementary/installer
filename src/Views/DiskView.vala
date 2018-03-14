@@ -103,8 +103,8 @@ public class Installer.DiskView : AbstractInstallerView {
 
     // If possible, open devices in a different thread so that the interface stays awake.
     public async void load () {
-        var disks = yield Installer.Disk.get_disks ();
-        foreach (var disk in disks) {
+        var disks = Distinst.Disks.probe ();
+        foreach (unowned Distinst.Disk disk in disks.list()) {
             var disk_button = new DiskButton (disk);
             disk_grid.add (disk_button);
             disk_button.clicked.connect (() => {

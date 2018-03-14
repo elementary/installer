@@ -19,8 +19,8 @@
  */
 
 public class Installer.DiskButton : Gtk.ToggleButton {
-    public Disk disk { get; construct; }
-    public DiskButton (Disk disk) {
+    public unowned Distinst.Disk disk { get; construct; }
+    public DiskButton (Distinst.Disk disk) {
         Object (disk: disk);
     }
 
@@ -28,12 +28,26 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         margin = 12;
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var disk_image = new Gtk.Image.from_icon_name (disk.get_icon_name (), Gtk.IconSize.DIALOG);
+        // Drives are identifiable by whether they are rotational and/or removable.
+        string icon_name = null;
+        if (disk.is_removable()) {
+            if (disk.is_rotational()) {
+                icon = "drive-harddisk-usb"
+            } else {
+                icon_name = "drive-removable-media";
+            }
+        } else if (disk.is_rotational()) {
+            icon_name = "drive-harddisk-scsi"
+        } else {
+            icon_name = "drive-harddisk-solidstate";
+        };
 
-        var name_label = new Gtk.Label (disk.get_label_name ());
+        var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
+
+        var name_label = new Gtk.Label (disk.get_serial ());
         name_label.hexpand = true;
 
-        var size_label = new Gtk.Label ("<small>%s</small>".printf (GLib.format_size (disk.get_size ())));
+        var size_label = new Gtk.Label ("<small>%s</small>".printf (GLib.format_size (disk.get_sectors ())));
         size_label.use_markup = true;
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
@@ -49,7 +63,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         notify["active"].connect (() => {
             if (active) {
                 unowned Configuration config = Configuration.get_default ();
-                config.disk = disk.get_dev_path ();
+                config.disk = (string) disk.get_device_path ();
             }
         });
     }
