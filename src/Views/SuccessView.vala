@@ -71,10 +71,10 @@ public class SuccessView : AbstractInstallerView {
             }
         });
 
-        Timeout.add_seconds (30, () => {
-            session_restart ();
-            return GLib.Source.REMOVE;
-        });
+        // Timeout.add_seconds (30, () => {
+        //     session_restart ();
+        //     return GLib.Source.REMOVE;
+        // });
 
         show_all ();
     }
@@ -91,4 +91,3 @@ public class SuccessView : AbstractInstallerView {
         }
     }
 }
-
