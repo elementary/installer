@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-20 23:38+0200\n"
-"PO-Revision-Date: 2018-03-05 00:06+0000\n"
-"Last-Translator: mIcHy AmRaNe <marseillaisanonymous@gmail.com>\n"
+"POT-Creation-Date: 2018-03-09 09:59-0600\n"
+"PO-Revision-Date: 2018-03-14 20:47+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French "
 "<https://weblate.elementary.io/projects/installer/installer/fr/>\n"
 "Language: fr\n"
@@ -15,8 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
-#: src/Views/TryInstallView.vala:92
+#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Installer %s"
@@ -25,18 +24,18 @@ msgstr "Installer %s"
 msgid "Operating System"
 msgstr "Système d'exploitation"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Helpers/LogHelper.vala:35
-msgid "Unable to change the Distinst log domain name"
-msgstr "Impossible de changer le domaine du journal de Distinst"
+#: src/Helpers/LogHelper.vala:52
+msgid "Unable to set the Distinst log callback"
+msgstr "Impossible de récupérer le journal de Distinst"
 
-#: src/Helpers/LogHelper.vala:37
-msgid "Starting installation\n"
-msgstr "Démarrage de l'installation\n"
+#: src/Helpers/LogHelper.vala:54
+msgid "Starting installation"
+msgstr "Démarrage de l'installation"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -54,7 +53,7 @@ msgstr "Redémarrer"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
+#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
 msgstr "Éteindre"
@@ -62,6 +61,10 @@ msgstr "Éteindre"
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Annuler l'installation"
+
+#: src/Views/AbstractInstallerView.vala:56
+msgid "Test Mode"
+msgstr "Tester"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -105,19 +108,19 @@ msgstr ""
 "Votre appareil est actuellement sur batterie. Il est recommandé de le "
 "maintenir branché à une source d'alimentation pendant l'installation."
 
-#: src/Views/CheckView.vala:293
+#: src/Views/CheckView.vala:296
 msgid "Recommended:"
 msgstr "Recommandé :"
 
-#: src/Views/CheckView.vala:297
+#: src/Views/CheckView.vala:300
 msgid "Your Device:"
 msgstr "Votre appareil :"
 
-#: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
 msgstr "Processeur :"
 
-#: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
 msgid "Memory:"
 msgstr "Mémoire :"
 
@@ -171,7 +174,7 @@ msgstr "• Redémarrer votre périphérique et démarrer à partir d'un autre d
 msgid "Restart Device"
 msgstr "Redémarrer le périphérique"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
+#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "Essayer le mode de démonstration"
 
@@ -191,7 +194,7 @@ msgstr "Écrivez pour essayer l'agencement du clavier"
 msgid "Show keyboard layout"
 msgstr "Afficher l'agencement du clavier"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
 msgid "Back"
 msgstr "Précédent"
 
@@ -200,11 +203,11 @@ msgstr "Précédent"
 msgid "Select"
 msgstr "Sélectionner"
 
-#: src/Views/KeyboardLayoutView.vala:96
+#: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
 msgstr "Défaut"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
 msgstr "Langue d'entrée"
 
@@ -220,27 +223,27 @@ msgstr "Sélectionner une langue"
 msgid "Currently active language"
 msgstr "Langue actuellement active"
 
-#: src/Views/ProgressView.vala:108
-msgid "Formating Drive"
-msgstr "Formatage du disque"
-
-#: src/Views/ProgressView.vala:112
+#: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
 msgstr "Partitionnement du disque"
 
-#: src/Views/ProgressView.vala:116
+#: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
 msgstr "Extraction des fichiers"
 
-#: src/Views/ProgressView.vala:120
+#: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
 msgstr "Configuration du système"
 
-#: src/Views/ProgressView.vala:124
+#: src/Views/ProgressView.vala:319
 msgid "Finishing the Installation"
 msgstr "Finition de l'installation"
 
-#: src/Views/TryInstallView.vala:35
+#: src/Views/TryInstallView.vala:33
+msgid "Install or Try Demo Mode"
+msgstr "Installer ou Tester"
+
+#: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
@@ -248,24 +251,18 @@ msgstr ""
 "Vous pouvez installer %s sur ce périphérique maintenant, ou essayer le mode "
 "de démonstration sans installer."
 
-#: src/Views/TryInstallView.vala:41
-msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr ""
-"Les données de vos précédents systèmes d'exploitations resteront inchangées "
-"dans le mode de démonstration."
-
-#: src/Views/TryInstallView.vala:59
-msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
-"Les changements que vous apporterez au mode de démonstration ne seront pas "
-"enregistrés."
-
-#: src/Views/TryInstallView.vala:67
+#: src/Views/TryInstallView.vala:53
 msgid ""
-"You can always return from Demo Mode to the installer by selecting the "
+"In Demo Mode, changes you make will not be saved and data from your previous "
+"operating system will be unchanged."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:64
+msgid ""
+"You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"Vous pouvez toujours revenir du mode de démonstration en sélectionnant "
+"Vous pouvez toujours revenir au processus d'installation en sélectionnant "
 "l'icône d'installation."
 
 #: src/Views/SuccessView.vala:32
@@ -275,12 +272,33 @@ msgstr "Redémarrez votre périphérique pour continuer la configuration"
 #: src/Views/SuccessView.vala:38
 #, c-format
 msgid ""
-"%s has been installed. Your device will automatically restart in 30 seconds "
-"to set up a new user, or you can shut down now and set a user up later."
+"Your device will automatically restart to %s in 30 seconds to set up a new "
+"user, or you can shut down now and set a user up later."
 msgstr ""
-"%s est maintenant installé. Votre périphérique redémarrera automatiquement "
-"dans 30 secondes pour configurer un nouvel utilisateur, vous pouvez aussi "
-"l'éteindre maintenant et configurer l'utilisateur plus tard."
+"Votre appareil redémarrera automatiquement sur %s dans 30 secondes pour "
+"créer un nouvel utilisateur, mais vous pouvez l'éteindre maintenant et créer "
+"le compte ultérieurement."
+
+#: src/Views/SuccessView.vala:64
+msgid "Test mode shutdown"
+msgstr ""
+
+#: src/Views/SuccessView.vala:84
+msgid "Test mode reboot"
+msgstr ""
+
+#~ msgid "Formating Drive"
+#~ msgstr "Formatage du disque"
+
+#~ msgid "Data from your previous operating system is unchanged in Demo Mode."
+#~ msgstr ""
+#~ "Les données de vos précédents systèmes d'exploitations resteront "
+#~ "inchangées dans le mode de démonstration."
+
+#~ msgid "Any changes you make in Demo Mode will not be saved."
+#~ msgstr ""
+#~ "Les changements que vous apporterez au mode de démonstration ne seront "
+#~ "pas enregistrés."
 
 #~ msgid "Installer"
 #~ msgstr "Installateur"

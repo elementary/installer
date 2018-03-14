@@ -2,22 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-20 23:38+0200\n"
+"POT-Creation-Date: 2018-03-09 09:59-0600\n"
 "PO-Revision-Date: 2018-02-09 19:44+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian "
-"<https://weblate.elementary.io/projects/installer/installer/sl/>\n"
+"Language-Team: Slovenian <https://weblate.elementary.io/projects/installer/"
+"installer/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
-#: src/Views/TryInstallView.vala:92
+#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Namesti %s"
@@ -26,17 +25,19 @@ msgstr "Namesti %s"
 msgid "Operating System"
 msgstr "Operacijski sistem"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Helpers/LogHelper.vala:35
-msgid "Unable to change the Distinst log domain name"
+#: src/Helpers/LogHelper.vala:52
+#, fuzzy
+msgid "Unable to set the Distinst log callback"
 msgstr "Ni bilo mogoče spremeniti imena domene za Distinst log"
 
-#: src/Helpers/LogHelper.vala:37
-msgid "Starting installation\n"
+#: src/Helpers/LogHelper.vala:54
+#, fuzzy
+msgid "Starting installation"
 msgstr "Začenjam namestitev\n"
 
 #: src/Dialogs/EndSessionDialog.vala:43
@@ -55,7 +56,7 @@ msgstr "Ponovni zagon"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
+#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
 msgstr "Izklop"
@@ -63,6 +64,11 @@ msgstr "Izklop"
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Prekliči namestitev"
+
+#: src/Views/AbstractInstallerView.vala:56
+#, fuzzy
+msgid "Test Mode"
+msgstr "Demonstracijski način"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -102,19 +108,19 @@ msgid ""
 "while installing."
 msgstr "Vaš računalnik deluje z baterije. Priporočamo priklop na elektriko."
 
-#: src/Views/CheckView.vala:293
+#: src/Views/CheckView.vala:296
 msgid "Recommended:"
 msgstr "Priporočeno:"
 
-#: src/Views/CheckView.vala:297
+#: src/Views/CheckView.vala:300
 msgid "Your Device:"
 msgstr "Vaš računalnik:"
 
-#: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
 msgstr "Procesor:"
 
-#: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
 msgid "Memory:"
 msgstr "Pomnilnik:"
 
@@ -167,7 +173,7 @@ msgstr "* Ponovno pognati računalnik z drugega pogona"
 msgid "Restart Device"
 msgstr "Ponovni zagon"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
+#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "Demonstracijski način"
 
@@ -187,7 +193,7 @@ msgstr "Tipkajte za preizkus razporeda tipk"
 msgid "Show keyboard layout"
 msgstr "Pokaži razpored tipk"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
 msgid "Back"
 msgstr "Nazaj"
 
@@ -196,11 +202,11 @@ msgstr "Nazaj"
 msgid "Select"
 msgstr "Izberi"
 
-#: src/Views/KeyboardLayoutView.vala:96
+#: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
 msgstr "Privzeto"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
 msgstr "Jezik vnosa"
 
@@ -216,44 +222,44 @@ msgstr "Izberite jezik"
 msgid "Currently active language"
 msgstr "Trenutno aktivni jezik"
 
-#: src/Views/ProgressView.vala:108
-msgid "Formating Drive"
-msgstr "Formatiranje pogona"
-
-#: src/Views/ProgressView.vala:112
+#: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
 msgstr "Ustvarjanje particij"
 
-#: src/Views/ProgressView.vala:116
+#: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
 msgstr "Kopiranje datotek"
 
-#: src/Views/ProgressView.vala:120
+#: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
 msgstr "Nastavitev sistema"
 
-#: src/Views/ProgressView.vala:124
+#: src/Views/ProgressView.vala:319
 msgid "Finishing the Installation"
 msgstr "Zaključevanje namestitve"
 
-#: src/Views/TryInstallView.vala:35
+#: src/Views/TryInstallView.vala:33
+#, fuzzy
+msgid "Install or Try Demo Mode"
+msgstr "Demonstracijski način"
+
+#: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
 "Lahko namestite %s ali pa preizkusite demonstracijski način brez namestitve."
 
-#: src/Views/TryInstallView.vala:41
-msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr "V demonstracijskem načinu se podatki na računalniku ne bodo spremenili."
-
-#: src/Views/TryInstallView.vala:59
-msgid "Any changes you make in Demo Mode will not be saved."
-msgstr "Spremembe v demonstracijskem načinu se ne bodo shranile."
-
-#: src/Views/TryInstallView.vala:67
+#: src/Views/TryInstallView.vala:53
 msgid ""
-"You can always return from Demo Mode to the installer by selecting the "
+"In Demo Mode, changes you make will not be saved and data from your previous "
+"operating system will be unchanged."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:64
+#, fuzzy
+msgid ""
+"You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
 "Z demonstracijskega načina lahko vedno poženete namestitveni program z "
@@ -264,13 +270,31 @@ msgid "Restart your device to continue setting up"
 msgstr "Ponovno zaženite računalnik za nadaljevanje namestitve"
 
 #: src/Views/SuccessView.vala:38
-#, c-format
+#, fuzzy, c-format
 msgid ""
-"%s has been installed. Your device will automatically restart in 30 seconds "
-"to set up a new user, or you can shut down now and set a user up later."
+"Your device will automatically restart to %s in 30 seconds to set up a new "
+"user, or you can shut down now and set a user up later."
 msgstr ""
 "%s je bil nameščen. Vaš računalnik se bo samodejno ponovno zagnal čez 30 "
 "sekund."
+
+#: src/Views/SuccessView.vala:64
+msgid "Test mode shutdown"
+msgstr ""
+
+#: src/Views/SuccessView.vala:84
+msgid "Test mode reboot"
+msgstr ""
+
+#~ msgid "Formating Drive"
+#~ msgstr "Formatiranje pogona"
+
+#~ msgid "Data from your previous operating system is unchanged in Demo Mode."
+#~ msgstr ""
+#~ "V demonstracijskem načinu se podatki na računalniku ne bodo spremenili."
+
+#~ msgid "Any changes you make in Demo Mode will not be saved."
+#~ msgstr "Spremembe v demonstracijskem načinu se ne bodo shranile."
 
 #~ msgid "translator-credits"
 #~ msgstr ""

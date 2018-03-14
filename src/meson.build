@@ -3,6 +3,7 @@ vala_files = [
     'Application.vala',
     'MainWindow.vala',
     'Utils.vala',
+    'Helpers/Inhibitor.vala',
     'Helpers/KeyboardLayoutHelper.vala',
     'Helpers/LocaleHelper.vala',
     'Helpers/LogHelper.vala',

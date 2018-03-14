@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-20 23:38+0200\n"
+"POT-Creation-Date: 2018-03-09 09:59-0600\n"
 "PO-Revision-Date: 2017-09-03 15:00+0000\n"
 "Last-Translator: Tomáš Havlík <me@tomires.eu>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/installer/"
@@ -15,8 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:39 src/Views/TryInstallView.vala:30
-#: src/Views/TryInstallView.vala:92
+#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr ""
@@ -25,18 +24,18 @@ msgstr ""
 msgid "Operating System"
 msgstr "Operační systém"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:133
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
 #, c-format
 msgid "%s…"
 msgstr ""
 
-#: src/Helpers/LogHelper.vala:35
-msgid "Unable to change the Distinst log domain name"
+#: src/Helpers/LogHelper.vala:52
+msgid "Unable to set the Distinst log callback"
 msgstr ""
 
-#: src/Helpers/LogHelper.vala:37
+#: src/Helpers/LogHelper.vala:54
 #, fuzzy
-msgid "Starting installation\n"
+msgid "Starting installation"
 msgstr "Přerušit instalaci"
 
 #: src/Dialogs/EndSessionDialog.vala:43
@@ -56,7 +55,7 @@ msgstr "Restartovat"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:96
+#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:52
 msgid "Shut Down"
 msgstr "Vypnout"
@@ -64,6 +63,10 @@ msgstr "Vypnout"
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Přerušit instalaci"
+
+#: src/Views/AbstractInstallerView.vala:56
+msgid "Test Mode"
+msgstr ""
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -109,19 +112,19 @@ msgstr ""
 "Vaše zařízení užívá baterii. Doporučujeme jej po čas instalace připojit k "
 "elektrické síti."
 
-#: src/Views/CheckView.vala:293
+#: src/Views/CheckView.vala:296
 msgid "Recommended:"
 msgstr "Doporučeno:"
 
-#: src/Views/CheckView.vala:297
+#: src/Views/CheckView.vala:300
 msgid "Your Device:"
 msgstr "Vaše zařízení:"
 
-#: src/Views/CheckView.vala:301 src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
 msgstr "Procesor:"
 
-#: src/Views/CheckView.vala:309 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
 msgid "Memory:"
 msgstr "Operační paměť:"
 
@@ -170,7 +173,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr "Restartovat zařízení"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:90
+#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr ""
 
@@ -190,7 +193,7 @@ msgstr ""
 msgid "Show keyboard layout"
 msgstr ""
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:88
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
 #, fuzzy
 msgid "Back"
 msgstr "Zpět"
@@ -200,11 +203,11 @@ msgstr "Zpět"
 msgid "Select"
 msgstr ""
 
-#: src/Views/KeyboardLayoutView.vala:96
+#: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
 msgstr ""
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
 msgstr ""
 
@@ -220,44 +223,42 @@ msgstr ""
 msgid "Currently active language"
 msgstr ""
 
-#: src/Views/ProgressView.vala:108
-msgid "Formating Drive"
-msgstr ""
-
-#: src/Views/ProgressView.vala:112
+#: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
 msgstr ""
 
-#: src/Views/ProgressView.vala:116
+#: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
 msgstr ""
 
-#: src/Views/ProgressView.vala:120
+#: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
 msgstr ""
 
-#: src/Views/ProgressView.vala:124
+#: src/Views/ProgressView.vala:319
 #, fuzzy
 msgid "Finishing the Installation"
 msgstr "Přerušit instalaci"
 
-#: src/Views/TryInstallView.vala:35
+#: src/Views/TryInstallView.vala:33
+msgid "Install or Try Demo Mode"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:41
-msgid "Data from your previous operating system is unchanged in Demo Mode."
-msgstr ""
-
-#: src/Views/TryInstallView.vala:59
-msgid "Any changes you make in Demo Mode will not be saved."
-msgstr ""
-
-#: src/Views/TryInstallView.vala:67
+#: src/Views/TryInstallView.vala:53
 msgid ""
-"You can always return from Demo Mode to the installer by selecting the "
+"In Demo Mode, changes you make will not be saved and data from your previous "
+"operating system will be unchanged."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:64
+msgid ""
+"You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
 
@@ -268,8 +269,16 @@ msgstr ""
 #: src/Views/SuccessView.vala:38
 #, c-format
 msgid ""
-"%s has been installed. Your device will automatically restart in 30 seconds "
-"to set up a new user, or you can shut down now and set a user up later."
+"Your device will automatically restart to %s in 30 seconds to set up a new "
+"user, or you can shut down now and set a user up later."
+msgstr ""
+
+#: src/Views/SuccessView.vala:64
+msgid "Test mode shutdown"
+msgstr ""
+
+#: src/Views/SuccessView.vala:84
+msgid "Test mode reboot"
 msgstr ""
 
 #, fuzzy
