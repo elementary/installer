@@ -106,7 +106,30 @@ public class Installer.DiskView : AbstractInstallerView {
     public async void load () {
         disks = Distinst.Disks.probe ();
         foreach (unowned Distinst.Disk disk in disks.list()) {
-            var disk_button = new DiskButton (disk);
+            // Drives are identifiable by whether they are rotational and/or removable.
+            string icon_name = null;
+            if (disk.is_removable ()) {
+                if (disk.is_rotational ()) {
+                    icon_name = "drive-harddisk-usb";
+                } else {
+                    icon_name = "drive-removable-media-usb";
+                }
+            } else if (disk.is_rotational ()) {
+                icon_name = "drive-harddisk-scsi";
+            } else {
+                icon_name = "drive-harddisk-solidstate";
+            }
+
+            string path = (string) disk.get_device_path();
+            stderr.printf("DEBUG: load(): device path: %s\n", path);
+
+            var disk_button = new DiskButton (
+                disk.get_serial (),
+                icon_name,
+                path,
+                disk.get_sectors () * disk.get_sector_size ()
+            );
+
             disk_grid.add (disk_button);
             disk_button.clicked.connect (() => {
                 if (disk_button.active) {
