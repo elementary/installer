@@ -40,14 +40,14 @@ public class Installer.DiskButton : Gtk.ToggleButton {
             icon_name = "drive-harddisk-scsi";
         } else {
             icon_name = "drive-harddisk-solidstate";
-        };
+        }
 
         var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
 
         var name_label = new Gtk.Label (disk.get_serial ());
         name_label.hexpand = true;
 
-        var size_label = new Gtk.Label ("<small>%s</small>".printf (GLib.format_size (disk.get_sectors () * disk.get_sector_size())));
+        var size_label = new Gtk.Label ("<small>%s</small>".printf (GLib.format_size (disk.get_sectors () * disk.get_sector_size ())));
         size_label.use_markup = true;
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
