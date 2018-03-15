@@ -30,13 +30,13 @@ public class Installer.DiskButton : Gtk.ToggleButton {
 
         // Drives are identifiable by whether they are rotational and/or removable.
         string icon_name = null;
-        if (disk.is_removable()) {
-            if (disk.is_rotational()) {
+        if (disk.is_removable ()) {
+            if (disk.is_rotational ()) {
                 icon_name = "drive-harddisk-usb";
             } else {
                 icon_name = "drive-removable-media";
             }
-        } else if (disk.is_rotational()) {
+        } else if (disk.is_rotational ()) {
             icon_name = "drive-harddisk-scsi";
         } else {
             icon_name = "drive-harddisk-solidstate";
