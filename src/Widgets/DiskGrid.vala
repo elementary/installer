@@ -32,12 +32,12 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         string icon_name = null;
         if (disk.is_removable()) {
             if (disk.is_rotational()) {
-                icon = "drive-harddisk-usb"
+                icon_name = "drive-harddisk-usb";
             } else {
                 icon_name = "drive-removable-media";
             }
         } else if (disk.is_rotational()) {
-            icon_name = "drive-harddisk-scsi"
+            icon_name = "drive-harddisk-scsi";
         } else {
             icon_name = "drive-harddisk-solidstate";
         };
