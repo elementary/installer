@@ -34,7 +34,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
             if (disk.is_rotational ()) {
                 icon_name = "drive-harddisk-usb";
             } else {
-                icon_name = "drive-removable-media";
+                icon_name = "drive-removable-media-usb";
             }
         } else if (disk.is_rotational ()) {
             icon_name = "drive-harddisk-scsi";
@@ -43,6 +43,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         }
 
         var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
+        disk_image.use_fallback = true;
 
         var name_label = new Gtk.Label (disk.get_serial ());
         name_label.hexpand = true;
