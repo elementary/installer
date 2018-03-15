@@ -20,6 +20,7 @@
 
 public class Installer.DiskView : AbstractInstallerView {
     public signal void next_step ();
+    public Distinst.Disks disks;
 
     private Gtk.Button next_button;
     private Gtk.Grid disk_grid;
@@ -103,7 +104,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
     // If possible, open devices in a different thread so that the interface stays awake.
     public async void load () {
-        var disks = Distinst.Disks.probe ();
+        disks = Distinst.Disks.probe ();
         foreach (unowned Distinst.Disk disk in disks.list()) {
             var disk_button = new DiskButton (disk);
             disk_grid.add (disk_button);
