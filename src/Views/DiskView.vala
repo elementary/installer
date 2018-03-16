@@ -105,6 +105,10 @@ public class Installer.DiskView : AbstractInstallerView {
     public async void load () {
         Distinst.Disks disks = Distinst.Disks.probe ();
         foreach (unowned Distinst.Disk disk in disks.list()) {
+            if (disk.contains_root ()) {
+                continue;
+            }
+
             // Drives are identifiable by whether they are rotational and/or removable.
             string icon_name = null;
             if (disk.is_removable ()) {
@@ -120,10 +124,10 @@ public class Installer.DiskView : AbstractInstallerView {
             }
 
             // NOTE: Why does casting as a string not work?
-            uint8[] raw_path = disk.get_device_path();
-            var path_builder = new GLib.StringBuilder.sized(raw_path.length);
+            uint8[] raw_path = disk.get_device_path ();
+            var path_builder = new GLib.StringBuilder.sized (raw_path.length);
             foreach (uint8 byte in raw_path) {
-                path_builder.append_c((char) byte);
+                path_builder.append_c ((char) byte);
             }
 
             var disk_button = new DiskButton (
