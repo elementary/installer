@@ -7,9 +7,6 @@ src/Helpers/LogHelper.vala
 src/Dialogs/EndSessionDialog.vala
 src/Objects/org.freedesktop.udisks2.vala
 src/Objects/Configuration.vala
-src/Objects/Disk.vala
-src/Objects/Partition.vala
-src/Objects/PartitionTable.vala
 src/Views/AbstractInstallerView.vala
 src/Views/CheckView.vala
 src/Views/DiskView.vala
