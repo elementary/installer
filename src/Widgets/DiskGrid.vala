@@ -19,21 +19,31 @@
  */
 
 public class Installer.DiskButton : Gtk.ToggleButton {
-    public Disk disk { get; construct; }
-    public DiskButton (Disk disk) {
-        Object (disk: disk);
+    public string disk_name { get; construct; }
+    public string icon_name { get; construct; }
+    public string disk_path { get; construct; }
+    public uint64 size { get; construct; }
+    
+    public DiskButton (string disk_name, string icon_name, string disk_path, uint64 size) {
+        Object (
+            disk_name: disk_name,
+            icon_name: icon_name,
+            disk_path: disk_path,
+            size: size
+        );
     }
 
     construct {
         margin = 12;
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var disk_image = new Gtk.Image.from_icon_name (disk.get_icon_name (), Gtk.IconSize.DIALOG);
+        var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
+        disk_image.use_fallback = true;
 
-        var name_label = new Gtk.Label (disk.get_label_name ());
+        var name_label = new Gtk.Label (disk_name);
         name_label.hexpand = true;
 
-        var size_label = new Gtk.Label ("<small>%s</small>".printf (GLib.format_size (disk.get_size ())));
+        var size_label = new Gtk.Label ("<small>%s</small>".printf (GLib.format_size (size)));
         size_label.use_markup = true;
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
@@ -49,7 +59,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         notify["active"].connect (() => {
             if (active) {
                 unowned Configuration config = Configuration.get_default ();
-                config.disk = disk.get_dev_path ();
+                config.disk = disk_path;
             }
         });
     }
