@@ -104,7 +104,7 @@ public class Installer.DiskView : AbstractInstallerView {
     // If possible, open devices in a different thread so that the interface stays awake.
     public async void load () {
         Distinst.Disks disks = Distinst.Disks.probe ();
-        foreach (unowned Distinst.Disk disk in disks.list()) {
+        foreach (unowned Distinst.Disk disk in disks.list ()) {
             if (disk.contains_root ()) {
                 continue;
             }
@@ -131,7 +131,7 @@ public class Installer.DiskView : AbstractInstallerView {
             }
 
             var disk_button = new DiskButton (
-                disk.get_serial (),
+                disk.get_serial ().replace ("_", " "),
                 icon_name,
                 (owned) path_builder.str,
                 disk.get_sectors () * disk.get_sector_size ()
