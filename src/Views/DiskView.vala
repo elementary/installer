@@ -20,7 +20,6 @@
 
 public class Installer.DiskView : AbstractInstallerView {
     public signal void next_step ();
-    public Distinst.Disks disks;
 
     private Gtk.Button next_button;
     private Gtk.Grid disk_grid;
@@ -104,7 +103,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
     // If possible, open devices in a different thread so that the interface stays awake.
     public async void load () {
-        disks = Distinst.Disks.probe ();
+        Distinst.Disks disks = Distinst.Disks.probe ();
         foreach (unowned Distinst.Disk disk in disks.list()) {
             // Drives are identifiable by whether they are rotational and/or removable.
             string icon_name = null;
@@ -120,13 +119,17 @@ public class Installer.DiskView : AbstractInstallerView {
                 icon_name = "drive-harddisk-solidstate";
             }
 
-            string path = (string) disk.get_device_path();
-            stderr.printf("DEBUG: load(): device path: %s\n", path);
+            // NOTE: Why does casting as a string not work?
+            uint8[] raw_path = disk.get_device_path();
+            var path_builder = new GLib.StringBuilder.sized(raw_path.length);
+            foreach (uint8 byte in raw_path) {
+                path_builder.append_c((char) byte);
+            }
 
             var disk_button = new DiskButton (
                 disk.get_serial (),
                 icon_name,
-                path,
+                (owned) path_builder.str,
                 disk.get_sectors () * disk.get_sector_size ()
             );
 

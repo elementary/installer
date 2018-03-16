@@ -36,7 +36,6 @@ public class Installer.DiskButton : Gtk.ToggleButton {
     construct {
         margin = 12;
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        stderr.printf("device path: %s\n", disk_path);
 
         var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
         disk_image.use_fallback = true;
