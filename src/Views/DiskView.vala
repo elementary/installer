@@ -105,7 +105,7 @@ public class Installer.DiskView : AbstractInstallerView {
     public async void load () {
         Distinst.Disks disks = Distinst.Disks.probe ();
         foreach (unowned Distinst.Disk disk in disks.list ()) {
-            if (disk.contains_root ()) {
+            if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
                 continue;
             }
 
