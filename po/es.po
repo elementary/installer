@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2017-12-22 19:07+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Spanish <https://weblate.elementary.io/projects/installer/"
-"installer/es/>\n"
+"PO-Revision-Date: 2018-03-17 05:34+0000\n"
+"Last-Translator: Alain M. <alain23@protonmail.com>\n"
+"Language-Team: Spanish "
+"<https://weblate.elementary.io/projects/installer/installer/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,14 +30,12 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "No se puede cambiar el nombre de dominio de registro Distinst"
+msgstr "No se puede establecer el llamado a un registro distinto"
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "Iniciando Instalación\n"
+msgstr "Iniciando Instalación"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -65,9 +63,8 @@ msgid "Cancel Installation"
 msgstr "Cancelar Instalación"
 
 #: src/Views/AbstractInstallerView.vala:56
-#, fuzzy
 msgid "Test Mode"
-msgstr "Probar modo Demo"
+msgstr "Probar modo"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -242,9 +239,8 @@ msgid "Finishing the Installation"
 msgstr "Finalizando la instalación"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "Probar modo Demo"
+msgstr "Instalar o probar el modo de Demo"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -259,29 +255,30 @@ msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged."
 msgstr ""
+"En el modo Demo, los cambios que realice no se guardarán y los datos de su "
+"sistema operativo no se verán afectados."
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"Siempre es posible volver del modo Demo al instalador seleccionando el icono "
-"Instalar."
+"Siempre puede volver al instalador desde el modo de Demo, solo seleccionando "
+"el icono Instalar."
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
 msgstr "Reinicia el dispositivo para continuar con la configuración"
 
 #: src/Views/SuccessView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
 msgstr ""
-"%s ha sido instalado. El dispositivo se reiniciará automáticamente en 30 "
-"segundos para configurar un nuevo usuario, o puedes apagarlo ahora y "
-"configurar un usuario más tarde."
+"Su dispositivo se reiniciará automáticamente en  %s con 30 segundos y "
+"empezar a configurar un nuevo usuario, o puede cerrar ahora y configurar un "
+"usuario más tarde."
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
