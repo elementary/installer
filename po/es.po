@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
 "PO-Revision-Date: 2018-03-17 05:34+0000\n"
-"Last-Translator: Alain M. <alain23@protonmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/installer/installer/es/>\n"
 "Language: es\n"
@@ -282,11 +282,11 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "apagado del modo de prueba"
 
 #: src/Views/SuccessView.vala:84
 msgid "Test mode reboot"
-msgstr ""
+msgstr "reinicio del modo de prueba"
 
 #~ msgid "Formating Drive"
 #~ msgstr "Formateando la Unidad"
