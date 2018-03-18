@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-18 14:03+0000\n"
+"PO-Revision-Date: 2018-03-18 14:21+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Swedish "
 "<https://weblate.elementary.io/projects/installer/installer/sv/>\n"
@@ -138,26 +138,28 @@ msgstr ""
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Hämtar nuvarande konfiguration..."
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr ""
+msgstr "Radera & Installera"
 
 #: src/Views/ErrorView.vala:32
 #, c-format
 msgid "Could not install %s"
-msgstr ""
+msgstr "Kunde inte installera %s"
 
 #: src/Views/ErrorView.vala:38
 msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
+"Installationen misslyckades, så din enhet kanske inte kommer starta om "
+"ordentligt. Du kan testa något av följande:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Testa att installera på nytt"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
@@ -165,31 +167,31 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Starta upp din enhet till en annan disk."
 
 #: src/Views/ErrorView.vala:74
 msgid "Restart Device"
-msgstr ""
+msgstr "Starta om enheten"
 
 #: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Testa Demoläge"
 
 #: src/Views/ErrorView.vala:78
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Testa att installera på nytt"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Tangentbordslayout"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Skriv för att kontrollera layout"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Visa tangentbordslayout"
 
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
 #, fuzzy
@@ -199,11 +201,11 @@ msgstr "Backsteg"
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:150
 msgid "Select"
-msgstr ""
+msgstr "Välj"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
@@ -211,31 +213,31 @@ msgstr ""
 
 #: src/Views/LanguageView.vala:201
 msgid "Languages"
-msgstr ""
+msgstr "Språk"
 
 #: src/Views/LanguageView.vala:218
 msgid "Select a Language"
-msgstr ""
+msgstr "Välj ett språk"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
-msgstr ""
+msgstr "Nuvarande aktivt språk"
 
 #: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Partitionerar disk"
 
 #: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
-msgstr ""
+msgstr "Extraherar filer"
 
 #: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
-msgstr ""
+msgstr "Konfigurerar systemet"
 
 #: src/Views/ProgressView.vala:319
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Slutför installationen"
 
 #: src/Views/TryInstallView.vala:33
 msgid "Install or Try Demo Mode"
@@ -246,6 +248,8 @@ msgstr ""
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Du kan installera %s på denna enhet nu, eller testa Demoläge utan att "
+"installera."
 
 #: src/Views/TryInstallView.vala:53
 msgid ""
