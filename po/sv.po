@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
 "PO-Revision-Date: 2018-03-18 14:00+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Smalbenet <smalbenet@gmail.com>\n"
 "Language-Team: Swedish "
 "<https://weblate.elementary.io/projects/installer/installer/sv/>\n"
 "Language: sv\n"
@@ -60,7 +60,7 @@ msgstr "Stäng av"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr "Avbryt installationen"
+msgstr "Avbryt installation"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
