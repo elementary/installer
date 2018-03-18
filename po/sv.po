@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-18 14:02+0000\n"
-"Last-Translator: Smalbenet <smalbenet@gmail.com>\n"
+"PO-Revision-Date: 2018-03-18 14:03+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Swedish "
 "<https://weblate.elementary.io/projects/installer/installer/sv/>\n"
 "Language: sv\n"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:300
 msgid "Your Device:"
-msgstr ""
+msgstr "Din enhet:"
 
 #: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
@@ -121,17 +121,20 @@ msgstr ""
 
 #: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
 msgid "Memory:"
-msgstr ""
+msgstr "Minne:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "Välj en disk att använda för installation"
 
 #: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Detta kommer radera all data från den valda enheten. Om du inte har "
+"säkerhetskopierat din data, kan du avbryta installationen och använda "
+"Demoläge."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
