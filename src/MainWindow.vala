@@ -82,25 +82,35 @@ public class Installer.MainWindow : Gtk.Dialog {
         try_install_view.previous_view = keyboard_layout_view;
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
+        load_checkview ();
 
-        try_install_view.next_step.connect (() => load_checkview ());
+        try_install_view.next_step.connect (() => load_encryptview ());
     }
 
     private void load_checkview () {
-        if (check_view != null) {
-            check_view.destroy ();
-        }
-
         check_view = new Installer.CheckView ();
-        check_view.previous_view = try_install_view;
-        check_view.next_step.connect (() => load_encryptview ());
+        check_view.next_step.connect (() => {
+            check_view.ignored = true;
+            stack.visible_child = check_view.previous_view;
+        });
+        stack.add (check_view);
 
-        if (check_view.check_requirements ()) {
-            load_encryptview ();
-        } else {
-            stack.add (check_view);
-            stack.visible_child = check_view;
-        }
+        GLib.Timeout.add (100, () => {
+            if (check_view.ignored) {
+                return GLib.Source.REMOVE;
+            }
+
+            if (stack.visible_child == check_view) {
+                if (check_view.check_requirements ()) {
+                    stack.visible_child = check_view.previous_view;
+                }
+            } else if (!check_view.check_requirements ()) {
+                check_view.previous_view = stack.visible_child;
+                stack.visible_child = check_view;
+            }
+
+            return GLib.Source.CONTINUE;
+        });
     }
 
     private void load_encryptview () {

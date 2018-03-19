@@ -30,6 +30,7 @@ public class Installer.CheckView : AbstractInstallerView  {
 
     public signal void next_step ();
 
+    public bool ignored = false;
     bool enough_space = true;
     bool enough_power = true;
     bool powered = true;
@@ -60,7 +61,7 @@ public class Installer.CheckView : AbstractInstallerView  {
 
         ignore_button = new Gtk.Button.with_label (_("Ignore"));
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        ignore_button.clicked.connect (() => show_next ());
+        ignore_button.clicked.connect (() => next_step ());
 
         show_all ();
     }
@@ -172,7 +173,6 @@ public class Installer.CheckView : AbstractInstallerView  {
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
-                    next_step ();
                     return;
                 }
 
@@ -183,7 +183,6 @@ public class Installer.CheckView : AbstractInstallerView  {
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
-                    next_step ();
                     return;
                 }
 
@@ -192,13 +191,11 @@ public class Installer.CheckView : AbstractInstallerView  {
                 if (!powered) {
                     next_state = State.POWERED;
                 } else {
-                    next_step ();
                     return;
                 }
 
                 break;
             case State.POWERED:
-                next_step ();
                 return;
         }
 
