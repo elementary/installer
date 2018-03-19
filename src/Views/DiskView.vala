@@ -103,9 +103,40 @@ public class Installer.DiskView : AbstractInstallerView {
 
     // If possible, open devices in a different thread so that the interface stays awake.
     public async void load () {
-        var disks = yield Installer.Disk.get_disks ();
-        foreach (var disk in disks) {
-            var disk_button = new DiskButton (disk);
+        Distinst.Disks disks = Distinst.Disks.probe ();
+        foreach (unowned Distinst.Disk disk in disks.list ()) {
+            if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
+                continue;
+            }
+
+            // Drives are identifiable by whether they are rotational and/or removable.
+            string icon_name = null;
+            if (disk.is_removable ()) {
+                if (disk.is_rotational ()) {
+                    icon_name = "drive-harddisk-usb";
+                } else {
+                    icon_name = "drive-removable-media-usb";
+                }
+            } else if (disk.is_rotational ()) {
+                icon_name = "drive-harddisk-scsi";
+            } else {
+                icon_name = "drive-harddisk-solidstate";
+            }
+
+            // NOTE: Why does casting as a string not work?
+            uint8[] raw_path = disk.get_device_path ();
+            var path_builder = new GLib.StringBuilder.sized (raw_path.length);
+            foreach (uint8 byte in raw_path) {
+                path_builder.append_c ((char) byte);
+            }
+
+            var disk_button = new DiskButton (
+                disk.get_serial ().replace ("_", " "),
+                icon_name,
+                (owned) path_builder.str,
+                disk.get_sectors () * disk.get_sector_size ()
+            );
+
             disk_grid.add (disk_button);
             disk_button.clicked.connect (() => {
                 if (disk_button.active) {
