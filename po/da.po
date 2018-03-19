@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-19 21:50+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-03-19 21:56+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
@@ -153,18 +153,20 @@ msgid ""
 "The installation failed, so your device may not restart properly. You can "
 "try one of the following:"
 msgstr ""
+"Installationen mislykkedes, så din enhed muligvis ikke genstarter korrekt. "
+"Du kan prøve et af følgende:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Prøv installationen igen"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• Brug Demo Tilstand og prøv manuelt at gendanne"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Genstart din enhed for at starte fra et andet drev"
 
 #: src/Views/ErrorView.vala:74
 msgid "Restart Device"
