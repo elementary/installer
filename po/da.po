@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-19 21:09+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-03-19 21:14+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
@@ -60,11 +60,11 @@ msgstr "Luk Ned"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Annullér Installation"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
-msgstr ""
+msgstr "Afprøvningstilstand"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
