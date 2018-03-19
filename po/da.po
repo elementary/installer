@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-19 21:36+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-03-19 21:45+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
@@ -64,7 +64,7 @@ msgstr "Annullér Installation"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
-msgstr "Afprøvningstilstand"
+msgstr "Demo Tilstand"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -125,13 +125,15 @@ msgstr "Hukommelse:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr ""
+msgstr "Vælg et drev, der skal bruges til installation"
 
 #: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Dette vil slette alt data på det valgte drev. Hvis du ikke har backup af din "
+"data, kan du annullere installationen og bruge Demo Tilstand."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
