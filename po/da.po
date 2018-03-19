@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
 "PO-Revision-Date: 2018-03-19 22:03+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
@@ -207,7 +207,7 @@ msgstr "Standard"
 
 #: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
-msgstr ""
+msgstr "Indtastningssprog"
 
 #: src/Views/LanguageView.vala:201
 msgid "Languages"
