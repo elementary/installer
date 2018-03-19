@@ -126,14 +126,22 @@ public class Installer.DiskView : AbstractInstallerView {
             // NOTE: Why does casting as a string not work?
             uint8[] raw_path = disk.get_device_path ();
             var path_builder = new GLib.StringBuilder.sized (raw_path.length);
-            foreach (uint8 byte in raw_path) {
-                path_builder.append_c ((char) byte);
+            path_builder.append_len ((string) raw_path, raw_path.length);
+
+            string label;
+            string model = disk.get_model ();
+            if (model.length == 0) {
+                label = disk.get_serial ().replace ("_", " ");
+            } else {
+                label = model;
             }
 
+            string path = (owned) path_builder.str;
+
             var disk_button = new DiskButton (
-                disk.get_serial ().replace ("_", " "),
+                label + " (" + path + ")",
                 icon_name,
-                (owned) path_builder.str,
+                path,
                 disk.get_sectors () * disk.get_sector_size ()
             );
 
