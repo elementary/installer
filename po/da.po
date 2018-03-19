@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-19 22:06+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-03-19 22:10+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
@@ -223,15 +223,15 @@ msgstr "Nuværende aktivt sprog"
 
 #: src/Views/ProgressView.vala:307
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Partitionerer Drev"
 
 #: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
-msgstr ""
+msgstr "Udpakker Filer"
 
 #: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
-msgstr ""
+msgstr "Konfigurerer Systemet"
 
 #: src/Views/ProgressView.vala:319
 msgid "Finishing the Installation"
