@@ -32,3 +32,10 @@ Priority: extra
 Depends: pop-installer
 Description: Dedicated installer session
  Launches pop-installer in a dedicated session.
+
+Package: pop-installer-casper
+Architecture: any
+Priority: extra
+Depends: casper
+Description: Autostart pop-installer in casper
+ Autostart pop-installer when running in a live system with casper
