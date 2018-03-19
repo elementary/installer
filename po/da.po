@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-19 22:11+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-03-19 22:30+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
@@ -31,7 +31,7 @@ msgstr "%s..."
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr ""
+msgstr "Kunne ikke sætte Distinst log callback"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -39,7 +39,7 @@ msgstr "Starter installation"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "Er du sikker på at du vil Lukke Ned?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
@@ -235,33 +235,39 @@ msgstr "Konfigurerer Systemet"
 
 #: src/Views/ProgressView.vala:319
 msgid "Finishing the Installation"
-msgstr "Færdiggører installationen "
+msgstr "Færdiggører Installationen"
 
 #: src/Views/TryInstallView.vala:33
 msgid "Install or Try Demo Mode"
-msgstr ""
+msgstr "Installér eller Prøv Demo Tilstand"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Du kan nu installere %s på denne enhed eller prøve Demo Tilstand uden at "
+"installere."
 
 #: src/Views/TryInstallView.vala:53
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged."
 msgstr ""
+"I demo-tilstand vil ændringer, du laver, ikke blive gemt, og data fra dit "
+"tidligere operativsystem forbliver uændret."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
+"Du kan altid vende tilbage til installationsprogrammet fra Demo Tilstand ved "
+"at vælge installationsikonet."
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr ""
+msgstr "Genstart din enhed for at fortsætte opsætning"
 
 #: src/Views/SuccessView.vala:38
 #, c-format
@@ -269,14 +275,16 @@ msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
 msgstr ""
+"Din enhed genstarter automatisk til %s om 30 sekunder for at oprette en ny "
+"bruger, eller du kan lukke nu og oprette en bruger senere."
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Demo tilstand nedlukning"
 
 #: src/Views/SuccessView.vala:84
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Demo tilstand genstart"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
