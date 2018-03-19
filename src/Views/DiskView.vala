@@ -109,6 +109,8 @@ public class Installer.DiskView : AbstractInstallerView {
                 continue;
             }
 
+            var size = disk.get_sectors () * disk.get_sector_size ();
+
             // Drives are identifiable by whether they are rotational and/or removable.
             string icon_name = null;
             if (disk.is_removable ()) {
@@ -142,21 +144,26 @@ public class Installer.DiskView : AbstractInstallerView {
                 label + " (" + path + ")",
                 icon_name,
                 path,
-                disk.get_sectors () * disk.get_sector_size ()
+                size
             );
 
             disk_grid.add (disk_button);
-            disk_button.clicked.connect (() => {
-                if (disk_button.active) {
-                    disk_grid.get_children ().foreach ((child) => {
-                        ((Gtk.ToggleButton)child).active = child == disk_button;
-                    });
 
-                    next_button.sensitive = true;
-                } else {
-                    next_button.sensitive = false;
-                }
-            });
+            if (size < 5000000000) {
+                disk_button.set_sensitive(false);
+            } else {
+                disk_button.clicked.connect (() => {
+                    if (disk_button.active) {
+                        disk_grid.get_children ().foreach ((child) => {
+                            ((Gtk.ToggleButton)child).active = child == disk_button;
+                        });
+
+                        next_button.sensitive = true;
+                    } else {
+                        next_button.sensitive = false;
+                    }
+                });
+            }
         }
 
         disk_grid.show_all ();
