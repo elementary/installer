@@ -30,6 +30,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private SuccessView success_view;
     private EncryptView encrypt_view;
     private ErrorView error_view;
+    private bool check_ignored = false;
 
     public MainWindow () {
         Object (
@@ -84,32 +85,38 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.visible_child = try_install_view;
         load_checkview ();
 
-        try_install_view.next_step.connect (() => load_encryptview ());
+        try_install_view.next_step.connect (() => load_checkview ());
     }
 
     private void load_checkview () {
+        if (check_view != null) {
+            check_view.destroy ();
+        }
+
         check_view = new Installer.CheckView ();
+        check_view.previous_view = try_install_view;
+        stack.add (check_view);
+        if (check_ignored || check_view.check_requirements ()) {
+            load_encryptview ();
+        } else {
+            stack.visible_child = check_view;
+        }
+
         check_view.next_step.connect (() => {
-            check_view.ignored = true;
+            check_ignored = true;
             stack.visible_child = check_view.previous_view;
         });
-        stack.add (check_view);
 
-        GLib.Timeout.add (100, () => {
-            if (check_view.ignored) {
-                return GLib.Source.REMOVE;
-            }
-
-            if (stack.visible_child == check_view) {
-                if (check_view.check_requirements ()) {
+        check_view.status_changed.connect ((met_requirements) => {
+            if (!check_ignored) {
+                if (!met_requirements) {
+                    check_view.previous_view = stack.visible_child;
+                    stack.visible_child = check_view;
+                } else {
                     stack.visible_child = check_view.previous_view;
+                    check_view.previous_view = try_install_view;
                 }
-            } else if (!check_view.check_requirements ()) {
-                check_view.previous_view = stack.visible_child;
-                stack.visible_child = check_view;
             }
-
-            return GLib.Source.CONTINUE;
         });
     }
 
