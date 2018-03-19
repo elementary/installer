@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-19 21:34+0000\n"
-"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
+"PO-Revision-Date: 2018-03-19 21:36+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
@@ -109,19 +109,19 @@ msgstr ""
 
 #: src/Views/CheckView.vala:296
 msgid "Recommended:"
-msgstr ""
+msgstr "Anbefalet:"
 
 #: src/Views/CheckView.vala:300
 msgid "Your Device:"
-msgstr ""
+msgstr "Din Enhed:"
 
 #: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
-msgstr ""
+msgstr "Processor:"
 
 #: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
 msgid "Memory:"
-msgstr ""
+msgstr "Hukommelse:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
