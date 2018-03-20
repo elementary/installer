@@ -143,7 +143,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         disk_view = new DiskView ();
-        disk_view.previous_view = encrypt_view;
+        disk_view.previous_view = try_install_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
         disk_view.load.begin(minimum_disk_size);
