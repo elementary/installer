@@ -105,14 +105,9 @@ public class ProgressView : AbstractInstallerView {
             debug ("no country\n");
         }
 
-        config.keyboard = current_config.keyboard_layout;
-        debug ("keyboard: %s\n", current_config.keyboard_layout);
-        if (current_config.keyboard_variant != null) {
-            debug ("variant: %s\n", current_config.keyboard_variant);
-            config.keyboard += "-" + current_config.keyboard_variant;
-        } else {
-            debug ("no variant\n");
-        }
+        config.keyboard_layout = current_config.keyboard_layout;
+        config.keyboard_model = null;
+        config.keyboard_variant = config.keyboard_variant;
 
         Distinst.LvmEncryption? encryption;
         if (current_config.encryption_password != null) {
