@@ -27,19 +27,21 @@ public class ErrorView : AbstractInstallerView {
         }
 
         var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.START;
+        image.valign = Gtk.Align.END;
 
-        var primary_label = new Gtk.Label (_("Could not install %s").printf (Utils.get_pretty_name ()));
-        primary_label.max_width_chars = 60;
-        primary_label.wrap = true;
-        primary_label.xalign = 0;
-        primary_label.get_style_context ().add_class ("h2");
+        var title_label = new Gtk.Label (_("Could Not Install"));
+        title_label.halign = Gtk.Align.CENTER;
+        title_label.max_width_chars = 60;
+        title_label.valign = Gtk.Align.START;
+        title_label.wrap = true;
+        title_label.xalign = 0;
+        title_label.get_style_context ().add_class ("h2");
 
-        var secondary_label = new Gtk.Label (_("The installation failed, so your device may not restart properly. You can try one of the following:"));
-        secondary_label.max_width_chars = 60;
-        secondary_label.wrap = true;
-        secondary_label.xalign = 0;
-        secondary_label.use_markup = true;
+        var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. Your device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ()));
+        description_label.max_width_chars = 60;
+        description_label.wrap = true;
+        description_label.xalign = 0;
+        description_label.use_markup = true;
 
         var try_label = new Gtk.Label (_("• Try the installation again"));
         try_label.max_width_chars = 60;
@@ -59,17 +61,21 @@ public class ErrorView : AbstractInstallerView {
         restart_label.xalign = 0;
         restart_label.use_markup = true;
 
+        var grid = new Gtk.Grid ();
+        grid.row_spacing = 6;
+        grid.attach (description_label, 0, 0, 1, 1);
+        grid.attach (try_label ,        0, 1, 1, 1);
+        grid.attach (launch_label,      0, 2, 1, 1);
+        grid.attach (restart_label,     0, 3, 1, 1);
+
+        content_area.column_homogeneous = true;
         content_area.halign = Gtk.Align.CENTER;
+        content_area.margin = 48;
         content_area.valign = Gtk.Align.CENTER;
-        content_area.margin_end = 22;
-        content_area.margin_start = 22;
-        content_area.row_spacing = 6;
-        content_area.attach (image, 0, 0, 1, 4);
-        content_area.attach (primary_label, 1, 0, 1, 1);
-        content_area.attach (secondary_label, 1, 1, 1, 1);
-        content_area.attach (try_label , 1, 2, 1, 1);
-        content_area.attach (launch_label, 1, 3, 1, 1);
-        content_area.attach (restart_label, 1, 4, 1, 1);
+
+        content_area.attach (image,       0, 0, 1, 1);
+        content_area.attach (title_label, 0, 1, 1, 1);
+        content_area.attach (grid,        1, 0, 1, 2);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 
@@ -83,20 +89,28 @@ public class ErrorView : AbstractInstallerView {
         action_area.add (install_button);
 
         restart_button.clicked.connect (() => {
-            try {
-                system_interface.reboot (false);
-            } catch (IOError e) {
-                critical (e.message);
+            if (Installer.App.test_mode) {
+                critical (_("Test mode reboot"));
+            } else {
+                try {
+                    system_interface.reboot (false);
+                } catch (IOError e) {
+                    critical (e.message);
+                }
             }
         });
 
         demo_button.clicked.connect (() => {
-            var seat = Utils.get_seat_instance ();
-            if (seat != null) {
-                try {
-                    seat.switch_to_guest ("");
-                } catch (IOError e) {
-                    stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+            if (Installer.App.test_mode) {
+                critical (_("Test mode switch user"));
+            } else {
+                var seat = Utils.get_seat_instance ();
+                if (seat != null) {
+                    try {
+                        seat.switch_to_guest ("");
+                    } catch (IOError e) {
+                        stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+                    }
                 }
             }
         });
