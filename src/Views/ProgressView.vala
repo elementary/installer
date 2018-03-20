@@ -107,7 +107,7 @@ public class ProgressView : AbstractInstallerView {
 
         config.keyboard_layout = current_config.keyboard_layout;
         config.keyboard_model = null;
-        config.keyboard_variant = config.keyboard_variant;
+        config.keyboard_variant = current_config.keyboard_variant;
 
         Distinst.LvmEncryption? encryption;
         if (current_config.encryption_password != null) {
