@@ -43,10 +43,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         var name_label = new Gtk.Label (disk_name);
         name_label.hexpand = true;
 
-        var path_label = new Gtk.Label (disk_path);
-        path_label.hexpand = true;
-
-        var size_label = new Gtk.Label ("<small>%s</small>".printf (GLib.format_size (size)));
+        var size_label = new Gtk.Label ("<small>%s %s</small>".printf (disk_path, GLib.format_size (size)));
         size_label.use_markup = true;
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
@@ -57,8 +54,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         grid.orientation = Gtk.Orientation.VERTICAL;
         grid.attach (disk_image, 0, 0, 1, 1);
         grid.attach (name_label, 0, 1, 1, 1);
-        grid.attach (path_label, 0, 2, 1, 1);
-        grid.attach (size_label, 0, 3, 1, 1);
+        grid.attach (size_label, 0, 2, 1, 1);
         add (grid);
         notify["active"].connect (() => {
             if (active) {
