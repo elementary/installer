@@ -32,6 +32,8 @@ public class Installer.MainWindow : Gtk.Dialog {
     private ErrorView error_view;
     private bool check_ignored = false;
 
+    private uint64 minimum_disk_size;
+
     public MainWindow () {
         Object (
             deletable: false,
@@ -52,6 +54,8 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         get_content_area ().add (stack);
         get_style_context ().add_class ("os-installer");
+
+        minimum_disk_size = Distinst.minimum_disk_size (5000000000);
 
         language_view.next_step.connect (() => load_keyboard_view ());
 
@@ -96,7 +100,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             check_view.destroy ();
         }
 
-        check_view = new Installer.CheckView ();
+        check_view = new Installer.CheckView (minimum_disk_size);
         check_view.previous_view = try_install_view;
         stack.add (check_view);
         if (check_ignored || check_view.check_requirements ()) {
@@ -142,10 +146,10 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         disk_view = new DiskView ();
-        disk_view.previous_view = encrypt_view;
+        disk_view.previous_view = try_install_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
-        disk_view.load.begin ();
+        disk_view.load.begin(minimum_disk_size);
 
         disk_view.next_step.connect (() => load_progress_view ());
     }

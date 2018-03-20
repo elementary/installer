@@ -38,6 +38,7 @@ public class Installer.CheckView : AbstractInstallerView  {
     int frequency = 0;
     uint64 memory = 0;
 
+    public static uint64 minimum_disk_size;
     private UPower upower;
 
     enum State {
@@ -51,7 +52,8 @@ public class Installer.CheckView : AbstractInstallerView  {
     private Gtk.Button ignore_button;
     private Gtk.Stack stack;
 
-    public CheckView () {
+    public CheckView (uint64 size) {
+        minimum_disk_size = size;
         Object (cancellable: true);
     }
 
@@ -92,29 +94,14 @@ public class Installer.CheckView : AbstractInstallerView  {
     }
 
     private static bool get_has_enough_space () {
-        bool enough_space = false;
-        try {
-            var client = new DBusObjectManagerClient.for_bus_sync (BusType.SYSTEM, GLib.DBusObjectManagerClientFlags.NONE,
-                                                            "org.freedesktop.UDisks2", "/org/freedesktop/UDisks2", null);
-            client.get_objects ().foreach ((object) => {
-                var drive_interface = object.get_interface ("org.freedesktop.UDisks2.Drive");
-                if (drive_interface != null) {
-                    try {
-                        UDisks2.Drive drive = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UDisks2", object.get_object_path ());
-                        if (drive.removable) {
-                            return;
-                        }
-
-                        enough_space |= drive.size > MINIMUM_SPACE;
-                    } catch (Error e) {
-                        warning (e.message);
-                    }
-                }
-            });
-        } catch (Error e) {
-            critical (e.message);
+        Distinst.Disks disks = Distinst.Disks.probe ();
+        foreach (unowned Distinst.Disk disk in disks.list ()) {
+            uint64 size = disk.get_sectors () * disk.get_sector_size ();
+            if (size > minimum_disk_size) {
+                return true;
+            }
         }
-        return enough_space;
+        return false;
     }
 
     private int get_frequency () {
