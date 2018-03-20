@@ -38,6 +38,7 @@ public class Installer.CheckView : AbstractInstallerView  {
     int frequency = 0;
     uint64 memory = 0;
 
+    public static uint64 minimum_disk_size;
     private UPower upower;
 
     enum State {
@@ -51,7 +52,8 @@ public class Installer.CheckView : AbstractInstallerView  {
     private Gtk.Button ignore_button;
     private Gtk.Stack stack;
 
-    public CheckView () {
+    public CheckView (uint64 size) {
+        minimum_disk_size = size;
         Object (cancellable: true);
     }
 
@@ -94,7 +96,8 @@ public class Installer.CheckView : AbstractInstallerView  {
     private static bool get_has_enough_space () {
         Distinst.Disks disks = Distinst.Disks.probe ();
         foreach (unowned Distinst.Disk disk in disks.list ()) {
-            if (disk.get_sectors () * disk.get_sector_size () > MINIMUM_SPACE) {
+            uint64 size = disk.get_sectors () * disk.get_sector_size ();
+            if (size > minimum_disk_size) {
                 return true;
             }
         }
