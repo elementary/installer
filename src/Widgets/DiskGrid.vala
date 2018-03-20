@@ -23,7 +23,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
     public string icon_name { get; construct; }
     public string disk_path { get; construct; }
     public uint64 size { get; construct; }
-    
+
     public DiskButton (string disk_name, string icon_name, string disk_path, uint64 size) {
         Object (
             disk_name: disk_name,
@@ -43,7 +43,7 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         var name_label = new Gtk.Label (disk_name);
         name_label.hexpand = true;
 
-        var size_label = new Gtk.Label ("<small>%s</small>".printf (GLib.format_size (size)));
+        var size_label = new Gtk.Label ("<small>%s %s</small>".printf (disk_path, GLib.format_size (size)));
         size_label.use_markup = true;
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
