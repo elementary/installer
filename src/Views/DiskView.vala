@@ -103,8 +103,12 @@ public class Installer.DiskView : AbstractInstallerView {
 
     // If possible, open devices in a different thread so that the interface stays awake.
     public async void load (uint64 minimum_disk_size) {
+        DiskButton[] enabled_buttons = {};
+        DiskButton[] disabled_buttons = {};
+
         Distinst.Disks disks = Distinst.Disks.probe ();
         foreach (unowned Distinst.Disk disk in disks.list ()) {
+            // Skip root disk or live disk
             if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
                 continue;
             }
@@ -141,16 +145,16 @@ public class Installer.DiskView : AbstractInstallerView {
             string path = (owned) path_builder.str;
 
             var disk_button = new DiskButton (
-                label + " (" + path + ")",
+                label,
                 icon_name,
                 path,
                 size
             );
 
-            disk_grid.add (disk_button);
-
             if (size < minimum_disk_size) {
                 disk_button.set_sensitive(false);
+
+                disabled_buttons += disk_button;
             } else {
                 disk_button.clicked.connect (() => {
                     if (disk_button.active) {
@@ -163,7 +167,17 @@ public class Installer.DiskView : AbstractInstallerView {
                         next_button.sensitive = false;
                     }
                 });
+
+                enabled_buttons += disk_button;
             }
+        }
+
+        foreach (DiskButton disk_button in enabled_buttons) {
+            disk_grid.add (disk_button);
+        }
+
+        foreach (DiskButton disk_button in disabled_buttons) {
+            disk_grid.add (disk_button);
         }
 
         disk_grid.show_all ();
