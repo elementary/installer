@@ -18,6 +18,8 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
+extern Posix.uid_t getuid ();
+
 public class Installer.MainWindow : Gtk.Dialog {
     private Gtk.Stack stack;
 
@@ -46,18 +48,24 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     construct {
-        language_view = new LanguageView ();
-
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.add (language_view);
 
         get_content_area ().add (stack);
         get_style_context ().add_class ("os-installer");
 
-        minimum_disk_size = Distinst.minimum_disk_size (5000000000);
+        if (getuid () == 0) {
+            minimum_disk_size = Distinst.minimum_disk_size (5000000000);
 
-        language_view.next_step.connect (() => load_keyboard_view ());
+            language_view = new LanguageView ();
+            language_view.next_step.connect (() => load_keyboard_view ());
+
+            stack.add (language_view);
+        } else {
+            check_view = new Installer.CheckView (0);
+            check_view.show_non_root ();
+            stack.add (check_view);
+        }
     }
 
     /*

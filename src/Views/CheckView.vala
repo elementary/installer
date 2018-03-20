@@ -39,6 +39,7 @@ public class Installer.CheckView : AbstractInstallerView  {
     uint64 memory = 0;
 
     public static uint64 minimum_disk_size;
+
     private UPower upower;
 
     enum State {
@@ -68,6 +69,18 @@ public class Installer.CheckView : AbstractInstallerView  {
         ignore_button.clicked.connect (() => next_step ());
 
         show_all ();
+    }
+
+    public void show_non_root () {
+        var grid = setup_grid (
+            _("Not Running As Root"),
+            _("Root is required for this application to make changes to the system"),
+            "dialog-password-symbolic"
+        );
+        grid.show_all ();
+
+        stack.add (grid);
+        stack.set_visible_child (grid);
     }
 
     // If all the requirements are met, skip this view (return true);
