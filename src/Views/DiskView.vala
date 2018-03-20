@@ -102,22 +102,82 @@ public class Installer.DiskView : AbstractInstallerView {
     }
 
     // If possible, open devices in a different thread so that the interface stays awake.
-    public async void load () {
-        var disks = yield Installer.Disk.get_disks ();
-        foreach (var disk in disks) {
-            var disk_button = new DiskButton (disk);
-            disk_grid.add (disk_button);
-            disk_button.clicked.connect (() => {
-                if (disk_button.active) {
-                    disk_grid.get_children ().foreach ((child) => {
-                        ((Gtk.ToggleButton)child).active = child == disk_button;
-                    });
+    public async void load (uint64 minimum_disk_size) {
+        DiskButton[] enabled_buttons = {};
+        DiskButton[] disabled_buttons = {};
 
-                    next_button.sensitive = true;
+        Distinst.Disks disks = Distinst.Disks.probe ();
+        foreach (unowned Distinst.Disk disk in disks.list ()) {
+            // Skip root disk or live disk
+            if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
+                continue;
+            }
+
+            var size = disk.get_sectors () * disk.get_sector_size ();
+
+            // Drives are identifiable by whether they are rotational and/or removable.
+            string icon_name = null;
+            if (disk.is_removable ()) {
+                if (disk.is_rotational ()) {
+                    icon_name = "drive-harddisk-usb";
                 } else {
-                    next_button.sensitive = false;
+                    icon_name = "drive-removable-media-usb";
                 }
-            });
+            } else if (disk.is_rotational ()) {
+                icon_name = "drive-harddisk-scsi";
+            } else {
+                icon_name = "drive-harddisk-solidstate";
+            }
+
+            // NOTE: Why does casting as a string not work?
+            uint8[] raw_path = disk.get_device_path ();
+            var path_builder = new GLib.StringBuilder.sized (raw_path.length);
+            path_builder.append_len ((string) raw_path, raw_path.length);
+
+            string label;
+            string model = disk.get_model ();
+            if (model.length == 0) {
+                label = disk.get_serial ().replace ("_", " ");
+            } else {
+                label = model;
+            }
+
+            string path = (owned) path_builder.str;
+
+            var disk_button = new DiskButton (
+                label,
+                icon_name,
+                path,
+                size
+            );
+
+            if (size < minimum_disk_size) {
+                disk_button.set_sensitive(false);
+
+                disabled_buttons += disk_button;
+            } else {
+                disk_button.clicked.connect (() => {
+                    if (disk_button.active) {
+                        disk_grid.get_children ().foreach ((child) => {
+                            ((Gtk.ToggleButton)child).active = child == disk_button;
+                        });
+
+                        next_button.sensitive = true;
+                    } else {
+                        next_button.sensitive = false;
+                    }
+                });
+
+                enabled_buttons += disk_button;
+            }
+        }
+
+        foreach (DiskButton disk_button in enabled_buttons) {
+            disk_grid.add (disk_button);
+        }
+
+        foreach (DiskButton disk_button in disabled_buttons) {
+            disk_grid.add (disk_button);
         }
 
         disk_grid.show_all ();
