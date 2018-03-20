@@ -102,7 +102,7 @@ public class Installer.DiskView : AbstractInstallerView {
     }
 
     // If possible, open devices in a different thread so that the interface stays awake.
-    public async void load () {
+    public async void load (uint64 minimum_disk_size) {
         Distinst.Disks disks = Distinst.Disks.probe ();
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
@@ -149,7 +149,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
             disk_grid.add (disk_button);
 
-            if (size < 5000000000) {
+            if (size < minimum_disk_size) {
                 disk_button.set_sensitive(false);
             } else {
                 disk_button.clicked.connect (() => {
