@@ -15,14 +15,185 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-textview.terminal {
-    background-color: #252e32;
-    color: #94a3a5;
+.terminal text{
+    background-color: #333;
+    color: #f6f6f6;
 }
 
-textview.terminal selection {
-    background-color: #93a1a1;
-    color: #252e32;
+.terminal selection {
+    background-color: #48b9c7;
+    color: #fff;
+}
+
+/* Needed to prevent shadow clipping. */
+buttonbox {
+    margin: 8px;
+}
+
+.os-installer headerbar {
+    min-height: 48px;
+}
+
+.os-installer stack {
+    padding-bottom: 12px;
+}
+
+.h2 {
+    font-size: 20pt;
+    font-weight: 200;
+}
+
+.artwork {
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.disks {
+    background-image: url("resource:///io/elementary/installer/drive-selection.png");
+}
+
+@keyframes language {
+  0% {
+    background-image: url("resource:///io/elementary/installer/language1.png"),
+                      url("resource:///io/elementary/installer/language.png");
+  }
+  50% {
+    background-image: url("resource:///io/elementary/installer/language.png"),
+                      url("resource:///io/elementary/installer/language.png");
+  }
+  100% {
+    background-image: url("resource:///io/elementary/installer/language1.png"),
+                      url("resource:///io/elementary/installer/language.png");
+  }
+}
+
+.language {
+    background-image: url("resource:///io/elementary/installer/language1.png"),
+                      url("resource:///io/elementary/installer/language.png");
+    animation: language 800ms ease infinite forwards;
+}
+
+@keyframes keyboard {
+  0% {
+    background-image: url("resource:///io/elementary/installer/keyboard1.png"),
+                      url("resource:///io/elementary/installer/keyboard.png");
+  }
+  50% {
+    background-image: url("resource:///io/elementary/installer/keyboard2.png"),
+                      url("resource:///io/elementary/installer/keyboard.png");
+  }
+  100% {
+    background-image: url("resource:///io/elementary/installer/keyboard3.png"),
+                      url("resource:///io/elementary/installer/keyboard.png");
+  }
+}
+
+.keyboard {
+    background-image: url("resource:///io/elementary/installer/keyboard.png");
+    animation: keyboard 1s ease infinite alternate;
+}
+
+@keyframes encrypt {
+  0% {
+    background-image: url("resource:///io/elementary/installer/encryption1.png"),
+                      url("resource:///io/elementary/installer/encryption.png");
+  }
+  50% {
+    background-image: url("resource:///io/elementary/installer/encryption2.png"),
+                      url("resource:///io/elementary/installer/encryption.png");
+  }
+  100% {
+    background-image: url("resource:///io/elementary/installer/encryption3.png"),
+                      url("resource:///io/elementary/installer/encryption.png");
+  }
+}
+
+.encrypt {
+  background-image: url("resource:///io/elementary/installer/encryption1.png"),
+                    url("resource:///io/elementary/installer/encryption.png");
+    animation: encrypt 600ms ease infinite alternate;
+}
+
+@keyframes issue {
+  from {
+    background-image: url("resource:///io/elementary/installer/issue-detection1.png"),
+                      url("resource:///io/elementary/installer/issue-detection.png");
+  }
+  to {
+    background-image: url("resource:///io/elementary/installer/issue-detection.png"),
+                      url("resource:///io/elementary/installer/issue-detection.png");
+  }
+}
+
+.issue {
+    background-image: url("resource:///io/elementary/installer/issue-detection1.png"),
+                      url("resource:///io/elementary/installer/issue-detection.png");
+    animation: issue 500ms ease-in-out infinite alternate;
+}
+
+.error {
+    background-image: url("resource:///io/elementary/installer/catastrophic-error.png");
+}
+
+@keyframes try {
+  0% {
+    background-image: url("resource:///io/elementary/installer/try-install1.png"),
+                      url("resource:///io/elementary/installer/try-install.png");
+  }
+  33% {
+    background-image: url("resource:///io/elementary/installer/try-install2.png"),
+                      url("resource:///io/elementary/installer/try-install.png");
+  }
+  66% {
+    background-image: url("resource:///io/elementary/installer/try-install3.png"),
+                      url("resource:///io/elementary/installer/try-install.png");
+  }
+  100% {
+    background-image: url("resource:///io/elementary/installer/try-install1.png"),
+                      url("resource:///io/elementary/installer/try-install.png");
+  }
+}
+
+.try-install {
+    background-image: url("resource:///io/elementary/installer/try-install1.png"),
+                      url("resource:///io/elementary/installer/try-install.png");
+    animation: try 3s ease infinite forwards;
+}
+
+@keyframes progress {
+  from {
+    background-image: url("resource:///io/elementary/installer/progress1.png"),
+                      url("resource:///io/elementary/installer/progress.png");
+  }
+  to {
+    background-image: url("resource:///io/elementary/installer/progress.png"),
+                      url("resource:///io/elementary/installer/progress.png");
+  }
+}
+
+.progress {
+    background-image: url("resource:///io/elementary/installer/progress1.png"),
+                      url("resource:///io/elementary/installer/progress.png");
+
+    animation: progress 300ms ease infinite alternate;
+}
+
+@keyframes success {
+  from {
+    background-image: url("resource:///io/elementary/installer/success1.png"),
+                      url("resource:///io/elementary/installer/success.png");
+  }
+  to {
+    background-image: url("resource:///io/elementary/installer/success.png"),
+                      url("resource:///io/elementary/installer/success.png");
+  }
+}
+
+.success {
+    background-image: url("resource:///io/elementary/installer/success1.png"),
+                      url("resource:///io/elementary/installer/success.png");
+    animation: success 450ms ease infinite alternate;
 }
 
 .ext2, .ext3, .ext4 {
