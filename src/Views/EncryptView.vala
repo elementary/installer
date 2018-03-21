@@ -164,6 +164,7 @@ public class EncryptView : AbstractInstallerView {
         next_button.clicked.connect (() => {
             if (stack.visible_child == choice_grid) {
                 stack.visible_child = password_grid;
+                pw_entry.grab_focus ();
                 next_button.label = _("Select Drive");
                 update_next_button ();
             } else if (stack.visible_child == password_grid) {

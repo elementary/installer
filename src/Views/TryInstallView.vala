@@ -50,7 +50,7 @@ public class TryInstallView : AbstractInstallerView {
         implications_image.halign = Gtk.Align.END;
         implications_image.valign = Gtk.Align.START;
 
-        var implications_label = new Gtk.Label (_("In Demo Mode, changes you make will not be saved and data from your previous operating system will be unchanged."));
+        var implications_label = new Gtk.Label (_("In Demo Mode, changes you make will not be saved and data from your previous operating system will be unchanged. Performance and features may not reflect the installed experience."));
         implications_label.halign = Gtk.Align.START;
         implications_label.max_width_chars = 52;
         implications_label.valign = Gtk.Align.START;
