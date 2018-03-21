@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-02-09 19:44+0000\n"
+"PO-Revision-Date: 2018-03-22 00:05+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian <https://weblate.elementary.io/projects/installer/"
-"installer/sl/>\n"
+"Language-Team: Slovenian "
+"<https://weblate.elementary.io/projects/installer/installer/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
@@ -31,14 +31,12 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "Ni bilo mogoče spremeniti imena domene za Distinst log"
+msgstr "Ni bilo mogoče spremeniti imena domene za Distinst dnevnik"
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "Začenjam namestitev\n"
+msgstr "Začenjam namestitev"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -66,7 +64,6 @@ msgid "Cancel Installation"
 msgstr "Prekliči namestitev"
 
 #: src/Views/AbstractInstallerView.vala:56
-#, fuzzy
 msgid "Test Mode"
 msgstr "Demonstracijski način"
 
@@ -239,9 +236,8 @@ msgid "Finishing the Installation"
 msgstr "Zaključevanje namestitve"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "Demonstracijski način"
+msgstr "Namesti ali preizkusi v demonstracijskem načinu"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -255,9 +251,10 @@ msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged."
 msgstr ""
+"V demonstracijskem načinu spremembe ne bodo shranjene in vaš obstoječ "
+"operacijski sistem ostane nedotaknjen."
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
@@ -270,7 +267,7 @@ msgid "Restart your device to continue setting up"
 msgstr "Ponovno zaženite računalnik za nadaljevanje namestitve"
 
 #: src/Views/SuccessView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
