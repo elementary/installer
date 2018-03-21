@@ -284,7 +284,7 @@ public class ProgressView : AbstractInstallerView {
         }
 
         new Thread<void*> (null, () => {
-            installer.install (disks, config);
+            installer.install ((owned) disks, config);
             return null;
         });
     }
