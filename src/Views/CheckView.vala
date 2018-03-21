@@ -29,6 +29,7 @@ public class Installer.CheckView : AbstractInstallerView  {
     public static uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
     public signal void next_step ();
+    public signal void status_changed (bool met_requirements);
 
     bool enough_space = true;
     bool enough_power = true;
@@ -36,6 +37,9 @@ public class Installer.CheckView : AbstractInstallerView  {
 
     int frequency = 0;
     uint64 memory = 0;
+
+    public static uint64 minimum_disk_size;
+    private UPower upower;
 
     enum State {
         NONE,
@@ -48,7 +52,8 @@ public class Installer.CheckView : AbstractInstallerView  {
     private Gtk.Button ignore_button;
     private Gtk.Stack stack;
 
-    public CheckView () {
+    public CheckView (uint64 size) {
+        minimum_disk_size = size;
         Object (cancellable: true);
     }
 
@@ -60,7 +65,7 @@ public class Installer.CheckView : AbstractInstallerView  {
 
         ignore_button = new Gtk.Button.with_label (_("Ignore"));
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        ignore_button.clicked.connect (() => show_next ());
+        ignore_button.clicked.connect (() => next_step ());
 
         show_all ();
     }
@@ -89,29 +94,14 @@ public class Installer.CheckView : AbstractInstallerView  {
     }
 
     private static bool get_has_enough_space () {
-        bool enough_space = false;
-        try {
-            var client = new DBusObjectManagerClient.for_bus_sync (BusType.SYSTEM, GLib.DBusObjectManagerClientFlags.NONE,
-                                                            "org.freedesktop.UDisks2", "/org/freedesktop/UDisks2", null);
-            client.get_objects ().foreach ((object) => {
-                var drive_interface = object.get_interface ("org.freedesktop.UDisks2.Drive");
-                if (drive_interface != null) {
-                    try {
-                        UDisks2.Drive drive = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UDisks2", object.get_object_path ());
-                        if (drive.removable) {
-                            return;
-                        }
-
-                        enough_space |= drive.size > MINIMUM_SPACE;
-                    } catch (Error e) {
-                        warning (e.message);
-                    }
-                }
-            });
-        } catch (Error e) {
-            critical (e.message);
+        Distinst.Disks disks = Distinst.Disks.probe ();
+        foreach (unowned Distinst.Disk disk in disks.list ()) {
+            uint64 size = disk.get_sectors () * disk.get_sector_size ();
+            if (size > minimum_disk_size) {
+                return true;
+            }
         }
-        return enough_space;
+        return false;
     }
 
     private int get_frequency () {
@@ -151,14 +141,23 @@ public class Installer.CheckView : AbstractInstallerView  {
     }
 
     private bool get_is_on_battery () {
-        try {
-            UPower upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower");
-            return upower.on_battery;
-        } catch (Error e) {
-            warning (e.message);
+        if (upower == null) {
+            try {
+                upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
+
+                (upower as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
+                    var _on_battery = changed.lookup_value ("OnBattery", GLib.VariantType.BOOLEAN);
+                    if (_on_battery != null) {
+                        status_changed (check_requirements ());
+                    }
+                });
+            } catch (Error e) {
+                warning (e.message);
+                return false;
+            }
         }
 
-        return false;
+        return upower.on_battery;
     }
 
     private void show_next () {
@@ -172,7 +171,6 @@ public class Installer.CheckView : AbstractInstallerView  {
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
-                    next_step ();
                     return;
                 }
 
@@ -183,7 +181,6 @@ public class Installer.CheckView : AbstractInstallerView  {
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
-                    next_step ();
                     return;
                 }
 
@@ -192,13 +189,11 @@ public class Installer.CheckView : AbstractInstallerView  {
                 if (!powered) {
                     next_state = State.POWERED;
                 } else {
-                    next_step ();
                     return;
                 }
 
                 break;
             case State.POWERED:
-                next_step ();
                 return;
         }
 
