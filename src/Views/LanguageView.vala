@@ -123,6 +123,12 @@ public class Installer.LanguageView : AbstractInstallerView {
                 Configuration.get_default ().lang = lang;
             }
 
+            unowned Gtk.ListBoxRow crow = lang_variant_widget.variant_listbox.get_selected_row ();
+            if (crow != null) {
+                string country = ((CountryRow) crow).country_entry.alpha_2;
+                Configuration.get_default ().country = country;
+            }
+
             next_step ();
         });
 
