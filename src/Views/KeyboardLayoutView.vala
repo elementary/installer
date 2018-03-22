@@ -82,14 +82,15 @@ public class KeyboardLayoutView : AbstractInstallerView {
             unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
             if (row != null) {
                 var layout = ((LayoutRow) row).layout;
-                Configuration.get_default ().keyboard_layout = layout.name;
+                unowned Configuration configuration = Configuration.get_default ();
+                configuration.keyboard_layout = layout.name;
 
                 unowned Gtk.ListBoxRow vrow = input_variant_widget.variant_listbox.get_selected_row ();
                 if (vrow != null) {
                     string variant = ((VariantRow) vrow).code;
-                    Configuration.get_default ().keyboard_variant = variant;
+                    configuration.keyboard_variant = variant;
                 } else if (layout.variants.is_empty) {
-                    Configuration.get_default ().keyboard_variant = null;
+                    configuration.keyboard_variant = null;
                 } else {
                     row.activate ();
                     return;
