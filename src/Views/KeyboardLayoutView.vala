@@ -91,11 +91,12 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 } else if (layout.variants.is_empty) {
                     Configuration.get_default ().keyboard_variant = null;
                 } else {
-                    row.activate();
+                    row.activate ();
                     return;
                 }
             } else {
-                error ("next_button enabled when no keyboard selected");
+                warning ("next_button enabled when no keyboard selected");
+                next_button.sensitive = false;
                 return;
             }
 
