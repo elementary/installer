@@ -87,6 +87,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         try_install_view.previous_view = keyboard_layout_view;
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
+        load_checkview ();
 
         try_install_view.next_step.connect (() => load_checkview ());
     }
@@ -107,7 +108,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         check_view.next_step.connect (() => {
             check_ignored = true;
-            load_encryptview ();
+            stack.visible_child = check_view.previous_view;
         });
 
         check_view.status_changed.connect ((met_requirements) => {
