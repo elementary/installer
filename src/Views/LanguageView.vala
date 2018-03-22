@@ -122,14 +122,15 @@ public class Installer.LanguageView : AbstractInstallerView {
                 var lang_entry = ((LangRow) row).lang_entry;
                 string lang = lang_entry.get_code ();
                 Environment.set_variable ("LANGUAGE", lang, true);
-                Configuration.get_default ().lang = lang;
+                unowned Configuration configuration = Configuration.get_default ();
+                configuration.lang = lang;
 
                 unowned Gtk.ListBoxRow crow = lang_variant_widget.variant_listbox.get_selected_row ();
                 if (crow != null) {
                     string country = ((CountryRow) crow).country_entry.alpha_2;
-                    Configuration.get_default ().country = country;
+                    configuration.country = country;
                 } else if (lang_entry.countries.length == 0) {
-                    Configuration.get_default ().country = null;
+                    configuration.country = null;
                 } else {
                     row.activate ();
                     return;
