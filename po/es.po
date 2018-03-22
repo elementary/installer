@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-17 05:34+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-03-21 00:04+0000\n"
+"Last-Translator: Adolfo Jayme-Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/installer/installer/es/>\n"
 "Language: es\n"
@@ -22,7 +22,7 @@ msgstr "Instalar %s"
 
 #: src/Utils.vala:156
 msgid "Operating System"
-msgstr "Sistema Operativo"
+msgstr "Sistema operativo"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
 #, c-format
@@ -39,11 +39,11 @@ msgstr "Iniciando Instalación"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr "¿Estás seguro de que quieres apagar?"
+msgstr "¿Confirma que quiere apagar?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "Ésto cancelará la instalación y apagará este dispositivo."
+msgstr "Esto cancelará la instalación y apagará este dispositivo."
 
 #: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
 msgid "Restart"
@@ -60,11 +60,11 @@ msgstr "Apagar"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr "Cancelar Instalación"
+msgstr "Cancelar instalación"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
-msgstr "Probar modo"
+msgstr "Modo de prueba"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -80,24 +80,24 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"No hay suficiente espacio en tu dispositivo para instalar %s. Recomendamos "
-"un mínimo de %s de almacenamiento."
+"No hay espacio suficiente en el dispositivo para instalar %s. Recomendamos %"
+"s de almacenamiento mínimo."
 
 #: src/Views/CheckView.vala:220
 msgid "Your Device May Be Too Slow"
-msgstr "Tu dispositivo puede ser demasiado lento"
+msgstr "El dispositivo puede ser demasiado lento"
 
 #: src/Views/CheckView.vala:221
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"El dispositivo no cumple los requisitos de hardware recomendados. Ésto puede "
+"El dispositivo no cumple los requisitos de hardware recomendados. Esto puede "
 "hacer que funcione lentamente o se congele."
 
 #: src/Views/CheckView.vala:237
 msgid "Connect to a Power Source"
-msgstr "Conectar a una fuente de alimentación"
+msgstr "Conéctese a una fuente de alimentación"
 
 #: src/Views/CheckView.vala:238
 msgid ""
@@ -113,7 +113,7 @@ msgstr "Recomendado:"
 
 #: src/Views/CheckView.vala:300
 msgid "Your Device:"
-msgstr "Tu dispositivo:"
+msgstr "Su dispositivo:"
 
 #: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
 msgid "Processor:"
@@ -125,16 +125,15 @@ msgstr "Memoria:"
 
 #: src/Views/DiskView.vala:49
 msgid "Select a drive to use for installation"
-msgstr "Selecciona la unidad que quieres usar para la instalación"
+msgstr "Seleccione la unidad que utilizar para la instalación"
 
 #: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"Se borrarán todos los datos de la unidad seleccionada. Si no has realizado "
-"una copia de seguridad de tus datos, puedes cancelar la instalación y usar "
-"el modo Demo."
+"Se eliminarán todos los datos de la unidad seleccionada. Si no ha respaldado "
+"sus datos, puede cancelar la instalación y utilizar el modo de demostración."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
@@ -142,7 +141,7 @@ msgstr "Obteniendo la configuración actual…"
 
 #: src/Views/DiskView.vala:94
 msgid "Erase and Install"
-msgstr "Borrar e Instalar"
+msgstr "Borrar e instalar"
 
 #: src/Views/ErrorView.vala:32
 #, c-format
@@ -155,7 +154,7 @@ msgid ""
 "try one of the following:"
 msgstr ""
 "La instalación falló, por lo que es posible que el dispositivo no se "
-"reinicie correctamente. Puedes probar lo siguiente:"
+"reinicie correctamente. Puede probar lo siguiente:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -163,7 +162,7 @@ msgstr "• Intentar instalar de nuevo"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Utilizar el modo Demo e intentar la recuperación manualmente"
+msgstr "• Utilizar el modo de demostración y probar la recuperación manual"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
@@ -175,19 +174,19 @@ msgstr "Reiniciar dispositivo"
 
 #: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
-msgstr "Probar modo Demo"
+msgstr "Probar modo de demostración"
 
 #: src/Views/ErrorView.vala:78
 msgid "Try Installing Again"
-msgstr "Intente Instalar Nuevamente"
+msgstr "Intentar instalar nuevamente"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr "Diseño de Teclado"
+msgstr "Disposición de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr "Escribe para probar la disposición"
+msgstr "Escriba para probar la disposición"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
@@ -204,7 +203,7 @@ msgstr "Seleccionar"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
-msgstr "Por defecto"
+msgstr "Predeterminado"
 
 #: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
@@ -212,11 +211,11 @@ msgstr "Idioma de escritura"
 
 #: src/Views/LanguageView.vala:201
 msgid "Languages"
-msgstr "Idioma"
+msgstr "Idiomas"
 
 #: src/Views/LanguageView.vala:218
 msgid "Select a Language"
-msgstr "Selecciona un idioma"
+msgstr "Seleccione un idioma"
 
 #: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
 msgid "Currently active language"
@@ -228,11 +227,11 @@ msgstr "Particionando disco"
 
 #: src/Views/ProgressView.vala:311
 msgid "Extracting Files"
-msgstr "Extrayendo Archivos"
+msgstr "Extrayendo archivos"
 
 #: src/Views/ProgressView.vala:315
 msgid "Configuring the System"
-msgstr "Configurando el Sistema"
+msgstr "Configurando el sistema"
 
 #: src/Views/ProgressView.vala:319
 msgid "Finishing the Installation"
@@ -240,35 +239,35 @@ msgstr "Finalizando la instalación"
 
 #: src/Views/TryInstallView.vala:33
 msgid "Install or Try Demo Mode"
-msgstr "Instalar o probar el modo de Demo"
+msgstr "Instalar o probar el modo de demostración"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
-"Puedes instalar %s en este dispositivo ahora, o probar el modo Demo sin "
-"necesidad de instalarlo."
+"Puede instalar %s en este dispositivo ahora o probar el modo de demostración "
+"sin instalarlo."
 
 #: src/Views/TryInstallView.vala:53
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged."
 msgstr ""
-"En el modo Demo, los cambios que realice no se guardarán y los datos de su "
-"sistema operativo no se verán afectados."
+"En el modo de demostración, los cambios que realice no se guardarán y los "
+"datos del sistema operativo anterior no se verán afectados."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"Siempre puede volver al instalador desde el modo de Demo, solo seleccionando "
-"el icono Instalar."
+"Siempre puede volver al instalador desde el modo de demostración al "
+"seleccionar el icono Instalar."
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
-msgstr "Reinicia el dispositivo para continuar con la configuración"
+msgstr "Reinicie el dispositivo para continuar con la configuración"
 
 #: src/Views/SuccessView.vala:38
 #, c-format
@@ -276,17 +275,17 @@ msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
 msgstr ""
-"Su dispositivo se reiniciará automáticamente en  %s con 30 segundos y "
-"empezar a configurar un nuevo usuario, o puede cerrar ahora y configurar un "
-"usuario más tarde."
+"El dispositivo se reiniciará automáticamente en %s en 30 segundos para "
+"configurar una cuenta de usuario nueva, o puede apagar ahora y configurar la "
+"cuenta más tarde."
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
-msgstr "apagado del modo de prueba"
+msgstr "Apagado del modo de prueba"
 
 #: src/Views/SuccessView.vala:84
 msgid "Test mode reboot"
-msgstr "reinicio del modo de prueba"
+msgstr "Reinicio del modo de prueba"
 
 #~ msgid "Formating Drive"
 #~ msgstr "Formateando la Unidad"
