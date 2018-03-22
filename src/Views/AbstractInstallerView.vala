@@ -19,6 +19,7 @@
 public abstract class AbstractInstallerView : Gtk.Grid {
     public bool cancellable { get; construct; }
     public unowned Gtk.Widget? previous_view { get; set; }
+    public Gtk.Label? test_label = null;
     
     public signal void previous_step ();
 
@@ -59,7 +60,7 @@ public abstract class AbstractInstallerView : Gtk.Grid {
         }
         
         if (Installer.App.test_mode) {
-            var test_label = new Gtk.Label (_("Test Mode"));
+            test_label = new Gtk.Label (_("Test Mode"));
             action_area.add (test_label);
         }
 
