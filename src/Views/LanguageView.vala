@@ -131,11 +131,12 @@ public class Installer.LanguageView : AbstractInstallerView {
                 } else if (lang_entry.countries.length == 0) {
                     Configuration.get_default ().country = null;
                 } else {
-                    row.activate();
+                    row.activate ();
                     return;
                 }
             } else {
-                error ("next_button enabled when no language selected");
+                warning ("next_button enabled when no language selected");
+                next_button.sensitive = false;
                 return;
             }
 
