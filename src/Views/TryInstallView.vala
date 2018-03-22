@@ -93,37 +93,15 @@ public class TryInstallView : AbstractInstallerView {
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        var shutdown_button = new Gtk.Button.from_icon_name ("system-shutdown-symbolic", Gtk.IconSize.BUTTON);
-        shutdown_button.tooltip_text = _("Shut Down");
-        shutdown_button.get_style_context ().add_class ("circular");
-
-        action_area.add (shutdown_button);
         action_area.add (back_button);
         action_area.add (demo_button);
         action_area.add (next_button);
-        action_area.set_child_secondary (shutdown_button, true);
-        action_area.set_child_non_homogeneous (shutdown_button, true);
 
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
-        demo_button.clicked.connect (() => {
-            var seat = Utils.get_seat_instance ();
-            if (seat != null) {
-                try {
-                    seat.switch_to_guest ("");
-                } catch (IOError e) {
-                    stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
-                }
-            }
-        });
+        demo_button.clicked.connect (() => Installer.App.get_instance ().quit ());
 
         next_button.clicked.connect (() => next_step ());
-
-        shutdown_button.clicked.connect (() => {
-            var end_session_dialog = new EndSessionDialog ();
-            end_session_dialog.transient_for = (Gtk.Window) get_toplevel ();
-            end_session_dialog.run ();
-        });
 
         show_all ();
     }
