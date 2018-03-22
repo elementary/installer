@@ -78,22 +78,34 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
-        next_button.clicked.connect (() => next_step ());
+        next_button.clicked.connect (() => {
+            unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
+            if (row != null) {
+                var layout = ((LayoutRow) row).layout;
+                Configuration.get_default ().keyboard_layout = layout.name;
 
-        input_variant_widget.going_to_main.connect (() => {
-            next_button.sensitive = false;
+                unowned Gtk.ListBoxRow vrow = input_variant_widget.variant_listbox.get_selected_row ();
+                if (vrow != null) {
+                    string variant = ((VariantRow) vrow).code;
+                    Configuration.get_default ().keyboard_variant = variant;
+                } else if (layout.variants.is_empty) {
+                    Configuration.get_default ().keyboard_variant = null;
+                } else {
+                    row.activate();
+                    return;
+                }
+            } else {
+                error ("next_button enabled when no keyboard selected");
+                return;
+            }
+
+            next_step ();
         });
 
         input_variant_widget.main_listbox.row_activated.connect ((row) => {
             var layout = ((LayoutRow) row).layout;
-
-            unowned Configuration config = Configuration.get_default ();
-            config.keyboard_layout = layout.name;
-            config.keyboard_variant = null;
-
             var variants = layout.variants;
             if (variants.is_empty) {
-                next_button.sensitive = true;
                 return;
             }
 
@@ -108,14 +120,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             input_variant_widget.show_variants (_("Input Language"), "<b>%s</b>".printf (layout.description));
         });
 
-        input_variant_widget.variant_listbox.row_selected.connect ((row) => {
-            unowned Configuration config = Configuration.get_default ();
-            if (row != null) {
-                config.keyboard_variant = ((VariantRow) row).code;
-            } else {
-                config.keyboard_variant = null;
-            }
-
+        input_variant_widget.main_listbox.row_selected.connect ((row) => {
             next_button.sensitive = true;
         });
 
