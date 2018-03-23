@@ -12,5 +12,5 @@ install:
  - sudo add-apt-repository -y ppa:elementary-os/daily && sudo apt update && sudo apt install -y io.elementary.vala-lint
 
 script:
- - io.elementary.vala-lint **/*
+ - docker run -v "$PWD":/var/opt/vala-lint elementary/docker:vala-lint
  - docker run -v "$PWD":/tmp/build-dir elementary/docker:juno-unstable /bin/sh -c "apt-get update && apt-get -y dist-upgrade && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && meson build --prefix=/usr && ninja -C build test"
