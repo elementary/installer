@@ -21,6 +21,7 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_error ();
 
     private Gtk.ScrolledWindow terminal_output;
+    public Gtk.TextView terminal_view { get; construct; }
     private Gtk.ProgressBar progressbar;
     private Gtk.Label progressbar_label;
     private const int NUM_STEP = 5;
@@ -32,7 +33,7 @@ public class ProgressView : AbstractInstallerView {
         logo.get_style_context ().add_class ("logo");
 
         unowned LogHelper log_helper = LogHelper.get_default ();
-        var terminal_view = new Gtk.TextView.with_buffer (log_helper.buffer);
+        terminal_view = new Gtk.TextView.with_buffer (log_helper.buffer);
         terminal_view.bottom_margin = terminal_view.top_margin = terminal_view.left_margin = terminal_view.right_margin = 12;
         terminal_view.editable = false;
         terminal_view.cursor_visible = true;
@@ -97,6 +98,10 @@ public class ProgressView : AbstractInstallerView {
     private bool terminal_is_at_bottom () {
         var adj = terminal_output.vadjustment;
         return adj.upper - adj.page_size - adj.value <= 50;
+    }
+
+    public string get_log () {
+        return terminal_view.buffer.text;
     }
 
     // TODO: This should receive the disk configuration from the user.
