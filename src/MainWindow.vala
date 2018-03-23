@@ -93,11 +93,11 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     private void update_check_view (bool show) {
         if (show) {
-            check_view.ignore_view = stack.visible_child;
+            check_view.previous_view = stack.visible_child;
             stack.visible_child = check_view;
-        } else if (check_view.ignore_view != null) {
-            stack.visible_child = check_view.ignore_view;
-            check_view.ignore_view = null;
+        } else if (check_view.previous_view != null) {
+            stack.visible_child = check_view.previous_view;
+            check_view.previous_view = null;
         }
     }
 
@@ -107,7 +107,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         check_view = new Installer.CheckView (minimum_disk_size);
-        check_view.previous_view = try_install_view;
         stack.add (check_view);
 
         check_view.status_changed.connect ((met_requirements) => {
@@ -118,8 +117,10 @@ public class Installer.MainWindow : Gtk.Dialog {
             }
         });
 
-        check_view.previous_step.connect (() => {
-            check_view.ignore_view = null;
+        check_view.cancel.connect (() => {
+            stack.visible_child = try_install_view;
+            check_view.previous_view = null;
+            check_view.destroy ();
         });
 
         check_view.next_step.connect (() => {
@@ -153,10 +154,14 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         disk_view = new DiskView ();
-        disk_view.previous_view = try_install_view;
+        disk_view.previous_view = encrypt_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
         disk_view.load.begin(minimum_disk_size);
+
+        disk_view.cancel.connect (() => {
+            stack.visible_child = try_install_view;
+        });
 
         disk_view.next_step.connect (() => load_progress_view ());
     }
