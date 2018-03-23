@@ -23,7 +23,7 @@ public class Installer.App : Gtk.Application {
         { "test", 't', 0, OptionArg.NONE, out test_mode, "Non-destructive test mode", null},
         { null }
     };
-    
+
     public static bool test_mode;
 
     private static Installer.App instance = null;

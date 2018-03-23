@@ -21,8 +21,8 @@ public class ErrorView : AbstractInstallerView {
 
     public string log { get; construct; }
 
-    public ErrorView(string log) {
-        Object(log: log);
+    public ErrorView (string log) {
+        Object (log: log);
     }
 
     construct {
@@ -99,8 +99,8 @@ public class ErrorView : AbstractInstallerView {
         label_area.attach (grid,        1, 0, 1, 2);
 
         var content_stack = new Gtk.Stack ();
-        content_stack.add(label_area);
-        content_stack.add(terminal_output);
+        content_stack.add (label_area);
+        content_stack.add (terminal_output);
 
         var terminal_button = new Gtk.ToggleButton ();
         terminal_button.halign = Gtk.Align.END;
