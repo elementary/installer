@@ -91,7 +91,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         try_install_view.next_step.connect (() => load_encryptview ());
     }
 
-    private void update_check_view (bool show) {
+    private void set_check_view_visible (bool show) {
         if (show) {
             check_view.previous_view = stack.visible_child;
             stack.visible_child = check_view;
@@ -110,10 +110,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (check_view);
 
         check_view.status_changed.connect ((met_requirements) => {
-            // If check is not ignored
             if (!check_ignored) {
-                // Change the check view visibility
-                update_check_view (!met_requirements);
+                set_check_view_visible (!met_requirements);
             }
         });
 
@@ -125,12 +123,10 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         check_view.next_step.connect (() => {
             check_ignored = true;
-            // Hide the check view
-            update_check_view (false);
+            set_check_view_visible (false);
         });
 
-        // Show the check_view if check is not ignored and requirements not met
-        update_check_view (!check_ignored && !check_view.check_requirements ());
+        set_check_view_visible (!check_ignored && !check_view.check_requirements ());
     }
 
     private void load_encryptview () {
