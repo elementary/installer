@@ -160,7 +160,7 @@ public class ProgressView : AbstractInstallerView {
             flag = Distinst.SectorKind.END,
             value = 0
         };
-        
+
         // Each disk that will have changes made to it should be added to a Disks object. This
         // object will be passed to the install method, and used as a blueprint for how changes
         // to each disk should be made, and where critical partitions are located.
@@ -194,9 +194,9 @@ public class ProgressView : AbstractInstallerView {
                     on_error ();
                     return;
                 }
-                
+
                 disks.push (disk);
-                
+
                 //TODO: encryption on BIOS
 
                 break;
@@ -251,34 +251,34 @@ public class ProgressView : AbstractInstallerView {
                     on_error ();
                     return;
                 }
-                
+
                 disks.push (disk);
-                
+
                 result = disks.initialize_volume_groups ();
-                
+
                 if (result != 0) {
                     warning ("unable to initialize volume groups on %s\n", current_config.disk);
                     on_error ();
                     return;
                 }
-                
+
                 unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume ("data");
-                
+
                 if (lvm_device == null) {
                     warning ("unable to find 'data' volume group on %s\n", current_config.disk);
                     on_error ();
                     return;
                 }
-                
+
                 start = lvm_device.get_sector (ref start_sector);
                 end = lvm_device.get_sector (ref end_sector);
-                
+
                 result = lvm_device.add_partition(
                     new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
                         .name("root")
                         .mount ("/")
                 );
-                
+
                 if (result != 0) {
                     warning ("unable to add / partition to lvm on %s\n", current_config.disk);
                     on_error ();
