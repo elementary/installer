@@ -51,14 +51,14 @@ public class EncryptView : AbstractInstallerView {
         protect_label.wrap = true;
         protect_label.xalign = 0;
 
-        var performance_image = new Gtk.Image.from_icon_name ("sensors-voltage-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var performance_image = new Gtk.Image.from_icon_name ("utilities-system-monitor-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         var performance_label = new Gtk.Label (_("Drive encryption may minimally impact read and write speed when performing intense tasks."));
         performance_label.max_width_chars = 52;
         performance_label.wrap = true;
         performance_label.xalign = 0;
 
-        var restart_image = new Gtk.Image.from_icon_name ("rotation-locked-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var restart_image = new Gtk.Image.from_icon_name ("system-restart-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         var restart_label = new Gtk.Label (_("The encryption password will be required each time you turn on this device or restart."));
         restart_label.max_width_chars = 52;
