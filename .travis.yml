@@ -9,7 +9,7 @@ env:
  - DEPENDENCY_PACKAGES="meson desktop-file-utils gettext libdistinst-dev libgtk-3-dev libgee-0.8-dev libgranite-dev libxml2-dev libjson-glib-dev libgnomekbd-dev libpwquality-dev libxml2-utils valac"
 
 install:
- - docker build -t vala-lint https://github.com/elementary/docker#master:vala-lint
+ - docker build -t vala-lint github.com/elementary/docker#master:vala-lint
 
 script:
  - docker run -v "$PWD":/var/opt/vala-lint vala-lint
