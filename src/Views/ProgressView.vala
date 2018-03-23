@@ -20,6 +20,7 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
+    private double last_upper;
     private Gtk.ScrolledWindow terminal_output;
     public Gtk.TextView terminal_view { get; construct; }
     private Gtk.ProgressBar progressbar;
@@ -81,6 +82,16 @@ public class ProgressView : AbstractInstallerView {
             }
         });
 
+        // This event is signaled before the text view is redrawn, so we can use
+        // this to get the last adjustment's upper value.
+        terminal_view.buffer.changed.connect (() => {
+            last_upper = terminal_output.vadjustment.upper;
+        });
+
+        // After the terminal's text view has updated, it will have a new
+        // upper adjustment value. This can be used to check if the user
+        // is at the bottom, where we should enable automatic scrolling,
+        // or if we shouldn't update the scrolling position.
         terminal_view.size_allocate.connect (() => {
             if (terminal_is_at_bottom ()) {
                 scroll_to_bottom ();
@@ -97,7 +108,12 @@ public class ProgressView : AbstractInstallerView {
 
     private bool terminal_is_at_bottom () {
         var adj = terminal_output.vadjustment;
-        return adj.upper - adj.page_size - adj.value <= 50;
+        var diff = adj.upper - last_upper;
+        if (diff < 0) {
+            diff = 0;
+        }
+        var adjusted = adj.upper - adj.page_size - adj.value;
+        return adjusted - diff <= diff * 2;
     }
 
     public string get_log () {
