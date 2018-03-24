@@ -20,7 +20,6 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
-    private bool overshot;
     private double prev_upper_adj = 0;
     private Gtk.ScrolledWindow terminal_output;
     public Gtk.TextView terminal_view { get; construct; }
