@@ -87,9 +87,18 @@ public class Installer.MainWindow : Gtk.Dialog {
         try_install_view.previous_view = keyboard_layout_view;
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
-        load_checkview ();
 
-        try_install_view.next_step.connect (() => load_checkview ());
+        try_install_view.next_step.connect (() => load_encryptview ());
+    }
+
+    private void set_check_view_visible (bool show) {
+        if (show) {
+            check_view.previous_view = stack.visible_child;
+            stack.visible_child = check_view;
+        } else if (check_view.previous_view != null) {
+            stack.visible_child = check_view.previous_view;
+            check_view.previous_view = null;
+        }
     }
 
     private void load_checkview () {
@@ -98,30 +107,26 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         check_view = new Installer.CheckView (minimum_disk_size);
-        check_view.previous_view = try_install_view;
         stack.add (check_view);
-        if (check_ignored || check_view.check_requirements ()) {
-            load_encryptview ();
-        } else {
-            stack.visible_child = check_view;
-        }
-
-        check_view.next_step.connect (() => {
-            check_ignored = true;
-            stack.visible_child = check_view.previous_view;
-        });
 
         check_view.status_changed.connect ((met_requirements) => {
             if (!check_ignored) {
-                if (!met_requirements) {
-                    check_view.previous_view = stack.visible_child;
-                    stack.visible_child = check_view;
-                } else {
-                    stack.visible_child = check_view.previous_view;
-                    check_view.previous_view = try_install_view;
-                }
+                set_check_view_visible (!met_requirements);
             }
         });
+
+        check_view.cancel.connect (() => {
+            stack.visible_child = try_install_view;
+            check_view.previous_view = null;
+            check_view.destroy ();
+        });
+
+        check_view.next_step.connect (() => {
+            check_ignored = true;
+            set_check_view_visible (false);
+        });
+
+        set_check_view_visible (!check_ignored && !check_view.check_requirements ());
     }
 
     private void load_encryptview () {
@@ -134,6 +139,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (encrypt_view);
         stack.visible_child = encrypt_view;
 
+        load_checkview ();
+
         encrypt_view.next_step.connect (() => load_diskview ());
     }
 
@@ -143,10 +150,14 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         disk_view = new DiskView ();
-        disk_view.previous_view = try_install_view;
+        disk_view.previous_view = encrypt_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
         disk_view.load.begin(minimum_disk_size);
+
+        disk_view.cancel.connect (() => {
+            stack.visible_child = try_install_view;
+        });
 
         disk_view.next_step.connect (() => load_progress_view ());
     }
