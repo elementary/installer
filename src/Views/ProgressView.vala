@@ -20,7 +20,8 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
-    private double last_upper;
+    private bool overshot;
+    private double prev_upper_adj = 0;
     private Gtk.ScrolledWindow terminal_output;
     public Gtk.TextView terminal_view { get; construct; }
     private Gtk.ProgressBar progressbar;
@@ -82,38 +83,30 @@ public class ProgressView : AbstractInstallerView {
             }
         });
 
-        // This event is signaled before the text view is redrawn, so we can use
-        // this to get the last adjustment's upper value.
-        terminal_view.buffer.changed.connect (() => {
-            last_upper = terminal_output.vadjustment.upper;
-        });
-
-        // After the terminal's text view has updated, it will have a new
-        // upper adjustment value. This can be used to check if the user
-        // is at the bottom, where we should enable automatic scrolling,
-        // or if we shouldn't update the scrolling position.
-        terminal_view.size_allocate.connect (() => {
-            if (terminal_is_at_bottom ()) {
-                scroll_to_bottom ();
-            }
-        });
+        terminal_view.size_allocate.connect (() => attempt_scroll ());
 
         show_all ();
+    }
+
+    private void attempt_scroll () {
+        var adj = terminal_output.vadjustment;
+
+        var units_from_end = prev_upper_adj - adj.page_size - adj.value;
+        var view_size_difference = adj.upper - prev_upper_adj;
+        if (view_size_difference < 0) {
+            view_size_difference = 0;
+        }
+
+        if (prev_upper_adj <= adj.page_size || units_from_end <= 50) {
+            scroll_to_bottom ();
+        }
+
+        prev_upper_adj = adj.upper;
     }
 
     private void scroll_to_bottom () {
         var adj = terminal_output.vadjustment;
         adj.value = adj.upper;
-    }
-
-    private bool terminal_is_at_bottom () {
-        var adj = terminal_output.vadjustment;
-        var diff = adj.upper - last_upper;
-        if (diff < 0) {
-            diff = 0;
-        }
-        var adjusted = adj.upper - adj.page_size - adj.value;
-        return adjusted - diff <= diff * 2;
     }
 
     public string get_log () {
@@ -129,6 +122,8 @@ public class ProgressView : AbstractInstallerView {
 
         var config = Distinst.Config ();
         unowned Configuration current_config = Configuration.get_default ();
+
+        config.flags = Distinst.MODIFY_BOOT_ORDER;
 
         config.hostname = "todo";
 
@@ -323,6 +318,7 @@ public class ProgressView : AbstractInstallerView {
         }
 
         new Thread<void*> (null, () => {
+            GLib.Thread.usleep (3000000);
             installer.install ((owned) disks, config);
             return null;
         });
