@@ -318,7 +318,6 @@ public class ProgressView : AbstractInstallerView {
         }
 
         new Thread<void*> (null, () => {
-            GLib.Thread.usleep (3000000);
             installer.install ((owned) disks, config);
             return null;
         });
