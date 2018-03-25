@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2017-09-25 07:59+0000\n"
+"PO-Revision-Date: 2018-03-26 00:08+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://weblate.elementary.io/projects/installer/"
-"installer/fi/>\n"
+"Language-Team: Finnish "
+"<https://weblate.elementary.io/projects/installer/installer/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
@@ -34,9 +34,8 @@ msgid "Unable to set the Distinst log callback"
 msgstr ""
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "Käynnistetään asennus\n"
+msgstr "Käynnistetään asennus"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -64,9 +63,8 @@ msgid "Cancel Installation"
 msgstr "Peru asennus"
 
 #: src/Views/AbstractInstallerView.vala:56
-#, fuzzy
 msgid "Test Mode"
-msgstr "Kokeile demotilaa"
+msgstr "Testitila"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -240,9 +238,8 @@ msgid "Finishing the Installation"
 msgstr "Valmistellaan asennusta"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "Kokeile demotilaa"
+msgstr "Asenna tai kokeile testitilaa"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -257,14 +254,15 @@ msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged."
 msgstr ""
+"Testitilassa tekemiäsi muutoksia ei tallenneta, ja tietoja edellisestä "
+"käyttöjärjestelmästäsi ei muuteta."
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"Voit palata demotilasta asennusohjelmaan napsauttamalla Asenna-kuvaketta."
+"Voit palata testitilasta asennusohjelmaan napsauttamalla Asenna-kuvaketta."
 
 #: src/Views/SuccessView.vala:32
 msgid "Restart your device to continue setting up"
