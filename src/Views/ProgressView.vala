@@ -20,6 +20,8 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
+    private double prev_upper_adj = 0;
+    private Gtk.ScrolledWindow terminal_output;
     public Gtk.TextView terminal_view { get; construct; }
     private Gtk.ProgressBar progressbar;
     private Gtk.Label progressbar_label;
@@ -40,7 +42,7 @@ public class ProgressView : AbstractInstallerView {
         terminal_view.wrap_mode = Gtk.WrapMode.WORD_CHAR;
         terminal_view.get_style_context ().add_class ("terminal");
 
-        var terminal_output = new Gtk.ScrolledWindow (null, null);
+        terminal_output = new Gtk.ScrolledWindow (null, null);
         terminal_output.hscrollbar_policy = Gtk.PolicyType.NEVER;
         terminal_output.expand = true;
         terminal_output.add (terminal_view);
@@ -74,12 +76,36 @@ public class ProgressView : AbstractInstallerView {
         terminal_button.toggled.connect (() => {
             if (terminal_button.active) {
                 logo_stack.visible_child = terminal_output;
+                scroll_to_bottom ();
             } else {
                 logo_stack.visible_child = logo;
             }
         });
 
+        terminal_view.size_allocate.connect (() => attempt_scroll ());
+
         show_all ();
+    }
+
+    private void attempt_scroll () {
+        var adj = terminal_output.vadjustment;
+
+        var units_from_end = prev_upper_adj - adj.page_size - adj.value;
+        var view_size_difference = adj.upper - prev_upper_adj;
+        if (view_size_difference < 0) {
+            view_size_difference = 0;
+        }
+
+        if (prev_upper_adj <= adj.page_size || units_from_end <= 50) {
+            scroll_to_bottom ();
+        }
+
+        prev_upper_adj = adj.upper;
+    }
+
+    private void scroll_to_bottom () {
+        var adj = terminal_output.vadjustment;
+        adj.value = adj.upper;
     }
 
     public string get_log () {
@@ -95,6 +121,8 @@ public class ProgressView : AbstractInstallerView {
 
         var config = Distinst.Config ();
         unowned Configuration current_config = Configuration.get_default ();
+
+        config.flags = Distinst.MODIFY_BOOT_ORDER;
 
         config.hostname = "todo";
 
