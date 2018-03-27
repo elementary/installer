@@ -31,7 +31,6 @@ public class Installer.DiskView : AbstractInstallerView {
 
     construct {
         disk_grid = new Gtk.Grid ();
-        disk_grid.column_spacing = 6;
         disk_grid.halign = Gtk.Align.CENTER;
         disk_grid.valign = Gtk.Align.CENTER;
         disk_grid.orientation = Gtk.Orientation.VERTICAL;
@@ -89,6 +88,7 @@ public class Installer.DiskView : AbstractInstallerView {
         title_grid.attach (install_desc_label, 0, 2, 1, 1);
 
         content_area.valign = Gtk.Align.FILL;
+        content_area.column_homogeneous = true;
         content_area.attach (title_grid, 0, 0, 1, 1);
         content_area.attach (load_stack, 1, 0, 1, 1);
 
