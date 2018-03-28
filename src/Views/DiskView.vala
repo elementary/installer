@@ -35,6 +35,7 @@ public class Installer.DiskView : AbstractInstallerView {
         disk_grid.valign = Gtk.Align.CENTER;
         disk_grid.orientation = Gtk.Orientation.VERTICAL;
         disk_grid.vexpand = true;
+        disk_grid.row_spacing = 6;
 
         var disk_scrolled = new Gtk.ScrolledWindow (null, null);
         disk_scrolled.vexpand = true;
