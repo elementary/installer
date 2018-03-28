@@ -49,8 +49,8 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         size_label.halign = Gtk.Align.START;
 
         var grid = new Gtk.Grid ();
-        grid.margin = 12;
-        grid.column_spacing = 12;
+        grid.margin = 6;
+        grid.column_spacing = 6;
         grid.row_spacing = 6;
         grid.orientation = Gtk.Orientation.VERTICAL;
         grid.attach (disk_image, 0, 0, 1, 2);
