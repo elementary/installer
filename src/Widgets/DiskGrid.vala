@@ -42,11 +42,13 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         var name_label = new Gtk.Label (disk_name);
         name_label.hexpand = true;
         name_label.halign = Gtk.Align.START;
+        name_label.valign = Gtk.Align.END;
 
         var size_label = new Gtk.Label ("<small>%s %s</small>".printf (disk_path, GLib.format_size (size)));
         size_label.use_markup = true;
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         size_label.halign = Gtk.Align.START;
+        size_label.valign = Gtk.Align.START;
 
         var grid = new Gtk.Grid ();
         grid.margin = 6;
