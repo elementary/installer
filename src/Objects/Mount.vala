@@ -24,14 +24,17 @@ public class Installer.Mount {
     public string mount_point;
     public Distinst.FileSystemType filesystem;
     public bool format;
+    public PartitionMenu menu;
 
     public Mount (string partition, string parent_disk, string mount,
-                  bool format, Distinst.FileSystemType fs) {
-        partition_path = partition;
-        this.parent_disk = parent_disk;
-        mount_point = mount;
+                  bool format, Distinst.FileSystemType fs,
+                  PartitionMenu menu) {
         filesystem = fs;
+        mount_point = mount;
+        partition_path = partition;
         this.format = format;
+        this.menu = menu;
+        this.parent_disk = parent_disk;
     }
 
     public bool is_valid_boot_mount () {

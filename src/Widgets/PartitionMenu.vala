@@ -24,12 +24,15 @@ public delegate void UnsetMount (string partition);
 
 public class Installer.PartitionMenu : Gtk.Popover {
     private Gtk.Grid grid;
-    private Gtk.Switch use_partition;
-    private Gtk.ComboBoxText use_as;
-    private Gtk.Entry custom;
-    private Gtk.ComboBoxText type;
-    private string partition_path;
-    private string parent_disk;
+    public Gtk.Switch use_partition;
+    public Gtk.ComboBoxText use_as;
+    public Gtk.Entry custom;
+    public Gtk.ComboBoxText type;
+    public Gtk.Label type_label;
+    public Gtk.Label custom_label;
+    public string partition_path;
+    public string parent_disk;
+    public bool disable_signals;
 
     public PartitionMenu (string path, string parent, SetMount set_mount, UnsetMount unset_mount) {
         partition_path = path;
@@ -41,8 +44,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
 
         var use_partition_label = new Gtk.Label ("Use partition:");
         var use_as_label = new Gtk.Label ("Use as:");
-        var custom_label = new Gtk.Label ("Custom:");
-        var type_label = new Gtk.Label ("Type:");
+        custom_label = new Gtk.Label ("Custom:");
+        type_label = new Gtk.Label ("Type:");
 
         use_partition_label.set_halign (Gtk.Align.END);
         use_as_label.set_halign (Gtk.Align.END);
@@ -95,6 +98,10 @@ public class Installer.PartitionMenu : Gtk.Popover {
         custom_label.set_visible (false);
 
         use_as.changed.connect(() => {
+            if (disable_signals) {
+                return;
+            }
+
             var active = use_as.get_active ();
             bool visible = active == 4;
 
@@ -120,9 +127,24 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 type.set_sensitive (true);
             }
         });
-        type.changed.connect(() => check_values (set_mount));
-        custom.changed.connect(() => check_values (set_mount));
+
+        type.changed.connect(() => {
+            if (!disable_signals) {
+                check_values (set_mount);
+            }
+        });
+
+        custom.changed.connect(() => {
+            if (!disable_signals) {
+                check_values (set_mount);
+            }
+        });
+
         use_partition.notify["active"].connect (() => {
+            if (disable_signals) {
+                return;
+            }
+
             if (use_partition.active) {
                 update_values (set_mount);
             } else {
@@ -138,7 +160,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     }
 
     private void update_values (SetMount set_mount) {
-        set_mount (new Installer.Mount (partition_path, parent_disk, get_mount (), true, get_file_system ()));
+        set_mount (new Installer.Mount (partition_path, parent_disk, get_mount (), true, get_file_system (), this));
     }
 
     private Distinst.FileSystemType get_file_system () {

@@ -24,6 +24,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
     public uint64 start;
     public uint64 end;
     public uint64 used;
+    public new string path;
 
     public Distinst.Partition* info;
     public Gtk.Label label;
@@ -42,7 +43,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
             used = end - start;
         }
 
-        string path = Utils.string_from_utf8 (part->get_device_path ());
+        path = Utils.string_from_utf8 (part->get_device_path ());
 
         var fs = part->get_file_system ();
         var filesystem = Distinst.strfilesys (fs);
