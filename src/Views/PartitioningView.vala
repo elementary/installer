@@ -23,7 +23,6 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     private Gtk.Button next_button;
     private Distinst.Disks disks;
-    private GLib.Array<PartitionBar> partitions;
 
     public GLib.Array<Installer.Mount> mounts;
 
@@ -70,7 +69,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 label = model;
             }
 
-            partitions = new GLib.Array<PartitionBar> ();
+            var partitions = new GLib.Array<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
                 var partition = new PartitionBar (part, path, sector_size, this.set_mount, this.unset_mount);
                 partitions.append_val (partition);
@@ -106,6 +105,12 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         const uint8 ROOT = 1;
         const uint8 BOOT = 2;
 
+        stderr.printf("DEBUG: Current Layout:\n");
+        for (int i = 0; i < mounts.length; i++) {
+            var m = mounts.index (i);
+            stderr.printf("  %s : %s\n", m.partition_path, m.mount_point);
+        }
+
         for (int i = 0; i < mounts.length; i++) {
             var m = mounts.index (i);
 
@@ -125,6 +130,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     }
 
     private void set_mount (Mount mount) {
+        unset_mount_point (mount);
+
         for (int i = 0; i < mounts.length; i++) {
             var m = mounts.index (i);
             if (m.partition_path == mount.partition_path) {
@@ -154,5 +161,31 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         }
 
         validate_status ();
+    }
+
+    private void unset_mount_point (Mount src) {
+        var found_mount = false;
+        int i = 0;
+        for (; i < mounts.length; i++) {
+            var m = mounts.index (i);
+            if (m.mount_point == src.mount_point && m.partition_path != src.partition_path) {
+                m.menu.disable_signals = true;
+                m.menu.use_partition.active = false;
+                m.menu.use_as.set_active (0);
+                m.menu.type.set_active (0);
+                m.menu.type.set_sensitive (true);
+                m.menu.type.set_visible (true);
+                m.menu.type_label.set_visible (true);
+                m.menu.custom.set_visible (false);
+                m.menu.custom_label.set_visible (false);
+                m.menu.disable_signals = false;
+                found_mount = true;
+                break;
+            }
+        }
+
+        if (found_mount) {
+            mounts.remove_index (i);
+        }
     }
 }
