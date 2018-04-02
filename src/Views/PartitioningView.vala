@@ -109,9 +109,9 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         for (int i = 0; i < mounts.length; i++) {
             var m = mounts.index (i);
 
-            if (m.mount_point == "/") {
+            if (m.mount_point == "/" && m.is_valid_root_mount ()) {
                 flags |= ROOT;
-            } else if (m.mount_point == "/boot/efi" && m.has_esp_fs ()) {
+            } else if (m.mount_point == "/boot/efi" && m.is_valid_boot_mount ()) {
                 flags |= BOOT;
             }
 

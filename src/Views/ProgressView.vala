@@ -194,26 +194,7 @@ public class ProgressView : AbstractInstallerView {
                 return;
             }
 
-            if (m.mount_point == "/") {
-                bool valid_fs = m.filesystem != Distinst.FileSystemType.FAT16
-                    && m.filesystem != Distinst.FileSystemType.FAT32
-                    && m.filesystem != Distinst.FileSystemType.NTFS;
-
-                if (!valid_fs) {
-                    warning ("root file system is not valid\n");
-                    on_error ();
-                    return;
-                }
-            } else if (m.mount_point == "/boot/efi") {
-                bool valid_fs = m.filesystem == Distinst.FileSystemType.FAT16
-                    || m.filesystem == Distinst.FileSystemType.FAT32;
-
-                if (!valid_fs) {
-                    warning ("ESP partition must be either Fat16 or Fat32\n");
-                    on_error ();
-                    return;
-                }
-
+            if (m.mount_point == "/boot/efi") {
                 Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
                 partition.set_flags (flags);
             }

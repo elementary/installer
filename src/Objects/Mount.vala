@@ -34,8 +34,14 @@ public class Installer.Mount {
         this.format = format;
     }
 
-    public bool has_esp_fs () {
+    public bool is_valid_boot_mount () {
         return filesystem == Distinst.FileSystemType.FAT16
             || filesystem == Distinst.FileSystemType.FAT32;
+    }
+
+    public bool is_valid_root_mount () {
+        return filesystem != Distinst.FileSystemType.FAT16
+            && filesystem != Distinst.FileSystemType.FAT32
+            && filesystem != Distinst.FileSystemType.NTFS;
     }
 }
