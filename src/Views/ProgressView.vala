@@ -270,11 +270,6 @@ public class ProgressView : AbstractInstallerView {
             value = 0
         };
 
-        // Each disk that will have changes made to it should be added to a Disks object. This
-        // object will be passed to the install method, and used as a blueprint for how changes
-        // to each disk should be made, and where critical partitions are located.
-        var disks = new Distinst.Disks ();
-
         // Wipes the partition table clean with a brand new partition table.
         int result = disk.mklabel (bootloader);
 
