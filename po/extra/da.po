@@ -14,8 +14,8 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 
 #: data/io.elementary.installer.desktop.in:3
-msgid "Install elementary OS"
-msgstr "Installér elementary OS"
+msgid "Install Pop!_OS"
+msgstr "Installér Pop!_OS"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"

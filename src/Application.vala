@@ -26,11 +26,20 @@ public class Installer.App : Gtk.Application {
 
     public static bool test_mode;
 
+    private static Installer.App instance = null;
+
     construct {
         application_id = "io.elementary.installer";
         flags = ApplicationFlags.FLAGS_NONE;
         Intl.setlocale (LocaleCategory.ALL, "");
         add_main_option_entries (INSTALLER_OPTIONS);
+        instance = this;
+    }
+    
+    public static Installer.App get_instance () {
+        assert (instance != null);
+        
+        return instance;
     }
 
     public override void activate () {

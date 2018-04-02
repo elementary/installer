@@ -7,7 +7,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
 #: data/io.elementary.installer.desktop.in:3
-msgid "Install elementary OS"
+msgid "Install Pop!_OS"
 msgstr ""
 
 #: data/io.elementary.installer.desktop.in:4

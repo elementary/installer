@@ -35,11 +35,6 @@ public class SuccessView : AbstractInstallerView {
         primary_label.xalign = 0;
         primary_label.get_style_context ().add_class ("h2");
 
-        var secondary_label = new Gtk.Label (_("Your device will automatically restart to %s in 30 seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name ()));
-        secondary_label.max_width_chars = 60;
-        secondary_label.wrap = true;
-        secondary_label.xalign = 0;
-
         content_area.halign = Gtk.Align.CENTER;
         content_area.valign = Gtk.Align.CENTER;
         content_area.margin_end = 22;
@@ -47,7 +42,6 @@ public class SuccessView : AbstractInstallerView {
         content_area.row_spacing = 6;
         content_area.attach (image, 0, 0, 1, 2);
         content_area.attach (primary_label, 1, 0, 1, 1);
-        content_area.attach (secondary_label, 1, 1, 1, 1);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
 
@@ -71,10 +65,10 @@ public class SuccessView : AbstractInstallerView {
             }
         });
 
-        Timeout.add_seconds (30, () => {
-            session_restart ();
-            return GLib.Source.REMOVE;
-        });
+        // Timeout.add_seconds (30, () => {
+        //     session_restart ();
+        //     return GLib.Source.REMOVE;
+        // });
 
         show_all ();
     }
@@ -91,4 +85,3 @@ public class SuccessView : AbstractInstallerView {
         }
     }
 }
-

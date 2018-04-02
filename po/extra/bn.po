@@ -21,8 +21,8 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/io.elementary.installer.desktop.in:3
-msgid "Install elementary OS"
-msgstr "elementary OS ইনস্টল করুন"
+msgid "Install Pop!_OS"
+msgstr "Pop!_OS ইনস্টল করুন"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"

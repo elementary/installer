@@ -27,6 +27,8 @@ public class Installer.CheckView : AbstractInstallerView  {
     public static int MINIMUM_FREQUENCY = 1200 * 1000;
     // Minimum 1GB
     public static uint64 MINIMUM_MEMORY = 1 * ONE_GB;
+    
+    public unowned Gtk.Widget? ignore_view { get; set; }
 
     public signal void next_step ();
     public signal void status_changed (bool met_requirements);
