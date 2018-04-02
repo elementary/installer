@@ -34,7 +34,6 @@ public class Installer.DiskButton : Gtk.ToggleButton {
     }
 
     construct {
-        margin = 12;
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
@@ -42,19 +41,23 @@ public class Installer.DiskButton : Gtk.ToggleButton {
 
         var name_label = new Gtk.Label (disk_name);
         name_label.hexpand = true;
+        name_label.halign = Gtk.Align.START;
+        name_label.valign = Gtk.Align.END;
 
         var size_label = new Gtk.Label ("<small>%s %s</small>".printf (disk_path, GLib.format_size (size)));
         size_label.use_markup = true;
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        size_label.halign = Gtk.Align.START;
+        size_label.valign = Gtk.Align.START;
 
         var grid = new Gtk.Grid ();
-        grid.margin = 12;
-        grid.column_spacing = 12;
+        grid.margin = 6;
+        grid.column_spacing = 6;
         grid.row_spacing = 6;
         grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.attach (disk_image, 0, 0, 1, 1);
-        grid.attach (name_label, 0, 1, 1, 1);
-        grid.attach (size_label, 0, 2, 1, 1);
+        grid.attach (disk_image, 0, 0, 1, 2);
+        grid.attach (name_label, 1, 0, 1, 1);
+        grid.attach (size_label, 1, 1, 1, 1);
         add (grid);
         notify["active"].connect (() => {
             if (active) {
