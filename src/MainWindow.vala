@@ -147,6 +147,10 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         load_checkview ();
 
+        partition_view.cancel.connect (() => {
+            stack.visible_child = try_install_view;
+        });
+
         partition_view.next_step.connect (() => {
             load_progress_view ((owned) partition_view.mounts);
         });
@@ -198,14 +202,14 @@ public class Installer.MainWindow : Gtk.Dialog {
         progress_view.on_error.connect (() => {
             load_error_view (progress_view.get_log ());
         });
-        
+
         start_date = new DateTime.now_local ();
         end_date = null;
-        
+
         if (progress_view.test_label != null) {
             progress_view.test_label.set_text(_("Test Mode") + " 0.00");
         }
-        
+
         var time_source = GLib.Timeout.add (10, () => {
             end_date = new DateTime.now_local ();
             if (progress_view.test_label != null) {
@@ -214,17 +218,17 @@ public class Installer.MainWindow : Gtk.Dialog {
             }
             return GLib.Source.CONTINUE;
         });
-        
+
         progress_view.on_success.connect(() => {
             end_date = new DateTime.now_local ();
             GLib.Source.remove(time_source);
         });
-        
+
         progress_view.on_error.connect(() => {
             end_date = new DateTime.now_local ();
             GLib.Source.remove(time_source);
         });
-        
+
         progress_view.start_installation ();
     }
 
@@ -236,7 +240,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         success_view = new SuccessView ();
         stack.add (success_view);
         stack.visible_child = success_view;
-        
+
         if (success_view.test_label != null && start_date != null && end_date != null) {
             var time_span = end_date.difference(start_date);
             success_view.test_label.set_text (_("Test Mode") + " %.2f".printf((double)time_span/1000000.0));
