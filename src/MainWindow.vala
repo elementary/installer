@@ -253,10 +253,9 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         error_view = new ErrorView (log);
+        error_view.previous_view = try_install_view;
         stack.add (error_view);
         stack.visible_child = error_view;
-
-        error_view.previous_view = try_or_install_view;
     }
 
     public override void close () {}
