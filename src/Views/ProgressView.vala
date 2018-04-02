@@ -194,21 +194,19 @@ public class ProgressView : AbstractInstallerView {
                 return;
             }
 
-            if (partition.mount_point == "/") {
-                switch (partition.filesystem) {
-                    bool valid_fs = partition.filesystem != Distinst.FileSystemType.FAT16
-                        && partition.filesystem != Distinst.FileSystemType.FAT32
-                        && partition.filesystem != NTFS;
+            if (m.mount_point == "/") {
+                bool valid_fs = m.filesystem != Distinst.FileSystemType.FAT16
+                    && m.filesystem != Distinst.FileSystemType.FAT32
+                    && m.filesystem != Distinst.FileSystemType.NTFS;
 
-                    if (!valid_fs) {
-                        warning ("root file system is not valid\n");
-                        on_error ();
-                        return;
-                    }
+                if (!valid_fs) {
+                    warning ("root file system is not valid\n");
+                    on_error ();
+                    return;
                 }
-            } else if (partition.mount_point == "/boot/efi") {
-                bool valid_fs = partition.filesystem == Distinst.FileSystemType.FAT16
-                    || partition.filesystem == Distinst.FileSystemType.FAT32;
+            } else if (m.mount_point == "/boot/efi") {
+                bool valid_fs = m.filesystem == Distinst.FileSystemType.FAT16
+                    || m.filesystem == Distinst.FileSystemType.FAT32;
 
                 if (!valid_fs) {
                     warning ("ESP partition must be either Fat16 or Fat32\n");
