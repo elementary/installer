@@ -22,5 +22,51 @@ textview.terminal {
 
 textview.terminal selection {
     background-color: #93a1a1;
-    color: #252e32; 
+    color: #252e32;
+}
+
+.partition {
+    border-style: solid;
+    border-right-width: 1px;
+}
+
+.disk-bar {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.ext2, .ext3, .ext4 {
+    background-color: rgb(114, 147, 203);
+}
+
+.fat16, .fat32 {
+    background-color: rgb(225, 151, 76);
+}
+
+.btrfs {
+  background-color: rgb(132, 186, 91);
+}
+
+.xfs {
+  background-color: rgb(211, 94, 96);
+}
+
+.ntfs {
+  background-color: rgb(144, 103, 167);
+}
+
+.luks {
+  background-color: rgb(171, 104, 87);
+}
+
+.lvm {
+  background-color: rgb(204, 194, 16);
+}
+
+.none {
+  background-color: rgb(128, 133, 133);
+}
+
+.swap {
+  background-color: rgb(218, 124, 48);
 }

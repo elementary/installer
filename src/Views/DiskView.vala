@@ -131,11 +131,6 @@ public class Installer.DiskView : AbstractInstallerView {
                 icon_name = "drive-harddisk-solidstate";
             }
 
-            // NOTE: Why does casting as a string not work?
-            uint8[] raw_path = disk.get_device_path ();
-            var path_builder = new GLib.StringBuilder.sized (raw_path.length);
-            path_builder.append_len ((string) raw_path, raw_path.length);
-
             string label;
             string model = disk.get_model ();
             if (model.length == 0) {
@@ -144,7 +139,7 @@ public class Installer.DiskView : AbstractInstallerView {
                 label = model;
             }
 
-            string path = (owned) path_builder.str;
+            string path = Utils.string_from_utf8(disk.get_device_path ());
 
             var disk_button = new DiskButton (
                 label,

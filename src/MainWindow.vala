@@ -26,6 +26,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private TryInstallView try_install_view;
     private Installer.CheckView check_view;
     private DiskView disk_view;
+    private PartitioningView partition_view;
     private ProgressView progress_view;
     private SuccessView success_view;
     private EncryptView encrypt_view;
@@ -91,6 +92,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
+        try_install_view.custom_step.connect (() => load_partitioning_view ());
         try_install_view.next_step.connect (() => load_encryptview ());
     }
 
@@ -133,6 +135,23 @@ public class Installer.MainWindow : Gtk.Dialog {
         set_check_view_visible (!check_ignored && !check_view.check_requirements ());
     }
 
+    private void load_partitioning_view() {
+        if (partition_view != null) {
+            partition_view.destroy ();
+        }
+
+        partition_view = new PartitioningView (minimum_disk_size);
+        partition_view.previous_view = try_install_view;
+        stack.add (partition_view);
+        stack.visible_child = partition_view;
+
+        load_checkview ();
+
+        partition_view.next_step.connect (() => {
+            load_progress_view ((owned) partition_view.mounts);
+        });
+    }
+
     private void load_encryptview () {
         if (encrypt_view != null) {
             encrypt_view.destroy ();
@@ -163,15 +182,15 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.visible_child = try_install_view;
         });
 
-        disk_view.next_step.connect (() => load_progress_view ());
+        disk_view.next_step.connect (() => load_progress_view (null));
     }
 
-    private void load_progress_view () {
+    private void load_progress_view (GLib.Array<Installer.Mount>? disk_config) {
         if (progress_view != null) {
             progress_view.destroy ();
         }
 
-        progress_view = new ProgressView ();
+        progress_view = new ProgressView (disk_config);
         stack.add (progress_view);
         stack.visible_child = progress_view;
 
