@@ -56,7 +56,11 @@ public abstract class AbstractInstallerView : Gtk.Grid {
 
         if (Installer.App.test_mode) {
             var test_label = new Gtk.Label (_("Test Mode"));
+            test_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+
             action_area.add (test_label);
+            action_area.set_child_non_homogeneous (test_label, true);
+            action_area.set_child_secondary (test_label, true);
         }
 
         orientation = Gtk.Orientation.VERTICAL;
