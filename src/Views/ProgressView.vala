@@ -318,7 +318,9 @@ public class ProgressView : AbstractInstallerView {
 
         new Thread<void*> (null, () => {
             if (Installer.App.test_mode) {
-                on_success ();
+                Idle.add (() => {
+                    on_success ();
+                });
             } else {
                 installer.install ((owned) disks, config);
             }
