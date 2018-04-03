@@ -58,9 +58,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         minimum_disk_size = Distinst.minimum_disk_size (5000000000);
 
         language_view.next_step.connect (() => load_keyboard_view ());
-
-        // FIXME: Remove this override
-        load_success_view ();
     }
 
     /*
