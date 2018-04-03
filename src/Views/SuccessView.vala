@@ -30,24 +30,24 @@ public class SuccessView : AbstractInstallerView {
 
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
 
-        var title_label = new Gtk.Label (_("Continue Setting Up"));
-        title_label.halign = Gtk.Align.START;
-        title_label.max_width_chars = 60;
-        title_label.wrap = true;
-        title_label.xalign = 0;
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        var primary_label = new Gtk.Label (_("Continue Setting Up"));
+        primary_label.halign = Gtk.Align.START;
+        primary_label.max_width_chars = 60;
+        primary_label.wrap = true;
+        primary_label.xalign = 0;
+        primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var description_label = new Gtk.Label (_("Your device will automatically restart to %s in %i seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name (), RESTART_TIMEOUT));
-        description_label.max_width_chars = 60;
-        description_label.wrap = true;
-        description_label.xalign = 0;
+        var secondary_label = new Gtk.Label (_("Your device will automatically restart to %s in %i seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name (), RESTART_TIMEOUT));
+        secondary_label.max_width_chars = 60;
+        secondary_label.wrap = true;
+        secondary_label.xalign = 0;
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = grid.row_spacing = 12;
         grid.valign = Gtk.Align.CENTER;
 
-        grid.attach (title_label, 0, 0, 1, 1);
-        grid.attach (description_label, 0, 1, 1, 1);
+        grid.attach (primary_label, 0, 0, 1, 1);
+        grid.attach (secondary_label, 0, 1, 1, 1);
 
         content_area.column_homogeneous = true;
         content_area.halign = Gtk.Align.CENTER;
