@@ -317,7 +317,12 @@ public class ProgressView : AbstractInstallerView {
         }
 
         new Thread<void*> (null, () => {
-            installer.install ((owned) disks, config);
+            if (Installer.App.test_mode) {
+                on_success ();
+            } else {
+                installer.install ((owned) disks, config);
+            }
+
             return null;
         });
     }
