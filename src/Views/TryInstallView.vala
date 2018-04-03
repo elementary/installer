@@ -17,6 +17,7 @@
  */
 
 public class TryInstallView : AbstractInstallerView {
+    public signal void custom_step ();
     public signal void next_step ();
     private Utils.SystemInterface system_interface;
 
@@ -90,6 +91,8 @@ public class TryInstallView : AbstractInstallerView {
 
         var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
 
+        var custom_button = new Gtk.Button.with_label (_("Custom Partitioning"));
+
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
@@ -100,6 +103,7 @@ public class TryInstallView : AbstractInstallerView {
         action_area.add (shutdown_button);
         action_area.add (back_button);
         action_area.add (demo_button);
+        action_area.add (custom_button);
         action_area.add (next_button);
         action_area.set_child_secondary (shutdown_button, true);
         action_area.set_child_non_homogeneous (shutdown_button, true);
@@ -117,6 +121,7 @@ public class TryInstallView : AbstractInstallerView {
             }
         });
 
+        custom_button.clicked.connect (() => custom_step ());
         next_button.clicked.connect (() => next_step ());
 
         shutdown_button.clicked.connect (() => {

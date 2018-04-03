@@ -20,12 +20,21 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
+    private GLib.Array<Installer.Mount>? disk_config;
+
     private double prev_upper_adj = 0;
     private Gtk.ScrolledWindow terminal_output;
     public Gtk.TextView terminal_view { get; construct; }
     private Gtk.ProgressBar progressbar;
     private Gtk.Label progressbar_label;
     private const int NUM_STEP = 5;
+
+    public ProgressView (GLib.Array<Installer.Mount>? mounts) {
+        if (mounts == null) {
+            stderr.printf ("mounts is null\n");
+        }
+        this.disk_config = mounts;
+    }
 
     construct {
         var logo = new Gtk.Image ();
@@ -130,6 +139,8 @@ public class ProgressView : AbstractInstallerView {
 
         config.lang = "en_US.UTF-8";
 
+        config.remove = Build.MANIFEST_REMOVE_PATH;
+
         //TODO: Use the following
         debug ("language: %s\n", current_config.lang);
         if (current_config.country != null) {
@@ -141,6 +152,63 @@ public class ProgressView : AbstractInstallerView {
         config.keyboard_layout = current_config.keyboard_layout;
         config.keyboard_model = null;
         config.keyboard_variant = current_config.keyboard_variant;
+
+        // Each disk that will have changes made to it should be added to a Disks object. This
+        // object will be passed to the install method, and used as a blueprint for how changes
+        // to each disk should be made, and where critical partitions are located.
+        var disks = new Distinst.Disks ();
+
+        if (disk_config == null) {
+            default_disk_configuration (disks);
+        } else {
+            custom_disk_configuration (disks);
+        }
+
+        new Thread<void*> (null, () => {
+            installer.install ((owned) disks, config);
+            return null;
+        });
+    }
+
+    private void custom_disk_configuration (Distinst.Disks disks) {
+        for (int i = 0; i < disk_config.length ; i++) {
+            var m = disk_config.index (i);
+
+            unowned Distinst.Disk disk = disks.get_physical_device (m.parent_disk);
+            if (disk == null) {
+                var new_disk = new Distinst.Disk (m.parent_disk);
+                if (new_disk == null) {
+                    warning ("could not find %s\n", m.parent_disk);
+                    on_error ();
+                    return;
+                }
+
+                disks.push (new_disk);
+                disk = disks.get_physical_device (m.parent_disk);
+            }
+
+            unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
+            if (partition == null) {
+                warning ("could not find %s\n", m.partition_path);
+                on_error ();
+                return;
+            }
+
+            if (m.mount_point == "/boot/efi") {
+                Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
+                partition.set_flags (flags);
+            }
+
+            if (m.filesystem != Distinst.FileSystemType.SWAP) {
+                partition.set_mount (m.mount_point);
+            }
+
+            partition.format_with (m.filesystem);
+        }
+    }
+
+    private void default_disk_configuration (Distinst.Disks disks) {
+        unowned Configuration current_config = Configuration.get_default ();
 
         Distinst.LvmEncryption? encryption;
         if (current_config.encryption_password != null) {
@@ -155,7 +223,6 @@ public class ProgressView : AbstractInstallerView {
             encryption = null;
         }
 
-        config.remove = Build.MANIFEST_REMOVE_PATH;
 
         // TODO: The following code is an example of API usage. Disk configurations should be
         // passed as a parameter into this method, rather than being hard-coded as it is below.
@@ -188,11 +255,6 @@ public class ProgressView : AbstractInstallerView {
             flag = Distinst.SectorKind.END,
             value = 0
         };
-
-        // Each disk that will have changes made to it should be added to a Disks object. This
-        // object will be passed to the install method, and used as a blueprint for how changes
-        // to each disk should be made, and where critical partitions are located.
-        var disks = new Distinst.Disks ();
 
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
@@ -315,11 +377,6 @@ public class ProgressView : AbstractInstallerView {
 
                 break;
         }
-
-        new Thread<void*> (null, () => {
-            installer.install ((owned) disks, config);
-            return null;
-        });
     }
 
     private void installation_status_callback (Distinst.Status status) {
