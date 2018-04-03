@@ -19,11 +19,13 @@
  */
 
 public class Installer.DiskBar: Gtk.Box {
-    public string disk_name;
-    public string disk_path;
-    public uint64 size;
+    public string disk_name { get; construct; }
+    public string disk_path { get; construct; }
+    public uint64 size { get; construct; }
+    public GLib.Array<PartitionBar> partitions { get; construct; }
 
     public Gtk.Box label;
+    public Gtk.Box bar;
 
     public DiskBar (
         string model,
@@ -31,18 +33,27 @@ public class Installer.DiskBar: Gtk.Box {
         uint64 size,
         GLib.Array<PartitionBar> partitions
     ) {
-        this.disk_name = model;
-        this.disk_path = path;
-        this.size = size;
-
-        generate_label ();
-        generate_bar (partitions);
+        Object (
+            disk_name: model,
+            disk_path: path,
+            partitions: partitions,
+            size: size
+        );
     }
 
     construct {
+        generate_label ();
+        generate_bar ();
+
         this.orientation = Gtk.Orientation.HORIZONTAL;
+        this.spacing = 12;
         this.hexpand = true;
-        this.get_style_context ().add_class("disk-bar");
+        this.get_style_context ().add_class("storage-bar");
+
+        this.pack_start (label, false, false, 0);
+        this.pack_start (bar, true, true, 0);
+
+        show_all ();
     }
 
     private void generate_label () {
@@ -58,19 +69,27 @@ public class Installer.DiskBar: Gtk.Box {
         label.valign = Gtk.Align.CENTER;
     }
 
-    private void generate_bar (GLib.Array<PartitionBar> partitions) {
-        for (int i = 0; i < partitions.length ; i++) {
-            var part = partitions.index(i);
-            this.pack_start(part, true, true, 0);
+    private void generate_bar () {
+        bar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        bar.get_style_context ().add_class ("trough");
+        for (int i = 0; i < partitions.length; i++) {
+            var part = partitions.index (i);
+            part.get_style_context ().add_class ("fill-bar");
+            part.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
+            part.button_press_event.connect (() => {
+                part.show_popover();
+                return true;
+            });
+            bar.pack_start(part, true, true, 0);
         }
 
-        this.size_allocate.connect ((alloc) => {
+        bar.size_allocate.connect ((alloc) => {
             update_sector_lengths (partitions, alloc.width);
         });
 
         GLib.Idle.add (() => {
             var alloc = Gtk.Allocation ();
-            this.get_allocation (out alloc);
+            bar.get_allocation (out alloc);
             update_sector_lengths (partitions, alloc.width);
             return GLib.Source.REMOVE;
         });
@@ -78,7 +97,7 @@ public class Installer.DiskBar: Gtk.Box {
 
     public void update_sector_lengths (GLib.Array<PartitionBar> partitions, int alloc_width) {
         var disk_sectors = this.size / 512;
-        for (int i = 0; i < partitions.length ; i++) {
+        for (int i = 0; i < partitions.length; i++) {
             partitions.index (i).update_length (alloc_width, disk_sectors);
         }
     }

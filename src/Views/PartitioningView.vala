@@ -75,17 +75,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 partitions.append_val (partition);
             }
 
-            for (int i = 0; i < partitions.length ; i++) {
-                var part = partitions.index(i);
-                part.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
-                part.button_press_event.connect (() => {
-                    part.show_popover();
-                });
-            }
-
-            var disk_bar = new DiskBar (model, path, size, partitions);
-            disk_list.attach(disk_bar.label, 0, id, 1, 1);
-            disk_list.attach(disk_bar, 1, id, 1, 1);
+            var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+            disk_list.attach(disk_bar, 0, id);
 
             id += 1;
         }
