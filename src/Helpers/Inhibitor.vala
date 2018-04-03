@@ -76,13 +76,13 @@ public class Inhibitor :  Object {
         }
     }
 
-   /* 
+   /*
     * Inhibit currently does not block a suspend from ocurring,
     * so we simulate user activity every 2 mins to prevent it
     */
     private void simulate_activity () {
         if (simulator_started) return;
-        
+
         simulator_started = true;
         Timeout.add_full (Priority.DEFAULT, 120000, ()=> {
             if (inhibited) {
@@ -95,7 +95,7 @@ public class Inhibitor :  Object {
             } else {
                 simulator_started = false;
             }
-            
+
             return inhibited;
         });
     }
