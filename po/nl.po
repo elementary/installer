@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-01-09 00:17+0000\n"
+"PO-Revision-Date: 2018-04-02 00:04+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
-"Language-Team: Dutch <https://weblate.elementary.io/projects/installer/"
-"installer/nl/>\n"
+"Language-Team: Dutch "
+"<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,14 +30,12 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "Kan de Distinst log domeinnaam niet wijzigen"
+msgstr "Kan de Distinst log callback niet instellen"
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "Installatie starten\n"
+msgstr "Installatie starten"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -65,9 +63,8 @@ msgid "Cancel Installation"
 msgstr "Annuleer installatie"
 
 #: src/Views/AbstractInstallerView.vala:56
-#, fuzzy
 msgid "Test Mode"
-msgstr "Probeer de demonstratiemodus"
+msgstr "Testmodus"
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
@@ -242,9 +239,8 @@ msgid "Finishing the Installation"
 msgstr "Installatie afronden"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "Probeer de demonstratiemodus"
+msgstr "Installeer of probeer de demomodus"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -261,12 +257,11 @@ msgid ""
 msgstr ""
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"U kan altijd terug van de demonstratiemodus naar het installatieprogramma "
+"U kunt altijd terug van de demonstratiemodus naar het installatieprogramma "
 "door het installatie-icoon te selecteren."
 
 #: src/Views/SuccessView.vala:32
@@ -274,14 +269,14 @@ msgid "Restart your device to continue setting up"
 msgstr "Herstart uw toestel om verder te gaan met de installatie"
 
 #: src/Views/SuccessView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Your device will automatically restart to %s in 30 seconds to set up a new "
 "user, or you can shut down now and set a user up later."
 msgstr ""
-"%s is geïnstalleerd. Uw toestel zal automatisch opnieuw opstarten in 30 "
-"seconden om een nieuwe gebruiker aan te maken, of zet uw apparaat uit om "
-"later een gebruiker aan te maken."
+"Uw toestel zal binnen 30 seconden automatisch opnieuw opstarten naar %s om "
+"een nieuwe gebruiker aan te maken, of zet uw apparaat uit om later een "
+"gebruiker aan te maken."
 
 #: src/Views/SuccessView.vala:64
 msgid "Test mode shutdown"
