@@ -144,6 +144,10 @@ public class Installer.LanguageView : AbstractInstallerView {
             next_step ();
         });
 
+        lang_variant_widget.going_to_main.connect (() => {
+            next_button.sensitive = false;
+        });
+
         destroy.connect (() => {
             // We need to disconnect the signal otherwise it's called several time when destroying the window…
             lang_variant_widget.main_listbox.row_selected.disconnect (row_selected);
@@ -197,12 +201,15 @@ public class Installer.LanguageView : AbstractInstallerView {
                 }
             }
         }
+
+        next_button.sensitive = true;
     }
 
     private void row_activated (Gtk.ListBoxRow row) {
             var lang_entry = ((LangRow) row).lang_entry;
             var countries = lang_entry.countries;
             if (countries.length == 0) {
+                next_button.sensitive = true;
                 return;
             }
 
