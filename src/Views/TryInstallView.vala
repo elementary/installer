@@ -98,8 +98,8 @@ public class TryInstallView : AbstractInstallerView {
         shutdown_button.get_style_context ().add_class ("circular");
 
         action_area.add (shutdown_button);
-        action_area.add (back_button);
         action_area.add (demo_button);
+        action_area.add (back_button);
         action_area.add (next_button);
         action_area.set_child_secondary (shutdown_button, true);
         action_area.set_child_non_homogeneous (shutdown_button, true);
