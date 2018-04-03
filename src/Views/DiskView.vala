@@ -31,13 +31,15 @@ public class Installer.DiskView : AbstractInstallerView {
 
     construct {
         disk_grid = new Gtk.Grid ();
-        disk_grid.column_spacing = 12;
         disk_grid.halign = Gtk.Align.CENTER;
-        disk_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        disk_grid.valign = Gtk.Align.CENTER;
+        disk_grid.orientation = Gtk.Orientation.VERTICAL;
+        disk_grid.vexpand = true;
+        disk_grid.row_spacing = 6;
 
         var disk_scrolled = new Gtk.ScrolledWindow (null, null);
-        disk_scrolled.hexpand = true;
-        disk_scrolled.vscrollbar_policy = Gtk.PolicyType.NEVER;
+        disk_scrolled.vexpand = true;
+        disk_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
 #if GTK_3_22
         disk_scrolled.propagate_natural_height = true;
 #endif
@@ -49,13 +51,11 @@ public class Installer.DiskView : AbstractInstallerView {
         var install_label = new Gtk.Label (_("Select a drive to use for installation"));
         install_label.hexpand = true;
         install_label.get_style_context ().add_class ("h2");
-        install_label.xalign = 0;
 
         var install_desc_label = new Gtk.Label (_("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode."));
         install_desc_label.hexpand = true;
         install_desc_label.max_width_chars = 60;
         install_desc_label.wrap = true;
-        install_desc_label.xalign = 0;
 
         var load_spinner = new Gtk.Spinner ();
         load_spinner.halign = Gtk.Align.CENTER;
@@ -83,13 +83,15 @@ public class Installer.DiskView : AbstractInstallerView {
         title_grid.column_spacing = 12;
         title_grid.row_spacing = 6;
         title_grid.halign = Gtk.Align.CENTER;
-        title_grid.attach (install_image, 0, 0, 1, 2);
-        title_grid.attach (install_label, 1, 0, 1, 1);
-        title_grid.attach (install_desc_label, 1, 1, 1, 1);
+        title_grid.valign = Gtk.Align.CENTER;
+        title_grid.attach (install_image, 0, 0, 1, 1);
+        title_grid.attach (install_label, 0, 1, 1, 1);
+        title_grid.attach (install_desc_label, 0, 2, 1, 1);
 
-        content_area.valign = Gtk.Align.CENTER;
+        content_area.valign = Gtk.Align.FILL;
+        content_area.column_homogeneous = true;
         content_area.attach (title_grid, 0, 0, 1, 1);
-        content_area.attach (load_stack, 0, 1, 1, 1);
+        content_area.attach (load_stack, 1, 0, 1, 1);
 
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
