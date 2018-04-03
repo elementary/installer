@@ -320,6 +320,7 @@ public class ProgressView : AbstractInstallerView {
             if (Installer.App.test_mode) {
                 Idle.add (() => {
                     on_success ();
+                    return GLib.Source.REMOVE;
                 });
             } else {
                 installer.install ((owned) disks, config);
