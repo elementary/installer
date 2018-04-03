@@ -137,6 +137,7 @@ public class Installer.DiskBar: Gtk.Box {
         bar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         bar.set_size_request (-1, 40);
         bar.get_style_context ().add_class ("trough");
+        bar.get_style_context ().add_class ("disk-bar");
         for (int i = 0; i < partitions.length; i++) {
             bar.pack_start(partitions.index (i), true, true, 0);
         }
