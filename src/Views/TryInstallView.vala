@@ -96,8 +96,8 @@ public class TryInstallView : AbstractInstallerView {
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (back_button);
         action_area.add (demo_button);
+        action_area.add (back_button);
         action_area.add (custom_button);
         action_area.add (next_button);
 
