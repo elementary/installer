@@ -29,6 +29,7 @@ public class SuccessView : AbstractInstallerView {
         }
 
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
+        image.vexpand = true;
 
         var primary_label = new Gtk.Label (_("Continue Setting Up"));
         primary_label.halign = Gtk.Align.START;
@@ -43,9 +44,8 @@ public class SuccessView : AbstractInstallerView {
         secondary_label.xalign = 0;
 
         var grid = new Gtk.Grid ();
-        grid.column_spacing = grid.row_spacing = 12;
+        grid.row_spacing = 12;
         grid.valign = Gtk.Align.CENTER;
-
         grid.attach (primary_label, 0, 0, 1, 1);
         grid.attach (secondary_label, 0, 1, 1, 1);
 
@@ -54,7 +54,6 @@ public class SuccessView : AbstractInstallerView {
         content_area.margin = 48;
         content_area.margin_start = content_area.margin_end = 12;
         content_area.valign = Gtk.Align.CENTER;
-
         content_area.attach (image, 0, 0, 1, 1);
         content_area.attach (grid, 1, 0, 1, 2);
 
