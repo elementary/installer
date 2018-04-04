@@ -18,7 +18,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.DiskBar: Gtk.Box {
+public class Installer.DiskBar: Gtk.Grid {
     public string disk_name { get; construct; }
     public string disk_path { get; construct; }
     public uint64 size { get; construct; }
@@ -57,17 +57,13 @@ public class Installer.DiskBar: Gtk.Box {
         ));
         description.set_halign (Gtk.Align.CENTER);
 
-        bar_container = new Gtk.Box (Gtk.Orientation.VERTICAL, 9);
-        bar_container.pack_start (legend_container, false, false, 0);
-        bar_container.pack_start (bar, true, true, 0);
-        bar_container.pack_start (description, false, false, 0);
-
-        this.orientation = Gtk.Orientation.HORIZONTAL;
-        this.spacing = 12;
         this.hexpand = true;
+        this.row_spacing = 6;
         this.get_style_context ().add_class ("storage-bar");
-        this.pack_start (label, false, false, 0);
-        this.pack_start (bar_container, true, true, 0);
+        this.attach (label, 0, 1);
+        this.attach (legend_container, 1, 0);
+        this.attach (bar, 1, 1);
+        this.attach (description, 1, 2);
         this.margin = 6;
 
         show_all ();
