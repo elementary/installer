@@ -165,7 +165,15 @@ public class ProgressView : AbstractInstallerView {
         }
 
         new Thread<void*> (null, () => {
-            installer.install ((owned) disks, config);
+            if (Installer.App.test_mode) {
+                Idle.add (() => {
+                    on_success ();
+                    return GLib.Source.REMOVE;
+                });
+            } else {
+                installer.install ((owned) disks, config);
+            }
+
             return null;
         });
     }

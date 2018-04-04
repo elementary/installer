@@ -1,1 +1,1 @@
-casper/99pop-installer usr/share/initramfs-tools/scripts/casper-bottom/
+debian/99pop-installer usr/share/initramfs-tools/scripts/casper-bottom/
