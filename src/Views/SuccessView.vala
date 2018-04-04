@@ -29,33 +29,27 @@ public class SuccessView : AbstractInstallerView {
         }
 
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
-        image.vexpand = true;
+        image.valign = Gtk.Align.START;
 
-        var primary_label = new Gtk.Label (_("Continue Setting Up"));
-        primary_label.halign = Gtk.Align.START;
-        primary_label.max_width_chars = 60;
+        var primary_label = new Gtk.Label (_("Restart your device to continue setting up"));
+        primary_label.max_width_chars = 30;
         primary_label.wrap = true;
         primary_label.xalign = 0;
-        primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        primary_label.get_style_context ().add_class ("h2");
 
-        var secondary_label = new Gtk.Label (_("Your device will automatically restart to %s in %i seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name (), RESTART_TIMEOUT));
-        secondary_label.max_width_chars = 60;
-        secondary_label.wrap = true;
-        secondary_label.xalign = 0;
+        var artwork = new Gtk.Grid ();
+        artwork.get_style_context ().add_class ("success");
+        artwork.get_style_context().add_class ("artwork");
+        artwork.vexpand = true;
+        artwork.hexpand = true;
 
-        var grid = new Gtk.Grid ();
-        grid.row_spacing = 12;
-        grid.valign = Gtk.Align.CENTER;
-        grid.attach (primary_label, 0, 0, 1, 1);
-        //grid.attach (secondary_label, 0, 1, 1, 1);
-
-        content_area.column_homogeneous = true;
-        content_area.halign = Gtk.Align.CENTER;
-        content_area.margin = 48;
-        content_area.margin_start = content_area.margin_end = 12;
-        content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (image, 0, 0, 1, 1);
-        content_area.attach (grid, 1, 0, 1, 2);
+        content_area.halign = Gtk.Align.FILL;
+        content_area.valign = Gtk.Align.FILL;
+        content_area.margin_end = 22;
+        content_area.margin_start = 22;
+        content_area.row_spacing = 6;
+        content_area.attach (artwork, 0, 0, 1, 2);
+        content_area.attach (primary_label, 1, 0, 1, 1);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
 

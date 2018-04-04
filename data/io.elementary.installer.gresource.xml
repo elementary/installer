@@ -2,5 +2,36 @@
 <gresources>
   <gresource prefix="/io/elementary/installer">
     <file alias="application.css" compressed="true">application.css</file>
+
+    <file alias="catastrophic-error.png">images/initial-setup_catastrophic-error_full.png</file>
+
+    <file alias="drive-selection.png">images/initial-setup_drive-selection_full.png</file>
+
+    <file alias="issue-detection.png">images/initial-setup_basic-error_full.png</file>
+    <file alias="issue-detection1.png">images/initial-setup_basic-error_animate.png</file>
+
+    <file alias="keyboard.png">images/initial-setup_keyboard_full.png</file>
+    <file alias="keyboard1.png">images/initial-setup_keyboard_animate1.png</file>
+    <file alias="keyboard2.png">images/initial-setup_keyboard_animate2.png</file>
+    <file alias="keyboard3.png">images/initial-setup_keyboard_animate3.png</file>
+
+    <file alias="progress.png">images/initial-setup_progress_full.png</file>
+    <file alias="progress1.png">images/initial-setup_progress_animate.png</file>
+
+    <file alias="success.png">images/initial-setup_success_full.png</file>
+    <file alias="success1.png">images/initial-setup_success_animate.png</file>
+
+    <file alias="encryption.png">images/initial-setup_encryption_full.png</file>
+    <file alias="encryption1.png">images/initial-setup_encryption_animate1.png</file>
+    <file alias="encryption2.png">images/initial-setup_encryption_animate2.png</file>
+    <file alias="encryption3.png">images/initial-setup_encryption_animate3.png</file>
+
+    <file alias="language.png">images/initial-setup_language_full.png</file>
+    <file alias="language1.png">images/initial-setup_language_animate.png</file>
+
+    <file alias="try-install.png">images/initial-setup_try-install_full.png</file>
+    <file alias="try-install1.png">images/initial-setup_try-install_animate1.png</file>
+    <file alias="try-install2.png">images/initial-setup_try-install_animate2.png</file>
+    <file alias="try-install3.png">images/initial-setup_try-install_animate3.png</file>
   </gresource>
 </gresources>

@@ -72,6 +72,7 @@ public class TryInstallView : AbstractInstallerView {
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
         grid.row_spacing = 32;
+        grid.valign = Gtk.Align.CENTER;
 
         grid.attach (choice_image, 0, 1, 1, 1);
         grid.attach (choice_label, 1, 1, 1, 1);
@@ -81,9 +82,14 @@ public class TryInstallView : AbstractInstallerView {
         grid.attach (return_label, 1, 3, 1, 1);
 
         content_area.column_homogeneous = true;
-        content_area.valign = Gtk.Align.CENTER;
+        content_area.valign = Gtk.Align.FILL;
 
-        content_area.attach (image, 0, 0, 1, 1);
+        var artwork = new Gtk.Grid ();
+        artwork.get_style_context().add_class("try-install");
+        artwork.get_style_context().add_class("artwork");
+        artwork.vexpand = true;
+
+        content_area.attach (artwork, 0, 0, 1, 1);
         content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (grid, 1, 0, 1, 2);
 

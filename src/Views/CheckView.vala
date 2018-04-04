@@ -267,6 +267,11 @@ public class Installer.CheckView : AbstractInstallerView  {
         var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
+        var artwork = new Gtk.Grid ();
+        artwork.get_style_context().add_class("issue");
+        artwork.get_style_context().add_class("artwork");
+        artwork.expand = true;
+
         var grid = new Gtk.Grid ();
         grid.column_homogeneous = true;
         grid.column_spacing = 12;
@@ -275,10 +280,10 @@ public class Installer.CheckView : AbstractInstallerView  {
         grid.margin = 48;
         grid.margin_start = grid.margin_end = 12;
         grid.row_spacing = 6;
-        grid.valign = Gtk.Align.CENTER;
+        grid.valign = Gtk.Align.FILL;
         grid.vexpand = true;
 
-        grid.attach (image, 0, 0, 1, 1);
+        grid.attach (artwork, 0, 0, 1, 1);
         grid.attach (title_label, 0, 1, 1, 1);
         grid.attach (description_label, 1, 0, 1, 2);
 
