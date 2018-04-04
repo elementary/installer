@@ -22,7 +22,9 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     public signal void next_step ();
 
     private Gtk.Button next_button;
+    private Gtk.Button gparted_button;
     private Distinst.Disks disks;
+    private Gtk.Grid disk_list;
 
     public GLib.Array<Installer.Mount> mounts;
 
@@ -35,19 +37,38 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     construct {
         this.mounts = new GLib.Array<Installer.Mount> ();
-        this.margin = 24;
-        var disk_list = new Gtk.Grid ();
-        disk_list.row_spacing = 24;
+        this.margin = 12;
+        disk_list = new Gtk.Grid ();
+        disk_list.set_valign (Gtk.Align.START);
+        disk_list.row_spacing = 12;
         var disk_scroller = new Gtk.ScrolledWindow (null, null);
-        disk_scroller.expand = true;
-        disk_scroller.vscrollbar_policy = Gtk.PolicyType.NEVER;
+        disk_scroller.hexpand = true;
+        disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
         disk_scroller.add (disk_list);
 
         var description = new Gtk.Label (_("Select which partitions to use across all drives. This will erase all data on the selected partitions."));
+        description.set_halign (Gtk.Align.CENTER);
 
         this.content_area.attach(description, 0, 0, 1, 1);
         this.content_area.attach(disk_scroller, 0, 1, 1, 1);
 
+        load_disks ();
+
+        gparted_button = new Gtk.Button.with_label (_("Modify Partitions"));
+        gparted_button.clicked.connect (() => open_gparted ());
+
+        next_button = new Gtk.Button.with_label (_("Erase and Install"));
+        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        next_button.sensitive = false;
+        next_button.clicked.connect (() => next_step ());
+
+        action_area.add (gparted_button);
+        action_area.add (next_button);
+
+        show_all ();
+    }
+
+    private void load_disks () {
         disks = Distinst.Disks.probe ();
         var id = 0;
         foreach (unowned Distinst.Disk disk in disks.list ()) {
@@ -59,7 +80,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
             var sector_size = disk.get_sector_size ();
             var size = disk.get_sectors () * sector_size;
 
-            string path = Utils.string_from_utf8(disk.get_device_path ());
+            string path = Utils.string_from_utf8 (disk.get_device_path ());
 
             string label;
             string model = disk.get_model ();
@@ -81,14 +102,25 @@ public class Installer.PartitioningView : AbstractInstallerView  {
             id += 1;
         }
 
-        next_button = new Gtk.Button.with_label (_("Erase and Install"));
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        disk_list.show_all ();
+    }
+
+    private void open_gparted () {
+        try {
+            var process = new GLib.Subprocess.newv ({"gparted"}, GLib.SubprocessFlags.NONE);
+            process.wait ();
+        } catch (GLib.Error error) {
+            stderr.printf ("critical error occurred when executing gparted\n");
+        }
+
+        reset_view ();
+    }
+
+    private void reset_view () {
+        disk_list.get_children ().foreach ((child) => child.destroy ());
+        mounts.remove_range (0, mounts.length);
         next_button.sensitive = false;
-        next_button.clicked.connect (() => next_step ());
-
-        action_area.add (next_button);
-
-        show_all ();
+        load_disks ();
     }
 
     private void validate_status () {

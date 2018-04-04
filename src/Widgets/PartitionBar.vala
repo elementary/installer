@@ -29,6 +29,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
     public Distinst.Partition* info;
     public Gtk.Label label;
     public PartitionMenu menu;
+    public Distinst.FileSystemType filesystem;
 
     public PartitionBar(Distinst.Partition* part, string parent_path,
                         uint64 sector_size, SetMount set_mount,
@@ -44,30 +45,21 @@ public class Installer.PartitionBar : Gtk.EventBox {
         }
 
         path = Utils.string_from_utf8 (part->get_device_path ());
-
-        var fs = part->get_file_system ();
-        var filesystem = Distinst.strfilesys (fs);
-
-        label = new Gtk.Label ("%s (%s %s)".printf (
-            path,
-            filesystem,
-            GLib.format_size ((end - start) * 512)
-        ));
-
-        label.use_markup = true;
-
+        filesystem = part->get_file_system ();
         info = part;
 
         container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        container.pack_start (label, true, true, 0);
-        var context = container.get_style_context ();
-        context.add_class (filesystem);
-        context.add_class ("partition");
+        container.get_style_context ().add_class (Distinst.strfilesys (filesystem));
 
         menu = new PartitionMenu (path, parent_path, set_mount, unset_mount);
         menu.relative_to = container;
 
         add(container);
+        add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
+        button_press_event.connect (() => {
+            show_popover();
+            return true;
+        });
     }
 
     public uint64 get_size () {
