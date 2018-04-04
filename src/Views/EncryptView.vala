@@ -127,10 +127,15 @@ public class EncryptView : AbstractInstallerView {
         stack.add (choice_grid);
         stack.add (password_grid);
 
+        var artwork = new Gtk.Grid ();
+        artwork.get_style_context().add_class("encrypt");
+        artwork.get_style_context().add_class("artwork");
+        artwork.vexpand = true;
+
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;
         content_area.margin_start = 12;
-        content_area.attach (overlay, 0, 0, 1, 1);
+        content_area.attach (artwork, 0, 0, 1, 1);
         content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (stack, 1, 0, 1, 2);
 

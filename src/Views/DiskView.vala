@@ -79,16 +79,21 @@ public class Installer.DiskView : AbstractInstallerView {
         load_stack.add_named (load_grid, "loading");
         load_stack.add_named (disk_scrolled, "disk");
 
+        var artwork = new Gtk.Grid ();
+        artwork.get_style_context ().add_class ("disks");
+        artwork.get_style_context().add_class("artwork");
+        artwork.vexpand = true;
+
         var title_grid = new Gtk.Grid ();
         title_grid.column_spacing = 12;
         title_grid.row_spacing = 6;
         title_grid.halign = Gtk.Align.CENTER;
-        title_grid.valign = Gtk.Align.CENTER;
-        title_grid.attach (install_image, 0, 0, 1, 1);
+        title_grid.valign = Gtk.Align.FILL;
+        title_grid.attach (artwork, 0, 0, 1, 1);
         title_grid.attach (install_label, 0, 1, 1, 1);
-        title_grid.attach (install_desc_label, 0, 2, 1, 1);
 
         content_area.valign = Gtk.Align.FILL;
+        content_area.margin = 12;
         content_area.column_homogeneous = true;
         content_area.attach (title_grid, 0, 0, 1, 1);
         content_area.attach (load_stack, 1, 0, 1, 1);
