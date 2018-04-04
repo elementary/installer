@@ -129,14 +129,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         const uint8 BOOT = 2;
 
         stderr.printf("DEBUG: Current Layout:\n");
-        for (int i = 0; i < mounts.length; i++) {
-            var m = mounts.index (i);
+        foreach (unowned Mount m in mounts.data) {
             stderr.printf("  %s : %s\n", m.partition_path, m.mount_point);
-        }
-
-        for (int i = 0; i < mounts.length; i++) {
-            var m = mounts.index (i);
-
             if (m.mount_point == "/" && m.is_valid_root_mount ()) {
                 flags |= ROOT;
             } else if (m.mount_point == "/boot/efi" && m.is_valid_boot_mount ()) {
@@ -154,36 +148,24 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     private void set_mount (Mount mount) {
         unset_mount_point (mount);
-
-        for (int i = 0; i < mounts.length; i++) {
-            var m = mounts.index (i);
-            if (m.partition_path == mount.partition_path) {
-                m = mount;
-                validate_status ();
-                return;
-            }
-        }
-
+        remove_mount_by_partition (mount.partition_path);
         this.mounts.append_val (mount);
         validate_status ();
     }
 
     private void unset_mount (string partition) {
-        var found_mount = false;
-        int i = 0;
-        for (; i < mounts.length; i++) {
+        remove_mount_by_partition (partition);
+        validate_status ();
+    }
+
+    private void remove_mount_by_partition (string partition) {
+        for (int i = 0; i < mounts.length; i++) {
             var m = mounts.index (i);
             if (m.partition_path == partition) {
-                found_mount = true;
+                mounts.remove_index (i);
                 break;
             }
         }
-
-        if (found_mount) {
-            mounts.remove_index (i);
-        }
-
-        validate_status ();
     }
 
     private void unset_mount_point (Mount src) {
