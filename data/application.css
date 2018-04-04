@@ -15,16 +15,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-.terminal text{
-    background-color: #333;
-    color: #f6f6f6;
-}
-
-.terminal selection {
-    background-color: #48b9c7;
-    color: #fff;
-}
-
 /* Needed to prevent shadow clipping. */
 buttonbox {
     margin: 8px;
