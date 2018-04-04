@@ -35,9 +35,9 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     construct {
         this.mounts = new GLib.Array<Installer.Mount> ();
-        this.margin = 24;
+        this.margin = 12;
         var disk_list = new Gtk.Grid ();
-        disk_list.row_spacing = 24;
+        disk_list.row_spacing = 12;
         var disk_scroller = new Gtk.ScrolledWindow (null, null);
         disk_scroller.expand = true;
         disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;

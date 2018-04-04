@@ -27,10 +27,11 @@ textview.terminal selection {
 
 .disk-bar {
     padding: 0;
+    border-radius: 4px;
 }
 
 .ext2, .ext3, .ext4, .fat16, .fat32, .btrfs, .xfs, .ntfs, .luks, .lvm, .none, .swap {
-    border-width: 3px;
+    border-width: 0 2px;
     border-style: solid;
 }
 

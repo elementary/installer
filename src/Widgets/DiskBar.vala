@@ -138,25 +138,21 @@ public class Installer.DiskBar: Gtk.Box {
         bar.set_size_request (-1, 40);
         bar.get_style_context ().add_class ("trough");
         bar.get_style_context ().add_class ("disk-bar");
-        for (int i = 0; i < partitions.length; i++) {
-            bar.pack_start(partitions.index (i), true, true, 0);
-        }
-
         unused_bar = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         var context = unused_bar.get_style_context ();
         context.add_class ("unused");
-        bar.pack_start (unused_bar, true, true, 0);
 
         bar.size_allocate.connect ((alloc) => {
             update_sector_lengths (partitions, alloc.width);
         });
 
-        GLib.Idle.add (() => {
-            var alloc = Gtk.Allocation ();
-            bar.get_allocation (out alloc);
-            update_sector_lengths (partitions, alloc.width);
-            return GLib.Source.REMOVE;
-        });
+        for (int i = 0; i < partitions.length; i++) {
+            var part = partitions.index (i);
+            part.update_length (1000, this.size / 512);
+            bar.pack_start(part, false, false, 0);
+        }
+
+        bar.pack_start (unused_bar, true, true, 0);
     }
 
     public void update_sector_lengths (GLib.Array<PartitionBar> partitions, int alloc_width) {
@@ -165,9 +161,10 @@ public class Installer.DiskBar: Gtk.Box {
             partitions.index (i).update_length (alloc_width, disk_sectors);
         }
 
-        // var percent = ((double) unused / (double) disk_sectors) * 100;
-        // var request = alloc_width / 100 * (int) percent;
-        // unused_bar.set_size_request (request, -1);
+        var unused_size = unused / 512;
+        int percent = (int) (((double) unused_size / (double) disk_sectors) * 100);
+        var request = alloc_width / 100 * (int) percent;
+        unused_bar.set_size_request (request, -1);
     }
 
     internal class FillRound : Gtk.Widget {
