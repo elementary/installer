@@ -25,38 +25,71 @@ textview.terminal selection {
     color: #252e32;
 }
 
-.ext2, .ext3, .ext4 {
-    background-color: rgb(114, 147, 203);
+.disk-bar {
+    padding: 0;
+    border-radius: 4px;
+}
+
+.ext2, .ext3, .ext4, .fat16, .fat32, .btrfs, .xfs, .ntfs, .luks, .lvm, .none, .swap {
+    border-width: 0 2px;
+    border-style: solid;
+}
+
+.ext4 {
+    background-color: #68b723;
+    border-color: #3a9104;
+}
+
+.ext3 {
+    background-color: #9bdb4d;
+    border-color: #68b722;
+}
+
+.ext2 {
+    background-color: #d1ff82;
+    border-color: #9bdb4d;
 }
 
 .fat16, .fat32 {
-    background-color: rgb(225, 151, 76);
+    background-color: #485a6c;
+    border-color: #273445;
 }
 
 .btrfs {
-  background-color: rgb(132, 186, 91);
+  background-color: #7a36b1;
+  border-color: #4c158a;
 }
 
 .xfs {
-  background-color: rgb(211, 94, 96);
+  background-color: #f37329;
+  border-color: #cc3b02;
 }
 
 .ntfs {
-  background-color: rgb(144, 103, 167);
+  background-color: #715344;
+  border-color: #57392d;
 }
 
 .luks {
-  background-color: rgb(171, 104, 87);
+  background-color: #0e141f;
+  border-color: #485a6c;
 }
 
 .lvm {
-  background-color: rgb(204, 194, 16);
+  background-color: #273445;
+  border-color: #667885;
 }
 
 .none {
-  background-color: rgb(128, 133, 133);
+  background-color: #4d4d4d;
+  border-color: #333333;
+}
+
+.unused {
+  background-color: #d4d4d4;
 }
 
 .swap {
-  background-color: rgb(218, 124, 48);
+  background-color: #f9c440;
+  border-color: #d48e15;
 }
