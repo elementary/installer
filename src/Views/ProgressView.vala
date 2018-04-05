@@ -184,19 +184,11 @@ public class ProgressView : AbstractInstallerView {
     }
 
     private void custom_disk_configuration (Distinst.Disks disks) {
-        unowned Distinst.Partition partition;
+        Installer.Mount[] lvm_devices = {};
 
         foreach (Installer.Mount m in disk_config) {
             if (m.is_lvm ()) {
-                unowned Distinst.LvmDevice disk = disks.get_logical_device (m.parent_disk);
-                var new_disk = new Distinst.Disk (m.parent_disk);
-                if (new_disk == null) {
-                    warning ("could not find lvm device: '%s'\n", m.parent_disk);
-                    on_error ();
-                    return;
-                }
-
-                partition = disk.get_partition_by_path (m.partition_path);
+                lvm_devices += m;
             } else {
                 unowned Distinst.Disk disk = disks.get_physical_device (m.parent_disk);
                 if (disk == null) {
@@ -211,8 +203,38 @@ public class ProgressView : AbstractInstallerView {
                     disk = disks.get_physical_device (m.parent_disk);
                 }
 
-                partition = disk.get_partition_by_path (m.partition_path);
+                unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
+
+                if (partition == null) {
+                    warning ("could not find %s\n", m.partition_path);
+                    on_error ();
+                    return;
+                }
+
+                if (m.mount_point == "/boot/efi") {
+                    Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
+                    partition.set_flags (flags);
+                }
+
+                if (m.filesystem != Distinst.FileSystemType.SWAP) {
+                    partition.set_mount (m.mount_point);
+                }
+
+                partition.format_with (m.filesystem);
             }
+        }
+
+        disks.initialize_volume_groups ();
+        foreach (Installer.Mount m in lvm_devices) {
+            unowned Distinst.LvmDevice disk = disks.get_logical_device (m.parent_disk);
+            var new_disk = new Distinst.Disk (m.parent_disk);
+            if (new_disk == null) {
+                warning ("could not find lvm device: '%s'\n", m.parent_disk);
+                on_error ();
+                return;
+            }
+
+            unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
             if (partition == null) {
                 warning ("could not find %s\n", m.partition_path);
@@ -220,16 +242,11 @@ public class ProgressView : AbstractInstallerView {
                 return;
             }
 
-            if (m.mount_point == "/boot/efi") {
-                Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
-                partition.set_flags (flags);
-            }
-
             if (m.filesystem != Distinst.FileSystemType.SWAP) {
                 partition.set_mount (m.mount_point);
             }
 
-            partition.format_with (m.filesystem);
+            partition.format_and_keep_name (m.filesystem);
         }
     }
 

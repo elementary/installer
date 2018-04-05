@@ -71,6 +71,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private void load_disks () {
         disks = Distinst.Disks.probe ();
         disks.initialize_volume_groups ();
+        var label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
         var id = 0;
         foreach (unowned Distinst.Disk disk in disks.list ()) {
@@ -99,6 +100,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
             }
 
             var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+            label_sizer.add_widget (disk_bar.label);
             disk_list.attach(disk_bar, 0, id);
 
             id += 1;
@@ -119,6 +121,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
             }
 
             var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+            label_sizer.add_widget (disk_bar.label);
             disk_list.attach(disk_bar, 0, id);
 
             id += 1;

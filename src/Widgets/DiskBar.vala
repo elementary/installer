@@ -24,7 +24,7 @@ public class Installer.DiskBar: Gtk.Grid {
     public uint64 size { get; construct; }
     public Gee.ArrayList<PartitionBar> partitions { get; construct; }
 
-    private Gtk.Box label;
+    public Gtk.Box label;
     private Gtk.Box bar;
     private Gtk.Box legend_container;
     private uint64 unused;
