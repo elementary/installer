@@ -168,7 +168,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private void remove_mount_by_partition (string partition) {
         for (int i = 0; i < mounts.size; i++) {
             if (mounts[i].partition_path == partition) {
-                mounts.remove_at (i);
+                swap_remove_mount (mounts, i);
                 break;
             }
         }
@@ -188,9 +188,14 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 m.menu.custom.set_visible (false);
                 m.menu.custom_label.set_visible (false);
                 m.menu.disable_signals = false;
-                mounts.remove_at (i);
+                swap_remove_mount (mounts, i);
                 break;
             }
         }
+    }
+
+    private Mount swap_remove_mount (Gee.ArrayList<Mount> array, int index) {
+        array[index] = array[array.size - 1];
+        return array.remove_at (array.size - 1);
     }
 }
