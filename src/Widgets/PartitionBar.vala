@@ -72,6 +72,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
     public void update_length (int alloc_width, uint64 disk_sectors) {
         var request = alloc_width * get_percent (disk_sectors);
+        if (request < 20) request = 20;
         set_size_request ((int) request, -1);
     }
 
