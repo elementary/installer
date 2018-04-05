@@ -70,6 +70,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     private void load_disks () {
         disks = Distinst.Disks.probe ();
+        disks.initialize_volume_groups ();
+
         var id = 0;
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
@@ -89,6 +91,26 @@ public class Installer.PartitioningView : AbstractInstallerView  {
             } else {
                 label = model;
             }
+
+            var partitions = new Gee.ArrayList<PartitionBar> ();
+            foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
+                var partition = new PartitionBar (part, path, sector_size, this.set_mount, this.unset_mount);
+                partitions.add (partition);
+            }
+
+            var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+            disk_list.attach(disk_bar, 0, id);
+
+            id += 1;
+        }
+
+        foreach (unowned Distinst.LvmDevice disk in disks.list_logical ()) {
+            var sector_size = disk.get_sector_size ();
+            var size = disk.get_sectors () * sector_size;
+
+            string path = Utils.string_from_utf8 (disk.get_device_path ());
+
+            string model = disk.get_model ();
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
