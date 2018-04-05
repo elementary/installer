@@ -22,12 +22,11 @@ public class Installer.DiskBar: Gtk.Grid {
     public string disk_name { get; construct; }
     public string disk_path { get; construct; }
     public uint64 size { get; construct; }
-    public GLib.Array<PartitionBar> partitions { get; construct; }
+    public Gee.ArrayList<PartitionBar> partitions { get; construct; }
 
     private Gtk.Box label;
     private Gtk.Box bar;
     private Gtk.Box legend_container;
-    private Gtk.Box bar_container;
     private uint64 unused;
     private Gtk.Box unused_bar;
 
@@ -35,7 +34,7 @@ public class Installer.DiskBar: Gtk.Grid {
         string model,
         string path,
         uint64 size,
-        GLib.Array<PartitionBar> partitions
+        Gee.ArrayList<PartitionBar> partitions
     ) {
         Object (
             disk_name: model,
@@ -71,8 +70,8 @@ public class Installer.DiskBar: Gtk.Grid {
 
     private uint64 get_unused () {
         uint64 used = 0;
-        for (int i = 0; i < partitions.length; i++) {
-            used += partitions.index (i).get_size ();
+        foreach (PartitionBar partition in partitions) {
+            used += partition.get_size ();
         }
 
         return size - (used * 512);
@@ -82,8 +81,7 @@ public class Installer.DiskBar: Gtk.Grid {
         legend_container = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
         legend_container.set_halign (Gtk.Align.CENTER);
 
-        for (int i = 0; i < partitions.length; i++) {
-            var p = partitions.index (i);
+        foreach (PartitionBar p in partitions) {
             add_legend (p.path, p.get_size() * 512, Distinst.strfilesys (p.filesystem));
         }
 
@@ -142,8 +140,7 @@ public class Installer.DiskBar: Gtk.Grid {
             update_sector_lengths (partitions, alloc.width);
         });
 
-        for (int i = 0; i < partitions.length; i++) {
-            var part = partitions.index (i);
+        foreach (PartitionBar part in partitions) {
             part.update_length (1000, this.size / 512);
             bar.pack_start(part, false, false, 0);
         }
@@ -151,10 +148,10 @@ public class Installer.DiskBar: Gtk.Grid {
         bar.pack_start (unused_bar, true, true, 0);
     }
 
-    public void update_sector_lengths (GLib.Array<PartitionBar> partitions, int alloc_width) {
+    public void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, int alloc_width) {
         var disk_sectors = this.size / 512;
-        for (int i = 0; i < partitions.length; i++) {
-            partitions.index (i).update_length (alloc_width, disk_sectors);
+        foreach (PartitionBar partition in partitions) {
+            partition.update_length (alloc_width, disk_sectors);
         }
 
         var unused_size = unused / 512;

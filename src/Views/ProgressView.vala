@@ -20,7 +20,7 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
-    private GLib.Array<Installer.Mount>? disk_config;
+    private Gee.ArrayList<Installer.Mount>? disk_config;
 
     private double prev_upper_adj = 0;
     private Gtk.ScrolledWindow terminal_output;
@@ -29,7 +29,7 @@ public class ProgressView : AbstractInstallerView {
     private Gtk.Label progressbar_label;
     private const int NUM_STEP = 5;
 
-    public ProgressView (GLib.Array<Installer.Mount>? mounts) {
+    public ProgressView (Gee.ArrayList<Installer.Mount>? mounts) {
         if (mounts == null) {
             stderr.printf ("mounts is null\n");
         }
@@ -184,9 +184,7 @@ public class ProgressView : AbstractInstallerView {
     }
 
     private void custom_disk_configuration (Distinst.Disks disks) {
-        for (int i = 0; i < disk_config.length ; i++) {
-            var m = disk_config.index (i);
-
+        foreach (Installer.Mount m in disk_config) {
             unowned Distinst.Disk disk = disks.get_physical_device (m.parent_disk);
             if (disk == null) {
                 var new_disk = new Distinst.Disk (m.parent_disk);

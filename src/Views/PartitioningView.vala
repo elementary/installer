@@ -26,7 +26,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private Distinst.Disks disks;
     private Gtk.Grid disk_list;
 
-    public GLib.Array<Installer.Mount> mounts;
+    public Gee.ArrayList<Installer.Mount> mounts;
 
     public static uint64 minimum_disk_size;
 
@@ -36,7 +36,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     }
 
     construct {
-        this.mounts = new GLib.Array<Installer.Mount> ();
+        this.mounts = new Gee.ArrayList<Installer.Mount> ();
         this.margin = 12;
         disk_list = new Gtk.Grid ();
         disk_list.set_valign (Gtk.Align.START);
@@ -90,10 +90,10 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 label = model;
             }
 
-            var partitions = new GLib.Array<PartitionBar> ();
+            var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
                 var partition = new PartitionBar (part, path, sector_size, this.set_mount, this.unset_mount);
-                partitions.append_val (partition);
+                partitions.add (partition);
             }
 
             var disk_bar = new DiskBar (model, path, size, (owned) partitions);
@@ -118,7 +118,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     private void reset_view () {
         disk_list.get_children ().foreach ((child) => child.destroy ());
-        mounts.remove_range (0, mounts.length);
+        mounts.clear ();
         next_button.sensitive = false;
         load_disks ();
     }
@@ -129,8 +129,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         const uint8 BOOT = 2;
 
         stderr.printf("DEBUG: Current Layout:\n");
-        foreach (unowned Mount m in mounts.data) {
-            stderr.printf("  %s : %s\n", m.partition_path, m.mount_point);
+        foreach (Mount m in mounts) {
+            stderr.printf("  %s : %s : %s\n", m.partition_path, m.mount_point, Distinst.strfilesys (m.filesystem));
             if (m.mount_point == "/" && m.is_valid_root_mount ()) {
                 flags |= ROOT;
             } else if (m.mount_point == "/boot/efi" && m.is_valid_boot_mount ()) {
@@ -148,8 +148,15 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     private void set_mount (Mount mount) {
         unset_mount_point (mount);
-        remove_mount_by_partition (mount.partition_path);
-        this.mounts.append_val (mount);
+        for (int i = 0; i < mounts.size; i++) {
+            if (mounts[i].partition_path == mount.partition_path) {
+                mounts[i] = mount;
+                validate_status ();
+                return;
+            }
+        }
+
+        mounts.add (mount);
         validate_status ();
     }
 
@@ -159,20 +166,17 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     }
 
     private void remove_mount_by_partition (string partition) {
-        for (int i = 0; i < mounts.length; i++) {
-            var m = mounts.index (i);
-            if (m.partition_path == partition) {
-                mounts.remove_index (i);
+        for (int i = 0; i < mounts.size; i++) {
+            if (mounts[i].partition_path == partition) {
+                swap_remove_mount (mounts, i);
                 break;
             }
         }
     }
 
     private void unset_mount_point (Mount src) {
-        var found_mount = false;
-        int i = 0;
-        for (; i < mounts.length; i++) {
-            var m = mounts.index (i);
+        for (int i = 0; i < mounts.size; i++) {
+            var m = mounts[i];
             if (m.mount_point == src.mount_point && m.partition_path != src.partition_path) {
                 m.menu.disable_signals = true;
                 m.menu.use_partition.active = false;
@@ -184,13 +188,14 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 m.menu.custom.set_visible (false);
                 m.menu.custom_label.set_visible (false);
                 m.menu.disable_signals = false;
-                found_mount = true;
+                swap_remove_mount (mounts, i);
                 break;
             }
         }
+    }
 
-        if (found_mount) {
-            mounts.remove_index (i);
-        }
+    private Mount swap_remove_mount (Gee.ArrayList<Mount> array, int index) {
+        array[index] = array[array.size - 1];
+        return array.remove_at (array.size - 1);
     }
 }
