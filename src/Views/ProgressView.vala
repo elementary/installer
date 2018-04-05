@@ -176,7 +176,6 @@ public class ProgressView : AbstractInstallerView {
                     return GLib.Source.REMOVE;
                 });
             } else {
-                stderr.printf ("DEBUG: starting distinst installer\n");
                 installer.install ((owned) disks, config);
             }
 
@@ -195,7 +194,6 @@ public class ProgressView : AbstractInstallerView {
                 if (disk == null) {
                     var new_disk = new Distinst.Disk (m.parent_disk);
                     if (new_disk == null) {
-                        stderr.printf ("could not find physical device: '%s'\n", m.parent_disk);
                         warning ("could not find physical device: '%s'\n", m.parent_disk);
                         on_error ();
                         return;
@@ -208,7 +206,6 @@ public class ProgressView : AbstractInstallerView {
                 unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
                 if (partition == null) {
-                    stderr.printf ("could not find %s\n", m.partition_path);
                     warning ("could not find %s\n", m.partition_path);
                     on_error ();
                     return;
@@ -225,7 +222,6 @@ public class ProgressView : AbstractInstallerView {
                         Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
                         partition.set_flags (flags);
                     } else {
-                        stderr.printf ("unreachable code path -- efi partition is invalid\n");
                         warning ("unreachable code path -- efi partition is invalid\n");
                         on_error ();
                         return;
@@ -240,13 +236,11 @@ public class ProgressView : AbstractInstallerView {
             }
         }
 
-        stderr.printf ("configuring lvm partitions\n");
         disks.initialize_volume_groups ();
         foreach (Installer.Mount m in lvm_devices) {
             var vg = m.parent_disk.offset (12);
             unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
             if (disk == null) {
-                stderr.printf ("could not find %s\n", vg);
                 warning ("could not find %s\n", vg);
                 on_error ();
                 return;
@@ -255,7 +249,6 @@ public class ProgressView : AbstractInstallerView {
             unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
             if (partition == null) {
-                stderr.printf ("could not find %s\n", m.partition_path);
                 warning ("could not find %s\n", m.partition_path);
                 on_error ();
                 return;
