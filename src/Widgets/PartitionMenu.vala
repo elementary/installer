@@ -33,8 +33,10 @@ public class Installer.PartitionMenu : Gtk.Popover {
     public string partition_path;
     public string parent_disk;
     public bool disable_signals;
+    public bool is_lvm;
 
-    public PartitionMenu (string path, string parent, SetMount set_mount, UnsetMount unset_mount) {
+    public PartitionMenu (string path, string parent, bool lvm, SetMount set_mount, UnsetMount unset_mount) {
+        is_lvm = lvm;
         partition_path = path;
         parent_disk = parent;
         grid = new Gtk.Grid ();
@@ -160,7 +162,14 @@ public class Installer.PartitionMenu : Gtk.Popover {
     }
 
     private void update_values (SetMount set_mount) {
-        set_mount (new Installer.Mount (partition_path, parent_disk, get_mount (), true, get_file_system (), this));
+        set_mount (new Installer.Mount (
+            partition_path,
+            parent_disk,
+            get_mount (),
+            Mount.FORMAT + (is_lvm ? Mount.LVM : 0),
+            get_file_system (),
+            this
+        ));
     }
 
     private Distinst.FileSystemType get_file_system () {

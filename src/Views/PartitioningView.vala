@@ -94,7 +94,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-                var partition = new PartitionBar (part, path, sector_size, this.set_mount, this.unset_mount);
+                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount);
                 partitions.add (partition);
             }
 
@@ -114,7 +114,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-                var partition = new PartitionBar (part, path, sector_size, this.set_mount, this.unset_mount);
+                var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount);
                 partitions.add (partition);
             }
 
