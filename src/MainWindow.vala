@@ -190,7 +190,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         disk_view.next_step.connect (() => load_progress_view (null));
     }
 
-    private void load_progress_view (GLib.Array<Installer.Mount>? disk_config) {
+    private void load_progress_view (Gee.ArrayList<Installer.Mount>? disk_config) {
         if (progress_view != null) {
             progress_view.destroy ();
         }
