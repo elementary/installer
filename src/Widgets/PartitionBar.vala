@@ -66,13 +66,14 @@ public class Installer.PartitionBar : Gtk.EventBox {
         return end - start;
     }
 
-    public int get_percent(uint64 disk_sectors) {
-        return (int) (((double) this.get_size () / (double) disk_sectors) * 100);
+    public double get_percent(uint64 disk_sectors) {
+        return (((double) this.get_size () / (double) disk_sectors));
     }
 
     public void update_length (int alloc_width, uint64 disk_sectors) {
-        var request = alloc_width / 100 * (int) get_percent (disk_sectors);
-        container.set_size_request (request, -1);
+        var request = alloc_width * get_percent (disk_sectors);
+        if (request < 20) request = 20;
+        set_size_request ((int) request, -1);
     }
 
     public void show_popover () {
