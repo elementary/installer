@@ -52,10 +52,10 @@ public class Installer.Mount {
     }
 
     public bool is_lvm () {
-        return (bool) (this.flags & LVM != 0);
+        return (this.flags & LVM) != 0;
     }
 
     public bool should_format () {
-        return (bool) (this.flags & FORMAT != 0);
+        return (this.flags & FORMAT) != 0;
     }
 }

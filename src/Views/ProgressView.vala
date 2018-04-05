@@ -176,6 +176,7 @@ public class ProgressView : AbstractInstallerView {
                     return GLib.Source.REMOVE;
                 });
             } else {
+                stderr.printf ("DEBUG: starting distinst installer\n");
                 installer.install ((owned) disks, config);
             }
 
@@ -194,6 +195,7 @@ public class ProgressView : AbstractInstallerView {
                 if (disk == null) {
                     var new_disk = new Distinst.Disk (m.parent_disk);
                     if (new_disk == null) {
+                        stderr.printf ("could not find physical device: '%s'\n", m.parent_disk);
                         warning ("could not find physical device: '%s'\n", m.parent_disk);
                         on_error ();
                         return;
@@ -206,30 +208,46 @@ public class ProgressView : AbstractInstallerView {
                 unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
                 if (partition == null) {
+                    stderr.printf ("could not find %s\n", m.partition_path);
                     warning ("could not find %s\n", m.partition_path);
                     on_error ();
                     return;
                 }
 
                 if (m.mount_point == "/boot/efi") {
-                    Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
-                    partition.set_flags (flags);
-                }
+                    if (m.is_valid_boot_mount ()) {
+                        var pfs = partition.get_file_system ();
+                        if (pfs != Distinst.FileSystemType.FAT16 || pfs != Distinst.FileSystemType.FAT32) {
+                            partition.format_with (m.filesystem);
+                        }
 
-                if (m.filesystem != Distinst.FileSystemType.SWAP) {
-                    partition.set_mount (m.mount_point);
-                }
+                        partition.set_mount (m.mount_point);
+                        Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
+                        partition.set_flags (flags);
+                    } else {
+                        stderr.printf ("unreachable code path -- efi partition is invalid\n");
+                        warning ("unreachable code path -- efi partition is invalid\n");
+                        on_error ();
+                        return;
+                    }
+                } else {
+                    if (m.filesystem != Distinst.FileSystemType.SWAP) {
+                        partition.set_mount (m.mount_point);
+                    }
 
-                partition.format_with (m.filesystem);
+                    partition.format_with (m.filesystem);
+                }
             }
         }
 
+        stderr.printf ("configuring lvm partitions\n");
         disks.initialize_volume_groups ();
         foreach (Installer.Mount m in lvm_devices) {
-            unowned Distinst.LvmDevice disk = disks.get_logical_device (m.parent_disk);
-            var new_disk = new Distinst.Disk (m.parent_disk);
-            if (new_disk == null) {
-                warning ("could not find lvm device: '%s'\n", m.parent_disk);
+            var vg = m.parent_disk.offset (12);
+            unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
+            if (disk == null) {
+                stderr.printf ("could not find %s\n", vg);
+                warning ("could not find %s\n", vg);
                 on_error ();
                 return;
             }
@@ -237,6 +255,7 @@ public class ProgressView : AbstractInstallerView {
             unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
             if (partition == null) {
+                stderr.printf ("could not find %s\n", m.partition_path);
                 warning ("could not find %s\n", m.partition_path);
                 on_error ();
                 return;

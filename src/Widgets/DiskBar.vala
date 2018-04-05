@@ -132,6 +132,7 @@ public class Installer.DiskBar: Gtk.Grid {
         bar.set_size_request (-1, 40);
         bar.get_style_context ().add_class ("trough");
         bar.get_style_context ().add_class ("disk-bar");
+        
         unused_bar = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         var context = unused_bar.get_style_context ();
         context.add_class ("unused");
