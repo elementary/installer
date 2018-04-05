@@ -136,12 +136,8 @@ public class Installer.DiskBar: Gtk.Grid {
         var context = unused_bar.get_style_context ();
         context.add_class ("unused");
 
-        bar.size_allocate.connect ((alloc) => {
-            update_sector_lengths (partitions, alloc.width);
-        });
-
         foreach (PartitionBar part in partitions) {
-            part.update_length (1000, this.size / 512);
+            part.update_length (876, this.size / 512);
             bar.pack_start(part, false, false, 0);
         }
 
@@ -155,9 +151,9 @@ public class Installer.DiskBar: Gtk.Grid {
         }
 
         var unused_size = unused / 512;
-        int percent = (int) (((double) unused_size / (double) disk_sectors) * 100);
-        var request = alloc_width / 100 * (int) percent;
-        unused_bar.set_size_request (request, -1);
+        var percent = (((double) unused_size / (double) disk_sectors));
+        var request = alloc_width * percent;
+        unused_bar.set_size_request ((int) request, -1);
     }
 
     internal class FillRound : Gtk.Widget {
