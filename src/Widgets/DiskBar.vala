@@ -136,10 +136,6 @@ public class Installer.DiskBar: Gtk.Grid {
         var context = unused_bar.get_style_context ();
         context.add_class ("unused");
 
-        bar.size_allocate.connect ((alloc) => {
-            update_sector_lengths (partitions, alloc.width);
-        });
-
         foreach (PartitionBar part in partitions) {
             part.update_length (876, this.size / 512);
             bar.pack_start(part, false, false, 0);
