@@ -82,13 +82,13 @@ public class Installer.DiskBar: Gtk.Grid {
         legend_container.set_halign (Gtk.Align.CENTER);
 
         foreach (PartitionBar p in partitions) {
-            add_legend (p.path, p.get_size() * 512, Distinst.strfilesys (p.filesystem));
+            add_legend (p.path, p.get_size() * 512, Distinst.strfilesys (p.filesystem), p.menu);
         }
 
-        add_legend ("unused", unused, "unused");
+        add_legend ("unused", unused, "unused", null);
     }
 
-    private void add_legend (string ppath, uint64 size, string fs) {
+    private void add_legend (string ppath, uint64 size, string fs, PartitionMenu? menu) {
         var fill_round = new FillRound ();
         fill_round.set_valign(Gtk.Align.CENTER);
 
@@ -103,11 +103,26 @@ public class Installer.DiskBar: Gtk.Grid {
         var legend = new Gtk.Grid ();
         legend.row_spacing = 3;
         legend.column_spacing = 6;
-        legend.attach (fill_round, 0, 0, 1, 2);
-        legend.attach (path, 1, 0);
+        legend.attach (set_menu (fill_round, menu), 0, 0, 1, 2);
+        legend.attach (set_menu (path, menu), 1, 0);
         legend.attach (info, 1, 1);
 
         legend_container.pack_start(legend, false, false, 0);
+    }
+
+    private Gtk.EventBox set_menu (Gtk.Widget widget, PartitionMenu? menu) {
+        var event_box = new Gtk.EventBox ();
+        event_box.add (widget);
+
+        if (menu != null) {
+            event_box.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
+            event_box.button_press_event.connect (() => {
+                menu.popup();
+                return true;
+            });
+        }
+
+        return event_box;
     }
 
     private void generate_label () {
@@ -132,7 +147,7 @@ public class Installer.DiskBar: Gtk.Grid {
         bar.set_size_request (-1, 40);
         bar.get_style_context ().add_class ("trough");
         bar.get_style_context ().add_class ("disk-bar");
-        
+
         unused_bar = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         var context = unused_bar.get_style_context ();
         context.add_class ("unused");
