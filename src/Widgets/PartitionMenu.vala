@@ -61,14 +61,14 @@ public class Installer.PartitionMenu : Gtk.Popover {
         use_as_label.set_halign (Gtk.Align.END);
         use_partition_label.set_halign (Gtk.Align.END);
 
-        grid.attach(use_partition_label, 0, 0);
-        grid.attach(format_label, 0, 1);
-        grid.attach(use_as_label, 0, 2);
-        grid.attach(custom_label, 0, 3);
-        grid.attach(type_label, 0, 4);
+        grid.attach(format_label, 0, 0);
+        grid.attach(use_as_label, 0, 1);
+        grid.attach(custom_label, 0, 2);
+        grid.attach(type_label, 0, 3);
 
         use_partition = new Gtk.Switch ();
         use_partition.set_halign (Gtk.Align.START);
+        use_partition.set_hexpand (true);
 
         format_partition = new Gtk.Switch ();
         format_partition.set_halign (Gtk.Align.START);
@@ -99,14 +99,25 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.append_text ("ntfs");
         type.set_active (0);
 
-        grid.attach (use_partition, 1, 0);
-        grid.attach (format_partition, 1, 1);
-        grid.attach (use_as, 1, 2);
-        grid.attach (custom, 1, 3);
-        grid.attach (type, 1, 4);
+        grid.attach (format_partition, 1, 0);
+        grid.attach (use_as, 1, 1);
+        grid.attach (custom, 1, 2);
+        grid.attach (type, 1, 3);
 
-        this.add (grid);
-        grid.show_all ();
+        var outer = new Gtk.Grid ();
+        outer.row_spacing = 6;
+        outer.column_spacing = 12;;
+        outer.margin = 6;
+
+        var outer_revealer = new Gtk.Revealer ();
+        outer_revealer.add (grid);
+
+        outer.attach (use_partition_label, 0, 0);
+        outer.attach (use_partition, 1, 0);
+        outer.attach (outer_revealer, 0, 1, 2, 1);
+
+        this.add (outer);
+        outer.show_all ();
 
         custom.set_visible (false);
         custom_label.set_visible (false);
@@ -169,6 +180,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 unset_mount (partition_path);
             }
 
+            outer_revealer.set_reveal_child (use_partition.active);
             format_partition.set_visible (use_partition.active);
             format_label.set_visible (use_partition.active);
         });

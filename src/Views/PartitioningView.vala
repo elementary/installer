@@ -40,7 +40,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         this.margin = 12;
         disk_list = new Gtk.Grid ();
         disk_list.set_valign (Gtk.Align.START);
-        disk_list.row_spacing = 12;
+        disk_list.row_spacing = 6;
         var disk_scroller = new Gtk.ScrolledWindow (null, null);
         disk_scroller.hexpand = true;
         disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -49,8 +49,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         var description = new Gtk.Label (_("Select which partitions to use across all drives. This will erase all data on the selected partitions."));
         description.set_halign (Gtk.Align.CENTER);
 
-        this.content_area.attach(description, 0, 0, 1, 1);
-        this.content_area.attach(disk_scroller, 0, 1, 1, 1);
+        this.content_area.attach (description, 0, 0, 1, 1);
+        this.content_area.attach (disk_scroller, 0, 1, 1, 1);
 
         load_disks ();
 
@@ -157,7 +157,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         foreach (Mount m in mounts) {
             stderr.printf("  %s : %s : %s\n", m.partition_path, m.mount_point, Distinst.strfilesys (m.filesystem));
         }
-        
+
         foreach (Mount m in mounts) {
             if (m.mount_point == "/" && m.is_valid_root_mount ()) {
                 flags |= ROOT;
