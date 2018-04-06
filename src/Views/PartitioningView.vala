@@ -41,6 +41,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         disk_list = new Gtk.Grid ();
         disk_list.set_valign (Gtk.Align.START);
         disk_list.row_spacing = 12;
+        disk_list.margin = 6;
         var disk_scroller = new Gtk.ScrolledWindow (null, null);
         disk_scroller.hexpand = true;
         disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
