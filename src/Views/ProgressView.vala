@@ -213,8 +213,7 @@ public class ProgressView : AbstractInstallerView {
 
                 if (m.mount_point == "/boot/efi") {
                     if (m.is_valid_boot_mount ()) {
-                        var pfs = partition.get_file_system ();
-                        if (pfs != Distinst.FileSystemType.FAT16 || pfs != Distinst.FileSystemType.FAT32) {
+                        if (m.should_format ()) {
                             partition.format_with (m.filesystem);
                         }
 
@@ -231,7 +230,9 @@ public class ProgressView : AbstractInstallerView {
                         partition.set_mount (m.mount_point);
                     }
 
-                    partition.format_with (m.filesystem);
+                    if (m.should_format ()) {
+                        partition.format_with (m.filesystem);
+                    }
                 }
             }
         }
@@ -258,7 +259,9 @@ public class ProgressView : AbstractInstallerView {
                 partition.set_mount (m.mount_point);
             }
 
-            partition.format_and_keep_name (m.filesystem);
+            if (m.should_format ()) {
+                partition.format_and_keep_name (m.filesystem);
+            }
         }
     }
 
