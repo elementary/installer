@@ -184,37 +184,84 @@ public class ProgressView : AbstractInstallerView {
     }
 
     private void custom_disk_configuration (Distinst.Disks disks) {
+        Installer.Mount[] lvm_devices = {};
+
         foreach (Installer.Mount m in disk_config) {
-            unowned Distinst.Disk disk = disks.get_physical_device (m.parent_disk);
-            if (disk == null) {
-                var new_disk = new Distinst.Disk (m.parent_disk);
-                if (new_disk == null) {
-                    warning ("could not find %s\n", m.parent_disk);
+            if (m.is_lvm ()) {
+                lvm_devices += m;
+            } else {
+                unowned Distinst.Disk disk = disks.get_physical_device (m.parent_disk);
+                if (disk == null) {
+                    var new_disk = new Distinst.Disk (m.parent_disk);
+                    if (new_disk == null) {
+                        warning ("could not find physical device: '%s'\n", m.parent_disk);
+                        on_error ();
+                        return;
+                    }
+
+                    disks.push (new_disk);
+                    disk = disks.get_physical_device (m.parent_disk);
+                }
+
+                unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
+
+                if (partition == null) {
+                    warning ("could not find %s\n", m.partition_path);
                     on_error ();
                     return;
                 }
 
-                disks.push (new_disk);
-                disk = disks.get_physical_device (m.parent_disk);
+                if (m.mount_point == "/boot/efi") {
+                    if (m.is_valid_boot_mount ()) {
+                        if (m.should_format ()) {
+                            partition.format_with (m.filesystem);
+                        }
+
+                        partition.set_mount (m.mount_point);
+                        Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
+                        partition.set_flags (flags);
+                    } else {
+                        warning ("unreachable code path -- efi partition is invalid\n");
+                        on_error ();
+                        return;
+                    }
+                } else {
+                    if (m.filesystem != Distinst.FileSystemType.SWAP) {
+                        partition.set_mount (m.mount_point);
+                    }
+
+                    if (m.should_format ()) {
+                        partition.format_with (m.filesystem);
+                    }
+                }
+            }
+        }
+
+        disks.initialize_volume_groups ();
+        foreach (Installer.Mount m in lvm_devices) {
+            var vg = m.parent_disk.offset (12);
+            unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
+            if (disk == null) {
+                warning ("could not find %s\n", vg);
+                on_error ();
+                return;
             }
 
             unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
+
             if (partition == null) {
                 warning ("could not find %s\n", m.partition_path);
                 on_error ();
                 return;
             }
 
-            if (m.mount_point == "/boot/efi") {
-                Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
-                partition.set_flags (flags);
-            }
-
             if (m.filesystem != Distinst.FileSystemType.SWAP) {
                 partition.set_mount (m.mount_point);
             }
 
-            partition.format_with (m.filesystem);
+            if (m.should_format ()) {
+                partition.format_and_keep_name (m.filesystem);
+            }
         }
     }
 

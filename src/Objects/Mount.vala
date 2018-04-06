@@ -23,16 +23,19 @@ public class Installer.Mount {
     public string parent_disk;
     public string mount_point;
     public Distinst.FileSystemType filesystem;
-    public bool format;
+    public uint8 flags;
     public PartitionMenu menu;
 
+    public const uint8 FORMAT = 1;
+    public const uint8 LVM = 2;
+
     public Mount (string partition, string parent_disk, string mount,
-                  bool format, Distinst.FileSystemType fs,
+                  uint8 flags, Distinst.FileSystemType fs,
                   PartitionMenu menu) {
         filesystem = fs;
         mount_point = mount;
         partition_path = partition;
-        this.format = format;
+        this.flags = flags;
         this.menu = menu;
         this.parent_disk = parent_disk;
     }
@@ -46,5 +49,13 @@ public class Installer.Mount {
         return filesystem != Distinst.FileSystemType.FAT16
             && filesystem != Distinst.FileSystemType.FAT32
             && filesystem != Distinst.FileSystemType.NTFS;
+    }
+
+    public bool is_lvm () {
+        return (this.flags & LVM) != 0;
+    }
+
+    public bool should_format () {
+        return (this.flags & FORMAT) != 0;
     }
 }

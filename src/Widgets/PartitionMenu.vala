@@ -24,41 +24,54 @@ public delegate void UnsetMount (string partition);
 
 public class Installer.PartitionMenu : Gtk.Popover {
     private Gtk.Grid grid;
-    public Gtk.Switch use_partition;
+    public bool disable_signals;
+    public bool is_lvm;
+    public Gtk.ComboBoxText type;
     public Gtk.ComboBoxText use_as;
     public Gtk.Entry custom;
-    public Gtk.ComboBoxText type;
-    public Gtk.Label type_label;
     public Gtk.Label custom_label;
-    public string partition_path;
+    public Gtk.Label format_label;
+    public Gtk.Switch format_partition;
+    public Gtk.Label type_label;
+    public Gtk.Switch use_partition;
+    public Distinst.FileSystemType original_filesystem;
     public string parent_disk;
-    public bool disable_signals;
+    public string partition_path;
 
-    public PartitionMenu (string path, string parent, SetMount set_mount, UnsetMount unset_mount) {
+    public PartitionMenu (string path, string parent, Distinst.FileSystemType fs,
+                          bool lvm, SetMount set_mount, UnsetMount unset_mount) {
+        original_filesystem = fs;
+        is_lvm = lvm;
         partition_path = path;
         parent_disk = parent;
         grid = new Gtk.Grid ();
         grid.column_spacing = 12;
-        grid.row_spacing = 12;
+        grid.row_spacing = 6;
         grid.margin = 6;
 
         var use_partition_label = new Gtk.Label ("Use partition:");
+        format_label = new Gtk.Label ("Format:");
         var use_as_label = new Gtk.Label ("Use as:");
         custom_label = new Gtk.Label ("Custom:");
         type_label = new Gtk.Label ("Type:");
 
-        use_partition_label.set_halign (Gtk.Align.END);
-        use_as_label.set_halign (Gtk.Align.END);
         custom_label.set_halign (Gtk.Align.END);
+        format_label.set_halign (Gtk.Align.END);
         type_label.set_halign (Gtk.Align.END);
+        use_as_label.set_halign (Gtk.Align.END);
+        use_partition_label.set_halign (Gtk.Align.END);
 
-        grid.attach(use_partition_label, 0, 0, 1, 1);
-        grid.attach(use_as_label, 0, 1, 1, 1);
-        grid.attach(custom_label, 0, 2, 1, 1);
-        grid.attach(type_label, 0, 3, 1, 1);
+        grid.attach(use_partition_label, 0, 0);
+        grid.attach(format_label, 0, 1);
+        grid.attach(use_as_label, 0, 2);
+        grid.attach(custom_label, 0, 3);
+        grid.attach(type_label, 0, 4);
 
         use_partition = new Gtk.Switch ();
         use_partition.set_halign (Gtk.Align.START);
+
+        format_partition = new Gtk.Switch ();
+        format_partition.set_halign (Gtk.Align.START);
 
         string boot_partition;
         if (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT) {
@@ -86,16 +99,19 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.append_text ("ntfs");
         type.set_active (0);
 
-        grid.attach(use_partition, 1, 0, 1, 1);
-        grid.attach(use_as, 1, 1, 1, 1);
-        grid.attach(custom, 1, 2, 1, 1);
-        grid.attach(type, 1, 3, 1, 1);
+        grid.attach (use_partition, 1, 0);
+        grid.attach (format_partition, 1, 1);
+        grid.attach (use_as, 1, 2);
+        grid.attach (custom, 1, 3);
+        grid.attach (type, 1, 4);
 
         this.add (grid);
         grid.show_all ();
 
-        custom.set_visible(false);
+        custom.set_visible (false);
         custom_label.set_visible (false);
+        format_partition.set_visible (false);
+        format_label.set_visible (false);
 
         use_as.changed.connect(() => {
             if (disable_signals) {
@@ -131,6 +147,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.changed.connect(() => {
             if (!disable_signals) {
                 check_values (set_mount);
+                set_format_sensitivity ();
             }
         });
 
@@ -147,10 +164,20 @@ public class Installer.PartitionMenu : Gtk.Popover {
 
             if (use_partition.active) {
                 update_values (set_mount);
+                set_format_sensitivity ();
             } else {
                 unset_mount (partition_path);
             }
+
+            format_partition.set_visible (use_partition.active);
+            format_label.set_visible (use_partition.active);
         });
+    }
+
+    private void set_format_sensitivity () {
+        bool is_sensitive = has_same_filesystem ();
+        format_partition.active = !is_sensitive;
+        format_partition.set_sensitive (is_sensitive);
     }
 
     private void check_values (SetMount set_mount) {
@@ -160,7 +187,18 @@ public class Installer.PartitionMenu : Gtk.Popover {
     }
 
     private void update_values (SetMount set_mount) {
-        set_mount (new Installer.Mount (partition_path, parent_disk, get_mount (), true, get_file_system (), this));
+        set_mount (new Installer.Mount (
+            partition_path,
+            parent_disk,
+            get_mount (),
+            (format_partition.active ? Mount.FORMAT : 0) + (is_lvm ? Mount.LVM : 0),
+            get_file_system (),
+            this
+        ));
+    }
+
+    private bool has_same_filesystem () {
+        return original_filesystem == get_file_system ();
     }
 
     private Distinst.FileSystemType get_file_system () {

@@ -70,6 +70,9 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     private void load_disks () {
         disks = Distinst.Disks.probe ();
+        disks.initialize_volume_groups ();
+        var label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
+
         var id = 0;
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
@@ -92,11 +95,33 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-                var partition = new PartitionBar (part, path, sector_size, this.set_mount, this.unset_mount);
+                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount);
                 partitions.add (partition);
             }
 
             var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+            label_sizer.add_widget (disk_bar.label);
+            disk_list.attach(disk_bar, 0, id);
+
+            id += 1;
+        }
+
+        foreach (unowned Distinst.LvmDevice disk in disks.list_logical ()) {
+            var sector_size = disk.get_sector_size ();
+            var size = disk.get_sectors () * sector_size;
+
+            string path = Utils.string_from_utf8 (disk.get_device_path ());
+
+            string model = disk.get_model ();
+
+            var partitions = new Gee.ArrayList<PartitionBar> ();
+            foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
+                var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount);
+                partitions.add (partition);
+            }
+
+            var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+            label_sizer.add_widget (disk_bar.label);
             disk_list.attach(disk_bar, 0, id);
 
             id += 1;
@@ -131,6 +156,9 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         stderr.printf("DEBUG: Current Layout:\n");
         foreach (Mount m in mounts) {
             stderr.printf("  %s : %s : %s\n", m.partition_path, m.mount_point, Distinst.strfilesys (m.filesystem));
+        }
+        
+        foreach (Mount m in mounts) {
             if (m.mount_point == "/" && m.is_valid_root_mount ()) {
                 flags |= ROOT;
             } else if (m.mount_point == "/boot/efi" && m.is_valid_boot_mount ()) {
@@ -147,6 +175,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     }
 
     private void set_mount (Mount mount) {
+        stderr.printf ("setting %s on %s\n", mount.partition_path, mount.mount_point);
         unset_mount_point (mount);
         for (int i = 0; i < mounts.size; i++) {
             if (mounts[i].partition_path == mount.partition_path) {
@@ -156,11 +185,15 @@ public class Installer.PartitioningView : AbstractInstallerView  {
             }
         }
 
+
+        validate_status ();
+        stderr.printf ("adding new mount\n");
         mounts.add (mount);
         validate_status ();
     }
 
     private void unset_mount (string partition) {
+        stderr.printf ("unsetting %s", partition);
         remove_mount_by_partition (partition);
         validate_status ();
     }
