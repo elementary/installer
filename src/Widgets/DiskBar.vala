@@ -50,19 +50,12 @@ public class Installer.DiskBar: Gtk.Grid {
         generate_bar ();
         generate_legend ();
 
-        var description = new Gtk.Label ("%s free out of %s".printf (
-            GLib.format_size (unused),
-            GLib.format_size (size)
-        ));
-        description.set_halign (Gtk.Align.CENTER);
-
         this.hexpand = true;
         this.row_spacing = 6;
         this.get_style_context ().add_class ("storage-bar");
         this.attach (label, 0, 1);
         this.attach (legend_container, 1, 0);
         this.attach (bar, 1, 1);
-        this.attach (description, 1, 2);
         this.margin = 6;
 
         show_all ();
@@ -132,7 +125,7 @@ public class Installer.DiskBar: Gtk.Grid {
         bar.set_size_request (-1, 40);
         bar.get_style_context ().add_class ("trough");
         bar.get_style_context ().add_class ("disk-bar");
-        
+
         unused_bar = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         var context = unused_bar.get_style_context ();
         context.add_class ("unused");
