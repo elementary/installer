@@ -3,29 +3,31 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2016-08-25 14:39+0000\n"
-"Last-Translator: Nate <natejms@outlook.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-04-06 00:03+0000\n"
+"Last-Translator: Coder206 <patrick.arrow206@outlook.com>\n"
+"Language-Team: French (Canada) "
+"<https://weblate.elementary.io/projects/installer/installer/fr_CA/>\n"
+"Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
-msgstr ""
+msgstr "Installer %s"
 
 #: src/Utils.vala:156
 msgid "Operating System"
-msgstr ""
+msgstr "System d'exploitation"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
 #, c-format
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
@@ -49,7 +51,7 @@ msgstr ""
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:52
@@ -58,7 +60,7 @@ msgstr ""
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Annuler l'installation"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
@@ -66,7 +68,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:61
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorer"
 
 #: src/Views/CheckView.vala:208
 msgid "Not Enough Space"
