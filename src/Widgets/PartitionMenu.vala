@@ -47,7 +47,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         grid = new Gtk.Grid ();
         grid.column_spacing = 12;
         grid.row_spacing = 6;
-        grid.margin = 6;
+        grid.margin = 12;
 
         var use_partition_label = new Gtk.Label ("Use partition:");
         format_label = new Gtk.Label ("Format:");
@@ -61,10 +61,10 @@ public class Installer.PartitionMenu : Gtk.Popover {
         use_as_label.set_halign (Gtk.Align.END);
         use_partition_label.set_halign (Gtk.Align.END);
 
-        grid.attach(format_label, 0, 0);
-        grid.attach(use_as_label, 0, 1);
-        grid.attach(custom_label, 0, 2);
-        grid.attach(type_label, 0, 3);
+        grid.attach (format_label, 0, 0);
+        grid.attach (use_as_label, 0, 1);
+        grid.attach (custom_label, 0, 2);
+        grid.attach (type_label, 0, 3);
 
         use_partition = new Gtk.Switch ();
         use_partition.set_halign (Gtk.Align.START);
