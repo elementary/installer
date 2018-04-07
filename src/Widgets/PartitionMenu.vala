@@ -75,23 +75,23 @@ public class Installer.PartitionMenu : Gtk.Popover {
 
         string boot_partition;
         if (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT) {
-            boot_partition = "Boot (/boot/efi)";
+            boot_partition = _("Boot (/boot/efi)");
         } else {
-            boot_partition = "Boot (/boot)";
+            boot_partition = _("Boot (/boot)");
         }
 
         use_as = new Gtk.ComboBoxText ();
-        use_as.append_text ("Root (/)");
-        use_as.append_text ("Home (/home)");
+        use_as.append_text (_("Root (/)"));
+        use_as.append_text (_("Home (/home)"));
         use_as.append_text (boot_partition);
-        use_as.append_text ("Swap");
-        use_as.append_text ("Custom");
+        use_as.append_text (_("Swap"));
+        use_as.append_text (_("Custom"));
         use_as.set_active (0);
 
         custom = new Gtk.Entry ();
 
         type = new Gtk.ComboBoxText ();
-        type.append_text ("Default (ext4)");
+        type.append_text (_("Default (ext4)"));
         type.append_text ("fat16");
         type.append_text ("fat32");
         type.append_text ("btrfs");
@@ -256,7 +256,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     }
 
     private bool custom_set () {
-        return use_as.get_active_text () == "Custom";
+        return use_as.get_active() == 4;
     }
 
     private bool custom_valid () {
