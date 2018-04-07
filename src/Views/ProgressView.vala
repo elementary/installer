@@ -300,16 +300,27 @@ public class ProgressView : AbstractInstallerView {
 
         new Thread<void*> (null, () => {
             if (Installer.App.test_mode) {
-                Idle.add (() => {
-                    on_success ();
-                    return GLib.Source.REMOVE;
-                });
+                fake_status (Distinst.Step.PARTITION);
+                fake_status (Distinst.Step.EXTRACT);
+                fake_status (Distinst.Step.CONFIGURE);
+                fake_status (Distinst.Step.BOOTLOADER);
             } else {
                 installer.install ((owned) disks, config);
             }
 
             return null;
         });
+    }
+
+    private void fake_status (Distinst.Step step) {
+        for (var percent = 0; percent <= 100; percent++) {
+            Distinst.Status status = Distinst.Status () {
+                step = step,
+                percent = percent
+            };
+            installation_status_callback (status);
+            GLib.Thread.usleep (10000);
+        }
     }
 
     private void installation_status_callback (Distinst.Status status) {
