@@ -136,33 +136,68 @@ public class Installer.DiskBar: Gtk.Grid {
     }
 
     private void generate_bar () {
-        bar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        bar.set_size_request (-1, 40);
-        bar.get_style_context ().add_class ("trough");
-        bar.get_style_context ().add_class ("disk-bar");
-
         unused_bar = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         var context = unused_bar.get_style_context ();
         context.add_class ("unused");
 
+        bar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        bar.set_size_request (-1, 40);
+        bar.get_style_context ().add_class ("trough");
+        bar.get_style_context ().add_class ("disk-bar");
+        bar.pack_start (unused_bar, true, true, 0);
+        bar.size_allocate.connect ((alloc) => {
+            update_sector_lengths(partitions, alloc.width);
+        });
+
         foreach (PartitionBar part in partitions) {
-            part.update_length (876, this.size / 512);
             bar.pack_start(part, false, false, 0);
         }
 
-        bar.pack_start (unused_bar, true, true, 0);
+        update_sector_lengths (partitions, 876);
     }
 
-    public void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, int alloc_width) {
+    private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, int alloc_width) {
         var disk_sectors = this.size / 512;
-        foreach (PartitionBar partition in partitions) {
-            partition.update_length (alloc_width, disk_sectors);
+
+        int[] lengths = {};
+        for (int x = 0; x < partitions.size; x++) {
+            var part = partitions[x];
+            var requested = part.calculate_length (alloc_width, disk_sectors);
+
+            var excess = requested - alloc_width;
+            while (excess > 0) {
+                var reduce_by = x / excess;
+                if (reduce_by == 0) reduce_by = 1;
+
+                // Begin by resizing all partitions over 20px wide.
+                bool excess_modified = false;
+                for (int y = 0; excess > 0 && y < x; y++) {
+                    if (lengths[y] <= 20) continue;
+                    lengths[y] -= reduce_by;
+                    excess -= reduce_by;
+                    excess_modified = true;
+                }
+
+                // In case all are below that width, shrink beyond limit.
+                if (!excess_modified) {
+                    for (int y = 0; excess > 0 && y < x; y++) {
+                        lengths[y] -= reduce_by;
+                        excess -= reduce_by;
+                        excess_modified = true;
+                    }
+                }
+            }
+
+            alloc_width -= requested;
+            disk_sectors -= part.get_size ();
+            lengths += requested;
         }
 
-        var unused_size = unused / 512;
-        var percent = (((double) unused_size / (double) disk_sectors));
-        var request = alloc_width * percent;
-        unused_bar.set_size_request ((int) request, -1);
+        for (int x = 0; x < partitions.size; x++) {
+            partitions[x].update_length (lengths[x]);
+        }
+
+        unused_bar.set_size_request (alloc_width, -1);
     }
 
     internal class FillRound : Gtk.Widget {
