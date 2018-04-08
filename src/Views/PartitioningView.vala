@@ -41,6 +41,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         disk_list = new Gtk.Grid ();
         disk_list.set_valign (Gtk.Align.START);
         disk_list.row_spacing = 6;
+        disk_list.margin_end = 12;
+
         var disk_scroller = new Gtk.ScrolledWindow (null, null);
         disk_scroller.hexpand = true;
         disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -49,8 +51,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         var description = new Gtk.Label (_("Select which partitions to use across all drives. This will erase all data on the selected partitions."));
         description.set_halign (Gtk.Align.CENTER);
 
-        this.content_area.attach (description, 0, 0, 1, 1);
-        this.content_area.attach (disk_scroller, 0, 1, 1, 1);
+        this.content_area.attach(description, 0, 0);
+        this.content_area.attach(disk_scroller, 0, 1);
 
         load_disks ();
 

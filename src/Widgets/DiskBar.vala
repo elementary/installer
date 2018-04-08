@@ -26,6 +26,7 @@ public class Installer.DiskBar: Gtk.Grid {
 
     public Gtk.Box label;
     private Gtk.Box bar;
+    private Gtk.ScrolledWindow legend;
     private Gtk.Box legend_container;
     private uint64 unused;
     private Gtk.Box unused_bar;
@@ -51,10 +52,9 @@ public class Installer.DiskBar: Gtk.Grid {
         generate_legend ();
 
         this.hexpand = true;
-        this.row_spacing = 6;
         this.get_style_context ().add_class ("storage-bar");
         this.attach (label, 0, 1);
-        this.attach (legend_container, 1, 0);
+        this.attach (legend, 1, 0);
         this.attach (bar, 1, 1);
         this.margin = 6;
 
@@ -71,8 +71,13 @@ public class Installer.DiskBar: Gtk.Grid {
     }
 
     private void generate_legend () {
+        legend = new Gtk.ScrolledWindow (null, null);
+        legend.vscrollbar_policy = Gtk.PolicyType.NEVER;
+
         legend_container = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
         legend_container.set_halign (Gtk.Align.CENTER);
+        legend_container.margin_bottom = 9;
+        legend.add (legend_container);
 
         foreach (PartitionBar p in partitions) {
             add_legend (p.path, p.get_size() * 512, Distinst.strfilesys (p.filesystem), p.menu);
@@ -94,7 +99,6 @@ public class Installer.DiskBar: Gtk.Grid {
         path.use_markup = true;
 
         var legend = new Gtk.Grid ();
-        legend.row_spacing = 3;
         legend.column_spacing = 6;
         legend.attach (set_menu (fill_round, menu), 0, 0, 1, 2);
         legend.attach (set_menu (path, menu), 1, 0);
@@ -103,19 +107,19 @@ public class Installer.DiskBar: Gtk.Grid {
         legend_container.pack_start(legend, false, false, 0);
     }
 
-    private Gtk.EventBox set_menu (Gtk.Widget widget, PartitionMenu? menu) {
-        var event_box = new Gtk.EventBox ();
-        event_box.add (widget);
-
+    private Gtk.Widget set_menu (Gtk.Widget widget, PartitionMenu? menu) {
         if (menu != null) {
+            var event_box = new Gtk.EventBox ();
+            event_box.add (widget);
             event_box.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
             event_box.button_press_event.connect (() => {
                 menu.popup();
                 return true;
             });
+            return event_box;
         }
 
-        return event_box;
+        return widget;
     }
 
     private void generate_label () {
@@ -131,7 +135,7 @@ public class Installer.DiskBar: Gtk.Grid {
         label = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
         label.pack_start (name_label, false, false, 0);
         label.pack_start (size_label, false, false, 0);
-        label.set_margin_right (12);
+        label.margin_end = 12;
         label.valign = Gtk.Align.CENTER;
     }
 
