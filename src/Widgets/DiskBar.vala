@@ -83,7 +83,9 @@ public class Installer.DiskBar: Gtk.Grid {
             add_legend (p.path, p.get_size() * 512, Distinst.strfilesys (p.filesystem), p.menu);
         }
 
-        add_legend ("unused", unused, "unused", null);
+        if (size / 100 < unused) {
+            add_legend ("unused", unused, "unused", null);
+        }
     }
 
     private void add_legend (string ppath, uint64 size, string fs, Gtk.Popover? menu) {

@@ -124,6 +124,12 @@ public class Installer.PartitionMenu : Gtk.Popover {
         format_partition.set_visible (false);
         format_label.set_visible (false);
 
+        format_partition.notify["active"].connect (() => {
+            if (!disable_signals) {
+                check_values (set_mount);
+            }
+        });
+
         use_as.changed.connect(() => {
             if (disable_signals) {
                 return;
@@ -134,7 +140,6 @@ public class Installer.PartitionMenu : Gtk.Popover {
 
             custom.set_visible (visible);
             custom_label.set_visible (visible);
-            check_values (set_mount);
 
             if (active == 2) {
                 if (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT) {
@@ -146,6 +151,11 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 type.set_visible (true);
                 type.set_sensitive (false);
             } else if (active == 3) {
+                format_label.set_visible (false);
+                format_partition.set_visible (false);
+                disable_signals = true;
+                format_partition.active = true;
+                disable_signals = false;
                 type_label.set_visible (false);
                 type.set_visible (false);
             } else {
@@ -153,6 +163,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 type.set_visible (true);
                 type.set_sensitive (true);
             }
+
+            check_values (set_mount);
         });
 
         type.changed.connect(() => {
@@ -174,8 +186,10 @@ public class Installer.PartitionMenu : Gtk.Popover {
             }
 
             if (use_partition.active) {
-                update_values (set_mount);
+                disable_signals = true;
                 set_format_sensitivity ();
+                disable_signals = false;
+                update_values (set_mount);
             } else {
                 unset_mount (partition_path);
             }
@@ -199,12 +213,17 @@ public class Installer.PartitionMenu : Gtk.Popover {
     }
 
     private void update_values (SetMount set_mount) {
+        var mount = get_mount ();
+        var filesystem = mount == "swap"
+            ? Distinst.FileSystemType.SWAP
+            : get_file_system ();
+
         set_mount (new Installer.Mount (
             partition_path,
             parent_disk,
-            get_mount (),
+            mount,
             (format_partition.active ? Mount.FORMAT : 0) + (is_lvm ? Mount.LVM : 0),
-            get_file_system (),
+            filesystem,
             this
         ));
     }

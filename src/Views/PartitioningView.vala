@@ -160,7 +160,13 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
         stderr.printf("DEBUG: Current Layout:\n");
         foreach (Mount m in mounts) {
-            stderr.printf("  %s : %s : %s\n", m.partition_path, m.mount_point, Distinst.strfilesys (m.filesystem));
+            stderr.printf (
+                "  %s : %s : %s: format? %s\n",
+                m.partition_path,
+                m.mount_point,
+                Distinst.strfilesys (m.filesystem),
+                m.should_format () ? "true" : "false"
+            );
         }
 
         foreach (Mount m in mounts) {
