@@ -26,6 +26,7 @@ public class Installer.DiskBar: Gtk.Grid {
 
     public Gtk.Box label;
     private Gtk.Box bar;
+    private Gtk.ScrolledWindow legend;
     private Gtk.Box legend_container;
     private uint64 unused;
     private Gtk.Box unused_bar;
@@ -51,10 +52,9 @@ public class Installer.DiskBar: Gtk.Grid {
         generate_legend ();
 
         this.hexpand = true;
-        this.row_spacing = 6;
         this.get_style_context ().add_class ("storage-bar");
         this.attach (label, 0, 1);
-        this.attach (legend_container, 1, 0);
+        this.attach (legend, 1, 0);
         this.attach (bar, 1, 1);
         this.margin = 6;
 
@@ -71,8 +71,13 @@ public class Installer.DiskBar: Gtk.Grid {
     }
 
     private void generate_legend () {
+        legend = new Gtk.ScrolledWindow (null, null);
+        legend.vscrollbar_policy = Gtk.PolicyType.NEVER;
+
         legend_container = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
         legend_container.set_halign (Gtk.Align.CENTER);
+        legend_container.margin_bottom = 9;
+        legend.add (legend_container);
 
         foreach (PartitionBar p in partitions) {
             add_legend (p.path, p.get_size() * 512, Distinst.strfilesys (p.filesystem), p.menu);
@@ -96,7 +101,6 @@ public class Installer.DiskBar: Gtk.Grid {
         path.use_markup = true;
 
         var legend = new Gtk.Grid ();
-        legend.row_spacing = 3;
         legend.column_spacing = 6;
         legend.attach (set_menu (fill_round, menu), 0, 0, 1, 2);
         legend.attach (set_menu (path, menu), 1, 0);
@@ -105,19 +109,19 @@ public class Installer.DiskBar: Gtk.Grid {
         legend_container.pack_start(legend, false, false, 0);
     }
 
-    private Gtk.EventBox set_menu (Gtk.Widget widget, PartitionMenu? menu) {
-        var event_box = new Gtk.EventBox ();
-        event_box.add (widget);
-
+    private Gtk.Widget set_menu (Gtk.Widget widget, PartitionMenu? menu) {
         if (menu != null) {
+            var event_box = new Gtk.EventBox ();
+            event_box.add (widget);
             event_box.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
             event_box.button_press_event.connect (() => {
                 menu.popup();
                 return true;
             });
+            return event_box;
         }
 
-        return event_box;
+        return widget;
     }
 
     private void generate_label () {
@@ -133,38 +137,73 @@ public class Installer.DiskBar: Gtk.Grid {
         label = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
         label.pack_start (name_label, false, false, 0);
         label.pack_start (size_label, false, false, 0);
-        label.set_margin_right (12);
+        label.margin_end = 12;
         label.valign = Gtk.Align.CENTER;
     }
 
     private void generate_bar () {
-        bar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        bar.set_size_request (-1, 40);
-        bar.get_style_context ().add_class ("trough");
-        bar.get_style_context ().add_class ("disk-bar");
-
         unused_bar = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         var context = unused_bar.get_style_context ();
         context.add_class ("unused");
 
+        bar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+        bar.set_size_request (-1, 40);
+        bar.get_style_context ().add_class ("trough");
+        bar.get_style_context ().add_class ("disk-bar");
+        bar.pack_start (unused_bar, true, true, 0);
+        bar.size_allocate.connect ((alloc) => {
+            update_sector_lengths(partitions, alloc.width);
+        });
+
         foreach (PartitionBar part in partitions) {
-            part.update_length (876, this.size / 512);
             bar.pack_start(part, false, false, 0);
         }
 
-        bar.pack_start (unused_bar, true, true, 0);
+        update_sector_lengths (partitions, 876);
     }
 
-    public void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, int alloc_width) {
+    private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, int alloc_width) {
         var disk_sectors = this.size / 512;
-        foreach (PartitionBar partition in partitions) {
-            partition.update_length (alloc_width, disk_sectors);
+
+        int[] lengths = {};
+        for (int x = 0; x < partitions.size; x++) {
+            var part = partitions[x];
+            var requested = part.calculate_length (alloc_width, disk_sectors);
+
+            var excess = requested - alloc_width;
+            while (excess > 0) {
+                var reduce_by = x / excess;
+                if (reduce_by == 0) reduce_by = 1;
+
+                // Begin by resizing all partitions over 20px wide.
+                bool excess_modified = false;
+                for (int y = 0; excess > 0 && y < x; y++) {
+                    if (lengths[y] <= 20) continue;
+                    lengths[y] -= reduce_by;
+                    excess -= reduce_by;
+                    excess_modified = true;
+                }
+
+                // In case all are below that width, shrink beyond limit.
+                if (!excess_modified) {
+                    for (int y = 0; excess > 0 && y < x; y++) {
+                        lengths[y] -= reduce_by;
+                        excess -= reduce_by;
+                        excess_modified = true;
+                    }
+                }
+            }
+
+            alloc_width -= requested;
+            disk_sectors -= part.get_size ();
+            lengths += requested;
         }
 
-        var unused_size = unused / 512;
-        var percent = (((double) unused_size / (double) disk_sectors));
-        var request = alloc_width * percent;
-        unused_bar.set_size_request ((int) request, -1);
+        for (int x = 0; x < partitions.size; x++) {
+            partitions[x].update_length (lengths[x]);
+        }
+
+        unused_bar.set_size_request (alloc_width, -1);
     }
 
     internal class FillRound : Gtk.Widget {
