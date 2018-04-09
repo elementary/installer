@@ -28,6 +28,7 @@ public class Installer.Mount {
 
     public const uint8 FORMAT = 1;
     public const uint8 LVM = 2;
+    public const uint8 LVM_ON_LUKS = 4;
 
     public Mount (string partition, string parent_disk, string mount,
                   uint8 flags, Distinst.FileSystemType fs,
@@ -39,7 +40,6 @@ public class Installer.Mount {
         this.menu = menu;
         this.parent_disk = parent_disk;
     }
-
     public bool is_valid_boot_mount () {
         return filesystem == Distinst.FileSystemType.FAT16
             || filesystem == Distinst.FileSystemType.FAT32;
@@ -57,5 +57,17 @@ public class Installer.Mount {
 
     public bool should_format () {
         return (this.flags & FORMAT) != 0;
+    }
+}
+
+public class Installer.LuksCredentials {
+    public string device;
+    public string pv;
+    public string password;
+
+    public LuksCredentials (string device, string pv, string password) {
+        this.device = device;
+        this.pv = pv;
+        this.password = password;
     }
 }

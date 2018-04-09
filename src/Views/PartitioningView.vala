@@ -28,6 +28,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private Gtk.SizeGroup label_sizer;
 
     public Gee.ArrayList<Installer.Mount> mounts;
+    public Gee.ArrayList<LuksCredentials> luks;
 
     public static uint64 minimum_disk_size;
 
@@ -38,6 +39,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     construct {
         this.mounts = new Gee.ArrayList<Installer.Mount> ();
+        this.luks = new Gee.ArrayList<LuksCredentials> ();
         this.margin = 12;
 
         disk_list = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
@@ -130,6 +132,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private void reset_view () {
         disk_list.get_children ().foreach ((child) => child.destroy ());
         mounts.clear ();
+        luks.clear ();
         next_button.sensitive = false;
         load_disks ();
     }
@@ -197,6 +200,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 unowned Distinst.LvmDevice disk = disks.get_logical_device (pv);
                 add_logical_disk (disk);
                 menu.set_decrypted (pv);
+                luks.add (new LuksCredentials (device, pv, password));
                 break;
             case 1:
                 stderr.printf ("decrypt_partition result is 1\n");
