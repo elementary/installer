@@ -189,7 +189,11 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 disable_signals = true;
                 set_format_sensitivity ();
                 disable_signals = false;
-                update_values (set_mount);
+                use_as.set_active (
+                    (fs == Distinst.FileSystemType.FAT16 || fs == Distinst.FileSystemType.FAT32)
+                        ? 2
+                        : fs == Distinst.FileSystemType.SWAP ? 3 : 0
+                );
             } else {
                 unset_mount (partition_path);
             }
