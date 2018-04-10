@@ -106,7 +106,7 @@ public class Installer.DiskBar: Gtk.Grid {
         legend.attach (set_menu (path, menu), 1, 0);
         legend.attach (info, 1, 1);
 
-        legend_container.pack_start(legend, false, false, 0);
+        legend_container.pack_start (legend, false, false, 0);
     }
 
     private Gtk.Widget set_menu (Gtk.Widget widget, Gtk.Popover? menu) {
@@ -213,8 +213,6 @@ public class Installer.DiskBar: Gtk.Grid {
 
         construct {
             set_has_window (false);
-            var style_context = get_style_context ();
-            style_context.add_class ("fill-block");
             expand = true;
         }
 

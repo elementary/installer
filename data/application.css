@@ -186,71 +186,53 @@ buttonbox {
     animation: success 450ms ease infinite alternate;
 }
 
-.disk-bar {
-    padding: 0;
-    border-radius: 4px;
+
+.storage-bar .fill-block.swap {
+    background-color: #a10705;
 }
 
-.ext2, .ext3, .ext4, .fat16, .fat32, .btrfs, .xfs, .ntfs, .luks, .lvm, .none, .swap {
-    border-width: 0 2px;
-    border-style: solid;
+.storage-bar .fill-block.ext4 {
+    background-color: #3a9104;
 }
 
-.ext4 {
-    background-color: #68b723;
-    border-color: #3a9104;
+.storage-bar .fill-block.ext3 {
+    background-color: #3a9104;
 }
 
-.ext3 {
-    background-color: #9bdb4d;
-    border-color: #68b722;
+.storage-bar .fill-block.ext2 {
+    background-color: #206b00;
 }
 
-.ext2 {
-    background-color: #d1ff82;
-    border-color: #9bdb4d;
+.storage-bar .fill-block.fat16,
+.storage-bar .fill-block.fat32 {
+    background-color: #f9c440;
 }
 
-.fat16, .fat32 {
+.storage-bar .fill-block.btrfs {
+    background-color: #3689e6;
+}
+
+.storage-bar .fill-block.xfs {
     background-color: #485a6c;
-    border-color: #273445;
 }
 
-.btrfs {
-  background-color: #7a36b1;
-  border-color: #4c158a;
+.storage-bar .fill-block.ntfs {
+    background-color: #f37329;
 }
 
-.xfs {
-  background-color: #f37329;
-  border-color: #cc3b02;
+.storage-bar .fill-block.luks {
+    background-color: #7a36b1;
 }
 
-.ntfs {
-  background-color: #715344;
-  border-color: #57392d;
+.storage-bar .fill-block.lvm {
+    background-color: #4c158a;
 }
 
-.luks {
-  background-color: #0e141f;
-  border-color: #485a6c;
+.storage-bar .fill-block.none {
+    background-color: #a3907c;
 }
 
-.lvm {
-  background-color: #273445;
-  border-color: #667885;
+.storage-bar .fill-block.unused {
+    background-color: #d4d4d4;
 }
 
-.none {
-  background-color: #4d4d4d;
-  border-color: #333333;
-}
-
-.unused {
-  background-color: #d4d4d4;
-}
-
-.swap {
-  background-color: #f9c440;
-  border-color: #d48e15;
-}

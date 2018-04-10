@@ -35,6 +35,10 @@ public class Installer.PartitionBar : Gtk.EventBox {
                         uint64 sector_size, bool lvm, SetMount set_mount,
                         UnsetMount unset_mount, MountSetFn mount_set,
                         DecryptFn decrypt) {
+        var style_context = this.get_style_context ();
+        style_context.add_class (Distinst.strfilesys (filesystem));
+        style_context.add_class ("fill-block");
+
         start = part->get_start_sector ();
         end = part->get_end_sector ();
 
@@ -50,7 +54,6 @@ public class Installer.PartitionBar : Gtk.EventBox {
         info = part;
 
         container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        container.get_style_context ().add_class (Distinst.strfilesys (filesystem));
 
         if (filesystem == Distinst.FileSystemType.LUKS) {
             menu = new DecryptMenu (path, decrypt);
@@ -72,7 +75,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
         return end - start;
     }
 
-    public double get_percent(uint64 disk_sectors) {
+    public double get_percent (uint64 disk_sectors) {
         return (((double) this.get_size () / (double) disk_sectors));
     }
 
@@ -90,3 +93,4 @@ public class Installer.PartitionBar : Gtk.EventBox {
         menu.popup ();
     }
 }
+

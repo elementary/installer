@@ -44,6 +44,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
         disk_list = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
         disk_list.set_valign (Gtk.Align.START);
+        disk_list.margin = 6;
         disk_list.margin_end = 12;
 
         var disk_scroller = new Gtk.ScrolledWindow (null, null);
