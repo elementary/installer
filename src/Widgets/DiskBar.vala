@@ -213,6 +213,8 @@ public class Installer.DiskBar: Gtk.Grid {
 
         construct {
             set_has_window (false);
+            var style_context = get_style_context ();
+            style_context.add_class ("fill-block");
             expand = true;
         }
 
