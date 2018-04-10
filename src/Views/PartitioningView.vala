@@ -78,7 +78,6 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         disks.initialize_volume_groups ();
         label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
-        var id = 0;
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
             if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
@@ -90,25 +89,20 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
             string path = Utils.string_from_utf8 (disk.get_device_path ());
 
-            string label;
             string model = disk.get_model ();
-            if (model.length == 0) {
-                label = disk.get_serial ().replace ("_", " ");
-            } else {
-                label = model;
-            }
+            string label = (model.length == 0)
+                ? disk.get_serial ().replace ("_", " ")
+                : model;
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount, this.decrypt);
+                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
                 partitions.add (partition);
             }
 
             var disk_bar = new DiskBar (model, path, size, (owned) partitions);
             label_sizer.add_widget (disk_bar.label);
             disk_list.pack_start (disk_bar);
-
-            id += 1;
         }
 
         foreach (unowned Distinst.LvmDevice disk in disks.list_logical ()) {
@@ -147,7 +141,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
         var partitions = new Gee.ArrayList<PartitionBar> ();
         foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.decrypt);
+            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
             partitions.add (partition);
         }
 
@@ -240,6 +234,10 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         validate_status ();
         mounts.add (mount);
         validate_status ();
+    }
+
+    private bool mount_is_set (string mount_point) {
+        return mounts.any_match ((m) => m.mount_point == mount_point);
     }
 
     private void unset_mount (string partition) {

@@ -33,7 +33,8 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
     public PartitionBar(Distinst.Partition* part, string parent_path,
                         uint64 sector_size, bool lvm, SetMount set_mount,
-                        UnsetMount unset_mount, DecryptFn decrypt) {
+                        UnsetMount unset_mount, MountSetFn mount_set,
+                        DecryptFn decrypt) {
         start = part->get_start_sector ();
         end = part->get_end_sector ();
 
@@ -54,7 +55,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
         if (filesystem == Distinst.FileSystemType.LUKS) {
             menu = new DecryptMenu (path, decrypt);
         } else {
-            menu = new PartitionMenu (path, parent_path, filesystem, lvm, set_mount, unset_mount);
+            menu = new PartitionMenu (path, parent_path, filesystem, lvm, set_mount, unset_mount, mount_set);
         }
 
         menu.relative_to = container;
