@@ -39,9 +39,13 @@ public class Installer.PartitionMenu : Gtk.Popover {
     public string parent_disk;
     public string partition_path;
 
+    // A reference to the parent which owns this menu.
+    private PartitionBar partition_bar;
+
     public PartitionMenu (string path, string parent, Distinst.FileSystemType fs,
                           bool lvm, SetMount set_mount, UnsetMount unset_mount,
-                          MountSetFn mount_set) {
+                          MountSetFn mount_set, PartitionBar partition_bar) {
+        this.partition_bar = partition_bar;
         original_filesystem = fs;
         is_lvm = lvm;
         partition_path = path;
@@ -205,12 +209,27 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 update_values (set_mount);
             } else {
                 unset_mount (partition_path);
+                partition_bar.container.get_children ().foreach ((c) => c.destroy ());
             }
 
             outer_revealer.set_reveal_child (use_partition.active);
             format_partition.set_visible (use_partition.active);
             format_label.set_visible (use_partition.active);
         });
+    }
+
+    public void unset () {
+        disable_signals = true;
+        use_partition.active = false;
+        use_as.set_active (0);
+        type.set_active (0);
+        type.set_sensitive (true);
+        type.set_visible (true);
+        type_label.set_visible (true);
+        custom.set_visible (false);
+        custom_label.set_visible (false);
+        disable_signals = false;
+        partition_bar.container.get_children ().foreach ((c) => c.destroy ());
     }
 
     private void set_format_sensitivity () {
@@ -239,6 +258,17 @@ public class Installer.PartitionMenu : Gtk.Popover {
             filesystem,
             this
         ));
+
+        var mount_icon = new Gtk.Image.from_icon_name (
+            "process-completed-symbolic",
+            Gtk.IconSize.SMALL_TOOLBAR
+        );
+        mount_icon.set_halign (Gtk.Align.END);
+        mount_icon.set_valign (Gtk.Align.END);
+        mount_icon.margin = 2;
+        partition_bar.container.get_children ().foreach((c) => c.destroy ());
+        partition_bar.container.pack_start(mount_icon, true, true, 0);
+        partition_bar.container.show_all ();
     }
 
     private bool has_same_filesystem () {

@@ -80,15 +80,15 @@ public class Installer.DiskBar: Gtk.Grid {
         legend.add (legend_container);
 
         foreach (PartitionBar p in partitions) {
-            add_legend (p.path, p.get_size() * 512, Distinst.strfilesys (p.filesystem), p.menu);
+            add_legend (p.path, p.get_size() * 512, Distinst.strfilesys (p.filesystem), p.vg, p.menu);
         }
 
         if (size / 100 < unused) {
-            add_legend ("unused", unused, "unused", null);
+            add_legend ("unused", unused, "unused", null, null);
         }
     }
 
-    private void add_legend (string ppath, uint64 size, string fs, Gtk.Popover? menu) {
+    private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {
         var fill_round = new FillRound ();
         fill_round.set_valign(Gtk.Align.CENTER);
 
@@ -96,7 +96,14 @@ public class Installer.DiskBar: Gtk.Grid {
         context.add_class ("legend");
         context.add_class (fs);
 
-        var info = new Gtk.Label ("%s (%s)".printf (GLib.format_size (size), fs));
+        var format_size = GLib.format_size (size);
+        var info = new Gtk.Label (
+            (vg == null)
+                ? "%s (%s)".printf (format_size, fs)
+                : "%s (%s: <b>%s</b>)".printf (format_size, fs, vg)
+        );
+        info.use_markup = true;
+
         var path = new Gtk.Label ("<b>%s</b>".printf (ppath));
         path.use_markup = true;
 

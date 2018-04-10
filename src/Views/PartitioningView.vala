@@ -258,16 +258,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         for (int i = 0; i < mounts.size; i++) {
             var m = mounts[i];
             if (m.mount_point == src.mount_point && m.partition_path != src.partition_path) {
-                m.menu.disable_signals = true;
-                m.menu.use_partition.active = false;
-                m.menu.use_as.set_active (0);
-                m.menu.type.set_active (0);
-                m.menu.type.set_sensitive (true);
-                m.menu.type.set_visible (true);
-                m.menu.type_label.set_visible (true);
-                m.menu.custom.set_visible (false);
-                m.menu.custom_label.set_visible (false);
-                m.menu.disable_signals = false;
+                m.menu.unset ();
                 swap_remove_mount (mounts, i);
                 break;
             }
