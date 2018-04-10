@@ -22,6 +22,8 @@ public delegate void SetMount (Installer.Mount mount);
 
 public delegate void UnsetMount (string partition);
 
+public delegate bool MountSetFn (string mount_point);
+
 public class Installer.PartitionMenu : Gtk.Popover {
     private Gtk.Grid grid;
     public bool disable_signals;
@@ -39,7 +41,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
     public string partition_path;
 
     public PartitionMenu (string path, string parent, Distinst.FileSystemType fs,
-                          bool lvm, SetMount set_mount, UnsetMount unset_mount) {
+                          bool lvm, SetMount set_mount, UnsetMount unset_mount,
+                          MountSetFn mount_set) {
         original_filesystem = fs;
         is_lvm = lvm;
         partition_path = path;
@@ -73,17 +76,14 @@ public class Installer.PartitionMenu : Gtk.Popover {
         format_partition = new Gtk.Switch ();
         format_partition.set_halign (Gtk.Align.START);
 
-        string boot_partition;
-        if (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT) {
-            boot_partition = _("Boot (/boot/efi)");
-        } else {
-            boot_partition = _("Boot (/boot)");
-        }
+        string boot_partition = (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT)
+            ? "/boot/efi"
+            : "/boot";
 
         use_as = new Gtk.ComboBoxText ();
         use_as.append_text (_("Root (/)"));
         use_as.append_text (_("Home (/home)"));
-        use_as.append_text (boot_partition);
+        use_as.append_text (_("Boot (%s)".printf (boot_partition)));
         use_as.append_text (_("Swap"));
         use_as.append_text (_("Custom"));
         use_as.set_active (0);
@@ -191,9 +191,14 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 disable_signals = false;
                 use_as.set_active (
                     (fs == Distinst.FileSystemType.FAT16 || fs == Distinst.FileSystemType.FAT32)
-                        ? 2
-                        : fs == Distinst.FileSystemType.SWAP ? 3 : 0
+                        ? mount_set (boot_partition) ? 4 : 2
+                        : fs == Distinst.FileSystemType.SWAP
+                            ? 3
+                            : mount_set ("/")
+                                ? mount_set ("/home" ) ? 4 : 1
+                                : 0
                 );
+                update_values (set_mount);
             } else {
                 unset_mount (partition_path);
             }

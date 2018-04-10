@@ -33,7 +33,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
     public PartitionBar(Distinst.Partition* part, string parent_path,
                         uint64 sector_size, bool lvm, SetMount set_mount,
-                        UnsetMount unset_mount) {
+                        UnsetMount unset_mount, MountSetFn mount_set) {
         start = part->get_start_sector ();
         end = part->get_end_sector ();
 
@@ -51,7 +51,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
         container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         container.get_style_context ().add_class (Distinst.strfilesys (filesystem));
 
-        menu = new PartitionMenu (path, parent_path, filesystem, lvm, set_mount, unset_mount);
+        menu = new PartitionMenu (path, parent_path, filesystem, lvm, set_mount, unset_mount, mount_set);
         menu.relative_to = container;
 
         add(container);

@@ -97,7 +97,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount);
+                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set);
                 partitions.add (partition);
             }
 
@@ -118,7 +118,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-                var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount);
+                var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set);
                 partitions.add (partition);
             }
 
@@ -196,6 +196,10 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         validate_status ();
         mounts.add (mount);
         validate_status ();
+    }
+
+    private bool mount_is_set (string mount_point) {
+        return mounts.any_match ((m) => m.mount_point == mount_point);
     }
 
     private void unset_mount (string partition) {
