@@ -34,4 +34,6 @@ public class Configuration : GLib.Object {
     public string? keyboard_variant { get; set; default = null; }
     public string? encryption_password { get; set; default = null; }
     public string disk { get; set; }
+    public Gee.ArrayList<Installer.Mount>? mounts { get; set; default = null; }
+    public Gee.ArrayList<Installer.LuksCredentials>? luks { get; set; default = null; }
 }

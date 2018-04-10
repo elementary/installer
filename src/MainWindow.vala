@@ -153,7 +153,10 @@ public class Installer.MainWindow : Gtk.Dialog {
         });
 
         partition_view.next_step.connect (() => {
-            load_progress_view ((owned) partition_view.mounts);
+            unowned Configuration config = Configuration.get_default ();
+            config.luks = (owned) partition_view.luks;
+            config.mounts = (owned) partition_view.mounts;
+            load_progress_view ();
         });
     }
 
@@ -187,15 +190,15 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.visible_child = try_install_view;
         });
 
-        disk_view.next_step.connect (() => load_progress_view (null));
+        disk_view.next_step.connect (() => load_progress_view ());
     }
 
-    private void load_progress_view (Gee.ArrayList<Installer.Mount>? disk_config) {
+    private void load_progress_view () {
         if (progress_view != null) {
             progress_view.destroy ();
         }
 
-        progress_view = new ProgressView (disk_config);
+        progress_view = new ProgressView ();
         stack.add (progress_view);
         stack.visible_child = progress_view;
 
