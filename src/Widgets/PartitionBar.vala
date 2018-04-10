@@ -67,6 +67,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
         }
 
         menu.relative_to = container;
+        menu.position = Gtk.PositionType.BOTTOM;
 
         add(container);
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
