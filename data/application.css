@@ -191,51 +191,51 @@ buttonbox {
     border-radius: 4px;
 }
 
-.ext4 {
+.storage-bar .ext4 {
     background-color: #3a9104;
 }
 
-.ext3 {
+.storage-bar .ext3 {
     background-color: #3a9104;
 }
 
-.ext2 {
+.storage-bar .ext2 {
     background-color: #206b00;
 }
 
-.fat16,
-.fat32 {
+.storage-bar .fat16,
+.storage-bar .fat32 {
     background-color: #f9c440;
 }
 
-.btrfs {
+.storage-bar .btrfs {
     background-color: #3689e6;
 }
 
-.xfs {
+.storage-bar .xfs {
     background-color: #485a6c;
 }
 
-.ntfs {
+.storage-bar .ntfs {
     background-color: #f37329;
 }
 
-.luks {
+.storage-bar .luks {
     background-color: #7a36b1;
 }
 
-.lvm {
+.storage-bar .lvm {
     background-color: #4c158a;
 }
 
-.none {
+.storage-bar .none {
     background-color: #a3907c;
 }
 
-.unused {
+.storage-bar .unused {
     background-color: #d4d4d4;
 }
 
-.swap {
+.storage-bar .swap {
     background-color: #a10705;
 }
