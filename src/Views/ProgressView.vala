@@ -27,13 +27,6 @@ public class ProgressView : AbstractInstallerView {
     private Gtk.Label progressbar_label;
     private const int NUM_STEP = 5;
 
-    public ProgressView () {
-        unowned Configuration config = Configuration.get_default ();
-        if (config.mounts == null) {
-            stderr.printf ("mounts is null\n");
-        }
-    }
-
     construct {
         var logo = new Gtk.Image ();
         logo.icon_name = "distributor-logo";
@@ -54,14 +47,9 @@ public class ProgressView : AbstractInstallerView {
         terminal_output.expand = true;
         terminal_output.add (terminal_view);
 
-        var artwork = new Gtk.Grid ();
-        artwork.get_style_context().add_class("progress");
-        artwork.get_style_context().add_class("artwork");
-        artwork.vexpand = true;
-
         var logo_stack = new Gtk.Stack ();
         logo_stack.transition_type = Gtk.StackTransitionType.OVER_UP_DOWN;
-        logo_stack.add (artwork);
+        logo_stack.add (logo);
         logo_stack.add (terminal_output);
 
         var terminal_button = new Gtk.ToggleButton ();
@@ -76,6 +64,8 @@ public class ProgressView : AbstractInstallerView {
         progressbar = new Gtk.ProgressBar ();
         progressbar.hexpand = true;
 
+        content_area.margin_end = 22;
+        content_area.margin_start = 22;
         content_area.attach (logo_stack, 0, 0, 2, 1);
         content_area.attach (progressbar_label, 0, 1, 1, 1);
         content_area.attach (terminal_button, 1, 1, 1, 1);
@@ -88,7 +78,7 @@ public class ProgressView : AbstractInstallerView {
                 logo_stack.visible_child = terminal_output;
                 scroll_to_bottom ();
             } else {
-                logo_stack.visible_child = artwork;
+                logo_stack.visible_child = logo;
             }
         });
 
@@ -123,6 +113,20 @@ public class ProgressView : AbstractInstallerView {
     }
 
     public void start_installation () {
+        if (Installer.App.test_mode) {
+            new Thread<void*> (null, () => {
+                fake_status (Distinst.Step.PARTITION);
+                fake_status (Distinst.Step.EXTRACT);
+                fake_status (Distinst.Step.CONFIGURE);
+                fake_status (Distinst.Step.BOOTLOADER);
+                return null;
+            });
+        } else {
+            real_installation ();
+        }
+    }
+
+    public void real_installation () {
         var installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
@@ -132,13 +136,11 @@ public class ProgressView : AbstractInstallerView {
 
         config.flags = Distinst.MODIFY_BOOT_ORDER;
 
-        config.hostname = "pop-os";
+        config.hostname = "todo";
 
         config.squashfs = Build.SQUASHFS_PATH;
 
         config.lang = "en_US.UTF-8";
-
-        config.remove = Build.MANIFEST_REMOVE_PATH;
 
         //TODO: Use the following
         debug ("language: %s\n", current_config.lang);
@@ -151,126 +153,6 @@ public class ProgressView : AbstractInstallerView {
         config.keyboard_layout = current_config.keyboard_layout;
         config.keyboard_model = null;
         config.keyboard_variant = current_config.keyboard_variant;
-
-        // Each disk that will have changes made to it should be added to a Disks object. This
-        // object will be passed to the install method, and used as a blueprint for how changes
-        // to each disk should be made, and where critical partitions are located.
-        var disks = new Distinst.Disks ();
-
-        if (current_config.mounts == null) {
-            default_disk_configuration (disks);
-        } else {
-            custom_disk_configuration (disks);
-        }
-
-        new Thread<void*> (null, () => {
-            if (Installer.App.test_mode) {
-                Idle.add (() => {
-                    on_success ();
-                    return GLib.Source.REMOVE;
-                });
-            } else {
-                installer.install ((owned) disks, config);
-            }
-
-            return null;
-        });
-    }
-
-    private void custom_disk_configuration (Distinst.Disks disks) {
-        unowned Configuration config = Configuration.get_default ();
-        Installer.Mount[] lvm_devices = {};
-
-        foreach (Installer.Mount m in config.mounts) {
-            if (m.is_lvm ()) {
-                lvm_devices += m;
-            } else {
-                unowned Distinst.Disk disk = disks.get_physical_device (m.parent_disk);
-                if (disk == null) {
-                    var new_disk = new Distinst.Disk (m.parent_disk);
-                    if (new_disk == null) {
-                        warning ("could not find physical device: '%s'\n", m.parent_disk);
-                        on_error ();
-                        return;
-                    }
-
-                    disks.push ((owned) new_disk);
-                    disk = disks.get_physical_device (m.parent_disk);
-                }
-
-                unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
-
-                if (partition == null) {
-                    warning ("could not find %s\n", m.partition_path);
-                    on_error ();
-                    return;
-                }
-
-                if (m.mount_point == "/boot/efi") {
-                    if (m.is_valid_boot_mount ()) {
-                        if (m.should_format ()) {
-                            partition.format_with (m.filesystem);
-                        }
-
-                        partition.set_mount (m.mount_point);
-                        Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
-                        partition.set_flags (flags);
-                    } else {
-                        warning ("unreachable code path -- efi partition is invalid\n");
-                        on_error ();
-                        return;
-                    }
-                } else {
-                    if (m.filesystem != Distinst.FileSystemType.SWAP) {
-                        partition.set_mount (m.mount_point);
-                    }
-
-                    if (m.should_format ()) {
-                        partition.format_with (m.filesystem);
-                    }
-                }
-            }
-        }
-
-        disks.initialize_volume_groups ();
-
-        foreach (Installer.LuksCredentials cred in config.luks) {
-            disks.decrypt_partition (cred.device, Distinst.LvmEncryption () {
-                physical_volume = cred.pv,
-                password = cred.password,
-                keydata = null
-            });
-        }
-
-        foreach (Installer.Mount m in lvm_devices) {
-            var vg = m.parent_disk.offset (12);
-            unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
-            if (disk == null) {
-                warning ("could not find %s\n", vg);
-                on_error ();
-                return;
-            }
-
-            unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
-
-            if (partition == null) {
-                warning ("could not find %s\n", m.partition_path);
-                on_error ();
-                return;
-            }
-
-            if (m.filesystem != Distinst.FileSystemType.SWAP) {
-                partition.set_mount (m.mount_point);
-            }
-
-            if (m.should_format ()) {
-                partition.format_and_keep_name (m.filesystem);
-            }
-        }
-    }
-
-    private void default_disk_configuration (Distinst.Disks disks) {
-        unowned Configuration current_config = Configuration.get_default ();
 
         Distinst.LvmEncryption? encryption;
         if (current_config.encryption_password != null) {
@@ -285,58 +167,45 @@ public class ProgressView : AbstractInstallerView {
             encryption = null;
         }
 
+        config.remove = Build.MANIFEST_REMOVE_PATH;
 
-        // TODO: The following code is an example of API usage. Disk configurations should be
-        // passed as a parameter into this method, rather than being hard-coded as it is below.
-
-        // Reads all of the information regarding the specified device and creates an in-memory
-        // representation of the disk that actions can be performed against. Any changes made to
-        // this disk object will not be written to the disk until after it has been passed into
-        // the instal method, along with other disks.
         debug ("disk: %s\n", current_config.disk);
         var disk = new Distinst.Disk (current_config.disk);
         if (disk == null) {
-            warning ("could not find %s\n", current_config.disk);
+            critical ("could not find %s", current_config.disk);
             on_error ();
             return;
         }
 
-        // Obtains the preferred partition table based on what the system is currently loaded with.
-        // EFI partitions will need to have both an EFI partition with an `esp` flag, and a root
-        // partition; whereas MBR-based installations only require a root partition.
         var bootloader = Distinst.bootloader_detect ();
 
-        // Identify the start of disk by sector
         var start_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.START,
             value = 0
         };
 
-        // Sectors may also be constructed using different units of measurements, such as
-        // by megabytes and percents. The library author can choose whichever unit makes
-        // more sense for their use cases.
         var boot_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.MEGABYTE,
             value = 512
         };
 
-        // Sectors may also use the end of the disk
         var swap_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.MEGABYTE_FROM_END,
             value = 4096
         };
 
-        // Identify the end of disk
         var end_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.END,
             value = 0
         };
 
-        // Wipes the partition table clean with a brand new partition table.
+        var disks = new Distinst.Disks ();
+
+        // Prepares a new partition table.
         int result = disk.mklabel (bootloader);
 
         if (result != 0) {
-            warning ("unable to write partition table to %s\n", current_config.disk);
+            critical ("unable to write partition table to %s", current_config.disk);
             on_error ();
             return;
         }
@@ -346,9 +215,7 @@ public class ProgressView : AbstractInstallerView {
 
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
-                // Adds a new partition builder object which is defined to be a EXT4 partition
-                // with the `boot` flag, and shall be mounted to `/boot` after install. This is
-                // used to ensure LVM installs will work.
+                // This is used to ensure LVM installs will work with BIOS
                 result = disk.add_partition (
                     new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
                         .partition_type (Distinst.PartitionType.PRIMARY)
@@ -357,16 +224,14 @@ public class ProgressView : AbstractInstallerView {
                 );
 
                 if (result != 0) {
-                    warning ("unable to add boot partition to %s\n", current_config.disk);
+                    critical ("unable to add boot partition to %s", current_config.disk);
                     on_error ();
                     return;
                 }
 
                 break;
             case Distinst.PartitionTable.GPT:
-                // Adds a new partition builder object which is defined to be a FAT partition
-                // with the `esp` flag, and shall be mounted to `/boot/efi` after install. This
-                // meets the requirement for an EFI partition with an EFI install.
+                // A FAT32 partition is required for EFI installs
                 result = disk.add_partition (
                     new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
                         .partition_type (Distinst.PartitionType.PRIMARY)
@@ -375,7 +240,7 @@ public class ProgressView : AbstractInstallerView {
                 );
 
                 if (result != 0) {
-                    warning ("unable to add EFI partition to %s\n", current_config.disk);
+                    critical ("unable to add EFI partition to %s", current_config.disk);
                     on_error ();
                     return;
                 }
@@ -386,9 +251,6 @@ public class ProgressView : AbstractInstallerView {
         start = disk.get_sector (ref boot_sector);
         end = disk.get_sector (ref end_sector);
 
-        // EFI installs require both an EFI and root partition, so this add a new EXT4
-        // partition that is configured to start at the end of the EFI sector, and
-        // continue to the end of the disk.
         result = disk.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
                 .partition_type (Distinst.PartitionType.PRIMARY)
@@ -396,17 +258,15 @@ public class ProgressView : AbstractInstallerView {
         );
 
         if (result != 0) {
-            warning ("unable to add lvm partition to %s\n", current_config.disk);
+            critical ("unable to add lvm partition to %s", current_config.disk);
             on_error ();
             return;
         }
 
-        disks.push ((owned) disk);
-
         result = disks.initialize_volume_groups ();
 
         if (result != 0) {
-            warning ("unable to initialize volume groups on %s\n", current_config.disk);
+            critical ("unable to initialize volume groups on %s", current_config.disk);
             on_error ();
             return;
         }
@@ -414,7 +274,7 @@ public class ProgressView : AbstractInstallerView {
         unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume ("data");
 
         if (lvm_device == null) {
-            warning ("unable to find 'data' volume group on %s\n", current_config.disk);
+            critical ("unable to find 'data' volume group on %s", current_config.disk);
             on_error ();
             return;
         }
@@ -422,14 +282,14 @@ public class ProgressView : AbstractInstallerView {
         start = lvm_device.get_sector (ref start_sector);
         end = lvm_device.get_sector (ref swap_sector);
 
-        result = lvm_device.add_partition(
+        result = lvm_device.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
                 .name("root")
                 .mount ("/")
         );
 
         if (result != 0) {
-            warning ("unable to add / partition to lvm on %s\n", current_config.disk);
+            critical ("unable to add / partition to lvm on %s", current_config.disk);
             on_error ();
             return;
         }
@@ -437,15 +297,31 @@ public class ProgressView : AbstractInstallerView {
         start = lvm_device.get_sector (ref swap_sector);
         end = lvm_device.get_sector (ref end_sector);
 
-        result = lvm_device.add_partition(
+        result = lvm_device.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.SWAP)
                 .name("swap")
         );
 
         if (result != 0) {
-            warning ("unable to add swap partition to lvm on %s\n", current_config.disk);
+            critical ("unable to add swap partition to lvm on %s", current_config.disk);
             on_error ();
             return;
+        }
+
+        new Thread<void*> (null, () => {
+            installer.install ((owned) disks, config);
+            return null;
+        });
+    }
+
+    private void fake_status (Distinst.Step step) {
+        for (var percent = 0; percent <= 100; percent++) {
+            Distinst.Status status = Distinst.Status () {
+                step = step,
+                percent = percent
+            };
+            installation_status_callback (status);
+            GLib.Thread.usleep (10000);
         }
     }
 

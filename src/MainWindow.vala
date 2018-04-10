@@ -93,8 +93,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
-        try_install_view.custom_step.connect (() => load_partitioning_view ());
-        try_install_view.next_step.connect (() => load_encryptview ());
+        try_install_view.next_step.connect (() => load_diskview ());
     }
 
     private void set_check_view_visible (bool show) {
@@ -146,8 +145,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (partition_view);
         stack.visible_child = partition_view;
 
-        load_checkview ();
-
         partition_view.cancel.connect (() => {
             stack.visible_child = try_install_view;
         });
@@ -158,21 +155,6 @@ public class Installer.MainWindow : Gtk.Dialog {
             config.mounts = (owned) partition_view.mounts;
             load_progress_view ();
         });
-    }
-
-    private void load_encryptview () {
-        if (encrypt_view != null) {
-            encrypt_view.destroy ();
-        }
-
-        encrypt_view = new EncryptView ();
-        encrypt_view.previous_view = try_install_view;
-        stack.add (encrypt_view);
-        stack.visible_child = encrypt_view;
-
-        load_checkview ();
-
-        encrypt_view.next_step.connect (() => load_diskview ());
     }
 
     private void load_diskview () {
@@ -190,7 +172,23 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.visible_child = try_install_view;
         });
 
-        disk_view.next_step.connect (() => load_progress_view ());
+        disk_view.custom_step.connect (() => load_partitioning_view ());
+        disk_view.next_step.connect (() =>  load_encryptview ());
+
+        load_checkview ();
+    }
+
+    private void load_encryptview () {
+        if (encrypt_view != null) {
+            encrypt_view.destroy ();
+        }
+
+        encrypt_view = new EncryptView ();
+        encrypt_view.previous_view = try_install_view;
+        stack.add (encrypt_view);
+        stack.visible_child = encrypt_view;
+
+        encrypt_view.next_step.connect (() => load_progress_view ());
     }
 
     private void load_progress_view () {

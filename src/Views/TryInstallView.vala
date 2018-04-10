@@ -17,7 +17,6 @@
  */
 
 public class TryInstallView : AbstractInstallerView {
-    public signal void custom_step ();
     public signal void next_step ();
     private Utils.SystemInterface system_interface;
 
@@ -90,26 +89,18 @@ public class TryInstallView : AbstractInstallerView {
         content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (grid, 1, 0, 1, 2);
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
-
         var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
+        demo_button.clicked.connect (() => Installer.App.get_instance ().quit ());
+        action_area.add (demo_button);
 
-        var custom_button = new Gtk.Button.with_label (_("Custom Partitioning"));
+        var back_button = new Gtk.Button.with_label (_("Back"));
+        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
+        action_area.add (back_button);
 
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-
-        action_area.add (demo_button);
-        action_area.add (back_button);
-        action_area.add (custom_button);
-        action_area.add (next_button);
-
-        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
-
-        demo_button.clicked.connect (() => Installer.App.get_instance ().quit ());
-
-        custom_button.clicked.connect (() => custom_step ());
         next_button.clicked.connect (() => next_step ());
+        action_area.add (next_button);
 
         show_all ();
     }

@@ -138,13 +138,10 @@ public class EncryptView : AbstractInstallerView {
 
         var no_encrypt_button = new Gtk.Button.with_label (_("Don't Encrypt"));
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
-
         next_button = new Gtk.Button.with_label (_("Choose Password"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (no_encrypt_button);
-        action_area.add (back_button);
         action_area.add (next_button);
 
         next_button.grab_focus ();
@@ -153,21 +150,11 @@ public class EncryptView : AbstractInstallerView {
                 next_step ();
         });
 
-        back_button.clicked.connect (() => {
-            if (stack.visible_child == choice_grid) {
-                ((Gtk.Stack) get_parent ()).visible_child = previous_view;
-            } else if (stack.visible_child == password_grid) {
-                stack.visible_child = choice_grid;
-                next_button.label = _("Choose Password");
-                next_button.sensitive = true;
-            }
-        });
-
         next_button.clicked.connect (() => {
             if (stack.visible_child == choice_grid) {
                 stack.visible_child = password_grid;
                 pw_entry.grab_focus ();
-                next_button.label = _("Select Drive");
+                next_button.label = _("Select");
                 update_next_button ();
             } else if (stack.visible_child == password_grid) {
                 Configuration.get_default ().encryption_password = pw_entry.text;
