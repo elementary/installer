@@ -76,8 +76,6 @@ public class ProgressView : AbstractInstallerView {
         progressbar = new Gtk.ProgressBar ();
         progressbar.hexpand = true;
 
-        content_area.margin_end = 22;
-        content_area.margin_start = 22;
         content_area.attach (logo_stack, 0, 0, 2, 1);
         content_area.attach (progressbar_label, 0, 1, 1, 1);
         content_area.attach (terminal_button, 1, 1, 1, 1);

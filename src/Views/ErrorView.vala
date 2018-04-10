@@ -37,32 +37,32 @@ public class ErrorView : AbstractInstallerView {
 
         var title_label = new Gtk.Label (_("Could Not Install"));
         title_label.halign = Gtk.Align.CENTER;
-        title_label.max_width_chars = 60;
+        title_label.max_width_chars = 30;
         title_label.valign = Gtk.Align.START;
         title_label.wrap = true;
         title_label.xalign = 0;
         title_label.get_style_context ().add_class ("h2");
 
         var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. Your device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ()));
-        description_label.max_width_chars = 60;
+        description_label.max_width_chars = 52;
         description_label.wrap = true;
         description_label.xalign = 0;
         description_label.use_markup = true;
 
         var try_label = new Gtk.Label (_("• Try the installation again"));
-        try_label.max_width_chars = 60;
+        try_label.max_width_chars = 52;
         try_label.wrap = true;
         try_label.xalign = 0;
         try_label.use_markup = true;
 
         var launch_label = new Gtk.Label (_("• Use Demo Mode and try to manually recover"));
-        launch_label.max_width_chars = 60;
+        launch_label.max_width_chars = 52;
         launch_label.wrap = true;
         launch_label.xalign = 0;
         launch_label.use_markup = true;
 
         var restart_label = new Gtk.Label (_("• Restart your device to boot from another drive"));
-        restart_label.max_width_chars = 60;
+        restart_label.max_width_chars = 52;
         restart_label.wrap = true;
         restart_label.xalign = 0;
         restart_label.use_markup = true;

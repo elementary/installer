@@ -154,9 +154,6 @@ public class Installer.LanguageView : AbstractInstallerView {
         artwork.get_style_context().add_class("artwork");
         artwork.vexpand = true;
 
-        content_area.column_homogeneous = true;
-        content_area.margin_end = 10;
-        content_area.margin_start = 10;
         content_area.attach (artwork, 0, 0, 1, 1);
         content_area.attach (select_stack, 0, 1, 1, 1);
         content_area.attach (lang_variant_widget, 1, 0, 1, 2);
