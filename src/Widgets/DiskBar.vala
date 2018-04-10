@@ -153,17 +153,16 @@ public class Installer.DiskBar: Gtk.Grid {
         bar.get_style_context ().add_class ("trough");
         bar.get_style_context ().add_class ("disk-bar");
         bar.size_allocate.connect ((alloc) => {
-            update_sector_lengths(partitions, alloc.width);
+            update_sector_lengths(partitions, alloc);
         });
 
         foreach (PartitionBar part in partitions) {
             bar.pack_start(part, false, false, 0);
         }
-
-        update_sector_lengths (partitions, 876);
     }
 
-    private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, int alloc_width) {
+    private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, Gtk.Allocation alloc) {
+        var alloc_width = alloc.width;
         var disk_sectors = this.size / 512;
 
         int[] lengths = {};
@@ -200,8 +199,14 @@ public class Installer.DiskBar: Gtk.Grid {
             lengths += requested;
         }
 
+        var new_alloc = Gtk.Allocation ();
+        new_alloc.x = alloc.x;
+        new_alloc.y = alloc.y;
+        new_alloc.height = alloc.height;
         for (int x = 0; x < partitions.size; x++) {
-            partitions[x].update_length (lengths[x]);
+            new_alloc.width = lengths[x];
+            partitions[x].size_allocate (new_alloc);
+            new_alloc.x += new_alloc.width;
         }
     }
 
