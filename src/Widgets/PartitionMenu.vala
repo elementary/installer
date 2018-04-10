@@ -25,7 +25,6 @@ public delegate void UnsetMount (string partition);
 public delegate bool MountSetFn (string mount_point);
 
 public class Installer.PartitionMenu : Gtk.Popover {
-    private Gtk.Grid grid;
     public bool disable_signals;
     public bool is_lvm;
     public Gtk.ComboBoxText type;
@@ -47,7 +46,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
         is_lvm = lvm;
         partition_path = path;
         parent_disk = parent;
-        grid = new Gtk.Grid ();
+
+        var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
         grid.row_spacing = 6;
         grid.margin = 12;
