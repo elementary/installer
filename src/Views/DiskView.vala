@@ -49,7 +49,7 @@ public class Installer.DiskView : AbstractInstallerView {
         var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         install_image.valign = Gtk.Align.START;
 
-        var install_label = new Gtk.Label (_("Select a drive to use for installation"));
+        var install_label = new Gtk.Label (_("Select a drive"));
         install_label.hexpand = true;
         install_label.get_style_context ().add_class ("h2");
         install_label.max_width_chars = 30;
@@ -91,7 +91,7 @@ public class Installer.DiskView : AbstractInstallerView {
         var title_grid = new Gtk.Grid ();
         title_grid.column_spacing = 12;
         title_grid.row_spacing = 6;
-        title_grid.halign = Gtk.Align.CENTER;
+        title_grid.halign = Gtk.Align.FILL;
         title_grid.valign = Gtk.Align.FILL;
         title_grid.attach (artwork, 0, 0, 1, 1);
         title_grid.attach (install_label, 0, 1, 1, 1);
