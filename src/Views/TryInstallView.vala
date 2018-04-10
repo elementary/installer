@@ -81,9 +81,6 @@ public class TryInstallView : AbstractInstallerView {
         grid.attach (return_image, 0, 3, 1, 1);
         grid.attach (return_label, 1, 3, 1, 1);
 
-        content_area.column_homogeneous = true;
-        content_area.valign = Gtk.Align.FILL;
-
         var artwork = new Gtk.Grid ();
         artwork.get_style_context().add_class("try-install");
         artwork.get_style_context().add_class("artwork");

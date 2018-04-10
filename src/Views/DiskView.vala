@@ -51,6 +51,9 @@ public class Installer.DiskView : AbstractInstallerView {
         var install_label = new Gtk.Label (_("Select a drive to use for installation"));
         install_label.hexpand = true;
         install_label.get_style_context ().add_class ("h2");
+        install_label.max_width_chars = 30;
+        install_label.wrap = true;
+        install_label.justify = Gtk.Justification.CENTER;
 
         var install_desc_label = new Gtk.Label (_("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode."));
         install_desc_label.hexpand = true;
@@ -92,9 +95,6 @@ public class Installer.DiskView : AbstractInstallerView {
         title_grid.attach (artwork, 0, 0, 1, 1);
         title_grid.attach (install_label, 0, 1, 1, 1);
 
-        content_area.valign = Gtk.Align.FILL;
-        content_area.margin = 12;
-        content_area.column_homogeneous = true;
         content_area.attach (title_grid, 0, 0, 1, 1);
         content_area.attach (load_stack, 1, 0, 1, 1);
 
