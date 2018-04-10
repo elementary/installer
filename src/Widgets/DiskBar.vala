@@ -107,7 +107,7 @@ public class Installer.DiskBar: Gtk.Grid {
         legend.attach (path, 1, 0);
         legend.attach (info, 1, 1);
 
-        legend_container.pack_start(legend, false, false, 0);
+        legend_container.pack_start (legend, false, false, 0);
     }
 
     private void generate_label () {
@@ -164,8 +164,6 @@ public class Installer.DiskBar: Gtk.Grid {
 
         construct {
             set_has_window (false);
-            var style_context = get_style_context ();
-            style_context.add_class ("fill-block");
             expand = true;
         }
 
