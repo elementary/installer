@@ -43,11 +43,6 @@ public class SuccessView : AbstractInstallerView {
         artwork.vexpand = true;
         artwork.hexpand = true;
 
-        content_area.halign = Gtk.Align.FILL;
-        content_area.valign = Gtk.Align.FILL;
-        content_area.margin_end = 22;
-        content_area.margin_start = 22;
-        content_area.row_spacing = 6;
         content_area.attach (artwork, 0, 0, 1, 2);
         content_area.attach (primary_label, 1, 0, 1, 1);
 
