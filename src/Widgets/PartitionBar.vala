@@ -49,8 +49,11 @@ public class Installer.PartitionBar : Gtk.EventBox {
         filesystem = part->get_file_system ();
         info = part;
 
+        var style_context = this.get_style_context ();
+        style_context.add_class (Distinst.strfilesys (filesystem));
+        style_context.add_class ("fill-block");
+
         container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        container.get_style_context ().add_class (Distinst.strfilesys (filesystem));
 
         if (filesystem == Distinst.FileSystemType.LUKS) {
             menu = new DecryptMenu (path, decrypt);
