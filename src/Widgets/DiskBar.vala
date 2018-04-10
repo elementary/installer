@@ -29,7 +29,6 @@ public class Installer.DiskBar: Gtk.Grid {
     private Gtk.ScrolledWindow legend;
     private Gtk.Box legend_container;
     private uint64 unused;
-    private Gtk.Box unused_bar;
 
     public DiskBar (
         string model,
@@ -142,10 +141,6 @@ public class Installer.DiskBar: Gtk.Grid {
     }
 
     private void generate_bar () {
-        unused_bar = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        var context = unused_bar.get_style_context ();
-        context.add_class ("unused");
-
         bar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         bar.set_size_request (-1, 40);
         bar.get_style_context ().add_class ("trough");
@@ -158,7 +153,6 @@ public class Installer.DiskBar: Gtk.Grid {
             bar.pack_start(part, false, false, 0);
         }
 
-        bar.pack_start (unused_bar, true, true, 0);
         update_sector_lengths (partitions, 876);
     }
 
@@ -202,8 +196,6 @@ public class Installer.DiskBar: Gtk.Grid {
         for (int x = 0; x < partitions.size; x++) {
             partitions[x].update_length (lengths[x]);
         }
-
-        unused_bar.set_size_request (alloc_width, -1);
     }
 
     internal class FillRound : Gtk.Widget {
