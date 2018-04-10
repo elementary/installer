@@ -28,12 +28,13 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
     public Distinst.Partition* info;
     public Gtk.Label label;
-    public PartitionMenu menu;
+    public Gtk.Popover menu;
     public Distinst.FileSystemType filesystem;
 
     public PartitionBar(Distinst.Partition* part, string parent_path,
                         uint64 sector_size, bool lvm, SetMount set_mount,
-                        UnsetMount unset_mount) {
+                        UnsetMount unset_mount, MountSetFn mount_set,
+                        DecryptFn decrypt) {
         var style_context = this.get_style_context ();
         style_context.add_class (Distinst.strfilesys (filesystem));
         style_context.add_class ("fill-block");
@@ -54,7 +55,12 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
         container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
-        menu = new PartitionMenu (path, parent_path, filesystem, lvm, set_mount, unset_mount);
+        if (filesystem == Distinst.FileSystemType.LUKS) {
+            menu = new DecryptMenu (path, decrypt);
+        } else {
+            menu = new PartitionMenu (path, parent_path, filesystem, lvm, set_mount, unset_mount, mount_set);
+        }
+
         menu.relative_to = container;
 
         add(container);
@@ -73,10 +79,14 @@ public class Installer.PartitionBar : Gtk.EventBox {
         return (((double) this.get_size () / (double) disk_sectors));
     }
 
-    public void update_length (int alloc_width, uint64 disk_sectors) {
+    public int calculate_length (int alloc_width, uint64 disk_sectors) {
         var request = alloc_width * get_percent (disk_sectors);
         if (request < 20) request = 20;
-        set_size_request ((int) request, -1);
+        return (int) request;
+    }
+
+    public void update_length (int request) {
+        set_size_request (request, -1);
     }
 
     public void show_popover () {

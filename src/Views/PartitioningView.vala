@@ -24,9 +24,11 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private Gtk.Button next_button;
     private Gtk.Button gparted_button;
     private Distinst.Disks disks;
-    private Gtk.Grid disk_list;
+    private Gtk.Box disk_list;
+    private Gtk.SizeGroup label_sizer;
 
     public Gee.ArrayList<Installer.Mount> mounts;
+    public Gee.ArrayList<LuksCredentials> luks;
 
     public static uint64 minimum_disk_size;
 
@@ -37,11 +39,15 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     construct {
         this.mounts = new Gee.ArrayList<Installer.Mount> ();
+        this.luks = new Gee.ArrayList<LuksCredentials> ();
         this.margin = 12;
-        disk_list = new Gtk.Grid ();
+
+        disk_list = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
         disk_list.set_valign (Gtk.Align.START);
         disk_list.row_spacing = 12;
         disk_list.margin = 6;
+        disk_list.margin_end = 12;
+
         var disk_scroller = new Gtk.ScrolledWindow (null, null);
         disk_scroller.hexpand = true;
         disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -50,8 +56,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         var description = new Gtk.Label (_("Select which partitions to use across all drives. This will erase all data on the selected partitions."));
         description.set_halign (Gtk.Align.CENTER);
 
-        this.content_area.attach(description, 0, 0, 1, 1);
-        this.content_area.attach(disk_scroller, 0, 1, 1, 1);
+        this.content_area.attach(description, 0, 0);
+        this.content_area.attach(disk_scroller, 0, 1);
 
         load_disks ();
 
@@ -72,9 +78,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private void load_disks () {
         disks = Distinst.Disks.probe ();
         disks.initialize_volume_groups ();
-        var label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
+        label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
-        var id = 0;
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
             if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
@@ -86,46 +91,24 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
             string path = Utils.string_from_utf8 (disk.get_device_path ());
 
-            string label;
             string model = disk.get_model ();
-            if (model.length == 0) {
-                label = disk.get_serial ().replace ("_", " ");
-            } else {
-                label = model;
-            }
+            string label = (model.length == 0)
+                ? disk.get_serial ().replace ("_", " ")
+                : model;
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount);
+                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
                 partitions.add (partition);
             }
 
             var disk_bar = new DiskBar (model, path, size, (owned) partitions);
             label_sizer.add_widget (disk_bar.label);
-            disk_list.attach(disk_bar, 0, id);
-
-            id += 1;
+            disk_list.pack_start (disk_bar);
         }
 
         foreach (unowned Distinst.LvmDevice disk in disks.list_logical ()) {
-            var sector_size = disk.get_sector_size ();
-            var size = disk.get_sectors () * sector_size;
-
-            string path = Utils.string_from_utf8 (disk.get_device_path ());
-
-            string model = disk.get_model ();
-
-            var partitions = new Gee.ArrayList<PartitionBar> ();
-            foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-                var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount);
-                partitions.add (partition);
-            }
-
-            var disk_bar = new DiskBar (model, path, size, (owned) partitions);
-            label_sizer.add_widget (disk_bar.label);
-            disk_list.attach(disk_bar, 0, id);
-
-            id += 1;
+            add_logical_disk (disk);
         }
 
         disk_list.show_all ();
@@ -145,8 +128,28 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private void reset_view () {
         disk_list.get_children ().foreach ((child) => child.destroy ());
         mounts.clear ();
+        luks.clear ();
         next_button.sensitive = false;
         load_disks ();
+    }
+
+    private void add_logical_disk (Distinst.LvmDevice disk) {
+        var sector_size = disk.get_sector_size ();
+        var size = disk.get_sectors () * sector_size;
+
+        string path = Utils.string_from_utf8 (disk.get_device_path ());
+
+        string model = disk.get_model ();
+
+        var partitions = new Gee.ArrayList<PartitionBar> ();
+        foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
+            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
+            partitions.add (partition);
+        }
+
+        var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+        label_sizer.add_widget (disk_bar.label);
+        disk_list.pack_start (disk_bar);
     }
 
     private void validate_status () {
@@ -156,9 +159,15 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
         stderr.printf("DEBUG: Current Layout:\n");
         foreach (Mount m in mounts) {
-            stderr.printf("  %s : %s : %s\n", m.partition_path, m.mount_point, Distinst.strfilesys (m.filesystem));
+            stderr.printf (
+                "  %s : %s : %s: format? %s\n",
+                m.partition_path,
+                m.mount_point,
+                Distinst.strfilesys (m.filesystem),
+                m.should_format () ? "true" : "false"
+            );
         }
-        
+
         foreach (Mount m in mounts) {
             if (m.mount_point == "/" && m.is_valid_root_mount ()) {
                 flags |= ROOT;
@@ -175,8 +184,45 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         next_button.sensitive = false;
     }
 
+    private void decrypt (string device, string pv, string password, DecryptMenu menu) {
+        int result = disks.decrypt_partition (device, Distinst.LvmEncryption () {
+            physical_volume = pv,
+            password = password,
+            keydata = null
+        });
+
+        switch (result) {
+            case 0:
+                unowned Distinst.LvmDevice disk = disks.get_logical_device (pv);
+                add_logical_disk (disk);
+                menu.set_decrypted (pv);
+                luks.add (new LuksCredentials (device, pv, password));
+                break;
+            case 1:
+                stderr.printf ("decrypt_partition result is 1\n");
+                break;
+            case 2:
+                stderr.printf ("decrypt: input was not valid UTF-8\n");
+                break;
+            case 3:
+                stderr.printf ("decrypt: either a password or keydata string must be supplied\n");
+                break;
+            case 4:
+                stderr.printf ("decrypt: unable to decrypt partition (possibly invalid password)\n");
+                break;
+            case 5:
+                stderr.printf ("decrypt: the decrypted partition does not have a LVM volume on it\n");
+                break;
+            case 6:
+                stderr.printf ("decrypt: unable to locate LUKS partition at %s\n", device);
+                break;
+            default:
+                stderr.printf ("decrypt: unhandled error value: %d\n", result);
+                break;
+        }
+    }
+
     private void set_mount (Mount mount) {
-        stderr.printf ("setting %s on %s\n", mount.partition_path, mount.mount_point);
         unset_mount_point (mount);
         for (int i = 0; i < mounts.size; i++) {
             if (mounts[i].partition_path == mount.partition_path) {
@@ -188,13 +234,15 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
 
         validate_status ();
-        stderr.printf ("adding new mount\n");
         mounts.add (mount);
         validate_status ();
     }
 
+    private bool mount_is_set (string mount_point) {
+        return mounts.any_match ((m) => m.mount_point == mount_point);
+    }
+
     private void unset_mount (string partition) {
-        stderr.printf ("unsetting %s", partition);
         remove_mount_by_partition (partition);
         validate_status ();
     }

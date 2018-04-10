@@ -20,8 +20,6 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
-    private Gee.ArrayList<Installer.Mount>? disk_config;
-
     private double prev_upper_adj = 0;
     private Gtk.ScrolledWindow terminal_output;
     public Gtk.TextView terminal_view { get; construct; }
@@ -29,11 +27,11 @@ public class ProgressView : AbstractInstallerView {
     private Gtk.Label progressbar_label;
     private const int NUM_STEP = 5;
 
-    public ProgressView (Gee.ArrayList<Installer.Mount>? mounts) {
-        if (mounts == null) {
+    public ProgressView () {
+        unowned Configuration config = Configuration.get_default ();
+        if (config.mounts == null) {
             stderr.printf ("mounts is null\n");
         }
-        this.disk_config = mounts;
     }
 
     construct {
@@ -126,8 +124,6 @@ public class ProgressView : AbstractInstallerView {
         return terminal_view.buffer.text;
     }
 
-    // TODO: This should receive the disk configuration from the user.
-    // For now, it is hard-coded as an example.
     public void start_installation () {
         var installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
@@ -163,7 +159,7 @@ public class ProgressView : AbstractInstallerView {
         // to each disk should be made, and where critical partitions are located.
         var disks = new Distinst.Disks ();
 
-        if (disk_config == null) {
+        if (current_config.mounts == null) {
             default_disk_configuration (disks);
         } else {
             custom_disk_configuration (disks);
@@ -184,9 +180,10 @@ public class ProgressView : AbstractInstallerView {
     }
 
     private void custom_disk_configuration (Distinst.Disks disks) {
+        unowned Configuration config = Configuration.get_default ();
         Installer.Mount[] lvm_devices = {};
 
-        foreach (Installer.Mount m in disk_config) {
+        foreach (Installer.Mount m in config.mounts) {
             if (m.is_lvm ()) {
                 lvm_devices += m;
             } else {
@@ -199,7 +196,7 @@ public class ProgressView : AbstractInstallerView {
                         return;
                     }
 
-                    disks.push (new_disk);
+                    disks.push ((owned) new_disk);
                     disk = disks.get_physical_device (m.parent_disk);
                 }
 
@@ -238,6 +235,15 @@ public class ProgressView : AbstractInstallerView {
         }
 
         disks.initialize_volume_groups ();
+
+        foreach (Installer.LuksCredentials cred in config.luks) {
+            disks.decrypt_partition (cred.device, Distinst.LvmEncryption () {
+                physical_volume = cred.pv,
+                password = cred.password,
+                keydata = null
+            });
+        }
+
         foreach (Installer.Mount m in lvm_devices) {
             var vg = m.parent_disk.offset (12);
             unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
@@ -397,7 +403,7 @@ public class ProgressView : AbstractInstallerView {
             return;
         }
 
-        disks.push (disk);
+        disks.push ((owned) disk);
 
         result = disks.initialize_volume_groups ();
 
