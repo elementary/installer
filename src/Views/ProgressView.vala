@@ -196,7 +196,7 @@ public class ProgressView : AbstractInstallerView {
                         return;
                     }
 
-                    disks.push (new_disk);
+                    disks.push ((owned) new_disk);
                     disk = disks.get_physical_device (m.parent_disk);
                 }
 
@@ -403,7 +403,7 @@ public class ProgressView : AbstractInstallerView {
             return;
         }
 
-        disks.push (disk);
+        disks.push ((owned) disk);
 
         result = disks.initialize_volume_groups ();
 
