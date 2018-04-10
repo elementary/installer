@@ -150,6 +150,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 type_label.set_visible (true);
                 type.set_visible (true);
                 type.set_sensitive (false);
+                format_label.set_visible (true);
+                format_partition.set_visible (true);
             } else if (active == 3) {
                 format_label.set_visible (false);
                 format_partition.set_visible (false);
@@ -162,6 +164,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 type_label.set_visible (true);
                 type.set_visible (true);
                 type.set_sensitive (true);
+                format_label.set_visible (true);
+                format_partition.set_visible (true);
             }
 
             check_values (set_mount);
