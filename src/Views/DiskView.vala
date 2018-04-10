@@ -90,7 +90,7 @@ public class Installer.DiskView : AbstractInstallerView {
         var title_grid = new Gtk.Grid ();
         title_grid.column_spacing = 12;
         title_grid.row_spacing = 6;
-        title_grid.halign = Gtk.Align.CENTER;
+        title_grid.halign = Gtk.Align.FILL;
         title_grid.valign = Gtk.Align.FILL;
         title_grid.attach (artwork, 0, 0, 1, 1);
         title_grid.attach (install_label, 0, 1, 1, 1);
