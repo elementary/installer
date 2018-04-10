@@ -90,10 +90,6 @@ public class Installer.PartitionBar : Gtk.EventBox {
         return (int) request;
     }
 
-    public void update_length (int request) {
-        set_size_request (request, -1);
-    }
-
     public void show_popover () {
         menu.popup ();
     }
