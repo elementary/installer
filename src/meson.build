@@ -10,6 +10,7 @@ vala_files = [
     'Dialogs/EndSessionDialog.vala',
     'Objects/org.freedesktop.udisks2.vala',
     'Objects/Configuration.vala',
+    'Objects/Mount.vala',
     'Views/AbstractInstallerView.vala',
     'Views/CheckView.vala',
     'Views/DiskView.vala',
