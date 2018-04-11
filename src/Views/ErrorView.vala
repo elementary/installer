@@ -107,26 +107,12 @@ public class ErrorView : AbstractInstallerView {
         var content_stack = new Gtk.Stack ();
         content_stack.add (label_area);
         content_stack.add (terminal_output);
+        content_area.attach (content_stack, 0, 0, 1, 1);
 
         var terminal_button = new Gtk.ToggleButton ();
         terminal_button.halign = Gtk.Align.END;
         terminal_button.image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
         terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        content_area.attach (content_stack, 0, 0, 1, 1);
-
-        var restart_button = new Gtk.Button.with_label (_("Restart Device"));
-
-        var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
-
-        var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
-        install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-
-        action_area.add (terminal_button);
-        action_area.add (restart_button);
-        action_area.add (demo_button);
-        action_area.add (install_button);
-
         terminal_button.toggled.connect (() => {
             if (terminal_button.active) {
                 content_stack.visible_child = terminal_output;
@@ -134,7 +120,9 @@ public class ErrorView : AbstractInstallerView {
                 content_stack.visible_child = label_area;
             }
         });
+        action_area.add (terminal_button);
 
+        var restart_button = new Gtk.Button.with_label (_("Restart Device"));
         restart_button.clicked.connect (() => {
             if (Installer.App.test_mode) {
                 critical (_("Test mode reboot"));
@@ -146,27 +134,19 @@ public class ErrorView : AbstractInstallerView {
                 }
             }
         });
+        action_area.add (restart_button);
 
-        demo_button.clicked.connect (() => {
-            if (Installer.App.test_mode) {
-                critical (_("Test mode switch user"));
-            } else {
-                var seat = Utils.get_seat_instance ();
-                if (seat != null) {
-                    try {
-                        seat.switch_to_guest ("");
-                    } catch (IOError e) {
-                        stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
-                    }
-                }
-            }
-        });
+        var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
+        demo_button.clicked.connect (() => Installer.App.get_instance ().quit ());
+        action_area.add (demo_button);
 
+        var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
+        install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         install_button.clicked.connect (() => {
             ((Gtk.Stack) get_parent ()).visible_child = previous_view;
         });
+        action_area.add (install_button);
 
         show_all ();
     }
 }
-
