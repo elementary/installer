@@ -23,20 +23,24 @@ public class Installer.Mount {
     public string parent_disk;
     public string mount_point;
     public Distinst.FileSystemType filesystem;
-    public uint8 flags;
+    public Flags flags;
 
-    public const uint8 FORMAT = 1;
-    public const uint8 LVM = 2;
-    public const uint8 LVM_ON_LUKS = 4;
+    [Flags]
+    public enum Flags {
+        FORMAT = 1,
+        LVM = 2,
+        LVM_ON_LUKS = 4
+    }
 
     public Mount (string partition, string parent_disk, string mount,
-                  uint8 flags, Distinst.FileSystemType fs) {
+                  Flags flags, Distinst.FileSystemType fs) {
         filesystem = fs;
         mount_point = mount;
         partition_path = partition;
         this.flags = flags;
         this.parent_disk = parent_disk;
     }
+
     public bool is_valid_boot_mount () {
         return filesystem == Distinst.FileSystemType.FAT16
             || filesystem == Distinst.FileSystemType.FAT32;
@@ -49,11 +53,11 @@ public class Installer.Mount {
     }
 
     public bool is_lvm () {
-        return LVM in flags;
+        return Flags.LVM in flags;
     }
 
     public bool should_format () {
-        return FORMAT in flags;
+        return Flags.FORMAT in flags;
     }
 }
 
@@ -68,4 +72,3 @@ public class Installer.LuksCredentials {
         this.password = password;
     }
 }
-
