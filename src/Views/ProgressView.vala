@@ -281,6 +281,8 @@ public class ProgressView : AbstractInstallerView {
             return;
         }
 
+        disks.push((owned) disk);
+
         result = disks.initialize_volume_groups ();
 
         if (result != 0) {
