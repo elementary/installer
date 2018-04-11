@@ -154,11 +154,19 @@ public class ProgressView : AbstractInstallerView {
         config.keyboard_model = null;
         config.keyboard_variant = current_config.keyboard_variant;
 
+        var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
+        var root_vg = Distinst.generate_unique_id ("data");
+        if (encrypted_vg == null || root_vg == null) {
+            warning ("unable to generate unique volume group IDs\n");
+            on_error ();
+            return;
+        }
+
         Distinst.LvmEncryption? encryption;
         if (current_config.encryption_password != null) {
             debug ("encrypting");
             encryption = Distinst.LvmEncryption () {
-                physical_volume = "cryptdata",
+                physical_volume = encrypted_vg,
                 password = current_config.encryption_password,
                 keydata = null
             };
@@ -254,7 +262,7 @@ public class ProgressView : AbstractInstallerView {
         result = disk.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
                 .partition_type (Distinst.PartitionType.PRIMARY)
-                .logical_volume ("data", encryption)
+                .logical_volume (root_vg, encryption)
         );
 
         if (result != 0) {
@@ -271,7 +279,7 @@ public class ProgressView : AbstractInstallerView {
             return;
         }
 
-        unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume ("data");
+        unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
 
         if (lvm_device == null) {
             critical ("unable to find 'data' volume group on %s", current_config.disk);
