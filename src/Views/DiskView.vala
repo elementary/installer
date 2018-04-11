@@ -139,7 +139,7 @@ public class Installer.DiskView : AbstractInstallerView {
                 label = model;
             }
 
-            string path = Utils.string_from_utf8(disk.get_device_path ());
+            string path = Utils.string_from_utf8 (disk.get_device_path ());
 
             var disk_button = new DiskButton (
                 label,

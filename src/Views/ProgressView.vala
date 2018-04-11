@@ -365,8 +365,7 @@ public class ProgressView : AbstractInstallerView {
                         }
 
                         partition.set_mount (m.mount_point);
-                        Distinst.PartitionFlag[] flags = { Distinst.PartitionFlag.ESP };
-                        partition.set_flags (flags);
+                        partition.set_flags ({ Distinst.PartitionFlag.ESP });
                     } else {
                         warning ("unreachable code path -- efi partition is invalid\n");
                         on_error ();

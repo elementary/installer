@@ -49,11 +49,11 @@ public class Installer.Mount {
     }
 
     public bool is_lvm () {
-        return (this.flags & LVM) != 0;
+        return LVM in flags;
     }
 
     public bool should_format () {
-        return (this.flags & FORMAT) != 0;
+        return FORMAT in flags;
     }
 }
 
