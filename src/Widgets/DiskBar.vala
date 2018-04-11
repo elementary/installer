@@ -104,6 +104,7 @@ public class Installer.DiskBar: Gtk.Grid {
         info.use_markup = true;
 
         var path = new Gtk.Label ("<b>%s</b>".printf (ppath));
+        path.set_halign (Gtk.Align.START);
         path.use_markup = true;
 
         var legend = new Gtk.Grid ();
