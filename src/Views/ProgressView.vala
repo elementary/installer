@@ -117,6 +117,27 @@ public class ProgressView : AbstractInstallerView {
         return terminal_view.buffer.text;
     }
 
+    private string casper_dir () {
+        var cdrom = "/cdrom";
+
+        try {
+            var cdrom_dir = File.new_for_path (cdrom);
+            var iter = cdrom_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
+
+            FileInfo info;
+            while ((info = iter.next_file ()) != null) {
+                var name = info.get_name ();
+                if (name.has_prefix ("casper")) {
+                    return cdrom + "/" + name;
+                }
+            }
+        } catch (GLib.Error e) {
+            critical ("failed to find casper dir automatically: %s\n", e.message);
+        }
+
+        return cdrom + "/casper";
+    }
+
     public void start_installation () {
         if (Installer.App.test_mode) {
             new Thread<void*> (null, () => {
@@ -139,18 +160,23 @@ public class ProgressView : AbstractInstallerView {
         var config = Distinst.Config ();
         config.flags = Distinst.MODIFY_BOOT_ORDER;
         config.hostname = "pop-os";
-        config.lang = "en_US.UTF-8";
-        config.remove = Build.MANIFEST_REMOVE_PATH;
-        config.squashfs = Build.SQUASHFS_PATH;
+
+        var casper = casper_dir ();
+        config.remove = casper + "/filesystem.manifest-remove";
+        config.squashfs = casper + "/filesystem.squashfs";
 
         unowned Configuration current_config = Configuration.get_default ();
+
+        var recovery = Recovery.disk ();
 
         //TODO: Use the following
         debug ("language: %s\n", current_config.lang);
         if (current_config.country != null) {
             debug ("country: %s\n", current_config.country);
+            config.lang = current_config.lang + "_" + current_config.country + ".UTF-8";
         } else {
             debug ("no country\n");
+            config.lang = current_config.lang + ".UTF-8";
         }
 
         config.keyboard_layout = current_config.keyboard_layout;
@@ -158,7 +184,9 @@ public class ProgressView : AbstractInstallerView {
         config.keyboard_variant = current_config.keyboard_variant;
 
         var disks = new Distinst.Disks ();
-        if (current_config.mounts == null) {
+        if (recovery != null) {
+            recovery_disk_configuration (disks, recovery);
+        } else if (current_config.mounts == null) {
             default_disk_configuration (disks);
         } else {
             custom_disk_configuration (disks);
@@ -168,6 +196,179 @@ public class ProgressView : AbstractInstallerView {
             installer.install ((owned) disks, config);
             return null;
         });
+    }
+
+    private void recovery_disk_configuration (Distinst.Disks disks, string recovery_disk) {
+        unowned Configuration current_config = Configuration.get_default ();
+
+        var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
+        var root_vg = Distinst.generate_unique_id ("data");
+        if (encrypted_vg == null || root_vg == null) {
+            critical ("unable to generate unique volume group IDs\n");
+            on_error ();
+            return;
+        }
+
+        Distinst.LvmEncryption? encryption;
+        if (current_config.encryption_password != null) {
+            debug ("encrypting");
+            encryption = Distinst.LvmEncryption () {
+                physical_volume = encrypted_vg,
+                password = current_config.encryption_password,
+                keydata = null
+            };
+        } else {
+            debug ("not encrypting");
+            encryption = null;
+        }
+
+        debug ("disk: %s\n", recovery_disk);
+        var disk = new Distinst.Disk (recovery_disk);
+        if (disk == null) {
+            critical ("could not find physical device: '%s'\n", recovery_disk);
+            on_error ();
+            return;
+        }
+
+        var bootloader = Distinst.bootloader_detect ();
+
+        var start_sector = Distinst.Sector () {
+            flag = Distinst.SectorKind.START,
+            value = 0
+        };
+
+        var swap_sector = Distinst.Sector () {
+            flag = Distinst.SectorKind.MEGABYTE_FROM_END,
+            value = 4096
+        };
+
+        var end_sector = Distinst.Sector () {
+            flag = Distinst.SectorKind.END,
+            value = 0
+        };
+
+        string? efi_part = Recovery.efi_partition ();
+        string? recovery_part = Recovery.recovery_partition ();
+        string? lvm_part = null;
+        foreach (unowned Distinst.Partition partition in disk.list_partitions ()) {
+            string path = Utils.string_from_utf8 (partition.get_device_path ());
+            if (partition.get_file_system () == Distinst.FileSystemType.LVM && lvm_part == null) {
+                lvm_part = path;
+            }
+        }
+
+        if (efi_part != null) {
+            debug ("efi_part: %s\n", efi_part);
+
+            unowned Distinst.Partition partition = disk.get_partition_by_path (efi_part);
+
+            if (partition == null) {
+                critical ("could not find %s on %s\n", efi_part, recovery_disk);
+                on_error ();
+                return;
+            }
+
+            partition.set_mount ("/boot/efi");
+        }
+
+        if (recovery_part != null) {
+            debug("recovery_part: %s\n", recovery_part);
+
+            //TODO: Find recovery partition using /cdrom mount, do not format it, update it with correct information
+
+            unowned Distinst.Partition partition = disk.get_partition_by_path (recovery_part);
+
+            if (partition == null) {
+                critical ("could not find %s on %s\n", recovery_part, recovery_disk);
+                on_error ();
+                return;
+            }
+        }
+
+        int lvm_num;
+        uint64 start;
+        uint64 end;
+
+        if (lvm_part != null) {
+            debug("lvm_part: %s\n", lvm_part);
+
+            unowned Distinst.Partition partition = disk.get_partition_by_path (lvm_part);
+
+            if (partition == null) {
+                critical ("could not find %s on %s\n", lvm_part, recovery_disk);
+                on_error ();
+                return;
+            }
+
+            lvm_num = partition.get_number ();
+            start = partition.get_start_sector ();
+            end = partition.get_end_sector ();
+        } else {
+            critical ("LVM partition not found on %s", recovery_disk);
+            on_error ();
+            return;
+        }
+
+        disk.remove_partition (lvm_num);
+
+        int result = disk.add_partition (
+            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
+                .partition_type (Distinst.PartitionType.PRIMARY)
+                .logical_volume (root_vg, encryption)
+        );
+
+        if (result != 0) {
+            critical ("unable to add lvm partition to %s", recovery_disk);
+            on_error ();
+            return;
+        }
+
+        disks.push ((owned) disk);
+
+        result = disks.initialize_volume_groups ();
+
+        if (result != 0) {
+            critical ("unable to initialize volume groups on %s", recovery_disk);
+            on_error ();
+            return;
+        }
+
+        unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
+
+        if (lvm_device == null) {
+            critical ("unable to find '%s' volume group on %s", root_vg, recovery_disk);
+            on_error ();
+            return;
+        }
+
+        start = lvm_device.get_sector (ref start_sector);
+        end = lvm_device.get_sector (ref swap_sector);
+
+        result = lvm_device.add_partition (
+            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                .name("root")
+                .mount ("/")
+        );
+
+        if (result != 0) {
+            critical ("unable to add / partition to lvm on %s", recovery_disk);
+            on_error ();
+            return;
+        }
+
+        start = lvm_device.get_sector (ref swap_sector);
+        end = lvm_device.get_sector (ref end_sector);
+
+        result = lvm_device.add_partition (
+            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.SWAP)
+                .name("swap")
+        );
+
+        if (result != 0) {
+            critical ("unable to add swap partition to lvm on %s", recovery_disk);
+            on_error ();
+            return;
+        }
     }
 
     private void default_disk_configuration (Distinst.Disks disks) {
@@ -212,6 +413,11 @@ public class ProgressView : AbstractInstallerView {
         var boot_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.MEGABYTE,
             value = 512
+        };
+
+        var recovery_sector = Distinst.Sector() {
+            flag = Distinst.SectorKind.MEGABYTE,
+            value = 4096
         };
 
         var swap_sector = Distinst.Sector () {
@@ -272,6 +478,15 @@ public class ProgressView : AbstractInstallerView {
         }
 
         start = disk.get_sector (ref boot_sector);
+        end = disk.get_sector (ref recovery_sector);
+
+        result = disk.add_partition (
+            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
+                .name("recovery")
+                .mount ("/recovery")
+        );
+
+        start = disk.get_sector (ref recovery_sector);
         end = disk.get_sector (ref end_sector);
 
         result = disk.add_partition (
