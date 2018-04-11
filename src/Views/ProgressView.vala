@@ -47,9 +47,14 @@ public class ProgressView : AbstractInstallerView {
         terminal_output.expand = true;
         terminal_output.add (terminal_view);
 
+        var artwork = new Gtk.Grid ();
+        artwork.get_style_context().add_class("progress");
+        artwork.get_style_context().add_class("artwork");
+        artwork.vexpand = true;
+
         var logo_stack = new Gtk.Stack ();
         logo_stack.transition_type = Gtk.StackTransitionType.OVER_UP_DOWN;
-        logo_stack.add (logo);
+        logo_stack.add (artwork);
         logo_stack.add (terminal_output);
 
         var terminal_button = new Gtk.ToggleButton ();
@@ -78,7 +83,7 @@ public class ProgressView : AbstractInstallerView {
                 logo_stack.visible_child = terminal_output;
                 scroll_to_bottom ();
             } else {
-                logo_stack.visible_child = logo;
+                logo_stack.visible_child = artwork;
             }
         });
 
