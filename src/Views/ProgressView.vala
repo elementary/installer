@@ -292,7 +292,7 @@ public class ProgressView : AbstractInstallerView {
         unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
 
         if (lvm_device == null) {
-            critical ("unable to find 'data' volume group on %s", current_config.disk);
+            critical ("unable to find '%s' volume group on %s", root_vg, current_config.disk);
             on_error ();
             return;
         }
