@@ -19,6 +19,12 @@
  */
 
 namespace Utils {
+    public string string_from_utf8 (uint8[] input) {
+        var builder = new GLib.StringBuilder.sized (input.length);
+        builder.append_len ((string) input, input.length);
+        return (owned) builder.str;
+    }
+
     private static string os_pretty_name;
     private static string get_pretty_name () {
         if (os_pretty_name == null) {
