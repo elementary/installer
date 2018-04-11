@@ -102,12 +102,13 @@ public class Installer.DiskView : AbstractInstallerView {
         var custom_button = new Gtk.Button.with_label (_("Custom Partitioning"));
         custom_button.clicked.connect (() => custom_step ());
         action_area.add (custom_button);
+        action_area.set_child_secondary (custom_button, true);
+        action_area.set_child_non_homogeneous (custom_button, true);
 
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
         next_button.clicked.connect (() => next_step ());
-
         action_area.add (next_button);
 
         show_all ();
