@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 09:59-0600\n"
+"POT-Creation-Date: 2018-04-11 16:59-0700\n"
 "PO-Revision-Date: 2018-02-11 00:08+0000\n"
 "Last-Translator: Lasha-Giorgi Esebua <lashagiorgiesebua@gmail.com>\n"
 "Language-Team: Georgian <https://weblate.elementary.io/projects/installer/"
@@ -15,16 +15,16 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "დააინსტალირე"
 
-#: src/Utils.vala:156
+#: src/Utils.vala:31
 msgid "Operating System"
 msgstr "ოპერატიული სისტემა"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
 #, c-format
 msgid "%s…"
 msgstr ""
@@ -46,7 +46,7 @@ msgstr "ნამდვილად გსურთ გამორთვა?"
 msgid "This will cancel installation and turn off this device."
 msgstr "ეს გააუქმებს ინსტალაციას და გამორთავს აპარატს."
 
-#: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
+#: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
 msgstr "გადატვირთვა"
 
@@ -55,28 +55,28 @@ msgid "Cancel"
 msgstr "გაუქმება"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:52
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "გამორთვა"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
 msgstr "ინსტალაციის გაუქმება"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 #, fuzzy
 msgid "Test Mode"
 msgstr "სცადეთ სადემონსტარციო ვერსია"
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:66
 msgid "Ignore"
 msgstr "უგულვებელყოფა"
 
-#: src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
 msgstr "არ არის საკმარისი მოცულობა"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:204
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -85,47 +85,47 @@ msgstr ""
 "არ არის საკმარისი მოცულობა რათა დააინსტალიროთ %s. რეკომენდებული მინიმალური "
 "მოცულობაა %s."
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
 msgstr ""
 
-#: src/Views/CheckView.vala:221
+#: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:237
+#: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
 msgstr "შეაერთეთ კვების წყაროსთან"
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
 
-#: src/Views/CheckView.vala:296
+#: src/Views/CheckView.vala:291
 msgid "Recommended:"
 msgstr "რეკომენდებულია:"
 
-#: src/Views/CheckView.vala:300
+#: src/Views/CheckView.vala:295
 msgid "Your Device:"
 msgstr ""
 
-#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
+#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
 msgstr "პროცესორი:"
 
-#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
 msgstr "მეხსიერება:"
 
-#: src/Views/DiskView.vala:49
+#: src/Views/DiskView.vala:51
 msgid "Select a drive to use for installation"
 msgstr "აირჩიეთ დისკი ინსტალაციისთვის"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -135,46 +135,55 @@ msgstr "ეს წაშლის ყველა მონაემს არ�
 msgid "Getting the current configuration…"
 msgstr ""
 
-#: src/Views/DiskView.vala:94
+#: src/Views/DiskView.vala:96
 msgid "Erase and Install"
 msgstr "წაშალე და ჩაწერე"
 
-#: src/Views/ErrorView.vala:32
-#, c-format
-msgid "Could not install %s"
+#: src/Views/ErrorView.vala:38
+#, fuzzy
+msgid "Could Not Install"
 msgstr "შეუძლებელია ინსტალაცია"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:46
+#, fuzzy, c-format
 msgid ""
-"The installation failed, so your device may not restart properly. You can "
-"try one of the following:"
+"Installing %s failed, possibly due to a hardware error. Your device may not "
+"restart properly. You can try the following:"
 msgstr ""
 "ინსტალაცია წარუმატებელია, შესაბამისად თქვენი კომპიუტერი შეიძლება არ "
 "გადაიტვირთოს სწორად. შეგიძლიათ ცადოთ ქვემოთ ჩამოთვლილთაგან ერთ-ერთი:"
 
-#: src/Views/ErrorView.vala:44
+#: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
 msgstr "სცადეთ ინსტალაცია ახლიდან"
 
-#: src/Views/ErrorView.vala:50
+#: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
 msgstr ""
 
-#: src/Views/ErrorView.vala:56
+#: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
 msgstr ""
 
-#: src/Views/ErrorView.vala:74
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "გადატვირთეთ კომპიუტერი"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "სცადეთ სადემონსტარციო ვერსია"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "სცადეთ ინსტალაცია თავიდან"
+
+#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
+msgid "Test mode reboot"
+msgstr ""
+
+#: src/Views/ErrorView.vala:146
+msgid "Test mode switch user"
+msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -193,7 +202,7 @@ msgid "Back"
 msgstr "უკუშლა"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:150
+#: src/Views/LanguageView.vala:161
 msgid "Select"
 msgstr "არჩევა"
 
@@ -205,31 +214,31 @@ msgstr ""
 msgid "Input Language"
 msgstr ""
 
-#: src/Views/LanguageView.vala:201
+#: src/Views/LanguageView.vala:217
 msgid "Languages"
 msgstr "ენა"
 
-#: src/Views/LanguageView.vala:218
+#: src/Views/LanguageView.vala:234
 msgid "Select a Language"
 msgstr "აირჩიეთ ენა"
 
-#: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
+#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
 msgstr "თარგმანი"
 
-#: src/Views/ProgressView.vala:307
+#: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
 msgstr ""
 
-#: src/Views/ProgressView.vala:311
+#: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
 msgstr ""
 
-#: src/Views/ProgressView.vala:315
+#: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
 msgstr "სისტემის კონფიგურაცია"
 
-#: src/Views/ProgressView.vala:319
+#: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
 msgstr "სრულდება ინსტალაცია"
 
@@ -247,7 +256,8 @@ msgstr "შეგიძლიათ დააინსტალიროთ"
 #: src/Views/TryInstallView.vala:53
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged."
+"operating system will be unchanged. Performance and features may not reflect "
+"the installed experience."
 msgstr ""
 
 #: src/Views/TryInstallView.vala:64
@@ -256,23 +266,23 @@ msgid ""
 "Install icon."
 msgstr ""
 
-#: src/Views/SuccessView.vala:32
-msgid "Restart your device to continue setting up"
+#: src/Views/SuccessView.vala:34
+msgid "Continue Setting Up"
 msgstr ""
 
-#: src/Views/SuccessView.vala:38
+#: src/Views/SuccessView.vala:42
 #, c-format
+msgid "Your device will automatically restart to %s in %i seconds."
+msgstr ""
+
+#: src/Views/SuccessView.vala:43
 msgid ""
-"Your device will automatically restart to %s in 30 seconds to set up a new "
-"user, or you can shut down now and set a user up later."
+"After restarting you can set up a new user, or you can shut down now and set "
+"up a new user later."
 msgstr ""
 
-#: src/Views/SuccessView.vala:64
+#: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
-
-#: src/Views/SuccessView.vala:84
-msgid "Test mode reboot"
 msgstr ""
 
 #~ msgid "Data from your previous operating system is unchanged in Demo Mode."
