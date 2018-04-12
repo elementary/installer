@@ -88,7 +88,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
-        try_install_view.next_step.connect (() => load_encryptview ());
+        try_install_view.next_step.connect (() => load_encrypt_view ());
     }
 
     private void set_check_view_visible (bool show) {
@@ -101,7 +101,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
     }
 
-    private void load_checkview () {
+    private void load_check_view () {
         if (check_view != null) {
             check_view.destroy ();
         }
@@ -129,7 +129,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         set_check_view_visible (!check_ignored && !check_view.check_requirements ());
     }
 
-    private void load_encryptview () {
+    private void load_encrypt_view () {
         if (encrypt_view != null) {
             encrypt_view.destroy ();
         }
@@ -139,12 +139,12 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (encrypt_view);
         stack.visible_child = encrypt_view;
 
-        load_checkview ();
+        load_check_view ();
 
-        encrypt_view.next_step.connect (() => load_diskview ());
+        encrypt_view.next_step.connect (() => load_disk_view ());
     }
 
-    private void load_diskview () {
+    private void load_disk_view () {
         if (disk_view != null) {
             disk_view.destroy ();
         }
