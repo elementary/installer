@@ -32,8 +32,10 @@ public class ErrorView : AbstractInstallerView {
                 warning ("%s", e.message);
         }
 
-        var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.END;
+        var artwork = new Gtk.Grid ();
+        artwork.get_style_context ().add_class ("error");
+        artwork.get_style_context().add_class("artwork");
+        artwork.vexpand = true;
 
         var title_label = new Gtk.Label (_("Could Not Install"));
         title_label.halign = Gtk.Align.CENTER;
@@ -89,11 +91,6 @@ public class ErrorView : AbstractInstallerView {
         terminal_output.add (terminal_view);
         terminal_output.vexpand = true;
         terminal_output.hexpand = true;
-
-        var artwork = new Gtk.Grid ();
-        artwork.get_style_context ().add_class ("error");
-        artwork.get_style_context().add_class("artwork");
-        artwork.vexpand = true;
 
         var label_area = new Gtk.Grid ();
         label_area.column_homogeneous = true;

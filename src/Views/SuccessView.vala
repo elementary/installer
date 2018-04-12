@@ -21,6 +21,12 @@ public class SuccessView : AbstractInstallerView {
 
     private Utils.SystemInterface system_interface;
 
+    public string log { get; construct; }
+
+    public SuccessView (string log) {
+        Object (log: log);
+    }
+
     construct {
         try {
             system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
@@ -28,34 +34,73 @@ public class SuccessView : AbstractInstallerView {
             critical (e.message);
         }
 
-        var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.START;
-
-        var primary_label = new Gtk.Label (_("Restart your device to continue setting up"));
-        primary_label.max_width_chars = 30;
-        primary_label.wrap = true;
-        primary_label.xalign = 0;
-        primary_label.get_style_context ().add_class ("h2");
-
         var artwork = new Gtk.Grid ();
         artwork.get_style_context ().add_class ("success");
         artwork.get_style_context().add_class ("artwork");
         artwork.vexpand = true;
-        artwork.hexpand = true;
 
-        content_area.attach (artwork, 0, 0, 1, 2);
-        content_area.attach (primary_label, 1, 0, 1, 1);
+        var title_label = new Gtk.Label (_("Continue Setting Up"));
+        title_label.halign = Gtk.Align.CENTER;
+        title_label.max_width_chars = 30;
+        title_label.valign = Gtk.Align.START;
+        title_label.wrap = true;
+        title_label.xalign = 0;
+        title_label.get_style_context ().add_class ("h2");
+
+        var description_label = new Gtk.Label (_("After restarting you can set up a new user, or you can shut down now and set up a new user later."));
+        description_label.max_width_chars = 52;
+        description_label.wrap = true;
+        description_label.xalign = 0;
+        description_label.use_markup = true;
+
+        var grid = new Gtk.Grid ();
+        grid.row_spacing = 6;
+        grid.valign = Gtk.Align.CENTER;
+        grid.attach (description_label, 0, 0, 1, 1);
+
+        var terminal_view = new Gtk.TextView ();
+        terminal_view.buffer.text = log;
+        terminal_view.bottom_margin = terminal_view.top_margin = terminal_view.left_margin = terminal_view.right_margin = 12;
+        terminal_view.editable = false;
+        terminal_view.cursor_visible = true;
+        terminal_view.monospace = true;
+        terminal_view.wrap_mode = Gtk.WrapMode.WORD_CHAR;
+        terminal_view.get_style_context ().add_class ("terminal");
+
+        var terminal_output = new Gtk.ScrolledWindow (null, null);
+        terminal_output.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        terminal_output.add (terminal_view);
+        terminal_output.vexpand = true;
+        terminal_output.hexpand = true;
+
+        var label_area = new Gtk.Grid ();
+        label_area.column_homogeneous = true;
+        label_area.halign = Gtk.Align.CENTER;
+        label_area.margin = 48;
+        label_area.valign = Gtk.Align.FILL;
+        label_area.attach (artwork,       0, 0, 1, 1);
+        label_area.attach (title_label, 0, 1, 1, 1);
+        label_area.attach (grid,        1, 0, 1, 2);
+
+        var content_stack = new Gtk.Stack ();
+        content_stack.add (label_area);
+        content_stack.add (terminal_output);
+        content_area.attach (content_stack, 0, 0, 1, 1);
+
+        var terminal_button = new Gtk.ToggleButton ();
+        terminal_button.halign = Gtk.Align.END;
+        terminal_button.image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        terminal_button.toggled.connect (() => {
+            if (terminal_button.active) {
+                content_stack.visible_child = terminal_output;
+            } else {
+                content_stack.visible_child = label_area;
+            }
+        });
+        action_area.add (terminal_button);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
-
-        var restart_button = new Gtk.Button.with_label (_("Restart Device"));
-        restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-
-        action_area.add (shutdown_button);
-        action_area.add (restart_button);
-
-        restart_button.clicked.connect (session_restart);
-
         shutdown_button.clicked.connect (() => {
             if (Installer.App.test_mode) {
                 critical (_("Test mode shutdown"));
@@ -67,11 +112,12 @@ public class SuccessView : AbstractInstallerView {
                 }
             }
         });
+        action_area.add (shutdown_button);
 
-        // Timeout.add_seconds (RESTART_TIMEOUT, () => {
-        //     session_restart ();
-        //     return GLib.Source.REMOVE;
-        // });
+        var restart_button = new Gtk.Button.with_label (_("Restart Device"));
+        restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        restart_button.clicked.connect (session_restart);
+        action_area.add (restart_button);
 
         show_all ();
     }
@@ -88,4 +134,3 @@ public class SuccessView : AbstractInstallerView {
         }
     }
 }
-

@@ -200,7 +200,9 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (progress_view);
         stack.visible_child = progress_view;
 
-        progress_view.on_success.connect (() => load_success_view ());
+        progress_view.on_success.connect (() => {
+            load_success_view (progress_view.get_log ());
+        });
         progress_view.on_error.connect (() => {
             load_error_view (progress_view.get_log ());
         });
@@ -234,12 +236,12 @@ public class Installer.MainWindow : Gtk.Dialog {
         progress_view.start_installation ();
     }
 
-    private void load_success_view () {
+    private void load_success_view (string log) {
         if (success_view != null) {
             success_view.destroy ();
         }
 
-        success_view = new SuccessView ();
+        success_view = new SuccessView (log);
         stack.add (success_view);
         stack.visible_child = success_view;
 
