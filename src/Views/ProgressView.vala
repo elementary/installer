@@ -25,7 +25,7 @@ public class ProgressView : AbstractInstallerView {
     public Gtk.TextView terminal_view { get; construct; }
     private Gtk.ProgressBar progressbar;
     private Gtk.Label progressbar_label;
-    private const int NUM_STEP = 5;
+    private const int NUM_STEP = 4;
 
     construct {
         var logo = new Gtk.Image ();
