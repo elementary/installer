@@ -60,15 +60,16 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
         load_disks ();
 
-        gparted_button = new Gtk.Button.with_label (_("Modify Partitions"));
+        gparted_button = new Gtk.Button.with_label (_("Modify Partitions…"));
         gparted_button.clicked.connect (() => open_gparted ());
+        action_area.add (gparted_button);
+        action_area.set_child_secondary (gparted_button, true);
+        action_area.set_child_non_homogeneous (gparted_button, true);
 
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
         next_button.clicked.connect (() => next_step ());
-
-        action_area.add (gparted_button);
         action_area.add (next_button);
 
         show_all ();
