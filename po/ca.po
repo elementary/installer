@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-03-12 15:49+0000\n"
+"PO-Revision-Date: 2018-04-12 14:21+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://weblate.elementary.io/projects/installer/"
-"installer/ca/>\n"
+"Language-Team: Catalan "
+"<https://weblate.elementary.io/projects/installer/installer/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -144,18 +144,17 @@ msgid "Erase and Install"
 msgstr "Esborra i instal·la"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "No s'ha pogut instal·lar %s"
+msgstr "No s'ha pogut instal·lar"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Ha fallat la instal·lació; per tant, el dispositiu pot no reiniciar-se "
-"correctament. Podeu intentar el següent:"
+"Ha fallat la instal·lació de %s, probablement per un error de maquinari. El "
+"dispositiu pot no reiniciar-se correctament. Podeu intentar el següent:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -186,9 +185,8 @@ msgid "Test mode reboot"
 msgstr "Reinici del mode de prova"
 
 #: src/Views/ErrorView.vala:146
-#, fuzzy
 msgid "Test mode switch user"
-msgstr "Aturada del mode de prova"
+msgstr "Canvi d'usuari del mode de prova"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -260,14 +258,14 @@ msgstr ""
 "instal·lar."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
 "Al mode de prova, els canvis que feu no es desaran i les dades del sistema "
-"operatiu anterior es mantindran sense canviar."
+"operatiu anterior es mantindran sense canviar. Les característiques i el "
+"rendiment poden no reflectir l'experiència de tenir el sistema instal·lat."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -279,23 +277,20 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Continua la configuració"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"El dispositiu es reiniciarà automàticament amb %s d'aquí a 30 segons per "
-"establir un usuari nou, o bé podeu aturar-lo ara i establir-lo més tard."
+msgstr "El dispositiu es reiniciarà automàticament amb %s d'aquí a %i segons."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"El dispositiu es reiniciarà automàticament amb %s d'aquí a 30 segons per "
-"establir un usuari nou, o bé podeu aturar-lo ara i establir-lo més tard."
+"Després de reiniciar el dispositiu podreu establir un usuari nou, o bé podeu "
+"aturar-lo ara i establir-lo més tard."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
