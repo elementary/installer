@@ -1,53 +1,53 @@
-.legend {
-  padding: 8px;
-  border-radius: 50%;
+.storage-bar .legend {
+    border-radius: 50%;
 }
 
-.disk-bar, .unused {
+.storage-bar .disk-bar,
+.storage-bar .unused {
   background-color: #888;
 }
 
-.swap {
+.storage-bar .swap {
   background-color: #C22E1E;
 }
 
-.ext4 {
+.storage-bar .ext4 {
   background-color: #4EA845;
 }
 
-.ext3 {
+.storage-bar .ext3 {
   background-color: #428F3B;
 }
 
-.ext2 {
+.storage-bar .ext2 {
   background-color: #367530;
 }
 
-.fat16,
-.fat32 {
+.storage-bar .fat16,
+.storage-bar .fat32 {
   background-color: #CACA32;
 }
 
-.btrfs {
+.storage-bar .btrfs {
   background-color: #3940A0;
 }
 
-.xfs {
+.storage-bar .xfs {
   background-color: #6D57D3;
 }
 
-.ntfs {
+.storage-bar .ntfs {
   background-color: #BE791F;
 }
 
-.luks {
+.storage-bar .luks {
   background-color: #813BA4;
 }
 
-.lvm {
+.storage-bar .lvm {
   background-color: #9444BD;
 }
 
-.none {
+.storage-bar .none {
   background-color: #3199CB;
 }
