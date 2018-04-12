@@ -1,0 +1,53 @@
+.legend {
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.disk-bar, .unused {
+  background-color: #888;
+}
+
+.swap {
+  background-color: #C22E1E;
+}
+
+.ext4 {
+  background-color: #4EA845;
+}
+
+.ext3 {
+  background-color: #428F3B;
+}
+
+.ext2 {
+  background-color: #367530;
+}
+
+.fat16,
+.fat32 {
+  background-color: #CACA32;
+}
+
+.btrfs {
+  background-color: #3940A0;
+}
+
+.xfs {
+  background-color: #6D57D3;
+}
+
+.ntfs {
+  background-color: #BE791F;
+}
+
+.luks {
+  background-color: #813BA4;
+}
+
+.lvm {
+  background-color: #9444BD;
+}
+
+.none {
+  background-color: #3199CB;
+}
