@@ -277,7 +277,6 @@ public class Installer.CheckView : AbstractInstallerView  {
         grid.column_spacing = 12;
         grid.expand = true;
         grid.halign = Gtk.Align.CENTER;
-        grid.margin = 48;
         grid.margin_start = grid.margin_end = 12;
         grid.row_spacing = 6;
         grid.valign = Gtk.Align.FILL;

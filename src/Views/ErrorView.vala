@@ -71,6 +71,7 @@ public class ErrorView : AbstractInstallerView {
 
         var grid = new Gtk.Grid ();
         grid.row_spacing = 6;
+        grid.margin_left = 24;
         grid.valign = Gtk.Align.CENTER;
         grid.attach (description_label, 0, 0, 1, 1);
         grid.attach (try_label ,        0, 1, 1, 1);
@@ -95,7 +96,6 @@ public class ErrorView : AbstractInstallerView {
         var label_area = new Gtk.Grid ();
         label_area.column_homogeneous = true;
         label_area.halign = Gtk.Align.CENTER;
-        label_area.margin = 48;
         label_area.valign = Gtk.Align.FILL;
         label_area.attach (artwork,       0, 0, 1, 1);
         label_area.attach (title_label, 0, 1, 1, 1);
