@@ -99,7 +99,7 @@ public class Installer.DiskView : AbstractInstallerView {
         content_area.attach (title_grid, 0, 0, 1, 1);
         content_area.attach (load_stack, 1, 0, 1, 1);
 
-        var custom_button = new Gtk.Button.with_label (_("Custom Partitioning"));
+        var custom_button = new Gtk.Button.with_label (_("Customize Partitions…"));
         custom_button.clicked.connect (() => custom_step ());
         action_area.add (custom_button);
         action_area.set_child_secondary (custom_button, true);
