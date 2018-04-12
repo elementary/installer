@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 09:59-0600\n"
+"POT-Creation-Date: 2018-04-11 16:59-0700\n"
 "PO-Revision-Date: 2017-12-28 00:07+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/installer/"
@@ -15,16 +15,16 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "%s를 설치합니다"
 
-#: src/Utils.vala:156
+#: src/Utils.vala:31
 msgid "Operating System"
 msgstr "운영체제"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -47,7 +47,7 @@ msgstr "정말 컴퓨터를 끄시겠습니까?"
 msgid "This will cancel installation and turn off this device."
 msgstr "이 작업은 설치를 취소하고 컴퓨터를 끄게 됩니다."
 
-#: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
+#: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
 msgstr "다시 시작"
 
@@ -56,28 +56,28 @@ msgid "Cancel"
 msgstr "취소"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:52
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "컴퓨터 끄기"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
 msgstr "설치 취소"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 #, fuzzy
 msgid "Test Mode"
 msgstr "데모 모드로 들어가 보기"
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:66
 msgid "Ignore"
 msgstr "그냥 넘기기"
 
-#: src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
 msgstr "공간이 충분하지 않습니다"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:204
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -86,11 +86,11 @@ msgstr ""
 "컴퓨터에 %s의 설치에 필요한 공간이 충분하지 않습니다. 최소한 %s 정도의 저장 "
 "용량을 권장합니다."
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
 msgstr "컴퓨터가 꽤 느려질 수 있습니다"
 
-#: src/Views/CheckView.vala:221
+#: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -98,11 +98,11 @@ msgstr ""
 "사용하시는 장비가 하드웨어 권장 요건에 미치지 않습니다. 이런 경우 구동이 느리"
 "거나 프리징이 발생할 수 있습니다."
 
-#: src/Views/CheckView.vala:237
+#: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
 msgstr "전원에 연결하세요"
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -110,27 +110,27 @@ msgstr ""
 "사용하시는 장비가 배터리로 작동하고 있습니다. 설치 중에는 전원에 연결하시기"
 "를 권해드립니다."
 
-#: src/Views/CheckView.vala:296
+#: src/Views/CheckView.vala:291
 msgid "Recommended:"
 msgstr "권장 사양:"
 
-#: src/Views/CheckView.vala:300
+#: src/Views/CheckView.vala:295
 msgid "Your Device:"
 msgstr "여러분의 컴퓨터:"
 
-#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
+#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
 msgstr "프로세서:"
 
-#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
 msgstr "메모리:"
 
-#: src/Views/DiskView.vala:49
+#: src/Views/DiskView.vala:51
 msgid "Select a drive to use for installation"
 msgstr "설치에 사용할 드라이브를 선택해주세요"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -142,46 +142,55 @@ msgstr ""
 msgid "Getting the current configuration…"
 msgstr "현재 설정을 가져오고 있습니다…"
 
-#: src/Views/DiskView.vala:94
+#: src/Views/DiskView.vala:96
 msgid "Erase and Install"
 msgstr "지우고 설치하기"
 
-#: src/Views/ErrorView.vala:32
-#, c-format
-msgid "Could not install %s"
+#: src/Views/ErrorView.vala:38
+#, fuzzy
+msgid "Could Not Install"
 msgstr "%s의 설치를 할 수 없습니다"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:46
+#, fuzzy, c-format
 msgid ""
-"The installation failed, so your device may not restart properly. You can "
-"try one of the following:"
+"Installing %s failed, possibly due to a hardware error. Your device may not "
+"restart properly. You can try the following:"
 msgstr ""
 "설치에 실패해서, 컴퓨터가 제대로 다시 시작하지 않을 수 있습니다. 다음 중 한 "
 "가지를 수행해 보세요:"
 
-#: src/Views/ErrorView.vala:44
+#: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
 msgstr "• 다시 설치해보기"
 
-#: src/Views/ErrorView.vala:50
+#: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
 msgstr "• 데모 모드를 사용해서 수동으로 복구해보기"
 
-#: src/Views/ErrorView.vala:56
+#: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
 msgstr "• 다른 드라이브에서 컴퓨터를 다시 시작해보기"
 
-#: src/Views/ErrorView.vala:74
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "컴퓨터를 다시 시작하기"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "데모 모드로 들어가 보기"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "다시 설치해 보기"
+
+#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
+msgid "Test mode reboot"
+msgstr ""
+
+#: src/Views/ErrorView.vala:146
+msgid "Test mode switch user"
+msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -200,7 +209,7 @@ msgid "Back"
 msgstr "뒤로"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:150
+#: src/Views/LanguageView.vala:161
 msgid "Select"
 msgstr "선택"
 
@@ -212,31 +221,31 @@ msgstr "기본"
 msgid "Input Language"
 msgstr "언어 입력"
 
-#: src/Views/LanguageView.vala:201
+#: src/Views/LanguageView.vala:217
 msgid "Languages"
 msgstr "언어"
 
-#: src/Views/LanguageView.vala:218
+#: src/Views/LanguageView.vala:234
 msgid "Select a Language"
 msgstr "언어 선택"
 
-#: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
+#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
 msgstr "지금 사용 중인 언어"
 
-#: src/Views/ProgressView.vala:307
+#: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
 msgstr "드라이브 파티션 나누기"
 
-#: src/Views/ProgressView.vala:311
+#: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
 msgstr "파일 압축 풀기"
 
-#: src/Views/ProgressView.vala:315
+#: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
 msgstr "시스템 구성 하기"
 
-#: src/Views/ProgressView.vala:319
+#: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
 msgstr "설치 마무리 하기"
 
@@ -256,7 +265,8 @@ msgstr ""
 #: src/Views/TryInstallView.vala:53
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged."
+"operating system will be unchanged. Performance and features may not reflect "
+"the installed experience."
 msgstr ""
 
 #: src/Views/TryInstallView.vala:64
@@ -268,26 +278,32 @@ msgstr ""
 "언제든지 설치 아이콘을 눌러서 데모 모드에서 나와 설치 모드로 되돌아 갈 수 있"
 "습니다."
 
-#: src/Views/SuccessView.vala:32
-msgid "Restart your device to continue setting up"
-msgstr "설정을 계속 이어가시려면 다시 시작해주세요"
+#: src/Views/SuccessView.vala:34
+msgid "Continue Setting Up"
+msgstr ""
 
-#: src/Views/SuccessView.vala:38
+#: src/Views/SuccessView.vala:42
 #, fuzzy, c-format
-msgid ""
-"Your device will automatically restart to %s in 30 seconds to set up a new "
-"user, or you can shut down now and set a user up later."
+msgid "Your device will automatically restart to %s in %i seconds."
 msgstr ""
 "%s의 설치를 마쳤습니다. 30초 안에 자동으로 다시 시작해서 새 사용자 설정을 하"
 "시거나, 컴퓨터를 끄고 나중에 설정하실 수도 있습니다."
 
-#: src/Views/SuccessView.vala:64
+#: src/Views/SuccessView.vala:43
+#, fuzzy
+msgid ""
+"After restarting you can set up a new user, or you can shut down now and set "
+"up a new user later."
+msgstr ""
+"%s의 설치를 마쳤습니다. 30초 안에 자동으로 다시 시작해서 새 사용자 설정을 하"
+"시거나, 컴퓨터를 끄고 나중에 설정하실 수도 있습니다."
+
+#: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr ""
 
-#: src/Views/SuccessView.vala:84
-msgid "Test mode reboot"
-msgstr ""
+#~ msgid "Restart your device to continue setting up"
+#~ msgstr "설정을 계속 이어가시려면 다시 시작해주세요"
 
 #~ msgid "Formating Drive"
 #~ msgstr "드라이브 포맷하기"

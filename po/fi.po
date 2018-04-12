@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 09:59-0600\n"
+"POT-Creation-Date: 2018-04-11 16:59-0700\n"
 "PO-Revision-Date: 2018-03-26 00:08+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish "
-"<https://weblate.elementary.io/projects/installer/installer/fi/>\n"
+"Language-Team: Finnish <https://weblate.elementary.io/projects/installer/"
+"installer/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,16 +15,16 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Asenna %s"
 
-#: src/Utils.vala:156
+#: src/Utils.vala:31
 msgid "Operating System"
 msgstr "Käyttöjärjestelmä"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -45,7 +45,7 @@ msgstr "Haluatko varmasti sammuttaa?"
 msgid "This will cancel installation and turn off this device."
 msgstr "Tämä toiminto peruu asennuksen ja sammuttaa laitteen."
 
-#: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
+#: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
 msgstr "Käynnistä uudelleen"
 
@@ -54,27 +54,27 @@ msgid "Cancel"
 msgstr "Peru"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:52
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Sammuta"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
 msgstr "Peru asennus"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "Testitila"
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:66
 msgid "Ignore"
 msgstr "Ohita"
 
-#: src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
 msgstr "Tilaa ei ole riittävästi"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:204
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -83,11 +83,11 @@ msgstr ""
 "Ei riittävästi vapaata tilaa, jotta %s olisi mahdollista asentaa. "
 "Suosittelemme tallennustilan kapasiteetiksi vähintään %s."
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
 msgstr "Laitteesi saattaa olla liian hidas"
 
-#: src/Views/CheckView.vala:221
+#: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -95,11 +95,11 @@ msgstr ""
 "Laitteesi ei täytä suositeltuja vaatimuksia laitteiston suhteen. Tämän "
 "vuoksi järjestelmä saattaa toimia hitaasti."
 
-#: src/Views/CheckView.vala:237
+#: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
 msgstr "Yhdistä virtalähteeseen"
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -107,27 +107,27 @@ msgstr ""
 "Laitteesi toimii akkuvirralla. On suositeltavaa yhdistää laite verkkovirtaan "
 "asennuksen ajaksi."
 
-#: src/Views/CheckView.vala:296
+#: src/Views/CheckView.vala:291
 msgid "Recommended:"
 msgstr "Suositeltu:"
 
-#: src/Views/CheckView.vala:300
+#: src/Views/CheckView.vala:295
 msgid "Your Device:"
 msgstr "Laitteesi:"
 
-#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
+#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
 msgstr "Suoritin:"
 
-#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
 msgstr "Muisti:"
 
-#: src/Views/DiskView.vala:49
+#: src/Views/DiskView.vala:51
 msgid "Select a drive to use for installation"
 msgstr "Valitse asema asennusta varten"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -139,46 +139,55 @@ msgstr ""
 msgid "Getting the current configuration…"
 msgstr "Haetaan nykyisiä määrityksiä…"
 
-#: src/Views/DiskView.vala:94
+#: src/Views/DiskView.vala:96
 msgid "Erase and Install"
 msgstr "Tyhjennä ja asenna"
 
-#: src/Views/ErrorView.vala:32
-#, c-format
-msgid "Could not install %s"
+#: src/Views/ErrorView.vala:38
+#, fuzzy
+msgid "Could Not Install"
 msgstr "Ei voitu asentaa %s"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:46
+#, fuzzy, c-format
 msgid ""
-"The installation failed, so your device may not restart properly. You can "
-"try one of the following:"
+"Installing %s failed, possibly due to a hardware error. Your device may not "
+"restart properly. You can try the following:"
 msgstr ""
 "Asennus epäonnistui, laitteesi ei välttämättä käynnisty uudelleen kunnolla. "
 "Voit kokeilla jotain seuraavista:"
 
-#: src/Views/ErrorView.vala:44
+#: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
 msgstr "• Yrittää asennusta uudelleen"
 
-#: src/Views/ErrorView.vala:50
+#: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
 msgstr "• Käyttää demotilaa ja yrittää palautusta käsin"
 
-#: src/Views/ErrorView.vala:56
+#: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
 msgstr "• Käynnistää laite uudelleen ja käynnistää laite toiselta asemalta"
 
-#: src/Views/ErrorView.vala:74
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Käynnistä laite uudelleen"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "Kokeile demotilaa"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Yritä asennusta uudelleen"
+
+#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
+msgid "Test mode reboot"
+msgstr ""
+
+#: src/Views/ErrorView.vala:146
+msgid "Test mode switch user"
+msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -197,7 +206,7 @@ msgid "Back"
 msgstr "Takaisin"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:150
+#: src/Views/LanguageView.vala:161
 msgid "Select"
 msgstr "Valitse"
 
@@ -209,31 +218,31 @@ msgstr "Oletus"
 msgid "Input Language"
 msgstr "Syötekieli"
 
-#: src/Views/LanguageView.vala:201
+#: src/Views/LanguageView.vala:217
 msgid "Languages"
 msgstr "Kielet"
 
-#: src/Views/LanguageView.vala:218
+#: src/Views/LanguageView.vala:234
 msgid "Select a Language"
 msgstr "Valitse kieli"
 
-#: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
+#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
 msgstr "Parhaillaan aktiivinen kieli"
 
-#: src/Views/ProgressView.vala:307
+#: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
 msgstr "Osioidaan asema"
 
-#: src/Views/ProgressView.vala:311
+#: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
 msgstr "Puretaan tiedostoja"
 
-#: src/Views/ProgressView.vala:315
+#: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
 msgstr "Määritetään järjestelmää"
 
-#: src/Views/ProgressView.vala:319
+#: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
 msgstr "Valmistellaan asennusta"
 
@@ -250,9 +259,11 @@ msgstr ""
 "asentamatta."
 
 #: src/Views/TryInstallView.vala:53
+#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged."
+"operating system will be unchanged. Performance and features may not reflect "
+"the installed experience."
 msgstr ""
 "Testitilassa tekemiäsi muutoksia ei tallenneta, ja tietoja edellisestä "
 "käyttöjärjestelmästäsi ei muuteta."
@@ -264,27 +275,34 @@ msgid ""
 msgstr ""
 "Voit palata testitilasta asennusohjelmaan napsauttamalla Asenna-kuvaketta."
 
-#: src/Views/SuccessView.vala:32
-msgid "Restart your device to continue setting up"
-msgstr "Käynnistä laite uudelleen jatkaaksesi asetusten tekoa"
+#: src/Views/SuccessView.vala:34
+msgid "Continue Setting Up"
+msgstr ""
 
-#: src/Views/SuccessView.vala:38
+#: src/Views/SuccessView.vala:42
 #, fuzzy, c-format
-msgid ""
-"Your device will automatically restart to %s in 30 seconds to set up a new "
-"user, or you can shut down now and set a user up later."
+msgid "Your device will automatically restart to %s in %i seconds."
 msgstr ""
 "%s on asennettu. Laitteesi käynnistyy uudelleen 30 sekunnissa ja jatkaa "
 "käyttäjän luomisella. Voit myös sammuttaa laitteen nyt ja luoda käyttäjän "
 "myöhemmin."
 
-#: src/Views/SuccessView.vala:64
+#: src/Views/SuccessView.vala:43
+#, fuzzy
+msgid ""
+"After restarting you can set up a new user, or you can shut down now and set "
+"up a new user later."
+msgstr ""
+"%s on asennettu. Laitteesi käynnistyy uudelleen 30 sekunnissa ja jatkaa "
+"käyttäjän luomisella. Voit myös sammuttaa laitteen nyt ja luoda käyttäjän "
+"myöhemmin."
+
+#: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr ""
 
-#: src/Views/SuccessView.vala:84
-msgid "Test mode reboot"
-msgstr ""
+#~ msgid "Restart your device to continue setting up"
+#~ msgstr "Käynnistä laite uudelleen jatkaaksesi asetusten tekoa"
 
 #~ msgid "Formating Drive"
 #~ msgstr "Alustetaan asema"
