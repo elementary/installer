@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-03-10 11:51+0000\n"
+"PO-Revision-Date: 2018-04-12 21:00+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <https://weblate.elementary.io/projects/installer/"
-"installer/lt/>\n"
+"Language-Team: Lithuanian "
+"<https://weblate.elementary.io/projects/installer/installer/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
-"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || "
+"n%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
@@ -146,18 +146,18 @@ msgid "Erase and Install"
 msgstr "Ištrinti ir įdiegti"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Nepavyko įdiegti %s"
+msgstr "Nepavyko įdiegti"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Įdiegimas nepavyko, taigi, jūsų įrenginiui gali nepavykti tinkamai "
-"pasileisti iš naujo. Galite pabandyti vieną iš šių variantų:"
+"%s įdiegimas nepavyko, tikriausiai, dėl aparatinės įrangos klaidos. Jūsų "
+"įrenginiui gali nepavykti tinkamai pasileisti iš naujo. Galite pabandyti "
+"vieną iš šių variantų:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -188,9 +188,8 @@ msgid "Test mode reboot"
 msgstr "Išbandymo veiksenos paleidimas iš naujo"
 
 #: src/Views/ErrorView.vala:146
-#, fuzzy
 msgid "Test mode switch user"
-msgstr "Išbandymo veiksenos išjungimas"
+msgstr "Išbandymo veiksenos naudotojo perjungimas"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -262,14 +261,14 @@ msgstr ""
 "demonstracinę veikseną."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
 "Demonstracinėje veiksenoje jūsų atlikti pakeitimai nebus įrašyti, o "
-"ankstesnės operacinės sistemos duomenys išliks nepakitę."
+"ankstesnės operacinės sistemos duomenys išliks nepakitę. Našumas ir ypatybės "
+"gali neatitikti to patyrimo, kuris gaunamas įdiegus sistemą."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -281,25 +280,21 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Tęsti nustatymą"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
 msgstr ""
-"Siekiant atlikti naudotojo sąranką, jūsų įrenginys po 30 sekundžių bus "
-"automatiškai paleistas iš naujo į %s, arba galite dabar jį išjungti ir "
-"nustatyti naudotoją vėliau."
+"Jūsų įrenginys po %i sekundžių bus automatiškai paleistas iš naujo į %s."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Siekiant atlikti naudotojo sąranką, jūsų įrenginys po 30 sekundžių bus "
-"automatiškai paleistas iš naujo į %s, arba galite dabar jį išjungti ir "
-"nustatyti naudotoją vėliau."
+"Po paleidimo iš naujo galėsite atlikti naujo naudotojo sąranką arba galite "
+"išjungti įrenginį dabar ir nustatyti naudotoją vėliau."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
