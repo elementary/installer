@@ -35,10 +35,10 @@ public class Installer.App : Gtk.Application {
         add_main_option_entries (INSTALLER_OPTIONS);
         instance = this;
     }
-    
+
     public static Installer.App get_instance () {
         assert (instance != null);
-        
+
         return instance;
     }
 
