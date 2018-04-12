@@ -36,7 +36,7 @@ msgstr "Impossível mudar o nome de domínio do log Distinst"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr "Iniciando instalação\n"
+msgstr "Iniciando instalação"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
