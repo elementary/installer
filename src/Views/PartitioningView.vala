@@ -55,8 +55,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         var description = new Gtk.Label (_("Select which partitions to use across all drives. This will erase all data on the selected partitions."));
         description.set_halign (Gtk.Align.CENTER);
 
-        this.content_area.attach(description, 0, 0);
-        this.content_area.attach(disk_scroller, 0, 1);
+        this.content_area.attach (description, 0, 0);
+        this.content_area.attach (disk_scroller, 0, 1);
 
         load_disks ();
 
@@ -157,7 +157,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         const uint8 ROOT = 1;
         const uint8 BOOT = 2;
 
-        stderr.printf("DEBUG: Current Layout:\n");
+        stderr.printf ("DEBUG: Current Layout:\n");
         foreach (Mount m in mounts) {
             stderr.printf (
                 "  %s : %s : %s: format? %s\n",
@@ -272,3 +272,4 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         return array.remove_at (array.size - 1);
     }
 }
+
