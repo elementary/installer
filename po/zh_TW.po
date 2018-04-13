@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-03-13 09:41+0000\n"
+"PO-Revision-Date: 2018-04-13 14:01+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
-"installer/installer/zh_TW/>\n"
+"Language-Team: Chinese (Traditional) "
+"<https://weblate.elementary.io/projects/installer/installer/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -138,16 +138,15 @@ msgid "Erase and Install"
 msgstr "抹除並安裝"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "無法安裝 %s"
+msgstr "無法安裝"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
-msgstr "安裝失敗，因此您的裝置可能無法正常重新啟動。您可以嘗試下列動作："
+msgstr "%s 安裝失敗，可能是硬體錯誤導致。您的裝置可能無法正常重新啟動。您可以嘗試下列動作："
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -155,11 +154,11 @@ msgstr "• 嘗試重裝一次"
 
 #: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• 使用展示模式並嘗試手動還原"
+msgstr "• 進入「展示模式」並嘗試手動還原"
 
 #: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
-msgstr "• 重新啟動您的裝置以從另一個裝置開機"
+msgstr "• 重新啟動您的裝置以從另一個磁碟開機"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
@@ -178,9 +177,8 @@ msgid "Test mode reboot"
 msgstr "測試模式重新開機"
 
 #: src/Views/ErrorView.vala:146
-#, fuzzy
 msgid "Test mode switch user"
-msgstr "測試模式關機"
+msgstr "測試模式切換使用者"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -188,7 +186,7 @@ msgstr "鍵盤配置"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr "請繕打按鍵以測試您的鍵盤配置"
+msgstr "請繕打文字以測試您的鍵盤配置"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
@@ -250,38 +248,32 @@ msgid ""
 msgstr "您可以立刻在此裝置上安裝 %s，或是在不安裝的情況下試用展示模式。"
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
-msgstr "在展示模式中，您所做的變更不會儲存，電腦中先前的作業系統也不會更動。"
+msgstr "在展示模式中，您所做的變更不會儲存，電腦中先前的作業系統也不會更動。展示模式的效能與功能和安裝後的體驗不見得相同。"
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
-msgstr "只要選取「安裝」圖示，您都可以從展示模式再返回安裝程式。"
+msgstr "您隨時都可以選取安裝圖示以從展示模式返回安裝程式。"
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "繼續設置"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"您的裝置將在 30 秒內自動重新啟動至 %s 以設置新使用者，或者您可以立刻關機並稍"
-"後設置使用者。"
+msgstr "您的裝置將重新啟動至 %s，時間為 %i 秒內。"
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
-msgstr ""
-"您的裝置將在 30 秒內自動重新啟動至 %s 以設置新使用者，或者您可以立刻關機並稍"
-"後設置使用者。"
+msgstr "在重新啟動之後您可以設置新的使用者，或者您也可以立刻關機並稍後設置新使用者。"
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"

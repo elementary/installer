@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-03-09 19:12+0000\n"
-"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
-"Language-Team: Polish <https://weblate.elementary.io/projects/installer/"
-"installer/pl/>\n"
+"PO-Revision-Date: 2018-04-12 11:49+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
+"Language-Team: Polish "
+"<https://weblate.elementary.io/projects/installer/installer/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,18 +147,18 @@ msgid "Erase and Install"
 msgstr "Wyczyść i zainstaluj"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Nie udało się zainstalować %s"
+msgstr "Nie można zainstalować"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Instalacja nie powiodła się, więc urządzenie może nie uruchomić się "
-"ponownie. Możesz spróbować wykonać jedną z następujących czynności:"
+"Instalacja %s nie powiodła się, prawdopodobnie z powodu błędu sprzętowego. "
+"Urządzenie może nie uruchomić się ponownie. Możesz spróbować wykonać jedną z "
+"następujących czynności:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -189,9 +189,8 @@ msgid "Test mode reboot"
 msgstr "Uruchomienie ponowne trybu testowego"
 
 #: src/Views/ErrorView.vala:146
-#, fuzzy
 msgid "Test mode switch user"
-msgstr "Wyłączenie trybu testowego"
+msgstr "Przełączenie użytkownika trybu testowego"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -263,14 +262,14 @@ msgstr ""
 "demonstracyjnego bez instalacji."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
 "W trybie testowym poczynione przez Ciebie zmiany nie będą zapisane, a dane z "
-"poprzedniego systemu operacyjnego pozostaną niezmienione."
+"poprzedniego systemu operacyjnego pozostaną niezmienione. Wydajność i "
+"funkcjonalność może nie oddawać doświadczenia zainstalowanego systemu."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -282,25 +281,20 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Kontynuuj ustawianie"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"Twoje urządzenie zostanie uruchomione automatycznie za 30 sekund i zostanie "
-"włączone %s, aby skonfigurować nowego użytkownika. Możesz też wyłączyć "
-"urządzenie i skonfigurować użytkownika później."
+msgstr "Twoje urządzenie zostanie uruchomione automatycznie za %i sekund do %s."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Twoje urządzenie zostanie uruchomione automatycznie za 30 sekund i zostanie "
-"włączone %s, aby skonfigurować nowego użytkownika. Możesz też wyłączyć "
-"urządzenie i skonfigurować użytkownika później."
+"Po uruchomieniu będzie można skonfigurować nowego użytkownika. Możesz też "
+"wyłączyć urządzenie i skonfigurować użytkownika później."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"

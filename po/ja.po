@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-03-10 00:17+0000\n"
+"PO-Revision-Date: 2018-04-12 07:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
-"installer/ja/>\n"
+"Language-Team: Japanese "
+"<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -145,18 +145,17 @@ msgid "Erase and Install"
 msgstr "削除してインストール"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "%s をインストールできません"
+msgstr "インストールできません"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"インストールが失敗したため、お使いのデバイスは正しく再起動しない可能性があり"
-"ます。以下の操作を試すことができます。"
+"%s のインストールは失敗しました。これはハードウェアのエラーが原因と思われます。お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すこ"
+"とができます。"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -187,9 +186,8 @@ msgid "Test mode reboot"
 msgstr "テストモードの再起動"
 
 #: src/Views/ErrorView.vala:146
-#, fuzzy
 msgid "Test mode switch user"
-msgstr "テストモードのシャットダウン"
+msgstr "テストモードのユーザー切り替え"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -261,14 +259,13 @@ msgstr ""
 "を試すことができます。"
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
-"デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデー"
-"タは変更されません。"
+"デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデータは変更されません。パフォーマンスと機能はインストールされた環境を反映すること"
+"はありません。"
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -280,25 +277,18 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "セットアップを続行"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"お使いのデバイスは30秒後に自動的に %s を再起動し、新しいユーザーをセットアッ"
-"プします。あるいは、今はシャットダウンして、後でユーザーをセットアップするこ"
-"ともできます。"
+msgstr "お使いのデバイスは %i 秒後に自動的に %s を再起動します。"
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
-msgstr ""
-"お使いのデバイスは30秒後に自動的に %s を再起動し、新しいユーザーをセットアッ"
-"プします。あるいは、今はシャットダウンして、後でユーザーをセットアップするこ"
-"ともできます。"
+msgstr "再起動後は新しいユーザーをセットアップすることができます。あるいは、今はシャットダウンして、後でユーザーをセットアップすることもできます。"
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
