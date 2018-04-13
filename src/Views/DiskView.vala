@@ -50,11 +50,9 @@ public class Installer.DiskView : AbstractInstallerView {
         install_image.valign = Gtk.Align.START;
 
         var install_label = new Gtk.Label (_("Select a drive"));
-        install_label.hexpand = true;
+        install_label.max_width_chars = 60;
+        install_label.valign = Gtk.Align.START;
         install_label.get_style_context ().add_class ("h2");
-        install_label.max_width_chars = 30;
-        install_label.wrap = true;
-        install_label.justify = Gtk.Justification.CENTER;
 
         var install_desc_label = new Gtk.Label (_("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode."));
         install_desc_label.hexpand = true;
@@ -88,16 +86,9 @@ public class Installer.DiskView : AbstractInstallerView {
         artwork.get_style_context().add_class("artwork");
         artwork.vexpand = true;
 
-        var title_grid = new Gtk.Grid ();
-        title_grid.column_spacing = 12;
-        title_grid.row_spacing = 6;
-        title_grid.halign = Gtk.Align.FILL;
-        title_grid.valign = Gtk.Align.FILL;
-        title_grid.attach (artwork, 0, 0, 1, 1);
-        title_grid.attach (install_label, 0, 1, 1, 1);
-
-        content_area.attach (title_grid, 0, 0, 1, 1);
-        content_area.attach (load_stack, 1, 0, 1, 1);
+        content_area.attach (artwork, 0, 0, 1, 1);
+        content_area.attach (install_label, 0, 1, 1, 1);
+        content_area.attach (load_stack, 1, 0, 1, 2);
 
         var custom_button = new Gtk.Button.with_label (_("Customize Partitions…"));
         custom_button.clicked.connect (() => custom_step ());
