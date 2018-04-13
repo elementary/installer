@@ -54,31 +54,49 @@ public class Installer.PartitionMenu : Gtk.Popover {
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
         grid.row_spacing = 6;
-        grid.margin = 12;
+        grid.margin = 6;
+
+        var label_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
 
         var use_partition_label = new Gtk.Label ("Use partition:");
+        use_partition_label.halign = Gtk.Align.END;
+        use_partition_label.xalign = 1;
+
+        var sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+
         format_label = new Gtk.Label ("Format:");
+        format_label.halign = Gtk.Align.END;
+        format_label.xalign = 1;
+        label_size_group.add_widget (format_label);
+
         var use_as_label = new Gtk.Label ("Use as:");
-        custom_label = new Gtk.Label ("Custom:");
-        type_label = new Gtk.Label ("Type:");
-
-        custom_label.set_halign (Gtk.Align.END);
-        format_label.set_halign (Gtk.Align.END);
-        type_label.set_halign (Gtk.Align.END);
         use_as_label.set_halign (Gtk.Align.END);
-        use_partition_label.set_halign (Gtk.Align.END);
+        use_as_label.xalign = 1;
+        label_size_group.add_widget (use_as_label);
 
-        grid.attach (format_label, 0, 0);
-        grid.attach (use_as_label, 0, 1);
-        grid.attach (custom_label, 0, 2);
-        grid.attach (type_label, 0, 3);
+        custom_label = new Gtk.Label ("Custom:");
+        custom_label.halign = Gtk.Align.END;
+        custom_label.xalign = 1;
+        label_size_group.add_widget (custom_label);
+
+        type_label = new Gtk.Label ("Type:");
+        type_label.halign = Gtk.Align.END;
+        type_label.xalign = 1;
+        label_size_group.add_widget (type_label);
+
+        grid.attach (sep,          0, 0, 2, 1);
+        grid.attach (format_label, 0, 1, 1, 1);
+        grid.attach (use_as_label, 0, 2, 1, 1);
+        grid.attach (custom_label, 0, 3, 1, 1);
+        grid.attach (type_label,   0, 4, 1, 1);
 
         use_partition = new Gtk.Switch ();
-        use_partition.set_halign (Gtk.Align.START);
-        use_partition.set_hexpand (true);
+        use_partition.halign = Gtk.Align.START;
+        use_partition.hexpand = false;
 
         format_partition = new Gtk.Switch ();
-        format_partition.set_halign (Gtk.Align.START);
+        format_partition.halign = Gtk.Align.START;
+        format_partition.hexpand = false;
 
         string boot_partition = (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT)
             ? "/boot/efi"
@@ -103,15 +121,15 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.append_text ("ntfs");
         type.set_active (0);
 
-        grid.attach (format_partition, 1, 0);
-        grid.attach (use_as, 1, 1);
-        grid.attach (custom, 1, 2);
-        grid.attach (type, 1, 3);
+        grid.attach (format_partition, 1, 1, 1, 1);
+        grid.attach (use_as,           1, 2, 1, 1);
+        grid.attach (custom,           1, 3, 1, 1);
+        grid.attach (type,             1, 4, 1, 1);
 
         var outer = new Gtk.Grid ();
-        outer.row_spacing = 6;
-        outer.column_spacing = 12;;
-        outer.margin = 6;
+        // outer.row_spacing = 6;
+        outer.column_spacing = 12;
+        outer.margin = 12;
 
         var outer_revealer = new Gtk.Revealer ();
         outer_revealer.add (grid);
