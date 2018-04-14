@@ -116,7 +116,6 @@ public class Installer.PartitionMenu : Gtk.Popover {
         top_controls.column_spacing = 12;
         top_controls.row_spacing = 6;
         top_controls.margin = 12;
-        top_controls.margin_bottom = 6;
 
         top_controls.attach (use_partition_label, 0, 0, 1, 1);
         top_controls.attach (use_partition,       1, 0, 1, 1);
