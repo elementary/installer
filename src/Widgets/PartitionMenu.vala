@@ -19,7 +19,7 @@
  */
 
 public delegate void SetMount (Installer.Mount mount);
- 
+
 public delegate void UnsetMount (string partition);
 
 public delegate bool MountSetFn (string mount_point);
