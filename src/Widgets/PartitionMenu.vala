@@ -51,56 +51,39 @@ public class Installer.PartitionMenu : Gtk.Popover {
         partition_path = path;
         parent_disk = parent;
 
-        var grid = new Gtk.Grid ();
-        grid.column_spacing = 12;
-        grid.row_spacing = 6;
-        grid.margin = 6;
+        string boot_partition = (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT)
+            ? "/boot/efi"
+            : "/boot";
 
         var label_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
 
         var use_partition_label = new Gtk.Label ("Use partition:");
         use_partition_label.halign = Gtk.Align.END;
+        use_partition_label.hexpand = true;
         use_partition_label.xalign = 1;
-
-        var sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-
-        format_label = new Gtk.Label ("Format:");
-        format_label.halign = Gtk.Align.END;
-        format_label.xalign = 1;
         label_size_group.add_widget (format_label);
-
-        var use_as_label = new Gtk.Label ("Use as:");
-        use_as_label.set_halign (Gtk.Align.END);
-        use_as_label.xalign = 1;
-        label_size_group.add_widget (use_as_label);
-
-        custom_label = new Gtk.Label ("Custom:");
-        custom_label.halign = Gtk.Align.END;
-        custom_label.xalign = 1;
-        label_size_group.add_widget (custom_label);
-
-        type_label = new Gtk.Label ("Type:");
-        type_label.halign = Gtk.Align.END;
-        type_label.xalign = 1;
-        label_size_group.add_widget (type_label);
-
-        grid.attach (sep,          0, 0, 2, 1);
-        grid.attach (format_label, 0, 1, 1, 1);
-        grid.attach (use_as_label, 0, 2, 1, 1);
-        grid.attach (custom_label, 0, 3, 1, 1);
-        grid.attach (type_label,   0, 4, 1, 1);
 
         use_partition = new Gtk.Switch ();
         use_partition.halign = Gtk.Align.START;
         use_partition.hexpand = false;
 
+        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+
+        format_label = new Gtk.Label ("Format:");
+        format_label.halign = Gtk.Align.END;
+        format_label.hexpand = true;
+        format_label.xalign = 1;
+        label_size_group.add_widget (format_label);
+
         format_partition = new Gtk.Switch ();
         format_partition.halign = Gtk.Align.START;
         format_partition.hexpand = false;
 
-        string boot_partition = (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT)
-            ? "/boot/efi"
-            : "/boot";
+        var use_as_label = new Gtk.Label ("Use as:");
+        use_as_label.halign = Gtk.Align.END;
+        use_as_label.hexpand = true;
+        use_as_label.xalign = 1;
+        label_size_group.add_widget (use_as_label);
 
         use_as = new Gtk.ComboBoxText ();
         use_as.append_text (_("Root (/)"));
@@ -110,7 +93,19 @@ public class Installer.PartitionMenu : Gtk.Popover {
         use_as.append_text (_("Custom"));
         use_as.set_active (0);
 
+        custom_label = new Gtk.Label ("Custom:");
+        custom_label.halign = Gtk.Align.END;
+        custom_label.hexpand = true;
+        custom_label.xalign = 1;
+        label_size_group.add_widget (custom_label);
+
         custom = new Gtk.Entry ();
+
+        type_label = new Gtk.Label ("Type:");
+        type_label.halign = Gtk.Align.END;
+        type_label.hexpand = true;
+        type_label.xalign = 1;
+        label_size_group.add_widget (type_label);
 
         type = new Gtk.ComboBoxText ();
         type.append_text (_("Default (ext4)"));
@@ -120,26 +115,42 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.append_text ("xfs");
         type.append_text ("ntfs");
         type.set_active (0);
+        
+        var top_controls = new Gtk.Grid ();
+        top_controls.column_spacing = 12;
+        top_controls.row_spacing = 6;
+        top_controls.margin = 6;
 
-        grid.attach (format_partition, 1, 1, 1, 1);
-        grid.attach (use_as,           1, 2, 1, 1);
-        grid.attach (custom,           1, 3, 1, 1);
-        grid.attach (type,             1, 4, 1, 1);
+        top_controls.attach (use_partition_label, 0, 0, 1, 1);
+        top_controls.attach (use_partition,       1, 0, 1, 1);
 
-        var outer = new Gtk.Grid ();
-        // outer.row_spacing = 6;
-        outer.column_spacing = 12;
-        outer.margin = 12;
+        var bottom_controls = new Gtk.Grid ();
+        bottom_controls.column_spacing = 12;
+        bottom_controls.row_spacing = 6;
+        bottom_controls.margin = 6;
 
-        var outer_revealer = new Gtk.Revealer ();
-        outer_revealer.add (grid);
+        bottom_controls.attach (format_label, 0, 1);
+        bottom_controls.attach (use_as_label, 0, 2);
+        bottom_controls.attach (custom_label, 0, 3);
+        bottom_controls.attach (type_label,   0, 4);
 
-        outer.attach (use_partition_label, 0, 0);
-        outer.attach (use_partition, 1, 0);
-        outer.attach (outer_revealer, 0, 1, 2, 1);
+        bottom_controls.attach (format_partition, 1, 1);
+        bottom_controls.attach (use_as,           1, 2);
+        bottom_controls.attach (custom,           1, 3);
+        bottom_controls.attach (type,             1, 4);
 
-        this.add (outer);
-        outer.show_all ();
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = 12;
+
+        var revealer = new Gtk.Revealer ();
+        // revealer.add (separator);
+        revealer.add (bottom_controls);
+
+        grid.attach (top_controls, 0, 0, 1, 1);
+        grid.attach (revealer,     0, 1, 1, 1);
+
+        this.add (grid);
+        grid.show_all ();
 
         custom.set_visible (false);
         custom_label.set_visible (false);
@@ -152,7 +163,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
             }
         });
 
-        use_as.changed.connect(() => {
+        use_as.changed.connect (() => {
             if (disable_signals) {
                 return;
             }
@@ -193,14 +204,14 @@ public class Installer.PartitionMenu : Gtk.Popover {
             check_values (set_mount);
         });
 
-        type.changed.connect(() => {
+        type.changed.connect (() => {
             if (!disable_signals) {
                 check_values (set_mount);
                 set_format_sensitivity ();
             }
         });
 
-        custom.changed.connect(() => {
+        custom.changed.connect (() => {
             if (!disable_signals) {
                 check_values (set_mount);
             }
@@ -230,7 +241,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 partition_bar.container.get_children ().foreach ((c) => c.destroy ());
             }
 
-            outer_revealer.set_reveal_child (use_partition.active);
+            revealer.set_reveal_child (use_partition.active);
             format_partition.set_visible (use_partition.active);
             format_label.set_visible (use_partition.active);
         });
