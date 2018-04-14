@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-03-28 00:03+0000\n"
-"Last-Translator: Justin <justin.hucke@t-online.de>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/installer/"
-"installer/de/>\n"
+"PO-Revision-Date: 2018-04-14 08:23+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: German "
+"<https://weblate.elementary.io/projects/installer/installer/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,9 +35,8 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "Der Distinst-Log-Domainname konnte nicht geändert werden."
+msgstr "Der Distinst-Protokoll-Rückruf konnte nicht festgelegt werden"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -151,9 +150,8 @@ msgid "Erase and Install"
 msgstr "löschen und installieren"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "%s konnte nicht installiert werden"
+msgstr "Konnte nicht installiert werden"
 
 #: src/Views/ErrorView.vala:46
 #, fuzzy, c-format
