@@ -105,13 +105,13 @@ public class Installer.PartitionMenu : Gtk.Popover {
 
         type = new Gtk.ComboBoxText ();
         type.append_text (_("Default (ext4)"));
-        type.append_text ("fat16"); 
+        type.append_text ("fat16");
         type.append_text ("fat32");
         type.append_text ("btrfs");
         type.append_text ("xfs");
         type.append_text ("ntfs");
         type.active = 0;
-        
+
         var top_controls = new Gtk.Grid ();
         top_controls.column_spacing = 12;
         top_controls.row_spacing = 6;
@@ -156,7 +156,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         this.add (grid);
         grid.show_all ();
 
-        // FIXME: Probably should stick these in a revealer, too 
+        // FIXME: Probably should stick these in a revealer, too
         custom.visible = false;
         custom_label.visible = false;
 
