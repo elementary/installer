@@ -1,0 +1,54 @@
+.storage-bar .legend {
+    border-radius: 50%;
+}
+
+.storage-bar .disk-bar,
+.storage-bar .unused {
+    background-color: #888;
+}
+
+.storage-bar .swap {
+    background-color: #C22E1E;
+}
+
+.storage-bar .ext4 {
+    background-color: #4EA845;
+}
+
+.storage-bar .ext3 {
+    background-color: #428F3B;
+}
+
+.storage-bar .ext2 {
+    background-color: #367530;
+}
+
+.storage-bar .fat16,
+.storage-bar .fat32 {
+    background-color: #CACA32;
+}
+
+.storage-bar .btrfs {
+    background-color: #3940A0;
+}
+
+.storage-bar .xfs {
+    background-color: #6D57D3;
+}
+
+.storage-bar .ntfs {
+    background-color: #BE791F;
+}
+
+.storage-bar .luks {
+    background-color: #813BA4;
+}
+
+.storage-bar .lvm {
+    background-color: #9444BD;
+}
+
+.storage-bar .none {
+    background-color: #3199CB;
+}
+
