@@ -117,8 +117,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
         top_controls.row_spacing = 6;
         top_controls.margin = 12;
 
-        top_controls.attach (use_partition_label, 0, 0, 1, 1);
-        top_controls.attach (use_partition,       1, 0, 1, 1);
+        top_controls.attach (use_partition_label, 0, 0);
+        top_controls.attach (use_partition,       1, 0);
 
         var bottom_controls = new Gtk.Grid ();
         bottom_controls.column_spacing = 12;
@@ -140,8 +140,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
         bottom_grid.column_spacing = 12;
         bottom_grid.row_spacing = 6;
 
-        bottom_grid.attach (separator,       0, 0, 1, 1);
-        bottom_grid.attach (bottom_controls, 0, 1, 1, 1);
+        bottom_grid.attach (separator,       0, 0);
+        bottom_grid.attach (bottom_controls, 0, 1);
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
@@ -149,8 +149,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
         var bottom_revealer = new Gtk.Revealer ();
         bottom_revealer.add (bottom_grid);
 
-        grid.attach (top_controls,    0, 0, 1, 1);
-        grid.attach (bottom_revealer, 0, 1, 1, 1);
+        grid.attach (top_controls,    0, 0);
+        grid.attach (bottom_revealer, 0, 1);
 
         this.add (grid);
         grid.show_all ();
@@ -295,7 +295,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         mount_icon.halign = Gtk.Align.END;
         mount_icon.valign = Gtk.Align.END;
         mount_icon.margin = 2;
-        partition_bar.container.get_children ().foreach((c) => c.destroy ());
+        partition_bar.container.get_children ().foreach ((c) => c.destroy ());
         partition_bar.container.pack_start(mount_icon, true, true, 0);
         partition_bar.container.show_all ();
     }
