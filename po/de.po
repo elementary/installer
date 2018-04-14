@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-04-14 09:08+0000\n"
+"PO-Revision-Date: 2018-04-14 15:05+0000\n"
 "Last-Translator: Jörg Arnold <j0ar@posteo.de>\n"
 "Language-Team: German "
 "<https://weblate.elementary.io/projects/installer/installer/de/>\n"
@@ -40,15 +40,15 @@ msgstr "Der Distinst-Protokoll-Rückruf konnte nicht festgelegt werden"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr "Die Installation wird gestartet"
+msgstr "Beginn der Installation"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr "Sind Sie sicher, dass Sie den Rechner herunterfahren wollen?"
+msgstr "Sind Sie sicher, dass Sie herunterfahren wollen?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "Dies wird die Installation abbrechen und dieses Gerät ausschalten."
+msgstr "Dadurch wird die Installation abgebrochen und das Gerät ausgeschaltet."
 
 #: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
@@ -69,15 +69,15 @@ msgstr "Installation abbrechen"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
-msgstr "Demo-Modus"
+msgstr "Test-Modus"
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
-msgstr "ignorieren"
+msgstr "Ignorieren"
 
 #: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
-msgstr "nicht genügend Speicherplatz"
+msgstr "Nicht genug Speicherplatz"
 
 #: src/Views/CheckView.vala:204
 #, c-format
@@ -90,15 +90,15 @@ msgstr ""
 
 #: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
-msgstr "Ihr Rechner ist unter Umständen zu langsam"
+msgstr "Ihr Gerät ist möglicherweise zu langsam"
 
 #: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"Ihr Rechner erfüllt nicht die empfohlenen Hardware-Anforderungen. Dies kann "
-"dafür verantwortlich sein, dass er langsam läuft oder sich aufhängt."
+"Ihr Gerät erfüllt nicht die empfohlenen Hardwareanforderungen.  Dies kann "
+"dazu führen, dass es langsam läuft oder einfriert."
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
@@ -109,7 +109,7 @@ msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"Ihr Rechner läuft im Akkubetrieb. Es wird empfohlen, die Stromversorgung "
+"Ihr Gerät läuft im Akkubetrieb. Es wird empfohlen, die Stromversorgung "
 "während der Installation anzuschließen."
 
 #: src/Views/CheckView.vala:291
@@ -118,7 +118,7 @@ msgstr "Empfohlen:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr "Ihr Rechner:"
+msgstr "Ihr Gerät:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
@@ -130,16 +130,17 @@ msgstr "Arbeitsspeicher:"
 
 #: src/Views/DiskView.vala:51
 msgid "Select a drive to use for installation"
-msgstr "Wählen Sie eine Festplatte für die Installation aus"
+msgstr ""
+"Wählen Sie ein Laufwerk aus, das für die Installation verwendet werden soll"
 
 #: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"Dies wird alle Daten auf der gewählten Festplatte löschen. Wenn Sie Ihre "
-"Daten noch nicht gesichert haben, können Sie die Installation abbrechen und "
-"den Demo-Modus verwenden."
+"Dies wird alle Daten auf dem gewählten Laufwerk löschen. Wenn Sie Ihre Daten "
+"noch nicht gesichert haben, können Sie die Installation abbrechen und den "
+"Test-Modus verwenden."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
@@ -147,7 +148,7 @@ msgstr "Lädt die aktuelle Konfiguration…"
 
 #: src/Views/DiskView.vala:96
 msgid "Erase and Install"
-msgstr "löschen und installieren"
+msgstr "Löschen und Installieren"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -170,21 +171,20 @@ msgstr "• Versuchen Sie die Installation erneut"
 #: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
 msgstr ""
-"• Verwenden Sie den Demo-Modus und versuchen Sie eine manuelle "
+"• Verwenden Sie den Test-Modus und versuchen Sie eine manuelle "
 "Wiederherstellung"
 
 #: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
-msgstr ""
-"• Starten Sie Ihren Rechner neu, um von einem anderen Laufwerk zu booten"
+msgstr "• Starten Sie Ihr Gerät neu, um von einem anderen Laufwerk zu booten"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
-msgstr "Rechner neu starten"
+msgstr "Gerät neu starten"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
-msgstr "Versuchen Sie den Demo-Modus"
+msgstr "Test-Modus ausprobieren"
 
 #: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
@@ -196,7 +196,7 @@ msgstr "Test-Modus Neustart"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
-msgstr "Testmodus Benutzer wechseln"
+msgstr "Test-Modus Benutzer wechseln"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -217,7 +217,7 @@ msgstr "Zurück"
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:161
 msgid "Select"
-msgstr "auswählen"
+msgstr "Auswählen"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
@@ -241,7 +241,7 @@ msgstr "Aktuell eingestellte Sprache"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr "Partitioniere Datenträger"
+msgstr "Partitioniere Laufwerk"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
@@ -249,23 +249,23 @@ msgstr "Entpacke Dateien"
 
 #: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
-msgstr "Konfiguriere das System"
+msgstr "Konfiguration des Systems"
 
 #: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
-msgstr "Installation wird fertiggestellt"
+msgstr "Abschluss der Installation"
 
 #: src/Views/TryInstallView.vala:33
 msgid "Install or Try Demo Mode"
-msgstr "Installieren oder testen Sie den Demo-Modus"
+msgstr "Installieren oder Test-Modus ausprobieren"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
-"Sie können %s jetzt auf diesem Rechner installieren, oder den Demo-Modus "
-"ohne Installation ausprobieren."
+"Sie können %s jetzt auf diesem Gerät installieren, oder den Test-Modus ohne "
+"Installation ausprobieren."
 
 #: src/Views/TryInstallView.vala:53
 msgid ""
@@ -273,7 +273,7 @@ msgid ""
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
-"Im Demo-Modus werden Ihre Änderungen nicht gespeichert und die Daten Ihres "
+"Im Test-Modus werden Ihre Änderungen nicht gespeichert und die Daten Ihres "
 "vorherigen Betriebssystems bleiben unverändert. Leistung und Funktionen "
 "spiegeln möglicherweise nicht die installierte Erfahrung wider."
 
@@ -282,8 +282,8 @@ msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"Sie können im Demo-Modus jederzeit zum Installationsprogramm zurückkehren, "
-"indem Sie auf das Installieren-Symbol klicken."
+"Sie können jederzeit vom Test-Modus zum Installationsassistenten "
+"zurückkehren, indem Sie das Installationssymbol wählen."
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
@@ -292,7 +292,7 @@ msgstr "Konfiguration fortfahren"
 #: src/Views/SuccessView.vala:42
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Ihr Gerät wird in %i Sekunden automatisch nach %s neu gestartet."
+msgstr "Ihr Gerät wird automatisch nach %s in %i Sekunden neu gestartet."
 
 #: src/Views/SuccessView.vala:43
 msgid ""
@@ -304,7 +304,7 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr "Abschalten des Testmodus"
+msgstr "Test-Modus Herunterfahren"
 
 #~ msgid "Restart your device to continue setting up"
 #~ msgstr "Starten Sie Ihren Rechner neu, um die Einrichtung fortzusetzen"
