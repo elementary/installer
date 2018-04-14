@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-03-19 22:30+0000\n"
+"PO-Revision-Date: 2018-04-14 23:13+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
-"Language-Team: Danish <https://weblate.elementary.io/projects/installer/"
-"installer/da/>\n"
+"Language-Team: Danish "
+"<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -144,18 +144,17 @@ msgid "Erase and Install"
 msgstr "Slet og Installér"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Kunne ikke installere %s"
+msgstr "Kunne Ikke Installere"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installationen mislykkedes, så din enhed muligvis ikke genstarter korrekt. "
-"Du kan prøve et af følgende:"
+"Installering af %s mislykkedes, muligvis på grund af en hardwarefejl. Din "
+"enhed vil muligvis ikke starte korrekt. Du kan prøve følgende:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -186,9 +185,8 @@ msgid "Test mode reboot"
 msgstr "Demo tilstand genstart"
 
 #: src/Views/ErrorView.vala:146
-#, fuzzy
 msgid "Test mode switch user"
-msgstr "Demo tilstand nedlukning"
+msgstr "Test tilstand skift bruger"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -260,14 +258,14 @@ msgstr ""
 "installere."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
 "I demo-tilstand vil ændringer, du laver, ikke blive gemt, og data fra dit "
-"tidligere operativsystem forbliver uændret."
+"tidligere operativsystem forbliver uændret. Ydeevne og funktioner afspejler "
+"muligvis ikke den installerede oplevelse."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -279,23 +277,20 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Forsæt Opsætning"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"Din enhed genstarter automatisk til %s om 30 sekunder for at oprette en ny "
-"bruger, eller du kan lukke nu og oprette en bruger senere."
+msgstr "Din enhed genstarter automatisk til %s om %i sekunder."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Din enhed genstarter automatisk til %s om 30 sekunder for at oprette en ny "
-"bruger, eller du kan lukke nu og oprette en bruger senere."
+"Efter genstart kan du oprette en ny bruger, eller du kan lukke nu og oprette "
+"en ny bruger senere."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
