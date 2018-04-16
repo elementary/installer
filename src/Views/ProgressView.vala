@@ -185,11 +185,20 @@ public class ProgressView : AbstractInstallerView {
 
         var disks = new Distinst.Disks ();
         if (recovery != null) {
-            recovery_disk_configuration (disks, recovery);
+            if (!recovery_disk_configuration (disks, recovery)) {
+                on_error ();
+                return;
+            }
         } else if (current_config.mounts == null) {
-            default_disk_configuration (disks);
+            if (!default_disk_configuration (disks)) {
+                on_error ();
+                return;
+            }
         } else {
-            custom_disk_configuration (disks);
+            if (!custom_disk_configuration (disks)) {
+                on_error ();
+                return;
+            }
         }
 
         new Thread<void*> (null, () => {
@@ -198,15 +207,14 @@ public class ProgressView : AbstractInstallerView {
         });
     }
 
-    private void recovery_disk_configuration (Distinst.Disks disks, string recovery_disk) {
+    private bool recovery_disk_configuration (Distinst.Disks disks, string recovery_disk) {
         unowned Configuration current_config = Configuration.get_default ();
 
         var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
         var root_vg = Distinst.generate_unique_id ("data");
         if (encrypted_vg == null || root_vg == null) {
             critical ("unable to generate unique volume group IDs\n");
-            on_error ();
-            return;
+            return false;
         }
 
         Distinst.LvmEncryption? encryption;
@@ -226,8 +234,7 @@ public class ProgressView : AbstractInstallerView {
         var disk = new Distinst.Disk (recovery_disk);
         if (disk == null) {
             critical ("could not find physical device: '%s'\n", recovery_disk);
-            on_error ();
-            return;
+            return false;
         }
 
         var bootloader = Distinst.bootloader_detect ();
@@ -249,13 +256,7 @@ public class ProgressView : AbstractInstallerView {
 
         string? efi_part = Recovery.efi_partition ();
         string? recovery_part = Recovery.recovery_partition ();
-        string? lvm_part = null;
-        foreach (unowned Distinst.Partition partition in disk.list_partitions ()) {
-            string path = Utils.string_from_utf8 (partition.get_device_path ());
-            if (partition.get_file_system () == Distinst.FileSystemType.LVM && lvm_part == null) {
-                lvm_part = path;
-            }
-        }
+        string? lvm_part = Recovery.lvm_partition();
 
         if (efi_part != null) {
             debug ("efi_part: %s\n", efi_part);
@@ -264,11 +265,13 @@ public class ProgressView : AbstractInstallerView {
 
             if (partition == null) {
                 critical ("could not find %s on %s\n", efi_part, recovery_disk);
-                on_error ();
-                return;
+                return false;
             }
 
             partition.set_mount ("/boot/efi");
+        } else {
+            critical ("EFI partition not found on %s", recovery_disk);
+            return false;
         }
 
         if (recovery_part != null) {
@@ -280,9 +283,11 @@ public class ProgressView : AbstractInstallerView {
 
             if (partition == null) {
                 critical ("could not find %s on %s\n", recovery_part, recovery_disk);
-                on_error ();
-                return;
+                return false;
             }
+        } else {
+            critical ("recovery partition not found on %s", recovery_disk);
+            return false;
         }
 
         int lvm_num;
@@ -296,8 +301,7 @@ public class ProgressView : AbstractInstallerView {
 
             if (partition == null) {
                 critical ("could not find %s on %s\n", lvm_part, recovery_disk);
-                on_error ();
-                return;
+                return false;
             }
 
             lvm_num = partition.get_number ();
@@ -305,8 +309,7 @@ public class ProgressView : AbstractInstallerView {
             end = partition.get_end_sector ();
         } else {
             critical ("LVM partition not found on %s", recovery_disk);
-            on_error ();
-            return;
+            return false;
         }
 
         disk.remove_partition (lvm_num);
@@ -319,8 +322,7 @@ public class ProgressView : AbstractInstallerView {
 
         if (result != 0) {
             critical ("unable to add lvm partition to %s", recovery_disk);
-            on_error ();
-            return;
+            return false;
         }
 
         disks.push ((owned) disk);
@@ -329,16 +331,14 @@ public class ProgressView : AbstractInstallerView {
 
         if (result != 0) {
             critical ("unable to initialize volume groups on %s", recovery_disk);
-            on_error ();
-            return;
+            return false;
         }
 
         unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
 
         if (lvm_device == null) {
             critical ("unable to find '%s' volume group on %s", root_vg, recovery_disk);
-            on_error ();
-            return;
+            return false;
         }
 
         start = lvm_device.get_sector (ref start_sector);
@@ -352,8 +352,7 @@ public class ProgressView : AbstractInstallerView {
 
         if (result != 0) {
             critical ("unable to add / partition to lvm on %s", recovery_disk);
-            on_error ();
-            return;
+            return false;
         }
 
         start = lvm_device.get_sector (ref swap_sector);
@@ -366,20 +365,20 @@ public class ProgressView : AbstractInstallerView {
 
         if (result != 0) {
             critical ("unable to add swap partition to lvm on %s", recovery_disk);
-            on_error ();
-            return;
+            return false;
         }
+
+        return true;
     }
 
-    private void default_disk_configuration (Distinst.Disks disks) {
+    private bool default_disk_configuration (Distinst.Disks disks) {
         unowned Configuration current_config = Configuration.get_default ();
 
         var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
         var root_vg = Distinst.generate_unique_id ("data");
         if (encrypted_vg == null || root_vg == null) {
             critical ("unable to generate unique volume group IDs\n");
-            on_error ();
-            return;
+            return false;
         }
 
         Distinst.LvmEncryption? encryption;
@@ -399,8 +398,7 @@ public class ProgressView : AbstractInstallerView {
         var disk = new Distinst.Disk (current_config.disk);
         if (disk == null) {
             critical ("could not find %s", current_config.disk);
-            on_error ();
-            return;
+            return false;
         }
 
         var bootloader = Distinst.bootloader_detect ();
@@ -417,7 +415,7 @@ public class ProgressView : AbstractInstallerView {
 
         var recovery_sector = Distinst.Sector() {
             flag = Distinst.SectorKind.MEGABYTE,
-            value = 4096
+            value = 512 + 4096
         };
 
         var swap_sector = Distinst.Sector () {
@@ -435,8 +433,7 @@ public class ProgressView : AbstractInstallerView {
 
         if (result != 0) {
             critical ("unable to write partition table to %s", current_config.disk);
-            on_error ();
-            return;
+            return false;
         }
 
         var start = disk.get_sector (ref start_sector);
@@ -454,8 +451,7 @@ public class ProgressView : AbstractInstallerView {
 
                 if (result != 0) {
                     critical ("unable to add boot partition to %s", current_config.disk);
-                    on_error ();
-                    return;
+                    return false;
                 }
 
                 break;
@@ -470,8 +466,7 @@ public class ProgressView : AbstractInstallerView {
 
                 if (result != 0) {
                     critical ("unable to add EFI partition to %s", current_config.disk);
-                    on_error ();
-                    return;
+                    return false;
                 }
 
                 break;
@@ -497,8 +492,7 @@ public class ProgressView : AbstractInstallerView {
 
         if (result != 0) {
             critical ("unable to add lvm partition to %s", current_config.disk);
-            on_error ();
-            return;
+            return false;
         }
 
         disks.push ((owned) disk);
@@ -507,16 +501,14 @@ public class ProgressView : AbstractInstallerView {
 
         if (result != 0) {
             critical ("unable to initialize volume groups on %s", current_config.disk);
-            on_error ();
-            return;
+            return false;
         }
 
         unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
 
         if (lvm_device == null) {
             critical ("unable to find '%s' volume group on %s", root_vg, current_config.disk);
-            on_error ();
-            return;
+            return false;
         }
 
         start = lvm_device.get_sector (ref start_sector);
@@ -530,8 +522,7 @@ public class ProgressView : AbstractInstallerView {
 
         if (result != 0) {
             critical ("unable to add / partition to lvm on %s", current_config.disk);
-            on_error ();
-            return;
+            return false;
         }
 
         start = lvm_device.get_sector (ref swap_sector);
@@ -544,12 +535,13 @@ public class ProgressView : AbstractInstallerView {
 
         if (result != 0) {
             critical ("unable to add swap partition to lvm on %s", current_config.disk);
-            on_error ();
-            return;
+            return false;
         }
+
+        return true;
     }
 
-    private void custom_disk_configuration (Distinst.Disks disks) {
+    private bool custom_disk_configuration (Distinst.Disks disks) {
         unowned Configuration config = Configuration.get_default ();
         Installer.Mount[] lvm_devices = {};
 
@@ -562,8 +554,7 @@ public class ProgressView : AbstractInstallerView {
                     var new_disk = new Distinst.Disk (m.parent_disk);
                     if (new_disk == null) {
                         warning ("could not find physical device: '%s'\n", m.parent_disk);
-                        on_error ();
-                        return;
+                        return false;
                     }
 
                     disks.push ((owned) new_disk);
@@ -573,9 +564,8 @@ public class ProgressView : AbstractInstallerView {
                 unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
                 if (partition == null) {
-                    warning ("could not find %s\n", m.partition_path);
-                    on_error ();
-                    return;
+                    critical ("could not find %s\n", m.partition_path);
+                    return false;
                 }
 
                 if (m.mount_point == "/boot/efi") {
@@ -587,9 +577,8 @@ public class ProgressView : AbstractInstallerView {
                         partition.set_mount (m.mount_point);
                         partition.set_flags ({ Distinst.PartitionFlag.ESP });
                     } else {
-                        warning ("unreachable code path -- efi partition is invalid\n");
-                        on_error ();
-                        return;
+                        critical ("unreachable code path -- efi partition is invalid\n");
+                        return false;
                     }
                 } else {
                     if (m.filesystem != Distinst.FileSystemType.SWAP) {
@@ -621,17 +610,15 @@ public class ProgressView : AbstractInstallerView {
             var vg = m.parent_disk.offset (12);
             unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
             if (disk == null) {
-                warning ("could not find %s\n", vg);
-                on_error ();
-                return;
+                critical ("could not find %s\n", vg);
+                return false;
             }
 
             unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
             if (partition == null) {
-                warning ("could not find %s\n", m.partition_path);
-                on_error ();
-                return;
+                critical ("could not find %s\n", m.partition_path);
+                return false;
             }
 
             if (m.filesystem != Distinst.FileSystemType.SWAP) {
@@ -642,6 +629,8 @@ public class ProgressView : AbstractInstallerView {
                 partition.format_and_keep_name (m.filesystem);
             }
         }
+
+        return true;
     }
 
     private void fake_status (Distinst.Step step) {
