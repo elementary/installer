@@ -26,6 +26,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private Distinst.Disks disks;
     private Gtk.Box disk_list;
     private Gtk.SizeGroup label_sizer;
+    private string required_description;
 
     public Gee.ArrayList<Installer.Mount> mounts;
     public Gee.ArrayList<LuksCredentials> luks;
@@ -42,21 +43,19 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         luks = new Gee.ArrayList<LuksCredentials> ();
         margin = 12;
 
-        // FIXME: This description string building feels bad for translations, 
-        // but I'm not sure what the best way to do it would be.
-
         var base_description = _("Select which partitions to use across all drives. <b>Selecting \"Format\" will erase ALL data on the selected partition.</b>");
 
-        var required_description = _("You must at least select a <b>Root (/)</b> partition");
-
         var bootloader = Distinst.bootloader_detect ();
-        if (bootloader == Distinst.PartitionTable.GPT) {
-            required_description += _(" and a <b>Boot (/boot/efi)</b> partition");
+        switch (bootloader) {
+            case Distinst.PartitionTable.MSDOS:
+                required_description = _("You must at least select a <b>Root (/)</b> partition.");
+            case Distinst.PartitionTable.GPT:
+                required_description = _("You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/efi)</b> partition.");
         }
 
         var recommended_description = _("It is also recommended to select a <b>Swap</b> partition.");
 
-        var full_description = _("%s %s. %s".printf (
+        var full_description = _("%s %s %s".printf (
             base_description,
             required_description,
             recommended_description
