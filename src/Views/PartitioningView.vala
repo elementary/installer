@@ -59,11 +59,11 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
         var recommended_description = _("It is also recommended to select a <b>Swap</b> partition.");
 
-        var full_description = _("%s %s %s".printf (
+        var full_description = "%s %s %s".printf (
             base_description,
             required_description,
             recommended_description
-        ));
+        );
 
         var description = new Gtk.Label (full_description);
         description.halign = Gtk.Align.FILL;
