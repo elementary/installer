@@ -101,6 +101,8 @@ public class Recovery : GLib.Object {
     }
 
     private static string? resolve_slave(string name) {
+        stdout.printf("resolve_slave(%s)\n", name);
+
         try {
             var slaves_path = "/sys/class/block/" + name + "/slaves/";
             var slaves_dir = File.new_for_path (slaves_path);

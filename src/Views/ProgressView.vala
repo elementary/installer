@@ -255,8 +255,19 @@ public class ProgressView : AbstractInstallerView {
         string? recovery_part = Recovery.recovery_partition ();
         string? lvm_part = Recovery.lvm_partition();
 
+        if (lvm_part == null) {
+            warning ("attempting to find LVM partition automatically");
+
+            foreach (unowned Distinst.Partition part in disk.list_partitions()) {
+                if (part.get_file_system () == Distinst.FileSystemType.LVM || part.get_file_system () == Distinst.FileSystemType.LUKS) {
+                    lvm_part = Utils.string_from_utf8 (part.get_device_path ());
+                    break;
+                }
+            }
+        }
+
         if (efi_part != null) {
-            debug ("efi_part: %s\n", efi_part);
+            debug ("efi_part: %s", efi_part);
 
             unowned Distinst.Partition partition = disk.get_partition_by_path (efi_part);
 
@@ -272,7 +283,7 @@ public class ProgressView : AbstractInstallerView {
         }
 
         if (recovery_part != null) {
-            debug("recovery_part: %s\n", recovery_part);
+            debug("recovery_part: %s", recovery_part);
 
             //TODO: Find recovery partition using /cdrom mount, do not format it, update it with correct information
 
@@ -292,7 +303,7 @@ public class ProgressView : AbstractInstallerView {
         uint64 end;
 
         if (lvm_part != null) {
-            debug("lvm_part: %s\n", lvm_part);
+            debug("lvm_part: %s", lvm_part);
 
             unowned Distinst.Partition partition = disk.get_partition_by_path (lvm_part);
 
