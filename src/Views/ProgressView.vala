@@ -236,8 +236,6 @@ public class ProgressView : AbstractInstallerView {
             return false;
         }
 
-        var bootloader = Distinst.bootloader_detect ();
-
         var start_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.START,
             value = 0
@@ -412,11 +410,6 @@ public class ProgressView : AbstractInstallerView {
             value = 512
         };
 
-        var recovery_sector = Distinst.Sector() {
-            flag = Distinst.SectorKind.MEGABYTE,
-            value = 512 + 4096
-        };
-
         var swap_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.MEGABYTE_FROM_END,
             value = 4096
@@ -453,6 +446,9 @@ public class ProgressView : AbstractInstallerView {
                     return false;
                 }
 
+                start = disk.get_sector (ref boot_sector);
+                end = disk.get_sector (ref end_sector);
+
                 break;
             case Distinst.PartitionTable.GPT:
                 // A FAT32 partition is required for EFI installs
@@ -468,20 +464,30 @@ public class ProgressView : AbstractInstallerView {
                     return false;
                 }
 
+                var recovery_sector = Distinst.Sector() {
+                    flag = Distinst.SectorKind.MEGABYTE,
+                    value = 512 + 4096
+                };
+
+                start = disk.get_sector (ref boot_sector);
+                end = disk.get_sector (ref recovery_sector);
+
+                result = disk.add_partition (
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
+                        .name("recovery")
+                        .mount ("/recovery")
+                );
+
+                if (result != 0) {
+                    critical ("unable to add recovery partition to %s", current_config.disk);
+                    return false;
+                }
+
+                start = disk.get_sector (ref recovery_sector);
+                end = disk.get_sector (ref end_sector);
+
                 break;
         }
-
-        start = disk.get_sector (ref boot_sector);
-        end = disk.get_sector (ref recovery_sector);
-
-        result = disk.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
-                .name("recovery")
-                .mount ("/recovery")
-        );
-
-        start = disk.get_sector (ref recovery_sector);
-        end = disk.get_sector (ref end_sector);
 
         result = disk.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
