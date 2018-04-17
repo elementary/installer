@@ -54,7 +54,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
             required_description += _(" and a <b>Boot (/boot/efi)</b> partition");
         }
 
-        var recommended_description = _("We also recommend selecting a <b>Swap</b> partition.");
+        var recommended_description = _("It is also recommended to select a <b>Swap</b> partition.");
 
         var full_description = _("%s %s. %s".printf (
             base_description,
