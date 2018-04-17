@@ -162,18 +162,22 @@ public class Installer.MainWindow : Gtk.Dialog {
             disk_view.destroy ();
         }
 
-        disk_view = new DiskView ();
-        disk_view.previous_view = encrypt_view;
-        stack.add (disk_view);
-        stack.visible_child = disk_view;
-        disk_view.load.begin(minimum_disk_size);
+        if (Recovery.disk () == null) {
+            disk_view = new DiskView ();
+            disk_view.previous_view = encrypt_view;
+            stack.add (disk_view);
+            stack.visible_child = disk_view;
+            disk_view.load.begin(minimum_disk_size);
 
-        disk_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
-        });
+            disk_view.cancel.connect (() => {
+                stack.visible_child = try_install_view;
+            });
 
-        disk_view.custom_step.connect (() => load_partitioning_view ());
-        disk_view.next_step.connect (() =>  load_encryptview ());
+            disk_view.custom_step.connect (() => load_partitioning_view ());
+            disk_view.next_step.connect (() =>  load_encryptview ());
+        } else {
+            load_encryptview ();
+        }
 
         load_checkview ();
     }
