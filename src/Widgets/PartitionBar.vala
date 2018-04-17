@@ -54,7 +54,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
         info = part;
 
-        var style_context = this.get_style_context ();
+        var style_context = get_style_context ();
         style_context.add_class (Distinst.strfilesys (filesystem));
         style_context.add_class ("fill-block");
 

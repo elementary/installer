@@ -151,7 +151,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         grid.attach (top_controls,    0, 0);
         grid.attach (bottom_revealer, 0, 1);
 
-        this.add (grid);
+        add (grid);
         grid.show_all ();
 
         // FIXME: Probably should stick these in a revealer, too

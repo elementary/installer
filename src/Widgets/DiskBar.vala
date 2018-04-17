@@ -50,12 +50,12 @@ public class Installer.DiskBar: Gtk.Grid {
         generate_bar ();
         generate_legend ();
 
-        this.hexpand = true;
-        this.get_style_context ().add_class ("storage-bar");
-        this.attach (label, 0, 1);
-        this.attach (legend, 1, 0);
-        this.attach (bar, 1, 1);
-        this.margin = 6;
+        hexpand = true;
+        margin = 6;
+        get_style_context ().add_class ("storage-bar");
+        attach (label, 0, 1);
+        attach (legend, 1, 0);
+        attach (bar, 1, 1);
 
         show_all ();
     }
