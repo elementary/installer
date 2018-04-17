@@ -169,7 +169,6 @@ public class ProgressView : AbstractInstallerView {
 
         var recovery = Recovery.disk ();
 
-        //TODO: Use the following
         debug ("language: %s\n", current_config.lang);
         if (current_config.country != null) {
             debug ("country: %s\n", current_config.country);
