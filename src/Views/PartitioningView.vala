@@ -26,6 +26,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private Distinst.Disks disks;
     private Gtk.Box disk_list;
     private Gtk.SizeGroup label_sizer;
+    private string required_description;
 
     public Gee.ArrayList<Installer.Mount> mounts;
     public Gee.ArrayList<LuksCredentials> luks;
@@ -38,12 +39,40 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     }
 
     construct {
-        this.mounts = new Gee.ArrayList<Installer.Mount> ();
-        this.luks = new Gee.ArrayList<LuksCredentials> ();
-        this.margin = 12;
+        mounts = new Gee.ArrayList<Installer.Mount> ();
+        luks = new Gee.ArrayList<LuksCredentials> ();
+        margin = 12;
+
+        var base_description = _("Select which partitions to use across all drives. <b>Selecting \"Format\" will erase ALL data on the selected partition.</b>");
+
+        var bootloader = Distinst.bootloader_detect ();
+        switch (bootloader) {
+            case Distinst.PartitionTable.MSDOS:
+                // Device is in BIOS mode, so we just require a root partition
+                required_description = _("You must at least select a <b>Root (/)</b> partition.");
+                break;
+            case Distinst.PartitionTable.GPT:
+                // Device is in EFI mode, so we also require a boot partition
+                required_description = _("You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/efi)</b> partition.");
+                break;
+        }
+
+        var recommended_description = _("It is also recommended to select a <b>Swap</b> partition.");
+
+        var full_description = "%s %s %s".printf (
+            base_description,
+            required_description,
+            recommended_description
+        );
+
+        var description = new Gtk.Label (full_description);
+        description.halign = Gtk.Align.FILL;
+        description.max_width_chars = 72;
+        description.use_markup = true;
+        description.wrap = true;
 
         disk_list = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        disk_list.set_valign (Gtk.Align.START);
+        disk_list.valign = Gtk.Align.START;
         disk_list.margin = 6;
         disk_list.margin_end = 12;
 
@@ -52,11 +81,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
         disk_scroller.add (disk_list);
 
-        var description = new Gtk.Label (_("Select which partitions to use across all drives. This will erase all data on the selected partitions."));
-        description.set_halign (Gtk.Align.CENTER);
-
-        this.content_area.attach (description, 0, 0);
-        this.content_area.attach (disk_scroller, 0, 1);
+        content_area.attach (disk_scroller, 0, 0);
+        content_area.attach (description, 0, 1);
 
         load_disks ();
 
