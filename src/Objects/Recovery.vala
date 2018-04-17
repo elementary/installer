@@ -88,30 +88,40 @@ public class Recovery : GLib.Object {
         string root_dev = Recovery.root_partition ();
 
         if (root_dev != null) {
-            try {
-                string root_name = Path.get_basename (root_dev);
+            string root_name = Path.get_basename (root_dev);
 
-                var slave_dir = File.new_for_path ("/sys/class/block/" + root_name + "/slaves/");
-                var slave_iter = slave_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
-
-                var slaves = new Gee.ArrayList<string> ();
-                FileInfo info;
-                while ((info = slave_iter.next_file ()) != null) {
-                    var name = info.get_name ();
-                    slaves.add (name);
-                }
-
-                if (slaves.size == 1) {
-                    var slave_name = slaves[0];
-                    var slave_dev = "/dev/" + slave_name;
-
-                    return slave_dev;
-                } else {
-                    critical ("failed to find restore device automatically: incorrect number of LVM slaves: %d", slaves.size);
-                }
-            } catch (GLib.Error e) {
-                critical ("failed to find restore device automatically: %s", e.message);
+            var slave_name = resolve_slave(root_name);
+            if (slave_name != null) {
+                var slave_dev = "/dev/" + slave_name;
+                return slave_dev;
             }
+        }
+
+        return null;
+    }
+
+    private static string? resolve_slave(string name) {
+        try {
+            var slaves_path = "/sys/class/block/" + name + "/slaves/";
+            var slaves_dir = File.new_for_path (slaves_path);
+            if (!slaves_dir.query_exists ()) {
+                return name;
+            }
+
+            var slaves_iter = slaves_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
+            var slaves = new Gee.ArrayList<string> ();
+            FileInfo info;
+            while ((info = slaves_iter.next_file ()) != null) {
+                slaves.add (info.get_name ());
+            }
+
+            if (slaves.size == 1) {
+                return resolve_slave(slaves[0]);
+            } else {
+                critical ("failed to find slave device of %s automatically: incorrect number of LVM slaves: %d", name, slaves.size);
+            }
+        } catch (GLib.Error e) {
+            critical ("failed to find slave device of %s automatically: %s", name, e.message);
         }
 
         return null;
