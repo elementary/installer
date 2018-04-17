@@ -26,6 +26,10 @@ public class EncryptView : AbstractInstallerView {
     private ValidatedEntry pw_entry;
     private Gtk.LevelBar pw_levelbar;
 
+    public EncryptView () {
+        Object (cancellable: false);
+    }
+
     construct {
         var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
 
@@ -135,7 +139,6 @@ public class EncryptView : AbstractInstallerView {
         content_area.attach (stack, 1, 0, 1, 2);
 
         var no_encrypt_button = new Gtk.Button.with_label (_("Don't Encrypt"));
-
         var back_button = new Gtk.Button.with_label (_("Back"));
 
         next_button = new Gtk.Button.with_label (_("Choose Password"));
@@ -152,20 +155,18 @@ public class EncryptView : AbstractInstallerView {
         });
 
         back_button.clicked.connect (() => {
-            if (stack.visible_child == choice_grid) {
-                ((Gtk.Stack) get_parent ()).visible_child = previous_view;
-            } else if (stack.visible_child == password_grid) {
-                stack.visible_child = choice_grid;
-                next_button.label = _("Choose Password");
-                next_button.sensitive = true;
-            }
+            stack.visible_child = choice_grid;
+            next_button.label = _("Choose Password");
+            next_button.sensitive = true;
+            back_button.hide ();
         });
 
         next_button.clicked.connect (() => {
             if (stack.visible_child == choice_grid) {
                 stack.visible_child = password_grid;
                 pw_entry.grab_focus ();
-                next_button.label = _("Select Drive");
+                next_button.label = _("Set Password");
+                back_button.show ();
                 update_next_button ();
             } else if (stack.visible_child == password_grid) {
                 Configuration.get_default ().encryption_password = pw_entry.text;
@@ -185,6 +186,7 @@ public class EncryptView : AbstractInstallerView {
         });
 
         show_all ();
+        back_button.hide ();
     }
 
     private bool check_password () {
