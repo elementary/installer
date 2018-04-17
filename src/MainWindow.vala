@@ -164,12 +164,8 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.visible_child = try_install_view;
         });
 
-<<<<<<< HEAD
         disk_view.custom_step.connect (() => load_partitioning_view ());
-        disk_view.next_step.connect (() => load_progress_view ());
-=======
         disk_view.next_step.connect (() => load_encrypt_view ());
->>>>>>> master
     }
 
     private void load_partitioning_view() {
