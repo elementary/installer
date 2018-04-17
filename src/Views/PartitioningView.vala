@@ -49,8 +49,10 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
                 required_description = _("You must at least select a <b>Root (/)</b> partition.");
+                break;
             case Distinst.PartitionTable.GPT:
                 required_description = _("You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/efi)</b> partition.");
+                break;
         }
 
         var recommended_description = _("It is also recommended to select a <b>Swap</b> partition.");
