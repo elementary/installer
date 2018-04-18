@@ -148,7 +148,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
             var process = new GLib.Subprocess.newv ({"gparted"}, GLib.SubprocessFlags.NONE);
             process.wait ();
         } catch (GLib.Error error) {
-            stderr.printf ("critical error occurred when executing gparted\n");
+            critical ("could not execute gparted");
         }
 
         reset_view ();
@@ -186,12 +186,10 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         const uint8 ROOT = 1;
         const uint8 BOOT = 2;
 
-        // FIXME: store everything in a string and use `debug`, which allows a
-        // fine-grained level of debug outputs
-        stderr.printf ("DEBUG: Current Layout:\n");
+        debug ("Current Layout:");
         foreach (Mount m in mounts) {
-            stderr.printf (
-                "  %s : %s : %s: format? %s\n",
+            debug (
+                "  %s : %s : %s: format? %s",
                 m.partition_path,
                 m.mount_point,
                 Distinst.strfilesys (m.filesystem),
@@ -230,25 +228,25 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 luks.add (new LuksCredentials (device, pv, password));
                 break;
             case 1:
-                stderr.printf ("decrypt_partition result is 1\n");
+                debug ("decrypt_partition result is 1");
                 break;
             case 2:
-                stderr.printf ("decrypt: input was not valid UTF-8\n");
+                debug ("decrypt: input was not valid UTF-8");
                 break;
             case 3:
-                stderr.printf ("decrypt: either a password or keydata string must be supplied\n");
+                debug ("decrypt: either a password or keydata string must be supplied");
                 break;
             case 4:
-                stderr.printf ("decrypt: unable to decrypt partition (possibly invalid password)\n");
+                debug ("decrypt: unable to decrypt partition (possibly invalid password)");
                 break;
             case 5:
-                stderr.printf ("decrypt: the decrypted partition does not have a LVM volume on it\n");
+                debug ("decrypt: the decrypted partition does not have a LVM volume on it");
                 break;
             case 6:
-                stderr.printf ("decrypt: unable to locate LUKS partition at %s\n", device);
+                debug ("decrypt: unable to locate LUKS partition at %s", device);
                 break;
             default:
-                critical ("decrypt: unhandled error value: %d\n", result);
+                critical ("decrypt: unhandled error value: %d", result);
                 break;
         }
     }
