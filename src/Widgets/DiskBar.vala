@@ -98,11 +98,10 @@ public class Installer.DiskBar: Gtk.Grid {
 
         var format_size = GLib.format_size (size);
 
-        // FIXME: Properly translate these strings
         var info = new Gtk.Label (
             (vg == null)
-                ? "%s (%s)".printf (format_size, fs)
-                : "%s (%s: <b>%s</b>)".printf (format_size, fs, vg)
+                ? _("%s (%s)".printf (format_size, fs))
+                : _("%s (%s: <b>%s</b>)".printf (format_size, fs, vg))
         );
         info.use_markup = true;
 
