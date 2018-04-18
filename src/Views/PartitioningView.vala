@@ -248,8 +248,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 stderr.printf ("decrypt: unable to locate LUKS partition at %s\n", device);
                 break;
             default:
-                // FIXME: Use `critical` as this sounds like a big deal
-                stderr.printf ("decrypt: unhandled error value: %d\n", result);
+                critical ("decrypt: unhandled error value: %d\n", result);
                 break;
         }
     }
