@@ -18,7 +18,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.PartitioningView : AbstractInstallerView  {
+public class Installer.PartitioningView : AbstractInstallerView {
     public signal void next_step ();
 
     private Gtk.Button next_button;
@@ -143,18 +143,15 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     private void open_gparted () {
         try {
-            // FIXME: GParted provides a .desktop file; should use
-            // https://valadoc.org/gio-2.0/GLib.AppInfo.html
-            var process = new GLib.Subprocess.newv ({"gparted"}, GLib.SubprocessFlags.NONE);
-            process.wait ();
+            var gparted = AppInfo.create_from_commandline ("gparted", null, AppInfoCreateFlags.NONE);
+            gparted.launch (null, null);
         } catch (GLib.Error error) {
             critical ("could not execute gparted");
         }
-
-        reset_view ();
     }
 
-    private void reset_view () {
+    public void reset_view () {
+        debug ("Resetting partitioning view");
         disk_list.get_children ().foreach ((child) => child.destroy ());
         mounts.clear ();
         luks.clear ();

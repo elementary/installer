@@ -59,6 +59,13 @@ public class Installer.MainWindow : Gtk.Dialog {
         minimum_disk_size = Distinst.minimum_disk_size (5000000000);
 
         language_view.next_step.connect (() => load_keyboard_view ());
+
+        focus_in_event.connect (() => {
+            // Account for outside changes, i.e. from GParted
+            if (partitioning_view != null) {
+                partitioning_view.reset_view ();
+            }
+        });
     }
 
     /*
