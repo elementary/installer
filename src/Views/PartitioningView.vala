@@ -143,6 +143,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     private void open_gparted () {
         try {
+            // FIXME: GParted provides a .desktop file; should use
+            // https://valadoc.org/gio-2.0/GLib.AppInfo.html
             var process = new GLib.Subprocess.newv ({"gparted"}, GLib.SubprocessFlags.NONE);
             process.wait ();
         } catch (GLib.Error error) {
@@ -184,6 +186,8 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         const uint8 ROOT = 1;
         const uint8 BOOT = 2;
 
+        // FIXME: store everything in a string and use `debug`, which allows a
+        // fine-grained level of debug outputs
         stderr.printf ("DEBUG: Current Layout:\n");
         foreach (Mount m in mounts) {
             stderr.printf (
@@ -244,6 +248,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 stderr.printf ("decrypt: unable to locate LUKS partition at %s\n", device);
                 break;
             default:
+                // FIXME: Use `critical` as this sounds like a big deal
                 stderr.printf ("decrypt: unhandled error value: %d\n", result);
                 break;
         }
