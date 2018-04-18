@@ -254,3 +254,4 @@ public class Installer.DiskBar: Gtk.Grid {
         }
     }
 }
+

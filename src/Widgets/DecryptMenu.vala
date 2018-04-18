@@ -40,7 +40,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         pass_entry = new Gtk.Entry ();
         pass_entry.input_purpose = Gtk.InputPurpose.PASSWORD;
         pass_entry.visibility = false;
-        pass_entry.placeholder_text = "Password";
+        pass_entry.placeholder_text = _("Password");
         pass_entry.changed.connect (() => set_sensitivity ());
         pass_entry.activate.connect (() => {
             if (entries_set ()) {
@@ -49,7 +49,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         });
 
         pv_entry = new Gtk.Entry ();
-        pv_entry.placeholder_text = "Physical Volume";
+        pv_entry.placeholder_text = _("Physical Volume");
         pv_entry.changed.connect (() => set_sensitivity ());
         pv_entry.activate.connect (() => {
             if (entries_set ()) {
@@ -100,3 +100,4 @@ public class Installer.DecryptMenu: Gtk.Popover {
         create_decrypted_view (pv);
     }
 }
+

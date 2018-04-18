@@ -348,3 +348,4 @@ public class Installer.PartitionMenu : Gtk.Popover {
         return custom.get_text ().has_prefix ("/");
     }
  }
+
