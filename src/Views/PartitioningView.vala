@@ -186,16 +186,17 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         const uint8 ROOT = 1;
         const uint8 BOOT = 2;
 
-        debug ("Current Layout:");
+        string layout_debug = "";
         foreach (Mount m in mounts) {
-            debug (
-                "  %s : %s : %s: format? %s",
+            layout_debug +=
+                "  %s : %s : %s: format? %s\n".printf (
                 m.partition_path,
                 m.mount_point,
                 Distinst.strfilesys (m.filesystem),
                 m.should_format () ? "true" : "false"
             );
         }
+        debug ("Current Layout:\n" + layout_debug);
 
         foreach (Mount m in mounts) {
             if (m.mount_point == "/" && m.is_valid_root_mount ()) {
