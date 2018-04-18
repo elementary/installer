@@ -57,7 +57,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
 
         var label_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
 
-        var use_partition_label = new Gtk.Label ("Use partition:");
+        var use_partition_label = new Gtk.Label (_("Use partition:"));
         use_partition_label.halign = Gtk.Align.END;
         use_partition_label.xalign = 1;
         label_size_group.add_widget (use_partition_label);
@@ -92,7 +92,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         use_as.active = 0;
         use_as.bind_property ("visible", use_as_label, "visible");
 
-        custom_label = new Gtk.Label ("Custom:");
+        custom_label = new Gtk.Label (_("Custom:"));
         custom_label.halign = Gtk.Align.END;
         custom_label.xalign = 1;
         label_size_group.add_widget (custom_label);
