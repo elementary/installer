@@ -265,7 +265,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
             }
         }
 
-
         validate_status ();
         mounts.add (mount);
         validate_status ();
