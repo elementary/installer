@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016-2018 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ public class Installer.Mount {
     public string mount_point;
     public Distinst.FileSystemType filesystem;
     public Flags flags;
+    public PartitionMenu menu;
 
     [Flags]
     public enum Flags {
@@ -33,11 +34,13 @@ public class Installer.Mount {
     }
 
     public Mount (string partition, string parent_disk, string mount,
-                  Flags flags, Distinst.FileSystemType fs) {
+                  Flags flags, Distinst.FileSystemType fs,
+                  PartitionMenu menu) {
         filesystem = fs;
         mount_point = mount;
         partition_path = partition;
         this.flags = flags;
+        this.menu = menu;
         this.parent_disk = parent_disk;
     }
 
