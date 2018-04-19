@@ -22,7 +22,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
     public signal void next_step ();
 
     private Gtk.Button next_button;
-    private Gtk.Button gparted_button;
+    private Gtk.Button modify_partitions_button;
     private Distinst.Disks disks;
     private Gtk.Box disk_list;
     private Gtk.SizeGroup label_sizer;
@@ -86,11 +86,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         load_disks ();
 
-        gparted_button = new Gtk.Button.with_label (_("Modify Partitions…"));
-        gparted_button.clicked.connect (() => open_gparted ());
-        action_area.add (gparted_button);
-        action_area.set_child_secondary (gparted_button, true);
-        action_area.set_child_non_homogeneous (gparted_button, true);
+        modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
+        modify_partitions_button.clicked.connect (() => open_partition_editor ());
+        action_area.add (modify_partitions_button);
+        action_area.set_child_secondary (modify_partitions_button, true);
+        action_area.set_child_non_homogeneous (modify_partitions_button, true);
 
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
@@ -140,13 +140,20 @@ public class Installer.PartitioningView : AbstractInstallerView {
         disk_list.show_all ();
     }
 
-    private void open_gparted () {
+    private void open_partition_editor () {
         try {
-            var gparted = AppInfo.create_from_commandline ("gparted", null, AppInfoCreateFlags.NONE);
-            gparted.launch (null, null);
+            /*
+             * FIXME: GParted provides a .desktop file, so we should use
+             * GLib.AppInfo. However, we need a better way to listen to
+             * partition changes if we do that.
+             */
+            var gparted = new GLib.Subprocess.newv ({"gparted"}, GLib.SubprocessFlags.NONE);
+            gparted.wait ();
         } catch (GLib.Error error) {
             critical ("could not execute gparted");
         }
+
+        reset_view ();
     }
 
     public void reset_view () {
