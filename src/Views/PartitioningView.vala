@@ -66,7 +66,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
         );
 
         var description = new Gtk.Label (full_description);
-        description.halign = Gtk.Align.FILL;
         description.margin_bottom = description.margin_bottom = 24;
         description.max_width_chars = 72;
         description.use_markup = true;
