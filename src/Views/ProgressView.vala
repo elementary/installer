@@ -158,7 +158,7 @@ public class ProgressView : AbstractInstallerView {
         installer.on_status (installation_status_callback);
 
         var config = Distinst.Config ();
-        config.flags = Distinst.MODIFY_BOOT_ORDER;
+        config.flags = Distinst.MODIFY_BOOT_ORDER | Distinst.INSTALL_HARDWARE_SUPPORT;
         config.hostname = "pop-os";
 
         var casper = casper_dir ();
