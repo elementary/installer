@@ -181,7 +181,18 @@ public class Installer.PartitioningView : AbstractInstallerView  {
     private void validate_status () {
         uint8 flags = 0;
         const uint8 ROOT = 1;
-        const uint8 BOOT = 2;
+        const uint8 EFI = 2;
+
+        uint8 required = ROOT;
+
+        var bootloader = Distinst.bootloader_detect ();
+        switch (bootloader) {
+            case Distinst.PartitionTable.MSDOS:
+                break;
+            case Distinst.PartitionTable.GPT:
+                required |= EFI;
+                break;
+        }
 
         stderr.printf ("DEBUG: Current Layout:\n");
         foreach (Mount m in mounts) {
@@ -192,22 +203,20 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 Distinst.strfilesys (m.filesystem),
                 m.should_format () ? "true" : "false"
             );
-        }
 
-        foreach (Mount m in mounts) {
             if (m.mount_point == "/" && m.is_valid_root_mount ()) {
                 flags |= ROOT;
             } else if (m.mount_point == "/boot/efi" && m.is_valid_boot_mount ()) {
-                flags |= BOOT;
-            }
-
-            if (flags == ROOT + BOOT) {
-                next_button.sensitive = true;
-                return;
+                flags |= EFI;
             }
         }
 
-        next_button.sensitive = false;
+
+        if ((flags & required) == required) {
+            next_button.sensitive = true;
+        } else {
+            next_button.sensitive = false;
+        }
     }
 
     private void decrypt (string device, string pv, string password, DecryptMenu menu) {
@@ -298,4 +307,3 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         return array.remove_at (array.size - 1);
     }
 }
-
