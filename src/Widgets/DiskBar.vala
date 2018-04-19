@@ -100,8 +100,8 @@ public class Installer.DiskBar: Gtk.Grid {
 
         var info = new Gtk.Label (
             (vg == null)
-                ? _("%s (%s)".printf (format_size, fs))
-                : _("%s (%s: <b>%s</b>)".printf (format_size, fs, vg))
+                ? _("%s (%s)").printf (format_size, fs)
+                : _("%s (%s: <b>%s</b>)").printf (format_size, fs, vg)
         );
         info.use_markup = true;
 
