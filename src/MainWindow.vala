@@ -63,7 +63,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         focus_in_event.connect (() => {
             // Account for outside changes, i.e. from GParted
             if (partitioning_view != null) {
-                partitioning_view.reset_view ();
+                // FIXME: Comboboxes count as taking focus away, so this doesn't work
+                // partitioning_view.reset_view ();
             }
         });
     }

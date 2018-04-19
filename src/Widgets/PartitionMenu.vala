@@ -222,17 +222,24 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 disable_signals = true;
                 set_format_sensitivity ();
                 disable_signals = false;
-                use_as.set_active (
-                    // FIXME: not a fan of this syntax; it's the role of the
-                    // compiler to optimize it. Should use temporary variables.
-                    (fs == Distinst.FileSystemType.FAT16 || fs == Distinst.FileSystemType.FAT32)
-                        ? mount_set (boot_partition) ? 4 : 2
-                        : fs == Distinst.FileSystemType.SWAP
-                            ? 3
-                            : mount_set ("/")
-                                ? mount_set ("/home" ) ? 4 : 1
-                                : 0
-                );
+
+                int select = 0;
+                if (fs == Distinst.FileSystemType.FAT16 || fs == Distinst.FileSystemType.FAT32) {
+                    if (mount_set (boot_partition)) {
+                        select = 4;
+                    } else {
+                        select = 2;
+                    }
+                } else if (fs == Distinst.FileSystemType.SWAP) {
+                    select = 3;
+                } else if (mount_set ("/")) {
+                    if (mount_set ("/home" )) {
+                        select = 4;
+                    } else {
+                        select = 1;
+                    }
+                }
+                use_as.set_active (select);
                 update_values (set_mount);
             } else {
                 unset_mount (partition_path);
