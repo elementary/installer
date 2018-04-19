@@ -13,6 +13,7 @@ You'll need the following dependencies:
  - meson
  - desktop-file-utils
  - gettext
+ - gparted
  - libgnomekbd-dev
  - libgranite-dev >= 0.5
  - libgtk-3-dev
@@ -34,7 +35,7 @@ To install, use `ninja install`, then execute with `io.elementary.installer`
 
     sudo ninja install
     io.elementary.installer
-    
+
 You can also use test mode for development to disable some destructive behaviors like restarting and shutting down:
 
 `io.elementary.installer -t` or `io.elementary.installer --test`
