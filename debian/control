@@ -21,7 +21,7 @@ Homepage: https://github.com/elementary/installer
 Package: io.elementary.installer
 Architecture: any
 Priority: extra
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: gparted, ${misc:Depends}, ${shlibs:Depends}
 Recommends: io.elementary.installer-session
 Description: Distribution installer
  Installs distros with ease, all installs are treated as OEM.
