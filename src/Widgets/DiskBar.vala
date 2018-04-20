@@ -24,67 +24,91 @@ public class Installer.DiskBar: Gtk.Grid {
     public uint64 size { get; construct; }
     public Gee.ArrayList<PartitionBar> partitions { get; construct; }
 
-    public Gtk.Box label;
-    private Gtk.Box bar;
-    private Gtk.ScrolledWindow legend;
-    private Gtk.Box legend_container;
-    private uint64 unused;
+    public Gtk.Grid label { get; private set; }
+    private Gtk.Grid legend_container;
 
-    public DiskBar (
-        string model,
-        string path,
-        uint64 size,
-        Gee.ArrayList<PartitionBar> partitions
-    ) {
+    public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBar> partitions) {
         Object (
-            disk_name: model,
-            disk_path: path,
+            disk_name: disk_name,
+            disk_path: disk_path,
             partitions: partitions,
             size: size
         );
     }
 
     construct {
-        unused = get_unused ();
-        generate_label ();
-        generate_bar ();
-        generate_legend ();
+        var name_label = new Gtk.Label ("<b>%s</b>".printf (disk_name));
+        name_label.halign = Gtk.Align.END;
+        name_label.use_markup = true;
 
-        hexpand = true;
-        margin = 6;
-        get_style_context ().add_class ("storage-bar");
-        attach (label, 0, 1);
-        attach (legend, 1, 0);
-        attach (bar, 1, 1);
+        var size_label = new Gtk.Label ("<small>%s %s</small>".printf (disk_path, GLib.format_size (size)));
+        size_label.halign = Gtk.Align.END;
+        size_label.use_markup = true;
+        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        show_all ();
-    }
+        label = new Gtk.Grid ();
+        label.orientation = Gtk.Orientation.VERTICAL;
+        label.row_spacing = 6;
+        label.margin_end = 12;
+        label.valign = Gtk.Align.CENTER;
+        label.add (name_label);
+        label.add (size_label);
 
-    private uint64 get_unused () {
-        uint64 used = 0;
-        foreach (PartitionBar partition in partitions) {
-            used += partition.get_size ();
+        var bar = new Gtk.Grid ();
+        bar.width_request = 40;
+
+        var bar_style_context = bar.get_style_context ();
+        bar_style_context.add_class (Gtk.STYLE_CLASS_TROUGH);
+        bar_style_context.add_class ("disk-bar");
+
+        bar.size_allocate.connect ((alloc) => {
+            update_sector_lengths (partitions, alloc);
+        });
+
+        foreach (PartitionBar part in partitions) {
+            bar.add (part);
         }
 
-        return size - (used * 512);
-    }
-
-    private void generate_legend () {
-        legend = new Gtk.ScrolledWindow (null, null);
-        legend.vscrollbar_policy = Gtk.PolicyType.NEVER;
-
-        legend_container = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
+        legend_container = new Gtk.Grid ();
+        legend_container.column_spacing = 12;
         legend_container.halign = Gtk.Align.CENTER;
         legend_container.margin_bottom = 9;
+
+        var legend = new Gtk.ScrolledWindow (null, null);
+        legend.vscrollbar_policy = Gtk.PolicyType.NEVER;
         legend.add (legend_container);
 
         foreach (PartitionBar p in partitions) {
             add_legend (p.path, p.get_size () * 512, Distinst.strfilesys (p.filesystem), p.vg, p.menu);
         }
 
+        uint64 used = 0;
+        foreach (PartitionBar partition in partitions) {
+            used += partition.get_size ();
+        }
+
+        var unused = size - (used * 512);
         if (size / 100 < unused) {
             add_legend ("unused", unused, "unused", null, null);
+
+            var unused_bar = new Gtk.Grid ();
+            unused_bar.expand = true;
+
+            var unused_style_context = unused_bar.get_style_context ();
+            unused_style_context.add_class ("fill-block");
+            unused_style_context.add_class ("unused");
+
+            bar.add (unused_bar);
         }
+
+        hexpand = true;
+        margin = 6;
+        get_style_context ().add_class (Granite.STYLE_CLASS_STORAGEBAR);
+        attach (label, 0, 1);
+        attach (legend, 1, 0);
+        attach (bar, 1, 1);
+
+        show_all ();
     }
 
     private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {
@@ -115,7 +139,7 @@ public class Installer.DiskBar: Gtk.Grid {
         legend.attach (set_menu (path, menu), 1, 0);
         legend.attach (info, 1, 1);
 
-        legend_container.pack_start (legend, false, false, 0);
+        legend_container.add (legend);
     }
 
     private Gtk.Widget set_menu (Gtk.Widget widget, Gtk.Popover? menu) {
@@ -131,37 +155,6 @@ public class Installer.DiskBar: Gtk.Grid {
         }
 
         return widget;
-    }
-
-    private void generate_label () {
-        var name_label = new Gtk.Label ("<b>%s</b>".printf (disk_name));
-        name_label.halign = Gtk.Align.END;
-        name_label.use_markup = true;
-
-        var size_label = new Gtk.Label ("<small>%s %s</small>".printf (disk_path, GLib.format_size (size)));
-        size_label.halign = Gtk.Align.END;
-        size_label.use_markup = true;
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-
-        label = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        label.pack_start (name_label, false, false, 0);
-        label.pack_start (size_label, false, false, 0);
-        label.margin_end = 12;
-        label.valign = Gtk.Align.CENTER;
-    }
-
-    private void generate_bar () {
-        bar = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        bar.set_size_request (-1, 40);
-        bar.get_style_context ().add_class ("trough");
-        bar.get_style_context ().add_class ("disk-bar");
-        bar.size_allocate.connect ((alloc) => {
-            update_sector_lengths (partitions, alloc);
-        });
-
-        foreach (PartitionBar part in partitions) {
-            bar.pack_start (part, false, false, 0);
-        }
     }
 
     private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, Gtk.Allocation alloc) {
@@ -214,10 +207,6 @@ public class Installer.DiskBar: Gtk.Grid {
     }
 
     internal class FillRound : Gtk.Widget {
-        internal FillRound () {
-
-        }
-
         construct {
             set_has_window (false);
             var style_context = get_style_context ();
