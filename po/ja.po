@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-19 18:20-0700\n"
-"PO-Revision-Date: 2018-04-12 07:10+0000\n"
+"PO-Revision-Date: 2018-04-20 11:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
-"installer/ja/>\n"
+"Language-Team: Japanese "
+"<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -124,9 +124,8 @@ msgid "Memory:"
 msgstr "メモリー："
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "言語の選択"
+msgstr "ドライブの選択"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -143,7 +142,7 @@ msgstr "現在の設定を取得中…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "パーティションをカスタマイズ…"
 
 #: src/Views/DiskView.vala:103
 msgid "Erase and Install"
