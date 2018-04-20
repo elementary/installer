@@ -25,18 +25,22 @@ You'll need the following dependencies:
  - [distinst](https://github.com/pop-os/distinst/)
  - valac
 
-Run `meson build` to configure the build environment. Change to the build directory and run `ninja test` to build and run automated tests
+Run `meson build` to configure the build environment. Change to the build directory and run `ninja test` to build and run automated tests.
 
     meson build --prefix=/usr
     cd build
     ninja test
 
-To install, use `ninja install`, then execute with `io.elementary.installer`
+To install, use `ninja install`, then execute with `io.elementary.installer`. Note that listing drives and actually installing requires root.
 
     sudo ninja install
     io.elementary.installer
 
-You can also use test mode for development to disable some destructive behaviors like restarting and shutting down:
+You can also use `--test` mode for development to disable destructive behaviors like installing, restarting, and shutting down:
 
-`io.elementary.installer -t` or `io.elementary.installer --test`
+    io.elementary.installer --test
+
+For debug messages, set the `G_MESSAGES_DEBUG` environment variable, e.g. to `all`:
+
+    G_MESSAGES_DEBUG=all io.elementary.installer
 
