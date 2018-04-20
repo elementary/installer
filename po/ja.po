@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-19 18:20-0700\n"
-"PO-Revision-Date: 2018-04-20 11:13+0000\n"
+"PO-Revision-Date: 2018-04-20 16:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
@@ -109,19 +109,19 @@ msgstr ""
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
-msgstr "推奨要件："
+msgstr "推奨要件:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr "お使いのデバイス："
+msgstr "お使いのデバイス:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr "プロセッサー："
+msgstr "プロセッサー:"
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
-msgstr "メモリー："
+msgstr "メモリー:"
 
 #: src/Views/DiskView.vala:52
 msgid "Select a Drive"
