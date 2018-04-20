@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 16:59-0700\n"
+"POT-Creation-Date: 2018-04-19 18:20-0700\n"
 "PO-Revision-Date: 2017-12-28 00:07+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/installer/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "%s를 설치합니다"
@@ -126,11 +126,12 @@ msgstr "프로세서:"
 msgid "Memory:"
 msgstr "메모리:"
 
-#: src/Views/DiskView.vala:51
-msgid "Select a drive to use for installation"
-msgstr "설치에 사용할 드라이브를 선택해주세요"
+#: src/Views/DiskView.vala:52
+#, fuzzy
+msgid "Select a Drive"
+msgstr "언어 선택"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -138,11 +139,15 @@ msgstr ""
 "이 작업은 해당 드라이브의 모든 데이터를 지우게 됩니다. 데이터를 백업하지 않으"
 "셨다면, 설치를 취소하고 데모 모드로 사용해 보실 수 있습니다."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "현재 설정을 가져오고 있습니다…"
 
-#: src/Views/DiskView.vala:96
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr ""
+
+#: src/Views/DiskView.vala:103
 msgid "Erase and Install"
 msgstr "지우고 설치하기"
 
@@ -301,6 +306,9 @@ msgstr ""
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr ""
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "설치에 사용할 드라이브를 선택해주세요"
 
 #~ msgid "Restart your device to continue setting up"
 #~ msgstr "설정을 계속 이어가시려면 다시 시작해주세요"

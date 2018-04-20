@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 16:59-0700\n"
+"POT-Creation-Date: 2018-04-19 18:20-0700\n"
 "PO-Revision-Date: 2018-04-01 00:04+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Install %s"
@@ -124,11 +124,12 @@ msgstr "Processor:"
 msgid "Memory:"
 msgstr "Memory:"
 
-#: src/Views/DiskView.vala:51
-msgid "Select a drive to use for installation"
-msgstr "Select a drive to use for installation"
+#: src/Views/DiskView.vala:52
+#, fuzzy
+msgid "Select a Drive"
+msgstr "Select a Language"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -136,11 +137,15 @@ msgstr ""
 "This will erase all data on the selected drive. If you have not backed up "
 "your data, you can cancel the installation and use Demo Mode."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "Getting the current configuration…"
 
-#: src/Views/DiskView.vala:96
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr ""
+
+#: src/Views/DiskView.vala:103
 msgid "Erase and Install"
 msgstr "Erase and Install"
 
@@ -299,6 +304,9 @@ msgstr ""
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr ""
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "Select a drive to use for installation"
 
 #~ msgid "Restart your device to continue setting up"
 #~ msgstr "Restart your device to continue setting up"

@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 16:59-0700\n"
+"POT-Creation-Date: 2018-04-19 18:20-0700\n"
 "PO-Revision-Date: 2018-04-15 00:09+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Portuguese "
-"<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
+"Language-Team: Portuguese <https://weblate.elementary.io/projects/installer/"
+"installer/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Instalar %s"
@@ -125,11 +125,12 @@ msgstr "Processador:"
 msgid "Memory:"
 msgstr "Memória:"
 
-#: src/Views/DiskView.vala:51
-msgid "Select a drive to use for installation"
-msgstr "Selecione uma unidade para a instalação"
+#: src/Views/DiskView.vala:52
+#, fuzzy
+msgid "Select a Drive"
+msgstr "Selecionar um idioma"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -137,11 +138,15 @@ msgstr ""
 "Isto apagará todos os dados da unidade selecionada. Se fez uma cópia de "
 "segurança, pode cancelar a instalação e usar o Modo de Demonstração."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "A obter a configuração atual..."
 
-#: src/Views/DiskView.vala:96
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr ""
+
+#: src/Views/DiskView.vala:103
 msgid "Erase and Install"
 msgstr "Apagar e Instalar"
 
@@ -303,6 +308,9 @@ msgstr ""
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr "Encerrar Modo de Teste"
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "Selecione uma unidade para a instalação"
 
 #~ msgid "Restart your device to continue setting up"
 #~ msgstr "Reinicie o seu dispositivo para continuar a Configuração"

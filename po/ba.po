@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 16:59-0700\n"
+"POT-Creation-Date: 2018-04-19 18:20-0700\n"
 "PO-Revision-Date: 2016-10-11 19:51+0200\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr ""
@@ -115,21 +115,25 @@ msgstr ""
 msgid "Memory:"
 msgstr ""
 
-#: src/Views/DiskView.vala:51
-msgid "Select a drive to use for installation"
+#: src/Views/DiskView.vala:52
+msgid "Select a Drive"
 msgstr ""
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr ""
 
-#: src/Views/DiskView.vala:96
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr ""
+
+#: src/Views/DiskView.vala:103
 msgid "Erase and Install"
 msgstr ""
 

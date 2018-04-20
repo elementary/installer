@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 16:59-0700\n"
+"POT-Creation-Date: 2018-04-19 18:20-0700\n"
 "PO-Revision-Date: 2017-11-17 05:22+0000\n"
 "Last-Translator: Subhadeep Jasu <subhajasu@gmail.com>\n"
 "Language-Team: Bengali <https://weblate.elementary.io/projects/installer/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "%s ইনস্টল করুন"
@@ -127,11 +127,12 @@ msgstr "প্রসেসর:"
 msgid "Memory:"
 msgstr "মেমরি (RAM):"
 
-#: src/Views/DiskView.vala:51
-msgid "Select a drive to use for installation"
-msgstr "ইন্সটলেশনের জন্য একটি ড্রাইভ বেছে নিন"
+#: src/Views/DiskView.vala:52
+#, fuzzy
+msgid "Select a Drive"
+msgstr "একটি ভাষা বেছে নিন"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -140,11 +141,15 @@ msgstr ""
 "সুরক্ষিত উপায় সংরক্ষিত না করে থাকেন, তাহলে আপনি ইন্টিস্টল্যাশন বাতিল করে ডেমো মোড "
 "ব্যাবহার করতে পারেন।"
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "বর্তমান কনফিগারেশন সম্বন্ধে তথ্য সংগ্রহ করা হচ্ছে…"
 
-#: src/Views/DiskView.vala:96
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr ""
+
+#: src/Views/DiskView.vala:103
 msgid "Erase and Install"
 msgstr "সব মুছে ইনস্টল করুন"
 
@@ -305,6 +310,9 @@ msgstr ""
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr ""
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "ইন্সটলেশনের জন্য একটি ড্রাইভ বেছে নিন"
 
 #~ msgid "Restart your device to continue setting up"
 #~ msgstr "সেট আপ বজায় রাখার জন্য আপনার ডিভাইস পুনরায় চালু করুন"

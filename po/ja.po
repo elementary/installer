@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 16:59-0700\n"
+"POT-Creation-Date: 2018-04-19 18:20-0700\n"
 "PO-Revision-Date: 2018-04-12 07:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
+"installer/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "%s をインストール"
@@ -123,11 +123,12 @@ msgstr "プロセッサー："
 msgid "Memory:"
 msgstr "メモリー："
 
-#: src/Views/DiskView.vala:51
-msgid "Select a drive to use for installation"
-msgstr "インストールに使用するドライブを選択してください"
+#: src/Views/DiskView.vala:52
+#, fuzzy
+msgid "Select a Drive"
+msgstr "言語の選択"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -136,11 +137,15 @@ msgstr ""
 "バックアップしていない場合、インストールをキャンセルしてデモモードを使用する"
 "ことができます。"
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "現在の設定を取得中…"
 
-#: src/Views/DiskView.vala:96
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr ""
+
+#: src/Views/DiskView.vala:103
 msgid "Erase and Install"
 msgstr "削除してインストール"
 
@@ -154,7 +159,8 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s のインストールは失敗しました。これはハードウェアのエラーが原因と思われます。お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すこ"
+"%s のインストールは失敗しました。これはハードウェアのエラーが原因と思われま"
+"す。お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すこ"
 "とができます。"
 
 #: src/Views/ErrorView.vala:52
@@ -264,8 +270,9 @@ msgid ""
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
-"デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデータは変更されません。パフォーマンスと機能はインストールされた環境を反映すること"
-"はありません。"
+"デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデー"
+"タは変更されません。パフォーマンスと機能はインストールされた環境を反映するこ"
+"とはありません。"
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -288,11 +295,16 @@ msgstr "お使いのデバイスは %i 秒後に自動的に %s を再起動し�
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
-msgstr "再起動後は新しいユーザーをセットアップすることができます。あるいは、今はシャットダウンして、後でユーザーをセットアップすることもできます。"
+msgstr ""
+"再起動後は新しいユーザーをセットアップすることができます。あるいは、今は"
+"シャットダウンして、後でユーザーをセットアップすることもできます。"
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr "テストモードのシャットダウン"
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "インストールに使用するドライブを選択してください"
 
 #~ msgid "Restart your device to continue setting up"
 #~ msgstr "セットアップを続行するにはお使いのデバイスを再起動してください"

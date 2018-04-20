@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 16:59-0700\n"
+"POT-Creation-Date: 2018-04-19 18:20-0700\n"
 "PO-Revision-Date: 2018-04-14 15:05+0000\n"
 "Last-Translator: Jörg Arnold <j0ar@posteo.de>\n"
-"Language-Team: German "
-"<https://weblate.elementary.io/projects/installer/installer/de/>\n"
+"Language-Team: German <https://weblate.elementary.io/projects/installer/"
+"installer/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Installiere %s"
@@ -128,12 +128,12 @@ msgstr "Prozessor:"
 msgid "Memory:"
 msgstr "Arbeitsspeicher:"
 
-#: src/Views/DiskView.vala:51
-msgid "Select a drive to use for installation"
-msgstr ""
-"Wählen Sie ein Laufwerk aus, das für die Installation verwendet werden soll"
+#: src/Views/DiskView.vala:52
+#, fuzzy
+msgid "Select a Drive"
+msgstr "Sprache wählen"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -142,11 +142,15 @@ msgstr ""
 "noch nicht gesichert haben, können Sie die Installation abbrechen und den "
 "Test-Modus verwenden."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "Lädt die aktuelle Konfiguration…"
 
-#: src/Views/DiskView.vala:96
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr ""
+
+#: src/Views/DiskView.vala:103
 msgid "Erase and Install"
 msgstr "Löschen und Installieren"
 
@@ -305,6 +309,11 @@ msgstr ""
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr "Test-Modus Herunterfahren"
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr ""
+#~ "Wählen Sie ein Laufwerk aus, das für die Installation verwendet werden "
+#~ "soll"
 
 #~ msgid "Restart your device to continue setting up"
 #~ msgstr "Starten Sie Ihren Rechner neu, um die Einrichtung fortzusetzen"
