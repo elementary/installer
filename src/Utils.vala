@@ -19,6 +19,8 @@
  */
 
 namespace Utils {
+    private SystemInterface system_interface;
+
     public string string_from_utf8 (uint8[] input) {
         var builder = new GLib.StringBuilder.sized (input.length);
         builder.append_len ((string) input, input.length);
@@ -49,7 +51,6 @@ namespace Utils {
         return os_pretty_name;
     }
 
-    private SystemInterface system_interface;
     public void shutdown () {
         if (Installer.App.test_mode) {
             critical (_("Test mode shutdown"));
@@ -70,6 +71,23 @@ namespace Utils {
                 system_interface.reboot (false);
             } catch (IOError e) {
                 critical (e.message);
+            }
+        }
+    }
+    
+    private void demo_mode () {
+        try {
+            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+        } catch (IOError e) {
+            critical (e.message);
+        }
+
+        var seat = Utils.get_seat_instance ();
+        if (seat != null) {
+            try {
+                seat.switch_to_guest ("");
+            } catch (IOError e) {
+                stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
             }
         }
     }

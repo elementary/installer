@@ -18,15 +18,8 @@
 
 public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
-    private Utils.SystemInterface system_interface;
 
     construct {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-            critical (e.message);
-        }
-
         var image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
@@ -106,16 +99,7 @@ public class TryInstallView : AbstractInstallerView {
 
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
-        demo_button.clicked.connect (() => {
-            var seat = Utils.get_seat_instance ();
-            if (seat != null) {
-                try {
-                    seat.switch_to_guest ("");
-                } catch (IOError e) {
-                    stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
-                }
-            }
-        });
+        demo_button.clicked.connect (Utils.demo_mode);
 
         next_button.clicked.connect (() => next_step ());
 
