@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2017–2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,11 +64,14 @@ public class EndSessionDialog : Gtk.Dialog {
         get_content_area ().add (grid);
 
         var restart_button = (Gtk.Button) add_button (_("Restart"), Gtk.ResponseType.OK);
+        restart_button.clicked.connect (Utils.restart);
 
         var cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+        cancel_button.clicked.connect (() => destroy ());
 
         var shutdown_button = (Gtk.Button) add_button (_("Shut Down"), Gtk.ResponseType.OK);
         shutdown_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        shutdown_button.clicked.connect (Utils.shutdown);
 
         var action_area = get_action_area ();
         action_area.margin = 6;
@@ -76,23 +79,6 @@ public class EndSessionDialog : Gtk.Dialog {
 
         set_keep_above (true);
         stick ();
-
-        cancel_button.clicked.connect (() => destroy ());
-
-        restart_button.clicked.connect (() => {
-            try {
-                system_interface.reboot (false);
-            } catch (IOError e) {
-                critical (e.message);
-            }
-        });
-
-        shutdown_button.clicked.connect (() => {
-            try {
-                system_interface.power_off (false);
-            } catch (IOError e) {
-                warning ("%s", e.message);
-            }
-        });
     }
 }
+

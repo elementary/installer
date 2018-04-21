@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2016–2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,6 +49,31 @@ namespace Utils {
         return os_pretty_name;
     }
 
+    private SystemInterface system_interface;
+    public void shutdown () {
+        if (Installer.App.test_mode) {
+            critical (_("Test mode shutdown"));
+        } else {
+            try {
+                system_interface.power_off (false);
+            } catch (IOError e) {
+                critical (e.message);
+            }
+        }
+    }
+
+    private void restart () {
+        if (Installer.App.test_mode) {
+            critical (_("Test mode reboot"));
+        } else {
+            try {
+                system_interface.reboot (false);
+            } catch (IOError e) {
+                critical (e.message);
+            }
+        }
+    }
+
     [DBus (name = "org.freedesktop.login1.Manager")]
     interface SystemInterface : Object {
         public abstract void reboot (bool interactive) throws IOError;
@@ -74,3 +99,4 @@ namespace Utils {
         return seat_instance;
     }
 }
+

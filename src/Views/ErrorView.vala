@@ -129,17 +129,7 @@ public class ErrorView : AbstractInstallerView {
             }
         });
 
-        restart_button.clicked.connect (() => {
-            if (Installer.App.test_mode) {
-                critical (_("Test mode reboot"));
-            } else {
-                try {
-                    system_interface.reboot (false);
-                } catch (IOError e) {
-                    critical (e.message);
-                }
-            }
-        });
+        restart_button.clicked.connect (Utils.restart);
 
         demo_button.clicked.connect (() => {
             if (Installer.App.test_mode) {
