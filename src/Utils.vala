@@ -82,12 +82,16 @@ namespace Utils {
             critical (e.message);
         }
 
-        var seat = Utils.get_seat_instance ();
-        if (seat != null) {
-            try {
-                seat.switch_to_guest ("");
-            } catch (IOError e) {
-                stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+        if (Installer.App.test_mode) {
+            critical (_("Test mode switch user"));
+        } else {
+            var seat = Utils.get_seat_instance ();
+            if (seat != null) {
+                try {
+                    seat.switch_to_guest ("");
+                } catch (IOError e) {
+                    stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+                }
             }
         }
     }

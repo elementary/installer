@@ -131,20 +131,7 @@ public class ErrorView : AbstractInstallerView {
 
         restart_button.clicked.connect (Utils.restart);
 
-        demo_button.clicked.connect (() => {
-            if (Installer.App.test_mode) {
-                critical (_("Test mode switch user"));
-            } else {
-                var seat = Utils.get_seat_instance ();
-                if (seat != null) {
-                    try {
-                        seat.switch_to_guest ("");
-                    } catch (IOError e) {
-                        stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
-                    }
-                }
-            }
-        });
+        demo_button.clicked.connect (Utils.demo_mode);
 
         install_button.clicked.connect (() => {
             ((Gtk.Stack) get_parent ()).visible_child = previous_view;
