@@ -3,29 +3,31 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-19 18:20-0700\n"
-"PO-Revision-Date: 2016-05-27 15:28+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-04-21 12:55+0000\n"
+"Last-Translator: Morteza Khazamipour <mormoroth@gmail.com>\n"
+"Language-Team: Persian "
+"<https://weblate.elementary.io/projects/installer/installer/fa/>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
-msgstr ""
+msgstr "%s نصب"
 
 #: src/Utils.vala:31
 msgid "Operating System"
-msgstr ""
+msgstr "سیستم عامل"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
 #, c-format
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
@@ -33,44 +35,44 @@ msgstr ""
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr ""
+msgstr "شروع نصب"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "آیا از خاموش کردن سیستم اطمینان دارید ؟"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "با این عمل نصب کنسل خواهد شد و دستگاه خاموش میگردد."
 
 #: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
-msgstr ""
+msgstr "ریستارت"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "کنسل"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:63
 msgid "Shut Down"
-msgstr ""
+msgstr "خاموش کردن"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
-msgstr ""
+msgstr "انصراف از نصب"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
-msgstr ""
+msgstr "حالت آزمایشی"
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
-msgstr ""
+msgstr "بیخیال"
 
 #: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
-msgstr ""
+msgstr "فضای خالی موجود نیست"
 
 #: src/Views/CheckView.vala:204
 #, c-format
@@ -78,68 +80,76 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"فضای خالی در دستگاه شما برای نصب %s نیست. پیشنهاد ما حداقل %s فضا برای نصب "
+"است."
 
 #: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "دستگاه شما شاید خیلی کند است"
 
 #: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"دستگاه شما حداقل نیازهای نصب را ندارد. ممکن است سیستم شما کند شود ویا هنگ "
+"کند."
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "به برق وصل کنید"
 
 #: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"دستگاه شما در حالت استفاده از باطری است. پیشنهاد میشود در حال نصب به برق وصل "
+"شود."
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
-msgstr ""
+msgstr "پیشنهاد شده:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr ""
+msgstr "دستگاه شما:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr ""
+msgstr "پردازنده:"
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
-msgstr ""
+msgstr "حافضه رم:"
 
 #: src/Views/DiskView.vala:52
 msgid "Select a Drive"
-msgstr ""
+msgstr "یک دیسک را انتخاب کنید"
 
 #: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"این تمام اطلاعات روی دیسک انتخاب شده را پاک خواهد کرد. اگر از اطلاعات خود "
+"پشتیبان نگرفته ایید، میتوانید نصب را لغو کنید و از حالت دمو استفاده کنید."
 
 #: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "در حال گرفتن پیکره بندی کنونی …"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "شخصی سازی پارتیشن ها…"
 
 #: src/Views/DiskView.vala:103
 msgid "Erase and Install"
-msgstr ""
+msgstr "پاک کردن و نصب"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
-msgstr ""
+msgstr "عدم توانایی در نصب"
 
 #: src/Views/ErrorView.vala:46
 #, c-format
@@ -147,106 +157,109 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
+"نصب %s انجام نشد، احتمالا به دلیل خطای سخت افزاری. دستگاه شما احتمالا به "
+"درستی بارگذاری نگردد. میتوانید راه حل زیر را امتحان کنید:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
-msgstr ""
+msgstr "نصب کردن دوباره"
 
 #: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "از حالت دمو استفاده کنید و بصورت دستی بازیابی را انجام دهید"
 
 #: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "دستگاه خود را بارگذاری مجدد کنید تا از درایو دیگری بوت شود"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
-msgstr ""
+msgstr "راه اندازی مجدد دستگاه"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "حالت دمو"
 
 #: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
-msgstr ""
+msgstr "مجددا تلاش برای نصب کنید"
 
 #: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
 msgid "Test mode reboot"
-msgstr ""
+msgstr "راه اندازی مجدد حالت تست"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
-msgstr ""
+msgstr "تغییر کاربری حالت تست"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "قالب صفحه کلید"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "برای تست قالب چیزی بنویسید"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "نمایش قالب صفحه کلید"
 
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
-#, fuzzy
 msgid "Back"
-msgstr "Backspace"
+msgstr "پشت"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:161
 msgid "Select"
-msgstr ""
+msgstr "انتخاب"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
-msgstr ""
+msgstr "پیشفرض"
 
 #: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
-msgstr ""
+msgstr "زبان ورودی"
 
 #: src/Views/LanguageView.vala:217
 msgid "Languages"
-msgstr ""
+msgstr "زبان ها"
 
 #: src/Views/LanguageView.vala:234
 msgid "Select a Language"
-msgstr ""
+msgstr "انتخاب زبان"
 
 #: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
-msgstr ""
+msgstr "زبان فعلی فعال"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "جزء بندی فضای حافضه"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
-msgstr ""
+msgstr "استخراج فایل ها"
 
 #: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
-msgstr ""
+msgstr "پیکره بندی سیستم"
 
 #: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "اتمام نصب"
 
 #: src/Views/TryInstallView.vala:33
 msgid "Install or Try Demo Mode"
-msgstr ""
+msgstr "نصب یا استفاده از حالت دمو"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"میتوانید %s را الان روی این دستگاه نصب کنید، یا از نسخه ی دمو بدون نصب "
+"استفاده کنید."
 
 #: src/Views/TryInstallView.vala:53
 msgid ""
@@ -254,31 +267,36 @@ msgid ""
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
+"در نسخه دمو، تغییراتی که میدهید ذخیره نخواهد شد و اطلاعات سیستم عامل قبلی "
+"بدون تغییر خواهد ماند. کارایی و ویژگی ها همانند نسخه نصبی قابل لمس نخواهد "
+"بود."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
-msgstr ""
+msgstr "همیشه میتوانید به فرایند نصب با انتخاب ایکون نصب بروید."
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "ادامه ی راه اندازی"
 
 #: src/Views/SuccessView.vala:42
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
+msgstr "دستگاه شما بصورت خودکار بارگذاری مجدد میشود به %s در %i ثانیه."
 
 #: src/Views/SuccessView.vala:43
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"بعد از بارگذاری میتوانید نام کاربری جدید بسازید، یا خاموش کنید و بعدا نام "
+"کاربری را انتخاب کنید."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "خاموش کردن حالت تست"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
