@@ -74,7 +74,7 @@ namespace Utils {
             }
         }
     }
-    
+
     private void demo_mode () {
         try {
             system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
