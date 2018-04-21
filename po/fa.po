@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-19 18:20-0700\n"
-"PO-Revision-Date: 2018-04-21 12:55+0000\n"
+"PO-Revision-Date: 2018-04-22 00:04+0000\n"
 "Last-Translator: Morteza Khazamipour <mormoroth@gmail.com>\n"
 "Language-Team: Persian "
 "<https://weblate.elementary.io/projects/installer/installer/fa/>\n"
@@ -47,11 +47,11 @@ msgstr "با این عمل نصب کنسل خواهد شد و دستگاه خا�
 
 #: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
-msgstr "ریستارت"
+msgstr "بارگذاری مجدد"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr "کنسل"
+msgstr "لغو"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:63
@@ -68,7 +68,7 @@ msgstr "حالت آزمایشی"
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
-msgstr "بیخیال"
+msgstr "نادیده بگیر"
 
 #: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
@@ -92,8 +92,8 @@ msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"دستگاه شما حداقل نیازهای نصب را ندارد. ممکن است سیستم شما کند شود ویا هنگ "
-"کند."
+"دستگاه شما حداقل نیازهای سخت افزاری نصب را ندارد. ممکن است سیستم شما کند شود "
+"ویا هنگ کند."
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
@@ -158,11 +158,11 @@ msgid ""
 "restart properly. You can try the following:"
 msgstr ""
 "نصب %s انجام نشد، احتمالا به دلیل خطای سخت افزاری. دستگاه شما احتمالا به "
-"درستی بارگذاری نگردد. میتوانید راه حل زیر را امتحان کنید:"
+"درستی بارگذاری مجدد نگردد. میتوانید راه حل زیر را امتحان کنید:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
-msgstr "نصب کردن دوباره"
+msgstr "دوباره برای نصب کردن تلاش کنید"
 
 #: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
@@ -206,7 +206,7 @@ msgstr "نمایش قالب صفحه کلید"
 
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
 msgid "Back"
-msgstr "پشت"
+msgstr "بازگشت"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:161
@@ -231,11 +231,11 @@ msgstr "انتخاب زبان"
 
 #: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
-msgstr "زبان فعلی فعال"
+msgstr "زبان فعال کنونی"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr "جزء بندی فضای حافضه"
+msgstr "پارتشن بندی فضای حافظه"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
@@ -275,7 +275,7 @@ msgstr ""
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
-msgstr "همیشه میتوانید به فرایند نصب با انتخاب ایکون نصب بروید."
+msgstr "همیشه میتوانید در حالت دمو به فرایند نصب بروید با انتخاب ایکون نصب."
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
