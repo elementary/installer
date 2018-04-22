@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-19 18:20-0700\n"
-"PO-Revision-Date: 2018-04-22 06:46+0000\n"
+"PO-Revision-Date: 2018-04-23 00:09+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/installer/installer/pl/>\n"
@@ -290,8 +290,7 @@ msgstr "Kontynuuj ustawianie"
 #: src/Views/SuccessView.vala:42
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"Twoje urządzenie zostanie uruchomione automatycznie za %i sekund do %s."
+msgstr "Twoje urządzenie zostanie uruchomione automatycznie do %s za %i sekund."
 
 #: src/Views/SuccessView.vala:43
 msgid ""
