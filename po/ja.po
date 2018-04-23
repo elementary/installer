@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-04-12 07:10+0000\n"
+"POT-Creation-Date: 2018-04-23 13:06-0700\n"
+"PO-Revision-Date: 2018-04-20 16:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
+"installer/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "%s をインストール"
@@ -109,25 +109,25 @@ msgstr ""
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
-msgstr "推奨要件："
+msgstr "推奨要件:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr "お使いのデバイス："
+msgstr "お使いのデバイス:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr "プロセッサー："
+msgstr "プロセッサー:"
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
-msgstr "メモリー："
+msgstr "メモリー:"
 
-#: src/Views/DiskView.vala:51
-msgid "Select a drive to use for installation"
-msgstr "インストールに使用するドライブを選択してください"
+#: src/Views/DiskView.vala:52
+msgid "Select a Drive"
+msgstr "ドライブの選択"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -136,13 +136,75 @@ msgstr ""
 "バックアップしていない場合、インストールをキャンセルしてデモモードを使用する"
 "ことができます。"
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "現在の設定を取得中…"
 
-#: src/Views/DiskView.vala:96
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr "パーティションをカスタマイズ…"
+
+#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
 msgstr "削除してインストール"
+
+#: src/Views/EncryptView.vala:47
+msgid "Drive Encryption"
+msgstr ""
+
+#: src/Views/EncryptView.vala:53
+msgid ""
+"Encrypting this drive protects data from being read by others with physical "
+"access to this device."
+msgstr ""
+
+#: src/Views/EncryptView.vala:60
+msgid ""
+"Drive encryption may minimally impact read and write speed when performing "
+"intense tasks."
+msgstr ""
+
+#: src/Views/EncryptView.vala:67
+msgid ""
+"The encryption password will be required each time you turn on this device "
+"or restart."
+msgstr ""
+
+#: src/Views/EncryptView.vala:83
+msgid ""
+"If you forget the encryption password, <b>you will not be able to recover "
+"data.</b> This is a unique password for this device, not the password for "
+"your user account."
+msgstr ""
+
+#: src/Views/EncryptView.vala:90
+msgid "Choose Encryption Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:105
+msgid "Confirm Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:141
+msgid "Don't Encrypt"
+msgstr ""
+
+#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/TryInstallView.vala:89
+msgid "Back"
+msgstr "戻る"
+
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+msgid "Choose Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:168
+msgid "Set Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:231
+msgid "Passwords do not match"
+msgstr ""
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -154,7 +216,8 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s のインストールは失敗しました。これはハードウェアのエラーが原因と思われます。お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すこ"
+"%s のインストールは失敗しました。これはハードウェアのエラーが原因と思われま"
+"す。お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すこ"
 "とができます。"
 
 #: src/Views/ErrorView.vala:52
@@ -201,10 +264,6 @@ msgstr "入力してレイアウトを試してください"
 msgid "Show keyboard layout"
 msgstr "キーボードレイアウトを表示"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
-msgid "Back"
-msgstr "戻る"
-
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:161
 msgid "Select"
@@ -229,6 +288,31 @@ msgstr "言語の選択"
 #: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
 msgstr "現在使用可能な言語"
+
+#: src/Views/PartitioningView.vala:46
+msgid ""
+"Select which partitions to use across all drives. <b>Selecting \"Format\" "
+"will erase ALL data on the selected partition.</b>"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:52
+msgid "You must at least select a <b>Root (/)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:56
+msgid ""
+"You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
+"efi)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:60
+msgid "It is also recommended to select a <b>Swap</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:89
+#, fuzzy
+msgid "Modify Partitions…"
+msgstr "パーティションをカスタマイズ…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -264,8 +348,9 @@ msgid ""
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
-"デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデータは変更されません。パフォーマンスと機能はインストールされた環境を反映すること"
-"はありません。"
+"デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデー"
+"タは変更されません。パフォーマンスと機能はインストールされた環境を反映するこ"
+"とはありません。"
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -288,11 +373,97 @@ msgstr "お使いのデバイスは %i 秒後に自動的に %s を再起動し�
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
-msgstr "再起動後は新しいユーザーをセットアップすることができます。あるいは、今はシャットダウンして、後でユーザーをセットアップすることもできます。"
+msgstr ""
+"再起動後は新しいユーザーをセットアップすることができます。あるいは、今は"
+"シャットダウンして、後でユーザーをセットアップすることもできます。"
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr "テストモードのシャットダウン"
+
+#: src/Widgets/DecryptMenu.vala:54
+msgid "Decrypt This Partition"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:58
+msgid "Enter the partition's encryption password and set a LUKS device name."
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:71
+msgid "Password:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:84
+msgid "Device name:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:97
+msgid "Decrypt"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:125
+msgid "LUKS volume was decrypted"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:127
+#, c-format
+msgid "%s (%s)"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:128
+#, c-format
+msgid "%s (%s: <b>%s</b>)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:60
+msgid "Use partition:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:71
+msgid "Format:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:81
+msgid "Use as:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:87
+#, fuzzy
+msgid "Root (/)"
+msgstr "平方根"
+
+#: src/Widgets/PartitionMenu.vala:88
+msgid "Home (/home)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:89
+#, c-format
+msgid "Boot (%s)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:90
+msgid "Swap"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:91
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:95
+msgid "Custom:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:103
+msgid "Filesystem:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:109
+#, fuzzy
+msgid "Default (ext4)"
+msgstr "規定"
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "インストールに使用するドライブを選択してください"
 
 #~ msgid "Restart your device to continue setting up"
 #~ msgstr "セットアップを続行するにはお使いのデバイスを再起動してください"
@@ -375,9 +546,6 @@ msgstr "テストモードのシャットダウン"
 
 #~ msgid "Exponent"
 #~ msgstr "指数"
-
-#~ msgid "Root"
-#~ msgstr "平方根"
 
 #~ msgid "Sine"
 #~ msgstr "サイン"

@@ -1,6 +1,7 @@
 src/Application.vala
 src/MainWindow.vala
 src/Utils.vala
+src/Helpers/Inhibitor.vala
 src/Helpers/KeyboardLayoutHelper.vala
 src/Helpers/LocaleHelper.vala
 src/Helpers/LogHelper.vala
@@ -12,12 +13,18 @@ src/Objects/Recovery.vala
 src/Views/AbstractInstallerView.vala
 src/Views/CheckView.vala
 src/Views/DiskView.vala
+src/Views/EncryptView.vala
 src/Views/ErrorView.vala
 src/Views/KeyboardLayoutView.vala
 src/Views/LanguageView.vala
+src/Views/PartitioningView.vala
 src/Views/ProgressView.vala
 src/Views/TryInstallView.vala
 src/Views/SuccessView.vala
+src/Widgets/DecryptMenu.vala
+src/Widgets/DiskBar.vala
 src/Widgets/DiskGrid.vala
 src/Widgets/LayoutWidget.vala
+src/Widgets/PartitionBar.vala
+src/Widgets/PartitionMenu.vala
 src/Widgets/VariantWidget.vala

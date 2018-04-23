@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 16:59-0700\n"
-"PO-Revision-Date: 2018-03-22 13:40+0000\n"
+"POT-Creation-Date: 2018-04-23 13:06-0700\n"
+"PO-Revision-Date: 2018-04-13 15:58+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
 "installer/installer/en_CA/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: src/MainWindow.vala:43 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Install %s"
@@ -123,11 +123,12 @@ msgstr "Processor:"
 msgid "Memory:"
 msgstr "Memory:"
 
-#: src/Views/DiskView.vala:51
-msgid "Select a drive to use for installation"
-msgstr "Select a drive to use for installation"
+#: src/Views/DiskView.vala:52
+#, fuzzy
+msgid "Select a Drive"
+msgstr "Select a Language"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -135,27 +136,88 @@ msgstr ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "Getting the current configuration…"
 
-#: src/Views/DiskView.vala:96
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr ""
+
+#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
 msgstr "Erase and Install"
 
+#: src/Views/EncryptView.vala:47
+msgid "Drive Encryption"
+msgstr ""
+
+#: src/Views/EncryptView.vala:53
+msgid ""
+"Encrypting this drive protects data from being read by others with physical "
+"access to this device."
+msgstr ""
+
+#: src/Views/EncryptView.vala:60
+msgid ""
+"Drive encryption may minimally impact read and write speed when performing "
+"intense tasks."
+msgstr ""
+
+#: src/Views/EncryptView.vala:67
+msgid ""
+"The encryption password will be required each time you turn on this device "
+"or restart."
+msgstr ""
+
+#: src/Views/EncryptView.vala:83
+msgid ""
+"If you forget the encryption password, <b>you will not be able to recover "
+"data.</b> This is a unique password for this device, not the password for "
+"your user account."
+msgstr ""
+
+#: src/Views/EncryptView.vala:90
+msgid "Choose Encryption Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:105
+msgid "Confirm Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:141
+msgid "Don't Encrypt"
+msgstr ""
+
+#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/TryInstallView.vala:89
+msgid "Back"
+msgstr "Back"
+
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+msgid "Choose Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:168
+msgid "Set Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:231
+msgid "Passwords do not match"
+msgstr ""
+
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Could not install %s"
+msgstr "Could Not Install"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"The installation failed, so your device may not restart properly. You can "
-"try one of the following:"
+"Installing %s failed, possibly due to a hardware error. Your device may not "
+"restart properly. You can try the following:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -186,9 +248,8 @@ msgid "Test mode reboot"
 msgstr "Test mode reboot"
 
 #: src/Views/ErrorView.vala:146
-#, fuzzy
 msgid "Test mode switch user"
-msgstr "Test mode shutdown"
+msgstr "Test mode switch user"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -201,10 +262,6 @@ msgstr "Type to test your layout"
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
 msgstr "Show keyboard layout"
-
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
-msgid "Back"
-msgstr "Back"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:161
@@ -230,6 +287,30 @@ msgstr "Select a Language"
 #: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
 msgstr "Currently active language"
+
+#: src/Views/PartitioningView.vala:46
+msgid ""
+"Select which partitions to use across all drives. <b>Selecting \"Format\" "
+"will erase ALL data on the selected partition.</b>"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:52
+msgid "You must at least select a <b>Root (/)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:56
+msgid ""
+"You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
+"efi)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:60
+msgid "It is also recommended to select a <b>Swap</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:89
+msgid "Modify Partitions…"
+msgstr ""
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -259,14 +340,14 @@ msgstr ""
 "You can install %s on this device now, or try Demo Mode without installing."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged."
+"operating system will be unchanged. Performance and features may not reflect "
+"the installed experience."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -278,27 +359,108 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Continue Setting Up"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"Your device will automatically restart to %s in 30 seconds to set up a new "
-"user, or you can shut down now and set a user up later."
+msgstr "Your device will automatically restart to %s in %i seconds."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Your device will automatically restart to %s in 30 seconds to set up a new "
-"user, or you can shut down now and set a user up later."
+"After restarting you can set up a new user, or you can shut down now and set "
+"up a new user later."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr "Test mode shutdown"
+
+#: src/Widgets/DecryptMenu.vala:54
+msgid "Decrypt This Partition"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:58
+msgid "Enter the partition's encryption password and set a LUKS device name."
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:71
+msgid "Password:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:84
+msgid "Device name:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:97
+msgid "Decrypt"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:125
+msgid "LUKS volume was decrypted"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:127
+#, c-format
+msgid "%s (%s)"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:128
+#, c-format
+msgid "%s (%s: <b>%s</b>)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:60
+msgid "Use partition:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:71
+msgid "Format:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:81
+msgid "Use as:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:87
+#, fuzzy
+msgid "Root (/)"
+msgstr "Root"
+
+#: src/Widgets/PartitionMenu.vala:88
+msgid "Home (/home)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:89
+#, c-format
+msgid "Boot (%s)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:90
+msgid "Swap"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:91
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:95
+msgid "Custom:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:103
+msgid "Filesystem:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:109
+#, fuzzy
+msgid "Default (ext4)"
+msgstr "Default"
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "Select a drive to use for installation"
 
 #~ msgid "Restart your device to continue setting up"
 #~ msgstr "Restart your device to continue setting up"
@@ -373,9 +535,6 @@ msgstr "Test mode shutdown"
 
 #~ msgid "Exponent"
 #~ msgstr "Exponent"
-
-#~ msgid "Root"
-#~ msgstr "Root"
 
 #~ msgid "Sine"
 #~ msgstr "Sine"
