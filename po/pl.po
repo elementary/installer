@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-23 00:09+0000\n"
+"PO-Revision-Date: 2018-04-23 20:39+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
-"Language-Team: Polish <https://weblate.elementary.io/projects/installer/"
-"installer/pl/>\n"
+"Language-Team: Polish "
+"<https://weblate.elementary.io/projects/installer/installer/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -152,7 +152,7 @@ msgstr "Wyczyść i zainstaluj"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Szyfrowanie napędu"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
@@ -181,15 +181,15 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Wybierz hasło szyfrowania"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Potwierdź hasło"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Nie szyfruj"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -198,15 +198,15 @@ msgstr "Cofnij"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Wybierz hasło"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Ustaw hasło"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Hasła do siebie nie pasują"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -312,9 +312,8 @@ msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr ""
 
 #: src/Views/PartitioningView.vala:89
-#, fuzzy
 msgid "Modify Partitions…"
-msgstr "Dostosowanie partycji…"
+msgstr "Modyfikacja partycji…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -431,9 +430,8 @@ msgid "Use as:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Pierwiastek"
+msgstr "Główna (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
@@ -461,9 +459,8 @@ msgid "Filesystem:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Domyślny"
+msgstr "Domyślny (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Wybierz napęd do użycia w instalacji"
