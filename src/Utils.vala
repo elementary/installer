@@ -59,7 +59,7 @@ namespace Utils {
 
             try {
                 system_interface.power_off (false);
-            } catch (IOError e) {
+            } catch (GLib.Error e) {
                 critical (e.message);
             }
         }
@@ -73,7 +73,7 @@ namespace Utils {
 
             try {
                 system_interface.reboot (false);
-            } catch (IOError e) {
+            } catch (GLib.Error e) {
                 critical (e.message);
             }
         }
@@ -89,7 +89,7 @@ namespace Utils {
             if (seat != null) {
                 try {
                     seat.switch_to_guest ("");
-                } catch (IOError e) {
+                } catch (GLib.Error e) {
                     stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
                 }
             }
@@ -103,21 +103,21 @@ namespace Utils {
 
         try {
             system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
+        } catch (GLib.Error e) {
             warning ("%s", e.message);
         }
     }
 
     [DBus (name = "org.freedesktop.login1.Manager")]
     interface SystemInterface : Object {
-        public abstract void reboot (bool interactive) throws IOError;
-        public abstract void power_off (bool interactive) throws IOError;
+        public abstract void reboot (bool interactive) throws GLib.Error;
+        public abstract void power_off (bool interactive) throws GLib.Error;
     }
 
     [DBus (name = "org.freedesktop.DisplayManager.Seat")]
     public interface SeatInterface : Object {
         public abstract bool has_guest_account { get; }
-        public abstract void switch_to_guest (string session_name) throws IOError;
+        public abstract void switch_to_guest (string session_name) throws GLib.Error;
     }
 
     private static SeatInterface? seat_instance;
@@ -125,7 +125,7 @@ namespace Utils {
         if (seat_instance == null) {
             try {
                 seat_instance = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.DisplayManager", Environment.get_variable ("XDG_SEAT_PATH"), DBusProxyFlags.NONE);
-            } catch (IOError e) {
+            } catch (GLib.Error e) {
                 critical ("DisplayManager.Seat error: %s", e.message);
             }
         }
