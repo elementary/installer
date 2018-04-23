@@ -19,8 +19,6 @@
  */
 
 namespace Utils {
-    private SystemInterface system_interface;
-
     public string string_from_utf8 (uint8[] input) {
         var builder = new GLib.StringBuilder.sized (input.length);
         builder.append_len ((string) input, input.length);
@@ -55,10 +53,10 @@ namespace Utils {
         if (Installer.App.test_mode) {
             critical (_("Test mode shutdown"));
         } else {
-            connect_system_interface ();
+            get_system_instance ();
 
             try {
-                system_interface.power_off (false);
+                system_instance.power_off (false);
             } catch (GLib.Error e) {
                 critical (e.message);
             }
@@ -69,10 +67,10 @@ namespace Utils {
         if (Installer.App.test_mode) {
             critical (_("Test mode reboot"));
         } else {
-            connect_system_interface ();
+            get_system_instance ();
 
             try {
-                system_interface.reboot (false);
+                system_instance.reboot (false);
             } catch (GLib.Error e) {
                 critical (e.message);
             }
@@ -83,7 +81,7 @@ namespace Utils {
         if (Installer.App.test_mode) {
             critical (_("Test mode switch user"));
         } else {
-            connect_system_interface ();
+            get_system_instance ();
 
             var seat = Utils.get_seat_instance ();
             if (seat != null) {
@@ -96,22 +94,21 @@ namespace Utils {
         }
     }
 
-    private static void connect_system_interface () {
-        if (system_interface != null) {
-            return;
-        }
-
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (GLib.Error e) {
-            warning ("%s", e.message);
-        }
-    }
-
     [DBus (name = "org.freedesktop.login1.Manager")]
     interface SystemInterface : Object {
         public abstract void reboot (bool interactive) throws GLib.Error;
         public abstract void power_off (bool interactive) throws GLib.Error;
+    }
+
+    private static SystemInterface? system_instance;
+    private static void get_system_instance () {
+        if (system_instance == null) {
+            try {
+                system_instance = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+            } catch (GLib.Error e) {
+                warning ("%s", e.message);
+            }
+        }
     }
 
     [DBus (name = "org.freedesktop.DisplayManager.Seat")]
