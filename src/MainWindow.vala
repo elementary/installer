@@ -168,19 +168,15 @@ public class Installer.MainWindow : Gtk.Dialog {
         disk_view.next_step.connect (() => load_encrypt_view ());
     }
 
-    private void load_partitioning_view() {
+    private void load_partitioning_view () {
         if (partitioning_view != null) {
             partitioning_view.destroy ();
         }
 
         partitioning_view = new PartitioningView (minimum_disk_size);
-        partitioning_view.previous_view = try_install_view;
+        partitioning_view.previous_view = disk_view;
         stack.add (partitioning_view);
         stack.visible_child = partitioning_view;
-
-        partitioning_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
-        });
 
         partitioning_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
