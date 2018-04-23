@@ -241,11 +241,6 @@ public class ProgressView : AbstractInstallerView {
             value = 0
         };
 
-        var swap_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.MEGABYTE_FROM_END,
-            value = 4096
-        };
-
         var end_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.END,
             value = 0
@@ -256,10 +251,10 @@ public class ProgressView : AbstractInstallerView {
         string? lvm_part = Recovery.lvm_partition();
 
         if (lvm_part == null) {
-            warning ("attempting to find LVM partition automatically");
+            warning ("attempting to find LUKS partition automatically");
 
             foreach (unowned Distinst.Partition part in disk.list_partitions()) {
-                if (part.get_file_system () == Distinst.FileSystemType.LVM || part.get_file_system () == Distinst.FileSystemType.LUKS) {
+                if (part.get_file_system () == Distinst.FileSystemType.LUKS) {
                     lvm_part = Utils.string_from_utf8 (part.get_device_path ());
                     break;
                 }
@@ -350,7 +345,7 @@ public class ProgressView : AbstractInstallerView {
         }
 
         start = lvm_device.get_sector (ref start_sector);
-        end = lvm_device.get_sector (ref swap_sector);
+        end = lvm_device.get_sector (ref end_sector);
 
         result = lvm_device.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
@@ -359,28 +354,19 @@ public class ProgressView : AbstractInstallerView {
         );
 
         if (result != 0) {
-            critical ("unable to add / partition to lvm on %s", recovery_disk);
+            critical ("unable to add / partition to lvm %s on %s", root_vg, recovery_disk);
             return false;
         }
 
-        start = lvm_device.get_sector (ref swap_sector);
-        end = lvm_device.get_sector (ref end_sector);
-
-        result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.SWAP)
-                .name("swap")
-        );
-
-        if (result != 0) {
-            critical ("unable to add swap partition to lvm on %s", recovery_disk);
-            return false;
-        }
+        //TODO: Find swap
 
         return true;
     }
 
     private bool default_disk_configuration (Distinst.Disks disks) {
         unowned Configuration current_config = Configuration.get_default ();
+
+        var lvm = false;
 
         var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
         var root_vg = Distinst.generate_unique_id ("data");
@@ -392,6 +378,7 @@ public class ProgressView : AbstractInstallerView {
         Distinst.LvmEncryption? encryption;
         if (current_config.encryption_password != null) {
             debug ("encrypting");
+            lvm = true;
             encryption = Distinst.LvmEncryption () {
                 physical_volume = encrypted_vg,
                 password = current_config.encryption_password,
@@ -444,21 +431,26 @@ public class ProgressView : AbstractInstallerView {
 
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
-                // This is used to ensure LVM installs will work with BIOS
-                result = disk.add_partition (
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
-                        .partition_type (Distinst.PartitionType.PRIMARY)
-                        .flag (Distinst.PartitionFlag.BOOT)
-                        .mount ("/boot")
-                );
+                if (lvm) {
+                    // This is used to ensure LVM installs will work with BIOS
+                    result = disk.add_partition (
+                        new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                            .partition_type (Distinst.PartitionType.PRIMARY)
+                            .flag (Distinst.PartitionFlag.BOOT)
+                            .mount ("/boot")
+                    );
 
-                if (result != 0) {
-                    critical ("unable to add boot partition to %s", current_config.disk);
-                    return false;
+                    if (result != 0) {
+                        critical ("unable to add boot partition to %s", current_config.disk);
+                        return false;
+                    }
+
+                    start = disk.get_sector (ref boot_sector);
+                    end = disk.get_sector (ref swap_sector);
+                } else {
+                    start = disk.get_sector (ref start_sector);
+                    end = disk.get_sector (ref swap_sector);
                 }
-
-                start = disk.get_sector (ref boot_sector);
-                end = disk.get_sector (ref end_sector);
 
                 break;
             case Distinst.PartitionTable.GPT:
@@ -495,19 +487,43 @@ public class ProgressView : AbstractInstallerView {
                 }
 
                 start = disk.get_sector (ref recovery_sector);
-                end = disk.get_sector (ref end_sector);
+                end = disk.get_sector (ref swap_sector);
 
                 break;
         }
 
+        if (lvm) {
+            result = disk.add_partition (
+                new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
+                    .partition_type (Distinst.PartitionType.PRIMARY)
+                    .logical_volume (root_vg, encryption)
+            );
+
+            if (result != 0) {
+                critical ("unable to add lvm partition to %s", current_config.disk);
+                return false;
+            }
+        } else {
+            result = disk.add_partition (
+                new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                    .mount ("/")
+            );
+
+            if (result != 0) {
+                critical ("unable to add / partition to %s", current_config.disk);
+                return false;
+            }
+        }
+
+        start = disk.get_sector (ref swap_sector);
+        end = disk.get_sector (ref end_sector);
+
         result = disk.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
-                .partition_type (Distinst.PartitionType.PRIMARY)
-                .logical_volume (root_vg, encryption)
+            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.SWAP)
         );
 
         if (result != 0) {
-            critical ("unable to add lvm partition to %s", current_config.disk);
+            critical ("unable to add swap partition to %s", current_config.disk);
             return false;
         }
 
@@ -520,38 +536,27 @@ public class ProgressView : AbstractInstallerView {
             return false;
         }
 
-        unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
+        if (lvm) {
+            unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
 
-        if (lvm_device == null) {
-            critical ("unable to find '%s' volume group on %s", root_vg, current_config.disk);
-            return false;
-        }
+            if (lvm_device == null) {
+                critical ("unable to find '%s' volume group on %s", root_vg, current_config.disk);
+                return false;
+            }
 
-        start = lvm_device.get_sector (ref start_sector);
-        end = lvm_device.get_sector (ref swap_sector);
+            start = lvm_device.get_sector (ref start_sector);
+            end = lvm_device.get_sector (ref end_sector);
 
-        result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
-                .name("root")
-                .mount ("/")
-        );
+            result = lvm_device.add_partition (
+                new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                    .name("root")
+                    .mount ("/")
+            );
 
-        if (result != 0) {
-            critical ("unable to add / partition to lvm on %s", current_config.disk);
-            return false;
-        }
-
-        start = lvm_device.get_sector (ref swap_sector);
-        end = lvm_device.get_sector (ref end_sector);
-
-        result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.SWAP)
-                .name("swap")
-        );
-
-        if (result != 0) {
-            critical ("unable to add swap partition to lvm on %s", current_config.disk);
-            return false;
+            if (result != 0) {
+                critical ("unable to add / partition to lvm %s on %s", root_vg, current_config.disk);
+                return false;
+            }
         }
 
         return true;
