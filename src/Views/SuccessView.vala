@@ -19,15 +19,7 @@
 public class SuccessView : AbstractInstallerView {
     public static int RESTART_TIMEOUT = 30;
 
-    private Utils.SystemInterface system_interface;
-
     construct {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-            critical (e.message);
-        }
-
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
         image.vexpand = true;
 

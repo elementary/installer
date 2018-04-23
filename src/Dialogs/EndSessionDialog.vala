@@ -18,8 +18,6 @@
  */
 
 public class EndSessionDialog : Gtk.Dialog {
-    private Utils.SystemInterface system_interface;
-
     public EndSessionDialog () {
         Object (
             title: "",
@@ -31,12 +29,6 @@ public class EndSessionDialog : Gtk.Dialog {
     }
 
     construct {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-            critical (e.message);
-        }
-
         var image = new Gtk.Image.from_icon_name ("system-shutdown", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
