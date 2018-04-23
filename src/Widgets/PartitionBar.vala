@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016-2018 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,10 +32,10 @@ public class Installer.PartitionBar : Gtk.EventBox {
     public Gtk.Popover menu;
     public Distinst.FileSystemType filesystem;
 
-    public PartitionBar(Distinst.Partition* part, string parent_path,
-                        uint64 sector_size, bool lvm, SetMount set_mount,
-                        UnsetMount unset_mount, MountSetFn mount_set,
-                        DecryptFn decrypt) {
+    public PartitionBar (Distinst.Partition* part, string parent_path,
+                         uint64 sector_size, bool lvm, SetMount set_mount,
+                         UnsetMount unset_mount, MountSetFn mount_set,
+                         DecryptFn decrypt) {
         start = part->get_start_sector ();
         end = part->get_end_sector ();
 
@@ -51,10 +51,10 @@ public class Installer.PartitionBar : Gtk.EventBox {
         vg = (Distinst.FileSystemType.LVM == filesystem)
             ? part->get_current_lvm_volume_group ()
             : null;
-
         info = part;
+        tooltip_text = path;
 
-        var style_context = this.get_style_context ();
+        var style_context = get_style_context ();
         style_context.add_class (Distinst.strfilesys (filesystem));
         style_context.add_class ("fill-block");
 
@@ -63,16 +63,17 @@ public class Installer.PartitionBar : Gtk.EventBox {
         if (filesystem == Distinst.FileSystemType.LUKS) {
             menu = new DecryptMenu (path, decrypt);
         } else {
-            menu = new PartitionMenu (path, parent_path, filesystem, lvm, set_mount, unset_mount, mount_set, this);
+            menu = new PartitionMenu (path, parent_path, filesystem, lvm,
+                                      set_mount, unset_mount, mount_set, this);
         }
 
         menu.relative_to = container;
         menu.position = Gtk.PositionType.BOTTOM;
 
-        add(container);
+        add (container);
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
         button_press_event.connect (() => {
-            show_popover();
+            show_popover ();
             return true;
         });
     }
@@ -95,3 +96,4 @@ public class Installer.PartitionBar : Gtk.EventBox {
         menu.popup ();
     }
 }
+

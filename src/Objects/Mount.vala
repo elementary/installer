@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016-2018 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,15 +23,18 @@ public class Installer.Mount {
     public string parent_disk;
     public string mount_point;
     public Distinst.FileSystemType filesystem;
-    public uint8 flags;
+    public Flags flags;
     public PartitionMenu menu;
 
-    public const uint8 FORMAT = 1;
-    public const uint8 LVM = 2;
-    public const uint8 LVM_ON_LUKS = 4;
+    [Flags]
+    public enum Flags {
+        FORMAT = 1,
+        LVM = 2,
+        LVM_ON_LUKS = 4
+    }
 
     public Mount (string partition, string parent_disk, string mount,
-                  uint8 flags, Distinst.FileSystemType fs,
+                  Flags flags, Distinst.FileSystemType fs,
                   PartitionMenu menu) {
         filesystem = fs;
         mount_point = mount;
@@ -40,6 +43,7 @@ public class Installer.Mount {
         this.menu = menu;
         this.parent_disk = parent_disk;
     }
+
     public bool is_valid_boot_mount () {
         return filesystem == Distinst.FileSystemType.FAT16
             || filesystem == Distinst.FileSystemType.FAT32;
@@ -52,11 +56,11 @@ public class Installer.Mount {
     }
 
     public bool is_lvm () {
-        return (this.flags & LVM) != 0;
+        return Flags.LVM in flags;
     }
 
     public bool should_format () {
-        return (this.flags & FORMAT) != 0;
+        return Flags.FORMAT in flags;
     }
 }
 
