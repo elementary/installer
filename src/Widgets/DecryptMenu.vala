@@ -37,6 +37,37 @@ public class Installer.DecryptMenu: Gtk.Popover {
     }
 
     private void create_decrypt_view (string device_path, DecryptFn decrypt) {
+        var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
+        image.valign = Gtk.Align.START;
+
+        var overlay_image = new Gtk.Image.from_icon_name ("locked", Gtk.IconSize.DND);
+        overlay_image.halign = Gtk.Align.END;
+        overlay_image.valign = Gtk.Align.END;
+
+        var overlay = new Gtk.Overlay ();
+        overlay.halign = Gtk.Align.CENTER;
+        overlay.valign = Gtk.Align.END;
+        overlay.width_request = 60;
+        overlay.add (image);
+        overlay.add_overlay (overlay_image);
+
+        var primary_label = new Gtk.Label (_("Decrypt this partition"));
+        primary_label.get_style_context ().add_class ("primary");
+        primary_label.halign = Gtk.Align.START;
+
+        var secondary_label = new Gtk.Label (_("Enter the partition's encryption password and set a LUKS device name."));
+        secondary_label.halign = Gtk.Align.START;
+        secondary_label.max_width_chars = 50;
+        secondary_label.selectable = true;
+        secondary_label.wrap = true;
+        secondary_label.xalign = 0;
+
+        var dialog_grid = new Gtk.Grid ();
+        dialog_grid.column_spacing = 12;
+        dialog_grid.attach (overlay,         0, 0, 1, 2);
+        dialog_grid.attach (primary_label,   1, 0);
+        dialog_grid.attach (secondary_label, 1, 1);
+
         var pass_label = new Gtk.Label (_("Password:"));
         pass_label.halign = Gtk.Align.END;
 
@@ -50,7 +81,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
             }
         });
 
-        var pv_label = new Gtk.Label (_("Physical Volume:"));
+        var pv_label = new Gtk.Label (_("Device name:"));
         pv_label.halign = Gtk.Align.END;
 
         pv_entry = new Gtk.Entry ();
@@ -64,6 +95,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         });
 
         decrypt_button = new Gtk.Button.with_label (_("Decrypt"));
+        decrypt_button.halign = Gtk.Align.END;
         decrypt_button.sensitive = false;
         decrypt_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         decrypt_button.clicked.connect (() => {
@@ -74,11 +106,12 @@ public class Installer.DecryptMenu: Gtk.Popover {
         decrypt_view.column_spacing = 6;
         decrypt_view.row_spacing = 12;
 
-        decrypt_view.attach (pass_label,     0, 0);
-        decrypt_view.attach (pass_entry,     1, 0);
-        decrypt_view.attach (pv_label,       0, 1);
-        decrypt_view.attach (pv_entry,       1, 1);
-        decrypt_view.attach (decrypt_button, 0, 2, 2);
+        decrypt_view.attach (dialog_grid,    0, 0, 2);
+        decrypt_view.attach (pass_label,     0, 1);
+        decrypt_view.attach (pass_entry,     1, 1);
+        decrypt_view.attach (pv_label,       0, 2);
+        decrypt_view.attach (pv_entry,       1, 2);
+        decrypt_view.attach (decrypt_button, 0, 3, 2);
 
         stack.add (decrypt_view);
         stack.visible_child = decrypt_view;
