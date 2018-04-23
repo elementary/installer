@@ -55,7 +55,7 @@ public class EndSessionDialog : Gtk.Dialog {
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
-        grid.margin_left = grid.margin_right = 12;
+        grid.margin_start = grid.margin_end = 12;
         grid.attach (image, 0, 0, 1, 2);
         grid.attach (primary_label, 1, 0, 1, 1);
         grid.attach (secondary_label, 1, 1, 1, 1);

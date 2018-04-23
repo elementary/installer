@@ -112,23 +112,33 @@ public class ProgressView : AbstractInstallerView {
         return terminal_view.buffer.text;
     }
 
-    // TODO: This should receive the disk configuration from the user.
-    // For now, it is hard-coded as an example.
     public void start_installation () {
+        if (Installer.App.test_mode) {
+            new Thread<void*> (null, () => {
+                fake_status (Distinst.Step.PARTITION);
+                fake_status (Distinst.Step.EXTRACT);
+                fake_status (Distinst.Step.CONFIGURE);
+                fake_status (Distinst.Step.BOOTLOADER);
+                return null;
+            });
+        } else {
+            real_installation ();
+        }
+    }
+
+    public void real_installation () {
         var installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
 
         var config = Distinst.Config ();
-        unowned Configuration current_config = Configuration.get_default ();
-
         config.flags = Distinst.MODIFY_BOOT_ORDER;
-
         config.hostname = "todo";
-
+        config.lang = "en_US.UTF-8";
+        config.remove = Build.MANIFEST_REMOVE_PATH;
         config.squashfs = Build.SQUASHFS_PATH;
 
-        config.lang = "en_US.UTF-8";
+        unowned Configuration current_config = Configuration.get_default ();
 
         //TODO: Use the following
         debug ("language: %s\n", current_config.lang);
@@ -142,11 +152,35 @@ public class ProgressView : AbstractInstallerView {
         config.keyboard_model = null;
         config.keyboard_variant = current_config.keyboard_variant;
 
+        var disks = new Distinst.Disks ();
+        if (current_config.mounts == null) {
+            default_disk_configuration (disks);
+        } else {
+            custom_disk_configuration (disks);
+        }
+
+        new Thread<void*> (null, () => {
+            installer.install ((owned) disks, config);
+            return null;
+        });
+    }
+
+    private void default_disk_configuration (Distinst.Disks disks) {
+        unowned Configuration current_config = Configuration.get_default ();
+
+        var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
+        var root_vg = Distinst.generate_unique_id ("data");
+        if (encrypted_vg == null || root_vg == null) {
+            critical ("unable to generate unique volume group IDs\n");
+            on_error ();
+            return;
+        }
+
         Distinst.LvmEncryption? encryption;
         if (current_config.encryption_password != null) {
             debug ("encrypting");
             encryption = Distinst.LvmEncryption () {
-                physical_volume = "cryptdata",
+                physical_volume = encrypted_vg,
                 password = current_config.encryption_password,
                 keydata = null
             };
@@ -154,8 +188,6 @@ public class ProgressView : AbstractInstallerView {
             debug ("not encrypting");
             encryption = null;
         }
-
-        config.remove = Build.MANIFEST_REMOVE_PATH;
 
         debug ("disk: %s\n", current_config.disk);
         var disk = new Distinst.Disk (current_config.disk);
@@ -186,8 +218,6 @@ public class ProgressView : AbstractInstallerView {
             flag = Distinst.SectorKind.END,
             value = 0
         };
-
-        var disks = new Distinst.Disks ();
 
         // Prepares a new partition table.
         int result = disk.mklabel (bootloader);
@@ -242,7 +272,7 @@ public class ProgressView : AbstractInstallerView {
         result = disk.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
                 .partition_type (Distinst.PartitionType.PRIMARY)
-                .logical_volume ("data", encryption)
+                .logical_volume (root_vg, encryption)
         );
 
         if (result != 0) {
@@ -251,7 +281,7 @@ public class ProgressView : AbstractInstallerView {
             return;
         }
 
-        disks.push (disk);
+        disks.push ((owned) disk);
 
         result = disks.initialize_volume_groups ();
 
@@ -261,10 +291,10 @@ public class ProgressView : AbstractInstallerView {
             return;
         }
 
-        unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume ("data");
+        unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
 
         if (lvm_device == null) {
-            critical ("unable to find 'data' volume group on %s", current_config.disk);
+            critical ("unable to find '%s' volume group on %s", root_vg, current_config.disk);
             on_error ();
             return;
         }
@@ -297,19 +327,101 @@ public class ProgressView : AbstractInstallerView {
             on_error ();
             return;
         }
+    }
 
-        new Thread<void*> (null, () => {
-            if (Installer.App.test_mode) {
-                fake_status (Distinst.Step.PARTITION);
-                fake_status (Distinst.Step.EXTRACT);
-                fake_status (Distinst.Step.CONFIGURE);
-                fake_status (Distinst.Step.BOOTLOADER);
+    private void custom_disk_configuration (Distinst.Disks disks) {
+        unowned Configuration config = Configuration.get_default ();
+        Installer.Mount[] lvm_devices = {};
+
+        foreach (Installer.Mount m in config.mounts) {
+            if (m.is_lvm ()) {
+                lvm_devices += m;
             } else {
-                installer.install ((owned) disks, config);
+                unowned Distinst.Disk disk = disks.get_physical_device (m.parent_disk);
+                if (disk == null) {
+                    var new_disk = new Distinst.Disk (m.parent_disk);
+                    if (new_disk == null) {
+                        warning ("could not find physical device: '%s'\n", m.parent_disk);
+                        on_error ();
+                        return;
+                    }
+
+                    disks.push ((owned) new_disk);
+                    disk = disks.get_physical_device (m.parent_disk);
+                }
+
+                unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
+
+                if (partition == null) {
+                    warning ("could not find %s\n", m.partition_path);
+                    on_error ();
+                    return;
+                }
+
+                if (m.mount_point == "/boot/efi") {
+                    if (m.is_valid_boot_mount ()) {
+                        if (m.should_format ()) {
+                            partition.format_with (m.filesystem);
+                        }
+
+                        partition.set_mount (m.mount_point);
+                        partition.set_flags ({ Distinst.PartitionFlag.ESP });
+                    } else {
+                        warning ("unreachable code path -- efi partition is invalid\n");
+                        on_error ();
+                        return;
+                    }
+                } else {
+                    if (m.filesystem != Distinst.FileSystemType.SWAP) {
+                        partition.set_mount (m.mount_point);
+                    }
+
+                    if (m.mount_point == "/boot") {
+                        partition.set_flags ({ Distinst.PartitionFlag.BOOT });
+                    }
+
+                    if (m.should_format ()) {
+                        partition.format_with (m.filesystem);
+                    }
+                }
+            }
+        }
+
+        disks.initialize_volume_groups ();
+
+        foreach (Installer.LuksCredentials cred in config.luks) {
+            disks.decrypt_partition (cred.device, Distinst.LvmEncryption () {
+                physical_volume = cred.pv,
+                password = cred.password,
+                keydata = null
+            });
+        }
+
+        foreach (Installer.Mount m in lvm_devices) {
+            var vg = m.parent_disk.offset (12);
+            unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
+            if (disk == null) {
+                warning ("could not find %s\n", vg);
+                on_error ();
+                return;
             }
 
-            return null;
-        });
+            unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
+
+            if (partition == null) {
+                warning ("could not find %s\n", m.partition_path);
+                on_error ();
+                return;
+            }
+
+            if (m.filesystem != Distinst.FileSystemType.SWAP) {
+                partition.set_mount (m.mount_point);
+            }
+
+            if (m.should_format ()) {
+                partition.format_and_keep_name (m.filesystem);
+            }
+        }
     }
 
     private void fake_status (Distinst.Step step) {

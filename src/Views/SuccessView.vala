@@ -38,7 +38,10 @@ public class SuccessView : AbstractInstallerView {
         primary_label.xalign = 0;
         primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var secondary_label = new Gtk.Label (_("Your device will automatically restart to %s in %i seconds to set up a new user, or you can shut down now and set a user up later.").printf (Utils.get_pretty_name (), RESTART_TIMEOUT));
+        var secondary_label = new Gtk.Label (
+            _("Your device will automatically restart to %s in %i seconds.").printf (Utils.get_pretty_name (), RESTART_TIMEOUT) + " " +
+            _("After restarting you can set up a new user, or you can shut down now and set up a new user later.")
+        );
         secondary_label.max_width_chars = 60;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;

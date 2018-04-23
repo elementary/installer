@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-19 22:30+0000\n"
+"POT-Creation-Date: 2018-04-23 13:06-0700\n"
+"PO-Revision-Date: 2018-04-20 22:42+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
-"Language-Team: Danish "
-"<https://weblate.elementary.io/projects/installer/installer/da/>\n"
+"Language-Team: Danish <https://weblate.elementary.io/projects/installer/"
+"installer/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,16 +15,16 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "Installér %s"
 
-#: src/Utils.vala:156
+#: src/Utils.vala:31
 msgid "Operating System"
 msgstr "Styresystem"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
 #, c-format
 msgid "%s…"
 msgstr "%s..."
@@ -45,7 +45,7 @@ msgstr "Er du sikker på at du vil Lukke Ned?"
 msgid "This will cancel installation and turn off this device."
 msgstr "Dette vil afbryde installationen og slukke denne enhed."
 
-#: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
+#: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
 msgstr "Genstart"
 
@@ -54,27 +54,27 @@ msgid "Cancel"
 msgstr "Annullér"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:52
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Luk Ned"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
 msgstr "Annullér Installation"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "Demo Tilstand"
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:66
 msgid "Ignore"
 msgstr "Ignorér"
 
-#: src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
 msgstr "Ikke Nok Plads"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:204
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -83,11 +83,11 @@ msgstr ""
 "Der er ikke nok plads på din enhed til at installere %s. Vi anbefaler et "
 "minimum af %s plads."
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
 msgstr "Din Enhed Kan Være For Langsom"
 
-#: src/Views/CheckView.vala:221
+#: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -95,11 +95,11 @@ msgstr ""
 "Din enhed opfylder ikke de anbefalede hardwarekrav. Dette kan gøre at "
 "enheden kører langsomt eller fryser."
 
-#: src/Views/CheckView.vala:237
+#: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
 msgstr "Forbind til en Strømkilde"
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -107,27 +107,27 @@ msgstr ""
 "Din enhed kører på batteri. Det er anbefalet at enheden er sat til strøm "
 "under installation."
 
-#: src/Views/CheckView.vala:296
+#: src/Views/CheckView.vala:291
 msgid "Recommended:"
 msgstr "Anbefalet:"
 
-#: src/Views/CheckView.vala:300
+#: src/Views/CheckView.vala:295
 msgid "Your Device:"
 msgstr "Din Enhed:"
 
-#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
+#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
 msgstr "Processor:"
 
-#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
 msgstr "Hukommelse:"
 
-#: src/Views/DiskView.vala:49
-msgid "Select a drive to use for installation"
-msgstr "Vælg et drev, der skal bruges til installation"
+#: src/Views/DiskView.vala:52
+msgid "Select a Drive"
+msgstr "Vælg et Drev"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -135,50 +135,120 @@ msgstr ""
 "Dette vil slette alt data på det valgte drev. Hvis du ikke har backup af din "
 "data, kan du annullere installationen og bruge Demo Tilstand."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "Henter nuværende konfiguration..."
 
-#: src/Views/DiskView.vala:94
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr "Tilpas Partitioner…"
+
+#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
 msgstr "Slet og Installér"
 
-#: src/Views/ErrorView.vala:32
-#, c-format
-msgid "Could not install %s"
-msgstr "Kunne ikke installere %s"
+#: src/Views/EncryptView.vala:47
+msgid "Drive Encryption"
+msgstr ""
+
+#: src/Views/EncryptView.vala:53
+msgid ""
+"Encrypting this drive protects data from being read by others with physical "
+"access to this device."
+msgstr ""
+
+#: src/Views/EncryptView.vala:60
+msgid ""
+"Drive encryption may minimally impact read and write speed when performing "
+"intense tasks."
+msgstr ""
+
+#: src/Views/EncryptView.vala:67
+msgid ""
+"The encryption password will be required each time you turn on this device "
+"or restart."
+msgstr ""
+
+#: src/Views/EncryptView.vala:83
+msgid ""
+"If you forget the encryption password, <b>you will not be able to recover "
+"data.</b> This is a unique password for this device, not the password for "
+"your user account."
+msgstr ""
+
+#: src/Views/EncryptView.vala:90
+msgid "Choose Encryption Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:105
+msgid "Confirm Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:141
+msgid "Don't Encrypt"
+msgstr ""
+
+#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/TryInstallView.vala:89
+msgid "Back"
+msgstr "Tilbage"
+
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+msgid "Choose Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:168
+msgid "Set Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:231
+msgid "Passwords do not match"
+msgstr ""
 
 #: src/Views/ErrorView.vala:38
-msgid ""
-"The installation failed, so your device may not restart properly. You can "
-"try one of the following:"
-msgstr ""
-"Installationen mislykkedes, så din enhed muligvis ikke genstarter korrekt. "
-"Du kan prøve et af følgende:"
+msgid "Could Not Install"
+msgstr "Kunne Ikke Installere"
 
-#: src/Views/ErrorView.vala:44
+#: src/Views/ErrorView.vala:46
+#, c-format
+msgid ""
+"Installing %s failed, possibly due to a hardware error. Your device may not "
+"restart properly. You can try the following:"
+msgstr ""
+"Installering af %s mislykkedes, muligvis på grund af en hardwarefejl. Din "
+"enhed vil muligvis ikke starte korrekt. Du kan prøve følgende:"
+
+#: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
 msgstr "• Prøv installationen igen"
 
-#: src/Views/ErrorView.vala:50
+#: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
 msgstr "• Brug Demo Tilstand og prøv manuelt at gendanne"
 
-#: src/Views/ErrorView.vala:56
+#: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
 msgstr "• Genstart din enhed for at starte fra et andet drev"
 
-#: src/Views/ErrorView.vala:74
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Genstart Enhed"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "Prøv Demo Tilstand"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Prøv at Installere Igen"
+
+#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
+msgid "Test mode reboot"
+msgstr "Demo tilstand genstart"
+
+#: src/Views/ErrorView.vala:146
+msgid "Test mode switch user"
+msgstr "Test tilstand skift bruger"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -192,12 +262,8 @@ msgstr "Skriv for at teste dit layout"
 msgid "Show keyboard layout"
 msgstr "Vis tastatur layout"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
-msgid "Back"
-msgstr "Tilbage"
-
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:150
+#: src/Views/LanguageView.vala:161
 msgid "Select"
 msgstr "Vælg"
 
@@ -209,31 +275,56 @@ msgstr "Standard"
 msgid "Input Language"
 msgstr "Indtastningssprog"
 
-#: src/Views/LanguageView.vala:201
+#: src/Views/LanguageView.vala:217
 msgid "Languages"
 msgstr "Sprog"
 
-#: src/Views/LanguageView.vala:218
+#: src/Views/LanguageView.vala:234
 msgid "Select a Language"
 msgstr "Vælg et Sprog"
 
-#: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
+#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
 msgstr "Nuværende aktivt sprog"
 
-#: src/Views/ProgressView.vala:307
+#: src/Views/PartitioningView.vala:46
+msgid ""
+"Select which partitions to use across all drives. <b>Selecting \"Format\" "
+"will erase ALL data on the selected partition.</b>"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:52
+msgid "You must at least select a <b>Root (/)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:56
+msgid ""
+"You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
+"efi)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:60
+msgid "It is also recommended to select a <b>Swap</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:89
+#, fuzzy
+msgid "Modify Partitions…"
+msgstr "Tilpas Partitioner…"
+
+#: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
 msgstr "Partitionerer Drev"
 
-#: src/Views/ProgressView.vala:311
+#: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
 msgstr "Udpakker Filer"
 
-#: src/Views/ProgressView.vala:315
+#: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
 msgstr "Konfigurerer Systemet"
 
-#: src/Views/ProgressView.vala:319
+#: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
 msgstr "Færdiggører Installationen"
 
@@ -252,10 +343,12 @@ msgstr ""
 #: src/Views/TryInstallView.vala:53
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged."
+"operating system will be unchanged. Performance and features may not reflect "
+"the installed experience."
 msgstr ""
 "I demo-tilstand vil ændringer, du laver, ikke blive gemt, og data fra dit "
-"tidligere operativsystem forbliver uændret."
+"tidligere operativsystem forbliver uændret. Ydeevne og funktioner afspejler "
+"muligvis ikke den installerede oplevelse."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -265,26 +358,112 @@ msgstr ""
 "Du kan altid vende tilbage til installationsprogrammet fra Demo Tilstand ved "
 "at vælge installationsikonet."
 
-#: src/Views/SuccessView.vala:32
-msgid "Restart your device to continue setting up"
-msgstr "Genstart din enhed for at fortsætte opsætning"
+#: src/Views/SuccessView.vala:34
+msgid "Continue Setting Up"
+msgstr "Forsæt Opsætning"
 
-#: src/Views/SuccessView.vala:38
+#: src/Views/SuccessView.vala:42
 #, c-format
-msgid ""
-"Your device will automatically restart to %s in 30 seconds to set up a new "
-"user, or you can shut down now and set a user up later."
-msgstr ""
-"Din enhed genstarter automatisk til %s om 30 sekunder for at oprette en ny "
-"bruger, eller du kan lukke nu og oprette en bruger senere."
+msgid "Your device will automatically restart to %s in %i seconds."
+msgstr "Din enhed genstarter automatisk til %s om %i sekunder."
 
-#: src/Views/SuccessView.vala:64
+#: src/Views/SuccessView.vala:43
+msgid ""
+"After restarting you can set up a new user, or you can shut down now and set "
+"up a new user later."
+msgstr ""
+"Efter genstart kan du oprette en ny bruger, eller du kan lukke nu og oprette "
+"en ny bruger senere."
+
+#: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr "Demo tilstand nedlukning"
 
-#: src/Views/SuccessView.vala:84
-msgid "Test mode reboot"
-msgstr "Demo tilstand genstart"
+#: src/Widgets/DecryptMenu.vala:54
+msgid "Decrypt This Partition"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:58
+msgid "Enter the partition's encryption password and set a LUKS device name."
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:71
+msgid "Password:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:84
+msgid "Device name:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:97
+msgid "Decrypt"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:125
+msgid "LUKS volume was decrypted"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:127
+#, c-format
+msgid "%s (%s)"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:128
+#, c-format
+msgid "%s (%s: <b>%s</b>)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:60
+msgid "Use partition:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:71
+msgid "Format:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:81
+msgid "Use as:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:87
+msgid "Root (/)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:88
+msgid "Home (/home)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:89
+#, c-format
+msgid "Boot (%s)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:90
+msgid "Swap"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:91
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:95
+msgid "Custom:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:103
+msgid "Filesystem:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:109
+#, fuzzy
+msgid "Default (ext4)"
+msgstr "Standard"
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "Vælg et drev, der skal bruges til installation"
+
+#~ msgid "Restart your device to continue setting up"
+#~ msgstr "Genstart din enhed for at fortsætte opsætning"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

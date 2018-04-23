@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-12 00:09+0000\n"
+"POT-Creation-Date: 2018-04-23 13:06-0700\n"
+"PO-Revision-Date: 2018-04-20 04:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew "
-"<https://weblate.elementary.io/projects/installer/installer/he/>\n"
+"Language-Team: Hebrew <https://weblate.elementary.io/projects/installer/"
+"installer/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,24 +15,23 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "התקנת %s"
 
-#: src/Utils.vala:156
+#: src/Utils.vala:31
 msgid "Operating System"
 msgstr "מערכת הפעלה"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "לא ניתן לשנות את שם המתחם הייחודי"
+msgstr "לא ניתן להגדיר את ערך החזרה מהיומן של Distinst"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -46,7 +45,7 @@ msgstr "לכבות את המחשב?"
 msgid "This will cancel installation and turn off this device."
 msgstr "פעולה זו תבטל את ההתקנה ותכבה את ההתקן הזה."
 
-#: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
+#: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
 msgstr "הפעלה מחדש"
 
@@ -55,27 +54,27 @@ msgid "Cancel"
 msgstr "ביטול"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:52
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "כיבוי"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
 msgstr "ביטול ההתקנה"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "מצב התנסות"
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:66
 msgid "Ignore"
 msgstr "התעלמות"
 
-#: src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
 msgstr "אין די מקום"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:204
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -83,11 +82,11 @@ msgid ""
 msgstr ""
 "אין די מקום בהתקן שלך לצורך התקנת %s. אנו ממליצים על %s של אחסון לפחות."
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
 msgstr "יתכן שההתקן שלך יהיה אטי מדי"
 
-#: src/Views/CheckView.vala:221
+#: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -95,37 +94,37 @@ msgstr ""
 "ההתקן שלך לא עומד בדרישות החומרה המומלצות. מצב זה עשוי לגרום למערכת לפעול "
 "לאט או להיתקע."
 
-#: src/Views/CheckView.vala:237
+#: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
 msgstr "נא לחבר למקור חשמל"
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr "ההתקן שלך פועל על גבי סוללה. מומלץ לחבר אותו לחשמל בזמן ההתקנה."
 
-#: src/Views/CheckView.vala:296
+#: src/Views/CheckView.vala:291
 msgid "Recommended:"
 msgstr "מומלץ:"
 
-#: src/Views/CheckView.vala:300
+#: src/Views/CheckView.vala:295
 msgid "Your Device:"
 msgstr "ההתקן שלך:"
 
-#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
+#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
 msgstr "מעבד:"
 
-#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
 msgstr "זיכרון:"
 
-#: src/Views/DiskView.vala:49
-msgid "Select a drive to use for installation"
-msgstr "נא לבחור כונן לשימוש ההתקנה"
+#: src/Views/DiskView.vala:52
+msgid "Select a Drive"
+msgstr "בחירת כונן"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -133,50 +132,120 @@ msgstr ""
 "פעולה זו תמחק את כל הנתונים על הכונן הנבחר. אם לא גיבית את הנתונים שלך, ניתן "
 "לבטל את ההתקנה ולהשתמש במצב הדגמה."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "התצורה הנוכחית מתקבלת…"
 
-#: src/Views/DiskView.vala:94
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr "התאמת חלוקה למחיצות…"
+
+#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
 msgstr "למחוק ולהתקין"
 
-#: src/Views/ErrorView.vala:32
-#, c-format
-msgid "Could not install %s"
-msgstr "לא ניתן להתקין את %s"
+#: src/Views/EncryptView.vala:47
+msgid "Drive Encryption"
+msgstr ""
+
+#: src/Views/EncryptView.vala:53
+msgid ""
+"Encrypting this drive protects data from being read by others with physical "
+"access to this device."
+msgstr ""
+
+#: src/Views/EncryptView.vala:60
+msgid ""
+"Drive encryption may minimally impact read and write speed when performing "
+"intense tasks."
+msgstr ""
+
+#: src/Views/EncryptView.vala:67
+msgid ""
+"The encryption password will be required each time you turn on this device "
+"or restart."
+msgstr ""
+
+#: src/Views/EncryptView.vala:83
+msgid ""
+"If you forget the encryption password, <b>you will not be able to recover "
+"data.</b> This is a unique password for this device, not the password for "
+"your user account."
+msgstr ""
+
+#: src/Views/EncryptView.vala:90
+msgid "Choose Encryption Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:105
+msgid "Confirm Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:141
+msgid "Don't Encrypt"
+msgstr ""
+
+#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/TryInstallView.vala:89
+msgid "Back"
+msgstr "חזרה"
+
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+msgid "Choose Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:168
+msgid "Set Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:231
+msgid "Passwords do not match"
+msgstr ""
 
 #: src/Views/ErrorView.vala:38
-msgid ""
-"The installation failed, so your device may not restart properly. You can "
-"try one of the following:"
-msgstr ""
-"ההתקנה נכשלה, לכן יתכן שההתקן שלך לא יופעל מחדש כראוי. ניתן לנסות להיעזר "
-"באחת ההצעות הבאות:"
+msgid "Could Not Install"
+msgstr "לא ניתן להתקין"
 
-#: src/Views/ErrorView.vala:44
+#: src/Views/ErrorView.vala:46
+#, c-format
+msgid ""
+"Installing %s failed, possibly due to a hardware error. Your device may not "
+"restart properly. You can try the following:"
+msgstr ""
+"ההתקנה של %s נכשלה, כנראה עקב תקלת חומרה. יתכן שההתקן שלך לא יופעל מחדש "
+"כראוי. ניתן לנסות להיעזר באחת ההצעות הבאות:"
+
+#: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
 msgstr "• לנסות להתקין שוב"
 
-#: src/Views/ErrorView.vala:50
+#: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
 msgstr "• להשתמש במצב הדגמה ולנסות לשקם ידנית"
 
-#: src/Views/ErrorView.vala:56
+#: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
 msgstr "• להפעיל את ההתקן שלך מחדש כדי להעלות את ההתקן מכונן אחר"
 
-#: src/Views/ErrorView.vala:74
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "הפעלת ההתקן מחדש"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "התנסות במצב הדגמה"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "לנסות להתקין שוב"
+
+#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
+msgid "Test mode reboot"
+msgstr "הפעלה מחדש במצב בדיקה"
+
+#: src/Views/ErrorView.vala:146
+msgid "Test mode switch user"
+msgstr "החלפת משתמש במצב הדגמה"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -190,12 +259,8 @@ msgstr "יש להקליד כדי לבדוק את הפריסה שלך"
 msgid "Show keyboard layout"
 msgstr "הצגת פריסת המקלדת"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
-msgid "Back"
-msgstr "חזרה"
-
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:150
+#: src/Views/LanguageView.vala:161
 msgid "Select"
 msgstr "בחירה"
 
@@ -207,31 +272,56 @@ msgstr "בררת מחדל"
 msgid "Input Language"
 msgstr "שפת קלט"
 
-#: src/Views/LanguageView.vala:201
+#: src/Views/LanguageView.vala:217
 msgid "Languages"
 msgstr "שפות"
 
-#: src/Views/LanguageView.vala:218
+#: src/Views/LanguageView.vala:234
 msgid "Select a Language"
 msgstr "בחירת שפה"
 
-#: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
+#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
 msgstr "השפה הפעילה כרגע"
 
-#: src/Views/ProgressView.vala:307
+#: src/Views/PartitioningView.vala:46
+msgid ""
+"Select which partitions to use across all drives. <b>Selecting \"Format\" "
+"will erase ALL data on the selected partition.</b>"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:52
+msgid "You must at least select a <b>Root (/)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:56
+msgid ""
+"You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
+"efi)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:60
+msgid "It is also recommended to select a <b>Swap</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:89
+#, fuzzy
+msgid "Modify Partitions…"
+msgstr "התאמת חלוקה למחיצות…"
+
+#: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
 msgstr "הכונן מחולק למחיצות"
 
-#: src/Views/ProgressView.vala:311
+#: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
 msgstr "הקבצים מחולצים"
 
-#: src/Views/ProgressView.vala:315
+#: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
 msgstr "המערכת מוגדרת"
 
-#: src/Views/ProgressView.vala:319
+#: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
 msgstr "ההתקנה מסתיימת"
 
@@ -248,10 +338,11 @@ msgstr "ניתן להתקין את %s על התקן זה כעת, או לנסות
 #: src/Views/TryInstallView.vala:53
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged."
+"operating system will be unchanged. Performance and features may not reflect "
+"the installed experience."
 msgstr ""
 "במצב הדגמה, השינויים שייערכו לא יישמרו ונתונים ממערכת ההפעלה הקודמת שלך לא "
-"יושפעו."
+"יושפעו. הביצועים והתכונות לא משקפים באופן מלא את החוויה ממערכת מותקנת."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -259,26 +350,113 @@ msgid ""
 "Install icon."
 msgstr "תמיד ניתן לחזור ממצב הדגמה לתכנית ההתקנה על ידי בחירה בסמל ההתקנה."
 
-#: src/Views/SuccessView.vala:32
-msgid "Restart your device to continue setting up"
-msgstr "יש להפעיל את ההתקן שלך מחדש כדי להמשיך בהתקנה"
+#: src/Views/SuccessView.vala:34
+msgid "Continue Setting Up"
+msgstr "המשך ההתקנה"
 
-#: src/Views/SuccessView.vala:38
+#: src/Views/SuccessView.vala:42
 #, c-format
-msgid ""
-"Your device will automatically restart to %s in 30 seconds to set up a new "
-"user, or you can shut down now and set a user up later."
-msgstr ""
-"ההתקן שלך יופעל מחדש אוטומטית הישר לתוך %s בעוד 30 שניות כדי להקים משתמש "
-"חדש, או שניתן לכבות את ההתקן כעת ולהקים משתמש חדש מאוחר יותר."
+msgid "Your device will automatically restart to %s in %i seconds."
+msgstr "ההתקן שלך יופעל מחדש אוטומטית הישר לתוך %s בעוד %i שניות."
 
-#: src/Views/SuccessView.vala:64
+#: src/Views/SuccessView.vala:43
+msgid ""
+"After restarting you can set up a new user, or you can shut down now and set "
+"up a new user later."
+msgstr ""
+"לאחר ההפעלה מחדש ניתן להקים משתמש חדש, או שניתן לכבות את ההתקן כעת ולהקים "
+"משתמש חדש מאוחר יותר."
+
+#: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr "כיבוי במצב בדיקה"
 
-#: src/Views/SuccessView.vala:84
-msgid "Test mode reboot"
-msgstr "הפעלה מחדש במצב בדיקה"
+#: src/Widgets/DecryptMenu.vala:54
+msgid "Decrypt This Partition"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:58
+msgid "Enter the partition's encryption password and set a LUKS device name."
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:71
+msgid "Password:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:84
+msgid "Device name:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:97
+msgid "Decrypt"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:125
+msgid "LUKS volume was decrypted"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:127
+#, c-format
+msgid "%s (%s)"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:128
+#, c-format
+msgid "%s (%s: <b>%s</b>)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:60
+msgid "Use partition:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:71
+msgid "Format:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:81
+msgid "Use as:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:87
+#, fuzzy
+msgid "Root (/)"
+msgstr "שורש"
+
+#: src/Widgets/PartitionMenu.vala:88
+msgid "Home (/home)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:89
+#, c-format
+msgid "Boot (%s)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:90
+msgid "Swap"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:91
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:95
+msgid "Custom:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:103
+msgid "Filesystem:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:109
+#, fuzzy
+msgid "Default (ext4)"
+msgstr "בררת מחדל"
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "נא לבחור כונן לשימוש ההתקנה"
+
+#~ msgid "Restart your device to continue setting up"
+#~ msgstr "יש להפעיל את ההתקן שלך מחדש כדי להמשיך בהתקנה"
 
 #~ msgid "Formating Drive"
 #~ msgstr "הכונן עובר אתחול"
@@ -353,9 +531,6 @@ msgstr "הפעלה מחדש במצב בדיקה"
 
 #~ msgid "Exponent"
 #~ msgstr "מעריך"
-
-#~ msgid "Root"
-#~ msgstr "שורש"
 
 #~ msgid "Sine"
 #~ msgstr "סינוס"
