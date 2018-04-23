@@ -1,0 +1,73 @@
+/*-
+ * Copyright (c) 2018 elementary LLC. (https://elementary.io)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authored by: Ian Santopietro <ian@system76.com>
+ */
+
+.storage-bar .legend {
+    border-radius: 50%;
+}
+
+.storage-bar .disk-bar,
+.storage-bar .unused {
+    background-color: #888;
+}
+
+.storage-bar .swap {
+    background-color: #C22E1E;
+}
+
+.storage-bar .ext4 {
+    background-color: #4EA845;
+}
+
+.storage-bar .ext3 {
+    background-color: #428F3B;
+}
+
+.storage-bar .ext2 {
+    background-color: #367530;
+}
+
+.storage-bar .fat16,
+.storage-bar .fat32 {
+    background-color: #CACA32;
+}
+
+.storage-bar .btrfs {
+    background-color: #3940A0;
+}
+
+.storage-bar .xfs {
+    background-color: #6D57D3;
+}
+
+.storage-bar .ntfs {
+    background-color: #BE791F;
+}
+
+.storage-bar .luks {
+    background-color: #813BA4;
+}
+
+.storage-bar .lvm {
+    background-color: #9444BD;
+}
+
+.storage-bar .none {
+    background-color: #3199CB;
+}
+

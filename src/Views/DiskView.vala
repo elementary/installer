@@ -19,6 +19,7 @@
  */
 
 public class Installer.DiskView : AbstractInstallerView {
+    public signal void custom_step ();
     public signal void next_step ();
 
     private Gtk.Button next_button;
@@ -48,7 +49,7 @@ public class Installer.DiskView : AbstractInstallerView {
         var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         install_image.valign = Gtk.Align.START;
 
-        var install_label = new Gtk.Label (_("Select a drive to use for installation"));
+        var install_label = new Gtk.Label (_("Select a Drive"));
         install_label.hexpand = true;
         install_label.get_style_context ().add_class ("h2");
 
@@ -93,6 +94,12 @@ public class Installer.DiskView : AbstractInstallerView {
         content_area.attach (title_grid, 0, 0, 1, 1);
         content_area.attach (load_stack, 1, 0, 1, 1);
 
+        var custom_button = new Gtk.Button.with_label (_("Customize Partitions…"));
+        custom_button.clicked.connect (() => custom_step ());
+        action_area.add (custom_button);
+        action_area.set_child_secondary (custom_button, true);
+        action_area.set_child_non_homogeneous (custom_button, true);
+
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
@@ -131,11 +138,6 @@ public class Installer.DiskView : AbstractInstallerView {
                 icon_name = "drive-harddisk-solidstate";
             }
 
-            // NOTE: Why does casting as a string not work?
-            uint8[] raw_path = disk.get_device_path ();
-            var path_builder = new GLib.StringBuilder.sized (raw_path.length);
-            path_builder.append_len ((string) raw_path, raw_path.length);
-
             string label;
             string model = disk.get_model ();
             if (model.length == 0) {
@@ -144,7 +146,7 @@ public class Installer.DiskView : AbstractInstallerView {
                 label = model;
             }
 
-            string path = (owned) path_builder.str;
+            string path = Utils.string_from_utf8 (disk.get_device_path ());
 
             var disk_button = new DiskButton (
                 label,

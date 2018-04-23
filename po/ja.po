@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 09:59-0600\n"
-"PO-Revision-Date: 2018-03-10 00:17+0000\n"
+"POT-Creation-Date: 2018-04-23 13:06-0700\n"
+"PO-Revision-Date: 2018-04-20 16:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
+"installer/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,16 +15,16 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:40 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
 msgstr "%s をインストール"
 
-#: src/Utils.vala:156
+#: src/Utils.vala:31
 msgid "Operating System"
 msgstr "オペレーティングシステム"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:154
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -45,7 +45,7 @@ msgstr "シャットダウンしてもよろしいですか？"
 msgid "This will cancel installation and turn off this device."
 msgstr "続行すると、インストールをキャンセルしてこのデバイスの電源を切ります。"
 
-#: src/Dialogs/EndSessionDialog.vala:66 src/Views/SuccessView.vala:54
+#: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
 msgstr "再起動"
 
@@ -54,27 +54,27 @@ msgid "Cancel"
 msgstr "キャンセル"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:52
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "シャットダウン"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
 msgstr "インストールをキャンセル"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "テストモード"
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:66
 msgid "Ignore"
 msgstr "無視"
 
-#: src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
 msgstr "空き容量が十分にありません"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:204
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -83,11 +83,11 @@ msgstr ""
 "お使いのデバイスは %s をインストールするのに十分な空き容量がありません。イン"
 "ストールするにはストレージに最低でも %s ある状態が望ましいです。"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
 msgstr "お使いのデバイスは遅すぎるようです"
 
-#: src/Views/CheckView.vala:221
+#: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -95,11 +95,11 @@ msgstr ""
 "お使いのデバイスはハードウェアの推奨要件を満たしていません。これにより処理が"
 "遅くなったりフリーズすることがあります。"
 
-#: src/Views/CheckView.vala:237
+#: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
 msgstr "電源に接続してください"
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -107,27 +107,27 @@ msgstr ""
 "お使いのデバイスはバッテリーの電力で動作しています。インストールの間は電源に"
 "接続することをお勧めします。"
 
-#: src/Views/CheckView.vala:296
+#: src/Views/CheckView.vala:291
 msgid "Recommended:"
-msgstr "推奨要件："
+msgstr "推奨要件:"
 
-#: src/Views/CheckView.vala:300
+#: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr "お使いのデバイス："
+msgstr "お使いのデバイス:"
 
-#: src/Views/CheckView.vala:304 src/Views/CheckView.vala:306
+#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr "プロセッサー："
+msgstr "プロセッサー:"
 
-#: src/Views/CheckView.vala:312 src/Views/CheckView.vala:314
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
-msgstr "メモリー："
+msgstr "メモリー:"
 
-#: src/Views/DiskView.vala:49
-msgid "Select a drive to use for installation"
-msgstr "インストールに使用するドライブを選択してください"
+#: src/Views/DiskView.vala:52
+msgid "Select a Drive"
+msgstr "ドライブの選択"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -136,50 +136,121 @@ msgstr ""
 "バックアップしていない場合、インストールをキャンセルしてデモモードを使用する"
 "ことができます。"
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
 msgstr "現在の設定を取得中…"
 
-#: src/Views/DiskView.vala:94
+#: src/Views/DiskView.vala:97
+msgid "Customize Partitions…"
+msgstr "パーティションをカスタマイズ…"
+
+#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
 msgstr "削除してインストール"
 
-#: src/Views/ErrorView.vala:32
-#, c-format
-msgid "Could not install %s"
-msgstr "%s をインストールできません"
+#: src/Views/EncryptView.vala:47
+msgid "Drive Encryption"
+msgstr ""
+
+#: src/Views/EncryptView.vala:53
+msgid ""
+"Encrypting this drive protects data from being read by others with physical "
+"access to this device."
+msgstr ""
+
+#: src/Views/EncryptView.vala:60
+msgid ""
+"Drive encryption may minimally impact read and write speed when performing "
+"intense tasks."
+msgstr ""
+
+#: src/Views/EncryptView.vala:67
+msgid ""
+"The encryption password will be required each time you turn on this device "
+"or restart."
+msgstr ""
+
+#: src/Views/EncryptView.vala:83
+msgid ""
+"If you forget the encryption password, <b>you will not be able to recover "
+"data.</b> This is a unique password for this device, not the password for "
+"your user account."
+msgstr ""
+
+#: src/Views/EncryptView.vala:90
+msgid "Choose Encryption Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:105
+msgid "Confirm Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:141
+msgid "Don't Encrypt"
+msgstr ""
+
+#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/TryInstallView.vala:89
+msgid "Back"
+msgstr "戻る"
+
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+msgid "Choose Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:168
+msgid "Set Password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:231
+msgid "Passwords do not match"
+msgstr ""
 
 #: src/Views/ErrorView.vala:38
-msgid ""
-"The installation failed, so your device may not restart properly. You can "
-"try one of the following:"
-msgstr ""
-"インストールが失敗したため、お使いのデバイスは正しく再起動しない可能性があり"
-"ます。以下の操作を試すことができます。"
+msgid "Could Not Install"
+msgstr "インストールできません"
 
-#: src/Views/ErrorView.vala:44
+#: src/Views/ErrorView.vala:46
+#, c-format
+msgid ""
+"Installing %s failed, possibly due to a hardware error. Your device may not "
+"restart properly. You can try the following:"
+msgstr ""
+"%s のインストールは失敗しました。これはハードウェアのエラーが原因と思われま"
+"す。お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すこ"
+"とができます。"
+
+#: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
 msgstr "• もう一度インストールしてみる"
 
-#: src/Views/ErrorView.vala:50
+#: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
 msgstr "• デモモードを使用し、手動で回復してみる"
 
-#: src/Views/ErrorView.vala:56
+#: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
 msgstr "• デバイスを再起動して別のドライブから起動する"
 
-#: src/Views/ErrorView.vala:74
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "デバイスを再起動"
 
-#: src/Views/ErrorView.vala:76 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
 msgstr "デモモードを試す"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "もう一度インストールしてみる"
+
+#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
+msgid "Test mode reboot"
+msgstr "テストモードの再起動"
+
+#: src/Views/ErrorView.vala:146
+msgid "Test mode switch user"
+msgstr "テストモードのユーザー切り替え"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -193,12 +264,8 @@ msgstr "入力してレイアウトを試してください"
 msgid "Show keyboard layout"
 msgstr "キーボードレイアウトを表示"
 
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/TryInstallView.vala:89
-msgid "Back"
-msgstr "戻る"
-
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:150
+#: src/Views/LanguageView.vala:161
 msgid "Select"
 msgstr "選択"
 
@@ -210,31 +277,56 @@ msgstr "規定"
 msgid "Input Language"
 msgstr "入力する言語"
 
-#: src/Views/LanguageView.vala:201
+#: src/Views/LanguageView.vala:217
 msgid "Languages"
 msgstr "言語"
 
-#: src/Views/LanguageView.vala:218
+#: src/Views/LanguageView.vala:234
 msgid "Select a Language"
 msgstr "言語の選択"
 
-#: src/Views/LanguageView.vala:246 src/Views/LanguageView.vala:289
+#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
 msgstr "現在使用可能な言語"
 
-#: src/Views/ProgressView.vala:307
+#: src/Views/PartitioningView.vala:46
+msgid ""
+"Select which partitions to use across all drives. <b>Selecting \"Format\" "
+"will erase ALL data on the selected partition.</b>"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:52
+msgid "You must at least select a <b>Root (/)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:56
+msgid ""
+"You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
+"efi)</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:60
+msgid "It is also recommended to select a <b>Swap</b> partition."
+msgstr ""
+
+#: src/Views/PartitioningView.vala:89
+#, fuzzy
+msgid "Modify Partitions…"
+msgstr "パーティションをカスタマイズ…"
+
+#: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
 msgstr "ドライブをパーティショニングしています"
 
-#: src/Views/ProgressView.vala:311
+#: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
 msgstr "ファイルを展開しています"
 
-#: src/Views/ProgressView.vala:315
+#: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
 msgstr "システムを設定しています"
 
-#: src/Views/ProgressView.vala:319
+#: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
 msgstr "インストールを終了しています"
 
@@ -253,35 +345,128 @@ msgstr ""
 #: src/Views/TryInstallView.vala:53
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged."
-msgstr "デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデータは変更されません。"
+"operating system will be unchanged. Performance and features may not reflect "
+"the installed experience."
+msgstr ""
+"デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデー"
+"タは変更されません。パフォーマンスと機能はインストールされた環境を反映するこ"
+"とはありません。"
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
-msgstr "インストールアイコンを選択することで、いつでもデモモードからインストーラーに戻ることができます。"
-
-#: src/Views/SuccessView.vala:32
-msgid "Restart your device to continue setting up"
-msgstr "セットアップを続行するにはお使いのデバイスを再起動してください"
-
-#: src/Views/SuccessView.vala:38
-#, c-format
-msgid ""
-"Your device will automatically restart to %s in 30 seconds to set up a new "
-"user, or you can shut down now and set a user up later."
 msgstr ""
-"お使いのデバイスは30秒後に自動的に %s "
-"を再起動し、新しいユーザーをセットアップします。あるいは、今はシャットダウンして、後でユーザーをセットアップすることもできます。"
+"インストールアイコンを選択することで、いつでもデモモードからインストーラーに"
+"戻ることができます。"
 
-#: src/Views/SuccessView.vala:64
+#: src/Views/SuccessView.vala:34
+msgid "Continue Setting Up"
+msgstr "セットアップを続行"
+
+#: src/Views/SuccessView.vala:42
+#, c-format
+msgid "Your device will automatically restart to %s in %i seconds."
+msgstr "お使いのデバイスは %i 秒後に自動的に %s を再起動します。"
+
+#: src/Views/SuccessView.vala:43
+msgid ""
+"After restarting you can set up a new user, or you can shut down now and set "
+"up a new user later."
+msgstr ""
+"再起動後は新しいユーザーをセットアップすることができます。あるいは、今は"
+"シャットダウンして、後でユーザーをセットアップすることもできます。"
+
+#: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
 msgstr "テストモードのシャットダウン"
 
-#: src/Views/SuccessView.vala:84
-msgid "Test mode reboot"
-msgstr "テストモードの再起動"
+#: src/Widgets/DecryptMenu.vala:54
+msgid "Decrypt This Partition"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:58
+msgid "Enter the partition's encryption password and set a LUKS device name."
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:71
+msgid "Password:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:84
+msgid "Device name:"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:97
+msgid "Decrypt"
+msgstr ""
+
+#: src/Widgets/DecryptMenu.vala:125
+msgid "LUKS volume was decrypted"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:127
+#, c-format
+msgid "%s (%s)"
+msgstr ""
+
+#: src/Widgets/DiskBar.vala:128
+#, c-format
+msgid "%s (%s: <b>%s</b>)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:60
+msgid "Use partition:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:71
+msgid "Format:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:81
+msgid "Use as:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:87
+#, fuzzy
+msgid "Root (/)"
+msgstr "平方根"
+
+#: src/Widgets/PartitionMenu.vala:88
+msgid "Home (/home)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:89
+#, c-format
+msgid "Boot (%s)"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:90
+msgid "Swap"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:91
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:95
+msgid "Custom:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:103
+msgid "Filesystem:"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:109
+#, fuzzy
+msgid "Default (ext4)"
+msgstr "規定"
+
+#~ msgid "Select a drive to use for installation"
+#~ msgstr "インストールに使用するドライブを選択してください"
+
+#~ msgid "Restart your device to continue setting up"
+#~ msgstr "セットアップを続行するにはお使いのデバイスを再起動してください"
 
 #~ msgid "Formating Drive"
 #~ msgstr "ドライブをフォーマットしています"
@@ -361,9 +546,6 @@ msgstr "テストモードの再起動"
 
 #~ msgid "Exponent"
 #~ msgstr "指数"
-
-#~ msgid "Root"
-#~ msgstr "平方根"
 
 #~ msgid "Sine"
 #~ msgstr "サイン"

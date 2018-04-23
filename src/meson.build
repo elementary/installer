@@ -10,6 +10,7 @@ vala_files = [
     'Dialogs/EndSessionDialog.vala',
     'Objects/org.freedesktop.udisks2.vala',
     'Objects/Configuration.vala',
+    'Objects/Mount.vala',
     'Views/AbstractInstallerView.vala',
     'Views/CheckView.vala',
     'Views/DiskView.vala',
@@ -17,11 +18,16 @@ vala_files = [
     'Views/ErrorView.vala',
     'Views/KeyboardLayoutView.vala',
     'Views/LanguageView.vala',
+    'Views/PartitioningView.vala',
     'Views/ProgressView.vala',
     'Views/TryInstallView.vala',
     'Views/SuccessView.vala',
+    'Widgets/DecryptMenu.vala',
+    'Widgets/DiskBar.vala',
     'Widgets/DiskGrid.vala',
     'Widgets/LayoutWidget.vala',
+    'Widgets/PartitionBar.vala',
+    'Widgets/PartitionMenu.vala',
     'Widgets/VariantWidget.vala'
 ]
 
