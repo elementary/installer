@@ -198,6 +198,8 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     private void load_progress_view () {
+        check_ignored = true;
+
         if (progress_view != null) {
             progress_view.destroy ();
         }
