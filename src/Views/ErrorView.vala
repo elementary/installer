@@ -17,8 +17,6 @@
  */
 
 public class ErrorView : AbstractInstallerView {
-    private Utils.SystemInterface system_interface;
-
     public string log { get; construct; }
 
     public ErrorView (string log) {
@@ -26,12 +24,6 @@ public class ErrorView : AbstractInstallerView {
     }
 
     construct {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-                warning ("%s", e.message);
-        }
-
         var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 

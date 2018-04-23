@@ -51,10 +51,12 @@ namespace Utils {
         return os_pretty_name;
     }
 
-    public void shutdown () {
+    public static void shutdown () {
         if (Installer.App.test_mode) {
             critical (_("Test mode shutdown"));
         } else {
+            connect_system_interface ();
+
             try {
                 system_interface.power_off (false);
             } catch (IOError e) {
@@ -63,10 +65,12 @@ namespace Utils {
         }
     }
 
-    private void restart () {
+    private static void restart () {
         if (Installer.App.test_mode) {
             critical (_("Test mode reboot"));
         } else {
+            connect_system_interface ();
+
             try {
                 system_interface.reboot (false);
             } catch (IOError e) {
@@ -75,16 +79,12 @@ namespace Utils {
         }
     }
 
-    private void demo_mode () {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-            critical (e.message);
-        }
-
+    private static void demo_mode () {
         if (Installer.App.test_mode) {
             critical (_("Test mode switch user"));
         } else {
+            connect_system_interface ();
+
             var seat = Utils.get_seat_instance ();
             if (seat != null) {
                 try {
@@ -93,6 +93,18 @@ namespace Utils {
                     stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
                 }
             }
+        }
+    }
+
+    private static void connect_system_interface () {
+        if (system_interface != null) {
+            return;
+        }
+
+        try {
+            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+        } catch (IOError e) {
+            warning ("%s", e.message);
         }
     }
 
