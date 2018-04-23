@@ -100,6 +100,7 @@ public class Installer.DiskView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
         next_button.clicked.connect (() => next_step ());
+
         action_area.add (next_button);
 
         show_all ();
@@ -141,7 +142,7 @@ public class Installer.DiskView : AbstractInstallerView {
                 label = model;
             }
 
-            string path = Utils.string_from_utf8(disk.get_device_path ());
+            string path = Utils.string_from_utf8 (disk.get_device_path ());
 
             var disk_button = new DiskButton (
                 label,

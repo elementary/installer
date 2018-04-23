@@ -19,8 +19,6 @@
 public class SuccessView : AbstractInstallerView {
     public static int RESTART_TIMEOUT = 30;
 
-    private Utils.SystemInterface system_interface;
-
     public string log { get; construct; }
 
     public SuccessView (string log) {
@@ -28,12 +26,6 @@ public class SuccessView : AbstractInstallerView {
     }
 
     construct {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-            critical (e.message);
-        }
-
         var artwork = new Gtk.Grid ();
         artwork.get_style_context ().add_class ("success");
         artwork.get_style_context().add_class ("artwork");
@@ -101,36 +93,15 @@ public class SuccessView : AbstractInstallerView {
         action_area.add (terminal_button);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
-        shutdown_button.clicked.connect (() => {
-            if (Installer.App.test_mode) {
-                critical (_("Test mode shutdown"));
-            } else {
-                try {
-                    system_interface.power_off (false);
-                } catch (IOError e) {
-                    critical (e.message);
-                }
-            }
-        });
-        action_area.add (shutdown_button);
+        shutdown_button.clicked.connect (Utils.shutdown);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
         restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        restart_button.clicked.connect (session_restart);
+        restart_button.clicked.connect (Utils.restart);
+
+        action_area.add (shutdown_button);
         action_area.add (restart_button);
 
         show_all ();
-    }
-
-    private void session_restart () {
-        if (Installer.App.test_mode) {
-            critical (_("Test mode reboot"));
-        } else {
-            try {
-                system_interface.reboot (false);
-            } catch (IOError e) {
-                critical (e.message);
-            }
-        }
     }
 }

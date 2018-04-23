@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016-2018 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,11 +18,11 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.PartitioningView : AbstractInstallerView  {
+public class Installer.PartitioningView : AbstractInstallerView {
     public signal void next_step ();
 
     private Gtk.Button next_button;
-    private Gtk.Button gparted_button;
+    private Gtk.Button modify_partitions_button;
     private Distinst.Disks disks;
     private Gtk.Box disk_list;
     private Gtk.SizeGroup label_sizer;
@@ -35,7 +35,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
     public PartitioningView (uint64 size) {
         minimum_disk_size = size;
-        Object (cancellable: true);
+        Object (cancellable: false);
     }
 
     construct {
@@ -66,7 +66,7 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         );
 
         var description = new Gtk.Label (full_description);
-        description.halign = Gtk.Align.FILL;
+        description.margin_bottom = description.margin_bottom = 24;
         description.max_width_chars = 72;
         description.use_markup = true;
         description.wrap = true;
@@ -86,17 +86,23 @@ public class Installer.PartitioningView : AbstractInstallerView  {
 
         load_disks ();
 
-        gparted_button = new Gtk.Button.with_label (_("Modify Partitions…"));
-        gparted_button.clicked.connect (() => open_gparted ());
-        action_area.add (gparted_button);
-        action_area.set_child_secondary (gparted_button, true);
-        action_area.set_child_non_homogeneous (gparted_button, true);
+        modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
+        modify_partitions_button.clicked.connect (() => open_partition_editor ());
+        action_area.add (modify_partitions_button);
+        action_area.set_child_secondary (modify_partitions_button, true);
+        action_area.set_child_non_homogeneous (modify_partitions_button, true);
+
+        var back_button = new Gtk.Button.with_label (_("Back"));
 
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
-        next_button.clicked.connect (() => next_step ());
+
+        action_area.add (back_button);
         action_area.add (next_button);
+
+        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
+        next_button.clicked.connect (() => next_step ());
 
         show_all ();
     }
@@ -118,9 +124,6 @@ public class Installer.PartitioningView : AbstractInstallerView  {
             string path = Utils.string_from_utf8 (disk.get_device_path ());
 
             string model = disk.get_model ();
-            string label = (model.length == 0)
-                ? disk.get_serial ().replace ("_", " ")
-                : model;
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
@@ -140,18 +143,24 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         disk_list.show_all ();
     }
 
-    private void open_gparted () {
+    private void open_partition_editor () {
         try {
-            var process = new GLib.Subprocess.newv ({"gparted"}, GLib.SubprocessFlags.NONE);
-            process.wait ();
+            /*
+             * FIXME: GParted provides a .desktop file, so we should use
+             * GLib.AppInfo. However, we need a better way to listen to
+             * partition changes if we do that.
+             */
+            var gparted = new GLib.Subprocess.newv ({"gparted"}, GLib.SubprocessFlags.NONE);
+            gparted.wait ();
         } catch (GLib.Error error) {
-            stderr.printf ("critical error occurred when executing gparted\n");
+            critical ("could not execute gparted");
         }
 
         reset_view ();
     }
 
-    private void reset_view () {
+    public void reset_view () {
+        debug ("Resetting partitioning view");
         disk_list.get_children ().foreach ((child) => child.destroy ());
         mounts.clear ();
         luks.clear ();
@@ -234,25 +243,25 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 luks.add (new LuksCredentials (device, pv, password));
                 break;
             case 1:
-                stderr.printf ("decrypt_partition result is 1\n");
+                debug ("decrypt_partition result is 1");
                 break;
             case 2:
-                stderr.printf ("decrypt: input was not valid UTF-8\n");
+                debug ("decrypt: input was not valid UTF-8");
                 break;
             case 3:
-                stderr.printf ("decrypt: either a password or keydata string must be supplied\n");
+                debug ("decrypt: either a password or keydata string must be supplied");
                 break;
             case 4:
-                stderr.printf ("decrypt: unable to decrypt partition (possibly invalid password)\n");
+                debug ("decrypt: unable to decrypt partition (possibly invalid password)");
                 break;
             case 5:
-                stderr.printf ("decrypt: the decrypted partition does not have a LVM volume on it\n");
+                debug ("decrypt: the decrypted partition does not have a LVM volume on it");
                 break;
             case 6:
-                stderr.printf ("decrypt: unable to locate LUKS partition at %s\n", device);
+                debug ("decrypt: unable to locate LUKS partition at %s", device);
                 break;
             default:
-                stderr.printf ("decrypt: unhandled error value: %d\n", result);
+                critical ("decrypt: unhandled error value: %d", result);
                 break;
         }
     }
@@ -266,7 +275,6 @@ public class Installer.PartitioningView : AbstractInstallerView  {
                 return;
             }
         }
-
 
         validate_status ();
         mounts.add (mount);
@@ -307,3 +315,4 @@ public class Installer.PartitioningView : AbstractInstallerView  {
         return array.remove_at (array.size - 1);
     }
 }
+

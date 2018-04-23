@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2017–2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,15 +18,8 @@
 
 public class TryInstallView : AbstractInstallerView {
     public signal void next_step ();
-    private Utils.SystemInterface system_interface;
 
     construct {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-            critical (e.message);
-        }
-
         var image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
@@ -89,18 +82,22 @@ public class TryInstallView : AbstractInstallerView {
         content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (grid, 1, 0, 1, 2);
 
-        var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
-        demo_button.clicked.connect (() => Installer.App.get_instance ().quit ());
-        action_area.add (demo_button);
-
         var back_button = new Gtk.Button.with_label (_("Back"));
-        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
-        action_area.add (back_button);
+
+        var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
 
         var next_button = new Gtk.Button.with_label (_("Install %s").printf (Utils.get_pretty_name ()));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        next_button.clicked.connect (() => next_step ());
+
+        action_area.add (demo_button);
+        action_area.add (back_button);
         action_area.add (next_button);
+
+        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
+
+        demo_button.clicked.connect (Utils.demo_mode);
+
+        next_button.clicked.connect (() => next_step ());
 
         show_all ();
     }
