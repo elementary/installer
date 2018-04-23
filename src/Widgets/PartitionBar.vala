@@ -51,8 +51,8 @@ public class Installer.PartitionBar : Gtk.EventBox {
         vg = (Distinst.FileSystemType.LVM == filesystem)
             ? part->get_current_lvm_volume_group ()
             : null;
-
         info = part;
+        tooltip_text = path;
 
         var style_context = get_style_context ();
         style_context.add_class (Distinst.strfilesys (filesystem));
