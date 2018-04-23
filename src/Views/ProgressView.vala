@@ -209,6 +209,8 @@ public class ProgressView : AbstractInstallerView {
     private bool recovery_disk_configuration (Distinst.Disks disks, string recovery_disk) {
         unowned Configuration current_config = Configuration.get_default ();
 
+        var lvm = false;
+
         var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
         var root_vg = Distinst.generate_unique_id ("data");
         if (encrypted_vg == null || root_vg == null) {
@@ -219,6 +221,7 @@ public class ProgressView : AbstractInstallerView {
         Distinst.LvmEncryption? encryption;
         if (current_config.encryption_password != null) {
             debug ("encrypting");
+            lvm = true;
             encryption = Distinst.LvmEncryption () {
                 physical_volume = encrypted_vg,
                 password = current_config.encryption_password,
@@ -249,6 +252,7 @@ public class ProgressView : AbstractInstallerView {
         string? efi_part = Recovery.efi_partition ();
         string? recovery_part = Recovery.recovery_partition ();
         string? lvm_part = Recovery.lvm_partition();
+        //TODO: Find swap
 
         if (lvm_part == null) {
             warning ("attempting to find LUKS partition automatically");
@@ -315,17 +319,34 @@ public class ProgressView : AbstractInstallerView {
             return false;
         }
 
-        disk.remove_partition (lvm_num);
-
-        int result = disk.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
-                .partition_type (Distinst.PartitionType.PRIMARY)
-                .logical_volume (root_vg, encryption)
-        );
+        int result = disk.remove_partition (lvm_num);
 
         if (result != 0) {
-            critical ("unable to add lvm partition to %s", recovery_disk);
+            critical ("unable to remove partition %d on %s", lvm_num, recovery_disk);
             return false;
+        }
+
+        if (lvm) {
+            result = disk.add_partition (
+                new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
+                    .partition_type (Distinst.PartitionType.PRIMARY)
+                    .logical_volume (root_vg, encryption)
+            );
+
+            if (result != 0) {
+                critical ("unable to add lvm partition to %s", recovery_disk);
+                return false;
+            }
+        } else {
+            result = disk.add_partition (
+                new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                    .mount ("/")
+            );
+
+            if (result != 0) {
+                critical ("unable to add / partition to %s", recovery_disk);
+                return false;
+            }
         }
 
         disks.push ((owned) disk);
@@ -337,28 +358,28 @@ public class ProgressView : AbstractInstallerView {
             return false;
         }
 
-        unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
+        if (lvm) {
+            unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
 
-        if (lvm_device == null) {
-            critical ("unable to find '%s' volume group on %s", root_vg, recovery_disk);
-            return false;
+            if (lvm_device == null) {
+                critical ("unable to find '%s' volume group on %s", root_vg, recovery_disk);
+                return false;
+            }
+
+            start = lvm_device.get_sector (ref start_sector);
+            end = lvm_device.get_sector (ref end_sector);
+
+            result = lvm_device.add_partition (
+                new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                    .name("root")
+                    .mount ("/")
+            );
+
+            if (result != 0) {
+                critical ("unable to add / partition to lvm %s on %s", root_vg, recovery_disk);
+                return false;
+            }
         }
-
-        start = lvm_device.get_sector (ref start_sector);
-        end = lvm_device.get_sector (ref end_sector);
-
-        result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
-                .name("root")
-                .mount ("/")
-        );
-
-        if (result != 0) {
-            critical ("unable to add / partition to lvm %s on %s", root_vg, recovery_disk);
-            return false;
-        }
-
-        //TODO: Find swap
 
         return true;
     }
