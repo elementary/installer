@@ -21,26 +21,28 @@
  public delegate void DecryptFn (string path, string pv, string pass, Installer.DecryptMenu menu);
 
 public class Installer.DecryptMenu: Gtk.Popover {
-    private Gtk.Stack container;
+    private Gtk.Stack stack;
 
-    private Gtk.Container decrypt_view;
+    private Gtk.Grid decrypt_view;
     private Gtk.Button decrypt_button;
     private Gtk.Entry pass_entry;
     private Gtk.Entry pv_entry;
 
     public DecryptMenu (string device_path, DecryptFn decrypt) {
-        container = new Gtk.Stack ();
-        container.margin = 12;
+        stack = new Gtk.Stack ();
+        stack.margin = 12;
         create_decrypt_view (device_path, decrypt);
-        add (container);
-        container.show_all ();
+        add (stack);
+        stack.show_all ();
     }
 
     private void create_decrypt_view (string device_path, DecryptFn decrypt) {
+        var pass_label = new Gtk.Label (_("Password:"));
+        pass_label.halign = Gtk.Align.END;
+
         pass_entry = new Gtk.Entry ();
         pass_entry.input_purpose = Gtk.InputPurpose.PASSWORD;
         pass_entry.visibility = false;
-        pass_entry.placeholder_text = _("Password");
         pass_entry.changed.connect (() => set_sensitivity ());
         pass_entry.activate.connect (() => {
             if (entries_set ()) {
@@ -48,8 +50,12 @@ public class Installer.DecryptMenu: Gtk.Popover {
             }
         });
 
+        var pv_label = new Gtk.Label (_("Physical Volume:"));
+        pv_label.halign = Gtk.Align.END;
+
         pv_entry = new Gtk.Entry ();
-        pv_entry.placeholder_text = _("Physical Volume");
+        // Set a sane default
+        pv_entry.text = "data";
         pv_entry.changed.connect (() => set_sensitivity ());
         pv_entry.activate.connect (() => {
             if (entries_set ()) {
@@ -58,17 +64,25 @@ public class Installer.DecryptMenu: Gtk.Popover {
         });
 
         decrypt_button = new Gtk.Button.with_label (_("Decrypt"));
+        decrypt_button.sensitive = false;
+        decrypt_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         decrypt_button.clicked.connect (() => {
             decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
         });
 
-        decrypt_view = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        decrypt_view.add (pass_entry);
-        decrypt_view.add (pv_entry);
-        decrypt_view.add (decrypt_button);
+        decrypt_view = new Gtk.Grid ();
+        decrypt_view.column_spacing = 6;
+        decrypt_view.row_spacing = 12;
 
-        container.add (decrypt_view);
-        container.visible_child = decrypt_view;
+        decrypt_view.attach (pass_label,     0, 0);
+        decrypt_view.attach (pass_entry,     1, 0);
+        decrypt_view.attach (pv_label,       0, 1);
+        decrypt_view.attach (pv_entry,       1, 1);
+        decrypt_view.attach (decrypt_button, 0, 2, 2);
+
+        stack.add (decrypt_view);
+        stack.visible_child = decrypt_view;
+        pass_entry.grab_focus_without_selecting ();
     }
 
     private void create_decrypted_view (string pv) {
@@ -82,8 +96,8 @@ public class Installer.DecryptMenu: Gtk.Popover {
         box.add (info);
         box.show_all ();
 
-        container.add (box);
-        container.visible_child = box;
+        stack.add (box);
+        stack.visible_child = box;
     }
 
     private bool entries_set () {
