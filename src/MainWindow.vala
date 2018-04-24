@@ -84,7 +84,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             if (Recovery.disk () == null) {
                 load_try_install_view ();
             } else {
-                load_encryptview ();
+                load_encrypt_view ();
             }
         });
     }
@@ -99,7 +99,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
-        try_install_view.next_step.connect (() => load_diskview ());
+        try_install_view.next_step.connect (() => load_disk_view ());
     }
 
     private void set_check_view_visible (bool show) {
@@ -112,7 +112,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
     }
 
-    private void load_checkview () {
+    private void load_check_view () {
         if (check_view != null) {
             check_view.destroy ();
         }
@@ -121,7 +121,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (check_view);
 
         check_view.status_changed.connect ((met_requirements) => {
-            // If check is not ignored
             if (!check_ignored) {
                 set_check_view_visible (!met_requirements);
             }
@@ -139,6 +138,27 @@ public class Installer.MainWindow : Gtk.Dialog {
         });
 
         set_check_view_visible (!check_ignored && !check_view.check_requirements ());
+    }
+
+    private void load_disk_view () {
+        if (disk_view != null) {
+            disk_view.destroy ();
+        }
+
+        disk_view = new DiskView ();
+        disk_view.previous_view = try_install_view;
+        stack.add (disk_view);
+        stack.visible_child = disk_view;
+        disk_view.load.begin(minimum_disk_size);
+
+        disk_view.cancel.connect (() => {
+            stack.visible_child = try_install_view;
+        });
+
+        disk_view.custom_step.connect (() => load_partitioning_view ());
+        disk_view.next_step.connect (() =>  load_encrypt_view ());
+
+        load_check_view ();
     }
 
     private void load_partitioning_view() {
@@ -159,34 +179,13 @@ public class Installer.MainWindow : Gtk.Dialog {
         });
     }
 
-    private void load_diskview () {
-        if (disk_view != null) {
-            disk_view.destroy ();
-        }
-
-        disk_view = new DiskView ();
-        disk_view.previous_view = encrypt_view;
-        stack.add (disk_view);
-        stack.visible_child = disk_view;
-        disk_view.load.begin(minimum_disk_size);
-
-        disk_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
-        });
-
-        disk_view.custom_step.connect (() => load_partitioning_view ());
-        disk_view.next_step.connect (() =>  load_encryptview ());
-
-        load_checkview ();
-    }
-
-    private void load_encryptview () {
+    private void load_encrypt_view () {
         if (encrypt_view != null) {
             encrypt_view.destroy ();
         }
 
         encrypt_view = new EncryptView ();
-        encrypt_view.previous_view = try_install_view;
+        encrypt_view.previous_view = disk_view;
         stack.add (encrypt_view);
         stack.visible_child = encrypt_view;
 
@@ -207,6 +206,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         progress_view.on_success.connect (() => {
             load_success_view (progress_view.get_log ());
         });
+
         progress_view.on_error.connect (() => {
             load_error_view (progress_view.get_log ());
         });
@@ -268,3 +268,4 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     public override void close () {}
 }
+
