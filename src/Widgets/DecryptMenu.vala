@@ -55,7 +55,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
         primary_label.halign = Gtk.Align.START;
 
-        var secondary_label = new Gtk.Label (_("Enter the partition's encryption password and set a name for the decrypted partition."));
+        var secondary_label = new Gtk.Label (_("Enter the partition's encryption password and set a device name for the decrypted partition."));
         secondary_label.halign = Gtk.Align.START;
         secondary_label.max_width_chars = 50;
         secondary_label.selectable = true;
@@ -81,7 +81,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
             }
         });
 
-        var pv_label = new Gtk.Label (_("Name:"));
+        var pv_label = new Gtk.Label (_("Device name:"));
         pv_label.halign = Gtk.Align.END;
 
         pv_entry = new Gtk.Entry ();
