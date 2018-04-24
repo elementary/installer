@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-24 11:45+0000\n"
+"PO-Revision-Date: 2018-04-24 21:17+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech "
 "<https://weblate.elementary.io/projects/installer/installer/cs/>\n"
@@ -124,9 +124,8 @@ msgid "Memory:"
 msgstr "Operační paměť:"
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Vyberte jazyk"
+msgstr "Vybrat disk"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -142,7 +141,7 @@ msgstr "Získávám aktuální nastavení…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Přizpůsobit oddíly…"
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
@@ -150,7 +149,7 @@ msgstr "Vymazat a nainstalovat"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Šifrování disku"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
@@ -179,15 +178,15 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Vybrat šifrovací heslo"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Potvrdit heslo"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Nešifrovat"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -196,15 +195,15 @@ msgstr "Zpět"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Vybrat heslo"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Nastavit heslo"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Hesla se neshodují"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -304,11 +303,11 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Doporučujeme také vybrat <b>Swap</b> oddíl."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Upravit oddíly"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
