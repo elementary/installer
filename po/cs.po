@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-19 16:38+0000\n"
+"PO-Revision-Date: 2018-04-24 11:45+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
-"Language-Team: Czech <https://weblate.elementary.io/projects/installer/"
-"installer/cs/>\n"
+"Language-Team: Czech "
+"<https://weblate.elementary.io/projects/installer/installer/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
-msgstr "Instaluj %s"
+msgstr "Nainstalovat %s"
 
 #: src/Utils.vala:31
 msgid "Operating System"
@@ -100,13 +100,12 @@ msgid "Connect to a Power Source"
 msgstr "Připojte zdroj napájení"
 
 #: src/Views/CheckView.vala:233
-#, fuzzy
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"Vaše zařízení užívá baterii. Doporučujeme jej po čas instalace připojit k "
-"elektrické síti."
+"Vaše zařízení je napájené z baterie. Doporučujeme jej po čas instalace "
+"připojit k elektrické síti."
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
