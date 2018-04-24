@@ -237,7 +237,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         switch (result) {
             case 0:
-                unowned Distinst.LvmDevice disk = disks.get_logical_device (pv);
+                unowned Distinst.LvmDevice disk = disks.get_logical_device_within_pv (pv);
                 add_logical_disk (disk);
                 menu.set_decrypted (pv);
                 luks.add (new LuksCredentials (device, pv, password));
@@ -315,4 +315,3 @@ public class Installer.PartitioningView : AbstractInstallerView {
         return array.remove_at (array.size - 1);
     }
 }
-
