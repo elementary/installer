@@ -7,3 +7,4 @@ Terminal=false
 Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;System;
+X-GNOME-Autostart-Delay=1
