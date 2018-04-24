@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-04-24 11:45+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech "
 "<https://weblate.elementary.io/projects/installer/installer/cs/>\n"
 "Language: cs\n"
@@ -100,13 +100,12 @@ msgid "Connect to a Power Source"
 msgstr "Připojte zdroj napájení"
 
 #: src/Views/CheckView.vala:233
-#, fuzzy
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"Vaše zařízení užívá baterii. Doporučujeme jej po čas instalace připojit k "
-"elektrické síti."
+"Vaše zařízení je napájené z baterie. Doporučujeme jej po čas instalace "
+"připojit k elektrické síti."
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
