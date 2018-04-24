@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-20 07:47+0000\n"
+"PO-Revision-Date: 2018-04-24 13:52+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://weblate.elementary.io/projects/installer/"
-"installer/ca/>\n"
+"Language-Team: Catalan "
+"<https://weblate.elementary.io/projects/installer/installer/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -149,25 +149,31 @@ msgstr "Esborra i instal·la"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Encriptació de dispositiu"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Encriptar aquest dispositiu protegeix les dades de la lectura d'altres "
+"persones amb accés físic al dispositiu."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"L'encriptació del dispositiu pot tenir un petit impacte en la velocitat de "
+"lectura i escriptura a l'hora de fer tasques intenses."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
+"La contrasenya d'encriptació es demanarà cada vegada que activeu o reinicieu "
+"aquest dispositiu."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -175,18 +181,21 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Si oblideu la contrasenya d'encriptació, <b>no podreu recuperar-ne les "
+"dades.</b> És una contrasenya única per a aquest dispositiu, no la "
+"contrasenya per al compte d'usuari."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Trieu una contrasenya d'encriptació"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Confirmeu la contrasenya"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "No l'encriptis"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -195,15 +204,15 @@ msgstr "Enrere"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Trieu una contrasenya"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Estableix la contrasenya"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Les contrasenyes no coincideixen."
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -292,25 +301,28 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Seleccioneu quines particions s'usaran d'entre tots els dispositius. <b>"
+"Seleccionar \"Formata\" eliminarà les dades de la partició seleccionada.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Heu de seleccionar com a mínim una partició d'<b>arrel (/)</b>."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Heu de seleccionar com a mínim una partició d'<b>arrel (/)</b> i una "
+"partició d'<b>arrencada (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "També és recomanable seleccionar una partició d'<b>intercanvi</b>."
 
 #: src/Views/PartitioningView.vala:89
-#, fuzzy
 msgid "Modify Partitions…"
-msgstr "Personalitzeu les particions…"
+msgstr "Modifica les particions…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -381,84 +393,84 @@ msgstr "Aturada del mode de prova"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Desencripta aquesta partició"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
 msgstr ""
+"Escriviu la contrasenya d'encriptació de la partició i establiu un nom de "
+"dispositiu LUKS."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Contrasenya:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Nom del dispositiu:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Desencripta"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "S'ha desencriptat el volum LUKS"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Usa la partició:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Formata:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Usa com a:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Arrel"
+msgstr "Arrel (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Partició de l'usuari (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Arrencada (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Intercanvi"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Personalitzada"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Personalitzada:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Sistema de fitxers:"
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Per defecte"
+msgstr "Per defecte (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Seleccioneu un dispositiu per a la instal·lació"
