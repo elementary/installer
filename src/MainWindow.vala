@@ -147,13 +147,9 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         partition_view = new PartitioningView (minimum_disk_size);
-        partition_view.previous_view = try_install_view;
+        partition_view.previous_view = disk_view;
         stack.add (partition_view);
         stack.visible_child = partition_view;
-
-        partition_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
-        });
 
         partition_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
