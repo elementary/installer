@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-20 22:42+0000\n"
+"PO-Revision-Date: 2018-04-24 00:07+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
-"Language-Team: Danish <https://weblate.elementary.io/projects/installer/"
-"installer/da/>\n"
+"Language-Team: Danish "
+"<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -149,25 +149,31 @@ msgstr "Slet og Installér"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Drev Kryptering"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Kryptering af dette drev beskytter data mod at blive læst af andre med "
+"fysisk adgang til denne enhed."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"Drev kryptering kan minimalt påvirke læsnings- og skrivehastigheden, når du "
+"udfører intense opgaver."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
+"Krypteringsadgangskoden kræves hver gang du tænder eller genstarter denne "
+"enhed."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -175,18 +181,21 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Hvis du glemmer krypteringsadgangskoden, <b>vil du ikke kunne genskabe det "
+"tabte data.</b> Dette er et unikt kodeord for denne enhed, ikke adgangskoden "
+"til din brugerkonto."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Vælg Krypteringskode"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Bekræft Adgangskode"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Undlad at Kryptere"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -195,15 +204,15 @@ msgstr "Tilbage"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Vælg Adgangskode"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Sæt Adgangskode"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Adgangskoderne er ikke ens"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -292,6 +301,8 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Vælg hvilke partitioner der skal bruges på tværs af alle drev. <b>Hvis du "
+"vælger \"Format\", slettes ALT data på den valgte partition.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
