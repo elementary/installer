@@ -88,7 +88,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_disks ();
         
         var help_button = new Gtk.Button.with_label (_("?"));
-        help_button.tooltip_text = _("Help");
+        help_button.tooltip_text = _("Help with Dual Booting");
         help_button.get_style_context ().add_class ("circular");
 
         modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
