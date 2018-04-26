@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-14 15:05+0000\n"
-"Last-Translator: Jörg Arnold <j0ar@posteo.de>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/installer/"
-"installer/de/>\n"
+"PO-Revision-Date: 2018-04-26 20:17+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: German "
+"<https://weblate.elementary.io/projects/installer/installer/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -129,9 +129,8 @@ msgid "Memory:"
 msgstr "Arbeitsspeicher:"
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Sprache wählen"
+msgstr "Wählen Sie ein Laufwerk"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -148,7 +147,7 @@ msgstr "Lädt die aktuelle Konfiguration…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Partitionen anpassen..."
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
@@ -156,7 +155,7 @@ msgstr "Löschen und Installieren"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Laufwerksverschlüsselung"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
