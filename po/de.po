@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-26 20:37+0000\n"
+"PO-Revision-Date: 2018-04-27 00:02+0000\n"
 "Last-Translator: sdl-blue <bluethgen.kai@gmail.com>\n"
 "Language-Team: German "
 "<https://weblate.elementary.io/projects/installer/installer/de/>\n"
@@ -40,7 +40,7 @@ msgstr "Der Distinst-Protokoll-Rückruf konnte nicht festgelegt werden"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr "Beginn der Installation"
+msgstr "Starte Installation"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -147,7 +147,7 @@ msgstr "Lädt die aktuelle Konfiguration…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr "Partitionen anpassen..."
+msgstr "Partitionen anpassen…"
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
