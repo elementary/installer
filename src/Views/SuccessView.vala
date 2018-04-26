@@ -69,7 +69,7 @@ public class SuccessView : AbstractInstallerView {
 
         var label_area = new Gtk.Grid ();
         label_area.column_homogeneous = true;
-        label_area.halign = Gtk.Align.CENTER;
+        label_area.halign = Gtk.Align.FILL;
         label_area.valign = Gtk.Align.FILL;
         label_area.attach (artwork,       0, 0, 1, 1);
         label_area.attach (title_label, 0, 1, 1, 1);
