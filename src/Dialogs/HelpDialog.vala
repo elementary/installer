@@ -34,7 +34,6 @@ public class HelpDialog : Gtk.Window {
         var header = new Gtk.HeaderBar ();
         header.set_show_close_button (true);
         var header_context = header.get_style_context ();
-        // header_context.add_class ("default-decoration");
 
         var dual_booting = new Gtk.Label ("""<b>Create Partitions</b>
 If you don't have available partitions, you can create them using the "Modify Partitions…" button to open GParted.
