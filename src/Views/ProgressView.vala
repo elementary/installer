@@ -39,7 +39,7 @@ public class ProgressView : AbstractInstallerView {
         terminal_view.editable = false;
         terminal_view.cursor_visible = true;
         terminal_view.monospace = true;
-        terminal_view.wrap_mode = Gtk.WrapMode.WORD_CHAR;
+        terminal_view.wrap_mode = Gtk.WrapMode.CHAR;
         terminal_view.get_style_context ().add_class ("terminal");
 
         terminal_output = new Gtk.ScrolledWindow (null, null);
