@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-24 00:07+0000\n"
+"PO-Revision-Date: 2018-04-27 00:02+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian "
 "<https://weblate.elementary.io/projects/installer/installer/lt/>\n"
@@ -158,6 +158,8 @@ msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Šio disko šifravimas apsaugo duomenis ir neleidžia jų perskaityti asmenims, "
+"kurie turi fizinę prieigą prie šio įrenginio."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
@@ -320,9 +322,8 @@ msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Taip pat yra rekomenduojama pasirinkti <b>sukeitimų</b> skaidinį."
 
 #: src/Views/PartitioningView.vala:89
-#, fuzzy
 msgid "Modify Partitions…"
-msgstr "Tinkinti skaidinius…"
+msgstr "Tvarkyti skaidinius…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -399,6 +400,8 @@ msgstr "Iššifruoti šį skaidinį"
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
 msgstr ""
+"Įveskite skaidinio šifravimo slaptažodį ir nustatykite LUKS įrenginio "
+"pavadinimą."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
@@ -443,7 +446,6 @@ msgid "Root (/)"
 msgstr "Šaknis (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
-#, fuzzy
 msgid "Home (/home)"
 msgstr "Namai (/home)"
 
