@@ -34,21 +34,19 @@ public class HelpDialog : Gtk.Window {
         var header = new Gtk.HeaderBar ();
         header.set_show_close_button (true);
         var header_context = header.get_style_context ();
-        header_context.add_class ("default-decoration");
+        // header_context.add_class ("default-decoration");
 
         var dual_booting = new Gtk.Label ("""<b>Create Partitions</b>
-If you don't have an available partition, you can create one using the "Modify Partitions…" button to open GParted.
+If you don't have available partitions, you can create them using the "Modify Partitions…" button to open GParted.
 
-First, make sure you select the correct drive in the top-right of GParted. Right-click the desired partition and select "Resize/Move". Resize the partition down to make room for a %s partition, then select the "Resize/Move" button.
-
-Right-click the new "unallocated" space and select "New". Choose the filesystem you want (if unsure, keep the default ext4), then select the "Add" button.
+Select the wanted drive in the top-right of GParted. Resize the desired partition down to make room for a %s partition. If your previous install doesn't have a Swap partition, create one at the end of the unused space. In the remaining space, create a new partition to use as your root.
 
 When you're ready, select the "Apply All Operations" icon at the end of the toolbar. Once the process is complete, close the GParted window and the installer will update with your changes.
 
 <b>Choose Partitions</b>
-Select the partition on which you want to install %s. Choose "Use partition" and select "Use as Root (/)". On EFI installs, you must also choose a Boot (/boot/efi) partition. One should exist from your other OS; choose it, and do not format it.
+Select the partition you want to use for the root of %s. Choose "Use partition" and select "Use as Root (/)". On EFI installs, you must also choose a Boot (/boot/efi) partition. One should exist from your other OS; choose it, and do not format it.
 
-<b>Erase and install</b>
+<b>Erase and Install</b>
 Once you have your partition(s) selected, select the red "Erase and Install" button. This will apply your changes and begin the installation. When you restart your device after installing, it should automatically boot into %s where you can set up your user. Note that on BIOS installs, the %s entry may read "Ubuntu". To boot your other OS:
 
 • If your device is in EFI mode, hold the spacebar while powering it on.
@@ -57,37 +55,41 @@ Once you have your partition(s) selected, select the red "Erase and Install" but
 Choose your previous OS with the arrow keys, then press Enter.""".printf (os, os, os, os));
         dual_booting.margin = 12;
         dual_booting.max_width_chars = 90;
-        dual_booting.selectable = true;
         dual_booting.use_markup = true;
         dual_booting.valign = Gtk.Align.START;
         dual_booting.wrap = true;
 
-        var windows = new Gtk.Label ("""<b>EFI Installs</b>
+        var windows = new Gtk.Label ("""<b>Fast Startup</b>
+Windows 8 and later uses a "Fast Startup" setting which prevents Windows from fully shutting down and allowing other OSes to use the disk. Before you can properly dual boot with Windows, you must disable this setting in Windows.
 
-When modifying partitions, create a new 512 MB FAT32 partition at the beginning of the unused space to be used as a Boot (/boot/efi) partition. Create a 4 GB swap partition at the end of the unused space. Create a partition from the the remaining space to be used as Root (/).
+In your Windows install, open Control Panel and head to "Power Options". Select "Choose what the power buttons do", select "Change settings that are currently unavailable", then disable the "fast startup" setting. Note that Windows updates may occasionally turn this setting back on without asking, so if you are unable to boot into %s, check this setting first.
 
-Apply the changes in GParted. In the installer, select each of the new partitions, choose "Use partition", and select the respective options.
+<b>Create Partitions</b>
+Use the "Modify Partitions…" button to open GParted, then select the wanted drive in the top-right of GParted. Resize the desired partition down to make room for a %s partition. If your device is in EFI mode, create a new 512 MB FAT32 partition at the beginning of the unused space to be used as a Boot (/boot/efi) partition. Create a 4 GB swap partition at the end of the unused space. Create a partition from the the remaining space to be used as Root (/).
 
-<b>Fast Startup</b>
-Windows 8 and later uses a "Fast Startup" setting which prevents Windows from fully shutting down and allowing other OSes to use the disk. Before you can properly dual boot with Windows, you must disable this setting in Windows. 
+When you're ready, select the "Apply All Operations" icon at the end of the toolbar. Once the process is complete, close the GParted window and the installer will update with your changes.
 
-In your Windows install, open Control Panel and head to "Power Options". Select "Choose what the power buttons do", select "Change settings that are currently unavailable", then disable the "fast startup" setting. Note that Windows updates may occasionally turn this setting back on without asking, so if you are unable to boot into %s, check this setting first.""".printf (os));
+<b>Choose Partitions</b>
+Select the new FAT32 partition, choose "Use partition", and select "Use as Boot (/boot/efi)". Select the new partition you created for the root, choose "Use partition", and select "Use as Root (/)". Select the new Swap partition, choose "Use partition", and select "Use as Swap".
+
+<b>Erase and Install</b>
+Once you have your partitions selected, select the red "Erase and Install" button. This will apply your changes and begin the installation. When you restart your device after installing, it should automatically boot into %s where you can set up your user. Note that on BIOS installs, the %s entry may read "Ubuntu". To boot your other OS:
+
+• If your device is in EFI mode, use your device's built-in boot menu (typically by holding a key during boot).
+• If your device is in BIOS mode, a menu will automatically appear when powering on.
+
+Choose your previous OS with the arrow keys, then press Enter.""".printf (os, os, os, os));
         windows.use_markup = true;
         windows.margin = 12;
         windows.max_width_chars = 90;
-        windows.selectable = true;
         windows.use_markup = true;
         windows.valign = Gtk.Align.START;
         windows.wrap = true;
 
-        // var encryption = new Gtk.Label ("Encryption");
-        // encryption.use_markup = true;
-
         var stack = new Gtk.Stack ();
         stack.set_transition_type (Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
-        stack.add_titled (dual_booting, "dual_booting", _("Dual Booting"));
+        stack.add_titled (dual_booting, "dual_booting", _("Linux-based OSes"));
         stack.add_titled (windows, "windows", _("Windows"));
-        // stack.add_titled (encryption, "encryption", _("Encryption"));
 
         var stack_switcher = new Gtk.StackSwitcher ();
         stack_switcher.set_stack (stack);
