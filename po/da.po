@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-04-27 20:19+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
@@ -39,7 +39,7 @@ msgstr "Starter installation"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr "Er du sikker på at du vil Lukke Ned?"
+msgstr "Er du sikker på, at du vil lukke ned?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
