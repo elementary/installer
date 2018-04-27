@@ -184,7 +184,7 @@ public class ProgressView : AbstractInstallerView {
         config.keyboard_variant = current_config.keyboard_variant;
 
         var disks = new Distinst.Disks ();
-        if (recovery != null && Recovery.get_default().oem_mode) {
+        if (recovery != null) {
             if (!recovery_disk_configuration (disks, recovery)) {
                 on_error ();
                 return;

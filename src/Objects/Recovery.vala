@@ -20,7 +20,7 @@
 
 public class Recovery : GLib.Object {
     private static Recovery _recovery;
-    public static unowned Recovery? get_default () {
+    public static unowned Recovery get_default () {
         if (_recovery == null) {
             try {
                 _recovery = Recovery.load ("/cdrom/recovery.conf");
@@ -168,8 +168,8 @@ public class Recovery : GLib.Object {
                 recovery.recovery_uuid = val;
             } else if (name == "ROOT_UUID") {
                 recovery.root_uuid = val;
-            } else if (name == "OEM_MODE" && val == "1") {
-                recovery.oem_mode = true;
+            } else if (name == "OEM_MODE" && val == "0") {
+                return null;
             }
         }
 
@@ -185,7 +185,6 @@ public class Recovery : GLib.Object {
     public string? efi_uuid { get; set; default = null; }
     public string? recovery_uuid { get; set; default = null; }
     public string? root_uuid { get; set; default = null; }
-    public bool oem_mode { get; set; default = false; }
     public Gee.ArrayList<Installer.Mount>? mounts { get; set; default = null; }
     public Gee.ArrayList<Installer.LuksCredentials>? luks { get; set; default = null; }
 }
