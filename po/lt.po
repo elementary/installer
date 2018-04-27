@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-27 00:02+0000\n"
+"PO-Revision-Date: 2018-04-28 00:02+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian "
 "<https://weblate.elementary.io/projects/installer/installer/lt/>\n"
@@ -373,7 +373,7 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr "Tęsti nustatymą"
+msgstr "Tęskite nustatymą"
 
 #: src/Views/SuccessView.vala:42
 #, c-format
