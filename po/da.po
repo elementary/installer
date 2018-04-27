@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-04-27 20:22+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/installer/installer/da/>\n"
 "Language: da\n"
@@ -326,7 +326,7 @@ msgstr "Tilpas Partitioner…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr "Partitionerer Drev"
+msgstr "Partitionerer drev"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
