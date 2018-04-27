@@ -86,7 +86,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         content_area.attach (description, 0, 1);
 
         load_disks ();
-        
+
         var help_button = new Gtk.Button.with_label (_("?"));
         help_button.tooltip_text = _("Help with Dual Booting");
         help_button.get_style_context ().add_class ("circular");
@@ -129,7 +129,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
-            if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
+            if (!Recovery.get_default().oem_mode && (disk.contains_mount ("/") || disk.contains_mount ("/cdrom"))) {
                 continue;
             }
 
