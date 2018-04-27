@@ -6,6 +6,7 @@ src/Helpers/KeyboardLayoutHelper.vala
 src/Helpers/LocaleHelper.vala
 src/Helpers/LogHelper.vala
 src/Dialogs/EndSessionDialog.vala
+src/Dialogs/HelpDialog.vala
 src/Objects/org.freedesktop.udisks2.vala
 src/Objects/Configuration.vala
 src/Objects/Mount.vala

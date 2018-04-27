@@ -26,7 +26,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private TryInstallView try_install_view;
     private Installer.CheckView check_view;
     private DiskView disk_view;
-    private PartitioningView partition_view;
+    private PartitioningView partitioning_view;
     private ProgressView progress_view;
     private SuccessView success_view;
     private EncryptView encrypt_view;
@@ -162,19 +162,19 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     private void load_partitioning_view() {
-        if (partition_view != null) {
-            partition_view.destroy ();
+        if (partitioning_view != null) {
+            partitioning_view.destroy ();
         }
 
-        partition_view = new PartitioningView (minimum_disk_size);
-        partition_view.previous_view = disk_view;
-        stack.add (partition_view);
-        stack.visible_child = partition_view;
+        partitioning_view = new PartitioningView (minimum_disk_size);
+        partitioning_view.previous_view = disk_view;
+        stack.add (partitioning_view);
+        stack.visible_child = partitioning_view;
 
-        partition_view.next_step.connect (() => {
+        partitioning_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
-            config.luks = (owned) partition_view.luks;
-            config.mounts = (owned) partition_view.mounts;
+            config.luks = (owned) partitioning_view.luks;
+            config.mounts = (owned) partitioning_view.mounts;
             load_progress_view ();
         });
     }
