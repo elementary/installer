@@ -168,6 +168,8 @@ public class Recovery : GLib.Object {
                 recovery.recovery_uuid = val;
             } else if (name == "ROOT_UUID") {
                 recovery.root_uuid = val;
+            } else if (name == "OEM_MODE" && val == "0") {
+                return null;
             }
         }
 
