@@ -61,14 +61,15 @@ public class SuccessView : AbstractInstallerView {
         terminal_view.get_style_context ().add_class ("terminal");
 
         var terminal_output = new Gtk.ScrolledWindow (null, null);
-        terminal_output.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        terminal_output.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+        terminal_output.propagate_natural_width = true;
         terminal_output.add (terminal_view);
         terminal_output.vexpand = true;
         terminal_output.hexpand = true;
 
         var label_area = new Gtk.Grid ();
         label_area.column_homogeneous = true;
-        label_area.halign = Gtk.Align.CENTER;
+        label_area.halign = Gtk.Align.FILL;
         label_area.valign = Gtk.Align.FILL;
         label_area.attach (artwork,       0, 0, 1, 1);
         label_area.attach (title_label, 0, 1, 1, 1);
