@@ -20,7 +20,7 @@
 
 public class Recovery : GLib.Object {
     private static Recovery _recovery;
-    public static unowned Recovery get_default () {
+    public static unowned Recovery? get_default () {
         if (_recovery == null) {
             try {
                 _recovery = Recovery.load ("/cdrom/recovery.conf");
