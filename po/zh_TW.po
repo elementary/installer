@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-27 00:02+0000\n"
-"Last-Translator: YRC <yrc@csie.io>\n"
+"PO-Revision-Date: 2018-04-30 03:51+0000\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) "
 "<https://weblate.elementary.io/projects/installer/installer/zh_TW/>\n"
 "Language: zh_TW\n"
@@ -149,7 +149,7 @@ msgstr "磁碟加密"
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
-msgstr "加密這個磁碟可保護資料，避免被他人用物理方式讀取此裝置的數據。"
+msgstr "加密這個磁碟可保護資料，避免他人以物理方式存取此裝置的資料。"
 
 #: src/Views/EncryptView.vala:60
 msgid ""
@@ -390,7 +390,7 @@ msgid "LUKS volume was decrypted"
 msgstr "LUKS 分割區已解密完成"
 
 #: src/Widgets/DiskBar.vala:127
-#, c-format, fuzzy
+#, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
@@ -409,7 +409,7 @@ msgstr "格式化："
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr "使用作為："
+msgstr "用作為："
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
@@ -442,7 +442,7 @@ msgstr "檔案系統："
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr "預設檔案系統 (ext4)"
+msgstr "預設 (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "請選取要用於安裝的裝置"
