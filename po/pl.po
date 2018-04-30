@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-04-30 17:47+0000\n"
-"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
+"Last-Translator: Bartek Zimniak <bartusek1901@gmail.com>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/installer/installer/pl/>\n"
 "Language: pl\n"
@@ -402,7 +402,7 @@ msgstr "Odszyfruj tę partycję"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
-msgstr ""
+msgstr "Wpisz hasło szyfrowania partycji i nazwę urządzenia LUKS."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
