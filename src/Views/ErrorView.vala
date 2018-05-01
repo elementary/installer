@@ -80,7 +80,8 @@ public class ErrorView : AbstractInstallerView {
         terminal_view.get_style_context ().add_class ("terminal");
 
         var terminal_output = new Gtk.ScrolledWindow (null, null);
-        terminal_output.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        terminal_output.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+        terminal_output.propagate_natural_width = true;
         terminal_output.add (terminal_view);
         terminal_output.vexpand = true;
         terminal_output.hexpand = true;

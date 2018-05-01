@@ -27,6 +27,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private Gtk.Box disk_list;
     private Gtk.SizeGroup label_sizer;
     private string required_description;
+    private HelpDialog help_dialog;
 
     public Gee.ArrayList<Installer.Mount> mounts;
     public Gee.ArrayList<LuksCredentials> luks;
@@ -86,11 +87,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         load_disks ();
 
+        var help_button = new Gtk.Button.with_label (_("?"));
+        help_button.tooltip_text = _("Help with Dual Booting");
+        help_button.get_style_context ().add_class ("circular");
+
         modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
-        modify_partitions_button.clicked.connect (() => open_partition_editor ());
-        action_area.add (modify_partitions_button);
-        action_area.set_child_secondary (modify_partitions_button, true);
-        action_area.set_child_non_homogeneous (modify_partitions_button, true);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
@@ -98,9 +99,23 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
 
+        action_area.add (help_button);
+        action_area.set_child_secondary (help_button, true);
+        action_area.set_child_non_homogeneous (help_button, true);
+
+        action_area.add (modify_partitions_button);
+        action_area.set_child_secondary (modify_partitions_button, true);
+        action_area.set_child_non_homogeneous (modify_partitions_button, true);
+
         action_area.add (back_button);
         action_area.add (next_button);
 
+        help_button.clicked.connect (() => {
+            // FIXME: Only allow one instance
+            help_dialog = new HelpDialog ();
+            help_dialog.transient_for = (Gtk.Window) get_toplevel ();
+        });
+        modify_partitions_button.clicked.connect (() => open_partition_editor ());
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
         next_button.clicked.connect (() => next_step ());
 
@@ -114,7 +129,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
-            if (Recovery.get_default() == null && (disk.contains_mount ("/") || disk.contains_mount ("/cdrom"))) {
+            if (!Recovery.get_default().oem_mode && (disk.contains_mount ("/") || disk.contains_mount ("/cdrom"))) {
                 continue;
             }
 
