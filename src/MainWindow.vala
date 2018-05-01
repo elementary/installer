@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016-2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2016–2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,6 @@ public class Installer.MainWindow : Gtk.Dialog {
     private SuccessView success_view;
     private EncryptView encrypt_view;
     private ErrorView error_view;
-    // private bool check_ignored = false;
 
     private uint64 minimum_disk_size;
 
@@ -204,3 +203,4 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     public override void close () {}
 }
+
