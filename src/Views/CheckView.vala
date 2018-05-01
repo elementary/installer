@@ -162,9 +162,8 @@ public class Installer.CheckView : AbstractInstallerView  {
         try {
             DataInputStream dis = new DataInputStream (file.read ());
             string? line;
-            string name = "hypervisor";
             while ((line = dis.read_line (null,null)) != null) {
-                if (line.has_prefix (name)) {
+                if (line.has_prefix ("flags") && line.contains ("hypervisor")) {
                     return true;
                 }
             }
