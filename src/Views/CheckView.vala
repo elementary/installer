@@ -158,25 +158,18 @@ public class Installer.CheckView : AbstractInstallerView  {
     }
 
     private static bool get_vm () {
+        File file = File.new_for_path ("/proc/cpuinfo");
         try {
-            var dmiout = "";
-            var dmierror = "";
-            var dmiexit = 0;
-
-            Process.spawn_command_line_sync (
-                "dmidecode -s system-product-name",
-                out dmiout,
-                out dmierror,
-                out dmiexit
-            );
-
-            debug ("DMI: %s".printf (dmiout));
-
-            if (dmiout.ascii_down ().contains ("virtual")) {
-                return true;
+            DataInputStream dis = new DataInputStream (file.read ());
+            string? line;
+            string name = "hypervisor";
+            while ((line = dis.read_line (null,null)) != null) {
+                if (line.has_prefix (name)) {
+                    return true;
+                }
             }
-        } catch (GLib.Error error) {
-            critical ("could not get system name");
+        } catch (Error e) {
+            critical (e.message);
         }
 
         return false;
