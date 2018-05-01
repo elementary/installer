@@ -32,7 +32,8 @@ public class Installer.CheckView : AbstractInstallerView  {
     public signal void status_changed (bool met_requirements);
 
     bool enough_space = true;
-    bool enough_power = true;
+    bool minimum_specs = true;
+    bool vm = false;
     bool powered = true;
 
     int frequency = 0;
@@ -45,6 +46,7 @@ public class Installer.CheckView : AbstractInstallerView  {
         NONE,
         SPACE,
         SPECS,
+        VM,
         POWERED
     }
 
@@ -76,17 +78,19 @@ public class Installer.CheckView : AbstractInstallerView  {
 
         frequency = get_frequency ();
         if (frequency < MINIMUM_FREQUENCY && frequency > 0) {
-            enough_power = false;
+            minimum_specs = false;
         }
 
         memory = get_mem_info ();
         if (memory < MINIMUM_MEMORY) {
-            enough_power = false;
+            minimum_specs = false;
         }
 
         powered = !get_is_on_battery ();
 
-        bool result = enough_space && enough_power && powered;
+        vm = get_vm ();
+
+        bool result = enough_space && minimum_specs && !vm && powered;
         if (result == false) {
             show_next ();
         }
@@ -166,7 +170,6 @@ public class Installer.CheckView : AbstractInstallerView  {
             var dmierror = "";
             var dmiexit = 0;
 
-            var dmidecode = new GLib.Subprocess.newv ({"dmidecode -s system-product-name"}, GLib.SubprocessFlags.NONE);
             Process.spawn_command_line_sync (
                 "dmidecode -s system-product-name",
                 out dmiout,
@@ -174,14 +177,18 @@ public class Installer.CheckView : AbstractInstallerView  {
                 out dmiexit
             );
 
-            if (dmiout.contains ("virtual")) {
+            debug ("DMI: %s".printf (dmiout));
+
+            if (dmiout.ascii_down ().contains ("gal")) {
+                debug ("We're in a vm");
                 return true;
             }
-
-            return false;
         } catch (GLib.Error error) {
             critical ("could not get system name");
         }
+
+        debug ("We're on bare metal");
+        return false;
     }
 
     private void show_next () {
@@ -190,8 +197,10 @@ public class Installer.CheckView : AbstractInstallerView  {
             case State.NONE:
                 if (!enough_space) {
                     next_state = State.SPACE;
-                } else if (!enough_power) {
+                } else if (!minimum_specs) {
                     next_state = State.SPECS;
+                } else if (vm) {
+                    next_state = State.VM;
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
@@ -200,8 +209,10 @@ public class Installer.CheckView : AbstractInstallerView  {
 
                 break;
             case State.SPACE:
-                if (!enough_power) {
+                if (!minimum_specs) {
                     next_state = State.SPECS;
+                } else if (vm) {
+                    next_state = State.VM;
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
@@ -210,6 +221,16 @@ public class Installer.CheckView : AbstractInstallerView  {
 
                 break;
             case State.SPECS:
+                if (vm) {
+                    next_state = State.VM;
+                } else if (!powered) {
+                    next_state = State.POWERED;
+                } else {
+                    return;
+                }
+
+                break;
+            case State.VM:
                 if (!powered) {
                     next_state = State.POWERED;
                 } else {
@@ -241,6 +262,22 @@ public class Installer.CheckView : AbstractInstallerView  {
                     "application-x-firmware"
                 );
                 grid.attach (get_comparison_grid (), 1, 2, 1, 1);
+                grid.show_all ();
+
+                if (ignore_button.parent == null) {
+                    action_area.add (ignore_button);
+                }
+
+                stack.add (grid);
+                stack.set_visible_child (grid);
+                break;
+
+            case State.VM:
+                var grid = setup_grid (
+                    _("Virtual Machine"),
+                    _("You appear to be installing in a virtual machine. It's recommended to install on real hardware to achieve full performance and experience. Some parts of %s may not function properly in a virtual machine.").printf (Utils.get_pretty_name ()),
+                    "utilities-system-monitor"
+                );
                 grid.show_all ();
 
                 if (ignore_button.parent == null) {
@@ -367,3 +404,4 @@ public class Installer.CheckView : AbstractInstallerView  {
 public interface UPower : GLib.Object {
     public abstract bool on_battery { owned get; set; }
 }
+

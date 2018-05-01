@@ -31,7 +31,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private SuccessView success_view;
     private EncryptView encrypt_view;
     private ErrorView error_view;
-    private bool check_ignored = false;
+    // private bool check_ignored = false;
 
     private uint64 minimum_disk_size;
 
@@ -111,9 +111,9 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (check_view);
 
         check_view.status_changed.connect ((met_requirements) => {
-            if (!check_ignored) {
+            // if (!check_ignored) {
                 set_check_view_visible (!met_requirements);
-            }
+            // }
         });
 
         check_view.cancel.connect (() => {
@@ -123,11 +123,11 @@ public class Installer.MainWindow : Gtk.Dialog {
         });
 
         check_view.next_step.connect (() => {
-            check_ignored = true;
+            // check_ignored = true;
             set_check_view_visible (false);
         });
 
-        set_check_view_visible (!check_ignored && !check_view.check_requirements ());
+        set_check_view_visible (/*!check_ignored &&*/ !check_view.check_requirements ());
     }
 
     private void load_encrypt_view () {
