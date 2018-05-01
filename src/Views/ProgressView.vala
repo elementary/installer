@@ -185,6 +185,7 @@ public class ProgressView : AbstractInstallerView {
             var recovery = Recovery.disk ();
             if (recovery == null) {
                 on_error ();
+                return;
             }
 
             if (!recovery_disk_configuration (disks, recovery)) {
