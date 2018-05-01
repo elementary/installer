@@ -275,7 +275,7 @@ public class Installer.CheckView : AbstractInstallerView  {
             case State.VM:
                 var grid = setup_grid (
                     _("Virtual Machine"),
-                    _("You appear to be installing in a virtual machine. It's recommended to install on real hardware to achieve full performance and experience. Some parts of %s may not function properly in a virtual machine.").printf (Utils.get_pretty_name ()),
+                    _("You appear to be installing in a virtual machine. Some parts of %s may run slowly, freeze, or not function properly in a virtual machine. It's recommended to install on real hardware.").printf (Utils.get_pretty_name ()),
                     "utilities-system-monitor"
                 );
                 grid.show_all ();
