@@ -291,7 +291,7 @@ public class ProgressView : AbstractInstallerView {
             return;
         }
 
-        unowned Distinst.LvmDevice lvm_device = disks.find_logical_volume (root_vg);
+        unowned Distinst.LvmDevice lvm_device = disks.get_logical_device (root_vg);
 
         if (lvm_device == null) {
             critical ("unable to find '%s' volume group on %s", root_vg, current_config.disk);
