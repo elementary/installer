@@ -172,8 +172,7 @@ public class ProgressView : AbstractInstallerView {
             debug ("country: %s\n", current_config.country);
             config.lang = current_config.lang + "_" + current_config.country + ".UTF-8";
         } else {
-            debug ("no country\n");
-            config.lang = current_config.lang + ".UTF-8";
+            config.lang = current_config.lang + "_" + current_config.lang.ascii_up () + ".UTF-8";
         }
 
         config.keyboard_layout = current_config.keyboard_layout;
