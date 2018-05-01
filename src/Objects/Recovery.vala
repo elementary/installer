@@ -34,7 +34,10 @@ public class Recovery : GLib.Object {
     }
 
     public static string? efi_partition () {
-        unowned Recovery recovery = Recovery.get_default ();
+        unowned Recovery? recovery = Recovery.get_default ();
+        if (recovery == null) {
+            return null;
+        }
 
         if (recovery.efi_uuid != null) {
             return Posix.realpath ("/dev/disk/by-uuid/" + recovery.efi_uuid);
@@ -44,7 +47,10 @@ public class Recovery : GLib.Object {
     }
 
     public static string? recovery_partition () {
-        unowned Recovery recovery = Recovery.get_default ();
+        unowned Recovery? recovery = Recovery.get_default ();
+        if (recovery == null) {
+            return null;
+        }
 
         if (recovery.recovery_uuid != null) {
             return Posix.realpath ("/dev/disk/by-uuid/" + recovery.recovery_uuid);
@@ -54,7 +60,10 @@ public class Recovery : GLib.Object {
     }
 
     public static string? root_partition () {
-        unowned Recovery recovery = Recovery.get_default ();
+        unowned Recovery? recovery = Recovery.get_default ();
+        if (recovery == null) {
+            return null;
+        }
 
         if (recovery.root_uuid != null) {
             return Posix.realpath ("/dev/disk/by-uuid/" + recovery.root_uuid);
@@ -130,6 +139,10 @@ public class Recovery : GLib.Object {
     }
 
     private static Recovery? load (string path) throws GLib.Error {
+        if (!GLib.File.new_for_path (path).query_exists ()) {
+            return null;
+        }
+
         var recovery = new Recovery();
 
         var data_stream = new DataInputStream (File.new_for_path (path).read ());

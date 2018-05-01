@@ -81,7 +81,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.visible_child = keyboard_layout_view;
 
         keyboard_layout_view.next_step.connect (() => {
-            if (Recovery.disk () == null || !Recovery.get_default().oem_mode) {
+            var recovery = Recovery.get_default ();
+            if (recovery == null || !recovery.oem_mode) {
                 load_try_install_view ();
             } else {
                 load_encrypt_view ();
