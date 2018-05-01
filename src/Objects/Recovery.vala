@@ -183,6 +183,7 @@ public class Recovery : GLib.Object {
                 recovery.root_uuid = val;
             } else if (name == "OEM_MODE" && val == "1") {
                 recovery.oem_mode = true;
+                Configuration.get_default ().recovery = true;
             }
         }
 
