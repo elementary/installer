@@ -67,7 +67,7 @@ public class Installer.CheckView : AbstractInstallerView  {
 
         ignore_button = new Gtk.Button.with_label (_("Ignore"));
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        ignore_button.clicked.connect (() => next_step ());
+        ignore_button.clicked.connect (() => show_next ());
 
         show_all ();
     }
@@ -148,13 +148,6 @@ public class Installer.CheckView : AbstractInstallerView  {
         if (upower == null) {
             try {
                 upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
-
-                (upower as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
-                    var _on_battery = changed.lookup_value ("OnBattery", GLib.VariantType.BOOLEAN);
-                    if (_on_battery != null) {
-                        status_changed (check_requirements ());
-                    }
-                });
             } catch (Error e) {
                 warning (e.message);
                 return false;
@@ -204,6 +197,7 @@ public class Installer.CheckView : AbstractInstallerView  {
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
+                    next_step ();
                     return;
                 }
 
@@ -216,6 +210,7 @@ public class Installer.CheckView : AbstractInstallerView  {
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
+                    next_step ();
                     return;
                 }
 
@@ -226,6 +221,7 @@ public class Installer.CheckView : AbstractInstallerView  {
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
+                    next_step ();
                     return;
                 }
 
@@ -234,11 +230,13 @@ public class Installer.CheckView : AbstractInstallerView  {
                 if (!powered) {
                     next_state = State.POWERED;
                 } else {
+                    next_step ();
                     return;
                 }
 
                 break;
             case State.POWERED:
+                next_step ();
                 return;
         }
 
