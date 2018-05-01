@@ -106,6 +106,10 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.visible_child = check_view;
         }
 
+        check_view.cancel.connect (() => {
+            stack.visible_child = try_install_view;
+        });
+
         check_view.next_step.connect (() => load_disk_view ());
     }
 
