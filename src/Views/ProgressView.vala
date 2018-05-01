@@ -43,8 +43,7 @@ public class ProgressView : AbstractInstallerView {
         terminal_view.get_style_context ().add_class ("terminal");
 
         terminal_output = new Gtk.ScrolledWindow (null, null);
-        terminal_output.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-        terminal_output.propagate_natural_width = true;
+        terminal_output.hscrollbar_policy = Gtk.PolicyType.NEVER;
         terminal_output.expand = true;
         terminal_output.add (terminal_view);
 
@@ -168,8 +167,6 @@ public class ProgressView : AbstractInstallerView {
 
         unowned Configuration current_config = Configuration.get_default ();
 
-        var recovery = Recovery.disk ();
-
         debug ("language: %s\n", current_config.lang);
         if (current_config.country != null) {
             debug ("country: %s\n", current_config.country);
@@ -183,7 +180,13 @@ public class ProgressView : AbstractInstallerView {
         config.keyboard_variant = current_config.keyboard_variant;
 
         var disks = new Distinst.Disks ();
-        if (recovery != null && Recovery.get_default().oem_mode) {
+        if (current_config.recovery) {
+            var recovery = Recovery.disk ();
+            if (recovery == null) {
+                on_error ();
+                return;
+            }
+
             if (!recovery_disk_configuration (disks, recovery)) {
                 on_error ();
                 return;

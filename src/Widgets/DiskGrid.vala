@@ -62,7 +62,12 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         notify["active"].connect (() => {
             if (active) {
                 unowned Configuration config = Configuration.get_default ();
-                config.disk = disk_path;
+                var recovery = Recovery.disk ();
+                if (recovery != null && recovery == disk_path) {
+                    config.recovery = true;
+                } else {
+                    config.disk = disk_path;
+                }
             }
         });
     }
