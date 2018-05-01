@@ -160,6 +160,30 @@ public class Installer.CheckView : AbstractInstallerView  {
         return upower.on_battery;
     }
 
+    private static bool get_vm () {
+        try {
+            var dmiout = "";
+            var dmierror = "";
+            var dmiexit = 0;
+
+            var dmidecode = new GLib.Subprocess.newv ({"dmidecode -s system-product-name"}, GLib.SubprocessFlags.NONE);
+            Process.spawn_command_line_sync (
+                "dmidecode -s system-product-name",
+                out dmiout,
+                out dmierror,
+                out dmiexit
+            );
+
+            if (dmiout.contains ("virtual")) {
+                return true;
+            }
+
+            return false;
+        } catch (GLib.Error error) {
+            critical ("could not get system name");
+        }
+    }
+
     private void show_next () {
         State next_state = State.NONE;
         switch (current_state) {
