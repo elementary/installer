@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-23 00:09+0000\n"
-"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
-"Language-Team: Polish <https://weblate.elementary.io/projects/installer/"
-"installer/pl/>\n"
+"PO-Revision-Date: 2018-04-30 17:47+0000\n"
+"Last-Translator: Bartek Zimniak <bartusek1901@gmail.com>\n"
+"Language-Team: Polish "
+"<https://weblate.elementary.io/projects/installer/installer/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -152,25 +152,31 @@ msgstr "Wyczyść i zainstaluj"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Szyfrowanie napędu"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Szyfrowanie tego napędu chroni przed odczytem danych przez osoby posiadające "
+"dostęp do urządzenia."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"Szyfrowanie napędu może minimalnie wpłynąć na prędkość odczytu i zapisu "
+"podczas intensywnej pracy."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
+"Hasło szyfrowania danych będzie wymagane podczas każdego uruchamiania i "
+"restartowania urządzenia."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -178,18 +184,21 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Jeżeli zapomnisz hasła do odszyfrowania, <b>nie będziesz mógł odzyskać "
+"danych.</b> Jest to unikalne hasło dla tego urządzenia, nie hasło do konta "
+"użytkownika."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Wybierz hasło szyfrowania"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Potwierdź hasło"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Nie szyfruj"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -198,15 +207,15 @@ msgstr "Cofnij"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Wybierz hasło"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Ustaw hasło"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Hasła do siebie nie pasują"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -296,25 +305,28 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Wybierz partycje do używania przez wszystkie napędy. <b>Wybierając \"Format\""
+", zostaną usunięte WSZYSTKIE dane na wybranej partycji.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Musisz wskazać przynajmniej partycję <b>Główną (/)</b>."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Musisz wskazać przynajmniej partycję <b>Główną (/)</b> i partycję<b>"
+"Rozruchową (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Jest również polecane wybranie partycji <b>Wymiany (Swap)</b>."
 
 #: src/Views/PartitioningView.vala:89
-#, fuzzy
 msgid "Modify Partitions…"
-msgstr "Dostosowanie partycji…"
+msgstr "Modyfikacja partycji…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -386,84 +398,82 @@ msgstr "Wyłączenie trybu testowego"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Odszyfruj tę partycję"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
-msgstr ""
+msgstr "Wpisz hasło szyfrowania partycji i nazwę urządzenia LUKS."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Hasło:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Nazwa urządzenia:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Odszyfruj"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "Wolumin LUKS został odszyfrowany"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Użyj partycji:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Format:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Użyj jako:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Pierwiastek"
+msgstr "Katalog główny (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Katalog domowy (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Rozruch (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Przestrzeń wymiany"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Własny"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Własny:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "System plików:"
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Domyślny"
+msgstr "Domyślny (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Wybierz napęd do użycia w instalacji"

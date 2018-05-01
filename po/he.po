@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-20 04:16+0000\n"
+"PO-Revision-Date: 2018-04-24 11:47+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://weblate.elementary.io/projects/installer/"
-"installer/he/>\n"
+"Language-Team: Hebrew "
+"<https://weblate.elementary.io/projects/installer/installer/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -146,25 +146,28 @@ msgstr "למחוק ולהתקין"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "הצפנת כונן"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"הצפנת כונן זה מגנה על הנתונים מפני קריאה של גופים זרים שיש להם גישה פיזית "
+"להתקן זה."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"הצפנת כונן עשויה להשפיע קלות על מהירות הקריאה והכתיבה בעת ביצוע משימות כבדות."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
-msgstr ""
+msgstr "ססמת ההצפנה תידרש עם כל הפעלה או הפעלה מחדש של התקן זה."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -172,18 +175,20 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"<b>לא תהיה אפשרות לשחזר את הנתונים.</b> במקרה שססמת ההצפנה שלך אבדה. ססמה זו "
+"היא ייחודית להתקן, זאת אינה הססמה של חשבון המשתמש שלך."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "נא לבחור ססמת הצפנה"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "אימות ססמה"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "לא להצפין"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -192,15 +197,15 @@ msgstr "חזרה"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "נא לבחור ססמה"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "הגדרת ססמה"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "הססמאות אינן תואמות"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -289,25 +294,28 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"נא לבחור באילו מחיצות להשתמש מבין כל הכוננים. <b>בחירה ב„אתחול” תמחק את כל "
+"הנתונים במחיצה הנבחרת.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "עליך לבחור במחיצת <b>שורש (/)</b> לכל הפחות."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"עליך לבחור במחיצת <b>שורש (/)</b> ובמחיצת <b>הפעלה (‎/boot/efi)</b> לכל "
+"הפחות."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "מומלץ לבחור גם במחיצת <b>החלפה</b>."
 
 #: src/Views/PartitioningView.vala:89
-#, fuzzy
 msgid "Modify Partitions…"
-msgstr "התאמת חלוקה למחיצות…"
+msgstr "עריכת מחיצות…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -373,84 +381,82 @@ msgstr "כיבוי במצב בדיקה"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "פענוח המחיצה הזאת"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
-msgstr ""
+msgstr "נא להזין את ססמת ההצפנה של המחיצה ולהגדיר את שם התקן ה־LUKS."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "ססמה:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "שם ההתקן:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "פענוח"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "מחיצת ה־LUKS פוענחה"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "מחיצה לשימוש:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "תסדיר:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "שימוש בתור:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "שורש"
+msgstr "שורש (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "בית (‎/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "הפעלה (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "החלפה"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "התאמה אישית"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "התאמה אישית:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "מערכת קבצים:"
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "בררת מחדל"
+msgstr "בררת מחדל (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "נא לבחור כונן לשימוש ההתקנה"

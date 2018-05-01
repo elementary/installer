@@ -19,15 +19,7 @@
 public class SuccessView : AbstractInstallerView {
     public static int RESTART_TIMEOUT = 30;
 
-    private Utils.SystemInterface system_interface;
-
     construct {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-            critical (e.message);
-        }
-
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
         image.vexpand = true;
 
@@ -61,45 +53,21 @@ public class SuccessView : AbstractInstallerView {
         content_area.attach (grid, 1, 0, 1, 2);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
+        shutdown_button.clicked.connect (Utils.shutdown);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
         restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        restart_button.clicked.connect (Utils.restart);
 
         action_area.add (shutdown_button);
         action_area.add (restart_button);
 
-        restart_button.clicked.connect (session_restart);
-
-        shutdown_button.clicked.connect (() => {
-            if (Installer.App.test_mode) {
-                critical (_("Test mode shutdown"));
-            } else {
-                try {
-                    system_interface.power_off (false);
-                } catch (IOError e) {
-                    critical (e.message);
-                }
-            }
-        });
-
         Timeout.add_seconds (RESTART_TIMEOUT, () => {
-            session_restart ();
+            Utils.restart ();
             return GLib.Source.REMOVE;
         });
 
         show_all ();
-    }
-
-    private void session_restart () {
-        if (Installer.App.test_mode) {
-            critical (_("Test mode reboot"));
-        } else {
-            try {
-                system_interface.reboot (false);
-            } catch (IOError e) {
-                critical (e.message);
-            }
-        }
     }
 }
 
