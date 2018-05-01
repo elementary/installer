@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2017–2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,6 @@
  */
 
 public class ErrorView : AbstractInstallerView {
-    private Utils.SystemInterface system_interface;
-
     public string log { get; construct; }
 
     public ErrorView (string log) {
@@ -26,12 +24,6 @@ public class ErrorView : AbstractInstallerView {
     }
 
     construct {
-        try {
-            system_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
-        } catch (IOError e) {
-                warning ("%s", e.message);
-        }
-
         var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
@@ -129,32 +121,9 @@ public class ErrorView : AbstractInstallerView {
             }
         });
 
-        restart_button.clicked.connect (() => {
-            if (Installer.App.test_mode) {
-                critical (_("Test mode reboot"));
-            } else {
-                try {
-                    system_interface.reboot (false);
-                } catch (IOError e) {
-                    critical (e.message);
-                }
-            }
-        });
+        restart_button.clicked.connect (Utils.restart);
 
-        demo_button.clicked.connect (() => {
-            if (Installer.App.test_mode) {
-                critical (_("Test mode switch user"));
-            } else {
-                var seat = Utils.get_seat_instance ();
-                if (seat != null) {
-                    try {
-                        seat.switch_to_guest ("");
-                    } catch (IOError e) {
-                        stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
-                    }
-                }
-            }
-        });
+        demo_button.clicked.connect (Utils.demo_mode);
 
         install_button.clicked.connect (() => {
             ((Gtk.Stack) get_parent ()).visible_child = previous_view;

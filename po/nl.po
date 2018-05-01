@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-03 22:24+0000\n"
+"PO-Revision-Date: 2018-04-29 00:11+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
-"Language-Team: Dutch <https://weblate.elementary.io/projects/installer/"
-"installer/nl/>\n"
+"Language-Team: Dutch "
+"<https://weblate.elementary.io/projects/installer/installer/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -207,18 +207,17 @@ msgid "Passwords do not match"
 msgstr ""
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Kon %s niet installeren"
+msgstr "Kon niet installeren"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"De installatie is mislukt. Mogelijk herstart uw toestel niet correct. U kan "
-"één van de volgende opties proberen:"
+"Installeren van %s mislukt, mogelijks door een hardwarefout. Mogelijk "
+"herstart uw toestel niet correct. U kan één van de volgende opties proberen:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -361,22 +360,18 @@ msgid "Continue Setting Up"
 msgstr ""
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
 msgstr ""
-"Uw toestel zal binnen 30 seconden automatisch opnieuw opstarten naar %s om "
-"een nieuwe gebruiker aan te maken, of zet uw apparaat uit om later een "
-"gebruiker aan te maken."
+"Uw toestel zal binnen %i seconden automatisch opnieuw opstarten naar %s."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Uw toestel zal binnen 30 seconden automatisch opnieuw opstarten naar %s om "
-"een nieuwe gebruiker aan te maken, of zet uw apparaat uit om later een "
-"gebruiker aan te maken."
+"Na het opnieuw opstarten kunt u een nieuwe gebruiker aanmaken, of zet uw "
+"apparaat uit om later een gebruiker aan te maken."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
@@ -429,9 +424,8 @@ msgid "Use as:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Wortel"
+msgstr "Wortel (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"

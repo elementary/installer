@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-03-18 14:21+0000\n"
+"PO-Revision-Date: 2018-04-26 00:03+0000\n"
 "Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
-"Language-Team: Hindi <https://weblate.elementary.io/projects/installer/"
-"installer/hi/>\n"
+"Language-Team: Hindi "
+"<https://weblate.elementary.io/projects/installer/installer/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "एक शक्ति स्रोत से कनेक्ट करें"
 
 #: src/Views/CheckView.vala:233
 msgid ""
@@ -109,7 +109,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
-msgstr ""
+msgstr "संस्तुत:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
