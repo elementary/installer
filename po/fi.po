@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-03-26 00:08+0000\n"
+"PO-Revision-Date: 2018-05-01 17:32+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://weblate.elementary.io/projects/installer/"
-"installer/fi/>\n"
+"Language-Team: Finnish "
+"<https://weblate.elementary.io/projects/installer/installer/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -124,9 +124,8 @@ msgid "Memory:"
 msgstr "Muisti:"
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Valitse kieli"
+msgstr "Valitse asema"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -142,7 +141,7 @@ msgstr "Haetaan nykyisiä määrityksiä…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Muokkaa osioita…"
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
@@ -150,25 +149,29 @@ msgstr "Tyhjennä ja asenna"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Levyn salaus"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Levyn salaaminen suojaa siinä olevia tietoja muilta ihmisiltä, joilla on "
+"fyysinen pääsy tähän laitteeseen."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"Levyn salaaminen saattaa vaikuttaa vähäisesti luku- ja kirjoitusnopeuteen "
+"kesken vaativien tehtävien."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
-msgstr ""
+msgstr "Salauksen salasana vaaditaan joka kerta, kun tämä laite käynnistetään."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -176,18 +179,21 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Jos unohdat salauksen salasanan, <b>levyllä olevia tietoja ei voi "
+"palauttaa.</b> Kyseessä on ainutlaatuinen salasana tälle laitteelle, ei "
+"käyttäjätililläsi käytettävä salasana."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Valitse salauksen salasana"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Vahvista salasana"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Älä salaa"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -196,29 +202,29 @@ msgstr "Takaisin"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Valitse salasana"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Aseta salasana"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Salasanat eivät täsmää"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Ei voitu asentaa %s"
+msgstr "Asentaminen ei onnistunut"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Asennus epäonnistui, laitteesi ei välttämättä käynnisty uudelleen kunnolla. "
-"Voit kokeilla jotain seuraavista:"
+"\"%s\"-asennus epäonnistui mahdollisesti laitteistovirheen vuoksi. Laitteesi "
+"ei välttämättä käynnisty uudelleen kunnolla. Voit kokeilla jotain "
+"seuraavista:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -294,24 +300,27 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Valitse mitä kaikkien levyjen osioita käytetään. <b>Valitsemalla \"Alusta\" "
+"KAIKKI valitun osion tiedot poistetaan.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Valitse vähintään <b>juuriosio (/)</b>."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Valitse vähintään <b>juuriosio (/)</b> ja <b>käynnistysosio (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "On myös suositeltavaa valita <b>swap-osio</b>."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Muokkaa osioita…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -342,14 +351,14 @@ msgstr ""
 "asentamatta."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
 "Testitilassa tekemiäsi muutoksia ei tallenneta, ja tietoja edellisestä "
-"käyttöjärjestelmästäsi ei muuteta."
+"käyttöjärjestelmästäsi ei muuteta. Suorituskyky ja ominaisuudet eivät "
+"välttämättä vastaa asennetun ympäristön kokemusta."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -360,25 +369,20 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Jatka määritystä"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"%s on asennettu. Laitteesi käynnistyy uudelleen 30 sekunnissa ja jatkaa "
-"käyttäjän luomisella. Voit myös sammuttaa laitteen nyt ja luoda käyttäjän "
-"myöhemmin."
+msgstr "Laitteesi käynnistyy automaattisesti kohteeseen %s %i sekunnissa."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"%s on asennettu. Laitteesi käynnistyy uudelleen 30 sekunnissa ja jatkaa "
-"käyttäjän luomisella. Voit myös sammuttaa laitteen nyt ja luoda käyttäjän "
-"myöhemmin."
+"Uudelleenkäynnistyksen jälkeen voit luoda uuden käyttäjän, tai voit "
+"sammuttaa laitteen nyt ja luoda käyttäjän myöhemmin."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
@@ -386,84 +390,82 @@ msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Avaa tämän osion salaus"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
-msgstr ""
+msgstr "Anna osion salauksen salasana ja aseta LUKS-laitenimi."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Salasana:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Laitenimi:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Avaa salaus"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "LUKS-taltion salaus avattiin"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Käytä osiota:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Alusta:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Käytä:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Juuri"
+msgstr "Juuri (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Koti (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Käynnistys (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Mukautettu"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Mukautettu:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Tiedostojärjestelmä:"
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Oletus"
+msgstr "Oletus (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Valitse asema asennusta varten"
