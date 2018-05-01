@@ -172,7 +172,7 @@ public class Installer.CheckView : AbstractInstallerView  {
 
             debug ("DMI: %s".printf (dmiout));
 
-            if (dmiout.ascii_down ().contains ("gal")) {
+            if (dmiout.ascii_down ().contains ("virtual")) {
                 debug ("We're in a vm");
                 return true;
             }
