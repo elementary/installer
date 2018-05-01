@@ -1,2 +1,3 @@
+debian/lightdm.conf /etc/lightdm/
 usr/share/gnome-session
 usr/share/xsessions

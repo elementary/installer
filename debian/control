@@ -29,6 +29,7 @@ Description: Distribution installer
 Package: io.elementary.installer-session
 Architecture: any
 Priority: extra
-Depends: io.elementary.installer
+Depends: io.elementary.installer, lightdm
+Recommends: elementary-default-settings
 Description: Dedicated installer session
  Launches io.elementary.installer in a dedicated session.
