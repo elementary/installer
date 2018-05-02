@@ -167,14 +167,8 @@ public class ProgressView : AbstractInstallerView {
 
         unowned Configuration current_config = Configuration.get_default ();
 
-        debug ("language: %s\n", current_config.lang);
-        if (current_config.country != null) {
-            debug ("country: %s\n", current_config.country);
-            config.lang = current_config.lang + "_" + current_config.country + ".UTF-8";
-        } else {
-            config.lang = current_config.lang + "_" + current_config.lang.ascii_up () + ".UTF-8";
-        }
-
+        debug ("locale: %s\n", current_config.get_locale ());
+        config.lang = current_config.get_locale ();
         config.keyboard_layout = current_config.keyboard_layout;
         config.keyboard_model = null;
         config.keyboard_variant = current_config.keyboard_variant;

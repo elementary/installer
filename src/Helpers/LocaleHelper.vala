@@ -141,6 +141,8 @@ namespace LocaleHelper {
                 return "BD";
             case "ca":
                 return "ES";
+            case "da":
+                return "DK";
             case "de":
                 return "DE";
             case "el":

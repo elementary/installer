@@ -37,4 +37,19 @@ public class Configuration : GLib.Object {
     public bool recovery { get; set; default = false; }
     public Gee.ArrayList<Installer.Mount>? mounts { get; set; default = null; }
     public Gee.ArrayList<Installer.LuksCredentials>? luks { get; set; default = null; }
+
+    public string get_locale() {
+        if (country == null) {
+            switch (lang) {
+                case "da":
+                    country = "DK";
+                    break;
+                default:
+                    country = lang.ascii_up ();
+                    break;
+            }
+        }
+
+        return lang + "_" + country + ".UTF-8";
+    }
 }
