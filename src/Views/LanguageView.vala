@@ -188,6 +188,7 @@ public class Installer.LanguageView : AbstractInstallerView {
     }
 
     private void variant_row_selected (Gtk.ListBoxRow? row) {
+        if (row == null) return;
         var country_entry = ((CountryRow) row).country_entry;
         foreach (Gtk.Widget child in lang_variant_widget.variant_listbox.get_children ()) {
             if (child is CountryRow) {

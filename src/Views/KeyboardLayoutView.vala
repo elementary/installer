@@ -153,9 +153,14 @@ public class KeyboardLayoutView : AbstractInstallerView {
         show_all ();
 
         Idle.add (() => {
-            string? country = Configuration.get_default ().country;
-            if (country != null) {
-                string default_layout = country.down ();
+            var config = Configuration.get_default ();
+            if (config.country != null || config.lang != null) {
+                string default_layout;
+                if (config.country != null) {
+                    default_layout = config.country.down ();
+                } else {
+                    default_layout = config.lang;
+                }
 
                 foreach (Gtk.Widget child in input_variant_widget.main_listbox.get_children ()) {
                     if (child is LayoutRow) {
@@ -168,6 +173,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
                     }
                 }
             }
+
+            return GLib.Source.REMOVE;
         });
     }
 
