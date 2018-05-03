@@ -140,6 +140,9 @@ public class ProgressView : AbstractInstallerView {
 
     public void start_installation () {
         if (Installer.App.test_mode) {
+            unowned Configuration current_config = Configuration.get_default ();
+
+            stderr.printf ("locale: %s\n", current_config.get_locale ());
             new Thread<void*> (null, () => {
                 fake_status (Distinst.Step.PARTITION);
                 fake_status (Distinst.Step.EXTRACT);
@@ -167,7 +170,7 @@ public class ProgressView : AbstractInstallerView {
 
         unowned Configuration current_config = Configuration.get_default ();
 
-        debug ("locale: %s\n", current_config.get_locale ());
+        stderr.printf ("locale: %s\n", current_config.get_locale ());
         config.lang = current_config.get_locale ();
         config.keyboard_layout = current_config.keyboard_layout;
         config.keyboard_model = null;
