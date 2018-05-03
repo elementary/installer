@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-05-03 09:00+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French "
 "<https://weblate.elementary.io/projects/installer/installer/fr/>\n"
 "Language: fr\n"
@@ -427,9 +427,8 @@ msgid "Use as:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Racine"
+msgstr "Racine (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
@@ -457,9 +456,8 @@ msgid "Filesystem:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Défaut"
+msgstr "Défaut (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Sélectionnez un disque à utiliser lors de l'installation"
