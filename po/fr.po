@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-05-03 09:03+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French "
 "<https://weblate.elementary.io/projects/installer/installer/fr/>\n"
 "Language: fr\n"
@@ -256,7 +256,7 @@ msgstr "Essayer d'installer à nouveau"
 
 #: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
 msgid "Test mode reboot"
-msgstr "Redémarrage en mode test"
+msgstr "Redémarrage en mode de démonstration"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
