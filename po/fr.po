@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-12 20:32+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
-"Language-Team: French <https://weblate.elementary.io/projects/installer/"
-"installer/fr/>\n"
+"PO-Revision-Date: 2018-05-03 09:04+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: French "
+"<https://weblate.elementary.io/projects/installer/installer/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -125,9 +125,8 @@ msgid "Memory:"
 msgstr "Mémoire :"
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Sélectionner une langue"
+msgstr "Sélectionnez un disque"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -144,7 +143,7 @@ msgstr "Vérification de la configuration actuelle…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Modifier les partitions..."
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
@@ -152,25 +151,31 @@ msgstr "Supprimer et installer"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Chiffrement du disque"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Le chiffrement de ce lecteur empêche les données d'être lues par d'autres "
+"personnes ayant un accès physique à ce périphérique."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"Le chiffrement des lecteurs peut avoir un impact minime sur la vitesse de "
+"lecture et d'écriture lors de l'exécution de tâches intensives."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
+"Le mot de passe de chiffrement sera nécessaire chaque fois que vous "
+"allumerez ou redémarrerez cet appareil."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -178,18 +183,21 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Si vous oubliez le mot de passe de chiffrement, <b>vous ne pourrez pas "
+"récupérer les données.</b> Il s'agit d'un mot de passe unique pour cet "
+"appareil, pas du mot de passe de votre compte utilisateur."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Choisissez le mot de passe de chiffrement"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Confirmez le mot de passe"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Ne pas chiffrer"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -198,15 +206,15 @@ msgstr "Précédent"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Choisissez votre mot de passe"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Définir le mot de passe"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Les mots de passe ne correspondent pas"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -248,7 +256,7 @@ msgstr "Essayer d'installer à nouveau"
 
 #: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Redémarrage en mode de démonstration"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
@@ -344,13 +352,12 @@ msgstr ""
 "de démonstration sans installer."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
-"Pendant votre test, les modifications apportées ne seront pas enregistrés. "
+"Pendant votre test, les modifications apportées ne seront pas enregistrées. "
 "De même, vos anciens fichiers ne seront pas modifiés."
 
 #: src/Views/TryInstallView.vala:64
@@ -363,29 +370,24 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Continuer la configuration"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"Votre appareil redémarrera automatiquement sur %s dans 30 secondes pour "
-"créer un nouvel utilisateur, mais vous pouvez l'éteindre maintenant et créer "
-"le compte ultérieurement."
+msgstr "Votre appareil redémarrera automatiquement sur %s dans %i secondes."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Votre appareil redémarrera automatiquement sur %s dans 30 secondes pour "
-"créer un nouvel utilisateur, mais vous pouvez l'éteindre maintenant et créer "
-"le compte ultérieurement."
+"Après redémarrage vous pourrez créer un nouvel utilisateur, mais vous pouvez "
+"l'éteindre maintenant et créer le compte ultérieurement."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Éteindre et sortir du mode de démonstration"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -434,9 +436,8 @@ msgid "Use as:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Racine"
+msgstr "Racine (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
@@ -464,9 +465,8 @@ msgid "Filesystem:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Défaut"
+msgstr "Défaut (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Sélectionnez un disque à utiliser lors de l'installation"
