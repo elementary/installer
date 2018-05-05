@@ -74,10 +74,17 @@ namespace LocaleHelper {
                 };
 
                 foreach (var country in Distinst.locale_get_country_codes (language)) {
-                    lang_entry.add_country(CountryEntry () {
-                        code = country,
-                        name = Distinst.locale_get_country_name_translated (country, language)
-                    });
+                    if (country == "None") {
+                        lang_entry.add_country(CountryEntry () {
+                            code = country,
+                            name = country
+                        });
+                    } else {
+                        lang_entry.add_country(CountryEntry () {
+                            code = country,
+                            name = Distinst.locale_get_country_name_translated (country, language)
+                        });
+                    }
                 }
 
                 var main = get_main_country (language);
