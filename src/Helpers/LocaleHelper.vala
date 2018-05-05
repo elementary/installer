@@ -21,6 +21,7 @@ namespace LocaleHelper {
         public string code;
         public string? name;
         public CountryEntry[] countries;
+        public int preferred;
 
         public LangEntry () {
             countries = {};
@@ -34,6 +35,24 @@ namespace LocaleHelper {
 
         public unowned string get_code() {
             return code;
+        }
+
+        public void push_country_to_start (string country) {
+            var i = 0;
+            var found = false;
+            foreach (var entry in countries) {
+                if (country == entry.code) {
+                    found = true;
+                    break;
+                }
+                i += 1;
+            }
+
+            if (found) {
+                var temp = countries[0];
+                countries[0] = countries[i];
+                countries[i] = temp;
+            }
         }
     }
 
@@ -59,6 +78,11 @@ namespace LocaleHelper {
                         code = country,
                         name = Distinst.locale_get_country_name_translated (country, language)
                     });
+                }
+
+                var main = get_main_country (language);
+                if (main != null) {
+                    lang_entry.push_country_to_start (main);
                 }
 
                 lang_entries[language] = lang_entry;
