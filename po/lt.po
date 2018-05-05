@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-04 00:05+0000\n"
+"PO-Revision-Date: 2018-05-05 12:15+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian "
 "<https://weblate.elementary.io/projects/installer/installer/lt/>\n"
@@ -454,7 +454,7 @@ msgstr "Namai (/home)"
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Paleidimas (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
@@ -462,11 +462,11 @@ msgstr "Sukeitimų"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Tinkintas"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Tinkintas:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
