@@ -53,6 +53,8 @@ public class Configuration : GLib.Object {
             } else {
                 return default;
             }
+        } else if (country == "None") {
+            return lang;
         }
 
         return lang + "_" + country + ".UTF-8";
