@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-01-23 07:36+0000\n"
-"Last-Translator: Deo Valiandro. M <vaeloox@gmail.com>\n"
-"Language-Team: Indonesian <https://weblate.elementary.io/projects/installer/"
-"installer/id/>\n"
+"PO-Revision-Date: 2018-05-09 14:32+0000\n"
+"Last-Translator: Lukeschiffer <kyo.freecs@gmail.com>\n"
+"Language-Team: Indonesian "
+"<https://weblate.elementary.io/projects/installer/installer/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +37,7 @@ msgstr "Tidak dapat mengubah nama domain log Berbeda"
 #: src/Helpers/LogHelper.vala:54
 #, fuzzy
 msgid "Starting installation"
-msgstr "Mulai Pemasangan\n"
+msgstr "Mulai Pemasangan"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -209,7 +209,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Password tidak sesuai"
 
 #: src/Views/ErrorView.vala:38
 #, fuzzy
@@ -400,11 +400,11 @@ msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Password:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Nama Perangkat:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
@@ -434,7 +434,7 @@ msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Gunakan sebagai :"
 
 #: src/Widgets/PartitionMenu.vala:87
 #, fuzzy
