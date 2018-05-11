@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-11 18:31+0000\n"
+"PO-Revision-Date: 2018-05-12 00:11+0000\n"
 "Last-Translator: Pedro Ferreira <pmaf.ferreira@gmail.com>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
@@ -137,7 +137,7 @@ msgstr ""
 
 #: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
-msgstr "A obter a configuração atual..."
+msgstr "A obter a configuração atual…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
@@ -308,14 +308,14 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Deverá selecionar pelo menos uma partição <b>Raíz (/)</b>."
+msgstr "Deverá selecionar pelo menos uma partição <b>Raiz (/)</b>."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Deverá selecionar pelo menos uma partição <b>Raíz (/)</b> e uma partição <b>"
+"Deverá selecionar pelo menos uma partição <b>Raiz (/)</b> e uma partição <b>"
 "Arranque (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:60
