@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-15 00:09+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Portuguese <https://weblate.elementary.io/projects/installer/"
-"installer/pt/>\n"
+"PO-Revision-Date: 2018-05-11 17:53+0000\n"
+"Last-Translator: Pedro Ferreira <pmaf.ferreira@gmail.com>\n"
+"Language-Team: Portuguese "
+"<https://weblate.elementary.io/projects/installer/installer/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,12 +30,10 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "Não é possível mudar nome do domínio do registo Distinst"
+msgstr "Não é possível definir o callback do domínio de registo Distinst"
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
 msgstr "A iniciar a instalação"
 
@@ -126,9 +124,8 @@ msgid "Memory:"
 msgstr "Memória:"
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Selecionar um idioma"
+msgstr "Selecione um disco"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -144,7 +141,7 @@ msgstr "A obter a configuração atual..."
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Customizar partições…"
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
@@ -152,25 +149,31 @@ msgstr "Apagar e Instalar"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Encriptação do disco"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Encriptar este disco protege os dados de serem lidos por outros com acesso "
+"físico a este dispositivo."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"A encriptação de disco pode ter um impacto mínimo nas velocidades de leitura "
+"e escrita ao correr tarefas intensas."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
+"A palavra-passe de encriptação será requirida cada vez que ligues ou "
+"reinicies este dispositivo."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -178,18 +181,21 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Se te esqueceres da palavra-passe de encriptação, <b>não poderás recuperar "
+"os dados.</b> Esta é uma password única para este dispositivo, não é a "
+"palavra-passe da tua conta de utilizador."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Escolher palavra-passe de encriptação"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Confirmar palavra-passe"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Não encriptar"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -198,20 +204,19 @@ msgstr "Voltar"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Escolher palavra-passe"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Definir palavra-passe"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "As palavras-passe não coincidem"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Não foi possível instalar %s"
+msgstr "Não foi possível instalar"
 
 #: src/Views/ErrorView.vala:46
 #, fuzzy, c-format
