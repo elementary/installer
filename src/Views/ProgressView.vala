@@ -649,7 +649,7 @@ public class ProgressView : AbstractInstallerView {
         }
 
         foreach (Installer.Mount m in lvm_devices) {
-            var vg = m.parent_disk.offset (12);
+            var vg = m.parent_disk.offset (12).replace("--", "-");
             unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
             if (disk == null) {
                 critical ("could not find %s\n", vg);
