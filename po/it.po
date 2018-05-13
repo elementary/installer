@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-13 09:34+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"PO-Revision-Date: 2018-05-13 09:35+0000\n"
+"Last-Translator: alexandre sep <alexandreporks@gmail.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/installer/installer/it/>\n"
 "Language: it\n"
@@ -383,14 +383,12 @@ msgid "Your device will automatically restart to %s in %i seconds."
 msgstr "Il tuo dispositivo si riavvierà automaticamente con %s in %i secondi."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Il tuo dispositivo si riavvierà automaticamente in %s tra 30 secondi per "
-"impostare un nuovo profilo utente, o puoi spegnerlo ora e impostare il nuovo "
-"profilo utente più tardi."
+"Dopo riavviare , può configurare un nuovo utente , o spegnere ora e "
+"configurare il nuovo utentente dopo."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
