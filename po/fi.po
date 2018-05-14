@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-01 17:32+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"PO-Revision-Date: 2018-05-08 00:10+0000\n"
+"Last-Translator: Robin Lahtinen <robin.lahtinen@gmail.com>\n"
 "Language-Team: Finnish "
 "<https://weblate.elementary.io/projects/installer/installer/fi/>\n"
 "Language: fi\n"
@@ -31,7 +31,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr ""
+msgstr "Distinst-lokin soittopyyntöä ei voitu määrittää"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -252,11 +252,11 @@ msgstr "Yritä asennusta uudelleen"
 
 #: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Testitilan uudelleenkäynnistys"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
-msgstr ""
+msgstr "Testitila vaihda käyttäjä"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -305,22 +305,23 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Valitse vähintään <b>juuriosio (/)</b>."
+msgstr "Sinun pitää ainakin valita <b>Juuri (/)</b> osio."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Valitse vähintään <b>juuriosio (/)</b> ja <b>käynnistysosio (/boot/efi)</b>."
+"Sinun pitää ainakin valita <b>Juuri (/)</b> osio ja <b>Käynnistys "
+"(/boot/efi)</b> osio."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "On myös suositeltavaa valita <b>swap-osio</b>."
+msgstr "On myös suositeltavaa valita <b>Swap</b> osio."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr "Muokkaa osioita…"
+msgstr "Muokkaa osioita..."
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -369,7 +370,7 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr "Jatka määritystä"
+msgstr "Jatka asentamista"
 
 #: src/Views/SuccessView.vala:42
 #, c-format
@@ -386,15 +387,15 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Testitilan sammutus"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr "Avaa tämän osion salaus"
+msgstr "Pura osion salaus"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
-msgstr "Anna osion salauksen salasana ja aseta LUKS-laitenimi."
+msgstr "Anna osion salauksen salasana ja aseta LUKS-laitteen nimi."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
@@ -402,11 +403,11 @@ msgstr "Salasana:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr "Laitenimi:"
+msgstr "Laitteen nimi:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr "Avaa salaus"
+msgstr "Pura salaus"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"

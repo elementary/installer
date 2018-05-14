@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-28 00:02+0000\n"
+"PO-Revision-Date: 2018-05-05 12:15+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian "
 "<https://weblate.elementary.io/projects/installer/installer/lt/>\n"
@@ -210,7 +210,7 @@ msgstr "Pasirinkti slaptažodį"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Nustatyti slaptažodį"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
@@ -304,6 +304,8 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Pasirinkite kuriuos skaidinius iš visų diskų naudoti. <b>Pasirinkus \""
+"Formatuoti\", bus ištrinti VISI pasirinktame skaidinyje esantys duomenys.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
@@ -435,7 +437,7 @@ msgstr "Naudoti skaidinį:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Formatuoti:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
@@ -452,19 +454,19 @@ msgstr "Namai (/home)"
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Paleidimas (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Sukeitimų"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Tinkintas"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Tinkintas:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
