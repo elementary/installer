@@ -11,6 +11,7 @@ vala_files = [
     'Dialogs/HelpDialog.vala',
     'Objects/org.freedesktop.udisks2.vala',
     'Objects/Configuration.vala',
+    'Objects/InstallOptions.vala',
     'Objects/Mount.vala',
     'Objects/Recovery.vala',
     'Views/AbstractInstallerView.vala',
