@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-14 13:15+0000\n"
-"Last-Translator: Kanishak Chauhan <kanishakc1@gmail.com>\n"
+"PO-Revision-Date: 2018-05-15 00:05+0000\n"
+"Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
 "Language-Team: Hindi "
 "<https://weblate.elementary.io/projects/installer/installer/hi/>\n"
 "Language: hi\n"
@@ -31,7 +31,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr "अलग लोग बनाने मे असमर्थ..."
+msgstr "अलग लॉग बनाने मे असमर्थ..."
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -47,7 +47,7 @@ msgstr "यह इंस्टालेशन कैंसिल कर डि�
 
 #: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
-msgstr ""
+msgstr "पुनरारंभ"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
