@@ -85,7 +85,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var clean_install_button = new InstallTypeButton (
             _("Clean Install"),
             "edit-clear",
-            _("Erase everything and install a fresh copy of %s").printf (Utils.get_pretty_name ())
+            _("Erase everything and install a fresh copy of %s.").printf (Utils.get_pretty_name ())
         );
 
         var custom_button = new InstallTypeButton (
