@@ -25,7 +25,6 @@ public class Installer.MainWindow : Gtk.Dialog {
     private KeyboardLayoutView keyboard_layout_view;
     private TryInstallView try_install_view;
     private Installer.CheckView check_view;
-    private InstallTypeView install_type_view;
     private DiskView disk_view;
     private PartitioningView partitioning_view;
     private ProgressView progress_view;
@@ -90,7 +89,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
-        try_install_view.next_step.connect (() => load_install_type_view ());
+        try_install_view.custom_step.connect (() => load_partitioning_view ());
+        try_install_view.next_step.connect (() => load_disk_view ());
     }
 
     private void set_check_view_visible (bool show) {
@@ -150,31 +150,13 @@ public class Installer.MainWindow : Gtk.Dialog {
         encrypt_view.next_step.connect (() => load_progress_view ());
     }
 
-    private void load_install_type_view () {
-        if (install_type_view != null) {
-            install_type_view.destroy ();
-        }
-
-        install_type_view = new InstallTypeView ();
-        install_type_view.previous_view = try_install_view;
-        stack.add (install_type_view);
-        stack.visible_child = install_type_view;
-
-        disk_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
-        });
-
-        install_type_view.custom_step.connect (() => load_partitioning_view ());
-        install_type_view.next_step.connect (() => load_disk_view ());
-    }
-
     private void load_disk_view () {
         if (disk_view != null) {
             disk_view.destroy ();
         }
 
         disk_view = new DiskView ();
-        disk_view.previous_view = install_type_view;
+        disk_view.previous_view = try_install_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
         disk_view.load.begin(minimum_disk_size);
@@ -192,7 +174,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         partitioning_view = new PartitioningView (minimum_disk_size);
-        partitioning_view.previous_view = install_type_view;
+        partitioning_view.previous_view = try_install_view;
         stack.add (partitioning_view);
         stack.visible_child = partitioning_view;
 

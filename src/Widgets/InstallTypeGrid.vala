@@ -41,15 +41,19 @@ public class Installer.InstallTypeButton : Gtk.ToggleButton {
         title_label.halign = Gtk.Align.START;
         title_label.hexpand = true;
         title_label.valign = Gtk.Align.END;
+        title_label.get_style_context ().add_class ("primary");
 
-        var subtitle_label = new Gtk.Label ("<small>%s</small>".printf (type_subtitle));
+        var subtitle_label = new Gtk.Label ("%s".printf (type_subtitle));
         subtitle_label.halign = Gtk.Align.START;
         subtitle_label.use_markup = true;
+        subtitle_label.max_width_chars = 45;
         subtitle_label.valign = Gtk.Align.START;
-        subtitle_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        subtitle_label.wrap = true;
+        subtitle_label.xalign = 0;
 
         var grid = new Gtk.Grid ();
         grid.margin = 6;
+        grid.margin_right = 12;
         grid.column_spacing = 6;
         grid.row_spacing = 6;
         grid.orientation = Gtk.Orientation.VERTICAL;
