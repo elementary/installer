@@ -20,6 +20,10 @@
 
 public class InstallOptions : GLib.Object {
     private static InstallOptions _options_object;
+    private Distinst.InstallOptions _options;
+    private Distinst.Disks disks;
+    public Distinst.InstallOption? selected_option;
+
     public static unowned InstallOptions get_default () {
         if (_options_object == null) {
             _options_object = new InstallOptions ();
@@ -28,8 +32,14 @@ public class InstallOptions : GLib.Object {
         return _options_object;
     }
 
-    private Distinst.InstallOptions _options;
-    private Distinst.Disks disks;
+    public bool has_recovery () {
+        return null != get_options().get_recovery_option ();
+    }
+
+    public bool is_oem_mode () {
+        var recovery = get_options().get_recovery_option ();
+        return null != recovery && recovery.get_oem_mode ();
+    }
 
     public unowned Distinst.InstallOptions new_options (uint64 minimum_disk_size) {
         disks = Distinst.Disks.probe ();
@@ -37,11 +47,18 @@ public class InstallOptions : GLib.Object {
         return _options;
     }
 
+    public unowned Distinst.InstallOptions get_options () {
+        if (null == _options) {
+            disks = Distinst.Disks.probe ();
+            _options = new Distinst.InstallOptions (disks, 0);
+        }
+
+        return _options;
+    }
+
     public Distinst.Disks get_disks () {
         return (owned) disks;
     }
-
-    public Distinst.InstallOption? selected_option;
 
     public unowned Distinst.InstallOption? get_selected_option () {
         return selected_option;

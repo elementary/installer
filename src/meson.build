@@ -13,7 +13,6 @@ vala_files = [
     'Objects/Configuration.vala',
     'Objects/InstallOptions.vala',
     'Objects/Mount.vala',
-    'Objects/Recovery.vala',
     'Views/AbstractInstallerView.vala',
     'Views/CheckView.vala',
     'Views/DiskView.vala',
