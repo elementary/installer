@@ -27,6 +27,7 @@ vala_files = [
     'Widgets/DecryptMenu.vala',
     'Widgets/DiskBar.vala',
     'Widgets/DiskGrid.vala',
+    'Widgets/InstallTypeGrid.vala',
     'Widgets/LayoutWidget.vala',
     'Widgets/PartitionBar.vala',
     'Widgets/PartitionMenu.vala',
