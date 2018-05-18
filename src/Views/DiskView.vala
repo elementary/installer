@@ -104,7 +104,7 @@ public class Installer.DiskView : AbstractInstallerView {
         DiskButton[] enabled_buttons = {};
         DiskButton[] disabled_buttons = {};
 
-        unowned Distinst.InstallOptions install_options = InstallOptions.get_default()
+        unowned Distinst.InstallOptions install_options = InstallOptions.get_default ()
             .new_options (minimum_disk_size);
 
         if (install_options == null) {
@@ -132,7 +132,7 @@ public class Installer.DiskView : AbstractInstallerView {
                             ((Gtk.ToggleButton)child).active = child == disk_button;
                         });
 
-                        InstallOptions.get_default().selected_option = new Distinst.InstallOption () {
+                        InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
                             tag = Distinst.InstallOptionVariant.ERASE,
                             option = (void*) disk,
                             encrypt_pass = null
@@ -146,7 +146,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
                 enabled_buttons += disk_button;
             } else {
-                disk_button.set_sensitive(false);
+                disk_button.set_sensitive (false);
 
                 disabled_buttons += disk_button;
             }
