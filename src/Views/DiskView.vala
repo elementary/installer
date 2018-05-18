@@ -141,9 +141,8 @@ public class Installer.DiskView : AbstractInstallerView {
 
                         InstallOptions.get_default().selected_option = new Distinst.InstallOption () {
                             tag = Distinst.InstallOptionVariant.ERASE,
-                            refresh_option = null,
-                            erase_option = disk,
-                            erase_pass = null
+                            option = (void*) disk,
+                            encrypt_pass = null
                         };
 
                         next_button.sensitive = true;

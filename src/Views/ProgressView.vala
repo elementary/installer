@@ -201,13 +201,14 @@ public class ProgressView : AbstractInstallerView {
             switch (option.tag) {
                 case Distinst.InstallOptionVariant.REFRESH:
                     if (current_config.retain_home) {
+                        unowned Distinst.RefreshOption refresh = (Distinst.RefreshOption*) option.option;
                         config.old_root = Utils.string_from_utf8(
-                            option.refresh_option.get_root_part ()
+                            refresh.get_root_part ()
                         );
                     }
                     break;
                 case Distinst.InstallOptionVariant.ERASE:
-                    option.erase_pass = current_config.encryption_password;
+                    option.encrypt_pass = current_config.encryption_password;
                     break;
             }
 
