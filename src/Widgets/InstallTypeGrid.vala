@@ -41,7 +41,7 @@ public class Installer.InstallTypeButton : Gtk.ToggleButton {
         title_label.halign = Gtk.Align.START;
         title_label.hexpand = true;
         title_label.valign = Gtk.Align.END;
-        title_label.get_style_context ().add_class ("primary");
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
         var subtitle_label = new Gtk.Label ("%s".printf (type_subtitle));
         subtitle_label.halign = Gtk.Align.START;

@@ -21,10 +21,9 @@ public class Installer.TryInstallView : AbstractInstallerView {
     public signal void next_step ();
 
     private Gtk.Button next_button;
-    private Gtk.Grid type_grid;
 
     construct {
-        type_grid = new Gtk.Grid ();
+        var type_grid = new Gtk.Grid ();
         type_grid.halign = Gtk.Align.CENTER;
         type_grid.valign = Gtk.Align.CENTER;
         type_grid.orientation = Gtk.Orientation.VERTICAL;
