@@ -219,11 +219,7 @@ public class ProgressView : AbstractInstallerView {
         }
 
         new Thread<void*> (null, () => {
-            if (current_config.retain_home) {
-                installer.install_and_retain_home ((owned) disks, config);
-            } else {
-                installer.install ((owned) disks, config);
-            }
+            installer.install ((owned) disks, config);
             return null;
         });
     }
