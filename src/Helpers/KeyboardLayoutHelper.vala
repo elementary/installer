@@ -36,12 +36,14 @@ namespace KeyboardLayoutHelper {
             var variants = layout.get_variants ();
             if (variants != null) {
                 foreach (unowned Distinst.KeyboardVariant variant in variants) {
-                    variant_map[variant.get_name ()] = dgettext ("xkeyboard-config", variant.get_description ());
+                    var name = Utils.string_from_utf8 (variant.get_name ());
+                    var desc = Utils.string_from_utf8 (variant.get_description ());
+                    variant_map[name] = dgettext ("xkeyboard-config", desc);
                 }
             }
             layouts.add (Layout () {
-                name = layout.get_name (),
-                description = dgettext ("xkeyboard-config", layout.get_description ()),
+                name = Utils.string_from_utf8 (layout.get_name ()),
+                description = dgettext ("xkeyboard-config", Utils.string_from_utf8 (layout.get_description ())),
                 variants = variant_map
             });
         }
