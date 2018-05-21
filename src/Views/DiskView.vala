@@ -104,8 +104,7 @@ public class Installer.DiskView : AbstractInstallerView {
         DiskButton[] enabled_buttons = {};
         DiskButton[] disabled_buttons = {};
 
-        unowned Distinst.InstallOptions install_options = InstallOptions.get_default ()
-            .new_options (minimum_disk_size);
+        unowned Distinst.InstallOptions install_options = InstallOptions.get_default ().get_updated_options ();
 
         if (install_options == null) {
             critical (_("unable to get installation options"));

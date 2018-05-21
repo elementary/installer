@@ -20,6 +20,8 @@
 
 public class InstallOptions : GLib.Object {
     private static InstallOptions _options_object;
+    private uint64 minimum_size;
+    private uint64 layout_hash;
     private Distinst.InstallOptions _options;
     private Distinst.Disks disks;
     public Distinst.InstallOption? selected_option;
@@ -32,6 +34,10 @@ public class InstallOptions : GLib.Object {
         return _options_object;
     }
 
+    public void set_minimum_size (uint64 size) {
+        minimum_size = size;
+    }
+
     public bool has_recovery () {
         return null != get_options().get_recovery_option ();
     }
@@ -41,16 +47,25 @@ public class InstallOptions : GLib.Object {
         return null != recovery && recovery.get_oem_mode ();
     }
 
-    public unowned Distinst.InstallOptions new_options (uint64 minimum_disk_size) {
-        disks = Distinst.Disks.probe ();
-        _options = new Distinst.InstallOptions (disks, minimum_disk_size);
-        return _options;
-    }
-
     public unowned Distinst.InstallOptions get_options () {
         if (null == _options) {
             disks = Distinst.Disks.probe ();
-            _options = new Distinst.InstallOptions (disks, 0);
+            disks.initialize_volume_groups ();
+            layout_hash = Distinst.device_layout_hash ();
+            _options = new Distinst.InstallOptions (disks, minimum_size);
+        }
+
+        return _options;
+    }
+
+    // Returns an updated option if the device layout has changed.
+    public unowned Distinst.InstallOptions get_updated_options () {
+        var new_hash = Distinst.device_layout_hash ();
+        if (layout_hash != new_hash) {
+            layout_hash = new_hash;
+            disks = Distinst.Disks.probe ();
+            _options = new Distinst.InstallOptions (disks, minimum_size);
+            selected_option = null;
         }
 
         return _options;
