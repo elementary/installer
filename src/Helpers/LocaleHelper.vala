@@ -100,9 +100,9 @@ namespace LocaleHelper {
     }
 
     public static string? get_main_country (string lang_prefix) {
-        string? main = Distinst.locale_get_main_country (lang_prefix);
+        uint8[]? main = Distinst.locale_get_main_country (lang_prefix);
         if (main != null) {
-            return main;
+            return Utils.string_from_utf8 (main);
         }
 
         // We fallback to whatever is available in the lang list.
