@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-05-22 14:23+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Csepi Árpád <banderaszkormos@gmail.com>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/installer/installer/hu/>\n"
 "Language: hu\n"
@@ -47,7 +47,7 @@ msgstr "Ezzel megszakítod a telepítést és kikapcsolod az eszközt."
 
 #: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
-msgstr ""
+msgstr "Újraindítás"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
