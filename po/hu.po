@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-22 14:43+0000\n"
-"Last-Translator: Majer Tamás <tmajer@protonmail.com>\n"
+"PO-Revision-Date: 2018-05-23 00:06+0000\n"
+"Last-Translator: Csepi Árpád <banderaszkormos@gmail.com>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/installer/installer/hu/>\n"
 "Language: hu\n"
@@ -117,11 +117,11 @@ msgstr "Az ön eszköze:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr ""
+msgstr "Processzor:"
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
-msgstr ""
+msgstr "Memória:"
 
 #: src/Views/DiskView.vala:52
 msgid "Select a Drive"
