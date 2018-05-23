@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-01 05:12+0000\n"
+"PO-Revision-Date: 2018-05-24 00:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
@@ -162,7 +162,7 @@ msgstr "ドライブを暗号化すると、他の人がこのデバイスに物
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
-msgstr "ドライブの暗号化は負荷のかかるタスクを実行する際にわずかに読み書き速度に影響を及ぼす可能性があります。"
+msgstr "ドライブの暗号化は、負荷のかかるタスクを実行するときにわずかに読み書き速度に影響を及ぼす可能性があります。"
 
 #: src/Views/EncryptView.vala:67
 msgid ""
