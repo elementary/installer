@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:39+0200\n"
-"PO-Revision-Date: 2018-01-04 00:14+0000\n"
+"PO-Revision-Date: 2018-05-24 22:59+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/extra/ja/>\n"
@@ -30,7 +30,7 @@ msgstr "システムをインストールします"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr "system-os-installer"
+msgstr ""
 
 #~ msgid "Calculator"
 #~ msgstr "計算機"
