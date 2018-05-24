@@ -20,7 +20,7 @@
 
 public delegate void DecryptFn (string path, string pv, string pass, Installer.DecryptMenu menu);
 
-public class Installer.DecryptMenu: Gtk.Popover {
+public class Installer.DecryptMenu: Gtk.Dialog {
     private Gtk.Stack stack;
 
     private Gtk.Grid decrypt_view;

@@ -45,7 +45,13 @@ public class Installer.TryInstallView : AbstractInstallerView {
         type_label.hexpand = true;
         type_label.get_style_context ().add_class ("h2");
 
-        var type_desc_label = new Gtk.Label (_("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ()));
+        string description = _("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ());
+
+        // TODO: Once we support more options, give an example here. "More options, such as…"
+        string decrypt_description = _("More options may be available after unlocking any encrypted drives.");
+
+        // TODO: Only show decrypt description when we detect encrypted drives
+        var type_desc_label = new Gtk.Label (_("%s %s").printf (description, decrypt_description));
         type_desc_label.hexpand = true;
         type_desc_label.max_width_chars = 60;
         type_desc_label.wrap = true;
@@ -59,10 +65,19 @@ public class Installer.TryInstallView : AbstractInstallerView {
         title_grid.attach (type_label, 0, 1, 1, 1);
         title_grid.attach (type_desc_label, 0, 2, 1, 1);
 
+        var decrypt_button = new Gtk.Button.with_label (_("Unlock Encrypted Drives…"));
+
+        var decrypt_infobar = new Gtk.InfoBar ();
+        decrypt_infobar.message_type = Gtk.MessageType.INFO;
+
+        var infobar_area = decrypt_infobar.get_action_area () as Gtk.Container;
+        infobar_area.add (decrypt_button);
+
         content_area.valign = Gtk.Align.FILL;
         content_area.column_homogeneous = true;
-        content_area.attach (title_grid, 0, 0, 1, 1);
-        content_area.attach (type_scrolled, 1, 0, 1, 1);
+        content_area.attach (decrypt_infobar, 0, 0, 2, 1);
+        content_area.attach (title_grid,      0, 1, 1, 1);
+        content_area.attach (type_scrolled,   1, 1, 1, 1);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
@@ -94,10 +109,15 @@ public class Installer.TryInstallView : AbstractInstallerView {
         );
 
         action_area.add (shutdown_button);
+        // TODO: Only show decrypt button when we detect encrypted drives
+        // action_area.add (decrypt_button);
         action_area.add (back_button);
         action_area.add (next_button);
+
         action_area.set_child_secondary (shutdown_button, true);
-        action_area.set_child_non_homogeneous (shutdown_button, true);
+        // action_area.set_child_non_homogeneous (decrypt_button, true);
+        action_area.set_child_secondary (decrypt_button, true);
+        action_area.set_child_non_homogeneous (decrypt_button, true);
 
         type_grid.add (demo_button);
         type_grid.add (clean_install_button);
