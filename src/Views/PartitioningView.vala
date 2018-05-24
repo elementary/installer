@@ -123,7 +123,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
             string path = Utils.string_from_utf8 (disk.get_device_path ());
 
-            string model = disk.get_model ();
+            string model = Utils.string_from_utf8 (disk.get_model ());
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
@@ -174,7 +174,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         string path = Utils.string_from_utf8 (disk.get_device_path ());
 
-        string model = disk.get_model ();
+        string model = Utils.string_from_utf8 (disk.get_model ());
 
         var partitions = new Gee.ArrayList<PartitionBar> ();
         foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
