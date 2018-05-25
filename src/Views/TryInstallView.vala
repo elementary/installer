@@ -45,13 +45,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         type_label.hexpand = true;
         type_label.get_style_context ().add_class ("h2");
 
-        string description = _("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ());
-
-        // TODO: Once we support more options, give an example here. "More options, such as…"
-        string decrypt_description = _("More options may be available after unlocking any encrypted drives.");
-
-        // TODO: Only show decrypt description when we detect encrypted drives
-        var type_desc_label = new Gtk.Label (_("%s %s").printf (description, decrypt_description));
+        var type_desc_label = new Gtk.Label (_("You can install %s on this device now, or try Demo Mode without installing.").printf (Utils.get_pretty_name ()));
         type_desc_label.hexpand = true;
         type_desc_label.max_width_chars = 60;
         type_desc_label.wrap = true;
@@ -61,17 +55,25 @@ public class Installer.TryInstallView : AbstractInstallerView {
         title_grid.row_spacing = 6;
         title_grid.halign = Gtk.Align.CENTER;
         title_grid.valign = Gtk.Align.CENTER;
-        title_grid.attach (type_image, 0, 0, 1, 1);
-        title_grid.attach (type_label, 0, 1, 1, 1);
+
+        title_grid.attach (type_image,      0, 0, 1, 1);
+        title_grid.attach (type_label,      0, 1, 1, 1);
         title_grid.attach (type_desc_label, 0, 2, 1, 1);
+
+        // TODO: Once we support more options, give an example here. "More options, such as…"
+        var decrypt_description = new Gtk.Label (_("More options may be available after unlocking encrypted drives"));
 
         var decrypt_button = new Gtk.Button.with_label (_("Unlock Encrypted Drives…"));
 
+        // TODO: Only show decrypt infobar when we detect encrypted drives
         var decrypt_infobar = new Gtk.InfoBar ();
         decrypt_infobar.message_type = Gtk.MessageType.INFO;
 
-        var infobar_area = decrypt_infobar.get_action_area () as Gtk.Container;
-        infobar_area.add (decrypt_button);
+        var infobar_action_area = decrypt_infobar.get_action_area () as Gtk.Container;
+        infobar_action_area.add (decrypt_button);
+
+        var infobar_content_area = decrypt_infobar.get_content_area ();
+        infobar_content_area.add (decrypt_description);
 
         content_area.valign = Gtk.Align.FILL;
         content_area.column_homogeneous = true;
@@ -109,13 +111,10 @@ public class Installer.TryInstallView : AbstractInstallerView {
         );
 
         action_area.add (shutdown_button);
-        // TODO: Only show decrypt button when we detect encrypted drives
-        // action_area.add (decrypt_button);
         action_area.add (back_button);
         action_area.add (next_button);
 
         action_area.set_child_secondary (shutdown_button, true);
-        // action_area.set_child_non_homogeneous (decrypt_button, true);
         action_area.set_child_secondary (decrypt_button, true);
         action_area.set_child_non_homogeneous (decrypt_button, true);
 
@@ -123,6 +122,8 @@ public class Installer.TryInstallView : AbstractInstallerView {
         type_grid.add (clean_install_button);
         type_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         type_grid.add (custom_button);
+
+        ulong next_button_handler_id;
 
         demo_button.clicked.connect (() => {
             if (demo_button.active) {
@@ -138,6 +139,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
             } else {
                 next_button.sensitive = false;
                 next_button.label = _("Next");
+                next_button.clicked.disconnect (Utils.demo_mode);
             }
         });
 
@@ -151,10 +153,11 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
                 next_button.label = clean_install_button.type_title;
                 next_button.sensitive = true;
-                next_button.clicked.connect (() => next_step ());
+                handler_id = next_button.clicked.connect (() => next_step ());
             } else {
                 next_button.sensitive = false;
                 next_button.label = _("Next");
+                next_button.disconnect (handler_id);
             }
         });
 
@@ -168,10 +171,11 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
                 next_button.label = custom_button.type_title;
                 next_button.sensitive = true;
-                next_button.clicked.connect (() => custom_step ());
+                handler_id = next_button.clicked.connect (() => custom_step ());
             } else {
                 next_button.sensitive = false;
                 next_button.label = _("Next");
+                next_button.disconnect (handler_id);
             }
         });
 
