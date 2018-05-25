@@ -89,7 +89,6 @@ public class DecryptDialog: Gtk.Dialog {
         grid.column_spacing = 12;
         grid.margin_start = grid.margin_end = 12;
 
-        // Column, Row, Width, Height
         grid.attach (overlay,         0, 0, 1, 2);
         grid.attach (primary_label,   1, 0);
         grid.attach (secondary_label, 1, 1);

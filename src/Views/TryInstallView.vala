@@ -56,9 +56,9 @@ public class Installer.TryInstallView : AbstractInstallerView {
         title_grid.halign = Gtk.Align.CENTER;
         title_grid.valign = Gtk.Align.CENTER;
 
-        title_grid.attach (type_image,      0, 0, 1, 1);
-        title_grid.attach (type_label,      0, 1, 1, 1);
-        title_grid.attach (type_desc_label, 0, 2, 1, 1);
+        title_grid.attach (type_image,      0, 0);
+        title_grid.attach (type_label,      0, 1);
+        title_grid.attach (type_desc_label, 0, 2);
 
         // TODO: Once we support more options, give an example here
         // ("More options, such as…") if there's space…
@@ -78,9 +78,9 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         content_area.valign = Gtk.Align.FILL;
         content_area.column_homogeneous = true;
-        content_area.attach (decrypt_infobar, 0, 0, 2, 1);
-        content_area.attach (title_grid,      0, 1, 1, 1);
-        content_area.attach (type_scrolled,   1, 1, 1, 1);
+        content_area.attach (decrypt_infobar, 0, 0, 2);
+        content_area.attach (title_grid,      0, 1);
+        content_area.attach (type_scrolled,   1, 1);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
