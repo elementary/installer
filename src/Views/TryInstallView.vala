@@ -116,8 +116,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         action_area.add (next_button);
 
         action_area.set_child_secondary (shutdown_button, true);
-        action_area.set_child_secondary (decrypt_button, true);
-        action_area.set_child_non_homogeneous (decrypt_button, true);
+        action_area.set_child_non_homogeneous (shutdown_button, true);
 
         type_grid.add (demo_button);
         type_grid.add (clean_install_button);
