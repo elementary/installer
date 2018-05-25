@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-25 23:22+0000\n"
-"Last-Translator: papou84 <pacome.heuze@gmail.com>\n"
+"PO-Revision-Date: 2018-05-25 23:23+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French "
 "<https://weblate.elementary.io/projects/installer/installer/fr/>\n"
 "Language: fr\n"
@@ -319,7 +319,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr " Il est aussi recommandé de choisir une partition<b> 1Swap</b> 2."
+msgstr "Il est aussi recommandé de choisir une partition <b>Swap</b>."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
