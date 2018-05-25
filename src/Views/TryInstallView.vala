@@ -60,7 +60,8 @@ public class Installer.TryInstallView : AbstractInstallerView {
         title_grid.attach (type_label,      0, 1, 1, 1);
         title_grid.attach (type_desc_label, 0, 2, 1, 1);
 
-        // TODO: Once we support more options, give an example here. "More options, such as…"
+        // TODO: Once we support more options, give an example here
+        // ("More options, such as…") if there's space…
         var decrypt_description = new Gtk.Label (_("More options may be available after unlocking encrypted drives"));
 
         var decrypt_button = new Gtk.Button.with_label (_("Unlock Encrypted Drives…"));
@@ -91,7 +92,6 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var shutdown_button = new Gtk.Button.from_icon_name ("system-shutdown-symbolic", Gtk.IconSize.BUTTON);
         shutdown_button.tooltip_text = _("Shut Down");
         shutdown_button.get_style_context ().add_class ("circular");
-        shutdown_button.clicked.connect (Utils.shutdown);
 
         var demo_button = new InstallTypeButton (
             _("Try Demo Mode"),
@@ -140,7 +140,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
             } else {
                 next_button.sensitive = false;
                 next_button.label = _("Next");
-                next_button.clicked.disconnect (Utils.demo_mode);
+                next_button.disconnect (next_button_handler_id);
             }
         });
 
@@ -178,6 +178,12 @@ public class Installer.TryInstallView : AbstractInstallerView {
                 next_button.label = _("Next");
                 next_button.disconnect (next_button_handler_id);
             }
+        });
+
+        shutdown_button.clicked.connect (() => {
+            var end_session_dialog = new EndSessionDialog ();
+            end_session_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            end_session_dialog.run ();
         });
 
         show_all ();
