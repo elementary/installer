@@ -7,6 +7,7 @@ vala_files = [
     'Helpers/KeyboardLayoutHelper.vala',
     'Helpers/LocaleHelper.vala',
     'Helpers/LogHelper.vala',
+    'Dialogs/DecryptDialog.vala',
     'Dialogs/EndSessionDialog.vala',
     'Objects/org.freedesktop.udisks2.vala',
     'Objects/Configuration.vala',

@@ -180,6 +180,12 @@ public class Installer.TryInstallView : AbstractInstallerView {
             }
         });
 
+        decrypt_button.clicked.connect (() => {
+            var decrypt_dialog = new DecryptDialog ();
+            decrypt_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            decrypt_dialog.run ();
+        });
+
         shutdown_button.clicked.connect (() => {
             var end_session_dialog = new EndSessionDialog ();
             end_session_dialog.transient_for = (Gtk.Window) get_toplevel ();

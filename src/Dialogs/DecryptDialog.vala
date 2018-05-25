@@ -15,28 +15,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public delegate void DecryptFn (string path, string pv, string pass, Installer.DecryptMenu menu);
-
-public class Installer.DecryptMenu: Gtk.Dialog {
-    private Gtk.Stack stack;
-
-    private Gtk.Grid decrypt_view;
-    private Gtk.Button decrypt_button;
-    private Gtk.Entry pass_entry;
-    private Gtk.Entry pv_entry;
-
-    public DecryptMenu (string device_path, DecryptFn decrypt) {
-        stack = new Gtk.Stack ();
-        stack.margin = 12;
-        create_decrypt_view (device_path, decrypt);
-        add (stack);
-        stack.show_all ();
+public class DecryptDialog: Gtk.Dialog {
+    public DecryptDialog () {
+        Object (
+            title: "Unlock",
+            deletable: false,
+            resizable: false,
+            skip_taskbar_hint: true,
+            skip_pager_hint: true
+        );
     }
 
-    private void create_decrypt_view (string device_path, DecryptFn decrypt) {
+    construct {
         var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
@@ -51,100 +43,81 @@ public class Installer.DecryptMenu: Gtk.Dialog {
         overlay.add (image);
         overlay.add_overlay (overlay_image);
 
-        var primary_label = new Gtk.Label (_("Decrypt This Partition"));
+        var primary_label = new Gtk.Label (_("Select a Partition to Unlock"));
+        primary_label.max_width_chars = 50;
+        primary_label.selectable = true;
+        primary_label.wrap = true;
+        primary_label.xalign = 0;
         primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
-        primary_label.halign = Gtk.Align.START;
 
-        var secondary_label = new Gtk.Label (_("Enter the partition's encryption password and set a device name for the decrypted partition."));
-        secondary_label.halign = Gtk.Align.START;
+        var secondary_label = new Gtk.Label (_("There are multiple encrypted partitions. Choose one to unlock with its password."));
         secondary_label.max_width_chars = 50;
         secondary_label.selectable = true;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
-        var dialog_grid = new Gtk.Grid ();
-        dialog_grid.column_spacing = 12;
-        dialog_grid.attach (overlay,         0, 0, 1, 2);
-        dialog_grid.attach (primary_label,   1, 0);
-        dialog_grid.attach (secondary_label, 1, 1);
+        var partition_list = new Gtk.Label ("Imagine a list of partitions here!");
+        partition_list.margin_top = 12;
 
         var pass_label = new Gtk.Label (_("Password:"));
         pass_label.halign = Gtk.Align.END;
 
-        pass_entry = new Gtk.Entry ();
+        var pass_entry = new Gtk.Entry ();
+        pass_entry.hexpand = true;
         pass_entry.input_purpose = Gtk.InputPurpose.PASSWORD;
         pass_entry.visibility = false;
-        pass_entry.changed.connect (() => set_sensitivity ());
-        pass_entry.activate.connect (() => {
-            if (entries_set ()) {
-                decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
-            }
-        });
 
-        var pv_label = new Gtk.Label (_("Device name:"));
-        pv_label.halign = Gtk.Align.END;
+        var name_label = new Gtk.Label (_("Device name:"));
+        name_label.halign = Gtk.Align.END;
 
-        pv_entry = new Gtk.Entry ();
+        var name_entry = new Gtk.Entry ();
+        name_entry.hexpand = true;
         // Set a sane default
-        pv_entry.text = "data";
-        pv_entry.changed.connect (() => set_sensitivity ());
-        pv_entry.activate.connect (() => {
-            if (entries_set ()) {
-                decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
-            }
-        });
+        name_entry.text = "data";
 
-        decrypt_button = new Gtk.Button.with_label (_("Decrypt"));
-        decrypt_button.halign = Gtk.Align.END;
-        decrypt_button.sensitive = false;
-        decrypt_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        decrypt_button.clicked.connect (() => {
-            decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
-        });
+        var unlock_grid = new Gtk.Grid ();
+        unlock_grid.column_spacing = 12;
+        unlock_grid.row_spacing = 6;
+        unlock_grid.margin_top = 12;
 
-        decrypt_view = new Gtk.Grid ();
-        decrypt_view.column_spacing = 6;
-        decrypt_view.row_spacing = 12;
+        unlock_grid.attach (pass_label, 0, 0);
+        unlock_grid.attach (pass_entry, 1, 0);
+        unlock_grid.attach (name_label, 0, 1);
+        unlock_grid.attach (name_entry, 1, 1);
 
-        decrypt_view.attach (dialog_grid,    0, 0, 2);
-        decrypt_view.attach (pass_label,     0, 1);
-        decrypt_view.attach (pass_entry,     1, 1);
-        decrypt_view.attach (pv_label,       0, 2);
-        decrypt_view.attach (pv_entry,       1, 2);
-        decrypt_view.attach (decrypt_button, 0, 3, 2);
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = 12;
+        grid.margin_start = grid.margin_end = 12;
 
-        stack.add (decrypt_view);
-        stack.visible_child = decrypt_view;
-        pass_entry.grab_focus_without_selecting ();
-    }
+        // Column, Row, Width, Height
+        grid.attach (overlay,         0, 0, 1, 2);
+        grid.attach (primary_label,   1, 0);
+        grid.attach (secondary_label, 1, 1);
+        grid.attach (partition_list,  1, 2);
+        grid.attach (unlock_grid,     1, 3);
 
-    private void create_decrypted_view (string pv) {
-        var label = new Gtk.Label ("<b>%s</b>".printf (pv));
-        label.use_markup = true;
+        grid.show_all ();
 
-        var info = new Gtk.Label (_("LUKS volume was decrypted"));
+        get_content_area ().add (grid);
 
-        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        box.add (label);
-        box.add (info);
-        box.show_all ();
+        var cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
-        stack.add (box);
-        stack.visible_child = box;
-    }
+        var select_button = (Gtk.Button) add_button (_("Select"), Gtk.ResponseType.OK);
+        select_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        select_button.sensitive = false;
 
-    private bool entries_set () {
-        return pass_entry.get_text ().length != 0
-            && pv_entry.get_text ().length != 0;
-    }
+        var unlock_button = (Gtk.Button) add_button (_("Unlock"), Gtk.ResponseType.OK);
+        unlock_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        unlock_button.hide ();
 
-    private void set_sensitivity () {
-        decrypt_button.set_sensitive (entries_set ());
-    }
+        var action_area = get_action_area ();
+        action_area.margin = 6;
+        action_area.margin_top = 12;
 
-    public void set_decrypted (string pv) {
-        popdown ();
-        create_decrypted_view (pv);
+        set_keep_above (true);
+
+        cancel_button.clicked.connect (() => destroy ());
+        unlock_button.clicked.connect (Utils.shutdown);
     }
 }
 
