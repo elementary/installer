@@ -91,6 +91,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var shutdown_button = new Gtk.Button.from_icon_name ("system-shutdown-symbolic", Gtk.IconSize.BUTTON);
         shutdown_button.tooltip_text = _("Shut Down");
         shutdown_button.get_style_context ().add_class ("circular");
+        shutdown_button.clicked.connect (Utils.shutdown);
 
         var demo_button = new InstallTypeButton (
             _("Try Demo Mode"),
@@ -135,7 +136,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
                 next_button.label = demo_button.type_title;
                 next_button.sensitive = true;
-                next_button.clicked.connect (Utils.demo_mode);
+                next_button_handler_id = next_button.clicked.connect (Utils.demo_mode);
             } else {
                 next_button.sensitive = false;
                 next_button.label = _("Next");
@@ -153,11 +154,11 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
                 next_button.label = clean_install_button.type_title;
                 next_button.sensitive = true;
-                handler_id = next_button.clicked.connect (() => next_step ());
+                next_button_handler_id = next_button.clicked.connect (() => next_step ());
             } else {
                 next_button.sensitive = false;
                 next_button.label = _("Next");
-                next_button.disconnect (handler_id);
+                next_button.disconnect (next_button_handler_id);
             }
         });
 
@@ -171,11 +172,11 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
                 next_button.label = custom_button.type_title;
                 next_button.sensitive = true;
-                handler_id = next_button.clicked.connect (() => custom_step ());
+                next_button_handler_id = next_button.clicked.connect (() => custom_step ());
             } else {
                 next_button.sensitive = false;
                 next_button.label = _("Next");
-                next_button.disconnect (handler_id);
+                next_button.disconnect (next_button_handler_id);
             }
         });
 
