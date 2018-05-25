@@ -47,6 +47,10 @@ public class InstallOptions : GLib.Object {
         return null != recovery && recovery.get_oem_mode ();
     }
 
+    public bool contains_luks () {
+        return disks.contains_luks ();
+    }
+
     public unowned Distinst.InstallOptions get_options () {
         if (null == _options) {
             disks = Distinst.Disks.probe ();
@@ -73,6 +77,10 @@ public class InstallOptions : GLib.Object {
 
     public Distinst.Disks get_disks () {
         return (owned) disks;
+    }
+
+    public unowned Distinst.Disks borrow_disks () {
+        return disks;
     }
 
     public unowned Distinst.InstallOption? get_selected_option () {
