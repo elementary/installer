@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-27 00:05+0000\n"
+"PO-Revision-Date: 2018-05-27 12:18+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/installer/installer/hu/>\n"
@@ -375,7 +375,7 @@ msgid "Continue Setting Up"
 msgstr "Beállítás folytatása"
 
 #: src/Views/SuccessView.vala:42
-#, c-format, fuzzy
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
 msgstr "A készüléke automatikusan újraindul %s %i másodperc múlva."
 
