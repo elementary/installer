@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-26 16:09+0000\n"
-"Last-Translator: Csepi Árpád <banderaszkormos@gmail.com>\n"
+"PO-Revision-Date: 2018-05-27 00:05+0000\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/installer/installer/hu/>\n"
 "Language: hu\n"
@@ -31,7 +31,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr ""
+msgstr "Nem sikerült beállítani a Distinst napló visszahívást"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -266,86 +266,93 @@ msgstr "Billentyűzetkiosztás"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Gépeljen, hogy tesztelje a kiosztást"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Billentyűzetkiosztás megjelenítése"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:161
 msgid "Select"
-msgstr ""
+msgstr "Kiválaszt"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
-msgstr ""
+msgstr "Alapértelmezett"
 
 #: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
-msgstr ""
+msgstr "Beviteli nyelv"
 
 #: src/Views/LanguageView.vala:217
 msgid "Languages"
-msgstr ""
+msgstr "Nyelvek"
 
 #: src/Views/LanguageView.vala:234
 msgid "Select a Language"
-msgstr ""
+msgstr "Nyelv kiválasztása"
 
 #: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
-msgstr ""
+msgstr "Jelenlegi nyelv"
 
 #: src/Views/PartitioningView.vala:46
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Válassza ki mely partíciókat szeretné használni a meghajtókon. <b>A \""
+"Formázás\" kiválasztásával az ÖSSZES adat el fog veszni a kijelölt "
+"partíción.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Legalább egy <b>Root (/)</b> partíciót ki kell választania."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Legalább egy <b>Root (/)</b> és egy <b>Boot (/boot/efi)</b> partíciót ki "
+"kell választania."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Javasolt továbbá egy <b>Swap</b> partíció kiválasztása."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Partíciók módosítása…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Meghajtó partícionálása"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
-msgstr ""
+msgstr "Fájlok kibontása"
 
 #: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
-msgstr ""
+msgstr "A rendszer konfigurálása"
 
 #: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "A telepítés befejezése"
 
 #: src/Views/TryInstallView.vala:33
 msgid "Install or Try Demo Mode"
-msgstr ""
+msgstr "Telepítse vagy próbálja ki a demo módot"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Most telepítheti a(z) %s erre az eszközre, vagy kipróbálhatja telepítés "
+"nélkül a demo módot."
 
 #: src/Views/TryInstallView.vala:53
 msgid ""
@@ -353,110 +360,116 @@ msgid ""
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
+"Demo módban a változtatások nem lesznek elmentve, és az előző operációs "
+"rendszer adatai nem változnak. A teljesítmény és a szolgáltatások minősége "
+"nem feltétlenül tükrözik a telepített élményt."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
-msgstr ""
+msgstr "A telepítő ikon kiválasztásával bármikor visszatérhet a telepítőhöz."
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Beállítás folytatása"
 
 #: src/Views/SuccessView.vala:42
-#, c-format
+#, c-format, fuzzy
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
+msgstr "A készüléke automatikusan újraindul %s %i másodperc múlva."
 
 #: src/Views/SuccessView.vala:43
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"Az újraindítás után beállíthat egy új felhasználót, vagy leállíthatja "
+"készüléket, és létrehozhat egy új felhasználót később."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Teszt mód leállítás"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Partíció visszafejtése"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
 msgstr ""
+"Adja meg a partíció titkosítási jelszavát, és állítsa be a LUKS eszköz nevét."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Jelszó:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Eszköz neve:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Visszafejtés"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "A LUKS kötetet visszafejtettük"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Partíció használata:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Formázás:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Használva mint:"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
-msgstr ""
+msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Home (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Boot (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Egyedi"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Egyedi:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Fájlrendszer:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "Alapértelmezett (ext4)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
