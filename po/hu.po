@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-26 15:29+0000\n"
-"Last-Translator: Csepi Árpád <banderaszkormos@gmail.com>\n"
+"PO-Revision-Date: 2018-05-26 16:08+0000\n"
+"Last-Translator: Majer Tamás <tmajer@protonmail.com>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/installer/installer/hu/>\n"
 "Language: hu\n"
@@ -246,19 +246,19 @@ msgstr "Eszköz újraindítása"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
-msgstr "Demó mód kipróbálása"
+msgstr "Demo üzemmód kipróbálása"
 
 #: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Próbálja újra telepíteni"
 
 #: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
 msgid "Test mode reboot"
-msgstr ""
+msgstr "A teszt üzemmód újraindítás"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
-msgstr ""
+msgstr "Teszt üzemmód felhasználóváltás"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
