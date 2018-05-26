@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-26 15:27+0000\n"
-"Last-Translator: Majer Tamás <tmajer@protonmail.com>\n"
+"PO-Revision-Date: 2018-05-26 15:29+0000\n"
+"Last-Translator: Csepi Árpád <banderaszkormos@gmail.com>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/installer/installer/hu/>\n"
 "Language: hu\n"
@@ -238,15 +238,15 @@ msgstr "• Használja a demo üzemmódot, és próbálja meg manuálisan helyre
 
 #: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Indítsa újra a készüléket egy másik meghajtóról történő indításhoz"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
-msgstr ""
+msgstr "Eszköz újraindítása"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Demó mód kipróbálása"
 
 #: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
