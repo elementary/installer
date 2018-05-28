@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-05-28 23:21+0000\n"
-"Last-Translator: Murilo Venturoso <muriloventuroso@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -217,9 +217,8 @@ msgid "Passwords do not match"
 msgstr "Senhas não coincidem"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Não foi possível instalar %s"
+msgstr "Não foi possível instalar"
 
 #: src/Views/ErrorView.vala:46
 #, fuzzy, c-format
