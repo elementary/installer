@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-05-28 23:35+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: alexandre sep <alexandreporks@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -396,7 +396,7 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Desligar o modo de teste"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
