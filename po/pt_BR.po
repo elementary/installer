@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-28 23:30+0000\n"
-"Last-Translator: Murilo Venturoso <muriloventuroso@gmail.com>\n"
+"PO-Revision-Date: 2018-05-28 23:35+0000\n"
+"Last-Translator: alexandre sep <alexandreporks@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -356,14 +356,14 @@ msgstr ""
 "demonstração sem instalar."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
 "No modo de demonstração, as mudanças realizadas não serão salvas e dados do "
-"sistema operacional anterior continuarão inalterados."
+"sistema operacional anterior continuarão inalterados. Desempenho e recursos "
+"podem não refletir a experiência completa de um sistema instalado."
 
 #: src/Views/TryInstallView.vala:64
 #, fuzzy
