@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-05-28 23:17+0000\n"
-"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
+"Last-Translator: Geovanni Pacheco <geovanni.m.pacheco@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -151,19 +151,23 @@ msgstr "Apagar e Instalar"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Encriptação do disco"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Encriptar esse disco protege os dados de serem lidos por outros com acesso "
+"físico a esse dispositivo."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"Encriptação do disco pode afetar minimamente a velocidade de leitura e "
+"gravação ao executar tarefas intensas."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
