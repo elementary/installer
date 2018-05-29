@@ -60,7 +60,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         get_content_area ().add (stack);
         get_style_context ().add_class ("os-installer");
 
-        minimum_disk_size = Distinst.minimum_disk_size (5000000000);
+        const uint64 DEFAULT_MINIMUM_SIZE = 5000000000;
+        minimum_disk_size = Distinst.minimum_disk_size (DEFAULT_MINIMUM_SIZE / 512);
         InstallOptions.get_default ().set_minimum_size (minimum_disk_size);
 
         language_view.next_step.connect (() => load_keyboard_view ());
