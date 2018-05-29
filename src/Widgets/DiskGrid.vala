@@ -62,9 +62,32 @@ public class Installer.DiskButton : Gtk.ToggleButton {
         notify["active"].connect (() => {
             if (active) {
                 unowned Configuration config = Configuration.get_default ();
-                var recovery = Recovery.disk ();
-                if (recovery != null && recovery == disk_path) {
-                    config.recovery = true;
+                var opts = InstallOptions.get_default ();
+
+                if (opts.is_oem_mode ()) {
+                    unowned Distinst.InstallOptions options = opts.get_options ();
+                    var recovery = options.get_recovery_option ();
+
+                    var lang = Utils.string_from_utf8 (recovery.get_language ());
+                    var lang_parts = lang.split ("_", 2);
+                    config.lang = lang_parts[0];
+                    if (lang_parts.length >= 2) {
+                        var country_parts = lang_parts[1].split(".", 2);
+                        config.country = country_parts[0];
+                    }
+
+                    config.keyboard_layout = Utils.string_from_utf8 (recovery.get_kbd_layout ());
+
+                    var variant = recovery.get_kbd_variant ();
+                    if (null != variant) {
+                        config.keyboard_variant = Utils.string_from_utf8 (variant);
+                    }
+
+                    InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
+                        tag = Distinst.InstallOptionVariant.RECOVERY,
+                        option = (void*) recovery,
+                        encrypt_pass = null
+                    };
                 } else {
                     config.disk = disk_path;
                 }

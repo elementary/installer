@@ -9,6 +9,7 @@ src/Dialogs/EndSessionDialog.vala
 src/Dialogs/HelpDialog.vala
 src/Objects/org.freedesktop.udisks2.vala
 src/Objects/Configuration.vala
+src/Objects/InstallOptions.vala
 src/Objects/Mount.vala
 src/Objects/Recovery.vala
 src/Views/AbstractInstallerView.vala

@@ -61,6 +61,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         get_style_context ().add_class ("os-installer");
 
         minimum_disk_size = Distinst.minimum_disk_size (5000000000);
+        InstallOptions.get_default ().set_minimum_size (minimum_disk_size);
 
         language_view.next_step.connect (() => load_keyboard_view ());
     }
@@ -81,8 +82,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.visible_child = keyboard_layout_view;
 
         keyboard_layout_view.next_step.connect (() => {
-            var recovery = Recovery.get_default ();
-            if (recovery == null || !recovery.oem_mode) {
+            var options = InstallOptions.get_default ();
+            if (!options.is_oem_mode ()) {
                 load_try_install_view ();
             } else {
                 load_encrypt_view ();
@@ -100,6 +101,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
+        try_install_view.custom_step.connect (() => load_partitioning_view ());
         try_install_view.next_step.connect (() => load_disk_view ());
     }
 
@@ -156,7 +158,6 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.visible_child = try_install_view;
         });
 
-        disk_view.custom_step.connect (() => load_partitioning_view ());
         disk_view.next_step.connect (() =>  load_encrypt_view ());
 
         load_check_view ();
@@ -168,7 +169,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         partitioning_view = new PartitioningView (minimum_disk_size);
-        partitioning_view.previous_view = disk_view;
+        partitioning_view.previous_view = try_install_view;
         stack.add (partitioning_view);
         stack.visible_child = partitioning_view;
 

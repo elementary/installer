@@ -35,6 +35,7 @@ public class Configuration : GLib.Object {
     public string? encryption_password { get; set; default = null; }
     public string disk { get; set; }
     public bool recovery { get; set; default = false; }
+    public bool retain_home { get; set; default = false; }
     public Gee.ArrayList<Installer.Mount>? mounts { get; set; default = null; }
     public Gee.ArrayList<Installer.LuksCredentials>? luks { get; set; default = null; }
 

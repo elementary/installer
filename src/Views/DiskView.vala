@@ -19,7 +19,6 @@
  */
 
 public class Installer.DiskView : AbstractInstallerView {
-    public signal void custom_step ();
     public signal void next_step ();
 
     private Gtk.Button next_button;
@@ -90,12 +89,6 @@ public class Installer.DiskView : AbstractInstallerView {
         content_area.attach (install_label, 0, 1, 1, 1);
         content_area.attach (load_stack, 1, 0, 1, 2);
 
-        var custom_button = new Gtk.Button.with_label (_("Customize Partitions…"));
-        custom_button.clicked.connect (() => custom_step ());
-        action_area.add (custom_button);
-        action_area.set_child_secondary (custom_button, true);
-        action_area.set_child_non_homogeneous (custom_button, true);
-
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
@@ -111,56 +104,38 @@ public class Installer.DiskView : AbstractInstallerView {
         DiskButton[] enabled_buttons = {};
         DiskButton[] disabled_buttons = {};
 
-        Distinst.Disks disks = Distinst.Disks.probe ();
-        foreach (unowned Distinst.Disk disk in disks.list ()) {
-            // Skip root disk or live disk
-            if (Recovery.get_default () == null && (disk.contains_mount ("/") || disk.contains_mount ("/cdrom"))) {
-                continue;
-            }
+        unowned Distinst.InstallOptions install_options = InstallOptions.get_default ().get_updated_options ();
 
-            var size = disk.get_sectors () * disk.get_sector_size ();
+        if (install_options == null) {
+            critical (_("unable to get installation options"));
+            return;
+        }
 
-            // Drives are identifiable by whether they are rotational and/or removable.
-            string icon_name = null;
-            if (disk.is_removable ()) {
-                if (disk.is_rotational ()) {
-                    icon_name = "drive-harddisk-usb";
-                } else {
-                    icon_name = "drive-removable-media-usb";
-                }
-            } else if (disk.is_rotational ()) {
-                icon_name = "drive-harddisk-scsi";
-            } else {
-                icon_name = "drive-harddisk-solidstate";
-            }
-
-            string label;
-            string model = disk.get_model ();
-            if (model.length == 0) {
-                label = disk.get_serial ().replace ("_", " ");
-            } else {
-                label = model;
-            }
-
+        foreach (unowned Distinst.EraseOption disk in install_options.get_erase_options ()) {
+            var size = disk.get_sectors () * 512;
+            string model = Utils.string_from_utf8 (disk.get_model ());
             string path = Utils.string_from_utf8 (disk.get_device_path ());
+            string icon_name = Utils.string_from_utf8 (disk.get_linux_icon ());
 
             var disk_button = new DiskButton (
-                label,
+                model,
                 icon_name,
                 path,
                 size
             );
 
-            if (size < minimum_disk_size) {
-                disk_button.set_sensitive(false);
-
-                disabled_buttons += disk_button;
-            } else {
+            if (disk.meets_requirements ()) {
                 disk_button.clicked.connect (() => {
                     if (disk_button.active) {
                         disk_grid.get_children ().foreach ((child) => {
                             ((Gtk.ToggleButton)child).active = child == disk_button;
                         });
+
+                        InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
+                            tag = Distinst.InstallOptionVariant.ERASE,
+                            option = (void*) disk,
+                            encrypt_pass = null
+                        };
 
                         next_button.sensitive = true;
                     } else {
@@ -169,6 +144,10 @@ public class Installer.DiskView : AbstractInstallerView {
                 });
 
                 enabled_buttons += disk_button;
+            } else {
+                disk_button.set_sensitive (false);
+
+                disabled_buttons += disk_button;
             }
         }
 
