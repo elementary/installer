@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-08 00:10+0000\n"
+"PO-Revision-Date: 2018-05-31 00:02+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://weblate.elementary.io/projects/installer/installer/nb/>\n"
@@ -185,7 +185,10 @@ msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
-msgstr "Hvis du glemmer krypteringspassordet,"
+msgstr ""
+"Hvis du glemmer krypteringspassordet,<b>vil du ikke kunne gjenopprette "
+"data.</b> Dette er et unikt passord for denne enheten, ikke passordet til "
+"brukerkontoen din."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
@@ -306,21 +309,25 @@ msgstr "Aktivt språk nå"
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
-msgstr "Velg hvilke partisjoner som skal brukes, bland alle diskene."
+msgstr ""
+"Velg hvilke partisjoner som skal brukes, bland alle diskene. <b>Å velge \""
+"Formater\" vil slette ALL data på valgt partisjon.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Du må velge minst en"
+msgstr "Du må velge minst én <b>Rot (/)</b>-partisjon."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
-msgstr "Du må velge minst en <b>Rot (/)</b>-partisjon og en"
+msgstr ""
+"Du må velge minst én <b>Rot (/)</b>-partisjon og én <b>oppstarts- "
+"(/boot/efi)</b>partisjon."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "Det anbefales også å velge en"
+msgstr "Det anbefales også å velge en partisjon til <b>sidevekslingfil</b>."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
@@ -377,7 +384,7 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Fortsett oppsett"
 
 #: src/Views/SuccessView.vala:42
 #, fuzzy, c-format
@@ -398,37 +405,38 @@ msgstr ""
 "ny bruker senere."
 
 #: src/Views/SuccessView.vala:75
+#, fuzzy
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Testmodusavstengning"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Dekrypter denne partisjonen"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
-msgstr ""
+msgstr "Skriv inn partisjonens krypteringspassord og sett et LUKS-enhetsnavn."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Passord:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Enhetsnavn:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Dekrypter"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "LUKS-partisjonen ble dekryptert"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
@@ -441,7 +449,7 @@ msgstr "Bruk partisjon:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Format:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
