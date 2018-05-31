@@ -180,7 +180,7 @@ public class Installer.DiskBar: Gtk.Grid {
                 // Begin by resizing all partitions over 20px wide.
                 bool excess_modified = false;
                 for (int y = 0; excess > 0 && y < x; y++) {
-                    if (lengths[y] <= 20) continue;
+                    if (lengths[y] <= 28) continue;
                     lengths[y] -= reduce_by;
                     excess -= reduce_by;
                     excess_modified = true;

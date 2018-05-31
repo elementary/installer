@@ -72,7 +72,10 @@ public class InstallOptions : GLib.Object {
     }
 
     public Distinst.Disks get_disks () {
-        return (owned) disks;
+        var moved = (owned) disks;
+        _options = null;
+        selected_option = null;
+        return moved;
     }
 
     public unowned Distinst.InstallOption? get_selected_option () {

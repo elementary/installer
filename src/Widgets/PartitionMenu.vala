@@ -18,7 +18,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public delegate void SetMount (Installer.Mount mount);
+public delegate string? SetMount (Installer.Mount mount);
 
 public delegate void UnsetMount (string partition);
 
@@ -280,22 +280,30 @@ public class Installer.PartitionMenu : Gtk.Popover {
             ? Distinst.FileSystemType.SWAP
             : get_file_system ();
 
-        set_mount (new Installer.Mount (
+        var error = set_mount (new Installer.Mount (
             partition_path,
             parent_disk,
             mount,
-            (format_partition.active ? Mount.Flags.FORMAT : 0) + (is_lvm ? Mount.Flags.LVM : 0),
+            partition_bar.end - partition_bar.start,
+            (format_partition.active ? Mount.Flags.FORMAT : 0)
+                + (is_lvm ? Mount.Flags.LVM : 0),
             filesystem,
             this
         ));
 
         var mount_icon = new Gtk.Image.from_icon_name (
-            "process-completed-symbolic",
+            error == null ? "process-completed-symbolic" : "dialog-warning-symbolic",
             Gtk.IconSize.SMALL_TOOLBAR
         );
+
+        if (error != null) {
+            partition_bar.set_tooltip_text (error);
+        }
+
         mount_icon.halign = Gtk.Align.END;
         mount_icon.valign = Gtk.Align.END;
         mount_icon.margin = 6;
+
         partition_bar.container.get_children ().foreach ((c) => c.destroy ());
         partition_bar.container.pack_start (mount_icon, true, true, 0);
         partition_bar.container.show_all ();
@@ -355,4 +363,3 @@ public class Installer.PartitionMenu : Gtk.Popover {
         return custom.get_text ().has_prefix ("/");
     }
  }
-
