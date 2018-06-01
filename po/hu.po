@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-06-01 13:43+0000\n"
-"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
+"PO-Revision-Date: 2018-06-01 13:56+0000\n"
+"Last-Translator: Csepi Árpád <banderaszkormos@gmail.com>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/installer/installer/hu/>\n"
 "Language: hu\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
-msgstr "Telepítés %s"
+msgstr "%s telepítése"
 
 #: src/Utils.vala:31
 msgid "Operating System"
