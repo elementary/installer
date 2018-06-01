@@ -56,8 +56,26 @@ public class DecryptDialog: Gtk.Dialog {
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
-        var partition_list = new Gtk.Label ("Imagine a list of partitions here!");
+        var partition_list = new Gtk.ListBox ();
+        partition_list.height_request = 128;
         partition_list.margin_top = 12;
+
+        var fake_locked_label = new Gtk.Label ("Fake Locked Partition");
+        fake_locked_label.hexpand = true;
+        fake_locked_label.margin = 6;
+        fake_locked_label.xalign = 0;
+        fake_locked_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+
+        var fake_locked_icon = new Gtk.Image.from_icon_name ("dialog-password", Gtk.IconSize.MENU);
+        fake_locked_icon.margin = 6;
+
+        var fake_locked_grid = new Gtk.Grid ();
+        fake_locked_grid.attach (fake_locked_label, 0, 0);
+        fake_locked_grid.attach (fake_locked_icon, 1, 0);
+
+        var fake_locked_row = new Gtk.ListBoxRow ();
+        fake_locked_row.add (fake_locked_grid);
+        partition_list.add (fake_locked_row);
 
         var pass_label = new Gtk.Label (_("Password:"));
         pass_label.halign = Gtk.Align.END;
@@ -75,15 +93,15 @@ public class DecryptDialog: Gtk.Dialog {
         // Set a sane default
         name_entry.text = "data";
 
-        var unlock_grid = new Gtk.Grid ();
-        unlock_grid.column_spacing = 12;
-        unlock_grid.row_spacing = 6;
-        unlock_grid.margin_top = 12;
+        var entry_grid = new Gtk.Grid ();
+        entry_grid.column_spacing = 12;
+        entry_grid.row_spacing = 6;
+        entry_grid.margin_top = 12;
 
-        unlock_grid.attach (pass_label, 0, 0);
-        unlock_grid.attach (pass_entry, 1, 0);
-        unlock_grid.attach (name_label, 0, 1);
-        unlock_grid.attach (name_entry, 1, 1);
+        entry_grid.attach (pass_label, 0, 0);
+        entry_grid.attach (pass_entry, 1, 0);
+        entry_grid.attach (name_label, 0, 1);
+        entry_grid.attach (name_entry, 1, 1);
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
@@ -93,7 +111,7 @@ public class DecryptDialog: Gtk.Dialog {
         grid.attach (primary_label,   1, 0);
         grid.attach (secondary_label, 1, 1);
         grid.attach (partition_list,  1, 2);
-        grid.attach (unlock_grid,     1, 3);
+        grid.attach (entry_grid,     1, 3);
 
         grid.show_all ();
 

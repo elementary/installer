@@ -62,11 +62,11 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         // TODO: Once we support more options, give an example here
         // ("More options, such as…") if there's space…
-        var decrypt_description = new Gtk.Label (_("More options may be available after unlocking encrypted drives"));
+        var decrypt_description = new Gtk.Label (_("More options may be available after unlocking encrypted storage"));
 
-        var decrypt_button = new Gtk.Button.with_label (_("Unlock Encrypted Drives…"));
+        var decrypt_button = new Gtk.Button.with_label (_("Unlock Encrypted Storage…"));
 
-        // TODO: Only show decrypt infobar when we detect encrypted drives
+        // TODO: Only show decrypt infobar when we detect encrypted partitions
         var decrypt_infobar = new Gtk.InfoBar ();
         decrypt_infobar.message_type = Gtk.MessageType.INFO;
 
