@@ -65,19 +65,19 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         var demo_button = new InstallTypeButton (
             _("Try Demo Mode"),
-            "dialog-question",
+            "desktop",
             _("Changes will not be saved, and data from your previous OS will be unchanged. Performance and features may not reflect the installed experience.")
         );
 
         var clean_install_button = new InstallTypeButton (
             _("Clean Install"),
-            "edit-clear",
+            "gcleaner",
             _("Erase everything and install a fresh copy of %s.").printf (Utils.get_pretty_name ())
         );
 
         var custom_button = new InstallTypeButton (
             _("Custom (Advanced)"),
-            "system-run",
+            "disk-utility",
             _("Create, resize, or otherwise manage partitions manually. This method may lead to data loss.")
         );
 
