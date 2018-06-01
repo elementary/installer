@@ -39,6 +39,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
         Object (cancellable: false);
     }
 
+    const uint64 REQUIRED_EFI_SECTORS = 524288;
+
     construct {
         mounts = new Gee.ArrayList<Installer.Mount> ();
         luks = new Gee.ArrayList<LuksCredentials> ();
@@ -54,7 +56,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 break;
             case Distinst.PartitionTable.GPT:
                 // Device is in EFI mode, so we also require a boot partition
-                required_description = _("You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/efi)</b> partition.");
+                required_description = _("You must at least select a <b>Root (/)</b> partition, plus a <b>Boot (/boot/efi)</b> partition that is at least 256 MiB.");
                 break;
         }
 
@@ -190,9 +192,15 @@ public class Installer.PartitioningView : AbstractInstallerView {
         string model = Utils.string_from_utf8 (disk.get_model ());
 
         var partitions = new Gee.ArrayList<PartitionBar> ();
-        foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
-            partitions.add (partition);
+
+        unowned Distinst.Partition? poss_part = disk.get_encrypted_file_system ();
+        if (poss_part != null) {
+            partitions.add (new PartitionBar (poss_part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt));
+        } else {
+            foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
+                var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
+                partitions.add (partition);
+            }
         }
 
         var disk_bar = new DiskBar (model, path, size, (owned) partitions);
@@ -219,16 +227,17 @@ public class Installer.PartitioningView : AbstractInstallerView {
         stderr.printf ("DEBUG: Current Layout:\n");
         foreach (Mount m in mounts) {
             stderr.printf (
-                "  %s : %s : %s: format? %s\n",
+                "  %s : %s : %s : %s: format? %s\n",
+                m.parent_disk,
                 m.partition_path,
                 m.mount_point,
                 Distinst.strfilesys (m.filesystem),
                 m.should_format () ? "true" : "false"
             );
 
-            if (m.mount_point == "/" && m.is_valid_root_mount ()) {
+            if (m.mount_point == "/") {
                 flags |= ROOT;
-            } else if (m.mount_point == "/boot/efi" && m.is_valid_boot_mount ()) {
+            } else if (m.mount_point == "/boot/efi") {
                 flags |= EFI;
             }
         }
@@ -279,19 +288,33 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
     }
 
-    private void set_mount (Mount mount) {
+    private string? set_mount (Mount mount) {
         unset_mount_point (mount);
+
+        if (mount.mount_point == "/boot/efi") {
+            if (!mount.is_valid_boot_mount()) {
+                return _("EFI partition has the wrong file system");
+            } else if (mount.sectors < REQUIRED_EFI_SECTORS) {
+                return _("EFI partition is too small");
+            }
+        } else if (mount.mount_point == "/" && !mount.is_valid_root_mount ()) {
+            return _("Invalid file system for root");
+        } else if (mount.mount_point == "/home" && !mount.is_valid_root_mount ()) {
+            return _("Invalid file system for home");
+        }
+
         for (int i = 0; i < mounts.size; i++) {
             if (mounts[i].partition_path == mount.partition_path) {
                 mounts[i] = mount;
                 validate_status ();
-                return;
+                return null;
             }
         }
 
         validate_status ();
         mounts.add (mount);
         validate_status ();
+        return null;
     }
 
     private bool mount_is_set (string mount_point) {

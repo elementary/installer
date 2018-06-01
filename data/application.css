@@ -33,6 +33,11 @@ buttonbox {
     font-weight: 200;
 }
 
+.storage-bar image {
+    color: #000;
+    -gtk-icon-palette: success #000, warning #000, error #000;
+}
+
 .artwork {
     background-size: contain;
     background-repeat: no-repeat;
