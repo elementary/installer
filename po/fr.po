@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-04 00:05+0000\n"
+"PO-Revision-Date: 2018-05-26 09:57+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French "
 "<https://weblate.elementary.io/projects/installer/installer/fr/>\n"
@@ -307,21 +307,23 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Vous devez choisir au moins une partition <b>Racine (/)</b>."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Vous devez au moins choisir une partition <b>Racine (/)</b> et une partition "
+"de <b>Démarrage (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Il est aussi recommandé de choisir une partition <b>Swap</b>."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Modifier les partitions…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"

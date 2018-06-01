@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-23 00:06+0000\n"
+"PO-Revision-Date: 2018-06-01 13:56+0000\n"
 "Last-Translator: Csepi Árpád <banderaszkormos@gmail.com>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/installer/installer/hu/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
 #, c-format
 msgid "Install %s"
-msgstr "Telepítés %s"
+msgstr "%s telepítése"
 
 #: src/Utils.vala:31
 msgid "Operating System"
@@ -31,7 +31,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr ""
+msgstr "Nem sikerült beállítani a Distinst napló visszahívást"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -125,47 +125,55 @@ msgstr "Memória:"
 
 #: src/Views/DiskView.vala:52
 msgid "Select a Drive"
-msgstr ""
+msgstr "Válasszon ki egy meghajtót"
 
 #: src/Views/DiskView.vala:56
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Ez törli az összes adatot a kiválasztott meghajtón. Ha még nem mentette az "
+"adatait, akkor viszavonhatja a telepítést és használhatja a demo módot."
 
 #: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Az aktuális konfiguráció megszerzése…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Partíciók testreszabása…"
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
-msgstr ""
+msgstr "Törlés és telepítés"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Meghajtó titkosítása"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"A meghajtó titkosítása megóvja az adatait, ha mások fizikailag hozzáférnének "
+"az eszközhöz."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"A meghajtó titkosítása minimálisan befolyásolhatja az olvasási és írási "
+"sebességet intenzív feladatok végrehajtása során."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
+"A titkosítási jelszót minden egyes bekapcsoláskor vagy újraindításkor meg "
+"kell adni."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -173,40 +181,42 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Ha elfelejtette a titkosítási jelszót,<b>akkor nem tudja visszaállítani az "
+"adatokat.</b>Ez az eszköz egyedi jelszava, nem a felhasználói fiókhoz "
+"tartozó jelszó."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Válasszon titkosítási jelszót"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Jelszó megerősítése"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Ne titkosítsa"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
-#, fuzzy
 msgid "Back"
-msgstr "Visszatörlés"
+msgstr "Vissza"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Válasszon jelszót"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Állítson be jelszót"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "A jelszavak nem egyeznek"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
-msgstr ""
+msgstr "Nem telepíthető"
 
 #: src/Views/ErrorView.vala:46
 #, c-format
@@ -214,125 +224,134 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
+"A telepítés %s sikertelen, valószínűleg hardverhiba miatt. Előfordulhat, "
+"hogy a készülék nem fog megfelelően újraindulni. Megpróbálhatja a "
+"következőket:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Próbálja újra a telepítést"
 
 #: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• Használja a demo üzemmódot, és próbálja meg manuálisan helyreállítani"
 
 #: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Indítsa újra a készüléket egy másik meghajtóról történő indításhoz"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
-msgstr ""
+msgstr "Eszköz újraindítása"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Demo üzemmód kipróbálása"
 
 #: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Próbálja újra telepíteni"
 
 #: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
 msgid "Test mode reboot"
-msgstr ""
+msgstr "A teszt üzemmód újraindítás"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
-msgstr ""
+msgstr "Teszt üzemmód felhasználóváltás"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Billentyűzetkiosztás"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Gépeljen, hogy tesztelje a kiosztást"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Billentyűzetkiosztás megjelenítése"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:161
 msgid "Select"
-msgstr ""
+msgstr "Kiválaszt"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
-msgstr ""
+msgstr "Alapértelmezett"
 
 #: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
-msgstr ""
+msgstr "Beviteli nyelv"
 
 #: src/Views/LanguageView.vala:217
 msgid "Languages"
-msgstr ""
+msgstr "Nyelvek"
 
 #: src/Views/LanguageView.vala:234
 msgid "Select a Language"
-msgstr ""
+msgstr "Nyelv kiválasztása"
 
 #: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
-msgstr ""
+msgstr "Jelenlegi nyelv"
 
 #: src/Views/PartitioningView.vala:46
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Válassza ki mely partíciókat szeretné használni a meghajtókon. <b>A \""
+"Formázás\" kiválasztásával az ÖSSZES adat elvész a kijelölt partíción.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Legalább egy <b>Root (/)</b> partíciót ki kell választania."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Legalább egy <b>Root (/)</b> és egy <b>Boot (/boot/efi)</b> partíciót ki "
+"kell választania."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Javasolt továbbá egy <b>Swap</b> partíció kiválasztása."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Partíciók módosítása…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Meghajtó partícionálása"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
-msgstr ""
+msgstr "Fájlok kibontása"
 
 #: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
-msgstr ""
+msgstr "A rendszer konfigurálása"
 
 #: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "A telepítés befejezése"
 
 #: src/Views/TryInstallView.vala:33
 msgid "Install or Try Demo Mode"
-msgstr ""
+msgstr "Telepítse vagy próbálja ki a demo módot"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Most telepítheti a(z) %s erre az eszközre, vagy kipróbálhatja telepítés "
+"nélkül a demo módot."
 
 #: src/Views/TryInstallView.vala:53
 msgid ""
@@ -340,110 +359,116 @@ msgid ""
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
+"Demo módban a változtatások nem lesznek mentve, és az előző operációs "
+"rendszer adatai nem változnak. A teljesítmény és a szolgáltatások minősége "
+"nem feltétlenül tükrözik a telepített rendszer szintjét."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
-msgstr ""
+msgstr "A telepítő ikon kiválasztásával bármikor visszatérhet a telepítőhöz."
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Beállítás folytatása"
 
 #: src/Views/SuccessView.vala:42
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
+msgstr "A készüléke automatikusan újraindul %s %i másodperc múlva."
 
 #: src/Views/SuccessView.vala:43
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"Az újraindítás után beállíthat egy új felhasználót, vagy leállíthatja "
+"készüléket, és létrehozhat egy új felhasználót később."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Teszt mód leállítás"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Partíció visszafejtése"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
 msgstr ""
+"Adja meg a partíció titkosítási jelszavát, és állítsa be a LUKS eszköz nevét."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Jelszó:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Eszköz neve:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Visszafejtés"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "A LUKS kötetet visszafejtettük"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Partíció használata:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Formázás:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Használva mint:"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
-msgstr ""
+msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Home (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Boot (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Egyedi"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Egyedi:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Fájlrendszer:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "Alapértelmezett (ext4)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

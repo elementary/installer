@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-11 16:12+0000\n"
-"Last-Translator: Gustavo Marques <outlinx@outlook.com>\n"
-"Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
-"installer/installer/pt_BR/>\n"
+"PO-Revision-Date: 2018-05-29 00:11+0000\n"
+"Last-Translator: Murilo Venturoso <muriloventuroso@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) "
+"<https://weblate.elementary.io/projects/installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -143,7 +143,7 @@ msgstr "Obtendo a configuração atual…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Personalizar Partições…"
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
@@ -151,25 +151,31 @@ msgstr "Apagar e Instalar"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Encriptação do disco"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Encriptar esse disco protege os dados de serem lidos por outros com acesso "
+"físico a esse dispositivo."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"Encriptação do disco pode afetar minimamente a velocidade de leitura e "
+"gravação ao executar tarefas intensas."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
+"A senha de encriptação será necessária cada vez que você ligar ou reiniciar "
+"esse dispositivo."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -177,18 +183,21 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Se você esquecer a senha de encriptação, <b>não poderá recuperar seus "
+"dados.</b> Esta é uma senha única para esse dispositivo, não é a senha da "
+"sua conta de usuário."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Escolher Senha de Encriptação"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Confirmar a Senha"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Não Criptografar"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -197,29 +206,29 @@ msgstr "Voltar"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Escolher Senha"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Definir a Senha"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Senhas não coincidem"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Não foi possível instalar %s"
+msgstr "Não foi possível instalar"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"A instalação falhou, portanto seu dispositivo pode não reiniciar "
-"corretamente. Você pode tentar uma das seguintes opções:"
+"A instalação de %s falhou, possivelmente por um erro de hardware. Seu "
+"dispositivo pode não reiniciar corretamente. Você pode tentar as seguintes "
+"opções:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -251,7 +260,7 @@ msgstr "Reiniciar modo de demonstração"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
-msgstr ""
+msgstr "Modo de teste trocar o usuário"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -295,24 +304,28 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Selecione quais partições usar nos discos. <b>Selecionando \"Formatar\", "
+"TODOS os dados serão apagados da partição selecionada.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Você precisa selecionar ao menos uma partição <b>Root (/)</b>."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Você precisa selecionar ao menos uma partição <b>Root (/)</b> e uma partição "
+"<b>Boot (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Também é recomendado selecionar uma partição <b>Swap</b>."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Modificar Partições..."
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -343,14 +356,14 @@ msgstr ""
 "demonstração sem instalar."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
 "No modo de demonstração, as mudanças realizadas não serão salvas e dados do "
-"sistema operacional anterior continuarão inalterados."
+"sistema operacional anterior continuarão inalterados. Desempenho e recursos "
+"podem não refletir a experiência completa de um sistema instalado."
 
 #: src/Views/TryInstallView.vala:64
 #, fuzzy
@@ -363,7 +376,7 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Continuar a configuração"
 
 #: src/Views/SuccessView.vala:42
 #, fuzzy, c-format
@@ -383,53 +396,55 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Desligar o modo de teste"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Descriptografar Esta Partição"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
 msgstr ""
+"Digite a senha de criptografia da partição e defina um nome de dispositivo "
+"LUKS."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Senha:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Nome do dispositivo:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Descriptografar"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "O volume LUKS foi descriptografado"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Usar partição:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Formatar:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Usar como:"
 
 #: src/Widgets/PartitionMenu.vala:87
 #, fuzzy
@@ -443,23 +458,23 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Boot (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Personalizado"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Personalizado:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Sistema de arquivos:"
 
 #: src/Widgets/PartitionMenu.vala:109
 #, fuzzy

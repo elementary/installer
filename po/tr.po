@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-02-02 21:21+0000\n"
-"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
-"Language-Team: Turkish <https://weblate.elementary.io/projects/installer/"
-"installer/tr/>\n"
+"PO-Revision-Date: 2018-05-26 09:57+0000\n"
+"Last-Translator: İbrahim Ethem Göl <ethem578@gmail.com>\n"
+"Language-Team: Turkish "
+"<https://weblate.elementary.io/projects/installer/installer/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgid "Operating System"
 msgstr "İşletim Sistemi"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
-#, fuzzy, c-format
+#, c-format
 msgid "%s…"
 msgstr "%s…"
 
@@ -35,9 +35,8 @@ msgid "Unable to set the Distinst log callback"
 msgstr "Distinst günlüğünün alan adı değiştirilemedi"
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "Kurulum başlatılıyor\n"
+msgstr "Kurulum başlatılıyor"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
@@ -126,9 +125,8 @@ msgid "Memory:"
 msgstr "Bellek:"
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Bir Dil Seçin"
+msgstr "Bir Sürücü Seçin"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -144,7 +142,7 @@ msgstr "Geçerli yapılandırma alınıyor…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Bölümleri Özelleştir…"
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
@@ -152,7 +150,7 @@ msgstr "Sil ve Kur"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Sürücü Şifrelemesi"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
@@ -165,12 +163,15 @@ msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"Sürücü şifreleme, yoğun görevleri gerçekleştirirken okuma ve yazma hızını "
+"bir miktar etkileyebilir."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
+"Bu cihazı her açtığınızda veya yeniden başlatıldığında şifre istenecektir."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -185,11 +186,11 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Şifreyi Onayla"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Şifreleme"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -198,20 +199,19 @@ msgstr "Geri"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Şifre Seçin"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Şifre Belirle"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Şifreler uyuşmuyor"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "%s yüklenemedi"
+msgstr "Yüklenemedi"
 
 #: src/Views/ErrorView.vala:46
 #, fuzzy, c-format
@@ -313,7 +313,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Bölümleri Değiştir…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -332,9 +332,8 @@ msgid "Finishing the Installation"
 msgstr "Kurulum Sonlandırılıyor"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "Demo Modu'nu Deneyin"
+msgstr "Kurun veya Demo Modu'nu Deneyin"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -349,26 +348,26 @@ msgid ""
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
+"Demo Modunda yaptığınız değişiklikler kaydedilmeyecek ve önceki işletim "
+"sisteminizdeki veriler değişmeyecektir. Performans ve özellikler kurulu "
+"tecrübeyi yansıtmayabilir."
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"Kurulum simgesini seçerek daima Demo Modu'ndan yükleyiciye dönebilirsiniz."
+"Yükleme simgesini seçerek, her zaman Demo Modundan yükleyiciye geri "
+"dönebilirsiniz."
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Kurmaya Devam Et"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"%s kuruldu. Cihazınız yeni bir kullanıcı oluşturmak için otomatik olarak 30 "
-"saniye içinde yeniden başlayacak veya şimdi kapatıp kullanıcıyı daha sonra "
-"ayarlayabilirsiniz."
+msgstr "Cihazınız %s dk %i saniye içinde otomatik olarak yeniden başlayacaktır."
 
 #: src/Views/SuccessView.vala:43
 #, fuzzy
