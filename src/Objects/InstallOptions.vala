@@ -22,12 +22,13 @@ public class InstallOptions : GLib.Object {
     private static InstallOptions _options_object;
     private uint64 minimum_size;
     private uint64 layout_hash;
+    private bool disks_moved;
     private Distinst.InstallOptions _options;
     private Distinst.Disks disks;
     public Distinst.InstallOption? selected_option;
 
     public static unowned InstallOptions get_default () {
-        if (_options_object == null) {
+        if (_options_object == null || _options_object.disks_moved) {
             _options_object = new InstallOptions ();
         }
 
@@ -77,8 +78,7 @@ public class InstallOptions : GLib.Object {
 
     public Distinst.Disks get_disks () {
         var moved = (owned) disks;
-        _options = null;
-        selected_option = null;
+        disks_moved = true;
         return moved;
     }
 
