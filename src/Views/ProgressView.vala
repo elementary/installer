@@ -211,7 +211,7 @@ public class ProgressView : AbstractInstallerView {
                 return;
             }
         } else {
-            disks = new Distinst.Disks ();
+            disks = Distinst.Disks.probe ();
             if (!custom_disk_configuration (disks)) {
                 on_error ();
                 return;
@@ -297,11 +297,13 @@ public class ProgressView : AbstractInstallerView {
                 return false;
             }
 
-            unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
-
+            unowned Distinst.Partition partition = disk.get_encrypted_file_system ();
             if (partition == null) {
-                critical ("could not find %s\n", m.partition_path);
-                return false;
+                partition = disk.get_partition_by_path (m.partition_path);
+                if (partition == null) {
+                    critical ("could not find by path %s\n", m.partition_path);
+                    return false;
+                }
             }
 
             if (m.filesystem != Distinst.FileSystemType.SWAP) {

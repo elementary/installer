@@ -192,9 +192,15 @@ public class Installer.PartitioningView : AbstractInstallerView {
         string model = Utils.string_from_utf8 (disk.get_model ());
 
         var partitions = new Gee.ArrayList<PartitionBar> ();
-        foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
-            partitions.add (partition);
+
+        unowned Distinst.Partition? poss_part = disk.get_encrypted_file_system ();
+        if (poss_part != null) {
+            partitions.add (new PartitionBar (poss_part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt));
+        } else {
+            foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
+                var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
+                partitions.add (partition);
+            }
         }
 
         var disk_bar = new DiskBar (model, path, size, (owned) partitions);
@@ -221,7 +227,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
         stderr.printf ("DEBUG: Current Layout:\n");
         foreach (Mount m in mounts) {
             stderr.printf (
-                "  %s : %s : %s: format? %s\n",
+                "  %s : %s : %s : %s: format? %s\n",
+                m.parent_disk,
                 m.partition_path,
                 m.mount_point,
                 Distinst.strfilesys (m.filesystem),
