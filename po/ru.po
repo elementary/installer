@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-06-03 08:07+0000\n"
-"Last-Translator: Yuri Djur <qrasik@mail.ru>\n"
+"PO-Revision-Date: 2018-06-03 08:08+0000\n"
+"Last-Translator: Camellan <camellan@yandex.ru>\n"
 "Language-Team: Russian "
 "<https://weblate.elementary.io/projects/installer/installer/ru/>\n"
 "Language: ru\n"
@@ -44,20 +44,20 @@ msgstr "Вы уверены, что хотите завершить работу
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "Это приведёт к отмене установки и выключению данного устройства."
 
 #: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
-msgstr ""
+msgstr "Перезагрузить"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr ""
+msgstr "Отменить"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:63
 msgid "Shut Down"
-msgstr ""
+msgstr "Выключить"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
