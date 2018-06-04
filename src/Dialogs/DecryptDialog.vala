@@ -18,6 +18,8 @@
  */
 
 public class DecryptDialog: Gtk.Dialog {
+    private const int CONTENT_HEIGHT = 128;
+
     public DecryptDialog () {
         Object (
             title: "Unlock",
@@ -57,7 +59,7 @@ public class DecryptDialog: Gtk.Dialog {
         secondary_label.xalign = 0;
 
         var partition_list = new Gtk.ListBox ();
-        partition_list.height_request = 128;
+        partition_list.height_request = CONTENT_HEIGHT;
         partition_list.margin_top = 12;
 
         var fake_locked_label = new Gtk.Label ("Fake Locked Partition");
@@ -95,6 +97,8 @@ public class DecryptDialog: Gtk.Dialog {
 
         var entry_grid = new Gtk.Grid ();
         entry_grid.column_spacing = 12;
+        entry_grid.valign = Gtk.Align.CENTER;
+        entry_grid.vexpand = true;
         entry_grid.row_spacing = 6;
         entry_grid.margin_top = 12;
 
@@ -103,27 +107,39 @@ public class DecryptDialog: Gtk.Dialog {
         entry_grid.attach (name_label, 0, 1);
         entry_grid.attach (name_entry, 1, 1);
 
+        // var entry_grid_centerer = new Gtk.Grid ();
+        // entry_grid_centerer.height_request = CONTENT_HEIGHT;
+        // entry_grid_centerer.add (entry_grid);
+
+        var stack = new Gtk.Stack ();
+        stack.height_request = CONTENT_HEIGHT;
+        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+
+        stack.add (partition_list);
+        stack.add (entry_grid);
+
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
         grid.margin_start = grid.margin_end = 12;
 
-        grid.attach (overlay,         0, 0, 1, 2);
-        grid.attach (primary_label,   1, 0);
-        grid.attach (secondary_label, 1, 1);
-        grid.attach (partition_list,  1, 2);
-        grid.attach (entry_grid,     1, 3);
+        grid.attach (overlay,             0, 0, 1, 2);
+        grid.attach (primary_label,       1, 0);
+        grid.attach (secondary_label,     1, 1);
+        grid.attach (stack,      1, 2);
 
         grid.show_all ();
-
         get_content_area ().add (grid);
 
         var cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
-        var select_button = (Gtk.Button) add_button (_("Select"), Gtk.ResponseType.OK);
+        var select_button = (Gtk.Button) add_button (_("Select"), Gtk.ResponseType.NONE);
         select_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        select_button.sensitive = false;
+        // select_button.sensitive = false;
 
-        var unlock_button = (Gtk.Button) add_button (_("Unlock"), Gtk.ResponseType.OK);
+        var back_button = (Gtk.Button) add_button (_("Back"), Gtk.ResponseType.NONE);
+        back_button.hide ();
+
+        var unlock_button = (Gtk.Button) add_button (_("Unlock"), Gtk.ResponseType.NONE);
         unlock_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         unlock_button.hide ();
 
@@ -134,7 +150,28 @@ public class DecryptDialog: Gtk.Dialog {
         set_keep_above (true);
 
         cancel_button.clicked.connect (() => destroy ());
-        unlock_button.clicked.connect (Utils.shutdown);
+
+        select_button.clicked.connect (() => {
+            stack.visible_child = entry_grid;
+
+            cancel_button.hide ();
+            select_button.hide ();
+
+            back_button.show ();
+            unlock_button.show ();
+        });
+
+        back_button.clicked.connect (() => {
+            stack.visible_child = partition_list;
+
+            back_button.hide ();
+            unlock_button.hide ();
+
+            cancel_button.show ();
+            select_button.show ();
+        });
+
+        unlock_button.clicked.connect (() => destroy ());
     }
 }
 
