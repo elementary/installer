@@ -107,10 +107,6 @@ public class DecryptDialog: Gtk.Dialog {
         entry_grid.attach (name_label, 0, 1);
         entry_grid.attach (name_entry, 1, 1);
 
-        // var entry_grid_centerer = new Gtk.Grid ();
-        // entry_grid_centerer.height_request = CONTENT_HEIGHT;
-        // entry_grid_centerer.add (entry_grid);
-
         var stack = new Gtk.Stack ();
         stack.height_request = CONTENT_HEIGHT;
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
@@ -134,7 +130,6 @@ public class DecryptDialog: Gtk.Dialog {
 
         var select_button = (Gtk.Button) add_button (_("Select"), Gtk.ResponseType.NONE);
         select_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        // select_button.sensitive = false;
 
         var back_button = (Gtk.Button) add_button (_("Back"), Gtk.ResponseType.NONE);
         back_button.hide ();
