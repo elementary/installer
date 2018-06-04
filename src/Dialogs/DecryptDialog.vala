@@ -92,8 +92,7 @@ public class DecryptDialog: Gtk.Dialog {
 
         var name_entry = new Gtk.Entry ();
         name_entry.hexpand = true;
-        // Set a sane default
-        name_entry.text = "data";
+        name_entry.text = "data"; // Set a sane default
 
         var entry_grid = new Gtk.Grid ();
         entry_grid.column_spacing = 12;
@@ -118,10 +117,10 @@ public class DecryptDialog: Gtk.Dialog {
         grid.column_spacing = 12;
         grid.margin_start = grid.margin_end = 12;
 
-        grid.attach (overlay,             0, 0, 1, 2);
-        grid.attach (primary_label,       1, 0);
-        grid.attach (secondary_label,     1, 1);
-        grid.attach (stack,      1, 2);
+        grid.attach (overlay,         0, 0, 1, 2);
+        grid.attach (primary_label,   1, 0);
+        grid.attach (secondary_label, 1, 1);
+        grid.attach (stack,           1, 2);
 
         grid.show_all ();
         get_content_area ().add (grid);
