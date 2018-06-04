@@ -18,8 +18,6 @@
  */
 
 public class DecryptDialog: Gtk.Dialog {
-    private const int CONTENT_HEIGHT = 128;
-
     public DecryptDialog () {
         Object (
             title: "Unlock",
@@ -59,7 +57,7 @@ public class DecryptDialog: Gtk.Dialog {
         secondary_label.xalign = 0;
 
         var partition_list = new Gtk.ListBox ();
-        partition_list.height_request = CONTENT_HEIGHT;
+        partition_list.expand = true;
         partition_list.margin_top = 12;
 
         var fake_locked_label = new Gtk.Label ("Fake Locked Partition");
@@ -107,7 +105,7 @@ public class DecryptDialog: Gtk.Dialog {
         entry_grid.attach (name_entry, 1, 1);
 
         var stack = new Gtk.Stack ();
-        stack.height_request = CONTENT_HEIGHT;
+        stack.height_request = 128;
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
 
         stack.add (partition_list);
