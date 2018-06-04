@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-06-04 12:13+0000\n"
-"Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
+"Last-Translator: mir99712 <mir99712@naver.com>\n"
 "Language-Team: Korean "
 "<https://weblate.elementary.io/projects/installer/installer/ko/>\n"
 "Language: ko\n"
@@ -374,7 +374,7 @@ msgstr "다시 시작한 후에 새로 사용자를 설정하시거나, 또는 �
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr "테스트 모드 끄기"
+msgstr "테스트 모드 종료"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
