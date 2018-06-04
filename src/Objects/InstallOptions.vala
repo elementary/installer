@@ -40,11 +40,11 @@ public class InstallOptions : GLib.Object {
     }
 
     public bool has_recovery () {
-        return null != get_options().get_recovery_option ();
+        return null != get_options ().get_recovery_option ();
     }
 
     public bool is_oem_mode () {
-        var recovery = get_options().get_recovery_option ();
+        var recovery = get_options ().get_recovery_option ();
         return null != recovery && recovery.get_oem_mode ();
     }
 
