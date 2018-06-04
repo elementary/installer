@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-06-04 12:05+0000\n"
-"Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
+"PO-Revision-Date: 2018-06-04 12:11+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Korean "
 "<https://weblate.elementary.io/projects/installer/installer/ko/>\n"
 "Language: ko\n"
@@ -331,7 +331,7 @@ msgstr "설치 마무리 하기"
 
 #: src/Views/TryInstallView.vala:33
 msgid "Install or Try Demo Mode"
-msgstr "설치하거나 데모 모드로 살펴보기"
+msgstr "설치하거나 데모 모드를 실행하기"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
