@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-02-05 00:11+0000\n"
+"PO-Revision-Date: 2018-06-01 00:07+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
-"Language-Team: Kurdish <https://weblate.elementary.io/projects/installer/"
-"installer/ku/>\n"
+"Language-Team: Kurdish "
+"<https://weblate.elementary.io/projects/installer/installer/ku/>\n"
 "Language: ku\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,9 +34,8 @@ msgid "Unable to set the Distinst log callback"
 msgstr ""
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "Saz kirin dest pê bike\n"
+msgstr "Saz kirine dest pê bike"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"

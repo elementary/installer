@@ -49,7 +49,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
         path = Utils.string_from_utf8 (part->get_device_path ());
         filesystem = part->get_file_system ();
         vg = (Distinst.FileSystemType.LVM == filesystem)
-            ? part->get_current_lvm_volume_group ()
+            ? Utils.string_from_utf8 (part->get_current_lvm_volume_group ())
             : null;
         info = part;
         tooltip_text = path;

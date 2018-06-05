@@ -132,9 +132,9 @@ public class Installer.DiskView : AbstractInstallerView {
             }
 
             string label;
-            string model = disk.get_model ();
+            string model = Utils.string_from_utf8 (disk.get_model ());
             if (model.length == 0) {
-                label = disk.get_serial ().replace ("_", " ");
+                label = Utils.string_from_utf8 (disk.get_serial ()).replace ("_", " ");
             } else {
                 label = model;
             }
