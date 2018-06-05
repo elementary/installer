@@ -77,9 +77,8 @@ public class InstallOptions : GLib.Object {
     }
 
     public Distinst.Disks get_disks () {
-        var moved = (owned) disks;
         disks_moved = true;
-        return moved;
+        return (owned) disks;
     }
 
     public unowned Distinst.Disks borrow_disks () {
