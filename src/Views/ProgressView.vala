@@ -182,6 +182,7 @@ public class ProgressView : AbstractInstallerView {
             unowned Distinst.InstallOption? option = options.selected_option;
 
             if (option == null) {
+                critical (_("install option is null\n"));
                 on_error ();
                 return;
             }

@@ -83,10 +83,35 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.visible_child = keyboard_layout_view;
 
         keyboard_layout_view.next_step.connect (() => {
-            var options = InstallOptions.get_default ();
-            if (!options.is_oem_mode ()) {
+            var opts = InstallOptions.get_default ();
+            if (!opts.is_oem_mode ()) {
                 load_try_install_view ();
             } else {
+                unowned Configuration config = Configuration.get_default ();
+                unowned Distinst.InstallOptions options = opts.get_options ();
+                var recovery = options.get_recovery_option ();
+
+                var lang = Utils.string_from_utf8 (recovery.get_language ());
+                var lang_parts = lang.split ("_", 2);
+                config.lang = lang_parts[0];
+                if (lang_parts.length >= 2) {
+                    var country_parts = lang_parts[1].split(".", 2);
+                    config.country = country_parts[0];
+                }
+
+                config.keyboard_layout = Utils.string_from_utf8 (recovery.get_kbd_layout ());
+
+                var variant = recovery.get_kbd_variant ();
+                if (null != variant) {
+                    config.keyboard_variant = Utils.string_from_utf8 (variant);
+                }
+
+                InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
+                    tag = Distinst.InstallOptionVariant.RECOVERY,
+                    option = (void*) recovery,
+                    encrypt_pass = null
+                };
+
                 load_encrypt_view ();
             }
         });
