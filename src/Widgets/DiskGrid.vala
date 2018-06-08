@@ -63,7 +63,8 @@ public class Installer.DiskButton : Gtk.ToggleButton {
             if (active) {
                 unowned Configuration config = Configuration.get_default ();
                 var opts = InstallOptions.get_default ();
-                if (!opts.is_oem_mode ()) {
+
+                if (opts.is_oem_mode ()) {
                     unowned Distinst.InstallOptions options = opts.get_options ();
                     var recovery = options.get_recovery_option ();
 
