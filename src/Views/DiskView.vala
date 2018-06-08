@@ -131,11 +131,24 @@ public class Installer.DiskView : AbstractInstallerView {
                             ((Gtk.ToggleButton)child).active = child == disk_button;
                         });
 
-                        InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
-                            tag = Distinst.InstallOptionVariant.ERASE,
-                            option = (void*) disk,
-                            encrypt_pass = null
-                        };
+                        var opts = InstallOptions.get_default ();
+
+                        if (opts.has_recovery()) {
+                            unowned Distinst.InstallOptions options = opts.get_options ();
+                            var recovery = options.get_recovery_option ();
+
+                            InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
+                                tag = Distinst.InstallOptionVariant.RECOVERY,
+                                option = (void*) recovery,
+                                encrypt_pass = null
+                            };
+                        } else {
+                            InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
+                                tag = Distinst.InstallOptionVariant.ERASE,
+                                option = (void*) disk,
+                                encrypt_pass = null
+                            };
+                        }
 
                         next_button.sensitive = true;
                     } else {
