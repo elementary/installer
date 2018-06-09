@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-31 00:02+0000\n"
+"PO-Revision-Date: 2018-06-10 00:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/installer/installer/ja/>\n"
@@ -371,7 +371,7 @@ msgstr "セットアップを続行"
 #: src/Views/SuccessView.vala:42
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "お使いのデバイスは %i 秒後に自動的に %s を再起動します。"
+msgstr "お使いのデバイスは %s を %i 秒後に自動的に再起動します。"
 
 #: src/Views/SuccessView.vala:43
 msgid ""
