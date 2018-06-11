@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-06-06 00:08+0000\n"
+"PO-Revision-Date: 2018-06-12 12:15+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/installer/installer/hu/>\n"
@@ -113,7 +113,7 @@ msgstr "Ajánlott:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr "Az Ön készüléke:"
+msgstr "Az ön készüléke:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
