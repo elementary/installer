@@ -114,7 +114,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
-            if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
+            if (disk.contains_mount ("/", disks) || disk.contains_mount ("/cdrom", disks)) {
                 continue;
             }
 
@@ -307,4 +307,3 @@ public class Installer.PartitioningView : AbstractInstallerView {
         return array.remove_at (array.size - 1);
     }
 }
-
