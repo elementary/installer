@@ -31,7 +31,6 @@ public class Installer.App : Gtk.Application {
         flags = ApplicationFlags.FLAGS_NONE;
         Intl.setlocale (LocaleCategory.ALL, "");
         add_main_option_entries (INSTALLER_OPTIONS);
-        instance = this;
     }
 
     public override void activate () {

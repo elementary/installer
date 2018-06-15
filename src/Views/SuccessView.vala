@@ -104,7 +104,7 @@ public class SuccessView : AbstractInstallerView {
 
         Timeout.add_seconds (RESTART_TIMEOUT, () => {
             Utils.restart ();
-            return Glib.Source.REMOVE;
+            return GLib.Source.REMOVE;
         });
 
         show_all ();
