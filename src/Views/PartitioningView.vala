@@ -27,6 +27,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private Gtk.Box disk_list;
     private Gtk.SizeGroup label_sizer;
     private string required_description;
+    private HelpDialog help_dialog;
 
     public Gee.ArrayList<Installer.Mount> mounts;
     public Gee.ArrayList<LuksCredentials> luks;
@@ -37,6 +38,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
         minimum_disk_size = size;
         Object (cancellable: false);
     }
+
+    const uint64 REQUIRED_EFI_SECTORS = 524288;
 
     construct {
         mounts = new Gee.ArrayList<Installer.Mount> ();
@@ -53,7 +56,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 break;
             case Distinst.PartitionTable.GPT:
                 // Device is in EFI mode, so we also require a boot partition
-                required_description = _("You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/efi)</b> partition.");
+                required_description = _("You must at least select a <b>Root (/)</b> partition, plus a <b>Boot (/boot/efi)</b> partition that is at least 256 MiB.");
                 break;
         }
 
@@ -86,11 +89,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         load_disks ();
 
+        var help_button = new Gtk.Button.with_label (_("?"));
+        help_button.tooltip_text = _("Help with Dual Booting");
+        help_button.get_style_context ().add_class ("circular");
+
         modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
-        modify_partitions_button.clicked.connect (() => open_partition_editor ());
-        action_area.add (modify_partitions_button);
-        action_area.set_child_secondary (modify_partitions_button, true);
-        action_area.set_child_non_homogeneous (modify_partitions_button, true);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
@@ -98,9 +101,23 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
 
+        action_area.add (help_button);
+        action_area.set_child_secondary (help_button, true);
+        action_area.set_child_non_homogeneous (help_button, true);
+
+        action_area.add (modify_partitions_button);
+        action_area.set_child_secondary (modify_partitions_button, true);
+        action_area.set_child_non_homogeneous (modify_partitions_button, true);
+
         action_area.add (back_button);
         action_area.add (next_button);
 
+        help_button.clicked.connect (() => {
+            // FIXME: Only allow one instance
+            help_dialog = new HelpDialog ();
+            help_dialog.transient_for = (Gtk.Window) get_toplevel ();
+        });
+        modify_partitions_button.clicked.connect (() => open_partition_editor ());
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
         next_button.clicked.connect (() => next_step ());
 
@@ -114,7 +131,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
-            if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
+            if (!InstallOptions.get_default ().has_recovery () && (disk.contains_mount ("/", disks) || disk.contains_mount ("/cdrom", disks))) {
                 continue;
             }
 
@@ -122,7 +139,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
             var size = disk.get_sectors () * sector_size;
 
             string path = Utils.string_from_utf8 (disk.get_device_path ());
-
             string model = Utils.string_from_utf8 (disk.get_model ());
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
@@ -173,13 +189,18 @@ public class Installer.PartitioningView : AbstractInstallerView {
         var size = disk.get_sectors () * sector_size;
 
         string path = Utils.string_from_utf8 (disk.get_device_path ());
-
         string model = Utils.string_from_utf8 (disk.get_model ());
 
         var partitions = new Gee.ArrayList<PartitionBar> ();
-        foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
-            partitions.add (partition);
+
+        unowned Distinst.Partition? poss_part = disk.get_encrypted_file_system ();
+        if (poss_part != null) {
+            partitions.add (new PartitionBar (poss_part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt));
+        } else {
+            foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
+                var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
+                partitions.add (partition);
+            }
         }
 
         var disk_bar = new DiskBar (model, path, size, (owned) partitions);
@@ -190,34 +211,43 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private void validate_status () {
         uint8 flags = 0;
         const uint8 ROOT = 1;
-        const uint8 BOOT = 2;
+        const uint8 EFI = 2;
 
-        string layout_debug = "";
+        uint8 required = ROOT;
+
+        var bootloader = Distinst.bootloader_detect ();
+        switch (bootloader) {
+            case Distinst.PartitionTable.MSDOS:
+                break;
+            case Distinst.PartitionTable.GPT:
+                required |= EFI;
+                break;
+        }
+
+        stderr.printf ("DEBUG: Current Layout:\n");
         foreach (Mount m in mounts) {
-            layout_debug +=
-                "  %s : %s : %s: format? %s\n".printf (
+            stderr.printf (
+                "  %s : %s : %s : %s: format? %s\n",
+                m.parent_disk,
                 m.partition_path,
                 m.mount_point,
                 Distinst.strfilesys (m.filesystem),
                 m.should_format () ? "true" : "false"
             );
-        }
-        debug ("Current Layout:\n" + layout_debug);
 
-        foreach (Mount m in mounts) {
-            if (m.mount_point == "/" && m.is_valid_root_mount ()) {
+            if (m.mount_point == "/") {
                 flags |= ROOT;
-            } else if (m.mount_point == "/boot/efi" && m.is_valid_boot_mount ()) {
-                flags |= BOOT;
-            }
-
-            if (flags == ROOT + BOOT) {
-                next_button.sensitive = true;
-                return;
+            } else if (m.mount_point == "/boot/efi") {
+                flags |= EFI;
             }
         }
 
-        next_button.sensitive = false;
+
+        if ((flags & required) == required) {
+            next_button.sensitive = true;
+        } else {
+            next_button.sensitive = false;
+        }
     }
 
     private void decrypt (string device, string pv, string password, DecryptMenu menu) {
@@ -229,7 +259,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         switch (result) {
             case 0:
-                unowned Distinst.LvmDevice disk = disks.get_logical_device (pv);
+                unowned Distinst.LvmDevice disk = disks.get_logical_device_within_pv (pv);
                 add_logical_disk (disk);
                 menu.set_decrypted (pv);
                 luks.add (new LuksCredentials (device, pv, password));
@@ -258,19 +288,33 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
     }
 
-    private void set_mount (Mount mount) {
+    private string? set_mount (Mount mount) {
         unset_mount_point (mount);
+
+        if (mount.mount_point == "/boot/efi") {
+            if (!mount.is_valid_boot_mount()) {
+                return _("EFI partition has the wrong file system");
+            } else if (mount.sectors < REQUIRED_EFI_SECTORS) {
+                return _("EFI partition is too small");
+            }
+        } else if (mount.mount_point == "/" && !mount.is_valid_root_mount ()) {
+            return _("Invalid file system for root");
+        } else if (mount.mount_point == "/home" && !mount.is_valid_root_mount ()) {
+            return _("Invalid file system for home");
+        }
+
         for (int i = 0; i < mounts.size; i++) {
             if (mounts[i].partition_path == mount.partition_path) {
                 mounts[i] = mount;
                 validate_status ();
-                return;
+                return null;
             }
         }
 
         validate_status ();
         mounts.add (mount);
         validate_status ();
+        return null;
     }
 
     private bool mount_is_set (string mount_point) {
@@ -307,4 +351,3 @@ public class Installer.PartitioningView : AbstractInstallerView {
         return array.remove_at (array.size - 1);
     }
 }
-

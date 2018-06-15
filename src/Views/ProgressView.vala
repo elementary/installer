@@ -25,7 +25,7 @@ public class ProgressView : AbstractInstallerView {
     public Gtk.TextView terminal_view { get; construct; }
     private Gtk.ProgressBar progressbar;
     private Gtk.Label progressbar_label;
-    private const int NUM_STEP = 5;
+    private const int NUM_STEP = 4;
 
     construct {
         var logo = new Gtk.Image ();
@@ -112,8 +112,32 @@ public class ProgressView : AbstractInstallerView {
         return terminal_view.buffer.text;
     }
 
+    private string casper_dir () {
+        var cdrom = "/cdrom";
+
+        try {
+            var cdrom_dir = File.new_for_path (cdrom);
+            var iter = cdrom_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
+
+            FileInfo info;
+            while ((info = iter.next_file ()) != null) {
+                var name = info.get_name ();
+                if (name.has_prefix ("casper")) {
+                    return cdrom + "/" + name;
+                }
+            }
+        } catch (GLib.Error e) {
+            critical ("failed to find casper dir automatically: %s\n", e.message);
+        }
+
+        return cdrom + "/casper";
+    }
+
     public void start_installation () {
         if (Installer.App.test_mode) {
+            unowned Configuration current_config = Configuration.get_default ();
+
+            stderr.printf ("locale: %s\n", current_config.get_locale ());
             new Thread<void*> (null, () => {
                 fake_status (Distinst.Step.PARTITION);
                 fake_status (Distinst.Step.EXTRACT);
@@ -132,31 +156,62 @@ public class ProgressView : AbstractInstallerView {
         installer.on_status (installation_status_callback);
 
         var config = Distinst.Config ();
-        config.flags = Distinst.MODIFY_BOOT_ORDER;
-        config.hostname = "todo";
-        config.lang = "en_US.UTF-8";
-        config.remove = Build.MANIFEST_REMOVE_PATH;
-        config.squashfs = Build.SQUASHFS_PATH;
+        config.flags = Distinst.MODIFY_BOOT_ORDER | Distinst.INSTALL_HARDWARE_SUPPORT;
+        config.hostname = "pop-os";
+
+        var casper = casper_dir ();
+        config.remove = casper + "/filesystem.manifest-remove";
+        config.squashfs = casper + "/filesystem.squashfs";
 
         unowned Configuration current_config = Configuration.get_default ();
+        unowned InstallOptions options = InstallOptions.get_default ();
 
-        //TODO: Use the following
-        debug ("language: %s\n", current_config.lang);
-        if (current_config.country != null) {
-            debug ("country: %s\n", current_config.country);
-        } else {
-            config.lang = current_config.lang + "_" + current_config.lang.ascii_up () + ".UTF-8";
-        }
-
+        stderr.printf ("locale: %s\n", current_config.get_locale ());
+        config.lang = current_config.get_locale ();
         config.keyboard_layout = current_config.keyboard_layout;
         config.keyboard_model = null;
         config.keyboard_variant = current_config.keyboard_variant;
 
-        var disks = new Distinst.Disks ();
+        Distinst.Disks disks;
         if (current_config.mounts == null) {
-            default_disk_configuration (disks);
+            unowned Distinst.InstallOption? option = options.selected_option;
+
+            if (option == null) {
+                critical (_("install option is null\n"));
+                on_error ();
+                return;
+            }
+
+            switch (option.tag) {
+                case Distinst.InstallOptionVariant.REFRESH:
+                    if (current_config.retain_home) {
+                        unowned Distinst.RefreshOption refresh = (Distinst.RefreshOption*) option.option;
+                        config.old_root = Utils.string_from_utf8 (refresh.get_root_part ());
+                    }
+
+                    break;
+                case Distinst.InstallOptionVariant.RECOVERY:
+                    option.encrypt_pass = current_config.encryption_password;
+
+                    break;
+                case Distinst.InstallOptionVariant.ERASE:
+                    option.encrypt_pass = current_config.encryption_password;
+
+                    break;
+            }
+
+            disks = options.get_disks ();
+            var result = option.apply (disks);
+            if (result != 0) {
+                on_error ();
+                return;
+            }
         } else {
-            custom_disk_configuration (disks);
+            disks = Distinst.Disks.probe ();
+            if (!custom_disk_configuration (disks)) {
+                on_error ();
+                return;
+            }
         }
 
         new Thread<void*> (null, () => {
@@ -165,171 +220,7 @@ public class ProgressView : AbstractInstallerView {
         });
     }
 
-    private void default_disk_configuration (Distinst.Disks disks) {
-        unowned Configuration current_config = Configuration.get_default ();
-
-        var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
-        var root_vg = Distinst.generate_unique_id ("data");
-        if (encrypted_vg == null || root_vg == null) {
-            critical ("unable to generate unique volume group IDs\n");
-            on_error ();
-            return;
-        }
-
-        Distinst.LvmEncryption? encryption;
-        if (current_config.encryption_password != null) {
-            debug ("encrypting");
-            encryption = Distinst.LvmEncryption () {
-                physical_volume = encrypted_vg,
-                password = current_config.encryption_password,
-                keydata = null
-            };
-        } else {
-            debug ("not encrypting");
-            encryption = null;
-        }
-
-        debug ("disk: %s\n", current_config.disk);
-        var disk = new Distinst.Disk (current_config.disk);
-        if (disk == null) {
-            critical ("could not find %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        var bootloader = Distinst.bootloader_detect ();
-
-        var start_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.START,
-            value = 0
-        };
-
-        var boot_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.MEGABYTE,
-            value = 512
-        };
-
-        var swap_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.MEGABYTE_FROM_END,
-            value = 4096
-        };
-
-        var end_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.END,
-            value = 0
-        };
-
-        // Prepares a new partition table.
-        int result = disk.mklabel (bootloader);
-
-        if (result != 0) {
-            critical ("unable to write partition table to %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        var start = disk.get_sector (ref start_sector);
-        var end = disk.get_sector (ref boot_sector);
-
-        switch (bootloader) {
-            case Distinst.PartitionTable.MSDOS:
-                // This is used to ensure LVM installs will work with BIOS
-                result = disk.add_partition (
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
-                        .partition_type (Distinst.PartitionType.PRIMARY)
-                        .flag (Distinst.PartitionFlag.BOOT)
-                        .mount ("/boot")
-                );
-
-                if (result != 0) {
-                    critical ("unable to add boot partition to %s", current_config.disk);
-                    on_error ();
-                    return;
-                }
-
-                break;
-            case Distinst.PartitionTable.GPT:
-                // A FAT32 partition is required for EFI installs
-                result = disk.add_partition (
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
-                        .partition_type (Distinst.PartitionType.PRIMARY)
-                        .flag (Distinst.PartitionFlag.ESP)
-                        .mount ("/boot/efi")
-                );
-
-                if (result != 0) {
-                    critical ("unable to add EFI partition to %s", current_config.disk);
-                    on_error ();
-                    return;
-                }
-
-                break;
-        }
-
-        start = disk.get_sector (ref boot_sector);
-        end = disk.get_sector (ref end_sector);
-
-        result = disk.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
-                .partition_type (Distinst.PartitionType.PRIMARY)
-                .logical_volume (root_vg, encryption)
-        );
-
-        if (result != 0) {
-            critical ("unable to add lvm partition to %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        disks.push ((owned) disk);
-
-        result = disks.initialize_volume_groups ();
-
-        if (result != 0) {
-            critical ("unable to initialize volume groups on %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        unowned Distinst.LvmDevice lvm_device = disks.get_logical_device (root_vg);
-
-        if (lvm_device == null) {
-            critical ("unable to find '%s' volume group on %s", root_vg, current_config.disk);
-            on_error ();
-            return;
-        }
-
-        start = lvm_device.get_sector (ref start_sector);
-        end = lvm_device.get_sector (ref swap_sector);
-
-        result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
-                .name("root")
-                .mount ("/")
-        );
-
-        if (result != 0) {
-            critical ("unable to add / partition to lvm on %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        start = lvm_device.get_sector (ref swap_sector);
-        end = lvm_device.get_sector (ref end_sector);
-
-        result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.SWAP)
-                .name("swap")
-        );
-
-        if (result != 0) {
-            critical ("unable to add swap partition to lvm on %s", current_config.disk);
-            on_error ();
-            return;
-        }
-    }
-
-    private void custom_disk_configuration (Distinst.Disks disks) {
+    private bool custom_disk_configuration (Distinst.Disks disks) {
         unowned Configuration config = Configuration.get_default ();
         Installer.Mount[] lvm_devices = {};
 
@@ -342,8 +233,7 @@ public class ProgressView : AbstractInstallerView {
                     var new_disk = new Distinst.Disk (m.parent_disk);
                     if (new_disk == null) {
                         warning ("could not find physical device: '%s'\n", m.parent_disk);
-                        on_error ();
-                        return;
+                        return false;
                     }
 
                     disks.push ((owned) new_disk);
@@ -353,9 +243,8 @@ public class ProgressView : AbstractInstallerView {
                 unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
                 if (partition == null) {
-                    warning ("could not find %s\n", m.partition_path);
-                    on_error ();
-                    return;
+                    critical ("could not find %s\n", m.partition_path);
+                    return false;
                 }
 
                 if (m.mount_point == "/boot/efi") {
@@ -367,9 +256,8 @@ public class ProgressView : AbstractInstallerView {
                         partition.set_mount (m.mount_point);
                         partition.set_flags ({ Distinst.PartitionFlag.ESP });
                     } else {
-                        warning ("unreachable code path -- efi partition is invalid\n");
-                        on_error ();
-                        return;
+                        critical ("unreachable code path -- efi partition is invalid\n");
+                        return false;
                     }
                 } else {
                     if (m.filesystem != Distinst.FileSystemType.SWAP) {
@@ -398,20 +286,20 @@ public class ProgressView : AbstractInstallerView {
         }
 
         foreach (Installer.Mount m in lvm_devices) {
-            var vg = m.parent_disk.offset (12);
+            var vg = m.parent_disk.offset (12).replace("--", "-");
             unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
             if (disk == null) {
-                warning ("could not find %s\n", vg);
-                on_error ();
-                return;
+                critical ("could not find %s\n", vg);
+                return false;
             }
 
-            unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
-
+            unowned Distinst.Partition partition = disk.get_encrypted_file_system ();
             if (partition == null) {
-                warning ("could not find %s\n", m.partition_path);
-                on_error ();
-                return;
+                partition = disk.get_partition_by_path (m.partition_path);
+                if (partition == null) {
+                    critical ("could not find by path %s\n", m.partition_path);
+                    return false;
+                }
             }
 
             if (m.filesystem != Distinst.FileSystemType.SWAP) {
@@ -422,6 +310,8 @@ public class ProgressView : AbstractInstallerView {
                 partition.format_and_keep_name (m.filesystem);
             }
         }
+
+        return true;
     }
 
     private void fake_status (Distinst.Step step) {
@@ -448,15 +338,15 @@ public class ProgressView : AbstractInstallerView {
                     progressbar_label.label = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
-                    fraction += 2*(1.0/NUM_STEP);
+                    fraction += (1.0/NUM_STEP);
                     progressbar_label.label = _("Extracting Files");
                     break;
                 case Distinst.Step.CONFIGURE:
-                    fraction += 3*(1.0/NUM_STEP);
+                    fraction += 2*(1.0/NUM_STEP);
                     progressbar_label.label = _("Configuring the System");
                     break;
                 case Distinst.Step.BOOTLOADER:
-                    fraction += 4*(1.0/NUM_STEP);
+                    fraction += 3*(1.0/NUM_STEP);
                     progressbar_label.label = _("Finishing the Installation");
                     break;
             }

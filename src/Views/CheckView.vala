@@ -28,6 +28,8 @@ public class Installer.CheckView : AbstractInstallerView  {
     // Minimum 1GB
     public static uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
+    public unowned Gtk.Widget? ignore_view { get; set; }
+
     public signal void next_step ();
     public signal void status_changed (bool met_requirements);
 
@@ -252,7 +254,7 @@ public class Installer.CheckView : AbstractInstallerView  {
         var title_label = new Gtk.Label (title);
         title_label.get_style_context ().add_class ("h2");
         title_label.wrap = true;
-        title_label.max_width_chars = 60;
+        title_label.max_width_chars = 30;
         title_label.valign = Gtk.Align.START;
 
         var description_label = new Gtk.Label (description);

@@ -61,6 +61,8 @@ public class ErrorView : AbstractInstallerView {
 
         var grid = new Gtk.Grid ();
         grid.row_spacing = 6;
+        grid.margin_left = 24;
+        grid.valign = Gtk.Align.CENTER;
         grid.attach (description_label, 0, 0, 1, 1);
         grid.attach (try_label ,        0, 1, 1, 1);
         grid.attach (launch_label,      0, 2, 1, 1);
@@ -76,7 +78,8 @@ public class ErrorView : AbstractInstallerView {
         terminal_view.get_style_context ().add_class ("terminal");
 
         var terminal_output = new Gtk.ScrolledWindow (null, null);
-        terminal_output.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        terminal_output.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+        terminal_output.propagate_natural_width = true;
         terminal_output.add (terminal_view);
         terminal_output.vexpand = true;
         terminal_output.hexpand = true;

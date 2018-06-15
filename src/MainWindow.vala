@@ -35,14 +35,18 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     private uint64 minimum_disk_size;
 
+    private DateTime? start_date = null;
+    private DateTime? end_date = null;
+
     public MainWindow () {
         Object (
             deletable: false,
             height_request: 700,
             icon_name: "system-os-installer",
-            resizable: false,
+            resizable: true,
             title: _("Install %s").printf (Utils.get_pretty_name ()),
-            width_request: 950
+            width_request: 950,
+            use_header_bar: 1
         );
     }
 
@@ -56,7 +60,9 @@ public class Installer.MainWindow : Gtk.Dialog {
         get_content_area ().add (stack);
         get_style_context ().add_class ("os-installer");
 
-        minimum_disk_size = Distinst.minimum_disk_size (5000000000);
+        const uint64 DEFAULT_MINIMUM_SIZE = 5000000000;
+        minimum_disk_size = Distinst.minimum_disk_size (DEFAULT_MINIMUM_SIZE / 512);
+        InstallOptions.get_default ().set_minimum_size (minimum_disk_size);
 
         language_view.next_step.connect (() => load_keyboard_view ());
     }
@@ -76,7 +82,39 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (keyboard_layout_view);
         stack.visible_child = keyboard_layout_view;
 
-        keyboard_layout_view.next_step.connect (() => load_try_install_view ());
+        keyboard_layout_view.next_step.connect (() => {
+            var opts = InstallOptions.get_default ();
+            if (!opts.is_oem_mode ()) {
+                load_try_install_view ();
+            } else {
+                unowned Configuration config = Configuration.get_default ();
+                unowned Distinst.InstallOptions options = opts.get_options ();
+                var recovery = options.get_recovery_option ();
+
+                var lang = Utils.string_from_utf8 (recovery.get_language ());
+                var lang_parts = lang.split ("_", 2);
+                config.lang = lang_parts[0];
+                if (lang_parts.length >= 2) {
+                    var country_parts = lang_parts[1].split(".", 2);
+                    config.country = country_parts[0];
+                }
+
+                config.keyboard_layout = Utils.string_from_utf8 (recovery.get_kbd_layout ());
+
+                var variant = recovery.get_kbd_variant ();
+                if (null != variant) {
+                    config.keyboard_variant = Utils.string_from_utf8 (variant);
+                }
+
+                InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
+                    tag = Distinst.InstallOptionVariant.RECOVERY,
+                    option = (void*) recovery,
+                    encrypt_pass = null
+                };
+
+                load_encrypt_view ();
+            }
+        });
     }
 
     private void load_try_install_view () {
@@ -131,25 +169,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         set_check_view_visible (!check_ignored && !check_view.check_requirements ());
     }
 
-    private void load_encrypt_view () {
-        if (encrypt_view != null) {
-            encrypt_view.destroy ();
-        }
-
-        encrypt_view = new EncryptView ();
-        encrypt_view.previous_view = disk_view;
-        stack.add (encrypt_view);
-        stack.visible_child = encrypt_view;
-
-        load_check_view ();
-
-        encrypt_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
-        });
-
-        encrypt_view.next_step.connect (() => load_progress_view ());
-    }
-
     private void load_disk_view () {
         if (disk_view != null) {
             disk_view.destroy ();
@@ -165,10 +184,12 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.visible_child = try_install_view;
         });
 
-        disk_view.next_step.connect (() => load_encrypt_view ());
+        disk_view.next_step.connect (() =>  load_encrypt_view ());
+
+        load_check_view ();
     }
 
-    private void load_partitioning_view () {
+    private void load_partitioning_view() {
         if (partitioning_view != null) {
             partitioning_view.destroy ();
         }
@@ -186,7 +207,22 @@ public class Installer.MainWindow : Gtk.Dialog {
         });
     }
 
+    private void load_encrypt_view () {
+        if (encrypt_view != null) {
+            encrypt_view.destroy ();
+        }
+
+        encrypt_view = new EncryptView ();
+        encrypt_view.previous_view = disk_view;
+        stack.add (encrypt_view);
+        stack.visible_child = encrypt_view;
+
+        encrypt_view.next_step.connect (() => load_progress_view ());
+    }
+
     private void load_progress_view () {
+        check_ignored = true;
+
         if (progress_view != null) {
             progress_view.destroy ();
         }
@@ -195,21 +231,56 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (progress_view);
         stack.visible_child = progress_view;
 
-        progress_view.on_success.connect (() => load_success_view ());
+        progress_view.on_success.connect (() => {
+            load_success_view (progress_view.get_log ());
+        });
+
         progress_view.on_error.connect (() => {
             load_error_view (progress_view.get_log ());
         });
+
+        start_date = new DateTime.now_local ();
+        end_date = null;
+
+        if (progress_view.test_label != null) {
+            progress_view.test_label.set_text(_("Test Mode") + " 0.00");
+        }
+
+        var time_source = GLib.Timeout.add (10, () => {
+            end_date = new DateTime.now_local ();
+            if (progress_view.test_label != null) {
+                var time_span = end_date.difference(start_date);
+                progress_view.test_label.set_text (_("Test Mode") + " %.2f".printf((double)time_span/1000000.0));
+            }
+            return GLib.Source.CONTINUE;
+        });
+
+        progress_view.on_success.connect(() => {
+            end_date = new DateTime.now_local ();
+            GLib.Source.remove(time_source);
+        });
+
+        progress_view.on_error.connect(() => {
+            end_date = new DateTime.now_local ();
+            GLib.Source.remove(time_source);
+        });
+
         progress_view.start_installation ();
     }
 
-    private void load_success_view () {
+    private void load_success_view (string log) {
         if (success_view != null) {
             success_view.destroy ();
         }
 
-        success_view = new SuccessView ();
+        success_view = new SuccessView (log);
         stack.add (success_view);
         stack.visible_child = success_view;
+
+        if (success_view.test_label != null && start_date != null && end_date != null) {
+            var time_span = end_date.difference(start_date);
+            success_view.test_label.set_text (_("Test Mode") + " %.2f".printf((double)time_span/1000000.0));
+        }
     }
 
     private void load_error_view (string log) {
@@ -218,10 +289,9 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         error_view = new ErrorView (log);
+        error_view.previous_view = try_install_view;
         stack.add (error_view);
         stack.visible_child = error_view;
-
-        error_view.previous_view = disk_view;
     }
 
     public override void close () {}

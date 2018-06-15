@@ -96,8 +96,6 @@ public class Installer.TryInstallView : AbstractInstallerView {
         action_area.add (shutdown_button);
         action_area.add (back_button);
         action_area.add (next_button);
-        action_area.set_child_secondary (shutdown_button, true);
-        action_area.set_child_non_homogeneous (shutdown_button, true);
 
         type_grid.add (demo_button);
         type_grid.add (clean_install_button);
@@ -155,7 +153,22 @@ public class Installer.TryInstallView : AbstractInstallerView {
             }
         });
 
+        custom_button.clicked.connect (() => {
+            if (custom_button.active) {
+                type_grid.get_children ().foreach ((child) => {
+                    if (child is Gtk.ToggleButton) {
+                        ((Gtk.ToggleButton)child).active = child == custom_button;
+                    }
+                });
+
+                next_button.label = custom_button.type_title;
+                next_button.sensitive = true;
+                next_button.clicked.connect (() => custom_step ());
+            } else {
+                next_button.sensitive = false;
+                next_button.label = _("Next");
+            }
+        });
         show_all ();
     }
 }
-

@@ -48,8 +48,9 @@ public class Installer.DiskView : AbstractInstallerView {
         var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
         install_image.valign = Gtk.Align.START;
 
-        var install_label = new Gtk.Label (_("Select a Drive"));
-        install_label.hexpand = true;
+        var install_label = new Gtk.Label (_("Select a drive"));
+        install_label.max_width_chars = 60;
+        install_label.valign = Gtk.Align.START;
         install_label.get_style_context ().add_class ("h2");
 
         var install_desc_label = new Gtk.Label (_("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode."));
@@ -108,56 +109,51 @@ public class Installer.DiskView : AbstractInstallerView {
         DiskButton[] enabled_buttons = {};
         DiskButton[] disabled_buttons = {};
 
-        Distinst.Disks disks = Distinst.Disks.probe ();
-        foreach (unowned Distinst.Disk disk in disks.list ()) {
-            // Skip root disk or live disk
-            if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
-                continue;
-            }
+        unowned Distinst.InstallOptions install_options = InstallOptions.get_default ().get_updated_options ();
 
-            var size = disk.get_sectors () * disk.get_sector_size ();
+        if (install_options == null) {
+            critical (_("unable to get installation options"));
+            return;
+        }
 
-            // Drives are identifiable by whether they are rotational and/or removable.
-            string icon_name = null;
-            if (disk.is_removable ()) {
-                if (disk.is_rotational ()) {
-                    icon_name = "drive-harddisk-usb";
-                } else {
-                    icon_name = "drive-removable-media-usb";
-                }
-            } else if (disk.is_rotational ()) {
-                icon_name = "drive-harddisk-scsi";
-            } else {
-                icon_name = "drive-harddisk-solidstate";
-            }
-
-            string label;
+        foreach (unowned Distinst.EraseOption disk in install_options.get_erase_options ()) {
+            var size = disk.get_sectors () * 512;
             string model = Utils.string_from_utf8 (disk.get_model ());
-            if (model.length == 0) {
-                label = Utils.string_from_utf8 (disk.get_serial ()).replace ("_", " ");
-            } else {
-                label = model;
-            }
-
             string path = Utils.string_from_utf8 (disk.get_device_path ());
+            string icon_name = Utils.string_from_utf8 (disk.get_linux_icon ());
 
             var disk_button = new DiskButton (
-                label,
+                model,
                 icon_name,
                 path,
                 size
             );
 
-            if (size < minimum_disk_size) {
-                disk_button.set_sensitive(false);
-
-                disabled_buttons += disk_button;
-            } else {
+            if (disk.meets_requirements ()) {
                 disk_button.clicked.connect (() => {
                     if (disk_button.active) {
                         disk_grid.get_children ().foreach ((child) => {
                             ((Gtk.ToggleButton)child).active = child == disk_button;
                         });
+
+                        var opts = InstallOptions.get_default ();
+
+                        if (opts.has_recovery()) {
+                            unowned Distinst.InstallOptions options = opts.get_options ();
+                            var recovery = options.get_recovery_option ();
+
+                            InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
+                                tag = Distinst.InstallOptionVariant.RECOVERY,
+                                option = (void*) recovery,
+                                encrypt_pass = null
+                            };
+                        } else {
+                            InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
+                                tag = Distinst.InstallOptionVariant.ERASE,
+                                option = (void*) disk,
+                                encrypt_pass = null
+                            };
+                        }
 
                         next_button.sensitive = true;
                     } else {
@@ -166,6 +162,10 @@ public class Installer.DiskView : AbstractInstallerView {
                 });
 
                 enabled_buttons += disk_button;
+            } else {
+                disk_button.set_sensitive (false);
+
+                disabled_buttons += disk_button;
             }
         }
 
