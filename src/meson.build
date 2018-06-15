@@ -8,7 +8,6 @@ vala_files = [
     'Helpers/LocaleHelper.vala',
     'Helpers/LogHelper.vala',
     'Dialogs/EndSessionDialog.vala',
-    'Dialogs/HelpDialog.vala',
     'Objects/Configuration.vala',
     'Objects/InstallOptions.vala',
     'Objects/Mount.vala',
