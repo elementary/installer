@@ -88,11 +88,16 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
-        try_install_view.custom_step.connect (() => load_partitioning_view ());
-        try_install_view.next_step.connect (() => load_check_view ());
+        try_install_view.custom_step.connect (() => {
+            load_check_view ("custom");
+        });
+
+        try_install_view.next_step.connect (() => {
+            load_check_view ("clean");
+        });
     }
 
-    private void load_check_view () {
+    private void load_check_view (string next_view) {
         if (check_view != null) {
             check_view.destroy ();
         }
@@ -100,8 +105,14 @@ public class Installer.MainWindow : Gtk.Dialog {
         check_view = new CheckView (minimum_disk_size);
         check_view.previous_view = try_install_view;
 
+        if (next_view == "custom") {
+            check_view.next_step.connect (() => load_partitioning_view ());
+        } else {
+            check_view.next_step.connect (() => load_disk_view ());
+        }
+
         if (check_view.check_requirements ()) {
-            load_disk_view ();
+            check_view.next_step ();
         } else {
             stack.add (check_view);
             stack.visible_child = check_view;
@@ -110,8 +121,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         check_view.cancel.connect (() => {
             stack.visible_child = try_install_view;
         });
-
-        check_view.next_step.connect (() => load_disk_view ());
     }
 
     private void load_disk_view () {
