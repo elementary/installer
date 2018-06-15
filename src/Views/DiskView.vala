@@ -111,7 +111,7 @@ public class Installer.DiskView : AbstractInstallerView {
         Distinst.Disks disks = Distinst.Disks.probe ();
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
-            if (disk.contains_mount ("/") || disk.contains_mount ("/cdrom")) {
+            if (disk.contains_mount ("/", disks) || disk.contains_mount ("/cdrom", disks)) {
                 continue;
             }
 
