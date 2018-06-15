@@ -77,7 +77,16 @@ namespace Utils {
         if (Installer.App.test_mode) {
             critical (_("Test mode switch user"));
         } else {
-            Installer.App.get_instance ().quit ();
+            get_system_instance ();
+
+            var seat = Utils.get_seat_instance ();
+            if (seat != null) {
+                try {
+                    seat.switch_to_guest ("");
+                } catch (GLib.Error e) {
+                    stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+                }
+            }
         }
     }
 

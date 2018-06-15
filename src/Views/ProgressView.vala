@@ -157,7 +157,7 @@ public class ProgressView : AbstractInstallerView {
 
         var config = Distinst.Config ();
         config.flags = Distinst.MODIFY_BOOT_ORDER | Distinst.INSTALL_HARDWARE_SUPPORT;
-        config.hostname = "pop-os";
+        config.hostname = "elementary";
 
         var casper = casper_dir ();
         config.remove = casper + "/filesystem.manifest-remove";

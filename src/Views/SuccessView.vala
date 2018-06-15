@@ -102,6 +102,11 @@ public class SuccessView : AbstractInstallerView {
         action_area.add (shutdown_button);
         action_area.add (restart_button);
 
+        Timeout.add_seconds (RESTART_TIMEOUT, () => {
+            Utils.restart ();
+            return Glib.Source.REMOVE;
+        });
+
         show_all ();
     }
 }
