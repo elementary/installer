@@ -79,7 +79,7 @@ public class Installer.DiskBar: Gtk.Grid {
         legend.add (legend_container);
 
         foreach (PartitionBar p in partitions) {
-            add_legend (p.path, p.get_size() * 512, Distinst.strfilesys (p.filesystem), p.vg, p.menu);
+            add_legend (p.path, p.get_size () * 512, Distinst.strfilesys (p.filesystem), p.vg, p.menu);
         }
 
         if (size / 100 < unused) {
@@ -90,7 +90,7 @@ public class Installer.DiskBar: Gtk.Grid {
     private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {
         var fill_round = new FillRound ();
         fill_round.width_request = fill_round.height_request = 14;
-        fill_round.set_valign(Gtk.Align.CENTER);
+        fill_round.set_valign (Gtk.Align.CENTER);
 
         var context = fill_round.get_style_context ();
         context.add_class ("legend");
@@ -123,7 +123,7 @@ public class Installer.DiskBar: Gtk.Grid {
             event_box.add (widget);
             event_box.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
             event_box.button_press_event.connect (() => {
-                menu.popup();
+                menu.popup ();
                 return true;
             });
             return event_box;
@@ -155,11 +155,11 @@ public class Installer.DiskBar: Gtk.Grid {
         bar.get_style_context ().add_class ("trough");
         bar.get_style_context ().add_class ("disk-bar");
         bar.size_allocate.connect ((alloc) => {
-            update_sector_lengths(partitions, alloc);
+            update_sector_lengths (partitions, alloc);
         });
 
         foreach (PartitionBar part in partitions) {
-            bar.pack_start(part, false, false, 0);
+            bar.pack_start (part, false, false, 0);
         }
     }
 

@@ -292,7 +292,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         unset_mount_point (mount);
 
         if (mount.mount_point == "/boot/efi") {
-            if (!mount.is_valid_boot_mount()) {
+            if (!mount.is_valid_boot_mount ()) {
                 return _("EFI partition has the wrong file system");
             } else if (mount.sectors < REQUIRED_EFI_SECTORS) {
                 return _("EFI partition is too small");

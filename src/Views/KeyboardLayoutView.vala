@@ -117,7 +117,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 input_variant_widget.variant_listbox.add (new VariantRow (variant.key, variant.value));
             }
 
-            input_variant_widget.variant_listbox.select_row(input_variant_widget.variant_listbox.get_row_at_index(0));
+            input_variant_widget.variant_listbox.select_row (input_variant_widget.variant_listbox.get_row_at_index (0));
 
             input_variant_widget.show_variants (_("Input Language"), "<b>%s</b>".printf (layout.description));
         });
@@ -200,8 +200,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
     private void set_gsettings_input_layout (string layout, string? variant) {
         string layout_string = variant != null
-            ? "[('xkb', '%s+%s')]".printf(layout, variant)
-            : "[('xkb', '%s')]".printf(layout);
+            ? "[('xkb', '%s+%s')]".printf (layout, variant)
+            : "[('xkb', '%s')]".printf (layout);
 
         try {
             string[] args = {
@@ -212,13 +212,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 layout_string,
             };
 
-            new GLib.Subprocess.newv (args, GLib.SubprocessFlags.NONE).wait();
+            new GLib.Subprocess.newv (args, GLib.SubprocessFlags.NONE).wait ();
         } catch (GLib.Error error) {
             critical ("could not execute gsettings");
         }
     }
 
-    private void set_xkbmap_input_layout(string layout, string? variant) {
+    private void set_xkbmap_input_layout (string layout, string? variant) {
         try {
             string[] args = {
                 "setxkbmap",
@@ -231,7 +231,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 args += variant;
             }
 
-            new GLib.Subprocess.newv (args, GLib.SubprocessFlags.NONE).wait();
+            new GLib.Subprocess.newv (args, GLib.SubprocessFlags.NONE).wait ();
         } catch (GLib.Error error) {
             critical ("could not execute setxkbmap");
         }

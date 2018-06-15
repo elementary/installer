@@ -138,7 +138,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
                         var opts = InstallOptions.get_default ();
 
-                        if (opts.has_recovery()) {
+                        if (opts.has_recovery ()) {
                             unowned Distinst.InstallOptions options = opts.get_options ();
                             var recovery = options.get_recovery_option ();
 
