@@ -131,7 +131,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
-            if (!InstallOptions.get_default ().has_recovery () && (disk.contains_mount ("/") || disk.contains_mount ("/cdrom"))) {
+            if (!InstallOptions.get_default ().has_recovery () && (disk.contains_mount ("/", disks) || disk.contains_mount ("/cdrom", disks))) {
                 continue;
             }
 
