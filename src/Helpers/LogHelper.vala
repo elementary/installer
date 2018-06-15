@@ -17,19 +17,19 @@
  */
 
 static string level_name (Distinst.LogLevel level) {
-    switch(level) {
-    case Distinst.LogLevel.TRACE:
-        return "TRACE";
-    case Distinst.LogLevel.DEBUG:
-        return "DEBUG";
-    case Distinst.LogLevel.INFO:
-        return "INFO";
-    case Distinst.LogLevel.WARN:
-        return "WARN";
-    case Distinst.LogLevel.ERROR:
-        return "ERROR";
-    default:
-        return "UNKNOWN";
+    switch (level) {
+        case Distinst.LogLevel.TRACE:
+            return "TRACE";
+        case Distinst.LogLevel.DEBUG:
+            return "DEBUG";
+        case Distinst.LogLevel.INFO:
+            return "INFO";
+        case Distinst.LogLevel.WARN:
+            return "WARN";
+        case Distinst.LogLevel.ERROR:
+            return "ERROR";
+        default:
+            return "UNKNOWN";
     }
 }
 
@@ -49,14 +49,14 @@ public class LogHelper : GLib.Object {
         buffer = new Gtk.TextBuffer (null);
         buffer.text = "";
         if (Distinst.log (log_func) != 0) {
-            log_func(Distinst.LogLevel.ERROR, _("Unable to set the Distinst log callback"));
+            log_func (Distinst.LogLevel.ERROR, _("Unable to set the Distinst log callback"));
         } else {
-            log_func(Distinst.LogLevel.INFO, _("Starting installation"));
+            log_func (Distinst.LogLevel.INFO, _("Starting installation"));
         }
     }
 
     private void log_func (Distinst.LogLevel level, string message) {
-        stdout.printf("log: %s: %s\n", level_name(level), message);
+        stdout.printf ("log: %s: %s\n", level_name(level), message);
         Idle.add (() => {
             Gtk.TextIter end_iter;
             buffer.get_end_iter (out end_iter);
