@@ -18,18 +18,18 @@
 
 static string level_name (Distinst.LogLevel level) {
     switch (level) {
-    case Distinst.LogLevel.TRACE:
-        return "TRACE";
-    case Distinst.LogLevel.DEBUG:
-        return "DEBUG";
-    case Distinst.LogLevel.INFO:
-        return "INFO";
-    case Distinst.LogLevel.WARN:
-        return "WARN";
-    case Distinst.LogLevel.ERROR:
-        return "ERROR";
-    default:
-        return "UNKNOWN";
+        case Distinst.LogLevel.TRACE:
+            return "TRACE";
+        case Distinst.LogLevel.DEBUG:
+            return "DEBUG";
+        case Distinst.LogLevel.INFO:
+            return "INFO";
+        case Distinst.LogLevel.WARN:
+            return "WARN";
+        case Distinst.LogLevel.ERROR:
+            return "ERROR";
+        default:
+            return "UNKNOWN";
     }
 }
 
