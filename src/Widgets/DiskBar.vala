@@ -74,7 +74,7 @@ public class Installer.DiskBar: Gtk.Grid {
         legend.vscrollbar_policy = Gtk.PolicyType.NEVER;
 
         legend_container = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
-        legend_container.set_halign (Gtk.Align.CENTER);
+        legend_container.halign = Gtk.Align.CENTER;
         legend_container.margin_bottom = 9;
         legend.add (legend_container);
 
@@ -99,13 +99,13 @@ public class Installer.DiskBar: Gtk.Grid {
         var format_size = GLib.format_size (size);
         var info = new Gtk.Label (
             (vg == null)
-                ? "%s (%s)".printf (format_size, fs)
-                : "%s (%s: <b>%s</b>)".printf (format_size, fs, vg)
+                ? _("%s (%s)").printf (format_size, fs)
+                : _("%s (%s: <b>%s</b>)").printf (format_size, fs, vg)
         );
         info.use_markup = true;
 
         var path = new Gtk.Label ("<b>%s</b>".printf (ppath));
-        path.set_halign (Gtk.Align.START);
+        path.halign = Gtk.Align.START;
         path.use_markup = true;
 
         var legend = new Gtk.Grid ();
@@ -134,11 +134,11 @@ public class Installer.DiskBar: Gtk.Grid {
 
     private void generate_label () {
         var name_label = new Gtk.Label ("<b>%s</b>".printf (disk_name));
-        name_label.set_halign (Gtk.Align.END);
+        name_label.halign = Gtk.Align.END;
         name_label.use_markup = true;
 
         var size_label = new Gtk.Label ("<small>%s %s</small>".printf (disk_path, GLib.format_size (size)));
-        size_label.set_halign (Gtk.Align.END);
+        size_label.halign = Gtk.Align.END;
         size_label.use_markup = true;
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
