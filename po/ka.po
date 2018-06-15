@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-02-11 00:08+0000\n"
-"Last-Translator: Lasha-Giorgi Esebua <lashagiorgiesebua@gmail.com>\n"
-"Language-Team: Georgian <https://weblate.elementary.io/projects/installer/"
-"installer/ka/>\n"
+"PO-Revision-Date: 2018-06-06 00:08+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Georgian "
+"<https://weblate.elementary.io/projects/installer/installer/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,9 +16,9 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
-#, c-format
+#, c-format, fuzzy
 msgid "Install %s"
-msgstr "დააინსტალირე"
+msgstr "დააინსტალირე %s"
 
 #: src/Utils.vala:31
 msgid "Operating System"
@@ -331,10 +331,10 @@ msgid "Install or Try Demo Mode"
 msgstr "სცადეთ სადემონსტარციო ვერსია"
 
 #: src/Views/TryInstallView.vala:42
-#, c-format
+#, c-format, fuzzy
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
-msgstr "შეგიძლიათ დააინსტალიროთ"
+msgstr "შეგიძლიათ დააინსტალიროთ %s"
 
 #: src/Views/TryInstallView.vala:53
 msgid ""

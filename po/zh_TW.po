@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-04-30 03:51+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"PO-Revision-Date: 2018-06-06 00:08+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Chinese (Traditional) "
 "<https://weblate.elementary.io/projects/installer/installer/zh_TW/>\n"
 "Language: zh_TW\n"
@@ -351,9 +351,9 @@ msgid "Continue Setting Up"
 msgstr "繼續設定"
 
 #: src/Views/SuccessView.vala:42
-#, c-format
+#, c-format, fuzzy
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "您的裝置將在 %i 秒內重新啟動至 %s。"
+msgstr "您的裝置將在 %i 秒內重新啟動至 %s 。."
 
 #: src/Views/SuccessView.vala:43
 msgid ""
