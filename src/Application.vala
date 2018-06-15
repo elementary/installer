@@ -46,7 +46,7 @@ public class Installer.App : Gtk.Application {
         css_fallback.load_from_resource ("io/elementary/installer/disk-bar-fallback.css");
         Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), css_fallback, Gtk.STYLE_PROVIDER_PRIORITY_THEME);
 
-        Inhibitor.get_instance ().inhibit ();
+        inhibit (window, Gtk.ApplicationInhibitFlags.IDLE, "installing");
     }
 }
 
