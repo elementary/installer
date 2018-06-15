@@ -89,7 +89,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.visible_child = try_install_view;
 
         try_install_view.custom_step.connect (() => load_partitioning_view ());
-        try_install_view.next_step.connect (() => load_disk_view ());
+        try_install_view.next_step.connect (() => load_check_view ());
     }
 
     private void load_check_view () {
