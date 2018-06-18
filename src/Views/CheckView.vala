@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.CheckView : AbstractInstallerView  {
+public class Installer.CheckView : AbstractInstallerView {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     public static uint64 ONE_GB = 1000 * 1000 * 1000;
     // Minimum 5 GB
