@@ -112,6 +112,27 @@ public class ProgressView : AbstractInstallerView {
         return terminal_view.buffer.text;
     }
 
+    private string casper_dir () {
+        var cdrom = "/cdrom";
+
+        try {
+            var cdrom_dir = File.new_for_path (cdrom);
+            var iter = cdrom_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
+
+            FileInfo info;
+            while ((info = iter.next_file ()) != null) {
+                var name = info.get_name ();
+                if (name.has_prefix ("casper")) {
+                    return cdrom + "/" + name;
+                }
+            }
+        } catch (GLib.Error e) {
+            critical ("failed to find casper dir automatically: %s\n", e.message);
+        }
+
+        return cdrom + "/casper";
+    }
+
     public void start_installation () {
         if (Installer.App.test_mode) {
             new Thread<void*> (null, () => {
@@ -134,9 +155,10 @@ public class ProgressView : AbstractInstallerView {
         var config = Distinst.Config ();
         config.flags = Distinst.MODIFY_BOOT_ORDER;
         config.hostname = "todo";
-        config.lang = "en_US.UTF-8";
-        config.remove = Build.MANIFEST_REMOVE_PATH;
-        config.squashfs = Build.SQUASHFS_PATH;
+
+        var casper = casper_dir ();
+        config.remove = casper + "/filesystem.manifest-remove";
+        config.squashfs = casper + "/filesystem.squashfs";
 
         unowned Configuration current_config = Configuration.get_default ();
 
@@ -304,7 +326,7 @@ public class ProgressView : AbstractInstallerView {
 
         result = lvm_device.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
-                .name("root")
+                .name ("root")
                 .mount ("/")
         );
 
@@ -319,7 +341,7 @@ public class ProgressView : AbstractInstallerView {
 
         result = lvm_device.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.SWAP)
-                .name("swap")
+                .name ("swap")
         );
 
         if (result != 0) {
@@ -442,21 +464,21 @@ public class ProgressView : AbstractInstallerView {
                 return GLib.Source.REMOVE;
             }
 
-            double fraction = ((double) status.percent)/(100.0 * NUM_STEP);
+            double fraction = ((double) status.percent) / (100.0 * NUM_STEP);
             switch (status.step) {
                 case Distinst.Step.PARTITION:
                     progressbar_label.label = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
-                    fraction += 2*(1.0/NUM_STEP);
+                    fraction += 2 * (1.0/NUM_STEP);
                     progressbar_label.label = _("Extracting Files");
                     break;
                 case Distinst.Step.CONFIGURE:
-                    fraction += 3*(1.0/NUM_STEP);
+                    fraction += 3 * (1.0/NUM_STEP);
                     progressbar_label.label = _("Configuring the System");
                     break;
                 case Distinst.Step.BOOTLOADER:
-                    fraction += 4*(1.0/NUM_STEP);
+                    fraction += 4 * (1.0/NUM_STEP);
                     progressbar_label.label = _("Finishing the Installation");
                     break;
             }
