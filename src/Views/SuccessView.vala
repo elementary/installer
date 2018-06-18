@@ -19,6 +19,12 @@
 public class SuccessView : AbstractInstallerView {
     public static int RESTART_TIMEOUT = 30;
 
+    public string log { get; construct; }
+
+    public SuccessView (string log) {
+        Object (log: log);
+    }
+
     construct {
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
         image.vexpand = true;
@@ -39,18 +45,52 @@ public class SuccessView : AbstractInstallerView {
         secondary_label.xalign = 0;
 
         var grid = new Gtk.Grid ();
-        grid.row_spacing = 12;
+        grid.row_spacing = 6;
+        grid.margin_left = 24;
         grid.valign = Gtk.Align.CENTER;
         grid.attach (primary_label, 0, 0, 1, 1);
         grid.attach (secondary_label, 0, 1, 1, 1);
 
-        content_area.column_homogeneous = true;
-        content_area.halign = Gtk.Align.CENTER;
-        content_area.margin = 48;
-        content_area.margin_start = content_area.margin_end = 12;
-        content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (image, 0, 0, 1, 1);
-        content_area.attach (grid, 1, 0, 1, 2);
+        var terminal_view = new Gtk.TextView ();
+        terminal_view.buffer.text = log;
+        terminal_view.bottom_margin = terminal_view.top_margin = terminal_view.left_margin = terminal_view.right_margin = 12;
+        terminal_view.editable = false;
+        terminal_view.cursor_visible = true;
+        terminal_view.monospace = true;
+        terminal_view.wrap_mode = Gtk.WrapMode.WORD_CHAR;
+        terminal_view.get_style_context ().add_class ("terminal");
+
+        var terminal_output = new Gtk.ScrolledWindow (null, null);
+        terminal_output.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+        terminal_output.propagate_natural_width = true;
+        terminal_output.add (terminal_view);
+        terminal_output.vexpand = true;
+        terminal_output.hexpand = true;
+
+        var label_area = new Gtk.Grid ();
+        label_area.column_homogeneous = true;
+        label_area.halign = Gtk.Align.FILL;
+        label_area.valign = Gtk.Align.FILL;
+        label_area.attach (image,       0, 0, 1, 1);
+        label_area.attach (grid,        1, 0, 1, 2);
+
+        var content_stack = new Gtk.Stack ();
+        content_stack.add (label_area);
+        content_stack.add (terminal_output);
+        content_area.attach (content_stack, 0, 0, 1, 1);
+
+        var terminal_button = new Gtk.ToggleButton ();
+        terminal_button.halign = Gtk.Align.END;
+        terminal_button.image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        terminal_button.toggled.connect (() => {
+            if (terminal_button.active) {
+                content_stack.visible_child = terminal_output;
+            } else {
+                content_stack.visible_child = label_area;
+            }
+        });
+        action_area.add (terminal_button);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
         shutdown_button.clicked.connect (Utils.shutdown);
@@ -70,4 +110,3 @@ public class SuccessView : AbstractInstallerView {
         show_all ();
     }
 }
-
