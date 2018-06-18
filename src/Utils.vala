@@ -25,28 +25,24 @@ namespace Utils {
         return (owned) builder.str;
     }
 
-    private static string os_pretty_name;
-    private static string get_pretty_name () {
-        if (os_pretty_name == null) {
-            os_pretty_name = _("Operating System");
-            const string ETC_OS_RELEASE = "/etc/os-release";
+    private struct OsRelease {
+        public string pretty_name;
 
-            try {
-                var data_stream = new DataInputStream (File.new_for_path (ETC_OS_RELEASE).read ());
-
-                string line;
-                while ((line = data_stream.read_line (null)) != null) {
-                    var osrel_component = line.split ("=", 2);
-                    if (osrel_component.length == 2 && osrel_component[0] == "PRETTY_NAME") {
-                        os_pretty_name = osrel_component[1].replace ("\"", "");
-                        break;
-                    }
-                }
-            } catch (Error e) {
-                warning ("Couldn't read os-release file: %s", e.message);
-            }
+        public static OsRelease new () {
+            return OsRelease () {
+                pretty_name = string_from_utf8 (Distinst.get_os_pretty_name ())
+            };
         }
-        return os_pretty_name;
+    }
+
+    private static OsRelease? os_release;
+
+    private static string get_pretty_name () {
+        if (os_release == null) {
+            os_release = OsRelease.new ();
+        }
+
+        return os_release.pretty_name;
     }
 
     public static void shutdown () {
@@ -130,4 +126,3 @@ namespace Utils {
         return seat_instance;
     }
 }
-
