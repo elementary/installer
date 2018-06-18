@@ -280,14 +280,14 @@ public class Installer.PartitionMenu : Gtk.Popover {
             ? Distinst.FileSystemType.SWAP
             : get_file_system ();
 
-            set_mount (new Installer.Mount (
-                partition_path,
-                parent_disk,
-                mount,
-                (format_partition.active ? Mount.Flags.FORMAT : 0) + (is_lvm ? Mount.Flags.LVM : 0),
-                filesystem,
-                this
-            ));
+        set_mount (new Installer.Mount (
+            partition_path,
+            parent_disk,
+            mount,
+            (format_partition.active ? Mount.Flags.FORMAT : 0) + (is_lvm ? Mount.Flags.LVM : 0),
+            filesystem,
+            this
+        ));
 
         var mount_icon = new Gtk.Image.from_icon_name (
             "process-completed-symbolic",
