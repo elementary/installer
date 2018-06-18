@@ -127,7 +127,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
                 unowned Gtk.ListBoxRow crow = lang_variant_widget.variant_listbox.get_selected_row ();
                 if (crow != null) {
-                    string country = ((CountryRow) crow).country_entry.alpha_2;
+                    string country = ((CountryRow) crow).country_entry.code;
                     configuration.country = country;
                 } else if (lang_entry.countries.length == 0) {
                     configuration.country = null;
@@ -142,10 +142,6 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
 
             next_step ();
-        });
-
-        lang_variant_widget.going_to_main.connect (() => {
-            next_button.sensitive = false;
         });
 
         destroy.connect (() => {
@@ -190,26 +186,24 @@ public class Installer.LanguageView : AbstractInstallerView {
     }
 
     private void variant_row_selected (Gtk.ListBoxRow? row) {
+        if (row == null) return;
         var country_entry = ((CountryRow) row).country_entry;
         foreach (Gtk.Widget child in lang_variant_widget.variant_listbox.get_children ()) {
             if (child is CountryRow) {
                 var country_row = (CountryRow) child;
-                if (country_row.country_entry.alpha_2 == country_entry.alpha_2) {
+                if (country_row.country_entry.code == country_entry.code) {
                     country_row.selected = true;
                 } else {
                     country_row.selected = false;
                 }
             }
         }
-
-        next_button.sensitive = true;
     }
 
     private void row_activated (Gtk.ListBoxRow row) {
             var lang_entry = ((LangRow) row).lang_entry;
             var countries = lang_entry.countries;
             if (countries.length == 0) {
-                next_button.sensitive = true;
                 return;
             }
 

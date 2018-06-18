@@ -25,63 +25,29 @@ namespace KeyboardLayoutHelper {
 
     public static Gee.LinkedList<Layout?> get_layouts () {
         var layouts = new Gee.LinkedList<Layout?> ();
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/X11/xkb/rules/base.xml");
-        Xml.Node* root = doc->get_root_element ();
-        Xml.Node* layout_list_node = get_xml_node_by_name (root, "layoutList");
-        if (layout_list_node == null) {
-            delete doc;
+
+        var distinst_layouts = new Distinst.KeyboardLayouts ();
+        if (distinst_layouts == null) {
             return layouts;
         }
 
-        for (Xml.Node* layout_iter = layout_list_node->children; layout_iter != null; layout_iter = layout_iter->next) {
-            if (layout_iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (layout_iter->name == "layout") {
-                    Xml.Node* config_node = get_xml_node_by_name (layout_iter, "configItem");
-                    Xml.Node* variant_node = get_xml_node_by_name (layout_iter, "variantList");
-                    Xml.Node* description_node = get_xml_node_by_name (config_node, "description");
-                    Xml.Node* name_node = get_xml_node_by_name (config_node, "name");
-                    if (name_node == null || description_node == null) {
-                        continue;
-                    }
-
-                    var layout = Layout ();
-                    layout.name = name_node->children->content;
-                    layout.description = dgettext ("xkeyboard-config", description_node->children->content);
-                    var variants = new Gee.HashMap<string, string> ();
-                    layout.variants = variants;
-                    if (variant_node != null) {
-                        for (Xml.Node* variant_iter = variant_node->children; variant_iter != null; variant_iter = variant_iter->next) {
-                            if (variant_iter->name == "variant") {
-                                Xml.Node* variant_config_node = get_xml_node_by_name (variant_iter, "configItem");
-                                if (variant_config_node != null) {
-                                    Xml.Node* variant_description_node = get_xml_node_by_name (variant_config_node, "description");
-                                    Xml.Node* variant_name_node = get_xml_node_by_name (variant_config_node, "name");
-                                    if (variant_description_node != null && variant_name_node != null) {
-                                        variants[variant_name_node->children->content] = dgettext ("xkeyboard-config", variant_description_node->children->content);
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    layouts.add (layout);
+        foreach (unowned Distinst.KeyboardLayout layout in distinst_layouts.get_layouts ()) {
+            var variant_map = new Gee.HashMap<string, string> ();
+            var variants = layout.get_variants ();
+            if (variants != null) {
+                foreach (unowned Distinst.KeyboardVariant variant in variants) {
+                    var name = Utils.string_from_utf8 (variant.get_name ());
+                    var desc = Utils.string_from_utf8 (variant.get_description ());
+                    variant_map[name] = dgettext ("xkeyboard-config", desc);
                 }
             }
+            layouts.add (Layout () {
+                name = Utils.string_from_utf8 (layout.get_name ()),
+                description = dgettext ("xkeyboard-config", Utils.string_from_utf8 (layout.get_description ())),
+                variants = variant_map
+            });
         }
 
-        delete doc;
         return layouts;
-    }
-
-    private static Xml.Node* get_xml_node_by_name (Xml.Node* root, string name) {
-        for (Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-            if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (iter->name == name) {
-                    return iter;
-                }
-            }
-        }
-
-        return null;
     }
 }

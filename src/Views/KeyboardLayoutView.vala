@@ -117,13 +117,30 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 input_variant_widget.variant_listbox.add (new VariantRow (variant.key, variant.value));
             }
 
-            input_variant_widget.variant_listbox.select_row(input_variant_widget.variant_listbox.get_row_at_index(0));
+            input_variant_widget.variant_listbox.select_row (input_variant_widget.variant_listbox.get_row_at_index (0));
 
             input_variant_widget.show_variants (_("Input Language"), "<b>%s</b>".printf (layout.description));
         });
 
-        input_variant_widget.main_listbox.row_selected.connect ((row) => {
+        input_variant_widget.main_listbox.row_selected.connect ((lrow) => {
+            unowned Gtk.ListBoxRow vrow = input_variant_widget.variant_listbox.get_selected_row ();
+            set_interactive_input_layout (
+                ((LayoutRow) lrow).layout.name,
+                vrow != null ? ((VariantRow) vrow).code : null
+            );
             next_button.sensitive = true;
+        });
+
+        input_variant_widget.variant_listbox.row_selected.connect ((vrow) => {
+            unowned Gtk.ListBoxRow lrow = input_variant_widget.main_listbox.get_selected_row ();
+            if (lrow == null) {
+                return;
+            } else {
+                set_interactive_input_layout (
+                    ((LayoutRow) lrow).layout.name,
+                    ((VariantRow) vrow).code
+                );
+            }
         });
 
         keyboard_test_entry.icon_release.connect (() => {
@@ -151,9 +168,14 @@ public class KeyboardLayoutView : AbstractInstallerView {
         show_all ();
 
         Idle.add (() => {
-            string? country = Configuration.get_default ().country;
-            if (country != null) {
-                string default_layout = country.down ();
+            var config = Configuration.get_default ();
+            if (config.country != null || config.lang != null) {
+                string default_layout;
+                if (config.country != null) {
+                    default_layout = config.country.down ();
+                } else {
+                    default_layout = config.lang;
+                }
 
                 foreach (Gtk.Widget child in input_variant_widget.main_listbox.get_children ()) {
                     if (child is LayoutRow) {
@@ -166,7 +188,53 @@ public class KeyboardLayoutView : AbstractInstallerView {
                     }
                 }
             }
+
+            return GLib.Source.REMOVE;
         });
+    }
+
+    private void set_interactive_input_layout (string layout, string? variant) {
+        set_gsettings_input_layout (layout, variant);
+        set_xkbmap_input_layout (layout, variant);
+    }
+
+    private void set_gsettings_input_layout (string layout, string? variant) {
+        string layout_string = variant != null
+            ? "[('xkb', '%s+%s')]".printf (layout, variant)
+            : "[('xkb', '%s')]".printf (layout);
+
+        try {
+            string[] args = {
+                "gsettings",
+                "set",
+                "org.gnome.desktop.input-sources",
+                "sources",
+                layout_string,
+            };
+
+            new GLib.Subprocess.newv (args, GLib.SubprocessFlags.NONE).wait ();
+        } catch (GLib.Error error) {
+            critical ("could not execute gsettings");
+        }
+    }
+
+    private void set_xkbmap_input_layout (string layout, string? variant) {
+        try {
+            string[] args = {
+                "setxkbmap",
+                "-layout",
+                layout
+            };
+
+            if (variant != null) {
+                args += "-variant";
+                args += variant;
+            }
+
+            new GLib.Subprocess.newv (args, GLib.SubprocessFlags.NONE).wait ();
+        } catch (GLib.Error error) {
+            critical ("could not execute setxkbmap");
+        }
     }
 
     private class LayoutRow : Gtk.ListBoxRow {

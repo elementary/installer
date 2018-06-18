@@ -36,4 +36,26 @@ public class Configuration : GLib.Object {
     public string disk { get; set; }
     public Gee.ArrayList<Installer.Mount>? mounts { get; set; default = null; }
     public Gee.ArrayList<Installer.LuksCredentials>? luks { get; set; default = null; }
+
+    /**
+     * Uses distinst to attempt to get a default locale if no country is available.
+     *
+     * - If a country is provided, a locale will be generated without distinst's help.
+     * - If distinst returns a null value, we will default to `en_US.UTF-8`.
+     **/
+    public string get_locale () {
+        if (country == null) {
+            string? default = Distinst.locale_get_default (lang);
+            if (default == null) {
+                warning ("distinst could not generate a default locale for %s\n", lang);
+                return "en_US.UTF-8";
+            } else {
+                return default;
+            }
+        } else if (country == "None") {
+            return lang;
+        }
+
+        return lang + "_" + country + ".UTF-8";
+    }
 }
