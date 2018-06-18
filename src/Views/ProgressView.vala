@@ -112,27 +112,6 @@ public class ProgressView : AbstractInstallerView {
         return terminal_view.buffer.text;
     }
 
-    private string casper_dir () {
-        var cdrom = "/cdrom";
-
-        try {
-            var cdrom_dir = File.new_for_path (cdrom);
-            var iter = cdrom_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
-
-            FileInfo info;
-            while ((info = iter.next_file ()) != null) {
-                var name = info.get_name ();
-                if (name.has_prefix ("casper")) {
-                    return cdrom + "/" + name;
-                }
-            }
-        } catch (GLib.Error e) {
-            critical ("failed to find casper dir automatically: %s\n", e.message);
-        }
-
-        return cdrom + "/casper";
-    }
-
     public void start_installation () {
         if (Installer.App.test_mode) {
             new Thread<void*> (null, () => {
@@ -155,10 +134,8 @@ public class ProgressView : AbstractInstallerView {
         var config = Distinst.Config ();
         config.flags = Distinst.MODIFY_BOOT_ORDER | Distinst.INSTALL_HARDWARE_SUPPORT;
         config.hostname = "elementary";
-
-        var casper = casper_dir ();
-        config.remove = casper + "/filesystem.manifest-remove";
-        config.squashfs = casper + "/filesystem.squashfs";
+        config.remove = Build.MANIFEST_REMOVE_PATH;
+        config.squashfs = Build.SQUASHFS_PATH;
 
         unowned Configuration current_config = Configuration.get_default ();
         unowned InstallOptions options = InstallOptions.get_default ();
