@@ -149,7 +149,7 @@ public class Installer.DiskView : AbstractInstallerView {
             );
 
             if (size < minimum_disk_size) {
-                disk_button.set_sensitive(false);
+                disk_button.set_sensitive (false);
 
                 disabled_buttons += disk_button;
             } else {
