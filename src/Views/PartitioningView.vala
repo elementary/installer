@@ -38,6 +38,12 @@ public class Installer.PartitioningView : AbstractInstallerView {
         Object (cancellable: false);
     }
 
+    [Flags]
+    public enum Defined {
+        ROOT,
+        EFI
+    }
+
     const uint64 REQUIRED_EFI_SECTORS = 524288;
 
     construct {
@@ -191,24 +197,21 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     private void validate_status () {
         uint8 flags = 0;
-        const uint8 ROOT = 1;
-        const uint8 EFI = 2;
-
-        uint8 required = ROOT;
+        uint8 required = Defined.ROOT;
 
         var bootloader = Distinst.bootloader_detect ();
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
                 break;
             case Distinst.PartitionTable.GPT:
-                required |= EFI;
+                required |= Defined.EFI;
                 break;
         }
 
-        stderr.printf ("DEBUG: Current Layout:\n");
+        string layout_debug = "";
         foreach (Mount m in mounts) {
-            stderr.printf (
-                "  %s : %s : %s : %s: format? %s\n",
+            layout_debug +=
+                "  %s : %s : %s : %s: format? %s\n".printf (
                 m.parent_disk,
                 m.partition_path,
                 m.mount_point,
@@ -217,13 +220,14 @@ public class Installer.PartitioningView : AbstractInstallerView {
             );
 
             if (m.mount_point == "/") {
-                flags |= ROOT;
+                flags |= Defined.ROOT;
             } else if (m.mount_point == "/boot/efi") {
-                flags |= EFI;
+                flags |= Defined.EFI;
             }
         }
 
-        next_button.sensitive = ((flags & required) == required);
+        debug ("DEBUG: Current Layout:\n" + layout_debug);
+        next_button.sensitive = required in flags;
     }
 
     private void decrypt (string device, string pv, string password, DecryptMenu menu) {
@@ -264,33 +268,32 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
     }
 
-    private string? set_mount (Mount mount) {
+    private void set_mount (Mount mount) throws GLib.Error {
         unset_mount_point (mount);
 
         if (mount.mount_point == "/boot/efi") {
             if (!mount.is_valid_boot_mount ()) {
-                return _("EFI partition has the wrong file system");
+                throw new GLib.IOError.FAILED (_("EFI partition has the wrong file system"));
             } else if (mount.sectors < REQUIRED_EFI_SECTORS) {
-                return _("EFI partition is too small");
+                throw new GLib.IOError.FAILED (_("EFI partition is too small"));
             }
         } else if (mount.mount_point == "/" && !mount.is_valid_root_mount ()) {
-            return _("Invalid file system for root");
+            throw new GLib.IOError.FAILED (_("Invalid file system for root"));
         } else if (mount.mount_point == "/home" && !mount.is_valid_root_mount ()) {
-            return _("Invalid file system for home");
+            throw new GLib.IOError.FAILED (_("Invalid file system for home"));
         }
 
         for (int i = 0; i < mounts.size; i++) {
             if (mounts[i].partition_path == mount.partition_path) {
                 mounts[i] = mount;
                 validate_status ();
-                return null;
+                return;
             }
         }
 
         validate_status ();
         mounts.add (mount);
         validate_status ();
-        return null;
     }
 
     private bool mount_is_set (string mount_point) {
