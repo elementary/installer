@@ -56,7 +56,7 @@ public class LogHelper : GLib.Object {
     }
 
     private void log_func (Distinst.LogLevel level, string message) {
-        stdout.printf ("log: %s: %s\n", level_name(level), message);
+        stdout.printf ("log: %s: %s\n", level_name (level), message);
         Idle.add (() => {
             Gtk.TextIter end_iter;
             buffer.get_end_iter (out end_iter);
