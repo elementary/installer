@@ -117,7 +117,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 input_variant_widget.variant_listbox.add (new VariantRow (variant.key, variant.value));
             }
 
-            input_variant_widget.variant_listbox.select_row(input_variant_widget.variant_listbox.get_row_at_index(0));
+            input_variant_widget.variant_listbox.select_row (input_variant_widget.variant_listbox.get_row_at_index (0));
 
             input_variant_widget.show_variants (_("Input Language"), "<b>%s</b>".printf (layout.description));
         });

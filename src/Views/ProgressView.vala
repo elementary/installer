@@ -304,7 +304,7 @@ public class ProgressView : AbstractInstallerView {
 
         result = lvm_device.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
-                .name("root")
+                .name ("root")
                 .mount ("/")
         );
 
@@ -319,7 +319,7 @@ public class ProgressView : AbstractInstallerView {
 
         result = lvm_device.add_partition (
             new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.SWAP)
-                .name("swap")
+                .name ("swap")
         );
 
         if (result != 0) {
@@ -442,21 +442,21 @@ public class ProgressView : AbstractInstallerView {
                 return GLib.Source.REMOVE;
             }
 
-            double fraction = ((double) status.percent)/(100.0 * NUM_STEP);
+            double fraction = ((double) status.percent) / (100.0 * NUM_STEP);
             switch (status.step) {
                 case Distinst.Step.PARTITION:
                     progressbar_label.label = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
-                    fraction += 2*(1.0/NUM_STEP);
+                    fraction += 2 * (1.0/NUM_STEP);
                     progressbar_label.label = _("Extracting Files");
                     break;
                 case Distinst.Step.CONFIGURE:
-                    fraction += 3*(1.0/NUM_STEP);
+                    fraction += 3 * (1.0/NUM_STEP);
                     progressbar_label.label = _("Configuring the System");
                     break;
                 case Distinst.Step.BOOTLOADER:
-                    fraction += 4*(1.0/NUM_STEP);
+                    fraction += 4 * (1.0/NUM_STEP);
                     progressbar_label.label = _("Finishing the Installation");
                     break;
             }
