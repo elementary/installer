@@ -8,7 +8,6 @@ vala_files = [
     'Helpers/LocaleHelper.vala',
     'Helpers/LogHelper.vala',
     'Dialogs/EndSessionDialog.vala',
-    'Objects/org.freedesktop.udisks2.vala',
     'Objects/Configuration.vala',
     'Objects/Mount.vala',
     'Views/AbstractInstallerView.vala',
