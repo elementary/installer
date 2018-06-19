@@ -30,6 +30,8 @@ public class Installer.DiskBar: Gtk.Grid {
     private Gtk.Box legend_container;
     private uint64 unused;
 
+    public const int MIN_PARTITION_WIDTH = 28;
+
     public DiskBar (
         string model,
         string path,
@@ -177,10 +179,10 @@ public class Installer.DiskBar: Gtk.Grid {
                 var reduce_by = x / excess;
                 if (reduce_by == 0) reduce_by = 1;
 
-                // Begin by resizing all partitions over 20px wide.
+                // Begin by resizing all partitions over `MIN_PARTITION_WIDTH` wide.
                 bool excess_modified = false;
                 for (int y = 0; excess > 0 && y < x; y++) {
-                    if (lengths[y] <= 28) continue;
+                    if (lengths[y] <= MIN_PARTITION_WIDTH) continue;
                     lengths[y] -= reduce_by;
                     excess -= reduce_by;
                     excess_modified = true;
@@ -213,10 +215,6 @@ public class Installer.DiskBar: Gtk.Grid {
     }
 
     internal class FillRound : Gtk.Widget {
-        internal FillRound () {
-
-        }
-
         construct {
             set_has_window (false);
             var style_context = get_style_context ();
