@@ -155,6 +155,7 @@ public class ProgressView : AbstractInstallerView {
         var config = Distinst.Config ();
         config.flags = Distinst.MODIFY_BOOT_ORDER;
         config.hostname = "todo";
+        config.lang = "en_US.UTF-8";
 
         var casper = casper_dir ();
         config.remove = casper + "/filesystem.manifest-remove";
