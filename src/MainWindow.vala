@@ -59,30 +59,48 @@ public class Installer.MainWindow : Gtk.Dialog {
             case "keyboard":
                 debug (_("Force loading keyboard view…"));
                 load_keyboard_view ();
+                break;
+
             case "try_install":
                 debug (_("Force loading try/install view…"));
                 load_try_install_view ();
+                break;
+
             case "check":
                 debug (_("Force loading check view…"));
                 load_check_view ();
+                break;
+
             case "disk":
                 debug (_("Force loading disk view…"));
                 load_disk_view ();
+                break;
+
             case "partitioning":
                 debug (_("Force loading partitioning view…"));
                 load_partitioning_view ();
+                break;
+
             case "progress":
                 debug (_("Force loading progress view…"));
                 load_progress_view ();
+                break;
+
             case "success":
                 debug (_("Force loading success view…"));
                 load_success_view ();
+                break;
+
             case "encrypt":
                 debug (_("Force loading encrypt view…"));
                 load_encrypt_view ();
+                break;
+
             case "error":
                 debug (_("Force loading error view…"));
                 load_error_view ("");
+                break;
+
             default:
                 language_view = new LanguageView ();
                 stack.add (language_view);
