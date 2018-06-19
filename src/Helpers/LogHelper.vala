@@ -55,6 +55,9 @@ public class LogHelper : GLib.Object {
         }
     }
 
+    /**
+     * Workaround for https://gitlab.gnome.org/GNOME/gtk/issues/1161
+     */
     private string wrap (Distinst.LogLevel level, string message, int limit) {
         string[] words = message.split_set (" \t\n");
         string output = level_name (level) + ": ";
