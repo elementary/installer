@@ -62,7 +62,7 @@ public class EncryptView : AbstractInstallerView {
         performance_label.wrap = true;
         performance_label.xalign = 0;
 
-        var restart_image = new Gtk.Image.from_icon_name ("system-restart-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         var restart_label = new Gtk.Label (_("The encryption password will be required each time you turn on this device or restart."));
         restart_label.max_width_chars = 52;
