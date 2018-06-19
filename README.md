@@ -36,9 +36,13 @@ To install, use `ninja install`, then execute with `io.elementary.installer`. No
     sudo ninja install
     io.elementary.installer
 
-You can also use `--test` mode for development to disable destructive behaviors like installing, restarting, and shutting down:
+You can use `--test` mode for development to disable destructive behaviors like installing, restarting, and shutting down:
 
     io.elementary.installer --test
+
+You can also use `--load=VIEW` in development to force load a specific view for testing:
+
+    io.elementary.installer --load=error
 
 For debug messages, set the `G_MESSAGES_DEBUG` environment variable, e.g. to `all`:
 
