@@ -51,14 +51,44 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.add (language_view);
 
         get_content_area ().add (stack);
         get_style_context ().add_class ("os-installer");
 
         minimum_disk_size = Distinst.minimum_disk_size (5000000000);
 
-        language_view.next_step.connect (() => load_keyboard_view ());
+        switch (Installer.App.load_view) {
+            case "keyboard":
+                debug (_("Loading keyboard view…"));
+                load_keyboard_view ();
+            case "try_install":
+                debug (_("Loading try/install view…"));
+                load_try_install_view ();
+            case "check":
+                debug (_("Loading check view…"));
+                load_check_view ();
+            case "disk":
+                debug (_("Loading disk view…"));
+                load_disk_view ();
+            case "partitioning":
+                debug (_("Loading partitioning view…"));
+                load_partitioning_view ();
+            case "progress":
+                debug (_("Loading progress view…"));
+                load_progress_view ();
+            case "success":
+                debug (_("Loading success view…"));
+                load_success_view ();
+            case "encrypt":
+                debug (_("Loading encrypt view…"));
+                load_encrypt_view ();
+            case "error":
+                debug (_("Loading error view…"));
+                load_error_view ("");
+            default:
+                stack.add (language_view);
+                language_view.next_step.connect (() => load_keyboard_view ());
+        }
     }
 
     /*
