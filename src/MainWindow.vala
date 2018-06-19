@@ -47,8 +47,6 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     construct {
-        language_view = new LanguageView ();
-
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
 
@@ -86,6 +84,7 @@ public class Installer.MainWindow : Gtk.Dialog {
                 debug (_("Loading error view…"));
                 load_error_view ("");
             default:
+                language_view = new LanguageView ();
                 stack.add (language_view);
                 language_view.next_step.connect (() => load_keyboard_view ());
         }
