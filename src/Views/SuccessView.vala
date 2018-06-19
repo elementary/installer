@@ -63,6 +63,7 @@ public class SuccessView : AbstractInstallerView {
         label_area.attach (grid,        1, 0, 1, 2);
 
         var content_stack = new Gtk.Stack ();
+        content_stack.transition_type = Gtk.StackTransitionType.OVER_UP_DOWN;
         content_stack.add (label_area);
         content_stack.add (terminal.container);
         content_area.attach (content_stack, 0, 0, 1, 1);
