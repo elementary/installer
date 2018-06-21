@@ -76,6 +76,15 @@ public class KeyboardLayoutView : AbstractInstallerView {
             return ((VariantRow) row1).description.collate (((VariantRow) row2).description);
         });
 
+        input_variant_widget.key_press_event.connect ((event) => {
+            if (event.keyval == Gdk.Key.Return && next_button.sensitive) {
+                next_button.clicked ();
+                return true;
+            }
+
+            return false;
+        });
+
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
         next_button.clicked.connect (() => {

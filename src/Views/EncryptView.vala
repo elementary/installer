@@ -185,6 +185,15 @@ public class EncryptView : AbstractInstallerView {
             update_next_button ();
         });
 
+        confirm_entry.key_press_event.connect ((event) => {
+            if (event.keyval == Gdk.Key.Return && next_button.sensitive) {
+                next_button.clicked ();
+                return true;
+            }
+
+            return false;
+        });
+
         show_all ();
         back_button.hide ();
     }

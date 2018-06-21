@@ -70,4 +70,3 @@ public class SuccessView : AbstractInstallerView {
         show_all ();
     }
 }
-
