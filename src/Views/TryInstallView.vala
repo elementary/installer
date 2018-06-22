@@ -67,6 +67,17 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var back_button = new Gtk.Button.with_label (_("Back"));
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
+        key_press_event.connect ((event) => {
+            switch (event.keyval) {
+                case Gdk.Key.BackSpace:
+                case Gdk.Key.Escape:
+                    back_button.clicked ();
+                    return true;
+            }
+
+            return false;
+        });
+
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.sensitive = false;

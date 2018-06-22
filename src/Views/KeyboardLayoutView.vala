@@ -77,9 +77,20 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         input_variant_widget.key_press_event.connect ((event) => {
-            if (event.keyval == Gdk.Key.Return && next_button.sensitive) {
-                next_button.clicked ();
-                return true;
+            switch (event.keyval) {
+                case Gdk.Key.Return:
+                    if (next_button.sensitive) {
+                        next_button.clicked ();
+                    }
+                    return true;
+                case Gdk.Key.BackSpace:
+                case Gdk.Key.Escape:
+                    if (input_variant_widget.variants_visible ()) {
+                        input_variant_widget.back_button.clicked ();
+                    } else {
+                        back_button.clicked ();
+                    };
+                    return true;
             }
 
             return false;

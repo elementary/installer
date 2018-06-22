@@ -66,5 +66,18 @@ public abstract class AbstractInstallerView : Gtk.Grid {
         orientation = Gtk.Orientation.VERTICAL;
         add (content_area);
         add (action_area);
+
+        if (cancellable) {
+            key_press_event.connect ((event) => {
+                switch (event.keyval) {
+                    case Gdk.Key.BackSpace:
+                    case Gdk.Key.Escape:
+                        cancel ();
+                        return true;
+                }
+
+                return false;
+            });
+        }
     }
 }

@@ -35,7 +35,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     public PartitioningView (uint64 size) {
         minimum_disk_size = size;
-        Object (cancellable: false);
+        Object (cancellable: true);
     }
 
     [Flags]
@@ -100,16 +100,12 @@ public class Installer.PartitioningView : AbstractInstallerView {
         action_area.set_child_secondary (modify_partitions_button, true);
         action_area.set_child_non_homogeneous (modify_partitions_button, true);
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
-
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
 
-        action_area.add (back_button);
         action_area.add (next_button);
 
-        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
         next_button.clicked.connect (() => next_step ());
 
         show_all ();

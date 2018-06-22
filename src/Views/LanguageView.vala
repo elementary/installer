@@ -117,9 +117,16 @@ public class Installer.LanguageView : AbstractInstallerView {
         lang_variant_widget.main_listbox.row_activated.connect (row_activated);
 
         lang_variant_widget.key_press_event.connect ((event) => {
-            if (event.keyval == Gdk.Key.Return && next_button.sensitive) {
-                next_button.clicked ();
-                return true;
+            switch (event.keyval) {
+                case Gdk.Key.Return:
+                    if (next_button.sensitive) {
+                        next_button.clicked ();
+                    }
+                    return true;
+                case Gdk.Key.BackSpace:
+                case Gdk.Key.Escape:
+                    lang_variant_widget.back_button.clicked ();
+                    return true;
             }
 
             return false;
