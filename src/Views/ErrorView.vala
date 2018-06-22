@@ -61,8 +61,6 @@ public class ErrorView : AbstractInstallerView {
 
         var grid = new Gtk.Grid ();
         grid.row_spacing = 6;
-        grid.margin_left = 24;
-        grid.valign = Gtk.Align.CENTER;
         grid.attach (description_label, 0, 0, 1, 1);
         grid.attach (try_label ,        0, 1, 1, 1);
         grid.attach (launch_label,      0, 2, 1, 1);
@@ -135,4 +133,3 @@ public class ErrorView : AbstractInstallerView {
         show_all ();
     }
 }
-

@@ -112,6 +112,27 @@ public class ProgressView : AbstractInstallerView {
         return terminal_view.buffer.text;
     }
 
+    /**
+     * Device paths in `/dev/mapper/` have special rules for handling the `-` character. This
+     * character is used to differentiate between the volume group identifier, and the
+     * logical volume indentifier in the path name.
+     *
+     * If either identifiers have the `-` character in their name, the correct device path
+     * to reach that device in the file system will need to repeat the `-` character a
+     * second time. The device will continue to be internally referenced by lvm tools and
+     * distinst as its original name, though.
+     *
+     * Note: the device path specified here should refer to a LVM or LUKS device, rather
+     * than a logical volume that exists on a LVM device.
+     */
+    private string extract_volume_group_from (string device_path) {
+        return device_path
+            // Remove the `/dev/mapper` prefix
+            .offset (12)
+            // Replace all occurrences of `--` with `-`
+            .replace ("--", "-");
+    }
+
     public void start_installation () {
         if (Installer.App.test_mode) {
             new Thread<void*> (null, () => {
@@ -211,7 +232,7 @@ public class ProgressView : AbstractInstallerView {
                 if (disk == null) {
                     var new_disk = new Distinst.Disk (m.parent_disk);
                     if (new_disk == null) {
-                        warning ("could not find physical device: '%s'\n", m.parent_disk);
+                        critical ("could not find physical device: '%s'\n", m.parent_disk);
                         return false;
                     }
 
@@ -265,7 +286,7 @@ public class ProgressView : AbstractInstallerView {
         }
 
         foreach (Installer.Mount m in lvm_devices) {
-            var vg = m.parent_disk.offset (12).replace ("--", "-");
+            var vg = extract_volume_group_from (m.parent_disk);
             unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
             if (disk == null) {
                 critical ("could not find %s\n", vg);
