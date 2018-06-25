@@ -9,7 +9,6 @@ vala_files = [
     'Helpers/LogHelper.vala',
     'Dialogs/EndSessionDialog.vala',
     'Dialogs/HelpDialog.vala',
-    'Objects/org.freedesktop.udisks2.vala',
     'Objects/Configuration.vala',
     'Objects/InstallOptions.vala',
     'Objects/Mount.vala',

@@ -48,8 +48,8 @@ public class ProgressView : AbstractInstallerView {
         terminal_output.add (terminal_view);
 
         var artwork = new Gtk.Grid ();
-        artwork.get_style_context().add_class("progress");
-        artwork.get_style_context().add_class("artwork");
+        artwork.get_style_context ().add_class ("progress");
+        artwork.get_style_context ().add_class ("artwork");
         artwork.vexpand = true;
 
         var logo_stack = new Gtk.Stack ();
@@ -291,7 +291,7 @@ public class ProgressView : AbstractInstallerView {
         }
 
         foreach (Installer.Mount m in lvm_devices) {
-            var vg = m.parent_disk.offset (12).replace("--", "-");
+            var vg = m.parent_disk.offset (12).replace ("--", "-");
             unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
             if (disk == null) {
                 critical ("could not find %s\n", vg);
@@ -337,21 +337,21 @@ public class ProgressView : AbstractInstallerView {
                 return GLib.Source.REMOVE;
             }
 
-            double fraction = ((double) status.percent)/(100.0 * NUM_STEP);
+            double fraction = ((double) status.percent) / (100.0 * NUM_STEP);
             switch (status.step) {
                 case Distinst.Step.PARTITION:
                     progressbar_label.label = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
-                    fraction += (1.0/NUM_STEP);
+                    fraction += (1.0 / NUM_STEP);
                     progressbar_label.label = _("Extracting Files");
                     break;
                 case Distinst.Step.CONFIGURE:
-                    fraction += 2*(1.0/NUM_STEP);
+                    fraction += 2 * (1.0 / NUM_STEP);
                     progressbar_label.label = _("Configuring the System");
                     break;
                 case Distinst.Step.BOOTLOADER:
-                    fraction += 3*(1.0/NUM_STEP);
+                    fraction += 3 * (1.0 / NUM_STEP);
                     progressbar_label.label = _("Finishing the Installation");
                     break;
             }

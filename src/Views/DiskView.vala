@@ -82,7 +82,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
         var artwork = new Gtk.Grid ();
         artwork.get_style_context ().add_class ("disks");
-        artwork.get_style_context().add_class("artwork");
+        artwork.get_style_context ().add_class ("artwork");
         artwork.vexpand = true;
 
         content_area.attach (artwork, 0, 0, 1, 1);
@@ -133,7 +133,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
                         var opts = InstallOptions.get_default ();
 
-                        if (opts.has_recovery()) {
+                        if (opts.has_recovery ()) {
                             unowned Distinst.InstallOptions options = opts.get_options ();
                             var recovery = options.get_recovery_option ();
 

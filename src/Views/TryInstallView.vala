@@ -46,8 +46,8 @@ public class Installer.TryInstallView : AbstractInstallerView {
         type_label.get_style_context ().add_class ("h2");
 
         var artwork = new Gtk.Grid ();
-        artwork.get_style_context().add_class("try-install");
-        artwork.get_style_context().add_class("artwork");
+        artwork.get_style_context ().add_class ("try-install");
+        artwork.get_style_context ().add_class ("artwork");
         artwork.vexpand = true;
 
         content_area.valign = Gtk.Align.FILL;

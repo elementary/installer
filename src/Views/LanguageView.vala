@@ -150,8 +150,8 @@ public class Installer.LanguageView : AbstractInstallerView {
         });
 
         var artwork = new Gtk.Grid ();
-        artwork.get_style_context().add_class("language");
-        artwork.get_style_context().add_class("artwork");
+        artwork.get_style_context ().add_class ("language");
+        artwork.get_style_context ().add_class ("artwork");
         artwork.vexpand = true;
 
         content_area.attach (artwork, 0, 0, 1, 1);

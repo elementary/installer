@@ -1,5 +1,5 @@
 namespace Build {
-	public const string GETTEXT_PACKAGE = "@GETTEXT_PACKAGE@";
-	public const string LANG_LIST = "@LANG_LIST@";
-	public const string PREFERRED_LANG_LIST = "@PREFERRED_LANG_LIST@";
+    public const string GETTEXT_PACKAGE = "@GETTEXT_PACKAGE@";
+    public const string LANG_LIST = "@LANG_LIST@";
+    public const string PREFERRED_LANG_LIST = "@PREFERRED_LANG_LIST@";
 }

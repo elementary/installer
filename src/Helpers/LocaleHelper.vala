@@ -33,7 +33,7 @@ namespace LocaleHelper {
             countries = _countries;
         }
 
-        public unowned string get_code() {
+        public unowned string get_code () {
             return code;
         }
 
@@ -75,12 +75,12 @@ namespace LocaleHelper {
 
                 foreach (var country in Distinst.locale_get_country_codes (language)) {
                     if (country == "None") {
-                        lang_entry.add_country(CountryEntry () {
+                        lang_entry.add_country (CountryEntry () {
                             code = country,
                             name = country
                         });
                     } else {
-                        lang_entry.add_country(CountryEntry () {
+                        lang_entry.add_country (CountryEntry () {
                             code = country,
                             name = Distinst.locale_get_country_name_translated (country, language)
                         });

@@ -45,7 +45,7 @@ public class Configuration : GLib.Object {
      * - If a country is provided, a locale will be generated without distinst's help.
      * - If distinst returns a null value, we will default to `en_US.UTF-8`.
      **/
-    public string get_locale() {
+    public string get_locale () {
         if (country == null) {
             string? default = Distinst.locale_get_default (lang);
             if (default == null) {

@@ -28,7 +28,7 @@ public class SuccessView : AbstractInstallerView {
     construct {
         var artwork = new Gtk.Grid ();
         artwork.get_style_context ().add_class ("success");
-        artwork.get_style_context().add_class ("artwork");
+        artwork.get_style_context ().add_class ("artwork");
         artwork.vexpand = true;
 
         var title_label = new Gtk.Label (_("Continue Setting Up"));
