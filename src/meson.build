@@ -30,6 +30,7 @@ vala_files = [
     'Widgets/LayoutWidget.vala',
     'Widgets/PartitionBar.vala',
     'Widgets/PartitionMenu.vala',
+    'Widgets/Terminal.vala',
     'Widgets/VariantWidget.vala'
 ]
 

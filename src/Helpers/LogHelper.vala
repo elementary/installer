@@ -55,48 +55,13 @@ public class LogHelper : GLib.Object {
         }
     }
 
-    /**
-     * Workaround for https://gitlab.gnome.org/GNOME/gtk/issues/1161
-     */
-    private string wrap (Distinst.LogLevel level, string message, int limit) {
-        string[] words = message.split_set (" \t\n");
-        string output = level_name (level) + ": ";
-        int prefix = output.length;
-        int actual_limit = limit - output.length;
-
-        if (words.length == 0) {
-            return output + "\n";
-        }
-
-        string tab = "";
-        for (int i = 0; i < prefix; i++) {
-            tab += " ";
-        }
-
-        int chars = words[0].length;
-        output += words[0];
-
-        for (int i = 1; i < words.length; i++) {
-            unowned string word = words[i];
-            if (chars + word.length >= actual_limit) {
-                chars = word.length;
-                output += "\n" + tab + word;
-            } else {
-                chars += word.length + 1;
-                output += " " + word;
-            }
-        }
-
-        return output + "\n";
-    }
-
     private void log_func (Distinst.LogLevel level, string message) {
-        string msg = wrap (level, message, 80);
-        stdout.printf ("log: %s", msg);
+        stdout.printf ("log: %s: %s\n", level_name (level), message);
         Idle.add (() => {
             Gtk.TextIter end_iter;
             buffer.get_end_iter (out end_iter);
-            buffer.insert (ref end_iter, msg, msg.length);
+            string new_line = "\n" + level_name (level) + ": " + message;
+            buffer.insert (ref end_iter, new_line, new_line.length);
             return GLib.Source.REMOVE;
         });
     }

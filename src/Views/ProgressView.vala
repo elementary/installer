@@ -20,12 +20,10 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
-    private double prev_upper_adj = 0;
-    private Gtk.ScrolledWindow terminal_output;
-    public Gtk.TextView terminal_view { get; construct; }
     private Gtk.ProgressBar progressbar;
     private Gtk.Label progressbar_label;
     private const int NUM_STEP = 4;
+    private Terminal terminal;
 
     construct {
         var logo = new Gtk.Image ();
@@ -33,19 +31,7 @@ public class ProgressView : AbstractInstallerView {
         logo.pixel_size = 128;
         logo.get_style_context ().add_class ("logo");
 
-        unowned LogHelper log_helper = LogHelper.get_default ();
-        terminal_view = new Gtk.TextView.with_buffer (log_helper.buffer);
-        terminal_view.bottom_margin = terminal_view.top_margin = terminal_view.left_margin = terminal_view.right_margin = 12;
-        terminal_view.editable = false;
-        terminal_view.cursor_visible = true;
-        terminal_view.monospace = true;
-        terminal_view.wrap_mode = Gtk.WrapMode.WORD_CHAR;
-        terminal_view.get_style_context ().add_class ("terminal");
-
-        terminal_output = new Gtk.ScrolledWindow (null, null);
-        terminal_output.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        terminal_output.expand = true;
-        terminal_output.add (terminal_view);
+        terminal = new Terminal (LogHelper.get_default ().buffer);
 
         var artwork = new Gtk.Grid ();
         artwork.get_style_context ().add_class ("progress");
@@ -55,12 +41,7 @@ public class ProgressView : AbstractInstallerView {
         var logo_stack = new Gtk.Stack ();
         logo_stack.transition_type = Gtk.StackTransitionType.OVER_UP_DOWN;
         logo_stack.add (artwork);
-        logo_stack.add (terminal_output);
-
-        var terminal_button = new Gtk.ToggleButton ();
-        terminal_button.halign = Gtk.Align.END;
-        terminal_button.image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-        terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        logo_stack.add (terminal.container);
 
         progressbar_label = new Gtk.Label (null);
         progressbar_label.xalign = 0;
@@ -73,48 +54,22 @@ public class ProgressView : AbstractInstallerView {
         content_area.margin_start = 22;
         content_area.attach (logo_stack, 0, 0, 2, 1);
         content_area.attach (progressbar_label, 0, 1, 1, 1);
-        content_area.attach (terminal_button, 1, 1, 1, 1);
+        content_area.attach (terminal.toggle, 1, 1, 1, 1);
         content_area.attach (progressbar, 0, 2, 2, 1);
 
         get_style_context ().add_class ("progress-view");
 
-        terminal_button.toggled.connect (() => {
-            if (terminal_button.active) {
-                logo_stack.visible_child = terminal_output;
-                scroll_to_bottom ();
-            } else {
-                logo_stack.visible_child = artwork;
-            }
+        terminal.toggled.connect ((active) => {
+            logo_stack.visible_child = active
+                ? (Gtk.Widget) terminal.container
+                : (Gtk.Widget) artwork;
         });
-
-        terminal_view.size_allocate.connect (() => attempt_scroll ());
 
         show_all ();
     }
 
-    private void attempt_scroll () {
-        var adj = terminal_output.vadjustment;
-
-        var units_from_end = prev_upper_adj - adj.page_size - adj.value;
-        var view_size_difference = adj.upper - prev_upper_adj;
-        if (view_size_difference < 0) {
-            view_size_difference = 0;
-        }
-
-        if (prev_upper_adj <= adj.page_size || units_from_end <= 50) {
-            scroll_to_bottom ();
-        }
-
-        prev_upper_adj = adj.upper;
-    }
-
-    private void scroll_to_bottom () {
-        var adj = terminal_output.vadjustment;
-        adj.value = adj.upper;
-    }
-
     public string get_log () {
-        return terminal_view.buffer.text;
+        return terminal.log;
     }
 
     private string casper_dir () {
