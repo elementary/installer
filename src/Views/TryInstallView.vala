@@ -69,7 +69,10 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         key_press_event.connect ((event) => {
             switch (event.keyval) {
-                case Gdk.Key.BackSpace:
+                case Gdk.Key.Left:
+                    if (event.state != Gdk.ModifierType.MOD1_MASK) {
+                        break;
+                    }
                 case Gdk.Key.Escape:
                     back_button.clicked ();
                     return true;

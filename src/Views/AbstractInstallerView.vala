@@ -70,7 +70,10 @@ public abstract class AbstractInstallerView : Gtk.Grid {
         if (cancellable) {
             key_press_event.connect ((event) => {
                 switch (event.keyval) {
-                    case Gdk.Key.BackSpace:
+                    case Gdk.Key.Left:
+                        if (event.state != Gdk.ModifierType.MOD1_MASK) {
+                            break;
+                        }
                     case Gdk.Key.Escape:
                         cancel ();
                         return true;

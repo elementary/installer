@@ -83,7 +83,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
                         next_button.clicked ();
                     }
                     return true;
-                case Gdk.Key.BackSpace:
+                case Gdk.Key.Left:
+                    if (event.state != Gdk.ModifierType.MOD1_MASK) {
+                        break;
+                    }
                 case Gdk.Key.Escape:
                     if (input_variant_widget.variants_visible ()) {
                         input_variant_widget.back_button.clicked ();

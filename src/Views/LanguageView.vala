@@ -123,7 +123,10 @@ public class Installer.LanguageView : AbstractInstallerView {
                         next_button.clicked ();
                     }
                     return true;
-                case Gdk.Key.BackSpace:
+                case Gdk.Key.Left:
+                    if (event.state != Gdk.ModifierType.MOD1_MASK) {
+                        break;
+                    }
                 case Gdk.Key.Escape:
                     lang_variant_widget.back_button.clicked ();
                     return true;
