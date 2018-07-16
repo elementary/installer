@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-07-16 21:49+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"Last-Translator: Lucas Trehout <contact.ltrehout@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/installer/"
 "installer/fr/>\n"
 "Language: fr\n"
@@ -395,7 +395,7 @@ msgstr "Éteindre et sortir du mode de démonstration"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr "Décrypter cette partition"
+msgstr "Déchiffrer Cette Partition"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
