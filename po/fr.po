@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-26 09:57+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
-"Language-Team: French "
-"<https://weblate.elementary.io/projects/installer/installer/fr/>\n"
+"PO-Revision-Date: 2018-07-16 21:46+0000\n"
+"Last-Translator: Quentincaron1999 <quentincaron1999@live.fr>\n"
+"Language-Team: French <https://weblate.elementary.io/projects/installer/"
+"installer/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
@@ -393,19 +393,21 @@ msgstr "Éteindre et sortir du mode de démonstration"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Décrypter cette partition"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
 msgstr ""
+"Entrez le mot de passe de cryptage de la partition et définissez un nom "
+"d'appareil LUKS."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Mot de passe :"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Nom de la machine :"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
