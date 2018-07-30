@@ -18,25 +18,31 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
- public delegate void DecryptFn (string path, string pv, string pass, Installer.DecryptMenu menu);
+public delegate bool DecryptFn (string path, string pv, string pass, Installer.DecryptMenu menu);
 
 public class Installer.DecryptMenu: Gtk.Popover {
     private Gtk.Stack stack;
-
     private Gtk.Grid decrypt_view;
     private Gtk.Button decrypt_button;
     private Gtk.Entry pass_entry;
     private Gtk.Entry pv_entry;
+    private PartitionBar partition_bar;
+    private DecryptFn decrypt;
+    private string device_path;
 
-    public DecryptMenu (string device_path, DecryptFn decrypt) {
+    public DecryptMenu (string device_path, DecryptFn decrypt, PartitionBar partition_bar) {
+        this.partition_bar = partition_bar;
+        this.decrypt = decrypt;
+        this.device_path = device_path;
         stack = new Gtk.Stack ();
         stack.margin = 12;
-        create_decrypt_view (device_path, decrypt);
+        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        create_decrypt_view ();
         add (stack);
         stack.show_all ();
     }
 
-    private void create_decrypt_view (string device_path, DecryptFn decrypt) {
+    private void create_decrypt_view () {
         var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
@@ -61,6 +67,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         secondary_label.selectable = true;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
+        secondary_label.can_focus = false;
 
         var dialog_grid = new Gtk.Grid ();
         dialog_grid.column_spacing = 12;
@@ -74,12 +81,9 @@ public class Installer.DecryptMenu: Gtk.Popover {
         pass_entry = new Gtk.Entry ();
         pass_entry.input_purpose = Gtk.InputPurpose.PASSWORD;
         pass_entry.visibility = false;
-        pass_entry.changed.connect (() => set_sensitivity ());
-        pass_entry.activate.connect (() => {
-            if (entries_set ()) {
-                decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
-            }
-        });
+        pass_entry.has_focus = true;
+        pass_entry.changed.connect (set_sensitivity);
+        pass_entry.activate.connect (attempt_decrypt);
 
         var pv_label = new Gtk.Label (_("Device name:"));
         pv_label.halign = Gtk.Align.END;
@@ -87,20 +91,14 @@ public class Installer.DecryptMenu: Gtk.Popover {
         pv_entry = new Gtk.Entry ();
         // Set a sane default
         pv_entry.text = "data";
-        pv_entry.changed.connect (() => set_sensitivity ());
-        pv_entry.activate.connect (() => {
-            if (entries_set ()) {
-                decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
-            }
-        });
+        pv_entry.changed.connect (set_sensitivity);
+        pv_entry.activate.connect (attempt_decrypt);
 
         decrypt_button = new Gtk.Button.with_label (_("Decrypt"));
         decrypt_button.halign = Gtk.Align.END;
         decrypt_button.sensitive = false;
         decrypt_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        decrypt_button.clicked.connect (() => {
-            decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
-        });
+        decrypt_button.clicked.connect (attempt_decrypt);
 
         decrypt_view = new Gtk.Grid ();
         decrypt_view.column_spacing = 6;
@@ -116,21 +114,28 @@ public class Installer.DecryptMenu: Gtk.Popover {
         stack.add (decrypt_view);
         stack.visible_child = decrypt_view;
         pass_entry.grab_focus_without_selecting ();
+
+        this.closed.connect (() => {
+            stack.visible_child = decrypt_view;
+        });
     }
 
-    private void create_decrypted_view (string pv) {
-        var label = new Gtk.Label ("<b>%s</b>".printf (pv));
-        label.use_markup = true;
-
-        var info = new Gtk.Label (_("LUKS volume was decrypted"));
-
-        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        box.add (label);
-        box.add (info);
-        box.show_all ();
-
-        stack.add (box);
-        stack.visible_child = box;
+    private void attempt_decrypt() {
+        if (entries_set ()) {
+            if (decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this)) {
+                var mount_icon = new Gtk.Image.from_icon_name (
+                    "emblem-unlocked",
+                    Gtk.IconSize.SMALL_TOOLBAR
+                );
+                mount_icon.halign = Gtk.Align.END;
+                mount_icon.valign = Gtk.Align.END;
+                mount_icon.margin = 6;
+    
+                partition_bar.container.pack_start (mount_icon, true, true, 0);
+                partition_bar.container.show_all ();
+                this.destroy ();
+            }
+        }
     }
 
     private bool entries_set () {
@@ -142,9 +147,44 @@ public class Installer.DecryptMenu: Gtk.Popover {
         decrypt_button.set_sensitive (entries_set ());
     }
 
-    public void set_decrypted (string pv) {
-        popdown ();
-        create_decrypted_view (pv);
+    public void set_error (string message) {
+        var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG);
+        image.valign = Gtk.Align.START;
+        image.width_request = 60;
+
+        var primary_label = new Gtk.Label ("Decryption Error");
+        primary_label.halign = Gtk.Align.START;
+        primary_label.valign = Gtk.Align.END;
+        primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+
+        var secondary_label = new Gtk.Label (message);
+        secondary_label.expand = true;
+        secondary_label.max_width_chars = 40;
+        secondary_label.valign = Gtk.Align.START;
+        secondary_label.wrap = true;
+        secondary_label.xalign = 0;
+
+        var button = new Gtk.Button.with_label (_("Try Again"));
+        button.halign = Gtk.Align.END;
+
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = 12;
+        grid.attach (image,           0, 0, 1, 2);
+        grid.attach (primary_label,   1, 0);
+        grid.attach (secondary_label, 1, 1);
+        grid.attach (button,          1, 2);
+        grid.show_all ();
+
+        stack.add (grid);
+        stack.visible_child = grid;
+
+        button.has_focus = true;
+
+        button.clicked.connect (() => {
+            stack.visible_child = decrypt_view;
+            grid.destroy ();
+            pass_entry.has_focus = true;
+        });
     }
 }
 
