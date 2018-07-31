@@ -89,8 +89,8 @@ public class Installer.DecryptMenu: Gtk.Popover {
         pv_label.halign = Gtk.Align.END;
 
         pv_entry = new Gtk.Entry ();
-        // Set a sane default
-        pv_entry.text = "data";
+        pv_entry.text = "cryptdata";
+
         pv_entry.changed.connect (set_sensitivity);
         pv_entry.activate.connect (attempt_decrypt);
 
@@ -115,6 +115,12 @@ public class Installer.DecryptMenu: Gtk.Popover {
         stack.visible_child = decrypt_view;
         pass_entry.grab_focus_without_selecting ();
 
+        // Update the default LUKS PV name, to prevent namespace conflicts.
+        this.notify["active"].connect (() => {
+            string? pv_uid = Distinst.generate_unique_id("cryptdata");
+            pv_entry.text = pv_uid != null ? pv_uid : "";
+        });
+
         this.closed.connect (() => {
             stack.visible_child = decrypt_view;
         });
@@ -130,7 +136,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
                 mount_icon.halign = Gtk.Align.END;
                 mount_icon.valign = Gtk.Align.END;
                 mount_icon.margin = 6;
-    
+
                 partition_bar.container.pack_start (mount_icon, true, true, 0);
                 partition_bar.container.show_all ();
                 this.destroy ();
@@ -187,4 +193,3 @@ public class Installer.DecryptMenu: Gtk.Popover {
         });
     }
 }
-

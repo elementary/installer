@@ -60,6 +60,7 @@ public class Installer.App : Gtk.Application {
 }
 
 public static int main (string[] args) {
+    Distinst.deactivate_logical_devices ();
     var application = new Installer.App ();
     return application.run (args);
 }
