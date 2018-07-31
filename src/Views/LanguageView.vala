@@ -116,6 +116,25 @@ public class Installer.LanguageView : AbstractInstallerView {
         lang_variant_widget.main_listbox.select_row (lang_variant_widget.main_listbox.get_row_at_index (0));
         lang_variant_widget.main_listbox.row_activated.connect (row_activated);
 
+        lang_variant_widget.key_press_event.connect ((event) => {
+            switch (event.keyval) {
+                case Gdk.Key.Return:
+                    if (next_button.sensitive) {
+                        next_button.clicked ();
+                    }
+                    return true;
+                case Gdk.Key.Left:
+                    if (event.state != Gdk.ModifierType.MOD1_MASK) {
+                        break;
+                    }
+                case Gdk.Key.Escape:
+                    lang_variant_widget.back_button.clicked ();
+                    return true;
+            }
+
+            return false;
+        });
+
         next_button.clicked.connect (() => {
             unowned Gtk.ListBoxRow row = lang_variant_widget.main_listbox.get_selected_row ();
             if (row != null) {

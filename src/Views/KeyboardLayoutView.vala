@@ -78,6 +78,29 @@ public class KeyboardLayoutView : AbstractInstallerView {
             return ((VariantRow) row1).description.collate (((VariantRow) row2).description);
         });
 
+        input_variant_widget.key_press_event.connect ((event) => {
+            switch (event.keyval) {
+                case Gdk.Key.Return:
+                    if (next_button.sensitive) {
+                        next_button.clicked ();
+                    }
+                    return true;
+                case Gdk.Key.Left:
+                    if (event.state != Gdk.ModifierType.MOD1_MASK) {
+                        break;
+                    }
+                case Gdk.Key.Escape:
+                    if (input_variant_widget.variants_visible ()) {
+                        input_variant_widget.back_button.clicked ();
+                    } else {
+                        back_button.clicked ();
+                    };
+                    return true;
+            }
+
+            return false;
+        });
+
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
         next_button.clicked.connect (() => {

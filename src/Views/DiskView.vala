@@ -156,6 +156,19 @@ public class Installer.DiskView : AbstractInstallerView {
                     }
                 });
 
+                disk_button.key_press_event.connect ((event) => {
+                    if (event.keyval == Gdk.Key.Return) {
+                        disk_button.clicked ();
+                        if (next_button.sensitive) {
+                            next_button.clicked ();
+                        }
+
+                        return true;
+                    }
+
+                    return false;
+                });
+
                 enabled_buttons += disk_button;
             } else {
                 disk_button.set_sensitive (false);
@@ -174,5 +187,9 @@ public class Installer.DiskView : AbstractInstallerView {
 
         disk_grid.show_all ();
         load_stack.set_visible_child_name ("disk");
+
+        if (enabled_buttons.length != 0) {
+            enabled_buttons[0].grab_focus ();
+        }
     }
 }

@@ -22,7 +22,7 @@ public class VariantWidget : Gtk.Frame {
 
     public signal void going_to_main ();
 
-    private Gtk.Button back_button;
+    public Gtk.Button back_button;
     private Gtk.Label variant_title;
     private Gtk.Stack stack;
 
@@ -78,6 +78,10 @@ public class VariantWidget : Gtk.Frame {
         back_button.label = back_button_label;
         variant_title.label = variant_title_label;
         stack.visible_child_name = "variant";
+    }
+
+    public bool variants_visible () {
+        return stack.visible_child_name == "variant";
     }
 
     public void clear_variants () {

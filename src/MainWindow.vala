@@ -199,6 +199,10 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (partitioning_view);
         stack.visible_child = partitioning_view;
 
+        partitioning_view.cancel.connect (() => {
+            stack.visible_child = try_install_view;
+        });
+
         partitioning_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;

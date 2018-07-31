@@ -59,6 +59,20 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var back_button = new Gtk.Button.with_label (_("Back"));
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
+        key_press_event.connect ((event) => {
+            switch (event.keyval) {
+                case Gdk.Key.Left:
+                    if (event.state != Gdk.ModifierType.MOD1_MASK) {
+                        break;
+                    }
+                case Gdk.Key.Escape:
+                    back_button.clicked ();
+                    return true;
+            }
+
+            return false;
+        });
+
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.sensitive = false;
@@ -89,6 +103,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         type_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         type_grid.add (custom_button);
 
+        demo_button.key_press_event.connect ((event) => handle_key_press (demo_button, event));
         demo_button.clicked.connect (() => {
             if (demo_button.active) {
                 type_grid.get_children ().foreach ((child) => {
@@ -106,6 +121,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
             }
         });
 
+        clean_install_button.key_press_event.connect ((event) => handle_key_press (clean_install_button, event));
         clean_install_button.clicked.connect (() => {
             if (clean_install_button.active) {
                 type_grid.get_children ().foreach ((child) => {
@@ -123,6 +139,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
             }
         });
 
+        custom_button.key_press_event.connect ((event) => handle_key_press (custom_button, event));
         custom_button.clicked.connect (() => {
             if (custom_button.active) {
                 type_grid.get_children ().foreach ((child) => {
@@ -140,5 +157,16 @@ public class Installer.TryInstallView : AbstractInstallerView {
             }
         });
         show_all ();
+        clean_install_button.grab_focus ();
+    }
+
+    private bool handle_key_press (Gtk.Button button, Gdk.EventKey event) {
+        if (event.keyval == Gdk.Key.Return) {
+            button.clicked ();
+            next_button.clicked ();
+            return true;
+        }
+
+        return false;
     }
 }

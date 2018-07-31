@@ -36,7 +36,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     public PartitioningView (uint64 size) {
         minimum_disk_size = size;
-        Object (cancellable: false);
+        Object (cancellable: true);
     }
 
     [Flags]
