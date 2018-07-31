@@ -167,7 +167,7 @@ public class ProgressView : AbstractInstallerView {
                 return;
             }
         } else {
-            disks = Distinst.Disks.probe ();
+            disks = new Distinst.Disks ();
             if (!custom_disk_configuration (disks)) {
                 on_error ();
                 return;
