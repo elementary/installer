@@ -134,7 +134,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         input_variant_widget.variant_listbox.row_selected.connect ((vrow) => {
-            unowned Gtk.ListBoxRow lrow = input_variant_widget.main_listbox.get_selected_row ();
+            if (vrow == null) { return; }
+            unowned Gtk.ListBoxRow? lrow = input_variant_widget.main_listbox.get_selected_row ();
             if (lrow == null) {
                 return;
             } else {

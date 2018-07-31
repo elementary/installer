@@ -68,9 +68,9 @@ public class VariantWidget : Gtk.Frame {
         add (stack);
 
         back_button.clicked.connect (() => {
+            unset_variant ();
             going_to_main ();
             stack.visible_child_name = "main";
-            unset_variant ();
         });
     }
 
@@ -87,8 +87,7 @@ public class VariantWidget : Gtk.Frame {
     }
 
     private void unset_variant () {
-        weak Gtk.ListBoxRow row = variant_listbox.get_selected_row ();
-        if (row != null) variant_listbox.unselect_row (row);
+        variant_listbox.unselect_all ();
     }
 }
 
