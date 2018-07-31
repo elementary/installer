@@ -205,6 +205,8 @@ public class Installer.MainWindow : Gtk.Dialog {
             config.mounts = (owned) partitioning_view.mounts;
             load_progress_view ();
         });
+
+        load_check_view ();
     }
 
     private void load_encrypt_view () {
