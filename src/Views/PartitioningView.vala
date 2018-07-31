@@ -245,7 +245,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             }
         }
 
-        debug ("DEBUG: Current Layout:\n" + layout_debug);
+        stderr.printf ("DEBUG: Current Layout:\n" + layout_debug);
         next_button.sensitive = required in flags;
     }
 

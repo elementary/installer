@@ -39,6 +39,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
     public string parent_disk;
     public string partition_path;
 
+    private Gtk.Revealer bottom_revealer;
+
     // A reference to the parent which owns this menu.
     private PartitionBar partition_bar;
 
@@ -51,7 +53,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         partition_path = path;
         parent_disk = parent;
 
-        string boot_partition = (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT)
+        string boot_partition = (efi_supported ())
             ? "/boot/efi"
             : "/boot";
 
@@ -149,7 +151,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         var grid = new Gtk.Grid ();
         grid.column_spacing = 12;
 
-        var bottom_revealer = new Gtk.Revealer ();
+        bottom_revealer = new Gtk.Revealer ();
         bottom_revealer.add (bottom_grid);
 
         grid.attach (top_controls,    0, 0);
@@ -160,7 +162,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
 
         custom.visible = false;
 
-        format_partition.notify["active"].connect (() => {
+        this.closed.connect (() => {
             if (!disable_signals) {
                 check_values (set_mount);
             }
@@ -177,7 +179,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
             custom.visible = visible;
 
             if (active == 2) {
-                if (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT) {
+                if (efi_supported ()) {
                     type.active = 2;
                 } else {
                     type.active = 0;
@@ -196,20 +198,11 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 type.sensitive = true;
                 format_partition.visible = true;
             }
-
-            check_values (set_mount);
         });
 
         type.changed.connect (() => {
             if (!disable_signals) {
-                check_values (set_mount);
                 set_format_sensitivity ();
-            }
-        });
-
-        custom.changed.connect (() => {
-            if (!disable_signals) {
-                check_values (set_mount);
             }
         });
 
@@ -240,7 +233,6 @@ public class Installer.PartitionMenu : Gtk.Popover {
                     }
                 }
                 use_as.set_active (select);
-                update_values (set_mount);
             } else {
                 unset_mount (partition_path);
                 partition_bar.container.get_children ().foreach ((c) => c.destroy ());
@@ -259,6 +251,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.visible = true;
         custom.visible = false;
         disable_signals = false;
+        bottom_revealer.reveal_child = false;
         partition_bar.container.get_children ().foreach ((c) => c.destroy ());
     }
 
@@ -344,7 +337,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
             case 1:
                 return "/home";
             case 2:
-                if (Distinst.bootloader_detect () == Distinst.PartitionTable.GPT) {
+                if (efi_supported ()) {
                     return "/boot/efi";
                 } else {
                     return "/boot";
@@ -352,7 +345,25 @@ public class Installer.PartitionMenu : Gtk.Popover {
             case 3:
                 return "swap";
             default:
-                return custom.get_text ();
+                var text = custom.get_text ();
+                var overriden = false;
+
+                if (text == "/") {
+                    use_as.set_active (0);
+                    overriden = true;
+                } else if (text == "/home") {
+                    use_as.set_active (1);
+                    overriden = true;
+                } else if (efi_supported () ? text == "/boot/efi" : text == "/boot") {
+                    use_as.set_active (2);
+                    overriden = true;
+                }
+
+                if (overriden) {
+                    custom.text = "";
+                }
+
+                return text;
         }
     }
 
@@ -365,6 +376,12 @@ public class Installer.PartitionMenu : Gtk.Popover {
     }
 
     private bool custom_valid () {
-        return custom.get_text ().has_prefix ("/");
+        string custom = custom.get_text ();
+        return custom.has_prefix ("/")
+            && (custom != "/boot/efi" || efi_supported ());
+    }
+
+    private bool efi_supported () {
+        return Distinst.bootloader_detect () == Distinst.PartitionTable.GPT;
     }
  }
