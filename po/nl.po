@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-07-18 00:05+0000\n"
+"PO-Revision-Date: 2018-08-01 20:51+0000\n"
 "Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -142,7 +142,7 @@ msgstr "Huidige configuratie aan het ophalen…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Partities aanpassen..."
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
@@ -150,25 +150,31 @@ msgstr "Wis en installeer"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Schijfversleuteling"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Door deze schijf te versleutelen, kunnen gegevens niet worden gelezen door "
+"anderen met fysieke toegang tot dit apparaat."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
+"Schijfversleuteling zal een minimale invloed hebben op lees- en "
+"schrijfsnelheid wanneer u zware taken uitvoert."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
+"Het versleutelwachtwoord is vereist telkens als u dit apparaat aanzet of "
+"opnieuw opstart."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -176,18 +182,21 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Als u het versleutelwachtwoord vergeet, <b>zult u de verloren data niet meer "
+"kunnen herstellen.</b> Dit wachtwoord is specifiek voor dit apparaat, niet "
+"het wachtwoord van uw gebruikersaccount."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Kies versleutelwachtwoord"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Bevestig wachtwoord"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Niet versleutelen"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -196,15 +205,15 @@ msgstr "Terug"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Kies wachtwoord"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Wachtwoord instellen"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Wachtwoorden komen niet overeen"
 
 #: src/Views/ErrorView.vala:38
 msgid "Could Not Install"
@@ -245,11 +254,11 @@ msgstr "Probeer de installatie opnieuw"
 
 #: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Herstart in testmodus"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
-msgstr ""
+msgstr "Testmodus wissel gebruiker"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -257,7 +266,7 @@ msgstr "Toetsenbordindeling"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Typ om uw indeling uit te proberen"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
@@ -266,51 +275,57 @@ msgstr "Toon toetsenbordindeling"
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
 #: src/Views/LanguageView.vala:161
 msgid "Select"
-msgstr ""
+msgstr "Selecteer"
 
 #: src/Views/KeyboardLayoutView.vala:101
 msgid "Default"
-msgstr ""
+msgstr "Standaard"
 
 #: src/Views/KeyboardLayoutView.vala:108
 msgid "Input Language"
-msgstr ""
+msgstr "Invoertaal"
 
 #: src/Views/LanguageView.vala:217
 msgid "Languages"
-msgstr ""
+msgstr "Talen"
 
 #: src/Views/LanguageView.vala:234
 msgid "Select a Language"
-msgstr ""
+msgstr "Selecteer een taal"
 
 #: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
-msgstr ""
+msgstr "Momenteel actieve taal"
 
 #: src/Views/PartitioningView.vala:46
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Selecteer binnen alle schijven welke partities u wilt gebruiken. <b>het "
+"selecteren van \"Formatteren\" zal ALLE data op de geselecteerde partitie "
+"permanent verwijderen.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "U zult in ieder geval een <b>Root-partitie (/)</b> moeten kiezen."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"U zult in ieder geval een <b>Root-partitie (/)</b> als ook een <b>Boot-"
+"partitie (/boot/efi)</b> moeten selecteren."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr ""
+"Het wordt eveneens aangeraden om een <b>Swap-partitie</b> te selecteren."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Partities aanpassen…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -346,6 +361,11 @@ msgid ""
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 msgstr ""
+"In demomodus zullen veranderingen, die u gemaakt heeft, niet worden "
+"opgeslagen en data van uw eerdere besturingssysteem niet worden gewijzigd. "
+"Prestaties en functionaliteit zullen mogelijkerwijs geen waargetrouw beeld "
+"zijn van de ervaring van een daadwerkelijke installatie van dit "
+"besturingssysteem."
 
 #: src/Views/TryInstallView.vala:64
 msgid ""
@@ -357,7 +377,7 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Vervolg instellen"
 
 #: src/Views/SuccessView.vala:42
 #, c-format
@@ -375,53 +395,55 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Testmodus afsluiten"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Ontsleutel Deze Partitie"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
 msgstr ""
+"Voer het versleutelwachtwoord van de partitie in en stel een LUKS "
+"apparaatnaam in."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Wachtwoord:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Apparaatnaam:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Ontsleutel"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "LUKS-volume is ontsleuteld"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Partitie gebruiken:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Formatteren:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Gebruik als:"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
@@ -429,32 +451,32 @@ msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Home (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Boot (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Aangepast"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Aangepast:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Bestandsysteem:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "Standaard (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Selecteer een schijf voor installatie"
