@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-08-01 20:51+0000\n"
+"PO-Revision-Date: 2018-08-02 00:01+0000\n"
 "Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -43,15 +43,15 @@ msgstr "Bent u zeker dat u het systeem wilt afsluiten?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
-msgstr "Dit zal de installatie annuleren en dit toestel afsluiten."
+msgstr "Dit zal de installatie annuleren en dit apparaat afsluiten."
 
 #: src/Dialogs/EndSessionDialog.vala:66
 msgid "Restart"
-msgstr "Herstart"
+msgstr "Herstarten"
 
 #: src/Dialogs/EndSessionDialog.vala:68
 msgid "Cancel"
-msgstr "Annuleer"
+msgstr "Annuleren"
 
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:63
@@ -60,7 +60,7 @@ msgstr "Afsluiten"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
-msgstr "Annuleer installatie"
+msgstr "Installatie annuleren"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
@@ -68,7 +68,7 @@ msgstr "Testmodus"
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
-msgstr "Negeer"
+msgstr "Negeren"
 
 #: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
@@ -80,32 +80,32 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"Er is onvoldoende ruimte op uw toestel om %s te installeren. We bevelen een "
+"Er is onvoldoende ruimte op uw apparaat om %s te installeren. We bevelen een "
 "minimum opslagruimte aan van %s."
 
 #: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
-msgstr "Uw toestel is mogelijk te traag"
+msgstr "Uw apparaat is mogelijk te traag"
 
 #: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"Uw toestel voldoet niet aan de hardware vereisten. Hierdoor kan deze "
-"langzaam lopen of bevriezen."
+"Uw apparaat voldoet niet aan de hardwarevereisten. Hierdoor kan het traag "
+"werken of vastlopen."
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
-msgstr "Maak verbinding met een voedingsbron"
+msgstr "Verbinding met een voedingsbron maken"
 
 #: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"Uw toestel loopt op batterijvoeding. Tijdens de installatie wordt netvoeding "
-"aanbevolen."
+"Uw apparaat loopt op batterijvoeding. Tijdens de installatie wordt "
+"netvoeding aanbevolen."
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
@@ -113,7 +113,7 @@ msgstr "Aanbevolen:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr "Uw toestel:"
+msgstr "Uw apparaat:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
@@ -125,7 +125,7 @@ msgstr "Geheugen:"
 
 #: src/Views/DiskView.vala:52
 msgid "Select a Drive"
-msgstr "Selecteer een schijf"
+msgstr "Een schijf selecteren"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -133,7 +133,7 @@ msgid ""
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
 "Dit zal alle data op de geselecteerde schijf wissen. Als u geen back-up "
-"heeft van uw data, dan kan u de installatie annuleren en de demomodus "
+"heeft van uw data, dan kunt u de installatie annuleren en de demomodus "
 "gebruiken."
 
 #: src/Views/DiskView.vala:66
@@ -142,11 +142,11 @@ msgstr "Huidige configuratie aan het ophalen…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr "Partities aanpassen..."
+msgstr "Partities aanpassen…"
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
-msgstr "Wis en installeer"
+msgstr "Installeren en wissen"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
@@ -192,7 +192,7 @@ msgstr "Kies versleutelwachtwoord"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr "Bevestig wachtwoord"
+msgstr "Wachtwoord bevestigen"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
@@ -205,7 +205,7 @@ msgstr "Terug"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr "Kies wachtwoord"
+msgstr "Wachtwoord kiezen"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
@@ -225,16 +225,17 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installeren van %s mislukt, mogelijks door een hardwarefout. Mogelijk "
-"herstart uw toestel niet correct. U kan één van de volgende opties proberen:"
+"Installeren van %s mislukt, mogelijkerwijs door een hardwarefout. Wellicht "
+"herstart uw apparaat niet juist. U kunt één van de volgende opties proberen:"
 
 #: src/Views/ErrorView.vala:52
+#, fuzzy
 msgid "• Try the installation again"
 msgstr "• Probeer de installatie opnieuw"
 
 #: src/Views/ErrorView.vala:58
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Gebruik de demomodus en probeer manueel te herstellen"
+msgstr "• Gebruik de demomodus en probeer handmatig te herstellen"
 
 #: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
