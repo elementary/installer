@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 23:39+0200\n"
 "PO-Revision-Date: 2018-08-13 00:03+0000\n"
-"Last-Translator: James Qian <sotux82@gmail.com>\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "installer/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -30,7 +30,7 @@ msgstr "安装系统"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr ""
+msgstr "系统-操作系统-安装器"
 
 #~ msgid "Calculator"
 #~ msgstr "计算器"
