@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-08-29 04:00+0000\n"
-"Last-Translator: Enzo Gaban <enzogaban@gmail.com>\n"
+"PO-Revision-Date: 2018-08-29 04:02+0000\n"
+"Last-Translator: Israel Felipe de Lima Araújo S <israelita.felipe@gmail.com>"
+"\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -125,7 +126,7 @@ msgstr "Memória:"
 
 #: src/Views/DiskView.vala:52
 msgid "Select a Drive"
-msgstr "Selecione um Disco"
+msgstr "Selecione um Drive"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -385,8 +386,8 @@ msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Após reiniciar você poderá configurar um novo usuário, ou você pode desligar "
-"agora e configurar um novo usuário mais tarde."
+"Após reiniciar você pode configurar um novo usuário, ou desligar agora and "
+"configurar um novo usuário depois."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
