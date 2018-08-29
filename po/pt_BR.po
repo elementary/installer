@@ -4,8 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-08-29 04:00+0000\n"
-"Last-Translator: Israel Felipe de Lima Araújo S <israelita.felipe@gmail.com>"
-"\n"
+"Last-Translator: Enzo Gaban <enzogaban@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -125,9 +124,8 @@ msgid "Memory:"
 msgstr "Memória:"
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Escolha o Idioma"
+msgstr "Selecione um Disco"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -366,13 +364,12 @@ msgstr ""
 "podem não refletir a experiência completa de um sistema instalado."
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
 msgstr ""
-"Você pode sempre retornar do modo de demonstração para o instalador "
-"selecionando o ícone de instalação."
+"Você pode sempre retornar ao instalador a partir do Modo de Demonstração "
+"selecionando o ícone de Instalação."
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
@@ -384,13 +381,12 @@ msgid "Your device will automatically restart to %s in %i seconds."
 msgstr "Seu dispositivo será reiniciado automaticamente para %s em %i segundos."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Seu dispositivo será reiniciado automaticamente ao %s em 30 segundos para "
-"criar um novo usuário, ou você pode desligar agora e criar um usuário depois."
+"Após reiniciar você poderá configurar um novo usuário, ou você pode desligar "
+"agora e configurar um novo usuário mais tarde."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
