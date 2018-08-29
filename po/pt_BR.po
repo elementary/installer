@@ -3,9 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-08-29 04:02+0000\n"
-"Last-Translator: Israel Felipe de Lima Araújo S <israelita.felipe@gmail.com>"
-"\n"
+"PO-Revision-Date: 2018-08-29 04:03+0000\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -324,7 +323,7 @@ msgstr "Também é recomendado selecionar uma partição <b>Swap</b>."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr "Modificar Partições..."
+msgstr "Modificar Partições…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
