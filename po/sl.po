@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-03-22 00:05+0000\n"
+"PO-Revision-Date: 2018-07-03 19:20+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/installer/"
 "installer/sl/>\n"
@@ -11,9 +11,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 2.18\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
@@ -122,9 +122,8 @@ msgid "Memory:"
 msgstr "Pomnilnik:"
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Izberite jezik"
+msgstr "Izberite pogon"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -140,7 +139,7 @@ msgstr "Pridobivam trenutno konfiguracijo…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
-msgstr ""
+msgstr "Particije po meri…"
 
 #: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
 msgid "Erase and Install"
@@ -148,25 +147,27 @@ msgstr "Izbriši in namesti"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "Šifriranje pogona"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
+"Šifriranje tega pogona prepreči drugim osebam s fizičnim dostopom do "
+"računalnika dostop do podatkov."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
-msgstr ""
+msgstr "Šifriranje lahko nekoliko upočasni hitrost branja in pisanja podatkov."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
-msgstr ""
+msgstr "Pri vsakem vklopu računalnika bo potrebno vpisati geslo."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -174,18 +175,20 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Če pozabite geslo, <b>ne boste več nikoli mogli dostopati do podatkov.</b> "
+"To je unikatno geslo za ta računalnik in je drugačno od gesla za vaš račun."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Izberite geslo za šifriranje"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Ponovite geslo"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Ne šifriraj"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
@@ -194,29 +197,29 @@ msgstr "Nazaj"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
 msgid "Choose Password"
-msgstr ""
+msgstr "Izberite geslo"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Password"
-msgstr ""
+msgstr "Nastavi geslo"
 
 #: src/Views/EncryptView.vala:231
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Gesli se ne ujemata"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Ni bilo mogoče namestiti %s"
+msgstr "Ni bilo mogoče namestiti"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Namestitev je spodletela. Zaradi tega se vaš računalnik morda ne bo pravilno "
-"znova zagnal. Lahko poskusite:"
+"Namestitev %s je spodletela, verjetno zaradi napake na strojni opremi. "
+"Zaradi tega se vaš računalnik morda ne bo pravilno znova zagnal. Lahko "
+"poskusite:"
 
 #: src/Views/ErrorView.vala:52
 msgid "• Try the installation again"
@@ -244,11 +247,11 @@ msgstr "Ponovno poženi namestitev"
 
 #: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Ponovni zagon v testni način"
 
 #: src/Views/ErrorView.vala:146
 msgid "Test mode switch user"
-msgstr ""
+msgstr "Preklop uporabnika v testnem načinu"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -292,24 +295,28 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Izberite particije. <b>Če izberete \"Formatiraj\", bodo izbrisani VSI "
+"podatki na izbrani particiji.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Izbrati morate vsaj <b>korensko (/)</b> particijo."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Izbrati morate vsaj <b>korensko (/)</b> in <b>zagonsko (/boot/efi)</b> "
+"particijo."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Priporočamo tudi izbiro <b>izmenjalne (swap)</b> particije."
 
 #: src/Views/PartitioningView.vala:89
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Spremeni particije…"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -339,7 +346,6 @@ msgstr ""
 "Lahko namestite %s ali pa preizkusite demonstracijski način brez namestitve."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
 msgid ""
 "In Demo Mode, changes you make will not be saved and data from your previous "
 "operating system will be unchanged. Performance and features may not reflect "
@@ -358,108 +364,103 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:34
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Nadaljuj namestitev"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
 msgstr ""
-"%s je bil nameščen. Vaš računalnik se bo samodejno ponovno zagnal čez 30 "
+"%s je bil nameščen. Vaš računalnik se bo samodejno ponovno zagnal čez %i "
 "sekund."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
-msgstr ""
-"%s je bil nameščen. Vaš računalnik se bo samodejno ponovno zagnal čez 30 "
-"sekund."
+msgstr "Po ponovnem zagonu lahko ustvarite nov uporabniški račun."
 
 #: src/Views/SuccessView.vala:75
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Izklop v testnem načinu"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Odkleni to particijo"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Enter the partition's encryption password and set a LUKS device name."
-msgstr ""
+msgstr "Vnesite šifrirno geslo in nastavite LUKS ime naprave."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Geslo:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Ime naprave:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Odkleni"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "LUKS naprava je bila odklenjena"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Uporabi particijo:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Formatiraj:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Uporabi kot:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Koren"
+msgstr "Korenska particija (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Domači imenik (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Zagon (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Izmenjalni prostor (swap)"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Po meri"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Po meri:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Datotečni sistem:"
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Privzeto"
+msgstr "Privzet (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Izberite pogon za namestitev"
