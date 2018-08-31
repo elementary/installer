@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-31 00:02+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål "
-"<https://weblate.elementary.io/projects/installer/installer/nb/>\n"
+"PO-Revision-Date: 2018-07-20 19:38+0000\n"
+"Last-Translator: Nils K <slx@nilsk.net>\n"
+"Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
+"installer/installer/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
@@ -30,18 +30,16 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
 msgstr "Kunne ikke endre domenenavn for Distinst-logg"
 
 #: src/Helpers/LogHelper.vala:54
-#, fuzzy
 msgid "Starting installation"
-msgstr "Avbryt installasjon"
+msgstr "Starter installasjon"
 
 #: src/Dialogs/EndSessionDialog.vala:43
 msgid "Are you sure you want to Shut Down?"
-msgstr "Er du sikker på at du vil avslutte?"
+msgstr "Er du sikker på at du vil slå av?"
 
 #: src/Dialogs/EndSessionDialog.vala:50
 msgid "This will cancel installation and turn off this device."
@@ -58,14 +56,13 @@ msgstr "Avbryt"
 #: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
 #: src/Views/SuccessView.vala:63
 msgid "Shut Down"
-msgstr "Avslutt"
+msgstr "Slå av"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
 msgstr "Avbryt installasjon"
 
 #: src/Views/AbstractInstallerView.vala:58
-#, fuzzy
 msgid "Test Mode"
 msgstr "Prøv demo-modus"
 
@@ -83,31 +80,31 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"Det er ikke nok ledig plass på enheten din til å installere %s. Vi anbefaler "
+"Der er ikke nok ledig plass på enheten din til å installere %s. Vi anbefaler "
 "minimum %s lagringsplass."
 
 #: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
-msgstr "Din enhet kan være for treg"
+msgstr "Enheten din kan være for treg"
 
 #: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"Din enhet svarer ikke til de anbefalte maskinvarekravene. Dette kan "
+"Enheten din tilfredsstiller ikke de anbefalte maskinvarekravene. Dette kan "
 "forårsake at ting går tregt eller henger."
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
-msgstr "Koble til strømkilde"
+msgstr "Koble til en strømkilde"
 
 #: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"Enheten din kjører på batteridrift. Det anbefales å være koblet lysnettet "
+"Enheten din kjører på batteridrift. Det anbefales å være tilkoblet strøm "
 "under installasjon."
 
 #: src/Views/CheckView.vala:291
@@ -127,9 +124,8 @@ msgid "Memory:"
 msgstr "Minne:"
 
 #: src/Views/DiskView.vala:52
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Velg et språk"
+msgstr "Velg en disk"
 
 #: src/Views/DiskView.vala:56
 msgid ""
@@ -137,12 +133,12 @@ msgid ""
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
 "Dette vil slette all data på valgt lagringsstasjon. Hvis du ikke har "
-"sikkerhetskopiert dataen din, kan du avbryte installasjonen og bruke demo-"
+"sikkerhetskopiert dataene dine, kan du avbryte installasjonen og bruke demo-"
 "modus."
 
 #: src/Views/DiskView.vala:66
 msgid "Getting the current configuration…"
-msgstr "Henter korrekt oppsett…"
+msgstr "Henter gjeldende oppsett…"
 
 #: src/Views/DiskView.vala:97
 msgid "Customize Partitions…"
@@ -169,8 +165,8 @@ msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
-"Diskkryptering kan ha minimal innvirkning på lese- og skrive-hastighet ved "
-"utførelse av tunge oppgaver."
+"Diskkryptering kan ha en minimal innvirkning på lese- og skrive-hastighet "
+"ved utførelse av tunge oppgaver."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
@@ -204,7 +200,6 @@ msgstr "Ikke krypter"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/TryInstallView.vala:89
-#, fuzzy
 msgid "Back"
 msgstr "Tilbake"
 
@@ -221,17 +216,16 @@ msgid "Passwords do not match"
 msgstr "Passordene samsvarer ikke"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Kunne ikke installere %s"
+msgstr "Kunne ikke installere"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installasjonen mislyktes, så enheten din kan ha problemer med å starte på "
+"Installasjonen av %s feilet, så enheten din kan ha problemer med å starte på "
 "nytt. Prøv én av følgende:"
 
 #: src/Views/ErrorView.vala:52
@@ -244,12 +238,11 @@ msgstr "• Bruk demo-modus for å prøve å tilbakestille manuelt"
 
 #: src/Views/ErrorView.vala:64
 msgid "• Restart your device to boot from another drive"
-msgstr ""
-"• Start din enhet på nytt for å starte opp fra en annen lagringsstasjon"
+msgstr "• Start maskinen på nytt for å starte opp fra en annen lagringsstasjon"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
-msgstr "Start enhet på nytt"
+msgstr "Start maskinen på nytt"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
 msgid "Try Demo Mode"
@@ -293,9 +286,8 @@ msgid "Input Language"
 msgstr "Inndataspråk"
 
 #: src/Views/LanguageView.vala:217
-#, fuzzy
 msgid "Languages"
-msgstr "Inndataspråk"
+msgstr "Språk"
 
 #: src/Views/LanguageView.vala:234
 msgid "Select a Language"
@@ -303,27 +295,27 @@ msgstr "Velg et språk"
 
 #: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
 msgid "Currently active language"
-msgstr "Aktivt språk nå"
+msgstr "Nåværende språk"
 
 #: src/Views/PartitioningView.vala:46
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"Velg hvilke partisjoner som skal brukes, bland alle diskene. <b>Å velge \""
+"Velg hvilke partisjoner som skal brukes, blant alle diskene. <b>Å velge \""
 "Formater\" vil slette ALL data på valgt partisjon.</b>"
 
 #: src/Views/PartitioningView.vala:52
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Du må velge minst én <b>Rot (/)</b>-partisjon."
+msgstr "Du må minimum velge en <b>Rot (/)</b>-partisjon."
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Du må velge minst én <b>Rot (/)</b>-partisjon og én <b>oppstarts- "
-"(/boot/efi)</b>partisjon."
+"Du må minimum velge en <b>Rot (/)</b>-partisjon og en <b>oppstarts- (/boot/"
+"efi)</b>partisjon."
 
 #: src/Views/PartitioningView.vala:60
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -346,14 +338,12 @@ msgid "Configuring the System"
 msgstr "Setter opp systemet"
 
 #: src/Views/ProgressView.vala:460
-#, fuzzy
 msgid "Finishing the Installation"
-msgstr "Avbryt installasjon"
+msgstr "Fullfører installasjonen"
 
 #: src/Views/TryInstallView.vala:33
-#, fuzzy
 msgid "Install or Try Demo Mode"
-msgstr "Prøv demo-modus"
+msgstr "Installer eller prøv demo-modus"
 
 #: src/Views/TryInstallView.vala:42
 #, c-format
@@ -374,7 +364,6 @@ msgstr ""
 "samme nivå som ved faktisk installasjon."
 
 #: src/Views/TryInstallView.vala:64
-#, fuzzy
 msgid ""
 "You can always return to the installer from Demo Mode by selecting the "
 "Install icon."
@@ -387,27 +376,21 @@ msgid "Continue Setting Up"
 msgstr "Fortsett oppsett"
 
 #: src/Views/SuccessView.vala:42
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"%s har blitt installert. Din enhet vil automatisk starte på nytt om 30 "
-"sekunder for å sette opp en ny bruker, eller du avslutte nå, og sette opp en "
-"ny bruker senere."
+msgstr "Maskinen din vil automatisk starte på nytt til %s om %i sekunder."
 
 #: src/Views/SuccessView.vala:43
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"%s har blitt installert. Din enhet vil automatisk starte på nytt om 30 "
-"sekunder for å sette opp en ny bruker, eller du avslutte nå, og sette opp en "
-"ny bruker senere."
+"Etter omstart kan du opprette en ny bruker eller du kan slå av maskinen nå "
+"og opprette en ny bruker senere."
 
 #: src/Views/SuccessView.vala:75
-#, fuzzy
 msgid "Test mode shutdown"
-msgstr "Testmodusavstengning"
+msgstr "Slå av test-modus"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -456,9 +439,8 @@ msgid "Use as:"
 msgstr "Bruk som:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Rot"
+msgstr "Rot (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
@@ -486,9 +468,8 @@ msgid "Filesystem:"
 msgstr "Filsystem:"
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Forvalg"
+msgstr "Forvalg (ext4)"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Velg en lagringsenhet å bruke for installasjon"
