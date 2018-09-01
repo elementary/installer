@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-08-02 00:01+0000\n"
-"Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
+"PO-Revision-Date: 2018-08-31 18:51+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/installer/"
 "installer/nl/>\n"
 "Language: nl\n"
@@ -229,7 +229,6 @@ msgstr ""
 "herstart uw apparaat niet juist. U kunt één van de volgende opties proberen:"
 
 #: src/Views/ErrorView.vala:52
-#, fuzzy
 msgid "• Try the installation again"
 msgstr "• Probeer de installatie opnieuw"
 
