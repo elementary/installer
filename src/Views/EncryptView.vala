@@ -142,6 +142,7 @@ public class EncryptView : AbstractInstallerView {
         var back_button = new Gtk.Button.with_label (_("Back"));
 
         next_button = new Gtk.Button.with_label (_("Choose Password"));
+        next_button.can_default = true;
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.can_default = true;
 
