@@ -76,6 +76,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
             return ((VariantRow) row1).description.collate (((VariantRow) row2).description);
         });
 
+        input_variant_widget.variant_listbox.row_activated.connect (() => {
+            next_button.activate ();
+        });
+
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
 
         next_button.clicked.connect (() => {
