@@ -142,6 +142,7 @@ public class EncryptView : AbstractInstallerView {
         var back_button = new Gtk.Button.with_label (_("Back"));
 
         next_button = new Gtk.Button.with_label (_("Choose Password"));
+        next_button.can_default = true;
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (no_encrypt_button);
@@ -246,6 +247,7 @@ public class EncryptView : AbstractInstallerView {
     private void update_next_button () {
         if (pw_entry.is_valid && confirm_entry.is_valid) {
             next_button.sensitive = true;
+            next_button.has_default = true;
         } else {
             next_button.sensitive = false;
         }
@@ -253,6 +255,10 @@ public class EncryptView : AbstractInstallerView {
 
     private class ValidatedEntry : Gtk.Entry {
         public bool is_valid { get; set; default = false; }
+
+        construct {
+            activates_default = true;
+        }
     }
 
     private class ErrorRevealer : Gtk.Revealer {
