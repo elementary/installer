@@ -67,6 +67,10 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         lang_variant_widget = new VariantWidget ();
 
+        lang_variant_widget.variant_listbox.row_activated.connect (() => {
+            next_button.activate ();
+        });
+
         lang_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
             var langrow1 = (LangRow) row1;
             var langrow2 = (LangRow) row2;

@@ -78,11 +78,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
         input_variant_widget.key_press_event.connect ((event) => {
             switch (event.keyval) {
-                case Gdk.Key.Return:
-                    if (next_button.sensitive) {
-                        next_button.clicked ();
-                    }
-                    return true;
                 case Gdk.Key.Left:
                     if (event.state != Gdk.ModifierType.MOD1_MASK) {
                         break;
@@ -97,6 +92,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
             }
 
             return false;
+        });
+
+        input_variant_widget.variant_listbox.row_activated.connect (() => {
+            next_button.activate ();
         });
 
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
