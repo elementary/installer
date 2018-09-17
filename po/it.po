@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-05-14 00:02+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
-"Language-Team: Italian "
-"<https://weblate.elementary.io/projects/installer/installer/it/>\n"
+"PO-Revision-Date: 2018-09-06 04:15+0000\n"
+"Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
+"Language-Team: Italian <https://weblate.elementary.io/projects/installer/"
+"installer/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
@@ -30,9 +30,8 @@ msgid "%s…"
 msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "Impossibile modificare il nome del dominio del Distinst log"
+msgstr "Impossibile impostare il callback del registro di Distinst"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -421,12 +420,12 @@ msgid "LUKS volume was decrypted"
 msgstr "Il volume LUKS è stato decodificato"
 
 #: src/Widgets/DiskBar.vala:127
-#, c-format, fuzzy
+#, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
-#, c-format, fuzzy
+#, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
@@ -443,19 +442,17 @@ msgid "Use as:"
 msgstr "Usa come:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
 msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
-#, fuzzy
 msgid "Home (/home)"
-msgstr "Home (/home)"
+msgstr "Cartella personale (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
-#, c-format, fuzzy
+#, c-format
 msgid "Boot (%s)"
-msgstr "Boot (%s)"
+msgstr "Avvio (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
@@ -470,7 +467,6 @@ msgid "Custom:"
 msgstr "Personalizzato:"
 
 #: src/Widgets/PartitionMenu.vala:103
-#, fuzzy
 msgid "Filesystem:"
 msgstr "Filesystem:"
 
