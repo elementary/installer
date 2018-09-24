@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-23 13:06-0700\n"
 "PO-Revision-Date: 2018-09-25 00:02+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/installer/"
 "installer/fr/>\n"
 "Language: fr\n"
@@ -439,7 +439,7 @@ msgstr "Format :"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Utiliser comme :"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
@@ -464,7 +464,7 @@ msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Personnalisé :"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
