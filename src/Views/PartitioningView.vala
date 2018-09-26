@@ -62,7 +62,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 break;
             case Distinst.PartitionTable.GPT:
                 // Device is in EFI mode, so we also require a boot partition
-                required_description = _("You must at least select a <b>Root (/)</b> partition, plus a <b>Boot (/boot/efi)</b> partition that is at least 256 MiB.");
+                required_description = _("You must at least select a <b>Root (/)</b> partition, plus a <b>Boot (/boot/efi)</b> partition that is at least 256 MiB and on a GPT disk.");
                 break;
         }
 
@@ -301,7 +301,12 @@ public class Installer.PartitioningView : AbstractInstallerView {
         unset_mount_point (mount);
 
         if (mount.mount_point == "/boot/efi") {
-            if (!mount.is_valid_boot_mount ()) {
+            unowned Distinst.Disk? disk = disks.get_physical_device (mount.parent_disk);
+            if (disk == null) {
+                throw new GLib.IOError.FAILED (_("Cannot find parent disk of EFI partition"));
+            } else if (disk.get_partition_table () != Distinst.PartitionTable.GPT) {
+                throw new GLib.IOError.FAILED (_("EFI partition is not on a GPT disk"));
+            } else if (!mount.is_valid_boot_mount ()) {
                 throw new GLib.IOError.FAILED (_("EFI partition has the wrong file system"));
             } else if (mount.sectors < REQUIRED_EFI_SECTORS) {
                 throw new GLib.IOError.FAILED (_("EFI partition is too small"));

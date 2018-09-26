@@ -175,7 +175,12 @@ public class ProgressView : AbstractInstallerView {
         }
 
         new Thread<void*> (null, () => {
-            installer.install ((owned) disks, config);
+            if (installer.install ((owned) disks, config) != 0) {
+                Idle.add (() => {
+                    on_error ();
+                    return Source.REMOVE;
+                });
+            }
             return null;
         });
     }
