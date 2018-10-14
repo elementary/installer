@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-07-13 00:03+0000\n"
+"PO-Revision-Date: 2018-10-14 03:51+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -287,7 +287,7 @@ msgstr "言語"
 
 #: src/Views/LanguageView.vala:249
 msgid "Select a Language"
-msgstr "言語の選択"
+msgstr "言語を選択"
 
 #: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
@@ -326,19 +326,19 @@ msgstr "パーティションを修正…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI パーティションに不適切なファイルシステムがあります"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI パーティションが小さすぎます"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "ルートディレクトリが不適切なファイルシステムです"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "ホームディレクトリが不適切なファイルシステムです"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -357,9 +357,8 @@ msgid "Finishing the Installation"
 msgstr "インストールを終了しています"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "もう一度インストールしてみる"
+msgstr "試用するかインストールするかを選択してください"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -372,37 +371,32 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "次へ"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
-msgstr ""
-"デモモードでは、行った変更は保存されず、以前のオペレーティングシステムのデー"
-"タは変更されません。パフォーマンスと機能はインストールされた環境を反映するこ"
-"とはありません。"
+msgstr "変更は保存されず、以前の OS のデータは変更されません。パフォーマンスと機能はインストールされた環境を反映しない可能性があります。"
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "削除してインストール"
+msgstr "クリーンインストール"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "すべてを消去して %s をクリーンインストールします。"
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "カスタム (高度)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-msgstr ""
+msgstr "手動でパーティションを作成、サイズ変更、その他管理を行います。この方法はデータの損失につながることがあります。"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -426,13 +420,10 @@ msgid "Decrypt This Partition"
 msgstr "このパーティションを復号化"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
-msgstr ""
-"パーティションの暗号化のパスワードを入力し、LUKS デバイス名をセットしてくださ"
-"い。"
+msgstr "パーティションの暗号化パスワードを入力し、復号化するパーティションのデバイス名を選択してください。"
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
