@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-06-04 12:28+0000\n"
+"PO-Revision-Date: 2018-10-14 01:55+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/installer/"
 "installer/ko/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -321,19 +321,19 @@ msgstr "파티션 구성 중…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI 파티션의 파일 시스템이 잘못되었습니다"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI 파티션이 너무 작습니다"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "root용 파일 시스템이 잘못되었습니다"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "home용 파일 시스템이 잘못되었습니다"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -352,9 +352,8 @@ msgid "Finishing the Installation"
 msgstr "설치 마무리 하기"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "다시 설치해 보기"
+msgstr "체험 또는 설치"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -367,36 +366,33 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "다음"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"데모 모드에선, 바뀐 내용도 저장되지 않고 이전 운영 체제의 데이터도 저장되지 "
-"않습니다. 성능이나 기능도 운영 체제 설치에 영향을 주지 않습니다."
+"데모 모드에선, 바뀐 내용도 저장되지 않고 이전 운영 체제의 데이터도 바뀌지 않습니다. 성능이나 기능도 운영 체제에 영향을 주지 않습니다."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "지우고 설치하기"
+msgstr "깨끗이 설치하기"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "모든 걸 깨끗이 지우고 %s를 설치합니다."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "사용자 설정 (고급 모드)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-msgstr ""
+msgstr "파티션을 새로 만들거나, 크기를 조절하거나, 등의 조절을 사용자가 직접 합니다. 데이터를 잃어버릴 위험이 있는 방법입니다."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -420,11 +416,10 @@ msgid "Decrypt This Partition"
 msgstr "이 파티션 암호화 해제하기"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
-msgstr "파티션의 보안 암호를 입력하시고 LUKS 장치 이름을 설정하세요."
+msgstr "파티션의 보안 암호를 입력하시고 암호가 해제된 파티션의 장치 이름을 설정하세요."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
