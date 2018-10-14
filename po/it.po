@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-09-06 04:15+0000\n"
-"Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
+"PO-Revision-Date: 2018-10-14 04:26+0000\n"
+"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/installer/"
 "installer/it/>\n"
 "Language: it\n"
@@ -325,19 +325,19 @@ msgstr "Modifica partizioni…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "La partizione EFI ha un file system incorretto"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "La partizione EFI è troppo piccola"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Il file system per la root è invalido"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Il file system per la directory home è invalido"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -356,9 +356,8 @@ msgid "Finishing the Installation"
 msgstr "Ultimando l'installazione"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Prova a installare nuovamente"
+msgstr "Prova o installa"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -371,37 +370,37 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Prossimo"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"In Modalità Demo, le modifiche apportate non verranno salvate e i dati del "
-"tuo precedente sistema operativo rimarranno inalterati. Le prestazioni e le "
+"In modalità di prova, le modifiche non verranno salvate e i dati del tuo "
+"precedente sistema operativo rimarranno inalterati. Le prestazioni e le "
 "funzionalità potrebbero non riflettere l'esperienza di un sistema installato."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Cancella e installa"
+msgstr "Cancella tutto e installa"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Cancella tutto e installa una copia nuova di %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Personalizzata (avanzata)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Crea, ridimensiona o gestisci manualmente in altro modo le partizioni. "
+"Questo metodo può portare alla perdita dei dati precedenti."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -425,13 +424,12 @@ msgid "Decrypt This Partition"
 msgstr "Decritta questa partizione"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Inserisci la password di crittografia della partizione e imposta un nome di "
-"dispositivo LUKS."
+"Inserisci la password crittografica della partizione e imposta un nome di "
+"dispositivo per la partizione decriptata."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
