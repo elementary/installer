@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-07-20 19:38+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
+"PO-Revision-Date: 2018-10-15 00:06+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "installer/installer/nb/>\n"
 "Language: nb\n"
@@ -324,19 +324,21 @@ msgstr "Endre partisjoner…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI-partisjon har feil filsystem"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI-partisjon for liten"
 
 #: src/Views/PartitioningView.vala:281
+#, fuzzy
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Ugyldig filsystem for root"
 
 #: src/Views/PartitioningView.vala:283
+#, fuzzy
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Ugyldig filsystem for home"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -370,7 +372,7 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Neste"
 
 #: src/Views/TryInstallView.vala:81
 #, fuzzy
@@ -390,17 +392,19 @@ msgstr "Slett og installer"
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Slett alt og installer en ny kopi av %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Egendefinert (avansert)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Opprett, endre størrelse, og på annet vis behandle partisjoner. Denne "
+"metoden kan lede til datatap."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
