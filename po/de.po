@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-23 13:06-0700\n"
+"POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-08-29 00:03+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/installer/"
@@ -20,16 +20,24 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "Installiere %s"
 
-#: src/Utils.vala:31
-msgid "Operating System"
-msgstr "Betriebssystem"
+#: src/Utils.vala:50
+msgid "Test mode shutdown"
+msgstr "Test-Modus Herunterfahren"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
+#: src/Utils.vala:64
+msgid "Test mode reboot"
+msgstr "Test-Modus Neustart"
+
+#: src/Utils.vala:78
+msgid "Test mode switch user"
+msgstr "Test-Modus Benutzer wechseln"
+
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -42,24 +50,24 @@ msgstr "Der Distinst-Protokoll-Rückruf konnte nicht festgelegt werden"
 msgid "Starting installation"
 msgstr "Starte Installation"
 
-#: src/Dialogs/EndSessionDialog.vala:43
+#: src/Dialogs/EndSessionDialog.vala:35
 msgid "Are you sure you want to Shut Down?"
 msgstr "Sind Sie sicher, dass Sie herunterfahren wollen?"
 
-#: src/Dialogs/EndSessionDialog.vala:50
+#: src/Dialogs/EndSessionDialog.vala:42
 msgid "This will cancel installation and turn off this device."
 msgstr "Dadurch wird die Installation abgebrochen und das Gerät ausgeschaltet."
 
-#: src/Dialogs/EndSessionDialog.vala:66
+#: src/Dialogs/EndSessionDialog.vala:58
 msgid "Restart"
 msgstr "Neu starten"
 
-#: src/Dialogs/EndSessionDialog.vala:68
+#: src/Dialogs/EndSessionDialog.vala:60
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:63
+#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
+#: src/Views/SuccessView.vala:55
 msgid "Shut Down"
 msgstr "Herunterfahren"
 
@@ -128,11 +136,11 @@ msgstr "Prozessor:"
 msgid "Memory:"
 msgstr "Arbeitsspeicher:"
 
-#: src/Views/DiskView.vala:52
+#: src/Views/DiskView.vala:51
 msgid "Select a Drive"
 msgstr "Wählen Sie ein Laufwerk"
 
-#: src/Views/DiskView.vala:56
+#: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -141,15 +149,11 @@ msgstr ""
 "noch nicht gesichert haben, können Sie die Installation abbrechen und den "
 "Test-Modus verwenden."
 
-#: src/Views/DiskView.vala:66
+#: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
 msgstr "Lädt die aktuelle Konfiguration…"
 
-#: src/Views/DiskView.vala:97
-msgid "Customize Partitions…"
-msgstr "Partitionen anpassen…"
-
-#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
 msgstr "Löschen und Installieren"
 
@@ -204,27 +208,27 @@ msgid "Don't Encrypt"
 msgstr "Nicht verschlüsseln"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/TryInstallView.vala:89
+#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Zurück"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
 msgstr "Passwort wählen"
 
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Set Password"
 msgstr "Passwort setzen"
 
-#: src/Views/EncryptView.vala:231
+#: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
 msgstr "Die Kennwörter stimmen nicht überein"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
 msgstr "Konnte nicht installiert werden"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:38
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
@@ -234,39 +238,31 @@ msgstr ""
 "Hardwarefehlers. Ihr Gerät startet möglicherweise nicht ordnungsgemäß neu. "
 "Sie können folgendes versuchen:"
 
-#: src/Views/ErrorView.vala:52
+#: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
 msgstr "• Versuchen Sie die Installation erneut"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
 msgstr ""
 "• Verwenden Sie den Test-Modus und versuchen Sie eine manuelle "
 "Wiederherstellung"
 
-#: src/Views/ErrorView.vala:64
+#: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
 msgstr "• Starten Sie Ihr Gerät neu, um von einem anderen Laufwerk zu booten"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Gerät neu starten"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Test-Modus ausprobieren"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:108
 msgid "Try Installing Again"
 msgstr "Versuchen Sie die Installation erneut"
-
-#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
-msgid "Test mode reboot"
-msgstr "Test-Modus Neustart"
-
-#: src/Views/ErrorView.vala:146
-msgid "Test mode switch user"
-msgstr "Test-Modus Benutzer wechseln"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -280,32 +276,31 @@ msgstr "Tippen Sie, um Ihr Layout zu testen"
 msgid "Show keyboard layout"
 msgstr "Tastaturbelegung zeigen"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:161
+#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Auswählen"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:119
 msgid "Default"
 msgstr "Standard"
 
-#: src/Views/KeyboardLayoutView.vala:108
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Input Language"
 msgstr "Eingabesprache"
 
-#: src/Views/LanguageView.vala:217
+#: src/Views/LanguageView.vala:232
 msgid "Languages"
 msgstr "Sprachen"
 
-#: src/Views/LanguageView.vala:234
+#: src/Views/LanguageView.vala:249
 msgid "Select a Language"
 msgstr "Sprache wählen"
 
-#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
+#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
 msgstr "Aktuell eingestellte Sprache"
 
-#: src/Views/PartitioningView.vala:46
+#: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -314,25 +309,43 @@ msgstr ""
 "<b>Wenn Sie \"Formatieren\" wählen, werden ALLE Daten auf den gewählten "
 "Partitionen gelöscht.</b>"
 
-#: src/Views/PartitioningView.vala:52
+#. Device is in BIOS mode, so we just require a root partition
+#: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Sie müssen wenigstens eine <b>Wurzelpartition (/)</b> wählen."
 
-#: src/Views/PartitioningView.vala:56
+#. Device is in EFI mode, so we also require a boot partition
+#: src/Views/PartitioningView.vala:64
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Sie müssen wenigstens eine <b>Wurzelpartition (/)</b> und eine <b>"
-"Startpartition (/boot/efi)</b> wählen."
+"Sie müssen wenigstens eine <b>Wurzelpartition (/)</b> und eine "
+"<b>Startpartition (/boot/efi)</b> wählen."
 
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Es wird empfohlen eine <b>Swap-Partition</b> zu wählen."
 
-#: src/Views/PartitioningView.vala:89
+#: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
 msgstr "Partitionen bearbeiten…"
+
+#: src/Views/PartitioningView.vala:276
+msgid "EFI partition has the wrong file system"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:278
+msgid "EFI partition is too small"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:281
+msgid "Invalid file system for root"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:283
+msgid "Invalid file system for home"
+msgstr ""
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -350,11 +363,12 @@ msgstr "Konfiguration des Systems"
 msgid "Finishing the Installation"
 msgstr "Abschluss der Installation"
 
-#: src/Views/TryInstallView.vala:33
-msgid "Install or Try Demo Mode"
-msgstr "Installieren oder Test-Modus ausprobieren"
+#: src/Views/TryInstallView.vala:44
+#, fuzzy
+msgid "Try or Install"
+msgstr "Versuchen Sie die Installation erneut"
 
-#: src/Views/TryInstallView.vala:42
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
@@ -362,34 +376,51 @@ msgstr ""
 "Sie können %s jetzt auf diesem Gerät installieren, oder den Test-Modus ohne "
 "Installation ausprobieren."
 
-#: src/Views/TryInstallView.vala:53
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
+#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+msgid "Next"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:81
+#, fuzzy
 msgid ""
-"In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged. Performance and features may not reflect "
-"the installed experience."
+"Changes will not be saved, and data from your previous OS will be unchanged. "
+"Performance and features may not reflect the installed experience."
 msgstr ""
 "Im Test-Modus werden Ihre Änderungen nicht gespeichert und die Daten Ihres "
 "vorherigen Betriebssystems bleiben unverändert. Leistung und Funktionen "
 "spiegeln möglicherweise nicht die installierte Erfahrung wider."
 
-#: src/Views/TryInstallView.vala:64
-msgid ""
-"You can always return to the installer from Demo Mode by selecting the "
-"Install icon."
-msgstr ""
-"Sie können jederzeit vom Test-Modus zum Installationsassistenten "
-"zurückkehren, indem Sie das Installationssymbol wählen."
+#: src/Views/TryInstallView.vala:85
+#, fuzzy
+msgid "Clean Install"
+msgstr "Löschen und Installieren"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/TryInstallView.vala:87
+#, c-format
+msgid "Erase everything and install a fresh copy of %s."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:91
+msgid "Custom (Advanced)"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:93
+msgid ""
+"Create, resize, or otherwise manage partitions manually. This method may "
+"lead to data loss."
+msgstr ""
+
+#: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
 msgstr "Konfiguration fortfahren"
 
-#: src/Views/SuccessView.vala:42
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
 msgstr "Ihr Gerät wird automatisch nach %s in %i Sekunden neu gestartet."
 
-#: src/Views/SuccessView.vala:43
+#: src/Views/SuccessView.vala:35
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -397,16 +428,15 @@ msgstr ""
 "Nach dem Neustart können Sie einen neuen Benutzer einrichten oder erledigen "
 "dies später, wenn sie jetzt Herunterfahren."
 
-#: src/Views/SuccessView.vala:75
-msgid "Test mode shutdown"
-msgstr "Test-Modus Herunterfahren"
-
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
 msgstr "Diese Partition entschlüsseln"
 
 #: src/Widgets/DecryptMenu.vala:58
-msgid "Enter the partition's encryption password and set a LUKS device name."
+#, fuzzy
+msgid ""
+"Enter the partition's encryption password and set a device name for the "
+"decrypted partition."
 msgstr ""
 "Geben Sie das Verschlüsselungspasswort der Partition ein und setzen Sie "
 "einen LUKS Gerätenamen."
@@ -481,6 +511,22 @@ msgstr "Dateisystem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Standard (ext4)"
+
+#~ msgid "Operating System"
+#~ msgstr "Betriebssystem"
+
+#~ msgid "Customize Partitions…"
+#~ msgstr "Partitionen anpassen…"
+
+#~ msgid "Install or Try Demo Mode"
+#~ msgstr "Installieren oder Test-Modus ausprobieren"
+
+#~ msgid ""
+#~ "You can always return to the installer from Demo Mode by selecting the "
+#~ "Install icon."
+#~ msgstr ""
+#~ "Sie können jederzeit vom Test-Modus zum Installationsassistenten "
+#~ "zurückkehren, indem Sie das Installationssymbol wählen."
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr ""
