@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-14 03:51+0000\n"
+"PO-Revision-Date: 2018-10-15 00:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -133,16 +133,15 @@ msgstr "メモリー:"
 
 #: src/Views/DiskView.vala:51
 msgid "Select a Drive"
-msgstr "ドライブの選択"
+msgstr "ドライブを選択してください"
 
 #: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"続行すると、選択されたドライブ上のすべてのデータを削除します。もしデータを"
-"バックアップしていない場合、インストールをキャンセルしてデモモードを使用する"
-"ことができます。"
+"続行すると、選択されたドライブ上のすべてのデータを削除します。データをバックアップしていない場合は、インストールをキャンセルしてデモモードを使用することが"
+"できます。"
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
@@ -186,9 +185,8 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"万が一暗号化のパスワードを忘れると、<b>データを回復することはできません。</b>"
-"これはこのデバイスのためだけのパスワードであり、ユーザーアカウント用のパス"
-"ワードではありません。"
+"万が一暗号化のパスワードを忘れると、<b>データを回復することはできません。</b>これはこのデバイス専用のパスワードであり、ユーザーアカウント用のパスワ"
+"ードではありません。"
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
@@ -196,11 +194,11 @@ msgstr "暗号化のパスワードを選択"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr "パスワードの確認"
+msgstr "パスワードを確認"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr "暗号化を行わない"
+msgstr "暗号化しない"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
@@ -221,7 +219,7 @@ msgstr "パスワードが一致しません"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
-msgstr "インストールできません"
+msgstr "インストールできませんでした"
 
 #: src/Views/ErrorView.vala:38
 #, c-format
@@ -229,9 +227,8 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s のインストールは失敗しました。これはハードウェアのエラーが原因と思われま"
-"す。お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すこ"
-"とができます。"
+"%s のインストールが失敗しました。ハードウェアのエラーが原因と思われます。お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すことがで"
+"きます。"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -279,7 +276,7 @@ msgstr "デフォルト"
 
 #: src/Views/KeyboardLayoutView.vala:126
 msgid "Input Language"
-msgstr "入力する言語"
+msgstr "入力言語"
 
 #: src/Views/LanguageView.vala:232
 msgid "Languages"
@@ -287,7 +284,7 @@ msgstr "言語"
 
 #: src/Views/LanguageView.vala:249
 msgid "Select a Language"
-msgstr "言語を選択"
+msgstr "言語を選択してください"
 
 #: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
@@ -305,20 +302,18 @@ msgstr ""
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "少なくとも <b>ルート (/)</b> パーティションは選択する必要があります。"
+msgstr "少なくとも<b>ルート (/)</b>パーティションを選択する必要があります。"
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
-msgstr ""
-"少なくとも <b>ルート (/)</b> パーティションと <b>ブート (/boot/efi)</b> パー"
-"ティションは選択する必要があります。"
+msgstr "少なくとも<b>ルート (/)</b>パーティションと<b>ブート (/boot/efi)</b>パーティションを選択する必要があります。"
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "<b>スワップ</b> パーティションも選択することをおすすめします。"
+msgstr "<b>スワップ</b>パーティションも選択することをおすすめします。"
 
 #: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
@@ -342,7 +337,7 @@ msgstr "ホームディレクトリが不適切なファイルシステムです
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr "ドライブをパーティショニングしています"
+msgstr "ドライブのパーティションを作成しています"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
@@ -405,7 +400,7 @@ msgstr "セットアップを続行"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "お使いのデバイスは %s を %i 秒後に自動的に再起動します。"
+msgstr "%s が %i 秒後に自動的に再起動します。"
 
 #: src/Views/SuccessView.vala:35
 msgid ""
