@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-05-12 00:11+0000\n"
-"Last-Translator: Pedro Ferreira <pmaf.ferreira@gmail.com>\n"
+"PO-Revision-Date: 2018-10-15 14:44+0000\n"
+"Last-Translator: Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/installer/"
 "installer/pt/>\n"
 "Language: pt\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -325,19 +325,19 @@ msgstr "Modificar partições…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "A partição EFI tem o sistema de ficheiros errado"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "A partição EFI é demasiado pequena"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Sistema de ficheiros inválido para root"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Sistema de ficheiros inválido para home"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -356,9 +356,8 @@ msgid "Finishing the Installation"
 msgstr "A Finalizar a Instalação"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Tentar Instalar de Novo"
+msgstr "Experimentar ou Instalar"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -371,38 +370,37 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Próximo"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"No Modo de Demonstração, as alterações que faças não serão gravadas e os "
-"dados do teu sistema operativo anterior serão mantidos. Performance e "
-"funcionalidades podem não refletir a mesma experiência do sistema quando "
-"instalado."
+"As alterações não serão gravadas e os dados do seu sistema operativo "
+"anterior não serão alterados. O desempenho e funcionalidades poderão não "
+"reflectir a experiência instalada."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Apagar e Instalar"
+msgstr "Instalação Limpa"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Apagar tudo e instalar uma nova cópia de %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Personalizar (Avançado)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Crie, redimensione ou faça a gestão das partições manualmente. Este método "
+"pode levar à perda de dados."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -427,13 +425,12 @@ msgid "Decrypt This Partition"
 msgstr "Desencriptar esta partição"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Introduz a palavra-passe de encriptação da partição e configura um nome de "
-"dispositivo LUKS."
+"Introduza a palavra-passe de encriptação da partição e configure um nome de "
+"dispositivo para a partição desencriptada."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
