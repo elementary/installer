@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-07-03 00:06+0000\n"
+"PO-Revision-Date: 2018-10-15 16:30+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/installer/"
 "installer/ca/>\n"
@@ -324,19 +324,19 @@ msgstr "Modifica les particions…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "La partició EFI té el sistema de fitxers incorrecte."
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "La partició EFI és massa petita."
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Sistema de fitxers no vàlid per a l'arrel."
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Sistema de fitxers no vàlid per a la partició de l'usuari."
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -355,9 +355,8 @@ msgid "Finishing the Installation"
 msgstr "S'acaba la instal·lació"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Intenta tornar a fer una instal·lació"
+msgstr "Proveu el sistema o instal·leu-lo."
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -370,37 +369,37 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Següent"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"Al mode de prova, els canvis que feu no es desaran i les dades del sistema "
-"operatiu anterior es mantindran sense canviar. Les característiques i el "
-"rendiment poden no reflectir l'experiència de tenir el sistema instal·lat."
+"Els canvis que feu no es desaran i les dades del sistema operatiu anterior "
+"es mantindran sense cap canvi. Les característiques i el rendiment poden no "
+"reflectir l'experiència de tenir el sistema instal·lat."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Esborra i instal·la"
+msgstr "Instal·lació nova"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Suprimeix-ho tot i instal·la-hi una còpia nova de l'%s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Personalitzada (avançat)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Creeu, canvieu la mida o gestioneu les particions manualment. Aquest mètode "
+"pot comportar pèrdua de dades."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -424,13 +423,12 @@ msgid "Decrypt This Partition"
 msgstr "Desencripta aquesta partició"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
 "Escriviu la contrasenya d'encriptació de la partició i establiu un nom de "
-"dispositiu LUKS."
+"dispositiu per a la partició desencriptada."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
