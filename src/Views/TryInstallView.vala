@@ -77,22 +77,27 @@ public class Installer.TryInstallView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.sensitive = false;
 
-        var demo_button = new InstallTypeButton (
+        var button_creator = new InstallButtonFactory (next_button, type_grid);
+
+        var demo_button = button_creator.new_button (
             _("Try Demo Mode"),
             "desktop",
-            _("Changes will not be saved, and data from your previous OS will be unchanged. Performance and features may not reflect the installed experience.")
+            _("Changes will not be saved, and data from your previous OS will be unchanged. Performance and features may not reflect the installed experience."),
+            Utils.demo_mode
         );
 
-        var clean_install_button = new InstallTypeButton (
+        var clean_install_button = button_creator.new_button (
             _("Clean Install"),
             "gcleaner",
-            _("Erase everything and install a fresh copy of %s.").printf (Utils.get_pretty_name ())
+            _("Erase everything and install a fresh copy of %s.").printf (Utils.get_pretty_name ()),
+            () => next_step ()
         );
 
-        var custom_button = new InstallTypeButton (
+        var custom_button = button_creator.new_button (
             _("Custom (Advanced)"),
             "disk-utility",
-            _("Create, resize, or otherwise manage partitions manually. This method may lead to data loss.")
+            _("Create, resize, or otherwise manage partitions manually. This method may lead to data loss."),
+            () => custom_step ()
         );
 
         action_area.add (back_button);
@@ -104,59 +109,11 @@ public class Installer.TryInstallView : AbstractInstallerView {
         type_grid.add (custom_button);
 
         demo_button.key_press_event.connect ((event) => handle_key_press (demo_button, event));
-        demo_button.clicked.connect (() => {
-            if (demo_button.active) {
-                type_grid.get_children ().foreach ((child) => {
-                    if (child is Gtk.ToggleButton) {
-                        ((Gtk.ToggleButton)child).active = child == demo_button;
-                    }
-                });
-
-                next_button.label = demo_button.type_title;
-                next_button.sensitive = true;
-                next_button.clicked.connect (Utils.demo_mode);
-            } else {
-                next_button.sensitive = false;
-                next_button.label = _("Next");
-            }
-        });
-
         clean_install_button.key_press_event.connect ((event) => handle_key_press (clean_install_button, event));
-        clean_install_button.clicked.connect (() => {
-            if (clean_install_button.active) {
-                type_grid.get_children ().foreach ((child) => {
-                    if (child is Gtk.ToggleButton) {
-                        ((Gtk.ToggleButton)child).active = child == clean_install_button;
-                    }
-                });
-
-                next_button.label = clean_install_button.type_title;
-                next_button.sensitive = true;
-                next_button.clicked.connect (() => next_step ());
-            } else {
-                next_button.sensitive = false;
-                next_button.label = _("Next");
-            }
-        });
-
         custom_button.key_press_event.connect ((event) => handle_key_press (custom_button, event));
-        custom_button.clicked.connect (() => {
-            if (custom_button.active) {
-                type_grid.get_children ().foreach ((child) => {
-                    if (child is Gtk.ToggleButton) {
-                        ((Gtk.ToggleButton)child).active = child == custom_button;
-                    }
-                });
 
-                next_button.label = custom_button.type_title;
-                next_button.sensitive = true;
-                next_button.clicked.connect (() => custom_step ());
-            } else {
-                next_button.sensitive = false;
-                next_button.label = _("Next");
-            }
-        });
         show_all ();
+
         clean_install_button.grab_focus ();
     }
 
