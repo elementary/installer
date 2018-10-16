@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-06-06 00:08+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2018-10-16 09:43+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/installer/"
 "installer/da/>\n"
 "Language: da\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -323,19 +323,19 @@ msgstr "Tilpas Partitioner…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI-partitionen har det forkerte filsystem"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI-partitionen er for lille"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Ugyldigt filsystem til root"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Ugyldigt filsystem til home"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -354,9 +354,8 @@ msgid "Finishing the Installation"
 msgstr "Færdiggører Installationen"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Prøv at installere igen"
+msgstr "Prøv eller Installer"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -369,37 +368,37 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Næste"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"I demo-tilstand vil ændringer, du laver, ikke blive gemt, og data fra dit "
-"tidligere operativsystem forbliver uændret. Ydeevne og funktioner afspejler "
-"muligvis ikke den installerede oplevelse."
+"Ændringer, du laver, vil ikke blive gemt, og data fra dit tidligere "
+"operativsystem forbliver uændret. Ydeevne og funktioner afspejler muligvis "
+"ikke den installerede oplevelse."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Slet og installer"
+msgstr "Ren Installation"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Slet alt og installer en frisk kopi af %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Brugerdefineret (Avanceret)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Opret, tilpas størrelsen eller på anden vis administrere partitioner "
+"manuelt. Denne metode kan føre til tab af data."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -423,12 +422,12 @@ msgid "Decrypt This Partition"
 msgstr "Dekrypter Denne Partition"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Indtast partitionens krypteringsadgangskode, og angiv et LUKS-enhedsnavn."
+"Indtast partitionens krypteringsadgangskode og angiv et enhedsnavn for den "
+"dekrypterede partition."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
