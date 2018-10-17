@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-15 00:06+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2018-10-17 20:13+0000\n"
+"Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "installer/installer/nb/>\n"
 "Language: nb\n"
@@ -331,12 +331,10 @@ msgid "EFI partition is too small"
 msgstr "EFI-partisjon for liten"
 
 #: src/Views/PartitioningView.vala:281
-#, fuzzy
 msgid "Invalid file system for root"
 msgstr "Ugyldig filsystem for root"
 
 #: src/Views/PartitioningView.vala:283
-#, fuzzy
 msgid "Invalid file system for home"
 msgstr "Ugyldig filsystem for home"
 
@@ -357,9 +355,8 @@ msgid "Finishing the Installation"
 msgstr "Fullfører installasjonen"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Prøv å installere igjen"
+msgstr "Prøv eller installer"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -375,7 +372,6 @@ msgid "Next"
 msgstr "Neste"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -385,7 +381,6 @@ msgstr ""
 "samme nivå som ved faktisk installasjon."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
 msgstr "Slett og installer"
 
@@ -428,11 +423,11 @@ msgid "Decrypt This Partition"
 msgstr "Dekrypter denne partisjonen"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
-msgstr "Skriv inn partisjonens krypteringspassord og sett et LUKS-enhetsnavn."
+msgstr ""
+"Skriv inn partisjonens krypteringspassord og gi partisjonen et enhetsnavn."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
