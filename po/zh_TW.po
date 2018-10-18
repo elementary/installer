@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-06-06 00:08+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2018-10-18 11:47+0000\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
-"installer/installer/zh_TW/>\n"
+"installer/installer/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/MainWindow.vala:44
@@ -310,19 +310,19 @@ msgstr "修改分割區…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI 分割區的檔案系統錯誤"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI 分割區過小"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "根基的檔案系統無效"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "家屋的檔案系統無效"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -341,9 +341,8 @@ msgid "Finishing the Installation"
 msgstr "完成安裝"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "嘗試再安裝一次"
+msgstr "嘗試或安裝"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -354,45 +353,41 @@ msgstr "您可以立刻在此裝置上安裝 %s，或是在不安裝的情況下
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "下一步"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
-msgstr ""
-"在展示模式中，您所做的變更不會儲存，電腦中先前的作業系統也不會更動。展示模式"
-"的效能與功能和安裝後的體驗不見得相同。"
+msgstr "您所做的變更不會儲存，電腦裡先前的作業系統資料也不會更動。此時的效能與功能和安裝後的體驗不見得相同。"
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "抹除並安裝"
+msgstr "乾淨安裝"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "抹除任何資料並安裝全新的 %s 副本。"
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "自訂（進階）"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-msgstr ""
+msgstr "手動建立、管理、或調整分割區大小等。採用這個方法可能會導致資料喪失。"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
 msgstr "繼續設定"
 
 #: src/Views/SuccessView.vala:34
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "您的裝置將在 %i 秒內重新啟動至 %s 。."
+msgstr "您的裝置將在 %i 秒後自動重新啟動至 %s。"
 
 #: src/Views/SuccessView.vala:35
 msgid ""
@@ -406,11 +401,10 @@ msgid "Decrypt This Partition"
 msgstr "解密此分割區"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
-msgstr "輸入分割區的解密密碼並設定一個 LUKS 裝置名稱。"
+msgstr "請輸入分割區的加密密碼，並為解密後的分割區設定裝置名稱。"
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
