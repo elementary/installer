@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-07-10 00:03+0000\n"
+"PO-Revision-Date: 2018-10-18 06:56+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/installer/"
 "installer/cs/>\n"
@@ -322,19 +322,19 @@ msgstr "Upravit oddíly…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "Oddíl EFI má špatný souborový systém"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "Oddíl EFI je příliš malý"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Špatný souborový systém pro kořenový adresář"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Špatný souborový systém pro domovskou složku"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -353,9 +353,8 @@ msgid "Finishing the Installation"
 msgstr "Dokončuji instalaci"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Zkusit nainstalovat znovu"
+msgstr "Vyzkoušet nebo nainstalovat"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -368,37 +367,37 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Další"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"V Demo režimu se změny, které uděláte, neuloží a data z vašeho předchozího "
-"operačního systému zůstanou nezměněna. Výkon a funkce nemusí být přímo "
-"srovnatelné s nainstalovaným systémem."
+"Změny nebudou uloženy a data vašeho předchozího operačního systému zůstanou "
+"nezměněná. Výkon a funkce však nemusí být přímo srovnatelné s plně "
+"nainstalovaným systémem."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Vymazat a nainstalovat"
+msgstr "Čistá instalace"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Vymazat vše a nainstalovat čistou kopii %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Vlastní (Pokročilé)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Vytvořte oddíly, měňte jejich velikost, nebo je spravujte. Tato metoda může "
+"vést ke ztrátě dat."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -422,11 +421,11 @@ msgid "Decrypt This Partition"
 msgstr "Dešifrovat tento oddíl"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
-msgstr "Zadejte šifrovací heslo oddílu a nastavte název zařízení LUKS."
+msgstr ""
+"Zadejte šifrovací heslo oddílu a přiřaďte název zařízení pro šifrovaný oddíl."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
