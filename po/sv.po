@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-20 00:11+0000\n"
+"PO-Revision-Date: 2018-10-22 00:04+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/installer/"
 "installer/sv/>\n"
@@ -22,7 +22,7 @@ msgstr "Installera %s"
 
 #: src/Utils.vala:50
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Stäng av testläge"
 
 #: src/Utils.vala:64
 msgid "Test mode reboot"
