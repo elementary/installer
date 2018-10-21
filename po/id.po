@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-06-12 07:02+0000\n"
+"PO-Revision-Date: 2018-10-21 12:03+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/installer/"
 "installer/id/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -327,19 +327,19 @@ msgstr "Memodifikasi Partisi…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "Partisi EFI memiliki berkas sistem yang salah"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "Partisi EFI terlalu kecil"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Berkas sistem untuk root tidak valid"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Berkas sistem untuk beranda tidak valid"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -358,9 +358,8 @@ msgid "Finishing the Installation"
 msgstr "Selesaikan Pemasangan"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Coba Pemasangan Lagi"
+msgstr "Coba atau Pasang"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -373,37 +372,37 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Selanjutnya"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"Pada Mode Demo, perubahan yang Anda buat tidakan disimpan dan data dari "
-"sistem operasi yang sebelumnya tidak akan berubah. Performa dan fitur-fitur "
-"kemungkinan tidak sama dengan pengalaman saat sudah terpasang."
+"Perubahan tidak akan disimpan, dan data dari sistem operasi Anda yang "
+"sebelumnya tidak akan berubah. Performa dan fitur-fitur kemungkinan tidak "
+"mencerminkan pengalaman saat sudah terpasang."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Hapus dan Pasang"
+msgstr "Pasang Bersih"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Hapus semua dan pasang salinan baru dari %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Kustom (Mahir)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Buat, ubah ukuran, atau jika tidak kelola partisi secara manual. Metode ini "
+"dapat menyebabkan kehilangan data."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -428,12 +427,12 @@ msgid "Decrypt This Partition"
 msgstr "Dekripsi Partisi Ini"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Masukkan kata sandi enkripsi partisi dan atur sebuah nama perangkat LUKS."
+"Masukkan kata sandi enkripsi partisi dan atur sebuah nama perangkat untuk "
+"partisi yang didekripsi."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
