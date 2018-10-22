@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-22 05:30+0000\n"
-"Last-Translator: Adam Rohdin <adam.rohdin@outlook.com>\n"
+"PO-Revision-Date: 2018-10-23 00:03+0000\n"
+"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/installer/"
 "installer/sv/>\n"
 "Language: sv\n"
@@ -133,7 +133,7 @@ msgstr "Minne:"
 
 #: src/Views/DiskView.vala:51
 msgid "Select a Drive"
-msgstr "Välj en Diskenhet"
+msgstr "Välj en diskenhet"
 
 #: src/Views/DiskView.vala:55
 msgid ""
@@ -195,9 +195,8 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
-#, fuzzy
 msgid "Back"
-msgstr "Backsteg"
+msgstr "Tillbaka"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
@@ -212,18 +211,18 @@ msgid "Passwords do not match"
 msgstr ""
 
 #: src/Views/ErrorView.vala:30
-#, fuzzy
 msgid "Could Not Install"
-msgstr "Kunde inte installera %s"
+msgstr "Kunde inte installera"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installationen misslyckades, så din enhet kanske inte kommer starta om "
-"ordentligt. Du kan testa något av följande:"
+"Installationen av %s misslyckades, möjligen på grund av ett hårdvarufel. Din "
+"enhet kanske inte kommer starta om ordentligt. Du kan testa något av "
+"följande:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -344,9 +343,8 @@ msgid "Finishing the Installation"
 msgstr "Slutför installationen"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Testa att installera på nytt"
+msgstr "Prova eller installera"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -368,9 +366,8 @@ msgid ""
 msgstr ""
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Radera & Installera"
+msgstr "Ren installation"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
@@ -451,9 +448,8 @@ msgid "Use as:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Kvadratrot"
+msgstr "Rot (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
@@ -481,9 +477,8 @@ msgid "Filesystem:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Standard"
+msgstr "Förval (etx4)"
 
 #~ msgid "Operating System"
 #~ msgstr "Operativsystem"
