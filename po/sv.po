@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-10-22 05:30+0000\n"
-"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
+"Last-Translator: Adam Rohdin <adam.rohdin@outlook.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/installer/"
 "installer/sv/>\n"
 "Language: sv\n"
@@ -72,7 +72,7 @@ msgstr "Avbryt installation"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
-msgstr ""
+msgstr "Testläge"
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
@@ -125,16 +125,15 @@ msgstr "Din enhet:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr ""
+msgstr "Processor:"
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
 msgstr "Minne:"
 
 #: src/Views/DiskView.vala:51
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Välj ett språk"
+msgstr "Välj en Diskenhet"
 
 #: src/Views/DiskView.vala:55
 msgid ""
