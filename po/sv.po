@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-22 00:04+0000\n"
-"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
+"PO-Revision-Date: 2018-10-22 05:29+0000\n"
+"Last-Translator: Adam Rohdin <adam.rohdin@outlook.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/installer/"
 "installer/sv/>\n"
 "Language: sv\n"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr ""
+msgstr "Påbörjar Installation"
 
 #: src/Dialogs/EndSessionDialog.vala:35
 msgid "Are you sure you want to Shut Down?"
