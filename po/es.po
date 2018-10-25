@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-25 13:24+0000\n"
+"PO-Revision-Date: 2018-10-26 00:05+0000\n"
 "Last-Translator: Carlos Cañellas <ratiosu.cct@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/installer/"
 "installer/es/>\n"
@@ -340,7 +340,7 @@ msgstr "Sistema de archivos incorrecto para el directorio home"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr "Particionando disco"
+msgstr "Particionado de disco"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
@@ -355,9 +355,8 @@ msgid "Finishing the Installation"
 msgstr "Finalizando la instalación"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Intentar instalar nuevamente"
+msgstr "Probar o Instalar"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -370,16 +369,15 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Siguiente"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
 "En el modo de demostración, los cambios que realice no se guardarán y los "
-"datos del sistema operativo anterior no se verán afectados. El desempeño y "
+"datos del sistema operativo anterior no se verán afectados. El rendimiento y "
 "características podrían no reflejar la experiencia del sistema operativo al "
 "ser instalado."
 
@@ -391,11 +389,11 @@ msgstr "Borrar e instalar"
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Borrar todo e instalar una nueva copia de %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Personalizado (avanzado)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
