@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-10-26 00:05+0000\n"
-"Last-Translator: Carlos Cañellas <ratiosu.cct@gmail.com>\n"
+"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/installer/"
 "installer/es/>\n"
 "Language: es\n"
@@ -324,7 +324,7 @@ msgstr "Modificar particiones…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "La partición EFI tiene el sistema de archivos incorrecto"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
