@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-04-24 21:17+0000\n"
-"Last-Translator: Franklin Martinez <furankurinm@gmail.com>\n"
+"PO-Revision-Date: 2018-10-25 13:24+0000\n"
+"Last-Translator: Carlos Cañellas <ratiosu.cct@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/installer/"
 "installer/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -328,15 +328,15 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "La partición EFI es demasiado pequeña"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Sistema de archivos incorrecto para el directorio raíz"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Sistema de archivos incorrecto para el directorio home"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
