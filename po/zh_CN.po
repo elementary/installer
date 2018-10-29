@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-10-30 00:05+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"Last-Translator: Yuxuan Wang <wangmation.ch@foxmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -355,7 +355,7 @@ msgstr "您可以现在就安装 %s 到您的设备，也可以进入试用模�
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "继续"
 
 #: src/Views/TryInstallView.vala:81
 #, fuzzy
@@ -374,17 +374,17 @@ msgstr "抹除并安装"
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "格式化所有内容并全新安装 %s。"
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "自定义（高级选项）"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-msgstr ""
+msgstr "手动进行分区管理、分区大小调整以及其它的管理操作。该方法可能造成数据丢失。"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
