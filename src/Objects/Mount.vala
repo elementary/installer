@@ -23,7 +23,7 @@ public class Installer.Mount {
     public string parent_disk;
     public string mount_point;
     public uint64 sectors;
-    public Distinst.FileSystemType filesystem;
+    public Distinst.FileSystem filesystem;
     public Flags flags;
     public PartitionMenu menu;
 
@@ -35,7 +35,7 @@ public class Installer.Mount {
     }
 
     public Mount (string partition, string parent_disk, string mount,
-                  uint64 sectors, Flags flags, Distinst.FileSystemType fs,
+                  uint64 sectors, Flags flags, Distinst.FileSystem fs,
                   PartitionMenu menu) {
         filesystem = fs;
         mount_point = mount;
@@ -47,14 +47,14 @@ public class Installer.Mount {
     }
 
     public bool is_valid_boot_mount () {
-        return filesystem == Distinst.FileSystemType.FAT16
-            || filesystem == Distinst.FileSystemType.FAT32;
+        return filesystem == Distinst.FileSystem.FAT16
+            || filesystem == Distinst.FileSystem.FAT32;
     }
 
     public bool is_valid_root_mount () {
-        return filesystem != Distinst.FileSystemType.FAT16
-            && filesystem != Distinst.FileSystemType.FAT32
-            && filesystem != Distinst.FileSystemType.NTFS;
+        return filesystem != Distinst.FileSystem.FAT16
+            && filesystem != Distinst.FileSystem.FAT32
+            && filesystem != Distinst.FileSystem.NTFS;
     }
 
     public bool is_lvm () {
