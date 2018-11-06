@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-11-06 20:39+0000\n"
-"Last-Translator: Burhan Keleş <klsburhan@hotmail.com>\n"
+"Last-Translator: fatih ateş <144410028.bmf@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/installer/"
 "installer/tr/>\n"
 "Language: tr\n"
@@ -220,13 +220,14 @@ msgid "Could Not Install"
 msgstr "Yüklenemedi"
 
 #: src/Views/ErrorView.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Kurulum başarısız oldu, bu nedenle cihazınız düzgün şekilde "
-"başlatılamayabilir. Aşağıdakilerden birini deneyebilirsiniz:"
+"%s' nin kurulumu başarısız oldu, donanımdan kaynaklı bir hata olabilir. Bu "
+"nedenle cihazınız düzgün şekilde başlatılamayabilir. Aşağıdakilerden birini "
+"deneyebilirsiniz:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
