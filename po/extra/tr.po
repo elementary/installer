@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-02-02 21:21+0000\n"
-"Last-Translator: Furkan Ege Öztürk <furkanegeozturk@galatasaray.net>\n"
+"PO-Revision-Date: 2018-11-06 21:00+0000\n"
+"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/installer/"
 "extra/tr/>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/io.elementary.installer.desktop.in:3
@@ -30,7 +30,7 @@ msgstr "Sistemi kur"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr ""
+msgstr "system-os-installer"
 
 #~ msgid "Calculator"
 #~ msgstr "Hesap Makinesi"
