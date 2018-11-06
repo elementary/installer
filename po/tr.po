@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-11-06 20:45+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
+"Last-Translator: Burhan Keleş <klsburhan@hotmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/installer/"
 "installer/tr/>\n"
 "Language: tr\n"
@@ -311,7 +311,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Bir <b>Takas</b> kısmı da seçmeniz tavsiye edilir."
 
 #: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
