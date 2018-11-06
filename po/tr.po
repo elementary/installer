@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-11-06 20:45+0000\n"
-"Last-Translator: Burhan Keleş <klsburhan@hotmail.com>\n"
+"PO-Revision-Date: 2018-11-06 20:58+0000\n"
+"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/installer/"
 "installer/tr/>\n"
 "Language: tr\n"
@@ -311,7 +311,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "Bir <b>Takas</b> kısmı da seçmeniz tavsiye edilir."
+msgstr "Bir <b>Takas</b> bölümü de seçmeniz tavsiye edilir."
 
 #: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
@@ -319,19 +319,19 @@ msgstr "Bölümleri Değiştir…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI bölümü yanlış dosya sistemine sahip"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI bölümü çok küçük"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Kök için geçersiz bir dosya sistemi"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Home için geçersiz bir dosya sistemi"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -350,9 +350,8 @@ msgid "Finishing the Installation"
 msgstr "Kurulum Sonlandırılıyor"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Tekrar Yüklemeyi Deneyin"
+msgstr "Deneyin veya Kurun"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -364,37 +363,37 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Sonraki"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"Demo Modunda yaptığınız değişiklikler kaydedilmeyecek ve önceki işletim "
-"sisteminizdeki veriler değişmeyecektir. Performans ve özellikler kurulu "
-"tecrübeyi yansıtmayabilir."
+"Değişiklikler kaydedilmeyecek ve önceki işletim sisteminizdeki veriler "
+"değiştirilmeyecek. Performans ve özellikler kurulmuş sistem tecrübesini "
+"yansıtmayabilir."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Sil ve Kur"
+msgstr "Temiz Kurulum"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Her şeyi sil ve %s taze kopyasını kur."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Özel (Gelişmiş)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Oluştur, yeniden boyutlandır, veya bölümleri elle yönet. Bu metot veri "
+"kaybına yol açabilir."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -407,97 +406,95 @@ msgstr ""
 "Cihazınız %s dk %i saniye içinde otomatik olarak yeniden başlayacaktır."
 
 #: src/Views/SuccessView.vala:35
-#, fuzzy
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"%s kuruldu. Cihazınız yeni bir kullanıcı oluşturmak için otomatik olarak 30 "
-"saniye içinde yeniden başlayacak veya şimdi kapatıp kullanıcıyı daha sonra "
-"ayarlayabilirsiniz."
+"Yeniden başlattıktan sonra yeni bir kullanıcı oluşturabilir veya şimdi "
+"kapatabilir ve daha sonra yeni bir kullanıcı ayarlayabilirsiniz."
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Bu Bölümü Çöz"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"Bölümün şifreleme parolasını girin ve şifreli bölüm için bir cihaz adı "
+"ayarlayın."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Parola:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Cihaz adı:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Çöz"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "LUKS bölümü çözülmüştü"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Bölümü kullan:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Biçim:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Olarak kullan:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Kök"
+msgstr "Kök (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Home (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Boot (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Takas"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Özel"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Özel:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Dosya sistemi:"
 
 #: src/Widgets/PartitionMenu.vala:109
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Varsayılan"
+msgstr "Varsayılan (ext4)"
 
 #~ msgid "Operating System"
 #~ msgstr "İşletim Sistemi"
