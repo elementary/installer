@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-11-06 20:58+0000\n"
+"PO-Revision-Date: 2018-11-06 21:00+0000\n"
 "Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -299,7 +299,7 @@ msgstr ""
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "En azından bir <b>Kök (/)</b> bölümü seçmelisiniz"
+msgstr "En azından bir <b>Kök (/)</b> bölümü seçmelisiniz."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
