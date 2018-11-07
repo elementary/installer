@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-23 13:06-0700\n"
+"POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-07-03 19:20+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/installer/"
@@ -11,21 +11,29 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "Namesti %s"
 
-#: src/Utils.vala:31
-msgid "Operating System"
-msgstr "Operacijski sistem"
+#: src/Utils.vala:50
+msgid "Test mode shutdown"
+msgstr "Izklop v testnem načinu"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
+#: src/Utils.vala:64
+msgid "Test mode reboot"
+msgstr "Ponovni zagon v testni način"
+
+#: src/Utils.vala:78
+msgid "Test mode switch user"
+msgstr "Preklop uporabnika v testnem načinu"
+
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -38,24 +46,24 @@ msgstr "Ni bilo mogoče spremeniti imena domene za Distinst dnevnik"
 msgid "Starting installation"
 msgstr "Začenjam namestitev"
 
-#: src/Dialogs/EndSessionDialog.vala:43
+#: src/Dialogs/EndSessionDialog.vala:35
 msgid "Are you sure you want to Shut Down?"
 msgstr "Ste prepričani da želite izklopiti računalnik?"
 
-#: src/Dialogs/EndSessionDialog.vala:50
+#: src/Dialogs/EndSessionDialog.vala:42
 msgid "This will cancel installation and turn off this device."
 msgstr "To bo preklicalo namestitev in izklopilo računalnik."
 
-#: src/Dialogs/EndSessionDialog.vala:66
+#: src/Dialogs/EndSessionDialog.vala:58
 msgid "Restart"
 msgstr "Ponovni zagon"
 
-#: src/Dialogs/EndSessionDialog.vala:68
+#: src/Dialogs/EndSessionDialog.vala:60
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:63
+#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
+#: src/Views/SuccessView.vala:55
 msgid "Shut Down"
 msgstr "Izklop"
 
@@ -121,11 +129,11 @@ msgstr "Procesor:"
 msgid "Memory:"
 msgstr "Pomnilnik:"
 
-#: src/Views/DiskView.vala:52
+#: src/Views/DiskView.vala:51
 msgid "Select a Drive"
 msgstr "Izberite pogon"
 
-#: src/Views/DiskView.vala:56
+#: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -133,15 +141,11 @@ msgstr ""
 "To bo izbrisalo vse podatke na izbranem pogonu. Če nimate varnostnih kopij, "
 "lahko prekličete namestitev in naprej uporabljate demonstracijski način."
 
-#: src/Views/DiskView.vala:66
+#: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
 msgstr "Pridobivam trenutno konfiguracijo…"
 
-#: src/Views/DiskView.vala:97
-msgid "Customize Partitions…"
-msgstr "Particije po meri…"
-
-#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
 msgstr "Izbriši in namesti"
 
@@ -191,27 +195,27 @@ msgid "Don't Encrypt"
 msgstr "Ne šifriraj"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/TryInstallView.vala:89
+#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Nazaj"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
 msgstr "Izberite geslo"
 
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Set Password"
 msgstr "Nastavi geslo"
 
-#: src/Views/EncryptView.vala:231
+#: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
 msgstr "Gesli se ne ujemata"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
 msgstr "Ni bilo mogoče namestiti"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:38
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
@@ -221,37 +225,29 @@ msgstr ""
 "Zaradi tega se vaš računalnik morda ne bo pravilno znova zagnal. Lahko "
 "poskusite:"
 
-#: src/Views/ErrorView.vala:52
+#: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
 msgstr "* Ponovno pognati namestitev"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
 msgstr "* Uporabiti demonstracijski način za ročno popravilo"
 
-#: src/Views/ErrorView.vala:64
+#: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
 msgstr "* Ponovno pognati računalnik z drugega pogona"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Ponovni zagon"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Demonstracijski način"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:108
 msgid "Try Installing Again"
 msgstr "Ponovno poženi namestitev"
-
-#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
-msgid "Test mode reboot"
-msgstr "Ponovni zagon v testni način"
-
-#: src/Views/ErrorView.vala:146
-msgid "Test mode switch user"
-msgstr "Preklop uporabnika v testnem načinu"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -265,32 +261,31 @@ msgstr "Tipkajte za preizkus razporeda tipk"
 msgid "Show keyboard layout"
 msgstr "Pokaži razpored tipk"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:161
+#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Izberi"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:119
 msgid "Default"
 msgstr "Privzeto"
 
-#: src/Views/KeyboardLayoutView.vala:108
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Input Language"
 msgstr "Jezik vnosa"
 
-#: src/Views/LanguageView.vala:217
+#: src/Views/LanguageView.vala:232
 msgid "Languages"
 msgstr "Jeziki"
 
-#: src/Views/LanguageView.vala:234
+#: src/Views/LanguageView.vala:249
 msgid "Select a Language"
 msgstr "Izberite jezik"
 
-#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
+#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
 msgstr "Trenutno aktivni jezik"
 
-#: src/Views/PartitioningView.vala:46
+#: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -298,11 +293,13 @@ msgstr ""
 "Izberite particije. <b>Če izberete \"Formatiraj\", bodo izbrisani VSI "
 "podatki na izbrani particiji.</b>"
 
-#: src/Views/PartitioningView.vala:52
+#. Device is in BIOS mode, so we just require a root partition
+#: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Izbrati morate vsaj <b>korensko (/)</b> particijo."
 
-#: src/Views/PartitioningView.vala:56
+#. Device is in EFI mode, so we also require a boot partition
+#: src/Views/PartitioningView.vala:64
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -310,13 +307,29 @@ msgstr ""
 "Izbrati morate vsaj <b>korensko (/)</b> in <b>zagonsko (/boot/efi)</b> "
 "particijo."
 
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Priporočamo tudi izbiro <b>izmenjalne (swap)</b> particije."
 
-#: src/Views/PartitioningView.vala:89
+#: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
 msgstr "Spremeni particije…"
+
+#: src/Views/PartitioningView.vala:276
+msgid "EFI partition has the wrong file system"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:278
+msgid "EFI partition is too small"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:281
+msgid "Invalid file system for root"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:283
+msgid "Invalid file system for home"
+msgstr ""
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -334,61 +347,78 @@ msgstr "Nastavitev sistema"
 msgid "Finishing the Installation"
 msgstr "Zaključevanje namestitve"
 
-#: src/Views/TryInstallView.vala:33
-msgid "Install or Try Demo Mode"
-msgstr "Namesti ali preizkusi v demonstracijskem načinu"
+#: src/Views/TryInstallView.vala:44
+#, fuzzy
+msgid "Try or Install"
+msgstr "Ponovno poženi namestitev"
 
-#: src/Views/TryInstallView.vala:42
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
 "Lahko namestite %s ali pa preizkusite demonstracijski način brez namestitve."
 
-#: src/Views/TryInstallView.vala:53
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
+#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+msgid "Next"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:81
+#, fuzzy
 msgid ""
-"In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged. Performance and features may not reflect "
-"the installed experience."
+"Changes will not be saved, and data from your previous OS will be unchanged. "
+"Performance and features may not reflect the installed experience."
 msgstr ""
 "V demonstracijskem načinu spremembe ne bodo shranjene in vaš obstoječ "
 "operacijski sistem ostane nedotaknjen."
 
-#: src/Views/TryInstallView.vala:64
-msgid ""
-"You can always return to the installer from Demo Mode by selecting the "
-"Install icon."
-msgstr ""
-"Z demonstracijskega načina lahko vedno poženete namestitveni program z "
-"izbiro ikone za namestitev."
+#: src/Views/TryInstallView.vala:85
+#, fuzzy
+msgid "Clean Install"
+msgstr "Izbriši in namesti"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/TryInstallView.vala:87
+#, c-format
+msgid "Erase everything and install a fresh copy of %s."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:91
+msgid "Custom (Advanced)"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:93
+msgid ""
+"Create, resize, or otherwise manage partitions manually. This method may "
+"lead to data loss."
+msgstr ""
+
+#: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
 msgstr "Nadaljuj namestitev"
 
-#: src/Views/SuccessView.vala:42
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
 msgstr ""
 "%s je bil nameščen. Vaš računalnik se bo samodejno ponovno zagnal čez %i "
 "sekund."
 
-#: src/Views/SuccessView.vala:43
+#: src/Views/SuccessView.vala:35
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr "Po ponovnem zagonu lahko ustvarite nov uporabniški račun."
-
-#: src/Views/SuccessView.vala:75
-msgid "Test mode shutdown"
-msgstr "Izklop v testnem načinu"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
 msgstr "Odkleni to particijo"
 
 #: src/Widgets/DecryptMenu.vala:58
-msgid "Enter the partition's encryption password and set a LUKS device name."
+#, fuzzy
+msgid ""
+"Enter the partition's encryption password and set a device name for the "
+"decrypted partition."
 msgstr "Vnesite šifrirno geslo in nastavite LUKS ime naprave."
 
 #: src/Widgets/DecryptMenu.vala:71
@@ -461,6 +491,22 @@ msgstr "Datotečni sistem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Privzet (ext4)"
+
+#~ msgid "Operating System"
+#~ msgstr "Operacijski sistem"
+
+#~ msgid "Customize Partitions…"
+#~ msgstr "Particije po meri…"
+
+#~ msgid "Install or Try Demo Mode"
+#~ msgstr "Namesti ali preizkusi v demonstracijskem načinu"
+
+#~ msgid ""
+#~ "You can always return to the installer from Demo Mode by selecting the "
+#~ "Install icon."
+#~ msgstr ""
+#~ "Z demonstracijskega načina lahko vedno poženete namestitveni program z "
+#~ "izbiro ikone za namestitev."
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Izberite pogon za namestitev"
