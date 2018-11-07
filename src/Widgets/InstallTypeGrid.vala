@@ -53,7 +53,7 @@ public class Installer.InstallTypeButton : Gtk.ToggleButton {
 
         var grid = new Gtk.Grid ();
         grid.margin = 6;
-        grid.margin_right = 12;
+        grid.margin_end = 12;
         grid.column_spacing = 6;
         grid.row_spacing = 6;
         grid.orientation = Gtk.Orientation.VERTICAL;
