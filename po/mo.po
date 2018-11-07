@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-23 13:06-0700\n"
+"POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-05-27 00:05+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
-"Language-Team: Moldovan "
-"<https://weblate.elementary.io/projects/installer/installer/mo/>\n"
+"Language-Team: Moldovan <https://weblate.elementary.io/projects/installer/"
+"installer/mo/>\n"
 "Language: mo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,16 +13,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "Instalați %s 1"
 
-#: src/Utils.vala:31
-msgid "Operating System"
-msgstr "Sistemul de operare"
+#: src/Utils.vala:50
+msgid "Test mode shutdown"
+msgstr "Mod de oprire a testului"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
+#: src/Utils.vala:64
+msgid "Test mode reboot"
+msgstr "Mod de testare reporniți"
+
+#: src/Utils.vala:78
+msgid "Test mode switch user"
+msgstr "Utilizator comutator mod de testare"
+
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
 msgid "%s…"
 msgstr "%s 1…"
@@ -35,24 +43,24 @@ msgstr "Nu s-a putut seta apelul Distinst callback"
 msgid "Starting installation"
 msgstr "Începeți instalarea"
 
-#: src/Dialogs/EndSessionDialog.vala:43
+#: src/Dialogs/EndSessionDialog.vala:35
 msgid "Are you sure you want to Shut Down?"
 msgstr "Sigur vrei să închizi?"
 
-#: src/Dialogs/EndSessionDialog.vala:50
+#: src/Dialogs/EndSessionDialog.vala:42
 msgid "This will cancel installation and turn off this device."
 msgstr "Aceasta va anula instalarea și va opri acest dispozitiv."
 
-#: src/Dialogs/EndSessionDialog.vala:66
+#: src/Dialogs/EndSessionDialog.vala:58
 msgid "Restart"
 msgstr "Repornire"
 
-#: src/Dialogs/EndSessionDialog.vala:68
+#: src/Dialogs/EndSessionDialog.vala:60
 msgid "Cancel"
 msgstr "Anulare"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:63
+#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
+#: src/Views/SuccessView.vala:55
 msgid "Shut Down"
 msgstr "Închide"
 
@@ -121,11 +129,11 @@ msgstr "Procesador:"
 msgid "Memory:"
 msgstr "Memorie:"
 
-#: src/Views/DiskView.vala:52
+#: src/Views/DiskView.vala:51
 msgid "Select a Drive"
 msgstr "Selectați unitate"
 
-#: src/Views/DiskView.vala:56
+#: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -133,15 +141,11 @@ msgstr ""
 "Aceasta va șterge toate datele de pe unitatea selectată. Dacă nu ați "
 "susținut datele, puteți să anulați instalarea și să utilizați modul Demo."
 
-#: src/Views/DiskView.vala:66
+#: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
 msgstr "Obținerea configurației curente …"
 
-#: src/Views/DiskView.vala:97
-msgid "Customize Partitions…"
-msgstr "Personalizați partițiile …"
-
-#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
 msgstr "Ștergeți și instalați"
 
@@ -196,27 +200,27 @@ msgid "Don't Encrypt"
 msgstr "Nu criptați"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/TryInstallView.vala:89
+#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Înapoi"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
 msgstr "Alege parola"
 
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Set Password"
 msgstr "Setați parola"
 
-#: src/Views/EncryptView.vala:231
+#: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
 msgstr "Parolele nu se potrivesc"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
 msgstr "Nu sa putet instala"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:38
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
@@ -225,37 +229,29 @@ msgstr ""
 "Instalarea %s 1 a eșuat, posibil din cauza unei erori de hardware. Este "
 "posibil ca Pc Dvs. să nu se repornească corect. Puteți încerca următoarele:"
 
-#: src/Views/ErrorView.vala:52
+#: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
 msgstr "• Încercați instalarea din nou"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
 msgstr "• Utilizați modul Demo și încercați să recuperați manualmente"
 
-#: src/Views/ErrorView.vala:64
+#: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
 msgstr "• Reporniți dispozitivul pentru a porni de la o altă unitate"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Reporniți dispozitivul"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Încercați modul Demo"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:108
 msgid "Try Installing Again"
 msgstr "Încercați să instalați din nou"
-
-#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
-msgid "Test mode reboot"
-msgstr "Mod de testare reporniți"
-
-#: src/Views/ErrorView.vala:146
-msgid "Test mode switch user"
-msgstr "Utilizator comutator mod de testare"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -269,32 +265,31 @@ msgstr "Tastați pentru a testa aspectul"
 msgid "Show keyboard layout"
 msgstr "Afișați aspectul tastaturii"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:161
+#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Selectați"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:119
 msgid "Default"
 msgstr "Mod implicit"
 
-#: src/Views/KeyboardLayoutView.vala:108
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Input Language"
 msgstr "Limba de introducere"
 
-#: src/Views/LanguageView.vala:217
+#: src/Views/LanguageView.vala:232
 msgid "Languages"
 msgstr "Limbi"
 
-#: src/Views/LanguageView.vala:234
+#: src/Views/LanguageView.vala:249
 msgid "Select a Language"
 msgstr "Selectați limba"
 
-#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
+#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
 msgstr "Limba activă în prezent"
 
-#: src/Views/PartitioningView.vala:46
+#: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -302,11 +297,13 @@ msgstr ""
 "Selectați care partiții să fie utilizate pe toate unitățile. <b> 1 Selectați "
 "\"Format\" va șterge TOATE datele de pe partiția selectată. </b> 2"
 
-#: src/Views/PartitioningView.vala:52
+#. Device is in BIOS mode, so we just require a root partition
+#: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Trebuie să selectați cel puțin o partiție <b> 1Root (/) </b> 2."
 
-#: src/Views/PartitioningView.vala:56
+#. Device is in EFI mode, so we also require a boot partition
+#: src/Views/PartitioningView.vala:64
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -314,13 +311,29 @@ msgstr ""
 "Trebuie să selectați cel puțin o partiție <b> 1Root (/) </b> 2 și o partiție "
 "<b> 3 Boot (/ boot /efi) </b> 4."
 
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "De asemenea, este recomandat să selectați o partiție <b> 1Swap </b> 2."
 
-#: src/Views/PartitioningView.vala:89
+#: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
 msgstr "Modificați partițiile …"
+
+#: src/Views/PartitioningView.vala:276
+msgid "EFI partition has the wrong file system"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:278
+msgid "EFI partition is too small"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:281
+msgid "Invalid file system for root"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:283
+msgid "Invalid file system for home"
+msgstr ""
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -338,11 +351,12 @@ msgstr "Configurarea sistemului"
 msgid "Finishing the Installation"
 msgstr "Finalizarea instalării"
 
-#: src/Views/TryInstallView.vala:33
-msgid "Install or Try Demo Mode"
-msgstr "Instalați sau încercați modul demonstrativ"
+#: src/Views/TryInstallView.vala:44
+#, fuzzy
+msgid "Try or Install"
+msgstr "Încercați să instalați din nou"
 
-#: src/Views/TryInstallView.vala:42
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
@@ -350,34 +364,51 @@ msgstr ""
 "Puteți instala acum%s 1 pe acest dispozitiv sau încercați modul Demo fără a "
 "instala."
 
-#: src/Views/TryInstallView.vala:53
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
+#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+msgid "Next"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:81
+#, fuzzy
 msgid ""
-"In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged. Performance and features may not reflect "
-"the installed experience."
+"Changes will not be saved, and data from your previous OS will be unchanged. "
+"Performance and features may not reflect the installed experience."
 msgstr ""
 "În modul Demo, modificările pe care le faceți nu vor fi salvate, iar datele "
 "din sistemul de operare anterior vor fi neschimbate. Este posibil ca "
 "performanțele și caracteristicile să nu reflecte experiența instalată."
 
-#: src/Views/TryInstallView.vala:64
-msgid ""
-"You can always return to the installer from Demo Mode by selecting the "
-"Install icon."
-msgstr ""
-"Puteți reveni întotdeauna la programul de instalare din modul Demo selectând "
-"pictograma Instalare."
+#: src/Views/TryInstallView.vala:85
+#, fuzzy
+msgid "Clean Install"
+msgstr "Ștergeți și instalați"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/TryInstallView.vala:87
+#, c-format
+msgid "Erase everything and install a fresh copy of %s."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:91
+msgid "Custom (Advanced)"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:93
+msgid ""
+"Create, resize, or otherwise manage partitions manually. This method may "
+"lead to data loss."
+msgstr ""
+
+#: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
 msgstr "Continuați să configurați"
 
-#: src/Views/SuccessView.vala:42
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
 msgstr "Pc dvs. va reporni automat la%s 1 în%i 2 secunde."
 
-#: src/Views/SuccessView.vala:43
+#: src/Views/SuccessView.vala:35
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -385,16 +416,15 @@ msgstr ""
 "După repornire, puteți configura un utilizator nou sau puteți închide acum "
 "și configurați un utilizator nou mai târziu."
 
-#: src/Views/SuccessView.vala:75
-msgid "Test mode shutdown"
-msgstr "Mod de oprire a testului"
-
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
 msgstr "Decriptați această partiție"
 
 #: src/Widgets/DecryptMenu.vala:58
-msgid "Enter the partition's encryption password and set a LUKS device name."
+#, fuzzy
+msgid ""
+"Enter the partition's encryption password and set a device name for the "
+"decrypted partition."
 msgstr ""
 "Introduceți parola de criptare a partiției și setați un nume de dispozitiv "
 "LUKS."
@@ -469,3 +499,19 @@ msgstr "Sistemul de fișiere:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Implicit (ext4)"
+
+#~ msgid "Operating System"
+#~ msgstr "Sistemul de operare"
+
+#~ msgid "Customize Partitions…"
+#~ msgstr "Personalizați partițiile …"
+
+#~ msgid "Install or Try Demo Mode"
+#~ msgstr "Instalați sau încercați modul demonstrativ"
+
+#~ msgid ""
+#~ "You can always return to the installer from Demo Mode by selecting the "
+#~ "Install icon."
+#~ msgstr ""
+#~ "Puteți reveni întotdeauna la programul de instalare din modul Demo "
+#~ "selectând pictograma Instalare."
