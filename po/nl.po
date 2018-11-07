@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-23 13:06-0700\n"
+"POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-08-31 18:51+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/installer/"
@@ -15,16 +15,24 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "Installeer %s"
 
-#: src/Utils.vala:31
-msgid "Operating System"
-msgstr "Besturingssysteem"
+#: src/Utils.vala:50
+msgid "Test mode shutdown"
+msgstr "Testmodus afsluiten"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
+#: src/Utils.vala:64
+msgid "Test mode reboot"
+msgstr "Herstart in testmodus"
+
+#: src/Utils.vala:78
+msgid "Test mode switch user"
+msgstr "Testmodus wissel gebruiker"
+
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -37,24 +45,24 @@ msgstr "Kan de Distinst log callback niet instellen"
 msgid "Starting installation"
 msgstr "Installatie starten"
 
-#: src/Dialogs/EndSessionDialog.vala:43
+#: src/Dialogs/EndSessionDialog.vala:35
 msgid "Are you sure you want to Shut Down?"
 msgstr "Bent u zeker dat u het systeem wilt afsluiten?"
 
-#: src/Dialogs/EndSessionDialog.vala:50
+#: src/Dialogs/EndSessionDialog.vala:42
 msgid "This will cancel installation and turn off this device."
 msgstr "Dit zal de installatie annuleren en dit apparaat afsluiten."
 
-#: src/Dialogs/EndSessionDialog.vala:66
+#: src/Dialogs/EndSessionDialog.vala:58
 msgid "Restart"
 msgstr "Herstarten"
 
-#: src/Dialogs/EndSessionDialog.vala:68
+#: src/Dialogs/EndSessionDialog.vala:60
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:63
+#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
+#: src/Views/SuccessView.vala:55
 msgid "Shut Down"
 msgstr "Afsluiten"
 
@@ -123,11 +131,11 @@ msgstr "Processor:"
 msgid "Memory:"
 msgstr "Geheugen:"
 
-#: src/Views/DiskView.vala:52
+#: src/Views/DiskView.vala:51
 msgid "Select a Drive"
 msgstr "Een schijf selecteren"
 
-#: src/Views/DiskView.vala:56
+#: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -136,15 +144,11 @@ msgstr ""
 "heeft van uw data, dan kunt u de installatie annuleren en de demomodus "
 "gebruiken."
 
-#: src/Views/DiskView.vala:66
+#: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
 msgstr "Huidige configuratie aan het ophalen…"
 
-#: src/Views/DiskView.vala:97
-msgid "Customize Partitions…"
-msgstr "Partities aanpassen…"
-
-#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
 msgstr "Installeren en wissen"
 
@@ -199,27 +203,27 @@ msgid "Don't Encrypt"
 msgstr "Niet versleutelen"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/TryInstallView.vala:89
+#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Terug"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
 msgstr "Wachtwoord kiezen"
 
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Set Password"
 msgstr "Wachtwoord instellen"
 
-#: src/Views/EncryptView.vala:231
+#: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
 msgstr "Wachtwoorden komen niet overeen"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
 msgstr "Kon niet installeren"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:38
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
@@ -228,37 +232,29 @@ msgstr ""
 "Installeren van %s mislukt, mogelijkerwijs door een hardwarefout. Wellicht "
 "herstart uw apparaat niet juist. U kunt één van de volgende opties proberen:"
 
-#: src/Views/ErrorView.vala:52
+#: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
 msgstr "• Probeer de installatie opnieuw"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
 msgstr "• Gebruik de demomodus en probeer handmatig te herstellen"
 
-#: src/Views/ErrorView.vala:64
+#: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
 msgstr "• Herstart toestel om van een ander station op te starten"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Herstart toestel"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Probeer de demonstratiemodus"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:108
 msgid "Try Installing Again"
 msgstr "Probeer de installatie opnieuw"
-
-#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
-msgid "Test mode reboot"
-msgstr "Herstart in testmodus"
-
-#: src/Views/ErrorView.vala:146
-msgid "Test mode switch user"
-msgstr "Testmodus wissel gebruiker"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -272,32 +268,31 @@ msgstr "Typ om uw indeling uit te proberen"
 msgid "Show keyboard layout"
 msgstr "Toon toetsenbordindeling"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:161
+#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Selecteer"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:119
 msgid "Default"
 msgstr "Standaard"
 
-#: src/Views/KeyboardLayoutView.vala:108
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Input Language"
 msgstr "Invoertaal"
 
-#: src/Views/LanguageView.vala:217
+#: src/Views/LanguageView.vala:232
 msgid "Languages"
 msgstr "Talen"
 
-#: src/Views/LanguageView.vala:234
+#: src/Views/LanguageView.vala:249
 msgid "Select a Language"
 msgstr "Selecteer een taal"
 
-#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
+#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
 msgstr "Momenteel actieve taal"
 
-#: src/Views/PartitioningView.vala:46
+#: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -306,11 +301,13 @@ msgstr ""
 "selecteren van \"Formatteren\" zal ALLE data op de geselecteerde partitie "
 "permanent verwijderen.</b>"
 
-#: src/Views/PartitioningView.vala:52
+#. Device is in BIOS mode, so we just require a root partition
+#: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "U zult in ieder geval een <b>Root-partitie (/)</b> moeten kiezen."
 
-#: src/Views/PartitioningView.vala:56
+#. Device is in EFI mode, so we also require a boot partition
+#: src/Views/PartitioningView.vala:64
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -318,14 +315,30 @@ msgstr ""
 "U zult in ieder geval een <b>Root-partitie (/)</b> als ook een <b>Boot-"
 "partitie (/boot/efi)</b> moeten selecteren."
 
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr ""
 "Het wordt eveneens aangeraden om een <b>Swap-partitie</b> te selecteren."
 
-#: src/Views/PartitioningView.vala:89
+#: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
 msgstr "Partities aanpassen…"
+
+#: src/Views/PartitioningView.vala:276
+msgid "EFI partition has the wrong file system"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:278
+msgid "EFI partition is too small"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:281
+msgid "Invalid file system for root"
+msgstr ""
+
+#: src/Views/PartitioningView.vala:283
+msgid "Invalid file system for home"
+msgstr ""
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -343,11 +356,12 @@ msgstr "Systeem configureren"
 msgid "Finishing the Installation"
 msgstr "Installatie afronden"
 
-#: src/Views/TryInstallView.vala:33
-msgid "Install or Try Demo Mode"
-msgstr "Installeer of probeer de demomodus"
+#: src/Views/TryInstallView.vala:44
+#, fuzzy
+msgid "Try or Install"
+msgstr "Probeer de installatie opnieuw"
 
-#: src/Views/TryInstallView.vala:42
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
@@ -355,11 +369,16 @@ msgstr ""
 "U kunt nu %s installeren op uw toestel, of probeer de demonstratiemodus uit "
 "zonder installatie."
 
-#: src/Views/TryInstallView.vala:53
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
+#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+msgid "Next"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:81
+#, fuzzy
 msgid ""
-"In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged. Performance and features may not reflect "
-"the installed experience."
+"Changes will not be saved, and data from your previous OS will be unchanged. "
+"Performance and features may not reflect the installed experience."
 msgstr ""
 "In demomodus zullen veranderingen, die u gemaakt heeft, niet worden "
 "opgeslagen en data van uw eerdere besturingssysteem niet worden gewijzigd. "
@@ -367,25 +386,37 @@ msgstr ""
 "zijn van de ervaring van een daadwerkelijke installatie van dit "
 "besturingssysteem."
 
-#: src/Views/TryInstallView.vala:64
-msgid ""
-"You can always return to the installer from Demo Mode by selecting the "
-"Install icon."
-msgstr ""
-"U kunt altijd terug van de demonstratiemodus naar het installatieprogramma "
-"door het installatie-icoon te selecteren."
+#: src/Views/TryInstallView.vala:85
+#, fuzzy
+msgid "Clean Install"
+msgstr "Installeren en wissen"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/TryInstallView.vala:87
+#, c-format
+msgid "Erase everything and install a fresh copy of %s."
+msgstr ""
+
+#: src/Views/TryInstallView.vala:91
+msgid "Custom (Advanced)"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:93
+msgid ""
+"Create, resize, or otherwise manage partitions manually. This method may "
+"lead to data loss."
+msgstr ""
+
+#: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
 msgstr "Vervolg instellen"
 
-#: src/Views/SuccessView.vala:42
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
 msgstr ""
 "Uw toestel zal binnen %i seconden automatisch opnieuw opstarten naar %s."
 
-#: src/Views/SuccessView.vala:43
+#: src/Views/SuccessView.vala:35
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -393,16 +424,15 @@ msgstr ""
 "Na het opnieuw opstarten kunt u een nieuwe gebruiker aanmaken, of zet uw "
 "apparaat uit om later een gebruiker aan te maken."
 
-#: src/Views/SuccessView.vala:75
-msgid "Test mode shutdown"
-msgstr "Testmodus afsluiten"
-
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
 msgstr "Ontsleutel Deze Partitie"
 
 #: src/Widgets/DecryptMenu.vala:58
-msgid "Enter the partition's encryption password and set a LUKS device name."
+#, fuzzy
+msgid ""
+"Enter the partition's encryption password and set a device name for the "
+"decrypted partition."
 msgstr ""
 "Voer het versleutelwachtwoord van de partitie in en stel een LUKS "
 "apparaatnaam in."
@@ -477,6 +507,22 @@ msgstr "Bestandsysteem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Standaard (ext4)"
+
+#~ msgid "Operating System"
+#~ msgstr "Besturingssysteem"
+
+#~ msgid "Customize Partitions…"
+#~ msgstr "Partities aanpassen…"
+
+#~ msgid "Install or Try Demo Mode"
+#~ msgstr "Installeer of probeer de demomodus"
+
+#~ msgid ""
+#~ "You can always return to the installer from Demo Mode by selecting the "
+#~ "Install icon."
+#~ msgstr ""
+#~ "U kunt altijd terug van de demonstratiemodus naar het "
+#~ "installatieprogramma door het installatie-icoon te selecteren."
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "Selecteer een schijf voor installatie"
