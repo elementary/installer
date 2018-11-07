@@ -35,7 +35,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     public Gtk.Switch format_partition;
     public Gtk.Label type_label;
     public Gtk.Switch use_partition;
-    public Distinst.FileSystemType original_filesystem;
+    public Distinst.FileSystem original_filesystem;
     public string parent_disk;
     public string partition_path;
 
@@ -44,7 +44,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     // A reference to the parent which owns this menu.
     private PartitionBar partition_bar;
 
-    public PartitionMenu (string path, string parent, Distinst.FileSystemType fs,
+    public PartitionMenu (string path, string parent, Distinst.FileSystem fs,
                           bool lvm, SetMount set_mount, UnsetMount unset_mount,
                           MountSetFn mount_set, PartitionBar partition_bar) {
         this.partition_bar = partition_bar;
@@ -217,13 +217,13 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 disable_signals = false;
 
                 int select = 0;
-                if (fs == Distinst.FileSystemType.FAT16 || fs == Distinst.FileSystemType.FAT32) {
+                if (fs == Distinst.FileSystem.FAT16 || fs == Distinst.FileSystem.FAT32) {
                     if (mount_set (boot_partition)) {
                         select = 4;
                     } else {
                         select = 2;
                     }
-                } else if (fs == Distinst.FileSystemType.SWAP) {
+                } else if (fs == Distinst.FileSystem.SWAP) {
                     select = 3;
                 } else if (mount_set ("/")) {
                     if (mount_set ("/home" )) {
@@ -270,7 +270,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     private void update_values (SetMount set_mount) {
         var mount = get_mount ();
         var filesystem = mount == "swap"
-            ? Distinst.FileSystemType.SWAP
+            ? Distinst.FileSystem.SWAP
             : get_file_system ();
 
         string? error = null;
@@ -311,22 +311,22 @@ public class Installer.PartitionMenu : Gtk.Popover {
         return original_filesystem == get_file_system ();
     }
 
-    private Distinst.FileSystemType get_file_system () {
+    private Distinst.FileSystem get_file_system () {
         switch (type.active) {
             case 0:
-                return Distinst.FileSystemType.EXT4;
+                return Distinst.FileSystem.EXT4;
             case 1:
-                return Distinst.FileSystemType.FAT16;
+                return Distinst.FileSystem.FAT16;
             case 2:
-                return Distinst.FileSystemType.FAT32;
+                return Distinst.FileSystem.FAT32;
             case 3:
-                return Distinst.FileSystemType.BTRFS;
+                return Distinst.FileSystem.BTRFS;
             case 4:
-                return Distinst.FileSystemType.XFS;
+                return Distinst.FileSystem.XFS;
             case 5:
-                return Distinst.FileSystemType.NTFS;
+                return Distinst.FileSystem.NTFS;
             default:
-                return Distinst.FileSystemType.NONE;
+                return Distinst.FileSystem.NONE;
         }
     }
 

@@ -30,7 +30,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
     public Distinst.Partition* info;
     public Gtk.Label label;
     public Gtk.Popover menu;
-    public Distinst.FileSystemType filesystem;
+    public Distinst.FileSystem filesystem;
 
     public PartitionBar (Distinst.Partition* part, string parent_path,
                          uint64 sector_size, bool lvm, SetMount set_mount,
@@ -48,7 +48,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
         path = Utils.string_from_utf8 (part->get_device_path ());
         filesystem = part->get_file_system ();
-        vg = (Distinst.FileSystemType.LVM == filesystem)
+        vg = (Distinst.FileSystem.LVM == filesystem)
             ? Utils.string_from_utf8 (part->get_current_lvm_volume_group ())
             : null;
         info = part;
@@ -60,7 +60,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
         container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
-        if (filesystem == Distinst.FileSystemType.LUKS) {
+        if (filesystem == Distinst.FileSystem.LUKS) {
             menu = new DecryptMenu (path, decrypt, this);
         } else {
             menu = new PartitionMenu (path, parent_path, filesystem, lvm,

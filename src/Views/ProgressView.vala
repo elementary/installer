@@ -225,7 +225,7 @@ public class ProgressView : AbstractInstallerView {
                         return false;
                     }
                 } else {
-                    if (m.filesystem != Distinst.FileSystemType.SWAP) {
+                    if (m.filesystem != Distinst.FileSystem.SWAP) {
                         partition.set_mount (m.mount_point);
                     }
 
@@ -267,7 +267,7 @@ public class ProgressView : AbstractInstallerView {
                 }
             }
 
-            if (m.filesystem != Distinst.FileSystemType.SWAP) {
+            if (m.filesystem != Distinst.FileSystem.SWAP) {
                 partition.set_mount (m.mount_point);
             }
 
