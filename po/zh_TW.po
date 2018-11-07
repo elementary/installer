@@ -2,29 +2,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-23 13:06-0700\n"
-"PO-Revision-Date: 2018-06-06 00:08+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Chinese (Traditional) "
-"<https://weblate.elementary.io/projects/installer/installer/zh_TW/>\n"
+"POT-Creation-Date: 2018-10-13 17:27-0700\n"
+"PO-Revision-Date: 2018-10-18 11:47+0000\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
+"installer/installer/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: src/MainWindow.vala:44 src/Views/TryInstallView.vala:93
+#: src/MainWindow.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "安裝 %s"
 
-#: src/Utils.vala:31
-msgid "Operating System"
-msgstr "作業系統"
+#: src/Utils.vala:50
+msgid "Test mode shutdown"
+msgstr "測試模式關機"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:172
+#: src/Utils.vala:64
+msgid "Test mode reboot"
+msgstr "測試模式重新開機"
+
+#: src/Utils.vala:78
+msgid "Test mode switch user"
+msgstr "測試模式切換使用者"
+
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -37,24 +45,24 @@ msgstr "無法設定 Distinst log callback"
 msgid "Starting installation"
 msgstr "開始安裝"
 
-#: src/Dialogs/EndSessionDialog.vala:43
+#: src/Dialogs/EndSessionDialog.vala:35
 msgid "Are you sure you want to Shut Down?"
 msgstr "您確定要「關機」？"
 
-#: src/Dialogs/EndSessionDialog.vala:50
+#: src/Dialogs/EndSessionDialog.vala:42
 msgid "This will cancel installation and turn off this device."
 msgstr "這會取消安裝並關閉此裝置。"
 
-#: src/Dialogs/EndSessionDialog.vala:66
+#: src/Dialogs/EndSessionDialog.vala:58
 msgid "Restart"
 msgstr "重新啟動"
 
-#: src/Dialogs/EndSessionDialog.vala:68
+#: src/Dialogs/EndSessionDialog.vala:60
 msgid "Cancel"
 msgstr "取消"
 
-#: src/Dialogs/EndSessionDialog.vala:70 src/Views/TryInstallView.vala:97
-#: src/Views/SuccessView.vala:63
+#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
+#: src/Views/SuccessView.vala:55
 msgid "Shut Down"
 msgstr "關機"
 
@@ -117,11 +125,11 @@ msgstr "處理器："
 msgid "Memory:"
 msgstr "記憶體："
 
-#: src/Views/DiskView.vala:52
+#: src/Views/DiskView.vala:51
 msgid "Select a Drive"
 msgstr "選擇一個磁碟"
 
-#: src/Views/DiskView.vala:56
+#: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -129,15 +137,11 @@ msgstr ""
 "這會抹除選取裝置上的所有資料。若您尚未備份您的資料，您可以取消安裝並操作展示"
 "模式。"
 
-#: src/Views/DiskView.vala:66
+#: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
 msgstr "取得目前設定組態…"
 
-#: src/Views/DiskView.vala:97
-msgid "Customize Partitions…"
-msgstr "自訂分割區…"
-
-#: src/Views/DiskView.vala:103 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
 msgstr "抹除並安裝"
 
@@ -168,7 +172,9 @@ msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
-msgstr "如果您忘記加密密嗎，<b>您將無法將資料復原。</b>此密碼有別於您帳戶所使用的密碼，只用於此裝置上。"
+msgstr ""
+"如果您忘記加密密嗎，<b>您將無法將資料復原。</b>此密碼有別於您帳戶所使用的密"
+"碼，只用於此裝置上。"
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
@@ -183,27 +189,27 @@ msgid "Don't Encrypt"
 msgstr "不要加密"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/TryInstallView.vala:89
+#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "返回"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:159
+#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
 msgstr "選擇密碼"
 
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Set Password"
 msgstr "設定密碼"
 
-#: src/Views/EncryptView.vala:231
+#: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
 msgstr "密碼與確認密碼不一致"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
 msgstr "無法安裝"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:38
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
@@ -212,37 +218,29 @@ msgstr ""
 "%s 安裝失敗，可能是硬體錯誤導致。您的裝置可能無法正常重新啟動。您可以嘗試下列"
 "動作："
 
-#: src/Views/ErrorView.vala:52
+#: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
 msgstr "• 嘗試重裝一次"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
 msgstr "• 進入「展示模式」並嘗試手動還原"
 
-#: src/Views/ErrorView.vala:64
+#: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
 msgstr "• 重新啟動您的裝置以從另一個磁碟開機"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "重新啟動裝置"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:91
+#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "嘗試展示模式"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:108
 msgid "Try Installing Again"
 msgstr "嘗試再安裝一次"
-
-#: src/Views/ErrorView.vala:134 src/Views/SuccessView.vala:95
-msgid "Test mode reboot"
-msgstr "測試模式重新開機"
-
-#: src/Views/ErrorView.vala:146
-msgid "Test mode switch user"
-msgstr "測試模式切換使用者"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -256,54 +254,75 @@ msgstr "請繕打文字以測試您的鍵盤配置"
 msgid "Show keyboard layout"
 msgstr "顯示鍵盤配置"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:109
-#: src/Views/LanguageView.vala:161
+#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "選取"
 
-#: src/Views/KeyboardLayoutView.vala:101
+#: src/Views/KeyboardLayoutView.vala:119
 msgid "Default"
 msgstr "預設"
 
-#: src/Views/KeyboardLayoutView.vala:108
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Input Language"
 msgstr "輸入語言"
 
-#: src/Views/LanguageView.vala:217
+#: src/Views/LanguageView.vala:232
 msgid "Languages"
 msgstr "語言"
 
-#: src/Views/LanguageView.vala:234
+#: src/Views/LanguageView.vala:249
 msgid "Select a Language"
 msgstr "選取語言"
 
-#: src/Views/LanguageView.vala:262 src/Views/LanguageView.vala:305
+#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
 msgstr "目前使用中語言"
 
-#: src/Views/PartitioningView.vala:46
+#: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
-msgstr "請從磁碟中選取分割區。<b>選取「格式化」將會把已選取分割區內的所有資料清除。</b>"
+msgstr ""
+"請從磁碟中選取分割區。<b>選取「格式化」將會把已選取分割區內的所有資料清除。</"
+"b>"
 
-#: src/Views/PartitioningView.vala:52
+#. Device is in BIOS mode, so we just require a root partition
+#: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "您至少必須選取一個<b>根目錄 (/)</b>所在的分割區。"
 
-#: src/Views/PartitioningView.vala:56
+#. Device is in EFI mode, so we also require a boot partition
+#: src/Views/PartitioningView.vala:64
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
-msgstr "您至少必須選取一個<b>根目錄 (/)</b>所在的分割區和一個<b>啟動分區 (/boot/efi)</b>所在的分割區。"
+msgstr ""
+"您至少必須選取一個<b>根目錄 (/)</b>所在的分割區和一個<b>啟動分區 (/boot/"
+"efi)</b>所在的分割區。"
 
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "建議選取一個<b>置換空間 (Swap)</b>分割區。"
 
-#: src/Views/PartitioningView.vala:89
+#: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
 msgstr "修改分割區…"
+
+#: src/Views/PartitioningView.vala:276
+msgid "EFI partition has the wrong file system"
+msgstr "EFI 分割區的檔案系統錯誤"
+
+#: src/Views/PartitioningView.vala:278
+msgid "EFI partition is too small"
+msgstr "EFI 分割區過小"
+
+#: src/Views/PartitioningView.vala:281
+msgid "Invalid file system for root"
+msgstr "根基的檔案系統無效"
+
+#: src/Views/PartitioningView.vala:283
+msgid "Invalid file system for home"
+msgstr "家屋的檔案系統無效"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -321,57 +340,71 @@ msgstr "設定系統"
 msgid "Finishing the Installation"
 msgstr "完成安裝"
 
-#: src/Views/TryInstallView.vala:33
-msgid "Install or Try Demo Mode"
-msgstr "安裝或試用展示模式"
+#: src/Views/TryInstallView.vala:44
+msgid "Try or Install"
+msgstr "嘗試或安裝"
 
-#: src/Views/TryInstallView.vala:42
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr "您可以立刻在此裝置上安裝 %s，或是在不安裝的情況下試用展示模式。"
 
-#: src/Views/TryInstallView.vala:53
-msgid ""
-"In Demo Mode, changes you make will not be saved and data from your previous "
-"operating system will be unchanged. Performance and features may not reflect "
-"the installed experience."
-msgstr ""
-"在展示模式中，您所做的變更不會儲存，電腦中先前的作業系統也不會更動。展示模式"
-"的效能與功能和安裝後的體驗不見得相同。"
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
+#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+msgid "Next"
+msgstr "下一步"
 
-#: src/Views/TryInstallView.vala:64
+#: src/Views/TryInstallView.vala:81
 msgid ""
-"You can always return to the installer from Demo Mode by selecting the "
-"Install icon."
-msgstr "您隨時都可以選取安裝圖示以從展示模式返回安裝程式。"
+"Changes will not be saved, and data from your previous OS will be unchanged. "
+"Performance and features may not reflect the installed experience."
+msgstr "您所做的變更不會儲存，電腦裡先前的作業系統資料也不會更動。此時的效能與功能和安裝後的體驗不見得相同。"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/TryInstallView.vala:85
+msgid "Clean Install"
+msgstr "乾淨安裝"
+
+#: src/Views/TryInstallView.vala:87
+#, c-format
+msgid "Erase everything and install a fresh copy of %s."
+msgstr "抹除任何資料並安裝全新的 %s 副本。"
+
+#: src/Views/TryInstallView.vala:91
+msgid "Custom (Advanced)"
+msgstr "自訂（進階）"
+
+#: src/Views/TryInstallView.vala:93
+msgid ""
+"Create, resize, or otherwise manage partitions manually. This method may "
+"lead to data loss."
+msgstr "手動建立、管理、或調整分割區大小等。採用這個方法可能會導致資料喪失。"
+
+#: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
 msgstr "繼續設定"
 
-#: src/Views/SuccessView.vala:42
-#, c-format, fuzzy
+#: src/Views/SuccessView.vala:34
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "您的裝置將在 %i 秒內重新啟動至 %s 。."
+msgstr "您的裝置將在 %i 秒後自動重新啟動至 %s。"
 
-#: src/Views/SuccessView.vala:43
+#: src/Views/SuccessView.vala:35
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
-msgstr "在重新啟動之後您可以設定新的使用者，或者您也可以立刻關機並稍後設定新使用者。"
-
-#: src/Views/SuccessView.vala:75
-msgid "Test mode shutdown"
-msgstr "測試模式關機"
+msgstr ""
+"在重新啟動之後您可以設定新的使用者，或者您也可以立刻關機並稍後設定新使用者。"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
 msgstr "解密此分割區"
 
 #: src/Widgets/DecryptMenu.vala:58
-msgid "Enter the partition's encryption password and set a LUKS device name."
-msgstr "輸入分割區的解密密碼並設定一個 LUKS 裝置名稱。"
+msgid ""
+"Enter the partition's encryption password and set a device name for the "
+"decrypted partition."
+msgstr "請輸入分割區的加密密碼，並為解密後的分割區設定裝置名稱。"
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
@@ -443,6 +476,20 @@ msgstr "檔案系統："
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "預設 (ext4)"
+
+#~ msgid "Operating System"
+#~ msgstr "作業系統"
+
+#~ msgid "Customize Partitions…"
+#~ msgstr "自訂分割區…"
+
+#~ msgid "Install or Try Demo Mode"
+#~ msgstr "安裝或試用展示模式"
+
+#~ msgid ""
+#~ "You can always return to the installer from Demo Mode by selecting the "
+#~ "Install icon."
+#~ msgstr "您隨時都可以選取安裝圖示以從展示模式返回安裝程式。"
 
 #~ msgid "Select a drive to use for installation"
 #~ msgstr "請選取要用於安裝的裝置"

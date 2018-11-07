@@ -6,7 +6,6 @@ src/Helpers/KeyboardLayoutHelper.vala
 src/Helpers/LocaleHelper.vala
 src/Helpers/LogHelper.vala
 src/Dialogs/EndSessionDialog.vala
-src/Objects/org.freedesktop.udisks2.vala
 src/Objects/Configuration.vala
 src/Objects/Mount.vala
 src/Views/AbstractInstallerView.vala
@@ -23,6 +22,7 @@ src/Views/SuccessView.vala
 src/Widgets/DecryptMenu.vala
 src/Widgets/DiskBar.vala
 src/Widgets/DiskGrid.vala
+src/Widgets/InstallTypeGrid.vala
 src/Widgets/LayoutWidget.vala
 src/Widgets/PartitionBar.vala
 src/Widgets/PartitionMenu.vala
