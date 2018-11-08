@@ -26,7 +26,7 @@ public class DualBootView : AbstractInstallerView {
         title_label.get_style_context ().add_class ("h2");
 
         var secondary_label = new Gtk.Label (
-            _("Each operating system needs space on your device. Drag the bar below to set how much space each operating system gets.")
+            _("Each operating system needs space on your device. Drag the divider below to set how much space each operating system gets.")
         );
         secondary_label.max_width_chars = 60;
         secondary_label.wrap = true;
