@@ -16,6 +16,13 @@
  */
 
 public class DualBootView : AbstractInstallerView {
+    // NOTE: Temporary for mockup
+    public const int TOTAL_DISK = 64;
+    public const int DISK_USED = 15;
+
+    private Gtk.Label our_os_size_label { get; set; }
+    private Gtk.Label other_os_size_label { get; set; }
+
     construct {
         var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
         image.vexpand = true;
@@ -31,10 +38,6 @@ public class DualBootView : AbstractInstallerView {
         secondary_label.max_width_chars = 60;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
-
-        // NOTE: Temporary for mockup
-        const int TOTAL_DISK = 64;
-        const int DISK_USED = 15;
 
         var scale = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, TOTAL_DISK, 1);
         scale.add_mark (TOTAL_DISK / 2, Gtk.PositionType.BOTTOM, "");
@@ -52,28 +55,28 @@ public class DualBootView : AbstractInstallerView {
         our_os_label_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
         our_os_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
 
-        var our_os_size = new Gtk.Label (_("%i GB".printf (TOTAL_DISK / 2)));
-        our_os_size.halign = Gtk.Align.END;
-        our_os_size.hexpand = true;
+        our_os_size_label = new Gtk.Label (_("%i GB".printf (TOTAL_DISK / 2)));
+        our_os_size_label.halign = Gtk.Align.END;
+        our_os_size_label.hexpand = true;
 
         var other_os_label = new Gtk.Label (_("Other OS"));
         other_os_label.halign = Gtk.Align.START;
         other_os_label.hexpand = true;
         other_os_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var other_os_size = new Gtk.Label (_("""%i GB <span alpha="67%">(%i GB Free)</span>""".printf (TOTAL_DISK / 2, TOTAL_DISK / 2 - DISK_USED)));
-        other_os_size.halign = Gtk.Align.START;
-        other_os_size.hexpand = true;
-        other_os_size.use_markup = true;
+        other_os_size_label = new Gtk.Label (_("""%i GB <span alpha="67%">(%i GB Free)</span>""".printf (TOTAL_DISK / 2, TOTAL_DISK / 2 - DISK_USED)));
+        other_os_size_label.halign = Gtk.Align.START;
+        other_os_size_label.hexpand = true;
+        other_os_size_label.use_markup = true;
 
         var scale_grid = new Gtk.Grid ();
         scale_grid.halign = Gtk.Align.FILL;
 
-        scale_grid.attach (scale,          0, 0, 2);
-        scale_grid.attach (other_os_label, 0, 1);
-        scale_grid.attach (our_os_label,   1, 1);
-        scale_grid.attach (other_os_size,  0, 2);
-        scale_grid.attach (our_os_size,    1, 2);
+        scale_grid.attach (scale,               0, 0, 2);
+        scale_grid.attach (other_os_label,      0, 1);
+        scale_grid.attach (our_os_label,        1, 1);
+        scale_grid.attach (other_os_size_label, 0, 2);
+        scale_grid.attach (our_os_size_label,   1, 2);
 
         var grid = new Gtk.Grid ();
         grid.row_spacing = 12;
@@ -99,6 +102,20 @@ public class DualBootView : AbstractInstallerView {
         action_area.add (next_button);
 
         show_all ();
+
+        scale.value_changed.connect (() => {
+            update_size_labels ((int)scale.get_value ());
+        });
+    }
+
+    private void update_size_labels (int our_os_size) {
+        int other_os_size = TOTAL_DISK - our_os_size;
+
+        our_os_size_label.label = _("%i GB".printf (our_os_size));
+        other_os_size_label.label = _("""%i GB <span alpha="67%">(%i GB Free)</span>""".printf (
+            other_os_size,
+            other_os_size - DISK_USED
+        ));
     }
 }
 
