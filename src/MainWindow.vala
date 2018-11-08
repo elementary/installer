@@ -26,6 +26,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private TryInstallView try_install_view;
     private Installer.CheckView check_view;
     private DiskView disk_view;
+    private DualBootView dual_boot_view;
     private PartitioningView partitioning_view;
     private ProgressView progress_view;
     private SuccessView success_view;
@@ -47,11 +48,13 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     construct {
-        language_view = new LanguageView ();
+        // language_view = new LanguageView ();
+        dual_boot_view = new DualBootView ();
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.add (language_view);
+        // stack.add (language_view);
+        stack.add (dual_boot_view);
 
         get_content_area ().add (stack);
         get_style_context ().add_class ("os-installer");
@@ -162,6 +165,23 @@ public class Installer.MainWindow : Gtk.Dialog {
         disk_view.load.begin (minimum_disk_size);
 
         disk_view.cancel.connect (() => {
+            stack.visible_child = try_install_view;
+        });
+
+        disk_view.next_step.connect (() => load_encrypt_view ());
+    }
+
+    private void load_dual_boot_view () {
+        if (dual_boot_view != null) {
+            dual_boot_view.destroy ();
+        }
+
+        dual_boot_view = new DualBootView ();
+        dual_boot_view.previous_view = try_install_view;
+        stack.add (dual_boot_view);
+        stack.visible_child = dual_boot_view;
+
+        dual_boot_view.cancel.connect (() => {
             stack.visible_child = try_install_view;
         });
 
