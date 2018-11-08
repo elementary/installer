@@ -26,22 +26,28 @@ public class DualBootView : AbstractInstallerView {
         title_label.get_style_context ().add_class ("h2");
 
         var secondary_label = new Gtk.Label (
-            _("Each operating system needs space on your device. Drag the divider below to set how much space each operating system gets.")
+            _("Each operating system needs space on your device. Drag the handle below to set how much space each operating system gets.")
         );
         secondary_label.max_width_chars = 60;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
-        var scale = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, 100, 1);
-        scale.add_mark (50, Gtk.PositionType.BOTTOM, "");
+        // NOTE: Temporary for mockup
+        const int TOTAL_DISK = 64;
+        const int DISK_USED = 15;
+
+        var scale = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, TOTAL_DISK, 1);
+        scale.add_mark (TOTAL_DISK / 2, Gtk.PositionType.BOTTOM, "");
         scale.draw_value = false;
+        scale.fill_level = TOTAL_DISK - DISK_USED;
         scale.inverted = true;
-        scale.set_value (50);
+        scale.set_value (TOTAL_DISK / 2);
+        scale.show_fill_level = true;
 
         var our_os_label = new Gtk.Label (_("elementary OS"));
         our_os_label.halign = Gtk.Align.END;
         our_os_label.hexpand = true;
-        our_os_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        our_os_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var our_os_size = new Gtk.Label (_("32 GB"));
         our_os_size.halign = Gtk.Align.END;
@@ -50,7 +56,7 @@ public class DualBootView : AbstractInstallerView {
         var other_os_label = new Gtk.Label (_("Other OS"));
         other_os_label.halign = Gtk.Align.START;
         other_os_label.hexpand = true;
-        other_os_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        other_os_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var other_os_size = new Gtk.Label (_("""32 GB <span alpha="67%">(17 GB Free)</span>"""));
         other_os_size.halign = Gtk.Align.START;
