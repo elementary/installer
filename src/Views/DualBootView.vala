@@ -43,7 +43,7 @@ public class DualBootView : AbstractInstallerView {
         our_os_label.hexpand = true;
         our_os_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
-        var our_os_size = new Gtk.Label (_("20 GB"));
+        var our_os_size = new Gtk.Label (_("32 GB"));
         our_os_size.halign = Gtk.Align.END;
         our_os_size.hexpand = true;
 
