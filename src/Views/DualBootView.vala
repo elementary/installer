@@ -44,7 +44,7 @@ public class DualBootView : AbstractInstallerView {
         scale.set_value (TOTAL_DISK / 2);
         scale.show_fill_level = true;
 
-        var our_os_label = new Gtk.Label (_("elementary OS"));
+        var our_os_label = new Gtk.Label (Utils.get_pretty_name ());
         our_os_label.halign = Gtk.Align.END;
         our_os_label.hexpand = true;
 
@@ -52,7 +52,7 @@ public class DualBootView : AbstractInstallerView {
         our_os_label_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
         our_os_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
 
-        var our_os_size = new Gtk.Label (_("32 GB"));
+        var our_os_size = new Gtk.Label (_("%i GB".printf (TOTAL_DISK / 2)));
         our_os_size.halign = Gtk.Align.END;
         our_os_size.hexpand = true;
 
@@ -61,7 +61,7 @@ public class DualBootView : AbstractInstallerView {
         other_os_label.hexpand = true;
         other_os_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var other_os_size = new Gtk.Label (_("""32 GB <span alpha="67%">(17 GB Free)</span>"""));
+        var other_os_size = new Gtk.Label (_("""%i GB <span alpha="67%">(%i GB Free)</span>""".printf (TOTAL_DISK / 2, TOTAL_DISK / 2 - DISK_USED)));
         other_os_size.halign = Gtk.Align.START;
         other_os_size.hexpand = true;
         other_os_size.use_markup = true;
@@ -92,9 +92,8 @@ public class DualBootView : AbstractInstallerView {
         content_area.attach (title_label, 0, 1);
         content_area.attach (grid,        1, 0, 1, 2);
 
-        var next_button = new Gtk.Button.with_label (_("Erase and Install"));
+        var next_button = new Gtk.Button.with_label (_("Resize and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        next_button.sensitive = false;
         // next_button.clicked.connect (() => next_step ());
 
         action_area.add (next_button);
