@@ -19,6 +19,7 @@ public class DualBootView : AbstractInstallerView {
     // NOTE: Temporary for mockup
     public const int TOTAL_DISK = 64;
     public const int DISK_USED = 15;
+    public const int MIN_SIZE = 10;
 
     private Gtk.Label our_os_size_label { get; set; }
     private Gtk.Label other_os_size_label { get; set; }
@@ -55,16 +56,17 @@ public class DualBootView : AbstractInstallerView {
         our_os_label_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
         our_os_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
 
-        our_os_size_label = new Gtk.Label (_("%i GB".printf (TOTAL_DISK / 2)));
+        our_os_size_label = new Gtk.Label ("");
         our_os_size_label.halign = Gtk.Align.END;
         our_os_size_label.hexpand = true;
+        our_os_size_label.use_markup = true;
 
         var other_os_label = new Gtk.Label (_("Other OS"));
         other_os_label.halign = Gtk.Align.START;
         other_os_label.hexpand = true;
         other_os_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        other_os_size_label = new Gtk.Label (_("""%i GB <span alpha="67%">(%i GB Free)</span>""".printf (TOTAL_DISK / 2, TOTAL_DISK / 2 - DISK_USED)));
+        other_os_size_label = new Gtk.Label ("");
         other_os_size_label.halign = Gtk.Align.START;
         other_os_size_label.hexpand = true;
         other_os_size_label.use_markup = true;
@@ -100,18 +102,29 @@ public class DualBootView : AbstractInstallerView {
         // next_button.clicked.connect (() => next_step ());
 
         action_area.add (next_button);
-
+        update_size_labels ((int)scale.get_value ());
         show_all ();
 
         scale.value_changed.connect (() => {
+            constrain_scale (scale);
             update_size_labels ((int)scale.get_value ());
         });
+    }
+
+    private void constrain_scale (Gtk.Scale scale) {
+        if (scale.get_value () < MIN_SIZE) {
+            scale.set_value (MIN_SIZE);
+        }
     }
 
     private void update_size_labels (int our_os_size) {
         int other_os_size = TOTAL_DISK - our_os_size;
 
-        our_os_size_label.label = _("%i GB".printf (our_os_size));
+        our_os_size_label.label = _("""%i GB <span alpha="67%">(%i GB Free)</span>""".printf (
+            our_os_size,
+            our_os_size - MIN_SIZE
+        ));
+
         other_os_size_label.label = _("""%i GB <span alpha="67%">(%i GB Free)</span>""".printf (
             other_os_size,
             other_os_size - DISK_USED
