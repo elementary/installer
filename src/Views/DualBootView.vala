@@ -17,7 +17,7 @@
 
 public class DualBootView : AbstractInstallerView {
     // NOTE: Temporary for mockup
-    public const int TOTAL_DISK = 64;
+    public const int TOTAL_DISK = 250;
     public const int DISK_USED = 15;
     public const int MIN_SIZE = 10;
 
