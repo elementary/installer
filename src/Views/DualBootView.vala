@@ -47,6 +47,7 @@ public class DualBootView : AbstractInstallerView {
         scale.inverted = true;
         scale.set_value (TOTAL_DISK / 2);
         scale.show_fill_level = true;
+        scale.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
 
         var our_os_label = new Gtk.Label (Utils.get_pretty_name ());
         our_os_label.halign = Gtk.Align.END;
