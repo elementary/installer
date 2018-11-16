@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-09-25 00:02+0000\n"
-"Last-Translator: Jean-Charbel Vannier <Jean-Charbel.VANNIER@supinfo.com>\n"
+"PO-Revision-Date: 2018-11-17 00:02+0000\n"
+"Last-Translator: Eliott Lavier <eliott.lavier@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/installer/"
 "installer/fr/>\n"
 "Language: fr\n"
@@ -326,11 +326,11 @@ msgstr "Modifier les partitions…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "La partition EFI a un système de fichiers incorrect"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "La partition EFI est trop petite"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
@@ -357,9 +357,8 @@ msgid "Finishing the Installation"
 msgstr "Finition de l'installation"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Essayer d'installer à nouveau"
+msgstr "Essayer ou Installer"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -375,13 +374,13 @@ msgid "Next"
 msgstr "Suivant"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"Pendant votre test, les modifications apportées ne seront pas enregistrées. "
-"De même, vos anciens fichiers ne seront pas modifiés."
+"Les changements ne seront pas enregistrés et les données de votre précédent "
+"OS ne seront pas modifiées. Les performances et les fonctionnalités peuvent "
+"ne pas refléter l'expérience installée."
 
 #: src/Views/TryInstallView.vala:85
 #, fuzzy
@@ -430,13 +429,12 @@ msgid "Decrypt This Partition"
 msgstr "Déchiffrer cette partition"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Entrez le mot de passe de cryptage de la partition et définissez un nom "
-"d'appareil LUKS."
+"Entrez le mot de passe de chiffrement de la partition et définissez un nom "
+"de périphérique pour la partition déchiffrée."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
