@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-11-17 00:02+0000\n"
-"Last-Translator: Eliott Lavier <eliott.lavier@gmail.com>\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/installer/"
 "installer/fr/>\n"
 "Language: fr\n"
@@ -334,11 +334,11 @@ msgstr "La partition EFI est trop petite"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Système de fichier incompatible pour la partition \"Root\""
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Le système de fichier est incompatible pour la partition \"home\""
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -383,28 +383,24 @@ msgstr ""
 "ne pas refléter l'expérience installée."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
 msgstr "Supprimer et installer"
 
 #: src/Views/TryInstallView.vala:87
-#, fuzzy, c-format
+#, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
-"Supprime tout sur votre appareil et installe une version vierge d'elementary "
-"OS."
+msgstr "Supprime tout sur votre appareil et installe une version vierge d'%s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Personnalisée (Utilisateur Avancé)"
 
 #: src/Views/TryInstallView.vala:93
-#, fuzzy
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"Créez, redimensionnez et configurez manuellement les partitions du disque. "
+"Créez, redimensionnez ou configurez manuellement les partitions du disque. "
 "Cette méthode peut entraîner des pertes de données."
 
 #: src/Views/SuccessView.vala:26
