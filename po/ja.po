@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-11-09 00:08+0000\n"
+"PO-Revision-Date: 2018-11-22 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -113,19 +113,19 @@ msgstr "お使いのデバイスはバッテリーの電力で動作していま
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
-msgstr "推奨要件:"
+msgstr "推奨要件："
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr "お使いのデバイス:"
+msgstr "お使いのデバイス："
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr "プロセッサー:"
+msgstr "プロセッサー："
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
-msgstr "メモリー:"
+msgstr "メモリー："
 
 #: src/Views/DiskView.vala:51
 msgid "Select a Drive"
@@ -413,11 +413,11 @@ msgstr "パーティションの暗号化パスワードを入力し、復号化
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr "パスワード:"
+msgstr "パスワード："
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr "デバイス名:"
+msgstr "デバイス名："
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
@@ -435,19 +435,19 @@ msgstr "%s (%s)"
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr "%s (%s: <b>%s</b>)"
+msgstr "%s (%s：<b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr "パーティションを使う:"
+msgstr "パーティションを使う："
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr "フォーマット:"
+msgstr "フォーマット："
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr "使用方法:"
+msgstr "使用方法："
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
@@ -472,11 +472,11 @@ msgstr "カスタム"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr "カスタム:"
+msgstr "カスタム："
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr "ファイルシステム:"
+msgstr "ファイルシステム："
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
