@@ -4,7 +4,6 @@
 - Pop 18.10/18.04 + Ubuntu 18.04(systemdboot + grub)
 - Pop 18.10/18.04 + Windows
 - Pop 18.10/18.04 + Fedora on LVM
-- Pop 18.10/18.04 + Solus(systemdboot + systemdboot)
 
 <div></div>
 
