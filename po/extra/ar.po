@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-12-02 05:16+0000\n"
+"PO-Revision-Date: 2018-12-02 05:17+0000\n"
 "Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/installer/"
 "extra/ar/>\n"
@@ -20,8 +20,8 @@ msgstr "تثبيت إليمنتري أو إس"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
-msgstr "ثبيت النظام"
+msgstr "تثبيت النظام"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr "مثبت-نظام-التشغيل"
+msgstr "system-os-installer"
