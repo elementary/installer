@@ -3,9 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-12-02 05:16+0000\n"
-"Last-Translator: ButterflyOfFire <butterflyoffire+elementary@protonmail.com>"
-"\n"
+"PO-Revision-Date: 2018-12-03 00:09+0000\n"
+"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/installer/"
 "installer/ar/>\n"
 "Language: ar\n"
@@ -18,9 +17,9 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-09-27 06:39+0000\n"
 
 #: src/MainWindow.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Install %s"
-msgstr "تثبيت"
+msgstr "تثبيت %s"
 
 #: src/Utils.vala:50
 msgid "Test mode shutdown"
@@ -35,7 +34,7 @@ msgid "Test mode switch user"
 msgstr ""
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
-#, c-format, fuzzy
+#, c-format
 msgid "%s…"
 msgstr "%s…"
 
@@ -128,9 +127,8 @@ msgid "Memory:"
 msgstr ""
 
 #: src/Views/DiskView.vala:51
-#, fuzzy
 msgid "Select a Drive"
-msgstr "اختر اللغة"
+msgstr "اختر القرص"
 
 #: src/Views/DiskView.vala:55
 msgid ""
@@ -260,14 +258,12 @@ msgid "Default"
 msgstr "الإفتراضي"
 
 #: src/Views/KeyboardLayoutView.vala:126
-#, fuzzy
 msgid "Input Language"
-msgstr "اختر اللغة"
+msgstr "اختر لغة الإدخال"
 
 #: src/Views/LanguageView.vala:232
-#, fuzzy
 msgid "Languages"
-msgstr "اختر اللغة"
+msgstr "اللغات"
 
 #: src/Views/LanguageView.vala:249
 msgid "Select a Language"
@@ -336,9 +332,8 @@ msgid "Finishing the Installation"
 msgstr ""
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "تثبيت"
+msgstr "تثبيت أو جرب"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -358,9 +353,8 @@ msgid ""
 msgstr ""
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "تثبيت"
+msgstr "تثبيت نظيف"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
