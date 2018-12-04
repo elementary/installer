@@ -27,6 +27,9 @@ public class InstallOptions : GLib.Object {
     private Distinst.Disks disks;
     public Distinst.InstallOption? selected_option;
 
+    // The amount of free space that should be retained when shrinking (20 GB).
+    public const uint64 SHRINK_OVERHEAD = 39062500;
+
     public static unowned InstallOptions get_default () {
         if (_options_object == null || _options_object.disks_moved) {
             _options_object = new InstallOptions ();
@@ -57,7 +60,7 @@ public class InstallOptions : GLib.Object {
             disks = Distinst.Disks.probe ();
             disks.initialize_volume_groups ();
             layout_hash = Distinst.device_layout_hash ();
-            _options = new Distinst.InstallOptions (disks, minimum_size);
+            _options = new Distinst.InstallOptions (disks, minimum_size, SHRINK_OVERHEAD);
         }
 
         return _options;
@@ -69,7 +72,7 @@ public class InstallOptions : GLib.Object {
         if (layout_hash != new_hash) {
             layout_hash = new_hash;
             disks = Distinst.Disks.probe ();
-            _options = new Distinst.InstallOptions (disks, minimum_size);
+            _options = new Distinst.InstallOptions (disks, minimum_size, SHRINK_OVERHEAD);
             selected_option = null;
         }
 
