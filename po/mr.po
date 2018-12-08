@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-12-08 17:08+0000\n"
+"PO-Revision-Date: 2018-12-09 00:01+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/installer/"
 "installer/mr/>\n"
@@ -199,29 +199,28 @@ msgstr "पासवर्ड नक्की करा"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "एन्क्रिप्ट करू नका"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
-#, fuzzy
 msgid "Back"
-msgstr "बॅकस्पेस"
+msgstr "मागे"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
-msgstr ""
+msgstr "पासवर्ड निवडा"
 
 #: src/Views/EncryptView.vala:169
 msgid "Set Password"
-msgstr ""
+msgstr "पासवर्ड सेट करा"
 
 #: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
-msgstr ""
+msgstr "पासवर्डस जुळत नाहीत"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
-msgstr ""
+msgstr "इन्स्टॉल होऊ शकले नाही"
 
 #: src/Views/ErrorView.vala:38
 #, c-format
@@ -229,77 +228,81 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
+"%s इन्स्टॉल करणे शक्य झाले नाही, बहुदा हार्डवेअर त्रुटीमुळे. आपले डिव्हाइस "
+"योग्य रीस्टार्ट होऊ शकत नाही. आपण खालील प्रयत्न करू शकता:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• पुन्हा इन्स्टॉल करण्याचा प्रयत्न करा"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• डेमो मोड वापरा आणि स्वतः पुनर्प्राप्त करण्याचा प्रयत्न करा"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• दुसर्या डिव्हाइसवरून बूट करण्यासाठी आपले डिव्हाइस रीस्टार्ट करा"
 
 #: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
 msgid "Restart Device"
-msgstr ""
+msgstr "डिव्हाइस रीस्टार्ट करा"
 
 #: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "डेमो मोड वापरून पहा"
 
 #: src/Views/ErrorView.vala:108
 msgid "Try Installing Again"
-msgstr ""
+msgstr "पुन्हा इन्स्टॉल करण्याचा प्रयत्न करा"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "कीबोर्ड चे लेआऊट"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "आपल्या लेआऊट ची चाचणी करण्यासाठी टाईप करा"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "कीबोर्ड चे लेआऊट दाखवा"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr ""
+msgstr "निवडा"
 
 #: src/Views/KeyboardLayoutView.vala:119
 msgid "Default"
-msgstr ""
+msgstr "मूळ"
 
 #: src/Views/KeyboardLayoutView.vala:126
 msgid "Input Language"
-msgstr ""
+msgstr "इनपुट भाषा"
 
 #: src/Views/LanguageView.vala:232
 msgid "Languages"
-msgstr ""
+msgstr "भाषा"
 
 #: src/Views/LanguageView.vala:249
 msgid "Select a Language"
-msgstr ""
+msgstr "एक भाषा निवडा"
 
 #: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
-msgstr ""
+msgstr "सध्या वापरात असलेली भाषा"
 
 #: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"सर्व ड्राइव्हवर कोणते भाग वापरायचे ते निवडा. <b>\"Format\" निवडल्याने "
+"निवडलेल्या ड्राइव्हच्या विभाजनावरील सर्व डेटा मिटविला जाईल.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "तुम्हास किमान एक <b>Root(/)</b> विभाजन निवडणे आवश्यक आहे."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -307,38 +310,40 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"तुम्हास किमान एक <b>Root(/)</b> विभाजन आणि एक <b>Boot(/boot/efi)</b> विभाजन "
+"निवडणे आवश्यक आहे."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "एक <b>स्वॅप </b>विभाजन निवडण्याची देखील शिफारस केली जाते."
 
 #: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "विभाजने सुधारित करा …"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI विभाजनात चुकीची फाइल प्रणाली आहे"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI विभाजन खूप लहान आहे"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "रूटसाठी ही अवैध फाइल सिस्टम आहे"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "होमसाठी ही अवैध फाइल सिस्टम आहे"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "विभाजन ड्राइव्ह"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
-msgstr ""
+msgstr "फायली काढत आहे"
 
 #: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
