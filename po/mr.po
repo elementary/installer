@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-18 00:10+0000\n"
+"PO-Revision-Date: 2018-12-08 17:08+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/installer/"
 "installer/mr/>\n"
@@ -191,11 +191,11 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "एनक्रिप्शन पासवर्ड निवडा"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "पासवर्ड नक्की करा"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
