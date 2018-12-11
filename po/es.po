@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2018-12-12 00:07+0000\n"
-"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
+"Last-Translator: alexis holguin <wholguinmor@uniminuto.edu.co>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/installer/"
 "installer/es/>\n"
 "Language: es\n"
@@ -382,9 +382,8 @@ msgstr ""
 "ser instalado."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Borrar e instalar"
+msgstr "Instalación limpia"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
