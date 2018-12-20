@@ -19,7 +19,7 @@ Standards-Version: 3.9.6
 Homepage: https://github.com/pop-os/installer
 
 Package: pop-installer
-Architecture: any
+Architecture: amd64
 Priority: extra
 Depends: gparted, ${misc:Depends}, ${shlibs:Depends}
 Recommends: pop-installer-session
@@ -27,14 +27,14 @@ Description: Distribution installer
  Installs distros with ease, all installs are treated as OEM.
 
 Package: pop-installer-session
-Architecture: any
+Architecture: amd64
 Priority: extra
 Depends: pop-installer
 Description: Dedicated installer session
  Launches pop-installer in a dedicated session.
 
 Package: pop-installer-casper
-Architecture: any
+Architecture: amd64
 Priority: extra
 Depends: casper
 Description: Autostart pop-installer in casper
