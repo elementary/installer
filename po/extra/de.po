@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2019-01-02 22:19+0000\n"
+"PO-Revision-Date: 2019-01-03 00:04+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/installer/"
 "extra/de/>\n"
@@ -30,7 +30,7 @@ msgstr "System installieren"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr "Betriebssystem-Installationsprogramm"
+msgstr "system-os-installer"
 
 #~ msgid "Calculator"
 #~ msgstr "Taschenrechner"
