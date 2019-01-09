@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2019-01-07 00:02+0000\n"
+"PO-Revision-Date: 2019-01-09 00:06+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/installer/"
 "installer/pt/>\n"
@@ -259,15 +259,15 @@ msgstr "Tentar Instalar de Novo"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr "Esquema do Teclado"
+msgstr "Disposição do Teclado"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr "Escreva para testar o seu esquema de teclado"
+msgstr "Escreva para testar a sua disposição de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr "Exibir o Esquema do teclado"
+msgstr "Exibir a disposição do teclado"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
@@ -304,7 +304,7 @@ msgstr ""
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Deverá selecionar pelo menos uma partição <b>Raiz (/)</b>."
+msgstr "Deverá selecionar pelo menos uma partição <b>Root (/)</b>."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -312,8 +312,8 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Deverá selecionar pelo menos uma partição <b>Raíz (/)</b> e uma partição <b>"
-"Arranque (/boot/efi)</b>."
+"Deverá selecionar pelo menos uma partição <b>Root (/)</b> e uma partição <b>"
+"Boot (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -333,7 +333,7 @@ msgstr "A partição EFI é demasiado pequena"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr "Sistema de ficheiros inválido para a raíz"
+msgstr "Sistema de ficheiros inválido para o root"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
@@ -377,7 +377,7 @@ msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"As alterações não serão gravadas e os dados do seu sistema operativo "
+"As alterações não serão guardadas e os dados do seu sistema operativo "
 "anterior não serão alterados. O desempenho e funcionalidades poderão não "
 "reflectir a experiência instalada."
 
@@ -410,15 +410,15 @@ msgstr "Continuar Configuração"
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
 msgstr ""
-"O teu dispositivo será reiniciado automaticamente para %s em %i segundos."
+"O seu dispositivo será reiniciado automaticamente para %s em %i segundos."
 
 #: src/Views/SuccessView.vala:35
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Após reiniciar podes configurar um novo utilizador, ou podes desligar agora "
-"e configurar um novo utilizador mais tarde."
+"Após reiniciar pode configurar um novo utilizador, ou pode desligar agora e "
+"configurar um novo utilizador mais tarde."
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -472,7 +472,7 @@ msgstr "Usar como:"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
-msgstr "Raíz (/)"
+msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
@@ -481,7 +481,7 @@ msgstr "Home (/home)"
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr "Arranque (%s)"
+msgstr "Boot (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
