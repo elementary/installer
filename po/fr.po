@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2019-01-11 09:00+0000\n"
+"PO-Revision-Date: 2019-01-12 00:09+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -30,7 +30,7 @@ msgstr "Redémarrage en mode de démonstration"
 
 #: src/Utils.vala:78
 msgid "Test mode switch user"
-msgstr "Changement d'utilisateur en mode de démonstration"
+msgstr "Changer d'utilisateur en mode test"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
