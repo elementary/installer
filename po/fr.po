@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
 "PO-Revision-Date: 2019-01-14 00:08+0000\n"
-"Last-Translator: PpItO <morinicolas@gmail.com>\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/installer/"
 "installer/fr/>\n"
 "Language: fr\n"
@@ -72,7 +72,7 @@ msgstr "Annuler l'installation"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
-msgstr "Tester"
+msgstr "Mode Test"
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
@@ -236,7 +236,7 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr "• Installer à nouveau"
+msgstr "• Réessayer l'installation"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
@@ -334,11 +334,11 @@ msgstr "La partition EFI est trop petite"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr "Système de fichier incompatible pour la partition \"Root\""
+msgstr "Système de fichier incompatible pour la partition « root »"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr "Le système de fichier est incompatible pour la partition \"home\""
+msgstr "Le système de fichier est incompatible pour la partition « home »"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -354,7 +354,7 @@ msgstr "Configuration du système"
 
 #: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
-msgstr "Finition de l'installation"
+msgstr "Finalisation de l'installation"
 
 #: src/Views/TryInstallView.vala:44
 msgid "Try or Install"
@@ -393,7 +393,7 @@ msgstr "Supprime tout sur votre appareil et installe une version vierge d'%s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr "Personnalisée (Utilisateur Avancé)"
+msgstr "Personnalisée (Avancé)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
@@ -476,7 +476,7 @@ msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr "Dossiers personnels (/home)"
+msgstr "Dossier personnel (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
