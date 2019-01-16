@@ -10,4 +10,4 @@ env:
 
 script:
  - docker run -v "$PWD":/var/opt/vala-lint elementary/docker:vala-lint
- - docker run -v "$PWD":/tmp/build-dir elementary/docker:juno-unstable /bin/sh -c "apt-get update && apt-get -y dist-upgrade && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && meson build --prefix=/usr && ninja -C build test"
+ - docker run -v "$PWD":/tmp/build-dir elementary/docker:unstable-installer /bin/sh -c "apt-get update && apt-get -y dist-upgrade && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && meson build --prefix=/usr && ninja -C build test"
