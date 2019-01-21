@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-30 00:05+0000\n"
-"Last-Translator: Yuxuan Wang <wangmation.ch@foxmail.com>\n"
+"PO-Revision-Date: 2019-01-15 12:43+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -47,7 +47,7 @@ msgstr "开始安装"
 
 #: src/Dialogs/EndSessionDialog.vala:35
 msgid "Are you sure you want to Shut Down?"
-msgstr "您确定要关闭吗？"
+msgstr "您确定要关机吗？"
 
 #: src/Dialogs/EndSessionDialog.vala:42
 msgid "This will cancel installation and turn off this device."
@@ -97,7 +97,7 @@ msgstr "您的设备运行缓慢"
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
-msgstr "您的设备配置未达到推荐配置要求，可能会导致运行缓慢或卡死。"
+msgstr "您的设备配置未达到推荐配置要求。这可能会导致运行缓慢或死机。"
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
@@ -214,9 +214,7 @@ msgstr "无法安装"
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
-msgstr ""
-"安装 %s 失败，可能是硬件错误导致的。您的设备可能没有正确重启，请尝试以下操"
-"作："
+msgstr "安装 %s 失败，可能是硬件错误导致的。您的设备可能没有正常重启。您可以尝试以下操作："
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -263,12 +261,10 @@ msgid "Default"
 msgstr "默认"
 
 #: src/Views/KeyboardLayoutView.vala:126
-#, fuzzy
 msgid "Input Language"
-msgstr "选择语言"
+msgstr "输入语言"
 
 #: src/Views/LanguageView.vala:232
-#, fuzzy
 msgid "Languages"
 msgstr "选择语言"
 
@@ -342,9 +338,8 @@ msgid "Finishing the Installation"
 msgstr "正在完成安装"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "重新安装"
+msgstr "试用或安装"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -358,18 +353,14 @@ msgid "Next"
 msgstr "继续"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
-msgstr ""
-"在试用模式下，您的操作不会被保存，设备内原有的文件数据也不会被修改。试用模式"
-"下性能和功能无法代表实际安装体验。"
+msgstr "在试用模式下，您的操作不会被保存，设备内原有的文件数据也不会被修改。试用模式下性能和功能无法代表实际安装体验。"
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "抹除并安装"
+msgstr "全新安装"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
@@ -406,7 +397,6 @@ msgid "Decrypt This Partition"
 msgstr "解锁此分区"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
@@ -451,9 +441,8 @@ msgid "Use as:"
 msgstr "用于："
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "根"
+msgstr "根目录（/）"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
