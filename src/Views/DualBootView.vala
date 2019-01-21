@@ -21,8 +21,11 @@ public class DualBootView : AbstractInstallerView {
     public const int DISK_USED = 15;
     public const int MIN_SIZE = 10;
 
-    private Gtk.Label our_os_size_label { get; set; }
-    private Gtk.Label other_os_size_label { get; set; }
+    private Gtk.SpinButton our_os_size_spin { get; set; }
+    private Gtk.SpinButton other_os_size_spin { get; set; }
+    private Gtk.Label our_os_free_label { get; set; }
+    private Gtk.Label other_os_free_label { get; set; }
+
 
     construct {
         var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
@@ -57,29 +60,59 @@ public class DualBootView : AbstractInstallerView {
         our_os_label_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
         our_os_label_context.add_class (Granite.STYLE_CLASS_ACCENT);
 
-        our_os_size_label = new Gtk.Label ("");
-        our_os_size_label.halign = Gtk.Align.END;
-        our_os_size_label.hexpand = true;
-        our_os_size_label.use_markup = true;
+        our_os_size_spin = new Gtk.SpinButton.with_range (0, TOTAL_DISK, 1);
+        our_os_size_spin.halign = Gtk.Align.END;
+
+        var our_os_unit_label = new Gtk.Label ("GB");
+        our_os_unit_label.width_request = 0;
+        our_os_unit_label.halign = Gtk.Align.END;
+
+        our_os_free_label = new Gtk.Label ("");
+        our_os_free_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        our_os_free_label.halign = Gtk.Align.END;
+
+        var our_spin_grid = new Gtk.Grid ();
+        our_spin_grid.column_spacing = 6;
+        our_spin_grid.halign = Gtk.Align.END;
+
+        our_spin_grid.add (our_os_size_spin);
+        our_spin_grid.add (our_os_unit_label);
 
         var other_os_label = new Gtk.Label (_("Other OS"));
         other_os_label.halign = Gtk.Align.START;
         other_os_label.hexpand = true;
         other_os_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        other_os_size_label = new Gtk.Label ("");
-        other_os_size_label.halign = Gtk.Align.START;
-        other_os_size_label.hexpand = true;
-        other_os_size_label.use_markup = true;
+        other_os_size_spin = new Gtk.SpinButton.with_range (0, TOTAL_DISK, 1);
+        other_os_size_spin.halign = Gtk.Align.START;
+
+        var other_os_unit_label = new Gtk.Label ("GB");
+        other_os_unit_label.halign = Gtk.Align.START;
+        other_os_unit_label.hexpand = true;
+
+        other_os_free_label = new Gtk.Label ("");
+        other_os_free_label.halign = Gtk.Align.START;
+        other_os_free_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        var other_spin_grid = new Gtk.Grid ();
+        other_spin_grid.column_spacing = 6;
+        other_spin_grid.halign = Gtk.Align.START;
+
+        other_spin_grid.add (other_os_size_spin);
+        other_spin_grid.add (other_os_unit_label);
 
         var scale_grid = new Gtk.Grid ();
+        scale_grid.column_spacing = 6;
         scale_grid.halign = Gtk.Align.FILL;
+        scale_grid.row_spacing = 6;
 
         scale_grid.attach (scale,               0, 0, 2);
         scale_grid.attach (other_os_label,      0, 1);
         scale_grid.attach (our_os_label,        1, 1);
-        scale_grid.attach (other_os_size_label, 0, 2);
-        scale_grid.attach (our_os_size_label,   1, 2);
+        scale_grid.attach (other_spin_grid,     0, 2);
+        scale_grid.attach (our_spin_grid,       1, 2);
+        scale_grid.attach (other_os_free_label, 0, 3);
+        scale_grid.attach (our_os_free_label,   1, 3);
 
         var grid = new Gtk.Grid ();
         grid.row_spacing = 12;
@@ -103,12 +136,20 @@ public class DualBootView : AbstractInstallerView {
         // next_button.clicked.connect (() => next_step ());
 
         action_area.add (next_button);
-        update_size_labels ((int)scale.get_value ());
+        update_sizes ((int)scale.get_value ());
         show_all ();
 
         scale.value_changed.connect (() => {
             constrain_scale (scale);
-            update_size_labels ((int)scale.get_value ());
+            update_sizes ((int)scale.get_value ());
+        });
+
+        our_os_size_spin.change_value.connect (() => {
+            update_sizes ((int)our_os_size_spin.value);
+        });
+
+        other_os_size_spin.change_value.connect (() => {
+            update_sizes ((int)other_os_size_spin.value);
         });
     }
 
@@ -118,16 +159,18 @@ public class DualBootView : AbstractInstallerView {
         }
     }
 
-    private void update_size_labels (int our_os_size) {
+    private void update_sizes (int our_os_size) {
         int other_os_size = TOTAL_DISK - our_os_size;
 
-        our_os_size_label.label = _("""%i GB <span alpha="67%">(%i GB Free)</span>""".printf (
-            our_os_size,
+        our_os_size_spin.value = our_os_size;
+
+        our_os_free_label.label = _("%i GB Free".printf (
             our_os_size - MIN_SIZE
         ));
 
-        other_os_size_label.label = _("""%i GB <span alpha="67%">(%i GB Free)</span>""".printf (
-            other_os_size,
+        other_os_size_spin.value = other_os_size;
+
+        other_os_free_label.label = _("%i GB Free".printf (
             other_os_size - DISK_USED
         ));
     }
