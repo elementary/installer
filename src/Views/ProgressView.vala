@@ -229,7 +229,7 @@ public class ProgressView : AbstractInstallerView {
             case Distinst.PartitionTable.MSDOS:
                 // This is used to ensure LVM installs will work with BIOS
                 result = disk.add_partition (
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.EXT4)
                         .partition_type (Distinst.PartitionType.PRIMARY)
                         .flag (Distinst.PartitionFlag.BOOT)
                         .mount ("/boot")
@@ -245,7 +245,7 @@ public class ProgressView : AbstractInstallerView {
             case Distinst.PartitionTable.GPT:
                 // A FAT32 partition is required for EFI installs
                 result = disk.add_partition (
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.FAT32)
+                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.FAT32)
                         .partition_type (Distinst.PartitionType.PRIMARY)
                         .flag (Distinst.PartitionFlag.ESP)
                         .mount ("/boot/efi")
@@ -264,7 +264,7 @@ public class ProgressView : AbstractInstallerView {
         end = disk.get_sector (ref end_sector);
 
         result = disk.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.LVM)
+            new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.LVM)
                 .partition_type (Distinst.PartitionType.PRIMARY)
                 .logical_volume (root_vg, encryption)
         );
@@ -297,7 +297,7 @@ public class ProgressView : AbstractInstallerView {
         end = lvm_device.get_sector (ref swap_sector);
 
         result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.EXT4)
+            new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.EXT4)
                 .name ("root")
                 .mount ("/")
         );
@@ -312,7 +312,7 @@ public class ProgressView : AbstractInstallerView {
         end = lvm_device.get_sector (ref end_sector);
 
         result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystemType.SWAP)
+            new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.SWAP)
                 .name ("swap")
         );
 
@@ -366,7 +366,7 @@ public class ProgressView : AbstractInstallerView {
                         return;
                     }
                 } else {
-                    if (m.filesystem != Distinst.FileSystemType.SWAP) {
+                    if (m.filesystem != Distinst.FileSystem.SWAP) {
                         partition.set_mount (m.mount_point);
                     }
 
@@ -408,7 +408,7 @@ public class ProgressView : AbstractInstallerView {
                 return;
             }
 
-            if (m.filesystem != Distinst.FileSystemType.SWAP) {
+            if (m.filesystem != Distinst.FileSystem.SWAP) {
                 partition.set_mount (m.mount_point);
             }
 
