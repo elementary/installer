@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-26 00:05+0000\n"
-"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
+"PO-Revision-Date: 2018-12-12 00:07+0000\n"
+"Last-Translator: alexis holguin <wholguinmor@uniminuto.edu.co>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/installer/"
 "installer/es/>\n"
 "Language: es\n"
@@ -382,9 +382,8 @@ msgstr ""
 "ser instalado."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Borrar e instalar"
+msgstr "Instalación limpia"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
@@ -400,6 +399,8 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Cree, cambie el tamaño o administre las particiones manualmente. Este método "
+"puede llevar a la pérdida de datos."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -423,13 +424,12 @@ msgid "Decrypt This Partition"
 msgstr "Desencriptar esta partición"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Introduzca la contraseña de encriptación de la partición, y establezca un "
-"nombre de dispositivo LUKS."
+"Introduzca la contraseña de encriptación de la partición y establezca un "
+"nombre de dispositivo para la partición desencriptada."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
