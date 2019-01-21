@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-18 00:10+0000\n"
+"PO-Revision-Date: 2019-01-05 18:24+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/installer/"
 "installer/mr/>\n"
@@ -191,37 +191,36 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "एनक्रिप्शन पासवर्ड निवडा"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "पासवर्ड नक्की करा"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "एन्क्रिप्ट करू नका"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
-#, fuzzy
 msgid "Back"
-msgstr "बॅकस्पेस"
+msgstr "मागे"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
-msgstr ""
+msgstr "पासवर्ड निवडा"
 
 #: src/Views/EncryptView.vala:169
 msgid "Set Password"
-msgstr ""
+msgstr "पासवर्ड सेट करा"
 
 #: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
-msgstr ""
+msgstr "पासवर्डस जुळत नाहीत"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
-msgstr ""
+msgstr "इन्स्टॉल होऊ शकले नाही"
 
 #: src/Views/ErrorView.vala:38
 #, c-format
@@ -229,77 +228,81 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
+"%s इन्स्टॉल करणे शक्य झाले नाही, बहुदा हार्डवेअर त्रुटीमुळे. आपले डिव्हाइस "
+"योग्य रीस्टार्ट होऊ शकत नाही. आपण खालील प्रयत्न करू शकता:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• पुन्हा इन्स्टॉल करण्याचा प्रयत्न करा"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• डेमो मोड वापरा आणि स्वतः पुनर्प्राप्त करण्याचा प्रयत्न करा"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• दुसर्या डिव्हाइसवरून बूट करण्यासाठी आपले डिव्हाइस रीस्टार्ट करा"
 
 #: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
 msgid "Restart Device"
-msgstr ""
+msgstr "डिव्हाइस रीस्टार्ट करा"
 
 #: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "डेमो मोड वापरून पहा"
 
 #: src/Views/ErrorView.vala:108
 msgid "Try Installing Again"
-msgstr ""
+msgstr "पुन्हा इन्स्टॉल करण्याचा प्रयत्न करा"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "कीबोर्ड चे लेआऊट"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "आपल्या लेआऊट ची चाचणी करण्यासाठी टाईप करा"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "कीबोर्ड चे लेआऊट दाखवा"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr ""
+msgstr "निवडा"
 
 #: src/Views/KeyboardLayoutView.vala:119
 msgid "Default"
-msgstr ""
+msgstr "मूळ"
 
 #: src/Views/KeyboardLayoutView.vala:126
 msgid "Input Language"
-msgstr ""
+msgstr "इनपुट भाषा"
 
 #: src/Views/LanguageView.vala:232
 msgid "Languages"
-msgstr ""
+msgstr "भाषा"
 
 #: src/Views/LanguageView.vala:249
 msgid "Select a Language"
-msgstr ""
+msgstr "एक भाषा निवडा"
 
 #: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
-msgstr ""
+msgstr "सध्या वापरात असलेली भाषा"
 
 #: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"सर्व ड्राइव्हवर कोणते भाग वापरायचे ते निवडा. <b>\"Format\" निवडल्याने "
+"निवडलेल्या ड्राइव्हच्या विभाजनावरील सर्व डेटा मिटविला जाईल.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "तुम्हास किमान एक <b>Root(/)</b> विभाजन निवडणे आवश्यक आहे."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -307,183 +310,194 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"तुम्हास किमान एक <b>Root(/)</b> विभाजन आणि एक <b>Boot(/boot/efi)</b> विभाजन "
+"निवडणे आवश्यक आहे."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "एक <b>स्वॅप </b>विभाजन निवडण्याची देखील शिफारस केली जाते."
 
 #: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "विभाजने सुधारित करा …"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI विभाजनात चुकीची फाइल प्रणाली आहे"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI विभाजन खूप लहान आहे"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "रूटसाठी ही अवैध फाइल सिस्टम आहे"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "होमसाठी ही अवैध फाइल सिस्टम आहे"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "विभाजन ड्राइव्ह"
 
 #: src/Views/ProgressView.vala:452
 msgid "Extracting Files"
-msgstr ""
+msgstr "फायली काढत आहे"
 
 #: src/Views/ProgressView.vala:456
 msgid "Configuring the System"
-msgstr ""
+msgstr "सिस्टम कॉन्फिगर करत आहे"
 
 #: src/Views/ProgressView.vala:460
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "इंस्टॉलेशन पूर्ण करीत आहे"
 
 #: src/Views/TryInstallView.vala:44
 msgid "Try or Install"
-msgstr ""
+msgstr "वापरून बघा किंवा इन्स्टॉल करा"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"आपण या डिव्हाइसवर %s  इन्स्टॉल करू शकता किंवा  इन्स्टॉल केल्याशिवाय डेमो मोड "
+"वापरून पहा."
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "पुढे"
 
 #: src/Views/TryInstallView.vala:81
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
+"बदल जतन केले जाणार नाहीत आणि आपल्या मागील OS वरील डेटा अपरिवर्तित केला जाईल. "
+"कार्यप्रदर्शन आणि वैशिष्ट्ये स्थापित अनुभवास परावर्तित करू शकत नाहीत."
 
 #: src/Views/TryInstallView.vala:85
 msgid "Clean Install"
-msgstr ""
+msgstr "स्वच्छतेने इन्स्टॉल करा"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "सर्व काही मिटवा आणि %s ची ताजी प्रत इन्स्टॉल करा."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "सानुकूल (प्रगत)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"विभाजने स्वहस्ते विभाजने, आकार बदलणे, किंवा इतरथा व्यवस्थापित करा. ही पद्धत "
+"डेटा हानी होऊ शकते."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "सेट अप सुरू ठेवा"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
+msgstr "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदात %s वर रीस्टार्ट होईल."
 
 #: src/Views/SuccessView.vala:35
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"रीस्टार्ट केल्यानंतर आपण एक नवीन वापरकर्ता सेट करू शकता किंवा आपण आता बंद करू"
+" शकता आणि नंतर नवीन वापरकर्ता सेट करू शकता."
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "हा विभाजन डीक्रीप्ट करा"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"विभाजनचे एनक्रिप्शन पासवर्ड द्या आणि डिक्रिप्टेड विभाजनासाठी साधन नाव सेट "
+"करा."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "पासवर्ड:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "उपकरणाचे नाव:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "डीक्रिप्ट"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "LUKS खंड डिक्रिप्ट झाले"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "विभाजन वापरा:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "स्वरूप:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "म्हणून वापरा:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "रूट"
+msgstr "रूट (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "होम(/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "बूट (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "स्वॅप"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "सानुकूल"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "सानुकूल:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "फाइलसिस्टम:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "डीफॉल्ट(ext4)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

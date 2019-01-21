@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2017-04-10 18:41+0000\n"
-"Last-Translator: HAYDER <albasimy16@gmail.com>\n"
-"Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
+"PO-Revision-Date: 2018-12-03 00:09+0000\n"
+"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
+"Language-Team: Arabic <https://weblate.elementary.io/projects/installer/"
 "installer/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -13,13 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:39+0000\n"
 
 #: src/MainWindow.vala:44
-#, fuzzy, c-format
+#, c-format
 msgid "Install %s"
-msgstr "تثبيت"
+msgstr "تثبيت %s"
 
 #: src/Utils.vala:50
 msgid "Test mode shutdown"
@@ -36,7 +36,7 @@ msgstr ""
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
@@ -56,7 +56,7 @@ msgstr ""
 
 #: src/Dialogs/EndSessionDialog.vala:58
 msgid "Restart"
-msgstr ""
+msgstr "إعادة التشغيل"
 
 #: src/Dialogs/EndSessionDialog.vala:60
 msgid "Cancel"
@@ -69,7 +69,7 @@ msgstr ""
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
-msgstr ""
+msgstr "إلغاء التثبيت"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
@@ -127,9 +127,8 @@ msgid "Memory:"
 msgstr ""
 
 #: src/Views/DiskView.vala:51
-#, fuzzy
 msgid "Select a Drive"
-msgstr "اختر اللغة"
+msgstr "اختر القرص"
 
 #: src/Views/DiskView.vala:55
 msgid ""
@@ -189,7 +188,7 @@ msgstr ""
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
 msgid "Back"
-msgstr ""
+msgstr "للخلف"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
@@ -252,21 +251,19 @@ msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr ""
+msgstr "إختر"
 
 #: src/Views/KeyboardLayoutView.vala:119
 msgid "Default"
-msgstr ""
+msgstr "الإفتراضي"
 
 #: src/Views/KeyboardLayoutView.vala:126
-#, fuzzy
 msgid "Input Language"
-msgstr "اختر اللغة"
+msgstr "اختر لغة الإدخال"
 
 #: src/Views/LanguageView.vala:232
-#, fuzzy
 msgid "Languages"
-msgstr "اختر اللغة"
+msgstr "اللغات"
 
 #: src/Views/LanguageView.vala:249
 msgid "Select a Language"
@@ -335,9 +332,8 @@ msgid "Finishing the Installation"
 msgstr ""
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "تثبيت"
+msgstr "تثبيت أو جرب"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -357,9 +353,8 @@ msgid ""
 msgstr ""
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "تثبيت"
+msgstr "تثبيت نظيف"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
