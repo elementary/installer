@@ -100,7 +100,11 @@ namespace Utils {
     private static void get_system_instance () {
         if (system_instance == null) {
             try {
-                system_instance = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.login1", "/org/freedesktop/login1");
+                system_instance = Bus.get_proxy_sync (
+                    BusType.SYSTEM,
+                    "org.freedesktop.login1",
+                    "/org/freedesktop/login1"
+                );
             } catch (GLib.Error e) {
                 warning ("%s", e.message);
             }
@@ -117,7 +121,12 @@ namespace Utils {
     public static unowned SeatInterface? get_seat_instance () {
         if (seat_instance == null) {
             try {
-                seat_instance = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.DisplayManager", Environment.get_variable ("XDG_SEAT_PATH"), DBusProxyFlags.NONE);
+                seat_instance = Bus.get_proxy_sync (
+                    BusType.SYSTEM,
+                    "org.freedesktop.DisplayManager",
+                    Environment.get_variable ("XDG_SEAT_PATH"),
+                    DBusProxyFlags.NONE
+                );
             } catch (GLib.Error e) {
                 critical ("DisplayManager.Seat error: %s", e.message);
             }
