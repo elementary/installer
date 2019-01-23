@@ -111,8 +111,12 @@ public class Installer.DiskView : AbstractInstallerView {
             return;
         }
 
+        const uint64 MSDOS_MAX_SECTORS = 4294967296 - 1;
+
         foreach (unowned Distinst.EraseOption disk in install_options.get_erase_options ()) {
-            var size = disk.get_sectors () * 512;
+            var sectors = disk.get_sectors ();
+
+            var size = sectors * 512;
             string model = Utils.string_from_utf8 (disk.get_model ());
             string path = Utils.string_from_utf8 (disk.get_device_path ());
             string icon_name = Utils.string_from_utf8 (disk.get_linux_icon ());
@@ -124,7 +128,12 @@ public class Installer.DiskView : AbstractInstallerView {
                 size
             );
 
-            if (disk.meets_requirements ()) {
+            // Ensure that the user cannot select a disk that is too large for BIOS installs.
+            bool msdos_too_large =
+                Distinst.bootloader_detect () == Distinst.PartitionTable.MSDOS
+                && sectors > MSDOS_MAX_SECTORS;
+
+            if (disk.meets_requirements () && !msdos_too_large) {
                 disk_button.clicked.connect (() => {
                     if (disk_button.active) {
                         disk_grid.get_children ().foreach ((child) => {
@@ -153,6 +162,11 @@ public class Installer.DiskView : AbstractInstallerView {
                         next_button.sensitive = true;
                     } else {
                         next_button.sensitive = false;
+                        if (msdos_too_large) {
+                            disk_button.set_tooltip_text (_("Maximum size of MSDOS partition table is 2TiB. Switch to EFI for GPT table support."));
+                        } else {
+                            disk_button.set_tooltip_text (_("Disk does not meet the minimum requirement"));
+                        }
                     }
                 });
 
