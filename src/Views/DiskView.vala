@@ -162,11 +162,6 @@ public class Installer.DiskView : AbstractInstallerView {
                         next_button.sensitive = true;
                     } else {
                         next_button.sensitive = false;
-                        if (msdos_too_large) {
-                            disk_button.set_tooltip_text (_("Maximum size of MSDOS partition table is 2TiB. Switch to EFI for GPT table support."));
-                        } else {
-                            disk_button.set_tooltip_text (_("Disk does not meet the minimum requirement"));
-                        }
                     }
                 });
 
@@ -186,6 +181,11 @@ public class Installer.DiskView : AbstractInstallerView {
                 enabled_buttons += disk_button;
             } else {
                 disk_button.set_sensitive (false);
+                if (msdos_too_large) {
+                    disk_button.set_tooltip_text (_("Maximum size of MSDOS partition table is 2TiB. Switch to EFI for GPT table support."));
+                } else {
+                    disk_button.set_tooltip_text (_("Disk does not meet the minimum requirement"));
+                }
 
                 disabled_buttons += disk_button;
             }
