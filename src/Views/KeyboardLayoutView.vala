@@ -21,13 +21,16 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
     private VariantWidget input_variant_widget;
 
+    public KeyboardLayoutView () {
+        Object (
+            title: _("Keyboard Layout"),
+            artwork: "keyboard"
+        );
+    }
+
     construct {
         var image = new Gtk.Image.from_icon_name ("input-keyboard", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
-
-        var title_label = new Gtk.Label (_("Keyboard Layout"));
-        title_label.get_style_context ().add_class ("h2");
-        title_label.valign = Gtk.Align.START;
 
         input_variant_widget = new VariantWidget ();
 
@@ -44,13 +47,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
         stack_grid.add (input_variant_widget);
         stack_grid.add (keyboard_test_entry);
 
-        var artwork = new Gtk.Grid ();
-        artwork.get_style_context ().add_class ("keyboard");
-        artwork.get_style_context ().add_class ("artwork");
-        artwork.vexpand = true;
-
-        content_area.attach (artwork, 0, 0, 1, 1);
-        content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (stack_grid, 1, 0, 1, 2);
 
         var back_button = new Gtk.Button.with_label (_("Back"));

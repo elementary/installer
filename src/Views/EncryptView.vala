@@ -27,7 +27,11 @@ public class EncryptView : AbstractInstallerView {
     private Gtk.LevelBar pw_levelbar;
 
     public EncryptView () {
-        Object (cancellable: false);
+        Object (
+            cancellable: false,
+            title: _("Drive Encryption"),
+            artwork: "encrypt"
+        );
     }
 
     construct {
@@ -43,10 +47,6 @@ public class EncryptView : AbstractInstallerView {
         overlay.width_request = 60;
         overlay.add (image);
         overlay.add_overlay (overlay_image);
-
-        var title_label = new Gtk.Label (_("Drive Encryption"));
-        title_label.get_style_context ().add_class ("h2");
-        title_label.valign = Gtk.Align.START;
 
         var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
@@ -131,13 +131,6 @@ public class EncryptView : AbstractInstallerView {
         stack.add (choice_grid);
         stack.add (password_grid);
 
-        var artwork = new Gtk.Grid ();
-        artwork.get_style_context ().add_class ("encrypt");
-        artwork.get_style_context ().add_class ("artwork");
-        artwork.vexpand = true;
-
-        content_area.attach (artwork, 0, 0, 1, 1);
-        content_area.attach (title_label, 0, 1, 1, 1);
         content_area.attach (stack, 1, 0, 1, 2);
 
         var no_encrypt_button = new Gtk.Button.with_label (_("Don't Encrypt"));

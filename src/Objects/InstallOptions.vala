@@ -27,8 +27,10 @@ public class InstallOptions : GLib.Object {
     private Distinst.Disks disks;
     public Distinst.InstallOption? selected_option;
 
-    // The amount of free space that should be retained when shrinking (20 GB).
-    public const uint64 SHRINK_OVERHEAD = 39062500;
+    private Gee.ArrayList<string> unlocked_devices { get; set; default = new Gee.ArrayList<string> (); }
+
+    // The amount of free space that should be retained when shrinking (20 GiB).
+    public const uint64 SHRINK_OVERHEAD = 20 * 2 * 1024 * 1024;
 
     public static unowned InstallOptions get_default () {
         if (_options_object == null || _options_object.disks_moved) {
@@ -51,10 +53,38 @@ public class InstallOptions : GLib.Object {
         return null != recovery && recovery.get_oem_mode ();
     }
 
+    public bool is_unlocked (string path) {
+        foreach (var dev in unlocked_devices) {
+            if (dev == path) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public bool contains_luks () {
         return disks.contains_luks ();
     }
 
+    public void decrypt(string device, string pv, string pass) throws GLib.Error {
+        try {
+            Utils.decrypt_partition (disks, device, pv, pass);
+        } catch (Error e) {
+            throw e;
+        }
+
+        layout_hash = Distinst.device_layout_hash ();
+
+        // Record the name of the device that was unlocked.
+        unlocked_devices.add(device);
+
+        // Update the list of available options.
+        _options = new Distinst.InstallOptions (disks, minimum_size, SHRINK_OVERHEAD);
+        selected_option = null;
+    }
+
+    // Get the current set of installation options.
     public unowned Distinst.InstallOptions get_options () {
         if (null == _options) {
             disks = Distinst.Disks.probe ();
@@ -66,7 +96,7 @@ public class InstallOptions : GLib.Object {
         return _options;
     }
 
-    // Returns an updated option if the device layout has changed.
+    // Get the current set of installation options, and update the options if disk changes occurred.
     public unowned Distinst.InstallOptions get_updated_options () {
         var new_hash = Distinst.device_layout_hash ();
         if (layout_hash != new_hash) {
@@ -74,18 +104,21 @@ public class InstallOptions : GLib.Object {
             disks = Distinst.Disks.probe ();
             _options = new Distinst.InstallOptions (disks, minimum_size, SHRINK_OVERHEAD);
             selected_option = null;
+
+            unlocked_devices.clear ();
         }
 
         return _options;
     }
 
-    public Distinst.Disks get_disks () {
-        disks_moved = true;
-        return (owned) disks;
-    }
-
     public unowned Distinst.Disks borrow_disks () {
         return disks;
+    }
+
+    // Transder ownership of the disks to the caller.
+    public Distinst.Disks take_disks () {
+        disks_moved = true;
+        return (owned) disks;
     }
 
     public unowned Distinst.InstallOption? get_selected_option () {

@@ -145,8 +145,8 @@ public class Installer.DecryptMenu: Gtk.Popover {
     }
 
     private bool entries_set () {
-        return pass_entry.get_text ().length != 0
-            && pv_entry.get_text ().length != 0;
+        return pass_entry.text_length != 0
+            && pv_entry.text_length != 0;
     }
 
     private void set_sensitivity () {

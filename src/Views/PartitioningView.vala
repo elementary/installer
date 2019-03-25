@@ -107,6 +107,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
 
+        action_area.homogeneous = false;
+
         action_area.add (help_button);
         action_area.set_child_secondary (help_button, true);
         action_area.set_child_non_homogeneous (help_button, true);
@@ -118,18 +120,48 @@ public class Installer.PartitioningView : AbstractInstallerView {
         action_area.add (back_button);
         action_area.add (next_button);
 
+        // Display a help dialog when the help_button is clicked.
+        //
+        // Ensures that only one instance of the help dialog is active at
+        // given time.
+        var dialog_open = false;
         help_button.clicked.connect (() => {
-            // FIXME: Only allow one instance
-            help_dialog = new HelpDialog ();
-            help_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            if (!dialog_open) {
+                dialog_open = true;
+                help_dialog = new HelpDialog ();
+                help_dialog.transient_for = (Gtk.Window) get_toplevel ();
+                help_dialog.delete_event.connect (() => {
+                    dialog_open = false;
+                    return false;
+                });
+            }
         });
-        modify_partitions_button.clicked.connect (() => open_partition_editor ());
+
+        // Opens GParted when the modify_partitions_button is clicked.
+        //
+        // The extra logic here will prevent the subprocess from opening
+        // multiple times in succession when this button is clicked multiple
+        // times.
+        modify_partitions_button.clicked.connect (() => {
+            if (modify_partitions_button.sensitive) {
+                modify_partitions_button.sensitive = false;
+                Idle.add (() => {
+                    open_partition_editor ();
+                    Idle.add (() => {
+                        modify_partitions_button.sensitive = true;
+                        return false;
+                    });
+                    return false;
+                });
+            }
+        });
+
         back_button.clicked.connect (() => {
             Distinst.deactivate_logical_devices ();
             ((Gtk.Stack) get_parent ()).visible_child = previous_view;
         });
-        next_button.clicked.connect (() => next_step ());
 
+        next_button.clicked.connect (() => next_step ());
         show_all ();
     }
 
@@ -139,6 +171,10 @@ public class Installer.PartitioningView : AbstractInstallerView {
         label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
         foreach (unowned Distinst.Disk disk in disks.list ()) {
+            if (disk.is_read_only ()) {
+                continue;
+            }
+
             // Skip root disk or live disk
             if (!InstallOptions.get_default ().has_recovery () && (disk.contains_mount ("/", disks) || disk.contains_mount ("/cdrom", disks))) {
                 continue;
@@ -253,52 +289,23 @@ public class Installer.PartitioningView : AbstractInstallerView {
     }
 
     private bool decrypt (string device, string pv, string password, DecryptMenu menu) {
-        string error_msg;
-        if (Distinst.device_map_exists (pv)) {
-            error_msg = _("Device name already exists.");
-        } else {
-            int result = disks.decrypt_partition (device, Distinst.LvmEncryption () {
-                physical_volume = pv,
-                password = password,
-                keydata = null
-            });
-
-            switch (result) {
-                case 0:
-                    unowned Distinst.LvmDevice disk = disks.get_logical_device_within_pv (pv);
-                    add_logical_disk (disk);
-                    luks.add (new LuksCredentials (device, pv, password));
-                    return true;
-                case 1:
-                    error_msg = _("An input was null.");
-                    break;
-                case 2:
-                    error_msg = _("An input was not valid UTF-8.");
-                    break;
-                case 3:
-                    error_msg = _("Either a password or keydata string must be supplied.");
-                    break;
-                case 4:
-                    error_msg = _("Failed to decrypt due to invalid password.");
-                    break;
-                case 5:
-                    error_msg = _("The decrypted partition does not have a LVM volume on it.");
-                    break;
-                case 6:
-                    error_msg = _("Unable to locate LUKS partition at %s.").printf (device);
-                    break;
-                default:
-                    critical ("decrypt: unhandled error value: %d", result);
-                    return false;
-            }
+        try {
+            Utils.decrypt_partition (disks, device, pv, password);
+        } catch (Error e) {
+            menu.set_error (e.message);
+            return false;
         }
 
-        menu.set_error (error_msg);
-        return false;
+        unowned Distinst.LvmDevice disk = disks.get_logical_device_within_pv (pv);
+        add_logical_disk (disk);
+        luks.add (new LuksCredentials (device, pv, password));
+        return true;
     }
 
     private void set_mount (Mount mount) throws GLib.Error {
         unset_mount_point (mount);
+
+        string? error = null;
 
         if (mount.mount_point == "/boot/efi") {
             unowned Distinst.Disk? disk = disks.get_physical_device (mount.parent_disk);
@@ -309,12 +316,16 @@ public class Installer.PartitioningView : AbstractInstallerView {
             } else if (!mount.is_valid_boot_mount ()) {
                 throw new GLib.IOError.FAILED (_("EFI partition has the wrong file system"));
             } else if (mount.sectors < REQUIRED_EFI_SECTORS) {
-                throw new GLib.IOError.FAILED (_("EFI partition is too small"));
+                error = _("EFI partition is too small");
             }
         } else if (mount.mount_point == "/" && !mount.is_valid_root_mount ()) {
-            throw new GLib.IOError.FAILED (_("Invalid file system for root"));
+            error = _("Invalid file system for root");
         } else if (mount.mount_point == "/home" && !mount.is_valid_root_mount ()) {
-            throw new GLib.IOError.FAILED (_("Invalid file system for home"));
+            error = _("Invalid file system for home");
+        }
+
+        if (error != null) {
+            throw new GLib.IOError.FAILED (error);
         }
 
         for (int i = 0; i < mounts.size; i++) {
