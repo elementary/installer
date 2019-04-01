@@ -16,7 +16,6 @@
 - Pop 18.10/18.04 + empty drive
 
 ## Testing "Refresh" Install
-- Test a Refresh install of 18.04/18.10 with an encrypted home folder
 - Pop encrypted
 - Pop unencrypted
 - Refresh Pop in dualboot
