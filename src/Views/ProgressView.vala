@@ -25,6 +25,8 @@ public class ProgressView : AbstractInstallerView {
     private const int NUM_STEP = 4;
     private Terminal terminal;
 
+    private Distinst.Installer installer;
+
     construct {
         var logo = new Gtk.Image ();
         logo.icon_name = "distributor-logo";
@@ -111,7 +113,7 @@ public class ProgressView : AbstractInstallerView {
     }
 
     public void real_installation () {
-        var installer = new Distinst.Installer ();
+        installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
 
@@ -126,7 +128,6 @@ public class ProgressView : AbstractInstallerView {
         unowned Configuration current_config = Configuration.get_default ();
         unowned InstallOptions options = InstallOptions.get_default ();
 
-        stderr.printf ("locale: %s\n", current_config.get_locale ());
         config.lang = current_config.get_locale ();
         config.keyboard_layout = current_config.keyboard_layout;
         config.keyboard_model = null;
@@ -144,23 +145,21 @@ public class ProgressView : AbstractInstallerView {
 
             switch (option.tag) {
                 case Distinst.InstallOptionVariant.REFRESH:
-                    if (current_config.retain_home) {
-                        unowned Distinst.RefreshOption refresh = (Distinst.RefreshOption*) option.option;
-                        config.old_root = Utils.string_from_utf8 (refresh.get_root_part ());
+                    unowned Distinst.RefreshOption refresh = (Distinst.RefreshOption*) option.option;
+                    config.old_root = Utils.string_from_utf8 (refresh.get_root_part ());
+                    if (current_config.retain_old) {
+                        config.flags |= Distinst.KEEP_OLD_ROOT;
                     }
 
                     break;
+                case Distinst.InstallOptionVariant.ALONGSIDE:
+                case Distinst.InstallOptionVariant.ERASE:
                 case Distinst.InstallOptionVariant.RECOVERY:
                     option.encrypt_pass = current_config.encryption_password;
-
-                    break;
-                case Distinst.InstallOptionVariant.ERASE:
-                    option.encrypt_pass = current_config.encryption_password;
-
                     break;
             }
 
-            disks = options.get_disks ();
+            disks = options.take_disks ();
             var result = option.apply (disks);
             if (result != 0) {
                 on_error ();
@@ -299,6 +298,9 @@ public class ProgressView : AbstractInstallerView {
 
             double fraction = ((double) status.percent) / (100.0 * NUM_STEP);
             switch (status.step) {
+                case Distinst.Step.BACKUP:
+                    progressbar_label.label = _("Performing Backup Step");
+                    break;
                 case Distinst.Step.PARTITION:
                     progressbar_label.label = _("Partitioning Drive");
                     break;

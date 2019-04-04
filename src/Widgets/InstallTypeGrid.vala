@@ -36,7 +36,7 @@ public class Installer.InstallButtonFactory {
         this.handler = new Handle<ulong> ();
     }
 
-    public InstallTypeButton new_button (string type_title, string icon_name, string type_subtitle, Fn func) {
+    public InstallTypeButton new_button (string type_title, string icon_name, string? type_subtitle, Fn func) {
         return new InstallTypeButton (type_title, icon_name, type_subtitle, this.handler, this.next_button, this.type_grid, func);
     }
 }
@@ -44,13 +44,14 @@ public class Installer.InstallButtonFactory {
 public class Installer.InstallTypeButton : Gtk.ToggleButton {
     public string type_title { get; construct; }
     public string icon_name { get; construct; }
-    public string type_subtitle { get; construct; }
+    public string? type_subtitle { get; construct; }
     public Handle<ulong> handler { get; construct; }
     public Gtk.Button next_button { get; construct; }
+    public Gtk.Image type_image;
     public Gtk.Grid type_grid { get; construct; }
     private Fn func;
 
-    public InstallTypeButton (string type_title, string icon_name, string type_subtitle,
+    public InstallTypeButton (string type_title, string icon_name, string? type_subtitle,
                               Handle<ulong> handler, Gtk.Button next_button, Gtk.Grid type_grid,
                               Fn func) {
         Object (
@@ -68,22 +69,14 @@ public class Installer.InstallTypeButton : Gtk.ToggleButton {
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var type_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
+        type_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
         type_image.use_fallback = true;
+        type_image.halign = Gtk.Align.CENTER;
+        type_image.valign = Gtk.Align.CENTER;
 
         var title_label = new Gtk.Label (type_title);
-        title_label.halign = Gtk.Align.START;
         title_label.hexpand = true;
-        title_label.valign = Gtk.Align.END;
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
-
-        var subtitle_label = new Gtk.Label ("%s".printf (type_subtitle));
-        subtitle_label.halign = Gtk.Align.START;
-        subtitle_label.use_markup = true;
-        subtitle_label.max_width_chars = 45;
-        subtitle_label.valign = Gtk.Align.START;
-        subtitle_label.wrap = true;
-        subtitle_label.xalign = 0;
 
         var grid = new Gtk.Grid ();
         grid.margin = 6;
@@ -91,10 +84,27 @@ public class Installer.InstallTypeButton : Gtk.ToggleButton {
         grid.column_spacing = 6;
         grid.row_spacing = 6;
         grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.attach (type_image, 0, 0, 1, 2);
 
-        grid.attach (type_image,     0, 0, 1, 2);
-        grid.attach (title_label,    1, 0);
-        grid.attach (subtitle_label, 1, 1);
+        if (type_subtitle == null) {
+            title_label.halign = Gtk.Align.CENTER;
+            title_label.valign = Gtk.Align.CENTER;
+            grid.attach (title_label, 1, 0, 1, 2);
+        } else {
+            title_label.halign = Gtk.Align.START;
+            title_label.valign = Gtk.Align.END;
+
+            var subtitle_label = new Gtk.Label ("%s".printf (type_subtitle));
+            subtitle_label.halign = Gtk.Align.START;
+            subtitle_label.use_markup = true;
+            subtitle_label.max_width_chars = 45;
+            subtitle_label.valign = Gtk.Align.START;
+            subtitle_label.wrap = true;
+            subtitle_label.xalign = 0;
+
+            grid.attach (title_label,    1, 0);
+            grid.attach (subtitle_label, 1, 1);
+        }
 
         add (grid);
         clicked.connect (option_clicked);

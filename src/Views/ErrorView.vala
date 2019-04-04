@@ -17,10 +17,11 @@
  */
 
 public class ErrorView : AbstractInstallerView {
+    public uint64 minimum_disk_size { get; construct; }
     public string log { get; construct; }
 
-    public ErrorView (string log) {
-        Object (log: log);
+    public ErrorView (string log, uint64 minimum_disk_size) {
+        Object (log: log, minimum_disk_size: minimum_disk_size);
     }
 
     construct {
@@ -37,7 +38,7 @@ public class ErrorView : AbstractInstallerView {
         title_label.xalign = 0;
         title_label.get_style_context ().add_class ("h2");
 
-        var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. Your device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ()));
+        var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. Detailed logs were written to <b>/tmp/installer.log</b>. Your device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ()));
         description_label.max_width_chars = 52;
         description_label.wrap = true;
         description_label.xalign = 0;
@@ -130,6 +131,11 @@ public class ErrorView : AbstractInstallerView {
         demo_button.clicked.connect (Utils.demo_mode);
 
         install_button.clicked.connect (() => {
+            // This object is moved during install, so this will restore the default settings.
+            var options = InstallOptions.get_default ();
+            options.set_minimum_size (minimum_disk_size);
+            options.get_options ();
+
             ((Gtk.Stack) get_parent ()).visible_child = previous_view;
         });
 

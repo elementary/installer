@@ -20,16 +20,30 @@ public abstract class AbstractInstallerView : Gtk.Grid {
     public bool cancellable { get; construct; }
     public unowned Gtk.Widget? previous_view { get; set; }
     public Gtk.Label? test_label = null;
+    public Gtk.Button cancel_button;
+
+    public string artwork { get; construct; }
+    public string title { get; construct; }
+    public Gtk.Label? title_label;
+    public Gtk.Widget? title_widget { get; construct; }
 
     public signal void cancel ();
 
     protected Gtk.Grid content_area;
     protected Gtk.ButtonBox action_area;
 
-    public AbstractInstallerView (bool cancellable = false) {
+    public AbstractInstallerView (
+        bool cancellable = false,
+        string? title = null,
+        string? artwork = null,
+        Gtk.Widget? title_widget = null
+    ) {
         Object (
             cancellable: cancellable,
-            row_spacing: 24
+            row_spacing: 24,
+            title: title,
+            title_widget: title_widget,
+            artwork: artwork
         );
     }
 
@@ -44,14 +58,39 @@ public abstract class AbstractInstallerView : Gtk.Grid {
         content_area.valign = Gtk.Align.FILL;
         content_area.halign = Gtk.Align.FILL;
 
+        if (artwork != null && (title != null || title_widget != null)) {
+            Gtk.Widget title_w;
+            if (title_widget != null) {
+                title_w = title_widget;
+            } else {
+                title_label = new Gtk.Label (title);
+                title_label.max_width_chars = 60;
+                title_label.get_style_context ().add_class ("h2");
+                title_label.margin_bottom = 42;
+                title_w = (Gtk.Widget) title_label;
+            }
+
+            title_w.valign = Gtk.Align.START;
+            title_w.halign = Gtk.Align.CENTER;
+
+            var artwork = new Gtk.Grid ();
+            artwork.get_style_context ().add_class (this.artwork);
+            artwork.get_style_context ().add_class ("artwork");
+            artwork.vexpand = true;
+
+            content_area.attach (artwork, 0, 0);
+            content_area.attach (title_w, 0, 1);
+        }
+
         action_area = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
         action_area.margin_end = 10;
         action_area.margin_start = 10;
         action_area.spacing = 6;
         action_area.layout_style = Gtk.ButtonBoxStyle.END;
+        action_area.homogeneous = true;
 
         if (cancellable) {
-            var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
+            cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
             cancel_button.clicked.connect (() => {
                 cancel ();
             });

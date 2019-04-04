@@ -21,16 +21,17 @@
 public class Installer.MainWindow : Gtk.Dialog {
     private Gtk.Stack stack;
 
-    private LanguageView language_view;
-    private KeyboardLayoutView keyboard_layout_view;
-    private TryInstallView try_install_view;
-    private Installer.CheckView check_view;
     private DiskView disk_view;
-    private PartitioningView partitioning_view;
-    private ProgressView progress_view;
-    private SuccessView success_view;
     private EncryptView encrypt_view;
     private ErrorView error_view;
+    private Installer.CheckView check_view;
+    private KeyboardLayoutView keyboard_layout_view;
+    private LanguageView language_view;
+    private PartitioningView partitioning_view;
+    private ProgressView progress_view;
+    private RefreshView refresh_view;
+    private SuccessView success_view;
+    private TryInstallView try_install_view;
     private bool check_ignored = false;
 
     private uint64 minimum_disk_size;
@@ -71,6 +72,7 @@ public class Installer.MainWindow : Gtk.Dialog {
      * We need to load all the view after the language has being chosen and set.
      * We need to rebuild the view everytime the next button is clicked to reflect language changes.
      */
+
 
     private void load_keyboard_view () {
         if (keyboard_layout_view != null) {
@@ -127,8 +129,27 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
-        try_install_view.custom_step.connect (() => load_partitioning_view ());
-        try_install_view.next_step.connect (() => load_disk_view ());
+        try_install_view.custom_step.connect (load_partitioning_view);
+        try_install_view.next_step.connect (load_disk_view);
+        try_install_view.refresh_step.connect (load_refresh_view);
+    }
+
+    private void load_refresh_view () {
+        if (refresh_view == null) {
+            refresh_view = new RefreshView ();
+            refresh_view.previous_view = try_install_view;
+            refresh_view.next_step.connect ((retain_old) => {
+                Configuration.get_default ().retain_old = retain_old;
+                load_progress_view ();
+            });
+            refresh_view.cancel.connect (() => {
+                stack.visible_child = try_install_view;
+            });
+            stack.add (refresh_view);
+        }
+
+        stack.visible_child = refresh_view;
+        refresh_view.update_options ();
     }
 
     private void set_check_view_visible (bool show) {
@@ -294,7 +315,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             error_view.destroy ();
         }
 
-        error_view = new ErrorView (log);
+        error_view = new ErrorView (log, minimum_disk_size);
         error_view.previous_view = try_install_view;
         stack.add (error_view);
         stack.visible_child = error_view;

@@ -18,192 +18,99 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.DiskView : AbstractInstallerView {
+public class Installer.DiskView : OptionsView {
     public signal void next_step ();
 
-    private Gtk.Button next_button;
-    private Gtk.Grid disk_grid;
-    private Gtk.Stack load_stack;
-
     public DiskView () {
-        Object (cancellable: true);
+        Object (
+            cancellable: true,
+            artwork: "disks",
+            title: _("Select a drive")
+        );
     }
 
     construct {
-        disk_grid = new Gtk.Grid ();
-        disk_grid.halign = Gtk.Align.CENTER;
-        disk_grid.valign = Gtk.Align.CENTER;
-        disk_grid.orientation = Gtk.Orientation.VERTICAL;
-        disk_grid.vexpand = true;
-        disk_grid.row_spacing = 6;
-
-        var disk_scrolled = new Gtk.ScrolledWindow (null, null);
-        disk_scrolled.vexpand = true;
-        disk_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-#if GTK_3_22
-        disk_scrolled.propagate_natural_height = true;
-#endif
-        disk_scrolled.add (disk_grid);
-
-        var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);
-        install_image.valign = Gtk.Align.START;
-
-        var install_label = new Gtk.Label (_("Select a drive"));
-        install_label.max_width_chars = 60;
-        install_label.valign = Gtk.Align.START;
-        install_label.get_style_context ().add_class ("h2");
-
-        var install_desc_label = new Gtk.Label (_("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode."));
-        install_desc_label.hexpand = true;
-        install_desc_label.max_width_chars = 60;
-        install_desc_label.wrap = true;
-
-        var load_spinner = new Gtk.Spinner ();
-        load_spinner.halign = Gtk.Align.CENTER;
-        load_spinner.valign = Gtk.Align.CENTER;
-        load_spinner.start ();
-
-        var load_label = new Gtk.Label (_("Getting the current configuration…"));
-        load_label.get_style_context ().add_class ("h2");
-
-        var load_grid = new Gtk.Grid ();
-        load_grid.row_spacing = 12;
-        load_grid.expand = true;
-        load_grid.orientation = Gtk.Orientation.VERTICAL;
-        load_grid.valign = Gtk.Align.CENTER;
-        load_grid.halign = Gtk.Align.CENTER;
-        load_grid.add (load_spinner);
-        load_grid.add (load_label);
-
-        load_stack = new Gtk.Stack ();
-        load_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-        load_stack.add_named (load_grid, "loading");
-        load_stack.add_named (disk_scrolled, "disk");
-
-        var artwork = new Gtk.Grid ();
-        artwork.get_style_context ().add_class ("disks");
-        artwork.get_style_context ().add_class ("artwork");
-        artwork.vexpand = true;
-
-        content_area.attach (artwork, 0, 0, 1, 1);
-        content_area.attach (install_label, 0, 1, 1, 1);
-        content_area.attach (load_stack, 1, 0, 1, 2);
-
-        next_button = new Gtk.Button.with_label (_("Erase and Install"));
+        next_button.label = _("Erase and Install");
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
         next_button.clicked.connect (() => next_step ());
-
-        action_area.add (next_button);
 
         show_all ();
     }
 
     // If possible, open devices in a different thread so that the interface stays awake.
     public async void load (uint64 minimum_disk_size) {
-        DiskButton[] enabled_buttons = {};
-        DiskButton[] disabled_buttons = {};
-
-        unowned Distinst.InstallOptions install_options = InstallOptions.get_default ().get_updated_options ();
-
-        if (install_options == null) {
-            critical (_("unable to get installation options"));
-            return;
-        }
-
         const uint64 MSDOS_MAX_SECTORS = 4294967296 - 1;
 
-        foreach (unowned Distinst.EraseOption disk in install_options.get_erase_options ()) {
-            var sectors = disk.get_sectors ();
+        var install_options = InstallOptions.get_default ();
+        unowned Distinst.InstallOptions options = install_options.get_updated_options ();
 
-            var size = sectors * 512;
-            string model = Utils.string_from_utf8 (disk.get_model ());
-            string path = Utils.string_from_utf8 (disk.get_device_path ());
-            string icon_name = Utils.string_from_utf8 (disk.get_linux_icon ());
-
-            var disk_button = new DiskButton (
-                model,
-                icon_name,
-                path,
-                size
+        foreach (unowned Distinst.EraseOption disk in options.get_erase_options ()) {
+            string logo = Utils.string_from_utf8 (disk.get_linux_icon ());
+            string label = Utils.string_from_utf8 (disk.get_model ());
+            string details = "%s %.1f GiB".printf (
+                Utils.string_from_utf8 (disk.get_device_path ()),
+                (double) disk.get_sectors () / SECTORS_AS_GIB
             );
 
             // Ensure that the user cannot select a disk that is too large for BIOS installs.
             bool msdos_too_large =
                 Distinst.bootloader_detect () == Distinst.PartitionTable.MSDOS
-                && sectors > MSDOS_MAX_SECTORS;
+                && disk.get_sectors () > MSDOS_MAX_SECTORS;
 
-            if (disk.meets_requirements () && !msdos_too_large) {
-                disk_button.clicked.connect (() => {
-                    if (disk_button.active) {
-                        disk_grid.get_children ().foreach ((child) => {
-                            ((Gtk.ToggleButton)child).active = child == disk_button;
-                        });
+            base.add_option(logo, label, details, (button) => {
+                if (disk.meets_requirements () && !msdos_too_large) {
+                    button.key_press_event.connect ((event) => handle_key_press (button, event));
+                    button.notify["active"].connect (() => {
+                        if (button.active) {
+                            base.options.get_children ().foreach ((child) => {
+                                if (child is Gtk.ToggleButton) {
+                                    ((Gtk.ToggleButton)child).active = child == button;
+                                }
+                            });
 
-                        var opts = InstallOptions.get_default ();
+                            if (install_options.has_recovery ()) {
+                                var recovery = options.get_recovery_option ();
 
-                        if (opts.has_recovery ()) {
-                            unowned Distinst.InstallOptions options = opts.get_options ();
-                            var recovery = options.get_recovery_option ();
+                                install_options.selected_option = new Distinst.InstallOption () {
+                                    tag = Distinst.InstallOptionVariant.RECOVERY,
+                                    option = (void*) recovery,
+                                    encrypt_pass = null
+                                };
+                            } else {
+                                install_options.selected_option = new Distinst.InstallOption () {
+                                    tag = Distinst.InstallOptionVariant.ERASE,
+                                    option = (void*) disk,
+                                    encrypt_pass = null
+                                };
+                            }
 
-                            InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
-                                tag = Distinst.InstallOptionVariant.RECOVERY,
-                                option = (void*) recovery,
-                                encrypt_pass = null
-                            };
+                            next_button.sensitive = true;
                         } else {
-                            InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
-                                tag = Distinst.InstallOptionVariant.ERASE,
-                                option = (void*) disk,
-                                encrypt_pass = null
-                            };
+                            next_button.sensitive = false;
                         }
-
-                        next_button.sensitive = true;
-                    } else {
-                        next_button.sensitive = false;
-                    }
-                });
-
-                disk_button.key_press_event.connect ((event) => {
-                    if (event.keyval == Gdk.Key.Return) {
-                        disk_button.clicked ();
-                        if (next_button.sensitive) {
-                            next_button.clicked ();
-                        }
-
-                        return true;
-                    }
-
-                    return false;
-                });
-
-                enabled_buttons += disk_button;
-            } else {
-                disk_button.set_sensitive (false);
-                if (msdos_too_large) {
-                    disk_button.set_tooltip_text (_("Maximum size of MSDOS partition table is 2TiB. Switch to EFI for GPT table support."));
+                    });
                 } else {
-                    disk_button.set_tooltip_text (_("Disk does not meet the minimum requirement"));
+                    button.sensitive = false;
+                    if (msdos_too_large) {
+                        button.set_tooltip_text (_("Maximum size of MSDOS partition table is 2TiB. Switch to EFI for GPT table support."));
+                    } else {
+                        button.set_tooltip_text (_("Disk does not meet the minimum requirement"));
+                    }
                 }
-
-                disabled_buttons += disk_button;
-            }
+            });
         }
 
-        foreach (DiskButton disk_button in enabled_buttons) {
-            disk_grid.add (disk_button);
+        base.sort_sensitive ();
+    }
+
+    private bool handle_key_press (Gtk.Button button, Gdk.EventKey event) {
+        if (event.keyval == Gdk.Key.Return) {
+            button.clicked ();
+            next_button.clicked ();
+            return true;
         }
 
-        foreach (DiskButton disk_button in disabled_buttons) {
-            disk_grid.add (disk_button);
-        }
-
-        disk_grid.show_all ();
-        load_stack.set_visible_child_name ("disk");
-
-        if (enabled_buttons.length != 0) {
-            enabled_buttons[0].grab_focus ();
-        }
+        return false;
     }
 }

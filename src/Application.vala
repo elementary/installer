@@ -60,7 +60,13 @@ public class Installer.App : Gtk.Application {
 }
 
 public static int main (string[] args) {
+    // Initialize distinst logging in advance.
+    LogHelper.get_default();
+
+    // Deactivates all LVM / LUKS devices before launching the UI.
+    // This measure is to prevent possible mount, unmount, and file system conflicts.
     Distinst.deactivate_logical_devices ();
+
     var application = new Installer.App ();
     return application.run (args);
 }

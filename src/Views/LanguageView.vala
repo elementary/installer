@@ -18,8 +18,8 @@
  */
 
 public class Installer.LanguageView : AbstractInstallerView {
-    Gtk.Label select_label;
-    Gtk.Stack select_stack;
+    public Gtk.Label select_label { get; construct; }
+    public Gtk.Stack select_stack { get; construct; }
     Gtk.Button next_button;
     int select_number = 0;
     Gee.LinkedList<string> preferred_langs;
@@ -30,6 +30,24 @@ public class Installer.LanguageView : AbstractInstallerView {
 
     public LanguageView () {
         GLib.Timeout.add_seconds (3, timeout);
+
+        var select_label = new Gtk.Label (null);
+        select_label.halign = Gtk.Align.CENTER;
+        select_label.wrap = true;
+
+        var select_stack = new Gtk.Stack ();
+        select_stack.get_style_context ().add_class ("h2");
+        select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        select_stack.add (select_label);
+        select_stack.set_visible_child (select_label);
+        select_stack.margin_bottom = 30;
+
+        Object (
+            artwork: "language",
+            title_widget: (Gtk.Widget) select_stack,
+            select_label: select_label,
+            select_stack: select_stack
+        );
     }
 
     construct {
@@ -41,16 +59,6 @@ public class Installer.LanguageView : AbstractInstallerView {
         var image = new Gtk.Image.from_icon_name ("preferences-desktop-locale", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
-        select_label = new Gtk.Label (null);
-        select_label.halign = Gtk.Align.CENTER;
-        select_label.wrap = true;
-
-        select_stack = new Gtk.Stack ();
-        select_stack.valign = Gtk.Align.START;
-        select_stack.get_style_context ().add_class ("h2");
-        select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-        select_stack.add (select_label);
-
         select_stack.notify["transition-running"].connect (() => {
             if (!select_stack.transition_running) {
                 select_stack.get_children ().foreach ((child) => {
@@ -60,10 +68,6 @@ public class Installer.LanguageView : AbstractInstallerView {
                 });
             }
         });
-
-        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
-        size_group.add_widget (select_stack);
-        size_group.add_widget (image);
 
         lang_variant_widget = new VariantWidget ();
 
@@ -168,13 +172,6 @@ public class Installer.LanguageView : AbstractInstallerView {
             lang_variant_widget.main_listbox.row_selected.disconnect (row_selected);
         });
 
-        var artwork = new Gtk.Grid ();
-        artwork.get_style_context ().add_class ("language");
-        artwork.get_style_context ().add_class ("artwork");
-        artwork.vexpand = true;
-
-        content_area.attach (artwork, 0, 0, 1, 1);
-        content_area.attach (select_stack, 0, 1, 1, 1);
         content_area.attach (lang_variant_widget, 1, 0, 1, 2);
 
         timeout ();
@@ -257,10 +254,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         var current_lang = Environment.get_variable ("LANGUAGE");
         Environment.set_variable ("LANGUAGE", ((LangRow) row).lang_entry.get_code (), true);
         Intl.textdomain (Build.GETTEXT_PACKAGE);
-        select_label = new Gtk.Label (_("Select a Language"));
-        select_label.show_all ();
-        select_stack.add (select_label);
-        select_stack.set_visible_child (select_label);
+        select_label.label = _("Select a Language");
 
         if (current_lang != null) {
             Environment.set_variable ("LANGUAGE", current_lang, true);
