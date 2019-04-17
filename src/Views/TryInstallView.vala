@@ -117,7 +117,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         var clean_install_button = button_creator.new_button (
             _("Clean Install"),
-            "gcleaner",
+            "system-os-installer",
             _("Erase everything and install a fresh copy of %s.").printf (pretty_name),
             () => next_step ()
         );
