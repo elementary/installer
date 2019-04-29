@@ -133,7 +133,7 @@ public class ProgressView : AbstractInstallerView {
 
         var config = Distinst.Config ();
         config.flags = Distinst.MODIFY_BOOT_ORDER;
-        config.hostname = "todo";
+        config.hostname = "elementary-os";
         config.lang = "en_US.UTF-8";
         config.remove = Build.MANIFEST_REMOVE_PATH;
         config.squashfs = Build.SQUASHFS_PATH;
