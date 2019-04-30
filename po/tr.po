@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-11-06 21:00+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
-"Language-Team: Turkish <https://weblate.elementary.io/projects/installer/"
+"PO-Revision-Date: 2019-04-25 12:26+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -88,7 +88,7 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"%s'i kurmak için cihazınızda yeterli alan yok. Minimum %s alan ayrılmasını "
+"%s kurulumu için cihazınızda yeterli alan yok. En az %s alan ayrılmasını "
 "öneriyoruz."
 
 #: src/Views/CheckView.vala:215
@@ -192,7 +192,7 @@ msgstr "Şifreleme Parolasını Seçin"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr "Şifreyi Onayla"
+msgstr "Parolayı Onayla"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
@@ -213,7 +213,7 @@ msgstr "Şifre Belirle"
 
 #: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
-msgstr "Şifreler uyuşmuyor"
+msgstr "Parolalar eşleşmiyor"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
@@ -286,7 +286,7 @@ msgstr "Bir Dil Seçin"
 
 #: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
-msgstr "Şuan aktif olan dil"
+msgstr "Şu anda etkin olan dil"
 
 #: src/Views/PartitioningView.vala:54
 msgid ""
