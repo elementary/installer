@@ -37,21 +37,17 @@ public class Installer.Terminal : Gtk.ScrolledWindow {
 
     construct {
         view = new Gtk.TextView.with_buffer (buffer);
-        view.editable = false;
         view.cursor_visible = true;
+        view.editable = false;
+        view.margin_start = view.margin_end = 6;
         view.monospace = true;
-        view.wrap_mode = Gtk.WrapMode.WORD_CHAR;
-        view.expand = true;
-
-        // A workaround for https://gitlab.gnome.org/GNOME/gtk/issues/628
-        var workaround_box = new Gtk.Grid ();
-        workaround_box.margin = 12;
-        workaround_box.expand = true;
-        workaround_box.add (view);
+        view.pixels_below_lines = 3;
+        view.wrap_mode = Gtk.WrapMode.WORD;
 
         hscrollbar_policy = Gtk.PolicyType.NEVER;
         expand = true;
-        add (workaround_box);
+        min_content_height = 120;
+        add (view);
         get_style_context ().add_class (Granite.STYLE_CLASS_TERMINAL);
 
         view.size_allocate.connect (() => attempt_scroll ());
