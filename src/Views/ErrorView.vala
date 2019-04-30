@@ -112,11 +112,9 @@ public class ErrorView : AbstractInstallerView {
         });
 
         terminal_button.toggled.connect (() => {
+            terminal_revealer.reveal_child = terminal_button.active;
             if (terminal_button.active) {
-                terminal_revealer.reveal_child = true;
                 terminal_view.attempt_scroll ();
-            } else {
-                terminal_revealer.reveal_child = false;
             }
         });
 
