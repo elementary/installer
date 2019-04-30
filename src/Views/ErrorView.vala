@@ -76,14 +76,15 @@ public class ErrorView : AbstractInstallerView {
         terminal_revealer.add (terminal_view);
 
         var grid = new Gtk.Grid ();
+        grid.orientation = Gtk.Orientation.VERTICAL;
         grid.row_spacing = 6;
         grid.valign = Gtk.Align.CENTER;
-        grid.attach (description_label, 0, 0, 1, 1);
-        grid.attach (try_label ,        0, 1, 1, 1);
-        grid.attach (launch_label,      0, 2, 1, 1);
-        grid.attach (restart_label,     0, 3, 1, 1);
-        grid.attach (terminal_button, 0, 4);
-        grid.attach (terminal_revealer, 0, 5);
+        grid.add (description_label);
+        grid.add (try_label);
+        grid.add (launch_label);
+        grid.add (restart_label);
+        grid.add (terminal_button);
+        grid.add (terminal_revealer);
 
         content_area.column_homogeneous = true;
         content_area.halign = Gtk.Align.CENTER;
