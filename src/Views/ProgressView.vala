@@ -20,7 +20,7 @@ public class ProgressView : AbstractInstallerView {
     public signal void on_success ();
     public signal void on_error ();
 
-    public Terminal terminal_view { get; construct; }
+    public Installer.Terminal terminal_view { get; construct; }
     private Gtk.ProgressBar progressbar;
     private Gtk.Label progressbar_label;
     private const int NUM_STEP = 5;
@@ -32,7 +32,7 @@ public class ProgressView : AbstractInstallerView {
         logo.get_style_context ().add_class ("logo");
 
         unowned LogHelper log_helper = LogHelper.get_default ();
-        terminal_view = new Terminal (log_helper.buffer);
+        terminal_view = new Installer.Terminal (log_helper.buffer);
 
         var logo_stack = new Gtk.Stack ();
         logo_stack.transition_type = Gtk.StackTransitionType.OVER_UP_DOWN;

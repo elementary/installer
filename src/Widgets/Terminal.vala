@@ -17,7 +17,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Terminal : Gtk.ScrolledWindow {
+public class Installer.Terminal : Gtk.ScrolledWindow {
     public Gtk.TextBuffer buffer { get; construct; }
 
     private Gtk.TextView view;
