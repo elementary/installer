@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-12-03 00:09+0000\n"
-"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
-"Language-Team: Arabic <https://weblate.elementary.io/projects/installer/"
+"PO-Revision-Date: 2019-03-13 16:27+0000\n"
+"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+"Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
 "installer/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:39+0000\n"
 
 #: src/MainWindow.vala:44
@@ -44,15 +44,15 @@ msgstr ""
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr ""
+msgstr "بدء التثبيت"
 
 #: src/Dialogs/EndSessionDialog.vala:35
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "هل أنت متأكد من أنك تريد إيقاف التشغيل؟"
 
 #: src/Dialogs/EndSessionDialog.vala:42
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "سيؤدي هذا إلى إلغاء التثبيت وإيقاف هذا الجهاز."
 
 #: src/Dialogs/EndSessionDialog.vala:58
 msgid "Restart"
@@ -60,7 +60,7 @@ msgstr "إعادة التشغيل"
 
 #: src/Dialogs/EndSessionDialog.vala:60
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
 #: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
 #: src/Views/SuccessView.vala:55
@@ -77,11 +77,11 @@ msgstr ""
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
-msgstr ""
+msgstr "تجاهل"
 
 #: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
-msgstr ""
+msgstr "لا يوجد مساحة كافية"
 
 #: src/Views/CheckView.vala:204
 #, c-format
@@ -112,19 +112,19 @@ msgstr ""
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
-msgstr ""
+msgstr "موصى به:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr ""
+msgstr "جهازك:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr ""
+msgstr "المعالج:"
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
-msgstr ""
+msgstr "الذاكرة:"
 
 #: src/Views/DiskView.vala:51
 msgid "Select a Drive"
@@ -135,14 +135,17 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"سيؤدي هذا إلى مسح جميع البيانات الموجودة على محرك الأقراص المحدد. إذا لم تقم "
+"بعمل نسخة احتياطية من بياناتك ، فيمكنك إلغاء التثبيت واستخدام الوضع التجريبي."
 
 #: src/Views/DiskView.vala:65
+#, fuzzy
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "الحصول على التكوين الحالي …"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
-msgstr ""
+msgstr "امسح و ثبت"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
