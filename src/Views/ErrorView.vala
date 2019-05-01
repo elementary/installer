@@ -59,47 +59,39 @@ public class ErrorView : AbstractInstallerView {
         restart_label.xalign = 0;
         restart_label.use_markup = true;
 
-        var grid = new Gtk.Grid ();
-        grid.row_spacing = 6;
-        grid.attach (description_label, 0, 0, 1, 1);
-        grid.attach (try_label ,        0, 1, 1, 1);
-        grid.attach (launch_label,      0, 2, 1, 1);
-        grid.attach (restart_label,     0, 3, 1, 1);
-
-        var terminal_view = new Gtk.TextView ();
-        terminal_view.buffer.text = log;
-        terminal_view.bottom_margin = terminal_view.top_margin = terminal_view.left_margin = terminal_view.right_margin = 12;
-        terminal_view.editable = false;
-        terminal_view.cursor_visible = true;
-        terminal_view.monospace = true;
-        terminal_view.wrap_mode = Gtk.WrapMode.WORD_CHAR;
-        terminal_view.get_style_context ().add_class ("terminal");
-
-        var terminal_output = new Gtk.ScrolledWindow (null, null);
-        terminal_output.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        terminal_output.add (terminal_view);
-        terminal_output.vexpand = true;
-        terminal_output.hexpand = true;
-
-        var label_area = new Gtk.Grid ();
-        label_area.column_homogeneous = true;
-        label_area.halign = Gtk.Align.CENTER;
-        label_area.margin = 48;
-        label_area.valign = Gtk.Align.CENTER;
-        label_area.attach (image,       0, 0, 1, 1);
-        label_area.attach (title_label, 0, 1, 1, 1);
-        label_area.attach (grid,        1, 0, 1, 2);
-
-        var content_stack = new Gtk.Stack ();
-        content_stack.add (label_area);
-        content_stack.add (terminal_output);
-
         var terminal_button = new Gtk.ToggleButton ();
-        terminal_button.halign = Gtk.Align.END;
+        terminal_button.always_show_image = true;
+        terminal_button.halign = Gtk.Align.START;
+        terminal_button.label = _("Details");
+        terminal_button.margin_top = 18;
         terminal_button.image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
         terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        content_area.attach (content_stack, 0, 0, 1, 1);
+        var buffer = new Gtk.TextBuffer (null);
+        buffer.text = log;
+
+        var terminal_view = new Installer.Terminal (buffer);
+
+        var terminal_revealer = new Gtk.Revealer ();
+        terminal_revealer.add (terminal_view);
+
+        var grid = new Gtk.Grid ();
+        grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.row_spacing = 6;
+        grid.valign = Gtk.Align.CENTER;
+        grid.add (description_label);
+        grid.add (try_label);
+        grid.add (launch_label);
+        grid.add (restart_label);
+        grid.add (terminal_button);
+        grid.add (terminal_revealer);
+
+        content_area.column_homogeneous = true;
+        content_area.halign = Gtk.Align.CENTER;
+        content_area.margin = 48;
+        content_area.attach (image, 0, 0);
+        content_area.attach (title_label, 0, 1);
+        content_area.attach (grid, 1, 0, 1, 2);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 
@@ -108,18 +100,9 @@ public class ErrorView : AbstractInstallerView {
         var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
         install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (terminal_button);
         action_area.add (restart_button);
         action_area.add (demo_button);
         action_area.add (install_button);
-
-        terminal_button.toggled.connect (() => {
-            if (terminal_button.active) {
-                content_stack.visible_child = terminal_output;
-            } else {
-                content_stack.visible_child = label_area;
-            }
-        });
 
         restart_button.clicked.connect (Utils.restart);
 
@@ -127,6 +110,13 @@ public class ErrorView : AbstractInstallerView {
 
         install_button.clicked.connect (() => {
             ((Gtk.Stack) get_parent ()).visible_child = previous_view;
+        });
+
+        terminal_button.toggled.connect (() => {
+            terminal_revealer.reveal_child = terminal_button.active;
+            if (terminal_button.active) {
+                terminal_view.attempt_scroll ();
+            }
         });
 
         show_all ();
