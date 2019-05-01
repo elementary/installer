@@ -46,7 +46,7 @@ namespace Utils {
     }
 
     public static void shutdown () {
-        if (Installer.App.test_mode) {
+        if (Installer.App.test_mode || Installer.App.load_view != null) {
             critical (_("Test mode shutdown"));
         } else {
             get_system_instance ();
@@ -60,7 +60,7 @@ namespace Utils {
     }
 
     private static void restart () {
-        if (Installer.App.test_mode) {
+        if (Installer.App.test_mode || Installer.App.load_view != null) {
             critical (_("Test mode reboot"));
         } else {
             get_system_instance ();
@@ -74,7 +74,7 @@ namespace Utils {
     }
 
     private static void demo_mode () {
-        if (Installer.App.test_mode) {
+        if (Installer.App.test_mode || Installer.App.load_view != null) {
             critical (_("Test mode switch user"));
         } else {
             get_system_instance ();

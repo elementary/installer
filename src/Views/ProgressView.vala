@@ -77,7 +77,7 @@ public class ProgressView : AbstractInstallerView {
     }
 
     public void start_installation () {
-        if (Installer.App.test_mode) {
+        if (Installer.App.test_mode || Installer.App.load_view != null) {
             new Thread<void*> (null, () => {
                 fake_status (Distinst.Step.PARTITION);
                 fake_status (Distinst.Step.EXTRACT);

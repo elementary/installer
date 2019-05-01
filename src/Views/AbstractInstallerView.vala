@@ -54,7 +54,7 @@ public abstract class AbstractInstallerView : Gtk.Grid {
             action_area.add (cancel_button);
         }
 
-        if (Installer.App.test_mode) {
+        if (Installer.App.test_mode || Installer.App.load_view != null) {
             var test_label = new Gtk.Label (_("Test Mode"));
             test_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
 
