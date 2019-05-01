@@ -249,6 +249,7 @@ public class Installer.MainWindow : Gtk.Window {
         stack.visible_child = progress_view;
 
         progress_view.on_success.connect (() => load_success_view ());
+
         progress_view.on_error.connect (() => {
             load_error_view (progress_view.get_log ());
         });
