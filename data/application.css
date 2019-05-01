@@ -15,12 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-textview.terminal {
-    background-color: #252e32;
-    color: #94a3a5;
-}
-
-textview.terminal selection {
-    background-color: #93a1a1;
-    color: #252e32; 
+.primary {
+    font-weight: 700;
+    font-size: 1.2em;
 }
