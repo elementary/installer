@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-23 00:03+0000\n"
-"Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://weblate.elementary.io/projects/installer/"
+"PO-Revision-Date: 2019-05-04 00:39+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
 "installer/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -39,7 +39,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr "No es pot establir la crida del registre de Distinst."
+msgstr "No es pot establir la crida del registre de Distinst"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -233,15 +233,15 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr "• Torneu a fer una instal·lació."
+msgstr "• Torneu a fer una instal·lació"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Useu el mode Demo i intenteu fer-ne una recuperació manualment."
+msgstr "• Useu el mode Demo i intenteu fer-ne una recuperació manualment"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr "• Reinicieu el dispositiu per arrencar des d'una altra unitat."
+msgstr "• Reinicieu el dispositiu per arrencar des d'una altra unitat"
 
 #: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
 msgid "Restart Device"
@@ -323,19 +323,19 @@ msgstr "Modifica les particions…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr "La partició EFI té el sistema de fitxers incorrecte."
+msgstr "La partició EFI té el sistema de fitxers incorrecte"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr "La partició EFI és massa petita."
+msgstr "La partició EFI és massa petita"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr "Sistema de fitxers no vàlid per a l'arrel."
+msgstr "Sistema de fitxers no vàlid per a l'arrel"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr "Sistema de fitxers no vàlid per a la partició de l'usuari."
+msgstr "Sistema de fitxers no vàlid per a la partició de l'usuari"
 
 #: src/Views/ProgressView.vala:448
 msgid "Partitioning Drive"
@@ -355,7 +355,7 @@ msgstr "S'acaba la instal·lació"
 
 #: src/Views/TryInstallView.vala:44
 msgid "Try or Install"
-msgstr "Proveu el sistema o instal·leu-lo."
+msgstr "Proveu el sistema o instal·leu-lo"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
