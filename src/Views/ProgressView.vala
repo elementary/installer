@@ -77,7 +77,7 @@ public class ProgressView : AbstractInstallerView {
     }
 
     private string casper_dir () {
-        var cdrom = "/cdrom";
+        const string cdrom = "/cdrom";
 
         try {
             var cdrom_dir = File.new_for_path (cdrom);
@@ -85,16 +85,16 @@ public class ProgressView : AbstractInstallerView {
 
             FileInfo info;
             while ((info = iter.next_file ()) != null) {
-                var name = info.get_name ();
+                unowned string name = info.get_name ();
                 if (name.has_prefix ("casper")) {
-                    return cdrom + "/" + name;
+                    return GLib.Path.build_filename (cdrom, name);
                 }
             }
         } catch (GLib.Error e) {
             critical ("failed to find casper dir automatically: %s\n", e.message);
         }
 
-        return cdrom + "/casper";
+        return GLib.Path.build_filename (cdrom, "casper");
     }
 
     public void start_installation () {
@@ -122,8 +122,8 @@ public class ProgressView : AbstractInstallerView {
         config.lang = "en_US.UTF-8";
 
         var casper = casper_dir ();
-        config.remove = casper + "/filesystem.manifest-remove";
-        config.squashfs = casper + "/filesystem.squashfs";
+        config.remove = GLib.Path.build_filename (casper, "filesystem.manifest-remove");
+        config.squashfs = GLib.Path.build_filename (casper, "filesystem.squashfs");
 
         unowned Configuration current_config = Configuration.get_default ();
 
