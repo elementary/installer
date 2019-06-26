@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
 "PO-Revision-Date: 2019-01-09 00:06+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/installer/"
@@ -245,15 +245,19 @@ msgstr ""
 "• Reinicie o seu dispositivo para fazer o arranque a partir de outro "
 "dispositivo"
 
-#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:65
+msgid "Details"
+msgstr ""
+
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Reiniciar Dispositivo"
 
-#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Experimentar o Modo de Demonstração"
 
-#: src/Views/ErrorView.vala:108
+#: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "Tentar Instalar de Novo"
 
@@ -312,8 +316,8 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Deverá selecionar pelo menos uma partição <b>Root (/)</b> e uma partição <b>"
-"Boot (/boot/efi)</b>."
+"Deverá selecionar pelo menos uma partição <b>Root (/)</b> e uma partição "
+"<b>Boot (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -339,19 +343,19 @@ msgstr "Sistema de ficheiros inválido para o root"
 msgid "Invalid file system for home"
 msgstr "Sistema de ficheiros inválido para a home"
 
-#: src/Views/ProgressView.vala:448
+#: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
 msgstr "A Particionar a Unidade"
 
-#: src/Views/ProgressView.vala:452
+#: src/Views/ProgressView.vala:416
 msgid "Extracting Files"
 msgstr "A extrair os Ficheiros"
 
-#: src/Views/ProgressView.vala:456
+#: src/Views/ProgressView.vala:420
 msgid "Configuring the System"
 msgstr "A Configurar o Sistema"
 
-#: src/Views/ProgressView.vala:460
+#: src/Views/ProgressView.vala:424
 msgid "Finishing the Installation"
 msgstr "A Finalizar a Instalação"
 
