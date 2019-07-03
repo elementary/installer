@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 23:49+0200\n"
-"PO-Revision-Date: 2016-05-27 15:29+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-07-02 05:27+0000\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Language-Team: Esperanto <https://l10n.elementary.io/projects/installer/"
+"installer/eo/>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: src/MainWindow.vala:44
 #, c-format
@@ -49,7 +51,7 @@ msgstr ""
 
 #: src/Dialogs/EndSessionDialog.vala:42
 msgid "This will cancel installation and turn off this device."
-msgstr ""
+msgstr "Tio rezignos instalon kaj malŝaltos la aparaton."
 
 #: src/Dialogs/EndSessionDialog.vala:58
 msgid "Restart"
@@ -57,16 +59,16 @@ msgstr ""
 
 #: src/Dialogs/EndSessionDialog.vala:60
 msgid "Cancel"
-msgstr ""
+msgstr "Rezigni"
 
 #: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
 #: src/Views/SuccessView.vala:55
 msgid "Shut Down"
-msgstr ""
+msgstr "Malŝalti"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Rezigni instalon"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
@@ -132,6 +134,8 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Tio forviŝos ĉiujn datumojn el la elektita memorilo. Se vi ankoraŭ ne "
+"savkopiis viajn datumojn, eblas rezigni instalon kaj plu uzi provoversion."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
