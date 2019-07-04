@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 23:49+0200\n"
-"PO-Revision-Date: 2019-07-02 05:27+0000\n"
+"PO-Revision-Date: 2019-07-06 01:28+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/installer/"
 "installer/eo/>\n"
@@ -18,36 +18,36 @@ msgstr ""
 #: src/MainWindow.vala:44
 #, c-format
 msgid "Install %s"
-msgstr ""
+msgstr "Instali %s"
 
 #: src/Utils.vala:50
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Malŝalti testan reĝimon"
 
 #: src/Utils.vala:64
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Testreĝima restartigo"
 
 #: src/Utils.vala:78
 msgid "Test mode switch user"
-msgstr ""
+msgstr "Testreĝima ŝanĝo de uzanto"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr ""
+msgstr "Neeblas difini la protokolon Distinst"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr ""
+msgstr "Komencas instalo"
 
 #: src/Dialogs/EndSessionDialog.vala:35
 msgid "Are you sure you want to Shut Down?"
-msgstr ""
+msgstr "Ĉu vi certas pri malŝalto?"
 
 #: src/Dialogs/EndSessionDialog.vala:42
 msgid "This will cancel installation and turn off this device."
@@ -55,7 +55,7 @@ msgstr "Tio rezignos instalon kaj malŝaltos la aparaton."
 
 #: src/Dialogs/EndSessionDialog.vala:58
 msgid "Restart"
-msgstr ""
+msgstr "Restartigi"
 
 #: src/Dialogs/EndSessionDialog.vala:60
 msgid "Cancel"
@@ -72,15 +72,15 @@ msgstr "Rezigni instalon"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
-msgstr ""
+msgstr "Testa Reĝimo"
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
-msgstr ""
+msgstr "Ignori"
 
 #: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
-msgstr ""
+msgstr "Ne sufiĉa spaco"
 
 #: src/Views/CheckView.vala:204
 #, c-format
@@ -88,42 +88,47 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"Ne restas spaco sufiĉa en la memoro por instalo de %s. Ni rekomendas "
+"minimume %s da libera memoro."
 
 #: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Via aparato eble tre malrapidas"
 
 #: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"Via aparato ne respektas la rekomenditajn sufiĉajn rendimentojn. Tio povas "
+"kaŭzi malrapidan ruladon aŭ frostigojn."
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "Konekti al energifonton"
 
 #: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"Via aparato funkcias per la baterio. Favore konektu al elektro dum instalado."
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
-msgstr ""
+msgstr "Rekomendita:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr ""
+msgstr "Via aparato:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr ""
+msgstr "Procesoro:"
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
-msgstr ""
+msgstr "Menorio:"
 
 #: src/Views/DiskView.vala:51
 msgid "Select a Drive"
@@ -188,9 +193,8 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
-#, fuzzy
 msgid "Back"
-msgstr "Retroklavo"
+msgstr "Reen"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
@@ -441,9 +445,8 @@ msgid "Use as:"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Radiko"
+msgstr "Radiko (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
