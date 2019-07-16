@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
 "PO-Revision-Date: 2019-04-25 12:26+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
@@ -240,15 +240,19 @@ msgstr "• Demo Modu'nu kullanın ve elle kurtarmayı deneyin"
 msgid "• Restart your device to boot from another drive"
 msgstr "• Başka bir sürücüden başlatmak için cihazınızı yeniden başlatın"
 
-#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:65
+msgid "Details"
+msgstr ""
+
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Cihazı Yeniden Başlatın"
 
-#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Demo Modu'nu Deneyin"
 
-#: src/Views/ErrorView.vala:108
+#: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "Tekrar Yüklemeyi Deneyin"
 
@@ -293,8 +297,8 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"Bütün sürücüler arasında hangi bölümleri kullanacağınızı seçin. <b>\""
-"Biçimlendir\" seçeneği seçili bölümdeki BÜTÜN verileri silecektir.</b>"
+"Bütün sürücüler arasında hangi bölümleri kullanacağınızı seçin. <b>"
+"\"Biçimlendir\" seçeneği seçili bölümdeki BÜTÜN verileri silecektir.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
@@ -333,19 +337,19 @@ msgstr "Kök için geçersiz bir dosya sistemi"
 msgid "Invalid file system for home"
 msgstr "Home için geçersiz bir dosya sistemi"
 
-#: src/Views/ProgressView.vala:448
+#: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
 msgstr "Sürücü Bölümleniyor"
 
-#: src/Views/ProgressView.vala:452
+#: src/Views/ProgressView.vala:416
 msgid "Extracting Files"
 msgstr "Dosyalar Ayıklanıyor"
 
-#: src/Views/ProgressView.vala:456
+#: src/Views/ProgressView.vala:420
 msgid "Configuring the System"
 msgstr "Sistem Yapılandırılıyor"
 
-#: src/Views/ProgressView.vala:460
+#: src/Views/ProgressView.vala:424
 msgid "Finishing the Installation"
 msgstr "Kurulum Sonlandırılıyor"
 

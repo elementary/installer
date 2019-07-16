@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2019-01-09 00:06+0000\n"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"PO-Revision-Date: 2019-07-10 02:46+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://weblate.elementary.io/projects/installer/"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
 "installer/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -101,11 +101,11 @@ msgid ""
 "cause it to run slowly or freeze."
 msgstr ""
 "O seu dispositivo não dispõe dos requisitos recomendados de hardware, o que "
-"poderá fazer com que o mesmo se torne lento ou congele."
+"poderá fazer com que o mesmo se torne lento ou pare."
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
-msgstr "Ligue uma Fonte de Alimentação"
+msgstr "Ligue a uma Fonte de Alimentação"
 
 #: src/Views/CheckView.vala:233
 msgid ""
@@ -191,7 +191,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr "Escolher Palavra-passe de encriptação"
+msgstr "Escolher a Palavra-passe de encriptação"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
@@ -245,15 +245,19 @@ msgstr ""
 "• Reinicie o seu dispositivo para fazer o arranque a partir de outro "
 "dispositivo"
 
-#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:65
+msgid "Details"
+msgstr "Detalhes"
+
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Reiniciar Dispositivo"
 
-#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Experimentar o Modo de Demonstração"
 
-#: src/Views/ErrorView.vala:108
+#: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "Tentar Instalar de Novo"
 
@@ -312,8 +316,8 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Deverá selecionar pelo menos uma partição <b>Root (/)</b> e uma partição <b>"
-"Boot (/boot/efi)</b>."
+"Deverá selecionar pelo menos uma partição <b>Root (/)</b> e uma partição "
+"<b>Boot (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -339,19 +343,19 @@ msgstr "Sistema de ficheiros inválido para o root"
 msgid "Invalid file system for home"
 msgstr "Sistema de ficheiros inválido para a home"
 
-#: src/Views/ProgressView.vala:448
+#: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
 msgstr "A Particionar a Unidade"
 
-#: src/Views/ProgressView.vala:452
+#: src/Views/ProgressView.vala:416
 msgid "Extracting Files"
 msgstr "A extrair os Ficheiros"
 
-#: src/Views/ProgressView.vala:456
+#: src/Views/ProgressView.vala:420
 msgid "Configuring the System"
 msgstr "A Configurar o Sistema"
 
-#: src/Views/ProgressView.vala:460
+#: src/Views/ProgressView.vala:424
 msgid "Finishing the Installation"
 msgstr "A Finalizar a Instalação"
 

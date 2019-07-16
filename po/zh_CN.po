@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
 "PO-Revision-Date: 2019-01-15 12:43+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -214,7 +214,9 @@ msgstr "无法安装"
 msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
-msgstr "安装 %s 失败，可能是硬件错误导致的。您的设备可能没有正常重启。您可以尝试以下操作："
+msgstr ""
+"安装 %s 失败，可能是硬件错误导致的。您的设备可能没有正常重启。您可以尝试以下"
+"操作："
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -228,15 +230,19 @@ msgstr "• 进入试用模式手动恢复"
 msgid "• Restart your device to boot from another drive"
 msgstr "• 重启设备并从其他硬盘启动"
 
-#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:65
+msgid "Details"
+msgstr ""
+
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "重启设备"
 
-#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "进入试用模式"
 
-#: src/Views/ErrorView.vala:108
+#: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "重新安装"
 
@@ -321,19 +327,19 @@ msgstr "Root 文件系统不可用"
 msgid "Invalid file system for home"
 msgstr "主页（Home）文件系统不可用"
 
-#: src/Views/ProgressView.vala:448
+#: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
 msgstr "硬盘分区中"
 
-#: src/Views/ProgressView.vala:452
+#: src/Views/ProgressView.vala:416
 msgid "Extracting Files"
 msgstr "正在解压文件"
 
-#: src/Views/ProgressView.vala:456
+#: src/Views/ProgressView.vala:420
 msgid "Configuring the System"
 msgstr "正在配置系统"
 
-#: src/Views/ProgressView.vala:460
+#: src/Views/ProgressView.vala:424
 msgid "Finishing the Installation"
 msgstr "正在完成安装"
 
@@ -356,7 +362,9 @@ msgstr "继续"
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
-msgstr "在试用模式下，您的操作不会被保存，设备内原有的文件数据也不会被修改。试用模式下性能和功能无法代表实际安装体验。"
+msgstr ""
+"在试用模式下，您的操作不会被保存，设备内原有的文件数据也不会被修改。试用模式"
+"下性能和功能无法代表实际安装体验。"
 
 #: src/Views/TryInstallView.vala:85
 msgid "Clean Install"
@@ -375,7 +383,8 @@ msgstr "自定义（高级选项）"
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-msgstr "手动进行分区管理、分区大小调整以及其它的管理操作。该方法可能造成数据丢失。"
+msgstr ""
+"手动进行分区管理、分区大小调整以及其它的管理操作。该方法可能造成数据丢失。"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
