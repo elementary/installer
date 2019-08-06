@@ -2,19 +2,4 @@
 
 if [ "$1" = install ] || [ "$1" = upgrade ] ; then
 	dpkg-divert --add --rename --package io.elementary.installer-session --divert /etc/xdg/autostart/io.elementary.onboarding.desktop.distrib /etc/xdg/autostart/io.elementary.onboarding.desktop
-	dpkg-divert --add --rename --package base-files --divert /etc/os-release.distrib /etc/os-release
-	printf '%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s' \
-		'NAME="Ubuntu"' \
-		'VERSION="18.04.2 LTS (Bionic Beaver)"' \
-		'ID=ubuntu' \
-		'ID_LIKE=debian' \
-		'PRETTY_NAME="Ubuntu 18.04.2 LTS"' \
-		'VERSION_ID="18.04"' \
-		'HOME_URL="https://www.ubuntu.com/"' \
-		'SUPPORT_URL="https://help.ubuntu.com/"' \
-		'BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"' \
-		'PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"' \
-		'VERSION_CODENAME=bionic' \
-		'UBUNTU_CODENAME=bionic' \
-		> /etc/os-release
 fi

@@ -2,6 +2,4 @@
 
 if [ "$1" = remove ] ; then
 	dpkg-divert --remove --rename --package io.elementary.installer-session --divert /etc/xdg/autostart/io.elementary.onboarding.desktop.distrib /etc/xdg/autostart/io.elementary.onboarding.desktop
-	rm -f /etc/os-release
-	dpkg-divert --remove --rename --package base-files --divert /etc/os-release.distrib /etc/os-release
 fi
