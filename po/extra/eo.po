@@ -1,19 +1,26 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"PO-Revision-Date: 2019-07-13 05:46+0000\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Language-Team: Esperanto <https://l10n.elementary.io/projects/installer/"
+"extra/eo/>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
-msgstr ""
+msgstr "Instali operaciumon elementary"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
-msgstr ""
+msgstr "Instali la sistemon"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "system-os-installer"
-msgstr ""
+msgstr "system-os-installer"

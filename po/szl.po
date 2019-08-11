@@ -1,17 +1,16 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 23:49+0200\n"
-"PO-Revision-Date: 2016-05-27 15:29+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-06-26 18:53+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: szl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #: src/MainWindow.vala:44
 #, c-format
@@ -184,9 +183,8 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
-#, fuzzy
 msgid "Back"
-msgstr "Fafao Miverina"
+msgstr ""
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
@@ -468,48 +466,3 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr ""
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Launchpad Contributions:\n"
-#~ "  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount\n"
-#~ "  akoho https://launchpad.net/~akoho-maty"
-
-#~ msgid "Calculator"
-#~ msgstr "Mpikajy"
-
-#~ msgid "History"
-#~ msgstr "Tantara"
-
-#~ msgid "Value to add:"
-#~ msgstr "lanja ho ampiana"
-
-#~ msgid "Result"
-#~ msgstr "Valiny"
-
-#~ msgid "Expression"
-#~ msgstr "asa marika"
-
-#~ msgid "Close"
-#~ msgstr "Hidio"
-
-#~ msgid "Add"
-#~ msgstr "Manampy"
-
-#~ msgid "Show extended functionality"
-#~ msgstr "Maneho bebe kokoa"
-
-#~ msgid "Add last result"
-#~ msgstr "Ampidiro ny valiny farany"
-
-#~ msgid "Clear entry"
-#~ msgstr "Fafao izay voasoratra"
-
-#~ msgid "Hide extended functionality"
-#~ msgstr "Maneho vitsivitsy kokoa"
-
-#~ msgid "'%s' is invalid."
-#~ msgstr "Mety ny '%'"
-
-#~ msgid "'%s' is unknown."
-#~ msgstr "Tsy fahita ny '%'"

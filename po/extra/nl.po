@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
 "PO-Revision-Date: 2018-06-14 00:08+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/installer/extra/"
