@@ -13,6 +13,11 @@ install_data(
 )
 
 install_data(
+    'wingpanel-installer.desktop',
+    install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart')
+)
+
+install_data(
     'installer.session',
     install_dir: join_paths(get_option('datadir'), 'gnome-session', 'sessions')
 )
