@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Wingpanel
+Exec=wingpanel -g
+Icon=wingpanel
+OnlyShowIn=Installer;
+Terminal=false
+Type=Application
+X-GNOME-Autostart-Notify=false
+X-GNOME-AutoRestart=true
