@@ -1,5 +1,0 @@
-#!/bin/sh
-
-if [ "$1" = install ] || [ "$1" = upgrade ] ; then
-	dpkg-divert --add --rename --package io.elementary.installer-session --divert /etc/xdg/autostart/io.elementary.onboarding.desktop.distrib /etc/xdg/autostart/io.elementary.onboarding.desktop
-fi

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-if [ "$1" = remove ] ; then
-	dpkg-divert --remove --rename --package io.elementary.installer-session --divert /etc/xdg/autostart/io.elementary.onboarding.desktop.distrib /etc/xdg/autostart/io.elementary.onboarding.desktop
-fi
