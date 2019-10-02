@@ -20,13 +20,13 @@
 
 public class Installer.CheckView : AbstractInstallerView {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
-    public static uint64 ONE_GB = 1000 * 1000 * 1000;
+    public const uint64 ONE_GB = 1000 * 1000 * 1000;
     // Minimum 5 GB
-    public static uint64 MINIMUM_SPACE = 5 * ONE_GB;
+    public const uint64 MINIMUM_SPACE = 5 * ONE_GB;
     // Minimum 1.2 GHz
-    public static int MINIMUM_FREQUENCY = 1200 * 1000;
+    public const int MINIMUM_FREQUENCY = 1200 * 1000;
     // Minimum 1GB
-    public static uint64 MINIMUM_MEMORY = 1 * ONE_GB;
+    public const uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
     public signal void next_step ();
     public signal void status_changed (bool met_requirements);
@@ -127,7 +127,7 @@ public class Installer.CheckView : AbstractInstallerView {
             DataInputStream dis = new DataInputStream (file.read ());
             string? line;
             string name = "MemTotal:";
-            while ((line = dis.read_line (null,null)) != null) {
+            while ((line = dis.read_line (null, null)) != null) {
                 if (line.has_prefix (name)) {
                     var number = line.replace ("kB", "").replace (name, "").strip ();
                     return uint64.parse (number) * 1000;
@@ -330,9 +330,9 @@ public class Installer.CheckView : AbstractInstallerView {
 
     private static string get_frequency_string (int freq) {
         if (freq >= 1000000) {
-            return "%.1f GHz".printf (((float)freq)/1000000);
+            return "%.1f GHz".printf (((float)freq) / 1000000);
         } else if (freq >= 1000) {
-            return "%.1f MHz".printf (((float)freq)/1000);
+            return "%.1f MHz".printf (((float)freq) / 1000);
         } else {
             return "%d kHz".printf (freq);
         }
