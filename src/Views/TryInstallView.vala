@@ -151,4 +151,3 @@ public class Installer.TryInstallView : AbstractInstallerView {
         show_all ();
     }
 }
-

@@ -412,20 +412,20 @@ public class ProgressView : AbstractInstallerView {
                     progressbar_label.label = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
-                    fraction += 2 * (1.0/NUM_STEP);
+                    fraction += 2 * (1.0 / NUM_STEP);
                     progressbar_label.label = _("Extracting Files");
                     break;
                 case Distinst.Step.CONFIGURE:
-                    fraction += 3 * (1.0/NUM_STEP);
+                    fraction += 3 * (1.0 / NUM_STEP);
                     progressbar_label.label = _("Configuring the System");
                     break;
                 case Distinst.Step.BOOTLOADER:
-                    fraction += 4 * (1.0/NUM_STEP);
+                    fraction += 4 * (1.0 / NUM_STEP);
                     progressbar_label.label = _("Finishing the Installation");
                     break;
             }
 
-            progressbar_label.label +=  " (%d%%)".printf (status.percent);
+            progressbar_label.label += " (%d%%)".printf (status.percent);
             progressbar.fraction = fraction;
             return GLib.Source.REMOVE;
         });

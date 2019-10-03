@@ -122,4 +122,3 @@ public class ErrorView : AbstractInstallerView {
         show_all ();
     }
 }
-
