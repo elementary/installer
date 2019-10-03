@@ -65,4 +65,3 @@ public class Installer.InstallTypeButton : Gtk.ToggleButton {
         add (grid);
     }
 }
-
