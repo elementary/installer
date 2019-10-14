@@ -278,7 +278,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
             set {
                 if (value) {
-                    image.icon_name = "selection-checked";
+                    image.icon_name = "selection-checked-symbolic";
                     image.tooltip_text = _("Currently active language");
                 } else {
                     image.tooltip_text = "";
@@ -321,7 +321,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
             set {
                 if (value) {
-                    image.icon_name = "selection-checked";
+                    image.icon_name = "selection-checked-symbolic";
                     image.tooltip_text = _("Currently active language");
                 } else {
                     image.tooltip_text = "";
