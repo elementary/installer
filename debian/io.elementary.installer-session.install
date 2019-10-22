@@ -1,2 +1,3 @@
 usr/share/gnome-session
 usr/share/xsessions
+etc/xdg/autostart
