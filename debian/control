@@ -33,3 +33,10 @@ Depends: io.elementary.installer, lightdm
 Recommends: elementary-default-settings
 Description: Dedicated installer session
  Launches io.elementary.installer in a dedicated session.
+
+Package: io.elementary.installer-casper
+Architecture: amd64
+Priority: extra
+Depends: casper
+Description: Autostart installer in casper
+ Autostart installer when running in a live system with casper

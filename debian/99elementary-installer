@@ -1,0 +1,32 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Adding installer hooks..."
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+. /scripts/casper-functions
+
+log_begin_msg "$DESCRIPTION"
+
+APP="io.elementary.installer"
+
+chroot /root install -d -o "$USERNAME" -g "$USERNAME" \
+    "/home/$USERNAME/.config/autostart/"
+
+chroot /root install -D -o "$USERNAME" -g "$USERNAME" \
+    "/usr/share/applications/$APP.desktop" \
+    "/home/$USERNAME/.config/autostart/$APP.desktop"
+
+log_end_msg
