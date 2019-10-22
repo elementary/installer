@@ -18,7 +18,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
- public delegate void DecryptFn (string path, string pv, string pass, Installer.DecryptMenu menu);
+public delegate void DecryptFn (string path, string pv, string pass, Installer.DecryptMenu menu);
 
 public class Installer.DecryptMenu: Gtk.Popover {
     private Gtk.Stack stack;
@@ -64,8 +64,8 @@ public class Installer.DecryptMenu: Gtk.Popover {
 
         var dialog_grid = new Gtk.Grid ();
         dialog_grid.column_spacing = 12;
-        dialog_grid.attach (overlay,         0, 0, 1, 2);
-        dialog_grid.attach (primary_label,   1, 0);
+        dialog_grid.attach (overlay, 0, 0, 1, 2);
+        dialog_grid.attach (primary_label, 1, 0);
         dialog_grid.attach (secondary_label, 1, 1);
 
         var pass_label = new Gtk.Label (_("Password:"));
@@ -106,11 +106,11 @@ public class Installer.DecryptMenu: Gtk.Popover {
         decrypt_view.column_spacing = 6;
         decrypt_view.row_spacing = 12;
 
-        decrypt_view.attach (dialog_grid,    0, 0, 2);
-        decrypt_view.attach (pass_label,     0, 1);
-        decrypt_view.attach (pass_entry,     1, 1);
-        decrypt_view.attach (pv_label,       0, 2);
-        decrypt_view.attach (pv_entry,       1, 2);
+        decrypt_view.attach (dialog_grid, 0, 0, 2);
+        decrypt_view.attach (pass_label, 0, 1);
+        decrypt_view.attach (pass_entry, 1, 1);
+        decrypt_view.attach (pv_label, 0, 2);
+        decrypt_view.attach (pv_entry, 1, 2);
         decrypt_view.attach (decrypt_button, 0, 3, 2);
 
         stack.add (decrypt_view);
@@ -147,4 +147,3 @@ public class Installer.DecryptMenu: Gtk.Popover {
         create_decrypted_view (pv);
     }
 }
-
