@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-11-27 00:03+0000\n"
-"Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
-"Language-Team: Galician <https://weblate.elementary.io/projects/installer/"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"PO-Revision-Date: 2019-09-29 07:23+0000\n"
+"Last-Translator: Daniel R. <riesp@pm.me>\n"
+"Language-Team: Galician <https://l10n.elementary.io/projects/installer/"
 "installer/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -243,15 +243,19 @@ msgstr "• Usa o Modo Demo e intenta a recuperación manual"
 msgid "• Restart your device to boot from another drive"
 msgstr "• Reinicia o teu dispositivo para arrancar dende outro disco"
 
-#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:65
+msgid "Details"
+msgstr "Detalles"
+
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Reinicia o Dispositivo"
 
-#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Proba o Modo Demo"
 
-#: src/Views/ErrorView.vala:108
+#: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "Proba Instalando de Novo"
 
@@ -331,163 +335,175 @@ msgstr "A partición EFI é moi pequena"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Sistema de ficheiros incorrecto para o directorio raíz"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Sistema de ficheiros incorrecto para o directorio home"
 
-#: src/Views/ProgressView.vala:448
+#: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Particionado de disco"
 
-#: src/Views/ProgressView.vala:452
+#: src/Views/ProgressView.vala:416
 msgid "Extracting Files"
-msgstr ""
+msgstr "Extraendo ficheiros"
 
-#: src/Views/ProgressView.vala:456
+#: src/Views/ProgressView.vala:420
 msgid "Configuring the System"
-msgstr ""
+msgstr "Configurando o sistema"
 
-#: src/Views/ProgressView.vala:460
+#: src/Views/ProgressView.vala:424
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Finalizando a instalación"
 
 #: src/Views/TryInstallView.vala:44
 msgid "Try or Install"
-msgstr ""
+msgstr "Probar ou instalar"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Pode instalar %s neste dispositivo agora, ou probar o modo de demostración "
+"sen instalalo."
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Seguinte"
 
 #: src/Views/TryInstallView.vala:81
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
+"No modo de demostración, os cambios que realice non se gardarán e os datos "
+"do sistema operativo anterior non se verán afectados. O rendemento e "
+"características poderían non reflectir a experiencia do sistema operativo ao "
+"ser instalado."
 
 #: src/Views/TryInstallView.vala:85
 msgid "Clean Install"
-msgstr ""
+msgstr "Instalación limpa"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Eliminar todo e instalar unha nova copia de %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Personalizado (avanzado)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Cree, cambie o tamaño ou administre as particións manualmente. Este método "
+"pode levar á pérdida de datos."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Continuar coa configuración"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
+msgstr "O dispositivo reiniciarase automaticamente a %s en %i segundos."
 
 #: src/Views/SuccessView.vala:35
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"Despois de reiniciar pode configurar unha conta de usuario nova, ou pode "
+"apagar agora e configurar a conta máis tarde."
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Desencriptar esta participación"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"Introduza o contrasinal de encriptación da partición e estableza un nome de "
+"dispositivo para a partición desencriptada."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Contrasinal:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Nome do dispositivo:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "Desencriptar"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "O volume LUKS foi desencriptado"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Usar partición:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Formatar:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Empregar como:"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
-msgstr ""
+msgstr "Raíz (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Disco persoal (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Arranque (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Intercambio"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Personalizado"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Personalizado:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Sistema de ficheiros:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "Predeterminado (ext4)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

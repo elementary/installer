@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-10-18 06:56+0000\n"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"PO-Revision-Date: 2019-04-22 18:59+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
-"Language-Team: Czech <https://weblate.elementary.io/projects/installer/"
+"Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
 "installer/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -26,11 +26,11 @@ msgstr "Vypnout zkušební režim"
 
 #: src/Utils.vala:64
 msgid "Test mode reboot"
-msgstr "Restartovat testovací režim"
+msgstr "Restartovat zkušební režim"
 
 #: src/Utils.vala:78
 msgid "Test mode switch user"
-msgstr "Přepnout uživatele v testovacím režimu"
+msgstr "Přepnout uživatele ve zkušebním režimu"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
@@ -149,7 +149,7 @@ msgstr "Získávání aktuálního nastavení…"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
-msgstr "Vymazat a nainstalovat"
+msgstr "Smazat a nainstalovat"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
@@ -160,15 +160,15 @@ msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
-"Zašifrování tohoto disku ochrání data před přečtením někým jiným, kdo by měl "
-"fyzicky přístup k tomuto zařízení."
+"Zašifrování tohoto disku ochrání data před přečtením jiným člověkem, který "
+"by měl fyzický přístup k tomuto zařízení."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
-"Zašifrování disku může minimálně ovlivnit rychlost čtení a zápisu při "
+"Zašifrování disku může v minimální míře ovlivnit rychlost čtení a zápisu při "
 "vykonávání náročných operací."
 
 #: src/Views/EncryptView.vala:67
@@ -185,8 +185,8 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"Pokud zapomenete šifrovací heslo, <b>nebude již možné data obnovit.</b> Je "
-"to unikátní heslo k celému zařízení, ne heslo k vašemu uživatelskému účtu."
+"Pokud zapomenete šifrovací heslo, <b>nebude již možné data obnovit.</b> Jde "
+"o unikátní heslo k celému zařízení, ne heslo k vašemu uživatelskému účtu."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
@@ -242,15 +242,19 @@ msgstr "• Použít Demo režim a pokusit se problémy manuálně opravit"
 msgid "• Restart your device to boot from another drive"
 msgstr "• Restartovat vaše zařízení a nabootovat z jiného disku"
 
-#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:65
+msgid "Details"
+msgstr ""
+
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Restartovat zařízení"
 
-#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Vyzkoušet Demo režim"
 
-#: src/Views/ErrorView.vala:108
+#: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "Zkusit nainstalovat znovu"
 
@@ -336,19 +340,19 @@ msgstr "Špatný souborový systém pro kořenový adresář"
 msgid "Invalid file system for home"
 msgstr "Špatný souborový systém pro domovskou složku"
 
-#: src/Views/ProgressView.vala:448
+#: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
 msgstr "Vytvářím oddíly na disku"
 
-#: src/Views/ProgressView.vala:452
+#: src/Views/ProgressView.vala:416
 msgid "Extracting Files"
 msgstr "Rozbaluji soubory"
 
-#: src/Views/ProgressView.vala:456
+#: src/Views/ProgressView.vala:420
 msgid "Configuring the System"
 msgstr "Konfiguruji systém"
 
-#: src/Views/ProgressView.vala:460
+#: src/Views/ProgressView.vala:424
 msgid "Finishing the Installation"
 msgstr "Dokončuji instalaci"
 

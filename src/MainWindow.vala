@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.MainWindow : Gtk.Dialog {
+public class Installer.MainWindow : Gtk.Window {
     private Gtk.Stack stack;
 
     private LanguageView language_view;
@@ -50,11 +50,17 @@ public class Installer.MainWindow : Gtk.Dialog {
         language_view = new LanguageView ();
 
         stack = new Gtk.Stack ();
+        stack.margin_bottom = 12;
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (language_view);
 
-        get_content_area ().add (stack);
-        get_style_context ().add_class ("os-installer");
+        var titlebar = new Gtk.HeaderBar ();
+        titlebar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        titlebar.set_custom_title (new Gtk.Grid ()); // null title workaround
+
+        add (stack);
+        get_style_context ().add_class ("rounded");
+        set_titlebar (titlebar);
 
         minimum_disk_size = Distinst.minimum_disk_size (5000000000);
 
@@ -196,6 +202,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         stack.visible_child = progress_view;
 
         progress_view.on_success.connect (() => load_success_view ());
+
         progress_view.on_error.connect (() => {
             load_error_view (progress_view.get_log ());
         });
@@ -223,6 +230,4 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         error_view.previous_view = disk_view;
     }
-
-    public override void close () {}
 }

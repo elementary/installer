@@ -17,7 +17,7 @@
  */
 
 public class SuccessView : AbstractInstallerView {
-    public static int RESTART_TIMEOUT = 30;
+    public const int RESTART_TIMEOUT = 30;
 
     construct {
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
@@ -70,4 +70,3 @@ public class SuccessView : AbstractInstallerView {
         show_all ();
     }
 }
-

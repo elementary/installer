@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-11-06 21:00+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
-"Language-Team: Turkish <https://weblate.elementary.io/projects/installer/"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"PO-Revision-Date: 2019-08-21 23:22+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -88,7 +88,7 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"%s'i kurmak için cihazınızda yeterli alan yok. Minimum %s alan ayrılmasını "
+"%s kurulumu için cihazınızda yeterli alan yok. En az %s alan ayrılmasını "
 "öneriyoruz."
 
 #: src/Views/CheckView.vala:215
@@ -192,7 +192,7 @@ msgstr "Şifreleme Parolasını Seçin"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr "Şifreyi Onayla"
+msgstr "Parolayı Onayla"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
@@ -213,7 +213,7 @@ msgstr "Şifre Belirle"
 
 #: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
-msgstr "Şifreler uyuşmuyor"
+msgstr "Parolalar eşleşmiyor"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
@@ -240,15 +240,19 @@ msgstr "• Demo Modu'nu kullanın ve elle kurtarmayı deneyin"
 msgid "• Restart your device to boot from another drive"
 msgstr "• Başka bir sürücüden başlatmak için cihazınızı yeniden başlatın"
 
-#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:65
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Cihazı Yeniden Başlatın"
 
-#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Demo Modu'nu Deneyin"
 
-#: src/Views/ErrorView.vala:108
+#: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "Tekrar Yüklemeyi Deneyin"
 
@@ -286,15 +290,15 @@ msgstr "Bir Dil Seçin"
 
 #: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
-msgstr "Şuan aktif olan dil"
+msgstr "Şu anda etkin olan dil"
 
 #: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"Bütün sürücüler arasında hangi bölümleri kullanacağınızı seçin. <b>\""
-"Biçimlendir\" seçeneği seçili bölümdeki BÜTÜN verileri silecektir.</b>"
+"Bütün sürücüler arasında hangi bölümleri kullanacağınızı seçin. <b>"
+"\"Biçimlendir\" seçeneği seçili bölümdeki BÜTÜN verileri silecektir.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
@@ -333,19 +337,19 @@ msgstr "Kök için geçersiz bir dosya sistemi"
 msgid "Invalid file system for home"
 msgstr "Home için geçersiz bir dosya sistemi"
 
-#: src/Views/ProgressView.vala:448
+#: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
 msgstr "Sürücü Bölümleniyor"
 
-#: src/Views/ProgressView.vala:452
+#: src/Views/ProgressView.vala:416
 msgid "Extracting Files"
 msgstr "Dosyalar Ayıklanıyor"
 
-#: src/Views/ProgressView.vala:456
+#: src/Views/ProgressView.vala:420
 msgid "Configuring the System"
 msgstr "Sistem Yapılandırılıyor"
 
-#: src/Views/ProgressView.vala:460
+#: src/Views/ProgressView.vala:424
 msgid "Finishing the Installation"
 msgstr "Kurulum Sonlandırılıyor"
 

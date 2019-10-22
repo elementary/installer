@@ -17,12 +17,12 @@
 
 [DBus (name = "org.freedesktop.ScreenSaver")]
 public interface ScreenSaverIface : Object {
-    public abstract uint32 Inhibit (string app_name, string reason) throws Error;
-    public abstract void UnInhibit (uint32 cookie) throws Error;
-    public abstract void SimulateUserActivity () throws Error;
+    public abstract uint32 inhibit (string app_name, string reason) throws Error;
+    public abstract void un_inhibit (uint32 cookie) throws Error;
+    public abstract void simulate_user_activity () throws Error;
 }
 
-public class Inhibitor :  Object {
+public class Inhibitor : Object {
     private const string IFACE = "org.freedesktop.ScreenSaver";
     private const string IFACE_PATH = "/ScreenSaver";
 
@@ -55,7 +55,7 @@ public class Inhibitor :  Object {
         if (screensaver_iface != null && !inhibited) {
             try {
                 inhibited = true;
-                inhibit_cookie = screensaver_iface.Inhibit ("Installer", "Installing");
+                inhibit_cookie = screensaver_iface.inhibit ("Installer", "Installing");
                 simulate_activity ();
                 debug ("Inhibiting screen");
             } catch (Error e) {
@@ -68,7 +68,7 @@ public class Inhibitor :  Object {
         if (screensaver_iface != null && inhibited) {//&& inhibit_cookie != null) {
             try {
                 inhibited = false;
-                screensaver_iface.UnInhibit (inhibit_cookie);
+                screensaver_iface.un_inhibit (inhibit_cookie);
                 debug ("Uninhibiting screen");
             } catch (Error e) {
                 warning ("Could not uninhibit screen: %s", e.message);
@@ -88,7 +88,7 @@ public class Inhibitor :  Object {
             if (inhibited) {
                 try {
                     debug ("Simulating activity");
-                    screensaver_iface.SimulateUserActivity ();
+                    screensaver_iface.simulate_user_activity ();
                 } catch (Error e) {
                     warning ("Could not simulate user activity: %s", e.message);
                 }

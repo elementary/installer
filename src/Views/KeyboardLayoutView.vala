@@ -181,9 +181,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
                     default_layout = config.lang;
                 }
 
-                foreach (Gtk.Widget child in input_variant_widget.main_listbox.get_children ()) {
+                foreach (weak Gtk.Widget child in input_variant_widget.main_listbox.get_children ()) {
                     if (child is LayoutRow) {
-                        var row = (LayoutRow) child;
+                        weak LayoutRow row = (LayoutRow) child;
                         if (row.layout.name == default_layout) {
                             input_variant_widget.main_listbox.select_row (row);
                             row.grab_focus ();

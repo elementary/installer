@@ -121,7 +121,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         top_controls.margin = 12;
 
         top_controls.attach (use_partition_label, 0, 0);
-        top_controls.attach (use_partition,       1, 0);
+        top_controls.attach (use_partition, 1, 0);
 
         var bottom_controls = new Gtk.Grid ();
         bottom_controls.column_spacing = 12;
@@ -132,18 +132,18 @@ public class Installer.PartitionMenu : Gtk.Popover {
         bottom_controls.attach (format_label, 0, 1);
         bottom_controls.attach (use_as_label, 0, 2);
         bottom_controls.attach (custom_label, 0, 3);
-        bottom_controls.attach (type_label,   0, 4);
+        bottom_controls.attach (type_label, 0, 4);
 
         bottom_controls.attach (format_partition, 1, 1);
-        bottom_controls.attach (use_as,           1, 2);
-        bottom_controls.attach (custom,           1, 3);
-        bottom_controls.attach (type,             1, 4);
+        bottom_controls.attach (use_as, 1, 2);
+        bottom_controls.attach (custom, 1, 3);
+        bottom_controls.attach (type, 1, 4);
 
         var bottom_grid = new Gtk.Grid ();
         bottom_grid.column_spacing = 12;
         bottom_grid.row_spacing = 6;
 
-        bottom_grid.attach (separator,       0, 0);
+        bottom_grid.attach (separator, 0, 0);
         bottom_grid.attach (bottom_controls, 0, 1);
 
         var grid = new Gtk.Grid ();
@@ -152,7 +152,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         var bottom_revealer = new Gtk.Revealer ();
         bottom_revealer.add (bottom_grid);
 
-        grid.attach (top_controls,    0, 0);
+        grid.attach (top_controls, 0, 0);
         grid.attach (bottom_revealer, 0, 1);
 
         add (grid);

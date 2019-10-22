@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-12-12 00:07+0000\n"
-"Last-Translator: alexis holguin <wholguinmor@uniminuto.edu.co>\n"
-"Language-Team: Spanish <https://weblate.elementary.io/projects/installer/"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"PO-Revision-Date: 2019-09-09 09:22+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -244,15 +244,19 @@ msgstr "• Utilizar el modo de demostración y probar la recuperación manual"
 msgid "• Restart your device to boot from another drive"
 msgstr "• Reiniciar el dispositivo para arrancar desde otra unidad"
 
-#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:65
+msgid "Details"
+msgstr "Detalles"
+
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "Reiniciar dispositivo"
 
-#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "Probar modo de demostración"
 
-#: src/Views/ErrorView.vala:108
+#: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "Intentar instalar nuevamente"
 
@@ -338,19 +342,19 @@ msgstr "Sistema de archivos incorrecto para el directorio raíz"
 msgid "Invalid file system for home"
 msgstr "Sistema de archivos incorrecto para el directorio home"
 
-#: src/Views/ProgressView.vala:448
+#: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
 msgstr "Particionado de disco"
 
-#: src/Views/ProgressView.vala:452
+#: src/Views/ProgressView.vala:416
 msgid "Extracting Files"
 msgstr "Extrayendo archivos"
 
-#: src/Views/ProgressView.vala:456
+#: src/Views/ProgressView.vala:420
 msgid "Configuring the System"
 msgstr "Configurando el sistema"
 
-#: src/Views/ProgressView.vala:460
+#: src/Views/ProgressView.vala:424
 msgid "Finishing the Installation"
 msgstr "Finalizando la instalación"
 

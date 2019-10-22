@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 17:27-0700\n"
-"PO-Revision-Date: 2018-12-02 06:25+0000\n"
+"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"PO-Revision-Date: 2019-07-06 01:28+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/installer/"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -87,7 +87,9 @@ msgstr "空き容量が不足しています"
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
-msgstr "お使いのデバイスには %s をインストールするための十分な空き容量がありません。最低でも %s のストレージを推奨します。"
+msgstr ""
+"お使いのデバイスには %s をインストールするための十分な空き容量がありません。"
+"最低でも %s のストレージを推奨します。"
 
 #: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
@@ -109,7 +111,9 @@ msgstr "電源に接続してください"
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
-msgstr "お使いのデバイスはバッテリーの電力で動作しています。インストールの間は電源に接続することを推奨します。"
+msgstr ""
+"お使いのデバイスはバッテリーの電力で動作しています。インストールの間は電源に"
+"接続することを推奨します。"
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
@@ -136,8 +140,9 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"続行すると、選択されたドライブ上のすべてのデータを削除します。データをバックアップしていない場合は、インストールをキャンセルしてデモモードを使用することが"
-"できます。"
+"続行すると、選択されたドライブ上のすべてのデータを削除します。データをバック"
+"アップしていない場合は、インストールをキャンセルしてデモモードを使用すること"
+"ができます。"
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
@@ -155,13 +160,17 @@ msgstr "ドライブの暗号化"
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
-msgstr "ドライブを暗号化することで、他の人がこのデバイスに物理的にアクセスしデータを読み取ることを防止します。"
+msgstr ""
+"ドライブを暗号化することで、他の人がこのデバイスに物理的にアクセスしデータを"
+"読み取ることを防止します。"
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
-msgstr "ドライブの暗号化は、負荷のかかるタスクを実行する際に、わずかに読み書き速度に影響を及ぼす可能性があります。"
+msgstr ""
+"ドライブの暗号化は、負荷のかかるタスクを実行する際に、わずかに読み書き速度に"
+"影響を及ぼす可能性があります。"
 
 #: src/Views/EncryptView.vala:67
 msgid ""
@@ -177,8 +186,9 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"暗号化のパスワードを忘れた場合、<b>データを回復することはできません。</b>これはこのデバイス専用のパスワードであり、ユーザーアカウント用のパスワード"
-"ではありません。"
+"暗号化のパスワードを忘れた場合、<b>データを回復することはできません。</b>これ"
+"はこのデバイス専用のパスワードであり、ユーザーアカウント用のパスワードではあ"
+"りません。"
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
@@ -219,8 +229,9 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s のインストールに失敗しました。ハードウェアのエラーが原因と思われます。お使いのデバイスは正しく再起動しない可能性があります。以下の操作を試すことがで"
-"きます。"
+"%s のインストールに失敗しました。ハードウェアのエラーが原因と思われます。お使"
+"いのデバイスは正しく再起動しない可能性があります。以下の操作を試すことができ"
+"ます。"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -234,15 +245,19 @@ msgstr "• デモモードを使用して手動で回復してみる"
 msgid "• Restart your device to boot from another drive"
 msgstr "• デバイスを再起動して別のドライブから起動"
 
-#: src/Views/ErrorView.vala:104 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:65
+msgid "Details"
+msgstr "詳細"
+
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
 msgstr "デバイスを再起動"
 
-#: src/Views/ErrorView.vala:106 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
 msgid "Try Demo Mode"
 msgstr "デモモードを試す"
 
-#: src/Views/ErrorView.vala:108
+#: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "もう一度インストールしてみる"
 
@@ -287,8 +302,9 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"すべてのドライブで使用するパーティションを選択してください。<b>\"フォーマット\" "
-"を選択することで、選択されたパーティション上のすべてのデータは削除されます。</b>"
+"すべてのドライブで使用するパーティションを選択してください。<b>\"フォーマット"
+"\" を選択することで、選択されたパーティション上のすべてのデータは削除されま"
+"す。</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
@@ -300,7 +316,9 @@ msgstr "少なくとも<b>ルート (/)</b>パーティションを選択する�
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
-msgstr "少なくとも<b>ルート (/)</b>パーティションと<b>ブート (/boot/efi)</b>パーティションを選択する必要があります。"
+msgstr ""
+"少なくとも<b>ルート (/)</b>パーティションと<b>ブート (/boot/efi)</b>パーティ"
+"ションを選択する必要があります。"
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -326,19 +344,19 @@ msgstr "ルートディレクトリが不適切なファイルシステムです
 msgid "Invalid file system for home"
 msgstr "ホームディレクトリが不適切なファイルシステムです"
 
-#: src/Views/ProgressView.vala:448
+#: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
 msgstr "ドライブのパーティションを作成しています"
 
-#: src/Views/ProgressView.vala:452
+#: src/Views/ProgressView.vala:416
 msgid "Extracting Files"
 msgstr "ファイルを展開しています"
 
-#: src/Views/ProgressView.vala:456
+#: src/Views/ProgressView.vala:420
 msgid "Configuring the System"
 msgstr "システムを設定しています"
 
-#: src/Views/ProgressView.vala:460
+#: src/Views/ProgressView.vala:424
 msgid "Finishing the Installation"
 msgstr "インストールを終了しています"
 
@@ -363,7 +381,9 @@ msgstr "次へ"
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
-msgstr "変更は保存されず、以前の OS のデータは変更されません。パフォーマンスと機能はインストールされた環境をおそらく反映しません。"
+msgstr ""
+"変更は保存されず、以前の OS のデータは変更されません。パフォーマンスと機能は"
+"インストールされた環境をおそらく反映しません。"
 
 #: src/Views/TryInstallView.vala:85
 msgid "Clean Install"
@@ -382,7 +402,9 @@ msgstr "カスタム (高度)"
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-msgstr "手動でパーティションを作成、サイズ変更、その他管理を行います。この方法はデータの損失につながることがあります。"
+msgstr ""
+"手動でパーティションを作成、サイズ変更、その他管理を行います。この方法はデー"
+"タの損失につながることがあります。"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -409,7 +431,9 @@ msgstr "このパーティションを復号化"
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
-msgstr "パーティションの暗号化パスワードを入力し、復号化するパーティションのデバイス名を選択してください。"
+msgstr ""
+"パーティションの暗号化パスワードを入力し、復号化するパーティションのデバイス"
+"名を選択してください。"
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
