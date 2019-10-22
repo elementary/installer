@@ -77,24 +77,24 @@ public class ProgressView : AbstractInstallerView {
     }
 
     private string casper_dir () {
-        const string cdrom = "/cdrom";
+        const string CDROM = "/cdrom";
 
         try {
-            var cdrom_dir = File.new_for_path (cdrom);
+            var cdrom_dir = File.new_for_path (CDROM);
             var iter = cdrom_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
 
             FileInfo info;
             while ((info = iter.next_file ()) != null) {
                 unowned string name = info.get_name ();
                 if (name.has_prefix ("casper")) {
-                    return GLib.Path.build_filename (cdrom, name);
+                    return GLib.Path.build_filename (CDROM, name);
                 }
             }
         } catch (GLib.Error e) {
             critical ("failed to find casper dir automatically: %s\n", e.message);
         }
 
-        return GLib.Path.build_filename (cdrom, "casper");
+        return GLib.Path.build_filename (CDROM, "casper");
     }
 
     public void start_installation () {
