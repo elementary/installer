@@ -36,8 +36,6 @@ configuration_data = configuration_data()
 configuration_data.set('GETTEXT_PACKAGE', meson.project_name())
 configuration_data.set('LANG_LIST', get_option('supported_languages'))
 configuration_data.set('PREFERRED_LANG_LIST', get_option('preferred_languages'))
-configuration_data.set('SQUASHFS_PATH', get_option('squashfs_path'))
-configuration_data.set('MANIFEST_REMOVE_PATH', get_option('manifest_remove_path'))
 
 config_file = configure_file(
     input: 'Config.vala.in',
