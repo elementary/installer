@@ -76,6 +76,27 @@ public class ProgressView : AbstractInstallerView {
         return terminal_view.buffer.text;
     }
 
+    private string casper_dir () {
+        const string CDROM = "/cdrom";
+
+        try {
+            var cdrom_dir = File.new_for_path (CDROM);
+            var iter = cdrom_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
+
+            FileInfo info;
+            while ((info = iter.next_file ()) != null) {
+                unowned string name = info.get_name ();
+                if (name.has_prefix ("casper")) {
+                    return GLib.Path.build_filename (CDROM, name);
+                }
+            }
+        } catch (GLib.Error e) {
+            critical ("failed to find casper dir automatically: %s\n", e.message);
+        }
+
+        return GLib.Path.build_filename (CDROM, "casper");
+    }
+
     public void start_installation () {
         if (Installer.App.test_mode) {
             new Thread<void*> (null, () => {
@@ -99,8 +120,10 @@ public class ProgressView : AbstractInstallerView {
         config.flags = Distinst.MODIFY_BOOT_ORDER;
         config.hostname = "elementary-os";
         config.lang = "en_US.UTF-8";
-        config.remove = Build.MANIFEST_REMOVE_PATH;
-        config.squashfs = Build.SQUASHFS_PATH;
+
+        var casper = casper_dir ();
+        config.remove = GLib.Path.build_filename (casper, "filesystem.manifest-remove");
+        config.squashfs = GLib.Path.build_filename (casper, "filesystem.squashfs");
 
         unowned Configuration current_config = Configuration.get_default ();
 
@@ -412,20 +435,20 @@ public class ProgressView : AbstractInstallerView {
                     progressbar_label.label = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
-                    fraction += 2 * (1.0/NUM_STEP);
+                    fraction += 2 * (1.0 / NUM_STEP);
                     progressbar_label.label = _("Extracting Files");
                     break;
                 case Distinst.Step.CONFIGURE:
-                    fraction += 3 * (1.0/NUM_STEP);
+                    fraction += 3 * (1.0 / NUM_STEP);
                     progressbar_label.label = _("Configuring the System");
                     break;
                 case Distinst.Step.BOOTLOADER:
-                    fraction += 4 * (1.0/NUM_STEP);
+                    fraction += 4 * (1.0 / NUM_STEP);
                     progressbar_label.label = _("Finishing the Installation");
                     break;
             }
 
-            progressbar_label.label +=  " (%d%%)".printf (status.percent);
+            progressbar_label.label += " (%d%%)".printf (status.percent);
             progressbar.fraction = fraction;
             return GLib.Source.REMOVE;
         });
