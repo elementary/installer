@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Install elementary OS
 Comment=Install the system
-Exec=pkexec io.elementary.installer
+Exec=sh -c "pkexec env XDG_SEAT_PATH\=\$XDG_SEAT_PATH DISPLAY\=\$DISPLAY XAUTHORITY\=\$XAUTHORITY io.elementary.installer"
 Icon=system-os-installer
 Terminal=false
 Type=Application
