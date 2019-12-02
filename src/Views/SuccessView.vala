@@ -39,7 +39,14 @@ public class SuccessView : AbstractInstallerView {
         title_label.xalign = 0;
         title_label.get_style_context ().add_class ("h2");
 
-        var description_label = new Gtk.Label (_("After restarting you can set up a new user, or you can shut down now and set up a new user later."));
+        bool requires_workaround = requires_workaround ();
+
+        var description_label = new Gtk.Label (
+            requires_workaround
+                ? _("Shut down now and create a user account on the next start.")
+                : _("After restarting you can set up a new user, or you can shut down now and set up a new user later.")   
+        );
+
         description_label.max_width_chars = 52;
         description_label.wrap = true;
         description_label.xalign = 0;
@@ -80,13 +87,43 @@ public class SuccessView : AbstractInstallerView {
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
         shutdown_button.clicked.connect (Utils.shutdown);
 
-        var restart_button = new Gtk.Button.with_label (_("Restart Device"));
-        restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        restart_button.clicked.connect (Utils.restart);
+        if (!requires_workaround) {
+            var restart_button = new Gtk.Button.with_label (_("Restart Device"));
+            restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            restart_button.clicked.connect (Utils.restart);
+
+            action_area.add (restart_button);
+        }
 
         action_area.add (shutdown_button);
-        action_area.add (restart_button);
+        
 
         show_all ();
+    }
+
+    static bool requires_workaround () {
+        if (Utils.get_version_id () == "18.04") {
+            string product_model = product_model ();
+            return product_model == "darp6" || product_model == "galp4";
+        }
+        
+        return false;
+    }
+
+    static string product_model () {
+        string output;
+
+        try {
+            uint8[] contents;
+            string etag_out;
+            File file = File.new_for_path ("/sys/class/dmi/id/product_version");
+            file.load_contents (null, out contents, out etag_out);
+            output = ((string) contents).strip ();
+        } catch (Error why) {
+            warning("failed to retrieve product version");
+            output = "";
+        }
+
+        return output;
     }
 }
