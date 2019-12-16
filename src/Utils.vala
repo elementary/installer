@@ -71,10 +71,12 @@ namespace Utils {
 
     private struct OsRelease {
         public string pretty_name;
+        public string version_id;
 
         public static OsRelease new () {
             return OsRelease () {
-                pretty_name = string_from_utf8 (Distinst.get_os_pretty_name ())
+                pretty_name = string_from_utf8 (Distinst.get_os_pretty_name ()),
+                version_id = string_from_utf8 (Distinst.get_os_version_id ())
             };
         }
     }
@@ -87,6 +89,14 @@ namespace Utils {
         }
 
         return os_release.pretty_name;
+    }
+
+    private static string get_version_id () {
+        if (os_release == null) {
+            os_release = OsRelease.new ();
+        }
+
+        return os_release.version_id;
     }
 
     public static void shutdown () {
