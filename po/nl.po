@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 23:49+0200\n"
-"PO-Revision-Date: 2018-08-31 18:51+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
-"Language-Team: Dutch <https://weblate.elementary.io/projects/installer/"
+"PO-Revision-Date: 2019-12-30 06:47+0000\n"
+"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -154,22 +154,22 @@ msgstr "Installeren en wissen"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr "Schijfversleuteling"
+msgstr "Encryptie van de schijf"
 
 #: src/Views/EncryptView.vala:53
 msgid ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 msgstr ""
-"Door deze schijf te versleutelen, kunnen gegevens niet worden gelezen door "
-"anderen met fysieke toegang tot dit apparaat."
+"Door deze schijf te versleutelen door middel van encryptie, kunnen gegevens "
+"niet worden gelezen door anderen met fysieke toegang tot dit apparaat."
 
 #: src/Views/EncryptView.vala:60
 msgid ""
 "Drive encryption may minimally impact read and write speed when performing "
 "intense tasks."
 msgstr ""
-"Schijfversleuteling zal een minimale invloed hebben op lees- en "
+"Encryptie van de schijf heeft mogelijk een minimale invloed op lees- en "
 "schrijfsnelheid wanneer u zware taken uitvoert."
 
 #: src/Views/EncryptView.vala:67
@@ -177,8 +177,8 @@ msgid ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 msgstr ""
-"Het versleutelwachtwoord is vereist telkens als u dit apparaat aanzet of "
-"opnieuw opstart."
+"Het encryptiewachtwoord is vereist telkens wanneer u dit apparaat inschakelt "
+"of herstart."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -192,7 +192,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr "Kies versleutelwachtwoord"
+msgstr "Kies encryptie wachtwoord"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
@@ -246,7 +246,7 @@ msgstr "• Herstart toestel om van een ander station op te starten"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
@@ -330,19 +330,19 @@ msgstr "Partities aanpassen…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI partitie heeft het verkeerde bestandssysteem"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI partitie is te klein"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Ongeldig bestandssysteem voor root"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Ongeldig bestandssysteem voor home-folder"
 
 #: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
@@ -361,9 +361,8 @@ msgid "Finishing the Installation"
 msgstr "Installatie afronden"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Probeer de installatie opnieuw"
+msgstr "Probeer of Installeer"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -376,39 +375,39 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Volgende"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
 "In demomodus zullen veranderingen, die u gemaakt heeft, niet worden "
 "opgeslagen en data van uw eerdere besturingssysteem niet worden gewijzigd. "
-"Prestaties en functionaliteit zullen mogelijkerwijs geen waargetrouw beeld "
-"zijn van de ervaring van een daadwerkelijke installatie van dit "
+"Prestaties en functionaliteit zullen mogelijkerwijs geen waarheidsgetrouw "
+"beeld zijn van de ervaring van een daadwerkelijke installatie van dit "
 "besturingssysteem."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
-msgstr "Installeren en wissen"
+msgstr "Schone installatie"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Wis alles en installeer een nieuwe kopie van %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Aangepast (Geavanceerd)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Maak partities, pas de grootte aan, of bewerk partities handmatig. Deze "
+"methode kan tot verlies van gegevens leiden."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -433,13 +432,12 @@ msgid "Decrypt This Partition"
 msgstr "Ontsleutel Deze Partitie"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Voer het versleutelwachtwoord van de partitie in en stel een LUKS "
-"apparaatnaam in."
+"Voer het versleutelwachtwoord van de partitie in en stel een apparaatnaam in "
+"voor de partitie."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
