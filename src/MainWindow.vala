@@ -21,6 +21,8 @@
 public class Installer.MainWindow : Gtk.Dialog {
     private Gtk.Stack stack;
 
+    private bool check_ignored = false;
+    private DecryptionView decryption_view;
     private DiskView disk_view;
     private EncryptView encrypt_view;
     private ErrorView error_view;
@@ -32,7 +34,6 @@ public class Installer.MainWindow : Gtk.Dialog {
     private RefreshView refresh_view;
     private SuccessView success_view;
     private TryInstallView try_install_view;
-    private bool check_ignored = false;
 
     private uint64 minimum_disk_size;
 
@@ -45,34 +46,88 @@ public class Installer.MainWindow : Gtk.Dialog {
             height_request: 700,
             icon_name: "system-os-installer",
             resizable: true,
-            title: _("Install %s").printf (Utils.get_pretty_name ()),
             width_request: 950,
             use_header_bar: 1
         );
     }
 
     construct {
-        language_view = new LanguageView ();
-
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.add (language_view);
 
         get_content_area ().add (stack);
         get_style_context ().add_class ("os-installer");
 
         const uint64 DEFAULT_MINIMUM_SIZE = 5000000000;
         minimum_disk_size = Distinst.minimum_disk_size (DEFAULT_MINIMUM_SIZE / 512);
-        InstallOptions.get_default ().set_minimum_size (minimum_disk_size);
+        
+        unowned InstallOptions options = InstallOptions.get_default ();
+        options.set_minimum_size (minimum_disk_size);
 
-        language_view.next_step.connect (() => load_keyboard_view ());
+        unowned Distinst.RecoveryOption? recovery_option = options
+            .get_options ()
+            .get_recovery_option ();
+
+        weak Gtk.HeaderBar? headerbar = (Gtk.HeaderBar) get_header_bar ();
+
+        switch (Modes.mode (recovery_option)) {
+            case Modes.Mode.INSTALL:
+                headerbar.title = _("Install %s").printf (Utils.get_pretty_name ());
+
+                language_view = new LanguageView ();
+                language_view.next_step.connect (() => load_keyboard_view ());
+                stack.add (language_view);
+
+                break;
+            case Modes.Mode.REFRESH:
+                headerbar.title = _("Refresh OS");
+                startup_decrypt (recovery_option, Modes.Mode.REFRESH);
+        }
+    }
+
+    private void post_decrypt (Modes.Mode mode, Distinst.RecoveryOption recovery_option) {
+        load_refresh_view ();
+    }
+
+    private void startup_decrypt (Distinst.RecoveryOption recovery_option, Modes.Mode mode) {
+        unowned uint8[] luks_uuid = recovery_option.get_luks_uuid ();
+        unowned uint8[] root_uuid = recovery_option.get_root_uuid ();
+        var options = InstallOptions.get_default ();
+        unowned Distinst.Disks disks = options.borrow_disks ();
+
+        if (luks_uuid.length != 0 && (luks_uuid != root_uuid)) {
+            decryption_view = new DecryptionView ();
+            stack.add (decryption_view);
+            decryption_view.decrypt.connect ((passphrase) => {
+                if (null != passphrase) {
+                    string uuid = Utils.string_from_utf8 (luks_uuid);
+                    unowned Distinst.Partition? partition = disks.get_partition_by_uuid (uuid);
+
+                    if (null == partition) {
+                        debug ("unable to find partition after decryption");
+                        return;
+                    }
+
+                    unowned uint8[] device_path = partition.get_device_path ();
+                    string path = Utils.string_from_utf8 (device_path);
+
+                    try {
+                        options.decrypt (path, "cryptdata", passphrase);
+                        post_decrypt (mode, recovery_option);
+                    } catch (Error e) {
+                        warning ("failed to decrypt: %s", e.message);
+                    }
+                }
+            });
+        } else {
+            post_decrypt (mode, recovery_option);
+        }
     }
 
     /*
      * We need to load all the view after the language has being chosen and set.
      * We need to rebuild the view everytime the next button is clicked to reflect language changes.
      */
-
 
     private void load_keyboard_view () {
         if (keyboard_layout_view != null) {
@@ -92,21 +147,6 @@ public class Installer.MainWindow : Gtk.Dialog {
                 unowned Configuration config = Configuration.get_default ();
                 unowned Distinst.InstallOptions options = opts.get_options ();
                 var recovery = options.get_recovery_option ();
-
-                var lang = Utils.string_from_utf8 (recovery.get_language ());
-                var lang_parts = lang.split ("_", 2);
-                config.lang = lang_parts[0];
-                if (lang_parts.length >= 2) {
-                    var country_parts = lang_parts[1].split (".", 2);
-                    config.country = country_parts[0];
-                }
-
-                config.keyboard_layout = Utils.string_from_utf8 (recovery.get_kbd_layout ());
-
-                var variant = recovery.get_kbd_variant ();
-                if (null != variant) {
-                    config.keyboard_variant = Utils.string_from_utf8 (variant);
-                }
 
                 InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
                     tag = Distinst.InstallOptionVariant.RECOVERY,
@@ -138,13 +178,14 @@ public class Installer.MainWindow : Gtk.Dialog {
         if (refresh_view == null) {
             refresh_view = new RefreshView ();
             refresh_view.previous_view = try_install_view;
+            
             refresh_view.next_step.connect ((retain_old) => {
                 Configuration.get_default ().retain_old = retain_old;
                 load_progress_view ();
             });
-            refresh_view.cancel.connect (() => {
-                stack.visible_child = try_install_view;
-            });
+
+            refresh_view.cancel.connect (load_try_install_view);
+
             stack.add (refresh_view);
         }
 

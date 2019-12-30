@@ -2,6 +2,7 @@
 vala_files = [
     'Application.vala',
     'MainWindow.vala',
+    'Modes.vala',
     'Utils.vala',
     'Helpers/Inhibitor.vala',
     'Helpers/KeyboardLayoutHelper.vala',
@@ -15,6 +16,7 @@ vala_files = [
     'Objects/Mount.vala',
     'Views/AbstractInstallerView.vala',
     'Views/CheckView.vala',
+    'Views/DecryptionView.vala',
     'Views/DiskView.vala',
     'Views/EncryptView.vala',
     'Views/ErrorView.vala',

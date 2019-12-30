@@ -23,6 +23,7 @@ public class Configuration : GLib.Object {
     public static unowned Configuration get_default () {
         if (_config == null) {
             _config = new Configuration ();
+            _config.load_from_recovery();
         }
 
         return _config;
@@ -30,6 +31,7 @@ public class Configuration : GLib.Object {
 
     public string lang { get; set; }
     public string? country { get; set; default = null; }
+    public string? cached_locale { get; set; default = null; }
     public string keyboard_layout { get; set; }
     public string? keyboard_variant { get; set; default = null; }
     public string? encryption_password { get; set; default = null; }
@@ -60,5 +62,30 @@ public class Configuration : GLib.Object {
         }
 
         return lang + "_" + country + ".UTF-8";
+    }
+
+    /**
+     * Load values from the recovery environment, if there are values to load.
+     **/
+    public void load_from_recovery() {
+        var opts = InstallOptions.get_default ();
+        unowned Distinst.InstallOptions options = opts.get_updated_options ();
+        var recovery = options.get_recovery_option ();
+        if (null != recovery) {
+            var lang = Utils.string_from_utf8 (recovery.get_language ());
+            var lang_parts = lang.split ("_", 2);
+            this.lang = lang_parts[0];
+            if (lang_parts.length >= 2) {
+                var country_parts = lang_parts[1].split (".", 2);
+                this.country = country_parts[0];
+            }
+
+            this.keyboard_layout = Utils.string_from_utf8 (recovery.get_kbd_layout ());
+
+            unowned uint8[]? variant = recovery.get_kbd_variant ();
+            if (null != variant) {
+                this.keyboard_variant = Utils.string_from_utf8 (variant);
+            }
+        }
     }
 }

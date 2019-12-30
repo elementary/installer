@@ -129,6 +129,7 @@ public class ProgressView : AbstractInstallerView {
         unowned InstallOptions options = InstallOptions.get_default ();
 
         config.lang = current_config.get_locale ();
+
         config.keyboard_layout = current_config.keyboard_layout;
         config.keyboard_model = null;
         config.keyboard_variant = current_config.keyboard_variant;

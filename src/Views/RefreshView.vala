@@ -20,7 +20,7 @@ public class RefreshView: OptionsView {
         base.clear_options ();
         var install_options = InstallOptions.get_default ();
         unowned Distinst.Disks disks = install_options.borrow_disks ();
-        foreach (var option in install_options.get_options ().get_refresh_options ()) {
+        foreach (var option in install_options.get_updated_options ().get_refresh_options ()) {
             var os = Utils.string_from_utf8 (option.get_os_name ());
             var version = Utils.string_from_utf8 (option.get_os_version ());
             var uuid = Utils.string_from_utf8 (option.get_root_part ());
