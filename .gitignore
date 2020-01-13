@@ -1,3 +1,12 @@
+!debian/*.install
+!debian/*.postinst
+!debian/changelog
+!debian/control
+!debian/links
+!debian/rules
+!debian/source
+debian/
 *~
 build/
 .buildconfig
+obj-*
