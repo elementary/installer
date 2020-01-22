@@ -32,7 +32,7 @@ public abstract class AbstractInstallerView : Gtk.Grid {
     protected Gtk.Grid content_area;
     protected Gtk.ButtonBox action_area;
 
-    public AbstractInstallerView (
+    protected AbstractInstallerView (
         bool cancellable = false,
         string? title = null,
         string? artwork = null,
