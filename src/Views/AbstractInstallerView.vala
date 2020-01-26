@@ -25,7 +25,7 @@ public abstract class AbstractInstallerView : Gtk.Grid {
     protected Gtk.Grid content_area;
     protected Gtk.ButtonBox action_area;
 
-    public AbstractInstallerView (bool cancellable = false) {
+    protected AbstractInstallerView (bool cancellable = false) {
         Object (
             cancellable: cancellable,
             row_spacing: 24
