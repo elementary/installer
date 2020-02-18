@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 23:49+0200\n"
-"PO-Revision-Date: 2018-07-03 19:20+0000\n"
+"PO-Revision-Date: 2020-01-08 00:07+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian <https://weblate.elementary.io/projects/installer/"
+"Language-Team: Slovenian <https://l10n.elementary.io/projects/installer/"
 "installer/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 3.0.1\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -239,7 +239,7 @@ msgstr "* Ponovno pognati računalnik z drugega pogona"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "Podrobnosti"
 
 #: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
@@ -321,19 +321,19 @@ msgstr "Spremeni particije…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "EFI particija ima napačen datotečni sistem"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "EFI particija je premajhna"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Napačni datotečni sistem za korensko particijo"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Napačni datotečni sistem za domačo particijo"
 
 #: src/Views/ProgressView.vala:412
 msgid "Partitioning Drive"
@@ -352,9 +352,8 @@ msgid "Finishing the Installation"
 msgstr "Zaključevanje namestitve"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Ponovno poženi namestitev"
+msgstr "Poskusi ali namesti"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -366,10 +365,9 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
 #: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
 msgid "Next"
-msgstr ""
+msgstr "Naprej"
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -378,24 +376,25 @@ msgstr ""
 "operacijski sistem ostane nedotaknjen."
 
 #: src/Views/TryInstallView.vala:85
-#, fuzzy
 msgid "Clean Install"
 msgstr "Izbriši in namesti"
 
 #: src/Views/TryInstallView.vala:87
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Izbriši vse na računalniku in namesti svežo različico %s."
 
 #: src/Views/TryInstallView.vala:91
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Po meri (napredno)"
 
 #: src/Views/TryInstallView.vala:93
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Ustvari, spremeni velikost ali drugače upravljaj s particijami. Obstaja "
+"nevarnost izgube podatkov."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -419,7 +418,6 @@ msgid "Decrypt This Partition"
 msgstr "Odkleni to particijo"
 
 #: src/Widgets/DecryptMenu.vala:58
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
