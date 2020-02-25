@@ -38,6 +38,9 @@ public class Installer.App : Gtk.Application {
         window.show_all ();
         this.add_window (window);
 
+        weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
+        default_theme.add_resource_path ("/io/elementary/installer");
+
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource ("io/elementary/installer/application.css");
         Gtk.StyleContext.add_provider_for_screen (
