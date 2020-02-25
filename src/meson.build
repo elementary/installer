@@ -7,7 +7,6 @@ vala_files = [
     'Helpers/KeyboardLayoutHelper.vala',
     'Helpers/LocaleHelper.vala',
     'Helpers/LogHelper.vala',
-    'Dialogs/EndSessionDialog.vala',
     'Objects/Configuration.vala',
     'Objects/Mount.vala',
     'Views/AbstractInstallerView.vala',
