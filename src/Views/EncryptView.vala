@@ -45,7 +45,7 @@ public class EncryptView : AbstractInstallerView {
         overlay.add_overlay (overlay_image);
 
         var title_label = new Gtk.Label (_("Drive Encryption"));
-        title_label.get_style_context ().add_class ("h2");
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
         title_label.valign = Gtk.Align.START;
 
         var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
@@ -55,7 +55,7 @@ public class EncryptView : AbstractInstallerView {
         protect_label.wrap = true;
         protect_label.xalign = 0;
 
-        var performance_image = new Gtk.Image.from_icon_name ("utilities-system-monitor-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var performance_image = new Gtk.Image.from_icon_name ("tach-slow-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         var performance_label = new Gtk.Label (_("Drive encryption may minimally impact read and write speed when performing intense tasks."));
         performance_label.max_width_chars = 52;
