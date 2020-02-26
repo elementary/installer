@@ -5,7 +5,6 @@ src/Helpers/Inhibitor.vala
 src/Helpers/KeyboardLayoutHelper.vala
 src/Helpers/LocaleHelper.vala
 src/Helpers/LogHelper.vala
-src/Dialogs/EndSessionDialog.vala
 src/Objects/Configuration.vala
 src/Objects/Mount.vala
 src/Views/AbstractInstallerView.vala
