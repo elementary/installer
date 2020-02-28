@@ -1,4 +1,4 @@
 [GNOME Session]
 Name=Installer
-RequiredComponents=org.gnome.SettingsDaemon.MediaKeys;org.gnome.SettingsDaemon.Power;org.gnome.SettingsDaemon.XSettings;io.elementary.greeter-compositor;io.elementary.installer;
+RequiredComponents=org.gnome.SettingsDaemon.MediaKeys;org.gnome.SettingsDaemon.Power;org.gnome.SettingsDaemon.XSettings;io.elementary.greeter-compositor;
 DesktopName=Installer
