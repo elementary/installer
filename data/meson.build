@@ -19,6 +19,12 @@ install_data(
 )
 
 install_data(
+    'compositor-autostart.desktop',
+    install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart'),
+    rename: meson.project_name() + '.compositor.desktop'
+)
+
+install_data(
     'wingpanel-installer.desktop',
     install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart')
 )
