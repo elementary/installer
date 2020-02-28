@@ -25,8 +25,9 @@ install_data(
 )
 
 install_data(
-    'wingpanel-installer.desktop',
-    install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart')
+    'wingpanel-autostart.desktop',
+    install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart'),
+    rename: meson.project_name() + '.panel.desktop'
 )
 
 install_data(
