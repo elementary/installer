@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Installer
+Exec=io.elementary.installer
+Terminal=false
+Type=Application
+X-GNOME-Autostart-Notify=false
+X-GNOME-AutoRestart=true
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Phase=Applications
+OnlyShowIn=Installer;
