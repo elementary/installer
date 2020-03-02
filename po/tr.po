@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2019-08-21 23:22+0000\n"
+"PO-Revision-Date: 2020-03-04 13:09+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -134,35 +134,21 @@ msgid "Drive Encryption"
 msgstr "Sürücü Şifrelemesi"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
-msgstr ""
-"Bu diski şifrelemek verinin bu cihaza fiziksel erişimi olan başka kişiler "
-"tarafından okunmasına karşı korur."
+msgstr "Veriler, bu cihaza fiziksel erişimi olan diğer kişilerden korunacaktır."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"Sürücü şifreleme, yoğun görevleri gerçekleştirirken okuma ve yazma hızını "
-"bir miktar etkileyebilir."
+"Yoğun görevler sırasında okuma ve yazma hızları bir miktar etkileyebilir."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"Bu cihazı her açtığınızda veya yeniden başlatıldığında şifre istenecektir."
+"Bu cihaz her açıldığında şifreleme parolası gerekecektir. Güvenli bir yerde "
+"saklayın."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
