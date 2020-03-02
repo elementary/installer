@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2019-07-06 01:28+0000\n"
+"PO-Revision-Date: 2020-03-04 13:09+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
 "installer/ca/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -135,36 +135,24 @@ msgid "Drive Encryption"
 msgstr "Encriptació de dispositiu"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Encriptar aquest dispositiu protegeix les dades de la lectura d'altres "
-"persones amb accés físic al dispositiu."
+"Es protegiran les dades d'altres persones amb accés físic a aquest "
+"dispositiu."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"L'encriptació del dispositiu pot tenir un petit impacte en la velocitat de "
-"lectura i escriptura a l'hora de fer tasques intenses."
+"La velocitat de lectura i escriptura pot disminuir lleument a l'hora de fer "
+"tasques intenses."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"La contrasenya d'encriptació es demanarà cada vegada que activeu o reinicieu "
-"aquest dispositiu."
+"La contrasenya d'encriptació es demanarà cada cop que engegueu aquest "
+"dispositiu. Deseu-la en un lloc segur."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
