@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2020-01-08 00:07+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/installer/"
@@ -11,8 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
@@ -45,27 +45,6 @@ msgstr "Ni bilo mogoče spremeniti imena domene za Distinst dnevnik"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Začenjam namestitev"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Ste prepričani da želite izklopiti računalnik?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "To bo preklicalo namestitev in izklopilo računalnik."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Ponovni zagon"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Prekliči"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Izklop"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -154,23 +133,31 @@ msgid "Drive Encryption"
 msgstr "Šifriranje pogona"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Šifriranje tega pogona prepreči drugim osebam s fizičnim dostopom do "
 "računalnika dostop do podatkov."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr "Šifriranje lahko nekoliko upočasni hitrost branja in pisanja podatkov."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr "Pri vsakem vklopu računalnika bo potrebno vpisati geslo."
 
 #: src/Views/EncryptView.vala:83
@@ -245,7 +232,7 @@ msgstr "Podrobnosti"
 msgid "Restart Device"
 msgstr "Ponovni zagon"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Demonstracijski način"
 
@@ -335,19 +322,19 @@ msgstr "Napačni datotečni sistem za korensko particijo"
 msgid "Invalid file system for home"
 msgstr "Napačni datotečni sistem za domačo particijo"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Ustvarjanje particij"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Kopiranje datotek"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "Nastavitev sistema"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "Zaključevanje namestitve"
 
@@ -362,12 +349,12 @@ msgid ""
 msgstr ""
 "Lahko namestite %s ali pa preizkusite demonstracijski način brez namestitve."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "Naprej"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -375,20 +362,20 @@ msgstr ""
 "V demonstracijskem načinu spremembe ne bodo shranjene in vaš obstoječ "
 "operacijski sistem ostane nedotaknjen."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "Izbriši in namesti"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Izbriši vse na računalniku in namesti svežo različico %s."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "Po meri (napredno)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -412,6 +399,10 @@ msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr "Po ponovnem zagonu lahko ustvarite nov uporabniški račun."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Izklop"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -493,6 +484,18 @@ msgstr "Datotečni sistem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Privzet (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Ste prepričani da želite izklopiti računalnik?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "To bo preklicalo namestitev in izklopilo računalnik."
+
+#~ msgid "Restart"
+#~ msgstr "Ponovni zagon"
+
+#~ msgid "Cancel"
+#~ msgstr "Prekliči"
 
 #~ msgid "Operating System"
 #~ msgstr "Operacijski sistem"

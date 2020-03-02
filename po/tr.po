@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-08-21 23:22+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr "Distinst günlüğünün bağlantısı ayarlanamadı"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Kurulum başlatılıyor"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Kapatmak istediğinizden emin misiniz?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Bu kurulumu iptal edecek ve cihazınız kapatılacak."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Yeniden başlat"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "İptal Et"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Kapat"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -155,25 +134,33 @@ msgid "Drive Encryption"
 msgstr "Sürücü Şifrelemesi"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Bu diski şifrelemek verinin bu cihaza fiziksel erişimi olan başka kişiler "
 "tarafından okunmasına karşı korur."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "Sürücü şifreleme, yoğun görevleri gerçekleştirirken okuma ve yazma hızını "
 "bir miktar etkileyebilir."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "Bu cihazı her açtığınızda veya yeniden başlatıldığında şifre istenecektir."
 
@@ -248,7 +235,7 @@ msgstr "Ayrıntılar"
 msgid "Restart Device"
 msgstr "Cihazı Yeniden Başlatın"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Demo Modu'nu Deneyin"
 
@@ -337,19 +324,19 @@ msgstr "Kök için geçersiz bir dosya sistemi"
 msgid "Invalid file system for home"
 msgstr "Home için geçersiz bir dosya sistemi"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Sürücü Bölümleniyor"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Dosyalar Ayıklanıyor"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "Sistem Yapılandırılıyor"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "Kurulum Sonlandırılıyor"
 
@@ -364,12 +351,12 @@ msgid ""
 msgstr ""
 "Şimdi bu cihaza %s yükleyebilir veya kurmadan Demo Modu'nu deneyebilirsiniz."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "Sonraki"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -378,20 +365,20 @@ msgstr ""
 "değiştirilmeyecek. Performans ve özellikler kurulmuş sistem tecrübesini "
 "yansıtmayabilir."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "Temiz Kurulum"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Her şeyi sil ve %s taze kopyasını kur."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "Özel (Gelişmiş)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -416,6 +403,10 @@ msgid ""
 msgstr ""
 "Yeniden başlattıktan sonra yeni bir kullanıcı oluşturabilir veya şimdi "
 "kapatabilir ve daha sonra yeni bir kullanıcı ayarlayabilirsiniz."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Kapat"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -499,6 +490,18 @@ msgstr "Dosya sistemi:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Varsayılan (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Kapatmak istediğinizden emin misiniz?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Bu kurulumu iptal edecek ve cihazınız kapatılacak."
+
+#~ msgid "Restart"
+#~ msgstr "Yeniden başlat"
+
+#~ msgid "Cancel"
+#~ msgstr "İptal Et"
 
 #~ msgid "Operating System"
 #~ msgstr "İşletim Sistemi"

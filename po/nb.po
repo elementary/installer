@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-11-15 23:24+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -44,27 +44,6 @@ msgstr "Kunne ikke endre domenenavn for Distinst-logg"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Starter installasjon"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Er du sikker på at du vil slå av?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Dette vil avbryte installasjonen og skru av enheten."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Start på nytt"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Slå av"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -157,25 +136,33 @@ msgid "Drive Encryption"
 msgstr "Diskkryptering"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Kryptering av denne disken forhindrer dens data fra å bli lest av andre med "
 "fysisk tilgang til enheten."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "Diskkryptering kan ha en minimal innvirkning på lese- og skrive-hastighet "
 "ved utførelse av tunge oppgaver."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "Krypteringspassordet kreves hver gang du skrur på denne enheten eller "
 "starter på nytt."
@@ -252,7 +239,7 @@ msgstr "Detaljer"
 msgid "Restart Device"
 msgstr "Start maskinen på nytt"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Prøv demo-modus"
 
@@ -342,19 +329,19 @@ msgstr "Ugyldig filsystem for root"
 msgid "Invalid file system for home"
 msgstr "Ugyldig filsystem for home"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Partisjonerer enhet"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Pakker ut filer"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "Setter opp systemet"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "Fullfører installasjonen"
 
@@ -370,12 +357,12 @@ msgstr ""
 "Du kan installere %s på denne enheten nå, eller prøve demo-moduset uten å "
 "installere."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "Neste"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -384,20 +371,20 @@ msgstr ""
 "tidligere operativsystem vil forbli uendret. Ytelse og funksjoner er ikke på "
 "samme nivå som ved faktisk installasjon."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "Slett og installer"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Slett alt og installer en ny kopi av %s."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "Egendefinert (avansert)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -421,6 +408,10 @@ msgid ""
 msgstr ""
 "Etter omstart kan du opprette en ny bruker eller du kan slå av maskinen nå "
 "og opprette en ny bruker senere."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Slå av"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -502,6 +493,18 @@ msgstr "Filsystem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Forvalg (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Er du sikker på at du vil slå av?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Dette vil avbryte installasjonen og skru av enheten."
+
+#~ msgid "Restart"
+#~ msgstr "Start på nytt"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
 
 #~ msgid "Operating System"
 #~ msgstr "Operativsystem"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2018-06-14 09:01+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr "A Distinst naplózást nem lehetett beállítani"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Telepítés megkezdése"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Biztos benne, hogy ki akarja kapcsolni az eszközt?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Ezzel megszakítja a telepítést és kikapcsolja az eszközt."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Újraindítás"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Mégsem"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Kikapcsolás"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -156,25 +135,33 @@ msgid "Drive Encryption"
 msgstr "Meghajtó titkosítása"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "A meghajtó titkosítása megóvja az adatait, ha mások fizikailag hozzáférnének "
 "az eszközhöz."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "A meghajtó titkosítása minimálisan befolyásolhatja az olvasási és írási "
 "sebességet intenzív feladatok végrehajtása során."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "A titkosítási jelszót minden egyes bekapcsoláskor vagy újraindításkor meg "
 "kell adni."
@@ -252,7 +239,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr "Eszköz újraindítása"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Demo mód kipróbálása"
 
@@ -342,19 +329,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Meghajtó partícionálása"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Fájlok kibontása"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "A rendszer konfigurálása"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "A telepítés befejezése"
 
@@ -371,12 +358,12 @@ msgstr ""
 "Most telepítheti a(z) %s erre az eszközre, vagy kipróbálhatja telepítés "
 "nélkül a Demo módot."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 #, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
@@ -386,21 +373,21 @@ msgstr ""
 "rendszer adatai nem változnak. A teljesítmény és a szolgáltatások minősége "
 "nem feltétlenül tükrözik a telepített rendszer szintjét."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 #, fuzzy
 msgid "Clean Install"
 msgstr "Törlés és telepítés"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -422,6 +409,10 @@ msgid ""
 msgstr ""
 "Az újraindítás után beállíthat egy új felhasználót, vagy leállíthatja "
 "készüléket, és létrehozhat egy új felhasználót később."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Kikapcsolás"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -505,6 +496,18 @@ msgstr "Fájlrendszer:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Alapértelmezett (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Biztos benne, hogy ki akarja kapcsolni az eszközt?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Ezzel megszakítja a telepítést és kikapcsolja az eszközt."
+
+#~ msgid "Restart"
+#~ msgstr "Újraindítás"
+
+#~ msgid "Cancel"
+#~ msgstr "Mégsem"
 
 #~ msgid "Operating System"
 #~ msgstr "Operációs rendszer"

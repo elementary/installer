@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-07-18 02:24+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr "Distinst-lokin soittopyyntöä ei voitu määrittää"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Käynnistetään asennus"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Haluatko varmasti sammuttaa?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Tämä toiminto peruu asennuksen ja sammuttaa laitteen."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Käynnistä uudelleen"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Peru"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Sammuta"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -156,25 +135,33 @@ msgid "Drive Encryption"
 msgstr "Levyn salaus"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Levyn salaaminen suojaa siinä olevia tietoja muilta ihmisiltä, joilla on "
 "fyysinen pääsy tähän laitteeseen."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "Levyn salaaminen saattaa vaikuttaa vähäisesti luku- ja kirjoitusnopeuteen "
 "kesken vaativien tehtävien."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr "Salauksen salasana vaaditaan joka kerta, kun tämä laite käynnistetään."
 
 #: src/Views/EncryptView.vala:83
@@ -250,7 +237,7 @@ msgstr "Tiedot"
 msgid "Restart Device"
 msgstr "Käynnistä laite uudelleen"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Kokeile demotilaa"
 
@@ -340,19 +327,19 @@ msgstr "Väärä tiedostojärjestelmä juurelle"
 msgid "Invalid file system for home"
 msgstr "Väärä tiedostojärjestelmä kotihakemistolle"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Osioidaan asema"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Puretaan tiedostoja"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "Määritetään järjestelmää"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "Valmistellaan asennusta"
 
@@ -368,12 +355,12 @@ msgstr ""
 "%s on nyt mahdollista asentaa laitteelle, tai voit kokeilla demotilaa "
 "asentamatta."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "Seuraava"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -382,20 +369,20 @@ msgstr ""
 "käyttöjärjestelmästäsi ei muuteta. Suorituskyky ja ominaisuudet eivät "
 "välttämättä vastaa asennetun ympäristön kokemusta."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "Puhdas asennus"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Poista kaikki ja asenna %s."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "Mukautettu (lisäasetukset)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -419,6 +406,10 @@ msgid ""
 msgstr ""
 "Uudelleenkäynnistyksen jälkeen voit luoda uuden käyttäjän, tai voit "
 "sammuttaa laitteen nyt ja luoda käyttäjän myöhemmin."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Sammuta"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -501,6 +492,18 @@ msgstr "Tiedostojärjestelmä:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Oletus (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Haluatko varmasti sammuttaa?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Tämä toiminto peruu asennuksen ja sammuttaa laitteen."
+
+#~ msgid "Restart"
+#~ msgstr "Käynnistä uudelleen"
+
+#~ msgid "Cancel"
+#~ msgstr "Peru"
 
 #~ msgid "Operating System"
 #~ msgstr "Käyttöjärjestelmä"

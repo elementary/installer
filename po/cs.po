@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-04-22 18:59+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr "Nelze nastavit Distinst log callback"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Začínám instalaci"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Opravdu chcete zařízení vypnout?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Tato akce přeruší instalaci a vypne toto zařízení."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Restartovat"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Vypnout"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -156,25 +135,33 @@ msgid "Drive Encryption"
 msgstr "Šifrování disku"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Zašifrování tohoto disku ochrání data před přečtením jiným člověkem, který "
 "by měl fyzický přístup k tomuto zařízení."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "Zašifrování disku může v minimální míře ovlivnit rychlost čtení a zápisu při "
 "vykonávání náročných operací."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "Šifrovací heslo bude vyžadováno pokaždé, když toto zařízení zapnete nebo "
 "restartujete."
@@ -250,7 +237,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr "Restartovat zařízení"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Vyzkoušet Demo režim"
 
@@ -340,19 +327,19 @@ msgstr "Špatný souborový systém pro kořenový adresář"
 msgid "Invalid file system for home"
 msgstr "Špatný souborový systém pro domovskou složku"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Vytvářím oddíly na disku"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Rozbaluji soubory"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "Konfiguruji systém"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "Dokončuji instalaci"
 
@@ -368,12 +355,12 @@ msgstr ""
 "Můžete nainstalovat %s na toto zařízení teď, nebo vyzkoušet Demo režim bez "
 "nutnosti instalace."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "Další"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -382,20 +369,20 @@ msgstr ""
 "nezměněná. Výkon a funkce však nemusí být přímo srovnatelné s plně "
 "nainstalovaným systémem."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "Čistá instalace"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Vymazat vše a nainstalovat čistou kopii %s."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "Vlastní (Pokročilé)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -419,6 +406,10 @@ msgid ""
 msgstr ""
 "Po dokončení restartu můžete vytvořit nového uživatele, nebo teď můžete "
 "zařízení vypnout a vytvořit uživatele později."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Vypnout"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -501,6 +492,18 @@ msgstr "Souborový systém:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Výchozí (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Opravdu chcete zařízení vypnout?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Tato akce přeruší instalaci a vypne toto zařízení."
+
+#~ msgid "Restart"
+#~ msgstr "Restartovat"
+
+#~ msgid "Cancel"
+#~ msgstr "Zrušit"
 
 #~ msgid "Operating System"
 #~ msgstr "Operační systém"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2018-10-14 04:26+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr "Impossibile impostare il callback del registro di Distinst"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Avvio dell'installazione"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Vuoi davvero spegnere il computer?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Questa azione annullerà l'installazione e spegnerà il dispositivo."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Riavvia"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Annulla"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Arresta"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -157,25 +136,33 @@ msgid "Drive Encryption"
 msgstr "Crittografia del disco"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "La crittografia del disco previene che i dati vengano letti da altre persone "
 "che hanno accesso fisico a questo dispositivo."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "La crittografia del disco può avere un impatto minimo sulla velocità di "
 "lettura e scrittura quando si eseguono attività intense."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "La password di crittografia ti verrà richiesta ogni volta che accendi o "
 "riavvii il dispositivo."
@@ -253,7 +240,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr "Riavvia il dispositivo"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Prova la Modalità Demo"
 
@@ -343,19 +330,19 @@ msgstr "Il file system per la root è invalido"
 msgid "Invalid file system for home"
 msgstr "Il file system per la directory home è invalido"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Partizionando il disco"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Estraendo i file"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "Configurando il sistema"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "Ultimando l'installazione"
 
@@ -371,12 +358,12 @@ msgstr ""
 "Puoi installare subito %s su questo dispositivo oppure provare la Modalità "
 "Demo senza installazione."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "Prossimo"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -385,20 +372,20 @@ msgstr ""
 "precedente sistema operativo rimarranno inalterati. Le prestazioni e le "
 "funzionalità potrebbero non riflettere l'esperienza di un sistema installato."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "Cancella tutto e installa"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Cancella tutto e installa una copia nuova di %s."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "Personalizzata (avanzata)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -422,6 +409,10 @@ msgid ""
 msgstr ""
 "Dopo il riavvio potrai configurare un nuovo utente, oppure puoi spegnere ora "
 "e configurare il nuovo utente più tardi."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Arresta"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -505,6 +496,18 @@ msgstr "Filesystem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Predefinito (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Vuoi davvero spegnere il computer?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Questa azione annullerà l'installazione e spegnerà il dispositivo."
+
+#~ msgid "Restart"
+#~ msgstr "Riavvia"
+
+#~ msgid "Cancel"
+#~ msgstr "Annulla"
 
 #~ msgid "Operating System"
 #~ msgstr "Sistema Operativo"

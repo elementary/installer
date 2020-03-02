@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2018-04-22 00:04+0000\n"
 "Last-Translator: Morteza Khazamipour <mormoroth@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr ""
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "شروع نصب"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "آیا از خاموش کردن سیستم اطمینان دارید ؟"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "با این عمل نصب کنسل خواهد شد و دستگاه خاموش میگردد."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "بارگذاری مجدد"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "لغو"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "خاموش کردن"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -156,21 +135,17 @@ msgid "Drive Encryption"
 msgstr ""
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 
 #: src/Views/EncryptView.vala:67
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 
 #: src/Views/EncryptView.vala:83
@@ -242,7 +217,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr "راه اندازی مجدد دستگاه"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "حالت دمو"
 
@@ -329,19 +304,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "پارتشن بندی فضای حافظه"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "استخراج فایل ها"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "پیکره بندی سیستم"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "اتمام نصب"
 
@@ -358,12 +333,12 @@ msgstr ""
 "میتوانید %s را الان روی این دستگاه نصب کنید، یا از نسخه ی دمو بدون نصب "
 "استفاده کنید."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 #, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
@@ -373,21 +348,21 @@ msgstr ""
 "بدون تغییر خواهد ماند. کارایی و ویژگی ها همانند نسخه نصبی قابل لمس نخواهد "
 "بود."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 #, fuzzy
 msgid "Clean Install"
 msgstr "پاک کردن و نصب"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -409,6 +384,10 @@ msgid ""
 msgstr ""
 "بعد از بارگذاری میتوانید نام کاربری جدید بسازید، یا خاموش کنید و بعدا نام "
 "کاربری را انتخاب کنید."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "خاموش کردن"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -491,6 +470,18 @@ msgstr ""
 #, fuzzy
 msgid "Default (ext4)"
 msgstr "پیشفرض"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "آیا از خاموش کردن سیستم اطمینان دارید ؟"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "با این عمل نصب کنسل خواهد شد و دستگاه خاموش میگردد."
+
+#~ msgid "Restart"
+#~ msgstr "بارگذاری مجدد"
+
+#~ msgid "Cancel"
+#~ msgstr "لغو"
 
 #~ msgid "Operating System"
 #~ msgstr "سیستم عامل"

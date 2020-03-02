@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2018-06-04 00:08+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/installer/"
@@ -45,27 +45,6 @@ msgstr ""
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Начало установки"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Вы уверены, что хотите завершить работу?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Это приведёт к отмене установки и выключению данного устройства."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Перезагрузить"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Отменить"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Выключить"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -157,25 +136,33 @@ msgid "Drive Encryption"
 msgstr "Шифрование диска"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Шифрование этого диска защитит данные от чтения теми, кто имеет физический "
 "доступ к этому устройству."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "Шифрование диска можно минимально повлиять на скорость чтения и записи при "
 "выполнении сложных задач."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "Пароль шифрования будет необходимо вводить каждый раз при включении или "
 "перезагрузке этого устройства."
@@ -248,7 +235,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr ""
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr ""
 
@@ -336,19 +323,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr ""
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr ""
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr ""
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr ""
 
@@ -363,32 +350,32 @@ msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 #, fuzzy
 msgid "Clean Install"
 msgstr "Стереть и установить"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -408,6 +395,10 @@ msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Выключить"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -490,6 +481,18 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr ""
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Вы уверены, что хотите завершить работу?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Это приведёт к отмене установки и выключению данного устройства."
+
+#~ msgid "Restart"
+#~ msgstr "Перезагрузить"
+
+#~ msgid "Cancel"
+#~ msgstr "Отменить"
 
 #~ msgid "Operating System"
 #~ msgstr "Операционной системы"

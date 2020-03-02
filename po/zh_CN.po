@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-08-28 10:22+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -44,27 +44,6 @@ msgstr "无法设置 Distinst 日志回调"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "开始安装"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "您确定要关机吗？"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "这将会取消安装并关闭您的设备。"
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "重启"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "取消"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "关闭"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -150,21 +129,29 @@ msgid "Drive Encryption"
 msgstr "硬盘加密"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr "加密此硬盘，使数据无法被他人以物理方式获取。"
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr "硬盘加密可能会对有大量读写操作的任务产生影响。"
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr "每次开机或重启都需要输入密码。"
 
 #: src/Views/EncryptView.vala:83
@@ -238,7 +225,7 @@ msgstr "详情"
 msgid "Restart Device"
 msgstr "重启设备"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "进入试用模式"
 
@@ -327,19 +314,19 @@ msgstr "Root 文件系统不可用"
 msgid "Invalid file system for home"
 msgstr "主页（Home）文件系统不可用"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "硬盘分区中"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "正在解压文件"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "正在配置系统"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "正在完成安装"
 
@@ -353,12 +340,12 @@ msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr "您可以现在就安装 %s 到您的设备，也可以进入试用模式。"
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "继续"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -366,20 +353,20 @@ msgstr ""
 "在试用模式下，您的操作不会被保存，设备内原有的文件数据也不会被修改。试用模式"
 "下性能和功能无法代表实际安装体验。"
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "全新安装"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "格式化所有内容并全新安装 %s。"
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "自定义（高级选项）"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -400,6 +387,10 @@ msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr "您可以重启并设置新用户，也可以直接关闭设备。"
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "关闭"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -481,6 +472,18 @@ msgstr "文件系统："
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "默认（ext4）"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "您确定要关机吗？"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "这将会取消安装并关闭您的设备。"
+
+#~ msgid "Restart"
+#~ msgstr "重启"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
 #~ msgid "Operating System"
 #~ msgstr "操作系统"

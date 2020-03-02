@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-07-07 13:46+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr "वेगळा लॉग कॉलबॅक सेट करण्य�
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "स्थापना(इंस्टॉलेशन) सुरू करत आहे"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "आपणास खात्री आहे की आपण बंद करू इच्छिता?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "हे स्थापना रद्द करेल आणि हे डिव्हाइस बंद करेल."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "पुनरारंभ"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "रद्द करा"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "बंद"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -155,23 +134,31 @@ msgid "Drive Encryption"
 msgstr "ड्राइव्ह एन्क्रिप्शन"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "या ड्राइव्हला कूटबद्ध करणे या डिव्हाइसवरील प्रत्यक्ष प्रवेशासह इतरांद्वारे वाचण्यापासून डेटा "
 "संरक्षित करते."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr "तीव्र कार्ये करताना ड्राइव्ह एन्क्रिप्शन कमीत कमी वाचन आणि लेखन प्रभावित करू शकते."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "प्रत्येक वेळी आपण हे डिव्हाइस चालू करता किंवा रीस्टार्ट करता तेव्हा एन्क्रिप्शन पासवर्ड "
 "आवश्यक असेल."
@@ -248,7 +235,7 @@ msgstr "तपशील"
 msgid "Restart Device"
 msgstr "डिव्हाइस रीस्टार्ट करा"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "डेमो मोड वापरून पहा"
 
@@ -338,19 +325,19 @@ msgstr "रूटसाठी ही अवैध फाइल सिस्ट�
 msgid "Invalid file system for home"
 msgstr "होमसाठी ही अवैध फाइल सिस्टम आहे"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "विभाजन ड्राइव्ह"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "फायली काढत आहे"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "सिस्टम कॉन्फिगर करत आहे"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "इंस्टॉलेशन पूर्ण करीत आहे"
 
@@ -365,12 +352,12 @@ msgid ""
 msgstr ""
 "आपण या डिव्हाइसवर %s  इन्स्टॉल करू शकता किंवा  इन्स्टॉल केल्याशिवाय डेमो मोड वापरून पहा."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "पुढे"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -378,20 +365,20 @@ msgstr ""
 "बदल जतन केले जाणार नाहीत आणि आपल्या मागील OS वरील डेटा अपरिवर्तित केला जाईल. "
 "कार्यप्रदर्शन आणि वैशिष्ट्ये स्थापित अनुभवास परावर्तित करू शकत नाहीत."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "स्वच्छतेने इन्स्टॉल करा"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "सर्व काही मिटवा आणि %s ची ताजी प्रत इन्स्टॉल करा."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "सानुकूल (प्रगत)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -415,6 +402,10 @@ msgid ""
 msgstr ""
 "रीस्टार्ट केल्यानंतर आपण एक नवीन वापरकर्ता सेट करू शकता किंवा आपण आता बंद करू शकता आणि "
 "नंतर नवीन वापरकर्ता सेट करू शकता."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "बंद"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -496,6 +487,18 @@ msgstr "फाइलसिस्टम:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "डीफॉल्ट(ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "आपणास खात्री आहे की आपण बंद करू इच्छिता?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "हे स्थापना रद्द करेल आणि हे डिव्हाइस बंद करेल."
+
+#~ msgid "Restart"
+#~ msgstr "पुनरारंभ"
+
+#~ msgid "Cancel"
+#~ msgstr "रद्द करा"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

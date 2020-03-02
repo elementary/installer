@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-12-30 06:47+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr "Kan de Distinst log callback niet instellen"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Installatie starten"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Bent u zeker dat u het systeem wilt afsluiten?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Dit zal de installatie annuleren en dit apparaat afsluiten."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Herstarten"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Afsluiten"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -157,25 +136,33 @@ msgid "Drive Encryption"
 msgstr "Encryptie van de schijf"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Door deze schijf te versleutelen door middel van encryptie, kunnen gegevens "
 "niet worden gelezen door anderen met fysieke toegang tot dit apparaat."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "Encryptie van de schijf heeft mogelijk een minimale invloed op lees- en "
 "schrijfsnelheid wanneer u zware taken uitvoert."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "Het encryptiewachtwoord is vereist telkens wanneer u dit apparaat inschakelt "
 "of herstart."
@@ -252,7 +239,7 @@ msgstr "Details"
 msgid "Restart Device"
 msgstr "Herstart toestel"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Probeer de demonstratiemodus"
 
@@ -344,19 +331,19 @@ msgstr "Ongeldig bestandssysteem voor root"
 msgid "Invalid file system for home"
 msgstr "Ongeldig bestandssysteem voor home-folder"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Schijf partitioneren"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Bestanden uitpakken"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "Systeem configureren"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "Installatie afronden"
 
@@ -372,12 +359,12 @@ msgstr ""
 "U kunt nu %s installeren op uw toestel, of probeer de demonstratiemodus uit "
 "zonder installatie."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "Volgende"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -388,20 +375,20 @@ msgstr ""
 "beeld zijn van de ervaring van een daadwerkelijke installatie van dit "
 "besturingssysteem."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "Schone installatie"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Wis alles en installeer een nieuwe kopie van %s."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "Aangepast (Geavanceerd)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -426,6 +413,10 @@ msgid ""
 msgstr ""
 "Na het opnieuw opstarten kunt u een nieuwe gebruiker aanmaken, of zet uw "
 "apparaat uit om later een gebruiker aan te maken."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Afsluiten"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -509,6 +500,18 @@ msgstr "Bestandsysteem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Standaard (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Bent u zeker dat u het systeem wilt afsluiten?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Dit zal de installatie annuleren en dit apparaat afsluiten."
+
+#~ msgid "Restart"
+#~ msgstr "Herstarten"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuleren"
 
 #~ msgid "Operating System"
 #~ msgstr "Besturingssysteem"

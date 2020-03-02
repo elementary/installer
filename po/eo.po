@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-07-14 20:46+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr "Neeblas difini la protokolon Distinst"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Komencas instalo"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Ĉu vi certas pri malŝalto?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Tio rezignos instalon kaj malŝaltos la aparaton."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Restartigi"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Rezigni"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Malŝalti"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -155,26 +134,35 @@ msgid "Drive Encryption"
 msgstr "Memoruja ĉifrado"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Ĉifranta ĉi memorujon protektas datumojn kontraŭ legado de aliuloj kapablaj "
 "fizike atingi ĉi aparaton."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "Ĉifrado de memorujo povas iomete influi rapidecon legi kaj skribi, dum "
 "intensaj taskoj."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
-msgstr "La ĉifra pasvorto estos petata je ĉiu ŝalto kaj malŝalto de la aparato."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
+msgstr ""
+"La ĉifra pasvorto estos petata je ĉiu ŝalto kaj malŝalto de la aparato."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -182,8 +170,9 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"Se vi forgesas la ĉifran pasvorton, <b>vi ne sukcesos rehavi la datumojn.</b>"
-" Tio estu pasvorto unika por la aparato, ĝi ne estu la uzantokonta pasvorto."
+"Se vi forgesas la ĉifran pasvorton, <b>vi ne sukcesos rehavi la datumojn.</"
+"b> Tio estu pasvorto unika por la aparato, ĝi ne estu la uzantokonta "
+"pasvorto."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
@@ -247,7 +236,7 @@ msgstr "Detaloj"
 msgid "Restart Device"
 msgstr "Restartigi la aparaton"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Testi la Provoversion"
 
@@ -337,19 +326,19 @@ msgstr "Nevalida radika dosiersistemo"
 msgid "Invalid file system for home"
 msgstr "Nevalida dosiersistemo de hejmo"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Submemorigo"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Malkompaktiganta dosierojn"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "Agordanta la sistemon"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "Finanta instalon"
 
@@ -364,12 +353,12 @@ msgid ""
 msgstr ""
 "Eblas nun instali %s sur la aparato, aŭ testi la Provoversion sen instali."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "Sekva"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -378,20 +367,20 @@ msgstr ""
 "Rendimento kaj funkcioj ne reprezentas tiujn de efektive instalita "
 "operaciumo."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "Pura instalo"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Forigi ĉion kaj instali freŝan version de %s."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "Tajlorita (spertula)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -415,6 +404,10 @@ msgid ""
 msgstr ""
 "Post restarto, eblos agordi novan uzanton, aŭ eblas malŝalti nun kaj agordi "
 "novan uzanton, alian fojon."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Malŝalti"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -498,6 +491,18 @@ msgstr "Dosiersistemo:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Apriore (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Ĉu vi certas pri malŝalto?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Tio rezignos instalon kaj malŝaltos la aparaton."
+
+#~ msgid "Restart"
+#~ msgstr "Restartigi"
+
+#~ msgid "Cancel"
+#~ msgstr "Rezigni"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2018-08-29 00:03+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/installer/"
@@ -49,27 +49,6 @@ msgstr "Der Distinst-Protokoll-Rückruf konnte nicht festgelegt werden"
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "Starte Installation"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Sind Sie sicher, dass Sie herunterfahren wollen?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Dadurch wird die Installation abgebrochen und das Gerät ausgeschaltet."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Neu starten"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Herunterfahren"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -162,25 +141,33 @@ msgid "Drive Encryption"
 msgstr "Laufwerksverschlüsselung"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Das Verschlüsseln dieses Laufwerkes schützt Ihre Daten vor Personen, die "
 "physikalischen Zugriff auf dieses Gerät haben."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "Die Laufwerksverschlüsselung kann die Lese- und Schreibgeschwindigkeit bei "
 "intensiver Nutzung leicht beeinflussen."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "Das Verschlüsselungspasswort wird bei jedem Einschalten oder Neustart des "
 "Geräts benötigt."
@@ -260,7 +247,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr "Gerät neu starten"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Test-Modus ausprobieren"
 
@@ -351,19 +338,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "Partitioniere Laufwerk"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "Entpacke Dateien"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "Konfiguration des Systems"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "Abschluss der Installation"
 
@@ -380,12 +367,12 @@ msgstr ""
 "Sie können %s jetzt auf diesem Gerät installieren, oder den Test-Modus ohne "
 "Installation ausprobieren."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 #, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
@@ -395,21 +382,21 @@ msgstr ""
 "vorherigen Betriebssystems bleiben unverändert. Leistung und Funktionen "
 "spiegeln möglicherweise nicht die installierte Erfahrung wider."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 #, fuzzy
 msgid "Clean Install"
 msgstr "Löschen und Installieren"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -431,6 +418,10 @@ msgid ""
 msgstr ""
 "Nach dem Neustart können Sie einen neuen Benutzer einrichten oder erledigen "
 "dies später, wenn sie jetzt Herunterfahren."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "Herunterfahren"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -515,6 +506,19 @@ msgstr "Dateisystem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Standard (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Sind Sie sicher, dass Sie herunterfahren wollen?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr ""
+#~ "Dadurch wird die Installation abgebrochen und das Gerät ausgeschaltet."
+
+#~ msgid "Restart"
+#~ msgstr "Neu starten"
+
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
 
 #~ msgid "Operating System"
 #~ msgstr "Betriebssystem"

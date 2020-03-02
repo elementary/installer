@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-06-26 18:53+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -40,27 +40,6 @@ msgstr ""
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr ""
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr ""
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr ""
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr ""
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr ""
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
 msgstr ""
 
 #: src/Views/AbstractInstallerView.vala:49
@@ -145,21 +124,17 @@ msgid "Drive Encryption"
 msgstr ""
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 
 #: src/Views/EncryptView.vala:67
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 
 #: src/Views/EncryptView.vala:83
@@ -229,7 +204,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr ""
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr ""
 
@@ -315,19 +290,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr ""
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr ""
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr ""
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr ""
 
@@ -341,31 +316,31 @@ msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -384,6 +359,10 @@ msgstr ""
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
+msgstr ""
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
 msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:54

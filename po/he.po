@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2020-03-02 08:49-0800\n"
 "PO-Revision-Date: 2019-10-27 09:23+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
@@ -44,27 +44,6 @@ msgstr "לא ניתן להגדיר את ערך החזרה מהיומן של Dist
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
 msgstr "ההתקנה מתחילה"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "לכבות את המחשב?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "פעולה זו תבטל את ההתקנה ותכבה את ההתקן הזה."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "הפעלה מחדש"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "ביטול"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "כיבוי"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -153,24 +132,32 @@ msgid "Drive Encryption"
 msgstr "הצפנת כונן"
 
 #: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "הצפנת כונן זה מגנה על הנתונים מפני קריאה של גופים זרים שיש להם גישה פיזית "
 "להתקן זה."
 
 #: src/Views/EncryptView.vala:60
-msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+#, fuzzy
+#| msgid ""
+#| "Drive encryption may minimally impact read and write speed when "
+#| "performing intense tasks."
+msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
 "הצפנת כונן עשויה להשפיע קלות על מהירות הקריאה והכתיבה בעת ביצוע משימות כבדות."
 
 #: src/Views/EncryptView.vala:67
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr "ססמת ההצפנה תידרש עם כל הפעלה או הפעלה מחדש של התקן זה."
 
 #: src/Views/EncryptView.vala:83
@@ -244,7 +231,7 @@ msgstr "פרטים"
 msgid "Restart Device"
 msgstr "הפעלת ההתקן מחדש"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "התנסות במצב הדגמה"
 
@@ -333,19 +320,19 @@ msgstr "מערכת הקבצים למחיצת השורש שגויה"
 msgid "Invalid file system for home"
 msgstr "מערכת הקבצים למחיצת הבית שגויה"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
 msgstr "הכונן מחולק למחיצות"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
 msgstr "הקבצים מחולצים"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
 msgstr "המערכת מוגדרת"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
 msgstr "ההתקנה מסתיימת"
 
@@ -359,12 +346,12 @@ msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr "ניתן להתקין את %s על התקן זה כעת, או לנסות את מצב ההדגמה מבלי להתקין."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "הבא"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -372,20 +359,20 @@ msgstr ""
 "השינויים שייערכו לא יישמרו ונתונים ממערכת ההפעלה הקודמת שלך לא יושפעו. "
 "הביצועים והתכונות לא משקפים באופן מלא את החוויה ממערכת מותקנת."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "התקנה נקייה"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "למחוק הכול ולהתקין עותק רענן של %s."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "התאמה אישית (מתקדם)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -409,6 +396,10 @@ msgid ""
 msgstr ""
 "לאחר ההפעלה מחדש ניתן להקים משתמש חדש, או שניתן לכבות את ההתקן כעת ולהקים "
 "משתמש חדש מאוחר יותר."
+
+#: src/Views/SuccessView.vala:55
+msgid "Shut Down"
+msgstr "כיבוי"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
@@ -491,6 +482,18 @@ msgstr "מערכת קבצים:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "בררת מחדל (ext4)"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "לכבות את המחשב?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "פעולה זו תבטל את ההתקנה ותכבה את ההתקן הזה."
+
+#~ msgid "Restart"
+#~ msgstr "הפעלה מחדש"
+
+#~ msgid "Cancel"
+#~ msgstr "ביטול"
 
 #~ msgid "Operating System"
 #~ msgstr "מערכת הפעלה"
