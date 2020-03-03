@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2019-07-07 13:46+0000\n"
+"PO-Revision-Date: 2020-03-04 13:09+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -137,36 +137,24 @@ msgid "Drive Encryption"
 msgstr "Chiffrement du disque"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Le chiffrement de ce lecteur empêche les données d'être lues par d'autres "
-"personnes ayant un accès physique à ce périphérique."
+"Les données seront protégées en lecture des autres personnes ayant un accès "
+"physique à ce périphérique."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"Le chiffrement des lecteurs peut avoir un impact minime sur la vitesse de "
-"lecture et d'écriture lors de l'exécution de tâches intensives."
+"La vitesse de lecture et d'écriture pourrait être légèrement impactée lors "
+"de l'exécution de tâches intensives."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
 "Le mot de passe de chiffrement sera nécessaire chaque fois que vous "
-"allumerez ou redémarrerez cet appareil."
+"allumerez cet appareil. Stockez le dans un endroit sûr."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
