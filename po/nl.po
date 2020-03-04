@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2019-12-30 06:47+0000\n"
+"PO-Revision-Date: 2020-03-06 11:09+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -136,36 +136,23 @@ msgid "Drive Encryption"
 msgstr "Encryptie van de schijf"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Door deze schijf te versleutelen door middel van encryptie, kunnen gegevens "
-"niet worden gelezen door anderen met fysieke toegang tot dit apparaat."
+"Gegevens worden beschermd tegen anderen met fysieke toegang tot dit apparaat."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"Encryptie van de schijf heeft mogelijk een minimale invloed op lees- en "
-"schrijfsnelheid wanneer u zware taken uitvoert."
+"De lees- en schrijfsnelheid worden mogelijk minimaal beïnvloed wanneer u "
+"zware taken uitvoert."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"Het encryptiewachtwoord is vereist telkens wanneer u dit apparaat inschakelt "
-"of herstart."
+"Het encryptiewachtwoord is vereist telkens wanneer u dit apparaat "
+"inschakelt. Bewaar dit wachtwoord op een veilige plek."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
