@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2019-07-10 02:46+0000\n"
+"PO-Revision-Date: 2020-03-06 11:09+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
 "installer/pt/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -135,36 +135,23 @@ msgid "Drive Encryption"
 msgstr "Encriptação do Disco"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Encriptar este disco protege os dados de serem lidos por outros com acesso "
-"físico a este dispositivo."
+"Os dados serão protegidos de outros com acesso físico a este dispositivo."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"A encriptação de disco pode ter um impacto mínimo nas velocidades de leitura "
-"e escrita ao correr tarefas intensas."
+"As velocidades de leitura e escrita podem sofrer um impacto mínimo durante "
+"tarefas intensas."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"A palavra-passe de encriptação será requerida cada vez que ligue ou reinicie "
-"este dispositivo."
+"A palavra-passe de encriptação será necessária sempre que este dispositivo "
+"for ligado. Guarde-a num lugar seguro."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
