@@ -14,7 +14,7 @@ Build-Depends: debhelper (>= 9),
                libxml2-dev,
                libxml2-utils,
                meson,
-               valac (>= 0.26),
+               valac (>= 0.26)
 Standards-Version: 3.9.6
 Homepage: https://github.com/elementary/installer
 
