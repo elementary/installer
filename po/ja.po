@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-01-25 15:08+0000\n"
+"PO-Revision-Date: 2020-03-08 11:09+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -136,36 +136,18 @@ msgid "Drive Encryption"
 msgstr "ドライブの暗号化"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
-msgstr ""
-"ドライブを暗号化することで、ほかの人がこのデバイスに物理的にアクセスしデータ"
-"を読み取ることを防止します。"
+msgstr "ほかの人がこのデバイスに物理的にアクセスできないように、データを保護します。"
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
-"ドライブの暗号化は、負荷のかかるタスクを実行する際に、わずかに読み書き速度に"
-"影響を及ぼす可能性があります。"
+msgstr "負荷のかかるタスクを実行する際に、わずかに読み書き速度に影響が出る可能性があります。"
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
-msgstr ""
-"暗号化のパスワードはこのデバイスの電源を入れたり再起動したりする度に要求され"
-"ます。"
+msgstr "暗号化のパスワードはこのデバイスの電源を入れる度に要求されます。安全な場所に保管してください。"
 
 #: src/Views/EncryptView.vala:83
 msgid ""
