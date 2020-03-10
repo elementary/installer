@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2019-07-07 13:46+0000\n"
+"PO-Revision-Date: 2020-03-11 18:09+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/installer/"
 "installer/mr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:44
@@ -134,34 +134,20 @@ msgid "Drive Encryption"
 msgstr "ड्राइव्ह एन्क्रिप्शन"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
-msgstr ""
-"या ड्राइव्हला कूटबद्ध करणे या डिव्हाइसवरील प्रत्यक्ष प्रवेशासह इतरांद्वारे वाचण्यापासून डेटा "
-"संरक्षित करते."
+msgstr "या डिव्हाइसवर नैसर्गिक प्रवेशासह डेटा इतरांपासून संरक्षित केला जाईल."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr "तीव्र कार्ये करताना ड्राइव्ह एन्क्रिप्शन कमीत कमी वाचन आणि लेखन प्रभावित करू शकते."
+msgstr "तीव्र कार्ये दरम्यान वाचन आणि लेखन गतीवर अत्यल्प परिणाम होऊ शकतो."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"प्रत्येक वेळी आपण हे डिव्हाइस चालू करता किंवा रीस्टार्ट करता तेव्हा एन्क्रिप्शन पासवर्ड "
-"आवश्यक असेल."
+"हे डिव्हाइस प्रत्येक वेळी चालू केल्यावर एन्क्रिप्शन संकेतशब्द आवश्यक असेल. तो"
+" कोठेतरी सुरक्षित ठेवा."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
