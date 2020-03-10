@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-01-12 04:07+0000\n"
+"PO-Revision-Date: 2020-03-11 18:09+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
 "installer/ar/>\n"
@@ -118,9 +118,8 @@ msgstr ""
 "بعمل نسخة احتياطية من بياناتك ، فيمكنك إلغاء التثبيت واستخدام الوضع التجريبي."
 
 #: src/Views/DiskView.vala:65
-#, fuzzy
 msgid "Getting the current configuration…"
-msgstr "الحصول على التكوين الحالي …"
+msgstr "الحصول على الإعدادات الحالية …"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
