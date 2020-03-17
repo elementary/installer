@@ -1,3 +1,5 @@
+autostartdir = join_paths(get_option('sysconfdir'), 'xdg', 'autostart')
+
 i18n.merge_file(
     input: meson.project_name() + '.desktop.in',
     output: meson.project_name() + '.desktop',
@@ -14,20 +16,26 @@ install_data(
 
 install_data(
     'autostart.desktop',
-    install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart'),
+    install_dir: autostartdir,
     rename: meson.project_name() + '.desktop'
 )
 
 install_data(
     'compositor-autostart.desktop',
-    install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart'),
+    install_dir: autostartdir,
     rename: meson.project_name() + '.compositor.desktop'
 )
 
 install_data(
     'wingpanel-autostart.desktop',
-    install_dir: join_paths(get_option('sysconfdir'), 'xdg', 'autostart'),
+    install_dir: autostartdir,
     rename: meson.project_name() + '.panel.desktop'
+)
+
+install_subdir(
+    'gsd',
+    install_dir: autostartdir,
+    strip_directory: true
 )
 
 install_data(
