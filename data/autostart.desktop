@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Installer
-Exec=io.elementary.installer
+Exec=sh -c "pkexec env XDG_SEAT_PATH\=\$XDG_SEAT_PATH DISPLAY\=\$DISPLAY XAUTHORITY\=\$XAUTHORITY io.elementary.installer"
 Terminal=false
 Type=Application
 X-GNOME-Autostart-Notify=false
