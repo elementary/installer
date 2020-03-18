@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-03-11 18:09+0000\n"
+"PO-Revision-Date: 2020-03-19 23:09+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
 "installer/ar/>\n"
@@ -152,7 +152,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "إختر كلمة سر مشفرة"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
@@ -160,7 +160,7 @@ msgstr "تأكيد كلمة المرور"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "لا تشفر"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
@@ -169,19 +169,19 @@ msgstr "للخلف"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
-msgstr ""
+msgstr "إختر كلمة السر"
 
 #: src/Views/EncryptView.vala:169
 msgid "Set Password"
-msgstr ""
+msgstr "حدد كلمة السر"
 
 #: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
-msgstr ""
+msgstr "كلمتا المرور غير متطابقتين"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
-msgstr ""
+msgstr "تعذر التثبيت"
 
 #: src/Views/ErrorView.vala:38
 #, c-format
@@ -192,19 +192,19 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• حاول التثبيت مرة أخرى"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• استخدم الوضع التجريبي وحاول الإستعادة يدويًا"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• أعد تشغيل جهازك للإقلاع من محرك أقراص آخر"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "التفاصيل"
 
 #: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
