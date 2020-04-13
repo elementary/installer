@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2019-07-18 02:24+0000\n"
+"PO-Revision-Date: 2020-04-14 14:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -135,34 +135,22 @@ msgid "Drive Encryption"
 msgstr "Levyn salaus"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
-msgstr ""
-"Levyn salaaminen suojaa siinä olevia tietoja muilta ihmisiltä, joilla on "
-"fyysinen pääsy tähän laitteeseen."
+msgstr "Tiedot suoajataan muilta, joilla on fyysinen pääsy tälle laitteelle."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"Levyn salaaminen saattaa vaikuttaa vähäisesti luku- ja kirjoitusnopeuteen "
-"kesken vaativien tehtävien."
+"Luku- ja kirjoitusnopeudet voivat laskea minimaalisesti vaativissa "
+"toimenpiteissä."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
-msgstr "Salauksen salasana vaaditaan joka kerta, kun tämä laite käynnistetään."
+msgstr ""
+"Salauksen salasana vaaditaan joka kerta, kun tämä laite käynnistetään. "
+"Talleta se jonnekin turvallisesti."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
