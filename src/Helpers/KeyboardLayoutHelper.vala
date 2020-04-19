@@ -17,15 +17,26 @@
  */
 
 namespace KeyboardLayoutHelper {
+    public const string XKB_RULES_FILE = "base.xml";
+
     public struct Layout {
         public string name;
         public string description;
         public Gee.HashMap<string, string> variants;
     }
 
+    public string get_xml_rules_file_path () {
+        unowned string? base_path = GLib.Environment.get_variable ("XKB_CONFIG_ROOT");
+        if (base_path == null) {
+            base_path = Build.XKB_BASE;
+        }
+
+        return Path.build_filename (base_path, "rules", XKB_RULES_FILE);
+    }
+
     public static Gee.LinkedList<Layout?> get_layouts () {
         var layouts = new Gee.LinkedList<Layout?> ();
-        unowned Xml.Doc* doc = Xml.Parser.read_file ("/usr/share/X11/xkb/rules/base.xml");
+        unowned Xml.Doc* doc = Xml.Parser.read_file (get_xml_rules_file_path ());
         Xml.Node* root = doc->get_root_element ();
         Xml.Node* layout_list_node = get_xml_node_by_name (root, "layoutList");
         if (layout_list_node == null) {
