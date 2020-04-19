@@ -1,7 +1,7 @@
 project('io.elementary.installer', 'vala', 'c')
 
 add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', language:'c')
-add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], 
+add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')],
                       language: 'vala')
 
 gnome = import('gnome')
@@ -16,7 +16,7 @@ granite_dep = dependency('granite', version: '>=0.5')
 json_glib_dep = dependency('json-glib-1.0')
 xml2_dep = dependency('libxml-2.0')
 gnome_keyboard_dep = dependency('libgnomekbd')
-gnome_keyboard_ui_dep = meson.get_compiler('c').find_library('libgnomekbdui')
+gnome_keyboard_ui_dep = meson.get_compiler('c').find_library('gnomekbdui')
 pwquality_dep = dependency('pwquality')
 
 dependencies = [
