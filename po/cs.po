@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-05-07 23:10+0000\n"
+"PO-Revision-Date: 2020-05-11 13:10+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
 "installer/cs/>\n"
@@ -135,36 +135,23 @@ msgid "Drive Encryption"
 msgstr "Šifrování disku"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Zašifrování tohoto disku ochrání data před přečtením jiným člověkem, který "
-"by měl fyzický přístup k tomuto zařízení."
+"Data budou chráněna před ostatními, kteří mají fyzický přístup k zařízení."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"Zašifrování disku může v minimální míře ovlivnit rychlost čtení a zápisu při "
-"vykonávání náročných operací."
+"Při vykonávání náročných operací může šifrování disku v minimální míře "
+"ovlivnit rychlost čtení a zápisu."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"Šifrovací heslo bude vyžadováno pokaždé, když toto zařízení zapnete nebo "
-"restartujete."
+"Šifrovací heslo bude vyžadováno pokaždé, když toto zařízení zapnete. Uložte "
+"si ho někde bezpečně."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
