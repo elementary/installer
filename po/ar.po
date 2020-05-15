@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-03-19 23:09+0000\n"
+"PO-Revision-Date: 2020-05-16 03:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
 "installer/ar/>\n"
@@ -23,15 +23,15 @@ msgstr "تثبيت %s"
 
 #: src/Utils.vala:50
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "ايقاف تشغيل الوضع التجريبي"
 
 #: src/Utils.vala:64
 msgid "Test mode reboot"
-msgstr ""
+msgstr "إعادة تشغيل الوضع التجريبي"
 
 #: src/Utils.vala:78
 msgid "Test mode switch user"
-msgstr ""
+msgstr "تبديل حسابات الوضع التجريبي"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
@@ -40,7 +40,7 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr ""
+msgstr "‏غير قادر على ضبط (Distinst log callback)"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -52,7 +52,7 @@ msgstr "إلغاء التثبيت"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
-msgstr ""
+msgstr "الوضع التجريبي"
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
@@ -67,27 +67,29 @@ msgstr "لا يوجد مساحة كافية"
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
-msgstr ""
+msgstr "ليس هناك مساحة كافية لتثبيت %s. ننصح باتاحة مساحة %s على الأقل."
 
 #: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "قد يكون جهازك بطيئا جدا"
 
 #: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"جهازك لا يطابق المواصفات المقترحة. هذا قد يسبب بطء في الجهاز أو توقف في عمله."
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "اشبك منفذ طاقة"
 
 #: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"جهازك يعمل الآن على البطارية. من المفضل أن توصله بمنفذ طاقة خلال التثبيت."
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
@@ -127,21 +129,22 @@ msgstr "امسح و ثبت"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
-msgstr ""
+msgstr "تشفير القرص"
 
 #: src/Views/EncryptView.vala:53
 msgid "Data will be protected from others with physical access to this device."
-msgstr ""
+msgstr "البيانات ستكون محمية من الآخرين مع سماح للوصول بشكل فيزيائي."
 
 #: src/Views/EncryptView.vala:60
 msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
+msgstr "سرعة القراءة والكتابة قد تتأثر بشكل بسيط‏ عند القيام بعمليات ثقيلة."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
+"كلمة سر التشفير ستكون مطلوبة في كل مرة تقوم بفتح الجهاز. احفظها بمكان آمن."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -149,6 +152,8 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"إذا نسيت كلمة سر التشفير، <b> لن تكون قادرا على استعادة البيانات.</b> كلمة "
+"سر هذه مميزة للقرص الخاص بك، ليست كلمة السر الخاصة بحسابك."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
@@ -189,6 +194,8 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
+"تثبيت %s قد فشل، يحتمل أن يكون خطأ بسبب مشكلة فيزيائية. جهازك قد لا يعيد "
+"التشغيل بشكل صحيح. يمكنك محاولة التالي:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -208,27 +215,27 @@ msgstr "التفاصيل"
 
 #: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
-msgstr ""
+msgstr "أعد تشغيل الجهاز"
 
 #: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "جرب النسخة التجريبية"
 
 #: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
-msgstr ""
+msgstr "جرب إعادة التثبيت"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "تخطيط لوحة المفاتيح"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "اكتب لاختبار تخطيطك"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "اظهر تخطيط لوحة المفاتيح"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
@@ -252,7 +259,7 @@ msgstr "اختر اللغة"
 
 #: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
 msgid "Currently active language"
-msgstr ""
+msgstr "اللغة المفعلة حاليا"
 
 #: src/Views/PartitioningView.vala:54
 msgid ""
@@ -325,7 +332,7 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
-msgstr ""
+msgstr "التالي"
 
 #: src/Views/TryInstallView.vala:77
 msgid ""
