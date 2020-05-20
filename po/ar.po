@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-05-16 03:10+0000\n"
+"PO-Revision-Date: 2020-05-21 13:11+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
 "installer/ar/>\n"
@@ -266,11 +266,13 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"اختر أي قسم ليتم استخدامه من بين جميع الأقراص. <b> عند اختيار “اعادة التهيئة”"
+" سيقوم بإزالة جميع البيانات في القسم الذي تم تحديده.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "يجب على الأقل اختيار قسم الجذر <b> Root (/) </b>."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -278,6 +280,7 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"يجب على الأقل اختيار قسم <b>الجذر (/)</b> وقسم <b>الاقلاع (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -285,39 +288,39 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "تعديل للأقسام…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "يحتوي قسم EFI على نظام ملفات خاطئ"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "قسم EFI صغير جدًا"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "نظام الملفات غير صالح للجذر"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "نظام الملفات غير صالح لمجلد المنزل"
 
 #: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "جاري قسم القرص"
 
 #: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
-msgstr ""
+msgstr "استخراج الملفات"
 
 #: src/Views/ProgressView.vala:443
 msgid "Configuring the System"
-msgstr ""
+msgstr "تخصيص النظام"
 
 #: src/Views/ProgressView.vala:447
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "الانتهاء من التثبيت"
 
 #: src/Views/TryInstallView.vala:44
 msgid "Try or Install"
@@ -328,6 +331,7 @@ msgstr "تثبيت أو جرب"
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"يمكنك تثبيت %s على الجهاز الآن، أو يمكنك اختيار الوضع التجريبي من دون تثبيت."
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
@@ -339,6 +343,8 @@ msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
+"التغييرات لن يتم حفظها، والبيانات من نظام التشغيل السابق لن يتم المساس به. "
+"الأداء والمميزات ليست كالنسخة المثبتة."
 
 #: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
@@ -347,117 +353,123 @@ msgstr "تثبيت نظيف"
 #: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "حذف كل شيء وبدء تنزيل نسخة جديدة من %s."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "تخصيص (متقدم)"
 
 #: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"أنشئ، أعد تحجيم، أو تحكم بالأقسام يدويا، هذه الطريقة قد تؤدي إلى فقدان "
+"البيانات."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "اكمال التجهيز"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
+msgstr "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
 
 #: src/Views/SuccessView.vala:35
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"بعد إعادة التشغيل يمكنك إنشاء مستخدم جديد، أو بإمكانك إيقاف التشغيل الآن "
+"وإنشاء مستخدم جديد لاحقا."
 
 #: src/Views/SuccessView.vala:55
 msgid "Shut Down"
-msgstr ""
+msgstr "إيقاف التشغيل"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "فك تشفير هذا القسم"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"أدخل كلمة سر التشفير الخاصة بالقسم وقم بتعيين اسم الجهاز للقسم الذي تم فك "
+"تشفيره."
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "كلمة السر:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "اسم الجهاز:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
-msgstr ""
+msgstr "فك التشفير"
 
 #: src/Widgets/DecryptMenu.vala:125
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "تم فك تشفير LUKS للقسم"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "استخدام القسم:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "الصيغة:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "كما تستخدم:"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
-msgstr ""
+msgstr "الجذر (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "المنزل (home/)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "الاقلاع (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "تبديل"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "تخصيص"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "مخصص:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "نظام الملفات:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "الافتراضي (ext4)"
 
 #~ msgid "Are you sure you want to Shut Down?"
 #~ msgstr "هل أنت متأكد من أنك تريد إيقاف التشغيل؟"
