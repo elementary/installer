@@ -23,8 +23,9 @@ public class VariantWidget : Gtk.Frame {
     public signal void going_to_main ();
 
     private Gtk.Button back_button;
+    private Gtk.Grid variant_grid;
     private Gtk.Label variant_title;
-    private Gtk.Stack stack;
+    private Hdy.Deck deck;
 
     construct {
         main_listbox = new Gtk.ListBox ();
@@ -55,30 +56,31 @@ public class VariantWidget : Gtk.Frame {
         header_box.add (back_button);
         header_box.set_center_widget (variant_title);
 
-        var variant_grid = new Gtk.Grid ();
+        variant_grid = new Gtk.Grid ();
         variant_grid.orientation = Gtk.Orientation.VERTICAL;
         variant_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         variant_grid.add (header_box);
         variant_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         variant_grid.add (variant_scrolled);
 
-        stack = new Gtk.Stack ();
-        stack.expand = true;
-        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.add_named (main_scrolled, "main");
-        stack.add_named (variant_grid, "variant");
-        add (stack);
+        deck = new Hdy.Deck ();
+        deck.can_swipe_back = true;
+        deck.expand = true;
+        deck.add (main_scrolled);
+        deck.add (variant_grid);
+
+        add (deck);
 
         back_button.clicked.connect (() => {
             going_to_main ();
-            stack.visible_child_name = "main";
+            deck.navigate (Hdy.NavigationDirection.BACK);
         });
     }
 
     public void show_variants (string back_button_label, string variant_title_label) {
         back_button.label = back_button_label;
         variant_title.label = variant_title_label;
-        stack.visible_child_name = "variant";
+        deck.visible_child = variant_grid;
     }
 
     public void clear_variants () {
