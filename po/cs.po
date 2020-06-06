@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-05-28 21:11+0000\n"
+"PO-Revision-Date: 2020-06-07 10:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
 "installer/cs/>\n"
@@ -67,7 +67,7 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"Na úložišti počítače není dostatek místa k instalaci %s. Doporučujeme "
+"Na úložišti počítače není dostatek místa pro instalaci %s. Doporučujeme "
 "minimálně %s prostoru."
 
 #: src/Views/CheckView.vala:215
@@ -91,8 +91,8 @@ msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"Váš počítač je nyní napájen z akumulátoru. Doporučujeme jej po dobu "
-"instalace připojit k elektrické síti."
+"Váš počítač je nyní napájen z akumulátoru. Doporučujeme ho po dobu instalace "
+"připojit k napájení z elektrické sítě."
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
@@ -119,12 +119,12 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"Toto smaže všechna data na vybrané jednotce. Pokud jste data nezazálohovali, "
-"můžete instalaci přerušit a použít Režim pro ukázku."
+"Toto smaže všechna data na vybrané jednotce. Pokud jste si svá data ještě "
+"nezazálohovali, můžete instalaci přerušit a použít Režim pro ukázku."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
-msgstr "Získávání stávajícího nastavení…"
+msgstr "Zjišťování stávajícího uspořádání…"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
@@ -166,7 +166,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr "Zvolit šifrovací heslo"
+msgstr "Zvolte šifrovací heslo"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
@@ -212,7 +212,7 @@ msgstr "• Zkusit instalaci znovu"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Použít Režim pro ukázku a pokusit se problémy ručně opravit"
+msgstr "• Použít Režim pro ukázku a pokusit se problémy opravit ručně"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
@@ -341,7 +341,7 @@ msgstr "Vyzkoušet nebo nainstalovat"
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
-"Můžete nainstalovat %s na tento počítač hned, nebo napřed vyzkoušet Režim "
+"%s můžete nainstalovat na tento počítač hned, nebo napřed vyzkoušet Režim "
 "pro ukázku bez nutnosti instalace."
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
@@ -394,7 +394,7 @@ msgid ""
 "up a new user later."
 msgstr ""
 "Po dokončení restartu můžete vytvořit nového uživatele, nebo teď můžete "
-"zařízení vypnout a vytvořit uživatele později."
+"počítač vypnout a vytvořit uživatele později."
 
 #: src/Views/SuccessView.vala:55
 msgid "Shut Down"
