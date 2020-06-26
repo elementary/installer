@@ -1,6 +1,5 @@
 # Installer
 [![Translation status](https://l10n.elementary.io/widgets/installer/-/svg-badge.svg)](https://l10n.elementary.io/projects/installer/?utm_source=widget)
-[![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=46189108)](https://www.bountysource.com/trackers/46189108-elementary-pantheon-installer)
 
 > Note: this is the work-in-progress installer and has not been released yet. For the current installer, see [Ubiquity](https://wiki.ubuntu.com/Ubiquity).
 
