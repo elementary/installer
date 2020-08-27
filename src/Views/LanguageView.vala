@@ -133,6 +133,14 @@ public class Installer.LanguageView : AbstractInstallerView {
                 if (crow != null) {
                     string country = ((CountryRow) crow).country_entry.alpha_2;
                     configuration.country = country;
+                    lang += "_" + country + ".utf8";
+
+                    // Write the language to /etc/default/locale so it is picked up by guest (demo) sessions
+                    try {
+                        GLib.FileUtils.set_contents ("/etc/default/locale", lang);
+                    } catch (Error e) {
+                        warning ("Error writing default locale, language in demo mode may be incorrect: %s", e.message);
+                    }
                 } else if (lang_entry.countries.length == 0) {
                     configuration.country = null;
                 } else {
