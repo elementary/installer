@@ -133,20 +133,18 @@ public class Installer.LanguageView : AbstractInstallerView {
                 if (crow != null) {
                     string country = ((CountryRow) crow).country_entry.alpha_2;
                     configuration.country = country;
-                    lang += "_" + country + ".utf8";
-
-                    // Write the language to /etc/default/locale so it is picked up by guest (demo) sessions
-                    try {
-                        GLib.FileUtils.set_contents ("/etc/default/locale", lang);
-                    } catch (Error e) {
-                        warning ("Error writing default locale, language in demo mode may be incorrect: %s", e.message);
-                    }
                 } else if (lang_entry.countries.length == 0) {
                     configuration.country = null;
                 } else {
                     row.activate ();
                     return;
                 }
+
+                if (configuration.country != null && configuration.country != "") {
+                    lang += "_" + configuration.country;
+                }
+
+                set_demo_mode_language.begin (lang);
             } else {
                 warning ("next_button enabled when no language selected");
                 next_button.sensitive = false;
@@ -175,7 +173,28 @@ public class Installer.LanguageView : AbstractInstallerView {
         timeout ();
     }
 
+    private async void set_demo_mode_language (string language) {
+        string? locale;
+        if (yield LocaleHelper.language2locale (language, out locale)) {
+            if (locale == null) {
+                return;
+            }
+
+            // Write the language to /etc/default/locale so it is picked up by guest (demo) sessions
+            try {
+                GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
+            } catch (Error e) {
+                warning ("Error writing default locale, language in demo mode may be incorrect: %s", e.message);
+            }
+        }
+
+    }
+
     private void row_selected (Gtk.ListBoxRow? row) {
+        lang_variant_widget.variant_listbox.row_selected.disconnect (variant_row_selected);
+        lang_variant_widget.clear_variants ();
+        lang_variant_widget.variant_listbox.row_selected.connect (variant_row_selected);
+
         var current_lang = Environment.get_variable ("LANGUAGE");
         var lang_entry = ((LangRow) row).lang_entry;
         Environment.set_variable ("LANGUAGE", lang_entry.get_code (), true);
