@@ -17,6 +17,7 @@ You'll need the following dependencies:
  - libgranite-dev >= 0.5
  - libgtk-3-dev
  - libgee-0.8-dev
+ - libhandy-1-dev
  - libjson-glib-dev
  - libpwquality-dev
  - libxml2-dev
