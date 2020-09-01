@@ -28,6 +28,7 @@ public class VariantWidget : Gtk.Frame {
 
     construct {
         main_listbox = new Gtk.ListBox ();
+
         var main_scrolled = new Gtk.ScrolledWindow (null, null);
         main_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         main_scrolled.add (main_listbox);
@@ -43,7 +44,7 @@ public class VariantWidget : Gtk.Frame {
         back_button = new Gtk.Button ();
         back_button.halign = Gtk.Align.START;
         back_button.margin = 6;
-        back_button.get_style_context ().add_class ("back-button");
+        back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
         variant_title = new Gtk.Label (null);
         variant_title.ellipsize = Pango.EllipsizeMode.END;

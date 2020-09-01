@@ -291,9 +291,11 @@ public class Installer.LanguageView : AbstractInstallerView {
             image.halign = Gtk.Align.END;
             image.icon_size = Gtk.IconSize.BUTTON;
 
-            var label = new Gtk.Label (lang_entry.name);
-            label.get_style_context ().add_class ("h3");
-            label.xalign = 0;
+            var label = new Gtk.Label (lang_entry.name) {
+                ellipsize = Pango.EllipsizeMode.END,
+                xalign = 0
+            };
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var grid = new Gtk.Grid ();
             grid.column_spacing = 6;
