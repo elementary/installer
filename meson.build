@@ -1,11 +1,6 @@
 project('io.elementary.installer', 'vala', 'c')
 
-add_global_arguments([
-        '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
-        '-DHANDY_USE_UNSTABLE_API',
-    ],
-    language: 'c'
-)
+add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', language:'c')
 
 add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')],
                       language: 'vala')
@@ -19,7 +14,7 @@ gobject_dep = dependency('gobject-2.0')
 gtk_dep = dependency('gtk+-3.0')
 gee_dep = dependency('gee-0.8')
 granite_dep = dependency('granite', version: '>=0.5')
-handy_dep = dependency('libhandy-1', version: '>=0.80.0')
+handy_dep = dependency('libhandy-1', version: '>=0.90.0')
 json_glib_dep = dependency('json-glib-1.0')
 xml2_dep = dependency('libxml-2.0')
 gnome_keyboard_dep = dependency('libgnomekbd')
