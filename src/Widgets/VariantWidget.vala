@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -63,9 +62,9 @@ public class VariantWidget : Gtk.Frame {
         variant_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         variant_grid.add (variant_scrolled);
 
-        deck = new Hdy.Deck ();
-        deck.can_swipe_back = true;
-        deck.expand = true;
+        deck = new Hdy.Deck () {
+            can_swipe_back = true
+        };
         deck.add (main_scrolled);
         deck.add (variant_grid);
 
