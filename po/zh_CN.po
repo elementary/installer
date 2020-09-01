@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2019-08-28 10:22+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2020-08-08 11:13+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/MainWindow.vala:44
@@ -129,30 +129,18 @@ msgid "Drive Encryption"
 msgstr "硬盘加密"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
-msgstr "加密此硬盘，使数据无法被他人以物理方式获取。"
+msgstr "数据将受到保护，无法被他人以物理方式获取。"
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr "硬盘加密可能会对有大量读写操作的任务产生影响。"
+msgstr "在执行高强度任务时，读写速度可能会受到小幅影响。"
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
-msgstr "每次开机或重启都需要输入密码。"
+msgstr "每次开机都将需要输入解密密码。请务必在某个安全的地方保存好密码。"
 
 #: src/Views/EncryptView.vala:83
 msgid ""
