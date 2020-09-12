@@ -44,7 +44,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         EFI
     }
 
-    const uint64 REQUIRED_EFI_SECTORS = 524288;
+    const uint64 REQUIRED_EFI_SECTORS = 200000;
 
     construct {
         mounts = new Gee.ArrayList<Installer.Mount> ();
