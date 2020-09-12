@@ -24,6 +24,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
     public uint64 start;
     public uint64 end;
     public uint64 used;
+    public uint64 sector_size;
     public new string path;
     public string? vg;
 
@@ -38,6 +39,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
                          DecryptFn decrypt) {
         start = part->get_start_sector ();
         end = part->get_end_sector ();
+        this.sector_size = sector_size;
 
         var usage = part->sectors_used (sector_size);
         if (usage.tag == 1) {
