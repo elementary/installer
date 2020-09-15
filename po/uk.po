@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-09-15 03:14+0000\n"
+"PO-Revision-Date: 2020-09-16 13:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -130,7 +130,7 @@ msgstr ""
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
 msgid "Erase and Install"
-msgstr ""
+msgstr "Очистити і встановити"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
@@ -159,11 +159,11 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Вибрати пароль шифрування"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Підтвердити пароль"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
@@ -171,9 +171,8 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
-#, fuzzy
 msgid "Back"
-msgstr "Видалити попередній символ"
+msgstr "Назад"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
@@ -212,35 +211,35 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "Докладніше"
 
 #: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
-msgstr ""
+msgstr "Перезапустити пристрій"
 
 #: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Спробувати демонстраційний режим"
 
 #: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Повторити спробу встановити"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Розкладка клавіатури"
 
 #: src/Views/KeyboardLayoutView.vala:36
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Введіть щось для перевірки розкладки"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Показати розкладку клавіатури"
 
 #: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr ""
+msgstr "Вибрати"
 
 #: src/Views/KeyboardLayoutView.vala:119
 msgid "Default"
@@ -322,18 +321,20 @@ msgstr ""
 
 #: src/Views/TryInstallView.vala:44
 msgid "Try or Install"
-msgstr ""
+msgstr "Спробувати або встановити"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Ви можете встановити %s на цьому пристрої зараз або спробувати "
+"демонстраційний режим без встановлення."
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
-msgstr ""
+msgstr "Далі"
 
 #: src/Views/TryInstallView.vala:77
 msgid ""
@@ -408,12 +409,12 @@ msgstr ""
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
