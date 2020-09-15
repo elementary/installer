@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-09-12 22:14+0000\n"
+"PO-Revision-Date: 2020-09-15 03:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -31,7 +31,7 @@ msgstr "Перезавантажити тестовий режим"
 
 #: src/Utils.vala:78
 msgid "Test mode switch user"
-msgstr "Змінити користувача у тестовому режимі"
+msgstr "Змінити користувача тестового режиму"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
@@ -40,27 +40,27 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr ""
+msgstr "Не вдається встановити зворотний зв'язок з журналом Distinst"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr ""
+msgstr "Почати встановлення"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Скасувати встановлення"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
-msgstr ""
+msgstr "Режим тестування"
 
 #: src/Views/CheckView.vala:66
 msgid "Ignore"
-msgstr ""
+msgstr "Знехтувати"
 
 #: src/Views/CheckView.vala:203
 msgid "Not Enough Space"
-msgstr ""
+msgstr "Бракує простору"
 
 #: src/Views/CheckView.vala:204
 #, c-format
@@ -68,52 +68,61 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"На вашому пристрої бракує простору для встановлення %s. Ми радимо щонайменше "
+"%s сховища."
 
 #: src/Views/CheckView.vala:215
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Ваш пристрій може бути занадто повільним"
 
 #: src/Views/CheckView.vala:216
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"Ваш пристрій не відповідає рекомендованим вимогам до обладнання. Це може "
+"призвести до його повільної роботи або заморожування."
 
 #: src/Views/CheckView.vala:232
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "Під'єднайте джерело живлення"
 
 #: src/Views/CheckView.vala:233
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"Ваш пристрій працює від акумулятора. Під час встановлення рекомендовано "
+"під'єднатися до джерела живлення."
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
-msgstr ""
+msgstr "Рекомендовано:"
 
 #: src/Views/CheckView.vala:295
 msgid "Your Device:"
-msgstr ""
+msgstr "Ваш пристрій:"
 
 #: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
 msgid "Processor:"
-msgstr ""
+msgstr "Процесор:"
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Memory:"
-msgstr ""
+msgstr "Пам'ять:"
 
 #: src/Views/DiskView.vala:51
 msgid "Select a Drive"
-msgstr ""
+msgstr "Виберіть диск"
 
 #: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Це видалить всі дані на вибраному диску. Якщо ви не створили резервну копію "
+"даних, ви можете скасувати встановлення та скористатися демонстраційним "
+"режимом."
 
 #: src/Views/DiskView.vala:65
 msgid "Getting the current configuration…"
@@ -382,11 +391,11 @@ msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:71
 msgid "Password:"
-msgstr ""
+msgstr "Пароль:"
 
 #: src/Widgets/DecryptMenu.vala:84
 msgid "Device name:"
-msgstr ""
+msgstr "Назва пристрою:"
 
 #: src/Widgets/DecryptMenu.vala:97
 msgid "Decrypt"
@@ -446,11 +455,11 @@ msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Файлова система:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "Типова (ext4)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
