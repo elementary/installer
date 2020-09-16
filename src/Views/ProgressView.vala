@@ -118,7 +118,7 @@ public class ProgressView : AbstractInstallerView {
 
         var config = Distinst.Config ();
         config.flags = Distinst.MODIFY_BOOT_ORDER;
-        config.hostname = Utils.get_hostname ();
+        config.hostname = Utils.get_hostname () ?? "elementary-os";
         config.lang = "en_US.UTF-8";
 
         var casper = casper_dir ();
