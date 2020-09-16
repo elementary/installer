@@ -166,7 +166,7 @@ namespace Utils {
                 // Don't bother with products in development.
                 return null;
             }
-            
+
             if (manufacturer.contains ("bochs") || manufacturer.contains ("vmware")) {
                 model = "virtual machine";
                 // VirtualBox sets an appropriate system-product-name.
@@ -186,7 +186,7 @@ namespace Utils {
                     out process_status);
 
                 model = process_stdout;
-            } 
+            }
 
             if (manufacturer.contains ("apple")) {
                 //  MacBook4,1 - strip the 4,1
