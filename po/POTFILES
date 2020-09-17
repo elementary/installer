@@ -1,7 +1,6 @@
 src/Application.vala
 src/MainWindow.vala
 src/Utils.vala
-src/Helpers/Inhibitor.vala
 src/Helpers/KeyboardLayoutHelper.vala
 src/Helpers/LocaleHelper.vala
 src/Helpers/LogHelper.vala
