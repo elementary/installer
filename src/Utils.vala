@@ -162,8 +162,20 @@ namespace Utils {
         return hostname_interface_instance.chassis;
     }
 
+    public string? get_machine_id () {
+        string machine_id;
+        try {
+            FileUtils.get_contents ("/etc/machine-id", out machine_id);
+        } catch (FileError e) {
+            warning ("%s", e.message);
+            return null;
+        }
+
+        return machine_id.strip ();
+    }
+
     // Based on https://git.launchpad.net/ubiquity/tree/ubiquity/misc.py#n648
-    public static string? get_hostname () {
+    public static string? get_model () {
         string model = "";
 
         try {
@@ -244,5 +256,12 @@ namespace Utils {
         }
 
         return model;
+    }
+
+    public static string get_hostname () {
+        string hostname = get_machine_id () ?? "elementary-os";
+        hostname += "-" + (get_model () ?? get_chassis ());
+
+        return hostname;
     }
 }
