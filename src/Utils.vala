@@ -136,6 +136,32 @@ namespace Utils {
         return seat_instance;
     }
 
+    [DBus (name = "org.freedesktop.hostname1")]
+    interface HostnameInterface : Object {
+        public abstract string chassis { owned get; }
+    }
+
+    private static HostnameInterface? hostname_interface_instance;
+    private static void get_hostname_interface_instance () {
+        if (hostname_interface_instance == null) {
+            try {
+                hostname_interface_instance = Bus.get_proxy_sync (
+                    BusType.SYSTEM,
+                    "org.freedesktop.hostname1",
+                    "/org/freedesktop/hostname1"
+                );
+            } catch (GLib.Error e) {
+                warning ("%s", e.message);
+            }
+        }
+    }
+
+    public string get_chassis () {
+        get_hostname_interface_instance ();
+
+        return hostname_interface_instance.chassis;
+    }
+
     // Based on https://git.launchpad.net/ubiquity/tree/ubiquity/misc.py#n648
     public static string? get_hostname () {
         string model = "";
