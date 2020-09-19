@@ -174,93 +174,37 @@ namespace Utils {
         return machine_id.strip ();
     }
 
-    // Based on https://git.launchpad.net/ubiquity/tree/ubiquity/misc.py#n648
-    public static string? get_model () {
-        string model = "";
-
+    public static string? get_vendor () {
+        string vendor;
         try {
-            string[] process_args = {"dmidecode", "--quiet", "--string", "system-manufacturer"};
-            string[] process_env = Environ.get ();
-            string process_stdout;
-            string process_stderr;
-            int process_status;
-
-            Process.spawn_sync (null,
-                                process_args,
-                                process_env,
-                                SpawnFlags.SEARCH_PATH,
-                                null,
-                                out process_stdout,
-                                out process_stderr,
-                                out process_status);
-
-            string manufacturer = process_stdout;
-            if (manufacturer.length == 0) {
-                return null;
-            }
-            manufacturer = manufacturer.down ();
-
-            if (manufacturer.contains ("to be filled")) {
-                // Don't bother with products in development.
-                return null;
-            }
-
-            if (manufacturer.contains ("bochs") || manufacturer.contains ("vmware")) {
-                model = "virtual machine";
-                // VirtualBox sets an appropriate system-product-name.
-            } else {
-                string key = "system-product-name";
-                if (manufacturer.contains ("lenovo") || manufacturer.contains ("ibm")) {
-                    key = "system-version";
-                }
-
-                Process.spawn_sync (null,
-                    {"dmidecode", "--quiet", "--string", key},
-                    process_env,
-                    SpawnFlags.SEARCH_PATH,
-                    null,
-                    out process_stdout,
-                    out process_stderr,
-                    out process_status);
-
-                model = process_stdout;
-            }
-
-            if (manufacturer.contains ("apple")) {
-                //  MacBook4,1 - strip the 4,1
-                var re = new Regex ("[^a-zA-Z\\s]");
-                model = re.replace (model, model.length, 0, "");
-            }
-
-            // Replace each gap of non-alphanumeric characters with a dash.
-            // Ensure the resulting string does not begin or end with a dash.
-            var re = new Regex ("[^a-zA-Z0-9]+");
-            model = re.replace (model, model.length, 0, "-");
-            while (model[0] == '-') {
-                model = model.substring (1);
-            }
-            while (model[model.length - 1] == '-') {
-                model = model.substring (0, model.length - 1);
-            }
-
-            if (model.down () == "not-available") {
-                return null;
-            }
-            if (model.down () == "To be filled by O.E.M.".down ()) {
-                return null;
-            }
-        } catch (SpawnError e) {
-            print ("Error: %s\n", e.message);
-        } catch (RegexError e) {
-            print ("Error: %s\n", e.message);
+            FileUtils.get_contents ("/sys/devices/virtual/dmi/id/sys_vendor", out vendor);
+        } catch (FileError e) {
+            warning ("%s", e.message);
+            return null;
         }
 
-        return model;
+        return vendor.strip ();
+    }
+
+    public static string? get_model () {
+        string model;
+        try {
+            FileUtils.get_contents ("/sys/devices/virtual/dmi/id/product_name", out model);
+        } catch (FileError e) {
+            warning ("%s", e.message);
+            return null;
+        }
+
+        return model.strip ();
+    }
+
+    public static string? get_hardware_name () {
+        return (get_vendor () + "-" + get_model ()).replace (" ", "-");
     }
 
     public static string get_hostname () {
-        string hostname = get_machine_id () ?? "elementary-os";
-        hostname += "-" + (get_model () ?? get_chassis ());
+        string hostname = get_hardware_name () ?? ("elementary-os" + "-" + get_chassis ());
+        hostname += "-" + get_machine_id ().substring (0, 8);
 
         return hostname;
     }
