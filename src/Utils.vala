@@ -156,13 +156,13 @@ namespace Utils {
         }
     }
 
-    public string get_chassis () {
+    private string get_chassis () {
         get_hostname_interface_instance ();
 
         return hostname_interface_instance.chassis;
     }
 
-    public string? get_machine_id () {
+    private string? get_machine_id () {
         string machine_id;
         try {
             FileUtils.get_contents ("/etc/machine-id", out machine_id);
@@ -174,7 +174,7 @@ namespace Utils {
         return machine_id.strip ();
     }
 
-    public static string? get_vendor () {
+    private static string? get_vendor () {
         string vendor;
         try {
             FileUtils.get_contents ("/sys/devices/virtual/dmi/id/sys_vendor", out vendor);
@@ -186,7 +186,7 @@ namespace Utils {
         return vendor.strip ();
     }
 
-    public static string? get_model () {
+    private static string? get_model () {
         string model;
         try {
             FileUtils.get_contents ("/sys/devices/virtual/dmi/id/product_name", out model);
@@ -198,7 +198,7 @@ namespace Utils {
         return model.strip ();
     }
 
-    public static string? get_hardware_name () {
+    private static string? get_hardware_name () {
         return (get_vendor () + "-" + get_model ()).replace (" ", "-");
     }
 
