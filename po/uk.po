@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-09-17 22:14+0000\n"
+"PO-Revision-Date: 2020-09-26 20:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -40,11 +40,11 @@ msgstr "%s…"
 
 #: src/Helpers/LogHelper.vala:52
 msgid "Unable to set the Distinst log callback"
-msgstr "Не вдається встановити зворотний зв'язок з журналом Distinst"
+msgstr "Не вдалося встановити зворотний зв'язок з журналом Distinst"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
-msgstr "Почати встановлення"
+msgstr "Починається встановлення"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -113,7 +113,7 @@ msgstr "Пам'ять:"
 
 #: src/Views/DiskView.vala:51
 msgid "Select a Drive"
-msgstr "Вибрати диск"
+msgstr "Виберіть диск"
 
 #: src/Views/DiskView.vala:55
 msgid ""
@@ -276,8 +276,8 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"Виберіть, які розділи використовувати на всіх дисках. <b>Натискання \""
-"Форматувати\" призведе до стирання ВСІХ даних на вибраному розділі.</b>"
+"Виберіть, які розділи використовувати на всіх дисках. <b>Натискання "
+"«Форматувати» призведе до стирання ВСІХ даних на вибраному розділі.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
