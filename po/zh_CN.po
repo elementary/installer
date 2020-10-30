@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-08-08 11:13+0000\n"
+"PO-Revision-Date: 2020-10-25 04:15+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
@@ -22,15 +22,15 @@ msgstr "安装 %s"
 
 #: src/Utils.vala:50
 msgid "Test mode shutdown"
-msgstr "关闭试用模式"
+msgstr "测试模式关机"
 
 #: src/Utils.vala:64
 msgid "Test mode reboot"
-msgstr "试用模式重启"
+msgstr "测试模式重启"
 
 #: src/Utils.vala:78
 msgid "Test mode switch user"
-msgstr "试用模式切换用户"
+msgstr "测试模式切换用户"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
 #, c-format
@@ -219,7 +219,7 @@ msgstr "进入试用模式"
 
 #: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
-msgstr "重新安装"
+msgstr "尝试重新安装"
 
 #: src/Views/KeyboardLayoutView.vala:28
 msgid "Keyboard Layout"
@@ -261,8 +261,7 @@ msgstr "当前激活的语言"
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
-msgstr ""
-"选择您要使用硬盘分区， <b>选择“格式化”将会擦除选中分区内的所有数据！</b>"
+msgstr "选择您要使用硬盘分区。<b>选择“格式化”将会抹掉选中分区内的所有数据。</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
@@ -280,15 +279,15 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "同时建议您选择一个 <b>交换</b> 分区。"
+msgstr "同时建议您选择一个 <b>交换（Swap）</b> 分区。"
 
 #: src/Views/PartitioningView.vala:97
 msgid "Modify Partitions…"
-msgstr "正在修改分区…"
+msgstr "修改分区…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr "EFI 分区文件系统有错误"
+msgstr "EFI 分区文件系统有误"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
@@ -300,11 +299,11 @@ msgstr "Root 文件系统不可用"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr "主页（Home）文件系统不可用"
+msgstr "主目录（Home）文件系统不可用"
 
 #: src/Views/ProgressView.vala:435
 msgid "Partitioning Drive"
-msgstr "硬盘分区中"
+msgstr "正在分区硬盘"
 
 #: src/Views/ProgressView.vala:439
 msgid "Extracting Files"
@@ -378,7 +377,7 @@ msgstr "您可以重启并设置新用户，也可以直接关闭设备。"
 
 #: src/Views/SuccessView.vala:55
 msgid "Shut Down"
-msgstr "关闭"
+msgstr "关机"
 
 #: src/Widgets/DecryptMenu.vala:54
 msgid "Decrypt This Partition"

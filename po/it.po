@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2018-10-14 04:26+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
-"Language-Team: Italian <https://weblate.elementary.io/projects/installer/"
+"PO-Revision-Date: 2020-10-23 19:15+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/installer/"
 "installer/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -112,7 +112,7 @@ msgstr "Memoria:"
 
 #: src/Views/DiskView.vala:51
 msgid "Select a Drive"
-msgstr "Seleziona un dispositivo"
+msgstr "Seleziona un supporto"
 
 #: src/Views/DiskView.vala:55
 msgid ""
@@ -120,7 +120,7 @@ msgid ""
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
 "Questo cancellerà tutti i dati sull'unità selezionata. Se non hai fatto un "
-"backup dei tuoi dati, puoi annullare l'installazione ed usare la Modalità "
+"backup dei tuoi dati, puoi annullare l'installazione e usare la Modalità "
 "Demo."
 
 #: src/Views/DiskView.vala:65
@@ -136,36 +136,24 @@ msgid "Drive Encryption"
 msgstr "Crittografia del disco"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"La crittografia del disco previene che i dati vengano letti da altre persone "
-"che hanno accesso fisico a questo dispositivo."
+"I dati saranno protetti dagli altri utenti che hanno accesso fisico a questo "
+"dispositivo."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"La crittografia del disco può avere un impatto minimo sulla velocità di "
-"lettura e scrittura quando si eseguono attività intense."
+"Le velocità di lettura e scrittura potrebbero essere minimamente influenzate "
+"durante le attività intense."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"La password di crittografia ti verrà richiesta ogni volta che accendi o "
-"riavvii il dispositivo."
+"La password di crittografia ti verrà richiesta ogni volta che accendi il "
+"dispositivo. Conservala in un luogo sicuro."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -234,7 +222,7 @@ msgstr "• Riavviare il tuo dispositivo per l'avvio da un'altra unità"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "Dettagli"
 
 #: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
 msgid "Restart Device"
@@ -361,7 +349,7 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
-msgstr "Prossimo"
+msgstr "Successivo"
 
 #: src/Views/TryInstallView.vala:77
 msgid ""
@@ -391,7 +379,7 @@ msgid ""
 "lead to data loss."
 msgstr ""
 "Crea, ridimensiona o gestisci manualmente in altro modo le partizioni. "
-"Questo metodo può portare alla perdita dei dati precedenti."
+"Questo metodo può portare alla perdita di dati."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
