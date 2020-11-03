@@ -34,7 +34,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
         title_label.valign = Gtk.Align.START;
 
         input_variant_widget = new VariantWidget ();
-
+        input_variant_widget.search_entry.placeholder_text = _("Search a keyboard");
+        
         var keyboard_test_entry = new Gtk.Entry ();
         keyboard_test_entry.hexpand = true;
         keyboard_test_entry.placeholder_text = _("Type to test your layout");
@@ -66,6 +67,15 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
         input_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
             return ((LayoutRow) row1).layout.description.collate (((LayoutRow) row2).layout.description);
+        });
+
+        input_variant_widget.main_listbox.set_filter_func ((row) => {
+            var layout_description = ((LayoutRow) row).layout.description;
+            return input_variant_widget.search_entry.text.down () in layout_description.down ();
+        });
+
+        input_variant_widget.search_entry.search_changed.connect (() => {
+            input_variant_widget.main_listbox.invalidate_filter ();
         });
 
         input_variant_widget.variant_listbox.set_sort_func ((row1, row2) => {

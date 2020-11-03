@@ -66,6 +66,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         size_group.add_widget (image);
 
         lang_variant_widget = new VariantWidget ();
+        lang_variant_widget.search_entry.placeholder_text = _("Search a language");
 
         lang_variant_widget.variant_listbox.row_activated.connect (() => {
             next_button.activate ();
@@ -85,19 +86,26 @@ public class Installer.LanguageView : AbstractInstallerView {
             return langrow1.lang_entry.name.collate (langrow2.lang_entry.name);
         });
 
-        lang_variant_widget.main_listbox.set_header_func ((row, before) => {
-            row.set_header (null);
-            if (!((LangRow)row).preferred_row) {
-                if (before != null && ((LangRow)before).preferred_row) {
-                    var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-                    separator.show_all ();
-                    separator.margin = 3;
-                    separator.margin_end = 6;
-                    separator.margin_start = 6;
-                    row.set_header (separator);
-                }
+        lang_variant_widget.main_listbox.set_filter_func ((row) => {
+            if (lang_variant_widget.search_entry.text.strip () != "") {
+                var lang_row = ((LangRow) row);
+                return lang_variant_widget.search_entry.text.down () in lang_row.lang_entry.name.down () && lang_row.preferred_row;
             }
+
+            return true;
         });
+
+        lang_variant_widget.search_entry.search_changed.connect (() => {
+            if (lang_variant_widget.search_entry.text.strip () == "") {
+                lang_variant_widget.main_listbox.set_header_func (header_func);
+            } else {
+                lang_variant_widget.main_listbox.set_header_func (null);
+            }
+
+            lang_variant_widget.main_listbox.invalidate_filter ();
+        });
+
+        lang_variant_widget.main_listbox.set_header_func (header_func);
 
         foreach (var lang_entry in LocaleHelper.get_lang_entries ().entries) {
             if (lang_entry.key in preferred_langs) {
@@ -172,7 +180,21 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         timeout ();
     }
-
+    
+    private void header_func (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
+        row.set_header (null);
+        if (!((LangRow)row).preferred_row) {
+            if (before != null && ((LangRow)before).preferred_row) {
+                var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+                separator.show_all ();
+                separator.margin = 3;
+                separator.margin_end = 6;
+                separator.margin_start = 6;
+                row.set_header (separator);
+            }
+        }
+    }
+    
     private async void set_demo_mode_language (string language) {
         string? locale;
         if (yield LocaleHelper.language2locale (language, out locale)) {

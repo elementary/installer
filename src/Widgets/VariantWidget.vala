@@ -16,6 +16,7 @@
  */
 
 public class VariantWidget : Gtk.Frame {
+    public Gtk.SearchEntry search_entry { public get; private set; }
     public Gtk.ListBox main_listbox { public get; private set; }
     public Gtk.ListBox variant_listbox { public get; private set; }
 
@@ -27,11 +28,24 @@ public class VariantWidget : Gtk.Frame {
     private Hdy.Deck deck;
 
     construct {
+        search_entry = new Gtk.SearchEntry () {
+            margin = 3
+        };
+
         main_listbox = new Gtk.ListBox ();
 
-        var main_scrolled = new Gtk.ScrolledWindow (null, null);
-        main_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        var main_scrolled = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            expand = true
+        };
         main_scrolled.add (main_listbox);
+
+        var main_grid = new Gtk.Grid () {
+            expand = true,
+            orientation = Gtk.Orientation.VERTICAL
+        };
+        main_grid.add (search_entry);
+        main_grid.add (main_scrolled);
 
         variant_listbox = new Gtk.ListBox ();
         variant_listbox.activate_on_single_click = false;
@@ -66,7 +80,7 @@ public class VariantWidget : Gtk.Frame {
         deck = new Hdy.Deck () {
             can_swipe_back = true
         };
-        deck.add (main_scrolled);
+        deck.add (main_grid);
         deck.add (variant_grid);
 
         add (deck);
