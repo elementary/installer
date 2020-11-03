@@ -20,7 +20,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
     public signal void next_step ();
 
     private VariantWidget input_variant_widget;
-
     private GLib.Settings keyboard_settings;
 
     construct {
@@ -35,7 +34,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
         input_variant_widget = new VariantWidget ();
         input_variant_widget.search_entry.placeholder_text = _("Search a keyboard");
-        
+
         var keyboard_test_entry = new Gtk.Entry ();
         keyboard_test_entry.hexpand = true;
         keyboard_test_entry.placeholder_text = _("Type to test your layout");

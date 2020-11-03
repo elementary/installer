@@ -180,7 +180,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         timeout ();
     }
-    
+
     private void header_func (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
         row.set_header (null);
         if (!((LangRow)row).preferred_row) {
@@ -194,7 +194,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
         }
     }
-    
+
     private async void set_demo_mode_language (string language) {
         string? locale;
         if (yield LocaleHelper.language2locale (language, out locale)) {
