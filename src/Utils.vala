@@ -198,12 +198,63 @@ namespace Utils {
         return model.strip ();
     }
 
-    private static string? get_hardware_name () {
-        return (get_vendor () + "-" + get_model ()).replace (" ", "-");
+    private static string? get_ubiquity_compatible_hostname () {
+        string model = get_model ();
+        string manufacturer = get_vendor ();
+
+        if (manufacturer.length == 0) {
+            return null;
+        }
+        manufacturer = manufacturer.down ();
+
+        if (manufacturer.contains ("to be filled")) {
+            // Don't bother with products in development.
+            return null;
+        }
+
+        if (manufacturer.contains ("bochs") || manufacturer.contains ("vmware")) {
+            model = "virtual machine";
+            // VirtualBox sets an appropriate system-product-name.
+        } else {
+            string key = "system-product-name";
+            if (manufacturer.contains ("lenovo") || manufacturer.contains ("ibm")) {
+                key = "system-version";
+            }
+        }
+
+        try {
+            if (manufacturer.contains ("apple")) {
+                //  MacBook4,1 - strip the 4,1
+                var re = new Regex ("[^a-zA-Z\\s]");
+                model = re.replace (model, model.length, 0, "");
+            }
+
+            // Replace each gap of non-alphanumeric characters with a dash.
+            // Ensure the resulting string does not begin or end with a dash.
+            var re = new Regex ("[^a-zA-Z0-9]+");
+            model = re.replace (model, model.length, 0, "-");
+            while (model[0] == '-') {
+                model = model.substring (1);
+            }
+            while (model[model.length - 1] == '-') {
+                model = model.substring (0, model.length - 1);
+            }
+
+            if (model.down () == "not-available") {
+                return null;
+            }
+            if (model.down () == "To be filled by O.E.M.".down ()) {
+                return null;
+            }
+        } catch (RegexError e) {
+            print ("Error: %s\n", e.message);
+        }
+
+        return model;
     }
 
     public static string get_hostname () {
-        string hostname = get_hardware_name () ?? ("elementary-os" + "-" + get_chassis ());
+        string hostname = get_ubiquity_compatible_hostname () ?? ("elementary-os" + "-" + get_chassis ());
         hostname += "-" + get_machine_id ().substring (0, 8);
 
         return hostname;
