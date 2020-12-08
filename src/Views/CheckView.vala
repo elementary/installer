@@ -22,7 +22,7 @@ public class Installer.CheckView : AbstractInstallerView {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     public const uint64 ONE_GB = 1000 * 1000 * 1000;
     // Minimum 5 GB
-    public const uint64 MINIMUM_SPACE = 5 * ONE_GB;
+    public const uint64 MINIMUM_SPACE = 15 * ONE_GB;
     // Minimum 1.2 GHz
     public const int MINIMUM_FREQUENCY = 1200 * 1000;
     // Minimum 1GB
