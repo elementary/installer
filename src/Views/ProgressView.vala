@@ -135,7 +135,7 @@ public class ProgressView : AbstractInstallerView {
         }
         
         string? locale;
-        if (yield LocaleHelper.language2locale (language, out locale)) {
+        if (yield LocaleHelper.language2locale (lang, out locale)) {
             if (locale != null) {
                 config.lang = locale;
             }
