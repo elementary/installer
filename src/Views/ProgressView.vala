@@ -133,7 +133,7 @@ public class ProgressView : AbstractInstallerView {
             debug ("country: %s\n", current_config.country);
             lang += "_" + current_config.country;
         }
-        
+
         string? locale;
         if (yield LocaleHelper.language2locale (lang, out locale)) {
             if (locale != null) {
