@@ -45,7 +45,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
     }
 
     const uint64 ONE_MB = 1000 * 1000;
-    const uint64 MINIMUM_EFI_SIZE = 98 * ONE_MB;
+    const uint64 MINIMUM_ESP_SIZE = 98 * ONE_MB;
 
     construct {
         mounts = new Gee.ArrayList<Installer.Mount> ();
@@ -275,7 +275,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         if (mount.mount_point == "/boot/efi") {
             if (!mount.is_valid_boot_mount ()) {
                 throw new GLib.IOError.FAILED (_("EFI partition has the wrong file system"));
-            } else if ((mount.sectors * mount.sector_size) < MINIMUM_EFI_SIZE) {
+            } else if ((mount.sectors * mount.sector_size) < MINIMUM_ESP_SIZE) {
                 throw new GLib.IOError.FAILED (_("EFI partition is too small"));
             }
         } else if (mount.mount_point == "/" && !mount.is_valid_root_mount ()) {
