@@ -193,7 +193,7 @@ public class ProgressView : AbstractInstallerView {
 
         // 256 MiB is the minimum distinst ESP partition size, so this is 256 MiB in MB plus a bit
         // extra for safety
-        var efi_sector = Distinst.Sector() {
+        var efi_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.MEGABYTE,
             value = 278
         };
