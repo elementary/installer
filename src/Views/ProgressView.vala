@@ -191,11 +191,20 @@ public class ProgressView : AbstractInstallerView {
             value = 0
         };
 
-        var boot_sector = Distinst.Sector () {
+        // 256 MiB is the minimum distinst ESP partition size, so this is 256 MiB in MB plus a bit
+        // extra for safety
+        var efi_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.MEGABYTE,
-            value = 512
+            value = 278
         };
 
+        // 512MB /boot partition that's created if we're doing encryption
+        var boot_sector = Distinst.Sector () {
+            flag = Distinst.SectorKind.MEGABYTE,
+            value = efi_sector.value + 512
+        };
+
+        // 4GB swap partition at the end
         var swap_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.MEGABYTE_FROM_END,
             value = 4096
@@ -236,6 +245,8 @@ public class ProgressView : AbstractInstallerView {
 
                 break;
             case Distinst.PartitionTable.GPT:
+                end = disk.get_sector (ref efi_sector);
+
                 // A FAT32 partition is required for EFI installs
                 result = disk.add_partition (
                     new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.FAT32)
@@ -250,10 +261,34 @@ public class ProgressView : AbstractInstallerView {
                     return;
                 }
 
+                // If we're encrypting, we need an unencrypted partition to store kernels and initramfs images
+                if (encryption != null) {
+                    start = disk.get_sector (ref efi_sector);
+                    end = disk.get_sector (ref boot_sector);
+
+                    result = disk.add_partition (
+                        new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.EXT4)
+                            .partition_type (Distinst.PartitionType.PRIMARY)
+                            .mount ("/boot")
+                    );
+
+                    if (result != 0) {
+                        critical ("unable to add /boot partition to %s", current_config.disk);
+                        on_error ();
+                        return;
+                    }
+                }
+
                 break;
         }
 
-        start = disk.get_sector (ref boot_sector);
+        // Start the LVM from the end of the /boot partition if we have encryption enabled
+        if (encryption != null) {
+            start = disk.get_sector (ref boot_sector);
+        } else {
+            start = disk.get_sector (ref efi_sector);
+        }
+
         end = disk.get_sector (ref end_sector);
 
         result = disk.add_partition (

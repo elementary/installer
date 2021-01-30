@@ -1,0 +1,44 @@
+---
+
+name: Build .deb
+
+on:
+  - workflow_dispatch
+  - pull_request
+
+jobs:
+  build-deb:
+    runs-on: ubuntu-latest
+    
+    container:
+      image: elementary/docker:odin-unstable
+      
+    steps:
+      - name: Install dependencies
+        run: |
+          apt update
+          apt install -y git
+
+      - name: Checkout main
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Checkout debian packaging folder
+        run: git checkout origin/deb-packaging -- debian
+
+      - name: Install build dependencies
+        run: |
+          apt-get --no-install-recommends -qq build-dep .
+
+      - name: Build .deb package
+        run: |
+          dpkg-buildpackage -us -uc
+          mkdir output
+          cp ../*.deb output/
+
+      - name: Save .deb package
+        uses: actions/upload-artifact@v2
+        with:
+          name: deb-files
+          path: output/*.deb
