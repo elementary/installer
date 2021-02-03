@@ -77,15 +77,18 @@ namespace Utils {
         if (Installer.App.test_mode) {
             critical (_("Test mode switch user"));
         } else {
-            get_system_instance ();
+            try {
+                var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
+                demo_mode_file.create (GLib.FileCreateFlags.NONE);
+            } catch (Error e) {
+                critical ("Unable to create demo-mode file for greeter, demo mode won't happen: %s", e.message);
+            }
 
-            var seat = Utils.get_seat_instance ();
-            if (seat != null) {
-                try {
-                    seat.switch_to_guest ("");
-                } catch (GLib.Error e) {
-                    stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
-                }
+            try {
+                var session_instance = get_session_instance ();
+                session_instance.logout (2);
+            } catch (Error e) {
+                critical ("Unabe to terminate current session to switch to demo mode: %s", e.message);
             }
         }
     }
@@ -133,5 +136,28 @@ namespace Utils {
         }
 
         return seat_instance;
+    }
+
+    [DBus (name = "org.gnome.SessionManager")]
+    public interface SessionInterface : Object {
+        public abstract void logout (uint mode) throws GLib.Error;
+    }
+
+    private static SessionInterface? session_instance;
+    public static unowned SessionInterface? get_session_instance () {
+        if (session_instance == null) {
+            try {
+                session_instance = Bus.get_proxy_sync (
+                    BusType.SESSION,
+                    "org.gnome.SessionManager",
+                    "/org/gnome/SessionManager",
+                    DBusProxyFlags.NONE
+                );
+            } catch (GLib.Error e) {
+                critical ("Gnome.SessionManager error: %s", e.message);
+            }
+        }
+
+        return session_instance;
     }
 }
