@@ -27,31 +27,30 @@ public class Installer.PartitionBar : Gtk.EventBox {
     public new string path;
     public string? vg;
 
-    public Distinst.Partition* info;
     public Gtk.Label label;
     public Gtk.Popover menu;
     public Distinst.FileSystem filesystem;
 
-    public PartitionBar (Distinst.Partition* part, string parent_path,
-                         uint64 sector_size, bool lvm, SetMount set_mount,
-                         UnsetMount unset_mount, MountSetFn mount_set,
-                         DecryptFn decrypt) {
-        start = part->get_start_sector ();
-        end = part->get_end_sector ();
+    public signal void decrypted (LuksCredentials credential);
 
-        var usage = part->sectors_used (sector_size);
+    public PartitionBar (InstallerDaemon.Partition part, string parent_path,
+                         uint64 sector_size, bool lvm, SetMount set_mount,
+                         UnsetMount unset_mount, MountSetFn mount_set) {
+        start = part.start_sector;
+        end = part.end_sector;
+
+        var usage = part.sectors_used;
         if (usage.tag == 1) {
             used = usage.value;
         } else {
             used = end - start;
         }
 
-        path = Utils.string_from_utf8 (part->get_device_path ());
-        filesystem = part->get_file_system ();
+        path = part.device_path;
+        filesystem = part.filesystem;
         vg = (Distinst.FileSystem.LVM == filesystem)
-            ? Utils.string_from_utf8 (part->get_current_lvm_volume_group ())
+            ? part.current_lvm_volume_group
             : null;
-        info = part;
         tooltip_text = path;
 
         var style_context = get_style_context ();
@@ -61,7 +60,8 @@ public class Installer.PartitionBar : Gtk.EventBox {
         container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
         if (filesystem == Distinst.FileSystem.LUKS) {
-            menu = new DecryptMenu (path, decrypt);
+            menu = new DecryptMenu (path);
+            ((DecryptMenu)menu).decrypted.connect ((creds) => decrypted (creds));
         } else {
             menu = new PartitionMenu (path, parent_path, filesystem, lvm,
                                       set_mount, unset_mount, mount_set, this);

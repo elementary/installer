@@ -103,48 +103,39 @@ public class Installer.DiskView : AbstractInstallerView {
         show_all ();
     }
 
-    // If possible, open devices in a different thread so that the interface stays awake.
     public async void load (uint64 minimum_disk_size) {
         DiskButton[] enabled_buttons = {};
         DiskButton[] disabled_buttons = {};
 
-        Distinst.Disks disks = Distinst.Disks.probe ();
-        foreach (unowned Distinst.Disk disk in disks.list ()) {
-            // Skip root disk or live disk
-            if (disk.contains_mount ("/", disks) || disk.contains_mount ("/cdrom", disks)) {
-                continue;
-            }
-
-            var size = disk.get_sectors () * disk.get_sector_size ();
+        InstallerDaemon.DiskInfo disks = yield Daemon.get_default ().get_disks ();
+        foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
+            var size = disk.sectors * disk.sector_size;
 
             // Drives are identifiable by whether they are rotational and/or removable.
             string icon_name = null;
-            if (disk.is_removable ()) {
-                if (disk.is_rotational ()) {
+            if (disk.removable) {
+                if (disk.rotational) {
                     icon_name = "drive-harddisk-usb";
                 } else {
                     icon_name = "drive-removable-media-usb";
                 }
-            } else if (disk.is_rotational ()) {
+            } else if (disk.rotational) {
                 icon_name = "drive-harddisk-scsi";
             } else {
                 icon_name = "drive-harddisk-solidstate";
             }
 
             string label;
-            string model = Utils.string_from_utf8 (disk.get_model ());
-            if (model.length == 0) {
-                label = Utils.string_from_utf8 (disk.get_serial ()).replace ("_", " ");
+            if (disk.model.length == 0) {
+                label = disk.serial.replace ("_", " ");
             } else {
-                label = model;
+                label = disk.model;
             }
-
-            string path = Utils.string_from_utf8 (disk.get_device_path ());
 
             var disk_button = new DiskButton (
                 label,
                 icon_name,
-                path,
+                disk.device_path,
                 size
             );
 
