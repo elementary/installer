@@ -4,8 +4,7 @@ public struct InstallerDaemon.DiskInfo {
 }
 
 public struct InstallerDaemon.Disk {
-    string model;
-    string serial;
+    string name;
     string device_path;
     uint64 sectors;
     uint64 sector_size;
@@ -16,7 +15,6 @@ public struct InstallerDaemon.Disk {
 }
 
 public struct InstallerDaemon.Partition {
-    int number;
     string device_path;
 
     Distinst.FileSystem filesystem;

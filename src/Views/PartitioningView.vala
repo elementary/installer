@@ -25,6 +25,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private Gtk.Button modify_partitions_button;
     private Gtk.Box disk_list;
     private Gtk.SizeGroup label_sizer;
+    private Gtk.Stack load_stack;
     private string required_description;
 
     public Gee.ArrayList<Installer.Mount> mounts;
@@ -88,7 +89,29 @@ public class Installer.PartitioningView : AbstractInstallerView {
         disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
         disk_scroller.add (disk_list);
 
-        content_area.attach (disk_scroller, 0, 0);
+        var load_spinner = new Gtk.Spinner ();
+        load_spinner.halign = Gtk.Align.CENTER;
+        load_spinner.valign = Gtk.Align.CENTER;
+        load_spinner.start ();
+
+        var load_label = new Gtk.Label (_("Getting the current configuration…"));
+        load_label.get_style_context ().add_class ("h2");
+
+        var load_grid = new Gtk.Grid ();
+        load_grid.row_spacing = 12;
+        load_grid.expand = true;
+        load_grid.orientation = Gtk.Orientation.VERTICAL;
+        load_grid.valign = Gtk.Align.CENTER;
+        load_grid.halign = Gtk.Align.CENTER;
+        load_grid.add (load_spinner);
+        load_grid.add (load_label);
+
+        load_stack = new Gtk.Stack ();
+        load_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        load_stack.add_named (load_grid, "loading");
+        load_stack.add_named (disk_scroller, "disk");
+
+        content_area.attach (load_stack, 0, 0);
         content_area.attach (description, 0, 1);
 
         load_disks.begin ();
@@ -115,6 +138,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
     }
 
     private async void load_disks () {
+        load_stack.set_visible_child_name ("loading");
+
         label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
         InstallerDaemon.DiskInfo disks = yield Daemon.get_default ().get_disks (true);
@@ -123,7 +148,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
             var size = disk.sectors * sector_size;
 
             string path = disk.device_path;
-            string model = disk.model.length == 0 ? disk.serial : disk.model;
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
@@ -132,7 +156,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 partitions.add (partition);
             }
 
-            var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+            var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
             label_sizer.add_widget (disk_bar.label);
             disk_list.pack_start (disk_bar);
         }
@@ -142,6 +166,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
 
         disk_list.show_all ();
+
+        load_stack.set_visible_child_name ("disk");
     }
 
     private void open_partition_editor () {
@@ -174,7 +200,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
         var size = disk.sectors * sector_size;
 
         string path = disk.device_path;
-        string model = disk.model.length == 0 ? disk.serial : disk.model;
 
         var partitions = new Gee.ArrayList<PartitionBar> ();
         foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
@@ -183,7 +208,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             partitions.add (partition);
         }
 
-        var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+        var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
         label_sizer.add_widget (disk_bar.label);
         disk_list.pack_start (disk_bar);
     }

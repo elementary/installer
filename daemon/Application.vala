@@ -8,23 +8,21 @@ public class InstallerDaemon.Application : GLib.Object {
 
     private Distinst.Disks disks;
 
-    public void install (Distinst.Config config) {
-        var installer = new Distinst.Installer ();
-        installer.on_error ((error) => on_error (error));
-        installer.on_status ((status) => on_status (status));
+    public Distinst.PartitionTable bootloader_detect () throws GLib.Error {
+        return Distinst.bootloader_detect ();
     }
 
     public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
-        DiskInfo result = DiskInfo ();
-
-        Disk[] physical_disks = {};
-        Disk[] logical_disks = {};
-
         disks = Distinst.Disks.probe ();
 
         if (get_partitions) {
             disks.initialize_volume_groups ();
         }
+
+        DiskInfo result = DiskInfo ();
+
+        Disk[] physical_disks = {};
+        Disk[] logical_disks = {};
 
         foreach (unowned Distinst.Disk disk in disks.list ()) {
             // Skip root disk or live disk
@@ -41,7 +39,6 @@ public class InstallerDaemon.Application : GLib.Object {
                         : "";
 
                     partitions += Partition () {
-                        number = part.get_number (),
                         device_path = string_from_utf8 (part.get_device_path ()),
                         filesystem = part.get_file_system (),
                         start_sector = part.get_start_sector (),
@@ -52,9 +49,11 @@ public class InstallerDaemon.Application : GLib.Object {
                 }
             }
 
+            string model = string_from_utf8 (disk.get_model ());
+            string name = model.length == 0 ? string_from_utf8 (disk.get_serial ()).replace ("_", " ") : model;
+
             physical_disks += Disk () {
-                model = string_from_utf8 (disk.get_model ()),
-                serial = string_from_utf8 (disk.get_serial ()),
+                name = name,
                 device_path = string_from_utf8 (disk.get_device_path ()),
                 sectors = disk.get_sectors (),
                 sector_size = disk.get_sector_size (),
@@ -74,7 +73,6 @@ public class InstallerDaemon.Application : GLib.Object {
                         : "";
 
                     partitions += Partition () {
-                        number = part.get_number (),
                         device_path = string_from_utf8 (part.get_device_path ()),
                         filesystem = part.get_file_system (),
                         start_sector = part.get_start_sector (),
@@ -85,7 +83,7 @@ public class InstallerDaemon.Application : GLib.Object {
                 }
 
                 logical_disks += Disk () {
-                    model = string_from_utf8 (disk.get_model ()),
+                    name = string_from_utf8 (disk.get_model ()),
                     device_path = string_from_utf8 (disk.get_device_path ()),
                     sectors = disk.get_sectors (),
                     sector_size = disk.get_sector_size (),
@@ -118,7 +116,6 @@ public class InstallerDaemon.Application : GLib.Object {
                 : "";
 
             partitions += Partition () {
-                number = part.get_number (),
                 device_path = string_from_utf8 (part.get_device_path ()),
                 filesystem = part.get_file_system (),
                 start_sector = part.get_start_sector (),
@@ -129,7 +126,7 @@ public class InstallerDaemon.Application : GLib.Object {
         }
 
         return Disk () {
-            model = string_from_utf8 (disk.get_model ()),
+            name = string_from_utf8 (disk.get_model ()),
             device_path = string_from_utf8 (disk.get_device_path ()),
             sectors = disk.get_sectors (),
             sector_size = disk.get_sector_size (),

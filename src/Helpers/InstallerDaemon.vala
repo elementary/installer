@@ -1,4 +1,7 @@
 public class Installer.Daemon {
+    // Wait up to 60 seconds for DBus calls to timeout. Some of the Distinst disk probe operations seem to take around 30 seconds
+    private const int DBUS_TIMEOUT_MSEC = 60 * 1000;
+
     [DBus (name = "io.elementary.InstallerDaemon")]
     private interface InstallerInterface : GLib.DBusProxy {
         public async abstract InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error;
@@ -10,6 +13,7 @@ public class Installer.Daemon {
 
     private Daemon () {
         daemon = Bus.get_proxy_sync (BusType.SYSTEM, "io.elementary.InstallerDaemon", "/io/elementary/InstallerDaemon");
+        daemon.g_default_timeout = DBUS_TIMEOUT_MSEC;
     }
 
     public async InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {

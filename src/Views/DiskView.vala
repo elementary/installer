@@ -125,15 +125,8 @@ public class Installer.DiskView : AbstractInstallerView {
                 icon_name = "drive-harddisk-solidstate";
             }
 
-            string label;
-            if (disk.model.length == 0) {
-                label = disk.serial.replace ("_", " ");
-            } else {
-                label = disk.model;
-            }
-
             var disk_button = new DiskButton (
-                label,
+                disk.name,
                 icon_name,
                 disk.device_path,
                 size
