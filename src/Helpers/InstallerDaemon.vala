@@ -4,6 +4,7 @@ public class Installer.Daemon {
 
     [DBus (name = "io.elementary.InstallerDaemon")]
     private interface InstallerInterface : GLib.DBusProxy {
+        public abstract Distinst.PartitionTable bootloader_detect () throws GLib.Error;
         public async abstract InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error;
         public async abstract int decrypt_partition (string path, string pv, string password) throws GLib.Error;
         public async abstract InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error;
@@ -14,6 +15,10 @@ public class Installer.Daemon {
     private Daemon () {
         daemon = Bus.get_proxy_sync (BusType.SYSTEM, "io.elementary.InstallerDaemon", "/io/elementary/InstallerDaemon");
         daemon.g_default_timeout = DBUS_TIMEOUT_MSEC;
+    }
+
+    public Distinst.PartitionTable bootloader_detect () throws GLib.Error {
+        return daemon.bootloader_detect ();
     }
 
     public async InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {

@@ -53,7 +53,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         var base_description = _("Select which partitions to use across all drives. <b>Selecting \"Format\" will erase ALL data on the selected partition.</b>");
 
-        var bootloader = Distinst.bootloader_detect ();
+        var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
                 // Device is in BIOS mode, so we just require a root partition
@@ -217,7 +217,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         uint8 flags = 0;
         uint8 required = Defined.ROOT;
 
-        var bootloader = Distinst.bootloader_detect ();
+        var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
                 break;
