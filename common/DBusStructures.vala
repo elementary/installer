@@ -24,3 +24,15 @@ public struct InstallerDaemon.Partition {
     Distinst.PartitionUsage sectors_used;
     string? current_lvm_volume_group;
 }
+
+public struct InstallerDaemon.InstallConfig {
+    string hostname;
+    string keyboard_layout;
+    string keyboard_variant;
+    string lang;
+    uint8 flags;
+}
+
+public struct InstallerDaemon.PartitionConfig {
+    string placeholder;
+}

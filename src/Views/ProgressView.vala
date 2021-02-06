@@ -76,27 +76,6 @@ public class ProgressView : AbstractInstallerView {
         return terminal_view.buffer.text;
     }
 
-    private string casper_dir () {
-        const string CDROM = "/cdrom";
-
-        try {
-            var cdrom_dir = File.new_for_path (CDROM);
-            var iter = cdrom_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
-
-            FileInfo info;
-            while ((info = iter.next_file ()) != null) {
-                unowned string name = info.get_name ();
-                if (name.has_prefix ("casper")) {
-                    return GLib.Path.build_filename (CDROM, name);
-                }
-            }
-        } catch (GLib.Error e) {
-            critical ("failed to find casper dir automatically: %s\n", e.message);
-        }
-
-        return GLib.Path.build_filename (CDROM, "casper");
-    }
-
     public void start_installation () {
         if (Installer.App.test_mode) {
             new Thread<void*> (null, () => {
@@ -112,18 +91,13 @@ public class ProgressView : AbstractInstallerView {
     }
 
     public void real_installation () {
-        var installer = new Distinst.Installer ();
-        installer.on_error (installation_error_callback);
-        installer.on_status (installation_status_callback);
+        Installer.Daemon.get_default ().on_error.connect (installation_error_callback);
+        Installer.Daemon.get_default ().on_status.connect (installation_status_callback);
 
-        var config = Distinst.Config ();
+        var config = InstallerDaemon.InstallConfig ();
         config.flags = Distinst.MODIFY_BOOT_ORDER;
         config.hostname = "elementary-os";
         config.lang = "en_US.UTF-8";
-
-        var casper = casper_dir ();
-        config.remove = GLib.Path.build_filename (casper, "filesystem.manifest-remove");
-        config.squashfs = GLib.Path.build_filename (casper, "filesystem.squashfs");
 
         unowned Configuration current_config = Configuration.get_default ();
 
@@ -136,218 +110,12 @@ public class ProgressView : AbstractInstallerView {
         }
 
         config.keyboard_layout = current_config.keyboard_layout;
-        config.keyboard_model = null;
-        config.keyboard_variant = current_config.keyboard_variant;
+        config.keyboard_variant = current_config.keyboard_variant ?? "";
 
-        var disks = new Distinst.Disks ();
         if (current_config.mounts == null) {
-            default_disk_configuration (disks);
+            Installer.Daemon.get_default ().install_with_default_disk_layout (config, current_config.disk, current_config.encryption_password != null, current_config.encryption_password ?? "");
         } else {
-            custom_disk_configuration (disks);
-        }
-
-        new Thread<void*> (null, () => {
-            installer.install ((owned) disks, config);
-            return null;
-        });
-    }
-
-    private void default_disk_configuration (Distinst.Disks disks) {
-        unowned Configuration current_config = Configuration.get_default ();
-
-        var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
-        var root_vg = Distinst.generate_unique_id ("data");
-        if (encrypted_vg == null || root_vg == null) {
-            critical ("unable to generate unique volume group IDs\n");
-            on_error ();
-            return;
-        }
-
-        Distinst.LvmEncryption? encryption;
-        if (current_config.encryption_password != null) {
-            debug ("encrypting");
-            encryption = Distinst.LvmEncryption () {
-                physical_volume = encrypted_vg,
-                password = current_config.encryption_password,
-                keydata = null
-            };
-        } else {
-            debug ("not encrypting");
-            encryption = null;
-        }
-
-        debug ("disk: %s\n", current_config.disk);
-        var disk = new Distinst.Disk (current_config.disk);
-        if (disk == null) {
-            critical ("could not find %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        var bootloader = Distinst.bootloader_detect ();
-
-        var start_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.START,
-            value = 0
-        };
-
-        // 256 MiB is the minimum distinst ESP partition size, so this is 256 MiB in MB plus a bit
-        // extra for safety
-        var efi_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.MEGABYTE,
-            value = 278
-        };
-
-        // 512MB /boot partition that's created if we're doing encryption
-        var boot_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.MEGABYTE,
-            value = efi_sector.value + 512
-        };
-
-        // 4GB swap partition at the end
-        var swap_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.MEGABYTE_FROM_END,
-            value = 4096
-        };
-
-        var end_sector = Distinst.Sector () {
-            flag = Distinst.SectorKind.END,
-            value = 0
-        };
-
-        // Prepares a new partition table.
-        int result = disk.mklabel (bootloader);
-
-        if (result != 0) {
-            critical ("unable to write partition table to %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        var start = disk.get_sector (ref start_sector);
-        var end = disk.get_sector (ref boot_sector);
-
-        switch (bootloader) {
-            case Distinst.PartitionTable.MSDOS:
-                // This is used to ensure LVM installs will work with BIOS
-                result = disk.add_partition (
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.EXT4)
-                        .partition_type (Distinst.PartitionType.PRIMARY)
-                        .flag (Distinst.PartitionFlag.BOOT)
-                        .mount ("/boot")
-                );
-
-                if (result != 0) {
-                    critical ("unable to add boot partition to %s", current_config.disk);
-                    on_error ();
-                    return;
-                }
-
-                break;
-            case Distinst.PartitionTable.GPT:
-                end = disk.get_sector (ref efi_sector);
-
-                // A FAT32 partition is required for EFI installs
-                result = disk.add_partition (
-                    new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.FAT32)
-                        .partition_type (Distinst.PartitionType.PRIMARY)
-                        .flag (Distinst.PartitionFlag.ESP)
-                        .mount ("/boot/efi")
-                );
-
-                if (result != 0) {
-                    critical ("unable to add EFI partition to %s", current_config.disk);
-                    on_error ();
-                    return;
-                }
-
-                // If we're encrypting, we need an unencrypted partition to store kernels and initramfs images
-                if (encryption != null) {
-                    start = disk.get_sector (ref efi_sector);
-                    end = disk.get_sector (ref boot_sector);
-
-                    result = disk.add_partition (
-                        new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.EXT4)
-                            .partition_type (Distinst.PartitionType.PRIMARY)
-                            .mount ("/boot")
-                    );
-
-                    if (result != 0) {
-                        critical ("unable to add /boot partition to %s", current_config.disk);
-                        on_error ();
-                        return;
-                    }
-                }
-
-                break;
-        }
-
-        // Start the LVM from the end of the /boot partition if we have encryption enabled
-        if (encryption != null) {
-            start = disk.get_sector (ref boot_sector);
-        } else {
-            start = disk.get_sector (ref efi_sector);
-        }
-
-        end = disk.get_sector (ref end_sector);
-
-        result = disk.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.LVM)
-                .partition_type (Distinst.PartitionType.PRIMARY)
-                .logical_volume (root_vg, encryption)
-        );
-
-        if (result != 0) {
-            critical ("unable to add lvm partition to %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        disks.push ((owned) disk);
-
-        result = disks.initialize_volume_groups ();
-
-        if (result != 0) {
-            critical ("unable to initialize volume groups on %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        unowned Distinst.LvmDevice lvm_device = disks.get_logical_device (root_vg);
-
-        if (lvm_device == null) {
-            critical ("unable to find '%s' volume group on %s", root_vg, current_config.disk);
-            on_error ();
-            return;
-        }
-
-        start = lvm_device.get_sector (ref start_sector);
-        end = lvm_device.get_sector (ref swap_sector);
-
-        result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.EXT4)
-                .name ("root")
-                .mount ("/")
-        );
-
-        if (result != 0) {
-            critical ("unable to add / partition to lvm on %s", current_config.disk);
-            on_error ();
-            return;
-        }
-
-        start = lvm_device.get_sector (ref swap_sector);
-        end = lvm_device.get_sector (ref end_sector);
-
-        result = lvm_device.add_partition (
-            new Distinst.PartitionBuilder (start, end, Distinst.FileSystem.SWAP)
-                .name ("swap")
-        );
-
-        if (result != 0) {
-            critical ("unable to add swap partition to lvm on %s", current_config.disk);
-            on_error ();
-            return;
+            //custom_disk_configuration (disks);
         }
     }
 

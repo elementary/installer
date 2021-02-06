@@ -4,17 +4,28 @@ public class Installer.Daemon {
 
     [DBus (name = "io.elementary.InstallerDaemon")]
     private interface InstallerInterface : GLib.DBusProxy {
+        public signal void on_error (Distinst.Error error);
+        public signal void on_status (Distinst.Status status);
+
         public abstract Distinst.PartitionTable bootloader_detect () throws GLib.Error;
+
         public async abstract InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error;
         public async abstract int decrypt_partition (string path, string pv, string password) throws GLib.Error;
         public async abstract InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error;
+        public async abstract void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error;
     }
+
+    public signal void on_error (Distinst.Error error);
+    public signal void on_status (Distinst.Status status);
 
     private InstallerInterface daemon;
 
     private Daemon () {
         daemon = Bus.get_proxy_sync (BusType.SYSTEM, "io.elementary.InstallerDaemon", "/io/elementary/InstallerDaemon");
         daemon.g_default_timeout = DBUS_TIMEOUT_MSEC;
+
+        daemon.on_error.connect ((error) => on_error (error));
+        daemon.on_status.connect ((status) => on_status (status));
     }
 
     public Distinst.PartitionTable bootloader_detect () throws GLib.Error {
@@ -31,6 +42,10 @@ public class Installer.Daemon {
 
     public async InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error {
         return yield daemon.get_logical_device (pv);
+    }
+
+    public async void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
+        yield daemon.install_with_default_disk_layout (config, disk, encrypt, encryption_password);
     }
 
     private static Daemon? _instance = null;
