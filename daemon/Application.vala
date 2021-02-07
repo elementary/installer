@@ -138,37 +138,24 @@ public class InstallerDaemon.Application : GLib.Object {
     }
 
     public void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
-        var installer = new Distinst.Installer ();
-        installer.on_error ((error) => on_error (error));
-        installer.on_status ((status) => on_status (status));
-
-        var distinst_config = Distinst.Config ();
-        distinst_config.flags = config.flags;
-        distinst_config.hostname = config.hostname;
-
-        var casper = casper_dir ();
-        distinst_config.remove = GLib.Path.build_filename (casper, "filesystem.manifest-remove");
-        distinst_config.squashfs = GLib.Path.build_filename (casper, "filesystem.squashfs");
-
-        debug ("language: %s\n", config.lang);
-        distinst_config.lang = config.lang;
-
-        distinst_config.keyboard_layout = config.keyboard_layout;
-        distinst_config.keyboard_model = null;
-        distinst_config.keyboard_variant = config.keyboard_variant == "" ? null : config.keyboard_variant;
-
         var disks = new Distinst.Disks ();
         if (!default_disk_configuration (disks, disk, encrypt ? encryption_password : null)) {
             // TODO: Signal an error
         }
 
-        new Thread<void*> (null, () => {
-            installer.install ((owned) disks, distinst_config);
-            return null;
-        });
+        install (config, (owned) disks);
     }
 
     public void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
+        var disks = new Distinst.Disks ();
+        if (!custom_disk_configuration (disks, disk_config, credentials)) {
+            // TODO: Signal an error
+        }
+
+        install (config, (owned) disks);
+    }
+
+    private void install (InstallConfig config, owned Distinst.Disks disks) {
         var installer = new Distinst.Installer ();
         installer.on_error ((error) => on_error (error));
         installer.on_status ((status) => on_status (status));
@@ -187,11 +174,6 @@ public class InstallerDaemon.Application : GLib.Object {
         distinst_config.keyboard_layout = config.keyboard_layout;
         distinst_config.keyboard_model = null;
         distinst_config.keyboard_variant = config.keyboard_variant == "" ? null : config.keyboard_variant;
-
-        var disks = new Distinst.Disks ();
-        if (!custom_disk_configuration (disks, disk_config, credentials)) {
-            // TODO: Signal an error
-        }
 
         new Thread<void*> (null, () => {
             installer.install ((owned) disks, distinst_config);
@@ -224,7 +206,7 @@ public class InstallerDaemon.Application : GLib.Object {
         var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
         var root_vg = Distinst.generate_unique_id ("data");
         if (encrypted_vg == null || root_vg == null) {
-            critical ("unable to generate unique volume group IDs\n");
+            critical ("unable to generate unique volume group IDs");
             return false;
         }
 
