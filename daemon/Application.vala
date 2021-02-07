@@ -164,18 +164,14 @@ public class InstallerDaemon.Application : GLib.Object {
 
     public void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
         var disks = new Distinst.Disks ();
-        if (!default_disk_configuration (disks, disk, encrypt ? encryption_password : null)) {
-            // TODO: Signal an error
-        }
+        default_disk_configuration (disks, disk, encrypt ? encryption_password : null);
 
         install (config, (owned) disks);
     }
 
     public void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
         var disks = new Distinst.Disks ();
-        if (!custom_disk_configuration (disks, disk_config, credentials)) {
-            // TODO: Signal an error
-        }
+        custom_disk_configuration (disks, disk_config, credentials);
 
         install (config, (owned) disks);
     }
@@ -227,12 +223,11 @@ public class InstallerDaemon.Application : GLib.Object {
         return GLib.Path.build_filename (CDROM, "casper");
     }
 
-    private bool default_disk_configuration (Distinst.Disks disks, string disk_path, string? encryption_password) {
+    private void default_disk_configuration (Distinst.Disks disks, string disk_path, string? encryption_password) throws GLib.IOError {
         var encrypted_vg = Distinst.generate_unique_id ("cryptdata");
         var root_vg = Distinst.generate_unique_id ("data");
         if (encrypted_vg == null || root_vg == null) {
-            critical ("unable to generate unique volume group IDs");
-            return false;
+            throw new GLib.IOError.FAILED ("Unable to generate unique volume group IDs");
         }
 
         Distinst.LvmEncryption? encryption;
@@ -251,8 +246,7 @@ public class InstallerDaemon.Application : GLib.Object {
         debug ("disk: %s\n", disk_path);
         var disk = new Distinst.Disk (disk_path);
         if (disk == null) {
-            critical ("could not find %s", disk_path);
-            return false;
+            throw new GLib.IOError.FAILED ("Could not find %s", disk_path);
         }
 
         var bootloader = Distinst.bootloader_detect ();
@@ -290,8 +284,7 @@ public class InstallerDaemon.Application : GLib.Object {
         int result = disk.mklabel (bootloader);
 
         if (result != 0) {
-            critical ("unable to write partition table to %s", disk_path);
-            return false;
+            throw new GLib.IOError.FAILED ("Unable to write partition table to %s", disk_path);
         }
 
         var start = disk.get_sector (ref start_sector);
@@ -308,8 +301,7 @@ public class InstallerDaemon.Application : GLib.Object {
                 );
 
                 if (result != 0) {
-                    critical ("unable to add boot partition to %s", disk_path);
-                    return false;
+                    throw new GLib.IOError.FAILED ("Unable to add boot partition to %s", disk_path);
                 }
 
                 break;
@@ -325,8 +317,7 @@ public class InstallerDaemon.Application : GLib.Object {
                 );
 
                 if (result != 0) {
-                    critical ("unable to add EFI partition to %s", disk_path);
-                    return false;
+                    throw new GLib.IOError.FAILED ("Unable to add EFI partition to %s", disk_path);
                 }
 
                 // If we're encrypting, we need an unencrypted partition to store kernels and initramfs images
@@ -341,8 +332,7 @@ public class InstallerDaemon.Application : GLib.Object {
                     );
 
                     if (result != 0) {
-                        critical ("unable to add /boot partition to %s", disk_path);
-                        return false;
+                        throw new GLib.IOError.FAILED ("unable to add /boot partition to %s", disk_path);
                     }
                 }
 
@@ -365,8 +355,7 @@ public class InstallerDaemon.Application : GLib.Object {
         );
 
         if (result != 0) {
-            critical ("unable to add lvm partition to %s", disk_path);
-            return false;
+            throw new GLib.IOError.FAILED ("Unable to add LVM partition to %s", disk_path);
         }
 
         disks.push ((owned) disk);
@@ -374,15 +363,13 @@ public class InstallerDaemon.Application : GLib.Object {
         result = disks.initialize_volume_groups ();
 
         if (result != 0) {
-            critical ("unable to initialize volume groups on %s", disk_path);
-            return false;
+            throw new GLib.IOError.FAILED ("Unable to initialize volume groups on %s", disk_path);
         }
 
         unowned Distinst.LvmDevice lvm_device = disks.get_logical_device (root_vg);
 
         if (lvm_device == null) {
-            critical ("unable to find '%s' volume group on %s", root_vg, disk_path);
-            return false;
+            throw new GLib.IOError.FAILED ("Unable to find '%s' volume group on %s", root_vg, disk_path);
         }
 
         start = lvm_device.get_sector (ref start_sector);
@@ -395,8 +382,7 @@ public class InstallerDaemon.Application : GLib.Object {
         );
 
         if (result != 0) {
-            critical ("unable to add / partition to lvm on %s", disk_path);
-            return false;
+            throw new GLib.IOError.FAILED ("Unable to add / partition to LVM on %s", disk_path);
         }
 
         start = lvm_device.get_sector (ref swap_sector);
@@ -408,14 +394,11 @@ public class InstallerDaemon.Application : GLib.Object {
         );
 
         if (result != 0) {
-            critical ("unable to add swap partition to lvm on %s", disk_path);
-            return false;
+            throw new GLib.IOError.FAILED ("Unable to add swap partition to LVM on %s", disk_path);
         }
-
-        return true;
     }
 
-    private bool custom_disk_configuration (Distinst.Disks disks, Mount[] mounts, LuksCredentials[] credentials) {
+    private void custom_disk_configuration (Distinst.Disks disks, Mount[] mounts, LuksCredentials[] credentials) throws GLib.IOError {
         Mount[] lvm_devices = {};
 
         foreach (Mount m in mounts) {
@@ -426,8 +409,7 @@ public class InstallerDaemon.Application : GLib.Object {
                 if (disk == null) {
                     var new_disk = new Distinst.Disk (m.parent_disk);
                     if (new_disk == null) {
-                        warning ("could not find physical device: '%s'\n", m.parent_disk);
-                        return false;
+                        throw new GLib.IOError.FAILED ("Could not find physical device: '%s'", m.parent_disk);
                     }
 
                     disks.push ((owned) new_disk);
@@ -437,8 +419,7 @@ public class InstallerDaemon.Application : GLib.Object {
                 unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
                 if (partition == null) {
-                    warning ("could not find %s\n", m.partition_path);
-                    return false;
+                    throw new GLib.IOError.FAILED ("Could not find %s", m.partition_path);
                 }
 
                 if (m.mount_point == "/boot/efi") {
@@ -450,8 +431,7 @@ public class InstallerDaemon.Application : GLib.Object {
                         partition.set_mount (m.mount_point);
                         partition.set_flags ({ Distinst.PartitionFlag.ESP });
                     } else {
-                        warning ("unreachable code path -- efi partition is invalid\n");
-                        return false;
+                        throw new GLib.IOError.FAILED ("Unreachable code path -- EFI partition is invalid");
                     }
                 } else {
                     if (m.filesystem != Distinst.FileSystem.SWAP) {
@@ -483,15 +463,13 @@ public class InstallerDaemon.Application : GLib.Object {
             var vg = m.parent_disk.offset (12);
             unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
             if (disk == null) {
-                warning ("could not find %s\n", vg);
-                return false;
+                throw new GLib.IOError.FAILED ("Could not find %s", vg);
             }
 
             unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
 
             if (partition == null) {
-                warning ("could not find %s\n", m.partition_path);
-                return false;
+                throw new GLib.IOError.FAILED ("could not find %s", m.partition_path);
             }
 
             if (m.filesystem != Distinst.FileSystem.SWAP) {
@@ -502,8 +480,6 @@ public class InstallerDaemon.Application : GLib.Object {
                 partition.format_and_keep_name (m.filesystem);
             }
         }
-
-        return true;
     }
 
     private static string string_from_utf8 (uint8[] input) {

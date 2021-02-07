@@ -120,8 +120,15 @@ public class ProgressView : AbstractInstallerView {
                 config,
                 current_config.disk,
                 current_config.encryption_password != null,
-                current_config.encryption_password ?? ""
-            );
+                current_config.encryption_password ?? "",
+            (obj, res) => {
+                try {
+                    daemon.install_with_default_disk_layout.end (res);
+                } catch (Error e) {
+                    log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
+                    on_error ();
+                }
+            });
         } else {
             InstallerDaemon.Mount[] mounts = {};
             foreach (Installer.Mount m in current_config.mounts) {
@@ -142,7 +149,14 @@ public class ProgressView : AbstractInstallerView {
                 }
             }
 
-            daemon.install_with_custom_disk_layout.begin (config, mounts, creds);
+            daemon.install_with_custom_disk_layout.begin (config, mounts, creds, (obj, res) => {
+                try {
+                    daemon.install_with_custom_disk_layout.end (res);
+                } catch (Error e) {
+                    log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
+                    on_error ();
+                }
+            });
         }
     }
 
