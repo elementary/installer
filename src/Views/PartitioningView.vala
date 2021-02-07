@@ -142,7 +142,15 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
-        InstallerDaemon.DiskInfo disks = yield Daemon.get_default ().get_disks (true);
+        InstallerDaemon.DiskInfo? disks = null;
+        try {
+            disks = yield Daemon.get_default ().get_disks (true);
+        } catch (Error e) {
+            critical ("Unable to get disks: %s", e.message);
+            load_stack.set_visible_child_name ("disk");
+            return;
+        }
+
         foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
             var sector_size = disk.sector_size;
             var size = disk.sectors * sector_size;
@@ -251,8 +259,12 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private void on_partition_decrypted (InstallerDaemon.LuksCredentials credentials) {
         luks.add (credentials);
         Daemon.get_default ().get_logical_device.begin (credentials.pv, (obj, res) => {
-            var disk = Daemon.get_default ().get_logical_device.end (res);
-            add_logical_disk (disk);
+            try {
+                var disk = Daemon.get_default ().get_logical_device.end (res);
+                add_logical_disk (disk);
+            } catch (Error e) {
+                critical ("Unable to get logical device: %s", e.message);
+            }
         });
     }
 
