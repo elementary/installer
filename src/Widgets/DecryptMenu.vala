@@ -81,7 +81,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         pass_entry.changed.connect (() => set_sensitivity ());
         pass_entry.activate.connect (() => {
             if (entries_set ()) {
-                decrypt (pv_entry.get_text ());
+                decrypt.begin (pv_entry.get_text ());
             }
         });
 
@@ -94,7 +94,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         pv_entry.changed.connect (() => set_sensitivity ());
         pv_entry.activate.connect (() => {
             if (entries_set ()) {
-                decrypt (pv_entry.get_text ());
+                decrypt.begin (pv_entry.get_text ());
             }
         });
 
@@ -103,7 +103,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         decrypt_button.sensitive = false;
         decrypt_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         decrypt_button.clicked.connect (() => {
-            decrypt (pv_entry.get_text ());
+            decrypt.begin (pv_entry.get_text ());
         });
 
         decrypt_view = new Gtk.Grid ();

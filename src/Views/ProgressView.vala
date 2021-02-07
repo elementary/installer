@@ -91,8 +91,9 @@ public class ProgressView : AbstractInstallerView {
     }
 
     public void real_installation () {
-        Installer.Daemon.get_default ().on_error.connect (installation_error_callback);
-        Installer.Daemon.get_default ().on_status.connect (installation_status_callback);
+        unowned Installer.Daemon daemon = Installer.Daemon.get_default ();
+        daemon.on_error.connect (installation_error_callback);
+        daemon.on_status.connect (installation_status_callback);
 
         var config = InstallerDaemon.InstallConfig ();
         config.flags = Distinst.MODIFY_BOOT_ORDER;
@@ -113,7 +114,12 @@ public class ProgressView : AbstractInstallerView {
         config.keyboard_variant = current_config.keyboard_variant ?? "";
 
         if (current_config.mounts == null) {
-            Installer.Daemon.get_default ().install_with_default_disk_layout (config, current_config.disk, current_config.encryption_password != null, current_config.encryption_password ?? "");
+            daemon.install_with_default_disk_layout.begin (
+                config,
+                current_config.disk,
+                current_config.encryption_password != null,
+                current_config.encryption_password ?? ""
+            );
         } else {
             InstallerDaemon.Mount[] mounts = {};
             foreach (Installer.Mount m in current_config.mounts) {
@@ -134,7 +140,7 @@ public class ProgressView : AbstractInstallerView {
                 }
             }
 
-            Installer.Daemon.get_default ().install_with_custom_disk_layout (config, mounts, creds);
+            daemon.install_with_custom_disk_layout.begin (config, mounts, creds);
         }
     }
 
