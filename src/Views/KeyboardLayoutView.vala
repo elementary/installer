@@ -103,9 +103,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
                     row.activate ();
                     return;
                 }
-
-                warning (configuration.keyboard_layout);
-                warning (configuration.keyboard_variant);
             } else {
                 warning ("next_button enabled when no keyboard selected");
                 next_button.sensitive = false;
