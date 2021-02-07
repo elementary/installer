@@ -31,7 +31,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
     public Gtk.Popover menu;
     public Distinst.FileSystem filesystem;
 
-    public signal void decrypted (LuksCredentials credential);
+    public signal void decrypted (InstallerDaemon.LuksCredentials credential);
 
     public PartitionBar (InstallerDaemon.Partition part, string parent_path,
                          uint64 sector_size, bool lvm, SetMount set_mount,

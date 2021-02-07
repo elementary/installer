@@ -33,10 +33,6 @@ public struct InstallerDaemon.InstallConfig {
     uint8 flags;
 }
 
-public struct InstallerDaemon.PartitionConfig {
-    Mount[] mounts;
-}
-
 [Flags]
 public enum InstallerDaemon.MountFlags {
     FORMAT = 1,
@@ -70,4 +66,10 @@ public struct InstallerDaemon.Mount {
     public bool should_format () {
         return MountFlags.FORMAT in flags;
     }
+}
+
+public struct InstallerDaemon.LuksCredentials {
+    public string device;
+    public string pv;
+    public string password;
 }

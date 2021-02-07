@@ -287,8 +287,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 parent_disk,
                 mount,
                 partition_bar.end - partition_bar.start,
-                (format_partition.active ? Mount.Flags.FORMAT : 0)
-                    + (is_lvm ? Mount.Flags.LVM : 0),
+                (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0)
+                    + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
                 filesystem,
                 this
             ));

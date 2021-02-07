@@ -28,7 +28,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
 
     private string device_path;
 
-    public signal void decrypted (LuksCredentials creds);
+    public signal void decrypted (InstallerDaemon.LuksCredentials creds);
 
     public DecryptMenu (string device_path) {
         this.device_path = device_path;
@@ -130,7 +130,13 @@ public class Installer.DecryptMenu: Gtk.Popover {
         switch (result) {
             case 0:
                 set_decrypted (pv);
-                decrypted (new LuksCredentials (device_path, pv, password));
+                var creds = InstallerDaemon.LuksCredentials () {
+                    device = device_path,
+                    pv = pv,
+                    password = password
+                };
+
+                decrypted ((owned)creds);
                 break;
             case 1:
                 debug ("decrypt_partition result is 1");

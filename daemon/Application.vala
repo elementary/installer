@@ -168,8 +168,35 @@ public class InstallerDaemon.Application : GLib.Object {
         });
     }
 
-    public void install_with_custom_disk_layout (InstallConfig config, PartitionConfig disk_config) throws GLib.Error {
+    public void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
+        var installer = new Distinst.Installer ();
+        installer.on_error ((error) => on_error (error));
+        installer.on_status ((status) => on_status (status));
 
+        var distinst_config = Distinst.Config ();
+        distinst_config.flags = config.flags;
+        distinst_config.hostname = config.hostname;
+
+        var casper = casper_dir ();
+        distinst_config.remove = GLib.Path.build_filename (casper, "filesystem.manifest-remove");
+        distinst_config.squashfs = GLib.Path.build_filename (casper, "filesystem.squashfs");
+
+        debug ("language: %s\n", config.lang);
+        distinst_config.lang = config.lang;
+
+        distinst_config.keyboard_layout = config.keyboard_layout;
+        distinst_config.keyboard_model = null;
+        distinst_config.keyboard_variant = config.keyboard_variant == "" ? null : config.keyboard_variant;
+
+        var disks = new Distinst.Disks ();
+        if (!custom_disk_configuration (disks, disk_config, credentials)) {
+            // TODO: Signal an error
+        }
+
+        new Thread<void*> (null, () => {
+            installer.install ((owned) disks, distinst_config);
+            return null;
+        });
     }
 
     private string casper_dir () {
@@ -376,6 +403,97 @@ public class InstallerDaemon.Application : GLib.Object {
         if (result != 0) {
             critical ("unable to add swap partition to lvm on %s", disk_path);
             return false;
+        }
+
+        return true;
+    }
+
+    private bool custom_disk_configuration (Distinst.Disks disks, Mount[] mounts, LuksCredentials[] credentials) {
+        Mount[] lvm_devices = {};
+
+        foreach (Mount m in mounts) {
+            if (m.is_lvm ()) {
+                lvm_devices += m;
+            } else {
+                unowned Distinst.Disk disk = disks.get_physical_device (m.parent_disk);
+                if (disk == null) {
+                    var new_disk = new Distinst.Disk (m.parent_disk);
+                    if (new_disk == null) {
+                        warning ("could not find physical device: '%s'\n", m.parent_disk);
+                        return false;
+                    }
+
+                    disks.push ((owned) new_disk);
+                    disk = disks.get_physical_device (m.parent_disk);
+                }
+
+                unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
+
+                if (partition == null) {
+                    warning ("could not find %s\n", m.partition_path);
+                    return false;
+                }
+
+                if (m.mount_point == "/boot/efi") {
+                    if (m.is_valid_boot_mount ()) {
+                        if (m.should_format ()) {
+                            partition.format_with (m.filesystem);
+                        }
+
+                        partition.set_mount (m.mount_point);
+                        partition.set_flags ({ Distinst.PartitionFlag.ESP });
+                    } else {
+                        warning ("unreachable code path -- efi partition is invalid\n");
+                        return false;
+                    }
+                } else {
+                    if (m.filesystem != Distinst.FileSystem.SWAP) {
+                        partition.set_mount (m.mount_point);
+                    }
+
+                    if (m.mount_point == "/boot") {
+                        partition.set_flags ({ Distinst.PartitionFlag.BOOT });
+                    }
+
+                    if (m.should_format ()) {
+                        partition.format_with (m.filesystem);
+                    }
+                }
+            }
+        }
+
+        disks.initialize_volume_groups ();
+
+        foreach (LuksCredentials cred in credentials) {
+            disks.decrypt_partition (cred.device, Distinst.LvmEncryption () {
+                physical_volume = cred.pv,
+                password = cred.password,
+                keydata = null
+            });
+        }
+
+        foreach (Mount m in lvm_devices) {
+            var vg = m.parent_disk.offset (12);
+            unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
+            if (disk == null) {
+                warning ("could not find %s\n", vg);
+                return false;
+            }
+
+            unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
+
+            if (partition == null) {
+                warning ("could not find %s\n", m.partition_path);
+                return false;
+            }
+
+            if (m.filesystem != Distinst.FileSystem.SWAP) {
+                partition.set_mount (m.mount_point);
+            }
+
+            if (m.should_format ()) {
+                partition.format_and_keep_name (m.filesystem);
+            }
         }
 
         return true;

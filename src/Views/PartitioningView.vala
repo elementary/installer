@@ -29,7 +29,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private string required_description;
 
     public Gee.ArrayList<Installer.Mount> mounts;
-    public Gee.ArrayList<LuksCredentials> luks;
+    public Gee.ArrayList<InstallerDaemon.LuksCredentials?> luks;
 
     public static uint64 minimum_disk_size;
 
@@ -48,7 +48,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     construct {
         mounts = new Gee.ArrayList<Installer.Mount> ();
-        luks = new Gee.ArrayList<LuksCredentials> ();
+        luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
         margin = 12;
 
         var base_description = _("Select which partitions to use across all drives. <b>Selecting \"Format\" will erase ALL data on the selected partition.</b>");
@@ -248,7 +248,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.sensitive = required in flags;
     }
 
-    private void on_partition_decrypted (LuksCredentials credentials) {
+    private void on_partition_decrypted (InstallerDaemon.LuksCredentials credentials) {
         luks.add (credentials);
         Daemon.get_default ().get_logical_device.begin (credentials.pv, (obj, res) => {
             var disk = Daemon.get_default ().get_logical_device.end (res);

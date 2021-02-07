@@ -115,102 +115,26 @@ public class ProgressView : AbstractInstallerView {
         if (current_config.mounts == null) {
             Installer.Daemon.get_default ().install_with_default_disk_layout (config, current_config.disk, current_config.encryption_password != null, current_config.encryption_password ?? "");
         } else {
-            //custom_disk_configuration (disks);
-        }
-    }
+            InstallerDaemon.Mount[] mounts = {};
+            foreach (Installer.Mount m in current_config.mounts) {
+                mounts += InstallerDaemon.Mount () {
+                    partition_path = m.partition_path,
+                    parent_disk = m.parent_disk,
+                    mount_point = m.mount_point,
+                    sectors = m.sectors,
+                    filesystem = m.filesystem,
+                    flags = m.flags
+                };
+            }
 
-    private void custom_disk_configuration (Distinst.Disks disks) {
-        unowned Configuration config = Configuration.get_default ();
-        Installer.Mount[] lvm_devices = {};
-
-        foreach (Installer.Mount m in config.mounts) {
-            if (m.is_lvm ()) {
-                lvm_devices += m;
-            } else {
-                unowned Distinst.Disk disk = disks.get_physical_device (m.parent_disk);
-                if (disk == null) {
-                    var new_disk = new Distinst.Disk (m.parent_disk);
-                    if (new_disk == null) {
-                        warning ("could not find physical device: '%s'\n", m.parent_disk);
-                        on_error ();
-                        return;
-                    }
-
-                    disks.push ((owned) new_disk);
-                    disk = disks.get_physical_device (m.parent_disk);
-                }
-
-                unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
-
-                if (partition == null) {
-                    warning ("could not find %s\n", m.partition_path);
-                    on_error ();
-                    return;
-                }
-
-                if (m.mount_point == "/boot/efi") {
-                    if (m.is_valid_boot_mount ()) {
-                        if (m.should_format ()) {
-                            partition.format_with (m.filesystem);
-                        }
-
-                        partition.set_mount (m.mount_point);
-                        partition.set_flags ({ Distinst.PartitionFlag.ESP });
-                    } else {
-                        warning ("unreachable code path -- efi partition is invalid\n");
-                        on_error ();
-                        return;
-                    }
-                } else {
-                    if (m.filesystem != Distinst.FileSystem.SWAP) {
-                        partition.set_mount (m.mount_point);
-                    }
-
-                    if (m.mount_point == "/boot") {
-                        partition.set_flags ({ Distinst.PartitionFlag.BOOT });
-                    }
-
-                    if (m.should_format ()) {
-                        partition.format_with (m.filesystem);
-                    }
+            InstallerDaemon.LuksCredentials[] creds = {};
+            foreach (InstallerDaemon.LuksCredentials? cred in current_config.luks) {
+                if (cred != null) {
+                    creds += cred;
                 }
             }
-        }
 
-        disks.initialize_volume_groups ();
-
-        foreach (Installer.LuksCredentials cred in config.luks) {
-            disks.decrypt_partition (cred.device, Distinst.LvmEncryption () {
-                physical_volume = cred.pv,
-                password = cred.password,
-                keydata = null
-            });
-        }
-
-        foreach (Installer.Mount m in lvm_devices) {
-            var vg = m.parent_disk.offset (12);
-            unowned Distinst.LvmDevice disk = disks.get_logical_device (vg);
-            if (disk == null) {
-                warning ("could not find %s\n", vg);
-                on_error ();
-                return;
-            }
-
-            unowned Distinst.Partition partition = disk.get_partition_by_path (m.partition_path);
-
-            if (partition == null) {
-                warning ("could not find %s\n", m.partition_path);
-                on_error ();
-                return;
-            }
-
-            if (m.filesystem != Distinst.FileSystem.SWAP) {
-                partition.set_mount (m.mount_point);
-            }
-
-            if (m.should_format ()) {
-                partition.format_and_keep_name (m.filesystem);
-            }
+            Installer.Daemon.get_default ().install_with_custom_disk_layout (config, mounts, creds);
         }
     }
 

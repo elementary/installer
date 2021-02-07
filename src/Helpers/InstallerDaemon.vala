@@ -13,6 +13,7 @@ public class Installer.Daemon {
         public async abstract int decrypt_partition (string path, string pv, string password) throws GLib.Error;
         public async abstract InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error;
         public async abstract void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error;
+        public async abstract void install_with_custom_disk_layout (InstallerDaemon.InstallConfig config, InstallerDaemon.Mount[] disk_config, InstallerDaemon.LuksCredentials[] luks) throws GLib.Error;
     }
 
     public signal void on_error (Distinst.Error error);
@@ -46,6 +47,10 @@ public class Installer.Daemon {
 
     public async void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
         yield daemon.install_with_default_disk_layout (config, disk, encrypt, encryption_password);
+    }
+
+    public async void install_with_custom_disk_layout (InstallerDaemon.InstallConfig config, InstallerDaemon.Mount[] disk_config, InstallerDaemon.LuksCredentials[] luks) throws GLib.Error {
+        yield daemon.install_with_custom_disk_layout (config, disk_config, luks);
     }
 
     private static Daemon? _instance = null;
