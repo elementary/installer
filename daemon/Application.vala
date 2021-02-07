@@ -107,6 +107,9 @@ public class InstallerDaemon.Application : GLib.Object {
 
     public Disk get_logical_device (string pv) throws GLib.Error {
         unowned Distinst.LvmDevice disk = disks.get_logical_device (pv);
+        if (disk == null) {
+            throw new GLib.IOError.NOT_FOUND ("Couldn't find a logical device with that name");
+        }
 
         Partition[] partitions = {};
 

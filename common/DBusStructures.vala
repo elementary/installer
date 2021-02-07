@@ -34,5 +34,40 @@ public struct InstallerDaemon.InstallConfig {
 }
 
 public struct InstallerDaemon.PartitionConfig {
-    string placeholder;
+    Mount[] mounts;
+}
+
+[Flags]
+public enum InstallerDaemon.MountFlags {
+    FORMAT = 1,
+    LVM = 2,
+    LVM_ON_LUKS = 4
+}
+
+public struct InstallerDaemon.Mount {
+    public string partition_path;
+    public string parent_disk;
+    public string mount_point;
+    public uint64 sectors;
+    public Distinst.FileSystem filesystem;
+    public MountFlags flags;
+
+    public bool is_valid_boot_mount () {
+        return filesystem == Distinst.FileSystem.FAT16
+            || filesystem == Distinst.FileSystem.FAT32;
+    }
+
+    public bool is_valid_root_mount () {
+        return filesystem != Distinst.FileSystem.FAT16
+            && filesystem != Distinst.FileSystem.FAT32
+            && filesystem != Distinst.FileSystem.NTFS;
+    }
+
+    public bool is_lvm () {
+        return MountFlags.LVM in flags;
+    }
+
+    public bool should_format () {
+        return MountFlags.FORMAT in flags;
+    }
 }
