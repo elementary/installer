@@ -2,11 +2,19 @@ private static GLib.MainLoop loop;
 
 [DBus (name = "io.elementary.InstallerDaemon")]
 public class InstallerDaemon.Application : GLib.Object {
-    public signal void on_log_message (string message);
+    public signal void on_log_message (Distinst.LogLevel level, string message);
     public signal void on_status (Distinst.Status status);
     public signal void on_error (Distinst.Error error);
 
     private Distinst.Disks disks;
+
+    construct {
+        Distinst.log ((level, message) => {
+            Idle.add (() => {
+                on_log_message (level, message);
+            });
+        });
+    }
 
     public Distinst.PartitionTable bootloader_detect () throws GLib.Error {
         return Distinst.bootloader_detect ();

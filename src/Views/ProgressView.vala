@@ -91,9 +91,11 @@ public class ProgressView : AbstractInstallerView {
     }
 
     public void real_installation () {
+        unowned LogHelper log_helper = LogHelper.get_default ();
         unowned Installer.Daemon daemon = Installer.Daemon.get_default ();
         daemon.on_error.connect (installation_error_callback);
         daemon.on_status.connect (installation_status_callback);
+        daemon.on_log_message.connect (log_helper.log_func);
 
         var config = InstallerDaemon.InstallConfig ();
         config.flags = Distinst.MODIFY_BOOT_ORDER;

@@ -6,6 +6,7 @@ public class Installer.Daemon {
     private interface InstallerInterface : GLib.DBusProxy {
         public signal void on_error (Distinst.Error error);
         public signal void on_status (Distinst.Status status);
+        public signal void on_log_message (Distinst.LogLevel level, string message);
 
         public abstract Distinst.PartitionTable bootloader_detect () throws GLib.Error;
 
@@ -18,6 +19,7 @@ public class Installer.Daemon {
 
     public signal void on_error (Distinst.Error error);
     public signal void on_status (Distinst.Status status);
+    public signal void on_log_message (Distinst.LogLevel level, string message);
 
     private InstallerInterface daemon;
 
@@ -27,6 +29,7 @@ public class Installer.Daemon {
 
         daemon.on_error.connect ((error) => on_error (error));
         daemon.on_status.connect ((status) => on_status (status));
+        daemon.on_log_message.connect ((level, message) => on_log_message (level, message));
     }
 
     public Distinst.PartitionTable bootloader_detect () throws GLib.Error {
