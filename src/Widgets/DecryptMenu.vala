@@ -125,7 +125,13 @@ public class Installer.DecryptMenu: Gtk.Popover {
     private async void decrypt (string pv) {
         string password = pass_entry.get_text ();
 
-        int result = yield Daemon.get_default ().decrypt_partition (device_path, pv_entry.get_text (), password);
+        int result;
+        try {
+            result = yield Daemon.get_default ().decrypt_partition (device_path, pv_entry.get_text (), password);
+        } catch (Error e) {
+            critical ("Unable to decrypt partition: %s", e.message);
+            return;
+        }
 
         switch (result) {
             case 0:

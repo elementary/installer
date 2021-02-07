@@ -107,7 +107,15 @@ public class Installer.DiskView : AbstractInstallerView {
         DiskButton[] enabled_buttons = {};
         DiskButton[] disabled_buttons = {};
 
-        InstallerDaemon.DiskInfo disks = yield Daemon.get_default ().get_disks ();
+        InstallerDaemon.DiskInfo? disks;
+        try {
+            disks = yield Daemon.get_default ().get_disks ();
+        } catch (Error e) {
+            critical ("Unable to get disks list: %s", e.message);
+            load_stack.set_visible_child_name ("disk");
+            return;
+        }
+
         foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
             var size = disk.sectors * disk.sector_size;
 

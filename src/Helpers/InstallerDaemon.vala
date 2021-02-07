@@ -55,12 +55,25 @@ public class Installer.Daemon {
         daemon.on_log_message.connect ((level, message) => on_log_message (level, message));
     }
 
-    public Distinst.PartitionTable bootloader_detect () throws GLib.Error {
+    public Distinst.PartitionTable bootloader_detect () {
         if (daemon == null) {
-            throw new GLib.IOError.FAILED ("Not connected to installer daemon");
+            return fallback_bootloader_detect ();
         }
 
-        return daemon.bootloader_detect ();
+        try {
+            return daemon.bootloader_detect ();
+        } catch (Error e) {
+            return fallback_bootloader_detect ();
+        }
+    }
+
+    private Distinst.PartitionTable fallback_bootloader_detect () {
+        var efi_file = GLib.File.new_for_path ("/sys/firmware/efi");
+        if (efi_file.query_exists ()) {
+            return Distinst.PartitionTable.GPT;
+        } else {
+            return Distinst.PartitionTable.MSDOS;
+        }
     }
 
     public async InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
