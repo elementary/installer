@@ -18,7 +18,7 @@
 private static GLib.MainLoop loop;
 
 [DBus (name = "io.elementary.InstallerDaemon")]
-public class InstallerDaemon.Application : GLib.Object {
+public class InstallerDaemon.Daemon : GLib.Object {
     public signal void on_log_message (Distinst.LogLevel level, string message);
     public signal void on_status (Distinst.Status status);
     public signal void on_error (Distinst.Error error);
@@ -491,7 +491,7 @@ public class InstallerDaemon.Application : GLib.Object {
 
 private void on_bus_acquired (GLib.DBusConnection connection, string name) {
     try {
-        connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.Application ());
+        connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.Daemon ());
     } catch (GLib.Error e) {
         critical ("Unable to register the object: %s", e.message);
     }

@@ -1,5 +1,5 @@
 vala_files = [
-    'Application.vala',
+    'Daemon.vala',
     join_paths(meson.source_root(), 'common', 'DBusStructures.vala'),
 ]
 
