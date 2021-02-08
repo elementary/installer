@@ -155,7 +155,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             var sector_size = disk.sector_size;
             var size = disk.sectors * sector_size;
 
-            string path = disk.device_path;
+            unowned string path = disk.device_path;
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
@@ -207,7 +207,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         var sector_size = disk.sector_size;
         var size = disk.sectors * sector_size;
 
-        string path = disk.device_path;
+        unowned string path = disk.device_path;
 
         var partitions = new Gee.ArrayList<PartitionBar> ();
         foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
@@ -260,7 +260,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         luks.add (credentials);
         Daemon.get_default ().get_logical_device.begin (credentials.pv, (obj, res) => {
             try {
-                var disk = Daemon.get_default ().get_logical_device.end (res);
+                var disk = ((Daemon)obj).get_logical_device.end (res);
                 add_logical_disk (disk);
             } catch (Error e) {
                 critical ("Unable to get logical device: %s", e.message);

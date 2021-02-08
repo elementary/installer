@@ -97,7 +97,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
         Daemon.get_default ().get_disks.begin (false, (obj, res) => {
             try {
-                disks = Daemon.get_default ().get_disks.end (res);
+                disks = ((Daemon)obj).get_disks.end (res);
             } catch (Error e) {
                 critical ("Unable to get disks list: %s", e.message);
             } finally {
@@ -117,7 +117,6 @@ public class Installer.CheckView : AbstractInstallerView {
                 return true;
             }
         }
-
         return false;
     }
 
@@ -162,7 +161,7 @@ public class Installer.CheckView : AbstractInstallerView {
             try {
                 upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
 
-                upower.g_properties_changed.connect ((changed, invalid) => {
+                (upower as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
                     var _on_battery = changed.lookup_value ("OnBattery", GLib.VariantType.BOOLEAN);
                     if (_on_battery != null) {
                         status_changed (check_requirements ());
@@ -357,6 +356,6 @@ public class Installer.CheckView : AbstractInstallerView {
 }
 
 [DBus (name = "org.freedesktop.UPower")]
-public interface UPower : DBusProxy {
+public interface UPower : GLib.Object {
     public abstract bool on_battery { owned get; set; }
 }
