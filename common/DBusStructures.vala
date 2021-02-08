@@ -58,12 +58,12 @@ public enum InstallerDaemon.MountFlags {
 }
 
 public struct InstallerDaemon.Mount {
-    public string partition_path;
-    public string parent_disk;
-    public string mount_point;
-    public uint64 sectors;
-    public Distinst.FileSystem filesystem;
-    public MountFlags flags;
+    string partition_path;
+    string parent_disk;
+    string mount_point;
+    uint64 sectors;
+    Distinst.FileSystem filesystem;
+    MountFlags flags;
 
     public bool is_valid_boot_mount () {
         return filesystem == Distinst.FileSystem.FAT16
@@ -86,7 +86,7 @@ public struct InstallerDaemon.Mount {
 }
 
 public struct InstallerDaemon.LuksCredentials {
-    public string device;
-    public string pv;
-    public string password;
+    string device;
+    string pv;
+    string password;
 }
