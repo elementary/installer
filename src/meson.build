@@ -29,7 +29,7 @@ vala_files = [
     'Widgets/PartitionMenu.vala',
     'Widgets/Terminal.vala',
     'Widgets/VariantWidget.vala',
-    join_paths(meson.source_root(), 'common', 'DBusStructures.vala'),
+    common_files,
 ]
 
 configuration_data = configuration_data()

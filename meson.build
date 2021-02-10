@@ -29,6 +29,7 @@ asresources = gnome.compile_resources(
 )
 
 subdir('po')
+subdir('common')
 subdir('daemon')
 subdir('src')
 subdir('data')

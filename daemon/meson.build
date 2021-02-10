@@ -1,6 +1,6 @@
 vala_files = [
     'Daemon.vala',
-    join_paths(meson.source_root(), 'common', 'DBusStructures.vala'),
+    common_files
 ]
 
 daemon_dependencies = [
