@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-10-28 03:15+0000\n"
+"PO-Revision-Date: 2021-02-11 01:41+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:44
@@ -43,9 +43,8 @@ msgid "%s…"
 msgstr "%s …"
 
 #: src/Helpers/LogHelper.vala:52
-#, fuzzy
 msgid "Unable to set the Distinst log callback"
-msgstr "Der Distinst-Protokoll-Rückruf konnte nicht festgelegt werden"
+msgstr "Der Distinst-Log-Callback konnte nicht eingerichtet werden"
 
 #: src/Helpers/LogHelper.vala:54
 msgid "Starting installation"
@@ -395,9 +394,9 @@ msgid "Continue Setting Up"
 msgstr "Einrichtung fortsetzen"
 
 #: src/Views/SuccessView.vala:34
-#, c-format, fuzzy
+#, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Ihr Gerät wird automatisch nach %s in %i Sekunden neu gestartet."
+msgstr "Ihr Gerät wird in %i Sekunden automatisch mit %s neu gestartet."
 
 #: src/Views/SuccessView.vala:35
 msgid ""
