@@ -90,7 +90,7 @@ public class ProgressView : AbstractInstallerView {
         }
     }
 
-    public void real_installation () {
+    public async void real_installation () {
         unowned LogHelper log_helper = LogHelper.get_default ();
         unowned Installer.Daemon daemon = Installer.Daemon.get_default ();
         daemon.on_error.connect (installation_error_callback);
@@ -122,19 +122,17 @@ public class ProgressView : AbstractInstallerView {
         config.keyboard_variant = current_config.keyboard_variant ?? "";
 
         if (current_config.mounts == null) {
-            daemon.install_with_default_disk_layout.begin (
-                config,
-                current_config.disk,
-                current_config.encryption_password != null,
-                current_config.encryption_password ?? "",
-            (obj, res) => {
-                try {
-                    daemon.install_with_default_disk_layout.end (res);
-                } catch (Error e) {
-                    log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
-                    on_error ();
-                }
-            });
+            try {
+                yield daemon.install_with_default_disk_layout (
+                    config,
+                    current_config.disk,
+                    current_config.encryption_password != null,
+                    current_config.encryption_password ?? ""
+                );
+            } catch (Error e) {
+                log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
+                on_error ();
+            }
         } else {
             InstallerDaemon.Mount[] mounts = {};
             foreach (Installer.Mount m in current_config.mounts) {
@@ -155,14 +153,12 @@ public class ProgressView : AbstractInstallerView {
                 }
             }
 
-            daemon.install_with_custom_disk_layout.begin (config, mounts, creds, (obj, res) => {
-                try {
-                    daemon.install_with_custom_disk_layout.end (res);
-                } catch (Error e) {
-                    log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
-                    on_error ();
-                }
-            });
+            try {
+                yield daemon.install_with_custom_disk_layout (config, mounts, creds);
+            } catch (Error e) {
+                log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
+                on_error ();
+            }
         }
     }
 
