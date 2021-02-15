@@ -107,11 +107,11 @@ public class ProgressView : AbstractInstallerView {
                 return null;
             });
         } else {
-            real_installation ();
+            real_installation.begin ();
         }
     }
 
-    public void real_installation () {
+    private async void real_installation () {
         var installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
@@ -127,12 +127,18 @@ public class ProgressView : AbstractInstallerView {
 
         unowned Configuration current_config = Configuration.get_default ();
 
-        //TODO: Use the following
         debug ("language: %s\n", current_config.lang);
-        if (current_config.country != null) {
+        string lang = current_config.lang;
+        if (current_config.country != null && current_config.country != "") {
             debug ("country: %s\n", current_config.country);
-        } else {
-            config.lang = current_config.lang + "_" + current_config.lang.ascii_up () + ".UTF-8";
+            lang += "_" + current_config.country;
+        }
+
+        string? locale;
+        if (yield LocaleHelper.language2locale (lang, out locale)) {
+            if (locale != null) {
+                config.lang = locale;
+            }
         }
 
         config.keyboard_layout = current_config.keyboard_layout;
