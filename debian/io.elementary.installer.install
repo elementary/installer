@@ -1,3 +1,5 @@
 usr/bin
 usr/share/applications
 usr/share/locale
+usr/share/dbus-1/system.d
+lib/systemd/system
