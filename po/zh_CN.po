@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-11-17 05:15+0000\n"
+"PO-Revision-Date: 2021-02-15 20:15+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/MainWindow.vala:44
@@ -86,7 +86,7 @@ msgstr "接入电源"
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
-msgstr "您的设备当前正在使用电池，建议您安装系统时接入外部电源。"
+msgstr "您的设备当前正在使用电池，建议您在安装系统时接入外部电源。"
 
 #: src/Views/CheckView.vala:291
 msgid "Recommended:"
@@ -140,16 +140,14 @@ msgstr "在执行高强度任务时，读写速度可能会受到小幅影响。
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
-msgstr "每次开机都将需要输入解密密码。请务必在某个安全的地方保存好密码。"
+msgstr "每次启动该设备，都将需要输入解密密码。请务必在某个安全的地方保存好密码。"
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
-msgstr ""
-"如果您忘记了加密密码， <b>您的数据将无法恢复</b>。 加密密码是针对该设备的密"
-"码，而非账户密码。"
+msgstr "如果您忘记了加密密码， <b>您将无法恢复数据</b>。 加密密码是针对该设备的密码，而非账户密码。"
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
@@ -365,7 +363,7 @@ msgstr "正在进行设置"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "您的设备将在 %i 秒后重启至 %s。"
+msgstr "您的设备将重启至 %s，倒计时 %i 秒。"
 
 #: src/Views/SuccessView.vala:35
 msgid ""
