@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-02 08:49-0800\n"
+"POT-Creation-Date: 2021-02-16 17:04+0000\n"
 "PO-Revision-Date: 2018-06-06 00:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Georgian <https://weblate.elementary.io/projects/installer/"
@@ -15,36 +15,27 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:44
+#: src/MainWindow.vala:42
 #, fuzzy, c-format
 msgid "Install %s"
 msgstr "დააინსტალირე %s"
 
-#: src/Utils.vala:50
+#: src/Utils.vala:33
 msgid "Test mode shutdown"
 msgstr ""
 
-#: src/Utils.vala:64
+#: src/Utils.vala:47
 msgid "Test mode reboot"
 msgstr ""
 
-#: src/Utils.vala:78
+#: src/Utils.vala:61
 msgid "Test mode switch user"
 msgstr ""
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
 #, c-format
 msgid "%s…"
 msgstr ""
-
-#: src/Helpers/LogHelper.vala:52
-msgid "Unable to set the Distinst log callback"
-msgstr ""
-
-#: src/Helpers/LogHelper.vala:54
-#, fuzzy
-msgid "Starting installation"
-msgstr "იწყება ინსტალაცია\n"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -55,15 +46,15 @@ msgstr "ინსტალაციის გაუქმება"
 msgid "Test Mode"
 msgstr "სცადეთ სადემონსტარციო ვერსია"
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:64
 msgid "Ignore"
 msgstr "უგულვებელყოფა"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
 msgstr "არ არის საკმარისი მოცულობა"
 
-#: src/Views/CheckView.vala:204
+#: src/Views/CheckView.vala:220
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -72,39 +63,39 @@ msgstr ""
 "არ არის საკმარისი მოცულობა რათა დააინსტალიროთ %s. რეკომენდებული მინიმალური "
 "მოცულობაა %s."
 
-#: src/Views/CheckView.vala:215
+#: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
 msgstr ""
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:232
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
 msgstr "შეაერთეთ კვების წყაროსთან"
 
-#: src/Views/CheckView.vala:233
+#: src/Views/CheckView.vala:249
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
 
-#: src/Views/CheckView.vala:291
+#: src/Views/CheckView.vala:307
 msgid "Recommended:"
 msgstr "რეკომენდებულია:"
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:311
 msgid "Your Device:"
 msgstr ""
 
-#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
 msgstr "პროცესორი:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
 msgid "Memory:"
 msgstr "მეხსიერება:"
 
@@ -119,11 +110,11 @@ msgid ""
 "data up, you can cancel the installation and use Demo Mode."
 msgstr "ეს წაშლის ყველა მონაემს არჩეულ დისკზე."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr ""
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "წაშალე და ჩაწერე"
 
@@ -164,8 +155,8 @@ msgstr ""
 msgid "Don't Encrypt"
 msgstr ""
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "უკუშლა"
 
@@ -223,39 +214,39 @@ msgstr "სცადეთ სადემონსტარციო ვერ�
 msgid "Try Installing Again"
 msgstr "სცადეთ ინსტალაცია თავიდან"
 
-#: src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
 msgstr "კლავიატურის სქემა"
 
-#: src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "დაბეჭდეთ რათა გამოსცადოთ განლაგება"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "გამოაჩინე კლავიატურის განლაგება"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "არჩევა"
 
-#: src/Views/KeyboardLayoutView.vala:119
+#: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
 msgstr ""
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
 msgstr ""
 
-#: src/Views/LanguageView.vala:232
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "ენა"
 
-#: src/Views/LanguageView.vala:249
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "აირჩიეთ ენა"
 
-#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "თარგმანი"
 
@@ -281,7 +272,7 @@ msgstr ""
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr ""
 
-#: src/Views/PartitioningView.vala:97
+#: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
 msgstr ""
 
@@ -301,19 +292,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:435
+#: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
 msgstr ""
 
-#: src/Views/ProgressView.vala:439
+#: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
 msgstr ""
 
-#: src/Views/ProgressView.vala:443
+#: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
 msgstr "სისტემის კონფიგურაცია"
 
-#: src/Views/ProgressView.vala:447
+#: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
 msgstr "სრულდება ინსტალაცია"
 
@@ -378,29 +369,29 @@ msgstr ""
 msgid "Shut Down"
 msgstr "გამორთვა"
 
-#: src/Widgets/DecryptMenu.vala:54
+#: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:71
+#: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:84
+#: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:97
+#: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:125
+#: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
 msgstr ""
 
@@ -459,6 +450,10 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Starting installation"
+#~ msgstr "იწყება ინსტალაცია\n"
 
 #~ msgid "Are you sure you want to Shut Down?"
 #~ msgstr "ნამდვილად გსურთ გამორთვა?"
