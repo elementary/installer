@@ -141,6 +141,7 @@ namespace LocaleHelper {
             );
 
             yield command.communicate_utf8_async (null, null, out locale, null);
+            locale = locale.strip ();
 
             return command.get_exit_status () == 0;
         } catch (Error e) {
