@@ -202,6 +202,10 @@ public class InstallerDaemon.Daemon : GLib.Object {
         });
     }
 
+    public void set_demo_mode_locale (string locale) throws GLib.Error {
+        GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
+    }
+
     private string casper_dir () {
         const string CDROM = "/cdrom";
 

@@ -182,7 +182,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
             // Write the language to /etc/default/locale so it is picked up by guest (demo) sessions
             try {
-                GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
+                yield Daemon.get_default ().set_demo_mode_locale (locale);
             } catch (Error e) {
                 warning ("Error writing default locale, language in demo mode may be incorrect: %s", e.message);
             }
