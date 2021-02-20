@@ -206,6 +206,17 @@ public class InstallerDaemon.Daemon : GLib.Object {
         GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
     }
 
+    public void trigger_demo_mode () throws GLib.Error {
+        var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
+        try {
+            demo_mode_file.create (GLib.FileCreateFlags.NONE);
+        } catch (Error e) {
+            if (!(e is GLib.IOError.EXISTS)) {
+                throw e;
+            }
+        }
+    }
+
     private string casper_dir () {
         const string CDROM = "/cdrom";
 
