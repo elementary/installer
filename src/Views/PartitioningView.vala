@@ -23,13 +23,13 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     private Gtk.Button next_button;
     private Gtk.Button modify_partitions_button;
-    private Distinst.Disks disks;
     private Gtk.Box disk_list;
     private Gtk.SizeGroup label_sizer;
+    private Gtk.Stack load_stack;
     private string required_description;
 
     public Gee.ArrayList<Installer.Mount> mounts;
-    public Gee.ArrayList<LuksCredentials> luks;
+    public Gee.ArrayList<InstallerDaemon.LuksCredentials?> luks;
 
     public static uint64 minimum_disk_size;
 
@@ -48,12 +48,12 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     construct {
         mounts = new Gee.ArrayList<Installer.Mount> ();
-        luks = new Gee.ArrayList<LuksCredentials> ();
+        luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
         margin = 12;
 
         var base_description = _("Select which partitions to use across all drives. <b>Selecting \"Format\" will erase ALL data on the selected partition.</b>");
 
-        var bootloader = Distinst.bootloader_detect ();
+        var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
                 // Device is in BIOS mode, so we just require a root partition
@@ -89,10 +89,32 @@ public class Installer.PartitioningView : AbstractInstallerView {
         disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
         disk_scroller.add (disk_list);
 
-        content_area.attach (disk_scroller, 0, 0);
+        var load_spinner = new Gtk.Spinner ();
+        load_spinner.halign = Gtk.Align.CENTER;
+        load_spinner.valign = Gtk.Align.CENTER;
+        load_spinner.start ();
+
+        var load_label = new Gtk.Label (_("Getting the current configuration…"));
+        load_label.get_style_context ().add_class ("h2");
+
+        var load_grid = new Gtk.Grid ();
+        load_grid.row_spacing = 12;
+        load_grid.expand = true;
+        load_grid.orientation = Gtk.Orientation.VERTICAL;
+        load_grid.valign = Gtk.Align.CENTER;
+        load_grid.halign = Gtk.Align.CENTER;
+        load_grid.add (load_spinner);
+        load_grid.add (load_label);
+
+        load_stack = new Gtk.Stack ();
+        load_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        load_stack.add_named (load_grid, "loading");
+        load_stack.add_named (disk_scroller, "disk");
+
+        content_area.attach (load_stack, 0, 0);
         content_area.attach (description, 0, 1);
 
-        load_disks ();
+        load_disks.begin ();
 
         modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
         modify_partitions_button.clicked.connect (() => open_partition_editor ());
@@ -115,40 +137,45 @@ public class Installer.PartitioningView : AbstractInstallerView {
         show_all ();
     }
 
-    private void load_disks () {
-        disks = Distinst.Disks.probe ();
-        disks.initialize_volume_groups ();
+    private async void load_disks () {
+        load_stack.set_visible_child_name ("loading");
+
         label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
-        foreach (unowned Distinst.Disk disk in disks.list ()) {
-            // Skip root disk or live disk
-            if (disk.contains_mount ("/", disks) || disk.contains_mount ("/cdrom", disks)) {
-                continue;
-            }
+        InstallerDaemon.DiskInfo? disks = null;
+        try {
+            disks = yield Daemon.get_default ().get_disks (true);
+        } catch (Error e) {
+            critical ("Unable to get disks: %s", e.message);
+            load_stack.set_visible_child_name ("disk");
+            return;
+        }
 
-            var sector_size = disk.get_sector_size ();
-            var size = disk.get_sectors () * sector_size;
+        foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
+            var sector_size = disk.sector_size;
+            var size = disk.sectors * sector_size;
 
-            string path = Utils.string_from_utf8 (disk.get_device_path ());
-
-            string model = Utils.string_from_utf8 (disk.get_model ());
+            unowned string path = disk.device_path;
 
             var partitions = new Gee.ArrayList<PartitionBar> ();
-            foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
+            foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
+                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set);
+                partition.decrypted.connect (on_partition_decrypted);
                 partitions.add (partition);
             }
 
-            var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+            var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
             label_sizer.add_widget (disk_bar.label);
             disk_list.pack_start (disk_bar);
         }
 
-        foreach (unowned Distinst.LvmDevice disk in disks.list_logical ()) {
+        foreach (unowned InstallerDaemon.Disk disk in disks.logical_disks) {
             add_logical_disk (disk);
         }
 
         disk_list.show_all ();
+
+        load_stack.set_visible_child_name ("disk");
     }
 
     private void open_partition_editor () {
@@ -173,24 +200,23 @@ public class Installer.PartitioningView : AbstractInstallerView {
         mounts.clear ();
         luks.clear ();
         next_button.sensitive = false;
-        load_disks ();
+        load_disks.begin ();
     }
 
-    private void add_logical_disk (Distinst.LvmDevice disk) {
-        var sector_size = disk.get_sector_size ();
-        var size = disk.get_sectors () * sector_size;
+    private void add_logical_disk (InstallerDaemon.Disk disk) {
+        var sector_size = disk.sector_size;
+        var size = disk.sectors * sector_size;
 
-        string path = Utils.string_from_utf8 (disk.get_device_path ());
-
-        string model = Utils.string_from_utf8 (disk.get_model ());
+        unowned string path = disk.device_path;
 
         var partitions = new Gee.ArrayList<PartitionBar> ();
-        foreach (unowned Distinst.Partition part in disk.list_partitions ()) {
-            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set, this.decrypt);
+        foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
+            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set);
+            partition.decrypted.connect (on_partition_decrypted);
             partitions.add (partition);
         }
 
-        var disk_bar = new DiskBar (model, path, size, (owned) partitions);
+        var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
         label_sizer.add_widget (disk_bar.label);
         disk_list.pack_start (disk_bar);
     }
@@ -199,7 +225,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         uint8 flags = 0;
         uint8 required = Defined.ROOT;
 
-        var bootloader = Distinst.bootloader_detect ();
+        var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
             case Distinst.PartitionTable.MSDOS:
                 break;
@@ -230,42 +256,16 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.sensitive = required in flags;
     }
 
-    private void decrypt (string device, string pv, string password, DecryptMenu menu) {
-        int result = disks.decrypt_partition (device, Distinst.LvmEncryption () {
-            physical_volume = pv,
-            password = password,
-            keydata = null
-        });
-
-        switch (result) {
-            case 0:
-                unowned Distinst.LvmDevice disk = disks.get_logical_device (pv);
+    private void on_partition_decrypted (InstallerDaemon.LuksCredentials credentials) {
+        luks.add (credentials);
+        Daemon.get_default ().get_logical_device.begin (credentials.pv, (obj, res) => {
+            try {
+                var disk = ((Daemon)obj).get_logical_device.end (res);
                 add_logical_disk (disk);
-                menu.set_decrypted (pv);
-                luks.add (new LuksCredentials (device, pv, password));
-                break;
-            case 1:
-                debug ("decrypt_partition result is 1");
-                break;
-            case 2:
-                debug ("decrypt: input was not valid UTF-8");
-                break;
-            case 3:
-                debug ("decrypt: either a password or keydata string must be supplied");
-                break;
-            case 4:
-                debug ("decrypt: unable to decrypt partition (possibly invalid password)");
-                break;
-            case 5:
-                debug ("decrypt: the decrypted partition does not have a LVM volume on it");
-                break;
-            case 6:
-                debug ("decrypt: unable to locate LUKS partition at %s", device);
-                break;
-            default:
-                critical ("decrypt: unhandled error value: %d", result);
-                break;
-        }
+            } catch (Error e) {
+                critical ("Unable to get logical device: %s", e.message);
+            }
+        });
     }
 
     private void set_mount (Mount mount) throws GLib.Error {

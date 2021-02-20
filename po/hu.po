@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-02 08:49-0800\n"
+"POT-Creation-Date: 2021-02-16 17:04+0000\n"
 "PO-Revision-Date: 2018-06-14 09:01+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/installer/"
@@ -15,35 +15,27 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:44
+#: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "%s telepítése"
 
-#: src/Utils.vala:50
+#: src/Utils.vala:33
 msgid "Test mode shutdown"
 msgstr "Teszt mód leállítás"
 
-#: src/Utils.vala:64
+#: src/Utils.vala:47
 msgid "Test mode reboot"
 msgstr "A teszt mód újraindítás"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:61
 msgid "Test mode switch user"
 msgstr "Teszt mód felhasználóváltás"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
 #, c-format
 msgid "%s…"
 msgstr "%s…"
-
-#: src/Helpers/LogHelper.vala:52
-msgid "Unable to set the Distinst log callback"
-msgstr "A Distinst naplózást nem lehetett beállítani"
-
-#: src/Helpers/LogHelper.vala:54
-msgid "Starting installation"
-msgstr "Telepítés megkezdése"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -53,15 +45,15 @@ msgstr "Telepítés megszakítása"
 msgid "Test Mode"
 msgstr "Teszt mód"
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:64
 msgid "Ignore"
 msgstr "Mellőz"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
 msgstr "Nincs elegendő hely"
 
-#: src/Views/CheckView.vala:204
+#: src/Views/CheckView.vala:220
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -70,11 +62,11 @@ msgstr ""
 "Nincs elég hely a lemezen a(z) %s telepítéséhez. Javasoljuk, hogy %s hely "
 "legyen szabad."
 
-#: src/Views/CheckView.vala:215
+#: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
 msgstr "Lehet, hogy a készüléke lassú lesz"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:232
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -82,11 +74,11 @@ msgstr ""
 "A készülék nem felel meg az ajánlott rendszerkövetelményeknek. Ez lassulást "
 "vagy fagyást is okozhat."
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
 msgstr "Csatlakozzon az elektromos hálózatra"
 
-#: src/Views/CheckView.vala:233
+#: src/Views/CheckView.vala:249
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -94,19 +86,19 @@ msgstr ""
 "A készülék akkumulátorról üzemel. Ajánlott csatlakoztatni, mielőtt elkezdi a "
 "telepítést."
 
-#: src/Views/CheckView.vala:291
+#: src/Views/CheckView.vala:307
 msgid "Recommended:"
 msgstr "Ajánlott:"
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:311
 msgid "Your Device:"
 msgstr "Az ön készüléke:"
 
-#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
 msgstr "Processzor:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
 msgid "Memory:"
 msgstr "Memória:"
 
@@ -122,11 +114,11 @@ msgstr ""
 "Ez törli az összes adatot a kiválasztott meghajtón. Ha még nem mentette az "
 "adatait, akkor viszavonhatja a telepítést és használhatja a demo módot."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Az aktuális konfiguráció megszerzése…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Törlés és telepítés"
 
@@ -188,8 +180,8 @@ msgstr "Jelszó megerősítése"
 msgid "Don't Encrypt"
 msgstr "Ne titkosítsa"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Vissza"
 
@@ -247,39 +239,39 @@ msgstr "Demo mód kipróbálása"
 msgid "Try Installing Again"
 msgstr "Próbálja újra telepíteni"
 
-#: src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
 msgstr "Billentyűzetkiosztás"
 
-#: src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Írjon ide, hogy tesztelje a kiosztást"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Billentyűzetkiosztás megjelenítése"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Kiválaszt"
 
-#: src/Views/KeyboardLayoutView.vala:119
+#: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
 msgstr "Beviteli nyelv"
 
-#: src/Views/LanguageView.vala:232
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Nyelvek"
 
-#: src/Views/LanguageView.vala:249
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Nyelv kiválasztása"
 
-#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "Jelenlegi nyelv"
 
@@ -309,7 +301,7 @@ msgstr ""
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Javasolt továbbá egy <b>Swap</b> partíció kiválasztása."
 
-#: src/Views/PartitioningView.vala:97
+#: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
 msgstr "Partíciók módosítása…"
 
@@ -329,19 +321,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:435
+#: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
 msgstr "Meghajtó partícionálása"
 
-#: src/Views/ProgressView.vala:439
+#: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
 msgstr "Fájlok kibontása"
 
-#: src/Views/ProgressView.vala:443
+#: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
 msgstr "A rendszer konfigurálása"
 
-#: src/Views/ProgressView.vala:447
+#: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
 msgstr "A telepítés befejezése"
 
@@ -414,11 +406,11 @@ msgstr ""
 msgid "Shut Down"
 msgstr "Kikapcsolás"
 
-#: src/Widgets/DecryptMenu.vala:54
+#: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
 msgstr "Partíció visszafejtése"
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:62
 #, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
@@ -426,19 +418,19 @@ msgid ""
 msgstr ""
 "Adja meg a partíció titkosítási jelszavát, és állítsa be a LUKS eszköz nevét."
 
-#: src/Widgets/DecryptMenu.vala:71
+#: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
 msgstr "Jelszó:"
 
-#: src/Widgets/DecryptMenu.vala:84
+#: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
 msgstr "Eszköz neve:"
 
-#: src/Widgets/DecryptMenu.vala:97
+#: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
 msgstr "Visszafejtés"
 
-#: src/Widgets/DecryptMenu.vala:125
+#: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
 msgstr "A LUKS kötetet visszafejtettük"
 
@@ -496,6 +488,12 @@ msgstr "Fájlrendszer:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Alapértelmezett (ext4)"
+
+#~ msgid "Unable to set the Distinst log callback"
+#~ msgstr "A Distinst naplózást nem lehetett beállítani"
+
+#~ msgid "Starting installation"
+#~ msgstr "Telepítés megkezdése"
 
 #~ msgid "Are you sure you want to Shut Down?"
 #~ msgstr "Biztos benne, hogy ki akarja kapcsolni az eszközt?"

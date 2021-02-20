@@ -32,7 +32,6 @@ public class Installer.MainWindow : Hdy.Window {
     private ErrorView error_view;
     private bool check_ignored = false;
 
-    private uint64 minimum_disk_size;
 
     public MainWindow () {
         Object (
@@ -56,8 +55,6 @@ public class Installer.MainWindow : Hdy.Window {
         stack.add (language_view);
 
         add (stack);
-
-        minimum_disk_size = Distinst.minimum_disk_size (5000000000);
 
         language_view.next_step.connect (() => load_keyboard_view ());
     }
@@ -109,7 +106,7 @@ public class Installer.MainWindow : Hdy.Window {
             check_view.destroy ();
         }
 
-        check_view = new Installer.CheckView (minimum_disk_size);
+        check_view = new Installer.CheckView ();
         stack.add (check_view);
 
         check_view.status_changed.connect ((met_requirements) => {
@@ -160,7 +157,7 @@ public class Installer.MainWindow : Hdy.Window {
         disk_view.previous_view = try_install_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
-        disk_view.load.begin (minimum_disk_size);
+        disk_view.load.begin (CheckView.MINIMUM_SPACE);
 
         disk_view.cancel.connect (() => {
             stack.visible_child = try_install_view;
@@ -174,7 +171,7 @@ public class Installer.MainWindow : Hdy.Window {
             partitioning_view.destroy ();
         }
 
-        partitioning_view = new PartitioningView (minimum_disk_size);
+        partitioning_view = new PartitioningView (CheckView.MINIMUM_SPACE);
         partitioning_view.previous_view = try_install_view;
         stack.add (partitioning_view);
         stack.visible_child = partitioning_view;

@@ -20,30 +20,13 @@
  */
 
 namespace Utils {
-    public string string_from_utf8 (uint8[] input) {
-        var builder = new GLib.StringBuilder.sized (input.length);
-        builder.append_len ((string) input, input.length);
-        return (owned) builder.str;
-    }
-
-    private struct OsRelease {
-        public string pretty_name;
-
-        public static OsRelease new () {
-            return OsRelease () {
-                pretty_name = string_from_utf8 (Distinst.get_os_pretty_name ())
-            };
-        }
-    }
-
-    private static OsRelease? os_release;
-
+    private static string? pretty_name;
     private static string get_pretty_name () {
-        if (os_release == null) {
-            os_release = OsRelease.new ();
+        if (pretty_name == null) {
+            pretty_name = GLib.Environment.get_os_info (GLib.OsInfoKey.PRETTY_NAME);
         }
 
-        return os_release.pretty_name;
+        return pretty_name;
     }
 
     public static void shutdown () {
