@@ -1,7 +1,7 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016–2018 elementary LLC. (https://elementary.io)
- *
+ * Copyright 2016–2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2006-2021 ubiquity Developers (https://launchpad.net/ubiquity)
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -181,6 +181,7 @@ namespace Utils {
         return model.strip ();
     }
 
+    // Based on https://git.launchpad.net/ubiquity/tree/ubiquity/misc.py?id=ae6415d224c2e76afa2274cc9f85997f38870419#n648
     private static string? get_ubiquity_compatible_hostname () {
         string model = get_model ();
         string manufacturer = get_vendor ();
