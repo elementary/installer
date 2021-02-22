@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 17:04+0000\n"
-"PO-Revision-Date: 2021-02-11 01:41+0000\n"
+"PO-Revision-Date: 2021-02-21 19:25+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -65,7 +65,7 @@ msgid ""
 "minimum of %s of storage."
 msgstr ""
 "Ihr Gerät verfügt nicht über ausreichend freien Speicherplatz, um %s zu "
-"installieren. Wir empfehlen  mindestens %s freie Speicherkapazität."
+"installieren. Wir empfehlen mindestens %s freie Speicherkapazität."
 
 #: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
@@ -76,8 +76,8 @@ msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"Ihr Gerät erfüllt nicht die empfohlenen Hardware-Anforderungen.  Dies kann "
-"dazu führen, dass es langsam läuft oder einfriert."
+"Ihr Gerät erfüllt nicht die empfohlenen Hardware-Anforderungen. Dies kann "
+"dazu führen, dass es nur langsam arbeitet oder einfriert."
 
 #: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
@@ -159,7 +159,7 @@ msgid ""
 "your user account."
 msgstr ""
 "Wenn Sie das Verschlüsselungspasswort vergessen, <b>können Sie Ihre Daten "
-"nicht wiederherstellen.</b> Dies ist ein Passwort für den Zugang zu  diesem "
+"nicht wiederherstellen.</b> Dies ist ein Passwort für den Zugang zu diesem "
 "Gerät, nicht das Passwort für den Zugriff auf Ihr Benutzerkonto."
 
 #: src/Views/EncryptView.vala:90
@@ -202,7 +202,7 @@ msgid ""
 "restart properly. You can try the following:"
 msgstr ""
 "Die Installation von %s ist fehlgeschlagen, möglicherweise aufgrund eines "
-"Hardwarefehlers. Ihr Gerät startet möglicherweise nicht ordnungsgemäß neu. "
+"Hardware-Fehlers. Ihr Gerät startet möglicherweise nicht ordnungsgemäß neu. "
 "Sie können Folgendes versuchen:"
 
 #: src/Views/ErrorView.vala:44
@@ -217,7 +217,7 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr "• Starten Sie Ihr Gerät neu, um von einem anderen Laufwerk zu booten"
+msgstr "• Starten Sie Ihr Gerät neu, um von einem anderen Laufwerk zu starten"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
@@ -367,7 +367,7 @@ msgstr "Löschen und installieren"
 #: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "Sämtliche vorhandenen Daten löschen und  %s neu installieren."
+msgstr "Sämtliche vorhandenen Daten löschen und %s neu installieren."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
