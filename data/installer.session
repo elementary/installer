@@ -2,4 +2,3 @@
 Name=Installer
 RequiredComponents=io.elementary.installer.compositor;org.gnome.SettingsDaemon.MediaKeys;org.gnome.SettingsDaemon.Power;org.gnome.SettingsDaemon.XSettings;io.elementary.installer;
 DesktopName=Installer
-DesktopNames=Pantheon
