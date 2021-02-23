@@ -308,6 +308,8 @@ public class InstallerDaemon.Daemon : GLib.Object {
                     throw new GLib.IOError.FAILED ("Unable to add boot partition to %s", disk_path);
                 }
 
+                // Start the LVM from the end of our /boot partition
+                start = disk.get_sector (ref boot_sector);
                 break;
             case Distinst.PartitionTable.GPT:
                 end = disk.get_sector (ref efi_sector);
@@ -338,16 +340,15 @@ public class InstallerDaemon.Daemon : GLib.Object {
                     if (result != 0) {
                         throw new GLib.IOError.FAILED ("unable to add /boot partition to %s", disk_path);
                     }
+
+                    // Start the LVM from the end of our /boot/efi and /boot partitions
+                    start = disk.get_sector (ref boot_sector);
+                } else {
+                    // No encryption, we only have a /boot/efi partition, start the LVM from there
+                    start = disk.get_sector (ref efi_sector);
                 }
 
                 break;
-        }
-
-        // Start the LVM from the end of the /boot partition if we have encryption enabled
-        if (encryption != null) {
-            start = disk.get_sector (ref boot_sector);
-        } else {
-            start = disk.get_sector (ref efi_sector);
         }
 
         end = disk.get_sector (ref end_sector);
