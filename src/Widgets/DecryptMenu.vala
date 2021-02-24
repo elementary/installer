@@ -18,8 +18,6 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public delegate void DecryptFn (string path, string pv, string pass, Installer.DecryptMenu menu);
-
 public class Installer.DecryptMenu: Gtk.Popover {
     private Gtk.Stack stack;
 
@@ -28,15 +26,21 @@ public class Installer.DecryptMenu: Gtk.Popover {
     private Gtk.Entry pass_entry;
     private Gtk.Entry pv_entry;
 
-    public DecryptMenu (string device_path, DecryptFn decrypt) {
+    private string device_path;
+
+    public signal void decrypted (InstallerDaemon.LuksCredentials creds);
+
+    public DecryptMenu (string device_path) {
+        this.device_path = device_path;
+
         stack = new Gtk.Stack ();
         stack.margin = 12;
-        create_decrypt_view (device_path, decrypt);
+        create_decrypt_view ();
         add (stack);
         stack.show_all ();
     }
 
-    private void create_decrypt_view (string device_path, DecryptFn decrypt) {
+    private void create_decrypt_view () {
         var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
@@ -77,7 +81,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         pass_entry.changed.connect (() => set_sensitivity ());
         pass_entry.activate.connect (() => {
             if (entries_set ()) {
-                decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
+                decrypt.begin (pv_entry.get_text ());
             }
         });
 
@@ -90,7 +94,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         pv_entry.changed.connect (() => set_sensitivity ());
         pv_entry.activate.connect (() => {
             if (entries_set ()) {
-                decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
+                decrypt.begin (pv_entry.get_text ());
             }
         });
 
@@ -99,7 +103,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         decrypt_button.sensitive = false;
         decrypt_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         decrypt_button.clicked.connect (() => {
-            decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
+            decrypt.begin (pv_entry.get_text ());
         });
 
         decrypt_view = new Gtk.Grid ();
@@ -116,6 +120,52 @@ public class Installer.DecryptMenu: Gtk.Popover {
         stack.add (decrypt_view);
         stack.visible_child = decrypt_view;
         pass_entry.grab_focus_without_selecting ();
+    }
+
+    private async void decrypt (string pv) {
+        unowned string password = pass_entry.get_text ();
+
+        int result;
+        try {
+            result = yield Daemon.get_default ().decrypt_partition (device_path, pv_entry.get_text (), password);
+        } catch (Error e) {
+            critical ("Unable to decrypt partition: %s", e.message);
+            return;
+        }
+
+        switch (result) {
+            case 0:
+                set_decrypted (pv);
+                var creds = InstallerDaemon.LuksCredentials () {
+                    device = device_path,
+                    pv = pv,
+                    password = password
+                };
+
+                decrypted ((owned)creds);
+                break;
+            case 1:
+                debug ("decrypt_partition result is 1");
+                break;
+            case 2:
+                debug ("decrypt: input was not valid UTF-8");
+                break;
+            case 3:
+                debug ("decrypt: either a password or keydata string must be supplied");
+                break;
+            case 4:
+                debug ("decrypt: unable to decrypt partition (possibly invalid password)");
+                break;
+            case 5:
+                debug ("decrypt: the decrypted partition does not have a LVM volume on it");
+                break;
+            case 6:
+                debug ("decrypt: unable to locate LUKS partition at %s", device_path);
+                break;
+            default:
+                critical ("decrypt: unhandled error value: %d", result);
+                break;
+        }
     }
 
     private void create_decrypted_view (string pv) {

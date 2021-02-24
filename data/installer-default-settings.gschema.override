@@ -1,0 +1,56 @@
+[org.freedesktop.ibus.general.hotkey:Installer]
+triggers=['<Control>space']
+
+[org.freedesktop.ibus.panel:Installer]
+show=1
+
+[org.gnome.desktop.datetime:Installer]
+automatic-timezone=true
+
+[org.gnome.desktop.input-sources:Installer]
+xkb-options=['grp:alt_shift_toggle']
+
+[org.gnome.desktop.interface:Installer]
+cursor-theme='elementary'
+document-font-name='Open Sans 10'
+font-name='Inter 9'
+gtk-theme='io.elementary.stylesheet.blueberry'
+icon-theme='elementary'
+monospace-font-name='Roboto Mono 10'
+show-unicode-menu=false
+
+[org.gnome.desktop.peripherals.touchpad:Installer]
+natural-scroll=true
+tap-to-click=true
+
+[org.gnome.desktop.sound:Installer]
+theme-name='elementary'
+
+[org.gnome.desktop.wm.preferences:Installer]
+button-layout='close:maximize'
+mouse-button-modifier='<Super>'
+resize-with-right-button=true
+
+[org.gnome.nm-applet:Installer]
+disable-connected-notifications=true
+show-applet=false
+
+[org.gnome.settings-daemon.peripherals.touchpad:Installer]
+horiz-scroll-enabled=true
+natural-scroll=true
+scroll-method='two-finger-scrolling'
+
+[org.gnome.settings-daemon.plugins.screensaver-proxy:Installer]
+# Allows light-locker to accept DBus
+active=false
+
+[org.gnome.settings-daemon.plugins.xsettings:Installer]
+antialiasing='grayscale'
+hinting='slight'
+overrides={'Gtk/DialogsUseHeader': <0>, 'Gtk/EnablePrimaryPaste': <0>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'close:menu,maximize'>}
+
+[org.gtk.Settings.FileChooser:Installer]
+sort-directories-first=true
+
+[org.onboard:Installer]
+theme='/usr/share/onboard/themes/Nightshade.theme'
