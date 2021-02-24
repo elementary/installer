@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 17:04+0000\n"
-"PO-Revision-Date: 2021-02-21 19:25+0000\n"
+"PO-Revision-Date: 2021-02-24 22:25+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -56,7 +56,7 @@ msgstr "Ignorieren"
 
 #: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
-msgstr "Nicht genug Speicherplatz"
+msgstr "Zu wenig Speicherplatz"
 
 #: src/Views/CheckView.vala:220
 #, c-format
@@ -81,7 +81,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
-msgstr "Schließen Sie die Stromversorgung an"
+msgstr "Stromversorgung anschließen"
 
 #: src/Views/CheckView.vala:249
 msgid ""
@@ -126,7 +126,7 @@ msgstr "Aktuelle Konfiguration laden …"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
-msgstr "Löschen und Installieren"
+msgstr "Löschen und installieren"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
@@ -202,8 +202,8 @@ msgid ""
 "restart properly. You can try the following:"
 msgstr ""
 "Die Installation von %s ist fehlgeschlagen, möglicherweise aufgrund eines "
-"Hardware-Fehlers. Ihr Gerät startet möglicherweise nicht ordnungsgemäß neu. "
-"Sie können Folgendes versuchen:"
+"Hardware-Fehlers. Ihr Gerät startet eventuell nicht ordnungsgemäß neu. Sie "
+"können Folgendes versuchen:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
