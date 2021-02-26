@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 17:04+0000\n"
-"PO-Revision-Date: 2021-02-24 22:25+0000\n"
+"PO-Revision-Date: 2021-02-26 18:32+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -135,8 +135,8 @@ msgstr "Laufwerksverschlüsselung"
 #: src/Views/EncryptView.vala:53
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Ihre Daten werden vor dem Zugriff anderer Personen geschützt, die "
-"physikalischen Zugriff auf dieses Gerät haben."
+"Ihre Daten werden vor Personen mit physikalischem Zugriff auf dieses Gerät "
+"geschützt."
 
 #: src/Views/EncryptView.vala:60
 msgid "Read and write speeds may be minimally impacted during intense tasks."
@@ -272,6 +272,7 @@ msgid "Currently active language"
 msgstr "Aktuell eingestellte Sprache"
 
 #: src/Views/PartitioningView.vala:54
+#, fuzzy
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -300,7 +301,7 @@ msgstr "Es wird empfohlen, eine <b>Swap-Partition</b> zu wählen."
 
 #: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
-msgstr "Partitionen bearbeiten …"
+msgstr "Partitionen ändern …"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
@@ -367,7 +368,7 @@ msgstr "Löschen und installieren"
 #: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "Sämtliche vorhandenen Daten löschen und %s neu installieren."
+msgstr "Sämtliche vorhandene Daten löschen und %s neu installieren."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
