@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 17:04+0000\n"
 "PO-Revision-Date: 2021-02-26 18:32+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
 "Language: de\n"
@@ -389,7 +389,7 @@ msgstr "Einrichtung fortsetzen"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Ihr Gerät wird in %i Sekunden automatisch mit %s neu gestartet."
+msgstr "Ihr Gerät wird in %2$i Sekunden automatisch mit %1$s neu gestartet."
 
 #: src/Views/SuccessView.vala:35
 msgid ""
