@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-16 17:04+0000\n"
-"PO-Revision-Date: 2021-02-21 19:25+0000\n"
+"PO-Revision-Date: 2021-02-26 23:11+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -56,7 +56,7 @@ msgstr "Ignorieren"
 
 #: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
-msgstr "Nicht genug Speicherplatz"
+msgstr "Zu wenig Speicherplatz"
 
 #: src/Views/CheckView.vala:220
 #, c-format
@@ -81,7 +81,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
-msgstr "Schließen Sie die Stromversorgung an"
+msgstr "Stromversorgung anschließen"
 
 #: src/Views/CheckView.vala:249
 msgid ""
@@ -126,7 +126,7 @@ msgstr "Aktuelle Konfiguration laden …"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
-msgstr "Löschen und Installieren"
+msgstr "Löschen und installieren"
 
 #: src/Views/EncryptView.vala:47
 msgid "Drive Encryption"
@@ -135,8 +135,8 @@ msgstr "Laufwerksverschlüsselung"
 #: src/Views/EncryptView.vala:53
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Ihre Daten werden vor dem Zugriff anderer Personen geschützt, die "
-"physikalischen Zugriff auf dieses Gerät haben."
+"Ihre Daten werden vor Personen mit physikalischem Zugriff auf dieses Gerät "
+"geschützt."
 
 #: src/Views/EncryptView.vala:60
 msgid "Read and write speeds may be minimally impacted during intense tasks."
@@ -202,8 +202,8 @@ msgid ""
 "restart properly. You can try the following:"
 msgstr ""
 "Die Installation von %s ist fehlgeschlagen, möglicherweise aufgrund eines "
-"Hardware-Fehlers. Ihr Gerät startet möglicherweise nicht ordnungsgemäß neu. "
-"Sie können Folgendes versuchen:"
+"Hardware-Fehlers. Ihr Gerät startet eventuell nicht ordnungsgemäß neu. Sie "
+"können Folgendes versuchen:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -272,6 +272,7 @@ msgid "Currently active language"
 msgstr "Aktuell eingestellte Sprache"
 
 #: src/Views/PartitioningView.vala:54
+#, fuzzy
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -300,7 +301,7 @@ msgstr "Es wird empfohlen, eine <b>Swap-Partition</b> zu wählen."
 
 #: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
-msgstr "Partitionen bearbeiten …"
+msgstr "Partitionen ändern …"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
@@ -367,7 +368,7 @@ msgstr "Löschen und installieren"
 #: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "Sämtliche vorhandenen Daten löschen und %s neu installieren."
+msgstr "Sämtliche vorhandene Daten löschen und %s neu installieren."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
