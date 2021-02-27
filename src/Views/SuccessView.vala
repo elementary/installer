@@ -32,7 +32,7 @@ public class SuccessView : AbstractInstallerView {
 
         var secondary_label = new Gtk.Label (
             _("%s was successfully installed.").printf (Utils.get_pretty_name ()) + " " +
-            ngettext(
+            ngettext (
                 "Your device will automatically restart in %i second.",
                 "Your device will automatically restart in %i seconds.",
                 RESTART_TIMEOUT
