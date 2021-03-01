@@ -157,7 +157,7 @@ namespace Utils {
         return machine_id.strip ();
     }
 
-    private static string? get_vendor () {
+    private static string? get_sys_vendor () {
         string vendor;
         try {
             FileUtils.get_contents ("/sys/devices/virtual/dmi/id/sys_vendor", out vendor);
@@ -169,7 +169,7 @@ namespace Utils {
         return vendor.strip ();
     }
 
-    private static string? get_model () {
+    private static string? get_product_name () {
         string model;
         try {
             FileUtils.get_contents ("/sys/devices/virtual/dmi/id/product_name", out model);
@@ -181,10 +181,22 @@ namespace Utils {
         return model.strip ();
     }
 
+    private static string? get_product_version () {
+        string model;
+        try {
+            FileUtils.get_contents ("/sys/devices/virtual/dmi/id/product_version", out model);
+        } catch (FileError e) {
+            warning ("%s", e.message);
+            return null;
+        }
+
+        return model.strip ();
+    }
+
     // Based on https://git.launchpad.net/ubiquity/tree/ubiquity/misc.py?id=ae6415d224c2e76afa2274cc9f85997f38870419#n648
     private static string? get_ubiquity_compatible_hostname () {
-        string model = get_model ();
-        string manufacturer = get_vendor ();
+        string model = get_product_name ();
+        string manufacturer = get_sys_vendor ();
 
         if (manufacturer.length == 0) {
             return null;
@@ -200,9 +212,8 @@ namespace Utils {
             model = "virtual machine";
             // VirtualBox sets an appropriate system-product-name.
         } else {
-            string key = "system-product-name";
             if (manufacturer.contains ("lenovo") || manufacturer.contains ("ibm")) {
-                key = "system-version";
+                model = get_product_version ();
             }
         }
 
