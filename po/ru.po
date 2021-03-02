@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-03-02 21:54+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Last-Translator: Гарри Карин <buddy@airmail.cc>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -352,14 +352,13 @@ msgstr ""
 "установленный опыт."
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid "Clean Install"
-msgstr "Стереть и установить"
+msgstr "Чистая установка"
 
 #: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Удалить всё и установить свежую копию %s."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
