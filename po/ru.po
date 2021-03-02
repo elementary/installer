@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-03-02 21:50+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Last-Translator: LL <chours2008@yandex.ru>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -291,7 +291,7 @@ msgstr "Также рекомендуется выбрать раздел <b>п�
 
 #: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Изменить разделы…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
