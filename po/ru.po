@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
-"PO-Revision-Date: 2021-03-02 21:54+0000\n"
+"PO-Revision-Date: 2021-03-03 01:39+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
@@ -117,7 +117,7 @@ msgstr ""
 
 #: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
-msgstr "Получение текущей конфигурации..."
+msgstr "Получение текущей конфигурации…"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
@@ -358,7 +358,7 @@ msgstr "Чистая установка"
 #: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "Удалить всё и установить свежую копию %s."
+msgstr "Удалить всё и установить новую копию %s."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
@@ -372,20 +372,20 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Продолжить установку"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed."
-msgstr ""
+msgstr "%s установлено."
 
 #: src/Views/SuccessView.vala:36
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Ваше устройство автоматически перезагрузится через %i секунду."
+msgstr[1] "Ваше устройство автоматически перезагрузится через %i секунды."
+msgstr[2] "Ваше устройство автоматически перезагрузится через %i секунд."
 
 #: src/Views/SuccessView.vala:40
 msgid ""
@@ -426,12 +426,12 @@ msgstr ""
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
@@ -443,16 +443,15 @@ msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Использовать как:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Корень"
+msgstr "Корневой каталог (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Домашний каталог (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
@@ -461,19 +460,19 @@ msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Пользовательский"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Пользовательский:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Файловая система:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
