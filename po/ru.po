@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-03-02 21:35+0000\n"
-"Last-Translator: LL <chours2008@yandex.ru>\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -23,11 +23,11 @@ msgstr "Установка %s"
 
 #: src/Utils.vala:33
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Выключить тестовый режим"
 
 #: src/Utils.vala:47
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Перезагрузить тестовый режим"
 
 #: src/Utils.vala:61
 msgid "Test mode switch user"
@@ -128,36 +128,24 @@ msgid "Drive Encryption"
 msgstr "Шифрование диска"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Шифрование этого диска защитит данные от чтения теми, кто имеет физический "
-"доступ к этому устройству."
+"Данные будут защищены от других лиц, имеющих физический доступ к этому "
+"устройству."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"Шифрование диска можно минимально повлиять на скорость чтения и записи при "
-"выполнении сложных задач."
+"Скорость чтения и записи может быть минимальной во время выполнения "
+"интенсивных задач."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"Пароль шифрования будет необходимо вводить каждый раз при включении или "
-"перезагрузке этого устройства."
+"При каждом включении устройства потребуется пароль шифрования. Храните его в "
+"безопасном месте."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -165,6 +153,9 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Если вы забудете пароль шифрования, <b>вы не сможете восстановить данные.</"
+"b> Это уникальный пароль для этого устройства, а не пароль для учетной "
+"записи пользователя."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
@@ -180,13 +171,12 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
-#, fuzzy
 msgid "Back"
-msgstr "Назад (Стереть)"
+msgstr "Назад"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
-msgstr ""
+msgstr "Введите пароль"
 
 #: src/Views/EncryptView.vala:169
 msgid "Set Password"
@@ -194,7 +184,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Пароли не совпадают"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
