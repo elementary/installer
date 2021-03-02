@@ -31,7 +31,7 @@ public class SuccessView : AbstractInstallerView {
         primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var secondary_label = new Gtk.Label (
-            _("%s was successfully installed.").printf (Utils.get_pretty_name ()) + " " +
+            _("%s has been installed.").printf (Utils.get_pretty_name ()) + " " +
             ngettext (
                 "Your device will automatically restart in %i second.",
                 "Your device will automatically restart in %i seconds.",
