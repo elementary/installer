@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 17:04+0000\n"
+"POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2020-05-21 13:11+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
@@ -205,7 +205,7 @@ msgstr "• أعد تشغيل جهازك للإقلاع من محرك أقراص
 msgid "Details"
 msgstr "التفاصيل"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "أعد تشغيل الجهاز"
 
@@ -365,10 +365,22 @@ msgstr "اكمال التجهيز"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
+msgid "%s has been installed."
+msgstr ""
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, fuzzy, c-format
+#| msgid "Your device will automatically restart to %s in %i seconds."
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
+msgstr[1] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
+msgstr[2] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
+msgstr[3] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
+msgstr[4] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
+msgstr[5] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -376,7 +388,7 @@ msgstr ""
 "بعد إعادة التشغيل يمكنك إنشاء مستخدم جديد، أو بإمكانك إيقاف التشغيل الآن "
 "وإنشاء مستخدم جديد لاحقا."
 
-#: src/Views/SuccessView.vala:55
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "إيقاف التشغيل"
 
