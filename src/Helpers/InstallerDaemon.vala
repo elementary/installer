@@ -33,6 +33,7 @@ public class Installer.Daemon {
         public async abstract void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error;
         public async abstract void install_with_custom_disk_layout (InstallerDaemon.InstallConfig config, InstallerDaemon.Mount[] disk_config, InstallerDaemon.LuksCredentials[] luks) throws GLib.Error;
         public async abstract void set_demo_mode_locale (string locale) throws GLib.Error;
+        public async abstract void trigger_demo_mode () throws GLib.Error;
     }
 
     public signal void on_error (Distinst.Error error);
@@ -123,6 +124,14 @@ public class Installer.Daemon {
         }
 
         yield daemon.set_demo_mode_locale (locale);
+    }
+
+    public async void trigger_demo_mode () throws GLib.Error {
+        if (daemon == null) {
+            throw new GLib.IOError.FAILED ("Not connected to installer daemon");
+        }
+
+        yield daemon.trigger_demo_mode ();
     }
 
     private static Daemon? _instance = null;
