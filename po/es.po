@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
-"PO-Revision-Date: 2021-03-02 18:57+0000\n"
-"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
+"PO-Revision-Date: 2021-03-03 01:39+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
 "Language: es\n"
@@ -382,7 +382,7 @@ msgstr "Continuar configuración"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed."
-msgstr "%s ha sido instalado."
+msgstr "Se ha instalado %s."
 
 #: src/Views/SuccessView.vala:36
 #, c-format
@@ -425,7 +425,7 @@ msgstr "Nombre del dispositivo:"
 
 #: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
-msgstr "Descrifrar"
+msgstr "Descifrar"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
@@ -451,7 +451,7 @@ msgstr "Formatear:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr "Usar como:"
+msgstr "Utilizar como:"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
