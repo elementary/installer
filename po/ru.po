@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
-"PO-Revision-Date: 2021-03-02 21:40+0000\n"
-"Last-Translator: Igor <igor.13.sarik@gmail.com>\n"
+"PO-Revision-Date: 2021-03-02 21:48+0000\n"
+"Last-Translator: LL <chours2008@yandex.ru>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -285,7 +285,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Также рекомендуется выбрать раздел подкачки. <b>Swap</b>"
 
 #: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
