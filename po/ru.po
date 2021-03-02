@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-03-02 21:40+0000\n"
-"Last-Translator: Глеб Буваненко <glebbuvanenko@ya.ru>\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -209,7 +209,7 @@ msgstr "• Используйте Демо Режим и попробуйте �
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr "• Перезагрузите устройство для загрузки с другого диска"
+msgstr "• Перезагрузите устройство для загрузки с другого устройства"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
@@ -229,11 +229,11 @@ msgstr "Попробовать установить заново"
 
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Раскладка клавиатуры"
 
 #: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Введите что-то для проверки раскладки"
 
 #: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
