@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-03-03 01:39+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Last-Translator: Гарри Карин <buddy@airmail.cc>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -369,6 +369,8 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Создание и изменение разделов вручную. Этот способ может привести к потере "
+"данных."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -392,6 +394,8 @@ msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"После перезагрузки вы сможете настроить новую учетную запись, или вы можете "
+"выключить компьютер сейчас и настроить новую учетную запись позже."
 
 #: src/Views/SuccessView.vala:60
 msgid "Shut Down"
@@ -399,29 +403,31 @@ msgstr "Выключить"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Расшифровать этот раздел"
 
 #: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"Введите пароль для расшифровки этого раздела и установите название "
+"устройства для расшифрованного раздела."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
-msgstr ""
+msgstr "Пароль:"
 
 #: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
-msgstr ""
+msgstr "Имя устройства:"
 
 #: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
-msgstr ""
+msgstr "Расшифровать"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "Том LUKS был рашифрован"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
@@ -435,11 +441,11 @@ msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Использовать раздел:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Форматировать:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
@@ -476,7 +482,7 @@ msgstr "Файловая система:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "По умолчанию (ext4)"
 
 #~ msgid "Starting installation"
 #~ msgstr "Начало установки"
