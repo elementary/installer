@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
-"PO-Revision-Date: 2021-03-02 22:39+0000\n"
+"PO-Revision-Date: 2021-03-03 01:39+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
 "installer/pt/>\n"
@@ -39,7 +39,7 @@ msgstr "%s…"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
-msgstr "Cancelar a Instalação"
+msgstr "Cancelar a instalação"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
@@ -51,7 +51,7 @@ msgstr "Ignorar"
 
 #: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
-msgstr "Espaço Insuficiente"
+msgstr "Espaço insuficiente"
 
 #: src/Views/CheckView.vala:220
 #, c-format
@@ -76,7 +76,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
-msgstr "Ligue a uma Fonte de Alimentação"
+msgstr "Ligue a uma fonte de alimentação"
 
 #: src/Views/CheckView.vala:249
 msgid ""
@@ -92,7 +92,7 @@ msgstr "Recomendado:"
 
 #: src/Views/CheckView.vala:311
 msgid "Your Device:"
-msgstr "O seu Dispositivo:"
+msgstr "O seu dispositivo:"
 
 #: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
@@ -157,15 +157,15 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr "Escolher a Palavra-passe de encriptação"
+msgstr "Escolher a palavra-passe de encriptação"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr "Confirmar Palavra-passe"
+msgstr "Confirmar palavra-passe"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr "Não Encriptar"
+msgstr "Não encriptar"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
@@ -174,15 +174,15 @@ msgstr "Voltar"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
-msgstr "Escolher Palavra-passe"
+msgstr "Escolher palavra-passe"
 
 #: src/Views/EncryptView.vala:169
 msgid "Set Password"
-msgstr "Definir Palavra-passe"
+msgstr "Definir palavra-passe"
 
 #: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
-msgstr "As Palavras-passe não coincidem"
+msgstr "As palavras-passe não coincidem"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
@@ -208,8 +208,7 @@ msgstr "• Use o Modo de Demonstração e tente recuperar manualmente"
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
 msgstr ""
-"• Reinicie o seu dispositivo para fazer o arranque a partir de outro "
-"dispositivo"
+"• Reinicie o dispositivo para fazer o arranque a partir de outro dispositivo"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
@@ -217,7 +216,7 @@ msgstr "Detalhes"
 
 #: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
-msgstr "Reiniciar Dispositivo"
+msgstr "Reiniciar dispositivo"
 
 #: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
@@ -225,19 +224,19 @@ msgstr "Experimentar o Modo de Demonstração"
 
 #: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
-msgstr "Tentar Instalar de Novo"
+msgstr "Tentar instalar novamente"
 
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
-msgstr "Disposição do Teclado"
+msgstr "Esquema de Teclado"
 
 #: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
-msgstr "Escreva para testar a sua disposição de teclado"
+msgstr "Digite para testar o seu esquema de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
-msgstr "Exibir a disposição do teclado"
+msgstr "Mostrar o esquema de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
@@ -249,7 +248,7 @@ msgstr "Padrão"
 
 #: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
-msgstr "Idioma de Introdução"
+msgstr "Idioma de introdução"
 
 #: src/Views/LanguageView.vala:259
 msgid "Languages"
