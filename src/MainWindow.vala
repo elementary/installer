@@ -35,6 +35,7 @@ public class Installer.MainWindow : Hdy.Window {
 
     public MainWindow () {
         Object (
+            deletable: false,
             height_request: 700,
             icon_name: "system-os-installer",
             resizable: false,
