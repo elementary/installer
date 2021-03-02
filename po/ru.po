@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-03-02 21:35+0000\n"
-"Last-Translator: Глеб Буваненко <glebbuvanenko@ya.ru>\n"
+"Last-Translator: LL <chours2008@yandex.ru>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -168,7 +168,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Выберите пароль шифрования"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
@@ -198,7 +198,7 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
-msgstr ""
+msgstr "Не удалось установить"
 
 #: src/Views/ErrorView.vala:38
 #, c-format
