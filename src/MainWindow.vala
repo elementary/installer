@@ -35,12 +35,12 @@ public class Installer.MainWindow : Hdy.Window {
 
     public MainWindow () {
         Object (
-            deletable: false,
             height_request: 700,
             icon_name: "system-os-installer",
             resizable: false,
             title: _("Install %s").printf (Utils.get_pretty_name ()),
-            width_request: 950
+            width_request: 950,
+            window_position: Gtk.WindowPosition.CENTER_ALWAYS
         );
     }
 
