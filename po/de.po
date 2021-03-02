@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 17:04+0000\n"
+"POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-02-26 23:11+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
@@ -223,7 +223,7 @@ msgstr "• Starten Sie Ihr Gerät neu, um von einem anderen Laufwerk zu starten
 msgid "Details"
 msgstr "Details"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "Gerät neu starten"
 
@@ -388,10 +388,18 @@ msgstr "Einrichtung fortsetzen"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Ihr Gerät wird in %i Sekunden automatisch mit %s neu gestartet."
+msgid "%s has been installed."
+msgstr ""
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, fuzzy, c-format
+#| msgid "Your device will automatically restart to %s in %i seconds."
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "Ihr Gerät wird in %i Sekunden automatisch mit %s neu gestartet."
+msgstr[1] "Ihr Gerät wird in %i Sekunden automatisch mit %s neu gestartet."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -399,7 +407,7 @@ msgstr ""
 "Nach einem Neustart können Sie einen neuen Benutzer einrichten; Sie können "
 "das Gerät aber auch ausschalten und den neuen Benutzer später einrichten."
 
-#: src/Views/SuccessView.vala:55
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "Ausschalten"
 
