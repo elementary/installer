@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-03-02 21:50+0000\n"
-"Last-Translator: Гарри Карин <buddy@airmail.cc>\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -287,7 +287,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "Также рекомендуется выбрать раздел подкачки. <b>Swap</b>"
+msgstr "Также рекомендуется выбрать раздел <b>подкачки (Swap)</b>."
 
 #: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
@@ -299,7 +299,7 @@ msgstr "Раздел EFI имеет неправильную файловую с
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "Раздел EFI слишком мал"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
