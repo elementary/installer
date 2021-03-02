@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-03-02 21:48+0000\n"
-"Last-Translator: Гарри Карин <buddy@airmail.cc>\n"
+"Last-Translator: p0werpwn <p0werpwnx@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -248,14 +248,12 @@ msgid "Default"
 msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:130
-#, fuzzy
 msgid "Input Language"
-msgstr "Выберите язык"
+msgstr "Язык ввода"
 
 #: src/Views/LanguageView.vala:259
-#, fuzzy
 msgid "Languages"
-msgstr "Выберите язык"
+msgstr "Языки"
 
 #: src/Views/LanguageView.vala:276
 msgid "Select a Language"
