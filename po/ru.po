@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2021-03-02 21:52+0000\n"
-"Last-Translator: LL <chours2008@yandex.ru>\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -303,7 +303,7 @@ msgstr "Раздел EFI слишком мал"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr "Недопустимая файловая система для root"
+msgstr "Недопустимая файловая система для корневого раздела"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
@@ -311,7 +311,7 @@ msgstr ""
 
 #: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Разметка диска"
 
 #: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
@@ -326,9 +326,8 @@ msgid "Finishing the Installation"
 msgstr "Завершение установки"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Стереть и установить"
+msgstr "Попробовать или установить"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
