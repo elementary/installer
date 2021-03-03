@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
-"PO-Revision-Date: 2020-04-14 14:10+0000\n"
+"PO-Revision-Date: 2021-03-03 14:07+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:42
@@ -377,15 +377,14 @@ msgstr "Jatka asentamista"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed."
-msgstr ""
+msgstr "%s on asennettu."
 
 #: src/Views/SuccessView.vala:36
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "Laitteesi käynnistyy automaattisesti kohteeseen %s %i sekunnissa."
-msgstr[1] "Laitteesi käynnistyy automaattisesti kohteeseen %s %i sekunnissa."
+msgstr[0] "Laitteesi käynnistyy uudelleen automaattisesti %i sekunnissa."
+msgstr[1] "Laitteesi käynnistyy uudelleen automaattisesti %i sekunnissa."
 
 #: src/Views/SuccessView.vala:40
 msgid ""
