@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
-"PO-Revision-Date: 2021-02-26 23:11+0000\n"
+"PO-Revision-Date: 2021-03-03 05:28+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -389,15 +389,14 @@ msgstr "Einrichtung fortsetzen"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed."
-msgstr ""
+msgstr "%s wurde installiert."
 
 #: src/Views/SuccessView.vala:36
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "Ihr Gerät wird in %i Sekunden automatisch mit %s neu gestartet."
-msgstr[1] "Ihr Gerät wird in %i Sekunden automatisch mit %s neu gestartet."
+msgstr[0] "Ihr Gerät wird in %i Sekunde automatisch neu gestartet."
+msgstr[1] "Ihr Gerät wird in %i Sekunden automatisch neu gestartet."
 
 #: src/Views/SuccessView.vala:40
 msgid ""
