@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
-"PO-Revision-Date: 2021-03-02 09:56+0000\n"
+"PO-Revision-Date: 2021-03-03 09:05+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -364,15 +364,14 @@ msgstr "המשך ההתקנה"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed."
-msgstr ""
+msgstr "%s הותקן."
 
 #: src/Views/SuccessView.vala:36
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "ההתקן שלך יופעל מחדש אוטומטית הישר לתוך %s בעוד %i שניות."
-msgstr[1] "ההתקן שלך יופעל מחדש אוטומטית הישר לתוך %s בעוד %i שניות."
+msgstr[0] "ההתקן שלך יופעל מחדש אוטומטית בעוד שנייה."
+msgstr[1] "ההתקן שלך יופעל מחדש אוטומטית בעוד %i שניות."
 
 #: src/Views/SuccessView.vala:40
 msgid ""
