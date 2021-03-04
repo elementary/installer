@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 17:37+0000\n"
-"PO-Revision-Date: 2018-06-10 00:11+0000\n"
-"Last-Translator: Gamunu Balagalla <gamunu.balagalla@gmail.com>\n"
-"Language-Team: Sinhala <https://weblate.elementary.io/projects/installer/"
+"PO-Revision-Date: 2021-03-04 15:31+0000\n"
+"Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
+"Language-Team: Sinhala <https://l10n.elementary.io/projects/installer/"
 "installer/si/>\n"
 "Language: si\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:42
@@ -92,7 +92,7 @@ msgstr "නිර්දේශිත:"
 
 #: src/Views/CheckView.vala:311
 msgid "Your Device:"
-msgstr "ඔබේ උපාංගය:"
+msgstr "ඔබගේ උපාංගය:"
 
 #: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
@@ -221,7 +221,7 @@ msgstr "• ඔබගේ උපාංගය වෙනත් ධාවකයක�
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "විස්තර"
 
 #: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
