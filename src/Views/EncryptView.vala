@@ -75,7 +75,6 @@ public class EncryptView : AbstractInstallerView {
 
         var choice_grid = new Gtk.Grid () {
             column_spacing = 12,
-            orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 32
         };
         choice_grid.attach (protect_image, 0, 0);
