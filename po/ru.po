@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 17:04+0000\n"
-"PO-Revision-Date: 2018-06-04 00:08+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
-"Language-Team: Russian <https://weblate.elementary.io/projects/installer/"
+"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"PO-Revision-Date: 2021-03-03 01:39+0000\n"
+"Last-Translator: Igor <igor.13.sarik@gmail.com>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:42
@@ -23,15 +23,15 @@ msgstr "Установка %s"
 
 #: src/Utils.vala:33
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Выключить тестовый режим"
 
 #: src/Utils.vala:47
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Перезагрузить тестовый режим"
 
 #: src/Utils.vala:61
 msgid "Test mode switch user"
-msgstr ""
+msgstr "Сменить пользователя в тестовом режиме"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
 #, c-format
@@ -117,7 +117,7 @@ msgstr ""
 
 #: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
-msgstr "Получение текущей конфигурации..."
+msgstr "Получение текущей конфигурации…"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
@@ -128,36 +128,24 @@ msgid "Drive Encryption"
 msgstr "Шифрование диска"
 
 #: src/Views/EncryptView.vala:53
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Шифрование этого диска защитит данные от чтения теми, кто имеет физический "
-"доступ к этому устройству."
+"Данные будут защищены от других лиц, имеющих физический доступ к этому "
+"устройству."
 
 #: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
 msgid "Read and write speeds may be minimally impacted during intense tasks."
 msgstr ""
-"Шифрование диска можно минимально повлиять на скорость чтения и записи при "
-"выполнении сложных задач."
+"Скорость чтения и записи может быть минимальной во время выполнения "
+"интенсивных задач."
 
 #: src/Views/EncryptView.vala:67
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"Пароль шифрования будет необходимо вводить каждый раз при включении или "
-"перезагрузке этого устройства."
+"При каждом включении устройства потребуется пароль шифрования. Храните его в "
+"безопасном месте."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -165,40 +153,42 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"Если вы забудете пароль шифрования, <b>вы не сможете восстановить данные.</"
+"b> Это уникальный пароль для этого устройства, а не пароль для учетной "
+"записи пользователя."
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "Выберите пароль шифрования"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr ""
+msgstr "Подтвердите пароль"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr ""
+msgstr "Не шифровать"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
-#, fuzzy
 msgid "Back"
-msgstr "Назад (Стереть)"
+msgstr "Назад"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
-msgstr ""
+msgstr "Введите пароль"
 
 #: src/Views/EncryptView.vala:169
 msgid "Set Password"
-msgstr ""
+msgstr "Установить пароль"
 
 #: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Пароли не совпадают"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
-msgstr ""
+msgstr "Не удалось установить"
 
 #: src/Views/ErrorView.vala:38
 #, c-format
@@ -206,64 +196,64 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
+"Установка %s не удалась, возможно, из-за аппаратной ошибки. Устройство может "
+"не перезагрузиться должным образом. Вы можете попробовать следующее:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Повторите установку заново"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• Используйте Демо Режим и попробуйте восстановить вручную"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Перезагрузите устройство для загрузки с другого устройства"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "Подробнее"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
-msgstr ""
+msgstr "Перезагрузить устройство"
 
 #: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Попробовать Демо-режим"
 
 #: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Попробовать установить заново"
 
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Раскладка клавиатуры"
 
 #: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Введите что-то для проверки раскладки"
 
 #: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Показать раскладку клавиатуры"
 
 #: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr ""
+msgstr "Выбрать"
 
 #: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 #: src/Views/KeyboardLayoutView.vala:130
-#, fuzzy
 msgid "Input Language"
-msgstr "Выберите язык"
+msgstr "Язык ввода"
 
 #: src/Views/LanguageView.vala:259
-#, fuzzy
 msgid "Languages"
-msgstr "Выберите язык"
+msgstr "Языки"
 
 #: src/Views/LanguageView.vala:276
 msgid "Select a Language"
@@ -271,18 +261,20 @@ msgstr "Выберите язык"
 
 #: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
-msgstr ""
+msgstr "Текущий язык"
 
 #: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Выберите, какие разделы использовать на всех дисках. <b>Выбор \"Форматировать"
+"\" приведет к очистке ВСЕХ данных на выбранном разделе.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Необходимо выбрать по крайней мере <b>Корневой (/)</b> раздел."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -290,189 +282,207 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Необходимо выбрать по крайней мере <b>Корневой (/)</b> раздел и "
+"<b>Загрузочный (/boot/efi)</b> раздел."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Также рекомендуется выбрать раздел <b>подкачки (Swap)</b>."
 
 #: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Изменить разделы…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "Раздел EFI имеет неправильную файловую систему"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "Раздел EFI слишком мал"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Недопустимая файловая система для корневого раздела"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Недопустимая файловая система для домашнего каталога"
 
 #: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Разметка диска"
 
 #: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
-msgstr ""
+msgstr "Извлечение файлов"
 
 #: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
-msgstr ""
+msgstr "Настройка системы"
 
 #: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Завершение установки"
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Try or Install"
-msgstr "Стереть и установить"
+msgstr "Попробовать или установить"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
+"Вы можете установить %s на это устройство сейчас, или попробовать демо-режим "
+"без установки."
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
-msgstr ""
+msgstr "Далее"
 
 #: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
+"Изменения не будут сохранены, а данные из прошлой операционной системы "
+"останутся без изменений. Производительность и функции могут не "
+"соответствовать установленной системе."
 
 #: src/Views/TryInstallView.vala:81
-#, fuzzy
 msgid "Clean Install"
-msgstr "Стереть и установить"
+msgstr "Чистая установка"
 
 #: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Удалить всё и установить новую копию %s."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
-msgstr ""
+msgstr "Пользовательский (Для опытных)"
 
 #: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Создание и изменение разделов вручную. Этот способ может привести к потере "
+"данных."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Продолжить установку"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
+msgid "%s has been installed."
+msgstr "%s установлено."
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, c-format
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "Ваше устройство автоматически перезагрузится через %i секунду."
+msgstr[1] "Ваше устройство автоматически перезагрузится через %i секунды."
+msgstr[2] "Ваше устройство автоматически перезагрузится через %i секунд."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"После перезагрузки вы сможете настроить новую учетную запись, или вы можете "
+"выключить компьютер сейчас и настроить новую учетную запись позже."
 
-#: src/Views/SuccessView.vala:55
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "Выключить"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Расшифровать этот раздел"
 
 #: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"Введите пароль для расшифровки этого раздела и установите название "
+"устройства для расшифрованного раздела."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
-msgstr ""
+msgstr "Пароль:"
 
 #: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
-msgstr ""
+msgstr "Имя устройства:"
 
 #: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
-msgstr ""
+msgstr "Расшифровать"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "Том LUKS был рашифрован"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Использовать раздел:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Форматировать:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Использовать как:"
 
 #: src/Widgets/PartitionMenu.vala:87
-#, fuzzy
 msgid "Root (/)"
-msgstr "Корень"
+msgstr "Корневой каталог (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Домашний каталог (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Загрузка (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Пользовательский"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Пользовательский:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Файловая система:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "По умолчанию (ext4)"
 
 #~ msgid "Starting installation"
 #~ msgstr "Начало установки"

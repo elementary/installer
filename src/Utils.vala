@@ -57,20 +57,32 @@ namespace Utils {
         }
     }
 
+    private static void logout () {
+        var session = Utils.get_session_instance ();
+        if (session != null) {
+            try {
+                // Logout mode 2 is forcefully logout. No confirmation will be shown and any inhibitors will be ignored.
+                session.logout (2);
+            } catch (GLib.Error e) {
+                warning ("DisplayManager.Seat error: %s", e.message);
+            }
+        }
+    }
+
     private static void demo_mode () {
         if (Installer.App.test_mode) {
             critical (_("Test mode switch user"));
         } else {
-            get_system_instance ();
-
-            var seat = Utils.get_seat_instance ();
-            if (seat != null) {
+            // This touches the file `/var/lib/lightdm/demo-mode`, which signals to the greeter that the next session it launches
+            // should be the live (demo) session. If this file doesn't exist, it just relaunches the installer session
+            Installer.Daemon.get_default ().trigger_demo_mode.begin ((obj, res) => {
                 try {
-                    seat.switch_to_guest ("");
-                } catch (GLib.Error e) {
-                    stderr.printf ("DisplayManager.Seat error: %s\n", e.message);
+                    ((Installer.Daemon)obj).trigger_demo_mode.end (res);
+                    logout ();
+                } catch (Error e) {
+                    warning ("Error triggering demo mode: %s", e.message);
                 }
-            }
+            });
         }
     }
 
@@ -95,28 +107,27 @@ namespace Utils {
         }
     }
 
-    [DBus (name = "org.freedesktop.DisplayManager.Seat")]
-    public interface SeatInterface : Object {
-        public abstract bool has_guest_account { get; }
-        public abstract void switch_to_guest (string session_name) throws GLib.Error;
+    [DBus (name = "org.gnome.SessionManager")]
+    interface SessionInterface : Object {
+        public abstract void logout (uint type) throws GLib.Error;
     }
 
-    private static SeatInterface? seat_instance;
-    public static unowned SeatInterface? get_seat_instance () {
-        if (seat_instance == null) {
+    private static SessionInterface? session_instance;
+    private static unowned SessionInterface? get_session_instance () {
+        if (session_instance == null) {
             try {
-                seat_instance = Bus.get_proxy_sync (
-                    BusType.SYSTEM,
-                    "org.freedesktop.DisplayManager",
-                    Environment.get_variable ("XDG_SEAT_PATH"),
+                session_instance = Bus.get_proxy_sync (
+                    BusType.SESSION,
+                    "org.gnome.SessionManager",
+                    "/org/gnome/SessionManager",
                     DBusProxyFlags.NONE
                 );
             } catch (GLib.Error e) {
-                critical ("DisplayManager.Seat error: %s", e.message);
+                critical ("SessionManager error: %s", e.message);
             }
         }
 
-        return seat_instance;
+        return session_instance;
     }
 
     [DBus (name = "org.freedesktop.hostname1")]

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 17:04+0000\n"
-"PO-Revision-Date: 2020-03-06 11:09+0000\n"
+"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"PO-Revision-Date: 2021-03-03 01:39+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
 "installer/pt/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:42
@@ -39,7 +39,7 @@ msgstr "%s…"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
-msgstr "Cancelar a Instalação"
+msgstr "Cancelar a instalação"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
@@ -51,7 +51,7 @@ msgstr "Ignorar"
 
 #: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
-msgstr "Espaço Insuficiente"
+msgstr "Espaço insuficiente"
 
 #: src/Views/CheckView.vala:220
 #, c-format
@@ -76,7 +76,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
-msgstr "Ligue a uma Fonte de Alimentação"
+msgstr "Ligue a uma fonte de alimentação"
 
 #: src/Views/CheckView.vala:249
 msgid ""
@@ -92,7 +92,7 @@ msgstr "Recomendado:"
 
 #: src/Views/CheckView.vala:311
 msgid "Your Device:"
-msgstr "O seu Dispositivo:"
+msgstr "O seu dispositivo:"
 
 #: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
@@ -157,15 +157,15 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:90
 msgid "Choose Encryption Password"
-msgstr "Escolher a Palavra-passe de encriptação"
+msgstr "Escolher a palavra-passe de encriptação"
 
 #: src/Views/EncryptView.vala:105
 msgid "Confirm Password"
-msgstr "Confirmar Palavra-passe"
+msgstr "Confirmar palavra-passe"
 
 #: src/Views/EncryptView.vala:141
 msgid "Don't Encrypt"
-msgstr "Não Encriptar"
+msgstr "Não encriptar"
 
 #: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
@@ -174,15 +174,15 @@ msgstr "Voltar"
 
 #: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
 msgid "Choose Password"
-msgstr "Escolher Palavra-passe"
+msgstr "Escolher palavra-passe"
 
 #: src/Views/EncryptView.vala:169
 msgid "Set Password"
-msgstr "Definir Palavra-passe"
+msgstr "Definir palavra-passe"
 
 #: src/Views/EncryptView.vala:232
 msgid "Passwords do not match"
-msgstr "As Palavras-passe não coincidem"
+msgstr "As palavras-passe não coincidem"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
@@ -208,16 +208,15 @@ msgstr "• Use o Modo de Demonstração e tente recuperar manualmente"
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
 msgstr ""
-"• Reinicie o seu dispositivo para fazer o arranque a partir de outro "
-"dispositivo"
+"• Reinicie o dispositivo para fazer o arranque a partir de outro dispositivo"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
 msgstr "Detalhes"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
-msgstr "Reiniciar Dispositivo"
+msgstr "Reiniciar dispositivo"
 
 #: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
@@ -225,19 +224,19 @@ msgstr "Experimentar o Modo de Demonstração"
 
 #: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
-msgstr "Tentar Instalar de Novo"
+msgstr "Tentar instalar novamente"
 
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
-msgstr "Disposição do Teclado"
+msgstr "Esquema de Teclado"
 
 #: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
-msgstr "Escreva para testar a sua disposição de teclado"
+msgstr "Digite para testar o seu esquema de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
-msgstr "Exibir a disposição do teclado"
+msgstr "Mostrar o esquema de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
@@ -249,7 +248,7 @@ msgstr "Padrão"
 
 #: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
-msgstr "Idioma de Introdução"
+msgstr "Idioma de introdução"
 
 #: src/Views/LanguageView.vala:259
 msgid "Languages"
@@ -295,7 +294,7 @@ msgstr "Modificar partições…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr "A partição EFI tem o sistema de ficheiros errado"
+msgstr "A partição EFI tem o sistema de ficheiros incorreto"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
@@ -311,19 +310,19 @@ msgstr "Sistema de ficheiros inválido para a home"
 
 #: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
-msgstr "A Particionar a Unidade"
+msgstr "A particionar a unidade"
 
 #: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
-msgstr "A extrair os Ficheiros"
+msgstr "A extrair os ficheiros"
 
 #: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
-msgstr "A Configurar o Sistema"
+msgstr "A configurar o sistema"
 
 #: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
-msgstr "A Finalizar a Instalação"
+msgstr "A finalizar a instalação"
 
 #: src/Views/TryInstallView.vala:44
 msgid "Try or Install"
@@ -334,13 +333,13 @@ msgstr "Experimentar ou Instalar"
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
-"Pode instalar %s neste dispositivo, ou experimentar o Modo de Demonstração "
-"sem instalar."
+"Pode instalar o %s neste dispositivo agora, ou experimentar o Modo de "
+"Demonstração sem instalar."
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
-msgstr "Próximo"
+msgstr "Seguinte"
 
 #: src/Views/TryInstallView.vala:77
 msgid ""
@@ -353,16 +352,16 @@ msgstr ""
 
 #: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
-msgstr "Instalação Limpa"
+msgstr "Instalação limpa"
 
 #: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "Apagar tudo e instalar uma nova cópia de %s."
+msgstr "Apagar tudo e instalar uma nova cópia do %s."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
-msgstr "Personalizar (Avançado)"
+msgstr "Personalizada (Avançada)"
 
 #: src/Views/TryInstallView.vala:89
 msgid ""
@@ -374,15 +373,21 @@ msgstr ""
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
-msgstr "Continuar Configuração"
+msgstr "Continuar a configuração"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr ""
-"O seu dispositivo será reiniciado automaticamente para %s em %i segundos."
+msgid "%s has been installed."
+msgstr "%s foi instalado."
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, c-format
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "O dispositivo irá reiniciar automaticamente em %i segundo."
+msgstr[1] "O dispositivo irá reiniciar automaticamente em %i segundos."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -390,7 +395,7 @@ msgstr ""
 "Após reiniciar pode configurar um novo utilizador, ou pode desligar agora e "
 "configurar um novo utilizador mais tarde."
 
-#: src/Views/SuccessView.vala:55
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "Encerrar"
 

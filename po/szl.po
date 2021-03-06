@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 17:04+0000\n"
+"POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2020-06-17 00:11+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/installer/"
@@ -213,7 +213,7 @@ msgstr "• Sztartnij zaś maszina z inkszego dysku"
 msgid "Details"
 msgstr "Informacyje"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "Zresztartuj maszina"
 
@@ -376,10 +376,22 @@ msgstr "Kōntynuuj sztalowanie"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
+msgid "%s has been installed."
+msgstr ""
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, fuzzy, c-format
+#| msgid "Your device will automatically restart to %s in %i seconds."
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] ""
+"Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
+msgstr[1] ""
+"Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
+msgstr[2] ""
+"Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -387,7 +399,7 @@ msgstr ""
 "Po resztarcie bydzie szło skōnfigurować nowego używocza. Możesz tyż zastawić "
 "maszina i skōnfigurować używocza niyskorzij."
 
-#: src/Views/SuccessView.vala:55
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "Zastow kōmputer"
 

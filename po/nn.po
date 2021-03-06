@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 17:04+0000\n"
+"POT-Creation-Date: 2021-03-02 17:37+0000\n"
 "PO-Revision-Date: 2019-01-05 02:45+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -227,7 +227,7 @@ msgstr "• Start maskina om att for å starte opp frå ein annan lagringsstasjo
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "Start maskina om att"
 
@@ -390,10 +390,18 @@ msgstr "Hald fram med oppsett"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Maskina di vil automatisk starte om att til %s om %i sekund."
+msgid "%s has been installed."
+msgstr ""
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, fuzzy, c-format
+#| msgid "Your device will automatically restart to %s in %i seconds."
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "Maskina di vil automatisk starte om att til %s om %i sekund."
+msgstr[1] "Maskina di vil automatisk starte om att til %s om %i sekund."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -401,7 +409,7 @@ msgstr ""
 "Etter omstarten kan du opprette ein ny brukar, eller du kan slå av maskina "
 "no og opprette ein ny brukar seinare."
 
-#: src/Views/SuccessView.vala:55
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "Slå av"
 

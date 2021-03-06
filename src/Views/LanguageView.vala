@@ -144,7 +144,9 @@ public class Installer.LanguageView : AbstractInstallerView {
                     lang += "_" + configuration.country;
                 }
 
-                set_demo_mode_language.begin (lang);
+                if (!Installer.App.test_mode) {
+                    set_demo_mode_language.begin (lang);
+                }
             } else {
                 warning ("next_button enabled when no language selected");
                 next_button.sensitive = false;

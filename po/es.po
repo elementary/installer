@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 17:04+0000\n"
-"PO-Revision-Date: 2020-03-06 11:09+0000\n"
+"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"PO-Revision-Date: 2021-03-03 01:39+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:42
@@ -215,7 +215,7 @@ msgstr "• Reiniciar el dispositivo para arrancar desde otra unidad"
 msgid "Details"
 msgstr "Detalles"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "Reiniciar dispositivo"
 
@@ -381,10 +381,17 @@ msgstr "Continuar configuración"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "El dispositivo se reiniciará automáticamente a %s en %i segundos."
+msgid "%s has been installed."
+msgstr "Se ha instalado %s."
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, c-format
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "El dispositivo se reiniciará automáticamente en %i segundo."
+msgstr[1] "El dispositivo se reiniciará automáticamente en %i segundos."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -392,7 +399,7 @@ msgstr ""
 "Después de reiniciar puede configurar una cuenta de usuario nueva, o puede "
 "apagar ahora y configurar la cuenta más tarde."
 
-#: src/Views/SuccessView.vala:55
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "Apagar"
 
@@ -418,7 +425,7 @@ msgstr "Nombre del dispositivo:"
 
 #: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
-msgstr "Descrifrar"
+msgstr "Descifrar"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
@@ -444,7 +451,7 @@ msgstr "Formatear:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr "Usar como:"
+msgstr "Utilizar como:"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"

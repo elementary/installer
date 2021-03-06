@@ -146,10 +146,12 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 }
             }
 
-            Variant[] entries = { new Variant ("(ss)", "xkb", layout_string) };
-            var sources = new Variant.array (new VariantType ("(ss)"), entries);
-            keyboard_settings.set_value ("sources", sources);
-            keyboard_settings.set_value ("current", (uint)0);
+            if (!Installer.App.test_mode) {
+                Variant[] entries = { new Variant ("(ss)", "xkb", layout_string) };
+                var sources = new Variant.array (new VariantType ("(ss)"), entries);
+                keyboard_settings.set_value ("sources", sources);
+                keyboard_settings.set_value ("current", (uint)0);
+            }
         });
 
         input_variant_widget.main_listbox.row_selected.connect ((row) => {
