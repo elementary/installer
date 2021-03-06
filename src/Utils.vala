@@ -253,7 +253,8 @@ namespace Utils {
                 return null;
             }
         } catch (RegexError e) {
-            print ("Error: %s\n", e.message);
+            warning ("Error cleaning up hostname strings: %s", e.message);
+            return null;
         }
 
         return model;
