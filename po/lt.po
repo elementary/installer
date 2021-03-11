@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2019-07-06 01:28+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/installer/"
@@ -29,11 +29,11 @@ msgstr "Išbandymo veiksenos išjungimas"
 msgid "Test mode reboot"
 msgstr "Išbandymo veiksenos paleidimas iš naujo"
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "Išbandymo veiksenos naudotojo perjungimas"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -124,11 +124,11 @@ msgstr "Gaunama esama konfigūracija…"
 msgid "Erase and Install"
 msgstr "Ištrinti ir įdiegti"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "Disko šifravimas"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -138,17 +138,7 @@ msgstr ""
 "Šio disko šifravimas apsaugo duomenis ir neleidžia jų perskaityti asmenims, "
 "kurie turi fizinę prieigą prie šio įrenginio."
 
-#: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
-"Atliekant intensyvias užduotis, disko šifravimas gali nežymiai įtakoti "
-"skaitymo ir rašymo greičius."
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -160,7 +150,13 @@ msgstr ""
 "Kiekvieną kartą įjungus ar paleidus šį įrenginį iš naujo, bus reikalaujama "
 "įvesti šifravimo slaptažodį."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -170,32 +166,32 @@ msgstr ""
 "b> Tai unikalus slaptažodis, kuris yra skirtas šiam įrenginiui, o ne jūsų "
 "naudotojo paskyrai."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "Pasirinkite šifravimo slaptažodį"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Patvirtinkite slaptažodį"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "Nešifruoti"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Atgal"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "Pasirinkti slaptažodį"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "Nustatyti slaptažodį"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "Slaptažodžiai nesutampa"
 
@@ -265,15 +261,15 @@ msgstr "Numatytasis"
 msgid "Input Language"
 msgstr "Įvesties kalba"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "Kalbos"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "Pasirinkite kalbą"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "Šiuo metu aktyvi kalba"
 
@@ -504,6 +500,16 @@ msgstr "Failų sistema:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Numatytasis (ext4)"
+
+#, fuzzy
+#~| msgid ""
+#~| "Drive encryption may minimally impact read and write speed when "
+#~| "performing intense tasks."
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "Atliekant intensyvias užduotis, disko šifravimas gali nežymiai įtakoti "
+#~ "skaitymo ir rašymo greičius."
 
 #~ msgid "Unable to set the Distinst log callback"
 #~ msgstr "Nepavyko nustatyti Distinst žurnalo atgalinę iškvietą"

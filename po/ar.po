@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2020-05-21 13:11+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
@@ -29,11 +29,11 @@ msgstr "ايقاف تشغيل الوضع التجريبي"
 msgid "Test mode reboot"
 msgstr "إعادة تشغيل الوضع التجريبي"
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "تبديل حسابات الوضع التجريبي"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -119,26 +119,28 @@ msgstr "الحصول على الإعدادات الحالية …"
 msgid "Erase and Install"
 msgstr "امسح و ثبت"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "تشفير القرص"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 msgid "Data will be protected from others with physical access to this device."
 msgstr "البيانات ستكون محمية من الآخرين مع سماح للوصول بشكل فيزيائي."
 
-#: src/Views/EncryptView.vala:60
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr "سرعة القراءة والكتابة قد تتأثر بشكل بسيط‏ عند القيام بعمليات ثقيلة."
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
 "كلمة سر التشفير ستكون مطلوبة في كل مرة تقوم بفتح الجهاز. احفظها بمكان آمن."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -147,32 +149,32 @@ msgstr ""
 "إذا نسيت كلمة سر التشفير، <b> لن تكون قادرا على استعادة البيانات.</b> كلمة "
 "سر هذه مميزة للقرص الخاص بك، ليست كلمة السر الخاصة بحسابك."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "إختر كلمة سر مشفرة"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "تأكيد كلمة المرور"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "لا تشفر"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "للخلف"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "إختر كلمة السر"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "حدد كلمة السر"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "كلمتا المرور غير متطابقتين"
 
@@ -241,15 +243,15 @@ msgstr "الإفتراضي"
 msgid "Input Language"
 msgstr "اختر لغة الإدخال"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "اللغات"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "اختر اللغة"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "اللغة المفعلة حاليا"
 
@@ -474,6 +476,10 @@ msgstr "نظام الملفات:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "الافتراضي (ext4)"
+
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr "سرعة القراءة والكتابة قد تتأثر بشكل بسيط‏ عند القيام بعمليات ثقيلة."
 
 #~ msgid "Unable to set the Distinst log callback"
 #~ msgstr "‏غير قادر على ضبط (Distinst log callback)"

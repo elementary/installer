@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2021-03-03 01:39+0000\n"
 "Last-Translator: Igor <igor.13.sarik@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
@@ -29,11 +29,11 @@ msgstr "Выключить тестовый режим"
 msgid "Test mode reboot"
 msgstr "Перезагрузить тестовый режим"
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "Сменить пользователя в тестовом режиме"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -123,23 +123,17 @@ msgstr "Получение текущей конфигурации…"
 msgid "Erase and Install"
 msgstr "Стереть и установить"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "Шифрование диска"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Данные будут защищены от других лиц, имеющих физический доступ к этому "
 "устройству."
 
-#: src/Views/EncryptView.vala:60
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
-"Скорость чтения и записи может быть минимальной во время выполнения "
-"интенсивных задач."
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -147,7 +141,13 @@ msgstr ""
 "При каждом включении устройства потребуется пароль шифрования. Храните его в "
 "безопасном месте."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -157,32 +157,32 @@ msgstr ""
 "b> Это уникальный пароль для этого устройства, а не пароль для учетной "
 "записи пользователя."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "Выберите пароль шифрования"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Подтвердите пароль"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "Не шифровать"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Назад"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "Введите пароль"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "Установить пароль"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
@@ -251,15 +251,15 @@ msgstr "По умолчанию"
 msgid "Input Language"
 msgstr "Язык ввода"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "Языки"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "Выберите язык"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "Текущий язык"
 
@@ -483,6 +483,12 @@ msgstr "Файловая система:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "По умолчанию (ext4)"
+
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "Скорость чтения и записи может быть минимальной во время выполнения "
+#~ "интенсивных задач."
 
 #~ msgid "Starting installation"
 #~ msgstr "Начало установки"

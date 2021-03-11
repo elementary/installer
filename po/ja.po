@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2021-03-03 14:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
@@ -28,11 +28,11 @@ msgstr "テストモードのシャットダウン"
 msgid "Test mode reboot"
 msgstr "テストモードの再起動"
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "テストモードのユーザー切り替え"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -123,22 +123,16 @@ msgstr "現在の設定を取得しています…"
 msgid "Erase and Install"
 msgstr "削除してインストール"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "ドライブの暗号化"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "ほかの人がこのデバイスに物理的にアクセスできないように、データを保護します。"
 
-#: src/Views/EncryptView.vala:60
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
-"負荷のかかるタスクを実行する際に、わずかに読み書き速度に影響が出る可能性があ"
-"ります。"
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -146,7 +140,13 @@ msgstr ""
 "暗号化のパスワードはこのデバイスの電源を入れる度に要求されます。安全な場所に"
 "保管してください。"
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -156,32 +156,32 @@ msgstr ""
 "はこのデバイス専用のパスワードであり、ユーザーアカウント用のパスワードではあ"
 "りません。"
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "暗号化のパスワードを選択"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "パスワードを確認"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "暗号化しない"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "戻る"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "パスワードを選択"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "パスワードを設定"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "パスワードが一致しません"
 
@@ -251,15 +251,15 @@ msgstr "デフォルト"
 msgid "Input Language"
 msgstr "入力言語"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "言語"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "言語を選択してください"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "現在使用可能な言語"
 
@@ -481,6 +481,12 @@ msgstr "ファイルシステム:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "デフォルト (ext4)"
+
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "負荷のかかるタスクを実行する際に、わずかに読み書き速度に影響が出る可能性が"
+#~ "あります。"
 
 #~ msgid "Unable to set the Distinst log callback"
 #~ msgstr "Distinst ログコールバックを設定できません"

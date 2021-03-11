@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2021-02-15 20:15+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -28,11 +28,11 @@ msgstr "测试模式关机"
 msgid "Test mode reboot"
 msgstr "测试模式重启"
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "测试模式切换用户"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -116,26 +116,28 @@ msgstr "正在获取当前配置…"
 msgid "Erase and Install"
 msgstr "抹掉并安装"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "硬盘加密"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 msgid "Data will be protected from others with physical access to this device."
 msgstr "数据将受到保护，无法被他人以物理方式获取。"
 
-#: src/Views/EncryptView.vala:60
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr "在执行高强度任务时，读写速度可能会受到小幅影响。"
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
 "每次启动该设备，都将需要输入解密密码。请务必在某个安全的地方保存好密码。"
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -144,32 +146,32 @@ msgstr ""
 "如果您忘记了加密密码， <b>您将无法恢复数据</b>。 加密密码是针对该设备的密码，"
 "而非账户密码。"
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "选择加密密码"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "确认密码"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "不加密"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "返回"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "选择密码"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "设置密码"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "密码不匹配"
 
@@ -238,15 +240,15 @@ msgstr "默认"
 msgid "Input Language"
 msgstr "输入语言"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "选择语言"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "选择语言"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "当前激活的语言"
 
@@ -459,6 +461,10 @@ msgstr "文件系统："
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "默认（ext4）"
+
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr "在执行高强度任务时，读写速度可能会受到小幅影响。"
 
 #~ msgid "Unable to set the Distinst log callback"
 #~ msgstr "无法设置 Distinst 日志回调"

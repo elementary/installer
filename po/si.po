@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2021-03-04 15:31+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/installer/"
@@ -28,11 +28,11 @@ msgstr ""
 msgid "Test mode reboot"
 msgstr "පරීක්ශා මාදිලිය නැවත ආරම්භ කිරීම"
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "පරීක්ශා මාදිලි පරිශීලක මාරු කරන්න"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -122,11 +122,11 @@ msgstr "වත්මන් සැකසුම ලබා ගැනීම…"
 msgid "Erase and Install"
 msgstr "මකා ස්ථාපනය කරන්න"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "ධාවක ගුප්තකේතනය"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -135,16 +135,7 @@ msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "දාවකය ගුප්තකේතනය කිරීමෙන් මෙම උපාංගයට භෞතික ප්රවේශයකින් දත්ත කියවීමට ලබානොදී ආරක්ෂා කරයි."
 
-#: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
-"ධාවක ගුප්තකේතනය අවම වශයෙන් කාර්යක්ෂම කාර්යයන් සිදු කරන විට කියවීමේ සහ ලිවීමේ වේගයට බලපායි."
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -156,7 +147,13 @@ msgstr ""
 "මෙම උපකරණය නැවත ආරම්භ වන විට හෝ නැවත ආරම්භ කිරීම සඳහා සෑම විටම ගුප්තකේතන මුරපදයක් අවශ්ය "
 "වේ."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -165,32 +162,32 @@ msgstr ""
 "ඔබ ගුප්තකේතන මුරපදය අමතක නම්, <b> ඔබට දත්ත ආපසු ලබාගැනීමට නොහැකි වනු ඇත. </b> මෙම "
 "උපාංගය සඳහා මෙම සුවිශේෂී මුරපදය වන අතර, ඔබගේ පරිශීලක ගිණුම සඳහා රහස් පදය නොවේ."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "ගුප්තකේතන මුරපදය තෝරන්න"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "මුරපදය තහවුරු කරන්න"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "ගුප්තකේතනය නොකරන්න"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "ආපසු"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "මුර පදයක් තෝරන්න"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "මුරපදය සකසන්න"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "මුර පද ගැලපෙන්නේ නැත"
 
@@ -259,15 +256,15 @@ msgstr "පෙරනිමි"
 msgid "Input Language"
 msgstr "ආදාන භාෂාව"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "භාෂා"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "භාෂාව තෝරන්න"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "දැනට ක්රියාකාරී භාෂාව"
 
@@ -480,6 +477,16 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "Drive encryption may minimally impact read and write speed when "
+#~| "performing intense tasks."
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "ධාවක ගුප්තකේතනය අවම වශයෙන් කාර්යක්ෂම කාර්යයන් සිදු කරන විට කියවීමේ සහ ලිවීමේ වේගයට "
+#~ "බලපායි."
 
 #~ msgid "Unable to set the Distinst log callback"
 #~ msgstr "වෙනස් ලොග් බැඳුම්කරය පිහිටුවීමට නොහැකිය"
