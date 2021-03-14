@@ -140,8 +140,6 @@ public class Installer.MainWindow : Hdy.Window {
         stack.add (encrypt_view);
         stack.visible_child = encrypt_view;
 
-        load_check_view ();
-
         encrypt_view.cancel.connect (() => {
             stack.visible_child = try_install_view;
         });
@@ -159,6 +157,8 @@ public class Installer.MainWindow : Hdy.Window {
         stack.add (disk_view);
         stack.visible_child = disk_view;
         disk_view.load.begin (CheckView.MINIMUM_SPACE);
+
+        load_check_view ();
 
         disk_view.cancel.connect (() => {
             stack.visible_child = try_install_view;
