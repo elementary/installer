@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 02:24+0000\n"
-"PO-Revision-Date: 2021-03-11 05:30+0000\n"
+"PO-Revision-Date: 2021-03-16 07:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -111,9 +111,8 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"続行すると、選択されたドライブ上のすべてのデータを削除します。データをバック"
-"アップしていない場合は、インストールをキャンセルしてデモモードを使用すること"
-"ができます。"
+"続行すると、選択されたドライブ上のすべてのデータを削除します。データをバックアップしていない場合は、インストールをキャンセルしてデモモードを使うことで、デ"
+"ータをバックアップできます。"
 
 #: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
@@ -150,8 +149,8 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"暗号化パスワードを忘れた場合、<b>データを回復することはできません。</b>これはこのデバイス専用のパスワードであり、ユーザーアカウント用のパスワードで"
-"はありません。"
+"暗号化パスワードを忘れた場合、<b>データは回復できません。</b>これはこのデバイス専用のパスワードであり、ユーザーアカウント用のパスワードではありませ"
+"ん。"
 
 #: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
@@ -293,7 +292,7 @@ msgstr "パーティションを修正…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr "EFI パーティションに不適切なファイルシステムがあります"
+msgstr "EFI パーティションのファイルシステムが不適切です"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
@@ -301,11 +300,11 @@ msgstr "EFI パーティションが小さすぎます"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr "ルートディレクトリが不適切なファイルシステムです"
+msgstr "ルートディレクトリのファイルシステムが不適切です"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr "ホームディレクトリが不適切なファイルシステムです"
+msgstr "ホームディレクトリのファイルシステムが不適切です"
 
 #: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
@@ -331,9 +330,7 @@ msgstr "試用するかインストールするかを選択してください"
 #, c-format
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-"%s をお使いのデバイスに今すぐインストールするか、インストールせずにデモモード"
-"を試すことができます。"
+msgstr "%s をお使いのデバイスに今すぐインストールすることも、インストールせずにデモモードを試すこともできます。"
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
@@ -345,8 +342,7 @@ msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"変更は保存されず、以前の OS のデータは変更されません。パフォーマンスと機能は"
-"インストールされた環境をおそらく反映しません。"
+"変更は保存されず、インストール済みの OS のデータは変更されません。お使いのシステムのパフォーマンスと機能を十分に活用できない可能性があります。"
 
 #: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
@@ -365,9 +361,7 @@ msgstr "カスタム (高度)"
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-msgstr ""
-"手動でパーティションを作成、サイズ変更、そのほかの管理を行います。この方法は"
-"データの損失につながることがあります。"
+msgstr "手動でパーティションの作成やサイズ変更、管理を行います。この方法はデータの損失につながることがあります。"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -382,7 +376,7 @@ msgstr "%s をインストールしました。"
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "お使いのデバイスは %i 秒後に自動的に再起動します。"
+msgstr[0] "お使いのデバイスは%i秒後に自動的に再起動します。"
 
 #: src/Views/SuccessView.vala:40
 msgid ""
