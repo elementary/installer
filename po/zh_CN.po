@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 02:24+0000\n"
-"PO-Revision-Date: 2021-02-15 20:15+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2021-03-20 21:27+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -135,7 +135,7 @@ msgstr ""
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
-msgstr ""
+msgstr "每次启动设备时需要使用内置或 USB 外接的键盘来输入解密密码。"
 
 #: src/Views/EncryptView.vala:87
 msgid ""
@@ -362,14 +362,13 @@ msgstr "正在进行设置"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed."
-msgstr ""
+msgstr "%s 已安装。"
 
 #: src/Views/SuccessView.vala:36
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "您的设备将重启至 %s，倒计时 %i 秒。"
+msgstr[0] "您的设备将在 %i 秒后重启。"
 
 #: src/Views/SuccessView.vala:40
 msgid ""
