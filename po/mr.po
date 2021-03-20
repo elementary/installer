@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 02:24+0000\n"
-"PO-Revision-Date: 2020-03-11 18:09+0000\n"
+"PO-Revision-Date: 2021-03-20 21:27+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/installer/"
 "installer/mr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:42
@@ -142,6 +142,8 @@ msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"हे उपकरण चालू करतांना प्रत्येक वेळी अंगभूत किंवा यूएसबी कीबोर्ड वापरून "
+"एन्क्रिप्शन पासवर्ड टाइप करण्याची आवश्यकता असते."
 
 #: src/Views/EncryptView.vala:87
 msgid ""
@@ -330,7 +332,8 @@ msgstr "वापरून बघा किंवा इन्स्टॉल �
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
-"आपण या डिव्हाइसवर %s  इन्स्टॉल करू शकता किंवा  इन्स्टॉल केल्याशिवाय डेमो मोड वापरून पहा."
+"आपण या डिव्हाइसवर %s इन्स्टॉल करू शकता किंवा इन्स्टॉल केल्याशिवाय डेमो मोड "
+"वापरून पहा."
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
@@ -373,15 +376,14 @@ msgstr "सेट अप सुरू ठेवा"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed."
-msgstr ""
+msgstr "%s स्थापित केले गेले आहे."
 
 #: src/Views/SuccessView.vala:36
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदात %s वर रीस्टार्ट होईल."
-msgstr[1] "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदात %s वर रीस्टार्ट होईल."
+msgstr[0] "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदात रीस्टार्ट होईल."
+msgstr[1] "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदांत रीस्टार्ट होईल."
 
 #: src/Views/SuccessView.vala:40
 msgid ""
