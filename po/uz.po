@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 02:24+0000\n"
-"PO-Revision-Date: 2021-03-21 03:00+0000\n"
-"Last-Translator: Shukrullo Turgunov <shukrullo@umail.uz>\n"
+"PO-Revision-Date: 2021-03-21 22:19+0000\n"
+"Last-Translator: Shukrullo Turgunov <shookrullo@gmail.com>\n"
 "Language-Team: Uzbek <https://l10n.elementary.io/projects/installer/"
 "installer/uz/>\n"
 "Language: uz\n"
@@ -201,67 +201,67 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
-msgstr ""
+msgstr "• Qaytadan o'rnatishga urinib ko'ring"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "• Demo tartibdan foydalaning yoki qo'lda tiklashga urinib ko'ring"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr ""
+msgstr "• Boshqa qurilmadan yuklash uchun qurilmani qayta ishga tushiring"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "Batafsil"
 
 #: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
-msgstr ""
+msgstr "Qurilmani qayta ishga tushirish"
 
 #: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Dem-tartibni sinab ko'rish"
 
 #: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Qaytadan o'rnatishga urinib ko'rish"
 
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Klaviatura tili"
 
 #: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Klaviatura yozuv tilini sinab ko'rish uchun nimadir yozib ko'ring"
 
 #: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Klaviatura yozuv tilini ko'rsatish"
 
 #: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr ""
+msgstr "Tanlash"
 
 #: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
-msgstr ""
+msgstr "Odatdagi"
 
 #: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
-msgstr ""
+msgstr "Kiritish tili"
 
 #: src/Views/LanguageView.vala:261
 msgid "Languages"
-msgstr ""
+msgstr "Tillar"
 
 #: src/Views/LanguageView.vala:278
 msgid "Select a Language"
-msgstr ""
+msgstr "Tilni tanlang"
 
 #: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
-msgstr ""
+msgstr "Joriy til"
 
 #: src/Views/PartitioningView.vala:54
 msgid ""
@@ -334,7 +334,7 @@ msgstr ""
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
-msgstr ""
+msgstr "Keyingi"
 
 #: src/Views/TryInstallView.vala:77
 msgid ""
@@ -403,67 +403,67 @@ msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
-msgstr ""
+msgstr "Qurilma nomi:"
 
 #: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
-msgstr ""
+msgstr "Shifrdan chiqarish"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "LUKS jildi shifrlangan"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
-msgstr ""
+msgstr "Bo'limdan foydalanish:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Format:"
-msgstr ""
+msgstr "Formatlash:"
 
 #: src/Widgets/PartitionMenu.vala:81
 msgid "Use as:"
-msgstr ""
+msgstr "Ushbu sifatida foydalanish:"
 
 #: src/Widgets/PartitionMenu.vala:87
 msgid "Root (/)"
-msgstr ""
+msgstr "Ildiz katalog (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr ""
+msgstr "Uy katalogi (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Yuklash (%s)"
 
 #: src/Widgets/PartitionMenu.vala:90
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr ""
+msgstr "Moslashtirilgan"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr ""
+msgstr "Moslashtirilgan:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
-msgstr ""
+msgstr "Fayl tizimi:"
 
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
-msgstr ""
+msgstr "Odatiy (ext4)"
