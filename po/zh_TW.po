@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2018-10-18 11:47+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -28,11 +28,11 @@ msgstr "測試模式關機"
 msgid "Test mode reboot"
 msgstr "測試模式重新開機"
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "測試模式切換使用者"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -116,11 +116,11 @@ msgstr "取得目前設定組態…"
 msgid "Erase and Install"
 msgstr "抹除並安裝"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "磁碟加密"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -128,15 +128,7 @@ msgstr "磁碟加密"
 msgid "Data will be protected from others with physical access to this device."
 msgstr "加密這個磁碟可保護資料，避免他人以物理方式存取此裝置的資料。"
 
-#: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr "磁碟加密在執行較繁重的工作時可能會略為影響讀寫速度。"
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -146,7 +138,13 @@ msgid ""
 "Store it somewhere safe."
 msgstr "每次您開啟或重新啟動此裝置時，將會需要使用加密密碼。"
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -155,32 +153,32 @@ msgstr ""
 "如果您忘記加密密嗎，<b>您將無法將資料復原。</b>此密碼有別於您帳戶所使用的密"
 "碼，只用於此裝置上。"
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "選擇加密密碼"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "確認密碼"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "不要加密"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "返回"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "選擇密碼"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "設定密碼"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "密碼與確認密碼不一致"
 
@@ -249,15 +247,15 @@ msgstr "預設"
 msgid "Input Language"
 msgstr "輸入語言"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "語言"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "選取語言"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "目前使用中語言"
 
@@ -472,6 +470,14 @@ msgstr "檔案系統："
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "預設 (ext4)"
+
+#, fuzzy
+#~| msgid ""
+#~| "Drive encryption may minimally impact read and write speed when "
+#~| "performing intense tasks."
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr "磁碟加密在執行較繁重的工作時可能會略為影響讀寫速度。"
 
 #~ msgid "Unable to set the Distinst log callback"
 #~ msgstr "無法設定 Distinst log callback"

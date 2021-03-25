@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
-"PO-Revision-Date: 2021-03-03 01:39+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"PO-Revision-Date: 2021-03-12 08:51+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
 "installer/pt/>\n"
@@ -28,11 +28,11 @@ msgstr "Encerrar modo de teste"
 msgid "Test mode reboot"
 msgstr "Reiniciar modo de teste"
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "Mudar utilizador do modo de teste"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -122,22 +122,16 @@ msgstr "A obter a configuração atual…"
 msgid "Erase and Install"
 msgstr "Apagar e Instalar"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "Encriptação do Disco"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Os dados serão protegidos de outros com acesso físico a este dispositivo."
 
-#: src/Views/EncryptView.vala:60
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
-"As velocidades de leitura e escrita podem sofrer um impacto mínimo durante "
-"tarefas intensas."
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -145,7 +139,15 @@ msgstr ""
 "A palavra-passe de encriptação será necessária sempre que este dispositivo "
 "for ligado. Guarde-a num lugar seguro."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+"Será necessário um teclado integrado ou USB para digitar a palavra-passe de "
+"encriptação cada vez que este dispositivo for ligado."
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -155,32 +157,32 @@ msgstr ""
 "os dados.</b> Esta é uma palavra-passe única para este dispositivo, não é a "
 "palavra-passe da tua conta de utilizador."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "Escolher a palavra-passe de encriptação"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Confirmar palavra-passe"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "Não encriptar"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Voltar"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "Escolher palavra-passe"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "Definir palavra-passe"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "As palavras-passe não coincidem"
 
@@ -250,15 +252,15 @@ msgstr "Padrão"
 msgid "Input Language"
 msgstr "Idioma de introdução"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "Idiomas"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "Selecionar um idioma"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "Idioma atualmente ativo"
 
@@ -481,6 +483,12 @@ msgstr "Sistema de ficheiros:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Padrão (ext4)"
+
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "As velocidades de leitura e escrita podem sofrer um impacto mínimo "
+#~ "durante tarefas intensas."
 
 #~ msgid "Unable to set the Distinst log callback"
 #~ msgstr "Não é possível definir o retorno do domínio de registo Distinst"

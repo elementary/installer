@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2019-09-20 15:22+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
@@ -28,11 +28,11 @@ msgstr "테스트 모드 끄기"
 msgid "Test mode reboot"
 msgstr "테스트 모드로 다시 시작하기"
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "테스트 모드 사용자 전환"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -122,11 +122,11 @@ msgstr "현재 설정을 가져오고 있습니다…"
 msgid "Erase and Install"
 msgstr "설치하기"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "드라이브 암호화"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -136,17 +136,7 @@ msgstr ""
 "이 드라이브를 암호화하면 다른 사람이 이 장치에 물리적으로 연결해도 데이터를 "
 "읽을 수 없게 합니다."
 
-#: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
-"드라이브 암호화를 하면 많은 작업을 할 때 읽기 및 쓰기 속도에 약간의 영향을 "
-"줄 수 있습니다."
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -156,7 +146,13 @@ msgid ""
 "Store it somewhere safe."
 msgstr "이 장치를 켜거나 다시 시작할 때마다 보안 암호가 필요합니다."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -166,32 +162,32 @@ msgstr ""
 "비 만을 위한 특별한 비밀번호여야 합니다, 여러분의 계정 비밀번호를 사용하시면 "
 "안 됩니다."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "보안 암호 만들기"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "비밀번호 확인"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "암호화하지 않겠습니다"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "뒤로"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "비밀번호 만들기"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "비밀번호 설정"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "비밀번호가 맞지 않습니다"
 
@@ -260,15 +256,15 @@ msgstr "기본"
 msgid "Input Language"
 msgstr "언어 입력"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "언어"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "언어 선택"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "지금 사용 중인 언어"
 
@@ -490,6 +486,16 @@ msgstr "파일 시스템:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "기본 (ext4)"
+
+#, fuzzy
+#~| msgid ""
+#~| "Drive encryption may minimally impact read and write speed when "
+#~| "performing intense tasks."
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "드라이브 암호화를 하면 많은 작업을 할 때 읽기 및 쓰기 속도에 약간의 영향"
+#~ "을 줄 수 있습니다."
 
 #~ msgid "Unable to set the Distinst log callback"
 #~ msgstr "Distinst 로그 콜백을 설정할 수 없습니다"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 17:37+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2018-06-04 00:08+0000\n"
 "Last-Translator: citro <citro33@centrum.sk>\n"
 "Language-Team: Slovak <https://weblate.elementary.io/projects/installer/"
@@ -28,11 +28,11 @@ msgstr ""
 msgid "Test mode reboot"
 msgstr ""
 
-#: src/Utils.vala:61
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr ""
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:215
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, fuzzy, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -119,11 +119,11 @@ msgstr "Získávamm konfiguráciu…"
 msgid "Erase and Install"
 msgstr "Zmazať a inštalovať"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "Šifrovanie disku"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -131,17 +131,7 @@ msgstr "Šifrovanie disku"
 msgid "Data will be protected from others with physical access to this device."
 msgstr "Zašifrovaním dát znemožníte čítanie dát cudzím osobám."
 
-#: src/Views/EncryptView.vala:60
-#, fuzzy
-#| msgid ""
-#| "Drive encryption may minimally impact read and write speed when "
-#| "performing intense tasks."
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
-"Šifrovanie jednotky môže minimálne ovplyvniť výkon čítania a zápisu pri "
-"vykonávaní intenzívnych úloh."
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -153,7 +143,13 @@ msgstr ""
 "Heslo pre šifrovanie bude vyžadované stále keď zapnete túto jednotku, alebo "
 "reštartujete."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -162,33 +158,33 @@ msgstr ""
 "Ak zabudnete heslo <b>nebudete môcť obnoviť svoje dáta</b> Toto je unikátne "
 "heslo pre túto jednotku, nie pre Vaše konto."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "Zvoľte heslo šifrovania"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Potvrďte heslo"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "Nešifrovať"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 #, fuzzy
 msgid "Back"
 msgstr "Späť"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "Zvoľte heslo"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr ""
 
@@ -255,15 +251,15 @@ msgstr ""
 msgid "Input Language"
 msgstr ""
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr ""
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr ""
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr ""
 
@@ -475,6 +471,16 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "Drive encryption may minimally impact read and write speed when "
+#~| "performing intense tasks."
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "Šifrovanie jednotky môže minimálne ovplyvniť výkon čítania a zápisu pri "
+#~ "vykonávaní intenzívnych úloh."
 
 #~ msgid "Starting installation"
 #~ msgstr "Spúšťa sa inštalácia"
