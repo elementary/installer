@@ -1,7 +1,7 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016–2018 elementary LLC. (https://elementary.io)
- *
+ * Copyright 2016–2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2006-2021 ubiquity Developers (https://launchpad.net/ubiquity)
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Authored by: Corentin Noël <corentin@elementary.io>
+ *              Marius Meisenzahl <mariusmeisenzahl@gmail.com>
  */
 
 namespace Utils {
@@ -127,5 +128,142 @@ namespace Utils {
         }
 
         return session_instance;
+    }
+
+    [DBus (name = "org.freedesktop.hostname1")]
+    interface HostnameInterface : Object {
+        public abstract string chassis { owned get; }
+    }
+
+    private static HostnameInterface? hostname_interface_instance;
+    private static void get_hostname_interface_instance () {
+        if (hostname_interface_instance == null) {
+            try {
+                hostname_interface_instance = Bus.get_proxy_sync (
+                    BusType.SYSTEM,
+                    "org.freedesktop.hostname1",
+                    "/org/freedesktop/hostname1"
+                );
+            } catch (GLib.Error e) {
+                warning ("%s", e.message);
+            }
+        }
+    }
+
+    private string get_chassis () {
+        get_hostname_interface_instance ();
+
+        return hostname_interface_instance.chassis;
+    }
+
+    private string? get_machine_id () {
+        string machine_id;
+        try {
+            FileUtils.get_contents ("/etc/machine-id", out machine_id);
+        } catch (FileError e) {
+            warning ("%s", e.message);
+            return null;
+        }
+
+        return machine_id.strip ();
+    }
+
+    private static string? get_sys_vendor () {
+        string vendor;
+        try {
+            FileUtils.get_contents ("/sys/devices/virtual/dmi/id/sys_vendor", out vendor);
+        } catch (FileError e) {
+            warning ("%s", e.message);
+            return null;
+        }
+
+        return vendor.strip ();
+    }
+
+    private static string? get_product_name () {
+        string model;
+        try {
+            FileUtils.get_contents ("/sys/devices/virtual/dmi/id/product_name", out model);
+        } catch (FileError e) {
+            warning ("%s", e.message);
+            return null;
+        }
+
+        return model.strip ();
+    }
+
+    private static string? get_product_version () {
+        string model;
+        try {
+            FileUtils.get_contents ("/sys/devices/virtual/dmi/id/product_version", out model);
+        } catch (FileError e) {
+            warning ("%s", e.message);
+            return null;
+        }
+
+        return model.strip ();
+    }
+
+    // Based on https://git.launchpad.net/ubiquity/tree/ubiquity/misc.py?id=ae6415d224c2e76afa2274cc9f85997f38870419#n648
+    private static string? get_ubiquity_compatible_hostname () {
+        string model = get_product_name ();
+        string manufacturer = get_sys_vendor ();
+
+        if (manufacturer.length == 0) {
+            return null;
+        }
+        manufacturer = manufacturer.down ();
+
+        if (manufacturer.contains ("to be filled")) {
+            // Don't bother with products in development.
+            return null;
+        }
+
+        if (manufacturer.contains ("bochs") || manufacturer.contains ("vmware")) {
+            model = "virtual machine";
+            // VirtualBox sets an appropriate system-product-name.
+        } else {
+            if (manufacturer.contains ("lenovo") || manufacturer.contains ("ibm")) {
+                model = get_product_version ();
+            }
+        }
+
+        try {
+            if (manufacturer.contains ("apple")) {
+                //  MacBook4,1 - strip the 4,1
+                var re = new Regex ("[^a-zA-Z\\s]");
+                model = re.replace (model, model.length, 0, "");
+            }
+
+            // Replace each gap of non-alphanumeric characters with a dash.
+            // Ensure the resulting string does not begin or end with a dash.
+            var re = new Regex ("[^a-zA-Z0-9]+");
+            model = re.replace (model, model.length, 0, "-");
+            while (model[0] == '-') {
+                model = model.substring (1);
+            }
+            while (model[model.length - 1] == '-') {
+                model = model.substring (0, model.length - 1);
+            }
+
+            if (model.down () == "not-available") {
+                return null;
+            }
+            if (model.down () == "To be filled by O.E.M.".down ()) {
+                return null;
+            }
+        } catch (RegexError e) {
+            warning ("Error cleaning up hostname strings: %s", e.message);
+            return null;
+        }
+
+        return model;
+    }
+
+    public static string get_hostname () {
+        string hostname = get_ubiquity_compatible_hostname () ?? ("elementary-os" + "-" + get_chassis ());
+        hostname += "-" + get_machine_id ().substring (0, 8);
+
+        return hostname;
     }
 }
