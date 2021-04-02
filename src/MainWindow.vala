@@ -32,6 +32,7 @@ public class Installer.MainWindow : Hdy.Window {
     private ErrorView error_view;
     private bool check_ignored = false;
 
+    private unowned Configuration config;
 
     public MainWindow () {
         Object (
@@ -46,18 +47,35 @@ public class Installer.MainWindow : Hdy.Window {
     }
 
     construct {
-        language_view = new LanguageView ();
-
         stack = new Gtk.Stack () {
             margin_bottom = 12,
             margin_top = 12,
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         };
-        stack.add (language_view);
 
-        add (stack);
+        if (App.config_file != null) {
+            try {
+                string config_string;
+                FileUtils.get_contents (App.config_file, out config_string);
+                config = new Configuration.from_string (config_string);
+            } catch (Error e) {
+                warning ("Could not read config file '%s': %s", App.config_file, e.message);
+            }
 
-        language_view.next_step.connect (() => load_keyboard_view ());
+            add (stack);
+
+            load_progress_view ();
+        } else {
+            config = Configuration.get_default ();
+
+            language_view = new LanguageView ();
+
+            stack.add (language_view);
+
+            add (stack);
+
+            language_view.next_step.connect (() => load_keyboard_view ());
+        }
     }
 
     /*
@@ -178,7 +196,6 @@ public class Installer.MainWindow : Hdy.Window {
         stack.visible_child = partitioning_view;
 
         partitioning_view.next_step.connect (() => {
-            unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;
             config.mounts = (owned) partitioning_view.mounts;
             load_progress_view ();

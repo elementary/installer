@@ -28,6 +28,10 @@ public class Configuration : GLib.Object {
         return _config;
     }
 
+    public Configuration.from_string (string data) throws GLib.Error {
+        _config = (Configuration) Json.gobject_from_data (typeof (Configuration), data);
+    }
+
     public string lang { get; set; }
     public string? country { get; set; default = null; }
     public string keyboard_layout { get; set; }
