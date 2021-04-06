@@ -53,30 +53,58 @@ public class Installer.MainWindow : Hdy.Window {
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         };
 
+        var cmdline = Utils.get_kernel_parameters ();
+
+        if ("auto" in cmdline) {
+            for (int i = 0; i < cmdline.length; i++) {
+                if ("url=" in cmdline[i]) {
+                    var uri = cmdline[i].split ("=")[1].strip ();
+
+                    var server_file = File.new_for_uri (uri);
+                    var path = Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ());
+                    var local_file = File.new_for_path (path);
+
+                    bool result;
+                    try {
+                        result = server_file.copy (local_file, FileCopyFlags.OVERWRITE, null, (current_num_bytes, total_num_bytes) => {
+                        });
+                    } catch (Error e) {
+                        warning ("Could not download configuration file from \"%s\": %s", uri, e.message);
+                    }
+
+                    if (result) {
+                        App.config_file = path;
+                    }
+                }
+            }
+        }
+
         if (App.config_file != null) {
             try {
+                debug ("Loading config from \"%s\"", App.config_file);
+
                 string config_string;
                 FileUtils.get_contents (App.config_file, out config_string);
                 config = new Configuration.from_string (config_string);
+
+                add (stack);
+
+                load_progress_view ();
             } catch (Error e) {
                 warning ("Could not read config file '%s': %s", App.config_file, e.message);
             }
-
-            add (stack);
-
-            load_progress_view ();
-        } else {
-            config = Configuration.get_default ();
-            config.hostname = Utils.get_hostname ();
-
-            language_view = new LanguageView ();
-
-            stack.add (language_view);
-
-            add (stack);
-
-            language_view.next_step.connect (() => load_keyboard_view ());
         }
+
+        config = Configuration.get_default ();
+        config.hostname = Utils.get_hostname ();
+
+        language_view = new LanguageView ();
+
+        stack.add (language_view);
+
+        add (stack);
+
+        language_view.next_step.connect (() => load_keyboard_view ());
     }
 
     /*
