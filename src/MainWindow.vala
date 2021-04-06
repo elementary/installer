@@ -67,6 +67,7 @@ public class Installer.MainWindow : Hdy.Window {
             load_progress_view ();
         } else {
             config = Configuration.get_default ();
+            config.hostname = Utils.get_hostname ();
 
             language_view = new LanguageView ();
 
