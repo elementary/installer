@@ -10,6 +10,7 @@ vala_files = [
     'Objects/Configuration.vala',
     'Objects/Mount.vala',
     'Views/AbstractInstallerView.vala',
+    'Views/AutomatedView.vala',
     'Views/CheckView.vala',
     'Views/DiskView.vala',
     'Views/EncryptView.vala',

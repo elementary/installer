@@ -26,6 +26,7 @@ public class Installer.MainWindow : Hdy.Window {
     private Installer.CheckView check_view;
     private DiskView disk_view;
     private PartitioningView partitioning_view;
+    private AutomatedView automated_view;
     private ProgressView progress_view;
     private SuccessView success_view;
     private EncryptView encrypt_view;
@@ -53,50 +54,16 @@ public class Installer.MainWindow : Hdy.Window {
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         };
 
+        config = Configuration.get_default ();
+
         var cmdline = Utils.get_kernel_parameters ();
-
         if ("auto" in cmdline) {
-            for (int i = 0; i < cmdline.length; i++) {
-                if ("url=" in cmdline[i]) {
-                    var uri = cmdline[i].split ("=")[1].strip ();
-
-                    var server_file = File.new_for_uri (uri);
-                    var path = Path.build_filename (Environment.get_tmp_dir (), server_file.get_basename ());
-                    var local_file = File.new_for_path (path);
-
-                    bool result;
-                    try {
-                        result = server_file.copy (local_file, FileCopyFlags.OVERWRITE, null, (current_num_bytes, total_num_bytes) => {
-                        });
-                    } catch (Error e) {
-                        warning ("Could not download configuration file from \"%s\": %s", uri, e.message);
-                    }
-
-                    if (result) {
-                        App.config_file = path;
-                    }
-                }
-            }
+            load_automated_view ();
         }
 
         if (App.config_file != null) {
-            try {
-                debug ("Loading config from \"%s\"", App.config_file);
-
-                string config_string;
-                FileUtils.get_contents (App.config_file, out config_string);
-                config = new Configuration.from_string (config_string);
-
-                add (stack);
-
-                load_progress_view ();
-            } catch (Error e) {
-                warning ("Could not read config file '%s': %s", App.config_file, e.message);
-            }
+            load_automated_view ();
         }
-
-        config = Configuration.get_default ();
-        config.hostname = Utils.get_hostname ();
 
         language_view = new LanguageView ();
 
@@ -229,6 +196,23 @@ public class Installer.MainWindow : Hdy.Window {
             config.mounts = (owned) partitioning_view.mounts;
             load_progress_view ();
         });
+    }
+
+    private void load_automated_view () {
+        if (automated_view != null) {
+            automated_view.destroy ();
+        }
+
+        automated_view = new AutomatedView ();
+        stack.add (automated_view);
+        stack.visible_child = automated_view;
+
+        automated_view.on_success.connect (() => load_progress_view ());
+
+        automated_view.on_error.connect (() => {
+            load_error_view (automated_view.get_log ());
+        });
+        automated_view.start ();
     }
 
     private void load_progress_view () {
