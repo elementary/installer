@@ -267,7 +267,7 @@ namespace Utils {
         return hostname;
     }
 
-    public static string[] get_kernel_parameters() {
+    public static string[] get_kernel_parameters () {
         string cmdline;
 
         try {
