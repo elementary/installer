@@ -24,18 +24,11 @@ public class Installer.Mount {
     public string mount_point;
     public uint64 sectors;
     public Distinst.FileSystem filesystem;
-    public Flags flags;
+    public InstallerDaemon.MountFlags flags;
     public PartitionMenu menu;
 
-    [Flags]
-    public enum Flags {
-        FORMAT = 1,
-        LVM = 2,
-        LVM_ON_LUKS = 4
-    }
-
     public Mount (string partition, string parent_disk, string mount,
-                  uint64 sectors, Flags flags, Distinst.FileSystem fs,
+                  uint64 sectors, InstallerDaemon.MountFlags flags, Distinst.FileSystem fs,
                   PartitionMenu menu) {
         filesystem = fs;
         mount_point = mount;
@@ -58,22 +51,10 @@ public class Installer.Mount {
     }
 
     public bool is_lvm () {
-        return Flags.LVM in flags;
+        return InstallerDaemon.MountFlags.LVM in flags;
     }
 
     public bool should_format () {
-        return Flags.FORMAT in flags;
-    }
-}
-
-public class Installer.LuksCredentials {
-    public string device;
-    public string pv;
-    public string password;
-
-    public LuksCredentials (string device, string pv, string password) {
-        this.device = device;
-        this.pv = pv;
-        this.password = password;
+        return InstallerDaemon.MountFlags.FORMAT in flags;
     }
 }

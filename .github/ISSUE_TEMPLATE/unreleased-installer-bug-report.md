@@ -1,6 +1,6 @@
 ---
 name: Unreleased Installer Bug Report
-about: Create a report to help us improve the upcoming, unreleased installer
+about: Create a report to help us improve the upcoming, unreleased installer for elementary OS 6
 
 ---
 

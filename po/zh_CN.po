@@ -2,69 +2,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
-"PO-Revision-Date: 2019-01-15 12:43+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"PO-Revision-Date: 2021-03-20 21:27+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
+"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: src/MainWindow.vala:44
+#: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "安装 %s"
 
-#: src/Utils.vala:50
+#: src/Utils.vala:33
 msgid "Test mode shutdown"
-msgstr "关闭试用模式"
+msgstr "测试模式关机"
 
-#: src/Utils.vala:64
+#: src/Utils.vala:47
 msgid "Test mode reboot"
-msgstr "试用模式重启"
+msgstr "测试模式重启"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:73
 msgid "Test mode switch user"
-msgstr "试用模式切换用户"
+msgstr "测试模式切换用户"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
-
-#: src/Helpers/LogHelper.vala:52
-msgid "Unable to set the Distinst log callback"
-msgstr "无法设置 Distinst 日志回调"
-
-#: src/Helpers/LogHelper.vala:54
-msgid "Starting installation"
-msgstr "开始安装"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "您确定要关机吗？"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "这将会取消安装并关闭您的设备。"
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "重启"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "取消"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "关闭"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -74,54 +45,54 @@ msgstr "取消安装"
 msgid "Test Mode"
 msgstr "测试模式"
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:64
 msgid "Ignore"
 msgstr "忽略"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
 msgstr "空间不足"
 
-#: src/Views/CheckView.vala:204
+#: src/Views/CheckView.vala:220
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
-msgstr "您设备的剩余空间不足，无法安装 %s。 我们建议的的储存空间大小为 %s。"
+msgstr "您设备的剩余空间不足，无法安装 %s。建议的的储存空间大小为 %s。"
 
-#: src/Views/CheckView.vala:215
+#: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
 msgstr "您的设备运行缓慢"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:232
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
-msgstr "您的设备配置未达到推荐配置要求。这可能会导致运行缓慢或死机。"
+msgstr "您的设备配置未达到推荐配置要求，可能会导致运行缓慢或死机。"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
 msgstr "接入电源"
 
-#: src/Views/CheckView.vala:233
+#: src/Views/CheckView.vala:249
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
-msgstr "您的设备当前正在使用电池，我们建议您进行安装时接入外部电源。"
+msgstr "您的设备当前正在使用电池，建议您在安装系统时接入外部电源。"
 
-#: src/Views/CheckView.vala:291
+#: src/Views/CheckView.vala:307
 msgid "Recommended:"
 msgstr "推荐配置："
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:311
 msgid "Your Device:"
 msgstr "您的设备："
 
-#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
 msgstr "处理器："
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
 msgid "Memory:"
 msgstr "内存："
 
@@ -137,71 +108,70 @@ msgstr ""
 "此操作会抹掉硬盘中的所有数据，如果您还未备份您的数据，可以取消安装并使用试用"
 "模式。"
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "正在获取当前配置…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
-msgstr "抹除并安装"
+msgstr "抹掉并安装"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "硬盘加密"
 
-#: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
-msgstr "加密此硬盘，使数据无法被他人以物理方式获取。"
+#: src/Views/EncryptView.vala:54
+msgid "Data will be protected from others with physical access to this device."
+msgstr "数据将受到保护，无法被他人以物理方式获取。"
 
-#: src/Views/EncryptView.vala:60
+#: src/Views/EncryptView.vala:62
 msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
-msgstr "硬盘加密可能会对有大量读写操作的任务产生影响。"
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
+msgstr ""
+"每次启动该设备，都将需要输入解密密码。请务必在某个安全的地方保存好密码。"
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:70
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
-msgstr "每次开机或重启都需要输入密码。"
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr "每次启动设备时需要使用内置或 USB 外接的键盘来输入解密密码。"
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"如果您忘记了加密密码， <b>您的数据将无法恢复</b>。 加密密码是针对该设备的密"
-"码，而非账户密码。"
+"如果您忘记了加密密码， <b>您将无法恢复数据</b>。 加密密码是针对该设备的密码，"
+"而非账户密码。"
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "选择加密密码"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "确认密码"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "不加密"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "返回"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "选择密码"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "设置密码"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "密码不匹配"
 
@@ -232,53 +202,53 @@ msgstr "• 重启设备并从其他硬盘启动"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "详情"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "重启设备"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "进入试用模式"
 
 #: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
-msgstr "重新安装"
+msgstr "尝试重新安装"
 
-#: src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
 msgstr "键盘布局"
 
-#: src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "输入以检测布局"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "显示键盘布局"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "选择"
 
-#: src/Views/KeyboardLayoutView.vala:119
+#: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
 msgstr "默认"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
 msgstr "输入语言"
 
-#: src/Views/LanguageView.vala:232
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "选择语言"
 
-#: src/Views/LanguageView.vala:249
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "选择语言"
 
-#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "当前激活的语言"
 
@@ -287,12 +257,12 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"选择您要使用硬盘分区， <b>选择“格式化”将会擦除选中分区内的所有数据！</b>"
+"选择您要使用硬盘分区。<b>选择“格式化”将会抹掉选中分区内的所有数据。</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "您需要选择至少一个 <b>根 （/）</b> 分区。"
+msgstr "您需要选择至少一个 <b>根（/）</b> 分区。"
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -300,20 +270,19 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"您需要选择至少一个 <b>根 （/）</b> 分区和一个 <b>启动 （/boot/efi）</b> 分"
-"区。"
+"您需要选择至少一个 <b>根（/）</b> 分区和一个 <b>启动（/boot/efi）</b> 分区。"
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "同时建议您选择一个 <b>交换</b> 分区。"
+msgstr "同时建议您选择一个 <b>交换（Swap）</b> 分区。"
 
-#: src/Views/PartitioningView.vala:97
+#: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
-msgstr "正在修改分区…"
+msgstr "修改分区…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr "EFI 分区文件系统有错误"
+msgstr "EFI 分区文件系统有误"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
@@ -325,21 +294,21 @@ msgstr "Root 文件系统不可用"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr "主页（Home）文件系统不可用"
+msgstr "主目录（Home）文件系统不可用"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
-msgstr "硬盘分区中"
+msgstr "正在分区硬盘"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
 msgstr "正在解压文件"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
 msgstr "正在配置系统"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
 msgstr "正在完成安装"
 
@@ -353,12 +322,12 @@ msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr "您可以现在就安装 %s 到您的设备，也可以进入试用模式。"
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "继续"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -366,20 +335,20 @@ msgstr ""
 "在试用模式下，您的操作不会被保存，设备内原有的文件数据也不会被修改。试用模式"
 "下性能和功能无法代表实际安装体验。"
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
 msgstr "全新安装"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "格式化所有内容并全新安装 %s。"
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr "自定义（高级选项）"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -392,50 +361,60 @@ msgstr "正在进行设置"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "您的设备将在 %i 秒后重启至 %s。"
+msgid "%s has been installed."
+msgstr "%s 已安装。"
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, c-format
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "您的设备将在 %i 秒后重启。"
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr "您可以重启并设置新用户，也可以直接关闭设备。"
 
-#: src/Widgets/DecryptMenu.vala:54
+#: src/Views/SuccessView.vala:60
+msgid "Shut Down"
+msgstr "关机"
+
+#: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
 msgstr "解锁此分区"
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr "输入此分区的加密密码并设置设备名称。"
 
-#: src/Widgets/DecryptMenu.vala:71
+#: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
 msgstr "密码："
 
-#: src/Widgets/DecryptMenu.vala:84
+#: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
 msgstr "设备名称："
 
-#: src/Widgets/DecryptMenu.vala:97
+#: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
 msgstr "解锁"
 
-#: src/Widgets/DecryptMenu.vala:125
+#: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr "此卷已解锁"
+msgstr "LUKS 卷已解锁"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
 msgid "%s (%s)"
-msgstr "%s （%s）"
+msgstr "%s（%s）"
 
 #: src/Widgets/DiskBar.vala:128
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr "%s （%s: <b>%s</b>）"
+msgstr "%s（%s: <b>%s</b>）"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Use partition:"
@@ -481,6 +460,28 @@ msgstr "文件系统："
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "默认（ext4）"
+
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr "在执行高强度任务时，读写速度可能会受到小幅影响。"
+
+#~ msgid "Unable to set the Distinst log callback"
+#~ msgstr "无法设置 Distinst 日志回调"
+
+#~ msgid "Starting installation"
+#~ msgstr "开始安装"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "您确定要关机吗？"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "这将会取消安装并关闭您的设备。"
+
+#~ msgid "Restart"
+#~ msgstr "重启"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
 #~ msgid "Operating System"
 #~ msgstr "操作系统"

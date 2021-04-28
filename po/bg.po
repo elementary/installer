@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2018-04-17 19:35+0000\n"
 "Last-Translator: Alex Skywalker <alexskywalkerbg@gmail.com>\n"
 "Language-Team: Bulgarian <https://weblate.elementary.io/projects/installer/"
@@ -15,56 +15,27 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:44
+#: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Инсталирай %s"
 
-#: src/Utils.vala:50
+#: src/Utils.vala:33
 msgid "Test mode shutdown"
 msgstr "Изключване на тестов режим"
 
-#: src/Utils.vala:64
+#: src/Utils.vala:47
 msgid "Test mode reboot"
 msgstr "Рестарт на тестов режим"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "Смяна на потребител в тестов режим"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s …"
-
-#: src/Helpers/LogHelper.vala:52
-msgid "Unable to set the Distinst log callback"
-msgstr ""
-
-#: src/Helpers/LogHelper.vala:54
-msgid "Starting installation"
-msgstr "Стартира инсталация"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Сигулни ли сте, че искате да изключите?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Това ще преустанови инсталацията и ще изключи устройството."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Рестарт"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Отказ"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Изключване"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -74,15 +45,15 @@ msgstr "Откажи инсталацията"
 msgid "Test Mode"
 msgstr "Тестов режим"
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:64
 msgid "Ignore"
 msgstr "Игнорирай"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
 msgstr "Няма достатъчно място"
 
-#: src/Views/CheckView.vala:204
+#: src/Views/CheckView.vala:220
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -91,11 +62,11 @@ msgstr ""
 "На устройството няма достатъчно място за инсталиране на %s. Препоръчваме "
 "минимум %s свободно място."
 
-#: src/Views/CheckView.vala:215
+#: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
 msgstr "Вероятно вашето устройство е прекалено бавно"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:232
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -103,11 +74,11 @@ msgstr ""
 "Устройството ви не отговаря на препоръчителните хардуерни изисквания. Това "
 "може да доведе до бавна работа или \"замръзване\"."
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
 msgstr "Свръжете към източник на електричество"
 
-#: src/Views/CheckView.vala:233
+#: src/Views/CheckView.vala:249
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -115,19 +86,19 @@ msgstr ""
 "Устройството работи на батерия. Препоръчва се да се включи в мрежата при "
 "инсталация."
 
-#: src/Views/CheckView.vala:291
+#: src/Views/CheckView.vala:307
 msgid "Recommended:"
 msgstr "Препоръчително:"
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:311
 msgid "Your Device:"
 msgstr "Вашето устройство:"
 
-#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
 msgstr "Процесор:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
 msgid "Memory:"
 msgstr "Памет:"
 
@@ -144,69 +115,67 @@ msgstr ""
 "Това ще изтрие всички данни от избрания диск. Ако не сте архивирали данните "
 "си, можете да откажете инсталацията и да използвате ДЕМО режим."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Извличане на настоящата конфигурация…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Изтрий и инсталирай"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr ""
 
-#: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#: src/Views/EncryptView.vala:54
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 
-#: src/Views/EncryptView.vala:60
+#: src/Views/EncryptView.vala:62
 msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:70
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr ""
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Назад"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr ""
 
@@ -239,11 +208,11 @@ msgstr "Рестартирайте устройството, за да заре�
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "Рестартирайте устройството"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Опитайте ДЕМО режим"
 
@@ -251,39 +220,39 @@ msgstr "Опитайте ДЕМО режим"
 msgid "Try Installing Again"
 msgstr "Опитайте да инсталирате отново"
 
-#: src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
 msgstr "Клавиатурна подредба"
 
-#: src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Пишете, за да изпробване подредбата"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Покажи клавиатурната подредба"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Избери"
 
-#: src/Views/KeyboardLayoutView.vala:119
+#: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
 msgstr "По подразбиране"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
 msgstr "Език за въвеждане"
 
-#: src/Views/LanguageView.vala:232
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "Езици"
 
-#: src/Views/LanguageView.vala:249
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "Изберете език"
 
-#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "Активен език"
 
@@ -309,7 +278,7 @@ msgstr ""
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr ""
 
-#: src/Views/PartitioningView.vala:97
+#: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
 msgstr ""
 
@@ -329,19 +298,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
 msgstr "Създаване на дискови дялове"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
 msgstr "Извличане на файлове"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
 msgstr "Конфигуриране на системата"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
 msgstr "Приключване на инсталацията"
 
@@ -358,12 +327,12 @@ msgstr ""
 "Можете да инсталирате %s на устройството или да изпробвате ДЕМО режим без "
 "инсталация."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 #, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
@@ -374,21 +343,21 @@ msgstr ""
 "устройството и софтуера може да не отразят изживяването от инсталирана "
 "система."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 #, fuzzy
 msgid "Clean Install"
 msgstr "Изтрий и инсталирай"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -400,10 +369,18 @@ msgstr "Продължи инсталацията"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Устройството ви ще се рестартира автоматично до %s след %i секунди."
+msgid "%s has been installed."
+msgstr ""
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, fuzzy, c-format
+#| msgid "Your device will automatically restart to %s in %i seconds."
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "Устройството ви ще се рестартира автоматично до %s след %i секунди."
+msgstr[1] "Устройството ви ще се рестартира автоматично до %s след %i секунди."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -411,29 +388,33 @@ msgstr ""
 "След рестарт можете да създадете нов потребител или да изключите "
 "устройството и да конфигурирате нов потребител по-късно."
 
-#: src/Widgets/DecryptMenu.vala:54
+#: src/Views/SuccessView.vala:60
+msgid "Shut Down"
+msgstr "Изключване"
+
+#: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:71
+#: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:84
+#: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:97
+#: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
 msgstr ""
 
-#: src/Widgets/DecryptMenu.vala:125
+#: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
 msgstr ""
 
@@ -493,6 +474,21 @@ msgstr ""
 #, fuzzy
 msgid "Default (ext4)"
 msgstr "По подразбиране"
+
+#~ msgid "Starting installation"
+#~ msgstr "Стартира инсталация"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Сигулни ли сте, че искате да изключите?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Това ще преустанови инсталацията и ще изключи устройството."
+
+#~ msgid "Restart"
+#~ msgstr "Рестарт"
+
+#~ msgid "Cancel"
+#~ msgstr "Отказ"
 
 #~ msgid "Operating System"
 #~ msgstr "Операционна система"

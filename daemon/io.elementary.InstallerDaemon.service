@@ -1,0 +1,11 @@
+[Unit]
+Description=elementary Installer Backend
+
+[Service]
+Type=dbus
+Restart=always
+BusName=io.elementary.InstallerDaemon
+ExecStart=io.elementary.installer-daemon
+
+[Install]
+WantedBy=multi-user.target

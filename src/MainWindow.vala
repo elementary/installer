@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016-2017 elementary LLC. (https://elementary.io)
+ * Copyright 2016-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.MainWindow : Gtk.Window {
+public class Installer.MainWindow : Hdy.Window {
     private Gtk.Stack stack;
 
     private LanguageView language_view;
@@ -33,7 +32,6 @@ public class Installer.MainWindow : Gtk.Window {
     private ErrorView error_view;
     private bool check_ignored = false;
 
-    private uint64 minimum_disk_size;
 
     public MainWindow () {
         Object (
@@ -42,27 +40,22 @@ public class Installer.MainWindow : Gtk.Window {
             icon_name: "system-os-installer",
             resizable: false,
             title: _("Install %s").printf (Utils.get_pretty_name ()),
-            width_request: 950
+            width_request: 950,
+            window_position: Gtk.WindowPosition.CENTER_ALWAYS
         );
     }
 
     construct {
         language_view = new LanguageView ();
 
-        stack = new Gtk.Stack ();
-        stack.margin_bottom = 12;
-        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        stack = new Gtk.Stack () {
+            margin_bottom = 12,
+            margin_top = 12,
+            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+        };
         stack.add (language_view);
 
-        var titlebar = new Gtk.HeaderBar ();
-        titlebar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        titlebar.set_custom_title (new Gtk.Grid ()); // null title workaround
-
         add (stack);
-        get_style_context ().add_class ("rounded");
-        set_titlebar (titlebar);
-
-        minimum_disk_size = Distinst.minimum_disk_size (5000000000);
 
         language_view.next_step.connect (() => load_keyboard_view ());
     }
@@ -114,7 +107,7 @@ public class Installer.MainWindow : Gtk.Window {
             check_view.destroy ();
         }
 
-        check_view = new Installer.CheckView (minimum_disk_size);
+        check_view = new Installer.CheckView ();
         stack.add (check_view);
 
         check_view.status_changed.connect ((met_requirements) => {
@@ -147,8 +140,6 @@ public class Installer.MainWindow : Gtk.Window {
         stack.add (encrypt_view);
         stack.visible_child = encrypt_view;
 
-        load_check_view ();
-
         encrypt_view.cancel.connect (() => {
             stack.visible_child = try_install_view;
         });
@@ -165,7 +156,9 @@ public class Installer.MainWindow : Gtk.Window {
         disk_view.previous_view = try_install_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
-        disk_view.load.begin (minimum_disk_size);
+        disk_view.load.begin (CheckView.MINIMUM_SPACE);
+
+        load_check_view ();
 
         disk_view.cancel.connect (() => {
             stack.visible_child = try_install_view;
@@ -179,7 +172,7 @@ public class Installer.MainWindow : Gtk.Window {
             partitioning_view.destroy ();
         }
 
-        partitioning_view = new PartitioningView (minimum_disk_size);
+        partitioning_view = new PartitioningView (CheckView.MINIMUM_SPACE);
         partitioning_view.previous_view = try_install_view;
         stack.add (partitioning_view);
         stack.visible_child = partitioning_view;

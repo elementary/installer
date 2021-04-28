@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2018-04-25 00:39+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
@@ -15,56 +15,27 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: src/MainWindow.vala:44
+#: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Install %s"
 
-#: src/Utils.vala:50
+#: src/Utils.vala:33
 msgid "Test mode shutdown"
 msgstr "Test mode shutdown"
 
-#: src/Utils.vala:64
+#: src/Utils.vala:47
 msgid "Test mode reboot"
 msgstr "Test mode reboot"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "Test mode switch user"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
-
-#: src/Helpers/LogHelper.vala:52
-msgid "Unable to set the Distinst log callback"
-msgstr "Unable to set the Distinst log callback"
-
-#: src/Helpers/LogHelper.vala:54
-msgid "Starting installation"
-msgstr "Starting installation"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Are you sure you want to Shut Down?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "This will cancel installation and turn off this device."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Restart"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Cancel"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Shut Down"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -74,15 +45,15 @@ msgstr "Cancel Installation"
 msgid "Test Mode"
 msgstr "Test Mode"
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:64
 msgid "Ignore"
 msgstr "Ignore"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
 msgstr "Not Enough Space"
 
-#: src/Views/CheckView.vala:204
+#: src/Views/CheckView.vala:220
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -91,11 +62,11 @@ msgstr ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 
-#: src/Views/CheckView.vala:215
+#: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
 msgstr "Your Device May Be Too Slow"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:232
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -103,11 +74,11 @@ msgstr ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
 msgstr "Connect to a Power Source"
 
-#: src/Views/CheckView.vala:233
+#: src/Views/CheckView.vala:249
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -115,19 +86,19 @@ msgstr ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 
-#: src/Views/CheckView.vala:291
+#: src/Views/CheckView.vala:307
 msgid "Recommended:"
 msgstr "Recommended:"
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:311
 msgid "Your Device:"
 msgstr "Your Device:"
 
-#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
 msgstr "Processor:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
 msgid "Memory:"
 msgstr "Memory:"
 
@@ -143,43 +114,47 @@ msgstr ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Getting the current configuration…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Erase and Install"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "Drive Encryption"
 
-#: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#: src/Views/EncryptView.vala:54
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 
-#: src/Views/EncryptView.vala:60
+#: src/Views/EncryptView.vala:62
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
-msgstr ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
-
-#: src/Views/EncryptView.vala:67
-msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -189,32 +164,32 @@ msgstr ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "Choose Encryption Password"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Confirm Password"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "Don't Encrypt"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Back"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "Choose Password"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "Set Password"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
 
@@ -247,11 +222,11 @@ msgstr "• Restart your device to boot from another drive"
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "Restart Device"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Try Demo Mode"
 
@@ -259,39 +234,39 @@ msgstr "Try Demo Mode"
 msgid "Try Installing Again"
 msgstr "Try Installing Again"
 
-#: src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
 msgstr "Keyboard Layout"
 
-#: src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Type to test your layout"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Show keyboard layout"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Select"
 
-#: src/Views/KeyboardLayoutView.vala:119
+#: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
 msgstr "Default"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
 msgstr "Input Language"
 
-#: src/Views/LanguageView.vala:232
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "Languages"
 
-#: src/Views/LanguageView.vala:249
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "Select a Language"
 
-#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "Currently active language"
 
@@ -321,7 +296,7 @@ msgstr ""
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "It is also recommended to select a <b>Swap</b> partition."
 
-#: src/Views/PartitioningView.vala:97
+#: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
 msgstr "Modify Partitions…"
 
@@ -341,19 +316,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
 msgstr "Partitioning Drive"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
 msgstr "Extracting Files"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
 msgstr "Configuring the System"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
 msgstr "Finishing the Installation"
 
@@ -369,12 +344,12 @@ msgid ""
 msgstr ""
 "You can install %s on this device now, or try Demo Mode without installing."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 #, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
@@ -384,21 +359,21 @@ msgstr ""
 "operating system will be unchanged. Performance and features may not reflect "
 "the installed experience."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 #, fuzzy
 msgid "Clean Install"
 msgstr "Erase and Install"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -410,10 +385,18 @@ msgstr "Continue Setting Up"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Your device will automatically restart to %s in %i seconds."
+msgid "%s has been installed."
+msgstr ""
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, fuzzy, c-format
+#| msgid "Your device will automatically restart to %s in %i seconds."
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "Your device will automatically restart to %s in %i seconds."
+msgstr[1] "Your device will automatically restart to %s in %i seconds."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -421,30 +404,34 @@ msgstr ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 
-#: src/Widgets/DecryptMenu.vala:54
+#: src/Views/SuccessView.vala:60
+msgid "Shut Down"
+msgstr "Shut Down"
+
+#: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
 msgstr "Decrypt This Partition"
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:62
 #, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr "Enter the partition's encryption password and set a LUKS device name."
 
-#: src/Widgets/DecryptMenu.vala:71
+#: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
 msgstr "Password:"
 
-#: src/Widgets/DecryptMenu.vala:84
+#: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
 msgstr "Device name:"
 
-#: src/Widgets/DecryptMenu.vala:97
+#: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
 msgstr "Decrypt"
 
-#: src/Widgets/DecryptMenu.vala:125
+#: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
 msgstr "LUKS volume was decrypted"
 
@@ -502,6 +489,34 @@ msgstr "Filesystem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Default (ext4)"
+
+#, fuzzy
+#~| msgid ""
+#~| "Drive encryption may minimally impact read and write speed when "
+#~| "performing intense tasks."
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "Drive encryption may minimally impact read and write speed when "
+#~ "performing intense tasks."
+
+#~ msgid "Unable to set the Distinst log callback"
+#~ msgstr "Unable to set the Distinst log callback"
+
+#~ msgid "Starting installation"
+#~ msgstr "Starting installation"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Are you sure you want to Shut Down?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "This will cancel installation and turn off this device."
+
+#~ msgid "Restart"
+#~ msgstr "Restart"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancel"
 
 #~ msgid "Operating System"
 #~ msgstr "Operating System"

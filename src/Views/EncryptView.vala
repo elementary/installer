@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2018 elementary LLC. (https://elementary.io)
+/*
+ * Copyright 2018–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,6 +25,8 @@ public class EncryptView : AbstractInstallerView {
     private ValidatedEntry pw_entry;
     private Gtk.LevelBar pw_levelbar;
 
+    private const int INFO_LABEL_CHARS = 52;
+
     public EncryptView () {
         Object (cancellable: false);
     }
@@ -45,40 +46,43 @@ public class EncryptView : AbstractInstallerView {
         overlay.add_overlay (overlay_image);
 
         var title_label = new Gtk.Label (_("Drive Encryption"));
-        title_label.get_style_context ().add_class ("h2");
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
         title_label.valign = Gtk.Align.START;
 
         var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
-        var protect_label = new Gtk.Label (_("Encrypting this drive protects data from being read by others with physical access to this device."));
-        protect_label.max_width_chars = 52;
-        protect_label.wrap = true;
-        protect_label.xalign = 0;
-
-        var performance_image = new Gtk.Image.from_icon_name ("utilities-system-monitor-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-
-        var performance_label = new Gtk.Label (_("Drive encryption may minimally impact read and write speed when performing intense tasks."));
-        performance_label.max_width_chars = 52;
-        performance_label.wrap = true;
-        performance_label.xalign = 0;
+        var protect_label = new Gtk.Label (_("Data will be protected from others with physical access to this device.")) {
+            max_width_chars = INFO_LABEL_CHARS,
+            wrap = true,
+            xalign = 0
+        };
 
         var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
-        var restart_label = new Gtk.Label (_("The encryption password will be required each time you turn on this device or restart."));
-        restart_label.max_width_chars = 52;
-        restart_label.wrap = true;
-        restart_label.xalign = 0;
+        var restart_label = new Gtk.Label (_("The encryption password will be required each time this device is turned on. Store it somewhere safe.")) {
+            max_width_chars = INFO_LABEL_CHARS,
+            wrap = true,
+            xalign = 0
+        };
 
-        var choice_grid = new Gtk.Grid ();
-        choice_grid.orientation = Gtk.Orientation.VERTICAL;
-        choice_grid.column_spacing = 12;
-        choice_grid.row_spacing = 32;
-        choice_grid.attach (protect_image, 0, 0, 1, 1);
-        choice_grid.attach (protect_label, 1, 0, 1, 1);
-        choice_grid.attach (performance_image, 0, 1, 1, 1);
-        choice_grid.attach (performance_label, 1, 1, 1, 1);
-        choice_grid.attach (restart_image, 0, 2, 1, 1);
-        choice_grid.attach (restart_label, 1, 2, 1, 1);
+        var keyboard_image = new Gtk.Image.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+
+        var keyboard_label = new Gtk.Label (_("A built-in or USB keyboard will be required to type the encryption password each time this device is turned on.")) {
+            max_width_chars = INFO_LABEL_CHARS,
+            wrap = true,
+            xalign = 0
+        };
+
+        var choice_grid = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 32
+        };
+        choice_grid.attach (protect_image, 0, 0);
+        choice_grid.attach (protect_label, 1, 0);
+        choice_grid.attach (restart_image, 0, 1);
+        choice_grid.attach (restart_label, 1, 1);
+        choice_grid.attach (keyboard_image, 0, 2);
+        choice_grid.attach (keyboard_label, 1, 2);
 
         var description = new Gtk.Label (_("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account."));
         description.margin_bottom = 12;

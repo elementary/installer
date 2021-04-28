@@ -21,7 +21,11 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
     private VariantWidget input_variant_widget;
 
+    private GLib.Settings keyboard_settings;
+
     construct {
+        keyboard_settings = new GLib.Settings ("org.gnome.desktop.input-sources");
+
         var image = new Gtk.Image.from_icon_name ("input-keyboard", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.END;
 
@@ -126,6 +130,30 @@ public class KeyboardLayoutView : AbstractInstallerView {
             input_variant_widget.show_variants (_("Input Language"), "<b>%s</b>".printf (layout.description));
         });
 
+        input_variant_widget.variant_listbox.row_selected.connect (() => {
+            string layout_string = "us";
+
+            unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
+            if (row != null) {
+                layout_string = ((LayoutRow) row).layout.name;
+
+                unowned Gtk.ListBoxRow vrow = input_variant_widget.variant_listbox.get_selected_row ();
+                if (vrow != null) {
+                    string variant = ((VariantRow) vrow).code;
+                    if (variant != null && variant != "") {
+                        layout_string += "+" + variant;
+                    }
+                }
+            }
+
+            if (!Installer.App.test_mode) {
+                Variant[] entries = { new Variant ("(ss)", "xkb", layout_string) };
+                var sources = new Variant.array (new VariantType ("(ss)"), entries);
+                keyboard_settings.set_value ("sources", sources);
+                keyboard_settings.set_value ("current", (uint)0);
+            }
+        });
+
         input_variant_widget.main_listbox.row_selected.connect ((row) => {
             next_button.sensitive = true;
         });
@@ -134,13 +162,19 @@ public class KeyboardLayoutView : AbstractInstallerView {
             var popover = new Gtk.Popover (keyboard_test_entry);
             var layout = new LayoutWidget ();
 
-            var layout_string = "us";
-            unowned Configuration config = Configuration.get_default ();
-            if (config.keyboard_layout != null) {
-                layout_string = config.keyboard_layout;
-                if (config.keyboard_variant != null) {
-                    layout_string += "\t" + config.keyboard_variant;
+            string layout_string;
+
+            unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
+            if (row != null) {
+                layout_string = ((LayoutRow) row).layout.name;
+
+                unowned Gtk.ListBoxRow vrow = input_variant_widget.variant_listbox.get_selected_row ();
+                if (vrow != null) {
+                    string variant = ((VariantRow) vrow).code;
+                    layout_string += "\t" + variant;
                 }
+            } else {
+                layout_string = "us";
             }
 
             layout.set_layout (layout_string);
@@ -183,10 +217,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 layout_description = _("%s…").printf (layout_description);
             };
 
-            var label = new Gtk.Label (layout_description);
-            label.margin = 6;
-            label.xalign = 0;
-            label.get_style_context ().add_class ("h3");
+            var label = new Gtk.Label (layout_description) {
+                ellipsize = Pango.EllipsizeMode.END,
+                margin = 6,
+                xalign = 0
+            };
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+
             add (label);
             show_all ();
         }
@@ -198,10 +235,14 @@ public class KeyboardLayoutView : AbstractInstallerView {
         public VariantRow (string? code, string description) {
             this.code = code;
             this.description = description;
-            var label = new Gtk.Label (description);
-            label.margin = 6;
-            label.xalign = 0;
-            label.get_style_context ().add_class ("h3");
+
+            var label = new Gtk.Label (description) {
+                ellipsize = Pango.EllipsizeMode.END,
+                margin = 6,
+                xalign = 0
+            };
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+
             add (label);
             show_all ();
         }

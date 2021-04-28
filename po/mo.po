@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
 "PO-Revision-Date: 2018-05-27 00:05+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/installer/"
@@ -13,56 +13,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/MainWindow.vala:44
+#: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Instalați %s 1"
 
-#: src/Utils.vala:50
+#: src/Utils.vala:33
 msgid "Test mode shutdown"
 msgstr "Mod de oprire a testului"
 
-#: src/Utils.vala:64
+#: src/Utils.vala:47
 msgid "Test mode reboot"
 msgstr "Mod de testare reporniți"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "Utilizator comutator mod de testare"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s 1…"
-
-#: src/Helpers/LogHelper.vala:52
-msgid "Unable to set the Distinst log callback"
-msgstr "Nu s-a putut seta apelul Distinst callback"
-
-#: src/Helpers/LogHelper.vala:54
-msgid "Starting installation"
-msgstr "Începeți instalarea"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Sigur vrei să închizi?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Aceasta va anula instalarea și va opri acest dispozitiv."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Repornire"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Anulare"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Închide"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -72,15 +43,15 @@ msgstr "Anularea instalării"
 msgid "Test Mode"
 msgstr "Modul test"
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:64
 msgid "Ignore"
 msgstr "Ignoră"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
 msgstr "Spațiu insuficient"
 
-#: src/Views/CheckView.vala:204
+#: src/Views/CheckView.vala:220
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -89,11 +60,11 @@ msgstr ""
 "Nu este suficient spațiu pe dispozitivul dvs. pentru a instala %s 1. Vă "
 "recomandăm un minim de %s 2 de stocare."
 
-#: src/Views/CheckView.vala:215
+#: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
 msgstr "Dispozitivul dvs. poate fi prea lent"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:232
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -101,11 +72,11 @@ msgstr ""
 "Dispozitivul dvs. nu îndeplinește cerințele hardware recomandate. Acest "
 "lucru poate cauza încetinirea sau înghețarea."
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
 msgstr "Conectați-vă la o sursă de alimentare"
 
-#: src/Views/CheckView.vala:233
+#: src/Views/CheckView.vala:249
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -113,19 +84,19 @@ msgstr ""
 "Dispozitivul dvs. rulează cu baterie. Se recomandă conectarea la o sursă de "
 "curent înainte de instalare."
 
-#: src/Views/CheckView.vala:291
+#: src/Views/CheckView.vala:307
 msgid "Recommended:"
 msgstr "Recomandat:"
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:311
 msgid "Your Device:"
 msgstr "Dispozitivul tău:"
 
-#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
 msgstr "Procesador:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
 msgid "Memory:"
 msgstr "Memorie:"
 
@@ -141,43 +112,47 @@ msgstr ""
 "Aceasta va șterge toate datele de pe unitatea selectată. Dacă nu ați "
 "susținut datele, puteți să anulați instalarea și să utilizați modul Demo."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Obținerea configurației curente …"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Ștergeți și instalați"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "Codarea unității"
 
-#: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#: src/Views/EncryptView.vala:54
+#, fuzzy
+#| msgid ""
+#| "Encrypting this drive protects data from being read by others with "
+#| "physical access to this device."
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Criptarea acestei unități protejează datele de a fi citite de alții cu acces "
 "fizic la acest dispozitiv."
 
-#: src/Views/EncryptView.vala:60
+#: src/Views/EncryptView.vala:62
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time you turn on this "
+#| "device or restart."
 msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
-msgstr ""
-"Criptarea unității poate avea un impact minim asupra vitezei de citire și "
-"scriere atunci când efectuează sarcini intense."
-
-#: src/Views/EncryptView.vala:67
-msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
 "Parola de criptare va fi necesară de fiecare dată când porniți acest "
 "dispozitiv sau reporniți."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -187,32 +162,32 @@ msgstr ""
 "Aceasta este o parolă unică pentru acest dispozitiv, nu și parola pentru "
 "contul dvs. de utilizator."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "Alegeți parola de criptare"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Confirmă parola"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "Nu criptați"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Înapoi"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "Alege parola"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "Setați parola"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "Parolele nu se potrivesc"
 
@@ -245,11 +220,11 @@ msgstr "• Reporniți dispozitivul pentru a porni de la o altă unitate"
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "Reporniți dispozitivul"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
 msgstr "Încercați modul Demo"
 
@@ -257,39 +232,39 @@ msgstr "Încercați modul Demo"
 msgid "Try Installing Again"
 msgstr "Încercați să instalați din nou"
 
-#: src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
 msgstr "Configurarea tastaturii"
 
-#: src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Tastați pentru a testa aspectul"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Afișați aspectul tastaturii"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Selectați"
 
-#: src/Views/KeyboardLayoutView.vala:119
+#: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
 msgstr "Mod implicit"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
 msgstr "Limba de introducere"
 
-#: src/Views/LanguageView.vala:232
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "Limbi"
 
-#: src/Views/LanguageView.vala:249
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "Selectați limba"
 
-#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "Limba activă în prezent"
 
@@ -319,7 +294,7 @@ msgstr ""
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "De asemenea, este recomandat să selectați o partiție <b> 1Swap </b> 2."
 
-#: src/Views/PartitioningView.vala:97
+#: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
 msgstr "Modificați partițiile …"
 
@@ -339,19 +314,19 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
 msgstr "Unitate de partiționare"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
 msgstr "Extragerea fișierelor"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
 msgstr "Configurarea sistemului"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
 msgstr "Finalizarea instalării"
 
@@ -368,12 +343,12 @@ msgstr ""
 "Puteți instala acum%s 1 pe acest dispozitiv sau încercați modul Demo fără a "
 "instala."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 #, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
@@ -383,21 +358,21 @@ msgstr ""
 "din sistemul de operare anterior vor fi neschimbate. Este posibil ca "
 "performanțele și caracteristicile să nu reflecte experiența instalată."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 #, fuzzy
 msgid "Clean Install"
 msgstr "Ștergeți și instalați"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -409,10 +384,18 @@ msgstr "Continuați să configurați"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Pc dvs. va reporni automat la%s 1 în%i 2 secunde."
+msgid "%s has been installed."
+msgstr ""
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, fuzzy, c-format
+#| msgid "Your device will automatically restart to %s in %i seconds."
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "Pc dvs. va reporni automat la%s 1 în%i 2 secunde."
+msgstr[1] "Pc dvs. va reporni automat la%s 1 în%i 2 secunde."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -420,11 +403,15 @@ msgstr ""
 "După repornire, puteți configura un utilizator nou sau puteți închide acum "
 "și configurați un utilizator nou mai târziu."
 
-#: src/Widgets/DecryptMenu.vala:54
+#: src/Views/SuccessView.vala:60
+msgid "Shut Down"
+msgstr "Închide"
+
+#: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
 msgstr "Decriptați această partiție"
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:62
 #, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
@@ -433,19 +420,19 @@ msgstr ""
 "Introduceți parola de criptare a partiției și setați un nume de dispozitiv "
 "LUKS."
 
-#: src/Widgets/DecryptMenu.vala:71
+#: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
 msgstr "Parola:"
 
-#: src/Widgets/DecryptMenu.vala:84
+#: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
 msgstr "Nume dispozitiv:"
 
-#: src/Widgets/DecryptMenu.vala:97
+#: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
 msgstr "Decriptaţi"
 
-#: src/Widgets/DecryptMenu.vala:125
+#: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
 msgstr "Volumul LUKS a fost decriptat"
 
@@ -503,6 +490,34 @@ msgstr "Sistemul de fișiere:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Implicit (ext4)"
+
+#, fuzzy
+#~| msgid ""
+#~| "Drive encryption may minimally impact read and write speed when "
+#~| "performing intense tasks."
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "Criptarea unității poate avea un impact minim asupra vitezei de citire și "
+#~ "scriere atunci când efectuează sarcini intense."
+
+#~ msgid "Unable to set the Distinst log callback"
+#~ msgstr "Nu s-a putut seta apelul Distinst callback"
+
+#~ msgid "Starting installation"
+#~ msgstr "Începeți instalarea"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Sigur vrei să închizi?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Aceasta va anula instalarea și va opri acest dispozitiv."
+
+#~ msgid "Restart"
+#~ msgstr "Repornire"
+
+#~ msgid "Cancel"
+#~ msgstr "Anulare"
 
 #~ msgid "Operating System"
 #~ msgstr "Sistemul de operare"

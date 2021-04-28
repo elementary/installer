@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,11 +22,13 @@ public class VariantWidget : Gtk.Frame {
     public signal void going_to_main ();
 
     private Gtk.Button back_button;
+    private Gtk.Grid variant_grid;
     private Gtk.Label variant_title;
-    private Gtk.Stack stack;
+    private Hdy.Deck deck;
 
     construct {
         main_listbox = new Gtk.ListBox ();
+
         var main_scrolled = new Gtk.ScrolledWindow (null, null);
         main_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         main_scrolled.add (main_listbox);
@@ -43,7 +44,7 @@ public class VariantWidget : Gtk.Frame {
         back_button = new Gtk.Button ();
         back_button.halign = Gtk.Align.START;
         back_button.margin = 6;
-        back_button.get_style_context ().add_class ("back-button");
+        back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
         variant_title = new Gtk.Label (null);
         variant_title.ellipsize = Pango.EllipsizeMode.END;
@@ -55,30 +56,31 @@ public class VariantWidget : Gtk.Frame {
         header_box.add (back_button);
         header_box.set_center_widget (variant_title);
 
-        var variant_grid = new Gtk.Grid ();
+        variant_grid = new Gtk.Grid ();
         variant_grid.orientation = Gtk.Orientation.VERTICAL;
         variant_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         variant_grid.add (header_box);
         variant_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         variant_grid.add (variant_scrolled);
 
-        stack = new Gtk.Stack ();
-        stack.expand = true;
-        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.add_named (main_scrolled, "main");
-        stack.add_named (variant_grid, "variant");
-        add (stack);
+        deck = new Hdy.Deck () {
+            can_swipe_back = true
+        };
+        deck.add (main_scrolled);
+        deck.add (variant_grid);
+
+        add (deck);
 
         back_button.clicked.connect (() => {
             going_to_main ();
-            stack.visible_child_name = "main";
+            deck.navigate (Hdy.NavigationDirection.BACK);
         });
     }
 
     public void show_variants (string back_button_label, string variant_title_label) {
         back_button.label = back_button_label;
         variant_title.label = variant_title_label;
-        stack.visible_child_name = "variant";
+        deck.visible_child = variant_grid;
     }
 
     public void clear_variants () {

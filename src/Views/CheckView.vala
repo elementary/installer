@@ -20,13 +20,13 @@
 
 public class Installer.CheckView : AbstractInstallerView {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
-    public static uint64 ONE_GB = 1000 * 1000 * 1000;
-    // Minimum 5 GB
-    public static uint64 MINIMUM_SPACE = 5 * ONE_GB;
+    public const uint64 ONE_GB = 1000 * 1000 * 1000;
+    // Minimum 15 GB
+    public const uint64 MINIMUM_SPACE = 15 * ONE_GB;
     // Minimum 1.2 GHz
-    public static int MINIMUM_FREQUENCY = 1200 * 1000;
+    public const int MINIMUM_FREQUENCY = 1200 * 1000;
     // Minimum 1GB
-    public static uint64 MINIMUM_MEMORY = 1 * ONE_GB;
+    public const uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
     public signal void next_step ();
     public signal void status_changed (bool met_requirements);
@@ -38,7 +38,6 @@ public class Installer.CheckView : AbstractInstallerView {
     int frequency = 0;
     uint64 memory = 0;
 
-    public static uint64 minimum_disk_size;
     private UPower upower;
 
     enum State {
@@ -52,8 +51,7 @@ public class Installer.CheckView : AbstractInstallerView {
     private Gtk.Button ignore_button;
     private Gtk.Stack stack;
 
-    public CheckView (uint64 size) {
-        minimum_disk_size = size;
+    public CheckView () {
         Object (cancellable: true);
     }
 
@@ -94,10 +92,28 @@ public class Installer.CheckView : AbstractInstallerView {
     }
 
     private static bool get_has_enough_space () {
-        Distinst.Disks disks = Distinst.Disks.probe ();
-        foreach (unowned Distinst.Disk disk in disks.list ()) {
-            uint64 size = disk.get_sectors () * disk.get_sector_size ();
-            if (size > minimum_disk_size) {
+        var loop = new MainLoop ();
+        InstallerDaemon.DiskInfo? disks = null;
+
+        Daemon.get_default ().get_disks.begin (false, (obj, res) => {
+            try {
+                disks = ((Daemon)obj).get_disks.end (res);
+            } catch (Error e) {
+                critical ("Unable to get disks list: %s", e.message);
+            } finally {
+                loop.quit ();
+            }
+        });
+
+        loop.run ();
+
+        if (disks == null) {
+            return false;
+        }
+
+        foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
+            uint64 size = disk.sectors * disk.sector_size;
+            if (size > MINIMUM_SPACE) {
                 return true;
             }
         }
@@ -127,7 +143,7 @@ public class Installer.CheckView : AbstractInstallerView {
             DataInputStream dis = new DataInputStream (file.read ());
             string? line;
             string name = "MemTotal:";
-            while ((line = dis.read_line (null,null)) != null) {
+            while ((line = dis.read_line (null, null)) != null) {
                 if (line.has_prefix (name)) {
                     var number = line.replace ("kB", "").replace (name, "").strip ();
                     return uint64.parse (number) * 1000;
@@ -330,9 +346,9 @@ public class Installer.CheckView : AbstractInstallerView {
 
     private static string get_frequency_string (int freq) {
         if (freq >= 1000000) {
-            return "%.1f GHz".printf (((float)freq)/1000000);
+            return "%.1f GHz".printf (((float)freq) / 1000000);
         } else if (freq >= 1000) {
-            return "%.1f MHz".printf (((float)freq)/1000);
+            return "%.1f MHz".printf (((float)freq) / 1000);
         } else {
             return "%d kHz".printf (freq);
         }

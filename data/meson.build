@@ -1,3 +1,6 @@
+autostartdir = join_paths(get_option('sysconfdir'), 'xdg', 'autostart')
+schemadir = join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
+
 i18n.merge_file(
     input: meson.project_name() + '.desktop.in',
     output: meson.project_name() + '.desktop',
@@ -13,13 +16,37 @@ install_data(
 )
 
 install_data(
+    'autostart.desktop',
+    install_dir: autostartdir,
+    rename: meson.project_name() + '.desktop'
+)
+
+install_data(
+    'compositor-autostart.desktop',
+    install_dir: autostartdir,
+    rename: meson.project_name() + '.compositor.desktop'
+)
+
+install_data(
+    'wingpanel-autostart.desktop',
+    install_dir: autostartdir,
+    rename: meson.project_name() + '.panel.desktop'
+)
+
+install_subdir(
+    'gsd',
+    install_dir: autostartdir,
+    strip_directory: true
+)
+
+install_data(
     'installer.session',
     install_dir: join_paths(get_option('datadir'), 'gnome-session', 'sessions')
 )
 
 install_data(
-    'io.elementary.installer.policy',
-    install_dir: join_paths(get_option('datadir'), 'polkit-1', 'actions')
+    'installer-default-settings.gschema.override',
+    install_dir: schemadir
 )
 
 # Test the desktop file

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 23:49+0200\n"
-"PO-Revision-Date: 2019-04-22 18:59+0000\n"
-"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"PO-Revision-Date: 2020-06-07 10:11+0000\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
 "installer/cs/>\n"
 "Language: cs\n"
@@ -12,59 +12,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:44
+#: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Nainstalovat %s"
 
-#: src/Utils.vala:50
+#: src/Utils.vala:33
 msgid "Test mode shutdown"
-msgstr "Vypnout zkušební režim"
+msgstr "Vypnout v rámci testovacího režimu"
 
-#: src/Utils.vala:64
+#: src/Utils.vala:47
 msgid "Test mode reboot"
-msgstr "Restartovat zkušební režim"
+msgstr "Restartovat v rámci testovacího režimu"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:73
 msgid "Test mode switch user"
-msgstr "Přepnout uživatele ve zkušebním režimu"
+msgstr "Přepnout uživatele v rámci testovacího režimu"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
-
-#: src/Helpers/LogHelper.vala:52
-msgid "Unable to set the Distinst log callback"
-msgstr "Nelze nastavit Distinst log callback"
-
-#: src/Helpers/LogHelper.vala:54
-msgid "Starting installation"
-msgstr "Začínám instalaci"
-
-#: src/Dialogs/EndSessionDialog.vala:35
-msgid "Are you sure you want to Shut Down?"
-msgstr "Opravdu chcete zařízení vypnout?"
-
-#: src/Dialogs/EndSessionDialog.vala:42
-msgid "This will cancel installation and turn off this device."
-msgstr "Tato akce přeruší instalaci a vypne toto zařízení."
-
-#: src/Dialogs/EndSessionDialog.vala:58
-msgid "Restart"
-msgstr "Restartovat"
-
-#: src/Dialogs/EndSessionDialog.vala:60
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: src/Dialogs/EndSessionDialog.vala:62 src/Views/TryInstallView.vala:75
-#: src/Views/SuccessView.vala:55
-msgid "Shut Down"
-msgstr "Vypnout"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -72,150 +43,147 @@ msgstr "Zrušit instalaci"
 
 #: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
-msgstr "Zkušební režim"
+msgstr "Testovací režim"
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:64
 msgid "Ignore"
 msgstr "Ignorovat"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
 msgstr "Nedostatek místa"
 
-#: src/Views/CheckView.vala:204
+#: src/Views/CheckView.vala:220
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"Na zařízení není dostatek místa k instalaci %s. Doporučujeme minimálně %s "
-"prostoru."
+"Na úložišti počítače není dostatek místa pro instalaci %s. Doporučujeme "
+"minimálně %s prostoru."
 
-#: src/Views/CheckView.vala:215
+#: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
-msgstr "Vaše zařízení může být příliš pomalé"
+msgstr "Váš počítač může být příliš pomalý"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:232
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"Vaše zařízení nesplňuje doporučené hardwarové požadavky, což může způsobit "
-"zpomalení nebo úplné zamrznutí."
+"Váš počítač nesplňuje doporučené hardwarové požadavky, což může způsobovat "
+"zpomalování nebo úplné zamrznutí."
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
 msgstr "Připojte zdroj napájení"
 
-#: src/Views/CheckView.vala:233
+#: src/Views/CheckView.vala:249
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"Vaše zařízení je napájené z baterie. Doporučujeme jej po čas instalace "
-"připojit k elektrické síti."
+"Váš počítač je nyní napájen z akumulátoru. Doporučujeme ho po dobu instalace "
+"připojit k napájení z elektrické sítě."
 
-#: src/Views/CheckView.vala:291
+#: src/Views/CheckView.vala:307
 msgid "Recommended:"
 msgstr "Doporučeno:"
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:311
 msgid "Your Device:"
-msgstr "Vaše zařízení:"
+msgstr "Váš počítač:"
 
-#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
 msgstr "Procesor:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
 msgid "Memory:"
 msgstr "Operační paměť:"
 
 #: src/Views/DiskView.vala:51
 msgid "Select a Drive"
-msgstr "Vybrat disk"
+msgstr "Vybrat jednotku"
 
 #: src/Views/DiskView.vala:55
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"Toto smaže všechna data na vybraném disku. Pokud jste data nezazálohovali, "
-"můžete instalaci přerušit a použít Demo režim."
+"Toto smaže všechna data na vybrané jednotce. Pokud jste si svá data ještě "
+"nezazálohovali, můžete instalaci přerušit a použít Režim pro ukázku."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
-msgstr "Získávání aktuálního nastavení…"
+msgstr "Zjišťování stávajícího uspořádání…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
-msgstr "Smazat a nainstalovat"
+msgstr "Vymazat a nainstalovat"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
-msgstr "Šifrování disku"
+msgstr "Šifrování jednotky"
 
-#: src/Views/EncryptView.vala:53
-msgid ""
-"Encrypting this drive protects data from being read by others with physical "
-"access to this device."
+#: src/Views/EncryptView.vala:54
+msgid "Data will be protected from others with physical access to this device."
 msgstr ""
-"Zašifrování tohoto disku ochrání data před přečtením jiným člověkem, který "
-"by měl fyzický přístup k tomuto zařízení."
+"Data budou chráněna před ostatními, kteří mají k tomuto počítači fyzický "
+"přístup."
 
-#: src/Views/EncryptView.vala:60
+#: src/Views/EncryptView.vala:62
 msgid ""
-"Drive encryption may minimally impact read and write speed when performing "
-"intense tasks."
+"The encryption password will be required each time this device is turned on. "
+"Store it somewhere safe."
 msgstr ""
-"Zašifrování disku může v minimální míře ovlivnit rychlost čtení a zápisu při "
-"vykonávání náročných operací."
+"Šifrovací heslo bude vyžadováno pokaždé, když tento počítač zapnete. Uložte "
+"si ho někde bezpečně."
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:70
 msgid ""
-"The encryption password will be required each time you turn on this device "
-"or restart."
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
 msgstr ""
-"Šifrovací heslo bude vyžadováno pokaždé, když toto zařízení zapnete nebo "
-"restartujete."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"Pokud zapomenete šifrovací heslo, <b>nebude již možné data obnovit.</b> Jde "
-"o unikátní heslo k celému zařízení, ne heslo k vašemu uživatelskému účtu."
+"Pokud šifrovací heslo zapomenete, <b>data už nebude možné obnovit.</b> Jedná "
+"se o samostatné heslo k celému počítači, ne heslo k vašemu uživatelskému "
+"účtu."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
-msgstr "Zvolit šifrovací heslo"
+msgstr "Zvolte šifrovací heslo"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
-msgstr "Potvrdit heslo"
+msgstr "Potvrďte heslo"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "Nešifrovat"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Zpět"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
-msgstr "Vybrat heslo"
+msgstr "Zvolte si heslo"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "Nastavit heslo"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
-msgstr "Hesla se neshodují"
+msgstr "Zadání hesla se neshodují"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
@@ -227,8 +195,8 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Instalace %s se nezdařila, pravděpodobně kvůli hardwarové chybě. Vaše "
-"zařízení možná nepůjde restartovat. Můžete zkusit následující řešení:"
+"Instalace %s se nezdařila, pravděpodobně kvůli hardwarové chybě. Váš počítač "
+"možná nepůjde restartovat. Můžete zkusit následující řešení:"
 
 #: src/Views/ErrorView.vala:44
 msgid "• Try the installation again"
@@ -236,76 +204,76 @@ msgstr "• Zkusit instalaci znovu"
 
 #: src/Views/ErrorView.vala:50
 msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Použít Demo režim a pokusit se problémy manuálně opravit"
+msgstr "• Použít Režim pro ukázku a pokusit se problémy opravit ručně"
 
 #: src/Views/ErrorView.vala:56
 msgid "• Restart your device to boot from another drive"
-msgstr "• Restartovat vaše zařízení a nabootovat z jiného disku"
+msgstr "• Restartovat váš počítač a nastartovat z jiné jednotky"
 
 #: src/Views/ErrorView.vala:65
 msgid "Details"
-msgstr ""
+msgstr "Podrobnosti"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "Restartovat zařízení"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:79
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
 msgid "Try Demo Mode"
-msgstr "Vyzkoušet Demo režim"
+msgstr "Vyzkoušet Režim pro ukázku"
 
 #: src/Views/ErrorView.vala:100
 msgid "Try Installing Again"
 msgstr "Zkusit nainstalovat znovu"
 
-#: src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
 msgstr "Rozložení klávesnice"
 
-#: src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
-msgstr "Pište pro otestování rozložení klávesnice"
+msgstr "Vyzkoušejte rozvržení klávesnice psaním"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Zobrazit rozložení klávesnice"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Vybrat"
 
-#: src/Views/KeyboardLayoutView.vala:119
+#: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
 msgstr "Výchozí"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
-msgstr "Vstupní jazyk"
+msgstr "Jazyk vstupu z klávesnice"
 
-#: src/Views/LanguageView.vala:232
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "Jazyky"
 
-#: src/Views/LanguageView.vala:249
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "Vyberte jazyk"
 
-#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
-msgstr "Právě aktivní jazyk"
+msgstr "Právě používaný jazyk"
 
 #: src/Views/PartitioningView.vala:54
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"Vyberte ze všech disků oddíly, které se mají použít. <b>Výběrem \"Formátovat"
-"\" smažete VŠECHNA data na vybraném oddílu.</b>"
+"Vyberte z jednotek ty oddíly, které se mají použít. <b>Výběrem „Formátovat“ "
+"smažete VŠECHNA data na vybraném oddílu.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Musíte vybrat minimálně oddíl <b>Kořen (/)</b>."
+msgstr "Je třeba vybrat alespoň <b>kořenový (/)</b> oddíl."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -313,20 +281,20 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Musíte vybrat minimálně oddíl <b>Kořen (/)</b> a oddíl <b>Boot (/boot/efi)</"
-"b>."
+"Je třeba vybrat alespoň oddíly pro <b>kořen (/)</b>  a <b>zavádění (/boot/"
+"efi)</b>."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "Doporučujeme také vybrat <b>Swap</b> oddíl."
+msgstr "Je také doporučeno vybrat oddíl pro <b>Swap</b>."
 
-#: src/Views/PartitioningView.vala:97
+#: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
 msgstr "Upravit oddíly…"
 
 #: src/Views/PartitioningView.vala:276
 msgid "EFI partition has the wrong file system"
-msgstr "Oddíl EFI má špatný souborový systém"
+msgstr "Oddíl EFI nemá vhodný souborový systém"
 
 #: src/Views/PartitioningView.vala:278
 msgid "EFI partition is too small"
@@ -334,27 +302,27 @@ msgstr "Oddíl EFI je příliš malý"
 
 #: src/Views/PartitioningView.vala:281
 msgid "Invalid file system for root"
-msgstr "Špatný souborový systém pro kořenový adresář"
+msgstr "Nevhodný souborový systém pro kořenový adresář"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr "Špatný souborový systém pro domovskou složku"
+msgstr "Nevhodný souborový systém pro domovskou složku"
 
-#: src/Views/ProgressView.vala:412
+#: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
-msgstr "Vytvářím oddíly na disku"
+msgstr "Vytvářejí se oddíly na jednotce"
 
-#: src/Views/ProgressView.vala:416
+#: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
-msgstr "Rozbaluji soubory"
+msgstr "Rozbalují se soubory"
 
-#: src/Views/ProgressView.vala:420
+#: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
-msgstr "Konfiguruji systém"
+msgstr "Nastavuje se systém"
 
-#: src/Views/ProgressView.vala:424
+#: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
-msgstr "Dokončuji instalaci"
+msgstr "Dokončuje se instalace"
 
 #: src/Views/TryInstallView.vala:44
 msgid "Try or Install"
@@ -365,15 +333,15 @@ msgstr "Vyzkoušet nebo nainstalovat"
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
-"Můžete nainstalovat %s na toto zařízení teď, nebo vyzkoušet Demo režim bez "
-"nutnosti instalace."
+"%s můžete nainstalovat na tento počítač hned, nebo napřed vyzkoušet Režim "
+"pro ukázku bez nutnosti instalace."
 
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:120
-#: src/Views/TryInstallView.vala:137 src/Views/TryInstallView.vala:154
+#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
 msgid "Next"
 msgstr "Další"
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:77
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -382,70 +350,83 @@ msgstr ""
 "nezměněná. Výkon a funkce však nemusí být přímo srovnatelné s plně "
 "nainstalovaným systémem."
 
-#: src/Views/TryInstallView.vala:85
+#: src/Views/TryInstallView.vala:81
 msgid "Clean Install"
-msgstr "Čistá instalace"
+msgstr "Nainstalovat odznovu"
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:83
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Vymazat vše a nainstalovat čistou kopii %s."
 
-#: src/Views/TryInstallView.vala:91
+#: src/Views/TryInstallView.vala:87
 msgid "Custom (Advanced)"
-msgstr "Vlastní (Pokročilé)"
+msgstr "Uživatelsky určené (pokročilé)"
 
-#: src/Views/TryInstallView.vala:93
+#: src/Views/TryInstallView.vala:89
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"Vytvořte oddíly, měňte jejich velikost, nebo je spravujte. Tato metoda může "
-"vést ke ztrátě dat."
+"Vytvořte oddíly, měňte jejich velikost, nebo jinak spravujte ručně. Tato "
+"metoda může vést ke ztrátě dat."
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
-msgstr "Pokračovat v nastavení"
+msgstr "Pokračovat v nastavování"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Vaše zařízení se automaticky restartuje do %s za %i sekund."
+msgid "%s has been installed."
+msgstr ""
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, fuzzy, c-format
+#| msgid "Your device will automatically restart to %s in %i seconds."
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "Počítač se automaticky restartuje do %s za %i sekund."
+msgstr[1] "Počítač se automaticky restartuje do %s za %i sekund."
+msgstr[2] "Počítač se automaticky restartuje do %s za %i sekund."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "Po dokončení restartu můžete vytvořit nového uživatele, nebo teď můžete "
-"zařízení vypnout a vytvořit uživatele později."
+"počítač vypnout a vytvořit uživatele později."
 
-#: src/Widgets/DecryptMenu.vala:54
-msgid "Decrypt This Partition"
-msgstr "Dešifrovat tento oddíl"
+#: src/Views/SuccessView.vala:60
+msgid "Shut Down"
+msgstr "Vypnout"
 
 #: src/Widgets/DecryptMenu.vala:58
+msgid "Decrypt This Partition"
+msgstr "Odemknout tento oddíl"
+
+#: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
 "Zadejte šifrovací heslo oddílu a přiřaďte název zařízení pro šifrovaný oddíl."
 
-#: src/Widgets/DecryptMenu.vala:71
+#: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
 msgstr "Heslo:"
 
-#: src/Widgets/DecryptMenu.vala:84
+#: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
 msgstr "Název zařízení:"
 
-#: src/Widgets/DecryptMenu.vala:97
+#: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
-msgstr "Dešifrovat"
+msgstr "Odemknout"
 
-#: src/Widgets/DecryptMenu.vala:125
+#: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr "LUKS prostor byl dešifrován"
+msgstr "LUKS svazek byl odemknut"
 
 #: src/Widgets/DiskBar.vala:127
 #, c-format
@@ -475,7 +456,7 @@ msgstr "Kořen (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr "Domů (/home)"
+msgstr "Domovské složky (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
@@ -488,11 +469,11 @@ msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:91
 msgid "Custom"
-msgstr "Vlastní"
+msgstr "Uživatelsky určené"
 
 #: src/Widgets/PartitionMenu.vala:95
 msgid "Custom:"
-msgstr "Vlastní:"
+msgstr "Uživatelsky určené:"
 
 #: src/Widgets/PartitionMenu.vala:103
 msgid "Filesystem:"
@@ -501,6 +482,30 @@ msgstr "Souborový systém:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Výchozí (ext4)"
+
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "Při vykonávání náročných operací může šifrování disku v minimální míře "
+#~ "ovlivnit rychlost čtení a zápisu."
+
+#~ msgid "Unable to set the Distinst log callback"
+#~ msgstr "Nedaří se nastavit zpětné volání Distinst log"
+
+#~ msgid "Starting installation"
+#~ msgstr "Spouštění instalace"
+
+#~ msgid "Are you sure you want to Shut Down?"
+#~ msgstr "Opravdu chcete zařízení vypnout?"
+
+#~ msgid "This will cancel installation and turn off this device."
+#~ msgstr "Tato akce přeruší instalaci a vypne toto zařízení."
+
+#~ msgid "Restart"
+#~ msgstr "Restartovat"
+
+#~ msgid "Cancel"
+#~ msgstr "Zrušit"
 
 #~ msgid "Operating System"
 #~ msgstr "Operační systém"

@@ -69,4 +69,3 @@ public class Installer.Terminal : Gtk.ScrolledWindow {
         prev_upper_adj = adj.upper;
     }
 }
-
