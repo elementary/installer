@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 02:24+0000\n"
-"PO-Revision-Date: 2021-03-11 05:30+0000\n"
+"PO-Revision-Date: 2021-05-01 13:47+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -321,7 +321,7 @@ msgstr "Видобування файлів"
 
 #: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
-msgstr "Налаштування системи"
+msgstr "Налаштовування системи"
 
 #: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
