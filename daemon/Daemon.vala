@@ -197,7 +197,13 @@ public class InstallerDaemon.Daemon : GLib.Object {
         distinst_config.keyboard_variant = config.keyboard_variant == "" ? null : config.keyboard_variant;
 
         new Thread<void*> (null, () => {
-            installer.install ((owned) disks, distinst_config);
+            if (installer.install ((owned) disks, distinst_config) != 0) {
+                Idle.add (() => {
+                    on_error (Distinst.Error ());
+                    return GLib.Source.REMOVE;
+                });
+            }
+
             return null;
         });
     }
