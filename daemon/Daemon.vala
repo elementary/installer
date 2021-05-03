@@ -50,6 +50,10 @@ public class InstallerDaemon.Daemon : GLib.Object {
         Disk[] logical_disks = {};
 
         foreach (unowned Distinst.Disk disk in disks.list ()) {
+            if (disk.is_read_only ()) {
+                continue;
+            }
+
             // Skip root disk or live disk
             if (disk.contains_mount ("/", disks) || disk.contains_mount ("/cdrom", disks)) {
                 continue;
