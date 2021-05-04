@@ -50,6 +50,10 @@ public class InstallerDaemon.Daemon : GLib.Object {
         Disk[] logical_disks = {};
 
         foreach (unowned Distinst.Disk disk in disks.list ()) {
+            if (disk.is_read_only ()) {
+                continue;
+            }
+
             // Skip root disk or live disk
             if (disk.contains_mount ("/", disks) || disk.contains_mount ("/cdrom", disks)) {
                 continue;
@@ -197,7 +201,13 @@ public class InstallerDaemon.Daemon : GLib.Object {
         distinst_config.keyboard_variant = config.keyboard_variant == "" ? null : config.keyboard_variant;
 
         new Thread<void*> (null, () => {
-            installer.install ((owned) disks, distinst_config);
+            if (installer.install ((owned) disks, distinst_config) != 0) {
+                Idle.add (() => {
+                    on_error (Distinst.Error ());
+                    return GLib.Source.REMOVE;
+                });
+            }
+
             return null;
         });
     }

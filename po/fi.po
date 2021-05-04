@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-11 02:24+0000\n"
-"PO-Revision-Date: 2021-03-03 14:07+0000\n"
+"PO-Revision-Date: 2021-05-04 10:19+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -128,7 +128,7 @@ msgstr "Levyn salaus"
 
 #: src/Views/EncryptView.vala:54
 msgid "Data will be protected from others with physical access to this device."
-msgstr "Tiedot suoajataan muilta, joilla on fyysinen pääsy tälle laitteelle."
+msgstr "Tiedot suojataan muilta, joilla on fyysinen pääsy tälle laitteelle."
 
 #: src/Views/EncryptView.vala:62
 msgid ""
@@ -143,6 +143,8 @@ msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"Sisäänrakennettu tai USB-väylässä oleva näppäimistö vaaditaan salauksen "
+"salasanan kirjoittamiseksi joka kerta, kun laite käynnistetään."
 
 #: src/Views/EncryptView.vala:87
 msgid ""
