@@ -77,6 +77,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;
         content_area.margin_start = 12;
+        content_area.valign = Gtk.Align.CENTER;
         content_area.attach (type_image, 0, 0);
         content_area.attach (type_label, 0, 1);
         content_area.attach (type_scrolled, 1, 0, 1, 2);
