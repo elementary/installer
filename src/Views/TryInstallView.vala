@@ -42,7 +42,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         };
 
         var clean_install_button = new InstallTypeButton (
-            _("Clean Install"),
+            _("Erase Disk and Install"),
             "edit-clear",
             _("Erase everything and install a fresh copy of %s.").printf (Utils.get_pretty_name ())
         ) {
@@ -50,7 +50,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         };
 
         var custom_button = new InstallTypeButton (
-            _("Custom (Advanced)"),
+            _("Custom Install (Advanced)"),
             "system-run",
             _("Create, resize, or otherwise manage partitions manually. This method may lead to data loss.")
         ) {
@@ -60,8 +60,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var type_grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 6,
-            valign = Gtk.Align.CENTER,
-            vexpand = true
+            valign = Gtk.Align.CENTER
         };
         type_grid.add (demo_button);
         type_grid.add (clean_install_button);
@@ -111,7 +110,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         custom_button.clicked.connect (() => {
             if (custom_button.active) {
-                next_button.label = custom_button.title;
+                next_button.label = _("Custom Install");
                 next_button.sensitive = true;
                 next_button.clicked.connect (() => custom_step ());
             }
