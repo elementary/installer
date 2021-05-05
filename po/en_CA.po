@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:09+0000\n"
+"POT-Creation-Date: 2021-05-05 18:32+0000\n"
 "PO-Revision-Date: 2018-04-25 00:39+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
@@ -316,19 +316,27 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:186
+#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+msgid "Show log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:68
+msgid "Hide log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
 msgstr "Partitioning Drive"
 
-#: src/Views/ProgressView.vala:190
+#: src/Views/ProgressView.vala:196
 msgid "Extracting Files"
 msgstr "Extracting Files"
 
-#: src/Views/ProgressView.vala:194
+#: src/Views/ProgressView.vala:200
 msgid "Configuring the System"
 msgstr "Configuring the System"
 
-#: src/Views/ProgressView.vala:198
+#: src/Views/ProgressView.vala:204
 msgid "Finishing the Installation"
 msgstr "Finishing the Installation"
 

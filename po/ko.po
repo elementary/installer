@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:09+0000\n"
+"POT-Creation-Date: 2021-05-05 18:32+0000\n"
 "PO-Revision-Date: 2019-09-20 15:22+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
@@ -314,19 +314,27 @@ msgstr "root용 파일 시스템이 잘못되었습니다"
 msgid "Invalid file system for home"
 msgstr "home용 파일 시스템이 잘못되었습니다"
 
-#: src/Views/ProgressView.vala:186
+#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+msgid "Show log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:68
+msgid "Hide log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
 msgstr "드라이브 파티션 나누기"
 
-#: src/Views/ProgressView.vala:190
+#: src/Views/ProgressView.vala:196
 msgid "Extracting Files"
 msgstr "파일 압축 풀기"
 
-#: src/Views/ProgressView.vala:194
+#: src/Views/ProgressView.vala:200
 msgid "Configuring the System"
 msgstr "시스템 구성 하기"
 
-#: src/Views/ProgressView.vala:198
+#: src/Views/ProgressView.vala:204
 msgid "Finishing the Installation"
 msgstr "설치 마무리 하기"
 
