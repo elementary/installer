@@ -32,7 +32,7 @@ public class SuccessView : AbstractInstallerView {
 
         var primary_label = new Gtk.Label (_("%s has been installed").printf (Utils.get_pretty_name ())) {
             hexpand = true,
-            max_width_chars = 1, 
+            max_width_chars = 1,
             wrap = true,
             xalign = 0
         };
