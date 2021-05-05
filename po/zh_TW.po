@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:32+0000\n"
+"POT-Creation-Date: 2021-05-05 22:44+0000\n"
 "PO-Revision-Date: 2018-10-18 11:47+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -96,11 +96,11 @@ msgstr "處理器："
 msgid "Memory:"
 msgstr "記憶體："
 
-#: src/Views/DiskView.vala:51
+#: src/Views/DiskView.vala:36
 msgid "Select a Drive"
 msgstr "選擇一個磁碟"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -108,19 +108,19 @@ msgstr ""
 "這會抹除選取裝置上的所有資料。若您尚未備份您的資料，您可以取消安裝並操作展示"
 "模式。"
 
-#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "取得目前設定組態…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "抹除並安裝"
 
-#: src/Views/EncryptView.vala:48
+#: src/Views/EncryptView.vala:50
 msgid "Drive Encryption"
 msgstr "磁碟加密"
 
-#: src/Views/EncryptView.vala:54
+#: src/Views/EncryptView.vala:57
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -128,7 +128,7 @@ msgstr "磁碟加密"
 msgid "Data will be protected from others with physical access to this device."
 msgstr "加密這個磁碟可保護資料，避免他人以物理方式存取此裝置的資料。"
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:66
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -138,13 +138,13 @@ msgid ""
 "Store it somewhere safe."
 msgstr "每次您開啟或重新啟動此裝置時，將會需要使用加密密碼。"
 
-#: src/Views/EncryptView.vala:70
+#: src/Views/EncryptView.vala:74
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:92
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -153,32 +153,32 @@ msgstr ""
 "如果您忘記加密密嗎，<b>您將無法將資料復原。</b>此密碼有別於您帳戶所使用的密"
 "碼，只用於此裝置上。"
 
-#: src/Views/EncryptView.vala:94
+#: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
 msgstr "選擇加密密碼"
 
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
 msgstr "確認密碼"
 
-#: src/Views/EncryptView.vala:145
+#: src/Views/EncryptView.vala:155
 msgid "Don't Encrypt"
 msgstr "不要加密"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
+#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "返回"
 
-#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
+#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
 msgstr "選擇密碼"
 
-#: src/Views/EncryptView.vala:173
+#: src/Views/EncryptView.vala:184
 msgid "Set Password"
 msgstr "設定密碼"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:247
 msgid "Passwords do not match"
 msgstr "密碼與確認密碼不一致"
 
@@ -211,7 +211,7 @@ msgstr "• 重新啟動您的裝置以從另一個磁碟開機"
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "重新啟動裝置"
 
@@ -364,42 +364,42 @@ msgid ""
 "lead to data loss."
 msgstr "手動建立、管理、或調整分割區大小等。採用這個方法可能會導致資料喪失。"
 
-#: src/Views/TryInstallView.vala:86
+#: src/Views/TryInstallView.vala:87
 msgid "Next"
 msgstr "下一步"
 
-#: src/Views/TryInstallView.vala:114
+#: src/Views/TryInstallView.vala:115
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "無法安裝"
 
-#: src/Views/SuccessView.vala:26
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "繼續設定"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/SuccessView.vala:33
 #, c-format
-msgid "%s has been installed."
+msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:36
+#: src/Views/SuccessView.vala:62
+msgid "Shut Down"
+msgstr "關機"
+
+#: src/Views/SuccessView.vala:96
 #, fuzzy, c-format
 #| msgid "Your device will automatically restart to %s in %i seconds."
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "您的裝置將在 %i 秒後自動重新啟動至 %s。"
 
-#: src/Views/SuccessView.vala:40
+#: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "在重新啟動之後您可以設定新的使用者，或者您也可以立刻關機並稍後設定新使用者。"
-
-#: src/Views/SuccessView.vala:60
-msgid "Shut Down"
-msgstr "關機"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
