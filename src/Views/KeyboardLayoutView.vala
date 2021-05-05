@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,45 +19,48 @@ public class KeyboardLayoutView : AbstractInstallerView {
     public signal void next_step ();
 
     private VariantWidget input_variant_widget;
-
     private GLib.Settings keyboard_settings;
 
     construct {
         keyboard_settings = new GLib.Settings ("org.gnome.desktop.input-sources");
 
-        var image = new Gtk.Image.from_icon_name ("input-keyboard", Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.END;
+        var image = new Gtk.Image.from_icon_name ("input-keyboard", Gtk.IconSize.DIALOG) {
+            valign = Gtk.Align.END
+        };
 
-        var title_label = new Gtk.Label (_("Keyboard Layout"));
-        title_label.get_style_context ().add_class ("h2");
-        title_label.valign = Gtk.Align.START;
+        var title_label = new Gtk.Label (_("Keyboard Layout")) {
+            valign = Gtk.Align.START
+        };
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         input_variant_widget = new VariantWidget ();
 
-        var keyboard_test_entry = new Gtk.Entry ();
-        keyboard_test_entry.hexpand = true;
-        keyboard_test_entry.placeholder_text = _("Type to test your layout");
-        keyboard_test_entry.secondary_icon_activatable = true;
-        keyboard_test_entry.secondary_icon_name = "input-keyboard-symbolic";
-        keyboard_test_entry.secondary_icon_tooltip_text = _("Show keyboard layout");
+        var keyboard_test_entry = new Gtk.Entry () {
+            placeholder_text = _("Type to test your layout"),
+            secondary_icon_activatable = true,
+            secondary_icon_name = "input-keyboard-symbolic",
+            secondary_icon_tooltip_text = _("Show keyboard layout")
+        };
 
-        var stack_grid = new Gtk.Grid ();
-        stack_grid.orientation = Gtk.Orientation.VERTICAL;
-        stack_grid.row_spacing = 12;
+        var stack_grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL,
+            row_spacing = 12
+        };
         stack_grid.add (input_variant_widget);
         stack_grid.add (keyboard_test_entry);
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;
         content_area.margin_start = 12;
-        content_area.attach (image, 0, 0, 1, 1);
-        content_area.attach (title_label, 0, 1, 1, 1);
+        content_area.attach (image, 0, 0);
+        content_area.attach (title_label, 0, 1);
         content_area.attach (stack_grid, 1, 0, 1, 2);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
-        var next_button = new Gtk.Button.with_label (_("Select"));
-        next_button.sensitive = false;
+        var next_button = new Gtk.Button.with_label (_("Select")) {
+            sensitive = false
+        };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (back_button);
@@ -159,11 +161,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         keyboard_test_entry.icon_release.connect (() => {
-            var popover = new Gtk.Popover (keyboard_test_entry);
             var layout = new LayoutWidget ();
 
             string layout_string;
-
             unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
             if (row != null) {
                 layout_string = ((LayoutRow) row).layout.name;
@@ -178,6 +178,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
             }
 
             layout.set_layout (layout_string);
+
+            var popover = new Gtk.Popover (keyboard_test_entry);
             popover.add (layout);
             popover.show_all ();
         });
@@ -208,10 +210,13 @@ public class KeyboardLayoutView : AbstractInstallerView {
     }
 
     private class LayoutRow : Gtk.ListBoxRow {
-        public KeyboardLayoutHelper.Layout layout;
-        public LayoutRow (KeyboardLayoutHelper.Layout layout) {
-            this.layout = layout;
+        public KeyboardLayoutHelper.Layout layout { get; construct; }
 
+        public LayoutRow (KeyboardLayoutHelper.Layout layout) {
+            Object (layout: layout);
+        }
+
+        construct {
             string layout_description = layout.description;
             if (!layout.variants.is_empty) {
                 layout_description = _("%s…").printf (layout_description);
@@ -230,12 +235,17 @@ public class KeyboardLayoutView : AbstractInstallerView {
     }
 
     private class VariantRow : Gtk.ListBoxRow {
-        public string? code;
-        public string description;
-        public VariantRow (string? code, string description) {
-            this.code = code;
-            this.description = description;
+        public string? code { get; construct; }
+        public string description { get; construct; }
 
+        public VariantRow (string? code, string description) {
+            Object (
+                code: code,
+                description: description
+            );
+        }
+
+        construct {
             var label = new Gtk.Label (description) {
                 ellipsize = Pango.EllipsizeMode.END,
                 margin = 6,
