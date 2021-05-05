@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"POT-Creation-Date: 2021-05-05 18:09+0000\n"
 "PO-Revision-Date: 2020-06-07 10:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
@@ -20,28 +20,28 @@ msgstr ""
 msgid "Install %s"
 msgstr "Nainstalovat %s"
 
-#: src/Utils.vala:33
+#: src/Utils.vala:34
 msgid "Test mode shutdown"
 msgstr "Vypnout v rámci testovacího režimu"
 
-#: src/Utils.vala:47
+#: src/Utils.vala:48
 msgid "Test mode reboot"
 msgstr "Restartovat v rámci testovacího režimu"
 
-#: src/Utils.vala:73
+#: src/Utils.vala:74
 msgid "Test mode switch user"
 msgstr "Přepnout uživatele v rámci testovacího režimu"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:49
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Zrušit instalaci"
 
-#: src/Views/AbstractInstallerView.vala:58
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "Testovací režim"
 
@@ -168,8 +168,8 @@ msgstr "Potvrďte heslo"
 msgid "Don't Encrypt"
 msgstr "Nešifrovat"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "Zpět"
 
@@ -218,7 +218,7 @@ msgstr "Podrobnosti"
 msgid "Restart Device"
 msgstr "Restartovat zařízení"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Vyzkoušet Režim pro ukázku"
 
@@ -226,27 +226,27 @@ msgstr "Vyzkoušet Režim pro ukázku"
 msgid "Try Installing Again"
 msgstr "Zkusit nainstalovat znovu"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:31
 msgid "Keyboard Layout"
 msgstr "Rozložení klávesnice"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Vyzkoušejte rozvržení klávesnice psaním"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Zobrazit rozložení klávesnice"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Vybrat"
 
-#: src/Views/KeyboardLayoutView.vala:123
+#: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
 msgstr "Výchozí"
 
-#: src/Views/KeyboardLayoutView.vala:130
+#: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
 msgstr "Jazyk vstupu z klávesnice"
 
@@ -324,24 +324,11 @@ msgstr "Nastavuje se systém"
 msgid "Finishing the Installation"
 msgstr "Dokončuje se instalace"
 
-#: src/Views/TryInstallView.vala:44
+#: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
 msgstr "Vyzkoušet nebo nainstalovat"
 
-#: src/Views/TryInstallView.vala:48
-#, c-format
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-"%s můžete nainstalovat na tento počítač hned, nebo napřed vyzkoušet Režim "
-"pro ukázku bez nutnosti instalace."
-
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
-#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
-msgid "Next"
-msgstr "Další"
-
-#: src/Views/TryInstallView.vala:77
+#: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -350,26 +337,40 @@ msgstr ""
 "nezměněná. Výkon a funkce však nemusí být přímo srovnatelné s plně "
 "nainstalovaným systémem."
 
-#: src/Views/TryInstallView.vala:81
-msgid "Clean Install"
-msgstr "Nainstalovat odznovu"
+#: src/Views/TryInstallView.vala:46
+#, fuzzy
+#| msgid "Erase and Install"
+msgid "Erase Disk and Install"
+msgstr "Vymazat a nainstalovat"
 
-#: src/Views/TryInstallView.vala:83
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Vymazat vše a nainstalovat čistou kopii %s."
 
-#: src/Views/TryInstallView.vala:87
-msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:54
+#, fuzzy
+#| msgid "Custom (Advanced)"
+msgid "Custom Install (Advanced)"
 msgstr "Uživatelsky určené (pokročilé)"
 
-#: src/Views/TryInstallView.vala:89
+#: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
 "Vytvořte oddíly, měňte jejich velikost, nebo jinak spravujte ručně. Tato "
 "metoda může vést ke ztrátě dat."
+
+#: src/Views/TryInstallView.vala:86
+msgid "Next"
+msgstr "Další"
+
+#: src/Views/TryInstallView.vala:114
+#, fuzzy
+#| msgid "Could Not Install"
+msgid "Custom Install"
+msgstr "Nelze nainstalovat"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -482,6 +483,16 @@ msgstr "Souborový systém:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Výchozí (ext4)"
+
+#~ msgid ""
+#~ "You can install %s on this device now, or try Demo Mode without "
+#~ "installing."
+#~ msgstr ""
+#~ "%s můžete nainstalovat na tento počítač hned, nebo napřed vyzkoušet Režim "
+#~ "pro ukázku bez nutnosti instalace."
+
+#~ msgid "Clean Install"
+#~ msgstr "Nainstalovat odznovu"
 
 #~ msgid ""
 #~ "Read and write speeds may be minimally impacted during intense tasks."

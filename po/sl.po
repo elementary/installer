@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"POT-Creation-Date: 2021-05-05 18:09+0000\n"
 "PO-Revision-Date: 2020-01-08 00:07+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/installer/"
@@ -21,28 +21,28 @@ msgstr ""
 msgid "Install %s"
 msgstr "Namesti %s"
 
-#: src/Utils.vala:33
+#: src/Utils.vala:34
 msgid "Test mode shutdown"
 msgstr "Izklop v testnem načinu"
 
-#: src/Utils.vala:47
+#: src/Utils.vala:48
 msgid "Test mode reboot"
 msgstr "Ponovni zagon v testni način"
 
-#: src/Utils.vala:73
+#: src/Utils.vala:74
 msgid "Test mode switch user"
 msgstr "Preklop uporabnika v testnem načinu"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:49
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Prekliči namestitev"
 
-#: src/Views/AbstractInstallerView.vala:58
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "Demonstracijski način"
 
@@ -171,8 +171,8 @@ msgstr "Ponovite geslo"
 msgid "Don't Encrypt"
 msgstr "Ne šifriraj"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "Nazaj"
 
@@ -222,7 +222,7 @@ msgstr "Podrobnosti"
 msgid "Restart Device"
 msgstr "Ponovni zagon"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Demonstracijski način"
 
@@ -230,27 +230,27 @@ msgstr "Demonstracijski način"
 msgid "Try Installing Again"
 msgstr "Ponovno poženi namestitev"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:31
 msgid "Keyboard Layout"
 msgstr "Razpored tipkovnice"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Tipkajte za preizkus razporeda tipk"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Pokaži razpored tipk"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Izberi"
 
-#: src/Views/KeyboardLayoutView.vala:123
+#: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
 msgstr "Privzeto"
 
-#: src/Views/KeyboardLayoutView.vala:130
+#: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
 msgstr "Jezik vnosa"
 
@@ -328,23 +328,11 @@ msgstr "Nastavitev sistema"
 msgid "Finishing the Installation"
 msgstr "Zaključevanje namestitve"
 
-#: src/Views/TryInstallView.vala:44
+#: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
 msgstr "Poskusi ali namesti"
 
-#: src/Views/TryInstallView.vala:48
-#, c-format
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-"Lahko namestite %s ali pa preizkusite demonstracijski način brez namestitve."
-
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
-#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
-msgid "Next"
-msgstr "Naprej"
-
-#: src/Views/TryInstallView.vala:77
+#: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -352,26 +340,40 @@ msgstr ""
 "V demonstracijskem načinu spremembe ne bodo shranjene in vaš obstoječ "
 "operacijski sistem ostane nedotaknjen."
 
-#: src/Views/TryInstallView.vala:81
-msgid "Clean Install"
+#: src/Views/TryInstallView.vala:46
+#, fuzzy
+#| msgid "Erase and Install"
+msgid "Erase Disk and Install"
 msgstr "Izbriši in namesti"
 
-#: src/Views/TryInstallView.vala:83
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Izbriši vse na računalniku in namesti svežo različico %s."
 
-#: src/Views/TryInstallView.vala:87
-msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:54
+#, fuzzy
+#| msgid "Custom (Advanced)"
+msgid "Custom Install (Advanced)"
 msgstr "Po meri (napredno)"
 
-#: src/Views/TryInstallView.vala:89
+#: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
 "Ustvari, spremeni velikost ali drugače upravljaj s particijami. Obstaja "
 "nevarnost izgube podatkov."
+
+#: src/Views/TryInstallView.vala:86
+msgid "Next"
+msgstr "Naprej"
+
+#: src/Views/TryInstallView.vala:114
+#, fuzzy
+#| msgid "Could Not Install"
+msgid "Custom Install"
+msgstr "Ni bilo mogoče namestiti"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -490,6 +492,16 @@ msgstr "Datotečni sistem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Privzet (ext4)"
+
+#~ msgid ""
+#~ "You can install %s on this device now, or try Demo Mode without "
+#~ "installing."
+#~ msgstr ""
+#~ "Lahko namestite %s ali pa preizkusite demonstracijski način brez "
+#~ "namestitve."
+
+#~ msgid "Clean Install"
+#~ msgstr "Izbriši in namesti"
 
 #, fuzzy
 #~| msgid ""

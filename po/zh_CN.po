@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"POT-Creation-Date: 2021-05-05 18:09+0000\n"
 "PO-Revision-Date: 2021-03-20 21:27+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -20,28 +20,28 @@ msgstr ""
 msgid "Install %s"
 msgstr "安装 %s"
 
-#: src/Utils.vala:33
+#: src/Utils.vala:34
 msgid "Test mode shutdown"
 msgstr "测试模式关机"
 
-#: src/Utils.vala:47
+#: src/Utils.vala:48
 msgid "Test mode reboot"
 msgstr "测试模式重启"
 
-#: src/Utils.vala:73
+#: src/Utils.vala:74
 msgid "Test mode switch user"
 msgstr "测试模式切换用户"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:49
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "取消安装"
 
-#: src/Views/AbstractInstallerView.vala:58
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "测试模式"
 
@@ -158,8 +158,8 @@ msgstr "确认密码"
 msgid "Don't Encrypt"
 msgstr "不加密"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "返回"
 
@@ -208,7 +208,7 @@ msgstr "详情"
 msgid "Restart Device"
 msgstr "重启设备"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "进入试用模式"
 
@@ -216,27 +216,27 @@ msgstr "进入试用模式"
 msgid "Try Installing Again"
 msgstr "尝试重新安装"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:31
 msgid "Keyboard Layout"
 msgstr "键盘布局"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "输入以检测布局"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "显示键盘布局"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "选择"
 
-#: src/Views/KeyboardLayoutView.vala:123
+#: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
 msgstr "默认"
 
-#: src/Views/KeyboardLayoutView.vala:130
+#: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
 msgstr "输入语言"
 
@@ -312,22 +312,11 @@ msgstr "正在配置系统"
 msgid "Finishing the Installation"
 msgstr "正在完成安装"
 
-#: src/Views/TryInstallView.vala:44
+#: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
 msgstr "试用或安装"
 
-#: src/Views/TryInstallView.vala:48
-#, c-format
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr "您可以现在就安装 %s 到您的设备，也可以进入试用模式。"
-
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
-#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
-msgid "Next"
-msgstr "继续"
-
-#: src/Views/TryInstallView.vala:77
+#: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -335,25 +324,39 @@ msgstr ""
 "在试用模式下，您的操作不会被保存，设备内原有的文件数据也不会被修改。试用模式"
 "下性能和功能无法代表实际安装体验。"
 
-#: src/Views/TryInstallView.vala:81
-msgid "Clean Install"
-msgstr "全新安装"
+#: src/Views/TryInstallView.vala:46
+#, fuzzy
+#| msgid "Erase and Install"
+msgid "Erase Disk and Install"
+msgstr "抹掉并安装"
 
-#: src/Views/TryInstallView.vala:83
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "格式化所有内容并全新安装 %s。"
 
-#: src/Views/TryInstallView.vala:87
-msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:54
+#, fuzzy
+#| msgid "Custom (Advanced)"
+msgid "Custom Install (Advanced)"
 msgstr "自定义（高级选项）"
 
-#: src/Views/TryInstallView.vala:89
+#: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
 "手动进行分区管理、分区大小调整以及其它的管理操作。该方法可能造成数据丢失。"
+
+#: src/Views/TryInstallView.vala:86
+msgid "Next"
+msgstr "继续"
+
+#: src/Views/TryInstallView.vala:114
+#, fuzzy
+#| msgid "Could Not Install"
+msgid "Custom Install"
+msgstr "无法安装"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -460,6 +463,14 @@ msgstr "文件系统："
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "默认（ext4）"
+
+#~ msgid ""
+#~ "You can install %s on this device now, or try Demo Mode without "
+#~ "installing."
+#~ msgstr "您可以现在就安装 %s 到您的设备，也可以进入试用模式。"
+
+#~ msgid "Clean Install"
+#~ msgstr "全新安装"
 
 #~ msgid ""
 #~ "Read and write speeds may be minimally impacted during intense tasks."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"POT-Creation-Date: 2021-05-05 18:09+0000\n"
 "PO-Revision-Date: 2019-09-29 07:23+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/installer/"
@@ -20,28 +20,28 @@ msgstr ""
 msgid "Install %s"
 msgstr "Instalar %s"
 
-#: src/Utils.vala:33
+#: src/Utils.vala:34
 msgid "Test mode shutdown"
 msgstr "Apagar en modo de proba"
 
-#: src/Utils.vala:47
+#: src/Utils.vala:48
 msgid "Test mode reboot"
 msgstr "Reiniciar en modo de proba"
 
-#: src/Utils.vala:73
+#: src/Utils.vala:74
 msgid "Test mode switch user"
 msgstr "Cambiar de usuario en modo de proba"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:49
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Cancelar Instalación"
 
-#: src/Views/AbstractInstallerView.vala:58
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "Modo de Proba"
 
@@ -176,8 +176,8 @@ msgstr "Confirma o Contrasinal"
 msgid "Don't Encrypt"
 msgstr "Non Cifrar"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "Atrás"
 
@@ -226,7 +226,7 @@ msgstr "Detalles"
 msgid "Restart Device"
 msgstr "Reinicia o Dispositivo"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Proba o Modo Demo"
 
@@ -234,27 +234,27 @@ msgstr "Proba o Modo Demo"
 msgid "Try Installing Again"
 msgstr "Proba Instalando de Novo"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:31
 msgid "Keyboard Layout"
 msgstr "Distribución do Teclado"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Escribe para probar a distribución do teclado"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Mostrar distribución do teclado"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Seleccionar"
 
-#: src/Views/KeyboardLayoutView.vala:123
+#: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
 msgstr "Por Defecto"
 
-#: src/Views/KeyboardLayoutView.vala:130
+#: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
 msgstr "Linguaxe de Entrada"
 
@@ -332,24 +332,11 @@ msgstr "Configurando o sistema"
 msgid "Finishing the Installation"
 msgstr "Finalizando a instalación"
 
-#: src/Views/TryInstallView.vala:44
+#: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
 msgstr "Probar ou instalar"
 
-#: src/Views/TryInstallView.vala:48
-#, c-format
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-"Pode instalar %s neste dispositivo agora, ou probar o modo de demostración "
-"sen instalalo."
-
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
-#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
-msgid "Next"
-msgstr "Seguinte"
-
-#: src/Views/TryInstallView.vala:77
+#: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -359,26 +346,40 @@ msgstr ""
 "características poderían non reflectir a experiencia do sistema operativo ao "
 "ser instalado."
 
-#: src/Views/TryInstallView.vala:81
-msgid "Clean Install"
-msgstr "Instalación limpa"
+#: src/Views/TryInstallView.vala:46
+#, fuzzy
+#| msgid "Erase and Install"
+msgid "Erase Disk and Install"
+msgstr "Borrar e Instalar"
 
-#: src/Views/TryInstallView.vala:83
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Eliminar todo e instalar unha nova copia de %s."
 
-#: src/Views/TryInstallView.vala:87
-msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:54
+#, fuzzy
+#| msgid "Custom (Advanced)"
+msgid "Custom Install (Advanced)"
 msgstr "Personalizado (avanzado)"
 
-#: src/Views/TryInstallView.vala:89
+#: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
 "Cree, cambie o tamaño ou administre as particións manualmente. Este método "
 "pode levar á pérdida de datos."
+
+#: src/Views/TryInstallView.vala:86
+msgid "Next"
+msgstr "Seguinte"
+
+#: src/Views/TryInstallView.vala:114
+#, fuzzy
+#| msgid "Could Not Install"
+msgid "Custom Install"
+msgstr "Non foi Posíbel a Instalación"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -491,6 +492,16 @@ msgstr "Sistema de ficheiros:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Predeterminado (ext4)"
+
+#~ msgid ""
+#~ "You can install %s on this device now, or try Demo Mode without "
+#~ "installing."
+#~ msgstr ""
+#~ "Pode instalar %s neste dispositivo agora, ou probar o modo de "
+#~ "demostración sen instalalo."
+
+#~ msgid "Clean Install"
+#~ msgstr "Instalación limpa"
 
 #, fuzzy
 #~| msgid ""

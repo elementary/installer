@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"POT-Creation-Date: 2021-05-05 18:09+0000\n"
 "PO-Revision-Date: 2021-03-16 07:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
@@ -20,28 +20,28 @@ msgstr ""
 msgid "Install %s"
 msgstr "%s をインストール"
 
-#: src/Utils.vala:33
+#: src/Utils.vala:34
 msgid "Test mode shutdown"
 msgstr "テストモードのシャットダウン"
 
-#: src/Utils.vala:47
+#: src/Utils.vala:48
 msgid "Test mode reboot"
 msgstr "テストモードの再起動"
 
-#: src/Utils.vala:73
+#: src/Utils.vala:74
 msgid "Test mode switch user"
 msgstr "テストモードのユーザー切り替え"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:49
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "インストールをキャンセル"
 
-#: src/Views/AbstractInstallerView.vala:58
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "テストモード"
 
@@ -111,8 +111,9 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"続行すると、選択されたドライブ上のすべてのデータを削除します。データをバックアップしていない場合は、インストールをキャンセルしてデモモードを使うことで、デ"
-"ータをバックアップできます。"
+"続行すると、選択されたドライブ上のすべてのデータを削除します。データをバック"
+"アップしていない場合は、インストールをキャンセルしてデモモードを使うことで、"
+"データをバックアップできます。"
 
 #: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
@@ -135,13 +136,17 @@ msgstr ""
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
-msgstr "暗号化パスワードはこのデバイスの電源を入れる度に要求されます。安全な場所に保管してください。"
+msgstr ""
+"暗号化パスワードはこのデバイスの電源を入れる度に要求されます。安全な場所に保"
+"管してください。"
 
 #: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
-msgstr "このデバイスが起動する度に、暗号化パスワードを入力するための内蔵または USB キーボードが必要になります。"
+msgstr ""
+"このデバイスが起動する度に、暗号化パスワードを入力するための内蔵または USB "
+"キーボードが必要になります。"
 
 #: src/Views/EncryptView.vala:87
 msgid ""
@@ -149,8 +154,8 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"暗号化パスワードを忘れた場合、<b>データは回復できません。</b>これはこのデバイス専用のパスワードであり、ユーザーアカウント用のパスワードではありませ"
-"ん。"
+"暗号化パスワードを忘れた場合、<b>データは回復できません。</b>これはこのデバイ"
+"ス専用のパスワードであり、ユーザーアカウント用のパスワードではありません。"
 
 #: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
@@ -164,8 +169,8 @@ msgstr "パスワードを確認"
 msgid "Don't Encrypt"
 msgstr "暗号化しない"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "戻る"
 
@@ -215,7 +220,7 @@ msgstr "詳細"
 msgid "Restart Device"
 msgstr "デバイスを再起動"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "デモモードを試す"
 
@@ -223,27 +228,27 @@ msgstr "デモモードを試す"
 msgid "Try Installing Again"
 msgstr "もう一度インストールしてみる"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:31
 msgid "Keyboard Layout"
 msgstr "キーボードレイアウト"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "入力してレイアウトを試してください"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "キーボードレイアウトを表示"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "選択"
 
-#: src/Views/KeyboardLayoutView.vala:123
+#: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
 msgstr "デフォルト"
 
-#: src/Views/KeyboardLayoutView.vala:130
+#: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
 msgstr "入力言語"
 
@@ -322,46 +327,52 @@ msgstr "システムを設定しています"
 msgid "Finishing the Installation"
 msgstr "インストールを終了しています"
 
-#: src/Views/TryInstallView.vala:44
+#: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
 msgstr "試用するかインストールするかを選択してください"
 
-#: src/Views/TryInstallView.vala:48
-#, c-format
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr "%s をお使いのデバイスに今すぐインストールすることも、インストールせずにデモモードを試すこともできます。"
-
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
-#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
-msgid "Next"
-msgstr "次へ"
-
-#: src/Views/TryInstallView.vala:77
+#: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"変更は保存されず、インストール済みの OS のデータは変更されません。お使いのシステムのパフォーマンスと機能を十分に活用できない可能性があります。"
+"変更は保存されず、インストール済みの OS のデータは変更されません。お使いのシ"
+"ステムのパフォーマンスと機能を十分に活用できない可能性があります。"
 
-#: src/Views/TryInstallView.vala:81
-msgid "Clean Install"
-msgstr "クリーンインストール"
+#: src/Views/TryInstallView.vala:46
+#, fuzzy
+#| msgid "Erase and Install"
+msgid "Erase Disk and Install"
+msgstr "削除してインストール"
 
-#: src/Views/TryInstallView.vala:83
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "すべてを消去して %s をクリーンインストールします。"
 
-#: src/Views/TryInstallView.vala:87
-msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:54
+#, fuzzy
+#| msgid "Custom (Advanced)"
+msgid "Custom Install (Advanced)"
 msgstr "カスタム (高度)"
 
-#: src/Views/TryInstallView.vala:89
+#: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-msgstr "手動でパーティションの作成やサイズ変更、管理を行います。この方法はデータの損失につながることがあります。"
+msgstr ""
+"手動でパーティションの作成やサイズ変更、管理を行います。この方法はデータの損"
+"失につながることがあります。"
+
+#: src/Views/TryInstallView.vala:86
+msgid "Next"
+msgstr "次へ"
+
+#: src/Views/TryInstallView.vala:114
+#, fuzzy
+#| msgid "Could Not Install"
+msgid "Custom Install"
+msgstr "インストールできませんでした"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -472,6 +483,16 @@ msgstr "ファイルシステム:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "デフォルト (ext4)"
+
+#~ msgid ""
+#~ "You can install %s on this device now, or try Demo Mode without "
+#~ "installing."
+#~ msgstr ""
+#~ "%s をお使いのデバイスに今すぐインストールすることも、インストールせずにデ"
+#~ "モモードを試すこともできます。"
+
+#~ msgid "Clean Install"
+#~ msgstr "クリーンインストール"
 
 #~ msgid ""
 #~ "Read and write speeds may be minimally impacted during intense tasks."

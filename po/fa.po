@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"POT-Creation-Date: 2021-05-05 18:09+0000\n"
 "PO-Revision-Date: 2018-04-22 00:04+0000\n"
 "Last-Translator: Morteza Khazamipour <mormoroth@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/installer/"
@@ -20,28 +20,28 @@ msgstr ""
 msgid "Install %s"
 msgstr "%s نصب"
 
-#: src/Utils.vala:33
+#: src/Utils.vala:34
 msgid "Test mode shutdown"
 msgstr "خاموش کردن حالت تست"
 
-#: src/Utils.vala:47
+#: src/Utils.vala:48
 msgid "Test mode reboot"
 msgstr "راه اندازی مجدد حالت تست"
 
-#: src/Utils.vala:73
+#: src/Utils.vala:74
 msgid "Test mode switch user"
 msgstr "تغییر کاربری حالت تست"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:49
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "انصراف از نصب"
 
-#: src/Views/AbstractInstallerView.vala:58
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "حالت آزمایشی"
 
@@ -161,8 +161,8 @@ msgstr ""
 msgid "Don't Encrypt"
 msgstr ""
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "بازگشت"
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Restart Device"
 msgstr "راه اندازی مجدد دستگاه"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "حالت دمو"
 
@@ -219,27 +219,27 @@ msgstr "حالت دمو"
 msgid "Try Installing Again"
 msgstr "مجددا تلاش برای نصب کنید"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:31
 msgid "Keyboard Layout"
 msgstr "قالب صفحه کلید"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "برای تست قالب چیزی بنویسید"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "نمایش قالب صفحه کلید"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "انتخاب"
 
-#: src/Views/KeyboardLayoutView.vala:123
+#: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
 msgstr "پیشفرض"
 
-#: src/Views/KeyboardLayoutView.vala:130
+#: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
 msgstr "زبان ورودی"
 
@@ -314,25 +314,12 @@ msgstr "پیکره بندی سیستم"
 msgid "Finishing the Installation"
 msgstr "اتمام نصب"
 
-#: src/Views/TryInstallView.vala:44
+#: src/Views/TryInstallView.vala:27
 #, fuzzy
 msgid "Try or Install"
 msgstr "مجددا تلاش برای نصب کنید"
 
-#: src/Views/TryInstallView.vala:48
-#, c-format
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-"میتوانید %s را الان روی این دستگاه نصب کنید، یا از نسخه ی دمو بدون نصب "
-"استفاده کنید."
-
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
-#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
-msgid "Next"
-msgstr ""
-
-#: src/Views/TryInstallView.vala:77
+#: src/Views/TryInstallView.vala:40
 #, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
@@ -342,25 +329,36 @@ msgstr ""
 "بدون تغییر خواهد ماند. کارایی و ویژگی ها همانند نسخه نصبی قابل لمس نخواهد "
 "بود."
 
-#: src/Views/TryInstallView.vala:81
+#: src/Views/TryInstallView.vala:46
 #, fuzzy
-msgid "Clean Install"
+#| msgid "Erase and Install"
+msgid "Erase Disk and Install"
 msgstr "پاک کردن و نصب"
 
-#: src/Views/TryInstallView.vala:83
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:87
-msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:54
+msgid "Custom Install (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:89
+#: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+
+#: src/Views/TryInstallView.vala:86
+msgid "Next"
+msgstr ""
+
+#: src/Views/TryInstallView.vala:114
+#, fuzzy
+#| msgid "Could Not Install"
+msgid "Custom Install"
+msgstr "عدم توانایی در نصب"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
@@ -472,6 +470,17 @@ msgstr ""
 #, fuzzy
 msgid "Default (ext4)"
 msgstr "پیشفرض"
+
+#~ msgid ""
+#~ "You can install %s on this device now, or try Demo Mode without "
+#~ "installing."
+#~ msgstr ""
+#~ "میتوانید %s را الان روی این دستگاه نصب کنید، یا از نسخه ی دمو بدون نصب "
+#~ "استفاده کنید."
+
+#, fuzzy
+#~ msgid "Clean Install"
+#~ msgstr "پاک کردن و نصب"
 
 #~ msgid "Starting installation"
 #~ msgstr "شروع نصب"
