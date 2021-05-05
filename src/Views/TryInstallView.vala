@@ -29,6 +29,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         };
         type_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
+        // Force the user to make a conscious selection, not spam "Next"
         var no_selection = new Gtk.RadioButton (null) {
             active = true
         };
