@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2019 elementary, Inc. (https://elementary.io)
+ * Copyright 2019-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@
  */
 
 public class Installer.Terminal : Gtk.ScrolledWindow {
+    public signal void toggled (bool active);
     public Gtk.TextBuffer buffer { get; construct; }
 
     private Gtk.TextView view;
@@ -29,20 +30,21 @@ public class Installer.Terminal : Gtk.ScrolledWindow {
         }
     }
 
-    public signal void toggled (bool active);
-
     public Terminal (Gtk.TextBuffer buffer) {
         Object (buffer: buffer);
     }
 
     construct {
-        view = new Gtk.TextView.with_buffer (buffer);
-        view.cursor_visible = true;
-        view.editable = false;
-        view.margin_start = view.margin_end = 6;
-        view.monospace = true;
-        view.pixels_below_lines = 3;
-        view.wrap_mode = Gtk.WrapMode.WORD;
+        view = new Gtk.TextView.with_buffer (buffer) {
+            cursor_visible = true,
+            editable = false,
+            margin_end = 6,
+            margin_start = 6,
+            monospace = true,
+            pixels_below_lines = 3,
+            wrap_mode = Gtk.WrapMode.WORD
+        };
+        view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
 
         hscrollbar_policy = Gtk.PolicyType.NEVER;
         expand = true;
