@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 18:09+0000\n"
-"PO-Revision-Date: 2021-03-19 04:12+0000\n"
+"PO-Revision-Date: 2021-05-05 18:32+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/installer/nb/>\n"
@@ -340,10 +340,8 @@ msgstr ""
 "samme nivå som ved faktisk installasjon."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Slett og installer"
+msgstr "Slett disk og installer"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -351,10 +349,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Slett alt og installer en ny kopi av %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Egendefinert (avansert)"
+msgstr "Egendefinert installasjon(avansert)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -369,10 +365,8 @@ msgid "Next"
 msgstr "Neste"
 
 #: src/Views/TryInstallView.vala:114
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Kunne ikke installere"
+msgstr "Egendefinert installasjon"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
