@@ -32,26 +32,32 @@ public class SuccessView : AbstractInstallerView {
 
         var primary_label = new Gtk.Label (_("%s has been installed").printf (Utils.get_pretty_name ())) {
             hexpand = true,
-            max_width_chars = 45,
-            valign = Gtk.Align.END,
+            max_width_chars = 1, 
             wrap = true,
             xalign = 0
         };
         primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
         secondary_label = new Gtk.Label (null) {
-            max_width_chars = 45,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
+            use_markup = true,
             wrap = true,
             xalign = 0
         };
+
+        var message_grid = new Gtk.Grid () {
+            row_spacing = 6,
+            valign = Gtk.Align.CENTER
+        };
+        message_grid.attach (primary_label, 0, 0);
+        message_grid.attach (secondary_label, 0, 1);
 
         content_area.column_homogeneous = true;
         content_area.margin_start = content_area.margin_end = 12;
         content_area.valign = Gtk.Align.CENTER;
         content_area.attach (image, 0, 0);
         content_area.attach (title_label, 0, 1);
-        content_area.attach (primary_label, 1, 0);
-        content_area.attach (secondary_label, 1, 1);
+        content_area.attach (message_grid, 1, 0, 1, 2);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
         shutdown_button.clicked.connect (Utils.shutdown);
@@ -85,11 +91,13 @@ public class SuccessView : AbstractInstallerView {
     }
 
     private void update_secondary_label () {
-        secondary_label.label = ngettext (
-            "Your device will automatically restart in %i second.",
-            "Your device will automatically restart in %i seconds.",
-            seconds_remaining
-        ).printf (seconds_remaining) + " " +
-        _("After restarting you can set up a new user, or you can shut down now and set up a new user later.");
+        secondary_label.label = "<span font-features='tnum'>%s</span>".printf (
+            ngettext (
+                "Your device will automatically restart in %i second.",
+                "Your device will automatically restart in %i seconds.",
+                seconds_remaining
+            ).printf (seconds_remaining) + " " +
+            _("After restarting you can set up a new user, or you can shut down now and set up a new user later.")
+        );
     }
 }
