@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017–2018 elementary LLC. (https://elementary.io)
+ * Copyright 2017–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,45 +16,42 @@
  */
 
 public class SuccessView : AbstractInstallerView {
-    public const int RESTART_TIMEOUT = 30;
+    private const int RESTART_TIMEOUT = 30;
+    private int seconds_remaining = RESTART_TIMEOUT;
+    private Gtk.Label secondary_label;
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG);
-        image.vexpand = true;
+        var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG) {
+            valign = Gtk.Align.END
+        };
 
-        var primary_label = new Gtk.Label (_("Continue Setting Up"));
-        primary_label.halign = Gtk.Align.START;
-        primary_label.max_width_chars = 60;
-        primary_label.wrap = true;
-        primary_label.xalign = 0;
-        primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        var title_label = new Gtk.Label (_("Continue Setting Up")) {
+            valign = Gtk.Align.START
+        };
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var secondary_label = new Gtk.Label (
-            _("%s has been installed.").printf (Utils.get_pretty_name ()) + " " +
-            ngettext (
-                "Your device will automatically restart in %i second.",
-                "Your device will automatically restart in %i seconds.",
-                RESTART_TIMEOUT
-            ).printf (RESTART_TIMEOUT) + " " +
-            _("After restarting you can set up a new user, or you can shut down now and set up a new user later.")
-        );
-        secondary_label.max_width_chars = 60;
-        secondary_label.wrap = true;
-        secondary_label.xalign = 0;
+        var primary_label = new Gtk.Label (_("%s has been installed").printf (Utils.get_pretty_name ())) {
+            hexpand = true,
+            max_width_chars = 45,
+            valign = Gtk.Align.END,
+            wrap = true,
+            xalign = 0
+        };
+        primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
-        var grid = new Gtk.Grid ();
-        grid.row_spacing = 12;
-        grid.valign = Gtk.Align.CENTER;
-        grid.attach (primary_label, 0, 0, 1, 1);
-        grid.attach (secondary_label, 0, 1, 1, 1);
+        secondary_label = new Gtk.Label (null) {
+            max_width_chars = 45,
+            wrap = true,
+            xalign = 0
+        };
 
         content_area.column_homogeneous = true;
-        content_area.halign = Gtk.Align.CENTER;
-        content_area.margin = 48;
         content_area.margin_start = content_area.margin_end = 12;
         content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (image, 0, 0, 1, 1);
-        content_area.attach (grid, 1, 0, 1, 2);
+        content_area.attach (image, 0, 0);
+        content_area.attach (title_label, 0, 1);
+        content_area.attach (primary_label, 1, 0);
+        content_area.attach (secondary_label, 1, 1);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
         shutdown_button.clicked.connect (Utils.shutdown);
@@ -67,11 +63,33 @@ public class SuccessView : AbstractInstallerView {
         action_area.add (shutdown_button);
         action_area.add (restart_button);
 
+        update_secondary_label ();
+
         Timeout.add_seconds (RESTART_TIMEOUT, () => {
             Utils.restart ();
             return GLib.Source.REMOVE;
         });
 
+        Timeout.add_seconds (1, () => {
+            seconds_remaining = seconds_remaining - 1;
+            update_secondary_label ();
+
+            if (seconds_remaining == 0) {
+                return Source.REMOVE;
+            }
+
+            return Source.CONTINUE;
+        });
+
         show_all ();
+    }
+
+    private void update_secondary_label () {
+        secondary_label.label = ngettext (
+            "Your device will automatically restart in %i second.",
+            "Your device will automatically restart in %i seconds.",
+            seconds_remaining
+        ).printf (seconds_remaining) + " " +
+        _("After restarting you can set up a new user, or you can shut down now and set up a new user later.");
     }
 }
