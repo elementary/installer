@@ -84,7 +84,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         );
 
         var custom_button = new InstallTypeButton (
-            _("Intsall With Custom Partitioning"),
+            _("Install With Custom Partitioning"),
             "system-run",
             _("Create, resize, or otherwise manage partitions manually. This method may lead to data loss.")
         );
