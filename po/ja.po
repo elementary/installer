@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:32+0000\n"
+"POT-Creation-Date: 2021-05-05 22:44+0000\n"
 "PO-Revision-Date: 2021-03-16 07:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
@@ -102,11 +102,11 @@ msgstr "プロセッサー:"
 msgid "Memory:"
 msgstr "メモリー:"
 
-#: src/Views/DiskView.vala:51
+#: src/Views/DiskView.vala:36
 msgid "Select a Drive"
 msgstr "ドライブを選択してください"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -115,24 +115,24 @@ msgstr ""
 "アップしていない場合は、インストールをキャンセルしてデモモードを使うことで、"
 "データをバックアップできます。"
 
-#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "現在の設定を取得しています…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "削除してインストール"
 
-#: src/Views/EncryptView.vala:48
+#: src/Views/EncryptView.vala:50
 msgid "Drive Encryption"
 msgstr "ドライブの暗号化"
 
-#: src/Views/EncryptView.vala:54
+#: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "ほかの人がこのデバイスに物理的にアクセスできないように、データを保護します。"
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:66
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -140,7 +140,7 @@ msgstr ""
 "暗号化パスワードはこのデバイスの電源を入れる度に要求されます。安全な場所に保"
 "管してください。"
 
-#: src/Views/EncryptView.vala:70
+#: src/Views/EncryptView.vala:74
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -148,7 +148,7 @@ msgstr ""
 "このデバイスが起動する度に、暗号化パスワードを入力するための内蔵または USB "
 "キーボードが必要になります。"
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:92
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -157,32 +157,32 @@ msgstr ""
 "暗号化パスワードを忘れた場合、<b>データは回復できません。</b>これはこのデバイ"
 "ス専用のパスワードであり、ユーザーアカウント用のパスワードではありません。"
 
-#: src/Views/EncryptView.vala:94
+#: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
 msgstr "暗号化パスワードを選択"
 
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
 msgstr "パスワードを確認"
 
-#: src/Views/EncryptView.vala:145
+#: src/Views/EncryptView.vala:155
 msgid "Don't Encrypt"
 msgstr "暗号化しない"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
+#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "戻る"
 
-#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
+#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
 msgstr "パスワードを選択"
 
-#: src/Views/EncryptView.vala:173
+#: src/Views/EncryptView.vala:184
 msgid "Set Password"
 msgstr "パスワードを設定"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:247
 msgid "Passwords do not match"
 msgstr "パスワードが一致しません"
 
@@ -216,7 +216,7 @@ msgstr "• デバイスを再起動して別のドライブから起動"
 msgid "Details"
 msgstr "詳細"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "デバイスを再起動"
 
@@ -372,42 +372,43 @@ msgstr ""
 "手動でパーティションの作成やサイズ変更、管理を行います。この方法はデータの損"
 "失につながることがあります。"
 
-#: src/Views/TryInstallView.vala:86
+#: src/Views/TryInstallView.vala:87
 msgid "Next"
 msgstr "次へ"
 
-#: src/Views/TryInstallView.vala:114
+#: src/Views/TryInstallView.vala:115
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "インストールできませんでした"
 
-#: src/Views/SuccessView.vala:26
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "セットアップを続行"
 
-#: src/Views/SuccessView.vala:34
-#, c-format
-msgid "%s has been installed."
+#: src/Views/SuccessView.vala:33
+#, fuzzy, c-format
+#| msgid "%s has been installed."
+msgid "%s has been installed"
 msgstr "%s をインストールしました。"
 
-#: src/Views/SuccessView.vala:36
+#: src/Views/SuccessView.vala:62
+msgid "Shut Down"
+msgstr "シャットダウン"
+
+#: src/Views/SuccessView.vala:96
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "お使いのデバイスは%i秒後に自動的に再起動します。"
 
-#: src/Views/SuccessView.vala:40
+#: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "再起動後は新しいユーザーをセットアップすることができます。あるいは、今は"
 "シャットダウンして、後でユーザーをセットアップすることもできます。"
-
-#: src/Views/SuccessView.vala:60
-msgid "Shut Down"
-msgstr "シャットダウン"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"

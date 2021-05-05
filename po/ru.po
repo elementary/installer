@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:32+0000\n"
+"POT-Creation-Date: 2021-05-05 22:44+0000\n"
 "PO-Revision-Date: 2021-03-13 21:48+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
@@ -103,11 +103,11 @@ msgstr "Процессор:"
 msgid "Memory:"
 msgstr "Память:"
 
-#: src/Views/DiskView.vala:51
+#: src/Views/DiskView.vala:36
 msgid "Select a Drive"
 msgstr "Выберите диск"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -115,25 +115,25 @@ msgstr ""
 "Это удалит все данные на выбранном диске. Если вы не сохранили ваши данные, "
 "вы можете отменить установку и использовать демо-режим."
 
-#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Получение текущей конфигурации…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Стереть и установить"
 
-#: src/Views/EncryptView.vala:48
+#: src/Views/EncryptView.vala:50
 msgid "Drive Encryption"
 msgstr "Шифрование диска"
 
-#: src/Views/EncryptView.vala:54
+#: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Данные будут защищены от других лиц, имеющих физический доступ к этому "
 "устройству."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:66
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -141,7 +141,7 @@ msgstr ""
 "При каждом включении устройства потребуется пароль шифрования. Храните его в "
 "безопасном месте."
 
-#: src/Views/EncryptView.vala:70
+#: src/Views/EncryptView.vala:74
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -149,7 +149,7 @@ msgstr ""
 "Для ввода пароля шифрования при каждом включении этого устройства, "
 "потребуется встроенная или USB-клавиатура."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:92
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -159,32 +159,32 @@ msgstr ""
 "b> Это уникальный пароль для этого устройства, а не пароль для учетной "
 "записи пользователя."
 
-#: src/Views/EncryptView.vala:94
+#: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
 msgstr "Выберите пароль шифрования"
 
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
 msgstr "Подтвердите пароль"
 
-#: src/Views/EncryptView.vala:145
+#: src/Views/EncryptView.vala:155
 msgid "Don't Encrypt"
 msgstr "Не шифровать"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
+#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Назад"
 
-#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
+#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
 msgstr "Введите пароль"
 
-#: src/Views/EncryptView.vala:173
+#: src/Views/EncryptView.vala:184
 msgid "Set Password"
 msgstr "Установить пароль"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:247
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
@@ -217,7 +217,7 @@ msgstr "• Перезагрузите устройство для загруз�
 msgid "Details"
 msgstr "Подробнее"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Перезагрузить устройство"
 
@@ -373,26 +373,31 @@ msgstr ""
 "Создание и изменение разделов вручную. Этот способ может привести к потере "
 "данных."
 
-#: src/Views/TryInstallView.vala:86
+#: src/Views/TryInstallView.vala:87
 msgid "Next"
 msgstr "Далее"
 
-#: src/Views/TryInstallView.vala:114
+#: src/Views/TryInstallView.vala:115
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "Не удалось установить"
 
-#: src/Views/SuccessView.vala:26
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Продолжить установку"
 
-#: src/Views/SuccessView.vala:34
-#, c-format
-msgid "%s has been installed."
+#: src/Views/SuccessView.vala:33
+#, fuzzy, c-format
+#| msgid "%s has been installed."
+msgid "%s has been installed"
 msgstr "%s установлено."
 
-#: src/Views/SuccessView.vala:36
+#: src/Views/SuccessView.vala:62
+msgid "Shut Down"
+msgstr "Выключить"
+
+#: src/Views/SuccessView.vala:96
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
@@ -400,17 +405,13 @@ msgstr[0] "Ваше устройство автоматически переза
 msgstr[1] "Ваше устройство автоматически перезагрузится через %i секунды."
 msgstr[2] "Ваше устройство автоматически перезагрузится через %i секунд."
 
-#: src/Views/SuccessView.vala:40
+#: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "После перезагрузки вы сможете настроить новую учетную запись, или вы можете "
 "выключить компьютер сейчас и настроить новую учетную запись позже."
-
-#: src/Views/SuccessView.vala:60
-msgid "Shut Down"
-msgstr "Выключить"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"

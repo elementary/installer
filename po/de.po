@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:32+0000\n"
+"POT-Creation-Date: 2021-05-05 22:44+0000\n"
 "PO-Revision-Date: 2021-03-12 08:51+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
@@ -107,11 +107,11 @@ msgstr "Prozessor:"
 msgid "Memory:"
 msgstr "Arbeitsspeicher:"
 
-#: src/Views/DiskView.vala:51
+#: src/Views/DiskView.vala:36
 msgid "Select a Drive"
 msgstr "Laufwerk wählen"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -120,25 +120,25 @@ msgstr ""
 "Ihre Daten noch nicht gesichert haben, können Sie die Installation abbrechen "
 "und den Testmodus verwenden."
 
-#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Aktuelle Konfiguration laden …"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Löschen und installieren"
 
-#: src/Views/EncryptView.vala:48
+#: src/Views/EncryptView.vala:50
 msgid "Drive Encryption"
 msgstr "Laufwerksverschlüsselung"
 
-#: src/Views/EncryptView.vala:54
+#: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Ihre Daten werden vor Personen mit physikalischem Zugriff auf dieses Gerät "
 "geschützt."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:66
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -146,7 +146,7 @@ msgstr ""
 "Das Verschlüsselungspasswort wird bei jedem Einschalten des Geräts benötigt. "
 "Verwahren Sie es sicher."
 
-#: src/Views/EncryptView.vala:70
+#: src/Views/EncryptView.vala:74
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -154,7 +154,7 @@ msgstr ""
 "Bei jedem Einschalten dieses Geräts ist eine integrierte oder eine USB-"
 "Tastatur erforderlich, um das Verschlüsselungspasswort eingeben zu können."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:92
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -164,32 +164,32 @@ msgstr ""
 "nicht wiederherstellen.</b> Dies ist ein Passwort für den Zugang zu diesem "
 "Gerät, nicht das Passwort für den Zugriff auf Ihr Benutzerkonto."
 
-#: src/Views/EncryptView.vala:94
+#: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
 msgstr "Verschlüsselungspasswort wählen"
 
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
 msgstr "Passwort bestätigen"
 
-#: src/Views/EncryptView.vala:145
+#: src/Views/EncryptView.vala:155
 msgid "Don't Encrypt"
 msgstr "Nicht verschlüsseln"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
+#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Zurück"
 
-#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
+#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
 msgstr "Passwort wählen"
 
-#: src/Views/EncryptView.vala:173
+#: src/Views/EncryptView.vala:184
 msgid "Set Password"
 msgstr "Passwort setzen"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:247
 msgid "Passwords do not match"
 msgstr "Die Passwörter stimmen nicht überein"
 
@@ -225,7 +225,7 @@ msgstr "• Starten Sie Ihr Gerät neu, um von einem anderen Laufwerk zu starten
 msgid "Details"
 msgstr "Details"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Gerät neu starten"
 
@@ -383,43 +383,44 @@ msgstr ""
 "Partitionen manuell erstellen, ändern oder auf andere Weise verwalten. Dabei "
 "kann es zu Datenverlusten kommen."
 
-#: src/Views/TryInstallView.vala:86
+#: src/Views/TryInstallView.vala:87
 msgid "Next"
 msgstr "Weiter"
 
-#: src/Views/TryInstallView.vala:114
+#: src/Views/TryInstallView.vala:115
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "Installation nicht möglich"
 
-#: src/Views/SuccessView.vala:26
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Einrichtung fortsetzen"
 
-#: src/Views/SuccessView.vala:34
-#, c-format
-msgid "%s has been installed."
+#: src/Views/SuccessView.vala:33
+#, fuzzy, c-format
+#| msgid "%s has been installed."
+msgid "%s has been installed"
 msgstr "%s wurde installiert."
 
-#: src/Views/SuccessView.vala:36
+#: src/Views/SuccessView.vala:62
+msgid "Shut Down"
+msgstr "Ausschalten"
+
+#: src/Views/SuccessView.vala:96
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "Ihr Gerät wird in %i Sekunde automatisch neu gestartet."
 msgstr[1] "Ihr Gerät wird in %i Sekunden automatisch neu gestartet."
 
-#: src/Views/SuccessView.vala:40
+#: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "Nach einem Neustart können Sie einen neuen Benutzer einrichten; Sie können "
 "das Gerät aber auch ausschalten und den neuen Benutzer später einrichten."
-
-#: src/Views/SuccessView.vala:60
-msgid "Shut Down"
-msgstr "Ausschalten"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"

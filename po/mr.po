@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:32+0000\n"
+"POT-Creation-Date: 2021-05-05 22:44+0000\n"
 "PO-Revision-Date: 2021-03-20 21:27+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/installer/"
@@ -101,11 +101,11 @@ msgstr "प्रोसेसर :"
 msgid "Memory:"
 msgstr "मेमरी :"
 
-#: src/Views/DiskView.vala:51
+#: src/Views/DiskView.vala:36
 msgid "Select a Drive"
 msgstr "ड्राइव्ह निवडा"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -113,23 +113,23 @@ msgstr ""
 "हे निवडलेल्या ड्राइव्हवरील सर्व डेटा पुसून टाकेल. आपण आपला डेटा बॅक अप घेतला नसेल तर आपण "
 "स्थापना रद्द करू शकता आणि डेमो मोड वापरू शकता."
 
-#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "वर्तमान कॉन्फिगरेशन मिळवत आहे …"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "पुसून टाका आणि स्थापित करा"
 
-#: src/Views/EncryptView.vala:48
+#: src/Views/EncryptView.vala:50
 msgid "Drive Encryption"
 msgstr "ड्राइव्ह एन्क्रिप्शन"
 
-#: src/Views/EncryptView.vala:54
+#: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
 msgstr "या डिव्हाइसवर नैसर्गिक प्रवेशासह डेटा इतरांपासून संरक्षित केला जाईल."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:66
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -137,7 +137,7 @@ msgstr ""
 "हे डिव्हाइस प्रत्येक वेळी चालू केल्यावर एन्क्रिप्शन संकेतशब्द आवश्यक असेल. तो कोठेतरी सुरक्षित "
 "ठेवा."
 
-#: src/Views/EncryptView.vala:70
+#: src/Views/EncryptView.vala:74
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -145,7 +145,7 @@ msgstr ""
 "हे उपकरण चालू करतांना प्रत्येक वेळी अंगभूत किंवा यूएसबी कीबोर्ड वापरून एन्क्रिप्शन पासवर्ड "
 "टाइप करण्याची आवश्यकता असते."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:92
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -155,32 +155,32 @@ msgstr ""
 "b> हा या डिव्हाइससाठी एक अद्वितीय पासवर्ड आहे, आपल्या वापरकर्ता खात्यासाठीचा पासवर्ड "
 "नाही."
 
-#: src/Views/EncryptView.vala:94
+#: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
 msgstr "एनक्रिप्शन पासवर्ड निवडा"
 
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
 msgstr "पासवर्ड नक्की करा"
 
-#: src/Views/EncryptView.vala:145
+#: src/Views/EncryptView.vala:155
 msgid "Don't Encrypt"
 msgstr "एन्क्रिप्ट करू नका"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
+#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "मागे"
 
-#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
+#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
 msgstr "पासवर्ड निवडा"
 
-#: src/Views/EncryptView.vala:173
+#: src/Views/EncryptView.vala:184
 msgid "Set Password"
 msgstr "पासवर्ड सेट करा"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:247
 msgid "Passwords do not match"
 msgstr "पासवर्डस जुळत नाहीत"
 
@@ -213,7 +213,7 @@ msgstr "• दुसर्या डिव्हाइसवरून बूट
 msgid "Details"
 msgstr "तपशील"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "डिव्हाइस रीस्टार्ट करा"
 
@@ -368,43 +368,44 @@ msgstr ""
 "विभाजने स्वहस्ते विभाजने, आकार बदलणे, किंवा इतरथा व्यवस्थापित करा. ही पद्धत डेटा हानी "
 "होऊ शकते."
 
-#: src/Views/TryInstallView.vala:86
+#: src/Views/TryInstallView.vala:87
 msgid "Next"
 msgstr "पुढे"
 
-#: src/Views/TryInstallView.vala:114
+#: src/Views/TryInstallView.vala:115
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "इन्स्टॉल होऊ शकले नाही"
 
-#: src/Views/SuccessView.vala:26
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "सेट अप सुरू ठेवा"
 
-#: src/Views/SuccessView.vala:34
-#, c-format
-msgid "%s has been installed."
+#: src/Views/SuccessView.vala:33
+#, fuzzy, c-format
+#| msgid "%s has been installed."
+msgid "%s has been installed"
 msgstr "%s स्थापित केले गेले आहे."
 
-#: src/Views/SuccessView.vala:36
+#: src/Views/SuccessView.vala:62
+msgid "Shut Down"
+msgstr "बंद"
+
+#: src/Views/SuccessView.vala:96
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदात रीस्टार्ट होईल."
 msgstr[1] "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदांत रीस्टार्ट होईल."
 
-#: src/Views/SuccessView.vala:40
+#: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "रीस्टार्ट केल्यानंतर आपण एक नवीन वापरकर्ता सेट करू शकता किंवा आपण आता बंद करू शकता आणि "
 "नंतर नवीन वापरकर्ता सेट करू शकता."
-
-#: src/Views/SuccessView.vala:60
-msgid "Shut Down"
-msgstr "बंद"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"

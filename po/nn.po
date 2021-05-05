@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:32+0000\n"
+"POT-Creation-Date: 2021-05-05 22:44+0000\n"
 "PO-Revision-Date: 2019-01-05 02:45+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -102,11 +102,11 @@ msgstr "Prosessor:"
 msgid "Memory:"
 msgstr "Minne:"
 
-#: src/Views/DiskView.vala:51
+#: src/Views/DiskView.vala:36
 msgid "Select a Drive"
 msgstr "Vel ein disk"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -115,19 +115,19 @@ msgstr ""
 "har sikkerheitskopiert dataa dine, kan du avbryte installeringa og bruke "
 "demo-modus."
 
-#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Hentar gjeldande oppsett…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Slett og installer"
 
-#: src/Views/EncryptView.vala:48
+#: src/Views/EncryptView.vala:50
 msgid "Drive Encryption"
 msgstr "Diskkryptering"
 
-#: src/Views/EncryptView.vala:54
+#: src/Views/EncryptView.vala:57
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -137,7 +137,7 @@ msgstr ""
 "Kryptering av denne disken hindrar at dataa den inneheld kan verte lest av "
 "andre med fysisk tilgang til eininga."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:66
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -149,13 +149,13 @@ msgstr ""
 "Krypteringspassordet er kravd kvar gong du slår på denne eininga eller "
 "startar om att."
 
-#: src/Views/EncryptView.vala:70
+#: src/Views/EncryptView.vala:74
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:92
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -165,32 +165,32 @@ msgstr ""
 "dataa.</b> Dette er eit unikt passord for denne eininga, ikkje passordet til "
 "brukarkontoen din."
 
-#: src/Views/EncryptView.vala:94
+#: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
 msgstr "Vel krypteringspassord"
 
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
 msgstr "Stadfest passord"
 
-#: src/Views/EncryptView.vala:145
+#: src/Views/EncryptView.vala:155
 msgid "Don't Encrypt"
 msgstr "Ikkje krypter"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:84
+#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Tilbake"
 
-#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
+#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
 msgstr "Vel passord"
 
-#: src/Views/EncryptView.vala:173
+#: src/Views/EncryptView.vala:184
 msgid "Set Password"
 msgstr "Sett passord"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:247
 msgid "Passwords do not match"
 msgstr "Passorda samsvarar ikkje"
 
@@ -223,7 +223,7 @@ msgstr "• Start maskina om att for å starte opp frå ein annan lagringsstasjo
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Start maskina om att"
 
@@ -379,26 +379,30 @@ msgstr ""
 "Opprett, endre storleik, og på andre vis behandle partisjonar. Denne metoden "
 "kan leie til datatap."
 
-#: src/Views/TryInstallView.vala:86
+#: src/Views/TryInstallView.vala:87
 msgid "Next"
 msgstr "Neste"
 
-#: src/Views/TryInstallView.vala:114
+#: src/Views/TryInstallView.vala:115
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "Kunne ikkje installere"
 
-#: src/Views/SuccessView.vala:26
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Hald fram med oppsett"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/SuccessView.vala:33
 #, c-format
-msgid "%s has been installed."
+msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:36
+#: src/Views/SuccessView.vala:62
+msgid "Shut Down"
+msgstr "Slå av"
+
+#: src/Views/SuccessView.vala:96
 #, fuzzy, c-format
 #| msgid "Your device will automatically restart to %s in %i seconds."
 msgid "Your device will automatically restart in %i second."
@@ -406,17 +410,13 @@ msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "Maskina di vil automatisk starte om att til %s om %i sekund."
 msgstr[1] "Maskina di vil automatisk starte om att til %s om %i sekund."
 
-#: src/Views/SuccessView.vala:40
+#: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "Etter omstarten kan du opprette ein ny brukar, eller du kan slå av maskina "
 "no og opprette ein ny brukar seinare."
-
-#: src/Views/SuccessView.vala:60
-msgid "Shut Down"
-msgstr "Slå av"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
