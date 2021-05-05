@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 18:32+0000\n"
-"PO-Revision-Date: 2021-05-05 18:32+0000\n"
+"PO-Revision-Date: 2021-05-05 19:17+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
 "installer/ca/>\n"
@@ -313,11 +313,11 @@ msgstr "Sistema de fitxers no vàlid per a la partició de l'usuari"
 
 #: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
 msgid "Show log"
-msgstr ""
+msgstr "Mostra'n el registre"
 
 #: src/Views/ProgressView.vala:68
 msgid "Hide log"
-msgstr ""
+msgstr "Amaga'n el registre"
 
 #: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
@@ -358,10 +358,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Suprimeix-ho tot i instal·la-hi una còpia nova de l'%s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Personalitzada (avançat)"
+msgstr "Instal·lació personalitzada (avançat)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -376,10 +374,8 @@ msgid "Next"
 msgstr "Següent"
 
 #: src/Views/TryInstallView.vala:114
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "No s'ha pogut instal·lar"
+msgstr "Instal·lació personalitzada"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"
