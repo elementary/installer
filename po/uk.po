@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 18:32+0000\n"
-"PO-Revision-Date: 2021-05-05 18:32+0000\n"
+"PO-Revision-Date: 2021-05-05 19:17+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -313,11 +313,11 @@ msgstr "Неправильна файлова система для home"
 
 #: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
 msgid "Show log"
-msgstr ""
+msgstr "Показати журнал"
 
 #: src/Views/ProgressView.vala:68
 msgid "Hide log"
-msgstr ""
+msgstr "Сховати журнал"
 
 #: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
