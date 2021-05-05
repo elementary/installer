@@ -1,6 +1,6 @@
 ---
-name: Issue Installing Juno
-about: Trying to report a problem installing elementary OS 5.0 Juno
+name: Issue Installing elementary OS 5.1 Hera
+about: Trying to report a problem installing elementary OS 5.1 Hera
 
 ---
 

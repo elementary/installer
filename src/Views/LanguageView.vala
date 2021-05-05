@@ -144,7 +144,9 @@ public class Installer.LanguageView : AbstractInstallerView {
                     lang += "_" + configuration.country;
                 }
 
-                set_demo_mode_language.begin (lang);
+                if (!Installer.App.test_mode) {
+                    set_demo_mode_language.begin (lang);
+                }
             } else {
                 warning ("next_button enabled when no language selected");
                 next_button.sensitive = false;
@@ -182,7 +184,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
             // Write the language to /etc/default/locale so it is picked up by guest (demo) sessions
             try {
-                GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
+                yield Daemon.get_default ().set_demo_mode_locale (locale);
             } catch (Error e) {
                 warning ("Error writing default locale, language in demo mode may be incorrect: %s", e.message);
             }

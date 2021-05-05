@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-03-11 18:09+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"PO-Revision-Date: 2021-03-20 21:27+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/installer/"
 "installer/mr/>\n"
@@ -12,38 +12,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:44
+#: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "%s इन्स्टॉल करा"
 
-#: src/Utils.vala:50
+#: src/Utils.vala:33
 msgid "Test mode shutdown"
 msgstr "चाचणी मोड बंद"
 
-#: src/Utils.vala:64
+#: src/Utils.vala:47
 msgid "Test mode reboot"
 msgstr "चाचणी मोड बंद करून पुन्हा सुरु"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "चाचणी मोड वापरकर्ता बदल"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
-
-#: src/Helpers/LogHelper.vala:52
-msgid "Unable to set the Distinst log callback"
-msgstr "वेगळा लॉग कॉलबॅक सेट करण्यात अक्षम"
-
-#: src/Helpers/LogHelper.vala:54
-msgid "Starting installation"
-msgstr "स्थापना(इंस्टॉलेशन) सुरू करत आहे"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -53,15 +45,15 @@ msgstr "इंस्टॉलेशन रद्द करा"
 msgid "Test Mode"
 msgstr "चाचणी मोड"
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:64
 msgid "Ignore"
 msgstr "दुर्लक्ष"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
 msgstr "पुरेशी जागा नाही"
 
-#: src/Views/CheckView.vala:204
+#: src/Views/CheckView.vala:220
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -70,11 +62,11 @@ msgstr ""
 "आपल्या डिव्हाइसवर %s स्थापित करण्यासाठी पुरेशी जागा नाही. आम्ही किमान %s जागेची "
 "शिफारस करतो."
 
-#: src/Views/CheckView.vala:215
+#: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
 msgstr "आपले डिव्हाइस खूप धीमे असू शकते"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:232
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -82,30 +74,30 @@ msgstr ""
 "आपले डिव्हाइस शिफारस केलेल्या हार्डवेअर आवश्यकता पूर्ण करीत नाही. हे खूप धीमे होऊ शकते "
 "किंवा अडकू शकते."
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
 msgstr "उर्जा स्त्रोताशी जोडा"
 
-#: src/Views/CheckView.vala:233
+#: src/Views/CheckView.vala:249
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
 "आपले डिव्हाइस बॅटरी पॉवरवर चालत आहे. स्थापित करताना प्लग इन करण्याची शिफारस केली जाते."
 
-#: src/Views/CheckView.vala:291
+#: src/Views/CheckView.vala:307
 msgid "Recommended:"
 msgstr "शिफारस केलेले :"
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:311
 msgid "Your Device:"
 msgstr "आपले डिव्हाइस :"
 
-#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
 msgstr "प्रोसेसर :"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
 msgid "Memory:"
 msgstr "मेमरी :"
 
@@ -121,35 +113,39 @@ msgstr ""
 "हे निवडलेल्या ड्राइव्हवरील सर्व डेटा पुसून टाकेल. आपण आपला डेटा बॅक अप घेतला नसेल तर आपण "
 "स्थापना रद्द करू शकता आणि डेमो मोड वापरू शकता."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "वर्तमान कॉन्फिगरेशन मिळवत आहे …"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "पुसून टाका आणि स्थापित करा"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "ड्राइव्ह एन्क्रिप्शन"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 msgid "Data will be protected from others with physical access to this device."
 msgstr "या डिव्हाइसवर नैसर्गिक प्रवेशासह डेटा इतरांपासून संरक्षित केला जाईल."
 
-#: src/Views/EncryptView.vala:60
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr "तीव्र कार्ये दरम्यान वाचन आणि लेखन गतीवर अत्यल्प परिणाम होऊ शकतो."
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"हे डिव्हाइस प्रत्येक वेळी चालू केल्यावर एन्क्रिप्शन संकेतशब्द आवश्यक असेल. तो"
-" कोठेतरी सुरक्षित ठेवा."
+"हे डिव्हाइस प्रत्येक वेळी चालू केल्यावर एन्क्रिप्शन संकेतशब्द आवश्यक असेल. तो कोठेतरी सुरक्षित "
+"ठेवा."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+"हे उपकरण चालू करतांना प्रत्येक वेळी अंगभूत किंवा यूएसबी कीबोर्ड वापरून "
+"एन्क्रिप्शन पासवर्ड टाइप करण्याची आवश्यकता असते."
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -159,32 +155,32 @@ msgstr ""
 "b> हा या डिव्हाइससाठी एक अद्वितीय पासवर्ड आहे, आपल्या वापरकर्ता खात्यासाठीचा पासवर्ड "
 "नाही."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "एनक्रिप्शन पासवर्ड निवडा"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "पासवर्ड नक्की करा"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "एन्क्रिप्ट करू नका"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "मागे"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "पासवर्ड निवडा"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "पासवर्ड सेट करा"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "पासवर्डस जुळत नाहीत"
 
@@ -217,7 +213,7 @@ msgstr "• दुसर्या डिव्हाइसवरून बूट
 msgid "Details"
 msgstr "तपशील"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "डिव्हाइस रीस्टार्ट करा"
 
@@ -229,39 +225,39 @@ msgstr "डेमो मोड वापरून पहा"
 msgid "Try Installing Again"
 msgstr "पुन्हा इन्स्टॉल करण्याचा प्रयत्न करा"
 
-#: src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
 msgstr "कीबोर्ड चे लेआऊट"
 
-#: src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "आपल्या लेआऊट ची चाचणी करण्यासाठी टाईप करा"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "कीबोर्ड चे लेआऊट दाखवा"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "निवडा"
 
-#: src/Views/KeyboardLayoutView.vala:119
+#: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
 msgstr "मूळ"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
 msgstr "इनपुट भाषा"
 
-#: src/Views/LanguageView.vala:232
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "भाषा"
 
-#: src/Views/LanguageView.vala:249
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "एक भाषा निवडा"
 
-#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "सध्या वापरात असलेली भाषा"
 
@@ -291,7 +287,7 @@ msgstr ""
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "एक <b>स्वॅप </b>विभाजन निवडण्याची देखील शिफारस केली जाते."
 
-#: src/Views/PartitioningView.vala:97
+#: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
 msgstr "विभाजने सुधारित करा …"
 
@@ -311,19 +307,19 @@ msgstr "रूटसाठी ही अवैध फाइल सिस्ट�
 msgid "Invalid file system for home"
 msgstr "होमसाठी ही अवैध फाइल सिस्टम आहे"
 
-#: src/Views/ProgressView.vala:435
+#: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
 msgstr "विभाजन ड्राइव्ह"
 
-#: src/Views/ProgressView.vala:439
+#: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
 msgstr "फायली काढत आहे"
 
-#: src/Views/ProgressView.vala:443
+#: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
 msgstr "सिस्टम कॉन्फिगर करत आहे"
 
-#: src/Views/ProgressView.vala:447
+#: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
 msgstr "इंस्टॉलेशन पूर्ण करीत आहे"
 
@@ -336,7 +332,8 @@ msgstr "वापरून बघा किंवा इन्स्टॉल �
 msgid ""
 "You can install %s on this device now, or try Demo Mode without installing."
 msgstr ""
-"आपण या डिव्हाइसवर %s  इन्स्टॉल करू शकता किंवा  इन्स्टॉल केल्याशिवाय डेमो मोड वापरून पहा."
+"आपण या डिव्हाइसवर %s इन्स्टॉल करू शकता किंवा इन्स्टॉल केल्याशिवाय डेमो मोड "
+"वापरून पहा."
 
 #: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
 #: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
@@ -378,10 +375,17 @@ msgstr "सेट अप सुरू ठेवा"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदात %s वर रीस्टार्ट होईल."
+msgid "%s has been installed."
+msgstr "%s स्थापित केले गेले आहे."
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, c-format
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदात रीस्टार्ट होईल."
+msgstr[1] "आपले डिव्हाइस स्वयंचलितपणे %i सेकंदांत रीस्टार्ट होईल."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -389,33 +393,33 @@ msgstr ""
 "रीस्टार्ट केल्यानंतर आपण एक नवीन वापरकर्ता सेट करू शकता किंवा आपण आता बंद करू शकता आणि "
 "नंतर नवीन वापरकर्ता सेट करू शकता."
 
-#: src/Views/SuccessView.vala:55
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "बंद"
 
-#: src/Widgets/DecryptMenu.vala:54
+#: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
 msgstr "हा विभाजन डीक्रीप्ट करा"
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr "विभाजनचे एनक्रिप्शन पासवर्ड द्या आणि डिक्रिप्टेड विभाजनासाठी साधन नाव सेट करा."
 
-#: src/Widgets/DecryptMenu.vala:71
+#: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
 msgstr "पासवर्ड:"
 
-#: src/Widgets/DecryptMenu.vala:84
+#: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
 msgstr "उपकरणाचे नाव:"
 
-#: src/Widgets/DecryptMenu.vala:97
+#: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
 msgstr "डीक्रिप्ट"
 
-#: src/Widgets/DecryptMenu.vala:125
+#: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
 msgstr "LUKS खंड डिक्रिप्ट झाले"
 
@@ -473,6 +477,16 @@ msgstr "फाइलसिस्टम:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "डीफॉल्ट(ext4)"
+
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr "तीव्र कार्ये दरम्यान वाचन आणि लेखन गतीवर अत्यल्प परिणाम होऊ शकतो."
+
+#~ msgid "Unable to set the Distinst log callback"
+#~ msgstr "वेगळा लॉग कॉलबॅक सेट करण्यात अक्षम"
+
+#~ msgid "Starting installation"
+#~ msgstr "स्थापना(इंस्टॉलेशन) सुरू करत आहे"
 
 #~ msgid "Are you sure you want to Shut Down?"
 #~ msgstr "आपणास खात्री आहे की आपण बंद करू इच्छिता?"

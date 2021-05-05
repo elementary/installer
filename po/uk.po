@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-02 08:49-0800\n"
-"PO-Revision-Date: 2020-09-26 20:14+0000\n"
+"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"PO-Revision-Date: 2021-05-01 13:47+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -11,40 +11,32 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:44
+#: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Встановити %s"
 
-#: src/Utils.vala:50
+#: src/Utils.vala:33
 msgid "Test mode shutdown"
 msgstr "Вимкнути тестовий режим"
 
-#: src/Utils.vala:64
+#: src/Utils.vala:47
 msgid "Test mode reboot"
 msgstr "Перезавантажити тестовий режим"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:73
 msgid "Test mode switch user"
 msgstr "Змінити користувача тестового режиму"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:183
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
-
-#: src/Helpers/LogHelper.vala:52
-msgid "Unable to set the Distinst log callback"
-msgstr "Не вдалося встановити зворотний зв'язок з журналом Distinst"
-
-#: src/Helpers/LogHelper.vala:54
-msgid "Starting installation"
-msgstr "Починається встановлення"
 
 #: src/Views/AbstractInstallerView.vala:49
 msgid "Cancel Installation"
@@ -54,15 +46,15 @@ msgstr "Скасувати встановлення"
 msgid "Test Mode"
 msgstr "Режим тестування"
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:64
 msgid "Ignore"
 msgstr "Знехтувати"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:219
 msgid "Not Enough Space"
 msgstr "Бракує простору"
 
-#: src/Views/CheckView.vala:204
+#: src/Views/CheckView.vala:220
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -71,11 +63,11 @@ msgstr ""
 "На вашому пристрої бракує простору для встановлення %s. Ми радимо щонайменше "
 "%s сховища."
 
-#: src/Views/CheckView.vala:215
+#: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
 msgstr "Ваш пристрій може бути занадто повільним"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:232
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -83,11 +75,11 @@ msgstr ""
 "Ваш пристрій не відповідає рекомендованим вимогам до обладнання. Це може "
 "призвести до його повільної роботи або заморожування."
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
 msgstr "Під'єднайте джерело живлення"
 
-#: src/Views/CheckView.vala:233
+#: src/Views/CheckView.vala:249
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -95,19 +87,19 @@ msgstr ""
 "Ваш пристрій працює від акумулятора. Під час встановлення рекомендовано "
 "під'єднатися до джерела живлення."
 
-#: src/Views/CheckView.vala:291
+#: src/Views/CheckView.vala:307
 msgid "Recommended:"
 msgstr "Рекомендовано:"
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:311
 msgid "Your Device:"
 msgstr "Ваш пристрій:"
 
-#: src/Views/CheckView.vala:299 src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Processor:"
 msgstr "Процесор:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
 msgid "Memory:"
 msgstr "Пам'ять:"
 
@@ -124,29 +116,23 @@ msgstr ""
 "даних, ви можете скасувати встановлення та скористатися демонстраційним "
 "режимом."
 
-#: src/Views/DiskView.vala:65
+#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Отримання поточної конфігурації…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:105
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Стерти й встановити"
 
-#: src/Views/EncryptView.vala:47
+#: src/Views/EncryptView.vala:48
 msgid "Drive Encryption"
 msgstr "Шифрування диска"
 
-#: src/Views/EncryptView.vala:53
+#: src/Views/EncryptView.vala:54
 msgid "Data will be protected from others with physical access to this device."
 msgstr "Дані буде захищено від інших при фізичному доступі до цього пристрою."
 
-#: src/Views/EncryptView.vala:60
-msgid "Read and write speeds may be minimally impacted during intense tasks."
-msgstr ""
-"Швидкість читання та запису може незначно знизитися під час інтенсивних "
-"завдань."
-
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -154,7 +140,15 @@ msgstr ""
 "Пароль шифрування буде потрібен за кожного ввімкнення цього пристрою. "
 "Зберігайте його в безпечному місці."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:70
+msgid ""
+"A built-in or USB keyboard will be required to type the encryption password "
+"each time this device is turned on."
+msgstr ""
+"Для введення пароля шифрування за кожного увімкнення цього пристрою, "
+"знадобиться вбудована або USB-клавіатура."
+
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -164,32 +158,32 @@ msgstr ""
 "унікальний пароль для цього пристрою, а не пароль для вашого облікового "
 "запису користувача."
 
-#: src/Views/EncryptView.vala:90
+#: src/Views/EncryptView.vala:94
 msgid "Choose Encryption Password"
 msgstr "Вибрати пароль шифрування"
 
-#: src/Views/EncryptView.vala:105
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Підтвердити пароль"
 
-#: src/Views/EncryptView.vala:141
+#: src/Views/EncryptView.vala:145
 msgid "Don't Encrypt"
 msgstr "Не шифрувати"
 
-#: src/Views/EncryptView.vala:142 src/Views/KeyboardLayoutView.vala:54
-#: src/Views/PartitioningView.vala:103 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
 msgid "Back"
 msgstr "Назад"
 
-#: src/Views/EncryptView.vala:144 src/Views/EncryptView.vala:160
+#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
 msgid "Choose Password"
 msgstr "Виберіть пароль"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:173
 msgid "Set Password"
 msgstr "Встановіть пароль"
 
-#: src/Views/EncryptView.vala:232
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "Паролі не збігаються"
 
@@ -223,7 +217,7 @@ msgstr "• Перезапустити пристрій для завантаж�
 msgid "Details"
 msgstr "Докладніше"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:58
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "Перезапустити пристрій"
 
@@ -235,39 +229,39 @@ msgstr "Спробувати демонстраційний режим"
 msgid "Try Installing Again"
 msgstr "Повторити спробу встановлення"
 
-#: src/Views/KeyboardLayoutView.vala:28
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Keyboard Layout"
 msgstr "Розкладка клавіатури"
 
-#: src/Views/KeyboardLayoutView.vala:36
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Введіть щось для перевірки розкладки"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Показати розкладку клавіатури"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Вибрати"
 
-#: src/Views/KeyboardLayoutView.vala:119
+#: src/Views/KeyboardLayoutView.vala:123
 msgid "Default"
 msgstr "Типово"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:130
 msgid "Input Language"
 msgstr "Мова вводу"
 
-#: src/Views/LanguageView.vala:232
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "Мови"
 
-#: src/Views/LanguageView.vala:249
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "Виберіть мову"
 
-#: src/Views/LanguageView.vala:277 src/Views/LanguageView.vala:320
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
 msgstr "Поточна мова"
 
@@ -297,7 +291,7 @@ msgstr ""
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Також рекомендовано вибрати розділ <b>обміну (Swap)</b>."
 
-#: src/Views/PartitioningView.vala:97
+#: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
 msgstr "Змінити розділи…"
 
@@ -317,19 +311,19 @@ msgstr "Неправильна файлова система кореневог�
 msgid "Invalid file system for home"
 msgstr "Неправильна файлова система для home"
 
-#: src/Views/ProgressView.vala:435
+#: src/Views/ProgressView.vala:186
 msgid "Partitioning Drive"
 msgstr "Розподіл диска"
 
-#: src/Views/ProgressView.vala:439
+#: src/Views/ProgressView.vala:190
 msgid "Extracting Files"
 msgstr "Видобування файлів"
 
-#: src/Views/ProgressView.vala:443
+#: src/Views/ProgressView.vala:194
 msgid "Configuring the System"
-msgstr "Налаштування системи"
+msgstr "Налаштовування системи"
 
-#: src/Views/ProgressView.vala:447
+#: src/Views/ProgressView.vala:198
 msgid "Finishing the Installation"
 msgstr "Завершення встановлення"
 
@@ -386,10 +380,18 @@ msgstr "Продовжити встановлення"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
-msgid "Your device will automatically restart to %s in %i seconds."
-msgstr "Ваш пристрій автоматично перезапуститься до %s за %i секунд."
+msgid "%s has been installed."
+msgstr "%s встановлено."
 
-#: src/Views/SuccessView.vala:35
+#: src/Views/SuccessView.vala:36
+#, c-format
+msgid "Your device will automatically restart in %i second."
+msgid_plural "Your device will automatically restart in %i seconds."
+msgstr[0] "Ваш пристрій автоматично перезапуститься за %i секунду."
+msgstr[1] "Ваш пристрій автоматично перезапуститься за %i секунди."
+msgstr[2] "Ваш пристрій автоматично перезапуститься за %i секунд."
+
+#: src/Views/SuccessView.vala:40
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -397,15 +399,15 @@ msgstr ""
 "Після перезапуску ви можете налаштувати нового користувача або вимкнути "
 "зараз і налаштувати нового користувача пізніше."
 
-#: src/Views/SuccessView.vala:55
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "Вимкнути"
 
-#: src/Widgets/DecryptMenu.vala:54
+#: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
 msgstr "Розшифрувати цей розділ"
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
@@ -413,19 +415,19 @@ msgstr ""
 "Введіть пароль шифрування розділу та встановіть назву пристрою для "
 "розшифрованого розділу."
 
-#: src/Widgets/DecryptMenu.vala:71
+#: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
 msgstr "Пароль:"
 
-#: src/Widgets/DecryptMenu.vala:84
+#: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
 msgstr "Назва пристрою:"
 
-#: src/Widgets/DecryptMenu.vala:97
+#: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
 msgstr "Розшифрувати"
 
-#: src/Widgets/DecryptMenu.vala:125
+#: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
 msgstr "Том LUKS розшифровано"
 
@@ -483,6 +485,18 @@ msgstr "Файлова система:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Типова (ext4)"
+
+#~ msgid ""
+#~ "Read and write speeds may be minimally impacted during intense tasks."
+#~ msgstr ""
+#~ "Швидкість читання та запису може незначно знизитися під час інтенсивних "
+#~ "завдань."
+
+#~ msgid "Unable to set the Distinst log callback"
+#~ msgstr "Не вдалося встановити зворотний зв'язок з журналом Distinst"
+
+#~ msgid "Starting installation"
+#~ msgstr "Починається встановлення"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

@@ -2,6 +2,7 @@ vala_files = [
     'Application.vala',
     'MainWindow.vala',
     'Utils.vala',
+    'Helpers/InstallerDaemon.vala',
     'Helpers/KeyboardLayoutHelper.vala',
     'Helpers/LocaleHelper.vala',
     'Helpers/LogHelper.vala',
@@ -26,7 +27,8 @@ vala_files = [
     'Widgets/PartitionBar.vala',
     'Widgets/PartitionMenu.vala',
     'Widgets/Terminal.vala',
-    'Widgets/VariantWidget.vala'
+    'Widgets/VariantWidget.vala',
+    common_files,
 ]
 
 configuration_data = configuration_data()
@@ -50,7 +52,22 @@ config_file = configure_file(
     configuration: configuration_data
 )
 
+gui_dependencies = [
+    distinst_dep,
+    gee_dep,
+    glib_dep,
+    gnome_keyboard_dep,
+    gnome_keyboard_ui_dep,
+    gobject_dep,
+    granite_dep,
+    gtk_dep,
+    handy_dep,
+    json_glib_dep,
+    pwquality_dep,
+    xml2_dep
+]
+
 executable(meson.project_name(), vala_files, config_file,
            asresources,
-           dependencies : dependencies,
+           dependencies : gui_dependencies,
            install: true)

@@ -1,4 +1,5 @@
 autostartdir = join_paths(get_option('sysconfdir'), 'xdg', 'autostart')
+schemadir = join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 
 i18n.merge_file(
     input: meson.project_name() + '.desktop.in',
@@ -41,6 +42,11 @@ install_subdir(
 install_data(
     'installer.session',
     install_dir: join_paths(get_option('datadir'), 'gnome-session', 'sessions')
+)
+
+install_data(
+    'installer-default-settings.gschema.override',
+    install_dir: schemadir
 )
 
 # Test the desktop file
