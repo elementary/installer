@@ -40,15 +40,15 @@ public class Installer.DiskButton : Gtk.RadioButton {
         };
 
         var name_label = new Gtk.Label (disk_name) {
-            valign = Gtk.Align.END,
-            wrap = true,
-            xalign = 0
+            ellipsize = Pango.EllipsizeMode.MIDDLE,
+            halign = Gtk.Align.START,
+            valign = Gtk.Align.END
         };
 
         var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
-            valign = Gtk.Align.START,
-            wrap = true,
-            xalign = 0
+            ellipsize = Pango.EllipsizeMode.MIDDLE,
+            halign = Gtk.Align.START,
+            valign = Gtk.Align.START
         };
 
         unowned var size_label_context = size_label.get_style_context ();
