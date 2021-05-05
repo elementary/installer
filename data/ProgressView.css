@@ -1,0 +1,146 @@
+avatar.image {
+    animation: rainbow-bg 8s linear infinite;
+    background-image: linear-gradient(
+        to bottom,
+        alpha(@BLUEBERRY_500, 0.25),
+        alpha(@accent_color_700, 0.75)
+    );
+}
+
+.logo {
+    animation: rainbow-shadow 8s linear infinite;
+    color: white;
+    -gtk-icon-shadow:
+        0 1px 1px alpha(black, 0.3),
+        0 2px 3px alpha(@BLUEBERRY_900, 0.2);
+}
+
+@keyframes rainbow-bg {
+    from {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@BLUEBERRY_500, 0.25),
+            alpha(@accent_color_700, 0.75)
+        );
+    }
+
+    12.5% {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@MINT_500, 0.25),
+            alpha(@MINT_700, 0.75)
+        );
+    }
+
+    25% {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@LIME_500, 0.25),
+            alpha(@LIME_700, 0.75)
+        );
+    }
+
+    37.5% {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@BANANA_500, 0.25),
+            alpha(@BANANA_700, 0.75)
+        );
+    }
+
+    50% {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@ORANGE_500, 0.25),
+            alpha(@ORANGE_700, 0.75)
+        );
+    }
+
+    62.5% {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@STRAWBERRY_500, 0.25),
+            alpha(@STRAWBERRY_700, 0.75)
+        );
+    }
+
+    75% {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@BUBBLEGUM_500, 0.25),
+            alpha(@BUBBLEGUM_700, 0.75)
+        );
+    }
+
+    87.5% {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@GRAPE_500, 0.25),
+            alpha(@GRAPE_700, 0.75)
+        );
+    }
+
+    to {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@BLUEBERRY_500, 0.25),
+            alpha(@BLUEBERRY_700, 0.75)
+        );
+    }
+}
+
+@keyframes rainbow-shadow {
+    from {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@BLUEBERRY_900, 0.2);
+    }
+
+    12.5% {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@MINT_900, 0.2);
+    }
+
+    25% {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@LIME_900, 0.2);
+    }
+
+    37.5% {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@BANANA_900, 0.2);
+    }
+
+    50% {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@ORANGE_900, 0.2);
+    }
+
+    62.5% {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@STRAWBERRY_900, 0.2);
+    }
+
+    75% {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@BUBBLEGUM_900, 0.2);
+    }
+
+    87.5% {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@GRAPE_900, 0.2);
+    }
+
+    to {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@BLUEBERRY_900, 0.2);
+    }
+}

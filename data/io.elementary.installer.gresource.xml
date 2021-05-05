@@ -3,5 +3,6 @@
   <gresource prefix="/io/elementary/installer">
     <file alias="application.css" compressed="true">application.css</file>
     <file alias="disk-bar-fallback.css" compressed="true">disk-bar-fallback.css</file>
+    <file alias="ProgressView.css" compressed="true">ProgressView.css</file>
   </gresource>
 </gresources>

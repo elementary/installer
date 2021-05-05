@@ -25,10 +25,45 @@ public class ProgressView : AbstractInstallerView {
     private const int NUM_STEP = 5;
 
     construct {
-        var logo = new Gtk.Image () {
-            icon_name = "distributor-logo",
-            pixel_size = 128
+        var style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("io/elementary/installer/ProgressView.css");
+
+        var logo_icon_name = Environment.get_os_info ("LOGO");
+        if (logo_icon_name == "" || logo_icon_name == null) {
+            logo_icon_name = "distributor-logo";
+        }
+
+        var logo = new Hdy.Avatar (128, "", false) {
+            // In case the wallpaper can't be loaded, we don't want an icon or text
+            icon_name = "invalid-icon-name",
+            // We need this for the shadow to not get clipped by Gtk.Overlay
+            margin = 6
         };
+        logo.set_image_load_func ((size) => {
+            try {
+                return new Gdk.Pixbuf.from_file_at_scale ("/usr/share/backgrounds/elementaryos-default", -1, size, true);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        });
+        logo.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        var icon = new Gtk.Image () {
+            icon_name = logo_icon_name + "-symbolic",
+            // 128 minus 3px padding on each side
+            pixel_size = 128 - 6
+        };
+
+        unowned var icon_style_context = icon.get_style_context ();
+        icon_style_context.add_class ("logo");
+        icon_style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        var logo_overlay = new Gtk.Overlay () {
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER
+        };
+        logo_overlay.add (logo);
+        logo_overlay.add_overlay (icon);
 
         unowned LogHelper log_helper = LogHelper.get_default ();
         terminal_view = new Installer.Terminal (log_helper.buffer);
@@ -36,7 +71,7 @@ public class ProgressView : AbstractInstallerView {
         var logo_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.OVER_UP_DOWN
         };
-        logo_stack.add (logo);
+        logo_stack.add (logo_overlay);
         logo_stack.add (terminal_view);
 
         var terminal_button = new Gtk.ToggleButton () {
@@ -70,7 +105,7 @@ public class ProgressView : AbstractInstallerView {
                 terminal_view.attempt_scroll ();
             } else {
                 terminal_button.tooltip_text = _("Show log");
-                logo_stack.visible_child = logo;
+                logo_stack.visible_child = logo_overlay;
             }
         });
 
