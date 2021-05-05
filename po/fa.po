@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:09+0000\n"
+"POT-Creation-Date: 2021-05-05 18:32+0000\n"
 "PO-Revision-Date: 2018-04-22 00:04+0000\n"
 "Last-Translator: Morteza Khazamipour <mormoroth@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/installer/"
@@ -298,19 +298,27 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:186
+#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+msgid "Show log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:68
+msgid "Hide log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
 msgstr "پارتشن بندی فضای حافظه"
 
-#: src/Views/ProgressView.vala:190
+#: src/Views/ProgressView.vala:196
 msgid "Extracting Files"
 msgstr "استخراج فایل ها"
 
-#: src/Views/ProgressView.vala:194
+#: src/Views/ProgressView.vala:200
 msgid "Configuring the System"
 msgstr "پیکره بندی سیستم"
 
-#: src/Views/ProgressView.vala:198
+#: src/Views/ProgressView.vala:204
 msgid "Finishing the Installation"
 msgstr "اتمام نصب"
 

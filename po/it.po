@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:09+0000\n"
+"POT-Creation-Date: 2021-05-05 18:32+0000\n"
 "PO-Revision-Date: 2020-10-23 19:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/installer/"
@@ -310,19 +310,27 @@ msgstr "Il file system per la root è invalido"
 msgid "Invalid file system for home"
 msgstr "Il file system per la directory home è invalido"
 
-#: src/Views/ProgressView.vala:186
+#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+msgid "Show log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:68
+msgid "Hide log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
 msgstr "Partizionando il disco"
 
-#: src/Views/ProgressView.vala:190
+#: src/Views/ProgressView.vala:196
 msgid "Extracting Files"
 msgstr "Estraendo i file"
 
-#: src/Views/ProgressView.vala:194
+#: src/Views/ProgressView.vala:200
 msgid "Configuring the System"
 msgstr "Configurando il sistema"
 
-#: src/Views/ProgressView.vala:198
+#: src/Views/ProgressView.vala:204
 msgid "Finishing the Installation"
 msgstr "Ultimando l'installazione"
 

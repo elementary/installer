@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:09+0000\n"
-"PO-Revision-Date: 2021-05-01 13:47+0000\n"
+"POT-Creation-Date: 2021-05-05 18:32+0000\n"
+"PO-Revision-Date: 2021-05-05 18:32+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -311,19 +311,27 @@ msgstr "Неправильна файлова система кореневог�
 msgid "Invalid file system for home"
 msgstr "Неправильна файлова система для home"
 
-#: src/Views/ProgressView.vala:186
+#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+msgid "Show log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:68
+msgid "Hide log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
 msgstr "Розподіл диска"
 
-#: src/Views/ProgressView.vala:190
+#: src/Views/ProgressView.vala:196
 msgid "Extracting Files"
 msgstr "Видобування файлів"
 
-#: src/Views/ProgressView.vala:194
+#: src/Views/ProgressView.vala:200
 msgid "Configuring the System"
 msgstr "Налаштовування системи"
 
-#: src/Views/ProgressView.vala:198
+#: src/Views/ProgressView.vala:204
 msgid "Finishing the Installation"
 msgstr "Завершення встановлення"
 
@@ -341,10 +349,8 @@ msgstr ""
 "системі."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Стерти й встановити"
+msgstr "Стерти диск і встановити"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -352,10 +358,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Стерти все та встановити нову копію %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Власне (Розширене)"
+msgstr "Налаштувати встановлення (Розширене)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -370,10 +374,8 @@ msgid "Next"
 msgstr "Далі"
 
 #: src/Views/TryInstallView.vala:114
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Не вдалося встановити"
+msgstr "Налаштувати встановлення"
 
 #: src/Views/SuccessView.vala:26
 msgid "Continue Setting Up"

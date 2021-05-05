@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 18:09+0000\n"
-"PO-Revision-Date: 2021-03-12 08:51+0000\n"
+"POT-Creation-Date: 2021-05-05 18:32+0000\n"
+"PO-Revision-Date: 2021-05-05 18:32+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
 "installer/ca/>\n"
@@ -311,19 +311,27 @@ msgstr "Sistema de fitxers no vàlid per a l'arrel"
 msgid "Invalid file system for home"
 msgstr "Sistema de fitxers no vàlid per a la partició de l'usuari"
 
-#: src/Views/ProgressView.vala:186
+#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+msgid "Show log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:68
+msgid "Hide log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
 msgstr "Es parteix el dispositiu"
 
-#: src/Views/ProgressView.vala:190
+#: src/Views/ProgressView.vala:196
 msgid "Extracting Files"
 msgstr "S'extreuen fitxers"
 
-#: src/Views/ProgressView.vala:194
+#: src/Views/ProgressView.vala:200
 msgid "Configuring the System"
 msgstr "Es configura el sistema"
 
-#: src/Views/ProgressView.vala:198
+#: src/Views/ProgressView.vala:204
 msgid "Finishing the Installation"
 msgstr "S'acaba la instal·lació"
 
@@ -341,10 +349,8 @@ msgstr ""
 "reflectir l'experiència de tenir el sistema instal·lat."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Esborra i instal·la"
+msgstr "Esborra el disc i fes-hi la instal·lació"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
