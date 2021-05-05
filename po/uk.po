@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-05-05 19:17+0000\n"
+"PO-Revision-Date: 2021-05-06 01:56+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -382,10 +382,9 @@ msgid "Continue Setting Up"
 msgstr "Продовжити встановлення"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s встановлено."
+msgstr "%s встановлено"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
