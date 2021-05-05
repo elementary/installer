@@ -1,5 +1,5 @@
 avatar.image {
-    animation: rainbow-bg 8s linear infinite;
+    animation: rainbow-bg 30s linear infinite;
     background-image: linear-gradient(
         to bottom,
         alpha(@BLUEBERRY_500, 0.25),
