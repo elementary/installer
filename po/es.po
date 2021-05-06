@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-03-16 19:16+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2021-05-06 21:30+0000\n"
+"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
 "Language: es\n"
@@ -315,11 +315,11 @@ msgstr "Sistema de archivos incorrecto para el directorio home"
 
 #: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
 msgid "Show log"
-msgstr ""
+msgstr "Mostrar registro"
 
 #: src/Views/ProgressView.vala:68
 msgid "Hide log"
-msgstr ""
+msgstr "Ocultar registro"
 
 #: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
@@ -352,10 +352,8 @@ msgstr ""
 "ser instalado."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Borrar e instalar"
+msgstr "Borrar disco e instalar"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -363,10 +361,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Borrar todo e instalar una copia nueva de %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Personalizado (avanzado)"
+msgstr "Instalación personalizada (avanzado)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -381,20 +377,17 @@ msgid "Next"
 msgstr "Siguiente"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "No se pudo instalar"
+msgstr "Instalación personalizada"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Continuar configuración"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "Se ha instalado %s."
+msgstr "%s ha sido instalado"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
