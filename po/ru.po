@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-03-13 21:48+0000\n"
+"PO-Revision-Date: 2021-05-06 13:53+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
@@ -313,11 +313,11 @@ msgstr "Недопустимая файловая система для дома
 
 #: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
 msgid "Show log"
-msgstr ""
+msgstr "Показать журнал"
 
 #: src/Views/ProgressView.vala:68
 msgid "Hide log"
-msgstr ""
+msgstr "Скрыть журнал"
 
 #: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
@@ -349,10 +349,8 @@ msgstr ""
 "соответствовать установленной системе."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Стереть и установить"
+msgstr "Стереть диск и установить"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -360,10 +358,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Удалить всё и установить новую копию %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Пользовательский (Для опытных)"
+msgstr "Пользовательская установка (Для опытных)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -378,20 +374,17 @@ msgid "Next"
 msgstr "Далее"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Не удалось установить"
+msgstr "Пользовательская установка"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Продолжить установку"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s установлено."
+msgstr "%s установлено"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
