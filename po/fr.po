@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-04-05 07:34+0000\n"
+"PO-Revision-Date: 2021-05-06 17:31+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -315,11 +315,11 @@ msgstr "Le système de fichier est incompatible pour la partition « home »"
 
 #: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
 msgid "Show log"
-msgstr ""
+msgstr "Afficher les journaux"
 
 #: src/Views/ProgressView.vala:68
 msgid "Hide log"
-msgstr ""
+msgstr "Masquer les journaux"
 
 #: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
@@ -351,10 +351,8 @@ msgstr ""
 "ne pas refléter l'expérience installée."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Supprimer et installer"
+msgstr "Effacer le disque et installer"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -362,10 +360,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Supprime tout sur votre appareil et installe une version vierge d'%s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Personnalisée (Avancé)"
+msgstr "Installation personnalisée (Avancé)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -380,20 +376,17 @@ msgid "Next"
 msgstr "Suivant"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Erreur d'installation"
+msgstr "Installation personnalisée"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Continuer la configuration"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s a été installé."
+msgstr "%s a été installé"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
