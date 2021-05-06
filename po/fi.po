@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-05-04 10:19+0000\n"
+"PO-Revision-Date: 2021-05-06 07:41+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -311,11 +311,11 @@ msgstr "Väärä tiedostojärjestelmä kotihakemistolle"
 
 #: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
 msgid "Show log"
-msgstr ""
+msgstr "Näytä loki"
 
 #: src/Views/ProgressView.vala:68
 msgid "Hide log"
-msgstr ""
+msgstr "Piilota loki"
 
 #: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
@@ -347,10 +347,8 @@ msgstr ""
 "välttämättä vastaa asennetun ympäristön kokemusta."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Tyhjennä ja asenna"
+msgstr "Tyhjennä levy ja asenna"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -358,10 +356,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Poista kaikki ja asenna %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Mukautettu (lisäasetukset)"
+msgstr "Mukautettu asennus (lisäasetukset)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -376,20 +372,17 @@ msgid "Next"
 msgstr "Seuraava"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Asentaminen ei onnistunut"
+msgstr "Mukautettu asennus"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Jatka asentamista"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s on asennettu."
+msgstr "%s on asennettu"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
