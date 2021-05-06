@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-03-16 07:57+0000\n"
+"PO-Revision-Date: 2021-05-06 13:53+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -313,11 +313,11 @@ msgstr "ホームディレクトリのファイルシステムが不適切です
 
 #: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
 msgid "Show log"
-msgstr ""
+msgstr "ログを表示"
 
 #: src/Views/ProgressView.vala:68
 msgid "Hide log"
-msgstr ""
+msgstr "ログを非表示"
 
 #: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
@@ -337,7 +337,7 @@ msgstr "インストールを終了しています"
 
 #: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
-msgstr "試用するかインストールするかを選択してください"
+msgstr "試用またはインストール"
 
 #: src/Views/TryInstallView.vala:40
 msgid ""
@@ -348,10 +348,8 @@ msgstr ""
 "ステムのパフォーマンスと機能を十分に活用できない可能性があります。"
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "削除してインストール"
+msgstr "ディスクを削除してインストール"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -359,10 +357,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "すべてを消去して %s をクリーンインストールします。"
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "カスタム (高度)"
+msgstr "カスタムインストール (高度)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -377,20 +373,17 @@ msgid "Next"
 msgstr "次へ"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "インストールできませんでした"
+msgstr "カスタムインストール"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "セットアップを続行"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s をインストールしました。"
+msgstr "%s をインストールしました"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
