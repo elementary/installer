@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"POT-Creation-Date: 2021-05-05 22:44+0000\n"
 "PO-Revision-Date: 2020-06-17 00:11+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/installer/"
@@ -19,28 +19,28 @@ msgstr ""
 msgid "Install %s"
 msgstr "Instaluj %s"
 
-#: src/Utils.vala:33
+#: src/Utils.vala:34
 msgid "Test mode shutdown"
 msgstr "Zastawiynie trybu testowego"
 
-#: src/Utils.vala:47
+#: src/Utils.vala:48
 msgid "Test mode reboot"
 msgstr "Resztart trybu testowego"
 
-#: src/Utils.vala:73
+#: src/Utils.vala:74
 msgid "Test mode switch user"
 msgstr "Przeszaltrowanie używocza trybu testowego"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:49
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Pociep instalacyjo"
 
-#: src/Views/AbstractInstallerView.vala:58
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "Tryb testowy"
 
@@ -101,11 +101,11 @@ msgstr "Procesōr:"
 msgid "Memory:"
 msgstr "Pamiyńć:"
 
-#: src/Views/DiskView.vala:51
+#: src/Views/DiskView.vala:36
 msgid "Select a Drive"
 msgstr "Ôbier napynd"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -114,25 +114,25 @@ msgstr ""
 "stworzōno kopijo ibryczno twojich danych, możesz pociepnōńć instalacyjo i "
 "użyć trybu dymōnstracyjnego."
 
-#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Pobiyranie teroźnyj kōnfiguracyje…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Wymaż i zainstaluj"
 
-#: src/Views/EncryptView.vala:48
+#: src/Views/EncryptView.vala:50
 msgid "Drive Encryption"
 msgstr "Szyfrowanie napyndu"
 
-#: src/Views/EncryptView.vala:54
+#: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
 msgstr ""
 "Dane bydōm zabezpieczōne przed inkszymi ze fizycznym dostympym do tyj "
 "masziny."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:66
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -140,13 +140,13 @@ msgstr ""
 "Hasło szyfrowanio bydzie wymoganie przi kożdym włōnczyniu masziny. Trzim je "
 "kajś, kaj je bezpiecznie."
 
-#: src/Views/EncryptView.vala:70
+#: src/Views/EncryptView.vala:74
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:92
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -155,32 +155,32 @@ msgstr ""
 "Jeźli zapōmnisz hasła do ôdszyfrowanio, <b>niy bydzie szło ôdzyskać danych.</"
 "b> Je to unikalne hasło dlo tyj masziny, niy hasło do kōnta używocza."
 
-#: src/Views/EncryptView.vala:94
+#: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
 msgstr "Ôbier hasło szyfrowanio"
 
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
 msgstr "Potwiyrdź hasło"
 
-#: src/Views/EncryptView.vala:145
+#: src/Views/EncryptView.vala:155
 msgid "Don't Encrypt"
 msgstr "Niy szyfruj"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Nazod"
 
-#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
+#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
 msgstr "Ôbier hasło"
 
-#: src/Views/EncryptView.vala:173
+#: src/Views/EncryptView.vala:184
 msgid "Set Password"
 msgstr "Sztalowanie hasła"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:247
 msgid "Passwords do not match"
 msgstr "Hasła niy sztymujōm"
 
@@ -213,11 +213,11 @@ msgstr "• Sztartnij zaś maszina z inkszego dysku"
 msgid "Details"
 msgstr "Informacyje"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Zresztartuj maszina"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Wyprōbuj tryb dymōnstracyjny"
 
@@ -225,27 +225,27 @@ msgstr "Wyprōbuj tryb dymōnstracyjny"
 msgid "Try Installing Again"
 msgstr "Sprōbuj zainstalować jeszcze roz"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:31
 msgid "Keyboard Layout"
 msgstr "Ukłod tastatury"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Pisz, żeby przetestować ukłod"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Pokoż ukłod tastatury"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Ôbier"
 
-#: src/Views/KeyboardLayoutView.vala:123
+#: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
 msgstr "Wychodno"
 
-#: src/Views/KeyboardLayoutView.vala:130
+#: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
 msgstr "Jynzyk wchodu"
 
@@ -307,40 +307,35 @@ msgstr "Niynoleżny systym zbiorōw dlo root"
 msgid "Invalid file system for home"
 msgstr "Niynolezny systym zbiorōw dlo home"
 
-#: src/Views/ProgressView.vala:186
+#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+msgid "Show log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:68
+msgid "Hide log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
 msgstr "Partycjōnowanie napyndu"
 
-#: src/Views/ProgressView.vala:190
+#: src/Views/ProgressView.vala:196
 msgid "Extracting Files"
 msgstr "Rozpakowowanie zbiorōw"
 
-#: src/Views/ProgressView.vala:194
+#: src/Views/ProgressView.vala:200
 msgid "Configuring the System"
 msgstr "Kōnfigurowanie systymu"
 
-#: src/Views/ProgressView.vala:198
+#: src/Views/ProgressView.vala:204
 msgid "Finishing the Installation"
 msgstr "Kōńczynie instalacyje"
 
-#: src/Views/TryInstallView.vala:44
+#: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
 msgstr "Wyprōbuj abo zainstaluj"
 
-#: src/Views/TryInstallView.vala:48
-#, c-format
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-"Możesz teroz zainstalować %s na tyj maszinie abo sprōbować trybu "
-"dymōnstracyjnego bez instalacyje."
-
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
-#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
-msgid "Next"
-msgstr "Dalij"
-
-#: src/Views/TryInstallView.vala:77
+#: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -349,20 +344,24 @@ msgstr ""
 "bydōm zmiyniōne. Wydajność i funkcyje mogōm niy być take, jak po "
 "zainstalowaniu."
 
-#: src/Views/TryInstallView.vala:81
-msgid "Clean Install"
-msgstr "Snożno instalacyjo"
+#: src/Views/TryInstallView.vala:46
+#, fuzzy
+#| msgid "Erase and Install"
+msgid "Erase Disk and Install"
+msgstr "Wymaż i zainstaluj"
 
-#: src/Views/TryInstallView.vala:83
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Ôprōznij wszyjsko i zainstaluj świyżo kopijo %s."
 
-#: src/Views/TryInstallView.vala:87
-msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:54
+#, fuzzy
+#| msgid "Custom (Advanced)"
+msgid "Custom Install (Advanced)"
 msgstr "Włosno (Rozszyrzōno)"
 
-#: src/Views/TryInstallView.vala:89
+#: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -370,16 +369,30 @@ msgstr ""
 "Ryncznie twōrz, zmiyniej miara i dokōnuj ôperacyji na partycyjach. Ta metoda "
 "może prziniyś strata danych."
 
-#: src/Views/SuccessView.vala:26
+#: src/Views/TryInstallView.vala:87
+msgid "Next"
+msgstr "Dalij"
+
+#: src/Views/TryInstallView.vala:115
+#, fuzzy
+#| msgid "Could Not Install"
+msgid "Custom Install"
+msgstr "Niy idzie zainstalować"
+
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Kōntynuuj sztalowanie"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/SuccessView.vala:33
 #, c-format
-msgid "%s has been installed."
+msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:36
+#: src/Views/SuccessView.vala:62
+msgid "Shut Down"
+msgstr "Zastow kōmputer"
+
+#: src/Views/SuccessView.vala:96
 #, fuzzy, c-format
 #| msgid "Your device will automatically restart to %s in %i seconds."
 msgid "Your device will automatically restart in %i second."
@@ -391,17 +404,13 @@ msgstr[1] ""
 msgstr[2] ""
 "Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
 
-#: src/Views/SuccessView.vala:40
+#: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "Po resztarcie bydzie szło skōnfigurować nowego używocza. Możesz tyż zastawić "
 "maszina i skōnfigurować używocza niyskorzij."
-
-#: src/Views/SuccessView.vala:60
-msgid "Shut Down"
-msgstr "Zastow kōmputer"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -485,6 +494,16 @@ msgstr "Systym zbiorōw:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Wychodny (ext4)"
+
+#~ msgid ""
+#~ "You can install %s on this device now, or try Demo Mode without "
+#~ "installing."
+#~ msgstr ""
+#~ "Możesz teroz zainstalować %s na tyj maszinie abo sprōbować trybu "
+#~ "dymōnstracyjnego bez instalacyje."
+
+#~ msgid "Clean Install"
+#~ msgstr "Snożno instalacyjo"
 
 #~ msgid ""
 #~ "Read and write speeds may be minimally impacted during intense tasks."

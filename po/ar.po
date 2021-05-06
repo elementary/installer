@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 02:24+0000\n"
+"POT-Creation-Date: 2021-05-05 22:44+0000\n"
 "PO-Revision-Date: 2020-05-21 13:11+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
@@ -21,28 +21,28 @@ msgstr ""
 msgid "Install %s"
 msgstr "تثبيت %s"
 
-#: src/Utils.vala:33
+#: src/Utils.vala:34
 msgid "Test mode shutdown"
 msgstr "ايقاف تشغيل الوضع التجريبي"
 
-#: src/Utils.vala:47
+#: src/Utils.vala:48
 msgid "Test mode reboot"
 msgstr "إعادة تشغيل الوضع التجريبي"
 
-#: src/Utils.vala:73
+#: src/Utils.vala:74
 msgid "Test mode switch user"
 msgstr "تبديل حسابات الوضع التجريبي"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:49
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "إلغاء التثبيت"
 
-#: src/Views/AbstractInstallerView.vala:58
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "الوضع التجريبي"
 
@@ -99,11 +99,11 @@ msgstr "المعالج:"
 msgid "Memory:"
 msgstr "الذاكرة:"
 
-#: src/Views/DiskView.vala:51
+#: src/Views/DiskView.vala:36
 msgid "Select a Drive"
 msgstr "اختر القرص"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -111,36 +111,36 @@ msgstr ""
 "سيؤدي هذا إلى مسح جميع البيانات الموجودة على محرك الأقراص المحدد. إذا لم تقم "
 "بعمل نسخة احتياطية من بياناتك ، فيمكنك إلغاء التثبيت واستخدام الوضع التجريبي."
 
-#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "الحصول على الإعدادات الحالية …"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "امسح و ثبت"
 
-#: src/Views/EncryptView.vala:48
+#: src/Views/EncryptView.vala:50
 msgid "Drive Encryption"
 msgstr "تشفير القرص"
 
-#: src/Views/EncryptView.vala:54
+#: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
 msgstr "البيانات ستكون محمية من الآخرين مع سماح للوصول بشكل فيزيائي."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:66
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
 "كلمة سر التشفير ستكون مطلوبة في كل مرة تقوم بفتح الجهاز. احفظها بمكان آمن."
 
-#: src/Views/EncryptView.vala:70
+#: src/Views/EncryptView.vala:74
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:92
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -149,32 +149,32 @@ msgstr ""
 "إذا نسيت كلمة سر التشفير، <b> لن تكون قادرا على استعادة البيانات.</b> كلمة "
 "سر هذه مميزة للقرص الخاص بك، ليست كلمة السر الخاصة بحسابك."
 
-#: src/Views/EncryptView.vala:94
+#: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
 msgstr "إختر كلمة سر مشفرة"
 
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
 msgstr "تأكيد كلمة المرور"
 
-#: src/Views/EncryptView.vala:145
+#: src/Views/EncryptView.vala:155
 msgid "Don't Encrypt"
 msgstr "لا تشفر"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "للخلف"
 
-#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
+#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
 msgstr "إختر كلمة السر"
 
-#: src/Views/EncryptView.vala:173
+#: src/Views/EncryptView.vala:184
 msgid "Set Password"
 msgstr "حدد كلمة السر"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:247
 msgid "Passwords do not match"
 msgstr "كلمتا المرور غير متطابقتين"
 
@@ -207,11 +207,11 @@ msgstr "• أعد تشغيل جهازك للإقلاع من محرك أقراص
 msgid "Details"
 msgstr "التفاصيل"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "أعد تشغيل الجهاز"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
+#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "جرب النسخة التجريبية"
 
@@ -219,27 +219,27 @@ msgstr "جرب النسخة التجريبية"
 msgid "Try Installing Again"
 msgstr "جرب إعادة التثبيت"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:31
 msgid "Keyboard Layout"
 msgstr "تخطيط لوحة المفاتيح"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "اكتب لاختبار تخطيطك"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "اظهر تخطيط لوحة المفاتيح"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "إختر"
 
-#: src/Views/KeyboardLayoutView.vala:123
+#: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
 msgstr "الإفتراضي"
 
-#: src/Views/KeyboardLayoutView.vala:130
+#: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
 msgstr "اختر لغة الإدخال"
 
@@ -300,39 +300,35 @@ msgstr "نظام الملفات غير صالح للجذر"
 msgid "Invalid file system for home"
 msgstr "نظام الملفات غير صالح لمجلد المنزل"
 
-#: src/Views/ProgressView.vala:186
+#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+msgid "Show log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:68
+msgid "Hide log"
+msgstr ""
+
+#: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
 msgstr "جاري قسم القرص"
 
-#: src/Views/ProgressView.vala:190
+#: src/Views/ProgressView.vala:196
 msgid "Extracting Files"
 msgstr "استخراج الملفات"
 
-#: src/Views/ProgressView.vala:194
+#: src/Views/ProgressView.vala:200
 msgid "Configuring the System"
 msgstr "تخصيص النظام"
 
-#: src/Views/ProgressView.vala:198
+#: src/Views/ProgressView.vala:204
 msgid "Finishing the Installation"
 msgstr "الانتهاء من التثبيت"
 
-#: src/Views/TryInstallView.vala:44
+#: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
 msgstr "تثبيت أو جرب"
 
-#: src/Views/TryInstallView.vala:48
-#, c-format
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-"يمكنك تثبيت %s على الجهاز الآن، أو يمكنك اختيار الوضع التجريبي من دون تثبيت."
-
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
-#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
-msgid "Next"
-msgstr "التالي"
-
-#: src/Views/TryInstallView.vala:77
+#: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -340,20 +336,24 @@ msgstr ""
 "التغييرات لن يتم حفظها، والبيانات من نظام التشغيل السابق لن يتم المساس به. "
 "الأداء والمميزات ليست كالنسخة المثبتة."
 
-#: src/Views/TryInstallView.vala:81
-msgid "Clean Install"
-msgstr "تثبيت نظيف"
+#: src/Views/TryInstallView.vala:46
+#, fuzzy
+#| msgid "Erase and Install"
+msgid "Erase Disk and Install"
+msgstr "امسح و ثبت"
 
-#: src/Views/TryInstallView.vala:83
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "حذف كل شيء وبدء تنزيل نسخة جديدة من %s."
 
-#: src/Views/TryInstallView.vala:87
-msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:54
+#, fuzzy
+#| msgid "Custom (Advanced)"
+msgid "Custom Install (Advanced)"
 msgstr "تخصيص (متقدم)"
 
-#: src/Views/TryInstallView.vala:89
+#: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -361,16 +361,30 @@ msgstr ""
 "أنشئ، أعد تحجيم، أو تحكم بالأقسام يدويا، هذه الطريقة قد تؤدي إلى فقدان "
 "البيانات."
 
-#: src/Views/SuccessView.vala:26
+#: src/Views/TryInstallView.vala:87
+msgid "Next"
+msgstr "التالي"
+
+#: src/Views/TryInstallView.vala:115
+#, fuzzy
+#| msgid "Could Not Install"
+msgid "Custom Install"
+msgstr "تعذر التثبيت"
+
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "اكمال التجهيز"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/SuccessView.vala:33
 #, c-format
-msgid "%s has been installed."
+msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:36
+#: src/Views/SuccessView.vala:62
+msgid "Shut Down"
+msgstr "إيقاف التشغيل"
+
+#: src/Views/SuccessView.vala:96
 #, fuzzy, c-format
 #| msgid "Your device will automatically restart to %s in %i seconds."
 msgid "Your device will automatically restart in %i second."
@@ -382,17 +396,13 @@ msgstr[3] "جهازك سيقوم بإعادة التشغيل تلقائيا إل
 msgstr[4] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
 msgstr[5] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
 
-#: src/Views/SuccessView.vala:40
+#: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "بعد إعادة التشغيل يمكنك إنشاء مستخدم جديد، أو بإمكانك إيقاف التشغيل الآن "
 "وإنشاء مستخدم جديد لاحقا."
-
-#: src/Views/SuccessView.vala:60
-msgid "Shut Down"
-msgstr "إيقاف التشغيل"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -476,6 +486,16 @@ msgstr "نظام الملفات:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "الافتراضي (ext4)"
+
+#~ msgid ""
+#~ "You can install %s on this device now, or try Demo Mode without "
+#~ "installing."
+#~ msgstr ""
+#~ "يمكنك تثبيت %s على الجهاز الآن، أو يمكنك اختيار الوضع التجريبي من دون "
+#~ "تثبيت."
+
+#~ msgid "Clean Install"
+#~ msgstr "تثبيت نظيف"
 
 #~ msgid ""
 #~ "Read and write speeds may be minimally impacted during intense tasks."

@@ -41,14 +41,6 @@ public class Installer.App : Gtk.Application {
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/installer");
 
-        var css_provider = new Gtk.CssProvider ();
-        css_provider.load_from_resource ("io/elementary/installer/application.css");
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
-            css_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-
         var css_fallback = new Gtk.CssProvider ();
         css_fallback.load_from_resource ("io/elementary/installer/disk-bar-fallback.css");
         Gtk.StyleContext.add_provider_for_screen (

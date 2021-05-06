@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,46 +25,86 @@ public class ProgressView : AbstractInstallerView {
     private const int NUM_STEP = 5;
 
     construct {
-        var logo = new Gtk.Image ();
-        logo.icon_name = "distributor-logo";
-        logo.pixel_size = 128;
-        logo.get_style_context ().add_class ("logo");
+        var style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("io/elementary/installer/ProgressView.css");
+
+        var logo_icon_name = Environment.get_os_info ("LOGO");
+        if (logo_icon_name == "" || logo_icon_name == null) {
+            logo_icon_name = "distributor-logo";
+        }
+
+        var logo = new Hdy.Avatar (192, "", false) {
+            // In case the wallpaper can't be loaded, we don't want an icon or text
+            icon_name = "invalid-icon-name",
+            // We need this for the shadow to not get clipped by Gtk.Overlay
+            margin = 6
+        };
+        logo.set_image_load_func ((size) => {
+            try {
+                return new Gdk.Pixbuf.from_file_at_scale ("/usr/share/backgrounds/elementaryos-default", -1, size, true);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        });
+        logo.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        var icon = new Gtk.Image () {
+            icon_name = logo_icon_name + "-symbolic",
+            pixel_size = 192
+        };
+
+        unowned var icon_style_context = icon.get_style_context ();
+        icon_style_context.add_class ("logo");
+        icon_style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        var logo_overlay = new Gtk.Overlay () {
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER
+        };
+        logo_overlay.add (logo);
+        logo_overlay.add_overlay (icon);
 
         unowned LogHelper log_helper = LogHelper.get_default ();
         terminal_view = new Installer.Terminal (log_helper.buffer);
 
-        var logo_stack = new Gtk.Stack ();
-        logo_stack.transition_type = Gtk.StackTransitionType.OVER_UP_DOWN;
-        logo_stack.add (logo);
+        var logo_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.OVER_UP_DOWN
+        };
+        logo_stack.add (logo_overlay);
         logo_stack.add (terminal_view);
 
-        var terminal_button = new Gtk.ToggleButton ();
-        terminal_button.halign = Gtk.Align.END;
-        terminal_button.image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        var terminal_button = new Gtk.ToggleButton () {
+            halign = Gtk.Align.END,
+            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            tooltip_text = _("Show log")
+        };
         terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        progressbar_label = new Gtk.Label (null);
-        progressbar_label.xalign = 0;
+        progressbar_label = new Gtk.Label (null) {
+            use_markup = true,
+            xalign = 0
+        };
         progressbar_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        progressbar = new Gtk.ProgressBar ();
-        progressbar.hexpand = true;
+        progressbar = new Gtk.ProgressBar () {
+            hexpand = true
+        };
 
-        content_area.margin_end = 22;
-        content_area.margin_start = 22;
-        content_area.attach (logo_stack, 0, 0, 2, 1);
-        content_area.attach (progressbar_label, 0, 1, 1, 1);
-        content_area.attach (terminal_button, 1, 1, 1, 1);
-        content_area.attach (progressbar, 0, 2, 2, 1);
-
-        get_style_context ().add_class ("progress-view");
+        content_area.margin_end = 12;
+        content_area.margin_start = 12;
+        content_area.attach (logo_stack, 0, 0, 2);
+        content_area.attach (progressbar_label, 0, 1);
+        content_area.attach (terminal_button, 1, 1);
+        content_area.attach (progressbar, 0, 2, 2);
 
         terminal_button.toggled.connect (() => {
             if (terminal_button.active) {
+                terminal_button.tooltip_text = _("Hide log");
                 logo_stack.visible_child = terminal_view;
                 terminal_view.attempt_scroll ();
             } else {
-                logo_stack.visible_child = logo;
+                terminal_button.tooltip_text = _("Show log");
+                logo_stack.visible_child = logo_overlay;
             }
         });
 
@@ -169,7 +208,7 @@ public class ProgressView : AbstractInstallerView {
                 percent = percent
             };
             installation_status_callback (status);
-            GLib.Thread.usleep (10000);
+            GLib.Thread.usleep (100000);
         }
     }
 
@@ -180,26 +219,27 @@ public class ProgressView : AbstractInstallerView {
                 return GLib.Source.REMOVE;
             }
 
+            string step_string = "";
             double fraction = ((double) status.percent) / (100.0 * NUM_STEP);
             switch (status.step) {
                 case Distinst.Step.PARTITION:
-                    progressbar_label.label = _("Partitioning Drive");
+                    step_string = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
                     fraction += 2 * (1.0 / NUM_STEP);
-                    progressbar_label.label = _("Extracting Files");
+                    step_string = _("Extracting Files");
                     break;
                 case Distinst.Step.CONFIGURE:
                     fraction += 3 * (1.0 / NUM_STEP);
-                    progressbar_label.label = _("Configuring the System");
+                    step_string = _("Configuring the System");
                     break;
                 case Distinst.Step.BOOTLOADER:
                     fraction += 4 * (1.0 / NUM_STEP);
-                    progressbar_label.label = _("Finishing the Installation");
+                    step_string = _("Finishing the Installation");
                     break;
             }
 
-            progressbar_label.label += " (%d%%)".printf (status.percent);
+            progressbar_label.label = "<span font-features='tnum'>%s (%d%%)</span>".printf (step_string, status.percent);
             progressbar.fraction = fraction;
             return GLib.Source.REMOVE;
         });

@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017–2018 elementary LLC. (https://elementary.io)
+ * Copyright 2017–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,24 +25,23 @@ public abstract class AbstractInstallerView : Gtk.Grid {
     protected Gtk.ButtonBox action_area;
 
     protected AbstractInstallerView (bool cancellable = false) {
-        Object (
-            cancellable: cancellable,
-            row_spacing: 24
-        );
+        Object (cancellable: cancellable);
     }
 
     construct {
-        content_area = new Gtk.Grid ();
-        content_area.column_spacing = 12;
-        content_area.row_spacing = 12;
-        content_area.expand = true;
-        content_area.orientation = Gtk.Orientation.VERTICAL;
+        content_area = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 12,
+            expand = true,
+            orientation = Gtk.Orientation.VERTICAL
+        };
 
-        action_area = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-        action_area.margin_end = 10;
-        action_area.margin_start = 10;
-        action_area.spacing = 6;
-        action_area.layout_style = Gtk.ButtonBoxStyle.END;
+        action_area = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL) {
+            layout_style = Gtk.ButtonBoxStyle.END,
+            margin_end = 10,
+            margin_start = 10,
+            spacing = 6
+        };
 
         if (cancellable) {
             var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
@@ -64,6 +62,7 @@ public abstract class AbstractInstallerView : Gtk.Grid {
         }
 
         orientation = Gtk.Orientation.VERTICAL;
+        row_spacing = 24;
         add (content_area);
         add (action_area);
     }
