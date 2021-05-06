@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-05-02 01:19+0000\n"
+"PO-Revision-Date: 2021-05-06 13:53+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
 "installer/pt/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
-msgstr "Instalar %s"
+msgstr "Instalar o %s"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -43,7 +43,7 @@ msgstr "Cancelar a instalação"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
-msgstr "Modo de Demonstração"
+msgstr "Modo de Teste"
 
 #: src/Views/CheckView.vala:64
 msgid "Ignore"
@@ -59,8 +59,8 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"Não há espaço suficiente no seu dispositivo para instalar %s. Recomendamos o "
-"mínimo de %s de armazenamento."
+"Não existe espaço suficiente no seu dispositivo para instalar o %s. "
+"Recomendamos o mínimo de %s de armazenamento."
 
 #: src/Views/CheckView.vala:231
 msgid "Your Device May Be Too Slow"
@@ -71,8 +71,8 @@ msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"O seu dispositivo não dispõe dos requisitos recomendados de hardware, o que "
-"poderá fazer com que o mesmo se torne lento ou pare."
+"O seu dispositivo não dispõe dos requisitos de hardware recomendados, o que "
+"poderá fazer com que o mesmo se torne lento ou bloqueie."
 
 #: src/Views/CheckView.vala:248
 msgid "Connect to a Power Source"
@@ -104,15 +104,15 @@ msgstr "Memória:"
 
 #: src/Views/DiskView.vala:36
 msgid "Select a Drive"
-msgstr "Selecione um Disco"
+msgstr "Selecione uma unidade"
 
 #: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"Isto irá apagar todos os dados do disco selecionado. Se não fez uma cópia de "
-"segurança, pode cancelar a instalação e usar o Modo de Demonstração."
+"Isto irá apagar todos os dados da unidade selecionada. Se não fez uma cópia "
+"de segurança, pode cancelar a instalação e usar o Modo de Demonstração."
 
 #: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
@@ -159,7 +159,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
-msgstr "Escolher a palavra-passe de encriptação"
+msgstr "Escolha a palavra-passe de encriptação"
 
 #: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
@@ -196,7 +196,7 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. Your device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"A instalação %s falhou, possivelmente devido a um erro de hardware. O seu "
+"A instalação do %s falhou, possivelmente devido a um erro de hardware. O seu "
 "dispositivo poderá não reiniciar devidamente. Pode experimentar o seguinte:"
 
 #: src/Views/ErrorView.vala:44
@@ -308,15 +308,15 @@ msgstr "Sistema de ficheiros inválido para o root"
 
 #: src/Views/PartitioningView.vala:283
 msgid "Invalid file system for home"
-msgstr "Sistema de ficheiros inválido para a home"
+msgstr "Sistema de ficheiros inválido para a pasta pessoal"
 
 #: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
 msgid "Show log"
-msgstr ""
+msgstr "Mostrar registo"
 
 #: src/Views/ProgressView.vala:68
 msgid "Hide log"
-msgstr ""
+msgstr "Ocultar registo"
 
 #: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
@@ -343,15 +343,13 @@ msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"As alterações não serão guardadas e os dados do seu sistema operativo "
-"anterior não serão alterados. O desempenho e funcionalidades poderão não "
-"reflectir a experiência instalada."
+"As alterações não serão guardadas e os dados do sistema operativo anterior "
+"não serão alterados. O desempenho e funcionalidades poderão não refletir a "
+"experiência instalada."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Apagar e Instalar"
+msgstr "Apagar o disco e Instalar"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -359,10 +357,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Apagar tudo e instalar uma nova cópia do %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Personalizada (Avançada)"
+msgstr "Instalação personalizada (Avançado)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -377,20 +373,17 @@ msgid "Next"
 msgstr "Seguinte"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Não foi possível instalar"
+msgstr "Instalação personalizada"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Continuar a configuração"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s foi instalado."
+msgstr "%s foi instalado"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
@@ -467,7 +460,7 @@ msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:88
 msgid "Home (/home)"
-msgstr "Home (/home)"
+msgstr "Pasta Pessoal (/home)"
 
 #: src/Widgets/PartitionMenu.vala:89
 #, c-format
