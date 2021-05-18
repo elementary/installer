@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-03-12 21:19+0000\n"
+"PO-Revision-Date: 2021-05-12 22:17+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "installer/installer/en_GB/>\n"
@@ -311,11 +311,11 @@ msgstr "Invalid file system for home"
 
 #: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
 msgid "Show log"
-msgstr ""
+msgstr "Show log"
 
 #: src/Views/ProgressView.vala:68
 msgid "Hide log"
-msgstr ""
+msgstr "Hide log"
 
 #: src/Views/ProgressView.vala:192
 msgid "Partitioning Drive"
@@ -346,10 +346,8 @@ msgstr ""
 "Performance and features may not reflect the installed experience."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Erase and Install"
+msgstr "Erase Disk and Install"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -357,10 +355,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Erase everything and install a fresh copy of %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Custom (Advanced)"
+msgstr "Custom Install (Advanced)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -375,20 +371,17 @@ msgid "Next"
 msgstr "Next"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Could Not Install"
+msgstr "Custom Install"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Continue Setting Up"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s has been installed."
+msgstr "%s has been installed"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
