@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-06 17:31+0000\n"
+"PO-Revision-Date: 2021-05-20 09:20+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -194,35 +194,26 @@ msgid "Could Not Install"
 msgstr "Erreur d'installation"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"L'installation de %s a échoué, peut-être à cause d'une erreur matériel. "
-"Votre périphérique peut ne pas redémarrer correctement. Vous pouvez essayer "
-"une des solutions ci-dessous :"
+"L'installation de %s a échoué, peut-être à cause d'une erreur matérielle. Le "
+"périphérique peut ne pas redémarrer correctement. Vous pouvez essayer une "
+"des solutions ci-dessous :"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Réessayer l'installation"
+msgstr "Réessayer l'installation"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Utiliser le mode de démonstration et essayer de réparer manuellement"
+msgstr "Utiliser le mode de démonstration et essayer de réparer manuellement"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Redémarrer votre périphérique et démarrer à partir d'un autre disque"
+msgstr "Redémarrer le périphérique et démarrer à partir d'un autre disque"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
