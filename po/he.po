@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-06 10:02+0000\n"
+"PO-Revision-Date: 2021-05-20 06:36+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -184,34 +184,25 @@ msgid "Could Not Install"
 msgstr "לא ניתן להתקין"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"ההתקנה של %s נכשלה, כנראה עקב תקלת חומרה. יתכן שההתקן שלך לא יופעל מחדש "
-"כראוי. ניתן לנסות להיעזר באחת ההצעות הבאות:"
+"ההתקנה של %s נכשלה, כנראה עקב תקלת חומרה. יתכן שההתקן לא יופעל מחדש כראוי. "
+"ניתן לנסות להיעזר באחת ההצעות הבאות:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• לנסות להתקין שוב"
+msgstr "לנסות להתקין שוב"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• להשתמש במצב הדגמה ולנסות לשקם ידנית"
+msgstr "להשתמש במצב הדגמה ולנסות לשקם ידנית"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• להפעיל את ההתקן שלך מחדש כדי להעלות את ההתקן מכונן אחר"
+msgstr "להפעיל את ההתקן מחדש ולהעלות את ההתקן מכונן אחר"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
