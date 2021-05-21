@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-06 10:02+0000\n"
+"PO-Revision-Date: 2021-05-21 07:04+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
 "installer/ca/>\n"
@@ -192,10 +192,7 @@ msgid "Could Not Install"
 msgstr "No s'ha pogut instal·lar"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
@@ -204,22 +201,16 @@ msgstr ""
 "dispositiu pot no reiniciar-se correctament. Podeu intentar el següent:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Torneu a fer una instal·lació"
+msgstr "Torneu a fer una instal·lació."
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Useu el mode Demo i intenteu fer-ne una recuperació manualment"
+msgstr "Useu el mode Demo i intenteu fer-ne una recuperació manualment."
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Reinicieu el dispositiu per arrencar des d'una altra unitat"
+msgstr "Reinicieu el dispositiu per arrencar des d'una altra unitat."
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
