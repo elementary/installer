@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-06 17:14+0000\n"
+"PO-Revision-Date: 2021-05-21 13:56+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -198,37 +198,27 @@ msgid "Could Not Install"
 msgstr "Installation nicht möglich"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
 "Die Installation von %s ist fehlgeschlagen, möglicherweise aufgrund eines "
-"Hardware-Fehlers. Ihr Gerät startet eventuell nicht ordnungsgemäß neu. Sie "
+"Hardware-Fehlers. Das Gerät startet eventuell nicht ordnungsgemäß neu. Sie "
 "können Folgendes versuchen:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Versuchen Sie, die Installation erneut vorzunehmen"
+msgstr "Versuchen Sie, die Installation erneut vorzunehmen"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr ""
-"• Verwenden Sie den Testmodus und versuchen Sie eine manuelle "
-"Wiederherstellung"
+"Verwenden Sie den Testmodus und versuchen Sie eine manuelle Wiederherstellung"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Starten Sie Ihr Gerät neu, um von einem anderen Laufwerk zu starten"
+msgstr "Starten Sie das Gerät von einem anderen Datenträger neu"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -283,7 +273,6 @@ msgid "Currently active language"
 msgstr "Aktuell eingestellte Sprache"
 
 #: src/Views/PartitioningView.vala:54
-#, fuzzy
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
