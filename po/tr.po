@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-06 21:30+0000\n"
+"PO-Revision-Date: 2021-05-21 22:06+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -189,34 +189,25 @@ msgid "Could Not Install"
 msgstr "Yüklenemedi"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s' nin kurulumu başarısız oldu, donanımdan kaynaklı bir hata olabilir. "
-"Cihazınız düzgün şekilde başlatılamayabilir. Aşağıdakileri deneyebilirsiniz:"
+"%s kurulumu muhtemelen bir donanım hatası nedeniyle başarısız oldu. Cihaz "
+"düzgün şekilde başlatılamayabilir. Aşağıdakileri deneyebilirsiniz:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Kurulumu tekrarlayın"
+msgstr "Kurulumu tekrarlayın"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Demo Modu'nu kullanın ve elle kurtarmayı deneyin"
+msgstr "Demo Modu'nu kullanın ve el ile kurtarmayı deneyin"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Başka bir sürücüden başlatmak için cihazınızı yeniden başlatın"
+msgstr "Başka bir sürücüden başlatmak için cihazı yeniden başlatın"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
