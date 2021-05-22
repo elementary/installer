@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017–2018 elementary LLC. (https://elementary.io)
+ * Copyright 2017–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,71 +23,88 @@ public class ErrorView : AbstractInstallerView {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.END;
+        var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG) {
+            valign = Gtk.Align.END
+        };
 
-        var title_label = new Gtk.Label (_("Could Not Install"));
-        title_label.halign = Gtk.Align.CENTER;
-        title_label.max_width_chars = 60;
-        title_label.valign = Gtk.Align.START;
-        title_label.wrap = true;
-        title_label.xalign = 0;
-        title_label.get_style_context ().add_class ("h2");
+        var title_label = new Gtk.Label (_("Could Not Install")) {
+            valign = Gtk.Align.START
+        };
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. Your device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ()));
-        description_label.max_width_chars = 60;
-        description_label.wrap = true;
-        description_label.xalign = 0;
-        description_label.use_markup = true;
+        var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. The device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ())) {
+            margin_bottom = 12,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
+            wrap = true,
+            xalign = 0
+        };
 
-        var try_label = new Gtk.Label (_("• Try the installation again"));
-        try_label.max_width_chars = 60;
-        try_label.wrap = true;
-        try_label.xalign = 0;
-        try_label.use_markup = true;
+        var redo_image = new Gtk.Image.from_icon_name ("edit-undo-symbolic", Gtk.IconSize.MENU) {
+            margin_start = 6
+        };
 
-        var launch_label = new Gtk.Label (_("• Use Demo Mode and try to manually recover"));
-        launch_label.max_width_chars = 60;
-        launch_label.wrap = true;
-        launch_label.xalign = 0;
-        launch_label.use_markup = true;
+        var try_label = new Gtk.Label (_("Try the installation again")) {
+            hexpand = true,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
+            wrap = true,
+            xalign = 0
+        };
 
-        var restart_label = new Gtk.Label (_("• Restart your device to boot from another drive"));
-        restart_label.max_width_chars = 60;
-        restart_label.wrap = true;
-        restart_label.xalign = 0;
-        restart_label.use_markup = true;
+        var demo_image = new Gtk.Image.from_icon_name ("document-properties-symbolic", Gtk.IconSize.MENU) {
+            margin_start = 6
+        };
 
-        var terminal_button = new Gtk.ToggleButton ();
-        terminal_button.always_show_image = true;
-        terminal_button.halign = Gtk.Align.START;
-        terminal_button.label = _("Details");
-        terminal_button.margin_top = 18;
-        terminal_button.image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        var launch_label = new Gtk.Label (_("Use Demo Mode and try to manually recover")) {
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
+            wrap = true,
+            xalign = 0
+        };
+
+        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic", Gtk.IconSize.MENU) {
+            margin_start = 6
+        };
+
+        var restart_label = new Gtk.Label (_("Restart the device and boot from another drive")) {
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
+            wrap = true,
+            xalign = 0
+        };
+
+        var terminal_button = new Gtk.ToggleButton () {
+            always_show_image = true,
+            halign = Gtk.Align.START,
+            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            label = _("Details"),
+            margin_top = 12
+        };
         terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var buffer = new Gtk.TextBuffer (null);
-        buffer.text = log;
+        var buffer = new Gtk.TextBuffer (null) {
+            text = log
+        };
 
         var terminal_view = new Installer.Terminal (buffer);
 
         var terminal_revealer = new Gtk.Revealer ();
         terminal_revealer.add (terminal_view);
 
-        var grid = new Gtk.Grid ();
-        grid.orientation = Gtk.Orientation.VERTICAL;
-        grid.row_spacing = 6;
-        grid.valign = Gtk.Align.CENTER;
-        grid.add (description_label);
-        grid.add (try_label);
-        grid.add (launch_label);
-        grid.add (restart_label);
-        grid.add (terminal_button);
-        grid.add (terminal_revealer);
+        var grid = new Gtk.Grid () {
+            column_spacing = 6,
+            row_spacing = 12,
+            valign = Gtk.Align.CENTER
+        };
+        grid.attach (description_label, 0, 0, 2);
+        grid.attach (redo_image, 0, 1);
+        grid.attach (try_label, 1, 1);
+        grid.attach (demo_image, 0, 2);
+        grid.attach (launch_label, 1, 2);
+        grid.attach (restart_image, 0, 3);
+        grid.attach (restart_label, 1, 3);
+        grid.attach (terminal_button, 0, 4, 2);
+        grid.attach (terminal_revealer, 0, 5, 2);
 
         content_area.column_homogeneous = true;
-        content_area.halign = Gtk.Align.CENTER;
-        content_area.margin = 48;
+        content_area.margin_start = content_area.margin_end = 12;
         content_area.attach (image, 0, 0);
         content_area.attach (title_label, 0, 1);
         content_area.attach (grid, 1, 0, 1, 2);

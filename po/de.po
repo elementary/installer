@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-05-06 17:14+0000\n"
+"POT-Creation-Date: 2021-05-19 22:37+0000\n"
+"PO-Revision-Date: 2021-05-21 13:56+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -197,43 +197,42 @@ msgstr "Die Passwörter stimmen nicht überein"
 msgid "Could Not Install"
 msgstr "Installation nicht möglich"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:35
 #, c-format
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
 "Die Installation von %s ist fehlgeschlagen, möglicherweise aufgrund eines "
-"Hardware-Fehlers. Ihr Gerät startet eventuell nicht ordnungsgemäß neu. Sie "
+"Hardware-Fehlers. Das Gerät startet eventuell nicht ordnungsgemäß neu. Sie "
 "können Folgendes versuchen:"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
-msgstr "• Versuchen Sie, die Installation erneut vorzunehmen"
+#: src/Views/ErrorView.vala:46
+msgid "Try the installation again"
+msgstr "Versuchen Sie, die Installation erneut vorzunehmen"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
+#: src/Views/ErrorView.vala:57
+msgid "Use Demo Mode and try to manually recover"
 msgstr ""
-"• Verwenden Sie den Testmodus und versuchen Sie eine manuelle "
-"Wiederherstellung"
+"Verwenden Sie den Testmodus und versuchen Sie eine manuelle Wiederherstellung"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
-msgstr "• Starten Sie Ihr Gerät neu, um von einem anderen Laufwerk zu starten"
+#: src/Views/ErrorView.vala:67
+msgid "Restart the device and boot from another drive"
+msgstr "Starten Sie das Gerät von einem anderen Datenträger neu"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "Details"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Gerät neu starten"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Testmodus verwenden"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Installation erneut starten"
 
@@ -274,7 +273,6 @@ msgid "Currently active language"
 msgstr "Aktuell eingestellte Sprache"
 
 #: src/Views/PartitioningView.vala:54
-#, fuzzy
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -321,27 +319,27 @@ msgstr "Ungültiges Dateisystem für die Wurzelpartition"
 msgid "Invalid file system for home"
 msgstr "Ungültiges Dateisystem für das Home-Verzeichnis"
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
 msgstr "Protokoll anzeigen"
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
 msgstr "Protokoll ausblenden"
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "Laufwerk partionieren"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Dateien entpacken"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "System einrichten"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "Installation abschließen"
 
