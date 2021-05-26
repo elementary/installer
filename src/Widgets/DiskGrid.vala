@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016 elementary LLC. (https://elementary.io)
+ * Copyright 2016-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.DiskButton : Gtk.ToggleButton {
+public class Installer.DiskButton : Gtk.RadioButton {
     public string disk_name { get; construct; }
     public string icon_name { get; construct; }
     public string disk_path { get; construct; }
@@ -34,31 +33,39 @@ public class Installer.DiskButton : Gtk.ToggleButton {
     }
 
     construct {
-        get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        get_style_context ().add_class ("image-button");
 
-        var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
-        disk_image.use_fallback = true;
+        var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG) {
+            use_fallback = true
+        };
 
-        var name_label = new Gtk.Label (disk_name);
-        name_label.halign = Gtk.Align.START;
-        name_label.hexpand = true;
-        name_label.valign = Gtk.Align.END;
+        var name_label = new Gtk.Label (disk_name) {
+            ellipsize = Pango.EllipsizeMode.MIDDLE,
+            halign = Gtk.Align.START,
+            valign = Gtk.Align.END
+        };
+        name_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
-        var size_label = new Gtk.Label ("<small>%s %s</small>".printf (disk_path, GLib.format_size (size)));
-        size_label.halign = Gtk.Align.START;
-        size_label.use_markup = true;
-        size_label.valign = Gtk.Align.START;
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
+            ellipsize = Pango.EllipsizeMode.MIDDLE,
+            halign = Gtk.Align.START,
+            valign = Gtk.Align.START
+        };
 
-        var grid = new Gtk.Grid ();
-        grid.margin = 6;
-        grid.column_spacing = 6;
-        grid.row_spacing = 6;
-        grid.orientation = Gtk.Orientation.VERTICAL;
+        var grid = new Gtk.Grid () {
+            column_spacing = 3,
+            row_spacing = 6,
+            margin = 3,
+            margin_bottom = 0,
+            margin_top = 0,
+            hexpand = true
+        };
         grid.attach (disk_image, 0, 0, 1, 2);
-        grid.attach (name_label, 1, 0, 1, 1);
-        grid.attach (size_label, 1, 1, 1, 1);
+        grid.attach (name_label, 1, 0);
+        grid.attach (size_label, 1, 1);
+
         add (grid);
+
         notify["active"].connect (() => {
             if (active) {
                 unowned Configuration config = Configuration.get_default ();
