@@ -33,7 +33,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-
         input_variant_widget = new VariantWidget ();
 
         var keyboard_test_entry = new Gtk.Entry () {
