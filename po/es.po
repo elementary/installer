@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-01 21:30+0000\n"
-"PO-Revision-Date: 2021-05-26 14:44+0000\n"
+"PO-Revision-Date: 2021-06-02 04:05+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
@@ -123,10 +123,8 @@ msgid "Erase and Install"
 msgstr "Borrar e instalar"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Cifrado del disco"
+msgstr "Activar el cifrado de unidad"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -204,8 +202,6 @@ msgstr ""
 "siguiente:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "Intente la instalación nuevamente"
 
@@ -234,10 +230,8 @@ msgid "Try Installing Again"
 msgstr "Intentar instalar nuevamente"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "Disposición de teclado"
+msgstr "Seleccionar distribución del teclado"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
