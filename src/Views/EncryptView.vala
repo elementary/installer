@@ -47,7 +47,7 @@ public class EncryptView : AbstractInstallerView {
         overlay.add (image);
         overlay.add_overlay (overlay_image);
 
-        var title_label = new Gtk.Label (_("Drive Encryption")) {
+        var title_label = new Gtk.Label (_("Enable Drive Encryption")) {
             valign = Gtk.Align.START
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);

@@ -28,7 +28,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             valign = Gtk.Align.END
         };
 
-        var title_label = new Gtk.Label (_("Keyboard Layout")) {
+        var title_label = new Gtk.Label (_("Select Keyboard Layout")) {
             valign = Gtk.Align.START
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
