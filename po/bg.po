@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
 "PO-Revision-Date: 2018-04-17 19:35+0000\n"
 "Last-Translator: Alex Skywalker <alexskywalkerbg@gmail.com>\n"
 "Language-Team: Bulgarian <https://weblate.elementary.io/projects/installer/"
@@ -124,7 +124,7 @@ msgid "Erase and Install"
 msgstr "Изтрий и инсталирай"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
 msgstr ""
 
 #: src/Views/EncryptView.vala:57
@@ -230,7 +230,9 @@ msgid "Try Installing Again"
 msgstr "Опитайте да инсталирате отново"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
+#, fuzzy
+#| msgid "Keyboard Layout"
+msgid "Select Keyboard Layout"
 msgstr "Клавиатурна подредба"
 
 #: src/Views/KeyboardLayoutView.vala:39

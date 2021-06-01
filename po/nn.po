@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
 "PO-Revision-Date: 2019-01-05 02:45+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -124,7 +124,9 @@ msgid "Erase and Install"
 msgstr "Slett og installer"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
+#, fuzzy
+#| msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
 msgstr "Diskkryptering"
 
 #: src/Views/EncryptView.vala:57
@@ -245,7 +247,9 @@ msgid "Try Installing Again"
 msgstr "Prøv å installere igjen"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
+#, fuzzy
+#| msgid "Keyboard Layout"
+msgid "Select Keyboard Layout"
 msgstr "Tastaturoppsett"
 
 #: src/Views/KeyboardLayoutView.vala:39

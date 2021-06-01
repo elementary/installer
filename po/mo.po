@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
 "PO-Revision-Date: 2018-05-27 00:05+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/installer/"
@@ -121,7 +121,9 @@ msgid "Erase and Install"
 msgstr "Ștergeți și instalați"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
+#, fuzzy
+#| msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
 msgstr "Codarea unității"
 
 #: src/Views/EncryptView.vala:57
@@ -242,7 +244,9 @@ msgid "Try Installing Again"
 msgstr "Încercați să instalați din nou"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
+#, fuzzy
+#| msgid "Keyboard Layout"
+msgid "Select Keyboard Layout"
 msgstr "Configurarea tastaturii"
 
 #: src/Views/KeyboardLayoutView.vala:39

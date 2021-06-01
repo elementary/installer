@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
 "PO-Revision-Date: 2018-01-21 00:04+0000\n"
 "Last-Translator: Laurence Bahiirwa <laurence@mediauganda.com>\n"
 "Language-Team: Ganda <https://weblate.elementary.io/projects/installer/"
@@ -119,7 +119,7 @@ msgid "Erase and Install"
 msgstr "Gyako otekeko bupya"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
 msgstr ""
 
 #: src/Views/EncryptView.vala:57
@@ -223,7 +223,7 @@ msgid "Try Installing Again"
 msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
+msgid "Select Keyboard Layout"
 msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:39
