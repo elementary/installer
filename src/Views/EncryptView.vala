@@ -50,7 +50,6 @@ public class EncryptView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Enable Drive Encryption")) {
             valign = Gtk.Align.START
         };
-
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
