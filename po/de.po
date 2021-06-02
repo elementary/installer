@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-01 21:30+0000\n"
-"PO-Revision-Date: 2021-05-21 13:56+0000\n"
+"PO-Revision-Date: 2021-06-02 17:21+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -129,10 +129,8 @@ msgid "Erase and Install"
 msgstr "Löschen und installieren"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Laufwerksverschlüsselung"
+msgstr "Laufwerksverschlüsselung einschalten"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -239,10 +237,8 @@ msgid "Try Installing Again"
 msgstr "Installation erneut starten"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "Tastaturbelegung"
+msgstr "Tastaturbelegung wählen"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
