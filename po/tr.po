@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-01 21:30+0000\n"
-"PO-Revision-Date: 2021-05-21 22:06+0000\n"
+"PO-Revision-Date: 2021-06-02 17:21+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -122,10 +122,8 @@ msgid "Erase and Install"
 msgstr "Sil ve Kur"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Sürücü Şifrelemesi"
+msgstr "Sürücü Şifrelemesini Etkinleştir"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -228,10 +226,8 @@ msgid "Try Installing Again"
 msgstr "Tekrar Yüklemeyi Deneyin"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "Klavye Düzeni"
+msgstr "Klavye Düzeni Seçin"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
