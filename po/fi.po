@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-01 21:30+0000\n"
-"PO-Revision-Date: 2021-05-22 10:29+0000\n"
+"PO-Revision-Date: 2021-06-04 03:31+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -123,10 +123,8 @@ msgid "Erase and Install"
 msgstr "Tyhjennä ja asenna"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Levyn salaus"
+msgstr "Ota levyn salaus käyttöön"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -229,10 +227,8 @@ msgid "Try Installing Again"
 msgstr "Yritä asennusta uudelleen"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "Näppäimistön asettelu"
+msgstr "Valitse näppäimistön asettelu"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
