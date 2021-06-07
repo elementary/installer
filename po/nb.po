@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-06 01:56+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-03 09:11+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/installer/nb/>\n"
@@ -124,8 +124,10 @@ msgid "Erase and Install"
 msgstr "Slett og installer"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "Diskkryptering"
+#, fuzzy
+#| msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
+msgstr "Skru på diskkryptering"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -192,34 +194,25 @@ msgid "Could Not Install"
 msgstr "Kunne ikke installere"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installasjonen av %s feilet, så enheten din kan ha problemer med å starte på "
-"nytt. Prøv én av følgende:"
+"Installasjonen av %s mislyktes antagelig som følge av en maskinvarefeil. "
+"Enheten din kan ha problemer med å starte på nytt. Prøv én av følgende:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Prøv å installere igjen"
+msgstr "Prøv å installere igjen"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Bruk demo-modus for å prøve å tilbakestille manuelt"
+msgstr "Bruk demo-modus for å prøve å tilbakestille manuelt"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Start maskinen på nytt for å starte opp fra en annen lagringsstasjon"
+msgstr "Start enheten på nytt og start opp igjen fra en annen lagringsstasjon"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -238,8 +231,8 @@ msgid "Try Installing Again"
 msgstr "Prøv å installere igjen"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "Tastaturoppsett"
+msgid "Select Keyboard Layout"
+msgstr "Velg tastaturoppsett"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -390,10 +383,9 @@ msgid "Continue Setting Up"
 msgstr "Fortsett oppsett"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s har blitt installert."
+msgstr "%s har blitt installert"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"

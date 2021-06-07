@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
 "PO-Revision-Date: 2016-10-12 01:29+0200\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: \n"
@@ -114,7 +114,7 @@ msgid "Erase and Install"
 msgstr ""
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
 msgstr ""
 
 #: src/Views/EncryptView.vala:57
@@ -209,8 +209,10 @@ msgid "Try Installing Again"
 msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr ""
+#, fuzzy
+#| msgid "Select a Language"
+msgid "Select Keyboard Layout"
+msgstr "Kies 'n taal"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"

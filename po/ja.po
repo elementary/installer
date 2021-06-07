@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-06 13:53+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-02 04:05+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -124,8 +124,8 @@ msgid "Erase and Install"
 msgstr "削除してインストール"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "ドライブの暗号化"
+msgid "Enable Drive Encryption"
+msgstr "ドライブの暗号化を有効にする"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -191,35 +191,25 @@ msgid "Could Not Install"
 msgstr "インストールできませんでした"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s のインストールに失敗しました。ハードウェアのエラーが原因と思われます。お使"
-"いのデバイスは正しく再起動しない可能性があります。以下の操作を試すことができ"
-"ます。"
+"%s のインストールに失敗しました。ハードウェアのエラーが原因と思われます。デバ"
+"イスが正しく再起動しない可能性があります。以下の操作を試すことができます。"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• もう一度インストールしてみる"
+msgstr "インストールを再度試す"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• デモモードを使用して手動で回復してみる"
+msgstr "デモモードを使用して手動で回復してみる"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• デバイスを再起動して別のドライブから起動"
+msgstr "デバイスを再起動して別のドライブから起動"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -238,8 +228,8 @@ msgid "Try Installing Again"
 msgstr "もう一度インストールしてみる"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "キーボードレイアウト"
+msgid "Select Keyboard Layout"
+msgstr "キーボードレイアウトを選択"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"

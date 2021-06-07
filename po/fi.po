@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-06 07:41+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-04 03:31+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -123,8 +123,8 @@ msgid "Erase and Install"
 msgstr "Tyhjennä ja asenna"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "Levyn salaus"
+msgid "Enable Drive Encryption"
+msgstr "Ota levyn salaus käyttöön"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -190,35 +190,25 @@ msgid "Could Not Install"
 msgstr "Asentaminen ei onnistunut"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"\"%s\"-asennus epäonnistui mahdollisesti laitteistovirheen vuoksi. Laitteesi "
-"ei välttämättä käynnisty uudelleen kunnolla. Voit kokeilla jotain "
-"seuraavista:"
+"\"%s\"-asennus epäonnistui mahdollisesti laitteistovirheen vuoksi. Laite ei "
+"välttämättä käynnisty uudelleen kunnolla. Voit kokeilla jotain seuraavista:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Yrittää asennusta uudelleen"
+msgstr "Yrittää asennusta uudelleen"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Käyttää demotilaa ja yrittää palautusta käsin"
+msgstr "Käyttää demotilaa ja yrittää palautusta käsin"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Käynnistää laite uudelleen ja käynnistää laite toiselta asemalta"
+msgstr "Käynnistää laite uudelleen ja käynnistää laite toiselta asemalta"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -237,8 +227,8 @@ msgid "Try Installing Again"
 msgstr "Yritä asennusta uudelleen"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "Näppäimistön asettelu"
+msgid "Select Keyboard Layout"
+msgstr "Valitse näppäimistön asettelu"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -283,7 +273,7 @@ msgstr ""
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Sinun pitää ainakin valita <b>Juuri (/)</b> osio."
+msgstr "Sinun pitää ainakin valita <b>Juuri</b>-osio (/)."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -291,12 +281,12 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Sinun pitää ainakin valita <b>Juuri (/)</b> osio ja <b>Käynnistys (/boot/"
-"efi)</b> osio."
+"Sinun pitää ainakin valita <b>Juuri</b>- osio(/) ja <b>Käynnistys</b>-osio (/"
+"boot/efi)."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "On myös suositeltavaa valita <b>Swap</b> osio."
+msgstr "On myös suositeltavaa valita <b>Swap</b>-osio."
 
 #: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"

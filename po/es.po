@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-18 05:17+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-02 04:05+0000\n"
+"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
 "Language: es\n"
@@ -123,8 +123,8 @@ msgid "Erase and Install"
 msgstr "Borrar e instalar"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "Cifrado del disco"
+msgid "Enable Drive Encryption"
+msgstr "Activar el cifrado de unidad"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -192,10 +192,7 @@ msgid "Could Not Install"
 msgstr "No se pudo instalar"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
@@ -205,22 +202,16 @@ msgstr ""
 "siguiente:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Intentar instalar nuevamente"
+msgstr "Intente la instalación nuevamente"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Utilizar el modo de demostración y probar la recuperación manual"
+msgstr "Utilice el modo de demostración e intente recuperar manualmente"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Reiniciar el dispositivo para arrancar desde otra unidad"
+msgstr "Reinicie el dispositivo y arranque desde otra unidad"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -239,8 +230,8 @@ msgid "Try Installing Again"
 msgstr "Intentar instalar nuevamente"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "Disposición de teclado"
+msgid "Select Keyboard Layout"
+msgstr "Seleccionar distribución del teclado"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"

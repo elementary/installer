@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 22:37+0000\n"
-"PO-Revision-Date: 2021-05-20 02:29+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-02 04:05+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -125,8 +125,8 @@ msgid "Erase and Install"
 msgstr "Стерти й встановити"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "Шифрування диска"
+msgid "Enable Drive Encryption"
+msgstr "Увімкнути шифрування диска"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -160,7 +160,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
-msgstr "Вибрати пароль шифрування"
+msgstr "Обрати пароль шифрування"
 
 #: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
@@ -177,7 +177,7 @@ msgstr "Назад"
 
 #: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
-msgstr "Виберіть пароль"
+msgstr "Оберіть пароль"
 
 #: src/Views/EncryptView.vala:184
 msgid "Set Password"
@@ -230,8 +230,8 @@ msgid "Try Installing Again"
 msgstr "Повторити спробу встановлення"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "Розкладка клавіатури"
+msgid "Select Keyboard Layout"
+msgstr "Вибрати розкладку клавіатури"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
