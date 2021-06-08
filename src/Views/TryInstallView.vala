@@ -98,7 +98,6 @@ public class Installer.TryInstallView : AbstractInstallerView {
             if (demo_button.active) {
                 next_button.label = demo_button.title;
                 next_button.sensitive = true;
-                next_button.clicked.connect (Utils.demo_mode);
             }
         });
 
@@ -106,7 +105,6 @@ public class Installer.TryInstallView : AbstractInstallerView {
             if (clean_install_button.active) {
                 next_button.label = clean_install_button.title;
                 next_button.sensitive = true;
-                next_button.clicked.connect (() => next_step ());
             }
         });
 
@@ -114,7 +112,16 @@ public class Installer.TryInstallView : AbstractInstallerView {
             if (custom_button.active) {
                 next_button.label = _("Custom Install");
                 next_button.sensitive = true;
-                next_button.clicked.connect (() => custom_step ());
+            }
+        });
+
+        next_button.clicked.connect (() => {
+            if (demo_button.active) {
+                Utils.demo_mode ();
+            } else if (clean_install_button.active) {
+                next_step ();
+            } else if (custom_button.active) {
+                custom_step ();
             }
         });
 
