@@ -39,13 +39,7 @@ public class ProgressView : AbstractInstallerView {
             // We need this for the shadow to not get clipped by Gtk.Overlay
             margin = 6
         };
-        logo.set_image_load_func ((size) => {
-            try {
-                return new Gdk.Pixbuf.from_file_at_scale ("/usr/share/backgrounds/elementaryos-default", -1, size, true);
-            } catch (Error e) {
-                critical (e.message);
-            }
-        });
+        logo.loadable_icon = new FileIcon (File.new_for_path ("/usr/share/backgrounds/elementaryos-default"));
         logo.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var icon = new Gtk.Image () {
