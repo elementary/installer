@@ -81,3 +81,9 @@ levelbar block.none {
     background-color: @SILVER_300;
 }
 
+levelbar block image {
+    -gtk-icon-palette: error #fff, success #fff, warning #fff;
+    -gtk-icon-shadow:
+        0 1px 1px alpha(#000, 0.2),
+        0 1px 3px alpha(#000, 0.1);
+}
