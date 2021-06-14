@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 02:24+0000\n"
-"PO-Revision-Date: 2021-05-04 10:19+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-04 03:31+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -20,28 +20,28 @@ msgstr ""
 msgid "Install %s"
 msgstr "Asenna %s"
 
-#: src/Utils.vala:33
+#: src/Utils.vala:34
 msgid "Test mode shutdown"
 msgstr "Testitilan sammutus"
 
-#: src/Utils.vala:47
+#: src/Utils.vala:48
 msgid "Test mode reboot"
 msgstr "Testitilan uudelleenkäynnistys"
 
-#: src/Utils.vala:73
+#: src/Utils.vala:74
 msgid "Test mode switch user"
 msgstr "Testitila vaihda käyttäjä"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:217
+#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:49
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Peru asennus"
 
-#: src/Views/AbstractInstallerView.vala:58
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "Testitila"
 
@@ -102,11 +102,11 @@ msgstr "Suoritin:"
 msgid "Memory:"
 msgstr "Muisti:"
 
-#: src/Views/DiskView.vala:51
+#: src/Views/DiskView.vala:36
 msgid "Select a Drive"
 msgstr "Valitse asema"
 
-#: src/Views/DiskView.vala:55
+#: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -114,23 +114,23 @@ msgstr ""
 "Tämä poistaa kaikki valitulla asemalla olevat tiedot. Jos et ole "
 "varmuuskopioinut tietojasi, voit perua asennuksen ja käyttää demotilaa."
 
-#: src/Views/DiskView.vala:65 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
 msgid "Getting the current configuration…"
 msgstr "Haetaan nykyisiä määrityksiä…"
 
-#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
 msgid "Erase and Install"
 msgstr "Tyhjennä ja asenna"
 
-#: src/Views/EncryptView.vala:48
-msgid "Drive Encryption"
-msgstr "Levyn salaus"
+#: src/Views/EncryptView.vala:50
+msgid "Enable Drive Encryption"
+msgstr "Ota levyn salaus käyttöön"
 
-#: src/Views/EncryptView.vala:54
+#: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
 msgstr "Tiedot suojataan muilta, joilla on fyysinen pääsy tälle laitteelle."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:66
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -138,7 +138,7 @@ msgstr ""
 "Salauksen salasana vaaditaan joka kerta, kun tämä laite käynnistetään. "
 "Talleta se jonnekin turvallisesti."
 
-#: src/Views/EncryptView.vala:70
+#: src/Views/EncryptView.vala:74
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -146,7 +146,7 @@ msgstr ""
 "Sisäänrakennettu tai USB-väylässä oleva näppäimistö vaaditaan salauksen "
 "salasanan kirjoittamiseksi joka kerta, kun laite käynnistetään."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:92
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -156,32 +156,32 @@ msgstr ""
 "</b> Kyseessä on ainutlaatuinen salasana tälle laitteelle, ei "
 "käyttäjätililläsi käytettävä salasana."
 
-#: src/Views/EncryptView.vala:94
+#: src/Views/EncryptView.vala:102
 msgid "Choose Encryption Password"
 msgstr "Valitse salauksen salasana"
 
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:116
 msgid "Confirm Password"
 msgstr "Vahvista salasana"
 
-#: src/Views/EncryptView.vala:145
+#: src/Views/EncryptView.vala:155
 msgid "Don't Encrypt"
 msgstr "Älä salaa"
 
-#: src/Views/EncryptView.vala:146 src/Views/KeyboardLayoutView.vala:58
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:67
+#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Takaisin"
 
-#: src/Views/EncryptView.vala:148 src/Views/EncryptView.vala:164
+#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
 msgid "Choose Password"
 msgstr "Valitse salasana"
 
-#: src/Views/EncryptView.vala:173
+#: src/Views/EncryptView.vala:184
 msgid "Set Password"
 msgstr "Aseta salasana"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:247
 msgid "Passwords do not match"
 msgstr "Salasanat eivät täsmää"
 
@@ -189,65 +189,64 @@ msgstr "Salasanat eivät täsmää"
 msgid "Could Not Install"
 msgstr "Asentaminen ei onnistunut"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:35
 #, c-format
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"\"%s\"-asennus epäonnistui mahdollisesti laitteistovirheen vuoksi. Laitteesi "
-"ei välttämättä käynnisty uudelleen kunnolla. Voit kokeilla jotain "
-"seuraavista:"
+"\"%s\"-asennus epäonnistui mahdollisesti laitteistovirheen vuoksi. Laite ei "
+"välttämättä käynnisty uudelleen kunnolla. Voit kokeilla jotain seuraavista:"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
-msgstr "• Yrittää asennusta uudelleen"
+#: src/Views/ErrorView.vala:46
+msgid "Try the installation again"
+msgstr "Yrittää asennusta uudelleen"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Käyttää demotilaa ja yrittää palautusta käsin"
+#: src/Views/ErrorView.vala:57
+msgid "Use Demo Mode and try to manually recover"
+msgstr "Käyttää demotilaa ja yrittää palautusta käsin"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
-msgstr "• Käynnistää laite uudelleen ja käynnistää laite toiselta asemalta"
+#: src/Views/ErrorView.vala:67
+msgid "Restart the device and boot from another drive"
+msgstr "Käynnistää laite uudelleen ja käynnistää laite toiselta asemalta"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "Tiedot"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Käynnistä laite uudelleen"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:75
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Kokeile demotilaa"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Yritä asennusta uudelleen"
 
-#: src/Views/KeyboardLayoutView.vala:32
-msgid "Keyboard Layout"
-msgstr "Näppäimistön asettelu"
+#: src/Views/KeyboardLayoutView.vala:31
+msgid "Select Keyboard Layout"
+msgstr "Valitse näppäimistön asettelu"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Kirjoita testataksesi näppäimistön asettelua"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Näytä näppäimistön asettelu"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Valitse"
 
-#: src/Views/KeyboardLayoutView.vala:123
+#: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
 msgstr "Oletus"
 
-#: src/Views/KeyboardLayoutView.vala:130
+#: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
 msgstr "Syötekieli"
 
@@ -274,7 +273,7 @@ msgstr ""
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Sinun pitää ainakin valita <b>Juuri (/)</b> osio."
+msgstr "Sinun pitää ainakin valita <b>Juuri</b>-osio (/)."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -282,12 +281,12 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Sinun pitää ainakin valita <b>Juuri (/)</b> osio ja <b>Käynnistys (/boot/"
-"efi)</b> osio."
+"Sinun pitää ainakin valita <b>Juuri</b>- osio(/) ja <b>Käynnistys</b>-osio (/"
+"boot/efi)."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "On myös suositeltavaa valita <b>Swap</b> osio."
+msgstr "On myös suositeltavaa valita <b>Swap</b>-osio."
 
 #: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
@@ -309,40 +308,35 @@ msgstr "Väärä tiedostojärjestelmä juurelle"
 msgid "Invalid file system for home"
 msgstr "Väärä tiedostojärjestelmä kotihakemistolle"
 
-#: src/Views/ProgressView.vala:186
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
+msgid "Show log"
+msgstr "Näytä loki"
+
+#: src/Views/ProgressView.vala:102
+msgid "Hide log"
+msgstr "Piilota loki"
+
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "Osioidaan asema"
 
-#: src/Views/ProgressView.vala:190
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Puretaan tiedostoja"
 
-#: src/Views/ProgressView.vala:194
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Määritetään järjestelmää"
 
-#: src/Views/ProgressView.vala:198
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "Valmistellaan asennusta"
 
-#: src/Views/TryInstallView.vala:44
+#: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
 msgstr "Yritä tai asenna"
 
-#: src/Views/TryInstallView.vala:48
-#, c-format
-msgid ""
-"You can install %s on this device now, or try Demo Mode without installing."
-msgstr ""
-"%s on nyt mahdollista asentaa laitteelle, tai voit kokeilla demotilaa "
-"asentamatta."
-
-#: src/Views/TryInstallView.vala:70 src/Views/TryInstallView.vala:113
-#: src/Views/TryInstallView.vala:130 src/Views/TryInstallView.vala:147
-msgid "Next"
-msgstr "Seuraava"
-
-#: src/Views/TryInstallView.vala:77
+#: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -351,20 +345,20 @@ msgstr ""
 "käyttöjärjestelmästäsi ei muuteta. Suorituskyky ja ominaisuudet eivät "
 "välttämättä vastaa asennetun ympäristön kokemusta."
 
-#: src/Views/TryInstallView.vala:81
-msgid "Clean Install"
-msgstr "Puhdas asennus"
+#: src/Views/TryInstallView.vala:46
+msgid "Erase Disk and Install"
+msgstr "Tyhjennä levy ja asenna"
 
-#: src/Views/TryInstallView.vala:83
+#: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Poista kaikki ja asenna %s."
 
-#: src/Views/TryInstallView.vala:87
-msgid "Custom (Advanced)"
-msgstr "Mukautettu (lisäasetukset)"
+#: src/Views/TryInstallView.vala:54
+msgid "Custom Install (Advanced)"
+msgstr "Mukautettu asennus (lisäasetukset)"
 
-#: src/Views/TryInstallView.vala:89
+#: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -372,33 +366,41 @@ msgstr ""
 "Luo osioita, muuta niiden kokoa ja hallitse niitä käsin. Tämä tapa saattaa "
 "johtaa tietojen katoamiseen."
 
-#: src/Views/SuccessView.vala:26
+#: src/Views/TryInstallView.vala:87
+msgid "Next"
+msgstr "Seuraava"
+
+#: src/Views/TryInstallView.vala:115
+msgid "Custom Install"
+msgstr "Mukautettu asennus"
+
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Jatka asentamista"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/SuccessView.vala:33
 #, c-format
-msgid "%s has been installed."
-msgstr "%s on asennettu."
+msgid "%s has been installed"
+msgstr "%s on asennettu"
 
-#: src/Views/SuccessView.vala:36
+#: src/Views/SuccessView.vala:62
+msgid "Shut Down"
+msgstr "Sammuta"
+
+#: src/Views/SuccessView.vala:96
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "Laitteesi käynnistyy uudelleen automaattisesti %i sekunnissa."
 msgstr[1] "Laitteesi käynnistyy uudelleen automaattisesti %i sekunnissa."
 
-#: src/Views/SuccessView.vala:40
+#: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
 "Uudelleenkäynnistyksen jälkeen voit luoda uuden käyttäjän, tai voit "
 "sammuttaa laitteen nyt ja luoda käyttäjän myöhemmin."
-
-#: src/Views/SuccessView.vala:60
-msgid "Shut Down"
-msgstr "Sammuta"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -481,6 +483,16 @@ msgstr "Tiedostojärjestelmä:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Oletus (ext4)"
+
+#~ msgid ""
+#~ "You can install %s on this device now, or try Demo Mode without "
+#~ "installing."
+#~ msgstr ""
+#~ "%s on nyt mahdollista asentaa laitteelle, tai voit kokeilla demotilaa "
+#~ "asentamatta."
+
+#~ msgid "Clean Install"
+#~ msgstr "Puhdas asennus"
 
 #~ msgid ""
 #~ "Read and write speeds may be minimally impacted during intense tasks."

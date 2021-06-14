@@ -25,7 +25,7 @@ public class EncryptView : AbstractInstallerView {
     private ValidatedEntry pw_entry;
     private Gtk.LevelBar pw_levelbar;
 
-    private const int INFO_LABEL_CHARS = 52;
+    private const int INFO_LABEL_CHARS = 45;
 
     public EncryptView () {
         Object (cancellable: false);
@@ -34,24 +34,28 @@ public class EncryptView : AbstractInstallerView {
     construct {
         var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
 
-        var overlay_image = new Gtk.Image.from_icon_name ("security-high", Gtk.IconSize.DND);
-        overlay_image.halign = Gtk.Align.END;
-        overlay_image.valign = Gtk.Align.END;
+        var overlay_image = new Gtk.Image.from_icon_name ("security-high", Gtk.IconSize.DND) {
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.END
+        };
 
-        var overlay = new Gtk.Overlay ();
-        overlay.halign = Gtk.Align.CENTER;
-        overlay.valign = Gtk.Align.END;
-        overlay.width_request = 60;
+        var overlay = new Gtk.Overlay () {
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.END,
+            width_request = 60
+        };
         overlay.add (image);
         overlay.add_overlay (overlay_image);
 
-        var title_label = new Gtk.Label (_("Drive Encryption"));
+        var title_label = new Gtk.Label (_("Enable Drive Encryption")) {
+            valign = Gtk.Align.START
+        };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-        title_label.valign = Gtk.Align.START;
 
         var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         var protect_label = new Gtk.Label (_("Data will be protected from others with physical access to this device.")) {
+            hexpand = true,
             max_width_chars = INFO_LABEL_CHARS,
             wrap = true,
             xalign = 0
@@ -84,12 +88,16 @@ public class EncryptView : AbstractInstallerView {
         choice_grid.attach (keyboard_image, 0, 2);
         choice_grid.attach (keyboard_label, 1, 2);
 
-        var description = new Gtk.Label (_("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account."));
-        description.margin_bottom = 12;
-        description.max_width_chars = 60;
-        description.use_markup = true;
-        description.wrap = true;
-        description.xalign = 0;
+        var description = new Gtk.Label (
+            _("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account.")
+        ) {
+            hexpand = true,
+            margin_bottom = 12,
+            max_width_chars = INFO_LABEL_CHARS,
+            use_markup = true,
+            wrap = true,
+            xalign = 0
+        };
 
         var pw_label = new Granite.HeaderLabel (_("Choose Encryption Password"));
 
@@ -99,7 +107,6 @@ public class EncryptView : AbstractInstallerView {
         pw_entry = new ValidatedEntry ();
         pw_entry.visibility = false;
 
-        pw_levelbar = new Gtk.LevelBar ();
         pw_levelbar = new Gtk.LevelBar.for_interval (0.0, 100.0);
         pw_levelbar.set_mode (Gtk.LevelBarMode.CONTINUOUS);
         pw_levelbar.add_offset_value ("low", 50.0);
@@ -108,16 +115,18 @@ public class EncryptView : AbstractInstallerView {
 
         var confirm_label = new Granite.HeaderLabel (_("Confirm Password"));
 
-        confirm_entry = new ValidatedEntry ();
-        confirm_entry.sensitive = false;
-        confirm_entry.visibility = false;
+        confirm_entry = new ValidatedEntry () {
+            sensitive = false,
+            visibility = false
+        };
 
         confirm_entry_revealer = new ErrorRevealer (".");
         confirm_entry_revealer.label_widget.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
 
-        var password_grid = new Gtk.Grid ();
-        password_grid.orientation = Gtk.Orientation.VERTICAL;
-        password_grid.row_spacing = 3;
+        var password_grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL,
+            row_spacing = 3
+        };
         password_grid.add (description);
         password_grid.add (pw_label);
         password_grid.add (pw_entry);
@@ -127,26 +136,28 @@ public class EncryptView : AbstractInstallerView {
         password_grid.add (confirm_entry);
         password_grid.add (confirm_entry_revealer);
 
-        var stack = new Gtk.Stack ();
-        stack.homogeneous = false;
-        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.valign = Gtk.Align.CENTER;
-        stack.vexpand = true;
+        var stack = new Gtk.Stack () {
+            vhomogeneous = false,
+            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT,
+            valign = Gtk.Align.CENTER,
+            vexpand = true
+        };
         stack.add (choice_grid);
         stack.add (password_grid);
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;
         content_area.margin_start = 12;
-        content_area.attach (overlay, 0, 0, 1, 1);
-        content_area.attach (title_label, 0, 1, 1, 1);
+        content_area.attach (overlay, 0, 0);
+        content_area.attach (title_label, 0, 1);
         content_area.attach (stack, 1, 0, 1, 2);
 
         var no_encrypt_button = new Gtk.Button.with_label (_("Don't Encrypt"));
         var back_button = new Gtk.Button.with_label (_("Back"));
 
-        next_button = new Gtk.Button.with_label (_("Choose Password"));
-        next_button.can_default = true;
+        next_button = new Gtk.Button.with_label (_("Choose Password")) {
+            can_default = true
+        };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_area.add (no_encrypt_button);
