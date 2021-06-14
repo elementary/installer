@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 20:35+0000\n"
+"POT-Creation-Date: 2021-06-14 22:31+0000\n"
 "PO-Revision-Date: 2021-03-04 15:31+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/installer/"
@@ -45,15 +45,15 @@ msgstr "ස්ථාපනය අවලංගු කරන්න"
 msgid "Test Mode"
 msgstr "පරීක්ෂණ මාදිලිය"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "නොසලකාහරින්න"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "ප්රමාණවත් ඉඩකඩක් නැත"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "%s ස්ථාපනය කිරීමට ඔබේ උපාංගයේ ප්රමාණවත් ඉඩක් නොමැත. අපි අවම වශයෙන් %s ඉඩක් ගබඩා කිරීම "
 "සදහා නිර්දේශ කරනවා."
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "ඔබගේ උපාංගය සමහරවිට මන්දගාමීයි"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,11 +74,11 @@ msgstr ""
 "ඔබගේ උපාංගය නිර්දේශිත දෘඪාංග අවශ්යතා සපුරන්නේ නැත. මෙය සෙමින් ධාවනය වීමට හෝ අත්හිටුවීමට "
 "ඉඩ ඇත."
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "බලශක්ති ප්රභවයකට සම්බන්ධ කරන්න"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -86,19 +86,19 @@ msgstr ""
 "ඔබගේ උපාංගය බැටරි බලය මත ක්රියාත්මක වේ. ස්ථාපනය කරන අතරතුර සම්බන්ධ කර ලෙස නිර්දේශ කරනු "
 "ලැබේ."
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "නිර්දේශිත:"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "ඔබගේ උපාංගය:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "සකසනය:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "මතකය:"
 
@@ -122,22 +122,36 @@ msgstr "වත්මන් සැකසුම ලබා ගැනීම…"
 msgid "Erase and Install"
 msgstr "මකා ස්ථාපනය කරන්න"
 
+#: src/Views/EncryptView.vala:28
+#, fuzzy
+#| msgid "Don't Encrypt"
+msgid "Don’t Encrypt"
+msgstr "ගුප්තකේතනය නොකරන්න"
+
 #: src/Views/EncryptView.vala:50
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "ධාවක ගුප්තකේතනය"
 
-#: src/Views/EncryptView.vala:57
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
+msgstr ""
+
+#: src/Views/EncryptView.vala:65
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
 #| "physical access to this device."
-msgid "Data will be protected from others with physical access to this device."
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
 msgstr ""
 "දාවකය ගුප්තකේතනය කිරීමෙන් මෙම උපාංගයට භෞතික ප්රවේශයකින් දත්ත කියවීමට ලබානොදී ආරක්ෂා කරයි."
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:74
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -149,13 +163,13 @@ msgstr ""
 "මෙම උපකරණය නැවත ආරම්භ වන විට හෝ නැවත ආරම්භ කිරීම සඳහා සෑම විටම ගුප්තකේතන මුරපදයක් අවශ්ය "
 "වේ."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -164,32 +178,30 @@ msgstr ""
 "ඔබ ගුප්තකේතන මුරපදය අමතක නම්, <b> ඔබට දත්ත ආපසු ලබාගැනීමට නොහැකි වනු ඇත. </b> මෙම "
 "උපාංගය සඳහා මෙම සුවිශේෂී මුරපදය වන අතර, ඔබගේ පරිශීලක ගිණුම සඳහා රහස් පදය නොවේ."
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "ගුප්තකේතන මුරපදය තෝරන්න"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "මුරපදය තහවුරු කරන්න"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "ගුප්තකේතනය නොකරන්න"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "ආපසු"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "මුර පදයක් තෝරන්න"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "මුරපදය සකසන්න"
+#: src/Views/EncryptView.vala:191
+#, fuzzy
+#| msgid "Choose Encryption Password"
+msgid "Set Encryption Password"
+msgstr "ගුප්තකේතන මුරපදය තෝරන්න"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "මුර පද ගැලපෙන්නේ නැත"
 
@@ -502,6 +514,9 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr ""
+
+#~ msgid "Set Password"
+#~ msgstr "මුරපදය සකසන්න"
 
 #, fuzzy
 #~ msgid "Clean Install"

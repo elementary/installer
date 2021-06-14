@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 20:35+0000\n"
+"POT-Creation-Date: 2021-06-14 22:31+0000\n"
 "PO-Revision-Date: 2021-03-21 22:19+0000\n"
 "Last-Translator: Shukrullo Turgunov <shookrullo@gmail.com>\n"
 "Language-Team: Uzbek <https://l10n.elementary.io/projects/installer/"
@@ -45,15 +45,15 @@ msgstr "O'rnatishni bekor qilish"
 msgid "Test Mode"
 msgstr "Sinab ko'rish tartibi"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "Tashlab ketish"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "Joy yetarli emas"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "%sni o'rnatish uchun qurilmangizda yetarli joy mavjud emas. Kamida %s joy "
 "talab etiladi."
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "Sizning qurilmangiz judayam sekin ishlashi mumkin"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,11 +74,11 @@ msgstr ""
 "Sizning qurilmangiz tavsiya etiladigan talablarga javob bermaydi. Bu esa "
 "qurilmangiz sekin ishlashiga yoki qotib qolishiga olib kelishi mumkin."
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "Ta'minot qurilmasiga ulang"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -86,19 +86,19 @@ msgstr ""
 "Sizning qurilmangiz hozir batareyadan ishlamoqda. O'rnatish vaqtida ta'minot "
 "manbaiga ulab olish tavsiya etiladi."
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "Tavsiyalar:"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "Sizning qurilmangiz:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "Protsessor:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "Xotira:"
 
@@ -123,19 +123,36 @@ msgstr "Joriy konfiguratsiyalarni olish…"
 msgid "Erase and Install"
 msgstr "Tozalash va o'rnatish"
 
+#: src/Views/EncryptView.vala:28
+#, fuzzy
+#| msgid "Don't Encrypt"
+msgid "Don’t Encrypt"
+msgstr "Shifrlash shart emas"
+
 #: src/Views/EncryptView.vala:50
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "Diskni shifrlash"
 
-#: src/Views/EncryptView.vala:57
-msgid "Data will be protected from others with physical access to this device."
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
+msgstr ""
+
+#: src/Views/EncryptView.vala:65
+#, fuzzy
+#| msgid ""
+#| "Data will be protected from others with physical access to this device."
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
 msgstr ""
 "Ushbu qurilmalarga jismonan kirish huquqi bo'lgan shaxslardan ma'lumotlarni "
 "himoyalaydi."
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -143,7 +160,7 @@ msgstr ""
 "Har safar qurilmani yoqqanda shifrlash parolini kiritish talab etiladi. Uni "
 "havfsiz joyda saqlang."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -151,7 +168,7 @@ msgstr ""
 "Ushbu qurilmani har safar yoqganingizda shifrlash parolini kiritish uchun "
 "sizga ichki yoki USB klaviatura kerak bo'ladi."
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -161,32 +178,30 @@ msgstr ""
 "qayta tiklay olmaysiz. </b> Bu foydalanuvchi hisob qaydnomasi uchun parol "
 "emas, balki ushbu qurilma uchun noyob paroldir."
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "Shifrlash parolini tanlang"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "Parolni qaytadan kiriting"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "Shifrlash shart emas"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Orqaga"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Parolni kiriting"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "Parolni o'rnatish"
+#: src/Views/EncryptView.vala:191
+#, fuzzy
+#| msgid "Choose Encryption Password"
+msgid "Set Encryption Password"
+msgstr "Shifrlash parolini tanlang"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Parollar mos kelmadi"
 
@@ -490,3 +505,6 @@ msgstr "Fayl tizimi:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Odatiy (ext4)"
+
+#~ msgid "Set Password"
+#~ msgstr "Parolni o'rnatish"

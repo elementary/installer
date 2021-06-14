@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 20:35+0000\n"
+"POT-Creation-Date: 2021-06-14 22:31+0000\n"
 "PO-Revision-Date: 2020-06-07 10:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
@@ -45,15 +45,15 @@ msgstr "Zrušit instalaci"
 msgid "Test Mode"
 msgstr "Testovací režim"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "Ignorovat"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "Nedostatek místa"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "Na úložišti počítače není dostatek místa pro instalaci %s. Doporučujeme "
 "minimálně %s prostoru."
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "Váš počítač může být příliš pomalý"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,11 +74,11 @@ msgstr ""
 "Váš počítač nesplňuje doporučené hardwarové požadavky, což může způsobovat "
 "zpomalování nebo úplné zamrznutí."
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "Připojte zdroj napájení"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -86,19 +86,19 @@ msgstr ""
 "Váš počítač je nyní napájen z akumulátoru. Doporučujeme ho po dobu instalace "
 "připojit k napájení z elektrické sítě."
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "Doporučeno:"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "Váš počítač:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "Procesor:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "Operační paměť:"
 
@@ -122,19 +122,36 @@ msgstr "Zjišťování stávajícího uspořádání…"
 msgid "Erase and Install"
 msgstr "Vymazat a nainstalovat"
 
+#: src/Views/EncryptView.vala:28
+#, fuzzy
+#| msgid "Don't Encrypt"
+msgid "Don’t Encrypt"
+msgstr "Nešifrovat"
+
 #: src/Views/EncryptView.vala:50
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "Šifrování jednotky"
 
-#: src/Views/EncryptView.vala:57
-msgid "Data will be protected from others with physical access to this device."
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
+msgstr ""
+
+#: src/Views/EncryptView.vala:65
+#, fuzzy
+#| msgid ""
+#| "Data will be protected from others with physical access to this device."
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
 msgstr ""
 "Data budou chráněna před ostatními, kteří mají k tomuto počítači fyzický "
 "přístup."
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -142,13 +159,13 @@ msgstr ""
 "Šifrovací heslo bude vyžadováno pokaždé, když tento počítač zapnete. Uložte "
 "si ho někde bezpečně."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -158,32 +175,30 @@ msgstr ""
 "se o samostatné heslo k celému počítači, ne heslo k vašemu uživatelskému "
 "účtu."
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "Zvolte šifrovací heslo"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "Potvrďte heslo"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "Nešifrovat"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Zpět"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Zvolte si heslo"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "Nastavit heslo"
+#: src/Views/EncryptView.vala:191
+#, fuzzy
+#| msgid "Choose Encryption Password"
+msgid "Set Encryption Password"
+msgstr "Zvolte šifrovací heslo"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Zadání hesla se neshodují"
 
@@ -508,6 +523,9 @@ msgstr "Souborový systém:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Výchozí (ext4)"
+
+#~ msgid "Set Password"
+#~ msgstr "Nastavit heslo"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

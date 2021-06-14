@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 20:35+0000\n"
+"POT-Creation-Date: 2021-06-14 22:31+0000\n"
 "PO-Revision-Date: 2021-06-04 03:31+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
@@ -45,15 +45,15 @@ msgstr "Peru asennus"
 msgid "Test Mode"
 msgstr "Testitila"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "Ohita"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "Tilaa ei ole riittävästi"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "Ei riittävästi vapaata tilaa, jotta %s olisi mahdollista asentaa. "
 "Suosittelemme tallennustilan kapasiteetiksi vähintään %s."
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "Laitteesi saattaa olla liian hidas"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,11 +74,11 @@ msgstr ""
 "Laitteesi ei täytä suositeltuja vaatimuksia laitteiston suhteen. Tämän "
 "vuoksi järjestelmä saattaa toimia hitaasti."
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "Yhdistä virtalähteeseen"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -86,19 +86,19 @@ msgstr ""
 "Laitteesi toimii akkuvirralla. On suositeltavaa yhdistää laite verkkovirtaan "
 "asennuksen ajaksi."
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "Suositeltu:"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "Laitteesi:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "Suoritin:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "Muisti:"
 
@@ -122,15 +122,32 @@ msgstr "Haetaan nykyisiä määrityksiä…"
 msgid "Erase and Install"
 msgstr "Tyhjennä ja asenna"
 
+#: src/Views/EncryptView.vala:28
+#, fuzzy
+#| msgid "Don't Encrypt"
+msgid "Don’t Encrypt"
+msgstr "Älä salaa"
+
 #: src/Views/EncryptView.vala:50
 msgid "Enable Drive Encryption"
 msgstr "Ota levyn salaus käyttöön"
 
-#: src/Views/EncryptView.vala:57
-msgid "Data will be protected from others with physical access to this device."
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
+msgstr ""
+
+#: src/Views/EncryptView.vala:65
+#, fuzzy
+#| msgid ""
+#| "Data will be protected from others with physical access to this device."
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
 msgstr "Tiedot suojataan muilta, joilla on fyysinen pääsy tälle laitteelle."
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -138,7 +155,7 @@ msgstr ""
 "Salauksen salasana vaaditaan joka kerta, kun tämä laite käynnistetään. "
 "Talleta se jonnekin turvallisesti."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -146,7 +163,7 @@ msgstr ""
 "Sisäänrakennettu tai USB-väylässä oleva näppäimistö vaaditaan salauksen "
 "salasanan kirjoittamiseksi joka kerta, kun laite käynnistetään."
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -156,32 +173,30 @@ msgstr ""
 "</b> Kyseessä on ainutlaatuinen salasana tälle laitteelle, ei "
 "käyttäjätililläsi käytettävä salasana."
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "Valitse salauksen salasana"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "Vahvista salasana"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "Älä salaa"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Takaisin"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Valitse salasana"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "Aseta salasana"
+#: src/Views/EncryptView.vala:191
+#, fuzzy
+#| msgid "Choose Encryption Password"
+msgid "Set Encryption Password"
+msgstr "Valitse salauksen salasana"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Salasanat eivät täsmää"
 
@@ -487,6 +502,9 @@ msgstr "Tiedostojärjestelmä:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Oletus (ext4)"
+
+#~ msgid "Set Password"
+#~ msgstr "Aseta salasana"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "
