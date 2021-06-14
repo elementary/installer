@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"POT-Creation-Date: 2021-06-14 20:35+0000\n"
 "PO-Revision-Date: 2021-06-02 22:27+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
@@ -311,27 +311,31 @@ msgstr "Sistema de fitxers no vàlid per a l'arrel"
 msgid "Invalid file system for home"
 msgstr "Sistema de fitxers no vàlid per a la partició de l'usuari"
 
-#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
+#: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr "Mostra'n el registre"
 
-#: src/Views/ProgressView.vala:102
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr "Amaga'n el registre"
 
-#: src/Views/ProgressView.vala:226
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:221
 msgid "Partitioning Drive"
 msgstr "Es parteix el dispositiu"
 
-#: src/Views/ProgressView.vala:230
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:226
 msgid "Extracting Files"
 msgstr "S'extreuen fitxers"
 
-#: src/Views/ProgressView.vala:234
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:231
 msgid "Configuring the System"
 msgstr "Es configura el sistema"
 
-#: src/Views/ProgressView.vala:238
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:236
 msgid "Finishing the Installation"
 msgstr "S'acaba la instal·lació"
 
@@ -373,7 +377,7 @@ msgstr ""
 msgid "Next"
 msgstr "Següent"
 
-#: src/Views/TryInstallView.vala:115
+#: src/Views/TryInstallView.vala:113
 msgid "Custom Install"
 msgstr "Instal·lació personalitzada"
 
