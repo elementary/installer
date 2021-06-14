@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016-2017 elementary LLC. (https://elementary.io)
+ * Copyright 2016-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -215,25 +214,23 @@ public class Installer.CheckView : AbstractInstallerView {
 
         switch (next_state) {
             case State.SPACE:
-                var grid = setup_grid (
+                var grid = new CheckView (
                     _("Not Enough Space"),
                     _("There is not enough room on your device to install %s. We recommend a minimum of %s of storage.".printf (Utils.get_pretty_name (), GLib.format_size (MINIMUM_SPACE))),
                     "drive-harddisk"
                 );
-                grid.show_all ();
 
                 stack.add (grid);
                 stack.set_visible_child (grid);
                 break;
 
             case State.SPECS:
-                var grid = setup_grid (
+                var grid = new CheckView (
                     _("Your Device May Be Too Slow"),
                     _("Your device doesn't meet the recommended hardware requirements. This may cause it to run slowly or freeze."),
                     "application-x-firmware"
                 );
-                grid.attach (get_comparison_grid (), 1, 2, 1, 1);
-                grid.show_all ();
+                grid.attach (get_comparison_grid (), 1, 2);
 
                 if (ignore_button.parent == null) {
                     action_area.add (ignore_button);
@@ -244,12 +241,11 @@ public class Installer.CheckView : AbstractInstallerView {
                 break;
 
             case State.POWERED:
-                var grid = setup_grid (
+                var grid = new CheckView (
                     _("Connect to a Power Source"),
                     _("Your device is running on battery power. It's recommended to be plugged in while installing."),
                     "battery-ac-adapter"
                 );
-                grid.show_all ();
 
                 if (ignore_button.parent == null) {
                     action_area.add (ignore_button);
@@ -264,39 +260,35 @@ public class Installer.CheckView : AbstractInstallerView {
         current_state = next_state;
     }
 
-    private Gtk.Grid setup_grid (string title, string description, string icon_name) {
-        var title_label = new Gtk.Label (title);
-        title_label.get_style_context ().add_class ("h2");
-        title_label.wrap = true;
-        title_label.max_width_chars = 60;
-        title_label.valign = Gtk.Align.START;
+    private class CheckView : Gtk.Grid {
+        public CheckView (string title, string description, string icon_name) {
+            var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG) {
+                valign = Gtk.Align.END
+            };
 
-        var description_label = new Gtk.Label (description);
-        description_label.wrap = true;
-        description_label.max_width_chars = 60;
-        description_label.xalign = 0;
-        description_label.valign = Gtk.Align.CENTER;
-        description_label.vexpand = true;
+            var title_label = new Gtk.Label (title) {
+                valign = Gtk.Align.START
+            };
+            title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
-        image.valign = Gtk.Align.END;
+            var description_label = new Gtk.Label (description) {
+                max_width_chars = 1, // Make Gtk wrap, but not expand the window
+                wrap = true,
+                xalign = 0
+            };
 
-        var grid = new Gtk.Grid ();
-        grid.column_homogeneous = true;
-        grid.column_spacing = 12;
-        grid.expand = true;
-        grid.halign = Gtk.Align.CENTER;
-        grid.margin = 48;
-        grid.margin_start = grid.margin_end = 12;
-        grid.row_spacing = 6;
-        grid.valign = Gtk.Align.CENTER;
-        grid.vexpand = true;
+            column_homogeneous = true;
+            column_spacing = 12;
+            row_spacing = 12;
+            expand = true;
+            margin_end = 10;
+            margin_start = 10;
+            valign = Gtk.Align.CENTER;
 
-        grid.attach (image, 0, 0, 1, 1);
-        grid.attach (title_label, 0, 1, 1, 1);
-        grid.attach (description_label, 1, 0, 1, 2);
-
-        return grid;
+            attach (image, 0, 0);
+            attach (title_label, 0, 1);
+            attach (description_label, 1, 0, 1, 2);
+        }
     }
 
     private Gtk.Grid get_comparison_grid () {
