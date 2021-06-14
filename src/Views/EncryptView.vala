@@ -62,7 +62,7 @@ public class EncryptView : AbstractInstallerView {
 
         var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
-        var protect_label = new Gtk.Label (_("Data will be protected from others with physical access to this device when it is shut down.")) {
+        var protect_label = new Gtk.Label (_("Data will only be protected from others with physical access to this device when it is shut down.")) {
             hexpand = true,
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
