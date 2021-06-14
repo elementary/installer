@@ -37,47 +37,47 @@ levelbar block.legend {
 }
 
 levelbar block.swap {
-    background-color: #C22E1E;
+    background-color: @STRAWBERRY_500;
 }
 
 levelbar block.ext4 {
-    background-color: #4EA845;
+    background-color: @LIME_500;
 }
 
 levelbar block.ext3 {
-    background-color: #428F3B;
+    background-color: @MINT_500;
 }
 
 levelbar block.ext2 {
-    background-color: #367530;
+    background-color: @BUBBLEGUM_500;
 }
 
 levelbar block.fat16,
 levelbar block.fat32 {
-    background-color: #CACA32;
+    background-color: @BANANA_500;
 }
 
 levelbar block.btrfs {
-    background-color: #3940A0;
+    background-color: @BLUEBERRY_500;
 }
 
 levelbar block.xfs {
-    background-color: #6D57D3;
+    background-color: @SLATE_100;
 }
 
 levelbar block.ntfs {
-    background-color: #BE791F;
+    background-color: @COCOA_300;
 }
 
 levelbar block.luks {
-    background-color: #813BA4;
+    background-color: @ORANGE_500;
 }
 
 levelbar block.lvm {
-    background-color: #9444BD;
+    background-color: @GRAPE_500;
 }
 
 levelbar block.none {
-    background-color: #3199CB;
+    background-color: @SILVER_300;
 }
 
