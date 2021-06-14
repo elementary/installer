@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 20:35+0000\n"
+"POT-Creation-Date: 2021-06-14 22:31+0000\n"
 "PO-Revision-Date: 2020-01-08 00:07+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/installer/"
@@ -46,15 +46,15 @@ msgstr "Prekliči namestitev"
 msgid "Test Mode"
 msgstr "Demonstracijski način"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "Ignoriraj"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "Ni dovolj prostora"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgid ""
 msgstr ""
 "Ni dovolj prostora na disku za namestitev %s. Priporočamo vsaj %s prostora."
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "Vaš računalnik je prepočasen"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,29 +74,29 @@ msgstr ""
 "Vaš računalnik ne izpolnjuje minimalnih zahtev. Zaradi tega bo morda deloval "
 "počasi ali zmrzoval."
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "Priklop napajanja"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr "Vaš računalnik deluje z baterije. Priporočamo priklop na elektriko."
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "Priporočeno:"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "Vaš računalnik:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "Procesor:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "Pomnilnik:"
 
@@ -120,23 +120,37 @@ msgstr "Pridobivam trenutno konfiguracijo…"
 msgid "Erase and Install"
 msgstr "Izbriši in namesti"
 
+#: src/Views/EncryptView.vala:28
+#, fuzzy
+#| msgid "Don't Encrypt"
+msgid "Don’t Encrypt"
+msgstr "Ne šifriraj"
+
 #: src/Views/EncryptView.vala:50
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "Šifriranje pogona"
 
-#: src/Views/EncryptView.vala:57
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
+msgstr ""
+
+#: src/Views/EncryptView.vala:65
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
 #| "physical access to this device."
-msgid "Data will be protected from others with physical access to this device."
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
 msgstr ""
 "Šifriranje tega pogona prepreči drugim osebam s fizičnim dostopom do "
 "računalnika dostop do podatkov."
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:74
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -146,13 +160,13 @@ msgid ""
 "Store it somewhere safe."
 msgstr "Pri vsakem vklopu računalnika bo potrebno vpisati geslo."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -161,32 +175,30 @@ msgstr ""
 "Če pozabite geslo, <b>ne boste več nikoli mogli dostopati do podatkov.</b> "
 "To je unikatno geslo za ta računalnik in je drugačno od gesla za vaš račun."
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "Izberite geslo za šifriranje"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "Ponovite geslo"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "Ne šifriraj"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Nazaj"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Izberite geslo"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "Nastavi geslo"
+#: src/Views/EncryptView.vala:191
+#, fuzzy
+#| msgid "Choose Encryption Password"
+msgid "Set Encryption Password"
+msgstr "Izberite geslo za šifriranje"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Gesli se ne ujemata"
 
@@ -517,6 +529,9 @@ msgstr "Datotečni sistem:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Privzet (ext4)"
+
+#~ msgid "Set Password"
+#~ msgstr "Nastavi geslo"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

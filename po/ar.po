@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 20:35+0000\n"
+"POT-Creation-Date: 2021-06-14 22:31+0000\n"
 "PO-Revision-Date: 2020-05-21 13:11+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
@@ -46,56 +46,56 @@ msgstr "إلغاء التثبيت"
 msgid "Test Mode"
 msgstr "الوضع التجريبي"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "تجاهل"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "لا يوجد مساحة كافية"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr "ليس هناك مساحة كافية لتثبيت %s. ننصح باتاحة مساحة %s على الأقل."
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "قد يكون جهازك بطيئا جدا"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
 "جهازك لا يطابق المواصفات المقترحة. هذا قد يسبب بطء في الجهاز أو توقف في عمله."
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "اشبك منفذ طاقة"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
 "جهازك يعمل الآن على البطارية. من المفضل أن توصله بمنفذ طاقة خلال التثبيت."
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "موصى به:"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "جهازك:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "المعالج:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "الذاكرة:"
 
@@ -119,30 +119,47 @@ msgstr "الحصول على الإعدادات الحالية …"
 msgid "Erase and Install"
 msgstr "امسح و ثبت"
 
+#: src/Views/EncryptView.vala:28
+#, fuzzy
+#| msgid "Don't Encrypt"
+msgid "Don’t Encrypt"
+msgstr "لا تشفر"
+
 #: src/Views/EncryptView.vala:50
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "تشفير القرص"
 
-#: src/Views/EncryptView.vala:57
-msgid "Data will be protected from others with physical access to this device."
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
+msgstr ""
+
+#: src/Views/EncryptView.vala:65
+#, fuzzy
+#| msgid ""
+#| "Data will be protected from others with physical access to this device."
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
 msgstr "البيانات ستكون محمية من الآخرين مع سماح للوصول بشكل فيزيائي."
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
 "كلمة سر التشفير ستكون مطلوبة في كل مرة تقوم بفتح الجهاز. احفظها بمكان آمن."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -151,32 +168,30 @@ msgstr ""
 "إذا نسيت كلمة سر التشفير، <b> لن تكون قادرا على استعادة البيانات.</b> كلمة "
 "سر هذه مميزة للقرص الخاص بك، ليست كلمة السر الخاصة بحسابك."
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "إختر كلمة سر مشفرة"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "تأكيد كلمة المرور"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "لا تشفر"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "للخلف"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "إختر كلمة السر"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "حدد كلمة السر"
+#: src/Views/EncryptView.vala:191
+#, fuzzy
+#| msgid "Choose Encryption Password"
+msgid "Set Encryption Password"
+msgstr "إختر كلمة سر مشفرة"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "كلمتا المرور غير متطابقتين"
 
@@ -503,6 +518,9 @@ msgstr "نظام الملفات:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "الافتراضي (ext4)"
+
+#~ msgid "Set Password"
+#~ msgstr "حدد كلمة السر"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "
