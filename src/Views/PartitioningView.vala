@@ -23,7 +23,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     private Gtk.Button next_button;
     private Gtk.Button modify_partitions_button;
-    private Gtk.Box disk_list;
+    private Gtk.Grid disk_list;
     private Gtk.Stack load_stack;
     private string required_description;
 
@@ -48,7 +48,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
     construct {
         mounts = new Gee.ArrayList<Installer.Mount> ();
         luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
-        margin = 12;
 
         var base_description = _("Select which partitions to use across all drives. <b>Selecting \"Format\" will erase ALL data on the selected partition.</b>");
 
@@ -73,15 +72,15 @@ public class Installer.PartitioningView : AbstractInstallerView {
         );
 
         var description = new Gtk.Label (full_description);
-        description.margin_bottom = description.margin_bottom = 24;
         description.max_width_chars = 72;
         description.use_markup = true;
         description.wrap = true;
 
-        disk_list = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        disk_list.valign = Gtk.Align.START;
-        disk_list.margin = 6;
-        disk_list.margin_end = 12;
+        disk_list = new Gtk.Grid () {
+            row_spacing = 24,
+            orientation = Gtk.Orientation.VERTICAL,
+            valign = Gtk.Align.CENTER
+        };
 
         var disk_scroller = new Gtk.ScrolledWindow (null, null);
         disk_scroller.hexpand = true;
@@ -94,7 +93,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_spinner.start ();
 
         var load_label = new Gtk.Label (_("Getting the current configuration…"));
-        load_label.get_style_context ().add_class ("h2");
+        load_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var load_grid = new Gtk.Grid ();
         load_grid.row_spacing = 12;
@@ -110,16 +109,14 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_stack.add_named (load_grid, "loading");
         load_stack.add_named (disk_scroller, "disk");
 
-        content_area.attach (load_stack, 0, 0);
-        content_area.attach (description, 0, 1);
+        content_area.margin = 12;
+        content_area.attach (description, 0, 0);
+        content_area.attach (load_stack, 0, 1);
 
         load_disks.begin ();
 
         modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
         modify_partitions_button.clicked.connect (() => open_partition_editor ());
-        action_area.add (modify_partitions_button);
-        action_area.set_child_secondary (modify_partitions_button, true);
-        action_area.set_child_non_homogeneous (modify_partitions_button, true);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
@@ -127,6 +124,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
 
+        action_area.add (modify_partitions_button);
+        action_area.set_child_secondary (modify_partitions_button, true);
+        action_area.set_child_non_homogeneous (modify_partitions_button, true);
         action_area.add (back_button);
         action_area.add (next_button);
 
@@ -162,7 +162,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             }
 
             var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-            disk_list.pack_start (disk_bar);
+            disk_list.add (disk_bar);
         }
 
         foreach (unowned InstallerDaemon.Disk disk in disks.logical_disks) {
@@ -213,7 +213,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
 
         var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-        disk_list.pack_start (disk_bar);
+        disk_list.add (disk_bar);
     }
 
     private void validate_status () {

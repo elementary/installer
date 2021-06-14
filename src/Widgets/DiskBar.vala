@@ -111,7 +111,6 @@ public class Installer.DiskBar: Gtk.Grid {
 
         column_spacing = 12;
         hexpand = true;
-        margin = 6;
         get_style_context ().add_class (Granite.STYLE_CLASS_STORAGEBAR);
         attach (label, 0, 1);
         attach (legend, 1, 0);
