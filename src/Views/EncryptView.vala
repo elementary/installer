@@ -163,15 +163,10 @@ public class EncryptView : AbstractInstallerView {
         content_area.attach (title_label, 0, 1);
         content_area.attach (stack, 1, 0, 1, 2);
 
-        // We've committed to installing, so this is not to go back to a
-        // previous step, it's to switch back from password_grid to choice_grid
         var back_button = new Gtk.Button.with_label (_("Back"));
 
-        // User has chosen to encrypt, so go to password_grid
         var encrypt_button = new Gtk.Button.with_label (_("Choose Password"));
 
-        // If we're on choice_grid, this skips encryption. If we're on
-        // password_grid, it sets the password
         next_button = new Gtk.Button.with_label (SKIP_STRING) {
             can_default = true
         };
@@ -202,12 +197,11 @@ public class EncryptView : AbstractInstallerView {
         });
 
         next_button.clicked.connect (() => {
-            if (stack.visible_child == choice_grid) {
-                next_step ();
-            } else if (stack.visible_child == password_grid) {
+            if (stack.visible_child == password_grid) {
                 Configuration.get_default ().encryption_password = pw_entry.text;
-                next_step ();
             }
+
+            next_step ();
         });
 
         pw_entry.changed.connect (() => {
