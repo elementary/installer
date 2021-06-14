@@ -217,19 +217,23 @@ public class ProgressView : AbstractInstallerView {
             double fraction = ((double) status.percent) / (100.0 * NUM_STEP);
             switch (status.step) {
                 case Distinst.Step.PARTITION:
-                    step_string = _("Partitioning Drive…");
+                    ///TRANSLATORS: The current step of the installer back-end
+                    step_string = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
                     fraction += 2 * (1.0 / NUM_STEP);
-                    step_string = _("Extracting Files…");
+                    ///TRANSLATORS: The current step of the installer back-end
+                    step_string = _("Extracting Files");
                     break;
                 case Distinst.Step.CONFIGURE:
                     fraction += 3 * (1.0 / NUM_STEP);
-                    step_string = _("Configuring the System…");
+                    ///TRANSLATORS: The current step of the installer back-end
+                    step_string = _("Configuring the System");
                     break;
                 case Distinst.Step.BOOTLOADER:
                     fraction += 4 * (1.0 / NUM_STEP);
-                    step_string = _("Finishing the Installation…");
+                    ///TRANSLATORS: The current step of the installer back-end
+                    step_string = _("Finishing the Installation");
                     break;
             }
 
