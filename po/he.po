@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-03-12 08:51+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-02 04:05+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -120,8 +120,8 @@ msgid "Erase and Install"
 msgstr "למחוק ולהתקין"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "הצפנת כונן"
+msgid "Enable Drive Encryption"
+msgstr "הפעלת הצפנת כונן"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -183,46 +183,46 @@ msgstr "הססמאות אינן תואמות"
 msgid "Could Not Install"
 msgstr "לא ניתן להתקין"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:35
 #, c-format
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"ההתקנה של %s נכשלה, כנראה עקב תקלת חומרה. יתכן שההתקן שלך לא יופעל מחדש "
-"כראוי. ניתן לנסות להיעזר באחת ההצעות הבאות:"
+"ההתקנה של %s נכשלה, כנראה עקב תקלת חומרה. יתכן שההתקן לא יופעל מחדש כראוי. "
+"ניתן לנסות להיעזר באחת ההצעות הבאות:"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
-msgstr "• לנסות להתקין שוב"
+#: src/Views/ErrorView.vala:46
+msgid "Try the installation again"
+msgstr "לנסות להתקין שוב"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
-msgstr "• להשתמש במצב הדגמה ולנסות לשקם ידנית"
+#: src/Views/ErrorView.vala:57
+msgid "Use Demo Mode and try to manually recover"
+msgstr "להשתמש במצב הדגמה ולנסות לשקם ידנית"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
-msgstr "• להפעיל את ההתקן שלך מחדש כדי להעלות את ההתקן מכונן אחר"
+#: src/Views/ErrorView.vala:67
+msgid "Restart the device and boot from another drive"
+msgstr "להפעיל את ההתקן מחדש ולהעלות את ההתקן מכונן אחר"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "פרטים"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "הפעלת ההתקן מחדש"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "התנסות במצב הדגמה"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "לנסות להתקין שוב"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "פריסת מקלדת"
+msgid "Select Keyboard Layout"
+msgstr "בחירת פריסת מקלדת"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -301,27 +301,27 @@ msgstr "מערכת הקבצים למחיצת השורש שגויה"
 msgid "Invalid file system for home"
 msgstr "מערכת הקבצים למחיצת הבית שגויה"
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
-msgstr ""
+msgstr "להציג יומן"
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
-msgstr ""
+msgstr "להסתיר יומן"
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "הכונן מחולק למחיצות"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "הקבצים מחולצים"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "המערכת מוגדרת"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "ההתקנה מסתיימת"
 
@@ -338,10 +338,8 @@ msgstr ""
 "הביצועים והתכונות לא משקפים באופן מלא את החוויה ממערכת מותקנת."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "למחוק ולהתקין"
+msgstr "למחוק את הכונן ולהתקין"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -349,10 +347,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "למחוק הכול ולהתקין עותק רענן של %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "התאמה אישית (מתקדם)"
+msgstr "התקנה בהתאמה אישית (מתקדם)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -367,20 +363,17 @@ msgid "Next"
 msgstr "הבא"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "לא ניתן להתקין"
+msgstr "התקנה בהתאמה אישית"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "המשך ההתקנה"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s הותקן."
+msgstr "%s הותקן"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"

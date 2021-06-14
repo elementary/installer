@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2020-05-25 20:11+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-05 23:54+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/installer/"
 "installer/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:42
@@ -123,8 +123,8 @@ msgid "Erase and Install"
 msgstr "Slet og installer"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "Drev Kryptering"
+msgid "Enable Drive Encryption"
+msgstr "Aktiver Drev Kryptering"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -145,6 +145,8 @@ msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"Et indbygget eller USB keyboard vil være krævet for at indtaste krypterings "
+"kodeordet hvergang denne enhed starter."
 
 #: src/Views/EncryptView.vala:92
 msgid ""
@@ -189,46 +191,46 @@ msgstr "Adgangskoderne er ikke ens"
 msgid "Could Not Install"
 msgstr "Kunne Ikke Installere"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:35
 #, c-format
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installering af %s mislykkedes, muligvis på grund af en hardwarefejl. Din "
-"enhed vil muligvis ikke starte korrekt. Du kan prøve følgende:"
+"Installering af %s mislykkedes, muligvis på grund af en hardwarefejl. "
+"Enheden vil muligvis ikke starte korrekt. Du kan prøve følgende:"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
-msgstr "• Prøv installationen igen"
+#: src/Views/ErrorView.vala:46
+msgid "Try the installation again"
+msgstr "Prøv installationen igen"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Brug Demo Tilstand og prøv manuelt at gendanne"
+#: src/Views/ErrorView.vala:57
+msgid "Use Demo Mode and try to manually recover"
+msgstr "Brug Demo Tilstand og prøv manuelt at gendanne"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
-msgstr "• Genstart din enhed for at starte fra et andet drev"
+#: src/Views/ErrorView.vala:67
+msgid "Restart the device and boot from another drive"
+msgstr "Genstart din enhed for at starte fra et andet drev"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "Detaljer"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Genstart Enhed"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Prøv Demo Tilstand"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Prøv at installere igen"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "Tastatur Layout"
+msgid "Select Keyboard Layout"
+msgstr "Vælg Tastatur Layout"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -308,27 +310,27 @@ msgstr "Ugyldigt filsystem til root"
 msgid "Invalid file system for home"
 msgstr "Ugyldigt filsystem til home"
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
-msgstr ""
+msgstr "Vis log"
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
-msgstr ""
+msgstr "Skjul log"
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "Partitionerer drev"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Udpakker filer"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Konfigurerer systemet"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "Færdiggører Installationen"
 
@@ -346,10 +348,8 @@ msgstr ""
 "ikke den installerede oplevelse."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Slet og installer"
+msgstr "Slet Disk og Installer"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -357,10 +357,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Slet alt og installer en frisk kopi af %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Brugerdefineret (Avanceret)"
+msgstr "Brugerdefineret Installering (Avanceret)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -375,10 +373,8 @@ msgid "Next"
 msgstr "Næste"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Kunne Ikke Installere"
+msgstr "Brugerdefineret Installering"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -387,19 +383,18 @@ msgstr "Forsæt Opsætning"
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s er blevet installeret"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
 msgstr "Sluk"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "Din enhed genstarter automatisk til %s om %i sekunder."
-msgstr[1] "Din enhed genstarter automatisk til %s om %i sekunder."
+msgstr[0] "Din enhed genstarter automatisk om %i sekund."
+msgstr[1] "Din enhed genstarter automatisk om %i sekunder."
 
 #: src/Views/SuccessView.vala:100
 msgid ""

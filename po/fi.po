@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-05-04 10:19+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-04 03:31+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -123,8 +123,8 @@ msgid "Erase and Install"
 msgstr "Tyhjennä ja asenna"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "Levyn salaus"
+msgid "Enable Drive Encryption"
+msgstr "Ota levyn salaus käyttöön"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -189,47 +189,46 @@ msgstr "Salasanat eivät täsmää"
 msgid "Could Not Install"
 msgstr "Asentaminen ei onnistunut"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:35
 #, c-format
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"\"%s\"-asennus epäonnistui mahdollisesti laitteistovirheen vuoksi. Laitteesi "
-"ei välttämättä käynnisty uudelleen kunnolla. Voit kokeilla jotain "
-"seuraavista:"
+"\"%s\"-asennus epäonnistui mahdollisesti laitteistovirheen vuoksi. Laite ei "
+"välttämättä käynnisty uudelleen kunnolla. Voit kokeilla jotain seuraavista:"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
-msgstr "• Yrittää asennusta uudelleen"
+#: src/Views/ErrorView.vala:46
+msgid "Try the installation again"
+msgstr "Yrittää asennusta uudelleen"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Käyttää demotilaa ja yrittää palautusta käsin"
+#: src/Views/ErrorView.vala:57
+msgid "Use Demo Mode and try to manually recover"
+msgstr "Käyttää demotilaa ja yrittää palautusta käsin"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
-msgstr "• Käynnistää laite uudelleen ja käynnistää laite toiselta asemalta"
+#: src/Views/ErrorView.vala:67
+msgid "Restart the device and boot from another drive"
+msgstr "Käynnistää laite uudelleen ja käynnistää laite toiselta asemalta"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "Tiedot"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Käynnistä laite uudelleen"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Kokeile demotilaa"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Yritä asennusta uudelleen"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "Näppäimistön asettelu"
+msgid "Select Keyboard Layout"
+msgstr "Valitse näppäimistön asettelu"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -274,7 +273,7 @@ msgstr ""
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Sinun pitää ainakin valita <b>Juuri (/)</b> osio."
+msgstr "Sinun pitää ainakin valita <b>Juuri</b>-osio (/)."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:64
@@ -282,12 +281,12 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Sinun pitää ainakin valita <b>Juuri (/)</b> osio ja <b>Käynnistys (/boot/"
-"efi)</b> osio."
+"Sinun pitää ainakin valita <b>Juuri</b>- osio(/) ja <b>Käynnistys</b>-osio (/"
+"boot/efi)."
 
 #: src/Views/PartitioningView.vala:68
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "On myös suositeltavaa valita <b>Swap</b> osio."
+msgstr "On myös suositeltavaa valita <b>Swap</b>-osio."
 
 #: src/Views/PartitioningView.vala:119
 msgid "Modify Partitions…"
@@ -309,27 +308,27 @@ msgstr "Väärä tiedostojärjestelmä juurelle"
 msgid "Invalid file system for home"
 msgstr "Väärä tiedostojärjestelmä kotihakemistolle"
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
-msgstr ""
+msgstr "Näytä loki"
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
-msgstr ""
+msgstr "Piilota loki"
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "Osioidaan asema"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Puretaan tiedostoja"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Määritetään järjestelmää"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "Valmistellaan asennusta"
 
@@ -347,10 +346,8 @@ msgstr ""
 "välttämättä vastaa asennetun ympäristön kokemusta."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Tyhjennä ja asenna"
+msgstr "Tyhjennä levy ja asenna"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -358,10 +355,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Poista kaikki ja asenna %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Mukautettu (lisäasetukset)"
+msgstr "Mukautettu asennus (lisäasetukset)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -376,20 +371,17 @@ msgid "Next"
 msgstr "Seuraava"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Asentaminen ei onnistunut"
+msgstr "Mukautettu asennus"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Jatka asentamista"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s on asennettu."
+msgstr "%s on asennettu"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"

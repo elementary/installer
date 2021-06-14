@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
 "PO-Revision-Date: 2018-05-27 00:05+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/installer/"
@@ -121,7 +121,9 @@ msgid "Erase and Install"
 msgstr "Ștergeți și instalați"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
+#, fuzzy
+#| msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
 msgstr "Codarea unității"
 
 #: src/Views/EncryptView.vala:57
@@ -195,45 +197,56 @@ msgstr "Parolele nu se potrivesc"
 msgid "Could Not Install"
 msgstr "Nu sa putet instala"
 
-#: src/Views/ErrorView.vala:38
-#, c-format
+#: src/Views/ErrorView.vala:35
+#, fuzzy, c-format
+#| msgid ""
+#| "Installing %s failed, possibly due to a hardware error. Your device may "
+#| "not restart properly. You can try the following:"
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
 "Instalarea %s 1 a eșuat, posibil din cauza unei erori de hardware. Este "
 "posibil ca Pc Dvs. să nu se repornească corect. Puteți încerca următoarele:"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
+#: src/Views/ErrorView.vala:46
+#, fuzzy
+#| msgid "• Try the installation again"
+msgid "Try the installation again"
 msgstr "• Încercați instalarea din nou"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
+#: src/Views/ErrorView.vala:57
+#, fuzzy
+#| msgid "• Use Demo Mode and try to manually recover"
+msgid "Use Demo Mode and try to manually recover"
 msgstr "• Utilizați modul Demo și încercați să recuperați manualmente"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
+#: src/Views/ErrorView.vala:67
+#, fuzzy
+#| msgid "• Restart your device to boot from another drive"
+msgid "Restart the device and boot from another drive"
 msgstr "• Reporniți dispozitivul pentru a porni de la o altă unitate"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Reporniți dispozitivul"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Încercați modul Demo"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Încercați să instalați din nou"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
+#, fuzzy
+#| msgid "Keyboard Layout"
+msgid "Select Keyboard Layout"
 msgstr "Configurarea tastaturii"
 
 #: src/Views/KeyboardLayoutView.vala:39
@@ -314,27 +327,27 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "Unitate de partiționare"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Extragerea fișierelor"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Configurarea sistemului"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "Finalizarea instalării"
 

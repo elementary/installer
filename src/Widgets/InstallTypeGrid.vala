@@ -48,9 +48,9 @@ public class Installer.InstallTypeButton : Gtk.RadioButton {
         };
 
         var grid = new Gtk.Grid () {
-            column_spacing = 6,
+            column_spacing = 3,
             row_spacing = 6,
-            margin = 6
+            margin = 3
         };
         grid.attach (image, 0, 0, 1, 2);
         grid.attach (title_label, 1, 0);

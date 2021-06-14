@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
 "PO-Revision-Date: 2019-07-06 01:28+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/installer/"
@@ -125,7 +125,9 @@ msgid "Erase and Install"
 msgstr "Ištrinti ir įdiegti"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
+#, fuzzy
+#| msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
 msgstr "Disko šifravimas"
 
 #: src/Views/EncryptView.vala:57
@@ -199,46 +201,57 @@ msgstr "Slaptažodžiai nesutampa"
 msgid "Could Not Install"
 msgstr "Nepavyko įdiegti"
 
-#: src/Views/ErrorView.vala:38
-#, c-format
+#: src/Views/ErrorView.vala:35
+#, fuzzy, c-format
+#| msgid ""
+#| "Installing %s failed, possibly due to a hardware error. Your device may "
+#| "not restart properly. You can try the following:"
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
 "%s įdiegimas nepavyko, tikriausiai, dėl aparatinės įrangos klaidos. Jūsų "
 "įrenginiui gali nepavykti tinkamai pasileisti iš naujo. Galite pabandyti "
 "vieną iš šių variantų:"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
+#: src/Views/ErrorView.vala:46
+#, fuzzy
+#| msgid "• Try the installation again"
+msgid "Try the installation again"
 msgstr "• Bandyti įdiegti dar kartą"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
+#: src/Views/ErrorView.vala:57
+#, fuzzy
+#| msgid "• Use Demo Mode and try to manually recover"
+msgid "Use Demo Mode and try to manually recover"
 msgstr "• Naudoti demonstracinę veikseną ir bandyti atkurti rankiniu būdu"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
+#: src/Views/ErrorView.vala:67
+#, fuzzy
+#| msgid "• Restart your device to boot from another drive"
+msgid "Restart the device and boot from another drive"
 msgstr "• Paleisti savo įrenginį iš naujo, norint jį paleisti iš kito disko"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "Išsamiau"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Paleisti įrenginį iš naujo"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Išbandyti demonstracinę veikseną"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Bandyti įdiegti dar kartą"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
+#, fuzzy
+#| msgid "Keyboard Layout"
+msgid "Select Keyboard Layout"
 msgstr "Klaviatūros išdėstymas"
 
 #: src/Views/KeyboardLayoutView.vala:39
@@ -320,27 +333,27 @@ msgstr "Neteisinga šaknies failų sistema"
 msgid "Invalid file system for home"
 msgstr "Neteisinga namų failų sistema"
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "Skaidomas diskas"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Išskleidžiami failai"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Konfigūruojama sistema"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "Užbaigiamas įdiegimas"
 

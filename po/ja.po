@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-03-16 07:57+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-02 04:05+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -124,8 +124,8 @@ msgid "Erase and Install"
 msgstr "削除してインストール"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "ドライブの暗号化"
+msgid "Enable Drive Encryption"
+msgstr "ドライブの暗号化を有効にする"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -190,47 +190,46 @@ msgstr "パスワードが一致しません"
 msgid "Could Not Install"
 msgstr "インストールできませんでした"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:35
 #, c-format
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s のインストールに失敗しました。ハードウェアのエラーが原因と思われます。お使"
-"いのデバイスは正しく再起動しない可能性があります。以下の操作を試すことができ"
-"ます。"
+"%s のインストールに失敗しました。ハードウェアのエラーが原因と思われます。デバ"
+"イスが正しく再起動しない可能性があります。以下の操作を試すことができます。"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
-msgstr "• もう一度インストールしてみる"
+#: src/Views/ErrorView.vala:46
+msgid "Try the installation again"
+msgstr "インストールを再度試す"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
-msgstr "• デモモードを使用して手動で回復してみる"
+#: src/Views/ErrorView.vala:57
+msgid "Use Demo Mode and try to manually recover"
+msgstr "デモモードを使用して手動で回復してみる"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
-msgstr "• デバイスを再起動して別のドライブから起動"
+#: src/Views/ErrorView.vala:67
+msgid "Restart the device and boot from another drive"
+msgstr "デバイスを再起動して別のドライブから起動"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "詳細"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "デバイスを再起動"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "デモモードを試す"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "もう一度インストールしてみる"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "キーボードレイアウト"
+msgid "Select Keyboard Layout"
+msgstr "キーボードレイアウトを選択"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -311,33 +310,33 @@ msgstr "ルートディレクトリのファイルシステムが不適切です
 msgid "Invalid file system for home"
 msgstr "ホームディレクトリのファイルシステムが不適切です"
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
-msgstr ""
+msgstr "ログを表示"
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
-msgstr ""
+msgstr "ログを非表示"
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "ドライブのパーティションを作成しています"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "ファイルを展開しています"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "システムを設定しています"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "インストールを終了しています"
 
 #: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
-msgstr "試用するかインストールするかを選択してください"
+msgstr "試用またはインストール"
 
 #: src/Views/TryInstallView.vala:40
 msgid ""
@@ -348,10 +347,8 @@ msgstr ""
 "ステムのパフォーマンスと機能を十分に活用できない可能性があります。"
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "削除してインストール"
+msgstr "ディスクを削除してインストール"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -359,10 +356,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "すべてを消去して %s をクリーンインストールします。"
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "カスタム (高度)"
+msgstr "カスタムインストール (高度)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -377,20 +372,17 @@ msgid "Next"
 msgstr "次へ"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "インストールできませんでした"
+msgstr "カスタムインストール"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "セットアップを続行"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s をインストールしました。"
+msgstr "%s をインストールしました"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"

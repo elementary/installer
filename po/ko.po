@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
 "PO-Revision-Date: 2019-09-20 15:22+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
@@ -123,7 +123,9 @@ msgid "Erase and Install"
 msgstr "설치하기"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
+#, fuzzy
+#| msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
 msgstr "드라이브 암호화"
 
 #: src/Views/EncryptView.vala:57
@@ -195,45 +197,56 @@ msgstr "비밀번호가 맞지 않습니다"
 msgid "Could Not Install"
 msgstr "설치할 수 없습니다"
 
-#: src/Views/ErrorView.vala:38
-#, c-format
+#: src/Views/ErrorView.vala:35
+#, fuzzy, c-format
+#| msgid ""
+#| "Installing %s failed, possibly due to a hardware error. Your device may "
+#| "not restart properly. You can try the following:"
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
 "%s의 설치를 하지 못했습니다, 하드웨어 오류일 가능성이 있습니다. 컴퓨터가 제대"
 "로 다시 시작하지 않을 수 있습니다. 다음 중 한 가지를 수행해 보세요:"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
+#: src/Views/ErrorView.vala:46
+#, fuzzy
+#| msgid "• Try the installation again"
+msgid "Try the installation again"
 msgstr "• 다시 설치해보기"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
+#: src/Views/ErrorView.vala:57
+#, fuzzy
+#| msgid "• Use Demo Mode and try to manually recover"
+msgid "Use Demo Mode and try to manually recover"
 msgstr "• 데모 모드를 사용해서 수동으로 복구해보기"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
+#: src/Views/ErrorView.vala:67
+#, fuzzy
+#| msgid "• Restart your device to boot from another drive"
+msgid "Restart the device and boot from another drive"
 msgstr "• 다른 드라이브에서 컴퓨터를 다시 시작해보기"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "세부 정보"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "컴퓨터를 다시 시작하기"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "데모 모드로 들어가 보기"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "다시 설치해 보기"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
+#, fuzzy
+#| msgid "Keyboard Layout"
+msgid "Select Keyboard Layout"
 msgstr "키보드 배치"
 
 #: src/Views/KeyboardLayoutView.vala:39
@@ -314,27 +327,27 @@ msgstr "root용 파일 시스템이 잘못되었습니다"
 msgid "Invalid file system for home"
 msgstr "home용 파일 시스템이 잘못되었습니다"
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "드라이브 파티션 나누기"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "파일 압축 풀기"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "시스템 구성 하기"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "설치 마무리 하기"
 

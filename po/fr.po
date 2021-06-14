@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-04-05 07:34+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-02 10:59+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -125,8 +125,8 @@ msgid "Erase and Install"
 msgstr "Supprimer et installer"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "Chiffrement du disque"
+msgid "Enable Drive Encryption"
+msgstr "Activer le chiffrement du disque"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -193,47 +193,47 @@ msgstr "Les mots de passe ne correspondent pas"
 msgid "Could Not Install"
 msgstr "Erreur d'installation"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:35
 #, c-format
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"L'installation de %s a échoué, peut-être à cause d'une erreur matériel. "
-"Votre périphérique peut ne pas redémarrer correctement. Vous pouvez essayer "
-"une des solutions ci-dessous :"
+"L'installation de %s a échoué, peut-être à cause d'une erreur matérielle. Le "
+"périphérique peut ne pas redémarrer correctement. Vous pouvez essayer une "
+"des solutions ci-dessous :"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
-msgstr "• Réessayer l'installation"
+#: src/Views/ErrorView.vala:46
+msgid "Try the installation again"
+msgstr "Réessayer l'installation"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Utiliser le mode de démonstration et essayer de réparer manuellement"
+#: src/Views/ErrorView.vala:57
+msgid "Use Demo Mode and try to manually recover"
+msgstr "Utiliser le mode de démonstration et essayer de réparer manuellement"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
-msgstr "• Redémarrer votre périphérique et démarrer à partir d'un autre disque"
+#: src/Views/ErrorView.vala:67
+msgid "Restart the device and boot from another drive"
+msgstr "Redémarrer le périphérique et démarrer à partir d'un autre disque"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "Détails"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Redémarrer l'appareil"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Essayer le mode de démonstration"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Essayer d'installer à nouveau"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "Disposition du clavier"
+msgid "Select Keyboard Layout"
+msgstr "Sélectionner la disposition du clavier"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -313,27 +313,27 @@ msgstr "Système de fichier incompatible pour la partition « root »"
 msgid "Invalid file system for home"
 msgstr "Le système de fichier est incompatible pour la partition « home »"
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
-msgstr ""
+msgstr "Afficher les journaux"
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
-msgstr ""
+msgstr "Masquer les journaux"
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "Partitionnement du disque"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Extraction des fichiers"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Configuration du système"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "Finalisation de l'installation"
 
@@ -351,10 +351,8 @@ msgstr ""
 "ne pas refléter l'expérience installée."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Supprimer et installer"
+msgstr "Effacer le disque et installer"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -362,10 +360,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Supprime tout sur votre appareil et installe une version vierge d'%s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Personnalisée (Avancé)"
+msgstr "Installation personnalisée (Avancé)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -380,20 +376,17 @@ msgid "Next"
 msgstr "Suivant"
 
 #: src/Views/TryInstallView.vala:115
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Erreur d'installation"
+msgstr "Installation personnalisée"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "Continuer la configuration"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s a été installé."
+msgstr "%s a été installé"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"

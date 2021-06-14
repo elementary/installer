@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-05 22:44+0000\n"
-"PO-Revision-Date: 2021-05-05 19:17+0000\n"
+"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"PO-Revision-Date: 2021-06-03 09:11+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/installer/nb/>\n"
@@ -124,8 +124,10 @@ msgid "Erase and Install"
 msgstr "Slett og installer"
 
 #: src/Views/EncryptView.vala:50
-msgid "Drive Encryption"
-msgstr "Diskkryptering"
+#, fuzzy
+#| msgid "Drive Encryption"
+msgid "Enable Drive Encryption"
+msgstr "Skru på diskkryptering"
 
 #: src/Views/EncryptView.vala:57
 msgid "Data will be protected from others with physical access to this device."
@@ -191,46 +193,46 @@ msgstr "Passordene samsvarer ikke"
 msgid "Could Not Install"
 msgstr "Kunne ikke installere"
 
-#: src/Views/ErrorView.vala:38
+#: src/Views/ErrorView.vala:35
 #, c-format
 msgid ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installasjonen av %s feilet, så enheten din kan ha problemer med å starte på "
-"nytt. Prøv én av følgende:"
+"Installasjonen av %s mislyktes antagelig som følge av en maskinvarefeil. "
+"Enheten din kan ha problemer med å starte på nytt. Prøv én av følgende:"
 
-#: src/Views/ErrorView.vala:44
-msgid "• Try the installation again"
-msgstr "• Prøv å installere igjen"
+#: src/Views/ErrorView.vala:46
+msgid "Try the installation again"
+msgstr "Prøv å installere igjen"
 
-#: src/Views/ErrorView.vala:50
-msgid "• Use Demo Mode and try to manually recover"
-msgstr "• Bruk demo-modus for å prøve å tilbakestille manuelt"
+#: src/Views/ErrorView.vala:57
+msgid "Use Demo Mode and try to manually recover"
+msgstr "Bruk demo-modus for å prøve å tilbakestille manuelt"
 
-#: src/Views/ErrorView.vala:56
-msgid "• Restart your device to boot from another drive"
-msgstr "• Start maskinen på nytt for å starte opp fra en annen lagringsstasjon"
+#: src/Views/ErrorView.vala:67
+msgid "Restart the device and boot from another drive"
+msgstr "Start enheten på nytt og start opp igjen fra en annen lagringsstasjon"
 
-#: src/Views/ErrorView.vala:65
+#: src/Views/ErrorView.vala:77
 msgid "Details"
 msgstr "Detaljer"
 
-#: src/Views/ErrorView.vala:96 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
 msgstr "Start maskinen på nytt"
 
-#: src/Views/ErrorView.vala:98 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
 msgstr "Prøv demo-modus"
 
-#: src/Views/ErrorView.vala:100
+#: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
 msgstr "Prøv å installere igjen"
 
 #: src/Views/KeyboardLayoutView.vala:31
-msgid "Keyboard Layout"
-msgstr "Tastaturoppsett"
+msgid "Select Keyboard Layout"
+msgstr "Velg tastaturoppsett"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -310,27 +312,27 @@ msgstr "Ugyldig filsystem for root"
 msgid "Invalid file system for home"
 msgstr "Ugyldig filsystem for home"
 
-#: src/Views/ProgressView.vala:45 src/Views/ProgressView.vala:72
+#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
 msgid "Show log"
 msgstr "Vis logg"
 
-#: src/Views/ProgressView.vala:68
+#: src/Views/ProgressView.vala:102
 msgid "Hide log"
 msgstr "Skjul logg"
 
-#: src/Views/ProgressView.vala:192
+#: src/Views/ProgressView.vala:226
 msgid "Partitioning Drive"
 msgstr "Partisjonerer enhet"
 
-#: src/Views/ProgressView.vala:196
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Pakker ut filer"
 
-#: src/Views/ProgressView.vala:200
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Setter opp systemet"
 
-#: src/Views/ProgressView.vala:204
+#: src/Views/ProgressView.vala:238
 msgid "Finishing the Installation"
 msgstr "Fullfører installasjonen"
 
@@ -358,7 +360,7 @@ msgstr "Slett alt og installer en ny kopi av %s."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
-msgstr "Egendefinert installasjon(avansert)"
+msgstr "Egendefinert installasjon (avansert)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -381,10 +383,9 @@ msgid "Continue Setting Up"
 msgstr "Fortsett oppsett"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s har blitt installert."
+msgstr "%s har blitt installert"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
