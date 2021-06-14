@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-06-02 04:05+0000\n"
+"PO-Revision-Date: 2021-06-15 10:50+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -125,8 +125,6 @@ msgid "Erase and Install"
 msgstr "Стерти й встановити"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Не шифрувати"
 
@@ -139,15 +137,16 @@ msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"Зашифруйте диск цього пристрою, якщо це потрібно для додаткового захисту, "
+"але переконайтеся, що розумієте що:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr "Дані буде захищено від інших при фізичному доступі до цього пристрою."
+msgstr ""
+"Дані буде захищено від інших при фізичному доступі до цього пристрою, лише "
+"коли його вимкнено."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -193,10 +192,8 @@ msgid "Choose Password"
 msgstr "Оберіть пароль"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Обрати пароль шифрування"
+msgstr "Встановити пароль шифрування"
 
 #: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
