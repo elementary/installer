@@ -24,7 +24,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private Gtk.Button next_button;
     private Gtk.Button modify_partitions_button;
     private Gtk.Box disk_list;
-    private Gtk.SizeGroup label_sizer;
     private Gtk.Stack load_stack;
     private string required_description;
 
@@ -140,8 +139,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private async void load_disks () {
         load_stack.set_visible_child_name ("loading");
 
-        label_sizer = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
-
         InstallerDaemon.DiskInfo? disks = null;
         try {
             disks = yield Daemon.get_default ().get_disks (true);
@@ -165,7 +162,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
             }
 
             var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-            label_sizer.add_widget (disk_bar.label);
             disk_list.pack_start (disk_bar);
         }
 
@@ -217,7 +213,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
 
         var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-        label_sizer.add_widget (disk_bar.label);
         disk_list.pack_start (disk_bar);
     }
 

@@ -24,7 +24,8 @@ public class Installer.DiskBar: Gtk.Grid {
     public uint64 size { get; construct; }
     public Gee.ArrayList<PartitionBar> partitions { get; construct; }
 
-    public Gtk.Grid label { get; private set; }
+    private static Gtk.SizeGroup label_sizegroup;
+
     private Gtk.Grid legend_container;
 
     public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBar> partitions) {
@@ -36,30 +37,39 @@ public class Installer.DiskBar: Gtk.Grid {
         );
     }
 
+    class construct {
+        set_css_name ("levelbar");
+    }
+
+    static construct {
+        label_sizegroup = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+    }
+
     construct {
-        var name_label = new Gtk.Label ("<b>%s</b>".printf (disk_name));
-        name_label.halign = Gtk.Align.END;
-        name_label.use_markup = true;
+        var name_label = new Gtk.Label ("<b>%s</b>".printf (disk_name)) {
+            xalign = 1,
+            use_markup = true
+        };
 
-        var size_label = new Gtk.Label ("<small>%s %s</small>".printf (disk_path, GLib.format_size (size)));
-        size_label.halign = Gtk.Align.END;
-        size_label.use_markup = true;
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
+            xalign = 1
+        };
 
-        label = new Gtk.Grid ();
+        unowned var size_label_context = size_label.get_style_context ();
+        size_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        size_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+        var label = new Gtk.Grid ();
         label.orientation = Gtk.Orientation.VERTICAL;
         label.row_spacing = 6;
-        label.margin_end = 12;
         label.valign = Gtk.Align.CENTER;
         label.add (name_label);
         label.add (size_label);
 
-        var bar = new Gtk.Grid ();
-        bar.width_request = 40;
+        label_sizegroup.add_widget (name_label);
+        label_sizegroup.add_widget (size_label);
 
-        var bar_style_context = bar.get_style_context ();
-        bar_style_context.add_class (Gtk.STYLE_CLASS_TROUGH);
-        bar_style_context.add_class ("disk-bar");
+        var bar = new Gtk.Grid ();
 
         bar.size_allocate.connect ((alloc) => {
             update_sector_lengths (partitions, alloc);
@@ -70,7 +80,7 @@ public class Installer.DiskBar: Gtk.Grid {
         }
 
         legend_container = new Gtk.Grid ();
-        legend_container.column_spacing = 12;
+        legend_container.column_spacing = 24;
         legend_container.halign = Gtk.Align.CENTER;
         legend_container.margin_bottom = 9;
 
@@ -91,16 +101,15 @@ public class Installer.DiskBar: Gtk.Grid {
         if (size / 100 < unused) {
             add_legend ("unused", unused, "unused", null, null);
 
-            var unused_bar = new Gtk.Grid ();
-            unused_bar.expand = true;
-
-            var unused_style_context = unused_bar.get_style_context ();
-            unused_style_context.add_class ("fill-block");
-            unused_style_context.add_class ("unused");
+            var unused_bar = new Block () {
+                expand = true
+            };
+            unused_bar.get_style_context ().add_class ("empty");
 
             bar.add (unused_bar);
         }
 
+        column_spacing = 12;
         hexpand = true;
         margin = 6;
         get_style_context ().add_class (Granite.STYLE_CLASS_STORAGEBAR);
@@ -112,7 +121,7 @@ public class Installer.DiskBar: Gtk.Grid {
     }
 
     private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {
-        var fill_round = new FillRound ();
+        var fill_round = new Block ();
         fill_round.width_request = fill_round.height_request = 14;
         fill_round.valign = Gtk.Align.CENTER;
 
@@ -206,39 +215,9 @@ public class Installer.DiskBar: Gtk.Grid {
         }
     }
 
-    internal class FillRound : Gtk.Widget {
-        construct {
-            set_has_window (false);
-            var style_context = get_style_context ();
-            style_context.add_class ("fill-block");
-            expand = true;
-        }
-
-        public override bool draw (Cairo.Context cr) {
-            var width = get_allocated_width ();
-            var height = get_allocated_height ();
-            var context = get_style_context ();
-            context.render_background (cr, 0, 0, width, height);
-            context.render_frame (cr, 0, 0, width, height);
-            return true;
-        }
-
-        public override void get_preferred_width (out int minimum_width, out int natural_width) {
-            base.get_preferred_width (out minimum_width, out natural_width);
-            var context = get_style_context ();
-            var padding = context.get_padding (get_state_flags ());
-            minimum_width = int.max (padding.left + padding.right, minimum_width);
-            minimum_width = int.max (1, minimum_width);
-            natural_width = int.max (minimum_width, natural_width);
-        }
-
-        public override void get_preferred_height (out int minimum_height, out int natural_height) {
-            base.get_preferred_height (out minimum_height, out natural_height);
-            var context = get_style_context ();
-            var padding = context.get_padding (get_state_flags ());
-            minimum_height = int.max (padding.top + padding.bottom, minimum_height);
-            minimum_height = int.max (1, minimum_height);
-            natural_height = int.max (minimum_height, natural_height);
+    private class Block : Gtk.Grid {
+        class construct {
+            set_css_name ("block");
         }
     }
 }

@@ -17,57 +17,67 @@
  * Authored by: Ian Santopietro <ian@system76.com>
  */
 
-.storage-bar .legend {
+levelbar block {
+    border-radius: 3px;
+}
+
+levelbar block:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+levelbar block:not(:last-child) {
+    border-right-style: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+levelbar block.legend {
     border-radius: 50%;
 }
 
-.storage-bar .disk-bar,
-.storage-bar .unused {
-    background-color: #888;
-}
-
-.storage-bar .swap {
+levelbar block.swap {
     background-color: #C22E1E;
 }
 
-.storage-bar .ext4 {
+levelbar block.ext4 {
     background-color: #4EA845;
 }
 
-.storage-bar .ext3 {
+levelbar block.ext3 {
     background-color: #428F3B;
 }
 
-.storage-bar .ext2 {
+levelbar block.ext2 {
     background-color: #367530;
 }
 
-.storage-bar .fat16,
-.storage-bar .fat32 {
+levelbar block.fat16,
+levelbar block.fat32 {
     background-color: #CACA32;
 }
 
-.storage-bar .btrfs {
+levelbar block.btrfs {
     background-color: #3940A0;
 }
 
-.storage-bar .xfs {
+levelbar block.xfs {
     background-color: #6D57D3;
 }
 
-.storage-bar .ntfs {
+levelbar block.ntfs {
     background-color: #BE791F;
 }
 
-.storage-bar .luks {
+levelbar block.luks {
     background-color: #813BA4;
 }
 
-.storage-bar .lvm {
+levelbar block.lvm {
     background-color: #9444BD;
 }
 
-.storage-bar .none {
+levelbar block.none {
     background-color: #3199CB;
 }
 
