@@ -167,7 +167,7 @@ public class EncryptView : AbstractInstallerView {
 
         var encrypt_button = new Gtk.Button.with_label (_("Choose Password"));
 
-        next_button = new Gtk.Button.with_label (SKIP_STRING) {
+        next_button = new Gtk.Button.with_label (_(SKIP_STRING)) {
             can_default = true
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
@@ -180,7 +180,7 @@ public class EncryptView : AbstractInstallerView {
 
         back_button.clicked.connect (() => {
             stack.visible_child = choice_grid;
-            next_button.label = SKIP_STRING;
+            next_button.label = _(SKIP_STRING);
             next_button.sensitive = true;
             back_button.hide ();
             encrypt_button.show ();
