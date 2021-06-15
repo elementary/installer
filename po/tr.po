@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-06-02 17:21+0000\n"
+"PO-Revision-Date: 2021-06-15 10:50+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -122,8 +122,6 @@ msgid "Erase and Install"
 msgstr "Sil ve Kur"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Şifreleme"
 
@@ -136,16 +134,16 @@ msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"Ek koruma sağlamak için gerekirse bu cihazın sürücüsünü şifreleyin, ancak "
+"şunu anladığınızdan emin olun:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"Veriler, bu cihaza fiziksel erişimi olan diğer kişilerden korunacaktır."
+"Veriler, bu cihaza fiziksel erişimi olan diğer kişilerden ancak cihaz "
+"kapalıysa korunacaktır."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -190,10 +188,8 @@ msgid "Choose Password"
 msgstr "Şifre Seçin"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Şifreleme Parolasını Seçin"
+msgstr "Şifreleme Parolasını Belirle"
 
 #: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
