@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-06-02 04:05+0000\n"
+"PO-Revision-Date: 2021-06-15 10:50+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -124,8 +124,6 @@ msgid "Erase and Install"
 msgstr "削除してインストール"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "暗号化しない"
 
@@ -137,17 +135,13 @@ msgstr "ドライブの暗号化を有効にする"
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
-msgstr ""
+msgstr "必要であれば、ドライブを暗号化してデバイスの保護を強化できます。ただし、以下の点に注意してください。"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr ""
-"ほかの人がこのデバイスに物理的にアクセスできないように、データを保護します。"
+msgstr "デバイスの電源がオフの場合に限り、ほかの人がこのデバイスに物理的にアクセスできないようにデータを保護します。"
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -192,10 +186,8 @@ msgid "Choose Password"
 msgstr "パスワードを選択"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "暗号化パスワードを選択"
+msgstr "暗号化パスワードを設定"
 
 #: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
