@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-06-02 04:05+0000\n"
+"PO-Revision-Date: 2021-06-15 10:50+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -120,8 +120,6 @@ msgid "Erase and Install"
 msgstr "למחוק ולהתקין"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "לא להצפין"
 
@@ -133,16 +131,13 @@ msgstr "הפעלת הצפנת כונן"
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
-msgstr ""
+msgstr "ניתן להצפין את כונן המכשיר הזה אם זה נחוץ לשיפור האבטחה, אך חשוב להבין:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr "הנתונים יהיו מוגנים מפני זרים עם גישה פיזית למכשיר הזה."
+msgstr "הנתונים יהיו מוגנים רק מפני זרים עם גישה פיזית למכשיר הזה כשהוא כבוי."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -185,10 +180,8 @@ msgid "Choose Password"
 msgstr "נא לבחור ססמה"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "נא לבחור ססמת הצפנה"
+msgstr "הגדרת ססמת הצפנה"
 
 #: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
