@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-06-15 10:50+0000\n"
+"PO-Revision-Date: 2021-06-17 04:33+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -243,7 +243,7 @@ msgstr "Повторити спробу встановлення"
 
 #: src/Views/KeyboardLayoutView.vala:31
 msgid "Select Keyboard Layout"
-msgstr "Вибрати розкладку клавіатури"
+msgstr "Виберіть розкладку клавіатури"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -283,7 +283,7 @@ msgid ""
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
 "Виберіть, які розділи використовувати на всіх дисках. <b>Натискання "
-"«Форматувати» призведе до стирання ВСІХ даних на вибраному розділі.</b>"
+"«Форматувати» призведе до стирання УСІХ даних обраного розділу.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:60
@@ -360,9 +360,9 @@ msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"Зміни не збережуться, а дані з вашої попередньої ОС залишаться незайманими. "
-"Швидкодія та функціональність можуть бути гіршими ніж на встановленій "
-"системі."
+"Зміни не збережуться, а дані, з вашої попередньої ОС, залишаться "
+"незайманими. Швидкодія та функціональність можуть бути гіршими ніж на "
+"встановленій системі."
 
 #: src/Views/TryInstallView.vala:46
 msgid "Erase Disk and Install"
