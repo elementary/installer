@@ -101,6 +101,7 @@ public class ProgressView : AbstractInstallerView {
 
             stderr.printf ("locale: %s\n", current_config.get_locale ());
             new Thread<void*> (null, () => {
+                user_callback ();
                 fake_status (Distinst.Step.PARTITION);
                 fake_status (Distinst.Step.EXTRACT);
                 fake_status (Distinst.Step.CONFIGURE);
@@ -116,6 +117,7 @@ public class ProgressView : AbstractInstallerView {
         installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
+        installer.set_user_callback (user_callback);
 
         var config = Distinst.Config ();
         config.flags = Distinst.MODIFY_BOOT_ORDER | Distinst.INSTALL_HARDWARE_SUPPORT;
@@ -330,5 +332,15 @@ public class ProgressView : AbstractInstallerView {
             on_error ();
             return GLib.Source.REMOVE;
         });
+    }
+
+    private Distinst.UserAccountCreate user_callback () {
+        var conf = Configuration.get_default ();
+        return Distinst.UserAccountCreate () {
+            realname = conf.realname,
+            username = conf.username,
+            password = conf.password,
+            profile_icon = conf.profile_icon
+        };
     }
 }

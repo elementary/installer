@@ -34,6 +34,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private RefreshView refresh_view;
     private SuccessView success_view;
     private TryInstallView try_install_view;
+    private UserView user_view;
 
     private uint64 minimum_disk_size;
 
@@ -60,7 +61,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         const uint64 DEFAULT_MINIMUM_SIZE = 5000000000;
         minimum_disk_size = Distinst.minimum_disk_size (DEFAULT_MINIMUM_SIZE / 512);
-        
+
         unowned InstallOptions options = InstallOptions.get_default ();
         options.set_minimum_size (minimum_disk_size);
 
@@ -130,33 +131,57 @@ public class Installer.MainWindow : Gtk.Dialog {
      */
 
     private void load_keyboard_view () {
-        if (keyboard_layout_view != null) {
-            keyboard_layout_view.destroy ();
+        if (keyboard_layout_view == null) {
+            keyboard_layout_view = new KeyboardLayoutView ();
+            keyboard_layout_view.previous_view = language_view;
+            keyboard_layout_view.next_step.connect (load_try_install_view);
+
+            stack.add (keyboard_layout_view);
         }
 
-        keyboard_layout_view = new KeyboardLayoutView ();
-        keyboard_layout_view.previous_view = language_view;
-        stack.add (keyboard_layout_view);
         stack.visible_child = keyboard_layout_view;
+    }
 
-        keyboard_layout_view.next_step.connect (() => {
-            var opts = InstallOptions.get_default ();
-            if (!opts.is_oem_mode ()) {
-                load_try_install_view ();
-            } else {
-                unowned Configuration config = Configuration.get_default ();
-                unowned Distinst.InstallOptions options = opts.get_options ();
-                var recovery = options.get_recovery_option ();
+    private void load_user_view(Gtk.Widget prev_view, Fn load_prev_view, Fn load_next_view) {
+        if (user_view == null) {
+            user_view = new UserView();
 
-                InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
-                    tag = Distinst.InstallOptionVariant.RECOVERY,
-                    option = (void*) recovery,
-                    encrypt_pass = null
-                };
+            user_view.next_step.connect (() => load_next_view ());
+            user_view.cancel.connect (() => {
+                if (user_view.stack.visible_child == user_view.user_section) {
+                    load_prev_view ();
+                } else {
+                    user_view.stack.visible_child = user_view.user_section;
+                    user_view.update_next_button ();
+                    user_view.reset_password ();
+                }
+            });
 
-                load_encrypt_view ();
-            }
-        });
+            stack.add (user_view);
+        }
+
+        user_view.previous_view = prev_view;
+        stack.visible_child = user_view;
+        user_view.grab_focus ();
+    }
+
+    private void load_install_options() {
+        var opts = InstallOptions.get_default ();
+        if (!opts.is_oem_mode ()) {
+            load_try_install_view ();
+        } else {
+            unowned Configuration config = Configuration.get_default ();
+            unowned Distinst.InstallOptions options = opts.get_options ();
+            var recovery = options.get_recovery_option ();
+
+            InstallOptions.get_default ().selected_option = new Distinst.InstallOption () {
+                tag = Distinst.InstallOptionVariant.RECOVERY,
+                option = (void*) recovery,
+                encrypt_pass = null
+            };
+
+            load_encrypt_view ();
+        }
     }
 
     private void load_try_install_view () {
@@ -165,7 +190,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         try_install_view = new TryInstallView ();
-        try_install_view.previous_view = keyboard_layout_view;
+        try_install_view.previous_view = this.user_view;
         stack.add (try_install_view);
         stack.visible_child = try_install_view;
 
@@ -178,7 +203,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         if (refresh_view == null) {
             refresh_view = new RefreshView ();
             refresh_view.previous_view = try_install_view;
-            
+
             refresh_view.next_step.connect ((retain_old) => {
                 Configuration.get_default ().retain_old = retain_old;
                 load_progress_view ();
@@ -246,7 +271,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.visible_child = try_install_view;
         });
 
-        disk_view.next_step.connect (() =>  load_encrypt_view ());
+        disk_view.next_step.connect (() => load_user_view (disk_view, load_try_install_view, load_encrypt_view));
 
         load_check_view ();
     }
@@ -269,23 +294,28 @@ public class Installer.MainWindow : Gtk.Dialog {
             unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;
             config.mounts = (owned) partitioning_view.mounts;
-            load_progress_view ();
+            load_user_view (partitioning_view, load_try_install_view, load_progress_view);
         });
 
         load_check_view ();
     }
 
     private void load_encrypt_view () {
-        if (encrypt_view != null) {
-            encrypt_view.destroy ();
+        if (encrypt_view == null) {
+            encrypt_view = new EncryptView ();
+            encrypt_view.previous_view = disk_view;
+            stack.add (encrypt_view);
+            encrypt_view.next_step.connect (() => load_progress_view ());
         }
 
-        encrypt_view = new EncryptView ();
-        encrypt_view.previous_view = disk_view;
-        stack.add (encrypt_view);
-        stack.visible_child = encrypt_view;
+        if (Configuration.get_default ().password != null) {
+            encrypt_view.reuse_password.show();
+        } else {
+            encrypt_view.reuse_password.hide();
+        }
 
-        encrypt_view.next_step.connect (() => load_progress_view ());
+        stack.visible_child = encrypt_view;
+        encrypt_view.reset();
     }
 
     private void load_progress_view () {

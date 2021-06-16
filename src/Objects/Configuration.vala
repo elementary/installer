@@ -35,6 +35,10 @@ public class Configuration : GLib.Object {
     public string keyboard_layout { get; set; }
     public string? keyboard_variant { get; set; default = null; }
     public string? encryption_password { get; set; default = null; }
+    public string? realname { get; set; default = null; }
+    public string? username { get; set; default = null; }
+    public string? password { get; set; default = null; }
+    public string? profile_icon { get; set; default = null; }
     public string disk { get; set; }
     public bool recovery { get; set; default = false; }
     public bool retain_home { get; set; default = false; }

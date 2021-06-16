@@ -190,3 +190,7 @@ buttonbox {
                       url("resource:///io/elementary/installer/success.png");
     animation: success 450ms ease infinite alternate;
 }
+
+.create-account {
+  background-image: url("resource:///io/elementary/installer/create-account.png");
+}

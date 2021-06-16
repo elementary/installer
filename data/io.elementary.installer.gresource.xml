@@ -34,5 +34,7 @@
     <file alias="try-install1.png">images/initial-setup_try-install_animate1.png</file>
     <file alias="try-install2.png">images/initial-setup_try-install_animate2.png</file>
     <file alias="try-install3.png">images/initial-setup_try-install_animate3.png</file>
+
+    <file alias="create-account.png">images/initial-setup_create_account.png</file>
   </gresource>
 </gresources>

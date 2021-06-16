@@ -28,13 +28,17 @@ vala_files = [
     'Views/RefreshView.vala',
     'Views/SuccessView.vala',
     'Views/TryInstallView.vala',
+    'Views/User.vala',
     'Widgets/DecryptMenu.vala',
     'Widgets/DiskBar.vala',
+    'Widgets/ErrorRevealer.vala',
+    'Widgets/IconChooser.vala',
     'Widgets/InstallTypeGrid.vala',
     'Widgets/LayoutWidget.vala',
     'Widgets/PartitionBar.vala',
     'Widgets/PartitionMenu.vala',
     'Widgets/Terminal.vala',
+    'Widgets/Username.vala',
     'Widgets/VariantWidget.vala'
 ]
 
