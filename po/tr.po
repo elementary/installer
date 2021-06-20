@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-06-15 10:50+0000\n"
+"PO-Revision-Date: 2021-06-20 22:40+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -365,7 +365,7 @@ msgstr "Diski Sil ve Kur"
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "Her şeyi sil ve %s taze kopyasını kur."
+msgstr "Her şeyi sil ve %s yeni kopyasını kur."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
@@ -376,7 +376,7 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"Oluştur, yeniden boyutlandır, veya bölümleri elle yönet. Bu metot veri "
+"Oluştur, yeniden boyutlandır, veya bölümleri el ile yönet. Bu yöntem veri "
 "kaybına yol açabilir."
 
 #: src/Views/TryInstallView.vala:87
