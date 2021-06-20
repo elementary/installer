@@ -224,9 +224,9 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 unset_mount (partition_path);
                 partition_bar.container.get_children ().foreach ((c) => c.destroy ());
             }
-        });
 
-        use_partition.bind_property ("active", bottom_revealer, "reveal_child");
+            bottom_revealer.reveal_child = use_partition.active;
+        });
     }
 
     public void unset () {
