@@ -227,7 +227,6 @@ public class Installer.PartitionMenu : Gtk.Popover {
         });
 
         use_partition.bind_property ("active", bottom_revealer, "reveal_child");
-
     }
 
     public void unset () {
