@@ -219,6 +219,7 @@ public class EncryptView : AbstractInstallerView {
     }
 
     public void reset () {
+        reuse_password.grab_focus ();
         stack.visible_child = choice_grid;
         reuse_password.active = false;
         pw_entry.text = null;
