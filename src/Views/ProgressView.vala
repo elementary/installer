@@ -117,7 +117,9 @@ public class ProgressView : AbstractInstallerView {
         installer = new Distinst.Installer ();
         installer.on_error (installation_error_callback);
         installer.on_status (installation_status_callback);
-        installer.set_user_callback (user_callback);
+        if (Configuration.get_default ().username != null) {
+            installer.set_user_callback (user_callback);
+        }
 
         var config = Distinst.Config ();
         config.flags = Distinst.MODIFY_BOOT_ORDER | Distinst.INSTALL_HARDWARE_SUPPORT;
