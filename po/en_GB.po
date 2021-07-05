@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-05-12 22:17+0000\n"
+"PO-Revision-Date: 2021-07-05 10:04+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "installer/installer/en_GB/>\n"
@@ -123,32 +123,28 @@ msgid "Erase and Install"
 msgstr "Erase and Install"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
-msgstr "Don't Encrypt"
+msgstr "Don’t Encrypt"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Drive Encryption"
+msgstr "Enable Drive Encryption"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"Data will be protected from others with physical access to this device."
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -194,10 +190,8 @@ msgid "Choose Password"
 msgstr "Choose Password"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Choose Encryption Password"
+msgstr "Set Encryption Password"
 
 #: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
@@ -208,34 +202,25 @@ msgid "Could Not Install"
 msgstr "Could Not Install"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installing %s failed, possibly due to a hardware error. Your device may not "
+"Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Try the installation again"
+msgstr "Try the installation again"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Use Demo Mode and try to recover manually"
+msgstr "Use Demo Mode and try to manually recover"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Restart your device to boot from another drive"
+msgstr "Restart the device and boot from another drive"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -254,10 +239,8 @@ msgid "Try Installing Again"
 msgstr "Try Installing Again"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "Keyboard Layout"
+msgstr "Select Keyboard Layout"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
