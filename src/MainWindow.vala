@@ -134,7 +134,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         if (keyboard_layout_view == null) {
             keyboard_layout_view = new KeyboardLayoutView ();
             keyboard_layout_view.previous_view = language_view;
-            keyboard_layout_view.next_step.connect (load_try_install_view);
+            keyboard_layout_view.next_step.connect (load_install_options);
 
             stack.add (keyboard_layout_view);
         }
@@ -180,7 +180,7 @@ public class Installer.MainWindow : Gtk.Dialog {
                 encrypt_pass = null
             };
 
-            load_encrypt_view ();
+            load_user_view (keyboard_layout_view, load_keyboard_view, load_encrypt_view);
         }
     }
 
