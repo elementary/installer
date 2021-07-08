@@ -41,23 +41,6 @@ public class SuccessView : AbstractInstallerView {
 
         bool requires_workaround = requires_workaround ();
 
-        var description_label = new Gtk.Label (
-            requires_workaround
-                ? _("Shut down now and create a user account on the next start.")
-                : _("After restarting you can set up a new user, or you can shut down now and set up a new user later.")   
-        );
-
-        description_label.max_width_chars = 52;
-        description_label.wrap = true;
-        description_label.xalign = 0;
-        description_label.use_markup = true;
-
-        var grid = new Gtk.Grid ();
-        grid.row_spacing = 6;
-        grid.margin_left = 24;
-        grid.valign = Gtk.Align.CENTER;
-        grid.attach (description_label, 0, 0, 1, 1);
-
         var buffer = new Gtk.TextBuffer (null);
         buffer.text = log;
         var terminal = new Terminal (buffer);
@@ -68,7 +51,6 @@ public class SuccessView : AbstractInstallerView {
         label_area.valign = Gtk.Align.FILL;
         label_area.attach (artwork,       0, 0, 1, 1);
         label_area.attach (title_label, 0, 1, 1, 1);
-        label_area.attach (grid,        1, 0, 1, 2);
 
         var content_stack = new Gtk.Stack ();
         content_stack.transition_type = Gtk.StackTransitionType.OVER_UP_DOWN;
@@ -96,7 +78,7 @@ public class SuccessView : AbstractInstallerView {
         }
 
         action_area.add (shutdown_button);
-        
+
 
         show_all ();
     }
@@ -106,7 +88,7 @@ public class SuccessView : AbstractInstallerView {
             string product_model = product_model ();
             return product_model == "darp6" || product_model == "galp4" || product_model == "lemp9";
         }
-        
+
         return false;
     }
 
