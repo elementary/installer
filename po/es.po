@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-06-02 04:05+0000\n"
+"PO-Revision-Date: 2021-06-16 00:39+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
@@ -123,8 +123,6 @@ msgid "Erase and Install"
 msgstr "Borrar e instalar"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "No cifrar"
 
@@ -137,17 +135,16 @@ msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"Cifre la unidad de este dispositivo si es necesario para mayor protección, "
+"pero asegúrese de entender:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"Los datos quedarán protegidos de otras personas con acceso físico a este "
-"dispositivo."
+"Los datos solo estarán protegidos de otras personas con acceso físico a este "
+"dispositivo cuando se apague."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -193,10 +190,8 @@ msgid "Choose Password"
 msgstr "Elija una contraseña"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Elija una contraseña de cifrado"
+msgstr "Establecer contraseña de cifrado"
 
 #: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"

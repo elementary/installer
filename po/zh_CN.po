@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-03-20 21:27+0000\n"
+"PO-Revision-Date: 2021-06-20 22:40+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
@@ -117,31 +117,24 @@ msgid "Erase and Install"
 msgstr "抹掉并安装"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "不加密"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "硬盘加密"
+msgstr "启用硬盘加密"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
-msgstr ""
+msgstr "如需要额外保护，您可以加密这台设备的硬盘，但请务必知晓："
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr "数据将受到保护，无法被他人以物理方式获取。"
+msgstr "数据将受到保护，无法被他人以物理方式获取，但仅限于设备已关机时。"
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -183,10 +176,8 @@ msgid "Choose Password"
 msgstr "选择密码"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "选择加密密码"
+msgstr "设置加密密码"
 
 #: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
@@ -197,34 +188,23 @@ msgid "Could Not Install"
 msgstr "无法安装"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
-msgstr ""
-"安装 %s 失败，可能是硬件错误导致的。您的设备可能没有正常重启。您可以尝试以下"
-"操作："
+msgstr "安装 %s 失败，可能是硬件错误导致的。设备可能没有正常重启。您可以尝试以下操作："
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• 尝试重新安装"
+msgstr "尝试重新安装"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• 进入试用模式手动恢复"
+msgstr "进入试用模式手动恢复"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• 重启设备并从其他硬盘启动"
+msgstr "重启设备并从其他硬盘启动"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -243,10 +223,8 @@ msgid "Try Installing Again"
 msgstr "尝试重新安装"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "键盘布局"
+msgstr "选择键盘布局"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -326,11 +304,11 @@ msgstr "主目录（Home）文件系统不可用"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "显示日志"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "隐藏日志"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
@@ -365,10 +343,8 @@ msgstr ""
 "下性能和功能无法代表实际安装体验。"
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "抹掉并安装"
+msgstr "抹掉硬盘并安装"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -376,10 +352,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "格式化所有内容并全新安装 %s。"
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "自定义（高级选项）"
+msgstr "自定义安装（高级选项）"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -393,20 +367,17 @@ msgid "Next"
 msgstr "继续"
 
 #: src/Views/TryInstallView.vala:113
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "无法安装"
+msgstr "自定义安装"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "正在进行设置"
 
 #: src/Views/SuccessView.vala:33
-#, fuzzy, c-format
-#| msgid "%s has been installed."
+#, c-format
 msgid "%s has been installed"
-msgstr "%s 已安装。"
+msgstr "%s 已安装"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
