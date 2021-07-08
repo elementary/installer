@@ -55,7 +55,6 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
         var style_context = get_style_context ();
         style_context.add_class (Distinst.strfilesys (filesystem));
-        style_context.add_class ("fill-block");
 
         container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
@@ -76,6 +75,14 @@ public class Installer.PartitionBar : Gtk.EventBox {
             show_popover ();
             return true;
         });
+    }
+
+    class construct {
+        set_css_name ("block");
+    }
+
+    construct {
+        hexpand = true;
     }
 
     public uint64 get_size () {
