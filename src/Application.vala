@@ -21,10 +21,12 @@
 public class Installer.App : Gtk.Application {
     public const OptionEntry[] INSTALLER_OPTIONS = {
         { "test", 't', 0, OptionArg.NONE, out test_mode, "Non-destructive test mode", null},
+        { "file", 'f', 0, OptionArg.FILENAME, out config_file, "Read configuration from file", null},
         { null }
     };
 
     public static bool test_mode;
+    public static string? config_file;
 
     construct {
         application_id = "io.elementary.installer";

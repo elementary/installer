@@ -88,6 +88,14 @@ public class SuccessView : AbstractInstallerView {
         });
 
         show_all ();
+
+        unowned Configuration config = Configuration.get_default ();
+        string path = "/tmp/io.elementary.installer.json";
+        try {
+            FileUtils.set_contents (path, Json.gobject_to_data (config, null) + "\n");
+        } catch (FileError e) {
+            warning ("Could not write config to '%s': %s", path, e.message);
+        }
     }
 
     private void update_secondary_label () {

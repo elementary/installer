@@ -28,11 +28,16 @@ public class Configuration : GLib.Object {
         return _config;
     }
 
+    public Configuration.from_string (string data) throws GLib.Error {
+        _config = (Configuration) Json.gobject_from_data (typeof (Configuration), data);
+    }
+
     public string lang { get; set; }
     public string? country { get; set; default = null; }
     public string keyboard_layout { get; set; }
     public string? keyboard_variant { get; set; default = null; }
     public string? encryption_password { get; set; default = null; }
+    public string hostname { get; set; default = Utils.get_hostname (); }
     public string disk { get; set; }
     public Gee.ArrayList<Installer.Mount>? mounts { get; set; default = null; }
     public Gee.ArrayList<InstallerDaemon.LuksCredentials?>? luks { get; set; default = null; }

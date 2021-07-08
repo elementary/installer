@@ -26,12 +26,14 @@ public class Installer.MainWindow : Hdy.Window {
     private Installer.CheckView check_view;
     private DiskView disk_view;
     private PartitioningView partitioning_view;
+    private AutomatedView automated_view;
     private ProgressView progress_view;
     private SuccessView success_view;
     private EncryptView encrypt_view;
     private ErrorView error_view;
     private bool check_ignored = false;
 
+    private unowned Configuration config;
 
     public MainWindow () {
         Object (
@@ -46,13 +48,25 @@ public class Installer.MainWindow : Hdy.Window {
     }
 
     construct {
-        language_view = new LanguageView ();
-
         stack = new Gtk.Stack () {
             margin_bottom = 12,
             margin_top = 12,
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         };
+
+        config = Configuration.get_default ();
+
+        var cmdline = Utils.get_kernel_parameters ();
+        if ("auto" in cmdline) {
+            load_automated_view ();
+        }
+
+        if (App.config_file != null) {
+            load_automated_view ();
+        }
+
+        language_view = new LanguageView ();
+
         stack.add (language_view);
 
         add (stack);
@@ -178,11 +192,27 @@ public class Installer.MainWindow : Hdy.Window {
         stack.visible_child = partitioning_view;
 
         partitioning_view.next_step.connect (() => {
-            unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;
             config.mounts = (owned) partitioning_view.mounts;
             load_progress_view ();
         });
+    }
+
+    private void load_automated_view () {
+        if (automated_view != null) {
+            automated_view.destroy ();
+        }
+
+        automated_view = new AutomatedView ();
+        stack.add (automated_view);
+        stack.visible_child = automated_view;
+
+        automated_view.on_success.connect (() => load_progress_view ());
+
+        automated_view.on_error.connect (() => {
+            load_error_view (automated_view.get_log ());
+        });
+        automated_view.start ();
     }
 
     private void load_progress_view () {

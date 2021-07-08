@@ -266,4 +266,16 @@ namespace Utils {
 
         return hostname;
     }
+
+    public static string[] get_kernel_parameters () {
+        string cmdline;
+
+        try {
+            FileUtils.get_contents ("/proc/cmdline", out cmdline);
+        } catch (Error e) {
+            warning ("Could not read kernel parameters: %s", e.message);
+        }
+
+        return cmdline.split (" ");
+    }
 }
