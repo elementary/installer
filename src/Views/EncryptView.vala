@@ -21,11 +21,11 @@ public class EncryptView : AbstractInstallerView {
     private ErrorRevealer confirm_entry_revealer;
     private ErrorRevealer pw_error_revealer;
     private Gtk.Button next_button;
-    private ValidatedEntry confirm_entry;
+    private Granite.ValidatedEntry confirm_entry;
     private ValidatedEntry pw_entry;
     private Gtk.LevelBar pw_levelbar;
 
-    private const int INFO_LABEL_CHARS = 45;
+    private const string SKIP_STRING = _("Don’t Encrypt");
 
     public EncryptView () {
         Object (cancellable: false);
@@ -52,11 +52,19 @@ public class EncryptView : AbstractInstallerView {
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
+        var details_label = new Gtk.Label (_("Encrypt this device's drive if required for added protection, but be sure you understand:")) {
+            hexpand = true,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
+            wrap = true,
+            xalign = 0
+        };
+        details_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+
         var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
-        var protect_label = new Gtk.Label (_("Data will be protected from others with physical access to this device.")) {
+        var protect_label = new Gtk.Label (_("Data will only be protected from others with physical access to this device when it is shut down.")) {
             hexpand = true,
-            max_width_chars = INFO_LABEL_CHARS,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
@@ -64,7 +72,8 @@ public class EncryptView : AbstractInstallerView {
         var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         var restart_label = new Gtk.Label (_("The encryption password will be required each time this device is turned on. Store it somewhere safe.")) {
-            max_width_chars = INFO_LABEL_CHARS,
+            hexpand = true,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
@@ -72,7 +81,8 @@ public class EncryptView : AbstractInstallerView {
         var keyboard_image = new Gtk.Image.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         var keyboard_label = new Gtk.Label (_("A built-in or USB keyboard will be required to type the encryption password each time this device is turned on.")) {
-            max_width_chars = INFO_LABEL_CHARS,
+            hexpand = true,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
@@ -81,19 +91,20 @@ public class EncryptView : AbstractInstallerView {
             column_spacing = 12,
             row_spacing = 32
         };
-        choice_grid.attach (protect_image, 0, 0);
-        choice_grid.attach (protect_label, 1, 0);
-        choice_grid.attach (restart_image, 0, 1);
-        choice_grid.attach (restart_label, 1, 1);
-        choice_grid.attach (keyboard_image, 0, 2);
-        choice_grid.attach (keyboard_label, 1, 2);
+        choice_grid.attach (details_label, 0, 0, 2);
+        choice_grid.attach (protect_image, 0, 1);
+        choice_grid.attach (protect_label, 1, 1);
+        choice_grid.attach (restart_image, 0, 2);
+        choice_grid.attach (restart_label, 1, 2);
+        choice_grid.attach (keyboard_image, 0, 3);
+        choice_grid.attach (keyboard_label, 1, 3);
 
         var description = new Gtk.Label (
             _("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account.")
         ) {
             hexpand = true,
             margin_bottom = 12,
-            max_width_chars = INFO_LABEL_CHARS,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             use_markup = true,
             wrap = true,
             xalign = 0
@@ -115,7 +126,7 @@ public class EncryptView : AbstractInstallerView {
 
         var confirm_label = new Granite.HeaderLabel (_("Confirm Password"));
 
-        confirm_entry = new ValidatedEntry () {
+        confirm_entry = new Granite.ValidatedEntry () {
             sensitive = false,
             visibility = false
         };
@@ -152,42 +163,45 @@ public class EncryptView : AbstractInstallerView {
         content_area.attach (title_label, 0, 1);
         content_area.attach (stack, 1, 0, 1, 2);
 
-        var no_encrypt_button = new Gtk.Button.with_label (_("Don't Encrypt"));
         var back_button = new Gtk.Button.with_label (_("Back"));
 
-        next_button = new Gtk.Button.with_label (_("Choose Password")) {
+        var encrypt_button = new Gtk.Button.with_label (_("Choose Password"));
+
+        next_button = new Gtk.Button.with_label (_(SKIP_STRING)) {
             can_default = true
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (no_encrypt_button);
         action_area.add (back_button);
+        action_area.add (encrypt_button);
         action_area.add (next_button);
 
         next_button.grab_focus ();
 
-        no_encrypt_button.clicked.connect (() => {
-                next_step ();
-        });
-
         back_button.clicked.connect (() => {
             stack.visible_child = choice_grid;
-            next_button.label = _("Choose Password");
+            next_button.label = _(SKIP_STRING);
             next_button.sensitive = true;
             back_button.hide ();
+            encrypt_button.show ();
+        });
+
+        encrypt_button.clicked.connect (() => {
+            stack.visible_child = password_grid;
+            next_button.label = _("Set Encryption Password");
+            update_next_button ();
+            back_button.show ();
+            encrypt_button.hide ();
+
+            pw_entry.grab_focus ();
         });
 
         next_button.clicked.connect (() => {
-            if (stack.visible_child == choice_grid) {
-                stack.visible_child = password_grid;
-                pw_entry.grab_focus ();
-                next_button.label = _("Set Password");
-                back_button.show ();
-                update_next_button ();
-            } else if (stack.visible_child == password_grid) {
+            if (stack.visible_child == password_grid) {
                 Configuration.get_default ().encryption_password = pw_entry.text;
-                next_step ();
             }
+
+            next_step ();
         });
 
         pw_entry.changed.connect (() => {
@@ -243,16 +257,13 @@ public class EncryptView : AbstractInstallerView {
     private bool confirm_password () {
         if (confirm_entry.text != "") {
             if (pw_entry.text != confirm_entry.text) {
-                confirm_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "dialog-error-symbolic");
                 confirm_entry_revealer.label = _("Passwords do not match");
                 confirm_entry_revealer.reveal_child = true;
             } else {
-                confirm_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "process-completed-symbolic");
                 confirm_entry_revealer.reveal_child = false;
                 return true;
             }
         } else {
-            confirm_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, null);
             confirm_entry_revealer.reveal_child = false;
         }
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 20:35+0000\n"
-"PO-Revision-Date: 2021-06-02 17:21+0000\n"
+"POT-Creation-Date: 2021-06-14 22:31+0000\n"
+"PO-Revision-Date: 2021-06-20 22:40+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -45,15 +45,15 @@ msgstr "Kurulumu İptal Et"
 msgid "Test Mode"
 msgstr "Test Modu"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "Yoksay"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "Yeterli Alan Yok"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "%s kurulumu için cihazınızda yeterli alan yok. En az %s alan ayrılmasını "
 "öneriyoruz."
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "Cihazınız Çok Yavaş Olabilir"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,30 +74,30 @@ msgstr ""
 "Cihazınız önerilen sistem gereksinimlerini karşılamamaktadır. Bu, "
 "cihazınızın yavaş çalışmasına veya donmasına sebep olabilir."
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "Güç Kaynağına Bağla"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
 "Cihazınız pil gücü ile çalışıyor. Kurulum esnasında şarja takmanız önerilir."
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "Önerilen:"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "Cihazınız:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "İşlemci:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "Bellek:"
 
@@ -121,16 +121,31 @@ msgstr "Geçerli yapılandırma alınıyor…"
 msgid "Erase and Install"
 msgstr "Sil ve Kur"
 
+#: src/Views/EncryptView.vala:28
+msgid "Don’t Encrypt"
+msgstr "Şifreleme"
+
 #: src/Views/EncryptView.vala:50
 msgid "Enable Drive Encryption"
 msgstr "Sürücü Şifrelemesini Etkinleştir"
 
-#: src/Views/EncryptView.vala:57
-msgid "Data will be protected from others with physical access to this device."
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
 msgstr ""
-"Veriler, bu cihaza fiziksel erişimi olan diğer kişilerden korunacaktır."
+"Ek koruma sağlamak için gerekirse bu cihazın sürücüsünü şifreleyin, ancak "
+"şunu anladığınızdan emin olun:"
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:65
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
+msgstr ""
+"Veriler, bu cihaza fiziksel erişimi olan diğer kişilerden ancak cihaz "
+"kapalıysa korunacaktır."
+
+#: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -138,7 +153,7 @@ msgstr ""
 "Bu cihaz her açıldığında şifreleme parolası gerekecektir. Güvenli bir yerde "
 "saklayın."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -146,7 +161,7 @@ msgstr ""
 "Bu cihaz her açıldığında şifreleme parolasını yazmak için yerleşik bir "
 "klavye veya USB klavye gerekecektir."
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -155,32 +170,28 @@ msgstr ""
 "Şifreleme şifresini unutursanız, <b> veriyi kurtaramazsınız. </b> Bu şifre "
 "bu cihaza ait benzersiz bir şifre, kullanıcı hesabınızın şifresi değil."
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "Şifreleme Parolasını Seçin"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "Parolayı Onayla"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "Şifreleme"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
 #: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Geri"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Şifre Seçin"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "Şifre Belirle"
+#: src/Views/EncryptView.vala:191
+msgid "Set Encryption Password"
+msgstr "Şifreleme Parolasını Belirle"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Parolalar eşleşmiyor"
 
@@ -354,7 +365,7 @@ msgstr "Diski Sil ve Kur"
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "Her şeyi sil ve %s taze kopyasını kur."
+msgstr "Her şeyi sil ve %s yeni kopyasını kur."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
@@ -365,7 +376,7 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"Oluştur, yeniden boyutlandır, veya bölümleri elle yönet. Bu metot veri "
+"Oluştur, yeniden boyutlandır, veya bölümleri el ile yönet. Bu yöntem veri "
 "kaybına yol açabilir."
 
 #: src/Views/TryInstallView.vala:87
@@ -486,6 +497,9 @@ msgstr "Dosya sistemi:"
 #: src/Widgets/PartitionMenu.vala:109
 msgid "Default (ext4)"
 msgstr "Varsayılan (ext4)"
+
+#~ msgid "Set Password"
+#~ msgstr "Şifre Belirle"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "
