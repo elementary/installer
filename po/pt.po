@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-06-15 10:50+0000\n"
+"PO-Revision-Date: 2021-07-14 17:58+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
 "installer/pt/>\n"
@@ -244,7 +244,7 @@ msgstr "Selecionar o esquema de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
-msgstr "Digite para testar o seu esquema de teclado"
+msgstr "Escreva para testar o esquema de teclado"
 
 #: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
