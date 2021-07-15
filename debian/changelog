@@ -1,3 +1,9 @@
+io.elementary.installer (1.0.0) xenial; urgency=medium
+
+  * no changes since last release.
+
+ -- Cody Garver <cody@elementary.io>  Thu, 15 Jul 2021 23:55:44 +0000
+
 io.elementary.installer (1.0) xenial; urgency=medium
 
   * Initial Release.
