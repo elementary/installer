@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 22:31+0000\n"
+"POT-Creation-Date: 2021-07-15 23:48+0000\n"
 "PO-Revision-Date: 2021-07-14 17:58+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
@@ -114,11 +114,11 @@ msgstr ""
 "Isto irá apagar todos os dados da unidade selecionada. Se não fez uma cópia "
 "de segurança, pode cancelar a instalação e usar o Modo de Demonstração."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "A obter a configuração atual…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Apagar e Instalar"
 
@@ -181,7 +181,7 @@ msgid "Confirm Password"
 msgstr "Confirmar palavra-passe"
 
 #: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Voltar"
 
@@ -193,7 +193,7 @@ msgstr "Escolher palavra-passe"
 msgid "Set Encryption Password"
 msgstr "Definir a palavra-passe de encriptação"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "As palavras-passe não coincidem"
 
@@ -274,7 +274,7 @@ msgstr "Selecionar um idioma"
 msgid "Currently active language"
 msgstr "Idioma atualmente ativo"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -283,12 +283,12 @@ msgstr ""
 "\"Formatar\" irá apagar TODOS os dados da partição selecionada.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Deverá selecionar pelo menos uma partição <b>Root (/)</b>."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -296,27 +296,27 @@ msgstr ""
 "Deverá selecionar pelo menos uma partição <b>Root (/)</b> e uma partição "
 "<b>Boot (/boot/efi)</b>."
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "É também recomendável que selecione uma partição <b>Swap</b>."
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "Modificar partições…"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "A partição EFI tem o sistema de ficheiros incorreto"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "A partição EFI é demasiado pequena"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "Sistema de ficheiros inválido para o root"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "Sistema de ficheiros inválido para a pasta pessoal"
 
@@ -446,12 +446,12 @@ msgstr "Desencriptar"
 msgid "LUKS volume was decrypted"
 msgstr "O volume LUKS foi desencriptado"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

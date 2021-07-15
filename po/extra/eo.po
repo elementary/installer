@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 22:31+0000\n"
+"POT-Creation-Date: 2021-07-15 23:48+0000\n"
 "PO-Revision-Date: 2019-07-13 05:46+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/installer/"
@@ -13,9 +13,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.6.1\n"
 
-#: data/io.elementary.installer.desktop.in:3
+#: data/installer.appdata.xml.in:7
+#, fuzzy
+#| msgid "Install elementary OS"
+msgid "Installer"
+msgstr "Instali operaciumon elementary"
+
+#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Instali operaciumon elementary"
+
+#: data/installer.appdata.xml.in:10
+msgid "Step by step installer for elementary OS itself."
+msgstr ""
+
+#: data/installer.appdata.xml.in:17
+msgid "elementary, Inc."
+msgstr ""
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"

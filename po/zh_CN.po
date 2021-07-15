@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 22:31+0000\n"
+"POT-Creation-Date: 2021-07-15 23:48+0000\n"
 "PO-Revision-Date: 2021-06-20 22:40+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -108,11 +108,11 @@ msgstr ""
 "此操作会抹掉硬盘中的所有数据，如果您还未备份您的数据，可以取消安装并使用试用"
 "模式。"
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "正在获取当前配置…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "抹掉并安装"
 
@@ -167,7 +167,7 @@ msgid "Confirm Password"
 msgstr "确认密码"
 
 #: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "返回"
 
@@ -179,7 +179,7 @@ msgstr "选择密码"
 msgid "Set Encryption Password"
 msgstr "设置加密密码"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "密码不匹配"
 
@@ -192,7 +192,9 @@ msgstr "无法安装"
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
-msgstr "安装 %s 失败，可能是硬件错误导致的。设备可能没有正常重启。您可以尝试以下操作："
+msgstr ""
+"安装 %s 失败，可能是硬件错误导致的。设备可能没有正常重启。您可以尝试以下操"
+"作："
 
 #: src/Views/ErrorView.vala:46
 msgid "Try the installation again"
@@ -258,7 +260,7 @@ msgstr "选择语言"
 msgid "Currently active language"
 msgstr "当前激活的语言"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -266,39 +268,39 @@ msgstr ""
 "选择您要使用硬盘分区。<b>选择“格式化”将会抹掉选中分区内的所有数据。</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "您需要选择至少一个 <b>根（/）</b> 分区。"
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
 "您需要选择至少一个 <b>根（/）</b> 分区和一个 <b>启动（/boot/efi）</b> 分区。"
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "同时建议您选择一个 <b>交换（Swap）</b> 分区。"
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "修改分区…"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "EFI 分区文件系统有误"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "EFI 分区空间过小"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "Root 文件系统不可用"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "主目录（Home）文件系统不可用"
 
@@ -421,12 +423,12 @@ msgstr "解锁"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS 卷已解锁"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s（%s）"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s（%s: <b>%s</b>）"

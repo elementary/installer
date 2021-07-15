@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 22:31+0000\n"
+"POT-Creation-Date: 2021-07-15 23:48+0000\n"
 "PO-Revision-Date: 2021-06-15 10:50+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
@@ -115,11 +115,11 @@ msgstr ""
 "アップしていない場合は、インストールをキャンセルしてデモモードを使うことで、"
 "データをバックアップできます。"
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "現在の設定を取得しています…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "削除してインストール"
 
@@ -135,13 +135,17 @@ msgstr "ドライブの暗号化を有効にする"
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
-msgstr "必要であれば、ドライブを暗号化してデバイスの保護を強化できます。ただし、以下の点に注意してください。"
+msgstr ""
+"必要であれば、ドライブを暗号化してデバイスの保護を強化できます。ただし、以下"
+"の点に注意してください。"
 
 #: src/Views/EncryptView.vala:65
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr "デバイスの電源がオフの場合に限り、ほかの人がこのデバイスに物理的にアクセスできないようにデータを保護します。"
+msgstr ""
+"デバイスの電源がオフの場合に限り、ほかの人がこのデバイスに物理的にアクセスで"
+"きないようにデータを保護します。"
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -177,7 +181,7 @@ msgid "Confirm Password"
 msgstr "パスワードを確認"
 
 #: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "戻る"
 
@@ -189,7 +193,7 @@ msgstr "パスワードを選択"
 msgid "Set Encryption Password"
 msgstr "暗号化パスワードを設定"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "パスワードが一致しません"
 
@@ -270,7 +274,7 @@ msgstr "言語を選択してください"
 msgid "Currently active language"
 msgstr "現在使用可能な言語"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -280,12 +284,12 @@ msgstr ""
 "す。</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "少なくとも<b>ルート (/)</b>パーティションを選択する必要があります。"
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -293,27 +297,27 @@ msgstr ""
 "少なくとも<b>ルート (/)</b>パーティションと<b>ブート (/boot/efi)</b>パーティ"
 "ションを選択する必要があります。"
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "<b>スワップ</b>パーティションも選択することを推奨します。"
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "パーティションを修正…"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "EFI パーティションのファイルシステムが不適切です"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "EFI パーティションが小さすぎます"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "ルートディレクトリのファイルシステムが不適切です"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "ホームディレクトリのファイルシステムが不適切です"
 
@@ -441,12 +445,12 @@ msgstr "復号化"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS ボリュームが復号化されました"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

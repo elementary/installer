@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 22:31+0000\n"
+"POT-Creation-Date: 2021-07-15 23:48+0000\n"
 "PO-Revision-Date: 2020-08-19 13:13+0000\n"
 "Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
@@ -115,11 +115,11 @@ msgstr ""
 "heeft van uw data, dan kunt u de installatie annuleren en de demomodus "
 "gebruiken."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Huidige configuratie aan het ophalen…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Installeren en wissen"
 
@@ -184,7 +184,7 @@ msgid "Confirm Password"
 msgstr "Wachtwoord bevestigen"
 
 #: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Terug"
 
@@ -198,7 +198,7 @@ msgstr "Wachtwoord kiezen"
 msgid "Set Encryption Password"
 msgstr "Kies encryptie wachtwoord"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "Wachtwoorden komen niet overeen"
 
@@ -290,7 +290,7 @@ msgstr "Selecteer een taal"
 msgid "Currently active language"
 msgstr "Momenteel actieve taal"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -300,12 +300,12 @@ msgstr ""
 "permanent verwijderen.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "U zult in ieder geval een <b>Root-partitie (/)</b> moeten kiezen."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -313,28 +313,28 @@ msgstr ""
 "U zult in ieder geval een <b>Root-partitie (/)</b> als ook een <b>Boot-"
 "partitie (/boot/efi)</b> moeten selecteren."
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr ""
 "Het wordt eveneens aangeraden om een <b>Swap-partitie</b> te selecteren."
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "Partities aanpassen…"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "EFI partitie heeft het verkeerde bestandssysteem"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "EFI partitie is te klein"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "Ongeldig bestandssysteem voor root"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "Ongeldig bestandssysteem voor home-folder"
 
@@ -475,12 +475,12 @@ msgstr "Ontsleutel"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS-volume is ontsleuteld"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

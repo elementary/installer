@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 22:31+0000\n"
+"POT-Creation-Date: 2021-07-15 23:48+0000\n"
 "PO-Revision-Date: 2018-11-04 21:44+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/installer/"
@@ -116,11 +116,11 @@ msgstr ""
 "sigurnosnu kopiju svojih podataka, možete otkazati instalaciju i koristiti "
 "demonstracijski način rada."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Učitavanje trenutne konfiguracije…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Izbriši i instaliraj"
 
@@ -191,7 +191,7 @@ msgid "Confirm Password"
 msgstr "Potvrdite lozinku"
 
 #: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Nazad"
 
@@ -205,7 +205,7 @@ msgstr "Odaberite lozinku"
 msgid "Set Encryption Password"
 msgstr "Odaberite lozinku šifriranja"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "Lozinke se ne podudaraju"
 
@@ -297,7 +297,7 @@ msgstr "Odaberite jezik"
 msgid "Currently active language"
 msgstr "Trenutno aktivan jezik"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -306,12 +306,12 @@ msgstr ""
 "opcije \"Formatiraj\" izbrisat ćete SVE podatke na odabranoj particiji.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Morate odabrati makar <b>korijensku (/)</b> particiju."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -319,27 +319,27 @@ msgstr ""
 "Morate odabrati makar <b>korijensku (/)</b> particiju i <b>pokretačku (/boot/"
 "efi)</b> particiju."
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Također se preporučuje da odaberete <b>swap</b> particiju."
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "Izmijeni particije…"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "EFI particija ima pogrešan sistem datoteka"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "EFI particija je premala"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "Nevažeći sistem datoteka za korijen (root)"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "Nevažeći sistem datoteka za dom (home)"
 
@@ -477,12 +477,12 @@ msgstr "Dešifriraj"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS pogon je dešifriran"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
