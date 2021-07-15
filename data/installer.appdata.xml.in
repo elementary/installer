@@ -10,7 +10,7 @@
     <p>Step by step installer for elementary OS itself.</p>
   </description>
   <releases>
-    <release version="1.0.0" date="2021-07-14" urgency="medium">
+    <release version="1.0.0" date="2021-07-15" urgency="medium">
       <p>Initial release</p>
     </release>
   </releases>
