@@ -14,7 +14,6 @@
       <p>Initial release</p>
     </release>
   </releases>
-  <compulsory_for_desktop>Pantheon</compulsory_for_desktop>
   <developer_name>elementary, Inc.</developer_name>
   <url type="homepage">https://elementary.io</url>
   <url type="bugtracker">https://github.com/elementary/installer/issues</url>
