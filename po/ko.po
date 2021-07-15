@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 22:31+0000\n"
+"POT-Creation-Date: 2021-07-15 23:48+0000\n"
 "PO-Revision-Date: 2019-09-20 15:22+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
@@ -114,11 +114,11 @@ msgstr ""
 "이 작업은 해당 드라이브의 모든 데이터를 지우게 됩니다. 데이터를 백업하지 않으"
 "셨다면, 설치를 취소하고 데모 모드로 사용해 보실 수 있습니다."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "현재 설정을 가져오고 있습니다…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "설치하기"
 
@@ -187,7 +187,7 @@ msgid "Confirm Password"
 msgstr "비밀번호 확인"
 
 #: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "뒤로"
 
@@ -201,7 +201,7 @@ msgstr "비밀번호 만들기"
 msgid "Set Encryption Password"
 msgstr "보안 암호 만들기"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "비밀번호가 맞지 않습니다"
 
@@ -293,7 +293,7 @@ msgstr "언어 선택"
 msgid "Currently active language"
 msgstr "지금 사용 중인 언어"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -302,12 +302,12 @@ msgstr ""
 "모든 데이터를 지우게 됩니다.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "최소한 <b>Root (/)</b> 파티션은 꼭 선택하셔야 합니다."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -315,27 +315,27 @@ msgstr ""
 "최소한 <b>Root (/)</b> 파티션과 <b>Boot (/boot/efi)</b> 파티션은 꼭 선택하셔"
 "야 합니다."
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "<b>Swap</b> 파티션도 설정하시길 권해드립니다."
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "파티션 구성하기…"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "EFI 파티션의 파일 시스템이 잘못되었습니다"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "EFI 파티션이 너무 작습니다"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "root용 파일 시스템이 잘못되었습니다"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "home용 파일 시스템이 잘못되었습니다"
 
@@ -470,12 +470,12 @@ msgstr "암호화 해제"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS 볼륨의 암호화를 해제했습니다"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
