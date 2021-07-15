@@ -7,7 +7,7 @@
   <name>Installer</name>
   <summary>Install elementary OS</summary>
   <description>
-    <p>Step by step installation wizard for elementary OS.</p>
+    <p>Step by step installer for elementary OS itself.</p>
   </description>
   <releases>
     <release version="1.0.0" date="2021-07-14" urgency="medium">
