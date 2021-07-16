@@ -1,21 +1,33 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2017-09-21 08:45+0000\n"
+"POT-Creation-Date: 2021-07-15 23:48+0000\n"
+"PO-Revision-Date: 2021-07-16 10:41+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://weblate.elementary.io/projects/installer/"
-"extra/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/extra/"
+"he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 4.4.2\n"
 
-#: data/io.elementary.installer.desktop.in:3
+#: data/installer.appdata.xml.in:7
+msgid "Installer"
+msgstr "תכנית התקנה"
+
+#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "התקנת elementary OS"
+
+#: data/installer.appdata.xml.in:10
+msgid "Step by step installer for elementary OS itself."
+msgstr "תכנית התקנה ל־elementary OS שלוקחת אותך שלב אחר שלב."
+
+#: data/installer.appdata.xml.in:17
+msgid "elementary, Inc."
+msgstr "elementary בע״מ"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
