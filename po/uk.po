@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-06-17 04:33+0000\n"
+"PO-Revision-Date: 2021-07-27 23:13+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -461,20 +461,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Використати розділ:"
+msgstr "Використати розділ"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "Формат:"
+msgstr "Форматувати"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Видалити всі дані та встановити нову файлову систему"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
