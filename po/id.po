@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 23:48+0000\n"
+"POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2019-11-30 20:24+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/installer/"
@@ -488,48 +488,56 @@ msgstr "%s (%s)"
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
-#: src/Widgets/PartitionMenu.vala:60
-msgid "Use partition:"
+#: src/Widgets/PartitionMenu.vala:56
+#, fuzzy
+#| msgid "Use partition:"
+msgid "Use Partition"
 msgstr "Gunakan partisi:"
 
-#: src/Widgets/PartitionMenu.vala:71
-msgid "Format:"
+#: src/Widgets/PartitionMenu.vala:60
+#, fuzzy
+#| msgid "Format:"
+msgid "Format"
 msgstr "Format:"
 
-#: src/Widgets/PartitionMenu.vala:81
+#: src/Widgets/PartitionMenu.vala:61
+msgid "Delete all data and set up a new file system"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
 msgstr "Gunakan sebagai :"
 
-#: src/Widgets/PartitionMenu.vala:87
+#: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
 msgstr "Root (/)"
 
-#: src/Widgets/PartitionMenu.vala:88
+#: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
 msgstr "Beranda (/home)"
 
-#: src/Widgets/PartitionMenu.vala:89
+#: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
 msgstr "Boot (%s)"
 
-#: src/Widgets/PartitionMenu.vala:90
+#: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
 msgstr "Swap"
 
-#: src/Widgets/PartitionMenu.vala:91
+#: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
 msgstr "Kustom"
 
-#: src/Widgets/PartitionMenu.vala:95
+#: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
 msgstr "Kustom:"
 
-#: src/Widgets/PartitionMenu.vala:103
+#: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
 msgstr "Berkas sistem:"
 
-#: src/Widgets/PartitionMenu.vala:109
+#: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Bawaan (ext4)"
 
