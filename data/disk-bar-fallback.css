@@ -17,57 +17,73 @@
  * Authored by: Ian Santopietro <ian@system76.com>
  */
 
-.storage-bar .legend {
+levelbar block {
+    border-radius: 3px;
+}
+
+levelbar block:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+levelbar block:not(:last-child) {
+    border-right-style: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+levelbar block.legend {
     border-radius: 50%;
 }
 
-.storage-bar .disk-bar,
-.storage-bar .unused {
-    background-color: #888;
+levelbar block.swap {
+    background-color: @STRAWBERRY_500;
 }
 
-.storage-bar .swap {
-    background-color: #C22E1E;
+levelbar block.ext4 {
+    background-color: @LIME_500;
 }
 
-.storage-bar .ext4 {
-    background-color: #4EA845;
+levelbar block.ext3 {
+    background-color: @MINT_500;
 }
 
-.storage-bar .ext3 {
-    background-color: #428F3B;
+levelbar block.ext2 {
+    background-color: @BUBBLEGUM_500;
 }
 
-.storage-bar .ext2 {
-    background-color: #367530;
+levelbar block.fat16,
+levelbar block.fat32 {
+    background-color: @BANANA_500;
 }
 
-.storage-bar .fat16,
-.storage-bar .fat32 {
-    background-color: #CACA32;
+levelbar block.btrfs {
+    background-color: @BLUEBERRY_500;
 }
 
-.storage-bar .btrfs {
-    background-color: #3940A0;
+levelbar block.xfs {
+    background-color: @SLATE_100;
 }
 
-.storage-bar .xfs {
-    background-color: #6D57D3;
+levelbar block.ntfs {
+    background-color: @COCOA_300;
 }
 
-.storage-bar .ntfs {
-    background-color: #BE791F;
+levelbar block.luks {
+    background-color: @ORANGE_500;
 }
 
-.storage-bar .luks {
-    background-color: #813BA4;
+levelbar block.lvm {
+    background-color: @GRAPE_500;
 }
 
-.storage-bar .lvm {
-    background-color: #9444BD;
+levelbar block.none {
+    background-color: @SILVER_300;
 }
 
-.storage-bar .none {
-    background-color: #3199CB;
+levelbar block image {
+    -gtk-icon-palette: error #fff, success #fff, warning #fff;
+    -gtk-icon-shadow:
+        0 1px 1px alpha(#000, 0.2),
+        0 1px 3px alpha(#000, 0.1);
 }
-

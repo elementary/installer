@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 22:31+0000\n"
-"PO-Revision-Date: 2021-06-15 10:50+0000\n"
+"POT-Creation-Date: 2021-07-15 23:48+0000\n"
+"PO-Revision-Date: 2021-06-20 22:40+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -113,11 +113,11 @@ msgstr ""
 "Bu seçenek seçili sürücüden tüm veriyi silecektir. Eğer verilerinizi "
 "yedeklemediyseniz bu yüklemeyi iptal edip Demo Modu'nu kullanabilirsiniz."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Geçerli yapılandırma alınıyor…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Sil ve Kur"
 
@@ -179,7 +179,7 @@ msgid "Confirm Password"
 msgstr "Parolayı Onayla"
 
 #: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Geri"
 
@@ -191,7 +191,7 @@ msgstr "Şifre Seçin"
 msgid "Set Encryption Password"
 msgstr "Şifreleme Parolasını Belirle"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "Parolalar eşleşmiyor"
 
@@ -272,7 +272,7 @@ msgstr "Bir Dil Seçin"
 msgid "Currently active language"
 msgstr "Şu anda etkin olan dil"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -281,39 +281,39 @@ msgstr ""
 "\"Biçimlendir\" seçeneği seçili bölümdeki BÜTÜN verileri silecektir.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "En azından bir <b>Kök (/)</b> bölümü seçmelisiniz."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
 "En azından bir <b>Kök (/)</b> ve <b>Boot (/boot/efi)</b> bölümü seçmelisiniz."
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Bir <b>Takas</b> bölümü de seçmeniz tavsiye edilir."
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "Bölümleri Değiştir…"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "EFI bölümü yanlış dosya sistemine sahip"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "EFI bölümü çok küçük"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "Kök için geçersiz bir dosya sistemi"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "Home için geçersiz bir dosya sistemi"
 
@@ -365,7 +365,7 @@ msgstr "Diski Sil ve Kur"
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "Her şeyi sil ve %s taze kopyasını kur."
+msgstr "Her şeyi sil ve %s yeni kopyasını kur."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
@@ -376,7 +376,7 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"Oluştur, yeniden boyutlandır, veya bölümleri elle yönet. Bu metot veri "
+"Oluştur, yeniden boyutlandır, veya bölümleri el ile yönet. Bu yöntem veri "
 "kaybına yol açabilir."
 
 #: src/Views/TryInstallView.vala:87
@@ -443,12 +443,12 @@ msgstr "Çöz"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS bölümü çözülmüştü"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

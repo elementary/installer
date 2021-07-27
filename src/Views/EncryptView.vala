@@ -21,7 +21,7 @@ public class EncryptView : AbstractInstallerView {
     private ErrorRevealer confirm_entry_revealer;
     private ErrorRevealer pw_error_revealer;
     private Gtk.Button next_button;
-    private ValidatedEntry confirm_entry;
+    private Granite.ValidatedEntry confirm_entry;
     private ValidatedEntry pw_entry;
     private Gtk.LevelBar pw_levelbar;
 
@@ -126,7 +126,7 @@ public class EncryptView : AbstractInstallerView {
 
         var confirm_label = new Granite.HeaderLabel (_("Confirm Password"));
 
-        confirm_entry = new ValidatedEntry () {
+        confirm_entry = new Granite.ValidatedEntry () {
             sensitive = false,
             visibility = false
         };
@@ -257,16 +257,13 @@ public class EncryptView : AbstractInstallerView {
     private bool confirm_password () {
         if (confirm_entry.text != "") {
             if (pw_entry.text != confirm_entry.text) {
-                confirm_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "dialog-error-symbolic");
                 confirm_entry_revealer.label = _("Passwords do not match");
                 confirm_entry_revealer.reveal_child = true;
             } else {
-                confirm_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "process-completed-symbolic");
                 confirm_entry_revealer.reveal_child = false;
                 return true;
             }
         } else {
-            confirm_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, null);
             confirm_entry_revealer.reveal_child = false;
         }
 
