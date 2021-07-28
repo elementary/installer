@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-06-15 10:50+0000\n"
+"PO-Revision-Date: 2021-07-28 03:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -456,20 +456,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "パーティションを使う:"
+msgstr "パーティションを使う"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "フォーマット:"
+msgstr "フォーマット"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "すべてのデータを削除し、ファイルシステムを新しくセットアップします"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
