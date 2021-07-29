@@ -21,6 +21,26 @@
       <p>Initial release</p>
     </release>
   </releases>
+  <screenshots>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-language.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-keyboard.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-try-install.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-custom.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="default">https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-progress.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-success.png</image>
+    </screenshot>
+  </screenshots>
   <developer_name>elementary, Inc.</developer_name>
   <url type="homepage">https://elementary.io</url>
   <url type="bugtracker">https://github.com/elementary/installer/issues</url>
