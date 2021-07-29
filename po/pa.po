@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-07-28 16:12+0000\n"
+"PO-Revision-Date: 2021-07-29 18:27+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
 "installer/pa/>\n"
@@ -115,22 +115,24 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"ਇਹ ਚੁਣੀ ਹੋਈ ਡਰਾਈਵ ਦਾ ਸਾਰਾ ਡੇਟਾ ਮਿਟਾ ਦੇਵੇਗਾ। ਜੇ ਤੁਸੀਂ ਹਾਲੇ ਆਪਣਾ ਡੇਟਾ ਬੈਕਅਪ "
+"ਨਹੀਂ ਕੀਤਾ ਤਾਂ ਤੁਸੀਂ ਸਥਾਪਨ ਨੂੰ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ ਜਾਂ ਮਿਸਾਲ ਮੋਡ ਵਰਤ ਸਕਦੇ ਹੋ।"
 
 #: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "ਮੌਜੂਦਾ ਸੈਟਿੰਗਾਂ ਪੜ੍ਹ ਰਿਹੈ…"
 
 #: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
-msgstr ""
+msgstr "ਮਿਟਾਓ ਅਤੇ ਸਥਾਪਤ ਕਰੋ"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ-ਸੁਰੱਖਿਅਤ ਨਾ ਕਰੋ"
 
 #: src/Views/EncryptView.vala:50
 msgid "Enable Drive Encryption"
-msgstr ""
+msgstr "ਡਰਾਈਵ ਨੂੰ ਪਾਸਵਰਡ-ਸੁਰੱਖਿਅਤ ਕਰੋ"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
