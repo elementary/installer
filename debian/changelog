@@ -1,3 +1,14 @@
+io.elementary.installer (1.0.1) xenial; urgency=medium
+
+  * Release 1.0.1 (#582)
+  * LINGUAS: Add Panjabi (#581)
+  * Update translation files
+  * Update translation template
+  * PartitionMenu: Use GraniteSwitchModelButton (#563)
+  * ProgressView: Gresource wallpaper (#580)
+
+ -- Cody Garver <cody@elementary.io>  Thu, 29 Jul 2021 19:28:04 +0000
+
 io.elementary.installer (1.0.0) xenial; urgency=medium
 
   * no changes since last release.
