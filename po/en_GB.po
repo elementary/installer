@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-07-05 10:04+0000\n"
+"PO-Revision-Date: 2021-07-28 21:45+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "installer/installer/en_GB/>\n"
@@ -456,20 +456,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s:<b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Use partition:"
+msgstr "Use Partition"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "Format:"
+msgstr "Format"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Delete all data and set up a new file system"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
