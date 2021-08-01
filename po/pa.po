@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-01 06:08+0000\n"
+"PO-Revision-Date: 2021-08-01 12:30+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
 "installer/pa/>\n"
@@ -215,78 +215,80 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:46
 msgid "Try the installation again"
-msgstr ""
+msgstr "ਦੁਬਾਰਾ ਸਥਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
 #: src/Views/ErrorView.vala:57
 msgid "Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "ਡੈਮੋ ਮੋਡ ਵਰਤੋ ਅਤੇ ਹੱਥੀਂ ਰੀਕਵਰ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
 #: src/Views/ErrorView.vala:67
 msgid "Restart the device and boot from another drive"
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਰੀਸਟਾਰਟ ਕਰੋ ਅਤੇ ਕਿਸੇ ਹੋਰ ਡਰਾਈਵ ਤੋਂ ਬੂਟ ਕਰੋ"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
-msgstr ""
+msgstr "ਵੇਰਵਾ"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਰੀਸਟਾਰਟ ਕਰੋ"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "ਡੈਮੋ ਮੋਡ ਅਜ਼ਮਾਓ"
 
 #: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
-msgstr ""
+msgstr "ਦੁਬਾਰਾ ਸਥਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
 #: src/Views/KeyboardLayoutView.vala:31
 msgid "Select Keyboard Layout"
-msgstr ""
+msgstr "ਕੀਬੋਰਡ ਲੇਆਊਟ ਚੁਣੋ"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
-msgstr ""
+msgstr "ਲੇਆਊਟ ਟੈਸਟ ਕਰਨ ਲਈ ਟਾਈਪ ਕਰੋ"
 
 #: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "ਕੀਬੋਰਡ ਲੇਆਊਟ ਵਿਖਾਓ"
 
 #: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr ""
+msgstr "ਚੁਣੋ"
 
 #: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
-msgstr ""
+msgstr "ਡਿਫ਼ਾਲਟ"
 
 #: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
-msgstr ""
+msgstr "ਟਾਈਪਿੰਗ ਲਈ ਭਾਸ਼ਾ"
 
 #: src/Views/LanguageView.vala:261
 msgid "Languages"
-msgstr ""
+msgstr "ਭਾਸ਼ਾਵਾਂ"
 
 #: src/Views/LanguageView.vala:278
 msgid "Select a Language"
-msgstr ""
+msgstr "ਕੋਈ ਭਾਸ਼ਾ ਚੁਣੋ"
 
 #: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
-msgstr ""
+msgstr "ਮੌਜੂਦਾ ਚੁਣੀ ਹੋਈ ਭਾਸ਼ਾ"
 
 #: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"ਸਾਰੀਆਂ ਡਰਾਈਵਾਂ ਤੇ ਵਰਤਣ ਲਈ ਅਪਨਸ਼ਨਾਂ ਚੁਣੋ। <b>\"ਫ਼ਾਰਮੈਟ\" ਕਰਨ ਨਾਲ਼ ਚੁਣੀ ਹੋਈ ਡਰਾ"
+"ਈਵ ਦਾ ਸਾਰਾ ਡੇਟਾ ਮਿਟ ਜਾਵੇਗਾ।</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਵੰਡ ਲਾਜ਼ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
@@ -294,108 +296,115 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਅਤੇ ਇੱਕ <b>ਬੂਟ (/boot/efi)</b> ਵੰਡ ਲਾਜ਼"
+"ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "ਇੱਕ <b>ਸਵੈਪ</b> ਵੰਡ ਚੁਣਨ ਦੀ ਵੀ ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।"
 
 #: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "ਵੰਡਾਂ ਵਿੱਚ ਤਬਦੀਲੀਆਂ ਕਰੋ…"
 
 #: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਗ਼ਲਤ ਹੈ"
 
 #: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਬਹੁਤ ਹੀ ਛੋਟੀ ਹੈ"
 
 #: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "ਰੂਟ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "ਘਰ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "ਲਾਗ ਵਿਖਾਓ"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "ਲਾਗ ਲੁਕਾਓ"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "ਡਰਾਈਵ ਵੰਡ ਹੋ ਰਹੀ ਹੈ"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:226
 msgid "Extracting Files"
-msgstr ""
+msgstr "ਫ਼ਾਇਲਾਂ ਕੱਢੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:231
 msgid "Configuring the System"
-msgstr ""
+msgstr "ਸਿਸਟਮ ਨੂੰ ਕਨਫਿਗਰ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:236
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "ਸਥਾਪਨ ਮੁਕੰਮਲ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
 #: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
-msgstr ""
+msgstr "ਅਜ਼ਮਾਓ ਜਾਂ ਸਥਾਪਤ ਕਰੋ"
 
 #: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
+"ਤਬਦੀਲੀਆਂ ਨੂੰ ਸਾਂਭਿਆ ਨਹੀਂ ਜਾਵੇਗਾ ਅਤੇ ਤੁਹਾਡੇ ਪਿਛਲੇ ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਦੇ ਡੇਟੇ ਵਿੱਚ "
+"ਕੋਈ ਤਬਦੀਲੀ ਨਹੀਂ ਕੀਤੀ ਜਾਵੇਗੀ। ਫ਼ੀਚਰ ਅਤੇ ਕਾਰਗੁਜ਼ਾਰੀ ਸ਼ਾਇਦ ਉਹੋ ਜਿਹੀ ਨਾ ਹੋਵੇ ਜਿਹੋ"
+" ਜਿਹੀ ਸਥਾਪਤ ਕੀਤੇ ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਦੀ ਹੁੰਦੀ ਹੈ।"
 
 #: src/Views/TryInstallView.vala:46
 msgid "Erase Disk and Install"
-msgstr ""
+msgstr "ਡਿਸਕ ਸਾਫ਼ ਕਰੋ (ਸਾਰਾ ਡੇਟਾ ਮਿਟਾਓ) ਅਤੇ ਸਥਾਪਤ ਕਰੋ"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "ਸਭ ਕੁਝ ਮਿਟਾਓ ਅਤੇ %s ਦੀ ਇੱਕ ਤਾਜ਼ੀ ਨਕਲ ਸਥਾਪਤ ਕਰੋ।"
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
-msgstr ""
+msgstr "ਤਬਦੀਲੀਸ਼ੁਦਾ ਸਥਾਪਨ (ਜਾਣਕਾਰਾਂ ਲਈ)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"ਵੰਡਾਂ ਨੂੰ ਹੱਥੀਂ ਬਣਾਓ, ਇਹਨਾਂ ਦਾ ਸਾਈਜ਼ ਬਦਲੋ ਜਾਂ ਹੋਰ ਰੱਖ-ਰਖਾਓ ਕਰੋ। ਇਹ ਤਰੀਕੇ ਨਾਲ਼"
+" ਤੁਸੀਂ ਡੇਟਾ ਗਵਾ ਵੀ ਸਕਦੇ ਹੋ।"
 
 #: src/Views/TryInstallView.vala:87
 msgid "Next"
-msgstr ""
+msgstr "ਅਗਲਾ"
 
 #: src/Views/TryInstallView.vala:113
 msgid "Custom Install"
-msgstr ""
+msgstr "ਤਬਦੀਲੀਸ਼ੁਦਾ ਸਥਾਪਨ"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "ਸੈੱਟਅਪ ਕਰਨਾ ਜਾਰੀ ਰੱਖੋ"
 
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s ਸਥਾਪਤ ਹੋ ਚੁੱਕਿਐ"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
-msgstr ""
+msgstr "ਬੰਦ ਕਰੋ"
 
 #: src/Views/SuccessView.vala:96
 #, c-format
