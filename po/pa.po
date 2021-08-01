@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-07-29 18:27+0000\n"
+"PO-Revision-Date: 2021-08-01 04:52+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
 "installer/pa/>\n"
@@ -139,24 +139,32 @@ msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"ਜੇ ਲੋੜ ਹੋਵੇ ਤਾਂ ਇਸ ਡਿਵਾਈਸ ਦੀ ਡਰਾਈਵ ਪਾਸਵਰਡ-ਰੱਖਿਅਤ ਕਰੋ, ਪਰ ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ "
+"ਤੁਸੀਂ ਇਹ ਚੰਗੀ ਤਰ੍ਹਾਂ ਸਮਝਦੇ ਹੋਵੋਂ:"
 
 #: src/Views/EncryptView.vala:65
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
+"ਇਸ ਡਿਵਾਈਸ ਤੱਕ ਸਰੀਰਕ ਪਹੁੰਚ ਰੱਖਣ ਵਾਲਿਆਂ ਤੋਂ ਡੇਟਾ ਸਿਰਫ਼ ਉਦੋਂ ਹੀ ਸੁਰੱਖਿਅਤ ਹੋਵੇਗਾ "
+"ਜਦੋਂ ਇਹ ਬੰਦ ਹੋਵੇਗੀ।"
 
 #: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
+"ਜਦੋਂ ਵੀ ਇਹ ਡਿਵਾਈਸ ਬੰਦ ਹਾਲਤ ਵਿੱਚੋਂ ਚਲਾਈ ਗਈ ਤਾਂ ਪਾਸਵਰਡ ਮੰਗਿਆ ਜਾਵੇਗਾ। ਪਾਸਵਰਡ ਨੂੰ"
+" ਕਿਸੇ ਮਹਿਫੂਜ਼ ਜਗ੍ਹਾ ਲੁਕਾਉਣਾ।"
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"ਹਰ ਵਾਰ ਜਦੋਂ ਇਹ ਡਿਵਾਈਸ ਬੰਦ ਹਾਲਤ ਵਿੱਚੋਂ ਚਾਲੂ ਕੀਤੀ ਜਾਵੇਗੀ ਤਾਂ ਪਾਸਵਰਡ ਟਾਈਪ ਕਰਨ ਇੱ"
+"ਕ ਕੀਬੋਰਡ ਦੀ ਲੋੜ ਹੋਵੇਗੀ।"
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -164,35 +172,37 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"ਜੇ ਤੁਸੀਂ ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ ਤਾਂ ਤੁਸੀਂ <b>ਡੇਟਾ ਵਾਪਸ ਨਹੀਂ ਪਾ ਸਕੋਗੇ।</b> ਇਹ ਇਸ ਡਿਵਾ"
+"ਈਸ ਦਾ ਆਪਣਾ ਅਨੋਖਾ ਪਾਸਵਰਡ ਹੈ, ਨਾ ਕਿ ਤੁਹਾਡੇ ਵਰਤੋਂਕਾਰ ਖਾਤੇ ਵਾਲ਼ਾ ਪਾਸਵਰਡ।"
 
 #: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "ਸੁਰੱਖਿਆ ਲਈ ਪਾਸਵਰਡ ਚੁਣੋ"
 
 #: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ ਤਸਦੀਕ ਕਰੋ"
 
 #: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
 #: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
-msgstr ""
+msgstr "ਪਿੱਛੇ ਜਾਓ"
 
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ ਚੁਣੋ"
 
 #: src/Views/EncryptView.vala:191
 msgid "Set Encryption Password"
-msgstr ""
+msgstr "ਸੁਰੱਖਿਆ ਲਈ ਪਾਸਵਰਡ ਸੈੱਟ ਕਰੋ"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ ਮੇਲ ਨਹੀਂ ਖਾਂਦੇ"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
-msgstr ""
+msgstr "ਸਥਾਪਤ ਨਹੀਂ ਹੋ ਸਕਿਆ"
 
 #: src/Views/ErrorView.vala:35
 #, c-format
