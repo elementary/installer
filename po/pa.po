@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-01 12:30+0000\n"
+"PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
 "installer/pa/>\n"
@@ -410,96 +410,100 @@ msgstr "ਬੰਦ ਕਰੋ"
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ਤੁਹਾਡੀ ਡਿਵਾਈਸ %i ਸਕਿੰਟ ਵਿੱਚ ਆਪਣੇ-ਆਪ ਰੀਸਟਾਰਟ ਹੋ ਜਾਵੇਗੀ।"
+msgstr[1] "ਤੁਹਾਡੀ ਡਿਵਾਈਸ %i ਸਕਿੰਟਾਂ ਵਿੱਚ ਆਪਣੇ-ਆਪ ਰੀਸਟਾਰਟ ਹੋ ਜਾਵੇਗੀ।"
 
 #: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"ਰੀਸਟਾਰਟ ਤੋਂ ਬਾਅਦ ਤੁਸੀਂ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ, ਜਾਂ ਫਿਰ ਹੁਣ ਤੁਸੀਂ ਡਿਵਾ"
+"ਈਸ ਨੂੰ ਬੰਦ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਬਾਅਦ ਵਿੱਚ ਵੀ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ।"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "ਇਸ ਵੰਡ ਨੂੰ ਡੀਕ੍ਰਿਪਟ ਕਰੋ"
 
 #: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"ਇਸ ਵੰਡ ਦਾ ਇਨਕ੍ਰਿਪਸ਼ਨ ਪਾਸਵਰਡ ਦਾਖ਼ਲ ਕਰੋ ਅਤੇ ਡੀਕ੍ਰਿਪਟ ਹੋਈ ਵੰਡ ਲਈ ਡਿਵਾਈਸ ਨਾਂ ਸੈੱ"
+"ਟ ਕਰੋ।"
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ:"
 
 #: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਦਾ ਨਾਂ:"
 
 #: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
-msgstr ""
+msgstr "ਡੀਕ੍ਰਿਪਟ ਕਰੋ"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "ਐੱਲਯੂਕੇਐੱਸ ਵੰਡ ਡੀਕ੍ਰਿਪਟ ਹੋ ਗਈ"
 
 #: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
 msgid "Use Partition"
-msgstr ""
+msgstr "ਇਹ ਵੰਡ ਵਰਤੋ"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Format"
-msgstr ""
+msgstr "ਫ਼ਾਰਮੈਟ ਕਰੋ"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "ਸਾਰਾ ਡੇਟਾ ਮਿਟਾਓ ਅਤੇ ਇੱਕ ਨਵਾਂ ਫ਼ਾਇਲ ਸਿਸਟਮ ਸੈੱਟ ਕਰੋ"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr ""
+msgstr "ਵਰਤੋ ਬਤੌਰ:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
-msgstr ""
+msgstr "ਜੜ੍ਹ (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
-msgstr ""
+msgstr "ਘਰ (/home)"
 
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "ਬੂਟ (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr ""
+msgstr "ਸਵੈਪ"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr ""
+msgstr "ਤਬਦੀਲੀਸ਼ੁਦਾ"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
-msgstr ""
+msgstr "ਤਬਦੀਲੀਸ਼ੁਦਾ:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
-msgstr ""
+msgstr "ਫ਼ਾਇਲ-ਸਿਸਟਮ:"
 
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
-msgstr ""
+msgstr "ਡਿਫ਼ਾਲਟ (ਈ.ਐਕਸ.ਟੀ4)"
