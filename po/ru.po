@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-06-17 04:33+0000\n"
+"PO-Revision-Date: 2021-08-06 20:34+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
@@ -459,20 +459,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Использовать раздел:"
+msgstr "Использовать раздел"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "Форматировать:"
+msgstr "Форматировать"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Удалите все данные и установить новую файловую систему"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
