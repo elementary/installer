@@ -52,7 +52,7 @@ public class EncryptView : AbstractInstallerView {
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var details_label = new Gtk.Label (_("Encrypt this device's drive if required for added protection, but be sure you understand:")) {
+        var details_label = new Gtk.Label (_("Encrypting this device's drive ensures the safety of your information. We recommend enabling drive encryption which means:")) {
             hexpand = true,
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
