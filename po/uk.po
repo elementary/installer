@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-07-27 23:13+0000\n"
+"PO-Revision-Date: 2021-08-10 22:24+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -263,7 +263,7 @@ msgstr "Типово"
 
 #: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
-msgstr "Мова вводу"
+msgstr "Мова введення"
 
 #: src/Views/LanguageView.vala:261
 msgid "Languages"
@@ -334,7 +334,7 @@ msgstr "Сховати журнал"
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
 msgid "Partitioning Drive"
-msgstr "Розподіл диска"
+msgstr "Розподілення диска"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:226
