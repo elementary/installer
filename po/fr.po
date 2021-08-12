@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-07-30 21:34+0000\n"
+"PO-Revision-Date: 2021-08-12 08:57+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -317,7 +317,7 @@ msgstr "La partition EFI est trop petite"
 
 #: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
-msgstr "Système de fichier incompatible pour la partition « root »"
+msgstr "Système de fichier incompatible pour la partition racine"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
@@ -478,7 +478,7 @@ msgstr "Utiliser comme :"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
-msgstr "Root (/)"
+msgstr "Racine (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
