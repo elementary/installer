@@ -264,6 +264,10 @@ namespace Utils {
         string hostname = get_ubiquity_compatible_hostname () ?? ("elementary-os" + "-" + get_chassis ());
         hostname += "-" + get_machine_id ().substring (0, 8);
 
+        if (!Distinst.validate_hostname (hostname)) {
+            hostname = "elementary-os";
+        }
+
         return hostname;
     }
 }
