@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-15 23:48+0000\n"
+"POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2021-03-04 15:31+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/installer/"
@@ -470,48 +470,54 @@ msgstr ""
 msgid "%s (%s: <b>%s</b>)"
 msgstr ""
 
+#: src/Widgets/PartitionMenu.vala:56
+#, fuzzy
+#| msgid "Customize Partitions…"
+msgid "Use Partition"
+msgstr "අභිමත බෙදීම්කරණය…"
+
 #: src/Widgets/PartitionMenu.vala:60
-msgid "Use partition:"
+msgid "Format"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:71
-msgid "Format:"
+#: src/Widgets/PartitionMenu.vala:61
+msgid "Delete all data and set up a new file system"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:81
+#: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:87
+#: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:88
+#: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:89
+#: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:90
+#: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:91
+#: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:95
+#: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:103
+#: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
 msgstr ""
 
-#: src/Widgets/PartitionMenu.vala:109
+#: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr ""
 
@@ -552,9 +558,6 @@ msgstr ""
 
 #~ msgid "Operating System"
 #~ msgstr "මෙහෙයුම් පද්ධතිය"
-
-#~ msgid "Customize Partitions…"
-#~ msgstr "අභිමත බෙදීම්කරණය…"
 
 #~ msgid "Install or Try Demo Mode"
 #~ msgstr "Demo  මාතය හෝ ස්ථාපනය උත්සාහ කරන්න"
