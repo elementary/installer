@@ -1,3 +1,11 @@
+io.elementary.installer (1.0.2) xenial; urgency=medium
+
+  * Release 1.0.2 (#605)
+  * Fallback when generated hostname is invalid (#604)
+  * Delete Issue Templates (#585)
+
+ -- Cody Garver <cody@elementary.io>  Fri, 20 Aug 2021 21:34:31 +0000
+
 io.elementary.installer (1.0.1) xenial; urgency=medium
 
   * Release 1.0.1 (#582)
