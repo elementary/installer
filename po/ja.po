@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-01 21:30+0000\n"
-"PO-Revision-Date: 2021-06-02 04:05+0000\n"
+"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"PO-Revision-Date: 2021-08-09 14:40+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -45,15 +45,15 @@ msgstr "インストールをキャンセル"
 msgid "Test Mode"
 msgstr "テストモード"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "無視"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "空き容量が不足しています"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "お使いのデバイスには %s をインストールするための十分な空き容量がありません。"
 "最低でも %s のストレージを推奨します。"
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "お使いのデバイスは遅すぎる可能性があります"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,11 +74,11 @@ msgstr ""
 "お使いのデバイスはハードウェアの推奨要件を満たしていません。これにより処理が"
 "遅くなったりフリーズすることがあります。"
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "電源に接続してください"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -86,19 +86,19 @@ msgstr ""
 "お使いのデバイスはバッテリーの電力で動作しています。インストール中は電源に接"
 "続することを推奨します。"
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "推奨要件:"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "お使いのデバイス:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "プロセッサー:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "メモリー:"
 
@@ -115,24 +115,39 @@ msgstr ""
 "アップしていない場合は、インストールをキャンセルしてデモモードを使うことで、"
 "データをバックアップできます。"
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "現在の設定を取得しています…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "削除してインストール"
+
+#: src/Views/EncryptView.vala:28
+msgid "Don’t Encrypt"
+msgstr "暗号化しない"
 
 #: src/Views/EncryptView.vala:50
 msgid "Enable Drive Encryption"
 msgstr "ドライブの暗号化を有効にする"
 
-#: src/Views/EncryptView.vala:57
-msgid "Data will be protected from others with physical access to this device."
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
 msgstr ""
-"ほかの人がこのデバイスに物理的にアクセスできないように、データを保護します。"
+"必要であれば、ドライブを暗号化してデバイスの保護を強化できます。ただし、以下"
+"の点に注意してください。"
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:65
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
+msgstr ""
+"デバイスの電源がオフの場合に限り、ほかの人がこのデバイスに物理的にアクセスで"
+"きないようにデータを保護します。"
+
+#: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -140,7 +155,7 @@ msgstr ""
 "暗号化パスワードはこのデバイスの電源を入れる度に要求されます。安全な場所に保"
 "管してください。"
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -148,7 +163,7 @@ msgstr ""
 "このデバイスが起動する度に、暗号化パスワードを入力するための内蔵または USB "
 "キーボードが必要になります。"
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -157,32 +172,28 @@ msgstr ""
 "暗号化パスワードを忘れた場合、<b>データは回復できません。</b>これはこのデバイ"
 "ス専用のパスワードであり、ユーザーアカウント用のパスワードではありません。"
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "暗号化パスワードを選択"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "パスワードを確認"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "暗号化しない"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "戻る"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "パスワードを選択"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "パスワードを設定"
+#: src/Views/EncryptView.vala:191
+msgid "Set Encryption Password"
+msgstr "暗号化パスワードを設定"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "パスワードが一致しません"
 
@@ -263,22 +274,21 @@ msgstr "言語を選択してください"
 msgid "Currently active language"
 msgstr "現在使用可能な言語"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"すべてのドライブで使用するパーティションを選択してください。<b>\"フォーマット"
-"\" を選択することで、選択されたパーティション上のすべてのデータは削除されま"
-"す。</b>"
+"すべてのドライブで使用するパーティションを選択してください。<b>\"フォーマット\"を選択することで"
+"、選択されたパーティション上のすべてのデータは削除されます。</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "少なくとも<b>ルート (/)</b>パーティションを選択する必要があります。"
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -286,51 +296,55 @@ msgstr ""
 "少なくとも<b>ルート (/)</b>パーティションと<b>ブート (/boot/efi)</b>パーティ"
 "ションを選択する必要があります。"
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "<b>スワップ</b>パーティションも選択することを推奨します。"
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "パーティションを修正…"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "EFI パーティションのファイルシステムが不適切です"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "EFI パーティションが小さすぎます"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "ルートディレクトリのファイルシステムが不適切です"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "ホームディレクトリのファイルシステムが不適切です"
 
-#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
+#: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr "ログを表示"
 
-#: src/Views/ProgressView.vala:102
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr "ログを非表示"
 
-#: src/Views/ProgressView.vala:226
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:221
 msgid "Partitioning Drive"
 msgstr "ドライブのパーティションを作成しています"
 
-#: src/Views/ProgressView.vala:230
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:226
 msgid "Extracting Files"
 msgstr "ファイルを展開しています"
 
-#: src/Views/ProgressView.vala:234
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:231
 msgid "Configuring the System"
 msgstr "システムを設定しています"
 
-#: src/Views/ProgressView.vala:238
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:236
 msgid "Finishing the Installation"
 msgstr "インストールを終了しています"
 
@@ -371,7 +385,7 @@ msgstr ""
 msgid "Next"
 msgstr "次へ"
 
-#: src/Views/TryInstallView.vala:115
+#: src/Views/TryInstallView.vala:113
 msgid "Custom Install"
 msgstr "カスタムインストール"
 
@@ -430,60 +444,67 @@ msgstr "復号化"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS ボリュームが復号化されました"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
+#: src/Widgets/PartitionMenu.vala:56
+msgid "Use Partition"
+msgstr "パーティションを使う"
+
 #: src/Widgets/PartitionMenu.vala:60
-msgid "Use partition:"
-msgstr "パーティションを使う:"
+msgid "Format"
+msgstr "フォーマット"
 
-#: src/Widgets/PartitionMenu.vala:71
-msgid "Format:"
-msgstr "フォーマット:"
+#: src/Widgets/PartitionMenu.vala:61
+msgid "Delete all data and set up a new file system"
+msgstr "すべてのデータを削除し、ファイルシステムを新しくセットアップします"
 
-#: src/Widgets/PartitionMenu.vala:81
+#: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
 msgstr "使用方法:"
 
-#: src/Widgets/PartitionMenu.vala:87
+#: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
 msgstr "ルート (/)"
 
-#: src/Widgets/PartitionMenu.vala:88
+#: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
 msgstr "ホーム (/home)"
 
-#: src/Widgets/PartitionMenu.vala:89
+#: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
 msgstr "ブート (%s)"
 
-#: src/Widgets/PartitionMenu.vala:90
+#: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
 msgstr "スワップ"
 
-#: src/Widgets/PartitionMenu.vala:91
+#: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
 msgstr "カスタム"
 
-#: src/Widgets/PartitionMenu.vala:95
+#: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
 msgstr "カスタム:"
 
-#: src/Widgets/PartitionMenu.vala:103
+#: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
 msgstr "ファイルシステム:"
 
-#: src/Widgets/PartitionMenu.vala:109
+#: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "デフォルト (ext4)"
+
+#~ msgid "Set Password"
+#~ msgstr "パスワードを設定"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

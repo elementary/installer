@@ -39,7 +39,7 @@ public class ProgressView : AbstractInstallerView {
             // We need this for the shadow to not get clipped by Gtk.Overlay
             margin = 6
         };
-        logo.loadable_icon = new FileIcon (File.new_for_path ("/usr/share/backgrounds/elementaryos-default"));
+        logo.loadable_icon = new FileIcon (File.new_for_uri ("resource://io/elementary/installer/wallpaper.jpg"));
         logo.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var icon = new Gtk.Image () {
@@ -217,18 +217,22 @@ public class ProgressView : AbstractInstallerView {
             double fraction = ((double) status.percent) / (100.0 * NUM_STEP);
             switch (status.step) {
                 case Distinst.Step.PARTITION:
+                    ///TRANSLATORS: The current step of the installer back-end
                     step_string = _("Partitioning Drive");
                     break;
                 case Distinst.Step.EXTRACT:
                     fraction += 2 * (1.0 / NUM_STEP);
+                    ///TRANSLATORS: The current step of the installer back-end
                     step_string = _("Extracting Files");
                     break;
                 case Distinst.Step.CONFIGURE:
                     fraction += 3 * (1.0 / NUM_STEP);
+                    ///TRANSLATORS: The current step of the installer back-end
                     step_string = _("Configuring the System");
                     break;
                 case Distinst.Step.BOOTLOADER:
                     fraction += 4 * (1.0 / NUM_STEP);
+                    ///TRANSLATORS: The current step of the installer back-end
                     step_string = _("Finishing the Installation");
                     break;
             }

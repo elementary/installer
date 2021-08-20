@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2018 elementary LLC. (https://elementary.io)
+ * Copyright 2018-2021 elementary, inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,20 +24,19 @@ public delegate void UnsetMount (string partition);
 public delegate bool MountSetFn (string mount_point);
 
 public class Installer.PartitionMenu : Gtk.Popover {
-    public bool disable_signals;
-    public bool is_lvm;
-    public Gtk.ComboBoxText type;
-    public Gtk.ComboBoxText use_as;
-    public Gtk.Entry custom;
-    public Gtk.Label custom_label;
-    public Gtk.Label format_label;
-    public Gtk.Switch format_partition;
-    public Gtk.Label type_label;
-    public Gtk.Switch use_partition;
-    public Distinst.FileSystem original_filesystem;
-    public string parent_disk;
-    public string partition_path;
+    private bool disable_signals;
+    private bool is_lvm;
+    private string parent_disk;
+    private string partition_path;
+    private Distinst.FileSystem original_filesystem;
 
+    private Granite.SwitchModelButton format_partition;
+    private Granite.SwitchModelButton use_partition;
+    private Gtk.ComboBoxText type;
+    private Gtk.ComboBoxText use_as;
+    private Gtk.Entry custom;
+    private Gtk.Label custom_label;
+    private Gtk.Label type_label;
     // A reference to the parent which owns this menu.
     private PartitionBar partition_bar;
 
@@ -55,35 +53,21 @@ public class Installer.PartitionMenu : Gtk.Popover {
             ? "/boot/efi"
             : "/boot";
 
-        var label_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-
-        var use_partition_label = new Gtk.Label (_("Use partition:"));
-        use_partition_label.halign = Gtk.Align.END;
-        use_partition_label.xalign = 1;
-        label_size_group.add_widget (use_partition_label);
-
-        use_partition = new Gtk.Switch ();
-        use_partition.halign = Gtk.Align.START;
-        use_partition.hexpand = false;
+        use_partition = new Granite.SwitchModelButton (_("Use Partition"));
 
         var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
 
-        format_label = new Gtk.Label (_("Format:"));
-        format_label.halign = Gtk.Align.END;
-        format_label.xalign = 1;
-        label_size_group.add_widget (format_label);
-
-        format_partition = new Gtk.Switch ();
-        format_partition.halign = Gtk.Align.START;
-        format_partition.hexpand = false;
-        format_partition.bind_property ("visible", format_label, "visible");
+        format_partition = new Granite.SwitchModelButton (_("Format")) {
+            description = _("Delete all data and set up a new file system")
+        };
 
         var use_as_label = new Gtk.Label (_("Use as:"));
         use_as_label.halign = Gtk.Align.END;
         use_as_label.xalign = 1;
-        label_size_group.add_widget (use_as_label);
 
-        use_as = new Gtk.ComboBoxText ();
+        use_as = new Gtk.ComboBoxText () {
+            hexpand = true
+        };
         use_as.append_text (_("Root (/)"));
         use_as.append_text (_("Home (/home)"));
         use_as.append_text (_("Boot (%s)".printf (boot_partition)));
@@ -95,7 +79,6 @@ public class Installer.PartitionMenu : Gtk.Popover {
         custom_label = new Gtk.Label (_("Custom:"));
         custom_label.halign = Gtk.Align.END;
         custom_label.xalign = 1;
-        label_size_group.add_widget (custom_label);
 
         custom = new Gtk.Entry ();
         custom.bind_property ("visible", custom_label, "visible");
@@ -103,9 +86,15 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type_label = new Gtk.Label (_("Filesystem:"));
         type_label.halign = Gtk.Align.END;
         type_label.xalign = 1;
+
+        var label_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        label_size_group.add_widget (use_as_label);
+        label_size_group.add_widget (custom_label);
         label_size_group.add_widget (type_label);
 
-        type = new Gtk.ComboBoxText ();
+        type = new Gtk.ComboBoxText () {
+            hexpand = true
+        };
         type.append_text (_("Default (ext4)"));
         type.append_text ("fat16");
         type.append_text ("fat32");
@@ -115,48 +104,38 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.active = 0;
         type.bind_property ("visible", type_label, "visible");
 
-        var top_controls = new Gtk.Grid ();
-        top_controls.column_spacing = 12;
-        top_controls.row_spacing = 6;
-        top_controls.margin = 12;
-
-        top_controls.attach (use_partition_label, 0, 0);
-        top_controls.attach (use_partition, 1, 0);
-
-        var bottom_controls = new Gtk.Grid ();
-        bottom_controls.column_spacing = 12;
-        bottom_controls.row_spacing = 6;
-        bottom_controls.margin = 12;
-        bottom_controls.margin_top = 6;
-
-        bottom_controls.attach (format_label, 0, 1);
+        var bottom_controls = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 6,
+            margin = 12,
+            margin_bottom = 9
+        };
         bottom_controls.attach (use_as_label, 0, 2);
-        bottom_controls.attach (custom_label, 0, 3);
-        bottom_controls.attach (type_label, 0, 4);
-
-        bottom_controls.attach (format_partition, 1, 1);
         bottom_controls.attach (use_as, 1, 2);
+        bottom_controls.attach (custom_label, 0, 3);
         bottom_controls.attach (custom, 1, 3);
+        bottom_controls.attach (type_label, 0, 4);
         bottom_controls.attach (type, 1, 4);
 
-        var bottom_grid = new Gtk.Grid ();
-        bottom_grid.column_spacing = 12;
-        bottom_grid.row_spacing = 6;
-
-        bottom_grid.attach (separator, 0, 0);
-        bottom_grid.attach (bottom_controls, 0, 1);
-
-        var grid = new Gtk.Grid ();
-        grid.column_spacing = 12;
+        var bottom_grid = new Gtk.Grid () {
+            row_spacing = 3
+        };
+        bottom_grid.attach (format_partition, 0, 0);
+        bottom_grid.attach (separator, 0, 1);
+        bottom_grid.attach (bottom_controls, 0, 2);
 
         var bottom_revealer = new Gtk.Revealer ();
         bottom_revealer.add (bottom_grid);
 
-        grid.attach (top_controls, 0, 0);
+        var grid = new Gtk.Grid () {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+        grid.attach (use_partition, 0, 0);
         grid.attach (bottom_revealer, 0, 1);
+        grid.show_all ();
 
         add (grid);
-        grid.show_all ();
 
         custom.visible = false;
 
@@ -299,15 +278,15 @@ public class Installer.PartitionMenu : Gtk.Popover {
         var mount_icon = new Gtk.Image.from_icon_name (
             error == null ? "process-completed-symbolic" : "dialog-warning-symbolic",
             Gtk.IconSize.SMALL_TOOLBAR
-        );
+        ) {
+            halign = Gtk.Align.END,
+            valign = Gtk.Align.END,
+            margin = 6
+        };
 
         if (error != null) {
-            partition_bar.set_tooltip_text (error);
+            partition_bar.tooltip_text = error;
         }
-
-        mount_icon.halign = Gtk.Align.END;
-        mount_icon.valign = Gtk.Align.END;
-        mount_icon.margin = 6;
 
         partition_bar.container.get_children ().foreach ((c) => c.destroy ());
         partition_bar.container.pack_start (mount_icon, true, true, 0);

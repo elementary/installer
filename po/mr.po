@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2021-03-20 21:27+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/installer/"
@@ -45,15 +45,15 @@ msgstr "इंस्टॉलेशन रद्द करा"
 msgid "Test Mode"
 msgstr "चाचणी मोड"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "दुर्लक्ष"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "पुरेशी जागा नाही"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "आपल्या डिव्हाइसवर %s स्थापित करण्यासाठी पुरेशी जागा नाही. आम्ही किमान %s जागेची "
 "शिफारस करतो."
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "आपले डिव्हाइस खूप धीमे असू शकते"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,30 +74,30 @@ msgstr ""
 "आपले डिव्हाइस शिफारस केलेल्या हार्डवेअर आवश्यकता पूर्ण करीत नाही. हे खूप धीमे होऊ शकते "
 "किंवा अडकू शकते."
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "उर्जा स्त्रोताशी जोडा"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
 "आपले डिव्हाइस बॅटरी पॉवरवर चालत आहे. स्थापित करताना प्लग इन करण्याची शिफारस केली जाते."
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "शिफारस केलेले :"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "आपले डिव्हाइस :"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "प्रोसेसर :"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "मेमरी :"
 
@@ -113,13 +113,19 @@ msgstr ""
 "हे निवडलेल्या ड्राइव्हवरील सर्व डेटा पुसून टाकेल. आपण आपला डेटा बॅक अप घेतला नसेल तर आपण "
 "स्थापना रद्द करू शकता आणि डेमो मोड वापरू शकता."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "वर्तमान कॉन्फिगरेशन मिळवत आहे …"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "पुसून टाका आणि स्थापित करा"
+
+#: src/Views/EncryptView.vala:28
+#, fuzzy
+#| msgid "Don't Encrypt"
+msgid "Don’t Encrypt"
+msgstr "एन्क्रिप्ट करू नका"
 
 #: src/Views/EncryptView.vala:50
 #, fuzzy
@@ -127,11 +133,22 @@ msgstr "पुसून टाका आणि स्थापित करा"
 msgid "Enable Drive Encryption"
 msgstr "ड्राइव्ह एन्क्रिप्शन"
 
-#: src/Views/EncryptView.vala:57
-msgid "Data will be protected from others with physical access to this device."
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
+msgstr ""
+
+#: src/Views/EncryptView.vala:65
+#, fuzzy
+#| msgid ""
+#| "Data will be protected from others with physical access to this device."
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
 msgstr "या डिव्हाइसवर नैसर्गिक प्रवेशासह डेटा इतरांपासून संरक्षित केला जाईल."
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -139,7 +156,7 @@ msgstr ""
 "हे डिव्हाइस प्रत्येक वेळी चालू केल्यावर एन्क्रिप्शन संकेतशब्द आवश्यक असेल. तो कोठेतरी सुरक्षित "
 "ठेवा."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -147,7 +164,7 @@ msgstr ""
 "हे उपकरण चालू करतांना प्रत्येक वेळी अंगभूत किंवा यूएसबी कीबोर्ड वापरून एन्क्रिप्शन पासवर्ड "
 "टाइप करण्याची आवश्यकता असते."
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -157,32 +174,30 @@ msgstr ""
 "b> हा या डिव्हाइससाठी एक अद्वितीय पासवर्ड आहे, आपल्या वापरकर्ता खात्यासाठीचा पासवर्ड "
 "नाही."
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "एनक्रिप्शन पासवर्ड निवडा"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "पासवर्ड नक्की करा"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "एन्क्रिप्ट करू नका"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "मागे"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "पासवर्ड निवडा"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "पासवर्ड सेट करा"
+#: src/Views/EncryptView.vala:191
+#, fuzzy
+#| msgid "Choose Encryption Password"
+msgid "Set Encryption Password"
+msgstr "एनक्रिप्शन पासवर्ड निवडा"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "पासवर्डस जुळत नाहीत"
 
@@ -274,7 +289,7 @@ msgstr "एक भाषा निवडा"
 msgid "Currently active language"
 msgstr "सध्या वापरात असलेली भाषा"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -283,12 +298,12 @@ msgstr ""
 "ड्राइव्हच्या विभाजनावरील सर्व डेटा मिटविला जाईल.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "तुम्हास किमान एक <b>Root(/)</b> विभाजन निवडणे आवश्यक आहे."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
@@ -296,51 +311,55 @@ msgstr ""
 "तुम्हास किमान एक <b>Root(/)</b> विभाजन आणि एक <b>Boot(/boot/efi)</b> विभाजन "
 "निवडणे आवश्यक आहे."
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "एक <b>स्वॅप </b>विभाजन निवडण्याची देखील शिफारस केली जाते."
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "विभाजने सुधारित करा …"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "EFI विभाजनात चुकीची फाइल प्रणाली आहे"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "EFI विभाजन खूप लहान आहे"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "रूटसाठी ही अवैध फाइल सिस्टम आहे"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "होमसाठी ही अवैध फाइल सिस्टम आहे"
 
-#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
+#: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:102
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:226
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:221
 msgid "Partitioning Drive"
 msgstr "विभाजन ड्राइव्ह"
 
-#: src/Views/ProgressView.vala:230
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:226
 msgid "Extracting Files"
 msgstr "फायली काढत आहे"
 
-#: src/Views/ProgressView.vala:234
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:231
 msgid "Configuring the System"
 msgstr "सिस्टम कॉन्फिगर करत आहे"
 
-#: src/Views/ProgressView.vala:238
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:236
 msgid "Finishing the Installation"
 msgstr "इंस्टॉलेशन पूर्ण करीत आहे"
 
@@ -385,7 +404,7 @@ msgstr ""
 msgid "Next"
 msgstr "पुढे"
 
-#: src/Views/TryInstallView.vala:115
+#: src/Views/TryInstallView.vala:113
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
@@ -446,60 +465,71 @@ msgstr "डीक्रिप्ट"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS खंड डिक्रिप्ट झाले"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
-#: src/Widgets/PartitionMenu.vala:60
-msgid "Use partition:"
+#: src/Widgets/PartitionMenu.vala:56
+#, fuzzy
+#| msgid "Use partition:"
+msgid "Use Partition"
 msgstr "विभाजन वापरा:"
 
-#: src/Widgets/PartitionMenu.vala:71
-msgid "Format:"
+#: src/Widgets/PartitionMenu.vala:60
+#, fuzzy
+#| msgid "Format:"
+msgid "Format"
 msgstr "स्वरूप:"
 
-#: src/Widgets/PartitionMenu.vala:81
+#: src/Widgets/PartitionMenu.vala:61
+msgid "Delete all data and set up a new file system"
+msgstr ""
+
+#: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
 msgstr "म्हणून वापरा:"
 
-#: src/Widgets/PartitionMenu.vala:87
+#: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
 msgstr "रूट (/)"
 
-#: src/Widgets/PartitionMenu.vala:88
+#: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
 msgstr "होम(/home)"
 
-#: src/Widgets/PartitionMenu.vala:89
+#: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
 msgstr "बूट (%s)"
 
-#: src/Widgets/PartitionMenu.vala:90
+#: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
 msgstr "स्वॅप"
 
-#: src/Widgets/PartitionMenu.vala:91
+#: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
 msgstr "सानुकूल"
 
-#: src/Widgets/PartitionMenu.vala:95
+#: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
 msgstr "सानुकूल:"
 
-#: src/Widgets/PartitionMenu.vala:103
+#: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
 msgstr "फाइलसिस्टम:"
 
-#: src/Widgets/PartitionMenu.vala:109
+#: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "डीफॉल्ट(ext4)"
+
+#~ msgid "Set Password"
+#~ msgstr "पासवर्ड सेट करा"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

@@ -1,7 +1,9 @@
 # Installer
 [![Translation status](https://l10n.elementary.io/widgets/installer/-/svg-badge.svg)](https://l10n.elementary.io/projects/installer/?utm_source=widget)
 
-> Note: this is the work-in-progress installer and has not been released yet. For the current installer, see [Ubiquity](https://wiki.ubuntu.com/Ubiquity).
+> Note: this is the installer for elementary OS 6 and newer. For the elementary OS 5.1 and older installer, see [Ubiquity](https://wiki.ubuntu.com/Ubiquity).
+
+![Screenshot](data/screenshot-progress.png?raw=true)
 
 An installer for open-source operating systems. See the [wiki](https://github.com/elementary/installer/wiki) for goals, design spec, user flow, and details about each step.
 

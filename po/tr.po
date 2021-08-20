@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-01 21:30+0000\n"
-"PO-Revision-Date: 2021-06-02 17:21+0000\n"
+"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"PO-Revision-Date: 2021-08-13 21:11+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -45,15 +45,15 @@ msgstr "Kurulumu İptal Et"
 msgid "Test Mode"
 msgstr "Test Modu"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:63
 msgid "Ignore"
 msgstr "Yoksay"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
 msgstr "Yeterli Alan Yok"
 
-#: src/Views/CheckView.vala:220
+#: src/Views/CheckView.vala:219
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "%s kurulumu için cihazınızda yeterli alan yok. En az %s alan ayrılmasını "
 "öneriyoruz."
 
-#: src/Views/CheckView.vala:231
+#: src/Views/CheckView.vala:229
 msgid "Your Device May Be Too Slow"
 msgstr "Cihazınız Çok Yavaş Olabilir"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,30 +74,30 @@ msgstr ""
 "Cihazınız önerilen sistem gereksinimlerini karşılamamaktadır. Bu, "
 "cihazınızın yavaş çalışmasına veya donmasına sebep olabilir."
 
-#: src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:245
 msgid "Connect to a Power Source"
 msgstr "Güç Kaynağına Bağla"
 
-#: src/Views/CheckView.vala:249
+#: src/Views/CheckView.vala:246
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
 "Cihazınız pil gücü ile çalışıyor. Kurulum esnasında şarja takmanız önerilir."
 
-#: src/Views/CheckView.vala:307
+#: src/Views/CheckView.vala:299
 msgid "Recommended:"
 msgstr "Önerilen:"
 
-#: src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:303
 msgid "Your Device:"
 msgstr "Cihazınız:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
 msgid "Processor:"
 msgstr "İşlemci:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:325
+#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
 msgid "Memory:"
 msgstr "Bellek:"
 
@@ -113,24 +113,39 @@ msgstr ""
 "Bu seçenek seçili sürücüden tüm veriyi silecektir. Eğer verilerinizi "
 "yedeklemediyseniz bu yüklemeyi iptal edip Demo Modu'nu kullanabilirsiniz."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:97
+#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Geçerli yapılandırma alınıyor…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:127
+#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Sil ve Kur"
+
+#: src/Views/EncryptView.vala:28
+msgid "Don’t Encrypt"
+msgstr "Şifreleme"
 
 #: src/Views/EncryptView.vala:50
 msgid "Enable Drive Encryption"
 msgstr "Sürücü Şifrelemesini Etkinleştir"
 
-#: src/Views/EncryptView.vala:57
-msgid "Data will be protected from others with physical access to this device."
+#: src/Views/EncryptView.vala:55
+msgid ""
+"Encrypt this device's drive if required for added protection, but be sure "
+"you understand:"
 msgstr ""
-"Veriler, bu cihaza fiziksel erişimi olan diğer kişilerden korunacaktır."
+"Ek koruma sağlamak için gerekirse bu cihazın sürücüsünü şifreleyin, ancak "
+"şunu anladığınızdan emin olun:"
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:65
+msgid ""
+"Data will only be protected from others with physical access to this device "
+"when it is shut down."
+msgstr ""
+"Veriler, bu cihaza fiziksel erişimi olan diğer kişilerden ancak cihaz "
+"kapalıysa korunacaktır."
+
+#: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -138,7 +153,7 @@ msgstr ""
 "Bu cihaz her açıldığında şifreleme parolası gerekecektir. Güvenli bir yerde "
 "saklayın."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -146,41 +161,37 @@ msgstr ""
 "Bu cihaz her açıldığında şifreleme parolasını yazmak için yerleşik bir "
 "klavye veya USB klavye gerekecektir."
 
-#: src/Views/EncryptView.vala:92
+#: src/Views/EncryptView.vala:103
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"Şifreleme şifresini unutursanız, <b> veriyi kurtaramazsınız. </b> Bu şifre "
-"bu cihaza ait benzersiz bir şifre, kullanıcı hesabınızın şifresi değil."
+"Şifreleme parolasını unutursanız, <b>verileri kurtaramazsınız.</b> Bu "
+"kullanıcı hesabınızın parolası değil, bu cihaz için emsalsiz bir paroladır."
 
-#: src/Views/EncryptView.vala:102
+#: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
 msgstr "Şifreleme Parolasını Seçin"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "Parolayı Onayla"
 
-#: src/Views/EncryptView.vala:155
-msgid "Don't Encrypt"
-msgstr "Şifreleme"
-
-#: src/Views/EncryptView.vala:156 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:125 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
 msgstr "Geri"
 
-#: src/Views/EncryptView.vala:158 src/Views/EncryptView.vala:175
+#: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Şifre Seçin"
 
-#: src/Views/EncryptView.vala:184
-msgid "Set Password"
-msgstr "Şifre Belirle"
+#: src/Views/EncryptView.vala:191
+msgid "Set Encryption Password"
+msgstr "Şifreleme Parolasını Belirle"
 
-#: src/Views/EncryptView.vala:247
+#: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "Parolalar eşleşmiyor"
 
@@ -261,7 +272,7 @@ msgstr "Bir Dil Seçin"
 msgid "Currently active language"
 msgstr "Şu anda etkin olan dil"
 
-#: src/Views/PartitioningView.vala:54
+#: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
@@ -270,63 +281,67 @@ msgstr ""
 "\"Biçimlendir\" seçeneği seçili bölümdeki BÜTÜN verileri silecektir.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:60
+#: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "En azından bir <b>Kök (/)</b> bölümü seçmelisiniz."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:64
+#: src/Views/PartitioningView.vala:62
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
 "En azından bir <b>Kök (/)</b> ve <b>Boot (/boot/efi)</b> bölümü seçmelisiniz."
 
-#: src/Views/PartitioningView.vala:68
+#: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Bir <b>Takas</b> bölümü de seçmeniz tavsiye edilir."
 
-#: src/Views/PartitioningView.vala:119
+#: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
 msgstr "Bölümleri Değiştir…"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
 msgstr "EFI bölümü yanlış dosya sistemine sahip"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
 msgstr "EFI bölümü çok küçük"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
 msgstr "Kök için geçersiz bir dosya sistemi"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
 msgstr "Home için geçersiz bir dosya sistemi"
 
-#: src/Views/ProgressView.vala:79 src/Views/ProgressView.vala:106
+#: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr "Günlüğü göster"
 
-#: src/Views/ProgressView.vala:102
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr "Günlüğü gizle"
 
-#: src/Views/ProgressView.vala:226
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:221
 msgid "Partitioning Drive"
 msgstr "Sürücü Bölümleniyor"
 
-#: src/Views/ProgressView.vala:230
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:226
 msgid "Extracting Files"
 msgstr "Dosyalar Ayıklanıyor"
 
-#: src/Views/ProgressView.vala:234
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:231
 msgid "Configuring the System"
 msgstr "Sistem Yapılandırılıyor"
 
-#: src/Views/ProgressView.vala:238
+#. /TRANSLATORS: The current step of the installer back-end
+#: src/Views/ProgressView.vala:236
 msgid "Finishing the Installation"
 msgstr "Kurulum Sonlandırılıyor"
 
@@ -350,7 +365,7 @@ msgstr "Diski Sil ve Kur"
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "Her şeyi sil ve %s taze kopyasını kur."
+msgstr "Her şeyi sil ve %s yeni kopyasını kur."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
@@ -361,14 +376,14 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"Oluştur, yeniden boyutlandır, veya bölümleri elle yönet. Bu metot veri "
+"Oluştur, yeniden boyutlandır, veya bölümleri el ile yönet. Bu yöntem veri "
 "kaybına yol açabilir."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Next"
 msgstr "Sonraki"
 
-#: src/Views/TryInstallView.vala:115
+#: src/Views/TryInstallView.vala:113
 msgid "Custom Install"
 msgstr "Özel Kurulum"
 
@@ -428,60 +443,67 @@ msgstr "Çöz"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS bölümü çözülmüştü"
 
-#: src/Widgets/DiskBar.vala:127
+#: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:128
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
+#: src/Widgets/PartitionMenu.vala:56
+msgid "Use Partition"
+msgstr "Bölümü Kullan"
+
 #: src/Widgets/PartitionMenu.vala:60
-msgid "Use partition:"
-msgstr "Bölümü kullan:"
+msgid "Format"
+msgstr "Biçimlendir"
 
-#: src/Widgets/PartitionMenu.vala:71
-msgid "Format:"
-msgstr "Biçim:"
+#: src/Widgets/PartitionMenu.vala:61
+msgid "Delete all data and set up a new file system"
+msgstr "Tüm verileri silin ve yeni bir dosya sistemi kurun"
 
-#: src/Widgets/PartitionMenu.vala:81
+#: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
 msgstr "Olarak kullan:"
 
-#: src/Widgets/PartitionMenu.vala:87
+#: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
 msgstr "Kök (/)"
 
-#: src/Widgets/PartitionMenu.vala:88
+#: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
 msgstr "Home (/home)"
 
-#: src/Widgets/PartitionMenu.vala:89
+#: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
 msgstr "Boot (%s)"
 
-#: src/Widgets/PartitionMenu.vala:90
+#: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
 msgstr "Takas"
 
-#: src/Widgets/PartitionMenu.vala:91
+#: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
 msgstr "Özel"
 
-#: src/Widgets/PartitionMenu.vala:95
+#: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
 msgstr "Özel:"
 
-#: src/Widgets/PartitionMenu.vala:103
+#: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
 msgstr "Dosya sistemi:"
 
-#: src/Widgets/PartitionMenu.vala:109
+#: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Varsayılan (ext4)"
+
+#~ msgid "Set Password"
+#~ msgstr "Şifre Belirle"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

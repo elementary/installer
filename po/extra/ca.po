@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-01 21:30+0000\n"
-"PO-Revision-Date: 2019-04-25 12:26+0000\n"
+"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"PO-Revision-Date: 2021-07-19 23:30+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/extra/"
 "ca/>\n"
@@ -11,11 +11,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6\n"
+"X-Generator: Weblate 4.4.2\n"
 
-#: data/io.elementary.installer.desktop.in:3
+#: data/installer.appdata.xml.in:7
+msgid "Installer"
+msgstr "Instal·lador"
+
+#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Instal·la l'elementary OS"
+
+#: data/installer.appdata.xml.in:10
+msgid "Step by step installer for elementary OS itself."
+msgstr "Instal·lador de pas a pas per a elementary OS."
+
+#: data/installer.appdata.xml.in:17
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"

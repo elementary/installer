@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-01 21:30+0000\n"
+"POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2018-06-15 00:10+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/installer/"
@@ -20,9 +20,23 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: data/io.elementary.installer.desktop.in:3
+#: data/installer.appdata.xml.in:7
+#, fuzzy
+#| msgid "Install elementary OS"
+msgid "Installer"
+msgstr "Elementary OS telepítése"
+
+#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Elementary OS telepítése"
+
+#: data/installer.appdata.xml.in:10
+msgid "Step by step installer for elementary OS itself."
+msgstr ""
+
+#: data/installer.appdata.xml.in:17
+msgid "elementary, Inc."
+msgstr ""
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"

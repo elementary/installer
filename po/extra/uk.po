@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-01 21:30+0000\n"
-"PO-Revision-Date: 2020-09-15 03:14+0000\n"
+"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"PO-Revision-Date: 2021-07-16 10:41+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "extra/uk/>\n"
@@ -18,12 +18,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: data/io.elementary.installer.desktop.in:3
+#: data/installer.appdata.xml.in:7
+msgid "Installer"
+msgstr "Встановлювач"
+
+#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Встановлення elementary OS"
+
+#: data/installer.appdata.xml.in:10
+msgid "Step by step installer for elementary OS itself."
+msgstr "Покроковий встановлювач самої elementary OS."
+
+#: data/installer.appdata.xml.in:17
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"

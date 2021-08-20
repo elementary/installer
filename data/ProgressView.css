@@ -8,7 +8,7 @@ avatar.image {
 }
 
 .logo {
-    animation: rainbow-shadow 8s linear infinite;
+    animation: rainbow-shadow 30s linear infinite;
     color: white;
     -gtk-icon-shadow:
         0 1px 1px alpha(black, 0.3),
