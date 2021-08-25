@@ -3,7 +3,7 @@ avatar.image {
     background-image: linear-gradient(
         to bottom,
         alpha(@BLUEBERRY_500, 0.25),
-        alpha(@BLUEBERRY_700, 0.75)
+        alpha(@accent_color_700, 0.75)
     );
 }
 
@@ -16,12 +16,11 @@ avatar.image {
 }
 
 @keyframes rainbow-bg {
-    from,
-    to {
+    from {
         background-image: linear-gradient(
             to bottom,
             alpha(@BLUEBERRY_500, 0.25),
-            alpha(@BLUEBERRY_700, 0.75)
+            alpha(@accent_color_700, 0.75)
         );
     }
 
@@ -80,11 +79,18 @@ avatar.image {
             alpha(@GRAPE_700, 0.75)
         );
     }
+
+    to {
+        background-image: linear-gradient(
+            to bottom,
+            alpha(@BLUEBERRY_500, 0.25),
+            alpha(@BLUEBERRY_700, 0.75)
+        );
+    }
 }
 
 @keyframes rainbow-shadow {
-    from,
-    to {
+    from {
         -gtk-icon-shadow:
             0 1px 1px alpha(black, 0.3),
             0 2px 3px alpha(@BLUEBERRY_900, 0.2);
@@ -130,5 +136,11 @@ avatar.image {
         -gtk-icon-shadow:
             0 1px 1px alpha(black, 0.3),
             0 2px 3px alpha(@GRAPE_900, 0.2);
+    }
+
+    to {
+        -gtk-icon-shadow:
+            0 1px 1px alpha(black, 0.3),
+            0 2px 3px alpha(@BLUEBERRY_900, 0.2);
     }
 }
