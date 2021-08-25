@@ -64,7 +64,7 @@ namespace LocaleHelper {
                     }
 
                     var key_string = entry.get_code ();
-                    entry.name = object.get_string_member ("name");
+                    entry.name = object.get_string_mamber ("common_name");
                     if (key_string in langs) {
                         lang_entries[key_string] = entry;
                     }
