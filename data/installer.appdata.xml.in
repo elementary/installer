@@ -10,6 +10,13 @@
     <p>Step by step installer for elementary OS itself.</p>
   </description>
   <releases>
+    <release version="1.0.3" date="2021-08-24" urgency="medium">
+      <p>Improvements:</p>
+      <ul>
+        <li>Avoid political naming of certain locales</li>
+        <li>Updated translations</li>
+      </ul>
+    </release>
     <release version="1.0.2" date="2021-08-20" urgency="medium">
       <p>Improvements:</p>
       <ul>
