@@ -64,7 +64,7 @@ namespace LocaleHelper {
                     }
 
                     var key_string = entry.get_code ();
-                    entry.name = object.get_string_mamber ("common_name");
+                    entry.name = object.get_string_member ("name");
                     if (key_string in langs) {
                         lang_entries[key_string] = entry;
                     }
@@ -84,7 +84,14 @@ namespace LocaleHelper {
                     var entry = CountryEntry ();
                     entry.alpha_3 = object.get_string_member ("alpha_3");
                     entry.alpha_2 = object.get_string_member ("alpha_2");
-                    entry.name = object.get_string_member ("name");
+
+                    // Try to get common name to avoid problematic political naming of some locales
+                    if (object.has_member ("common_name")) {
+                        entry.name = object.get_string_member ("common_name");
+                    } else {
+                        entry.name = object.get_string_member ("name");
+                    }
+
                     countries[entry.alpha_2] = entry;
                 }
             } catch (Error e) {
