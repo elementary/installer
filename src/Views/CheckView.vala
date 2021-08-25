@@ -292,47 +292,69 @@ public class Installer.CheckView : AbstractInstallerView {
     }
 
     private Gtk.Grid get_comparison_grid () {
-        var comparison_grid = new Gtk.Grid ();
-        comparison_grid.column_spacing = 6;
-        comparison_grid.row_spacing = 6;
-        comparison_grid.margin_top = 12;
-        var recommended_label = new Gtk.Label (_("Recommended:"));
-        recommended_label.hexpand = true;
-        recommended_label.get_style_context ().add_class ("category-label");
-        recommended_label.xalign = 0;
-        var your_device_label = new Gtk.Label (_("Your Device:"));
-        your_device_label.hexpand = true;
-        your_device_label.get_style_context ().add_class ("category-label");
-        your_device_label.xalign = 0;
-        var processor_1 = new Gtk.Label (_("Processor:"));
-        processor_1.xalign = 1;
-        var processor_2 = new Gtk.Label (_("Processor:"));
-        processor_2.xalign = 1;
-        var processor_val_1 = new Gtk.Label (get_frequency_string (MINIMUM_FREQUENCY));
-        processor_val_1.xalign = 0;
-        var processor_val_2 = new Gtk.Label (get_frequency_string (frequency));
-        processor_val_2.xalign = 0;
-        var memory_1 = new Gtk.Label (_("Memory:"));
-        memory_1.xalign = 1;
-        var memory_2 = new Gtk.Label (_("Memory:"));
-        memory_2.xalign = 1;
-        var memory_val_1 = new Gtk.Label (GLib.format_size (MINIMUM_MEMORY));
-        memory_val_1.xalign = 0;
-        var memory_val_2 = new Gtk.Label (GLib.format_size (memory));
-        memory_val_2.xalign = 0;
-        comparison_grid.attach (recommended_label, 0, 0, 2, 1);
+        var recommended_label = new Gtk.Label (_("Recommended:")) {
+            hexpand = true,
+            xalign = 0
+        };
+        recommended_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+
+        var your_device_label = new Gtk.Label (_("Your Device:")) {
+            hexpand = true,
+            xalign = 0
+        };
+        your_device_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+
+        var processor_1 = new Gtk.Label (_("Processor:")) {
+            xalign = 1
+        };
+
+        var processor_2 = new Gtk.Label (_("Processor:")) {
+            xalign = 1
+        };
+
+        var processor_val_1 = new Gtk.Label (get_frequency_string (MINIMUM_FREQUENCY)) {
+            xalign = 0
+        };
+
+        var processor_val_2 = new Gtk.Label (get_frequency_string (frequency)) {
+            xalign = 0
+        };
+
+        var memory_1 = new Gtk.Label (_("Memory:")) {
+            xalign = 1
+        };
+
+        var memory_2 = new Gtk.Label (_("Memory:")) {
+            xalign = 1
+        };
+
+        var memory_val_1 = new Gtk.Label (GLib.format_size (MINIMUM_MEMORY)) {
+            xalign = 0
+        };
+
+        var memory_val_2 = new Gtk.Label (GLib.format_size (memory)) {
+            xalign = 0
+        };
+
+        var comparison_grid = new Gtk.Grid () {
+            column_spacing = 6,
+            margin_top = 12,
+            row_spacing = 6
+        };
+        comparison_grid.attach (recommended_label, 0, 0, 2);
         comparison_grid.attach (new Gtk.Separator (Gtk.Orientation.VERTICAL), 2, 0, 1, 5);
         comparison_grid.attach (your_device_label, 3, 0, 2, 1);
-        comparison_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 5, 1);
-        comparison_grid.attach (processor_1, 0, 2, 1, 1);
-        comparison_grid.attach (processor_val_1, 1, 2, 1, 1);
-        comparison_grid.attach (processor_2, 3, 2, 1, 1);
-        comparison_grid.attach (processor_val_2, 4, 2, 1, 1);
-        comparison_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 3, 5, 1);
-        comparison_grid.attach (memory_1, 0, 4, 1, 1);
-        comparison_grid.attach (memory_val_1, 1, 4, 1, 1);
-        comparison_grid.attach (memory_2, 3, 4, 1, 1);
-        comparison_grid.attach (memory_val_2, 4, 4, 1, 1);
+        comparison_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 5);
+        comparison_grid.attach (processor_1, 0, 2);
+        comparison_grid.attach (processor_val_1, 1, 2);
+        comparison_grid.attach (processor_2, 3, 2);
+        comparison_grid.attach (processor_val_2, 4, 2);
+        comparison_grid.attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 3, 5);
+        comparison_grid.attach (memory_1, 0, 4);
+        comparison_grid.attach (memory_val_1, 1, 4);
+        comparison_grid.attach (memory_2, 3, 4);
+        comparison_grid.attach (memory_val_2, 4, 4);
+
         return comparison_grid;
     }
 
