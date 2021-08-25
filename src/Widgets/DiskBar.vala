@@ -104,7 +104,7 @@ public class Installer.DiskBar: Gtk.Grid {
             var unused_bar = new Block () {
                 expand = true
             };
-            unused_bar.get_style_context ().add_class ("empty");
+            unused_bar.get_style_context ().add_class ("unused");
 
             bar.add (unused_bar);
         }
