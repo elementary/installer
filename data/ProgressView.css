@@ -3,7 +3,7 @@ avatar.image {
     background-image: linear-gradient(
         to bottom,
         alpha(@BLUEBERRY_500, 0.25),
-        alpha(@accent_color_700, 0.75)
+        alpha(@BLUEBERRY_700, 0.75)
     );
 }
 
@@ -20,7 +20,7 @@ avatar.image {
         background-image: linear-gradient(
             to bottom,
             alpha(@BLUEBERRY_500, 0.25),
-            alpha(@accent_color_700, 0.75)
+            alpha(@BLUEBERRY_700, 0.75)
         );
     }
 
