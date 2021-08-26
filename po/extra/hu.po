@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2021-08-26 10:04+0000\n"
-"Last-Translator: Szabó Gyuszi <gyhun95@gmail.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "extra/hu/>\n"
 "Language: hu\n"
@@ -30,7 +30,7 @@ msgstr "Elementary OS telepítése"
 
 #: data/installer.appdata.xml.in:10
 msgid "Step by step installer for elementary OS itself."
-msgstr "Telepítő az Elementary OS-hez lépésről-lépésre"
+msgstr "Telepítő az Elementary OS-hez lépésről-lépésre."
 
 #: data/installer.appdata.xml.in:17
 msgid "elementary, Inc."
