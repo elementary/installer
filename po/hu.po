@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2021-08-26 11:59+0000\n"
-"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
 "Language: hu\n"
@@ -371,19 +371,17 @@ msgid "Finishing the Installation"
 msgstr "A telepítés befejezése"
 
 #: src/Views/TryInstallView.vala:27
-#, fuzzy
 msgid "Try or Install"
-msgstr "Próbálja újra telepíteni"
+msgstr "Próbálja ki vagy telepítse"
 
 #: src/Views/TryInstallView.vala:40
-#, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"Demo módban a változtatások nem lesznek mentve, és az előző operációs "
-"rendszer adatai nem változnak. A teljesítmény és a szolgáltatások minősége "
-"nem feltétlenül tükrözik a telepített rendszer szintjét."
+"A változtatások nem lesznek mentve és az előző operációs rendszer adatai nem "
+"változnak. A teljesítmény és a szolgáltatások minősége nem feltétlenül "
+"tükrözik a telepített rendszerét."
 
 #: src/Views/TryInstallView.vala:46
 #, fuzzy
