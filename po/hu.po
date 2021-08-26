@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2021-08-26 11:58+0000\n"
-"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
 "Language: hu\n"
@@ -340,7 +340,7 @@ msgstr "Hibás root fájlrendszer"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Hibás home fájlrendszer"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
