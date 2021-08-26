@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-26 11:58+0000\n"
+"PO-Revision-Date: 2021-08-26 11:59+0000\n"
 "Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
@@ -340,7 +340,7 @@ msgstr "Érvénytelen root fájlrendszer"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
-msgstr "Hibás home fájlrendszer"
+msgstr "Érvénytelen home fájlrendszer"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
@@ -394,7 +394,7 @@ msgstr "Törlés és telepítés"
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Töröljön mindent, és telepítse a %s friss példányát."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
