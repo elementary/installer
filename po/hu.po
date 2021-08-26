@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-26 12:08+0000\n"
+"PO-Revision-Date: 2021-08-26 13:03+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
@@ -22,15 +22,15 @@ msgstr "%s telepítése"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
-msgstr "Teszt mód leállítás"
+msgstr "Tesztmód leállítása"
 
 #: src/Utils.vala:48
 msgid "Test mode reboot"
-msgstr "A teszt mód újraindítás"
+msgstr "Tesztmód újraindítása"
 
 #: src/Utils.vala:74
 msgid "Test mode switch user"
-msgstr "Teszt mód felhasználóváltás"
+msgstr "Tesztmód felhasználóváltása"
 
 #: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
 #, c-format
@@ -43,11 +43,11 @@ msgstr "Telepítés megszakítása"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
-msgstr "Teszt mód"
+msgstr "Tesztmód"
 
 #: src/Views/CheckView.vala:63
 msgid "Ignore"
-msgstr "Mellőz"
+msgstr "Mellőzés"
 
 #: src/Views/CheckView.vala:218
 msgid "Not Enough Space"
@@ -112,7 +112,7 @@ msgid ""
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
 "Ez törli az összes adatot a kiválasztott meghajtón. Ha még nem mentette az "
-"adatait, akkor viszavonhatja a telepítést és használhatja a demo módot."
+"adatait, akkor viszavonhatja a telepítést és használhatja a demómódot."
 
 #: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
@@ -143,8 +143,8 @@ msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"A meghajtó titkosítása megóvja az adatait, ha mások fizikailag hozzáférnének "
-"az eszközhöz."
+"A meghajtó titkosítása csak akkor óvja meg az adatait, ha mások fizikailag "
+"hozzáférnének az eszközhöz."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -168,8 +168,8 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"Ha elfelejtette a titkosítási jelszót,<b>akkor nem tudja visszaállítani az "
-"adatokat.</b>Ez az eszköz egyedi jelszava, nem a felhasználói fiókhoz "
+"Ha elfelejtette a titkosítási jelszót, akkor <b>nem tudja visszaállítani az "
+"adatokat.</b> Ez az eszköz egyedi jelszava, nem a felhasználói fiókhoz "
 "tartozó jelszó."
 
 #: src/Views/EncryptView.vala:113
@@ -217,7 +217,7 @@ msgstr "Próbálja újra a telepítést"
 
 #: src/Views/ErrorView.vala:57
 msgid "Use Demo Mode and try to manually recover"
-msgstr "Használja a Demo módot és próbálja meg manuálisan helyreállítani"
+msgstr "Használja a demómódot és próbálja meg manuálisan helyreállítani"
 
 #: src/Views/ErrorView.vala:67
 msgid "Restart the device and boot from another drive"
@@ -229,11 +229,11 @@ msgstr "Részletek"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
-msgstr "Eszköz újraindítása"
+msgstr "Készülék újraindítása"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
-msgstr "Demo mód kipróbálása"
+msgstr "Demómód kipróbálása"
 
 #: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
@@ -253,7 +253,7 @@ msgstr "Billentyűzetkiosztás megjelenítése"
 
 #: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr "Kiválaszt"
+msgstr "Kiválasztás"
 
 #: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
@@ -286,7 +286,7 @@ msgstr ""
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "Legalább egy <b>Root (/)</b> partíciót ki kell választania."
+msgstr "Legalább egy <b>gyökérpartíciót (/)</b> ki kell választania."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
@@ -294,7 +294,7 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Legalább egy <b>Root (/)</b> és egy <b>Boot (/boot/efi)</b> partíciót ki "
+"Legalább egy <b>gyökér- (/)</b> és egy <b>Boot (/boot/efi)</b> partíciót ki "
 "kell választania."
 
 #: src/Views/PartitioningView.vala:66
@@ -315,7 +315,7 @@ msgstr "Az EFI partíció túl kicsi"
 
 #: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
-msgstr "Érvénytelen root fájlrendszer"
+msgstr "Érvénytelen gyökérfájlrendszer"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
@@ -323,11 +323,11 @@ msgstr "Érvénytelen home fájlrendszer"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr "Naplók mutatása"
+msgstr "Naplózás mutatása"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "Naplózás elrejtése"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
@@ -373,7 +373,7 @@ msgstr "Minden törlése és egy friss %s-példány telepítése."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
-msgstr ""
+msgstr "Egyedi telepítés (haladó)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -398,7 +398,7 @@ msgstr "Beállítás folytatása"
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s telepítésre került"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
@@ -467,15 +467,15 @@ msgstr "Formázás"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Minden adat törlése és új fájlrendszer felállítása"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr "Használva mint:"
+msgstr "Használat mint:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
-msgstr "Root (/)"
+msgstr "Gyökér (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
