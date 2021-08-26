@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-26 11:59+0000\n"
+"PO-Revision-Date: 2021-08-26 12:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
@@ -123,28 +123,22 @@ msgid "Erase and Install"
 msgstr "Törlés és telepítés"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Ne titkosítsa"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Meghajtó titkosítása"
+msgstr "Meghajtó titkosításának engedélyezése"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"Titkosítsa a készülék meghajtóját, ha adatvédelmi szempontból szükséges, de "
+"vegye figyelembe:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -153,22 +147,20 @@ msgstr ""
 "az eszközhöz."
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
 "A titkosítási jelszót minden egyes bekapcsoláskor vagy újraindításkor meg "
-"kell adni."
+"kell adni. Tárolja biztonságos helyen."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"Egy beépített vagy USB-s billentyűzet lesz szükséges minden bekapcsoláskor a "
+"titkosítás feloldásához."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -198,10 +190,8 @@ msgid "Choose Password"
 msgstr "Válasszon jelszót"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Válasszon titkosítási jelszót"
+msgstr "Állítson be titkosítási jelszót"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
@@ -212,10 +202,7 @@ msgid "Could Not Install"
 msgstr "Nem telepíthető"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
@@ -225,22 +212,16 @@ msgstr ""
 "Megpróbálhatja a következőket:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Próbálja újra a telepítést"
+msgstr "Próbálja újra a telepítést"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Használja a Demo módot, és próbálja meg manuálisan helyreállítani"
+msgstr "Használja a Demo módot és próbálja meg manuálisan helyreállítani"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Indítsa újra a készüléket egy másik meghajtóról történő indításhoz"
+msgstr "Indítsa újra a készüléket egy másik meghajtóról történő indításhoz"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -259,10 +240,8 @@ msgid "Try Installing Again"
 msgstr "Próbálja újra telepíteni"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "Billentyűzetkiosztás"
+msgstr "Billentyűzetkiosztás választása"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -344,7 +323,7 @@ msgstr "Érvénytelen home fájlrendszer"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "Naplók mutatása"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
@@ -384,10 +363,8 @@ msgstr ""
 "tükrözik a telepített rendszerét."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Törlés és telepítés"
+msgstr "Tároló törlése és telepítés"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -403,18 +380,16 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"A partíciók kézzel létrehozhatja, átméretezheti és kezelheti. Ez a módszer "
+"A partíciókat kézzel létrehozhatja, átméretezheti és kezelheti. Ez a módszer "
 "adatvesztést okozhat."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Next"
-msgstr ""
+msgstr "Következő"
 
 #: src/Views/TryInstallView.vala:113
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Nem telepíthető"
+msgstr "Egyedi telepítés"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -430,12 +405,11 @@ msgid "Shut Down"
 msgstr "Kikapcsolás"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "A készüléke automatikusan újraindul %s %i másodperc múlva."
-msgstr[1] "A készüléke automatikusan újraindul %s %i másodperc múlva."
+msgstr[0] "A készüléke automatikusan újraindul %i másodperc múlva."
+msgstr[1] "A készüléke automatikusan újraindul %i másodperc múlva."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
@@ -450,12 +424,12 @@ msgid "Decrypt This Partition"
 msgstr "Partíció visszafejtése"
 
 #: src/Widgets/DecryptMenu.vala:62
-#, fuzzy
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Adja meg a partíció titkosítási jelszavát, és állítsa be a LUKS eszköz nevét."
+"Adja meg a partíció titkosítási jelszavát és állítsa be a feloldott "
+"titkosítású partíció eszköznevét."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
@@ -484,16 +458,12 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Partíció használata:"
+msgstr "Partíció használata"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "Formázás:"
+msgstr "Formázás"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
