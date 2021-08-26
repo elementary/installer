@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2021-08-26 11:58+0000\n"
-"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"Last-Translator: zoli111 <acszoltan111@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
 "Language: hu\n"
@@ -336,7 +336,7 @@ msgstr "Az EFI partíció túl kicsi"
 
 #: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
-msgstr "Hibás root fájlrendszer"
+msgstr "Érvénytelen root fájlrendszer"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
