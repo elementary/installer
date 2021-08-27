@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-27 15:13+0000\n"
+"PO-Revision-Date: 2021-08-27 17:59+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
 "installer/ar/>\n"
@@ -283,7 +283,7 @@ msgstr ""
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "يجب اختيار قسم جذر أو <b>Root (/)</b> واحد على الأقل."
+msgstr "يجب اختيار قسم <b>الجذر (/)</b> واحد على الأقل."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
@@ -291,14 +291,13 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"يجب على الأقل اختيار قسم جذر أو <b>Root (/)</b> وقسم <b>الإقلاع (/boot/"
-"efi)</b>."
+"يجب على الأقل اختيار قسم <b>الجذر (/)</b> وقسم <b>الإقلاع (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr ""
-"من المستحسن أيضاً اختيار قسم المبادلة أو <b>Swap</b> كذاكرة مساعدة لذاكرة "
-"النظام (RAM)."
+"من المستحسن أيضاً اختيار قسم <b>المبادلة</b> كذاكرة مساعدة لذاكرة النظام "
+"(RAM)."
 
 #: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
@@ -358,75 +357,68 @@ msgid ""
 "Performance and features may not reflect the installed experience."
 msgstr ""
 "لن يتم حفظ التغييرات، والبيانات الموجودة من نظام التشغيل السابق لن تتغير. "
-"الأداء والميزات لن تكون كالنسخة المثبتة."
+"الأداء والميزات لن يكونا كالنسخة المثبتة."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "امسح و ثبت"
+msgstr "امسح وسيط التخزين وثبت"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "حذف كل شيء وبدء تنزيل نسخة جديدة من %s."
+msgstr "احذف كل شيء وثبت نسخة جديدة من %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "تخصيص (متقدم)"
+msgstr "تثبيت مخصص (متقدم)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"أنشئ، أعد تحجيم، أو تحكم بالأقسام يدويا، هذه الطريقة قد تؤدي إلى فقدان "
-"البيانات."
+"قم بإنشاء الأقسام، وتغيير حجمها، وإدارتها بطرق أخرى يدوياً. قد تؤدي هذه "
+"الطريقة إلى فقدان البيانات."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Next"
 msgstr "التالي"
 
 #: src/Views/TryInstallView.vala:113
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "تعذر التثبيت"
+msgstr "تثبيت مخصص"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
-msgstr "اكمال التجهيز"
+msgstr "أكمل الإعداد"
 
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "تم تثبيت %s"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
-msgstr "إيقاف التشغيل"
+msgstr "أوقف التشغيل"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[1] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[2] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[3] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[4] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[5] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
+msgstr[0] "ستتم إعادة تشغيل جهازك تلقائياً الآن."
+msgstr[1] "ستتم إعادة تشغيل جهازك تلقائياً بعد ثانية واحدة."
+msgstr[2] "ستتم إعادة تشغيل جهازك تلقائياً بعد ثانيتين."
+msgstr[3] "ستتم إعادة تشغيل جهازك تلقائياً بعد %i ثوان."
+msgstr[4] "ستتم إعادة تشغيل جهازك تلقائياً بعد %i ثانية."
+msgstr[5] "ستتم إعادة تشغيل جهازك تلقائياً بعد عدد %i من الثواني."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"بعد إعادة التشغيل يمكنك إنشاء مستخدم جديد، أو بإمكانك إيقاف التشغيل الآن "
-"وإنشاء مستخدم جديد لاحقا."
+"بعد إعادة التشغيل، يمكنك إنشاء مستخدم جديد، أو يمكنك إيقاف التشغيل الآن "
+"وإنشاء مستخدم جديد لاحقاً."
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -437,12 +429,12 @@ msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"أدخل كلمة سر التشفير الخاصة بالقسم وقم بتعيين اسم الجهاز للقسم الذي تم فك "
+"أدخل كلمة مرور التشفير الخاصة بالقسم وقم بتعيين اسم الجهاز للقسم الذي تم فك "
 "تشفيره."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
-msgstr "كلمة السر:"
+msgstr "كلمة المرور:"
 
 #: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
@@ -454,7 +446,7 @@ msgstr "فك التشفير"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr "تم فك تشفير LUKS للقسم"
+msgstr "تم فك تشفير وحدة تخزين LUKS"
 
 #: src/Widgets/DiskBar.vala:135
 #, c-format
@@ -467,24 +459,20 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "استخدام القسم:"
+msgstr "استخدم القسم"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "الصيغة:"
+msgstr "أعد التهيئة"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "امسح جميع البيانات وقم بإعداد نظام ملفات جديد"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr "كما تستخدم:"
+msgstr "استخدمه ك:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
@@ -497,15 +485,15 @@ msgstr "المنزل (home/)"
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
-msgstr "الاقلاع (%s)"
+msgstr "الإقلاع (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr "تبديل"
+msgstr "المبادلة (Swap)"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr "تخصيص"
+msgstr "مخصص"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
