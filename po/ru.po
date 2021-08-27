@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-27 17:59+0000\n"
-"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
+"PO-Revision-Date: 2021-08-27 21:43+0000\n"
+"Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -112,8 +112,8 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"Это удалит все данные на выбранном диске. Если вы не создали резервную копию "
-"данных, вы можете отменить установку и использовать демонстрационный режим."
+"Это сотрёт все данные на выбранном диске. Если Вы не создали резервную копию "
+"данных, Вы можете отменить установку и перейти в демонстрационный режим."
 
 #: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
@@ -233,7 +233,7 @@ msgstr "Перезагрузить устройство"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
-msgstr "Попробовать демонстрационный режим"
+msgstr "Демонстрационный режим"
 
 #: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
