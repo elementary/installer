@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2021-08-29 13:22+0000\n"
-"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/installer/"
 "installer/sk/>\n"
 "Language: sk\n"
@@ -195,7 +195,7 @@ msgstr "Nastavte šifrovacie heslo"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Heslá sa nezhodujú"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
