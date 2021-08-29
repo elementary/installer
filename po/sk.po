@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-29 13:22+0000\n"
-"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"PO-Revision-Date: 2021-08-29 14:20+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/installer/"
 "installer/sk/>\n"
 "Language: sk\n"
@@ -252,38 +252,40 @@ msgstr "Zobraziť rozloženie klávesnice"
 
 #: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr ""
+msgstr "Vybrať"
 
 #: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
-msgstr ""
+msgstr "Predvolené"
 
 #: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
-msgstr ""
+msgstr "Vstupný jazyk"
 
 #: src/Views/LanguageView.vala:261
 msgid "Languages"
-msgstr ""
+msgstr "Jazyky"
 
 #: src/Views/LanguageView.vala:278
 msgid "Select a Language"
-msgstr ""
+msgstr "Vyberte jazyk"
 
 #: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
-msgstr ""
+msgstr "Práve používaný jazyk"
 
 #: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"Vyberte z jednotiek tie oddiely, ktoré sa majú použiť. <b>Výberom "
+"„Formátovať“ vymažete VŠETKY údaje na vybranom oddieli.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Je potrebné vybrať aspoň <b>Root (/)</b> oddiel."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
@@ -291,108 +293,111 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"Je potrebné vybrať aspoň <b>Root (/)</b> oddiel a <b>Boot (/boot/efi)</b> "
+"oddiel."
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Odporúčame tiež vybrať <b>Swap</b> oddiel."
 
 #: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Upraviť oddiely…"
 
 #: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "Oddiel EFI nemá vhodný súborový systém"
 
 #: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "Oddiel EFI je príliš malý"
 
 #: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Nevhodný súborový systém pre root"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Nevhodný súborový systém pre domovský priečinok"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "Zobraziť záznam"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "Skryť záznam"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Vytvárajú sa oddiely na jednotke"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:226
 msgid "Extracting Files"
-msgstr ""
+msgstr "Rozbaľujú sa súbory"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:231
 msgid "Configuring the System"
-msgstr ""
+msgstr "Nastavuje sa systém"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:236
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Dokončuje sa inštalácia"
 
 #: src/Views/TryInstallView.vala:27
-#, fuzzy
 msgid "Try or Install"
-msgstr "Zmazať a inštalovať"
+msgstr "Vyskúšať alebo nainštalovať"
 
 #: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
+"Zmeny nebudú uložené a dáta z vášho predchádzajúceho operačného systému "
+"zostanú nezmenené. Výkon a funkcie však nemusia byť priamo zrovnateľné s "
+"plne nainštalovaným systémom."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Zmazať a inštalovať"
+msgstr "Vymazať disk a nainštalovať"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Vymazať všetko a nainštalovať čistú kópiu %s."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
-msgstr ""
+msgstr "Vlastná inštalácia (pokročilé)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Vytvorte oddiely, meňte ich veľkosť alebo ich inak spravujte ručne. Táto "
+"metóda môže viesť k strate dát."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Next"
-msgstr ""
+msgstr "Ďalej"
 
 #: src/Views/TryInstallView.vala:113
-#, fuzzy
 msgid "Custom Install"
-msgstr "Zmazať a inštalovať"
+msgstr "Vlastná inštalácia"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Pokračovať v nastavovaní"
 
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s bol nainštalovaný"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
@@ -402,41 +407,45 @@ msgstr "Vypnúť"
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Vaše zariadenie sa automaticky reštartuje za %i sekundu."
+msgstr[1] "Vaše zariadenie sa automaticky reštartuje za %i sekundy."
+msgstr[2] "Vaše zariadenie sa automaticky reštartuje za %i sekúnd."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"Po reštarte môžete vytvoriť nového používateľa, prípadne môžete zariadenie "
+"hneď teraz vypnúť a vytvoriť nového používateľa neskôr."
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Odomknúť tento oddiel"
 
 #: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"Zadajte šifrovacie heslo oddielu a nastavte názov zariadenia pre odšifrovaný "
+"oddiel."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
-msgstr ""
+msgstr "Heslo:"
 
 #: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
-msgstr ""
+msgstr "Názov zariadenia:"
 
 #: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
-msgstr ""
+msgstr "Odomknúť"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "Zväzok LUKS bol odomknutý"
 
 #: src/Widgets/DiskBar.vala:135
 #, c-format
@@ -449,56 +458,53 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Customize Partitions…"
 msgid "Use Partition"
-msgstr "Úprava diskových oddielov…"
+msgstr "Použiť oddiel"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Format"
-msgstr ""
+msgstr "Formátovať"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Zmazať všetky dáta a nastaviť nový súborový systém"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr ""
+msgstr "Použiť ako:"
 
 #: src/Widgets/PartitionMenu.vala:71
-#, fuzzy
 msgid "Root (/)"
-msgstr "Koreň"
+msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
-msgstr ""
+msgstr "Domovské priečinky (/home)"
 
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Boot (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr ""
+msgstr "Vlastné"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
-msgstr ""
+msgstr "Vlastné:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
-msgstr ""
+msgstr "Súborový systém:"
 
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
-msgstr ""
+msgstr "Predvolený (ext4)"
 
 #, fuzzy
 #~| msgid ""
