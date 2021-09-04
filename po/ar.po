@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-27 17:59+0000\n"
+"PO-Revision-Date: 2021-09-04 16:04+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
 "installer/ar/>\n"
@@ -19,11 +19,11 @@ msgstr ""
 #: src/MainWindow.vala:42
 #, c-format
 msgid "Install %s"
-msgstr "تثبيت %s"
+msgstr "ثبت %s"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
-msgstr "أقف التشغيل في الوضع التجريبي"
+msgstr "أوقف التشغيل في الوضع التجريبي"
 
 #: src/Utils.vala:48
 msgid "Test mode reboot"
