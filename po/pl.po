@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
 "PO-Revision-Date: 2021-09-27 16:18+0000\n"
-"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/"
 "installer/pl/>\n"
 "Language: pl\n"
@@ -125,22 +125,20 @@ msgid "Erase and Install"
 msgstr "Wyczyść i zainstaluj"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Nie szyfruj"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Szyfrowanie napędu"
+msgstr "Włącz szyfrowanie napędu"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"W razie potrzeby zaszyfruj dysk tego urządzenia w celu zapewnienia "
+"dodatkowej ochrony, ale upewnij się, że to rozumiesz:"
 
 #: src/Views/EncryptView.vala:65
 msgid ""
@@ -194,10 +192,8 @@ msgid "Choose Password"
 msgstr "Wybierz hasło"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Wybierz hasło szyfrowania"
+msgstr "Ustaw hasło szyfrowania"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
@@ -208,10 +204,7 @@ msgid "Could Not Install"
 msgstr "Nie można zainstalować"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
@@ -249,10 +242,8 @@ msgid "Try Installing Again"
 msgstr "Ponów instalację"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "Układ klawiatury"
+msgstr "Wybierz układ klawiatury"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -334,7 +325,7 @@ msgstr "Błędny system plików dla przestrzeni domowej"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "Pokaż dziennik"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
@@ -374,10 +365,8 @@ msgstr ""
 "doświadczeń, które są po zainstalowaniu systemu."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Wyczyść i zainstaluj"
+msgstr "Wyczyść dysk i zainstaluj"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -385,10 +374,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Wyczyść wszystko i zainstaluj świeżą kopię %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Własna (Zaawansowana)"
+msgstr "Własna instalacja (zaawansowana)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -403,10 +390,8 @@ msgid "Next"
 msgstr "Dalej"
 
 #: src/Views/TryInstallView.vala:113
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Nie można zainstalować"
+msgstr "Własna instalacja"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -415,7 +400,7 @@ msgstr "Kontynuuj ustawianie"
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s został zainstalowany"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
