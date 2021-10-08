@@ -24,6 +24,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
     public uint64 start;
     public uint64 end;
     public uint64 used;
+    public uint64 sector_size;
     public new string path;
     public string? vg;
 
@@ -38,6 +39,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
                          UnsetMount unset_mount, MountSetFn mount_set) {
         start = part.start_sector;
         end = part.end_sector;
+        this.sector_size = sector_size;
 
         var usage = part.sectors_used;
         if (usage.tag == 1) {
@@ -87,6 +89,10 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
     public uint64 get_size () {
         return end - start;
+    }
+
+    public uint64 get_sector_size () {
+        return sector_size;
     }
 
     public double get_percent (uint64 disk_sectors) {
