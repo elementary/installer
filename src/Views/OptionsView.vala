@@ -6,11 +6,11 @@ public class OptionsView: AbstractInstallerView {
 
     public Gtk.Button next_button;
 
-    public string? description { get; construct; }
-
     public signal void next ();
 
-    public OptionsView (string artwork, string title, string? description) {
+    public Gtk.Label description;
+
+    public OptionsView (string artwork, string title) {
         Object (
             cancellable: true,
             title: title,
@@ -32,20 +32,18 @@ public class OptionsView: AbstractInstallerView {
 
         var content = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
 
-        if (description != null) {
-            var description = new Gtk.Label (description);
-            description.hexpand = true;
-            description.max_width_chars = 60;
-            description.wrap = true;
-            content.add (description);
-        }
-
+        this.description = new Gtk.Label (null);
+        description.hexpand = true;
+        description.max_width_chars = 60;
+        description.wrap = true;
+        description.hide();
+        description.no_show_all = true;
+        content.add (description);
         content.add (scroller);
 
         content_area.attach (content, 1, 0, 1, 2);
 
         next_button = new Gtk.Button ();
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
         next_button.can_default = true;
         next_button.clicked.connect (() => next ());

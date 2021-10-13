@@ -55,22 +55,6 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         var content_overlay = new Gtk.Overlay ();
 
-        // TODO: Once we support more options, give an example here
-        // ("More options, such as…") if there's space…
-        var decrypt_description = new Gtk.Label (_("More options may be available after unlocking encrypted storage"));
-
-        var decrypt_button = new Gtk.Button.with_label (_("Unlock Encrypted Storage…"));
-
-        var decrypt_infobar = new Gtk.InfoBar ();
-        decrypt_infobar.message_type = Gtk.MessageType.INFO;
-        decrypt_infobar.valign = Gtk.Align.START;
-
-        var infobar_action_area = decrypt_infobar.get_action_area () as Gtk.Container;
-        infobar_action_area.add (decrypt_button);
-
-        var infobar_content_area = decrypt_infobar.get_content_area ();
-        infobar_content_area.add (decrypt_description);
-
         var grid = new Gtk.Grid ();
         grid.margin = 12;
         grid.margin_top = 24;
@@ -81,8 +65,6 @@ public class Installer.TryInstallView : AbstractInstallerView {
         grid.attach (type_scrolled, 1, 0, 1, 2);
 
         content_overlay.add (grid);
-        content_overlay.add_overlay (decrypt_infobar);
-
         content_area.margin = 0;
         content_area.valign = Gtk.Align.FILL;
         content_area.column_homogeneous = true;
@@ -170,30 +152,9 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         var options = InstallOptions.get_default ();
 
-        decrypt_button.clicked.connect (() => {
-            var decrypt_dialog = new DecryptDialog ();
-            decrypt_dialog.update_list ();
-            decrypt_dialog.transient_for = (Gtk.Window) get_toplevel ();
-            decrypt_dialog.run ();
-
-            // The dialog will respond with a delete event once it has decrypted a LUKS partition.
-            decrypt_dialog.response.connect ((resp) => {
-                if (resp == Gtk.ResponseType.DELETE_EVENT) {
-                    refresh_install_button.visible = options.get_options ().has_refresh_options ();
-                    //  alongside_button.visible = options.get_options ().has_alongside_options ();
-
-                    var nlocked = partitions_locked ();
-                    decrypt_infobar.visible = nlocked != 0;
-                }
-            });
-        });
-
         show_all ();
 
         clean_install_button.grab_focus ();
-
-        // Hide the info bar if no encrypted partitions are found.
-        decrypt_infobar.visible = partitions_locked () != 0;
 
         refresh_install_button.visible = options.get_options ().has_refresh_options ();
         //  alongside_button.visible = options.get_options ().has_alongside_options ();
@@ -208,17 +169,4 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         return false;
     }
-}
-
-uint32 partitions_locked () {
-    uint32 nlocked = 0;
-    var options = InstallOptions.get_default ();
-    foreach (unowned Distinst.Partition partition in options.borrow_disks ().get_encrypted_partitions ()) {
-        string path = Utils.string_from_utf8 (partition.get_device_path ());
-        if (! options.is_unlocked (path)) {
-            nlocked += 1;
-        }
-    }
-
-    return nlocked;
 }

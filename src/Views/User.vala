@@ -94,6 +94,7 @@ public class UserView : AbstractInstallerView {
                 stack.visible_child = password_section;
                 update_next_button();
                 pw_entry.grab_focus();
+                this.cancel_button.show();
                 return;
             }
             var config = Configuration.get_default ();
@@ -122,6 +123,15 @@ public class UserView : AbstractInstallerView {
         confirm_entry.changed.connect (() => {
             confirm_entry.is_valid = confirm_password ();
             update_next_button ();
+        });
+
+        cancel.connect(() => {
+            if (this.stack.visible_child != this.user_section) {
+                this.stack.visible_child = this.user_section;
+                this.update_next_button();
+                this.reset_password();
+                this.cancel_button.hide();
+            }
         });
 
         show_all ();

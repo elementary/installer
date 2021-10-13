@@ -43,7 +43,16 @@ public class Installer.App : Gtk.Application {
     }
 
     public override void activate () {
-        var window = new MainWindow ();
+        DistinstIface distinst;
+
+        try {
+            distinst = Bus.get_proxy_sync(BusType.SYSTEM, "com.system76.Distinst", "/com/system76/Distinst", DBusProxyFlags.NONE);
+        } catch (GLib.Error e) {
+            stderr.printf ("could not locate Distinst DBus service: %s\n", e.message);
+            return;
+        }
+
+        var window = new MainWindow (distinst);
         window.show_all ();
         this.add_window (window);
 

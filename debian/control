@@ -21,7 +21,7 @@ Homepage: https://github.com/pop-os/installer
 Package: pop-installer
 Architecture: amd64
 Priority: extra
-Depends: gparted, ${misc:Depends}, ${shlibs:Depends}
+Depends: gparted, distinst-v2, ${misc:Depends}, ${shlibs:Depends}
 Recommends: pop-installer-session
 Description: Distribution installer
  Installs distros with ease, all installs are treated as OEM.

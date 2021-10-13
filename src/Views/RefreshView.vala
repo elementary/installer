@@ -1,82 +1,127 @@
-public class RefreshView: OptionsView {
-    public signal void next_step (bool retain_old);
-    private bool retain_old;
+// Copyright 2018-2021 System76
+// SPDX-License-Identifier: GPL-3.0-or-later
 
-    public RefreshView () {
+public class RefreshView: OptionsView {
+    public signal void choose_another();
+    public signal void refresh();
+    public signal void install();
+
+    public string os { get; construct; }
+    public string version { get; construct; }
+
+    private Gtk.ToggleButton install_button;
+    private Gtk.ToggleButton refresh_button;
+    private Gtk.Button choose_another_button;
+
+    public RefreshView(string os, string version) {
         Object (
-            cancellable: true,
-            artwork: "disks",
-            title: _("Refresh Install")
+            cancellable: false,
+            artwork: "try-install",
+            title: _("Install"),
+            os: os,
+            version: version
         );
     }
 
     construct {
-        next_button.label = _("Refresh Install");
-        next.connect (() => next_step (retain_old));
-        show_all ();
+        this.description.set_text(_("%s is not installed and Refresh Install is unavailable.").printf(this.os));
+        this.description.hide();
+
+        string refresh_icon = "view-refresh";
+        string refresh_title = _("Refresh Install");
+        string refresh_description = _(
+"Reinstall %s while keeping user accounts and files.
+Applications will need to be reinstalled manually."
+        ).printf(this.os);
+
+        string install_icon = "system-os-installer";
+        string install_title = _("Clean Install");
+        string install_description = _(
+"Erase everything and install a fresh copy of %s."
+        ).printf(this.os);
+
+
+        base.add_option(
+            refresh_icon,
+            refresh_title,
+            refresh_description,
+            (button) => {
+                this.refresh_button = button;
+                button.key_press_event.connect((event) => handle_key_press(button, event));
+                button.notify["active"].connect(() => {
+                    if (button.active) {
+                        this.next_button.sensitive = button.active;
+                        install_button.active = false;
+                    } else if (!install_button.active) {
+                        this.next_button.sensitive = false;
+                    }
+                });
+            }
+        );
+
+        base.add_option(
+            install_icon,
+            install_title,
+            install_description,
+            (button) => {
+                this.install_button = button;
+                button.key_press_event.connect((event) => handle_key_press(button, event));
+                button.notify["active"].connect(() => {
+                    if (button.active) {
+                        this.next_button.sensitive = button.active;
+                        refresh_button.active = false;
+                    } else if (!refresh_button.active) {
+                        this.next_button.sensitive = false;
+                    }
+                });
+            }
+        );
+
+        choose_another_button = new Gtk.Button.with_label(_("Select Another Partition"));
+        choose_another_button.clicked.connect(() => this.choose_another());
+        choose_another_button.set_no_show_all(true);
+        choose_another_button.hide();
+        this.action_area.add(choose_another_button);
+
+        this.next_button.label = _("Next");
+        this.next_button.get_style_context().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        this.next.connect(() => {
+            if (refresh_button.active) {
+                this.refresh();
+            } else if (install_button.active) {
+                this.install();
+            }
+        });
+
+        this.show_all();
     }
 
-    public void update_options () {
-        base.clear_options ();
-        var install_options = InstallOptions.get_default ();
-        unowned Distinst.Disks disks = install_options.borrow_disks ();
-        foreach (var option in install_options.get_updated_options ().get_refresh_options ()) {
-            var os = Utils.string_from_utf8 (option.get_os_name ());
-            var version = Utils.string_from_utf8 (option.get_os_version ());
-            var uuid = Utils.string_from_utf8 (option.get_root_part ());
-            Distinst.OsRelease release;
-            string? override_logo = null;
-            if (option.get_os_release (out release) != 0) {
-                override_logo = "tux";
-            }
+    public void disable_refresh() {
+        this.description.show();
+        this.refresh_button.hide();
+        this.title_label.set_text(_("Install"));
+    }
 
-            unowned Distinst.Partition? partition = disks.get_partition_by_uuid (uuid);
-            if (partition == null) {
-                stderr.printf ("did not find partition with UUID \"%s\"\n", uuid);
-                continue;
-            }
+    public void enable_refresh() {
+        this.description.hide();
+        this.refresh_button.show();
+        this.title_label.set_text(_("Refresh Or Install"));
+    }
 
-            var device_path = Utils.string_from_utf8 (partition.get_device_path ());
-            bool can_retain_old = option.can_retain_old ();
+    public void search_failure(string why, bool can_select) {
+        this.description.show();
 
-            base.add_option (
-                (override_logo == null) ? Utils.get_distribution_logo (release) : override_logo,
-                _("%s (%s) at %s").printf (os, version, device_path),
-                null,
-                (button) => {
-                    button.key_press_event.connect ((event) => handle_key_press (button, event));
-                    button.notify["active"].connect (() => {
-                        if (button.active) {
-                            base.options.get_children ().foreach ((child) => {
-                                ((Gtk.ToggleButton)child).active = child == button;
-                            });
-
-                            install_options.selected_option = new Distinst.InstallOption () {
-                                tag = Distinst.InstallOptionVariant.REFRESH,
-                                option = (void*) option,
-                                encrypt_pass = null
-                            };
-
-                            next_button.sensitive = true;
-                            next_button.has_default = true;
-                            retain_old = can_retain_old;
-                        } else {
-                            next_button.sensitive = false;
-                            retain_old = false;
-                        }
-                    });
-                }
-            );
+        if (can_select) {
+            this.choose_another_button.show();
+        } else {
+            this.choose_another_button.hide();
         }
-
-        base.options.show_all ();
-        base.select_first_option ();
     }
 
-    private bool handle_key_press (Gtk.Button button, Gdk.EventKey event) {
+    private bool handle_key_press(Gtk.Button button, Gdk.EventKey event) {
         if (event.keyval == Gdk.Key.Return) {
-            button.clicked ();
-            next_button.clicked ();
+            button.clicked();
+            next_button.clicked();
             return true;
         }
 
