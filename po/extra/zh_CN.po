@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2019-09-07 18:22+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"PO-Revision-Date: 2021-11-01 08:19+0000\n"
+"Last-Translator: Guochengjie <i@guoch.xyz>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "installer/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -17,14 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.appdata.xml.in:7
-#, fuzzy
-#| msgid "Install elementary OS"
 msgid "Installer"
-msgstr "安装 elementary OS"
+msgstr "安装程序"
 
 #: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
@@ -32,11 +30,11 @@ msgstr "安装 elementary OS"
 
 #: data/installer.appdata.xml.in:10
 msgid "Step by step installer for elementary OS itself."
-msgstr ""
+msgstr "逐步安装elementary OS。"
 
 #: data/installer.appdata.xml.in:17
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
