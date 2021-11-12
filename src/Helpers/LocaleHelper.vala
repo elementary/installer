@@ -74,12 +74,7 @@ namespace LocaleHelper {
                 };
 
                 foreach (var country in Distinst.locale_get_country_codes (language)) {
-                    if (country == "None") {
-                        lang_entry.add_country (CountryEntry () {
-                            code = country,
-                            name = country
-                        });
-                    } else {
+                    if (country != "None") {
                         lang_entry.add_country (CountryEntry () {
                             code = country,
                             name = Distinst.locale_get_country_name_translated (country, language)
