@@ -11,7 +11,6 @@ src/Dialogs/HelpDialog.vala
 src/Objects/Configuration.vala
 src/Objects/InstallOptions.vala
 src/Objects/Mount.vala
-src/Objects/Recovery.vala
 src/Views/AbstractInstallerView.vala
 src/Views/CheckView.vala
 src/Views/DecryptionView.vala
