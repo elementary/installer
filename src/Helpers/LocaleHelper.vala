@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace LocaleHelper {
+ namespace LocaleHelper {
     public class LangEntry {
         public string code;
         public string? name;
@@ -35,24 +35,6 @@ namespace LocaleHelper {
 
         public unowned string get_code () {
             return code;
-        }
-
-        public void push_country_to_start (string country) {
-            var i = 0;
-            var found = false;
-            foreach (var entry in countries) {
-                if (country == entry.code) {
-                    found = true;
-                    break;
-                }
-                i += 1;
-            }
-
-            if (found) {
-                var temp = countries[0];
-                countries[0] = countries[i];
-                countries[i] = temp;
-            }
         }
     }
 
@@ -73,23 +55,21 @@ namespace LocaleHelper {
                     name = Distinst.locale_get_language_name_translated (language)
                 };
 
+	    	    string main_country = get_main_country (language);
+		        if (main_country != null) {
+		            lang_entry.add_country (CountryEntry () {
+			            code = main_country,
+			            name = Distinst.locale_get_country_name_translated (main_country, language)
+		            });
+		        }
+
                 foreach (var country in Distinst.locale_get_country_codes (language)) {
-                    if (country == "None") {
-                        lang_entry.add_country (CountryEntry () {
-                            code = country,
-                            name = country
-                        });
-                    } else {
+                    if (country != "None" && country != main_country) {
                         lang_entry.add_country (CountryEntry () {
                             code = country,
                             name = Distinst.locale_get_country_name_translated (country, language)
                         });
                     }
-                }
-
-                var main = get_main_country (language);
-                if (main != null) {
-                    lang_entry.push_country_to_start (main);
                 }
 
                 lang_entries[language] = lang_entry;
