@@ -91,10 +91,6 @@ public class Installer.PartitionBar : Gtk.EventBox {
         return end - start;
     }
 
-    public uint64 get_sector_size () {
-        return sector_size;
-    }
-
     public double get_percent (uint64 disk_sectors) {
         return (((double) this.get_size () / (double) disk_sectors));
     }
