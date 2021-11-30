@@ -52,6 +52,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private OsEntry[] boot_entries_discovered;
     private OsInfo[] os_discovered;
 
+    private int refresh_options_found = 0;
     private ulong? disk_rescan_signal = null;
     private ulong? decrypt_signal = null;
     private bool searching_for_boot_entries = false;
@@ -387,11 +388,12 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         // TODO: Use Distinst DBus service later.
         int options_found = this.refresh_os_view.update_options();
-        if (0 == options_found) {
+        if (this.refresh_options_found == options_found || options_found == 0) {
             this.load_encrypted_partition_view();
             return;
         }
 
+        this.refresh_options_found = options_found;
         this.stack.visible_child = this.refresh_os_view;
     }
 
