@@ -19,7 +19,7 @@ public class UserView : AbstractInstallerView {
 
     construct {
         cancel_button.label = _("Back");
-        var user_icon = new IconChooser("/usr/share/pixmaps/faces/penguin.jpg") {
+        var user_icon = new IconChooser("/usr/share/pixmaps/faces/pop-robot.png") {
             halign = Gtk.Align.CENTER,
             hexpand = true
         };
