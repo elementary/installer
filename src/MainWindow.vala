@@ -363,7 +363,11 @@ public class Installer.MainWindow : Gtk.Dialog {
             this.refresh_os_view = new RefreshOSView();
 
             this.refresh_os_view.cancel.connect(() => {
-                this.load_try_install_view();
+                if (this.refresh_mode) {
+                    this.load_refresh_view();
+                } else {
+                    this.load_try_install_view();
+                }
             });
 
             this.refresh_os_view.choose_another.connect(() => {
