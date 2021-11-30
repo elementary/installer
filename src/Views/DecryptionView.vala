@@ -7,16 +7,16 @@ public class Installer.DecryptionView : AbstractInstallerView {
     private Gtk.Label err_label;
     private Gtk.Entry pw_entry;
 
-    construct {
-        var artwork = new Gtk.Grid ();
-        artwork.get_style_context ().add_class ("disks");
-        artwork.get_style_context ().add_class ("artwork");
-        artwork.vexpand = true;
+    public DecryptionView () {
+        Object (
+            cancellable: true,
+            artwork: "disks",
+            title: _("Decrypt Install")
+        );
+    }
 
-        var label = new Gtk.Label (_("Decrypt Install"));
-        label.max_width_chars = 60;
-        label.valign = Gtk.Align.START;
-        label.get_style_context ().add_class ("h2");
+    construct {
+        this.cancel_button.set_label(_("Back"));
 
         var desc_label = new Gtk.Label (_("Enter the password to decrypt the existing install."));
         desc_label.hexpand = true;
@@ -59,8 +59,6 @@ public class Installer.DecryptionView : AbstractInstallerView {
         right_pane.add (pw_entry);
         right_pane.add (this.err_label);
 
-        content_area.attach (artwork, 0, 0, 1, 1);
-        content_area.attach (label, 0, 1, 1, 1);
         content_area.attach (right_pane, 1, 0, 1, 2);
 
         action_area.add (pw_button);
