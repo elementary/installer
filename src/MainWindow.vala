@@ -280,6 +280,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         user_view.previous_view = prev_view;
+        user_view.cancel_button.hide();
         stack.visible_child = user_view;
         user_view.grab_focus ();
     }
