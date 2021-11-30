@@ -133,6 +133,7 @@ public class Installer.MainWindow : Gtk.Dialog {
                 this.os_discovered = info;
                 if (null != this.refresh_view) {
                     this.stack.remove(this.refresh_view);
+                    this.stack.add(this.refresh_view);
                 }
                 this.load_refresh_os_view();
             });
