@@ -188,7 +188,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             string path = Utils.string_from_utf8 (device_path);
 
             try {
-                options.decrypt (path, "cryptdata", key);
+                options.decrypt (path, @"cryptdata-$uuid", key);
 
                 this.decryption_view.reset();
 
