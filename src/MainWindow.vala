@@ -188,7 +188,8 @@ public class Installer.MainWindow : Gtk.Dialog {
             string path = Utils.string_from_utf8 (device_path);
 
             try {
-                options.decrypt (path, @"cryptdata-$uuid", key);
+                string id = random_string(4);
+                options.decrypt (path, @"cryptdata-$id", key);
 
                 this.decryption_view.reset();
 
@@ -627,4 +628,19 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     public override void close () {}
+}
+
+
+string random_string(int length) {
+    string chars = "abcdefghijklmnopqrstuvwxyz1234567890";
+
+    string buf = "";
+
+    for(int i = 0; i < length; i++){
+        int idx = Random.int_range(0,chars.length);
+        string e = chars.get_char(chars.index_of_nth_char(idx)).to_string();
+        buf += e;
+    }
+	
+    return buf;
 }
