@@ -8,13 +8,15 @@ public class EncryptedPartitionView: OptionsView {
 
     public EncryptedPartitionView() {
         Object (
-            cancellable: false,
+            cancellable: true,
             artwork: "disks",
             title: _("Select Encrypted Partition")
         );
     }
 
     construct {
+        this.cancel_button.set_label(_("Back"));
+
         this.next_button.label = _("Select");
         this.next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         this.next.connect(() => {
