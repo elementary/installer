@@ -325,8 +325,6 @@ public class Installer.MainWindow : Gtk.Dialog {
             this.distinst.disconnect(this.disk_rescan_signal);
         }
 
-        InstallOptions.get_default().reset();
-
         this.disk_rescan_signal = this.distinst.disk_rescan_complete.connect(() => {
             this.distinst.disconnect(this.disk_rescan_signal);
             this.disk_rescan_signal = null;
@@ -361,7 +359,7 @@ public class Installer.MainWindow : Gtk.Dialog {
                     this.stack.add(this.refresh_view);
                 }
 
-                if (this.boot_entries_discovered.length == 0 || this.encrypted.length == 0) {
+                if (this.boot_entries_discovered.length == 0) {
                     this.refresh_view.disable_refresh();
                 } else {
                     this.refresh_view.enable_refresh();
@@ -401,9 +399,11 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         // TODO: Use Distinst DBus service later.
         int options_found = this.refresh_os_view.update_options();
-        if (this.refresh_options_found == options_found || options_found == 0) {
-            this.load_encrypted_partition_view();
-            return;
+        if (this.encrypted.length != 0) {
+            if (this.refresh_options_found == options_found || options_found == 0) {
+                this.load_encrypted_partition_view();
+                return;
+            }
         }
 
         this.refresh_options_found = options_found;
@@ -432,6 +432,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             }
 
             if (encrypted.length == 0) {
+                this.load_refresh_os_view();
                 return GLib.Source.REMOVE;
             }
 
