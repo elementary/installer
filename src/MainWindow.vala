@@ -414,7 +414,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         if (this.encrypted_partition_view == null) {
             this.encrypted_partition_view = new EncryptedPartitionView();
             this.encrypted_partition_view.cancel.connect(() => {
-                this.load_refresh_os_view();
+                this.load_refresh_view();
             });
             this.encrypted_partition_view.decrypt.connect((uuid) => {
                 this.load_decrypt_view(uuid);
@@ -643,6 +643,6 @@ string random_string(int length) {
         string e = chars.get_char(chars.index_of_nth_char(idx)).to_string();
         buf += e;
     }
-	
+
     return buf;
 }
