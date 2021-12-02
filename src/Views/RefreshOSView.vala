@@ -27,11 +27,17 @@ public class RefreshOSView: OptionsView {
         int appended = 0;
         base.clear_options ();
         var install_options = InstallOptions.get_default ();
+        var uuids = new Gee.ArrayList<string>();
+
         unowned Distinst.Disks disks = install_options.borrow_disks ();
         foreach (var option in install_options.get_updated_options ().get_refresh_options ()) {
             var os = Utils.string_from_utf8 (option.get_os_name ());
             var version = Utils.string_from_utf8 (option.get_os_version ());
             var uuid = Utils.string_from_utf8 (option.get_root_part ());
+
+            if (uuids.contains(uuid)) continue;
+            uuids.add(uuid);
+
             Distinst.OsRelease release;
             string? override_logo = null;
             if (option.get_os_release (out release) != 0) {
