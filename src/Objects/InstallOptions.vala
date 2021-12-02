@@ -116,6 +116,13 @@ public class InstallOptions : GLib.Object {
         return disks;
     }
 
+    public void reset () {
+        _options = null;
+        selected_option = null;
+        unlocked_devices.clear();
+        this.get_options();
+    }
+
     // Transder ownership of the disks to the caller.
     public Distinst.Disks take_disks () {
         disks_moved = true;

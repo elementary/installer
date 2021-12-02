@@ -325,6 +325,8 @@ public class Installer.MainWindow : Gtk.Dialog {
             this.distinst.disconnect(this.disk_rescan_signal);
         }
 
+        InstallOptions.get_default().reset();
+
         this.disk_rescan_signal = this.distinst.disk_rescan_complete.connect(() => {
             this.distinst.disconnect(this.disk_rescan_signal);
             this.disk_rescan_signal = null;
