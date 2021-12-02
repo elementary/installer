@@ -32,6 +32,10 @@ public class EncryptedPartitionView: OptionsView {
         base.clear_options();
     }
 
+    public new void select_first_option() {
+        base.select_first_option();
+    }
+
     public new void add_option(EncryptedDevice device) {
         base.add_option(
             "drive-harddisk",

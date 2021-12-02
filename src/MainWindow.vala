@@ -387,7 +387,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             });
 
             this.refresh_os_view.choose_another.connect(() => {
-                this.load_encrypted_partition_view();
+                this.load_refresh_os_view();
             });
 
             this.refresh_os_view.next_step.connect(() => {
@@ -441,6 +441,8 @@ public class Installer.MainWindow : Gtk.Dialog {
             foreach (var block in encrypted) {
                 this.encrypted_partition_view.add_option(block);
             }
+
+            this.encrypted_partition_view.select_first_option();
 
             this.stack.set_visible_child(this.encrypted_partition_view);
 
