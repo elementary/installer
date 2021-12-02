@@ -407,6 +407,8 @@ public class Installer.MainWindow : Gtk.Dialog {
         }
 
         this.refresh_options_found = options_found;
+        this.stack.remove(this.refresh_os_view);
+        this.stack.add(this.refresh_os_view);
         this.stack.visible_child = this.refresh_os_view;
     }
 
