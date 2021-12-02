@@ -36,6 +36,7 @@ public class Installer.DecryptionView : AbstractInstallerView {
         pw_entry.grab_focus ();
 
         var pw_button = new Gtk.Button.with_label(_("Decrypt"));
+        pw_button.get_style_context().add_class(Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         pw_button.sensitive = false;
 
         pw_entry.activate.connect (() => pw_button.clicked ());
