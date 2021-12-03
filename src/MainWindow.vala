@@ -117,11 +117,17 @@ public class Installer.MainWindow : Gtk.Dialog {
 
             this.distinst.encrypted_devices_ok.connect((devices) => {
                 stderr.printf("located encrypted devices:\n");
+                this.encrypted = {};
+
+                unowned InstallOptions opts = InstallOptions.get_default();
+
                 foreach (var device in devices) {
-                    stderr.printf("\t%s\n", device.device.path);
-                };
-                
-                this.encrypted = devices;
+                    if (!opts.is_unlocked(device.device.path)) {
+                        stderr.printf("\t%s\n", device.device.path);
+                        this.encrypted += device;
+                    }
+                }
+
                 this.searching_for_encrypted_devices = false;
             });
 
@@ -448,7 +454,7 @@ public class Installer.MainWindow : Gtk.Dialog {
                 return GLib.Source.CONTINUE;
             }
 
-            if (encrypted.length == 0) {
+            if (this.encrypted.length == 0) {
                 stderr.printf ("ERROR: encrypted length is 0\n");
                 this.load_refresh_os_view();
                 return GLib.Source.REMOVE;
