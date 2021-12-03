@@ -105,7 +105,7 @@ Applications will need to be reinstalled manually."
     public void enable_refresh() {
         this.description.hide();
         this.refresh_button.show();
-        this.title_label.set_text(_("Refresh Or Install"));
+        this.title_label.set_text(_("Refresh or Install"));
     }
 
     public void search_failure(string why, bool can_select) {
