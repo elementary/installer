@@ -83,7 +83,15 @@ Applications will need to be reinstalled manually."
         choose_another_button.clicked.connect(() => this.choose_another());
         choose_another_button.set_no_show_all(true);
         choose_another_button.hide();
+
+        var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
+        demo_button.clicked.connect (Utils.demo_mode);
+
+        this.action_area.homogeneous = false;
         this.action_area.add(choose_another_button);
+        this.action_area.add(demo_button);
+        this.action_area.set_child_secondary(demo_button, true);
+        this.action_area.set_child_non_homogeneous(demo_button, true);
 
         this.next_button.label = _("Next");
         this.next_button.get_style_context().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
