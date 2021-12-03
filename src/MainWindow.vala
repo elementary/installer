@@ -116,7 +116,11 @@ public class Installer.MainWindow : Gtk.Dialog {
             });
 
             this.distinst.encrypted_devices_ok.connect((devices) => {
-                stderr.printf("located encrypted devices\n");
+                stderr.printf("located encrypted devices:\n");
+                foreach (var device in devices) {
+                    stderr.printf("\t%s\n", device.device.path);
+                };
+                
                 this.encrypted = devices;
                 this.searching_for_encrypted_devices = false;
             });
@@ -397,19 +401,30 @@ public class Installer.MainWindow : Gtk.Dialog {
             this.stack.add(this.refresh_os_view);
         }
 
-        // TODO: Use Distinst DBus service later.
-        int options_found = this.refresh_os_view.update_options();
-        if (this.encrypted.length != 0) {
-            if (this.refresh_options_found == options_found || options_found == 0) {
-                this.load_encrypted_partition_view();
-                return;
-            }
+        if (this.disk_rescan_signal != null) {
+            this.distinst.disconnect(this.disk_rescan_signal);
         }
 
-        this.refresh_options_found = options_found;
-        this.stack.remove(this.refresh_os_view);
-        this.stack.add(this.refresh_os_view);
-        this.stack.visible_child = this.refresh_os_view;
+        this.disk_rescan_signal = this.distinst.disk_rescan_complete.connect(() => {
+            this.distinst.disconnect(this.disk_rescan_signal);
+            this.disk_rescan_signal = null;
+
+            // TODO: Use Distinst DBus service later.
+            int options_found = this.refresh_os_view.update_options();
+            if (this.encrypted.length != 0) {
+                if (this.refresh_options_found == options_found || options_found == 0) {
+                    this.load_encrypted_partition_view();
+                    return;
+                }
+            }
+
+            this.refresh_options_found = options_found;
+            this.stack.remove(this.refresh_os_view);
+            this.stack.add(this.refresh_os_view);
+            this.stack.visible_child = this.refresh_os_view;
+        });
+
+        this.distinst.disk_rescan();
     }
 
     private void load_encrypted_partition_view() {
@@ -434,6 +449,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             }
 
             if (encrypted.length == 0) {
+                stderr.printf ("ERROR: encrypted length is 0\n");
                 this.load_refresh_os_view();
                 return GLib.Source.REMOVE;
             }
