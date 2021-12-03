@@ -477,16 +477,21 @@ public class Installer.MainWindow : Gtk.Dialog {
         Configuration.get_default ().retain_old = false;
         if (this.try_install_view == null) {
             this.try_install_view = new TryInstallView ();
+
+            this.try_install_view.custom_step.connect (load_partitioning_view);
+            this.try_install_view.next_step.connect (load_disk_view);
+            this.try_install_view.refresh_step.connect (() => {
+                this.os_search();
+            });
+
             this.stack.add (this.try_install_view);
         }
 
-        this.try_install_view.previous_view = keyboard_layout_view;
+        this.try_install_view.previous_view = this.refresh_mode
+            ? (Gtk.Widget) this.refresh_view
+            : (Gtk.Widget) this.keyboard_layout_view;
         this.stack.visible_child = this.try_install_view;
-        this.try_install_view.custom_step.connect (load_partitioning_view);
-        this.try_install_view.next_step.connect (load_disk_view);
-        this.try_install_view.refresh_step.connect (() => {
-            this.os_search();
-        });
+
     }
 
     private void set_check_view_visible (bool show) {
