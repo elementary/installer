@@ -157,6 +157,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
                 if (this.boot_entries_discovered.length != 0) {
                     this.refresh_mode = true;
+                    options.is_refresh_mode = true;
                     headerbar.title = _("Refresh or Install %s").printf (this.pretty_name);
                     this.os_entries();
                 } else {

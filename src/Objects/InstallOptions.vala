@@ -26,6 +26,7 @@ public class InstallOptions : GLib.Object {
     private Distinst.InstallOptions _options;
     private Distinst.Disks disks;
     public Distinst.InstallOption? selected_option;
+    public bool is_refresh_mode = false;
 
     private Gee.ArrayList<string> unlocked_devices { get; set; default = new Gee.ArrayList<string> (); }
 
