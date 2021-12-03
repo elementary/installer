@@ -15,7 +15,7 @@ public class RefreshView: OptionsView {
 
     public RefreshView(string os, string version) {
         Object (
-            cancellable: false,
+            cancellable: true,
             artwork: "try-install",
             title: _("Install"),
             os: os,
@@ -24,6 +24,8 @@ public class RefreshView: OptionsView {
     }
 
     construct {
+        this.cancel_button.set_label(_("Back"));
+
         this.description.set_text(_("%s is not installed and Refresh Install is unavailable.").printf(this.os));
         this.description.hide();
 
