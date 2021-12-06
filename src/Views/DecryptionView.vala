@@ -17,6 +17,9 @@ public class Installer.DecryptionView : AbstractInstallerView {
 
     construct {
         this.cancel_button.set_label(_("Back"));
+        this.cancel_button.clicked.connect (() => {
+            ((Gtk.Stack) get_parent ()).visible_child = previous_view;
+        });
 
         var desc_label = new Gtk.Label (_("Enter the password to decrypt the existing install."));
         desc_label.hexpand = true;

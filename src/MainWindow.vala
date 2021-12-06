@@ -263,18 +263,10 @@ public class Installer.MainWindow : Gtk.Dialog {
     private void load_decrypt_view(string uuid) {
         if (this.decryption_view == null) {
             this.decryption_view = new DecryptionView ();
-
-            this.decryption_view.cancel.connect(() => {
-                if (this.refresh_mode) {
-                    load_refresh_view();
-                } else {
-                    load_try_install_view ();
-                }
-            });
-
             this.stack.add(this.decryption_view);
         }
 
+        this.decryption_view.previous_view = this.stack.visible_child;
         this.stack.visible_child = this.decryption_view;
         this.decryption_view.reset();
         this.decrypt(uuid);
