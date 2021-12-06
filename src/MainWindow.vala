@@ -343,11 +343,7 @@ public class Installer.MainWindow : Gtk.Dialog {
                 if (this.refresh_view == null) {
                     this.refresh_view = new RefreshView (this.pretty_name, this.version);
 
-                    this.refresh_view.previous_view = keyboard_layout_view;
-
-                    this.refresh_view.cancel.connect (() => {
-                        this.stack.visible_child = this.keyboard_layout_view;
-                    });
+                    this.refresh_view.previous_view = this.keyboard_layout_view;
 
                     this.refresh_view.refresh.connect(() => {
                         Configuration.get_default ().retain_old = true;

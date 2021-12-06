@@ -25,6 +25,9 @@ public class RefreshView: OptionsView {
 
     construct {
         this.cancel_button.set_label(_("Back"));
+        this.cancel_button.clicked.connect (() => {
+            ((Gtk.Stack) get_parent ()).visible_child = this.previous_view;
+        });
 
         this.description.set_text(_("%s is not installed and Refresh Install is unavailable.").printf(this.os));
         this.description.hide();
