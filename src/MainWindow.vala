@@ -234,8 +234,17 @@ public class Installer.MainWindow : Gtk.Dialog {
             string path = Utils.string_from_utf8 (device_path);
 
             try {
-                string id = random_string(4);
-                options.decrypt (path, @"cryptdata-$id", key);
+
+                string device_name = "cryptdata";
+
+                File device_file = File.new_for_path ("/dev/mapper/cryptdata");
+
+                if (device_file.query_exists()) {
+                    string id = random_string(4);
+                    device_name = @"cryptdata-$id";
+                }
+
+                options.decrypt (path, device_name, key);
 
                 // Remember if we decrypted the refresh partition's LUKS partition.
                 if (uuid == this.recovery_config.get("LUKS_UUID")) {
