@@ -54,7 +54,6 @@ public class Installer.MainWindow : Hdy.Window {
             margin_top = 12,
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         };
-
         stack.add (language_view);
 
         if (Utils.is_running_in_virtual_machine ()) {
