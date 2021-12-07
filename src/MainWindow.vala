@@ -110,6 +110,10 @@ public class Installer.MainWindow : Gtk.Dialog {
 
             this.distinst.os_entries_ok.connect((entries) => {
                 stderr.printf("Found OS boot entries\n");
+                if (entries.length > 0) {
+                    InstallOptions.get_default ().is_refreshable = true;
+                }
+
                 this.boot_entries_discovered = entries;
                 this.searching_for_boot_entries = false;
             });
