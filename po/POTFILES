@@ -18,6 +18,7 @@ src/Views/PartitioningView.vala
 src/Views/ProgressView.vala
 src/Views/TryInstallView.vala
 src/Views/SuccessView.vala
+src/Views/VirtualMachineView.vala
 src/Widgets/DecryptMenu.vala
 src/Widgets/DiskBar.vala
 src/Widgets/DiskGrid.vala
