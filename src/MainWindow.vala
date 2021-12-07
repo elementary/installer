@@ -455,7 +455,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
             int options_found = this.refresh_os_view.update_options();
 
-            if (this.mode == 2 && this.encrypted.length != 0) {
+            if (this.mode != 3 && this.encrypted.length != 0) {
                 if (this.refresh_options_found == options_found || options_found == 0) {
                     this.load_encrypted_partition_view();
                     return;
