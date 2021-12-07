@@ -19,16 +19,16 @@ public class VirtualMachineView : AbstractInstallerView {
     public signal void next_step ();
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("utilities-system-monitor", Gtk.IconSize.DIALOG) {
             valign = Gtk.Align.END
         };
 
-        var heading = new Gtk.Label (_("Speed may be limited")) {
+        var heading = new Gtk.Label (_("Virtual Machine")) {
             valign = Gtk.Align.START
         };
         heading.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var primary_label = new Gtk.Label (_("We have detected that you're using a Virtual Machine. For the best experience and performance, please install %s directly on your device.").printf (Utils.get_pretty_name ())) {
+        var primary_label = new Gtk.Label (_("You appear to be installing in a virtual machine. Some parts of %s may run slowly, freeze, or not function properly in a virtual machine. It's recommended to install on real hardware.").printf (Utils.get_pretty_name ())) {
             hexpand = true,
             max_width_chars = 1,
             wrap = true,
@@ -44,15 +44,15 @@ public class VirtualMachineView : AbstractInstallerView {
         content_area.attach (heading, 0, 1);
         content_area.attach (primary_label, 1, 0, 1, 2);
 
-        var next_button = new Gtk.Button.with_label (_("Accept"));
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
         shutdown_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         shutdown_button.clicked.connect (Utils.shutdown);
 
-        action_area.add (next_button);
+        var next_button = new Gtk.Button.with_label (_("Ignore"));
+        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
         action_area.add (shutdown_button);
+        action_area.add (next_button);
 
         shutdown_button.grab_focus ();
 
