@@ -19,7 +19,7 @@ public class VirtualMachineView : AbstractInstallerView {
     public signal void next_step ();
 
     construct {
-        var type_image = new Gtk.Image.from_icon_name ("computer", Gtk.IconSize.DIALOG) {
+        var type_image = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.DIALOG) {
             valign = Gtk.Align.END
         };
 
