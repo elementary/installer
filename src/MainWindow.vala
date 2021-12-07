@@ -445,30 +445,40 @@ public class Installer.MainWindow : Gtk.Dialog {
             this.stack.add(this.refresh_os_view);
         }
 
-        if (this.disk_rescan_signal != null) {
-            this.distinst.disconnect(this.disk_rescan_signal);
-        }
+        this.encrypted_devices();
 
-        this.disk_rescan_signal = this.distinst.disk_rescan_complete.connect(() => {
-            this.distinst.disconnect(this.disk_rescan_signal);
-            this.disk_rescan_signal = null;
-
-            int options_found = this.refresh_os_view.update_options();
-
-            if (this.mode != 3 && this.encrypted.length != 0) {
-                if (this.refresh_options_found == options_found || options_found == 0) {
-                    this.load_encrypted_partition_view();
-                    return;
-                }
+        Timeout.add(100, () => {
+            if (this.searching_for_encrypted_devices) {
+                return GLib.Source.CONTINUE;
             }
 
-            this.refresh_options_found = options_found;
-            this.stack.remove(this.refresh_os_view);
-            this.stack.add(this.refresh_os_view);
-            this.stack.visible_child = this.refresh_os_view;
-        });
+            if (this.disk_rescan_signal != null) {
+                this.distinst.disconnect(this.disk_rescan_signal);
+            }
 
-        this.distinst.disk_rescan();
+            this.disk_rescan_signal = this.distinst.disk_rescan_complete.connect(() => {
+                this.distinst.disconnect(this.disk_rescan_signal);
+                this.disk_rescan_signal = null;
+
+                int options_found = this.refresh_os_view.update_options();
+
+                if (this.mode != 3 && this.encrypted.length != 0) {
+                    if (this.refresh_options_found == options_found || options_found == 0) {
+                        this.load_encrypted_partition_view();
+                        return;
+                    }
+                }
+
+                this.refresh_options_found = options_found;
+                this.stack.remove(this.refresh_os_view);
+                this.stack.add(this.refresh_os_view);
+                this.stack.visible_child = this.refresh_os_view;
+            });
+
+            this.distinst.disk_rescan();
+
+            return GLib.Source.REMOVE;
+        });
     }
 
     private void load_encrypted_partition_view() {
