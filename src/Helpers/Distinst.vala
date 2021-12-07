@@ -49,8 +49,16 @@ public interface DistinstIface: Object {
     /** Disk rescan complete. */
     public signal void disk_rescan_complete();
 
-    /** Checks if the environment is in OEM mode. */
-    public abstract bool is_oem_mode() throws Error;
+    /** Which mode the install environment is in.
+     * - Live = 0
+     * - Oem = 1
+     * - Recovery = 2
+     * - Refresh = 3
+     **/
+    public abstract uint8 mode() throws Error;
+
+    /** If in the recovery partition, configuration details for the installer to use. */
+    public abstract HashTable<string, string> recovery_config() throws Error;
 
     /** Search for installed operating systems by their boot entries. */
     public abstract void os_entries() throws Error;

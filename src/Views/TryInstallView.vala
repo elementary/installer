@@ -127,7 +127,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         var options = InstallOptions.get_default ();
 
-        if (!options.is_refresh_mode && options.get_options ().has_refresh_options ()) {
+        if (!options.is_recovery_mode && options.get_options ().has_refresh_options ()) {
             var refresh_install_button = button_creator.new_button (
                 _("Refresh Install"),
                 "view-refresh",

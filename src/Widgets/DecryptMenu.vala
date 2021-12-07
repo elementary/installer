@@ -32,7 +32,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
 
     public DecryptMenu (string device_path, DecryptFn decrypt, PartitionBar partition_bar) {
         this.partition_bar = partition_bar;
-        this.decrypt = decrypt;
+        this.decrypt = (path, pv, pass, menu) => decrypt(path, pv, pass, menu);
         this.device_path = device_path;
         stack = new Gtk.Stack ();
         stack.margin = 12;

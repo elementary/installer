@@ -44,9 +44,11 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     private DistinstIface distinst;
 
-    private bool refresh_mode = false;
     private string pretty_name;
     private string version;
+
+    private HashTable<string, string>? recovery_config = null;
+    private bool refresh_encrypted = true;
 
     private EncryptedDevice[] encrypted;
     private OsEntry[] boot_entries_discovered;
@@ -57,6 +59,8 @@ public class Installer.MainWindow : Gtk.Dialog {
     private ulong? decrypt_signal = null;
     private bool searching_for_boot_entries = false;
     private bool searching_for_encrypted_devices = false;
+
+    private uint8 mode;
 
     public MainWindow (DistinstIface distinst) {
         Object (
@@ -148,16 +152,47 @@ public class Installer.MainWindow : Gtk.Dialog {
                 this.load_refresh_os_view();
             });
 
+            this.mode = 0;
+
+            try {
+                this.mode = distinst.mode();
+            } catch (Error why) {
+                stderr.printf("could not get mode from distinst-v2: %s\n", why.message);
+            }
+
+            options.is_recovery_mode = this.mode == 2 || this.mode == 3;
+
+            if (this.mode == 3) {
+                try {
+                    this.recovery_config = this.distinst.recovery_config();
+                } catch (Error why) {
+                    this.mode = 2;
+                    stderr.printf ("failed to get recovery config: %s\n", why.message);
+                }
+            }
+
             this.os_entries();
+
+            // Skip the language view if in refresh mode.
+            if (this.mode == 3) {
+                this.load_refresh_view();
+            } else {
+                language_view = new LanguageView ();
+                language_view.next_step.connect (() => load_keyboard_view ());
+                stack.add (language_view);
+                stack.visible_child = language_view;
+                stack.show_all();
+            }
 
             Timeout.add(100, () => {
                 if (this.searching_for_boot_entries) {
                     return GLib.Source.CONTINUE;
                 }
 
-                if (this.boot_entries_discovered.length != 0) {
-                    this.refresh_mode = true;
-                    options.is_refresh_mode = true;
+                if (this.mode == 3) {
+                    headerbar.title = _("Refresh OS");
+                    this.os_entries();
+                } else if (this.mode == 2 && this.boot_entries_discovered.length != 0) {
                     headerbar.title = _("Refresh or Install %s").printf (this.pretty_name);
                     this.os_entries();
                 } else {
@@ -169,16 +204,12 @@ public class Installer.MainWindow : Gtk.Dialog {
 
             return GLib.Source.REMOVE;
         });
-
-        language_view = new LanguageView ();
-        language_view.next_step.connect (() => load_keyboard_view ());
-        stack.add (language_view);
     }
 
     /** Controls the behavior of successful and unsuccessful decryption attempts. */
     private void decrypt(string uuid) {
         if (this.decrypt_signal != null) {
-            this.distinst.disconnect(this.decrypt_signal);
+            this.decryption_view.disconnect(this.decrypt_signal);
         }
 
         this.decrypt_signal = this.decryption_view.decrypt.connect((key) => {
@@ -201,6 +232,11 @@ public class Installer.MainWindow : Gtk.Dialog {
             try {
                 string id = random_string(4);
                 options.decrypt (path, @"cryptdata-$id", key);
+
+                // Remember if we decrypted the refresh partition's LUKS partition.
+                if (uuid == this.recovery_config.get("LUKS_UUID")) {
+                    this.refresh_encrypted = false;
+                }
 
                 this.decryption_view.reset();
 
@@ -229,15 +265,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         } catch (Error e) {
             warning("failed to search for encrypted devices: %s", e.message);
             return;
-        }
-    }
-
-    private bool is_oem_mode() {
-        try {
-            return this.distinst.is_oem_mode();
-        } catch (Error e) {
-            warning("failed to check if in OEM mode: %s", e.message);
-            return false;
         }
     }
 
@@ -304,7 +331,8 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     private void load_install_options() {
-        if (this.is_oem_mode()) {
+        if (this.mode == 1) {
+            // OEM Mode
             var opts = InstallOptions.get_default ();
             unowned Distinst.InstallOptions options = opts.get_options ();
             var recovery = options.get_recovery_option ();
@@ -316,9 +344,11 @@ public class Installer.MainWindow : Gtk.Dialog {
             };
 
             load_user_view (keyboard_layout_view, load_keyboard_view, load_encrypt_view);
-        } else if (this.refresh_mode) {
+        } else if (this.mode == 2) {
+            // Recovery Mode
             load_refresh_view();
         } else {
+            // Live Mode
             load_try_install_view ();
         }
     }
@@ -338,6 +368,20 @@ public class Installer.MainWindow : Gtk.Dialog {
                 // Do not pass until OS entries have been gathered.
                 if (this.searching_for_boot_entries || this.searching_for_encrypted_devices) {
                     return GLib.Source.CONTINUE;
+                }
+
+                if (this.mode == 3) {
+                    Configuration.get_default ().retain_old = true;
+
+                    string? luks = recovery_config.get("LUKS_UUID");
+
+                    if (this.refresh_encrypted && null != luks) {
+                        this.load_decrypt_view(luks);
+                    } else {
+                        this.load_refresh_os_view();
+                    }
+
+                    return GLib.Source.REMOVE;
                 }
 
                 if (this.refresh_view == null) {
@@ -378,7 +422,8 @@ public class Installer.MainWindow : Gtk.Dialog {
             this.refresh_os_view = new RefreshOSView();
 
             this.refresh_os_view.cancel.connect(() => {
-                if (this.refresh_mode) {
+                if (this.mode == 2 || this.mode == 3) {
+                    this.mode = 2;
                     this.load_refresh_view();
                 } else {
                     this.load_try_install_view();
@@ -404,9 +449,9 @@ public class Installer.MainWindow : Gtk.Dialog {
             this.distinst.disconnect(this.disk_rescan_signal);
             this.disk_rescan_signal = null;
 
-            // TODO: Use Distinst DBus service later.
             int options_found = this.refresh_os_view.update_options();
-            if (this.encrypted.length != 0) {
+
+            if (this.mode == 2 && this.encrypted.length != 0) {
                 if (this.refresh_options_found == options_found || options_found == 0) {
                     this.load_encrypted_partition_view();
                     return;
@@ -463,6 +508,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     private void load_try_install_view () {
         Configuration.get_default ().retain_old = false;
+
         if (this.try_install_view == null) {
             this.try_install_view = new TryInstallView ();
 
@@ -475,11 +521,11 @@ public class Installer.MainWindow : Gtk.Dialog {
             this.stack.add (this.try_install_view);
         }
 
-        this.try_install_view.previous_view = this.refresh_mode
+        this.try_install_view.previous_view = (this.mode == 2 || this.mode == 3)
             ? (Gtk.Widget) this.refresh_view
             : (Gtk.Widget) this.keyboard_layout_view;
-        this.stack.visible_child = this.try_install_view;
 
+        this.stack.visible_child = this.try_install_view;
     }
 
     private void set_check_view_visible (bool show) {

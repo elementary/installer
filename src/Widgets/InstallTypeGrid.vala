@@ -63,7 +63,7 @@ public class Installer.InstallTypeButton : Gtk.ToggleButton {
             type_grid: type_grid
         );
 
-        this.func = func;
+        this.func = () => func();
     }
 
     construct {
