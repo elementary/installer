@@ -47,7 +47,14 @@ public class VirtualMachineView : AbstractInstallerView {
         var next_button = new Gtk.Button.with_label (_("Accept"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
+        var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
+        shutdown_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        shutdown_button.clicked.connect (Utils.shutdown);
+
         action_area.add (next_button);
+        action_area.add (shutdown_button);
+
+        shutdown_button.grab_focus ();
 
         next_button.clicked.connect (() => {
             next_step ();
