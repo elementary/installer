@@ -77,6 +77,7 @@ public class Installer.DecryptionView : AbstractInstallerView {
     public void reset() {
         this.err_label.hide();
         pw_entry.text = "";
+        pw_entry.grab_focus ();
     }
 
 }
