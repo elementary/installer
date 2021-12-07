@@ -19,14 +19,14 @@ public class VirtualMachineView : AbstractInstallerView {
     public signal void next_step ();
 
     construct {
-        var type_image = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.DIALOG) {
             valign = Gtk.Align.END
         };
 
-        var type_label = new Gtk.Label (_("Speed may be limited")) {
+        var heading = new Gtk.Label (_("Speed may be limited")) {
             valign = Gtk.Align.START
         };
-        type_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        heading.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var primary_label = new Gtk.Label (_("We have detected that you're using a Virtual Machine. For the best experience and performance, please install %s directly on your device.").printf (Utils.get_pretty_name ())) {
             hexpand = true,
@@ -40,8 +40,8 @@ public class VirtualMachineView : AbstractInstallerView {
         content_area.margin_end = 12;
         content_area.margin_start = 12;
         content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (type_image, 0, 0);
-        content_area.attach (type_label, 0, 1);
+        content_area.attach (image, 0, 0);
+        content_area.attach (heading, 0, 1);
         content_area.attach (primary_label, 1, 0, 1, 2);
 
         var next_button = new Gtk.Button.with_label (_("Accept"));
