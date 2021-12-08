@@ -42,6 +42,11 @@ public class InstallOptions : GLib.Object {
         return _options_object;
     }
 
+    public void deactivate_logical_devices() {
+        Distinst.deactivate_logical_devices();
+        unlocked_devices.clear ();
+    }
+
     public void set_minimum_size (uint64 size) {
         minimum_size = size;
     }

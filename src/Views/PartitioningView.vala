@@ -157,7 +157,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         });
 
         back_button.clicked.connect (() => {
-            Distinst.deactivate_logical_devices ();
+            InstallOptions.get_default().deactivate_logical_devices();
             ((Gtk.Stack) get_parent ()).visible_child = previous_view;
         });
 

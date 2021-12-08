@@ -49,13 +49,11 @@ public class Installer.MainWindow : Gtk.Dialog {
     private string version;
 
     private HashTable<string, string>? recovery_config = null;
-    private bool refresh_encrypted = true;
 
     private EncryptedDevice[] encrypted;
     private OsEntry[] boot_entries_discovered;
     private OsInfo[] os_discovered;
 
-    private int refresh_options_found = 0;
     private ulong? disk_rescan_signal = null;
     private ulong? decrypt_signal = null;
     private bool searching_for_boot_entries = false;
@@ -247,11 +245,6 @@ public class Installer.MainWindow : Gtk.Dialog {
 
                 options.decrypt (path, device_name, key);
 
-                // Remember if we decrypted the refresh partition's LUKS partition.
-                if (uuid == this.recovery_config.get("LUKS_UUID")) {
-                    this.refresh_encrypted = false;
-                }
-
                 this.decryption_view.reset();
 
                 if (this.disk_rescan_signal != null) {
@@ -284,6 +277,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     /** The default option select view will differ based on recovery or live environment. */
     private void load_option_select_view() {
+        InstallOptions.get_default().deactivate_logical_devices();
         if (this.mode == 2 || this.mode == 3) {
             this.load_refresh_view();
         } else {
@@ -399,7 +393,7 @@ public class Installer.MainWindow : Gtk.Dialog {
                     string? luks = recovery_config.get("LUKS_UUID");
                     if (luks == "") luks = null;
 
-                    if (this.refresh_encrypted && null != luks) {
+                    if (null != luks) {
                         this.load_decrypt_view(luks);
                     } else {
                         this.load_refresh_os_view();
@@ -474,13 +468,9 @@ public class Installer.MainWindow : Gtk.Dialog {
                 int options_found = this.refresh_os_view.update_options();
 
                 if (this.mode != 3 && this.encrypted.length != 0) {
-                    if (this.refresh_options_found == options_found || options_found == 0) {
-                        this.load_encrypted_partition_view();
-                        return;
-                    }
+                    this.load_encrypted_partition_view();
+                    return;
                 }
-
-                this.refresh_options_found = options_found;
 
                 if (options_found == 0) {
                     this.load_refresh_not_found_view();
