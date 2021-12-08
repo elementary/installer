@@ -343,6 +343,8 @@ public class Installer.CheckView : AbstractInstallerView {
             attach (image, 0, 0);
             attach (title_label, 0, 1);
             attach (description_label, 1, 0, 1, 2);
+
+            show_all ();
         }
     }
 
