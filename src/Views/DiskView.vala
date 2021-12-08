@@ -45,6 +45,8 @@ public class Installer.DiskView : OptionsView {
         var install_options = InstallOptions.get_default ();
         unowned Distinst.InstallOptions options = install_options.get_updated_options ();
 
+        base.clear_options();
+
         foreach (unowned Distinst.EraseOption disk in options.get_erase_options ()) {
             string logo = Utils.string_from_utf8 (disk.get_linux_icon ());
             string label = Utils.string_from_utf8 (disk.get_model ());
