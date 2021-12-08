@@ -31,7 +31,8 @@ public class Installer.CheckView : AbstractInstallerView {
     public signal void status_changed (bool met_requirements);
 
     bool enough_space = true;
-    bool enough_power = true;
+    bool minimum_specs = true;
+    bool vm = false;
     bool powered = true;
 
     int frequency = 0;
@@ -43,6 +44,7 @@ public class Installer.CheckView : AbstractInstallerView {
         NONE,
         SPACE,
         SPECS,
+        VM,
         POWERED
     }
 
@@ -62,7 +64,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
         ignore_button = new Gtk.Button.with_label (_("Ignore"));
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        ignore_button.clicked.connect (() => next_step ());
+        ignore_button.clicked.connect (() => show_next ());
 
         show_all ();
     }
@@ -73,17 +75,19 @@ public class Installer.CheckView : AbstractInstallerView {
 
         frequency = get_frequency ();
         if (frequency < MINIMUM_FREQUENCY && frequency > 0) {
-            enough_power = false;
+            minimum_specs = false;
         }
 
         memory = get_mem_info ();
         if (memory < MINIMUM_MEMORY) {
-            enough_power = false;
+            minimum_specs = false;
         }
 
         powered = !get_is_on_battery ();
 
-        bool result = enough_space && enough_power && powered;
+        vm = get_vm ();
+
+        bool result = enough_space && minimum_specs && !vm && powered;
         if (result == false) {
             show_next ();
         }
@@ -175,40 +179,76 @@ public class Installer.CheckView : AbstractInstallerView {
         return upower.on_battery;
     }
 
+    private static bool get_vm () {
+        File file = File.new_for_path ("/proc/cpuinfo");
+        try {
+            DataInputStream dis = new DataInputStream (file.read ());
+            string? line;
+            while ((line = dis.read_line (null,null)) != null) {
+                if (line.has_prefix ("flags") && line.contains ("hypervisor")) {
+                    return true;
+                }
+            }
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        return false;
+    }
+
     private void show_next () {
         State next_state = State.NONE;
         switch (current_state) {
             case State.NONE:
                 if (!enough_space) {
                     next_state = State.SPACE;
-                } else if (!enough_power) {
+                } else if (!minimum_specs) {
                     next_state = State.SPECS;
+                } else if (vm) {
+                    next_state = State.VM;
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
+                    next_step ();
                     return;
                 }
 
                 break;
             case State.SPACE:
-                if (!enough_power) {
+                if (!minimum_specs) {
                     next_state = State.SPECS;
+                } else if (vm) {
+                    next_state = State.VM;
                 } else if (!powered) {
                     next_state = State.POWERED;
                 } else {
+                    next_step ();
                     return;
                 }
 
                 break;
             case State.SPECS:
+                if (vm) {
+                    next_state = State.VM;
+                } else if (!powered) {
+                    next_state = State.POWERED;
+                } else {
+                    next_step ();
+                    return;
+                }
+
+                break;
+            case State.VM:
                 if (!powered) {
                     next_state = State.POWERED;
                 } else {
+                    next_step ();
                     return;
                 }
 
                 break;
             case State.POWERED:
+                next_step ();
                 return;
         }
 
@@ -231,6 +271,21 @@ public class Installer.CheckView : AbstractInstallerView {
                     "application-x-firmware"
                 );
                 grid.attach (get_comparison_grid (), 1, 2);
+
+                if (ignore_button.parent == null) {
+                    action_area.add (ignore_button);
+                }
+
+                stack.add (grid);
+                stack.set_visible_child (grid);
+                break;
+
+            case State.VM:
+                var grid = new CheckView (
+                    _("Virtual Machine"),
+                    _("You appear to be installing in a virtual machine. Some parts of %s may run slowly, freeze, or not function properly in a virtual machine. It's recommended to install on real hardware.").printf (Utils.get_pretty_name ()),
+                    "utilities-system-monitor"
+                );
 
                 if (ignore_button.parent == null) {
                     action_area.add (ignore_button);
