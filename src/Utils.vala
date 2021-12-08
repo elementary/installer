@@ -273,18 +273,4 @@ namespace Utils {
 
         return hostname;
     }
-
-    public static bool is_running_in_virtual_machine () {
-        try {
-            string contents;
-            if (FileUtils.get_contents ("/proc/cpuinfo", out contents)) {
-                var regex = new Regex ("flags\\s*:.*(hypervisor)");
-                return regex.match (contents);
-            }
-        } catch (Error e) {
-            warning ("Could not detect if running in Virtual Machine: %s", e.message);
-        }
-
-        return false;
-    }
 }

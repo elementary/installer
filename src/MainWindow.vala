@@ -20,7 +20,6 @@
 public class Installer.MainWindow : Hdy.Window {
     private Gtk.Stack stack;
 
-    private VirtualMachineView virtual_machine_view;
     private LanguageView language_view;
     private KeyboardLayoutView keyboard_layout_view;
     private TryInstallView try_install_view;
@@ -55,14 +54,6 @@ public class Installer.MainWindow : Hdy.Window {
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         };
         stack.add (language_view);
-
-        if (Utils.is_running_in_virtual_machine ()) {
-            virtual_machine_view = new VirtualMachineView ();
-            stack.add (virtual_machine_view);
-            virtual_machine_view.next_step.connect (() => {
-                stack.visible_child = language_view;
-            });
-        }
 
         add (stack);
 
