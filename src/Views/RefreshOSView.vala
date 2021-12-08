@@ -5,7 +5,6 @@
 
 public class RefreshOSView: OptionsView {
     public signal void next_step ();
-    public signal void choose_another();
 
     public RefreshOSView () {
         Object (
@@ -83,12 +82,6 @@ public class RefreshOSView: OptionsView {
                 }
             );
         }
-
-        var choose_another_button = new Gtk.Button.with_label(_("Select Another Partition"));
-        choose_another_button.clicked.connect(() => this.choose_another());
-        choose_another_button.set_no_show_all(true);
-        choose_another_button.hide();
-        this.action_area.add(choose_another_button);
 
         this.next_button.get_style_context().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 

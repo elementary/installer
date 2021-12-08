@@ -30,6 +30,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private SuccessView success_view;
     private TryInstallView try_install_view;
     private UserView user_view;
+    private RefreshNotFoundView refresh_not_found_view;
 
     /** Refresh install path */
     private RefreshView refresh_view;
@@ -444,10 +445,6 @@ public class Installer.MainWindow : Gtk.Dialog {
                 }
             });
 
-            this.refresh_os_view.choose_another.connect(() => {
-                this.load_refresh_os_view();
-            });
-
             this.refresh_os_view.next_step.connect(() => {
                 load_progress_view();
             });
@@ -480,6 +477,12 @@ public class Installer.MainWindow : Gtk.Dialog {
                 }
 
                 this.refresh_options_found = options_found;
+
+                if (options_found == 0) {
+                    this.load_refresh_not_found_view();
+                    return;
+                }
+
                 this.stack.remove(this.refresh_os_view);
                 this.stack.add(this.refresh_os_view);
                 this.stack.visible_child = this.refresh_os_view;
@@ -489,6 +492,36 @@ public class Installer.MainWindow : Gtk.Dialog {
 
             return GLib.Source.REMOVE;
         });
+    }
+
+    private void load_refresh_not_found_view() {
+        if (this.refresh_not_found_view == null) {
+            this.refresh_not_found_view = new RefreshNotFoundView();
+
+            this.refresh_not_found_view.next_step.connect(() => {
+                this.load_disk_view();
+            });
+
+            this.refresh_not_found_view.choose_another.connect(() => {
+                this.load_refresh_os_view();
+            });
+
+            this.refresh_not_found_view.cancel.connect(() => {
+                if (this.mode == 2 || this.mode == 3) {
+                    this.load_refresh_view();
+                } else {
+                    this.load_try_install_view();
+                }
+            });
+
+            this.stack.add(this.refresh_not_found_view);
+        }
+
+        bool can_choose_another = this.mode != 3 && this.encrypted.length != 0;
+
+        this.refresh_not_found_view.reset();
+        this.refresh_not_found_view.can_choose_another(can_choose_another);
+        this.stack.visible_child = this.refresh_not_found_view;
     }
 
     private void load_encrypted_partition_view() {

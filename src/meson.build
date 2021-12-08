@@ -27,6 +27,7 @@ vala_files = [
     'Views/PartitioningView.vala',
     'Views/ProgressView.vala',
     'Views/RefreshView.vala',
+    'Views/RefreshNotFound.vala',
     'Views/RefreshOSView.vala',
     'Views/SuccessView.vala',
     'Views/TryInstallView.vala',
