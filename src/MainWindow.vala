@@ -528,7 +528,11 @@ public class Installer.MainWindow : Gtk.Dialog {
         if (this.encrypted_partition_view == null) {
             this.encrypted_partition_view = new EncryptedPartitionView();
             this.encrypted_partition_view.cancel.connect(() => {
-                this.load_refresh_view();
+                if (this.mode == 2 || this.mode == 3) {
+                    this.load_refresh_view();
+                } else {
+                    this.load_try_install_view();
+                }
             });
             this.encrypted_partition_view.decrypt.connect((uuid) => {
                 this.load_decrypt_view(uuid);
