@@ -142,7 +142,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
             this.distinst.os_search_err.connect((why) => {
                 stderr.printf("failed to find an OS: %s\n", why);
-                this.load_refresh_view();
+                this.load_option_select_view();
                 bool can_select = this.encrypted.length != 0;
                 this.refresh_view.search_failure(why, can_select);
             });
@@ -279,6 +279,15 @@ public class Installer.MainWindow : Gtk.Dialog {
         } catch (Error e) {
             warning("failed to search for encrypted devices: %s", e.message);
             return;
+        }
+    }
+
+    /** The default option select view will differ based on recovery or live environment. */
+    private void load_option_select_view() {
+        if (this.mode == 2 || this.mode == 3) {
+            this.load_refresh_view();
+        } else {
+            this.load_try_install_view();
         }
     }
 
@@ -437,12 +446,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             this.refresh_os_view = new RefreshOSView();
 
             this.refresh_os_view.cancel.connect(() => {
-                if (this.mode == 2 || this.mode == 3) {
-                    this.mode = 2;
-                    this.load_refresh_view();
-                } else {
-                    this.load_try_install_view();
-                }
+                this.load_option_select_view();
             });
 
             this.refresh_os_view.next_step.connect(() => {
@@ -507,11 +511,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             });
 
             this.refresh_not_found_view.cancel.connect(() => {
-                if (this.mode == 2 || this.mode == 3) {
-                    this.load_refresh_view();
-                } else {
-                    this.load_try_install_view();
-                }
+                this.load_option_select_view();
             });
 
             this.stack.add(this.refresh_not_found_view);
@@ -528,11 +528,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         if (this.encrypted_partition_view == null) {
             this.encrypted_partition_view = new EncryptedPartitionView();
             this.encrypted_partition_view.cancel.connect(() => {
-                if (this.mode == 2 || this.mode == 3) {
-                    this.load_refresh_view();
-                } else {
-                    this.load_try_install_view();
-                }
+                this.load_option_select_view();
             });
             this.encrypted_partition_view.decrypt.connect((uuid) => {
                 this.load_decrypt_view(uuid);
