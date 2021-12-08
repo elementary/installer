@@ -387,6 +387,7 @@ public class Installer.MainWindow : Gtk.Dialog {
                     Configuration.get_default ().retain_old = true;
 
                     string? luks = recovery_config.get("LUKS_UUID");
+                    if (luks == "") luks = null;
 
                     if (this.refresh_encrypted && null != luks) {
                         this.load_decrypt_view(luks);
