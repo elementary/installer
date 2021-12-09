@@ -483,12 +483,8 @@ public class Installer.MainWindow : Gtk.Dialog {
 
                 if (this.mode != 3 && this.encrypted.length != 0) {
                     stderr.printf("Encrypted partitions found: %d\n", this.encrypted.length);
-
-                    if (this.refresh_options_found == options_found || options_found == 0) {
-                        stderr.printf("No new operating systems were found that can be refreshed\n");
-                        this.load_encrypted_partition_view();
-                        return;
-                    }
+                    this.load_encrypted_partition_view();
+                    return;
                 }
 
                 this.refresh_options_found = options_found;
@@ -555,12 +551,6 @@ public class Installer.MainWindow : Gtk.Dialog {
         Timeout.add(100, () => {
             if (this.searching_for_encrypted_devices) {
                 return GLib.Source.CONTINUE;
-            }
-
-            if (this.encrypted.length == 0) {
-                stderr.printf ("ERROR: encrypted length is 0\n");
-                this.load_refresh_os_view();
-                return GLib.Source.REMOVE;
             }
 
             foreach (var block in encrypted) {
