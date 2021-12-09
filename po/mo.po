@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"POT-Creation-Date: 2021-12-09 03:22+0000\n"
 "PO-Revision-Date: 2018-05-27 00:05+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/installer/"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/MainWindow.vala:42
+#: src/MainWindow.vala:43
 #, c-format
 msgid "Install %s"
 msgstr "Instalați %s 1"
@@ -30,7 +30,7 @@ msgstr "Mod de testare reporniți"
 msgid "Test mode switch user"
 msgstr "Utilizator comutator mod de testare"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s 1…"
@@ -43,15 +43,15 @@ msgstr "Anularea instalării"
 msgid "Test Mode"
 msgstr "Modul test"
 
-#: src/Views/CheckView.vala:63
+#: src/Views/CheckView.vala:65
 msgid "Ignore"
 msgstr "Ignoră"
 
-#: src/Views/CheckView.vala:218
+#: src/Views/CheckView.vala:258
 msgid "Not Enough Space"
 msgstr "Spațiu insuficient"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:259
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -60,11 +60,11 @@ msgstr ""
 "Nu este suficient spațiu pe dispozitivul dvs. pentru a instala %s 1. Vă "
 "recomandăm un minim de %s 2 de stocare."
 
-#: src/Views/CheckView.vala:229
+#: src/Views/CheckView.vala:269
 msgid "Your Device May Be Too Slow"
 msgstr "Dispozitivul dvs. poate fi prea lent"
 
-#: src/Views/CheckView.vala:230
+#: src/Views/CheckView.vala:270
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -72,11 +72,23 @@ msgstr ""
 "Dispozitivul dvs. nu îndeplinește cerințele hardware recomandate. Acest "
 "lucru poate cauza încetinirea sau înghețarea."
 
-#: src/Views/CheckView.vala:245
+#: src/Views/CheckView.vala:285
+msgid "Virtual Machine"
+msgstr ""
+
+#: src/Views/CheckView.vala:286
+#, c-format
+msgid ""
+"You appear to be installing in a virtual machine. Some parts of %s may run "
+"slowly, freeze, or not function properly in a virtual machine. It's "
+"recommended to install on real hardware."
+msgstr ""
+
+#: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
 msgstr "Conectați-vă la o sursă de alimentare"
 
-#: src/Views/CheckView.vala:246
+#: src/Views/CheckView.vala:301
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -84,19 +96,19 @@ msgstr ""
 "Dispozitivul dvs. rulează cu baterie. Se recomandă conectarea la o sursă de "
 "curent înainte de instalare."
 
-#: src/Views/CheckView.vala:299
+#: src/Views/CheckView.vala:352
 msgid "Recommended:"
 msgstr "Recomandat:"
 
-#: src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:358
 msgid "Your Device:"
 msgstr "Dispozitivul tău:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
 msgid "Processor:"
 msgstr "Procesador:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
 msgid "Memory:"
 msgstr "Memorie:"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"POT-Creation-Date: 2021-12-09 03:22+0000\n"
 "PO-Revision-Date: 2018-04-22 00:04+0000\n"
 "Last-Translator: Morteza Khazamipour <mormoroth@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/installer/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:42
+#: src/MainWindow.vala:43
 #, c-format
 msgid "Install %s"
 msgstr "%s نصب"
@@ -32,7 +32,7 @@ msgstr "راه اندازی مجدد حالت تست"
 msgid "Test mode switch user"
 msgstr "تغییر کاربری حالت تست"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -45,15 +45,15 @@ msgstr "انصراف از نصب"
 msgid "Test Mode"
 msgstr "حالت آزمایشی"
 
-#: src/Views/CheckView.vala:63
+#: src/Views/CheckView.vala:65
 msgid "Ignore"
 msgstr "نادیده بگیر"
 
-#: src/Views/CheckView.vala:218
+#: src/Views/CheckView.vala:258
 msgid "Not Enough Space"
 msgstr "فضای خالی موجود نیست"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:259
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "فضای خالی در دستگاه شما برای نصب %s نیست. پیشنهاد ما حداقل %s فضا برای نصب "
 "است."
 
-#: src/Views/CheckView.vala:229
+#: src/Views/CheckView.vala:269
 msgid "Your Device May Be Too Slow"
 msgstr "دستگاه شما شاید خیلی کند است"
 
-#: src/Views/CheckView.vala:230
+#: src/Views/CheckView.vala:270
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,11 +74,23 @@ msgstr ""
 "دستگاه شما حداقل نیازهای سخت افزاری نصب را ندارد. ممکن است سیستم شما کند شود "
 "ویا هنگ کند."
 
-#: src/Views/CheckView.vala:245
+#: src/Views/CheckView.vala:285
+msgid "Virtual Machine"
+msgstr ""
+
+#: src/Views/CheckView.vala:286
+#, c-format
+msgid ""
+"You appear to be installing in a virtual machine. Some parts of %s may run "
+"slowly, freeze, or not function properly in a virtual machine. It's "
+"recommended to install on real hardware."
+msgstr ""
+
+#: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
 msgstr "به برق وصل کنید"
 
-#: src/Views/CheckView.vala:246
+#: src/Views/CheckView.vala:301
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -86,19 +98,19 @@ msgstr ""
 "دستگاه شما در حالت استفاده از باطری است. پیشنهاد میشود در حال نصب به برق وصل "
 "شود."
 
-#: src/Views/CheckView.vala:299
+#: src/Views/CheckView.vala:352
 msgid "Recommended:"
 msgstr "پیشنهاد شده:"
 
-#: src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:358
 msgid "Your Device:"
 msgstr "دستگاه شما:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
 msgid "Processor:"
 msgstr "پردازنده:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
 msgid "Memory:"
 msgstr "حافضه رم:"
 

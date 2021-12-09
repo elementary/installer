@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"POT-Creation-Date: 2021-12-09 03:22+0000\n"
 "PO-Revision-Date: 2021-07-28 09:15+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:42
+#: src/MainWindow.vala:43
 #, c-format
 msgid "Install %s"
 msgstr "Instal·la %s"
@@ -32,7 +32,7 @@ msgstr "Reinici del mode de prova"
 msgid "Test mode switch user"
 msgstr "Canvi d'usuari del mode de prova"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -45,15 +45,15 @@ msgstr "Cancel·la la instal·lació"
 msgid "Test Mode"
 msgstr "Mode de prova"
 
-#: src/Views/CheckView.vala:63
+#: src/Views/CheckView.vala:65
 msgid "Ignore"
 msgstr "Ignora"
 
-#: src/Views/CheckView.vala:218
+#: src/Views/CheckView.vala:258
 msgid "Not Enough Space"
 msgstr "No hi ha prou espai"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:259
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +62,11 @@ msgstr ""
 "No hi ha prou espai al dispositiu per instal·lar l'%s. Recomanem un "
 "emmagatzematge mínim de %s."
 
-#: src/Views/CheckView.vala:229
+#: src/Views/CheckView.vala:269
 msgid "Your Device May Be Too Slow"
 msgstr "El vostre dispositiu pot ser massa lent"
 
-#: src/Views/CheckView.vala:230
+#: src/Views/CheckView.vala:270
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,11 +74,23 @@ msgstr ""
 "El vostre dispositiu no compleix els requeriments recomanats de maquinari. "
 "Això pot fer que sigui lent o que es pengi."
 
-#: src/Views/CheckView.vala:245
+#: src/Views/CheckView.vala:285
+msgid "Virtual Machine"
+msgstr ""
+
+#: src/Views/CheckView.vala:286
+#, c-format
+msgid ""
+"You appear to be installing in a virtual machine. Some parts of %s may run "
+"slowly, freeze, or not function properly in a virtual machine. It's "
+"recommended to install on real hardware."
+msgstr ""
+
+#: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
 msgstr "Connecteu una font d'energia"
 
-#: src/Views/CheckView.vala:246
+#: src/Views/CheckView.vala:301
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -86,19 +98,19 @@ msgstr ""
 "El dispositiu funciona amb energia de bateria. Es recomana que s'endolli "
 "mentre es faci la instal·lació."
 
-#: src/Views/CheckView.vala:299
+#: src/Views/CheckView.vala:352
 msgid "Recommended:"
 msgstr "Recomanat:"
 
-#: src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:358
 msgid "Your Device:"
 msgstr "El vostre dispositiu:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
 msgid "Processor:"
 msgstr "Processador:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
 msgid "Memory:"
 msgstr "Memòria:"
 
