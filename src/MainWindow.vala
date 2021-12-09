@@ -285,7 +285,10 @@ public class Installer.MainWindow : Gtk.Dialog {
     /** The default option select view will differ based on recovery or live environment. */
     private void load_option_select_view() {
         stderr.printf("Loading option select view\n");
+        this.refresh_os_view.clear();
+        this.encrypted_partition_view.clear();
         InstallOptions.get_default().deactivate_logical_devices();
+        InstallOptions.get_default().get_updated_options();
         this.refresh_encrypted = true;
         this.refresh_options_found = 0;
         if (this.mode == 2 || this.mode == 3) {
@@ -638,7 +641,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private void load_disk_view () {
         if (disk_view == null) {
             disk_view = new DiskView ();
-            disk_view.cancel.connect (() => this.load_try_install_view());
+            disk_view.cancel.connect (() => this.load_option_select_view());
             disk_view.next_step.connect (() => load_user_view (disk_view, load_try_install_view, load_encrypt_view));
 
             stack.add (disk_view);
@@ -656,7 +659,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             partitioning_view = new PartitioningView (minimum_disk_size);
 
             partitioning_view.cancel.connect (() => {
-                stack.visible_child = try_install_view;
+                this.load_option_select_view();
             });
 
             partitioning_view.next_step.connect (() => {
@@ -669,7 +672,6 @@ public class Installer.MainWindow : Gtk.Dialog {
             stack.add (partitioning_view);
         }
 
-        partitioning_view.previous_view = try_install_view;
         stack.visible_child = partitioning_view;
         load_check_view ();
     }
