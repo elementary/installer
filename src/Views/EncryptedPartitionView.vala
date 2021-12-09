@@ -44,7 +44,6 @@ public class EncryptedPartitionView: OptionsView {
             (button) => {
                 button.key_press_event.connect((event) => handle_key_press(button, event));
                 button.notify["active"].connect(() => {
-                    this.next_button.sensitive = button.active;
                     if (button.active) {
                         base.options.get_children ().foreach ((child) => {
                             ((Gtk.ToggleButton)child).active = child == button;
@@ -53,6 +52,8 @@ public class EncryptedPartitionView: OptionsView {
                     } else if (this.selected_uuid == device.uuid) {
                         this.selected_uuid = null;
                     }
+
+                    this.next_button.sensitive = button.active;
                 });
             }
         );
