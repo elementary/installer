@@ -10,7 +10,7 @@ public class EncryptedPartitionView: OptionsView {
         Object (
             cancellable: true,
             artwork: "disks",
-            title: _("Select Encrypted Partition")
+            title: _("Select OS or Encrypted Partition")
         );
     }
 
