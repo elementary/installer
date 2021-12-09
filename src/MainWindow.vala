@@ -567,6 +567,7 @@ public class Installer.MainWindow : Gtk.Dialog {
                 this.encrypted_partition_view.add_option(block);
             }
 
+            this.encrypted_partition_view.add_refresh_installs();
             this.encrypted_partition_view.select_first_option();
 
             this.stack.set_visible_child(this.encrypted_partition_view);
