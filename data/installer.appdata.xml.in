@@ -13,8 +13,10 @@
     <release version="1.0.4" date="2021-12-09" urgency="medium">
       <p>Improvements:</p>
       <ul>
+        <li>Warn about installing in a VM</li>
         <li>Updated translations</li>
       </ul>
+    </release>
     <release version="1.0.3" date="2021-08-25" urgency="medium">
       <p>Improvements:</p>
       <ul>

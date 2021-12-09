@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"POT-Creation-Date: 2021-12-09 03:22+0000\n"
 "PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/MainWindow.vala:42
+#: src/MainWindow.vala:43
 #, c-format
 msgid "Install %s"
 msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
@@ -36,7 +36,7 @@ msgstr "ਟੈਸਟ ਮੋਡ ਰੀਬੂਟ"
 msgid "Test mode switch user"
 msgstr "ਟੈਸਟ ਮੋਡ ਵਰਤੋਂਕਾਰ ਬਦਲੋ"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -49,60 +49,72 @@ msgstr "ਸਥਾਪਨ ਰੱਦ ਕਰੋ"
 msgid "Test Mode"
 msgstr "ਟੈਸਟ ਮੋਡ"
 
-#: src/Views/CheckView.vala:63
+#: src/Views/CheckView.vala:65
 msgid "Ignore"
 msgstr "ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ"
 
-#: src/Views/CheckView.vala:218
+#: src/Views/CheckView.vala:258
 msgid "Not Enough Space"
 msgstr "ਜਗ੍ਹਾ ਕਾਫ਼ੀ ਨਹੀਂ ਹੈ"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:259
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
-"%s ਨੂੰ ਸਥਾਪਤ ਕਰਨ ਲਈ ਤੁਹਾਡੀ ਡਿਸਕ 'ਤੇ ਜ਼ਿਆਦਾ ਜਗ੍ਹਾ ਨਹੀਂ ਹੈ। ਅਸੀਂ ਘੱਟੋ-ਘੱਟ %s ਦੀ"
-" ਸਿਫ਼ਾਰਿਸ਼ ਕਰਦੇ ਹਾਂ।"
+"%s ਨੂੰ ਸਥਾਪਤ ਕਰਨ ਲਈ ਤੁਹਾਡੀ ਡਿਸਕ 'ਤੇ ਜ਼ਿਆਦਾ ਜਗ੍ਹਾ ਨਹੀਂ ਹੈ। ਅਸੀਂ ਘੱਟੋ-ਘੱਟ %s ਦੀ ਸਿਫ਼ਾਰਿਸ਼ "
+"ਕਰਦੇ ਹਾਂ।"
 
-#: src/Views/CheckView.vala:229
+#: src/Views/CheckView.vala:269
 msgid "Your Device May Be Too Slow"
 msgstr "ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਸ਼ਾਇਦ ਬਹੁਤ ਹੀ ਮੱਠੀ ਹੈ"
 
-#: src/Views/CheckView.vala:230
+#: src/Views/CheckView.vala:270
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
-"ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀਆਂ ਘੱਟੋ-ਘੱਟ ਜ਼ਰੂਰਤਾਂ ਨਾਲ਼ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ। ਇਸ ਕਰਕੇ"
-" ਇਹ ਮੱਠੀ ਚੱਲ ਸਕਦੀ ਹੈ ਜਾਂ ਜੰਮ ਸਕਦੀ ਹੈ।"
+"ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀਆਂ ਘੱਟੋ-ਘੱਟ ਜ਼ਰੂਰਤਾਂ ਨਾਲ਼ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ। ਇਸ ਕਰਕੇ ਇਹ ਮੱਠੀ ਚੱਲ "
+"ਸਕਦੀ ਹੈ ਜਾਂ ਜੰਮ ਸਕਦੀ ਹੈ।"
 
-#: src/Views/CheckView.vala:245
+#: src/Views/CheckView.vala:285
+msgid "Virtual Machine"
+msgstr ""
+
+#: src/Views/CheckView.vala:286
+#, c-format
+msgid ""
+"You appear to be installing in a virtual machine. Some parts of %s may run "
+"slowly, freeze, or not function properly in a virtual machine. It's "
+"recommended to install on real hardware."
+msgstr ""
+
+#: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
 msgstr "ਕਿਸੇ ਊਰਜਾ ਸਰੋਤ ਨਾਲ਼ ਜੋੜੋ"
 
-#: src/Views/CheckView.vala:246
+#: src/Views/CheckView.vala:301
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
-"ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਬੈਟਰੀ ਊਰਜਾ ਤੇ ਚੱਲ ਰਹੀ ਹੈ। ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਸਥਾਪਨ ਦੇ "
-"ਦੌਰਾਨ ਚਾਰਜਰ 'ਤੇ ਲਾ ਕੇ ਰੱਖੋ।"
+"ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਬੈਟਰੀ ਊਰਜਾ ਤੇ ਚੱਲ ਰਹੀ ਹੈ। ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਸਥਾਪਨ ਦੇ ਦੌਰਾਨ ਚਾਰਜਰ "
+"'ਤੇ ਲਾ ਕੇ ਰੱਖੋ।"
 
-#: src/Views/CheckView.vala:299
+#: src/Views/CheckView.vala:352
 msgid "Recommended:"
 msgstr "ਸਿਫ਼ਾਰਸ਼ੀ:"
 
-#: src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:358
 msgid "Your Device:"
 msgstr "ਤੁਹਾਡੀ ਡਿਵਾਈਸ:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
 msgid "Processor:"
 msgstr "ਪ੍ਰੋਸੈਸਰ:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
 msgid "Memory:"
 msgstr "ਮੈਮਰੀ:"
 
@@ -115,8 +127,8 @@ msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"ਇਹ ਚੁਣੀ ਹੋਈ ਡਰਾਈਵ ਦਾ ਸਾਰਾ ਡੇਟਾ ਮਿਟਾ ਦੇਵੇਗਾ। ਜੇ ਤੁਸੀਂ ਹਾਲੇ ਆਪਣਾ ਡੇਟਾ ਬੈਕਅਪ "
-"ਨਹੀਂ ਕੀਤਾ ਤਾਂ ਤੁਸੀਂ ਸਥਾਪਨ ਨੂੰ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ ਜਾਂ ਮਿਸਾਲ ਮੋਡ ਵਰਤ ਸਕਦੇ ਹੋ।"
+"ਇਹ ਚੁਣੀ ਹੋਈ ਡਰਾਈਵ ਦਾ ਸਾਰਾ ਡੇਟਾ ਮਿਟਾ ਦੇਵੇਗਾ। ਜੇ ਤੁਸੀਂ ਹਾਲੇ ਆਪਣਾ ਡੇਟਾ ਬੈਕਅਪ ਨਹੀਂ ਕੀਤਾ ਤਾਂ "
+"ਤੁਸੀਂ ਸਥਾਪਨ ਨੂੰ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ ਜਾਂ ਮਿਸਾਲ ਮੋਡ ਵਰਤ ਸਕਦੇ ਹੋ।"
 
 #: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
@@ -139,32 +151,31 @@ msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
-"ਜੇ ਲੋੜ ਹੋਵੇ ਤਾਂ ਇਸ ਡਿਵਾਈਸ ਦੀ ਡਰਾਈਵ ਪਾਸਵਰਡ-ਰੱਖਿਅਤ ਕਰੋ, ਪਰ ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ "
-"ਤੁਸੀਂ ਇਹ ਚੰਗੀ ਤਰ੍ਹਾਂ ਸਮਝਦੇ ਹੋਵੋਂ:"
+"ਜੇ ਲੋੜ ਹੋਵੇ ਤਾਂ ਇਸ ਡਿਵਾਈਸ ਦੀ ਡਰਾਈਵ ਪਾਸਵਰਡ-ਰੱਖਿਅਤ ਕਰੋ, ਪਰ ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਇਹ "
+"ਚੰਗੀ ਤਰ੍ਹਾਂ ਸਮਝਦੇ ਹੋਵੋਂ:"
 
 #: src/Views/EncryptView.vala:65
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"ਇਸ ਡਿਵਾਈਸ ਤੱਕ ਸਰੀਰਕ ਪਹੁੰਚ ਰੱਖਣ ਵਾਲਿਆਂ ਤੋਂ ਡੇਟਾ ਸਿਰਫ਼ ਉਦੋਂ ਹੀ ਸੁਰੱਖਿਅਤ ਹੋਵੇਗਾ "
-"ਜਦੋਂ ਇਹ ਬੰਦ ਹੋਵੇਗੀ।"
+"ਇਸ ਡਿਵਾਈਸ ਤੱਕ ਸਰੀਰਕ ਪਹੁੰਚ ਰੱਖਣ ਵਾਲਿਆਂ ਤੋਂ ਡੇਟਾ ਸਿਰਫ਼ ਉਦੋਂ ਹੀ ਸੁਰੱਖਿਅਤ ਹੋਵੇਗਾ ਜਦੋਂ ਇਹ ਬੰਦ ਹੋਵੇਗੀ।"
 
 #: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"ਜਦੋਂ ਵੀ ਇਹ ਡਿਵਾਈਸ ਬੰਦ ਹਾਲਤ ਵਿੱਚੋਂ ਚਲਾਈ ਗਈ ਤਾਂ ਪਾਸਵਰਡ ਮੰਗਿਆ ਜਾਵੇਗਾ। ਪਾਸਵਰਡ ਨੂੰ"
-" ਕਿਸੇ ਮਹਿਫੂਜ਼ ਜਗ੍ਹਾ ਲੁਕਾਉਣਾ।"
+"ਜਦੋਂ ਵੀ ਇਹ ਡਿਵਾਈਸ ਬੰਦ ਹਾਲਤ ਵਿੱਚੋਂ ਚਲਾਈ ਗਈ ਤਾਂ ਪਾਸਵਰਡ ਮੰਗਿਆ ਜਾਵੇਗਾ। ਪਾਸਵਰਡ ਨੂੰ ਕਿਸੇ ਮਹਿਫੂਜ਼ "
+"ਜਗ੍ਹਾ ਲੁਕਾਉਣਾ।"
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
-"ਹਰ ਵਾਰ ਜਦੋਂ ਇਹ ਡਿਵਾਈਸ ਬੰਦ ਹਾਲਤ ਵਿੱਚੋਂ ਚਾਲੂ ਕੀਤੀ ਜਾਵੇਗੀ ਤਾਂ ਪਾਸਵਰਡ ਟਾਈਪ ਕਰਨ ਇੱ"
-"ਕ ਕੀਬੋਰਡ ਦੀ ਲੋੜ ਹੋਵੇਗੀ।"
+"ਹਰ ਵਾਰ ਜਦੋਂ ਇਹ ਡਿਵਾਈਸ ਬੰਦ ਹਾਲਤ ਵਿੱਚੋਂ ਚਾਲੂ ਕੀਤੀ ਜਾਵੇਗੀ ਤਾਂ ਪਾਸਵਰਡ ਟਾਈਪ ਕਰਨ ਇੱਕ ਕੀਬੋਰਡ "
+"ਦੀ ਲੋੜ ਹੋਵੇਗੀ।"
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -172,8 +183,8 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"ਜੇ ਤੁਸੀਂ ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ ਤਾਂ ਤੁਸੀਂ <b>ਡੇਟਾ ਵਾਪਸ ਨਹੀਂ ਪਾ ਸਕੋਗੇ।</b> ਇਹ ਇਸ ਡਿਵਾ"
-"ਈਸ ਦਾ ਆਪਣਾ ਅਨੋਖਾ ਪਾਸਵਰਡ ਹੈ, ਨਾ ਕਿ ਤੁਹਾਡੇ ਵਰਤੋਂਕਾਰ ਖਾਤੇ ਵਾਲ਼ਾ ਪਾਸਵਰਡ।"
+"ਜੇ ਤੁਸੀਂ ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ ਤਾਂ ਤੁਸੀਂ <b>ਡੇਟਾ ਵਾਪਸ ਨਹੀਂ ਪਾ ਸਕੋਗੇ।</b> ਇਹ ਇਸ ਡਿਵਾਈਸ ਦਾ ਆਪਣਾ "
+"ਅਨੋਖਾ ਪਾਸਵਰਡ ਹੈ, ਨਾ ਕਿ ਤੁਹਾਡੇ ਵਰਤੋਂਕਾਰ ਖਾਤੇ ਵਾਲ਼ਾ ਪਾਸਵਰਡ।"
 
 #: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
@@ -210,8 +221,8 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s ਨੂੰ ਸਥਾਪਤ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ, ਸ਼ਾਇਦ ਹਾਰਡਵੇਅਰ ਦੀ ਖ਼ਰਾਬੀ ਕਰਕੇ ਹੀ। ਡਿਵਾਈਸ ਸ਼ਾਇਦ "
-"ਸਹੀ ਤਰ੍ਹਾਂ ਰੀਸਟਾਰਟ ਨਾ ਹੋਵੇ। ਤੁਸੀਂ ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਸ਼ਿਸ਼ ਕਰ ਸਕਦੇ ਹੋ:"
+"%s ਨੂੰ ਸਥਾਪਤ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ, ਸ਼ਾਇਦ ਹਾਰਡਵੇਅਰ ਦੀ ਖ਼ਰਾਬੀ ਕਰਕੇ ਹੀ। ਡਿਵਾਈਸ ਸ਼ਾਇਦ ਸਹੀ "
+"ਤਰ੍ਹਾਂ ਰੀਸਟਾਰਟ ਨਾ ਹੋਵੇ। ਤੁਸੀਂ ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਸ਼ਿਸ਼ ਕਰ ਸਕਦੇ ਹੋ:"
 
 #: src/Views/ErrorView.vala:46
 msgid "Try the installation again"
@@ -282,8 +293,8 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"ਸਾਰੀਆਂ ਡਰਾਈਵਾਂ ਤੇ ਵਰਤਣ ਲਈ ਅਪਨਸ਼ਨਾਂ ਚੁਣੋ। <b>\"ਫ਼ਾਰਮੈਟ\" ਕਰਨ ਨਾਲ਼ ਚੁਣੀ ਹੋਈ ਡਰਾ"
-"ਈਵ ਦਾ ਸਾਰਾ ਡੇਟਾ ਮਿਟ ਜਾਵੇਗਾ।</b>"
+"ਸਾਰੀਆਂ ਡਰਾਈਵਾਂ ਤੇ ਵਰਤਣ ਲਈ ਅਪਨਸ਼ਨਾਂ ਚੁਣੋ। <b>\"ਫ਼ਾਰਮੈਟ\" ਕਰਨ ਨਾਲ਼ ਚੁਣੀ ਹੋਈ ਡਰਾਈਵ ਦਾ ਸਾਰਾ "
+"ਡੇਟਾ ਮਿਟ ਜਾਵੇਗਾ।</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
@@ -296,8 +307,7 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਅਤੇ ਇੱਕ <b>ਬੂਟ (/boot/efi)</b> ਵੰਡ ਲਾਜ਼"
-"ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
+"ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਅਤੇ ਇੱਕ <b>ਬੂਟ (/boot/efi)</b> ਵੰਡ ਲਾਜ਼ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -360,9 +370,9 @@ msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"ਤਬਦੀਲੀਆਂ ਨੂੰ ਸਾਂਭਿਆ ਨਹੀਂ ਜਾਵੇਗਾ ਅਤੇ ਤੁਹਾਡੇ ਪਿਛਲੇ ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਦੇ ਡੇਟੇ ਵਿੱਚ "
-"ਕੋਈ ਤਬਦੀਲੀ ਨਹੀਂ ਕੀਤੀ ਜਾਵੇਗੀ। ਫ਼ੀਚਰ ਅਤੇ ਕਾਰਗੁਜ਼ਾਰੀ ਸ਼ਾਇਦ ਉਹੋ ਜਿਹੀ ਨਾ ਹੋਵੇ ਜਿਹੋ"
-" ਜਿਹੀ ਸਥਾਪਤ ਕੀਤੇ ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਦੀ ਹੁੰਦੀ ਹੈ।"
+"ਤਬਦੀਲੀਆਂ ਨੂੰ ਸਾਂਭਿਆ ਨਹੀਂ ਜਾਵੇਗਾ ਅਤੇ ਤੁਹਾਡੇ ਪਿਛਲੇ ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਦੇ ਡੇਟੇ ਵਿੱਚ ਕੋਈ ਤਬਦੀਲੀ ਨਹੀਂ "
+"ਕੀਤੀ ਜਾਵੇਗੀ। ਫ਼ੀਚਰ ਅਤੇ ਕਾਰਗੁਜ਼ਾਰੀ ਸ਼ਾਇਦ ਉਹੋ ਜਿਹੀ ਨਾ ਹੋਵੇ ਜਿਹੋ ਜਿਹੀ ਸਥਾਪਤ ਕੀਤੇ ਅਪਰੇਟਿੰਗ "
+"ਸਿਸਟਮ ਦੀ ਹੁੰਦੀ ਹੈ।"
 
 #: src/Views/TryInstallView.vala:46
 msgid "Erase Disk and Install"
@@ -382,8 +392,8 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"ਵੰਡਾਂ ਨੂੰ ਹੱਥੀਂ ਬਣਾਓ, ਇਹਨਾਂ ਦਾ ਸਾਈਜ਼ ਬਦਲੋ ਜਾਂ ਹੋਰ ਰੱਖ-ਰਖਾਓ ਕਰੋ। ਇਹ ਤਰੀਕੇ ਨਾਲ਼"
-" ਤੁਸੀਂ ਡੇਟਾ ਗਵਾ ਵੀ ਸਕਦੇ ਹੋ।"
+"ਵੰਡਾਂ ਨੂੰ ਹੱਥੀਂ ਬਣਾਓ, ਇਹਨਾਂ ਦਾ ਸਾਈਜ਼ ਬਦਲੋ ਜਾਂ ਹੋਰ ਰੱਖ-ਰਖਾਓ ਕਰੋ। ਇਹ ਤਰੀਕੇ ਨਾਲ਼ ਤੁਸੀਂ ਡੇਟਾ ਗਵਾ "
+"ਵੀ ਸਕਦੇ ਹੋ।"
 
 #: src/Views/TryInstallView.vala:87
 msgid "Next"
@@ -418,8 +428,8 @@ msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"ਰੀਸਟਾਰਟ ਤੋਂ ਬਾਅਦ ਤੁਸੀਂ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ, ਜਾਂ ਫਿਰ ਹੁਣ ਤੁਸੀਂ ਡਿਵਾ"
-"ਈਸ ਨੂੰ ਬੰਦ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਬਾਅਦ ਵਿੱਚ ਵੀ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ।"
+"ਰੀਸਟਾਰਟ ਤੋਂ ਬਾਅਦ ਤੁਸੀਂ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ, ਜਾਂ ਫਿਰ ਹੁਣ ਤੁਸੀਂ ਡਿਵਾਈਸ ਨੂੰ ਬੰਦ ਕਰ ਸਕਦੇ "
+"ਹੋ ਅਤੇ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਬਾਅਦ ਵਿੱਚ ਵੀ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ।"
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -429,9 +439,7 @@ msgstr "ਇਸ ਵੰਡ ਨੂੰ ਡੀਕ੍ਰਿਪਟ ਕਰੋ"
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
-msgstr ""
-"ਇਸ ਵੰਡ ਦਾ ਇਨਕ੍ਰਿਪਸ਼ਨ ਪਾਸਵਰਡ ਦਾਖ਼ਲ ਕਰੋ ਅਤੇ ਡੀਕ੍ਰਿਪਟ ਹੋਈ ਵੰਡ ਲਈ ਡਿਵਾਈਸ ਨਾਂ ਸੈੱ"
-"ਟ ਕਰੋ।"
+msgstr "ਇਸ ਵੰਡ ਦਾ ਇਨਕ੍ਰਿਪਸ਼ਨ ਪਾਸਵਰਡ ਦਾਖ਼ਲ ਕਰੋ ਅਤੇ ਡੀਕ੍ਰਿਪਟ ਹੋਈ ਵੰਡ ਲਈ ਡਿਵਾਈਸ ਨਾਂ ਸੈੱਟ ਕਰੋ।"
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
