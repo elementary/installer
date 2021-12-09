@@ -489,9 +489,6 @@ public class Installer.MainWindow : Gtk.Dialog {
                         this.load_encrypted_partition_view();
                         return;
                     }
-
-                    this.refresh_options_found = options_found;
-                    return;
                 }
 
                 this.refresh_options_found = options_found;
