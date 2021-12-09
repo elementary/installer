@@ -3,8 +3,10 @@
 
 public class EncryptedPartitionView: OptionsView {
     public signal void decrypt(string uuid);
+    public signal void refresh();
 
     private string? selected_uuid = null;
+    private bool os_selected = false;
 
     public EncryptedPartitionView() {
         Object (
@@ -20,6 +22,11 @@ public class EncryptedPartitionView: OptionsView {
         this.next_button.label = _("Select");
         this.next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         this.next.connect(() => {
+            if (this.os_selected) {
+                this.refresh();
+                return;
+            }
+
             if (this.selected_uuid != null) {
                 this.decrypt(this.selected_uuid);
             }
@@ -49,6 +56,7 @@ public class EncryptedPartitionView: OptionsView {
                             ((Gtk.ToggleButton)child).active = child == button;
                         });
                         this.selected_uuid = device.uuid;
+                        this.os_selected = false;
                     } else if (this.selected_uuid == device.uuid) {
                         this.selected_uuid = null;
                     }
@@ -106,6 +114,8 @@ public class EncryptedPartitionView: OptionsView {
                                 encrypt_pass = null
                             };
 
+                            this.os_selected = true;
+                            this.selected_uuid = null;
                             next_button.sensitive = true;
                             next_button.has_default = true;
                         } else {

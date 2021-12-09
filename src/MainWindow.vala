@@ -535,12 +535,21 @@ public class Installer.MainWindow : Gtk.Dialog {
         stderr.printf("Loading encrypted partition view\n");
         if (this.encrypted_partition_view == null) {
             this.encrypted_partition_view = new EncryptedPartitionView();
+
             this.encrypted_partition_view.cancel.connect(() => {
                 this.load_option_select_view();
             });
+
             this.encrypted_partition_view.decrypt.connect((uuid) => {
+                stderr.printf("Decrypting an encrypted partition\n");
                 this.load_decrypt_view(uuid);
             });
+
+            this.encrypted_partition_view.refresh.connect(() => {
+                stderr.printf("Selected to refresh an OS from encrypted partition view\n");
+                this.load_progress_view();
+            });
+
             this.stack.add(this.encrypted_partition_view);
         }
 
