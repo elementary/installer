@@ -39,6 +39,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private RefreshOSView refresh_os_view;
 
     private uint64 minimum_disk_size;
+    private int refresh_options_found = 0;
 
     private DateTime? start_date = null;
     private DateTime? end_date = null;
@@ -233,7 +234,6 @@ public class Installer.MainWindow : Gtk.Dialog {
             string path = Utils.string_from_utf8 (device_path);
 
             try {
-
                 string device_name = "cryptdata";
 
                 File device_file = File.new_for_path ("/dev/mapper/cryptdata");
@@ -278,6 +278,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     /** The default option select view will differ based on recovery or live environment. */
     private void load_option_select_view() {
         InstallOptions.get_default().deactivate_logical_devices();
+        this.refresh_options_found = 0;
         if (this.mode == 2 || this.mode == 3) {
             this.mode = 2;
             this.load_refresh_view();
@@ -469,9 +470,14 @@ public class Installer.MainWindow : Gtk.Dialog {
                 int options_found = this.refresh_os_view.update_options();
 
                 if (this.mode != 3 && this.encrypted.length != 0) {
-                    this.load_encrypted_partition_view();
+                    if (this.refresh_options_found == options_found || options_found == 0) {
+                        this.load_encrypted_partition_view();
+                        return;
+                    }
                     return;
                 }
+
+                this.refresh_options_found = options_found;
 
                 if (options_found == 0) {
                     this.load_refresh_not_found_view();
