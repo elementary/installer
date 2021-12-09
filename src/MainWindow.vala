@@ -247,9 +247,10 @@ public class Installer.MainWindow : Gtk.Dialog {
                 options.decrypt (path, device_name, key);
 
                 // Remember if we decrypted the refresh partition's LUKS partition.
-                if (uuid == this.recovery_config.get("LUKS_UUID")) {
+                if (null != this.recovery_config && uuid == this.recovery_config.get("LUKS_UUID")) {
                     this.refresh_encrypted = false;
                 }
+
 
                 this.decryption_view.reset();
 
