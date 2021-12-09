@@ -462,6 +462,7 @@ public class Installer.MainWindow : Gtk.Dialog {
             });
 
             this.refresh_os_view.next_step.connect(() => {
+                Configuration.get_default ().retain_old = true;
                 load_progress_view();
             });
 
@@ -552,6 +553,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
             this.encrypted_partition_view.refresh.connect(() => {
                 stderr.printf("Selected to refresh an OS from encrypted partition view\n");
+                Configuration.get_default ().retain_old = true;
                 this.load_progress_view();
             });
 
