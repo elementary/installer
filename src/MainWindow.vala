@@ -59,6 +59,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private ulong? decrypt_signal = null;
     private bool searching_for_boot_entries = false;
     private bool searching_for_encrypted_devices = false;
+    private bool refresh_encrypted = true;
 
     private uint8 mode;
 
@@ -245,6 +246,11 @@ public class Installer.MainWindow : Gtk.Dialog {
 
                 options.decrypt (path, device_name, key);
 
+                // Remember if we decrypted the refresh partition's LUKS partition.
+                if (uuid == this.recovery_config.get("LUKS_UUID")) {
+                    this.refresh_encrypted = false;
+                }
+
                 this.decryption_view.reset();
 
                 if (this.disk_rescan_signal != null) {
@@ -277,7 +283,9 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     /** The default option select view will differ based on recovery or live environment. */
     private void load_option_select_view() {
+        stderr.printf("Loading option select view\n");
         InstallOptions.get_default().deactivate_logical_devices();
+        this.refresh_encrypted = true;
         this.refresh_options_found = 0;
         if (this.mode == 2 || this.mode == 3) {
             this.mode = 2;
@@ -307,6 +315,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
     /** Offer to decrypt a given encrypted block device. */
     private void load_decrypt_view(string uuid) {
+        stderr.printf("Loading decrypt view for %s\n", uuid);
         if (this.decryption_view == null) {
             this.decryption_view = new DecryptionView ();
             this.stack.add(this.decryption_view);
@@ -395,7 +404,8 @@ public class Installer.MainWindow : Gtk.Dialog {
                     string? luks = recovery_config.get("LUKS_UUID");
                     if (luks == "") luks = null;
 
-                    if (null != luks) {
+                    if (this.refresh_encrypted && null != luks) {
+                        stderr.printf("Found encrypted refresh mode partition\n");
                         this.load_decrypt_view(luks);
                     } else {
                         this.load_refresh_os_view();
@@ -438,6 +448,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     private void load_refresh_os_view() {
+        stderr.printf("Loading refresh OS view.\n");
         if (this.refresh_os_view == null) {
             this.refresh_os_view = new RefreshOSView();
 
@@ -468,12 +479,18 @@ public class Installer.MainWindow : Gtk.Dialog {
                 this.disk_rescan_signal = null;
 
                 int options_found = this.refresh_os_view.update_options();
+                stderr.printf("Found %d operating installs that can be refreshed\n", options_found);
 
                 if (this.mode != 3 && this.encrypted.length != 0) {
+                    stderr.printf("Encrypted partitions found: %d\n", this.encrypted.length);
+
                     if (this.refresh_options_found == options_found || options_found == 0) {
+                        stderr.printf("No new operating systems were found that can be refreshed\n");
                         this.load_encrypted_partition_view();
                         return;
                     }
+
+                    this.refresh_options_found = options_found;
                     return;
                 }
 
@@ -522,6 +539,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     }
 
     private void load_encrypted_partition_view() {
+        stderr.printf("Loading encrypted partition view\n");
         if (this.encrypted_partition_view == null) {
             this.encrypted_partition_view = new EncryptedPartitionView();
             this.encrypted_partition_view.cancel.connect(() => {
