@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2021-08-21 17:09+0000\n"
+"PO-Revision-Date: 2021-12-09 06:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/installer/nb/>\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:285
 msgid "Virtual Machine"
-msgstr ""
+msgstr "Virtuell maskin"
 
 #: src/Views/CheckView.vala:286
 #, c-format
@@ -85,6 +85,9 @@ msgid ""
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
 msgstr ""
+"Det ser ut til at du installerer i en virtuell maskin. Noen deler av %s kan "
+"kjøre tregt, fryse, eller ikke fungere. Det anbefales å installere på ekte "
+"maskinvare."
 
 #: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
