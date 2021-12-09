@@ -279,6 +279,7 @@ public class Installer.MainWindow : Gtk.Dialog {
     private void load_option_select_view() {
         InstallOptions.get_default().deactivate_logical_devices();
         if (this.mode == 2 || this.mode == 3) {
+            this.mode = 2;
             this.load_refresh_view();
         } else {
             this.load_try_install_view();
