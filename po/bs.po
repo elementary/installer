@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"POT-Creation-Date: 2021-12-09 03:22+0000\n"
 "PO-Revision-Date: 2018-11-04 21:44+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/installer/"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:42
+#: src/MainWindow.vala:43
 #, c-format
 msgid "Install %s"
 msgstr "Instaliraj %s"
@@ -33,7 +33,7 @@ msgstr "Ponovno pokretanje u testnom načinu rada"
 msgid "Test mode switch user"
 msgstr "Promjena korisnika u testnom načinu rada"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -46,15 +46,15 @@ msgstr "Otkaži instalaciju"
 msgid "Test Mode"
 msgstr "Testni način rada"
 
-#: src/Views/CheckView.vala:63
+#: src/Views/CheckView.vala:65
 msgid "Ignore"
 msgstr "Ignoriraj"
 
-#: src/Views/CheckView.vala:218
+#: src/Views/CheckView.vala:258
 msgid "Not Enough Space"
 msgstr "Nema dovoljno prostora"
 
-#: src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:259
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -63,11 +63,11 @@ msgstr ""
 "Nema dovoljno prostora na Vašem urađaju da bi se instaliralo %s. "
 "Preporučujemo najmanje %s prostora."
 
-#: src/Views/CheckView.vala:229
+#: src/Views/CheckView.vala:269
 msgid "Your Device May Be Too Slow"
 msgstr "Vaš uređaj je možda prespor"
 
-#: src/Views/CheckView.vala:230
+#: src/Views/CheckView.vala:270
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -75,11 +75,23 @@ msgstr ""
 "Vaš uređaj ne zadovoljava preporučene hardverske standarde. Ovo može biti "
 "uzrok da radi polako ili se zamrzne."
 
-#: src/Views/CheckView.vala:245
+#: src/Views/CheckView.vala:285
+msgid "Virtual Machine"
+msgstr ""
+
+#: src/Views/CheckView.vala:286
+#, c-format
+msgid ""
+"You appear to be installing in a virtual machine. Some parts of %s may run "
+"slowly, freeze, or not function properly in a virtual machine. It's "
+"recommended to install on real hardware."
+msgstr ""
+
+#: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
 msgstr "Spojite se na napajanje energijom"
 
-#: src/Views/CheckView.vala:246
+#: src/Views/CheckView.vala:301
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -87,19 +99,19 @@ msgstr ""
 "Vaš uređaj radi na baterijskom napajanju. Preporučeno je da bude uključen na "
 "struju za vrijeme instalacije."
 
-#: src/Views/CheckView.vala:299
+#: src/Views/CheckView.vala:352
 msgid "Recommended:"
 msgstr "Preporučeno:"
 
-#: src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:358
 msgid "Your Device:"
 msgstr "Vaš uređaj:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
 msgid "Processor:"
 msgstr "Procesor:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
 msgid "Memory:"
 msgstr "Memorija:"
 

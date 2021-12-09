@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
+"POT-Creation-Date: 2021-12-09 03:22+0000\n"
 "PO-Revision-Date: 2018-10-11 13:53+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/installer/"
@@ -27,7 +27,7 @@ msgstr "एलिमेंटरी ओएस इन्स्टॉल करा
 msgid "Step by step installer for elementary OS itself."
 msgstr ""
 
-#: data/installer.appdata.xml.in:17
+#: data/installer.appdata.xml.in:69
 msgid "elementary, Inc."
 msgstr ""
 
