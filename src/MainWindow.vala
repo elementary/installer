@@ -289,6 +289,7 @@ public class Installer.MainWindow : Gtk.Dialog {
         this.encrypted_partition_view.clear();
         InstallOptions.get_default().deactivate_logical_devices();
         InstallOptions.get_default().get_updated_options();
+        this.distinst.disk_rescan();
         this.refresh_encrypted = true;
         this.refresh_options_found = 0;
         if (this.mode == 2 || this.mode == 3) {
