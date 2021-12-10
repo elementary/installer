@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2021-07-28 09:15+0000\n"
+"PO-Revision-Date: 2021-12-10 04:48+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:285
 msgid "Virtual Machine"
-msgstr ""
+msgstr "מכונה וירטואלית"
 
 #: src/Views/CheckView.vala:286
 #, c-format
@@ -84,6 +84,8 @@ msgid ""
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
 msgstr ""
+"נראה שזה ניסיון להתקנת מכונה וירטואלית. חלקים מתוך %s עלולים להאט, להיתקע או "
+"לחדול במכונה וירטואלית. מומלץ להתקין על חומרה אמתית."
 
 #: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
