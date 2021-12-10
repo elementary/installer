@@ -75,6 +75,9 @@ public class InstallOptions : GLib.Object {
     }
 
     public void decrypt(string device, string pv, string pass) throws GLib.Error {
+        this.deactivate_logical_devices();
+        this.get_updated_options();
+
         try {
             Utils.decrypt_partition (disks, device, pv, pass);
         } catch (Error e) {
