@@ -10,12 +10,12 @@ public class RefreshOSView: OptionsView {
         Object (
             cancellable: true,
             artwork: "disks",
-            title: _("Refresh Install")
+            title: _("Select OS or Encrypted Partition to Refresh")
         );
     }
 
     construct {
-        next_button.label = _("Refresh Install");
+        next_button.label = _("Select");
         next.connect (() => {
             next_step ();
         });
