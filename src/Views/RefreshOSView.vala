@@ -32,6 +32,8 @@ public class RefreshOSView: OptionsView {
         var install_options = InstallOptions.get_default ();
         var uuids = new Gee.ArrayList<string>();
 
+        Gtk.Button? decrypted_os_button = null;
+
         unowned Distinst.InstallOptions updated = install_options.get_options ();
         unowned Distinst.Disks disks = install_options.borrow_disks ();
         foreach (var option in updated.get_refresh_options ()) {
@@ -65,6 +67,10 @@ public class RefreshOSView: OptionsView {
                 _("%s (%s) at %s").printf (os, version, device_path),
                 null,
                 (button) => {
+                    if (decrypted_os_button == null && device_path.has_prefix("/dev/dm")) {
+                        decrypted_os_button = button;
+                    }
+
                     button.key_press_event.connect ((event) => handle_key_press (button, event));
                     button.notify["active"].connect (() => {
                         if (button.active) {
@@ -91,7 +97,14 @@ public class RefreshOSView: OptionsView {
         this.next_button.get_style_context().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         base.options.show_all ();
-        base.select_first_option ();
+
+        if (decrypted_os_button != null) {
+            decrypted_os_button.grab_focus ();
+            decrypted_os_button.clicked ();
+        } else {
+            base.select_first_option();
+        }
+
         return appended;
     }
 
