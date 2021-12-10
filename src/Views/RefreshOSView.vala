@@ -15,6 +15,7 @@ public class RefreshOSView: OptionsView {
     }
 
     construct {
+        this.cancel_button.set_label(_("Back"));
         next_button.label = _("Select");
         next.connect (() => {
             next_step ();
