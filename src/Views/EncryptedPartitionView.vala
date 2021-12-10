@@ -20,7 +20,6 @@ public class EncryptedPartitionView: OptionsView {
         this.cancel_button.set_label(_("Back"));
 
         this.next_button.label = _("Select");
-        this.next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         this.next.connect(() => {
             if (this.os_selected) {
                 this.refresh();
@@ -55,6 +54,8 @@ public class EncryptedPartitionView: OptionsView {
                         base.options.get_children ().foreach ((child) => {
                             ((Gtk.ToggleButton)child).active = child == button;
                         });
+                        this.next_button.get_style_context ().remove_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+                        this.next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
                         this.selected_uuid = device.uuid;
                         this.os_selected = false;
                     } else if (this.selected_uuid == device.uuid) {
@@ -114,6 +115,9 @@ public class EncryptedPartitionView: OptionsView {
                                 option = (void*) option,
                                 encrypt_pass = null
                             };
+
+                            this.next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+                            this.next_button.get_style_context ().remove_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
                             this.os_selected = true;
                             this.selected_uuid = null;
