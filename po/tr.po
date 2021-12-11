@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2021-08-13 21:11+0000\n"
+"PO-Revision-Date: 2021-12-11 19:44+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:285
 msgid "Virtual Machine"
-msgstr ""
+msgstr "Sanal Makine"
 
 #: src/Views/CheckView.vala:286
 #, c-format
@@ -85,6 +85,9 @@ msgid ""
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
 msgstr ""
+"Sanal bir makineye yüklüyorsunuz. %s sisteminin bazı bölümleri bir sanal "
+"makinede yavaş çalışabilir, donabilir veya düzgün çalışmayabilir. Gerçek "
+"donanıma kurulması önerilir."
 
 #: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
