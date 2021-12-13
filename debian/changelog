@@ -1,3 +1,14 @@
+io.elementary.installer (1.0.4) xenial; urgency=medium
+
+  * Release 1.0.4 (#626)
+  * Update translation files
+  * Update translation template
+  * Warn about VMs (#625)
+  * CheckView: Fix wrong gettext syntax (#624)
+  * CheckView: clean up get_comparison_grid (#613)
+
+ -- Cody Garver <cody@elementary.io>  Mon, 13 Dec 2021 22:36:02 +0000
+
 io.elementary.installer (1.0.3) xenial; urgency=medium
 
   * Release 1.0.3 (#614)
