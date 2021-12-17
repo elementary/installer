@@ -101,8 +101,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
-
         next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.sensitive = false;
@@ -117,7 +115,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
         action_area.set_child_secondary (modify_partitions_button, true);
         action_area.set_child_non_homogeneous (modify_partitions_button, true);
 
-        action_area.add (back_button);
         action_area.add (next_button);
 
         // Display a help dialog when the help_button is clicked.
@@ -154,11 +151,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
                     return false;
                 });
             }
-        });
-
-        back_button.clicked.connect (() => {
-            InstallOptions.get_default().deactivate_logical_devices();
-            ((Gtk.Stack) get_parent ()).visible_child = previous_view;
         });
 
         next_button.clicked.connect (() => next_step ());
