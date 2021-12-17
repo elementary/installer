@@ -63,6 +63,8 @@ public class Installer.DiskView : OptionsView {
             base.add_option(logo, label, details, (button) => {
                 if (disk.meets_requirements () && !msdos_too_large) {
                     button.key_press_event.connect ((event) => handle_key_press (button, event));
+                    button.focus_out_event.connect((event) => handle_focus_out (button));
+                    button.focus_in_event.connect((event) => handle_focus_in (button));
                     button.notify["active"].connect (() => {
                         if (button.active) {
                             base.options.get_children ().foreach ((child) => {
@@ -113,6 +115,16 @@ public class Installer.DiskView : OptionsView {
             return true;
         }
 
+        return false;
+    }
+
+    private bool handle_focus_in (Gtk.Button button) {
+        next_button.sensitive = true;
+        return false;
+    }
+
+    private bool handle_focus_out (Gtk.Button button) {
+        next_button.sensitive = false;
         return false;
     }
 }
