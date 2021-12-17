@@ -288,10 +288,10 @@ public class InstallerDaemon.Daemon : GLib.Object {
             value = 278
         };
 
-        // 512MB /boot partition that's created if we're doing encryption
+        // 1024MB /boot partition that's created if we're doing encryption
         var boot_sector = Distinst.Sector () {
             flag = Distinst.SectorKind.MEGABYTE,
-            value = efi_sector.value + 512
+            value = efi_sector.value + 1024
         };
 
         // 4GB swap partition at the end
