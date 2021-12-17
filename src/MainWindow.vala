@@ -652,6 +652,7 @@ public class Installer.MainWindow : Gtk.Dialog {
 
         disk_view.previous_view = try_install_view;
         stack.visible_child = disk_view;
+        this.disk_view.reset();
         disk_view.load.begin (minimum_disk_size);
 
         load_check_view ();
