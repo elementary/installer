@@ -10,7 +10,14 @@
     <p>Step by step installer for elementary OS itself.</p>
   </description>
   <releases>
-    <release version="1.0.4" date="2021-12-08" urgency="medium">
+    <release version="1.0.5" date="2021-12-17" urgency="medium">
+      <p>Improvements:</p>
+      <ul>
+        <li>Double the boot partition size for encrypted installs</li>
+        <li>Updated translations</li>
+      </ul>
+    </release>
+    <release version="1.0.4" date="2021-12-13" urgency="medium">
       <p>Improvements:</p>
       <ul>
         <li>Warn about installing in a VM</li>
