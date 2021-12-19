@@ -169,13 +169,16 @@ public class Installer.MainWindow : Hdy.Window {
 
     private void load_progress_view () {
         progress_view = new ProgressView ();
+
         deck.add (progress_view);
         deck.visible_child = progress_view;
+        deck.can_swipe_back = false;
 
         progress_view.on_success.connect (() => load_success_view ());
 
         progress_view.on_error.connect (() => {
             load_error_view (progress_view.get_log ());
+            deck.can_swipe_back = true;
         });
         progress_view.start_installation ();
     }
