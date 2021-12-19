@@ -125,7 +125,7 @@ public class ErrorView : AbstractInstallerView {
         demo_button.clicked.connect (Utils.demo_mode);
 
         install_button.clicked.connect (() => {
-            ((Gtk.Stack) get_parent ()).visible_child = previous_view;
+            ((Hdy.Deck) get_parent ()).navigate (Hdy.NavigationDirection.BACK);
         });
 
         terminal_button.toggled.connect (() => {

@@ -92,7 +92,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         action_area.add (back_button);
         action_area.add (next_button);
 
-        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
+        back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
 
         demo_button.clicked.connect (() => {
             if (demo_button.active) {

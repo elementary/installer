@@ -130,7 +130,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         action_area.add (back_button);
         action_area.add (next_button);
 
-        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
+        back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
         next_button.clicked.connect (() => next_step ());
 
         show_all ();

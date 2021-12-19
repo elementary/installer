@@ -17,7 +17,6 @@
 
 public abstract class AbstractInstallerView : Gtk.Grid {
     public bool cancellable { get; construct; }
-    public unowned Gtk.Widget? previous_view { get; set; }
 
     public signal void cancel ();
 
