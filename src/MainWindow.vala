@@ -18,7 +18,7 @@
  */
 
 public class Installer.MainWindow : Hdy.Window {
-    private Gtk.Stack stack;
+    private Hdy.Deck deck;
 
     private LanguageView language_view;
     private KeyboardLayoutView keyboard_layout_view;
@@ -48,14 +48,10 @@ public class Installer.MainWindow : Hdy.Window {
     construct {
         language_view = new LanguageView ();
 
-        stack = new Gtk.Stack () {
-            margin_bottom = 12,
-            margin_top = 12,
-            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
-        };
-        stack.add (language_view);
+        deck = new Hdy.Deck ();
+        deck.add (language_view);
 
-        add (stack);
+        add (deck);
 
         language_view.next_step.connect (() => load_keyboard_view ());
     }
@@ -72,8 +68,8 @@ public class Installer.MainWindow : Hdy.Window {
 
         keyboard_layout_view = new KeyboardLayoutView ();
         keyboard_layout_view.previous_view = language_view;
-        stack.add (keyboard_layout_view);
-        stack.visible_child = keyboard_layout_view;
+        deck.add (keyboard_layout_view);
+        deck.visible_child = keyboard_layout_view;
 
         keyboard_layout_view.next_step.connect (() => load_try_install_view ());
     }
@@ -85,8 +81,8 @@ public class Installer.MainWindow : Hdy.Window {
 
         try_install_view = new TryInstallView ();
         try_install_view.previous_view = keyboard_layout_view;
-        stack.add (try_install_view);
-        stack.visible_child = try_install_view;
+        deck.add (try_install_view);
+        deck.visible_child = try_install_view;
 
         try_install_view.custom_step.connect (() => load_partitioning_view ());
         try_install_view.next_step.connect (() => load_disk_view ());
@@ -94,10 +90,10 @@ public class Installer.MainWindow : Hdy.Window {
 
     private void set_check_view_visible (bool show) {
         if (show) {
-            check_view.previous_view = stack.visible_child;
-            stack.visible_child = check_view;
+            check_view.previous_view = deck.visible_child;
+            deck.visible_child = check_view;
         } else if (check_view.previous_view != null) {
-            stack.visible_child = check_view.previous_view;
+            deck.visible_child = check_view.previous_view;
             check_view.previous_view = null;
         }
     }
@@ -108,7 +104,7 @@ public class Installer.MainWindow : Hdy.Window {
         }
 
         check_view = new Installer.CheckView ();
-        stack.add (check_view);
+        deck.add (check_view);
 
         check_view.status_changed.connect ((met_requirements) => {
             if (!check_ignored) {
@@ -117,7 +113,7 @@ public class Installer.MainWindow : Hdy.Window {
         });
 
         check_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
+            deck.visible_child = try_install_view;
             check_view.previous_view = null;
             check_view.destroy ();
         });
@@ -137,11 +133,11 @@ public class Installer.MainWindow : Hdy.Window {
 
         encrypt_view = new EncryptView ();
         encrypt_view.previous_view = disk_view;
-        stack.add (encrypt_view);
-        stack.visible_child = encrypt_view;
+        deck.add (encrypt_view);
+        deck.visible_child = encrypt_view;
 
         encrypt_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
+            deck.visible_child = try_install_view;
         });
 
         encrypt_view.next_step.connect (() => load_progress_view ());
@@ -154,14 +150,14 @@ public class Installer.MainWindow : Hdy.Window {
 
         disk_view = new DiskView ();
         disk_view.previous_view = try_install_view;
-        stack.add (disk_view);
-        stack.visible_child = disk_view;
+        deck.add (disk_view);
+        deck.visible_child = disk_view;
         disk_view.load.begin (CheckView.MINIMUM_SPACE);
 
         load_check_view ();
 
         disk_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
+            deck.visible_child = try_install_view;
         });
 
         disk_view.next_step.connect (() => load_encrypt_view ());
@@ -174,8 +170,8 @@ public class Installer.MainWindow : Hdy.Window {
 
         partitioning_view = new PartitioningView (CheckView.MINIMUM_SPACE);
         partitioning_view.previous_view = try_install_view;
-        stack.add (partitioning_view);
-        stack.visible_child = partitioning_view;
+        deck.add (partitioning_view);
+        deck.visible_child = partitioning_view;
 
         partitioning_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
@@ -191,8 +187,8 @@ public class Installer.MainWindow : Hdy.Window {
         }
 
         progress_view = new ProgressView ();
-        stack.add (progress_view);
-        stack.visible_child = progress_view;
+        deck.add (progress_view);
+        deck.visible_child = progress_view;
 
         progress_view.on_success.connect (() => load_success_view ());
 
@@ -208,8 +204,8 @@ public class Installer.MainWindow : Hdy.Window {
         }
 
         success_view = new SuccessView ();
-        stack.add (success_view);
-        stack.visible_child = success_view;
+        deck.add (success_view);
+        deck.visible_child = success_view;
     }
 
     private void load_error_view (string log) {
@@ -218,8 +214,8 @@ public class Installer.MainWindow : Hdy.Window {
         }
 
         error_view = new ErrorView (log);
-        stack.add (error_view);
-        stack.visible_child = error_view;
+        deck.add (error_view);
+        deck.visible_child = error_view;
 
         error_view.previous_view = disk_view;
     }
