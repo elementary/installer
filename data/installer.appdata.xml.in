@@ -10,6 +10,13 @@
     <p>Step by step installer for elementary OS itself.</p>
   </description>
   <releases>
+    <release version="1.1.0" date="2021-12-19" urgency="medium">
+      <p>Improvements:</p>
+      <ul>
+        <li>Swipe to navigate back</li>
+        <li>Updated translations</li>
+      </ul>
+    </release>
     <release version="1.0.5" date="2021-12-17" urgency="medium">
       <p>Improvements:</p>
       <ul>
