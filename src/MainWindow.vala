@@ -48,7 +48,9 @@ public class Installer.MainWindow : Hdy.Window {
     construct {
         language_view = new LanguageView ();
 
-        deck = new Hdy.Deck ();
+        deck = new Hdy.Deck () {
+            can_swipe_back = true
+        };
         deck.add (language_view);
 
         add (deck);
