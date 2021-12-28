@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2018-10-18 11:47+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
+"PO-Revision-Date: 2021-12-28 14:41+0000\n"
+"Last-Translator: toto6038 <toto6038@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/MainWindow.vala:43
@@ -43,7 +43,7 @@ msgstr "取消安裝"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
-msgstr "測試模式"
+msgstr "試用模式"
 
 #: src/Views/CheckView.vala:65
 msgid "Ignore"
@@ -72,7 +72,7 @@ msgstr "您的裝置未滿足建議硬體需求。這可能導致電腦十分緩
 
 #: src/Views/CheckView.vala:285
 msgid "Virtual Machine"
-msgstr ""
+msgstr "虛擬機器"
 
 #: src/Views/CheckView.vala:286
 #, c-format
@@ -80,7 +80,7 @@ msgid ""
 "You appear to be installing in a virtual machine. Some parts of %s may run "
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
-msgstr ""
+msgstr "你似乎在虛擬機內安裝此系統，可能導致%s運作緩慢、凍結或有功能無法正確執行。因此建議將此系統安裝在實體機上。"
 
 #: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
@@ -90,7 +90,7 @@ msgstr "請連接電源"
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
-msgstr "您的裝置正依靠電池運行。我們建議安裝之時插入電源。"
+msgstr "您的裝置正由電池供電，建議在安裝時插入電源。"
 
 #: src/Views/CheckView.vala:352
 msgid "Recommended:"
