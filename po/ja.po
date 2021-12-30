@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2021-12-20 15:45+0000\n"
+"PO-Revision-Date: 2021-12-30 14:18+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -64,15 +64,13 @@ msgstr ""
 
 #: src/Views/CheckView.vala:269
 msgid "Your Device May Be Too Slow"
-msgstr "お使いのデバイスは遅すぎる可能性があります"
+msgstr "デバイスの動作が遅すぎる可能性があります"
 
 #: src/Views/CheckView.vala:270
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
-msgstr ""
-"お使いのデバイスはハードウェアの推奨要件を満たしていません。これにより処理が"
-"遅くなったりフリーズすることがあります。"
+msgstr "お使いのデバイスはハードウェアの推奨要件を満たしていないため、動作が遅くなったりフリーズしたりすることがあります。"
 
 #: src/Views/CheckView.vala:285
 msgid "Virtual Machine"
