@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2022-01-09 20:36+0000\n"
-"Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
+"PO-Revision-Date: 2022-01-09 20:41+0000\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
 "installer/cs/>\n"
 "Language: cs\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:285
 msgid "Virtual Machine"
-msgstr ""
+msgstr "Virtuální stroj"
 
 #: src/Views/CheckView.vala:286
 #, c-format
@@ -85,6 +85,9 @@ msgid ""
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
 msgstr ""
+"Zdá se, že instalujete na virtuální stroj. V takovém mohou některé části %s "
+"být pomalé, zamrzat nebo nesprávně fungovat. Je doporučeno instalovat na "
+"skutečný hardware."
 
 #: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
@@ -305,7 +308,7 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"Je třeba vybrat alespoň oddíly pro <b>kořen (/)</b>  a <b>zavádění (/boot/"
+"Je třeba vybrat alespoň oddíly pro <b>kořen (/)</b> a <b>zavádění (/boot/"
 "efi)</b>."
 
 #: src/Views/PartitioningView.vala:66
