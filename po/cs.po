@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2022-01-09 20:34+0000\n"
+"PO-Revision-Date: 2022-01-09 20:36+0000\n"
 "Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
 "installer/cs/>\n"
@@ -171,6 +171,8 @@ msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"Vestavěná nebo USB klávesnice bude potřeba pro zadání šifrovacího hesla při "
+"každém zapnutí počítače."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -200,10 +202,8 @@ msgid "Choose Password"
 msgstr "Zvolte si heslo"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Zvolte šifrovací heslo"
+msgstr "Nastavte šifrovací heslo"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
@@ -214,34 +214,25 @@ msgid "Could Not Install"
 msgstr "Nelze nainstalovat"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Instalace %s se nezdařila, pravděpodobně kvůli hardwarové chybě. Váš počítač "
-"možná nepůjde restartovat. Můžete zkusit následující řešení:"
+"Instalace %s se nezdařila, pravděpodobně kvůli hardwarové chybě. Zařízení se "
+"nemusí restartovat správně. Můžete zkusit následující řešení:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Zkusit instalaci znovu"
+msgstr "Zkuste instalaci znovu"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Použít Režim pro ukázku a pokusit se problémy opravit ručně"
+msgstr "Použijte Režim pro ukázku a pokuste se problémy opravit ručně"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Restartovat váš počítač a nastartovat z jiné jednotky"
+msgstr "Restartujte zařízení a načtěte systém z jiné diskové jednotky"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -345,11 +336,11 @@ msgstr "Nevhodný souborový systém pro domovskou složku"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "Zobrazit protokol"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "Skrýt protokol"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
@@ -385,10 +376,8 @@ msgstr ""
 "nainstalovaným systémem."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Vymazat a nainstalovat"
+msgstr "Vymazat disk a nainstalovat"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -396,10 +385,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Vymazat vše a nainstalovat čistou kopii %s."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Uživatelsky určené (pokročilé)"
+msgstr "Vlastní instalace (pokročilé)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -414,10 +401,8 @@ msgid "Next"
 msgstr "Další"
 
 #: src/Views/TryInstallView.vala:113
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Nelze nainstalovat"
+msgstr "Vlastní instalace"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -426,20 +411,19 @@ msgstr "Pokračovat v nastavování"
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s byl nainstalován"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
 msgstr "Vypnout"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "Počítač se automaticky restartuje do %s za %i sekund."
-msgstr[1] "Počítač se automaticky restartuje do %s za %i sekund."
-msgstr[2] "Počítač se automaticky restartuje do %s za %i sekund."
+msgstr[0] "Počítač se automaticky restartuje za %i sekundu."
+msgstr[1] "Počítač se automaticky restartuje za %i sekundy."
+msgstr[2] "Počítač se automaticky restartuje za %i sekund."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
@@ -487,20 +471,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Použít oddíl:"
+msgstr "Použít oddíl"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "Formátovat:"
+msgstr "Formátovat"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Smazat všechny data a vytvořit nový souborový systém"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
