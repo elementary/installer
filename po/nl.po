@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
 "PO-Revision-Date: 2022-01-13 19:54+0000\n"
-"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
 "Language: nl\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:285
 msgid "Virtual Machine"
-msgstr ""
+msgstr "Virtuele Machine"
 
 #: src/Views/CheckView.vala:286
 #, c-format
@@ -85,6 +85,10 @@ msgid ""
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
 msgstr ""
+"Het lijkt er op dat u aan het installeren bent in virtuele machine. Sommige "
+"elementen van %s kunnen langzaam, haperend, of mogelijk niet goed "
+"functioneren binnen een virtuele machine. Het wordt aangeraden om te "
+"installeren op echte hardware."
 
 #: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
@@ -136,32 +140,28 @@ msgid "Erase and Install"
 msgstr "Installeren en wissen"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
-msgstr "Niet versleutelen"
+msgstr "Niet Versleutelen"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Encryptie van de schijf"
+msgstr "Schijfversleuteling Inschakelen"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"Versleutel de opslag van dit apparaat voor extra beveiliging, maar wees je "
+"bewust van het volgende:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"Gegevens worden beschermd tegen anderen met fysieke toegang tot dit apparaat."
+"Gegevens worden alleen beschermd tegen anderen met fysieke toegang tot dit "
+"apparaat wanneer het is uitgeschakeld."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -176,6 +176,8 @@ msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"Een ingebouwd of USB-toetsenbord is benodigd om het sleutelwachtwoord in te "
+"typen elke keer dat het apparaat wordt opgestart."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -205,10 +207,8 @@ msgid "Choose Password"
 msgstr "Wachtwoord kiezen"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Kies encryptie wachtwoord"
+msgstr "Stel Sleutelwachtwoord in"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
@@ -219,34 +219,26 @@ msgid "Could Not Install"
 msgstr "Kon niet installeren"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installeren van %s mislukt, mogelijkerwijs door een hardwarefout. Wellicht "
-"herstart uw apparaat niet juist. U kunt één van de volgende opties proberen:"
+"Installeren van %s mislukt, mogelijk door een hardwarefout. De kans bestaat "
+"dat uw apparaat niet correct kan herstarten. U kunt een van de volgende "
+"opties proberen:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Probeer de installatie opnieuw"
+msgstr "Probeer de installatie opnieuw"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Gebruik de demomodus en probeer handmatig te herstellen"
+msgstr "Gebruik de demomodus en probeer het systeem handmatig te herstellen"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• Herstart toestel om van een ander station op te starten"
+msgstr "Herstart de computer om vervolgens van een andere schijf op te starten"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -265,10 +257,8 @@ msgid "Try Installing Again"
 msgstr "Probeer de installatie opnieuw"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "Toetsenbordindeling"
+msgstr "Selecteer Toetsenbordindeling"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
