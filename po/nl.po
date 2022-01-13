@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
 "PO-Revision-Date: 2022-01-14 00:24+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
+"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
 "Language: nl\n"
@@ -419,7 +419,7 @@ msgstr "Vervolg instellen"
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s is geïnstalleerd"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
