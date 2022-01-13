@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2022-01-13 19:56+0000\n"
+"PO-Revision-Date: 2022-01-14 00:24+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -410,7 +410,7 @@ msgstr "Volgende"
 
 #: src/Views/TryInstallView.vala:113
 msgid "Custom Install"
-msgstr "Aangepaste installatie"
+msgstr "Aangepaste Installatie"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -426,14 +426,11 @@ msgid "Shut Down"
 msgstr "Afsluiten"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
-"Uw toestel zal binnen %i seconden automatisch opnieuw opstarten naar %s."
-msgstr[1] ""
-"Uw toestel zal binnen %i seconden automatisch opnieuw opstarten naar %s."
+msgstr[0] "Uw computer zal automatisch herstarten in %i seconde."
+msgstr[1] "Uw computer zal automatisch herstarten in %i seconden."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
@@ -482,20 +479,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Partitie gebruiken:"
+msgstr "Gebruik Partitie"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "Formatteren:"
+msgstr "Formatteren"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Alle data verwijderen en een nieuw bestandssysteem opzetten"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
