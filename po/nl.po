@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2022-01-14 00:24+0000\n"
-"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
+"PO-Revision-Date: 2022-01-14 20:16+0000\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
 "Language: nl\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:285
 msgid "Virtual Machine"
-msgstr "Virtuele Machine"
+msgstr "Virtuele machine"
 
 #: src/Views/CheckView.vala:286
 #, c-format
@@ -141,11 +141,11 @@ msgstr "Installeren en wissen"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
-msgstr "Niet Versleutelen"
+msgstr "Niet versleutelen"
 
 #: src/Views/EncryptView.vala:50
 msgid "Enable Drive Encryption"
-msgstr "Schijfversleuteling Inschakelen"
+msgstr "Schijfversleuteling inschakelen"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
@@ -168,8 +168,8 @@ msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"Het encryptiewachtwoord is vereist telkens wanneer u dit apparaat "
-"inschakelt. Bewaar dit wachtwoord op een veilige plek."
+"Het sleutelwachtwoord is vereist telkens wanneer u dit apparaat inschakelt. "
+"Bewaar dit wachtwoord op een veilige plek."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
@@ -208,7 +208,7 @@ msgstr "Wachtwoord kiezen"
 
 #: src/Views/EncryptView.vala:191
 msgid "Set Encryption Password"
-msgstr "Stel Sleutelwachtwoord in"
+msgstr "Stel sleutelwachtwoord in"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
@@ -246,7 +246,7 @@ msgstr "Details"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
-msgstr "Herstart toestel"
+msgstr "Herstart apparaat"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
@@ -258,7 +258,7 @@ msgstr "Probeer de installatie opnieuw"
 
 #: src/Views/KeyboardLayoutView.vala:31
 msgid "Select Keyboard Layout"
-msgstr "Selecteer Toetsenbordindeling"
+msgstr "Selecteer toetsenbordindeling"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -338,7 +338,7 @@ msgstr "Ongeldig bestandssysteem voor root"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
-msgstr "Ongeldig bestandssysteem voor home-folder"
+msgstr "Ongeldig bestandssysteem voor home"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
@@ -370,22 +370,22 @@ msgstr "Installatie afronden"
 
 #: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
-msgstr "Probeer of Installeer"
+msgstr "Probeer of installeer"
 
 #: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"In demomodus zullen veranderingen, die u gemaakt heeft, niet worden "
-"opgeslagen en data van uw eerdere besturingssysteem niet worden gewijzigd. "
+"In de demomodus zullen veranderingen die u gemaakt heeft niet worden "
+"opgeslagen, en data van uw eerdere besturingssysteem niet worden gewijzigd. "
 "Prestaties en functionaliteit zullen mogelijkerwijs geen waarheidsgetrouw "
-"beeld zijn van de ervaring van een daadwerkelijke installatie van dit "
+"beeld geven tegenover een daadwerkelijke installatie van het "
 "besturingssysteem."
 
 #: src/Views/TryInstallView.vala:46
 msgid "Erase Disk and Install"
-msgstr "Wis Schijf en Installeer"
+msgstr "Schijf wissen en installeren"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -394,7 +394,7 @@ msgstr "Wis alles en installeer een nieuwe kopie van %s."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
-msgstr "Aangepaste Installatie (Geavanceerd)"
+msgstr "Aangepaste installatie (Geavanceerd)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -402,7 +402,7 @@ msgid ""
 "lead to data loss."
 msgstr ""
 "Maak partities, pas de grootte aan, of bewerk partities handmatig. Deze "
-"methode kan tot verlies van gegevens leiden."
+"methode kan tot het verlies van gegevens leiden."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Next"
@@ -410,7 +410,7 @@ msgstr "Volgende"
 
 #: src/Views/TryInstallView.vala:113
 msgid "Custom Install"
-msgstr "Aangepaste Installatie"
+msgstr "Aangepaste installatie"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -437,20 +437,20 @@ msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Na het opnieuw opstarten kunt u een nieuwe gebruiker aanmaken, of zet uw "
-"apparaat uit om later een gebruiker aan te maken."
+"Na het opnieuw opstarten kunt u een nieuwe gebruiker aanmaken, of u kunt uw "
+"apparaat afsluiten om later een gebruiker aan te maken."
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
-msgstr "Ontsleutel Deze Partitie"
+msgstr "Ontsleutel deze partitie"
 
 #: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Voer het versleutelwachtwoord van de partitie in en stel een apparaatnaam in "
-"voor de partitie."
+"Voer het sleutelwachtwoord van de partitie in en stel een apparaatnaam in "
+"voor de ontsleutelde partitie."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
@@ -480,7 +480,7 @@ msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
 msgid "Use Partition"
-msgstr "Gebruik Partitie"
+msgstr "Gebruik partitie"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Format"
