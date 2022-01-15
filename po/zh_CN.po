@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2021-11-01 08:19+0000\n"
+"PO-Revision-Date: 2022-01-15 12:51+0000\n"
 "Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
@@ -72,7 +72,7 @@ msgstr "您的设备配置未达到推荐配置要求，可能会导致运行缓
 
 #: src/Views/CheckView.vala:285
 msgid "Virtual Machine"
-msgstr ""
+msgstr "虚拟机"
 
 #: src/Views/CheckView.vala:286
 #, c-format
@@ -80,7 +80,7 @@ msgid ""
 "You appear to be installing in a virtual machine. Some parts of %s may run "
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
-msgstr ""
+msgstr "您似乎是在虚拟机中安装。 %s 的某些部分可能在虚拟机中运行缓慢、冻结或无法正常运行。 建议安装在真实硬件上。"
 
 #: src/Views/CheckView.vala:300
 msgid "Connect to a Power Source"
