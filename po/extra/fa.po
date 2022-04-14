@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2019-09-07 18:22+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"PO-Revision-Date: 2022-04-14 23:02+0000\n"
+"Last-Translator: Parsa Akhbar <parsaakhbar@gmail.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/installer/extra/"
 "fa/>\n"
 "Language: fa\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/installer.appdata.xml.in:7
 #, fuzzy
@@ -21,7 +21,7 @@ msgstr "نصب سیستم عامل elementary"
 
 #: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
-msgstr "نصب سیستم عامل elementary"
+msgstr "نصب المنتری‌اواس"
 
 #: data/installer.appdata.xml.in:10
 msgid "Step by step installer for elementary OS itself."
