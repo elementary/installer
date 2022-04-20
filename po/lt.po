@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2019-07-06 01:28+0000\n"
-"Last-Translator: Moo <hazap@hotmail.com>\n"
+"PO-Revision-Date: 2022-04-20 09:24+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/installer/"
 "installer/lt/>\n"
 "Language: lt\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:43
@@ -447,18 +447,13 @@ msgid "Shut Down"
 msgstr "Išjungti"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] ""
-"Jūsų įrenginys po %i sekundžių bus automatiškai paleistas iš naujo į %s."
 msgstr[1] ""
-"Jūsų įrenginys po %i sekundžių bus automatiškai paleistas iš naujo į %s."
 msgstr[2] ""
-"Jūsų įrenginys po %i sekundžių bus automatiškai paleistas iš naujo į %s."
 msgstr[3] ""
-"Jūsų įrenginys po %i sekundžių bus automatiškai paleistas iš naujo į %s."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
