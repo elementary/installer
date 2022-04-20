@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2020-01-08 00:07+0000\n"
-"Last-Translator: Jernej Virag <jernej@virag.si>\n"
+"PO-Revision-Date: 2022-04-20 09:24+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/installer/"
 "installer/sl/>\n"
 "Language: sl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/MainWindow.vala:43
@@ -438,22 +438,13 @@ msgid "Shut Down"
 msgstr "Izklop"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] ""
-"%s je bil nameščen. Vaš računalnik se bo samodejno ponovno zagnal čez %i "
-"sekund."
 msgstr[1] ""
-"%s je bil nameščen. Vaš računalnik se bo samodejno ponovno zagnal čez %i "
-"sekund."
 msgstr[2] ""
-"%s je bil nameščen. Vaš računalnik se bo samodejno ponovno zagnal čez %i "
-"sekund."
 msgstr[3] ""
-"%s je bil nameščen. Vaš računalnik se bo samodejno ponovno zagnal čez %i "
-"sekund."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
