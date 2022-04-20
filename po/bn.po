@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2017-11-17 05:22+0000\n"
-"Last-Translator: Subhadeep Jasu <subhajasu@gmail.com>\n"
-"Language-Team: Bengali <https://weblate.elementary.io/projects/installer/"
+"PO-Revision-Date: 2022-04-20 09:20+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Bengali <https://l10n.elementary.io/projects/installer/"
 "installer/bn/>\n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:43
@@ -414,17 +414,11 @@ msgid "Shut Down"
 msgstr "বন্ধ"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] ""
-"%s _এর ইনস্টলেশন সম্পন্ন হয়েছে। আপনার ডিভাইসটি নিজে থেকেই ৩০ সেকেন্ড পর পুনরায় "
-"চালু হবে নতুন ব্যবহারকারী স্থাপন করার জন্য, অথবা আপনি এখন ডিভাইসটিকে বন্ধ করে অন্য "
-"কোনো সময় নতুন ব্যাবহারকারী স্থাপন করতে পারেন।"
 msgstr[1] ""
-"%s _এর ইনস্টলেশন সম্পন্ন হয়েছে। আপনার ডিভাইসটি নিজে থেকেই ৩০ সেকেন্ড পর পুনরায় "
-"চালু হবে নতুন ব্যবহারকারী স্থাপন করার জন্য, অথবা আপনি এখন ডিভাইসটিকে বন্ধ করে অন্য "
-"কোনো সময় নতুন ব্যাবহারকারী স্থাপন করতে পারেন।"
 
 #: src/Views/SuccessView.vala:100
 #, fuzzy
