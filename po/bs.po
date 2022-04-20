@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2018-11-04 21:44+0000\n"
-"Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
-"Language-Team: Bosnian <https://weblate.elementary.io/projects/installer/"
+"PO-Revision-Date: 2022-04-20 09:20+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Bosnian <https://l10n.elementary.io/projects/installer/"
 "installer/bs/>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/MainWindow.vala:43
@@ -445,13 +445,12 @@ msgid "Shut Down"
 msgstr "Isključenje"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "Vaš uređaj će biti automatski ponovo pokrenut u %s za %i sekundi."
-msgstr[1] "Vaš uređaj će biti automatski ponovo pokrenut u %s za %i sekundi."
-msgstr[2] "Vaš uređaj će biti automatski ponovo pokrenut u %s za %i sekundi."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/Views/SuccessView.vala:100
 msgid ""
