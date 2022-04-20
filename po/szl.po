@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2020-06-17 00:11+0000\n"
-"Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
+"PO-Revision-Date: 2022-04-20 09:24+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/installer/"
 "installer/szl/>\n"
 "Language: szl\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/MainWindow.vala:43
 #, c-format
@@ -437,16 +437,12 @@ msgid "Shut Down"
 msgstr "Zastow kōmputer"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] ""
-"Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
 msgstr[1] ""
-"Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
 msgstr[2] ""
-"Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
