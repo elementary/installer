@@ -28,24 +28,19 @@ public class Installer.CheckView : AbstractInstallerView {
     public const uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
     public signal void next_step ();
-    public signal void status_changed (bool met_requirements);
 
     bool enough_space = true;
     bool minimum_specs = true;
     bool vm = false;
-    bool powered = true;
 
     int frequency = 0;
     uint64 memory = 0;
-
-    private UPower upower;
 
     enum State {
         NONE,
         SPACE,
         SPECS,
-        VM,
-        POWERED
+        VM
     }
 
     private State current_state = State.NONE;
@@ -83,11 +78,9 @@ public class Installer.CheckView : AbstractInstallerView {
             minimum_specs = false;
         }
 
-        powered = !get_is_on_battery ();
-
         vm = get_vm ();
 
-        bool result = enough_space && minimum_specs && !vm && powered;
+        bool result = enough_space && minimum_specs && !vm;
         if (result == false) {
             show_next ();
         }
@@ -159,26 +152,6 @@ public class Installer.CheckView : AbstractInstallerView {
         return 0;
     }
 
-    private bool get_is_on_battery () {
-        if (upower == null) {
-            try {
-                upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
-
-                (upower as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
-                    var _on_battery = changed.lookup_value ("OnBattery", GLib.VariantType.BOOLEAN);
-                    if (_on_battery != null) {
-                        status_changed (check_requirements ());
-                    }
-                });
-            } catch (Error e) {
-                warning (e.message);
-                return false;
-            }
-        }
-
-        return upower.on_battery;
-    }
-
     private static bool get_vm () {
         File file = File.new_for_path ("/proc/cpuinfo");
         try {
@@ -206,8 +179,6 @@ public class Installer.CheckView : AbstractInstallerView {
                     next_state = State.SPECS;
                 } else if (vm) {
                     next_state = State.VM;
-                } else if (!powered) {
-                    next_state = State.POWERED;
                 } else {
                     next_step ();
                     return;
@@ -219,8 +190,6 @@ public class Installer.CheckView : AbstractInstallerView {
                     next_state = State.SPECS;
                 } else if (vm) {
                     next_state = State.VM;
-                } else if (!powered) {
-                    next_state = State.POWERED;
                 } else {
                     next_step ();
                     return;
@@ -230,8 +199,6 @@ public class Installer.CheckView : AbstractInstallerView {
             case State.SPECS:
                 if (vm) {
                     next_state = State.VM;
-                } else if (!powered) {
-                    next_state = State.POWERED;
                 } else {
                     next_step ();
                     return;
@@ -239,15 +206,6 @@ public class Installer.CheckView : AbstractInstallerView {
 
                 break;
             case State.VM:
-                if (!powered) {
-                    next_state = State.POWERED;
-                } else {
-                    next_step ();
-                    return;
-                }
-
-                break;
-            case State.POWERED:
                 next_step ();
                 return;
         }
@@ -285,21 +243,6 @@ public class Installer.CheckView : AbstractInstallerView {
                     _("Virtual Machine"),
                     _("You appear to be installing in a virtual machine. Some parts of %s may run slowly, freeze, or not function properly in a virtual machine. It's recommended to install on real hardware.").printf (Utils.get_pretty_name ()),
                     "utilities-system-monitor"
-                );
-
-                if (ignore_button.parent == null) {
-                    action_area.add (ignore_button);
-                }
-
-                stack.add (grid);
-                stack.set_visible_child (grid);
-                break;
-
-            case State.POWERED:
-                var grid = new CheckView (
-                    _("Connect to a Power Source"),
-                    _("Your device is running on battery power. It's recommended to be plugged in while installing."),
-                    "battery-ac-adapter"
                 );
 
                 if (ignore_button.parent == null) {
@@ -424,9 +367,4 @@ public class Installer.CheckView : AbstractInstallerView {
             return "%d kHz".printf (freq);
         }
     }
-}
-
-[DBus (name = "org.freedesktop.UPower")]
-public interface UPower : GLib.Object {
-    public abstract bool on_battery { owned get; set; }
 }
