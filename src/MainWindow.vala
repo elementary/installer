@@ -60,12 +60,12 @@ public class Installer.MainWindow : Hdy.Window {
         };
         stack.add (language_view);
 
-        var infobar_label = new Gtk.Label (
-            "%s\n%s".printf (
-                _("Connect to a Power Source"),
-                Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (_("Your device is running on battery power. It's recommended to be plugged in while installing."))
-            )
-        ) {
+        var infobar_string = "%s\n%s".printf (
+            _("Connect to a Power Source"),
+            Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (_("Your device is running on battery power. It's recommended to be plugged in while installing."))
+        );
+
+        var infobar_label = new Gtk.Label (infobar_string) {
             use_markup = true
         };
 
@@ -87,7 +87,11 @@ public class Installer.MainWindow : Hdy.Window {
 
         add (overlay);
 
-        language_view.next_step.connect (() => load_keyboard_view ());
+        language_view.next_step.connect (() => {
+            // Reset when language selection changes
+            infobar_label.label = infobar_string;
+            load_keyboard_view ();
+        });
 
         try {
             UPower upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
