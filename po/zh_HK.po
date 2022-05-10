@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2022-05-10 17:04+0000\n"
 "PO-Revision-Date: 2016-05-25 22:12+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,9 +13,19 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 "X-Generator: Launchpad (build 18204)\n"
 
-#: src/MainWindow.vala:43
+#: src/MainWindow.vala:48
 #, c-format
 msgid "Install %s"
+msgstr ""
+
+#: src/MainWindow.vala:273
+msgid "Connect to a Power Source"
+msgstr ""
+
+#: src/MainWindow.vala:274
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
 msgstr ""
 
 #: src/Utils.vala:34
@@ -43,36 +53,36 @@ msgstr ""
 msgid "Test Mode"
 msgstr ""
 
-#: src/Views/CheckView.vala:65
+#: src/Views/CheckView.vala:60
 msgid "Ignore"
 msgstr ""
 
-#: src/Views/CheckView.vala:258
+#: src/Views/CheckView.vala:216
 msgid "Not Enough Space"
 msgstr ""
 
-#: src/Views/CheckView.vala:259
+#: src/Views/CheckView.vala:217
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
 
-#: src/Views/CheckView.vala:269
+#: src/Views/CheckView.vala:227
 msgid "Your Device May Be Too Slow"
 msgstr ""
 
-#: src/Views/CheckView.vala:270
+#: src/Views/CheckView.vala:228
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:285
+#: src/Views/CheckView.vala:243
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:286
+#: src/Views/CheckView.vala:244
 #, c-format
 msgid ""
 "You appear to be installing in a virtual machine. Some parts of %s may run "
@@ -80,29 +90,19 @@ msgid ""
 "recommended to install on real hardware."
 msgstr ""
 
-#: src/Views/CheckView.vala:300
-msgid "Connect to a Power Source"
-msgstr ""
-
-#: src/Views/CheckView.vala:301
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-
-#: src/Views/CheckView.vala:352
+#: src/Views/CheckView.vala:295
 msgid "Recommended:"
 msgstr ""
 
-#: src/Views/CheckView.vala:358
+#: src/Views/CheckView.vala:301
 msgid "Your Device:"
 msgstr ""
 
-#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
 msgid "Processor:"
 msgstr ""
 
-#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
 msgid "Memory:"
 msgstr ""
 

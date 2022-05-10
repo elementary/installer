@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2022-05-10 17:04+0000\n"
 "PO-Revision-Date: 2021-12-10 04:48+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
@@ -20,10 +20,22 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:43
+#: src/MainWindow.vala:48
 #, c-format
 msgid "Install %s"
 msgstr "%s installieren"
+
+#: src/MainWindow.vala:273
+msgid "Connect to a Power Source"
+msgstr "Stromversorgung anschließen"
+
+#: src/MainWindow.vala:274
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"Ihr Gerät läuft im Akkubetrieb. Es wird empfohlen, die Stromversorgung "
+"während der Installation anzuschließen."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -50,15 +62,15 @@ msgstr "Installation abbrechen"
 msgid "Test Mode"
 msgstr "Testmodus"
 
-#: src/Views/CheckView.vala:65
+#: src/Views/CheckView.vala:60
 msgid "Ignore"
 msgstr "Ignorieren"
 
-#: src/Views/CheckView.vala:258
+#: src/Views/CheckView.vala:216
 msgid "Not Enough Space"
 msgstr "Zu wenig Speicherplatz"
 
-#: src/Views/CheckView.vala:259
+#: src/Views/CheckView.vala:217
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -67,11 +79,11 @@ msgstr ""
 "Ihr Gerät verfügt nicht über ausreichend freien Speicherplatz, um %s zu "
 "installieren. Wir empfehlen mindestens %s freie Speicherkapazität."
 
-#: src/Views/CheckView.vala:269
+#: src/Views/CheckView.vala:227
 msgid "Your Device May Be Too Slow"
 msgstr "Ihr Gerät ist möglicherweise zu langsam"
 
-#: src/Views/CheckView.vala:270
+#: src/Views/CheckView.vala:228
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -79,11 +91,11 @@ msgstr ""
 "Ihr Gerät erfüllt nicht die empfohlenen Hardware-Anforderungen. Dies kann "
 "dazu führen, dass es nur langsam arbeitet oder einfriert."
 
-#: src/Views/CheckView.vala:285
+#: src/Views/CheckView.vala:243
 msgid "Virtual Machine"
 msgstr "Virtuelle Maschine"
 
-#: src/Views/CheckView.vala:286
+#: src/Views/CheckView.vala:244
 #, c-format
 msgid ""
 "You appear to be installing in a virtual machine. Some parts of %s may run "
@@ -95,31 +107,19 @@ msgstr ""
 "möglicherweise langsam ausgeführt, frieren ein oder arbeiten nicht korrekt. "
 "Es wird empfohlen, die Installation direkt auf einem Rechner vorzunehmen."
 
-#: src/Views/CheckView.vala:300
-msgid "Connect to a Power Source"
-msgstr "Stromversorgung anschließen"
-
-#: src/Views/CheckView.vala:301
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"Ihr Gerät läuft im Akkubetrieb. Es wird empfohlen, die Stromversorgung "
-"während der Installation anzuschließen."
-
-#: src/Views/CheckView.vala:352
+#: src/Views/CheckView.vala:295
 msgid "Recommended:"
 msgstr "Empfohlen:"
 
-#: src/Views/CheckView.vala:358
+#: src/Views/CheckView.vala:301
 msgid "Your Device:"
 msgstr "Ihr Gerät:"
 
-#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
 msgid "Processor:"
 msgstr "Prozessor:"
 
-#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
 msgid "Memory:"
 msgstr "Arbeitsspeicher:"
 

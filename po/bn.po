@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2022-05-10 17:04+0000\n"
 "PO-Revision-Date: 2022-04-20 09:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/installer/"
@@ -15,10 +15,22 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:43
+#: src/MainWindow.vala:48
 #, c-format
 msgid "Install %s"
 msgstr "%s ইনস্টল করুন"
+
+#: src/MainWindow.vala:273
+msgid "Connect to a Power Source"
+msgstr "বৈদ্যুতিক উৎসে কানেক্ট করুন"
+
+#: src/MainWindow.vala:274
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"আপনার ডিভাইসটি  ব্যাটারিতে চলছে। এটি প্রস্তাবিত যে ইন্সটলেশনের সময় আপনি এই "
+"ডিভাইসটি বৈদ্যুতিক উৎসে বা প্লাগে কানেক্ট করুন।"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -46,16 +58,16 @@ msgstr "ইনস্টলেশন বাতিল করুন"
 msgid "Test Mode"
 msgstr "ডেমো মোড ব্যবহার করে দেখুন"
 
-#: src/Views/CheckView.vala:65
+#: src/Views/CheckView.vala:60
 msgid "Ignore"
 msgstr "উপেক্ষা করুন"
 
-#: src/Views/CheckView.vala:258
+#: src/Views/CheckView.vala:216
 #, fuzzy
 msgid "Not Enough Space"
 msgstr "যথেষ্ট জায়গা নেই"
 
-#: src/Views/CheckView.vala:259
+#: src/Views/CheckView.vala:217
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -64,11 +76,11 @@ msgstr ""
 "আপনার ডিভাইসে %s ইনস্টল করার জন্য যথেষ্ট জায়গা নেই। আমরা সুপারিশ করি যে আপনার "
 "ডিভাইসে কমপক্ষে %s জায়গা রয়েছে বা থাকা দরকার।"
 
-#: src/Views/CheckView.vala:269
+#: src/Views/CheckView.vala:227
 msgid "Your Device May Be Too Slow"
 msgstr "আপনার ডিভাইসটি হয়তো খুব ধীরে কাজ করছে"
 
-#: src/Views/CheckView.vala:270
+#: src/Views/CheckView.vala:228
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -76,11 +88,11 @@ msgstr ""
 "আপনার ডিভাইসে প্রস্তাবিত হার্ডওয়্যার নেই। এই কারণে, আপনার ডিভাইস ধীরে চলতে পারে "
 "অথবা বিকল হতে পারে।"
 
-#: src/Views/CheckView.vala:285
+#: src/Views/CheckView.vala:243
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:286
+#: src/Views/CheckView.vala:244
 #, c-format
 msgid ""
 "You appear to be installing in a virtual machine. Some parts of %s may run "
@@ -88,31 +100,19 @@ msgid ""
 "recommended to install on real hardware."
 msgstr ""
 
-#: src/Views/CheckView.vala:300
-msgid "Connect to a Power Source"
-msgstr "বৈদ্যুতিক উৎসে কানেক্ট করুন"
-
-#: src/Views/CheckView.vala:301
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"আপনার ডিভাইসটি  ব্যাটারিতে চলছে। এটি প্রস্তাবিত যে ইন্সটলেশনের সময় আপনি এই "
-"ডিভাইসটি বৈদ্যুতিক উৎসে বা প্লাগে কানেক্ট করুন।"
-
-#: src/Views/CheckView.vala:352
+#: src/Views/CheckView.vala:295
 msgid "Recommended:"
 msgstr "প্রস্তাবিত:"
 
-#: src/Views/CheckView.vala:358
+#: src/Views/CheckView.vala:301
 msgid "Your Device:"
 msgstr "আপনার ডিভাইস:"
 
-#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
 msgid "Processor:"
 msgstr "প্রসেসর:"
 
-#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
 #, fuzzy
 msgid "Memory:"
 msgstr "মেমরি (RAM):"

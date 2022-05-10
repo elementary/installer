@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2022-05-10 17:04+0000\n"
 "PO-Revision-Date: 2021-12-30 14:18+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
@@ -15,10 +15,22 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:43
+#: src/MainWindow.vala:48
 #, c-format
 msgid "Install %s"
 msgstr "%s をインストール"
+
+#: src/MainWindow.vala:273
+msgid "Connect to a Power Source"
+msgstr "電源に接続してください"
+
+#: src/MainWindow.vala:274
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"お使いのデバイスはバッテリーの電力で動作しています。インストール中は電源に接"
+"続することを推奨します。"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -45,15 +57,15 @@ msgstr "インストールをキャンセル"
 msgid "Test Mode"
 msgstr "テストモード"
 
-#: src/Views/CheckView.vala:65
+#: src/Views/CheckView.vala:60
 msgid "Ignore"
 msgstr "無視"
 
-#: src/Views/CheckView.vala:258
+#: src/Views/CheckView.vala:216
 msgid "Not Enough Space"
 msgstr "空き容量が不足しています"
 
-#: src/Views/CheckView.vala:259
+#: src/Views/CheckView.vala:217
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,55 +74,46 @@ msgstr ""
 "お使いのデバイスには %s をインストールするための十分な空き容量がありません。"
 "最低でも %s のストレージを推奨します。"
 
-#: src/Views/CheckView.vala:269
+#: src/Views/CheckView.vala:227
 msgid "Your Device May Be Too Slow"
 msgstr "デバイスの動作が遅すぎる可能性があります"
 
-#: src/Views/CheckView.vala:270
+#: src/Views/CheckView.vala:228
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
-msgstr "お使いのデバイスはハードウェアの推奨要件を満たしていないため、動作が遅くなったりフリーズしたりすることがあります。"
+msgstr ""
+"お使いのデバイスはハードウェアの推奨要件を満たしていないため、動作が遅くなっ"
+"たりフリーズしたりすることがあります。"
 
-#: src/Views/CheckView.vala:285
+#: src/Views/CheckView.vala:243
 msgid "Virtual Machine"
 msgstr "仮想マシン"
 
-#: src/Views/CheckView.vala:286
+#: src/Views/CheckView.vala:244
 #, c-format
 msgid ""
 "You appear to be installing in a virtual machine. Some parts of %s may run "
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
 msgstr ""
-"仮想マシンにインストールしようとしているようです。仮想マシンでは、%s "
-"の一部の機能が遅くなったり、フリーズしたり、適切に動作しなかったりする恐れがあります。実機へのインストールを推奨します。"
+"仮想マシンにインストールしようとしているようです。仮想マシンでは、%s の一部の"
+"機能が遅くなったり、フリーズしたり、適切に動作しなかったりする恐れがありま"
+"す。実機へのインストールを推奨します。"
 
-#: src/Views/CheckView.vala:300
-msgid "Connect to a Power Source"
-msgstr "電源に接続してください"
-
-#: src/Views/CheckView.vala:301
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"お使いのデバイスはバッテリーの電力で動作しています。インストール中は電源に接"
-"続することを推奨します。"
-
-#: src/Views/CheckView.vala:352
+#: src/Views/CheckView.vala:295
 msgid "Recommended:"
 msgstr "推奨要件:"
 
-#: src/Views/CheckView.vala:358
+#: src/Views/CheckView.vala:301
 msgid "Your Device:"
 msgstr "お使いのデバイス:"
 
-#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
 msgid "Processor:"
 msgstr "プロセッサー:"
 
-#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
 msgid "Memory:"
 msgstr "メモリー:"
 
@@ -155,19 +158,25 @@ msgstr ""
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr "データの保護は、電源がオフの場合に、デバイスに物理的にアクセス可能な他人に対してのみ有効です。"
+msgstr ""
+"データの保護は、電源がオフの場合に、デバイスに物理的にアクセス可能な他人に対"
+"してのみ有効です。"
 
 #: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
-msgstr "このデバイスを起動する度に、暗号化パスワードが要求されます。安全な場所に保管してください。"
+msgstr ""
+"このデバイスを起動する度に、暗号化パスワードが要求されます。安全な場所に保管"
+"してください。"
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
-msgstr "このデバイスを起動する度に、暗号化パスワードを入力するための内蔵または USB キーボードが必要になります。"
+msgstr ""
+"このデバイスを起動する度に、暗号化パスワードを入力するための内蔵または USB "
+"キーボードが必要になります。"
 
 #: src/Views/EncryptView.vala:103
 msgid ""

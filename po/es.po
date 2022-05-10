@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2022-05-10 17:04+0000\n"
 "PO-Revision-Date: 2022-02-17 14:34+0000\n"
 "Last-Translator: Jose Manuel Hernandez Farias <ing.josemhf@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
@@ -15,10 +15,22 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:43
+#: src/MainWindow.vala:48
 #, c-format
 msgid "Install %s"
 msgstr "Instalar %s"
+
+#: src/MainWindow.vala:273
+msgid "Connect to a Power Source"
+msgstr "Conéctese a una fuente de alimentación"
+
+#: src/MainWindow.vala:274
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"El dispositivo funciona con batería. Es recomendable enchufarlo durante la "
+"instalación."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -45,15 +57,15 @@ msgstr "Cancelar instalación"
 msgid "Test Mode"
 msgstr "Modo de prueba"
 
-#: src/Views/CheckView.vala:65
+#: src/Views/CheckView.vala:60
 msgid "Ignore"
 msgstr "Ignorar"
 
-#: src/Views/CheckView.vala:258
+#: src/Views/CheckView.vala:216
 msgid "Not Enough Space"
 msgstr "No hay espacio suficiente"
 
-#: src/Views/CheckView.vala:259
+#: src/Views/CheckView.vala:217
 #, c-format
 msgid ""
 "There is not enough room on your device to install %s. We recommend a "
@@ -62,11 +74,11 @@ msgstr ""
 "No hay espacio suficiente en el dispositivo para instalar %s. Recomendamos "
 "un espacio mínimo de %s de almacenamiento."
 
-#: src/Views/CheckView.vala:269
+#: src/Views/CheckView.vala:227
 msgid "Your Device May Be Too Slow"
 msgstr "El dispositivo puede ser demasiado lento"
 
-#: src/Views/CheckView.vala:270
+#: src/Views/CheckView.vala:228
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
@@ -74,11 +86,11 @@ msgstr ""
 "El dispositivo no cumple los requisitos de hardware recomendados. Esto puede "
 "hacer que funcione lentamente o se congele."
 
-#: src/Views/CheckView.vala:285
+#: src/Views/CheckView.vala:243
 msgid "Virtual Machine"
 msgstr "Maquina virtual"
 
-#: src/Views/CheckView.vala:286
+#: src/Views/CheckView.vala:244
 #, c-format
 msgid ""
 "You appear to be installing in a virtual machine. Some parts of %s may run "
@@ -89,31 +101,19 @@ msgstr ""
 "pueden ejecutarse lentamente, congelarse o no funcionar correctamente en una "
 "maquina virtual. Se recomienda instalar en un equipo real."
 
-#: src/Views/CheckView.vala:300
-msgid "Connect to a Power Source"
-msgstr "Conéctese a una fuente de alimentación"
-
-#: src/Views/CheckView.vala:301
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"El dispositivo funciona con batería. Es recomendable enchufarlo durante la "
-"instalación."
-
-#: src/Views/CheckView.vala:352
+#: src/Views/CheckView.vala:295
 msgid "Recommended:"
 msgstr "Recomendados:"
 
-#: src/Views/CheckView.vala:358
+#: src/Views/CheckView.vala:301
 msgid "Your Device:"
 msgstr "Su dispositivo:"
 
-#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
+#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
 msgid "Processor:"
 msgstr "Procesador:"
 
-#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
+#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
 msgid "Memory:"
 msgstr "Memoria:"
 
