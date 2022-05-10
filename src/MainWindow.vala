@@ -23,6 +23,7 @@ public interface UPower : GLib.Object {
 }
 
 public class Installer.MainWindow : Hdy.Window {
+    private Gtk.Label infobar_label;
     private Gtk.Stack stack;
 
     private LanguageView language_view;
@@ -36,7 +37,6 @@ public class Installer.MainWindow : Hdy.Window {
     private EncryptView encrypt_view;
     private ErrorView error_view;
     private bool check_ignored = false;
-
 
     public MainWindow () {
         Object (
@@ -60,14 +60,10 @@ public class Installer.MainWindow : Hdy.Window {
         };
         stack.add (language_view);
 
-        var infobar_string = "%s\n%s".printf (
-            _("Connect to a Power Source"),
-            Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (_("Your device is running on battery power. It's recommended to be plugged in while installing."))
-        );
-
-        var infobar_label = new Gtk.Label (infobar_string) {
+        infobar_label = new Gtk.Label ("") {
             use_markup = true
         };
+        set_infobar_string ();
 
         var battery_infobar = new Gtk.InfoBar () {
             message_type = Gtk.MessageType.WARNING,
@@ -89,7 +85,7 @@ public class Installer.MainWindow : Hdy.Window {
 
         language_view.next_step.connect (() => {
             // Reset when language selection changes
-            infobar_label.label = infobar_string;
+            set_infobar_string ();
             load_keyboard_view ();
         });
 
@@ -270,5 +266,14 @@ public class Installer.MainWindow : Hdy.Window {
         stack.visible_child = error_view;
 
         error_view.previous_view = disk_view;
+    }
+
+    private void set_infobar_string () {
+        var infobar_string = "%s\n%s".printf (
+            _("Connect to a Power Source"),
+            Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (_("Your device is running on battery power. It's recommended to be plugged in while installing."))
+        );
+
+        infobar_label.label = infobar_string;
     }
 }
