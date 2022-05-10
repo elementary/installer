@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2022-05-10 17:04+0000\n"
 "PO-Revision-Date: 2022-01-09 20:32+0000\n"
 "Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/extra/cs/"
@@ -25,7 +25,7 @@ msgstr "Nainstalovat elementary OS"
 msgid "Step by step installer for elementary OS itself."
 msgstr "Instalátor pro elementary OS – krok za krokem."
 
-#: data/installer.appdata.xml.in:69
+#: data/installer.appdata.xml.in:76
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2022-05-10 17:04+0000\n"
 "PO-Revision-Date: 2018-09-02 00:08+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/installer/"
@@ -27,7 +27,7 @@ msgstr "Installér elementary OS"
 msgid "Step by step installer for elementary OS itself."
 msgstr ""
 
-#: data/installer.appdata.xml.in:69
+#: data/installer.appdata.xml.in:76
 msgid "elementary, Inc."
 msgstr ""
 
