@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 17:04+0000\n"
-"PO-Revision-Date: 2022-04-20 09:20+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2022-08-05 15:58+0000\n"
+"Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
 "installer/ko/>\n"
 "Language: ko\n"
@@ -440,11 +440,10 @@ msgid "Shut Down"
 msgstr "컴퓨터 끄기"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "하려고 컴퓨터를 %i 초 후에 다시 시작합니다."
+msgstr[0] "컴퓨터를 %i 초 후에 자동으로 다시 시작합니다."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
@@ -493,16 +492,12 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "파티션 사용:"
+msgstr "파티션 사용"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "포맷:"
+msgstr "포맷"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
