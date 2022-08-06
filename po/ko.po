@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 17:04+0000\n"
-"PO-Revision-Date: 2022-08-05 15:58+0000\n"
+"PO-Revision-Date: 2022-08-06 11:01+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
 "installer/ko/>\n"
@@ -279,7 +279,7 @@ msgstr "타이핑해서 키보드 배치를 확인해보세요"
 
 #: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
-msgstr "키보드 배치 보기"
+msgstr "키보드 레이아웃 보기"
 
 #: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
@@ -526,11 +526,11 @@ msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr "설정"
+msgstr "사용자 설정"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
-msgstr "설정:"
+msgstr "사용자 설정:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
