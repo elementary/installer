@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 17:04+0000\n"
-"PO-Revision-Date: 2021-12-30 14:18+0000\n"
+"PO-Revision-Date: 2022-08-09 13:14+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -97,9 +97,8 @@ msgid ""
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
 msgstr ""
-"仮想マシンにインストールしようとしているようです。仮想マシンでは、%s の一部の"
-"機能が遅くなったり、フリーズしたり、適切に動作しなかったりする恐れがありま"
-"す。実機へのインストールを推奨します。"
+"仮想マシンにインストールしようとしているようです。仮想マシンでは、%s "
+"の一部の機能の動作が遅くなったり、フリーズしたり、適切に動作しなかったりする恐れがあります。実機へのインストールを推奨します。"
 
 #: src/Views/CheckView.vala:295
 msgid "Recommended:"
@@ -283,7 +282,7 @@ msgstr "言語"
 
 #: src/Views/LanguageView.vala:278
 msgid "Select a Language"
-msgstr "言語を選択してください"
+msgstr "言語を選択"
 
 #: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
@@ -412,7 +411,7 @@ msgstr "セットアップを続行"
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr "%s をインストールしました"
+msgstr "%s のインストールが完了しました"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
