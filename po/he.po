@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 10:28+0000\n"
-"PO-Revision-Date: 2021-12-10 04:48+0000\n"
+"PO-Revision-Date: 2022-09-30 04:52+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -57,7 +57,7 @@ msgstr "מצב התנסות"
 
 #: src/Views/CheckView.vala:48
 msgid "System Requirements"
-msgstr ""
+msgstr "דרישות המערכת"
 
 #: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
@@ -66,7 +66,7 @@ msgstr "אין די מקום"
 #: src/Views/CheckView.vala:55
 #, c-format
 msgid "%s of storage or more is required to install %s."
-msgstr ""
+msgstr "%s ומעלה של אחסון דרושים לטובת התקנת %s."
 
 #: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
