@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 17:04+0000\n"
+"POT-Creation-Date: 2022-09-27 10:28+0000\n"
 "PO-Revision-Date: 2022-02-03 04:34+0000\n"
 "Last-Translator: Leomar Marcelo Marschalk <business@leomarmm.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -57,60 +57,53 @@ msgstr "Cancelar instalação"
 msgid "Test Mode"
 msgstr "Modo de demonstração"
 
-#: src/Views/CheckView.vala:60
-msgid "Ignore"
-msgstr "Ignorar"
+#: src/Views/CheckView.vala:48
+msgid "System Requirements"
+msgstr ""
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
 msgstr "Espaço Insuficiente"
 
-#: src/Views/CheckView.vala:217
+#: src/Views/CheckView.vala:55
 #, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+msgid "%s of storage or more is required to install %s."
 msgstr ""
-"Não há espaço suficiente no seu dispositivo para instalar %s. Recomendamos "
-"um mínimo de %s de armazenamento."
 
-#: src/Views/CheckView.vala:227
-msgid "Your Device May Be Too Slow"
-msgstr "Seu dispositivo pode ser muito lento"
-
-#: src/Views/CheckView.vala:228
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
-msgstr ""
-"Seu dispositivo não atende aos requisitos recomendados. Isso pode faze-lo "
-"rodar lento ou congela-lo."
-
-#: src/Views/CheckView.vala:243
+#: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:244
+#: src/Views/CheckView.vala:61
 #, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:66
+msgid "Your Device May Be Too Slow"
+msgstr "Seu dispositivo pode ser muito lento"
+
+#: src/Views/CheckView.vala:67
+msgid "This may cause it to run slowly or freeze."
+msgstr ""
+
+#: src/Views/CheckView.vala:83
+msgid "Ignore"
+msgstr "Ignorar"
+
+#: src/Views/CheckView.vala:236
 msgid "Recommended:"
 msgstr "Recomendado:"
 
-#: src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:242
 msgid "Your Device:"
 msgstr "Seu Dispositivo:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:248 src/Views/CheckView.vala:252
 msgid "Processor:"
 msgstr "Processador:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
+#: src/Views/CheckView.vala:264 src/Views/CheckView.vala:268
 msgid "Memory:"
 msgstr "Memória:"
 
@@ -541,6 +534,20 @@ msgstr "Sistema de arquivos:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Padrão (ext4)"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "Não há espaço suficiente no seu dispositivo para instalar %s. "
+#~ "Recomendamos um mínimo de %s de armazenamento."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "Seu dispositivo não atende aos requisitos recomendados. Isso pode faze-lo "
+#~ "rodar lento ou congela-lo."
 
 #~ msgid "Set Password"
 #~ msgstr "Definir a Senha"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 17:04+0000\n"
+"POT-Creation-Date: 2022-09-27 10:28+0000\n"
 "PO-Revision-Date: 2022-08-07 18:13+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
@@ -57,62 +57,53 @@ msgstr "설치 취소"
 msgid "Test Mode"
 msgstr "테스트 모드"
 
-#: src/Views/CheckView.vala:60
-msgid "Ignore"
-msgstr "그냥 넘기기"
+#: src/Views/CheckView.vala:48
+msgid "System Requirements"
+msgstr ""
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
 msgstr "공간이 충분하지 않습니다"
 
-#: src/Views/CheckView.vala:217
+#: src/Views/CheckView.vala:55
 #, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+msgid "%s of storage or more is required to install %s."
 msgstr ""
-"컴퓨터에 %s의 설치에 필요한 공간이 충분하지 않습니다. 최소한 %s 정도의 저장 "
-"용량을 권장합니다."
 
-#: src/Views/CheckView.vala:227
-msgid "Your Device May Be Too Slow"
-msgstr "컴퓨터가 꽤 느려질 수 있습니다"
-
-#: src/Views/CheckView.vala:228
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
-msgstr ""
-"사용하시는 장비가 하드웨어 권장 요건에 미치지 않습니다. 이런 경우 구동이 느리"
-"거나 프리징이 발생할 수 있습니다."
-
-#: src/Views/CheckView.vala:243
+#: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
 msgstr "가상 머신"
 
-#: src/Views/CheckView.vala:244
+#: src/Views/CheckView.vala:61
 #, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
-"가상 머신에 설치 중인 것 같습니다. %s의 일부가 가상 시스템에서 느리게 실행되거나 정지되거나 제대로 작동하지 않을 수 있습니다. 실제 "
-"하드웨어에 설치하는 것이 좋습니다."
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:66
+msgid "Your Device May Be Too Slow"
+msgstr "컴퓨터가 꽤 느려질 수 있습니다"
+
+#: src/Views/CheckView.vala:67
+msgid "This may cause it to run slowly or freeze."
+msgstr ""
+
+#: src/Views/CheckView.vala:83
+msgid "Ignore"
+msgstr "그냥 넘기기"
+
+#: src/Views/CheckView.vala:236
 msgid "Recommended:"
 msgstr "권장 사양:"
 
-#: src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:242
 msgid "Your Device:"
 msgstr "여러분의 컴퓨터:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:248 src/Views/CheckView.vala:252
 msgid "Processor:"
 msgstr "프로세서:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
+#: src/Views/CheckView.vala:264 src/Views/CheckView.vala:268
 msgid "Memory:"
 msgstr "메모리:"
 
@@ -148,25 +139,32 @@ msgstr "드라이브 암호화"
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
-msgstr "추가 보호를 위해 필요한 경우 이 장치의 드라이브를 암호화하되 다음 사항을 이해해야 합니다:"
+msgstr ""
+"추가 보호를 위해 필요한 경우 이 장치의 드라이브를 암호화하되 다음 사항을 이해"
+"해야 합니다:"
 
 #: src/Views/EncryptView.vala:65
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr "컴퓨터를 껐을 때 다른 사람이 이 장치에 물리적으로 연결해도 데이터를 보호합니다."
+msgstr ""
+"컴퓨터를 껐을 때 다른 사람이 이 장치에 물리적으로 연결해도 데이터를 보호합니"
+"다."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
-msgstr "이 장치를 켤 때마다 암호화 비밀번호가 필요합니다. 안전한 곳에 보관하세요."
+msgstr ""
+"이 장치를 켤 때마다 암호화 비밀번호가 필요합니다. 안전한 곳에 보관하세요."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
-msgstr "이 장치를 켤 때마다 암호화 비밀번호를 입력하려면 내장형 또는 USB 키보드가 필요합니다."
+msgstr ""
+"이 장치를 켤 때마다 암호화 비밀번호를 입력하려면 내장형 또는 USB 키보드가 필"
+"요합니다."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -213,8 +211,8 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s의 설치를 하지 못했습니다, 하드웨어 오류일 가능성이 있습니다. 컴퓨터가 제대로 다시 시작하지 않을 수 있습니다. 다음 중 한 가지를 "
-"수행해 보세요:"
+"%s의 설치를 하지 못했습니다, 하드웨어 오류일 가능성이 있습니다. 컴퓨터가 제대"
+"로 다시 시작하지 않을 수 있습니다. 다음 중 한 가지를 수행해 보세요:"
 
 #: src/Views/ErrorView.vala:46
 msgid "Try the installation again"
@@ -508,6 +506,29 @@ msgstr "파일 시스템:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "기본 (ext4)"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "컴퓨터에 %s의 설치에 필요한 공간이 충분하지 않습니다. 최소한 %s 정도의 저"
+#~ "장 용량을 권장합니다."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "사용하시는 장비가 하드웨어 권장 요건에 미치지 않습니다. 이런 경우 구동이 "
+#~ "느리거나 프리징이 발생할 수 있습니다."
+
+#~ msgid ""
+#~ "You appear to be installing in a virtual machine. Some parts of %s may "
+#~ "run slowly, freeze, or not function properly in a virtual machine. It's "
+#~ "recommended to install on real hardware."
+#~ msgstr ""
+#~ "가상 머신에 설치 중인 것 같습니다. %s의 일부가 가상 시스템에서 느리게 실행"
+#~ "되거나 정지되거나 제대로 작동하지 않을 수 있습니다. 실제 하드웨어에 설치하"
+#~ "는 것이 좋습니다."
 
 #~ msgid "Set Password"
 #~ msgstr "비밀번호 설정"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 17:04+0000\n"
+"POT-Creation-Date: 2022-09-27 10:28+0000\n"
 "PO-Revision-Date: 2021-12-09 06:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -57,63 +57,53 @@ msgstr "Avbryt installasjon"
 msgid "Test Mode"
 msgstr "Prøv demo-modus"
 
-#: src/Views/CheckView.vala:60
-msgid "Ignore"
-msgstr "Ignorer"
+#: src/Views/CheckView.vala:48
+msgid "System Requirements"
+msgstr ""
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
 msgstr "Ikke nok plass"
 
-#: src/Views/CheckView.vala:217
+#: src/Views/CheckView.vala:55
 #, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+msgid "%s of storage or more is required to install %s."
 msgstr ""
-"Der er ikke nok ledig plass på enheten din til å installere %s. Vi anbefaler "
-"minimum %s lagringsplass."
 
-#: src/Views/CheckView.vala:227
-msgid "Your Device May Be Too Slow"
-msgstr "Enheten din kan være for treg"
-
-#: src/Views/CheckView.vala:228
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
-msgstr ""
-"Enheten din tilfredsstiller ikke de anbefalte maskinvarekravene. Dette kan "
-"forårsake at ting går tregt eller henger."
-
-#: src/Views/CheckView.vala:243
+#: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
 msgstr "Virtuell maskin"
 
-#: src/Views/CheckView.vala:244
+#: src/Views/CheckView.vala:61
 #, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
-"Det ser ut til at du installerer i en virtuell maskin. Noen deler av %s kan "
-"kjøre tregt, fryse, eller ikke fungere. Det anbefales å installere på ekte "
-"maskinvare."
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:66
+msgid "Your Device May Be Too Slow"
+msgstr "Enheten din kan være for treg"
+
+#: src/Views/CheckView.vala:67
+msgid "This may cause it to run slowly or freeze."
+msgstr ""
+
+#: src/Views/CheckView.vala:83
+msgid "Ignore"
+msgstr "Ignorer"
+
+#: src/Views/CheckView.vala:236
 msgid "Recommended:"
 msgstr "Anbefalt:"
 
-#: src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:242
 msgid "Your Device:"
 msgstr "Enheten din:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:248 src/Views/CheckView.vala:252
 msgid "Processor:"
 msgstr "Prosessor:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
+#: src/Views/CheckView.vala:264 src/Views/CheckView.vala:268
 msgid "Memory:"
 msgstr "Minne:"
 
@@ -521,6 +511,29 @@ msgstr "Filsystem:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Forvalg (ext4)"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "Der er ikke nok ledig plass på enheten din til å installere %s. Vi "
+#~ "anbefaler minimum %s lagringsplass."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "Enheten din tilfredsstiller ikke de anbefalte maskinvarekravene. Dette "
+#~ "kan forårsake at ting går tregt eller henger."
+
+#~ msgid ""
+#~ "You appear to be installing in a virtual machine. Some parts of %s may "
+#~ "run slowly, freeze, or not function properly in a virtual machine. It's "
+#~ "recommended to install on real hardware."
+#~ msgstr ""
+#~ "Det ser ut til at du installerer i en virtuell maskin. Noen deler av %s "
+#~ "kan kjøre tregt, fryse, eller ikke fungere. Det anbefales å installere på "
+#~ "ekte maskinvare."
 
 #~ msgid "Set Password"
 #~ msgstr "Sett passord"

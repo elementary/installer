@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 17:04+0000\n"
+"POT-Creation-Date: 2022-09-27 10:28+0000\n"
 "PO-Revision-Date: 2022-04-20 09:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/installer/"
@@ -58,61 +58,54 @@ msgstr "ইনস্টলেশন বাতিল করুন"
 msgid "Test Mode"
 msgstr "ডেমো মোড ব্যবহার করে দেখুন"
 
-#: src/Views/CheckView.vala:60
-msgid "Ignore"
-msgstr "উপেক্ষা করুন"
+#: src/Views/CheckView.vala:48
+msgid "System Requirements"
+msgstr ""
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:54
 #, fuzzy
 msgid "Not Enough Space"
 msgstr "যথেষ্ট জায়গা নেই"
 
-#: src/Views/CheckView.vala:217
+#: src/Views/CheckView.vala:55
 #, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+msgid "%s of storage or more is required to install %s."
 msgstr ""
-"আপনার ডিভাইসে %s ইনস্টল করার জন্য যথেষ্ট জায়গা নেই। আমরা সুপারিশ করি যে আপনার "
-"ডিভাইসে কমপক্ষে %s জায়গা রয়েছে বা থাকা দরকার।"
 
-#: src/Views/CheckView.vala:227
-msgid "Your Device May Be Too Slow"
-msgstr "আপনার ডিভাইসটি হয়তো খুব ধীরে কাজ করছে"
-
-#: src/Views/CheckView.vala:228
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
-msgstr ""
-"আপনার ডিভাইসে প্রস্তাবিত হার্ডওয়্যার নেই। এই কারণে, আপনার ডিভাইস ধীরে চলতে পারে "
-"অথবা বিকল হতে পারে।"
-
-#: src/Views/CheckView.vala:243
+#: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:244
+#: src/Views/CheckView.vala:61
 #, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:66
+msgid "Your Device May Be Too Slow"
+msgstr "আপনার ডিভাইসটি হয়তো খুব ধীরে কাজ করছে"
+
+#: src/Views/CheckView.vala:67
+msgid "This may cause it to run slowly or freeze."
+msgstr ""
+
+#: src/Views/CheckView.vala:83
+msgid "Ignore"
+msgstr "উপেক্ষা করুন"
+
+#: src/Views/CheckView.vala:236
 msgid "Recommended:"
 msgstr "প্রস্তাবিত:"
 
-#: src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:242
 msgid "Your Device:"
 msgstr "আপনার ডিভাইস:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:248 src/Views/CheckView.vala:252
 msgid "Processor:"
 msgstr "প্রসেসর:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
+#: src/Views/CheckView.vala:264 src/Views/CheckView.vala:268
 #, fuzzy
 msgid "Memory:"
 msgstr "মেমরি (RAM):"
@@ -515,6 +508,20 @@ msgstr ""
 #, fuzzy
 msgid "Default (ext4)"
 msgstr "ডিফল্ট"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "আপনার ডিভাইসে %s ইনস্টল করার জন্য যথেষ্ট জায়গা নেই। আমরা সুপারিশ করি যে আপনার "
+#~ "ডিভাইসে কমপক্ষে %s জায়গা রয়েছে বা থাকা দরকার।"
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "আপনার ডিভাইসে প্রস্তাবিত হার্ডওয়্যার নেই। এই কারণে, আপনার ডিভাইস ধীরে চলতে "
+#~ "পারে অথবা বিকল হতে পারে।"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

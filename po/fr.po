@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 17:04+0000\n"
+"POT-Creation-Date: 2022-09-27 10:28+0000\n"
 "PO-Revision-Date: 2021-12-10 12:29+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
@@ -57,65 +57,53 @@ msgstr "Annuler l'installation"
 msgid "Test Mode"
 msgstr "Mode Test"
 
-#: src/Views/CheckView.vala:60
-msgid "Ignore"
-msgstr "Ignorer"
+#: src/Views/CheckView.vala:48
+msgid "System Requirements"
+msgstr ""
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
 msgstr "Pas assez d'espace"
 
-#: src/Views/CheckView.vala:217
+#: src/Views/CheckView.vala:55
 #, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+msgid "%s of storage or more is required to install %s."
 msgstr ""
-"Il n'y a pas assez d'espace sur votre périphérique pour installer %s. Nous "
-"recommandons un minimum de %s d'espace disque."
 
-#: src/Views/CheckView.vala:227
-msgid "Your Device May Be Too Slow"
-msgstr "Votre appareil est peut être trop lent"
-
-#: src/Views/CheckView.vala:228
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
-msgstr ""
-"Votre matériel ne satisfait pas à la configuration minimale requise. Ceci "
-"peut entraîner des lenteurs ou des plantages lors de l'exécution de "
-"certaines tâches."
-
-#: src/Views/CheckView.vala:243
+#: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
 msgstr "Machine virtuelle"
 
-#: src/Views/CheckView.vala:244
+#: src/Views/CheckView.vala:61
 #, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
-"Il semble que vous effectuez l'installation sur une machine virtuelle. "
-"Certaines parties de %s pourrait être lentes, se figer ou ne pas fonctionner "
-"correctement sur une machine virtuelle. Il est recommandé d'effectuer "
-"l'installation sur une machine réelle."
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:66
+msgid "Your Device May Be Too Slow"
+msgstr "Votre appareil est peut être trop lent"
+
+#: src/Views/CheckView.vala:67
+msgid "This may cause it to run slowly or freeze."
+msgstr ""
+
+#: src/Views/CheckView.vala:83
+msgid "Ignore"
+msgstr "Ignorer"
+
+#: src/Views/CheckView.vala:236
 msgid "Recommended:"
 msgstr "Recommandé :"
 
-#: src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:242
 msgid "Your Device:"
 msgstr "Votre appareil :"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:248 src/Views/CheckView.vala:252
 msgid "Processor:"
 msgstr "Processeur :"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
+#: src/Views/CheckView.vala:264 src/Views/CheckView.vala:268
 msgid "Memory:"
 msgstr "Mémoire :"
 
@@ -524,6 +512,31 @@ msgstr "Système de fichiers :"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Défaut (ext4)"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "Il n'y a pas assez d'espace sur votre périphérique pour installer %s. "
+#~ "Nous recommandons un minimum de %s d'espace disque."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "Votre matériel ne satisfait pas à la configuration minimale requise. Ceci "
+#~ "peut entraîner des lenteurs ou des plantages lors de l'exécution de "
+#~ "certaines tâches."
+
+#~ msgid ""
+#~ "You appear to be installing in a virtual machine. Some parts of %s may "
+#~ "run slowly, freeze, or not function properly in a virtual machine. It's "
+#~ "recommended to install on real hardware."
+#~ msgstr ""
+#~ "Il semble que vous effectuez l'installation sur une machine virtuelle. "
+#~ "Certaines parties de %s pourrait être lentes, se figer ou ne pas "
+#~ "fonctionner correctement sur une machine virtuelle. Il est recommandé "
+#~ "d'effectuer l'installation sur une machine réelle."
 
 #~ msgid "Set Password"
 #~ msgstr "Définir le mot de passe"

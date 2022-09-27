@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 17:04+0000\n"
+"POT-Creation-Date: 2022-09-27 10:28+0000\n"
 "PO-Revision-Date: 2022-09-10 12:23+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -57,63 +57,53 @@ msgstr "هەڵەوەشاندنەوەی دامەزراندن"
 msgid "Test Mode"
 msgstr "دۆخی تاقیکردنەوە"
 
-#: src/Views/CheckView.vala:60
-msgid "Ignore"
-msgstr "چەپاندن"
+#: src/Views/CheckView.vala:48
+msgid "System Requirements"
+msgstr ""
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
 msgstr "بۆشایی پێویست نییە"
 
-#: src/Views/CheckView.vala:217
+#: src/Views/CheckView.vala:55
 #, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+msgid "%s of storage or more is required to install %s."
 msgstr ""
-"بۆشایی پێویست لەسەر ئامێرەکەت نییە بۆ دامەزراندنی %s. لانی کەم %s بۆشایی "
-"پێویستە."
 
-#: src/Views/CheckView.vala:227
-msgid "Your Device May Be Too Slow"
-msgstr "لەوانەیە ئامێرەکەت زۆر خاو بێت"
-
-#: src/Views/CheckView.vala:228
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
-msgstr ""
-"ئامێرەکەت تایبەتمەندی داواکراوی ڕەقەکاڵای نییە، لەوانەیە ئەنجامی ئەمە "
-"کارکردنی خاو یان وەستانی کۆمپیتەر بێت."
-
-#: src/Views/CheckView.vala:243
+#: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
 msgstr "ئامێری گریمانەیی"
 
-#: src/Views/CheckView.vala:244
+#: src/Views/CheckView.vala:61
 #, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
-"وادیارە تۆ سیستەمەکە لەسەر ئامێری گریمانەیی دادەمەزرێنیت، جا بۆیە لەوانەیە "
-"سیستەمەکە خاو بێت، یان هەندێک بەشی %s کار نەکات، بۆیە پێشنیار دەکەین لەسەر "
-"ڕەقەکاڵای ڕاستی دایمەزرێنیت."
 
-#: src/Views/CheckView.vala:295
+#: src/Views/CheckView.vala:66
+msgid "Your Device May Be Too Slow"
+msgstr "لەوانەیە ئامێرەکەت زۆر خاو بێت"
+
+#: src/Views/CheckView.vala:67
+msgid "This may cause it to run slowly or freeze."
+msgstr ""
+
+#: src/Views/CheckView.vala:83
+msgid "Ignore"
+msgstr "چەپاندن"
+
+#: src/Views/CheckView.vala:236
 msgid "Recommended:"
 msgstr "داواکراو:"
 
-#: src/Views/CheckView.vala:301
+#: src/Views/CheckView.vala:242
 msgid "Your Device:"
 msgstr "ئامێرەکەت:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
+#: src/Views/CheckView.vala:248 src/Views/CheckView.vala:252
 msgid "Processor:"
 msgstr "پرۆسێسەر:"
 
-#: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
+#: src/Views/CheckView.vala:264 src/Views/CheckView.vala:268
 msgid "Memory:"
 msgstr "میمۆری:"
 
@@ -519,6 +509,29 @@ msgstr "فایل سیستەم:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "بنەڕەت (ext4)"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "بۆشایی پێویست لەسەر ئامێرەکەت نییە بۆ دامەزراندنی %s. لانی کەم %s بۆشایی "
+#~ "پێویستە."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "ئامێرەکەت تایبەتمەندی داواکراوی ڕەقەکاڵای نییە، لەوانەیە ئەنجامی ئەمە "
+#~ "کارکردنی خاو یان وەستانی کۆمپیتەر بێت."
+
+#~ msgid ""
+#~ "You appear to be installing in a virtual machine. Some parts of %s may "
+#~ "run slowly, freeze, or not function properly in a virtual machine. It's "
+#~ "recommended to install on real hardware."
+#~ msgstr ""
+#~ "وادیارە تۆ سیستەمەکە لەسەر ئامێری گریمانەیی دادەمەزرێنیت، جا بۆیە "
+#~ "لەوانەیە سیستەمەکە خاو بێت، یان هەندێک بەشی %s کار نەکات، بۆیە پێشنیار "
+#~ "دەکەین لەسەر ڕەقەکاڵای ڕاستی دایمەزرێنیت."
 
 #~ msgid "translator-credits"
 #~ msgstr ""
