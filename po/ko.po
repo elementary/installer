@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 17:04+0000\n"
-"PO-Revision-Date: 2022-04-20 09:20+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2022-08-07 18:13+0000\n"
+"Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
 "installer/ko/>\n"
 "Language: ko\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: src/MainWindow.vala:48
 #, c-format
 msgid "Install %s"
-msgstr "%s를 설치합니다"
+msgstr "%s 설치합니다"
 
 #: src/MainWindow.vala:273
 msgid "Connect to a Power Source"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:243
 msgid "Virtual Machine"
-msgstr ""
+msgstr "가상 머신"
 
 #: src/Views/CheckView.vala:244
 #, c-format
@@ -97,6 +97,8 @@ msgid ""
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
 msgstr ""
+"가상 머신에 설치 중인 것 같습니다. %s의 일부가 가상 시스템에서 느리게 실행되거나 정지되거나 제대로 작동하지 않을 수 있습니다. 실제 "
+"하드웨어에 설치하는 것이 좋습니다."
 
 #: src/Views/CheckView.vala:295
 msgid "Recommended:"
@@ -132,17 +134,13 @@ msgstr "현재 설정을 가져오고 있습니다…"
 
 #: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
-msgstr "설치하기"
+msgstr "디스크를 지우고 설치하기"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "암호화하지 않겠습니다"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "드라이브 암호화"
 
@@ -150,35 +148,25 @@ msgstr "드라이브 암호화"
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
-msgstr ""
+msgstr "추가 보호를 위해 필요한 경우 이 장치의 드라이브를 암호화하되 다음 사항을 이해해야 합니다:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr ""
-"이 드라이브를 암호화하면 다른 사람이 이 장치에 물리적으로 연결해도 데이터를 "
-"읽을 수 없게 합니다."
+msgstr "컴퓨터를 껐을 때 다른 사람이 이 장치에 물리적으로 연결해도 데이터를 보호합니다."
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
-msgstr "이 장치를 켜거나 다시 시작할 때마다 보안 암호가 필요합니다."
+msgstr "이 장치를 켤 때마다 암호화 비밀번호가 필요합니다. 안전한 곳에 보관하세요."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
-msgstr ""
+msgstr "이 장치를 켤 때마다 암호화 비밀번호를 입력하려면 내장형 또는 USB 키보드가 필요합니다."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -192,7 +180,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
-msgstr "보안 암호 만들기"
+msgstr "암호화 비밀번호 선택"
 
 #: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
@@ -208,10 +196,8 @@ msgid "Choose Password"
 msgstr "비밀번호 만들기"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "보안 암호 만들기"
+msgstr "암호화 비밀번호 설정"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
@@ -222,34 +208,25 @@ msgid "Could Not Install"
 msgstr "설치할 수 없습니다"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"%s의 설치를 하지 못했습니다, 하드웨어 오류일 가능성이 있습니다. 컴퓨터가 제대"
-"로 다시 시작하지 않을 수 있습니다. 다음 중 한 가지를 수행해 보세요:"
+"%s의 설치를 하지 못했습니다, 하드웨어 오류일 가능성이 있습니다. 컴퓨터가 제대로 다시 시작하지 않을 수 있습니다. 다음 중 한 가지를 "
+"수행해 보세요:"
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• 다시 설치해보기"
+msgstr "다시 설치해 보기"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• 데모 모드를 사용해서 수동으로 복구해보기"
+msgstr "데모 모드를 사용해서 수동으로 복구해 보기"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• 다른 드라이브에서 컴퓨터를 다시 시작해보기"
+msgstr "다른 드라이브에서 컴퓨터를 다시 시작해 보기"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
@@ -268,10 +245,8 @@ msgid "Try Installing Again"
 msgstr "다시 설치해 보기"
 
 #: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "키보드 배치"
+msgstr "키보드 레이아웃 선택"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -279,7 +254,7 @@ msgstr "타이핑해서 키보드 배치를 확인해보세요"
 
 #: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
-msgstr "키보드 배치 보기"
+msgstr "키보드 레이아웃 보기"
 
 #: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
@@ -353,11 +328,11 @@ msgstr "home용 파일 시스템이 잘못되었습니다"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "로그 표시"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "로그 숨기기"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
@@ -392,10 +367,8 @@ msgstr ""
 "습니다. 성능이나 기능도 운영 체제에 영향을 주지 않습니다."
 
 #: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "설치하기"
+msgstr "디스크를 지우고 설치하기"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
@@ -403,10 +376,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "모든 걸 깨끗이 지우고 %s를 설치합니다."
 
 #: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "사용자 설정 (고급 모드)"
+msgstr "사용자 설정 설치 (고급 모드)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -421,10 +392,8 @@ msgid "Next"
 msgstr "다음"
 
 #: src/Views/TryInstallView.vala:113
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "설치할 수 없습니다"
+msgstr "사용자 설정 설치"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -433,18 +402,17 @@ msgstr "설정 계속하기"
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s 설치를 마쳤습니다"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
 msgstr "컴퓨터 끄기"
 
 #: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "하려고 컴퓨터를 %i 초 후에 다시 시작합니다."
+msgstr[0] "컴퓨터를 %i 초 후에 자동으로 다시 시작합니다."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
@@ -493,20 +461,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "파티션 사용:"
+msgstr "파티션 사용"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "포맷:"
+msgstr "포맷"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "모든 데이터를 삭제하고 새 파일 시스템을 설정합니다"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
@@ -531,11 +495,11 @@ msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr "설정"
+msgstr "사용자 설정"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
-msgstr "설정:"
+msgstr "사용자 설정:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"

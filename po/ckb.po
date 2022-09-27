@@ -3,63 +3,67 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-10 17:04+0000\n"
-"PO-Revision-Date: 2016-09-13 07:28+0000\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2022-09-10 12:23+0000\n"
+"Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
+"Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
+"installer/installer/ckb/>\n"
+"Language: ckb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
 
 #: src/MainWindow.vala:48
 #, c-format
 msgid "Install %s"
-msgstr ""
+msgstr "دامەزراندن %s"
 
 #: src/MainWindow.vala:273
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "تکایە کۆمپیتەرەکەت بخە سەر شەحن یان سەرچاوەیەکی وزە پەیوەست بکە"
 
 #: src/MainWindow.vala:274
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
 msgstr ""
+"کۆمپیتەرەکەت وزەی پاترییەکەی بەکاردەهێنێت. پێمان باشە بیخەیتە سەر شەحن لە "
+"کاتی دامەزراندن."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "کوژانەوەی دۆخی تاقیکردنەوە"
 
 #: src/Utils.vala:48
 msgid "Test mode reboot"
-msgstr ""
+msgstr "پێکردنەوەی دۆخی تاقیکردنەوە"
 
 #: src/Utils.vala:74
 msgid "Test mode switch user"
-msgstr ""
+msgstr "گۆڕینی بەکارهێنەر لە دۆخی تاقیکردنەوەدا"
 
 #: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
 #, c-format
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr ""
+msgstr "هەڵەوەشاندنەوەی دامەزراندن"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
-msgstr ""
+msgstr "دۆخی تاقیکردنەوە"
 
 #: src/Views/CheckView.vala:60
 msgid "Ignore"
-msgstr ""
+msgstr "چەپاندن"
 
 #: src/Views/CheckView.vala:216
 msgid "Not Enough Space"
-msgstr ""
+msgstr "بۆشایی پێویست نییە"
 
 #: src/Views/CheckView.vala:217
 #, c-format
@@ -67,20 +71,24 @@ msgid ""
 "There is not enough room on your device to install %s. We recommend a "
 "minimum of %s of storage."
 msgstr ""
+"بۆشایی پێویست لەسەر ئامێرەکەت نییە بۆ دامەزراندنی %s. لانی کەم %s بۆشایی "
+"پێویستە."
 
 #: src/Views/CheckView.vala:227
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "لەوانەیە ئامێرەکەت زۆر خاو بێت"
 
 #: src/Views/CheckView.vala:228
 msgid ""
 "Your device doesn't meet the recommended hardware requirements. This may "
 "cause it to run slowly or freeze."
 msgstr ""
+"ئامێرەکەت تایبەتمەندی داواکراوی ڕەقەکاڵای نییە، لەوانەیە ئەنجامی ئەمە "
+"کارکردنی خاو یان وەستانی کۆمپیتەر بێت."
 
 #: src/Views/CheckView.vala:243
 msgid "Virtual Machine"
-msgstr ""
+msgstr "ئامێری گریمانەیی"
 
 #: src/Views/CheckView.vala:244
 #, c-format
@@ -89,72 +97,85 @@ msgid ""
 "slowly, freeze, or not function properly in a virtual machine. It's "
 "recommended to install on real hardware."
 msgstr ""
+"وادیارە تۆ سیستەمەکە لەسەر ئامێری گریمانەیی دادەمەزرێنیت، جا بۆیە لەوانەیە "
+"سیستەمەکە خاو بێت، یان هەندێک بەشی %s کار نەکات، بۆیە پێشنیار دەکەین لەسەر "
+"ڕەقەکاڵای ڕاستی دایمەزرێنیت."
 
 #: src/Views/CheckView.vala:295
 msgid "Recommended:"
-msgstr ""
+msgstr "داواکراو:"
 
 #: src/Views/CheckView.vala:301
 msgid "Your Device:"
-msgstr ""
+msgstr "ئامێرەکەت:"
 
 #: src/Views/CheckView.vala:307 src/Views/CheckView.vala:311
 msgid "Processor:"
-msgstr ""
+msgstr "پرۆسێسەر:"
 
 #: src/Views/CheckView.vala:323 src/Views/CheckView.vala:327
 msgid "Memory:"
-msgstr ""
+msgstr "میمۆری:"
 
 #: src/Views/DiskView.vala:36
 msgid "Select a Drive"
-msgstr ""
+msgstr "درایڤێک دیاریبکە"
 
 #: src/Views/DiskView.vala:42
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"هەموو داتای سەر درایڤەکە ڕەش دەبێتەوە، ئەگەر درایڤەکەت باکئەپ نەکردووە، "
+"دەتوانیت دامەزراندنەکە هەڵوەشێنییەوە و دۆخی تاقیکردنەوە بەکار بهێنیت."
 
 #: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "نوێکردنەوە…"
 
 #: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
-msgstr ""
+msgstr "سڕینەوە و دامەزراندن"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
-msgstr ""
+msgstr "شفرەی مەکە"
 
 #: src/Views/EncryptView.vala:50
 msgid "Enable Drive Encryption"
-msgstr ""
+msgstr "کاراکردنی کۆدکردنی درایڤ"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"ئەگەر پێویست بوو بۆ پاراستنی زیاتر، درایڤی ئەم ئامێرە کۆد بکە، بەڵام دڵنیابە "
+"کە تێدەگەیت:"
 
 #: src/Views/EncryptView.vala:65
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
+"داتاکان پارێزراو دەبن تەنها لەوانەی کە دەستگەیشتنی فیزیکییان هەیە بۆ ئەم "
+"ئامێرە کاتێک کۆمپیتەرەکە کوژاوەتەوە."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
+"تێپەڕەوشەی کۆدکردن پێویست دەبێت هەر کاتێک ئەم ئامێرە پێ بکەیت، بۆیە لە "
+"شوێنێکی سەلامەت بیپارێزە."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"تەختەکلیلێکی ناوخۆیی یان پەیوەستکراو بەهۆی USB ییەوە پێویست دەبێت بۆ نووسینی "
+"تێپەڕەوشەکە هەر کاتێک ئامێرەکە پێ بکەیت."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -162,35 +183,38 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"ئەگەر تێپەڕەوشەی کۆدکردنت بیربچێتەوە، <b>ئەوا داتاکانت لەدەست دەچێت و "
+"ناتوانیت بیان گەڕێنیتەوە.</b> ئەمە تێپەڕەوشەیەکی بێهاوتایە بۆ ئەم ئامێرە، "
+"نەک تێپەڕەوشەی هەژماری بەکارهێنەر."
 
 #: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "تێپەڕەوشەیەک بۆ کۆدکردن بنووسە"
 
 #: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
-msgstr ""
+msgstr "دووبارە تێپەڕەوشەکە بنووسەوە بۆ دڵنیابوونەوە"
 
 #: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
 #: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
 msgid "Back"
-msgstr ""
+msgstr "گەڕانەوە"
 
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
-msgstr ""
+msgstr "تێپەڕەوشە بنووسە"
 
 #: src/Views/EncryptView.vala:191
 msgid "Set Encryption Password"
-msgstr ""
+msgstr "دانانی تێپەڕەوشەی کۆدکردن"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
-msgstr ""
+msgstr "تێپەڕەوشەکان هاوتا نین"
 
 #: src/Views/ErrorView.vala:30
 msgid "Could Not Install"
-msgstr ""
+msgstr "دامەزراندن نەکرا"
 
 #: src/Views/ErrorView.vala:35
 #, c-format
@@ -198,81 +222,85 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
+"دامەزراندن %s شکستی هێنا، دەکرێت هۆکارەکە هەڵەی ڕەقەکاڵا بێت. لەوانەیە "
+"ئامێرەکە بە گونجاوی پێنەبێتەوە، دەتوانیت ئەمانە تاقی بکەیتەوە:"
 
 #: src/Views/ErrorView.vala:46
 msgid "Try the installation again"
-msgstr ""
+msgstr "دوبارە هەوڵی دامەزراندن بدەوە"
 
 #: src/Views/ErrorView.vala:57
 msgid "Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "بەکارهێنانی دۆخی تاقیکاری و هەوڵدان بۆ گەڕاندنەوەی دەستی"
 
 #: src/Views/ErrorView.vala:67
 msgid "Restart the device and boot from another drive"
-msgstr ""
+msgstr "ئامێرەکە پێبکەوە و لە درایڤێکی ترەوە بووتی بکە"
 
 #: src/Views/ErrorView.vala:77
 msgid "Details"
-msgstr ""
+msgstr "وردەکارییەکان"
 
 #: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
 msgid "Restart Device"
-msgstr ""
+msgstr "پێکردنەوەی ئامێر"
 
 #: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "تاقیکردنەوەی دۆخی تاقیکردنەوە"
 
 #: src/Views/ErrorView.vala:116
 msgid "Try Installing Again"
-msgstr ""
+msgstr "دوبارە هەوڵی دامەزراندن بدەوە"
 
 #: src/Views/KeyboardLayoutView.vala:31
 msgid "Select Keyboard Layout"
-msgstr ""
+msgstr "ڕووکاری تەختەکلیل دیاریبکە"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
-msgstr ""
+msgstr "لێرە بنووسە بۆ تاقیکردنەوەی ڕووکاری تەختەکلیلەکەت"
 
 #: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "پشاندانی ڕووکاری تەختەکلیل"
 
 #: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
 msgid "Select"
-msgstr ""
+msgstr "دیاریکردن"
 
 #: src/Views/KeyboardLayoutView.vala:125
 msgid "Default"
-msgstr ""
+msgstr "بنەڕەت"
 
 #: src/Views/KeyboardLayoutView.vala:132
 msgid "Input Language"
-msgstr ""
+msgstr "زمانی بەکارهێنان"
 
 #: src/Views/LanguageView.vala:261
 msgid "Languages"
-msgstr ""
+msgstr "زمانەکان"
 
 #: src/Views/LanguageView.vala:278
 msgid "Select a Language"
-msgstr ""
+msgstr "زمانێک دیاریکە"
 
 #: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
 msgid "Currently active language"
-msgstr ""
+msgstr "زمانی کارای ئێستا"
 
 #: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
+"ئەو پارتێشنانە دیاربکە بۆ بەکارهێنانی لەسەرانسەری درایڤەکاندا <b>هەڵبژاردنی "
+"\"فۆرمات\" هەموو داتاکانی سەر بەشە هەڵبژێردراوەکە دەسڕێتەوە.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "لانیکەم دەبێت پارتششنێکی <b>Root (/)</b> هەڵبژێریت."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
@@ -280,206 +308,217 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
+"دەبێت لانیکەم پارتێشنێکی <b>Root (/)</b> و پارتێشنێکی <b>Boot (/boot/efi)</"
+"b> دیاری بکەیت."
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "هەروەها پێشنیارکراوە کە پارتێشنێکی <b>Swap</b>یش دیاری بکەت."
 
 #: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "دەستکاریکردنی پارتێشنەکان…"
 
 #: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "پارتێشنی EFI فایل سیستەمێکی هەڵەی هەیە"
 
 #: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "قەبارەی پارتێشنی EFI زۆر بچووکە"
 
 #: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "فایل سیستەمێکی هەڵە بۆ ڕووت"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "فایل سیستەمێکی بۆ هۆم"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "پشاندانی تۆمار"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "شاردنەوەی تۆمار"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "پارتێشنکردنی درایڤ"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:226
 msgid "Extracting Files"
-msgstr ""
+msgstr "دەرکردنی پەڕگەکان"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:231
 msgid "Configuring the System"
-msgstr ""
+msgstr "ڕێکخستنی سیستەمەکە"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:236
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "تەواوکردنی دامەزراندنەکە"
 
 #: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
-msgstr ""
+msgstr "تاقیکردنەوە یان دامەزراندن"
 
 #: src/Views/TryInstallView.vala:40
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
+"گۆڕانکارییەکان پاشەکەوت ناکرێن، و زانیارییەکانی سیستەمی کارپێکردنی پێشووت "
+"دەستکاری ناکرێن. لەوانەیە کارایی و تایبەتمەندییەکان ڕەنگدانەوەی ئەزموونی "
+"دامەزراو نەبن."
 
 #: src/Views/TryInstallView.vala:46
 msgid "Erase Disk and Install"
-msgstr ""
+msgstr "سڕینەوەی پەپکە و دامەزراندن"
 
 #: src/Views/TryInstallView.vala:48
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "هەموو شتێک بسڕەوە و وێنەیەکی تازەی %s دامەزرێنە."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
-msgstr ""
+msgstr "دامەزراندنی تایبەت (پێشکەوتوو)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"دروستکردن و قەبارەگۆڕین یان بەڕێوەبردنی پارتێشنەکان بەدەستی. لەوەیە ئەم "
+"ڕێگەیە سەربکێشێت بۆ لەدەستدانی داتا."
 
 #: src/Views/TryInstallView.vala:87
 msgid "Next"
-msgstr ""
+msgstr "دواتر"
 
 #: src/Views/TryInstallView.vala:113
 msgid "Custom Install"
-msgstr ""
+msgstr "دامەزراندنی تایبەت"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "بەردەوامبوون لە ئامادەکردن"
 
 #: src/Views/SuccessView.vala:33
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s دامەزراوە"
 
 #: src/Views/SuccessView.vala:62
 msgid "Shut Down"
-msgstr ""
+msgstr "کوژاندنەوە"
 
 #: src/Views/SuccessView.vala:96
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ئامێرەکەت خۆکرانە لە ماوەی %i چرکەدا پێدەبێتەوە."
+msgstr[1] "لە ماوەی %i چرکەدا، ئامێرەکەت خۆکارانە پێدەبێتەوە."
 
 #: src/Views/SuccessView.vala:100
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"دوای پێکردنەوە، دەتوانیت ئامادەکردنی سیستەمەکەت تەواو بکەیت و بەکارهێنەری "
+"تازە دروست بکەت یانیش بیکوژێنیتەوە و دواتر ئەنجامی بدەیت."
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "کردنەوەی کۆدەکانی ئەم پارتێشنە"
 
 #: src/Widgets/DecryptMenu.vala:62
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"تێپەڕەوشەی کۆدکردنی پارتێشنەکە بنووسە و ناوی ئامێرێک بۆ پارتێشنی کۆدلێکراوە "
+"دابنێ."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
-msgstr ""
+msgstr "تێپەڕەوشە:"
 
 #: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
-msgstr ""
+msgstr "ناوی ئامێر:"
 
 #: src/Widgets/DecryptMenu.vala:101
 msgid "Decrypt"
-msgstr ""
+msgstr "کردنەوەی کۆد"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "کۆدی ڤۆلیومی LUKS کرایەوە"
 
 #: src/Widgets/DiskBar.vala:135
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
 msgid "Use Partition"
-msgstr ""
+msgstr "پارتێشن بەکاربێنە"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Format"
-msgstr ""
+msgstr "فۆڕمات"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "سڕینەوەی هەموو داتا و دانانی فایل سیستەمێکی نوێ"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr ""
+msgstr "بەکارهێنان وەکو:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
-msgstr ""
+msgstr "ڕووت (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
-msgstr ""
+msgstr "ماڵەوە (/home)"
 
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "بووت (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr ""
+msgstr "سواپ"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr ""
+msgstr "تایبەت"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
-msgstr ""
+msgstr "تایبەت:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
-msgstr ""
+msgstr "فایل سیستەم:"
 
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
-msgstr ""
+msgstr "بنەڕەت (ext4)"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
