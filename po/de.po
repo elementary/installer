@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 10:28+0000\n"
-"PO-Revision-Date: 2021-12-10 04:48+0000\n"
+"PO-Revision-Date: 2022-09-30 04:52+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -64,7 +64,7 @@ msgstr "Testmodus"
 
 #: src/Views/CheckView.vala:48
 msgid "System Requirements"
-msgstr ""
+msgstr "Systemanforderungen"
 
 #: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
@@ -73,7 +73,7 @@ msgstr "Zu wenig Speicherplatz"
 #: src/Views/CheckView.vala:55
 #, c-format
 msgid "%s of storage or more is required to install %s."
-msgstr ""
+msgstr "Mindestens %s Speicherplatz wird zur Installation von %s benötigt."
 
 #: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
@@ -83,6 +83,8 @@ msgstr "Virtuelle Maschine"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Einige Bestandteile von %s werden möglicherweise nur langsam ausführt, "
+"kommen zum Stillstand oder funktionieren nicht korrekt."
 
 #: src/Views/CheckView.vala:66
 msgid "Your Device May Be Too Slow"
@@ -91,6 +93,8 @@ msgstr "Ihr Gerät ist möglicherweise zu langsam"
 #: src/Views/CheckView.vala:67
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
+"Dies führt möglicherweise dazu, dass es nur langsam ausgeführt wird oder zum "
+"Stillstand kommt."
 
 #: src/Views/CheckView.vala:83
 msgid "Ignore"
