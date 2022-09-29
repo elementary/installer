@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 10:28+0000\n"
-"PO-Revision-Date: 2021-12-10 12:29+0000\n"
-"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
+"PO-Revision-Date: 2022-09-30 04:52+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
@@ -60,7 +60,7 @@ msgstr "Режим тестирования"
 
 #: src/Views/CheckView.vala:48
 msgid "System Requirements"
-msgstr ""
+msgstr "Системные требования"
 
 #: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
@@ -69,7 +69,7 @@ msgstr "Недостаточно места"
 #: src/Views/CheckView.vala:55
 #, c-format
 msgid "%s of storage or more is required to install %s."
-msgstr ""
+msgstr "%s пространства или больше необходимо для установки %s."
 
 #: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
@@ -79,6 +79,8 @@ msgstr "Виртуальная машина"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Некоторые части %s могут выполняться медленно, зависать или функционировать "
+"неправильно."
 
 #: src/Views/CheckView.vala:66
 msgid "Your Device May Be Too Slow"
@@ -86,7 +88,7 @@ msgstr "Ваше устройство может быть слишком мед�
 
 #: src/Views/CheckView.vala:67
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Это может привести к медленной работе или зависаниям."
 
 #: src/Views/CheckView.vala:83
 msgid "Ignore"
