@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 10:28+0000\n"
-"PO-Revision-Date: 2022-02-25 21:03+0000\n"
+"PO-Revision-Date: 2022-09-30 22:21+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/installer/"
 "installer/sk/>\n"
@@ -59,7 +59,7 @@ msgstr "Testovací režim"
 
 #: src/Views/CheckView.vala:48
 msgid "System Requirements"
-msgstr ""
+msgstr "Systémové požiadavky"
 
 #: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
@@ -68,7 +68,7 @@ msgstr "Nedostatok miesta"
 #: src/Views/CheckView.vala:55
 #, c-format
 msgid "%s of storage or more is required to install %s."
-msgstr ""
+msgstr "Je potreba %s alebo viac úložiska na inštaláciu %s."
 
 #: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
@@ -78,6 +78,8 @@ msgstr "Virtuálne zariadenie"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Niektoré časti %s môžu byť spomalené, môžu zamŕzať alebo nemusia správne "
+"fungovať."
 
 #: src/Views/CheckView.vala:66
 msgid "Your Device May Be Too Slow"
@@ -85,7 +87,7 @@ msgstr "Vaše zariadenie môže byť príliš pomalé"
 
 #: src/Views/CheckView.vala:67
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Toto môže spôsobiť spomalenie alebo zamŕzanie."
 
 #: src/Views/CheckView.vala:83
 msgid "Ignore"
