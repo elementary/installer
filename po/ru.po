@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 10:28+0000\n"
-"PO-Revision-Date: 2022-09-30 04:52+0000\n"
+"PO-Revision-Date: 2022-09-30 15:23+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
@@ -287,8 +287,8 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"Выберите, какие разделы использовать на всех дисках. <b>Выбор \"Форматировать"
-"\" приведет к очистке ВСЕХ данных на выбранном разделе.</b>"
+"Выберите, какие разделы использовать на всех дисках. <b>Выбор «Форматировать»"
+" приведёт к очистке ВСЕХ данных на выбранном разделе</b>."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
@@ -306,7 +306,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "Также рекомендуется выбрать раздел <b>подкачки (Swap)</b>."
+msgstr "Также рекомендуется выбрать <b>Раздел подкачки (Swap)</b>."
 
 #: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
@@ -380,7 +380,7 @@ msgstr "Удалить всё и установить новую копию %s."
 
 #: src/Views/TryInstallView.vala:54
 msgid "Custom Install (Advanced)"
-msgstr "Пользовательская установка (Для опытных)"
+msgstr "Пользовательская установка (для опытных)"
 
 #: src/Views/TryInstallView.vala:56
 msgid ""
@@ -424,8 +424,8 @@ msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"После перезагрузки вы сможете настроить новую учетную запись, или вы можете "
-"выключить компьютер сейчас и настроить новую учетную запись позже."
+"После перезагрузки вы сможете настроить новую учётную запись, или вы можете "
+"выключить компьютер сейчас и настроить новую учётную запись позже."
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -453,7 +453,7 @@ msgstr "Расшифровать"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr "Том LUKS был рашифрован"
+msgstr "Том LUKS был расшифрован"
 
 #: src/Widgets/DiskBar.vala:135
 #, c-format
@@ -475,7 +475,7 @@ msgstr "Форматировать"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr "Удалите все данные и установить новую файловую систему"
+msgstr "Удалить все данные и установить новую файловую систему"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
@@ -496,7 +496,7 @@ msgstr "Загрузка (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr "Swap"
+msgstr "Раздел подкачки (Swap)"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
