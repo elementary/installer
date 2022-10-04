@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 10:28+0000\n"
-"PO-Revision-Date: 2022-09-30 15:23+0000\n"
+"PO-Revision-Date: 2022-10-04 15:33+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
@@ -69,7 +69,7 @@ msgstr "Недостаточно места"
 #: src/Views/CheckView.vala:55
 #, c-format
 msgid "%s of storage or more is required to install %s."
-msgstr "%s пространства или больше необходимо для установки %s."
+msgstr "%s свободного места или больше необходимо для установки %s."
 
 #: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
@@ -288,7 +288,7 @@ msgid ""
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
 "Выберите, какие разделы использовать на всех дисках. <b>Выбор «Форматировать»"
-" приведёт к очистке ВСЕХ данных на выбранном разделе</b>."
+" приведёт к очистке ВСЕХ данных на выбранном разделе.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
