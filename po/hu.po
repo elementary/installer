@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 10:28+0000\n"
-"PO-Revision-Date: 2021-12-10 20:49+0000\n"
+"PO-Revision-Date: 2022-10-07 03:06+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
@@ -59,7 +59,7 @@ msgstr "Tesztmód"
 
 #: src/Views/CheckView.vala:48
 msgid "System Requirements"
-msgstr ""
+msgstr "Rendszerkövetelmények"
 
 #: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
@@ -68,7 +68,7 @@ msgstr "Nincs elegendő hely"
 #: src/Views/CheckView.vala:55
 #, c-format
 msgid "%s of storage or more is required to install %s."
-msgstr ""
+msgstr "Legalább %s tárhely szükséges az %s telepítéséhez."
 
 #: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
@@ -78,6 +78,8 @@ msgstr "Virtuális gép"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Az %s bizonyos részei lassúak lehetnek, lefagyhatnak, esetleg nem működnek "
+"rendesen."
 
 #: src/Views/CheckView.vala:66
 msgid "Your Device May Be Too Slow"
@@ -85,7 +87,7 @@ msgstr "Lehet, hogy a készüléke lassú lesz"
 
 #: src/Views/CheckView.vala:67
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Ez lassú működést vagy fagyást okozhat."
 
 #: src/Views/CheckView.vala:83
 msgid "Ignore"
