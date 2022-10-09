@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 10:28+0000\n"
-"PO-Revision-Date: 2021-12-09 18:02+0000\n"
+"PO-Revision-Date: 2022-10-09 22:35+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -59,7 +59,7 @@ msgstr "Testitila"
 
 #: src/Views/CheckView.vala:48
 msgid "System Requirements"
-msgstr ""
+msgstr "Järjestelmävaatimukset"
 
 #: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
@@ -68,7 +68,7 @@ msgstr "Tilaa ei ole riittävästi"
 #: src/Views/CheckView.vala:55
 #, c-format
 msgid "%s of storage or more is required to install %s."
-msgstr ""
+msgstr "%s levytilaa tai enemmän vaaditaan, jotta %s on mahdollista asentaa."
 
 #: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
@@ -77,7 +77,7 @@ msgstr "Virtuaalikone"
 #: src/Views/CheckView.vala:61
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
-msgstr ""
+msgstr "Jotkin %s:n osat voivat toimia hitaasti tai epätäydellisesti."
 
 #: src/Views/CheckView.vala:66
 msgid "Your Device May Be Too Slow"
@@ -85,7 +85,7 @@ msgstr "Laitteesi saattaa olla liian hidas"
 
 #: src/Views/CheckView.vala:67
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Tämän vuoksi toiminta saattaa olla hidasta tai takkuilevaa."
 
 #: src/Views/CheckView.vala:83
 msgid "Ignore"
