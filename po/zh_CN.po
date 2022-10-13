@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-27 10:28+0000\n"
-"PO-Revision-Date: 2022-01-30 03:53+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"PO-Revision-Date: 2022-10-14 02:38+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -57,7 +57,7 @@ msgstr "测试模式"
 
 #: src/Views/CheckView.vala:48
 msgid "System Requirements"
-msgstr ""
+msgstr "系统需求"
 
 #: src/Views/CheckView.vala:54
 msgid "Not Enough Space"
@@ -66,7 +66,7 @@ msgstr "空间不足"
 #: src/Views/CheckView.vala:55
 #, c-format
 msgid "%s of storage or more is required to install %s."
-msgstr ""
+msgstr "需要 %s 或更多空间来安装 %s。"
 
 #: src/Views/CheckView.vala:60
 msgid "Virtual Machine"
@@ -75,15 +75,15 @@ msgstr "虚拟机"
 #: src/Views/CheckView.vala:61
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
-msgstr ""
+msgstr "部分 %s 可能会运行缓慢、卡住或无法正常工作。"
 
 #: src/Views/CheckView.vala:66
 msgid "Your Device May Be Too Slow"
-msgstr "您的设备可能运行缓慢"
+msgstr "您的设备可能会运行缓慢"
 
 #: src/Views/CheckView.vala:67
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "这可能会导致设备运行缓慢或卡住。"
 
 #: src/Views/CheckView.vala:83
 msgid "Ignore"
