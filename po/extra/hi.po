@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 10:28+0000\n"
+"POT-Creation-Date: 2022-11-10 00:37+0000\n"
 "PO-Revision-Date: 2018-10-12 00:05+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/installer/extra/"
@@ -43,8 +43,11 @@ msgid "Install the system"
 msgstr "सिस्टम इनस्टॉल करें"
 
 #: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+msgid "io.elementary.installer"
+msgstr ""
+
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"
 
 #~ msgid "Calculator"
 #~ msgstr "गणक"

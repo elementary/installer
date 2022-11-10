@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 10:28+0000\n"
+"POT-Creation-Date: 2022-11-10 00:37+0000\n"
 "PO-Revision-Date: 2021-03-21 03:00+0000\n"
 "Last-Translator: Shukrullo Turgunov <shukrullo@umail.uz>\n"
 "Language-Team: Uzbek <https://l10n.elementary.io/projects/installer/extra/uz/"
@@ -36,5 +36,8 @@ msgid "Install the system"
 msgstr "Tizimni o'rnatish"
 
 #: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+msgid "io.elementary.installer"
+msgstr ""
+
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"
