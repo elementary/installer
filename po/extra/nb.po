@@ -2,22 +2,22 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-10 00:37+0000\n"
-"PO-Revision-Date: 2018-07-20 01:05+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
-"Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
+"PO-Revision-Date: 2022-11-11 14:29+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/extra/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/installer.appdata.xml.in:7
 #, fuzzy
 #| msgid "Install elementary OS"
 msgid "Installer"
-msgstr "Installer elementary OS"
+msgstr "Installer"
 
 #: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
@@ -25,11 +25,12 @@ msgstr "Installer elementary OS"
 
 #: data/installer.appdata.xml.in:10
 msgid "Step by step installer for elementary OS itself."
-msgstr ""
+msgstr "Stegvis installasjon av selve elementary OS."
 
 #: data/installer.appdata.xml.in:76
+#, fuzzy
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
@@ -37,7 +38,7 @@ msgstr "Installer systemet"
 
 #: data/io.elementary.installer.desktop.in:6
 msgid "io.elementary.installer"
-msgstr ""
+msgstr "io.elementary.installer"
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"
