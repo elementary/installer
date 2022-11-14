@@ -29,7 +29,7 @@ public class Installer.DiskView : AbstractInstallerView {
     }
 
     construct {
-        var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG) {
+        var install_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id, Gtk.IconSize.DIALOG) {
             valign = Gtk.Align.END
         };
 
