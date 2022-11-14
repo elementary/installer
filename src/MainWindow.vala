@@ -43,7 +43,7 @@ public class Installer.MainWindow : Hdy.Window {
             deletable: false,
             default_height: 600,
             default_width: 850,
-            icon_name: "system-os-installer",
+            icon_name: Application.get_default ().application_id,
             resizable: false,
             title: _("Install %s").printf (Utils.get_pretty_name ()),
             window_position: Gtk.WindowPosition.CENTER_ALWAYS
