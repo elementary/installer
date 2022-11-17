@@ -34,9 +34,16 @@ public class Installer.App : Gtk.Application {
     }
 
     public override void activate () {
-        var window = new MainWindow ();
+        var window = new MainWindow () {
+            deletable = false,
+            default_height = 600,
+            default_width = 850,
+            icon_name = application_id,
+            title = _("Install %s").printf (Utils.get_pretty_name ()),
+            window_position = Gtk.WindowPosition.CENTER_ALWAYS
+        };
         window.show_all ();
-        this.add_window (window);
+        add_window (window);
 
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/installer");
