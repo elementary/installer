@@ -42,6 +42,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
     construct {
         var image = new Gtk.Image.from_icon_name ("computer-fail", Gtk.IconSize.DIALOG) {
+            pixel_size = 128,
             valign = Gtk.Align.END
         };
 
@@ -101,7 +102,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
         if (!enough_space) {
             message_box.add (space_view);
-            ignore_button.sensitive = false;
+            ignore_button.sensitive = Installer.App.test_mode;
         }
 
         if (vm) {
