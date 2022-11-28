@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 00:37+0000\n"
+"POT-Creation-Date: 2022-11-28 19:44+0000\n"
 "PO-Revision-Date: 2021-08-07 06:29+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/extra/"
@@ -32,7 +32,7 @@ msgstr "elementary OS をインストール"
 msgid "Step by step installer for elementary OS itself."
 msgstr "elementary OS 向けのステップバイステップなインストーラーです。"
 
-#: data/installer.appdata.xml.in:76
+#: data/installer.appdata.xml.in:85
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
