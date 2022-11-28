@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-28 19:44+0000\n"
-"PO-Revision-Date: 2022-09-30 04:52+0000\n"
+"PO-Revision-Date: 2022-12-02 06:10+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:42
@@ -64,13 +64,15 @@ msgstr "Системні вимоги"
 
 #: src/Views/CheckView.vala:54
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Передрелізна версія"
 
 #: src/Views/CheckView.vala:55
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Установлюйте лише на пристрої, призначені для розробки. <b>Ви не зможете "
+"оновитися до стабільної версії</b>."
 
 #: src/Views/CheckView.vala:60
 msgid "Not Enough Space"
