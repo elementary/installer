@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-28 19:44+0000\n"
-"PO-Revision-Date: 2022-10-04 15:33+0000\n"
+"PO-Revision-Date: 2022-12-02 06:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -61,13 +61,15 @@ msgstr "דרישות המערכת"
 
 #: src/Views/CheckView.vala:54
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "מהדורת טרום הפצה"
 
 #: src/Views/CheckView.vala:55
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"להתקין רק על מכשירים שמיועדים לפיתוח. <b>לא יתאפשר לך לשדרג למהדורה "
+"יציבה</b>."
 
 #: src/Views/CheckView.vala:60
 msgid "Not Enough Space"
