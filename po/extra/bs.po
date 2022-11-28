@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 00:37+0000\n"
+"POT-Creation-Date: 2022-11-28 19:44+0000\n"
 "PO-Revision-Date: 2018-11-04 21:47+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/installer/"
@@ -28,7 +28,7 @@ msgstr "Instaliraj elementary OS"
 msgid "Step by step installer for elementary OS itself."
 msgstr ""
 
-#: data/installer.appdata.xml.in:76
+#: data/installer.appdata.xml.in:85
 msgid "elementary, Inc."
 msgstr ""
 
