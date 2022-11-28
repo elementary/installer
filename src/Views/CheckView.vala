@@ -108,7 +108,7 @@ public class Installer.CheckView : AbstractInstallerView {
         var apt_sources = File.new_for_path ("/etc/apt/sources.list.d/elementary.list");
         try {
             var @is = apt_sources.read ();
-            var dis  = new DataInputStream (@is);
+            var dis = new DataInputStream (@is);
 
             if ("daily" in dis.read_line ()) {
                 message_box.add (beta_view);
