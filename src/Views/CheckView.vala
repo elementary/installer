@@ -101,7 +101,8 @@ public class Installer.CheckView : AbstractInstallerView {
 
         if (!enough_space) {
             message_box.add (space_view);
-            ignore_button.sensitive = false;
+            // Make sure we can skip this view in Test Mode
+            ignore_button.sensitive = Installer.App.test_mode;
         }
 
         if (vm) {

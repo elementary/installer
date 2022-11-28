@@ -100,7 +100,8 @@ public class Installer.DiskView : AbstractInstallerView {
         content_area.attach (load_stack, 1, 1);
 
         next_button = new Gtk.Button.with_label (_("Erase and Install")) {
-            sensitive = false
+            // Make sure we can skip this view in Test Mode
+            sensitive = Installer.App.test_mode
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.clicked.connect (() => next_step ());
