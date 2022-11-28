@@ -20,8 +20,6 @@
 public class Installer.CheckView : AbstractInstallerView {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     public const uint64 ONE_GB = 1000 * 1000 * 1000;
-    // Minimum 15 GB
-    public const uint64 MINIMUM_SPACE = 15 * ONE_GB;
     // Minimum 1.2 GHz
     public const int MINIMUM_FREQUENCY = 1200 * 1000;
     // Minimum 1GB
@@ -29,7 +27,6 @@ public class Installer.CheckView : AbstractInstallerView {
 
     public signal void next_step ();
 
-    private bool enough_space = true;
     private bool minimum_specs = true;
     private bool vm = false;
 
@@ -49,12 +46,6 @@ public class Installer.CheckView : AbstractInstallerView {
             valign = Gtk.Align.START
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-
-        var space_view = new CheckView (
-            _("Not Enough Space"),
-            _("%s of storage or more is required to install %s.").printf (GLib.format_size (MINIMUM_SPACE), Utils.get_pretty_name ()),
-            "drive-harddisk"
-        );
 
         var vm_view = new CheckView (
             _("Virtual Machine"),
@@ -86,7 +77,6 @@ public class Installer.CheckView : AbstractInstallerView {
 
         action_area.add (ignore_button);
 
-        enough_space = get_has_enough_space ();
         vm = get_vm ();
 
         frequency = get_frequency ();
@@ -97,11 +87,6 @@ public class Installer.CheckView : AbstractInstallerView {
         memory = get_mem_info ();
         if (memory < MINIMUM_MEMORY) {
             minimum_specs = false;
-        }
-
-        if (!enough_space) {
-            message_box.add (space_view);
-            ignore_button.sensitive = false;
         }
 
         if (vm) {
@@ -117,36 +102,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
     // If all the requirements are met, skip this view (return true);
     public bool check_requirements () {
-        return enough_space && minimum_specs && !vm;
-    }
-
-    private static bool get_has_enough_space () {
-        var loop = new MainLoop ();
-        InstallerDaemon.DiskInfo? disks = null;
-
-        Daemon.get_default ().get_disks.begin (false, (obj, res) => {
-            try {
-                disks = ((Daemon)obj).get_disks.end (res);
-            } catch (Error e) {
-                critical ("Unable to get disks list: %s", e.message);
-            } finally {
-                loop.quit ();
-            }
-        });
-
-        loop.run ();
-
-        if (disks == null) {
-            return false;
-        }
-
-        foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
-            uint64 size = disk.sectors * disk.sector_size;
-            if (size > MINIMUM_SPACE) {
-                return true;
-            }
-        }
-        return false;
+        return minimum_specs && !vm;
     }
 
     private int get_frequency () {
