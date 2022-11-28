@@ -19,6 +19,9 @@ jobs:
           apt update
           apt install -y git
 
+      - name: Fix ownership
+        run: git config --global --add safe.directory /__w/installer/installer
+
       - name: Checkout main
         uses: actions/checkout@v3
         with:
