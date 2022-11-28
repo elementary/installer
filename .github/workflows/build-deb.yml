@@ -25,9 +25,10 @@ jobs:
           fetch-depth: 0
 
       - name: Checkout debian packaging folder
-        run: |
-          git config --global --add safe.directory /__w/installer/installer
-          git checkout origin/deb-packaging -- debian
+        uses: actions/checkout@v3
+        with:
+          ref: origin/deb-packaging
+          path: debian
 
       - name: Install build dependencies
         run: |
