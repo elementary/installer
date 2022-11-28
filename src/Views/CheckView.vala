@@ -29,14 +29,19 @@ public class Installer.CheckView : AbstractInstallerView {
 
     public signal void next_step ();
 
+    private Gtk.Box message_box;
+    public bool has_messages {
+        get {
+            return message_box.get_children ().length () > 0;
+        }
+    }
+
     private bool enough_space = true;
     private bool minimum_specs = true;
     private bool vm = false;
 
     private int frequency = 0;
     private uint64 memory = 0;
-
-    private Gtk.Box message_box;
 
     public CheckView () {
         Object (cancellable: true);
@@ -115,11 +120,6 @@ public class Installer.CheckView : AbstractInstallerView {
         }
 
         show_all ();
-    }
-
-    // If all the requirements are met, skip this view (return true);
-    public bool check_requirements () {
-        return message_box.get_children ().length () == 0;
     }
 
     private static bool get_has_enough_space () {
