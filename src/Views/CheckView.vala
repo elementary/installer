@@ -36,6 +36,8 @@ public class Installer.CheckView : AbstractInstallerView {
     private int frequency = 0;
     private uint64 memory = 0;
 
+    private Gtk.Box message_box;
+
     public CheckView () {
         Object (cancellable: true);
     }
@@ -69,7 +71,7 @@ public class Installer.CheckView : AbstractInstallerView {
         );
         specs_view.attach (get_comparison_grid (), 1, 2);
 
-        var message_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32) {
+        message_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32) {
             valign = Gtk.Align.CENTER
         };
 
@@ -117,7 +119,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
     // If all the requirements are met, skip this view (return true);
     public bool check_requirements () {
-        return enough_space && minimum_specs && !vm;
+        return message_box.get_children ().length () == 0;
     }
 
     private static bool get_has_enough_space () {
