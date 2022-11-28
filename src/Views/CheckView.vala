@@ -36,10 +36,6 @@ public class Installer.CheckView : AbstractInstallerView {
         }
     }
 
-    private bool enough_space = true;
-    private bool minimum_specs = true;
-    private bool vm = false;
-
     private int frequency = 0;
     private uint64 memory = 0;
 
@@ -99,8 +95,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
         action_area.add (ignore_button);
 
-        enough_space = get_has_enough_space ();
-        vm = get_vm ();
+        bool minimum_specs = true;
 
         frequency = get_frequency ();
         if (frequency < MINIMUM_FREQUENCY && frequency > 0) {
@@ -124,12 +119,12 @@ public class Installer.CheckView : AbstractInstallerView {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        if (!enough_space) {
+        if (!get_has_enough_space ()) {
             message_box.add (space_view);
             ignore_button.sensitive = false;
         }
 
-        if (vm) {
+        if (get_vm ()) {
             message_box.add (vm_view);
         }
 
