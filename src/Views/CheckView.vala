@@ -29,9 +29,12 @@ public class Installer.CheckView : AbstractInstallerView {
 
     public signal void next_step ();
 
-    private bool enough_space = true;
-    private bool minimum_specs = true;
-    private bool vm = false;
+    private Gtk.Box message_box;
+    public bool has_messages {
+        get {
+            return message_box.get_children ().length () > 0;
+        }
+    }
 
     private int frequency = 0;
     private uint64 memory = 0;
@@ -75,7 +78,7 @@ public class Installer.CheckView : AbstractInstallerView {
         );
         specs_view.attach (get_comparison_grid (), 1, 2);
 
-        var message_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32) {
+        message_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32) {
             valign = Gtk.Align.CENTER
         };
 
@@ -92,8 +95,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
         action_area.add (ignore_button);
 
-        enough_space = get_has_enough_space ();
-        vm = get_vm ();
+        bool minimum_specs = true;
 
         frequency = get_frequency ();
         if (frequency < MINIMUM_FREQUENCY && frequency > 0) {
@@ -117,12 +119,12 @@ public class Installer.CheckView : AbstractInstallerView {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        if (!enough_space) {
+        if (!get_has_enough_space ()) {
             message_box.add (space_view);
             ignore_button.sensitive = false;
         }
 
-        if (vm) {
+        if (get_vm ()) {
             message_box.add (vm_view);
         }
 
@@ -131,11 +133,6 @@ public class Installer.CheckView : AbstractInstallerView {
         }
 
         show_all ();
-    }
-
-    // If all the requirements are met, skip this view (return true);
-    public bool check_requirements () {
-        return enough_space && minimum_specs && !vm;
     }
 
     private static bool get_has_enough_space () {
