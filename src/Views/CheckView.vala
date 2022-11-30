@@ -50,6 +50,12 @@ public class Installer.CheckView : AbstractInstallerView {
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
+        var beta_view = new CheckView (
+            _("Pre-Release Version"),
+            _("Only install on devices dedicated for development. <b>You will not be able to upgrade to a stable release</b>."),
+            "applications-development"
+        );
+
         var space_view = new CheckView (
             _("Not Enough Space"),
             _("%s of storage or more is required to install %s.").printf (GLib.format_size (MINIMUM_SPACE), Utils.get_pretty_name ()),
@@ -97,6 +103,18 @@ public class Installer.CheckView : AbstractInstallerView {
         memory = get_mem_info ();
         if (memory < MINIMUM_MEMORY) {
             minimum_specs = false;
+        }
+
+        var apt_sources = File.new_for_path ("/etc/apt/sources.list.d/elementary.list");
+        try {
+            var @is = apt_sources.read ();
+            var dis = new DataInputStream (@is);
+
+            if ("daily" in dis.read_line ()) {
+                message_box.add (beta_view);
+            }
+        } catch (Error e) {
+            critical ("Couldn't read apt sources: %s", e.message);
         }
 
         if (!enough_space) {
@@ -218,6 +236,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
             var description_label = new Gtk.Label (description) {
                 max_width_chars = 1, // Make Gtk wrap, but not expand the window
+                use_markup = true,
                 wrap = true,
                 xalign = 0
             };

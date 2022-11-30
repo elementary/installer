@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 00:37+0000\n"
+"POT-Creation-Date: 2022-11-28 19:44+0000\n"
 "PO-Revision-Date: 2016-05-25 22:12+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,16 +13,16 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 "X-Generator: Launchpad (build 18204)\n"
 
-#: src/MainWindow.vala:48
+#: src/Application.vala:42
 #, c-format
 msgid "Install %s"
 msgstr ""
 
-#: src/MainWindow.vala:273
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr ""
 
-#: src/MainWindow.vala:274
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -58,48 +58,58 @@ msgid "System Requirements"
 msgstr ""
 
 #: src/Views/CheckView.vala:54
-msgid "Not Enough Space"
+msgid "Pre-Release Version"
 msgstr ""
 
 #: src/Views/CheckView.vala:55
-#, c-format
-msgid "%s of storage or more is required to install %s."
+msgid ""
+"Only install on devices dedicated for development. <b>You will not be able "
+"to upgrade to a stable release</b>."
 msgstr ""
 
 #: src/Views/CheckView.vala:60
-msgid "Virtual Machine"
+msgid "Not Enough Space"
 msgstr ""
 
 #: src/Views/CheckView.vala:61
 #, c-format
-msgid "Some parts of %s may run slowly, freeze, or not function properly."
+msgid "%s of storage or more is required to install %s."
 msgstr ""
 
 #: src/Views/CheckView.vala:66
-msgid "Your Device May Be Too Slow"
+msgid "Virtual Machine"
 msgstr ""
 
 #: src/Views/CheckView.vala:67
+#, c-format
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
+msgstr ""
+
+#: src/Views/CheckView.vala:72
+msgid "Your Device May Be Too Slow"
+msgstr ""
+
+#: src/Views/CheckView.vala:73
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:83
+#: src/Views/CheckView.vala:89
 msgid "Ignore"
 msgstr ""
 
-#: src/Views/CheckView.vala:236
+#: src/Views/CheckView.vala:255
 msgid "Recommended:"
 msgstr ""
 
-#: src/Views/CheckView.vala:242
+#: src/Views/CheckView.vala:261
 msgid "Your Device:"
 msgstr ""
 
-#: src/Views/CheckView.vala:248 src/Views/CheckView.vala:252
+#: src/Views/CheckView.vala:267 src/Views/CheckView.vala:271
 msgid "Processor:"
 msgstr ""
 
-#: src/Views/CheckView.vala:264 src/Views/CheckView.vala:268
+#: src/Views/CheckView.vala:283 src/Views/CheckView.vala:287
 msgid "Memory:"
 msgstr ""
 
