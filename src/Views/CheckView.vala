@@ -111,7 +111,7 @@ public class Installer.CheckView : AbstractInstallerView {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        if (vm) {
+        if (get_vm ()) {
             message_box.add (vm_view);
         }
 
