@@ -165,7 +165,7 @@ public class Installer.MainWindow : Hdy.Window {
             set_check_view_visible (false);
         });
 
-        set_check_view_visible (!check_ignored && !check_view.check_requirements ());
+        set_check_view_visible (!check_ignored && check_view.has_messages);
     }
 
     private void load_encrypt_view () {
