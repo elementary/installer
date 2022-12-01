@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-28 19:44+0000\n"
-"PO-Revision-Date: 2022-11-09 10:29+0000\n"
+"PO-Revision-Date: 2022-12-02 06:10+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -63,13 +63,15 @@ msgstr "Configuration requise"
 
 #: src/Views/CheckView.vala:54
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Version préliminaire"
 
 #: src/Views/CheckView.vala:55
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Ne l'installez que sur des appareils dédiés au développement. <b>Vous ne "
+"pourrez pas effectuer de mise à jour vers une version stable</b>."
 
 #: src/Views/CheckView.vala:60
 msgid "Not Enough Space"
