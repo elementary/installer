@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-28 19:44+0000\n"
-"PO-Revision-Date: 2022-09-30 04:52+0000\n"
+"PO-Revision-Date: 2022-12-02 06:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -63,13 +63,14 @@ msgstr "システム要件"
 
 #: src/Views/CheckView.vala:54
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "プレリリース版"
 
 #: src/Views/CheckView.vala:55
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
-msgstr ""
+msgstr "テスト専用のデバイスにのみインストールしてください。<b>安定版へのアップグレー"
+"ドはできません</b>。"
 
 #: src/Views/CheckView.vala:60
 msgid "Not Enough Space"
