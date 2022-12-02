@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 19:44+0000\n"
+"POT-Creation-Date: 2022-12-02 06:10+0000\n"
 "PO-Revision-Date: 2021-03-21 22:19+0000\n"
 "Last-Translator: Shukrullo Turgunov <shookrullo@gmail.com>\n"
 "Language-Team: Uzbek <https://l10n.elementary.io/projects/installer/"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Install %s"
 msgstr "%sni o'rnatish"
 
-#: src/MainWindow.vala:262
+#: src/MainWindow.vala:267
 msgid "Connect to a Power Source"
 msgstr "Ta'minot qurilmasiga ulang"
 
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:268
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -57,63 +57,54 @@ msgstr "O'rnatishni bekor qilish"
 msgid "Test Mode"
 msgstr "Sinab ko'rish tartibi"
 
-#: src/Views/CheckView.vala:48
+#: src/Views/CheckView.vala:49
 msgid "System Requirements"
 msgstr ""
 
-#: src/Views/CheckView.vala:54
+#: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
 msgstr ""
 
-#: src/Views/CheckView.vala:55
+#: src/Views/CheckView.vala:56
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
 
-#: src/Views/CheckView.vala:60
-msgid "Not Enough Space"
-msgstr "Joy yetarli emas"
-
 #: src/Views/CheckView.vala:61
-#, c-format
-msgid "%s of storage or more is required to install %s."
-msgstr ""
-
-#: src/Views/CheckView.vala:66
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:67
+#: src/Views/CheckView.vala:62
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:72
+#: src/Views/CheckView.vala:67
 msgid "Your Device May Be Too Slow"
 msgstr "Sizning qurilmangiz judayam sekin ishlashi mumkin"
 
-#: src/Views/CheckView.vala:73
+#: src/Views/CheckView.vala:68
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:89
+#: src/Views/CheckView.vala:84
 msgid "Ignore"
 msgstr "Tashlab ketish"
 
-#: src/Views/CheckView.vala:255
+#: src/Views/CheckView.vala:210
 msgid "Recommended:"
 msgstr "Tavsiyalar:"
 
-#: src/Views/CheckView.vala:261
+#: src/Views/CheckView.vala:216
 msgid "Your Device:"
 msgstr "Sizning qurilmangiz:"
 
-#: src/Views/CheckView.vala:267 src/Views/CheckView.vala:271
+#: src/Views/CheckView.vala:222 src/Views/CheckView.vala:226
 msgid "Processor:"
 msgstr "Protsessor:"
 
-#: src/Views/CheckView.vala:283 src/Views/CheckView.vala:287
+#: src/Views/CheckView.vala:238 src/Views/CheckView.vala:242
 msgid "Memory:"
 msgstr "Xotira:"
 
@@ -528,6 +519,9 @@ msgstr "Fayl tizimi:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Odatiy (ext4)"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "Joy yetarli emas"
 
 #~ msgid ""
 #~ "There is not enough room on your device to install %s. We recommend a "

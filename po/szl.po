@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 19:44+0000\n"
+"POT-Creation-Date: 2022-12-02 06:10+0000\n"
 "PO-Revision-Date: 2022-04-20 09:24+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/installer/"
@@ -19,11 +19,11 @@ msgstr ""
 msgid "Install %s"
 msgstr "Instaluj %s"
 
-#: src/MainWindow.vala:262
+#: src/MainWindow.vala:267
 msgid "Connect to a Power Source"
 msgstr "Podłōncz do sztrōmu"
 
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:268
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -56,63 +56,54 @@ msgstr "Pociep instalacyjo"
 msgid "Test Mode"
 msgstr "Tryb testowy"
 
-#: src/Views/CheckView.vala:48
+#: src/Views/CheckView.vala:49
 msgid "System Requirements"
 msgstr ""
 
-#: src/Views/CheckView.vala:54
+#: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
 msgstr ""
 
-#: src/Views/CheckView.vala:55
+#: src/Views/CheckView.vala:56
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
 
-#: src/Views/CheckView.vala:60
-msgid "Not Enough Space"
-msgstr "Niy styko placu"
-
 #: src/Views/CheckView.vala:61
-#, c-format
-msgid "%s of storage or more is required to install %s."
-msgstr ""
-
-#: src/Views/CheckView.vala:66
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:67
+#: src/Views/CheckView.vala:62
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:72
+#: src/Views/CheckView.vala:67
 msgid "Your Device May Be Too Slow"
 msgstr "Twoja maszina może być za pōmało"
 
-#: src/Views/CheckView.vala:73
+#: src/Views/CheckView.vala:68
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:89
+#: src/Views/CheckView.vala:84
 msgid "Ignore"
 msgstr "Ignoruj"
 
-#: src/Views/CheckView.vala:255
+#: src/Views/CheckView.vala:210
 msgid "Recommended:"
 msgstr "Rekōmandowane:"
 
-#: src/Views/CheckView.vala:261
+#: src/Views/CheckView.vala:216
 msgid "Your Device:"
 msgstr "Twoja maszina:"
 
-#: src/Views/CheckView.vala:267 src/Views/CheckView.vala:271
+#: src/Views/CheckView.vala:222 src/Views/CheckView.vala:226
 msgid "Processor:"
 msgstr "Procesōr:"
 
-#: src/Views/CheckView.vala:283 src/Views/CheckView.vala:287
+#: src/Views/CheckView.vala:238 src/Views/CheckView.vala:242
 msgid "Memory:"
 msgstr "Pamiyńć:"
 
@@ -545,6 +536,9 @@ msgstr "Systym zbiorōw:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Wychodny (ext4)"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "Niy styko placu"
 
 #~ msgid ""
 #~ "There is not enough room on your device to install %s. We recommend a "

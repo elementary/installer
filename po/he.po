@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 19:44+0000\n"
-"PO-Revision-Date: 2022-10-04 15:33+0000\n"
+"POT-Creation-Date: 2022-12-02 06:10+0000\n"
+"PO-Revision-Date: 2022-12-02 06:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Install %s"
 msgstr "התקנת %s"
 
-#: src/MainWindow.vala:262
+#: src/MainWindow.vala:267
 msgid "Connect to a Power Source"
 msgstr "נא לחבר למקור חשמל"
 
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:268
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -55,63 +55,56 @@ msgstr "ביטול ההתקנה"
 msgid "Test Mode"
 msgstr "מצב התנסות"
 
-#: src/Views/CheckView.vala:48
+#: src/Views/CheckView.vala:49
 msgid "System Requirements"
 msgstr "דרישות המערכת"
 
-#: src/Views/CheckView.vala:54
-msgid "Pre-Release Version"
-msgstr ""
-
 #: src/Views/CheckView.vala:55
+msgid "Pre-Release Version"
+msgstr "מהדורת טרום הפצה"
+
+#: src/Views/CheckView.vala:56
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
-
-#: src/Views/CheckView.vala:60
-msgid "Not Enough Space"
-msgstr "אין די מקום"
+"להתקין רק על מכשירים שמיועדים לפיתוח. <b>לא יתאפשר לך לשדרג למהדורה יציבה</"
+"b>."
 
 #: src/Views/CheckView.vala:61
-#, c-format
-msgid "%s of storage or more is required to install %s."
-msgstr "%s ומעלה של אחסון דרושים לטובת התקנת %s."
-
-#: src/Views/CheckView.vala:66
 msgid "Virtual Machine"
 msgstr "מכונה וירטואלית"
 
-#: src/Views/CheckView.vala:67
+#: src/Views/CheckView.vala:62
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr "חלקים מסוימים מתוך %s עלולים לרוץ לאט, לקפוא או לא לתפקד כראוי."
 
-#: src/Views/CheckView.vala:72
+#: src/Views/CheckView.vala:67
 msgid "Your Device May Be Too Slow"
 msgstr "יתכן שההתקן שלך יהיה אטי מדי"
 
-#: src/Views/CheckView.vala:73
+#: src/Views/CheckView.vala:68
 msgid "This may cause it to run slowly or freeze."
 msgstr "עלול לגרום להאטת הפעילות או לקפאון."
 
-#: src/Views/CheckView.vala:89
+#: src/Views/CheckView.vala:84
 msgid "Ignore"
 msgstr "התעלמות"
 
-#: src/Views/CheckView.vala:255
+#: src/Views/CheckView.vala:210
 msgid "Recommended:"
 msgstr "מומלץ:"
 
-#: src/Views/CheckView.vala:261
+#: src/Views/CheckView.vala:216
 msgid "Your Device:"
 msgstr "ההתקן שלך:"
 
-#: src/Views/CheckView.vala:267 src/Views/CheckView.vala:271
+#: src/Views/CheckView.vala:222 src/Views/CheckView.vala:226
 msgid "Processor:"
 msgstr "מעבד:"
 
-#: src/Views/CheckView.vala:283 src/Views/CheckView.vala:287
+#: src/Views/CheckView.vala:238 src/Views/CheckView.vala:242
 msgid "Memory:"
 msgstr "זיכרון:"
 
@@ -508,6 +501,13 @@ msgstr "מערכת קבצים:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "בררת מחדל (ext4)"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "אין די מקום"
+
+#, c-format
+#~ msgid "%s of storage or more is required to install %s."
+#~ msgstr "%s ומעלה של אחסון דרושים לטובת התקנת %s."
 
 #~ msgid ""
 #~ "There is not enough room on your device to install %s. We recommend a "

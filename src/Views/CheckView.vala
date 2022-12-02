@@ -20,8 +20,6 @@
 public class Installer.CheckView : AbstractInstallerView {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     public const uint64 ONE_GB = 1000 * 1000 * 1000;
-    // Minimum 15 GB
-    public const uint64 MINIMUM_SPACE = 15 * ONE_GB;
     // Minimum 1.2 GHz
     public const int MINIMUM_FREQUENCY = 1200 * 1000;
     // Minimum 1GB
@@ -29,9 +27,12 @@ public class Installer.CheckView : AbstractInstallerView {
 
     public signal void next_step ();
 
-    private bool enough_space = true;
-    private bool minimum_specs = true;
-    private bool vm = false;
+    private Gtk.Box message_box;
+    public bool has_messages {
+        get {
+            return message_box.get_children ().length () > 0;
+        }
+    }
 
     private int frequency = 0;
     private uint64 memory = 0;
@@ -56,12 +57,6 @@ public class Installer.CheckView : AbstractInstallerView {
             "applications-development"
         );
 
-        var space_view = new CheckView (
-            _("Not Enough Space"),
-            _("%s of storage or more is required to install %s.").printf (GLib.format_size (MINIMUM_SPACE), Utils.get_pretty_name ()),
-            "drive-harddisk"
-        );
-
         var vm_view = new CheckView (
             _("Virtual Machine"),
             _("Some parts of %s may run slowly, freeze, or not function properly.").printf (Utils.get_pretty_name ()),
@@ -75,7 +70,7 @@ public class Installer.CheckView : AbstractInstallerView {
         );
         specs_view.attach (get_comparison_grid (), 1, 2);
 
-        var message_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32) {
+        message_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32) {
             valign = Gtk.Align.CENTER
         };
 
@@ -92,8 +87,7 @@ public class Installer.CheckView : AbstractInstallerView {
 
         action_area.add (ignore_button);
 
-        enough_space = get_has_enough_space ();
-        vm = get_vm ();
+        bool minimum_specs = true;
 
         frequency = get_frequency ();
         if (frequency < MINIMUM_FREQUENCY && frequency > 0) {
@@ -117,12 +111,7 @@ public class Installer.CheckView : AbstractInstallerView {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        if (!enough_space) {
-            message_box.add (space_view);
-            ignore_button.sensitive = false;
-        }
-
-        if (vm) {
+        if (get_vm ()) {
             message_box.add (vm_view);
         }
 
@@ -131,40 +120,6 @@ public class Installer.CheckView : AbstractInstallerView {
         }
 
         show_all ();
-    }
-
-    // If all the requirements are met, skip this view (return true);
-    public bool check_requirements () {
-        return enough_space && minimum_specs && !vm;
-    }
-
-    private static bool get_has_enough_space () {
-        var loop = new MainLoop ();
-        InstallerDaemon.DiskInfo? disks = null;
-
-        Daemon.get_default ().get_disks.begin (false, (obj, res) => {
-            try {
-                disks = ((Daemon)obj).get_disks.end (res);
-            } catch (Error e) {
-                critical ("Unable to get disks list: %s", e.message);
-            } finally {
-                loop.quit ();
-            }
-        });
-
-        loop.run ();
-
-        if (disks == null) {
-            return false;
-        }
-
-        foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
-            uint64 size = disk.sectors * disk.sector_size;
-            if (size > MINIMUM_SPACE) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private int get_frequency () {
