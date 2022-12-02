@@ -20,8 +20,6 @@
 public class Installer.CheckView : AbstractInstallerView {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     public const uint64 ONE_GB = 1000 * 1000 * 1000;
-    // Minimum 15 GB
-    public const uint64 MINIMUM_SPACE = 15 * ONE_GB;
     // Minimum 1.2 GHz
     public const int MINIMUM_FREQUENCY = 1200 * 1000;
     // Minimum 1GB
@@ -57,12 +55,6 @@ public class Installer.CheckView : AbstractInstallerView {
             _("Pre-Release Version"),
             _("Only install on devices dedicated for development. <b>You will not be able to upgrade to a stable release</b>."),
             "applications-development"
-        );
-
-        var space_view = new CheckView (
-            _("Not Enough Space"),
-            _("%s of storage or more is required to install %s.").printf (GLib.format_size (MINIMUM_SPACE), Utils.get_pretty_name ()),
-            "drive-harddisk"
         );
 
         var vm_view = new CheckView (
@@ -119,11 +111,6 @@ public class Installer.CheckView : AbstractInstallerView {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        if (!get_has_enough_space ()) {
-            message_box.add (space_view);
-            ignore_button.sensitive = false;
-        }
-
         if (get_vm ()) {
             message_box.add (vm_view);
         }
@@ -133,35 +120,6 @@ public class Installer.CheckView : AbstractInstallerView {
         }
 
         show_all ();
-    }
-
-    private static bool get_has_enough_space () {
-        var loop = new MainLoop ();
-        InstallerDaemon.DiskInfo? disks = null;
-
-        Daemon.get_default ().get_disks.begin (false, (obj, res) => {
-            try {
-                disks = ((Daemon)obj).get_disks.end (res);
-            } catch (Error e) {
-                critical ("Unable to get disks list: %s", e.message);
-            } finally {
-                loop.quit ();
-            }
-        });
-
-        loop.run ();
-
-        if (disks == null) {
-            return false;
-        }
-
-        foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
-            uint64 size = disk.sectors * disk.sector_size;
-            if (size > MINIMUM_SPACE) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private int get_frequency () {

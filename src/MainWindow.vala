@@ -23,6 +23,11 @@ public interface UPower : GLib.Object {
 }
 
 public class Installer.MainWindow : Hdy.Window {
+    // We have to do it step by step because the vala compiler has overflows with big numbers.
+    private const uint64 ONE_GB = 1000 * 1000 * 1000;
+    // Minimum 15 GB
+    private const uint64 MINIMUM_SPACE = 15 * ONE_GB;
+
     private Gtk.Label infobar_label;
     private Gtk.Stack stack;
 
@@ -189,7 +194,7 @@ public class Installer.MainWindow : Hdy.Window {
         disk_view.previous_view = try_install_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
-        disk_view.load.begin (CheckView.MINIMUM_SPACE);
+        disk_view.load.begin (MINIMUM_SPACE);
 
         load_check_view ();
 
@@ -205,7 +210,7 @@ public class Installer.MainWindow : Hdy.Window {
             partitioning_view.destroy ();
         }
 
-        partitioning_view = new PartitioningView (CheckView.MINIMUM_SPACE);
+        partitioning_view = new PartitioningView (MINIMUM_SPACE);
         partitioning_view.previous_view = try_install_view;
         stack.add (partitioning_view);
         stack.visible_child = partitioning_view;
