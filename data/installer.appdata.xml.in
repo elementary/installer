@@ -9,56 +9,62 @@
   <description>
     <p>Step by step installer for elementary OS itself.</p>
   </description>
+
   <releases>
     <release version="1.0.6" date="2022-11-14" urgency="medium">
-      <p>Improvements:</p>
-      <ul>
-        <li>Show an infobar on battery instead of switching to a different page</li>
-        <li>Show all system requirements warnings on a single page</li>
-        <li>Updated translations</li>
-      </ul>
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Show an infobar on battery instead of switching to a different page</li>
+          <li>Show all system requirements warnings on a single page</li>
+          <li>Warn about installing developer builds</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
     </release>
 
     <release version="1.0.5" date="2021-12-17" urgency="medium">
-      <p>Improvements:</p>
-      <ul>
-        <li>Double the boot partition size for encrypted installs</li>
-        <li>Updated translations</li>
-      </ul>
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Double the boot partition size for encrypted installs</li>
+          <li>Updated translations</li>
+       </ul>
+      </description>
     </release>
+
     <release version="1.0.4" date="2021-12-13" urgency="medium">
-      <p>Improvements:</p>
-      <ul>
-        <li>Warn about installing in a VM</li>
-        <li>Updated translations</li>
-      </ul>
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Warn about installing in a VM</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
     </release>
+
     <release version="1.0.3" date="2021-08-25" urgency="medium">
-      <p>Improvements:</p>
-      <ul>
-        <li>Avoid political naming of certain locales</li>
-        <li>Fix styles for "Unused" disk partitions</li>
-        <li>Updated translations</li>
-      </ul>
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Avoid political naming of certain locales</li>
+          <li>Fix styles for "Unused" disk partitions</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
     </release>
+
     <release version="1.0.2" date="2021-08-20" urgency="medium">
-      <p>Improvements:</p>
-      <ul>
-        <li>Ensure a usable hostname</li>
-        <li>Updated translations</li>
-      </ul>
-    </release>
-    <release version="1.0.1" date="2021-07-28" urgency="medium">
-      <p>Improvements:</p>
-      <ul>
-        <li>Performance improvements</li>
-        <li>Updated translations</li>
-      </ul>
-    </release>
-    <release version="1.0.0" date="2021-07-15" urgency="medium">
-      <p>Initial release</p>
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Ensure a usable hostname</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
     </release>
   </releases>
+
   <screenshots>
     <screenshot>
       <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-language.png</image>
