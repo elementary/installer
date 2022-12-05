@@ -10,7 +10,7 @@
     <p>Step by step installer for elementary OS itself.</p>
   </description>
   <releases>
-    <release version="1.0.6" date="2022-11-15" urgency="medium">
+    <release version="1.0.6" date="2022-12-05" urgency="medium">
       <p>Improvements:</p>
       <ul>
         <li>Show an infobar on battery instead of switching to a different page</li>
