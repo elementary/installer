@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 00:37+0000\n"
+"POT-Creation-Date: 2022-12-02 06:10+0000\n"
 "PO-Revision-Date: 2022-09-30 22:21+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/installer/"
@@ -15,16 +15,16 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:48
+#: src/Application.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Inštalovať %s"
 
-#: src/MainWindow.vala:273
+#: src/MainWindow.vala:267
 msgid "Connect to a Power Source"
 msgstr "Pripojte zdroj napájania"
 
-#: src/MainWindow.vala:274
+#: src/MainWindow.vala:268
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -57,55 +57,56 @@ msgstr "Zrušiť inštaláciu"
 msgid "Test Mode"
 msgstr "Testovací režim"
 
-#: src/Views/CheckView.vala:48
+#: src/Views/CheckView.vala:49
 msgid "System Requirements"
 msgstr "Systémové požiadavky"
 
-#: src/Views/CheckView.vala:54
-msgid "Not Enough Space"
-msgstr "Nedostatok miesta"
-
 #: src/Views/CheckView.vala:55
-#, c-format
-msgid "%s of storage or more is required to install %s."
-msgstr "Je potreba %s alebo viac úložiska na inštaláciu %s."
+msgid "Pre-Release Version"
+msgstr ""
 
-#: src/Views/CheckView.vala:60
+#: src/Views/CheckView.vala:56
+msgid ""
+"Only install on devices dedicated for development. <b>You will not be able "
+"to upgrade to a stable release</b>."
+msgstr ""
+
+#: src/Views/CheckView.vala:61
 msgid "Virtual Machine"
 msgstr "Virtuálne zariadenie"
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:62
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 "Niektoré časti %s môžu byť spomalené, môžu zamŕzať alebo nemusia správne "
 "fungovať."
 
-#: src/Views/CheckView.vala:66
+#: src/Views/CheckView.vala:67
 msgid "Your Device May Be Too Slow"
 msgstr "Vaše zariadenie môže byť príliš pomalé"
 
-#: src/Views/CheckView.vala:67
+#: src/Views/CheckView.vala:68
 msgid "This may cause it to run slowly or freeze."
 msgstr "Toto môže spôsobiť spomalenie alebo zamŕzanie."
 
-#: src/Views/CheckView.vala:83
+#: src/Views/CheckView.vala:84
 msgid "Ignore"
 msgstr "Ignorovať"
 
-#: src/Views/CheckView.vala:236
+#: src/Views/CheckView.vala:210
 msgid "Recommended:"
 msgstr "Odporúčané:"
 
-#: src/Views/CheckView.vala:242
+#: src/Views/CheckView.vala:216
 msgid "Your Device:"
 msgstr "Vaše zariadenie:"
 
-#: src/Views/CheckView.vala:248 src/Views/CheckView.vala:252
+#: src/Views/CheckView.vala:222 src/Views/CheckView.vala:226
 msgid "Processor:"
 msgstr "Procesor:"
 
-#: src/Views/CheckView.vala:264 src/Views/CheckView.vala:268
+#: src/Views/CheckView.vala:238 src/Views/CheckView.vala:242
 msgid "Memory:"
 msgstr "Pamäť RAM:"
 
@@ -512,6 +513,13 @@ msgstr "Súborový systém:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Predvolený (ext4)"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "Nedostatok miesta"
+
+#, c-format
+#~ msgid "%s of storage or more is required to install %s."
+#~ msgstr "Je potreba %s alebo viac úložiska na inštaláciu %s."
 
 #~ msgid ""
 #~ "There is not enough room on your device to install %s. We recommend a "
