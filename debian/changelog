@@ -1,3 +1,23 @@
+io.elementary.installer (1.0.6) xenial; urgency=medium
+
+  * Release 1.0.6 (#660)
+  * Update translation files
+  * Update translation template
+  * Update installer.appdata.xml.in (#673)
+  * CheckView: remove minimum space check (#670)
+  * CheckView: show when messagebox has children (#669)
+  * CheckView: warn about daily builds (#668)
+  * Update build-deb.yml (#667)
+  * Data: update wallpaper for Horus (#664)
+  * Allow MainWindow to be resized (#661)
+  * Metainfo: add 1.0.6 release notes (#659)
+  * Change uses of non-fdo icon to app icon (#658)
+  * Ship own app icon (#657)
+  * CheckView: rewrite as a single page (#649)
+  * MainWindow: throw an infobar on battery (#648)
+
+ -- Cody Garver <cody@elementary.io>  Tue, 06 Dec 2022 16:40:50 +0000
+
 io.elementary.installer (1.0.5) xenial; urgency=medium
 
   * Release 1.0.5 (#632)
