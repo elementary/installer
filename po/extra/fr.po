@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-05 21:41+0000\n"
-"PO-Revision-Date: 2021-07-30 21:34+0000\n"
+"PO-Revision-Date: 2022-12-06 15:09+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/extra/"
 "fr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.appdata.xml.in:7
@@ -36,45 +36,50 @@ msgstr "Assistant d'installation étape par étape pour installer elementary OS.
 #: data/installer.appdata.xml.in:41 data/installer.appdata.xml.in:51
 #: data/installer.appdata.xml.in:62
 msgid "Improvements:"
-msgstr ""
+msgstr "Améliorations :"
 
 #: data/installer.appdata.xml.in:18
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
+"Affichage d'une barre d'information sur la batterie plutôt que de passer à "
+"une autre page"
 
 #: data/installer.appdata.xml.in:19
 msgid "Show all system requirements warnings on a single page"
 msgstr ""
+"Affichage de tous les avertissements relatifs à la configuration requise sur "
+"une seule page"
 
 #: data/installer.appdata.xml.in:20
 msgid "Warn about installing developer builds"
-msgstr ""
+msgstr "Avertissement sur l'installation des versions pour les développeurs"
 
 #: data/installer.appdata.xml.in:21 data/installer.appdata.xml.in:34
 #: data/installer.appdata.xml.in:44 data/installer.appdata.xml.in:55
 #: data/installer.appdata.xml.in:65
 msgid "Updated translations"
-msgstr ""
+msgstr "Mise à jour des traductions"
 
 #: data/installer.appdata.xml.in:33
 msgid "Double the boot partition size for encrypted installs"
 msgstr ""
+"Doublement de la taille de la partition pour les installations chiffrées"
 
 #: data/installer.appdata.xml.in:43
 msgid "Warn about installing in a VM"
-msgstr ""
+msgstr "Avertissement concernant l'installation sur une machine virtuelle"
 
 #: data/installer.appdata.xml.in:53
 msgid "Avoid political naming of certain locales"
-msgstr ""
+msgstr "Nous avons évité les appellations politiques de certains lieux"
 
 #: data/installer.appdata.xml.in:54
 msgid "Fix styles for \"Unused\" disk partitions"
-msgstr ""
+msgstr "Correction de l'apparence pour les partitions de disque « Inutilisé »"
 
 #: data/installer.appdata.xml.in:64
 msgid "Ensure a usable hostname"
-msgstr ""
+msgstr "Nous nous sommes assurés que le nom d'hôte soit utilisable"
 
 #: data/installer.appdata.xml.in:94
 msgid "elementary, Inc."
