@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-05 21:41+0000\n"
-"PO-Revision-Date: 2021-08-26 12:08+0000\n"
+"PO-Revision-Date: 2022-12-06 15:09+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "extra/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.appdata.xml.in:7
@@ -54,7 +54,7 @@ msgstr ""
 #: data/installer.appdata.xml.in:44 data/installer.appdata.xml.in:55
 #: data/installer.appdata.xml.in:65
 msgid "Updated translations"
-msgstr ""
+msgstr "Frissített fordítások"
 
 #: data/installer.appdata.xml.in:33
 msgid "Double the boot partition size for encrypted installs"
