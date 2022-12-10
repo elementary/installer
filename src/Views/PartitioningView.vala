@@ -59,7 +59,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 break;
             case Distinst.PartitionTable.GPT:
                 // Device is in EFI mode, so we also require a boot partition
-                required_description = _("You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/efi)</b> partition.");
+                required_description = _("You must at least select a <b>Root (/)</b> partition and an optional <b>Boot (/boot/efi)</b> partition.");
                 break;
         }
 
@@ -225,7 +225,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
             case Distinst.PartitionTable.MSDOS:
                 break;
             case Distinst.PartitionTable.GPT:
-                required |= Defined.EFI;
                 break;
         }
 
