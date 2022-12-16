@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 00:37+0000\n"
-"PO-Revision-Date: 2022-11-11 14:29+0000\n"
+"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"PO-Revision-Date: 2022-12-09 22:25+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/extra/"
 "pl/>\n"
@@ -33,7 +33,54 @@ msgstr "Zainstaluj elementary OS"
 msgid "Step by step installer for elementary OS itself."
 msgstr "Instalator krok po kroku dla elementary OS."
 
-#: data/installer.appdata.xml.in:76
+#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:31
+#: data/installer.appdata.xml.in:41 data/installer.appdata.xml.in:51
+#: data/installer.appdata.xml.in:62
+msgid "Improvements:"
+msgstr "Ulepszenia:"
+
+#: data/installer.appdata.xml.in:18
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr ""
+"Pokazanie pasku z informacjami na baterii zamiast zmieniania na inną stronę"
+
+#: data/installer.appdata.xml.in:19
+msgid "Show all system requirements warnings on a single page"
+msgstr ""
+"Wszystkie ostrzeżenia o wymaganiach systemowych są pokazywane na jednej "
+"stronie"
+
+#: data/installer.appdata.xml.in:20
+msgid "Warn about installing developer builds"
+msgstr "Ostrzeżenie o instalacji wersji deweloperskich"
+
+#: data/installer.appdata.xml.in:21 data/installer.appdata.xml.in:34
+#: data/installer.appdata.xml.in:44 data/installer.appdata.xml.in:55
+#: data/installer.appdata.xml.in:65
+msgid "Updated translations"
+msgstr "Zaktualizowano tłumaczenia"
+
+#: data/installer.appdata.xml.in:33
+msgid "Double the boot partition size for encrypted installs"
+msgstr "Podwojono rozmiar partycji dla szyfrowanych instalacji"
+
+#: data/installer.appdata.xml.in:43
+msgid "Warn about installing in a VM"
+msgstr "Ostrzeżenie o instalacji w maszynie wirtualnej"
+
+#: data/installer.appdata.xml.in:53
+msgid "Avoid political naming of certain locales"
+msgstr "Uniknięcie upolitycznionych nazw niektórych ustawień regionalnych"
+
+#: data/installer.appdata.xml.in:54
+msgid "Fix styles for \"Unused\" disk partitions"
+msgstr "Naprawiono style dla \"Nieużywanych\" partycji dysku"
+
+#: data/installer.appdata.xml.in:64
+msgid "Ensure a usable hostname"
+msgstr "Upewniono się, że hostname jest możliwy do użycia"
+
+#: data/installer.appdata.xml.in:94
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
