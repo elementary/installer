@@ -42,12 +42,12 @@ public class Installer.CheckView : AbstractInstallerView {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("computer-fail", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("io.elementary.installer.caution", Gtk.IconSize.DIALOG) {
             pixel_size = 128,
             valign = Gtk.Align.END
         };
 
-        var title_label = new Gtk.Label (_("System Requirements")) {
+        var title_label = new Gtk.Label (_("Before Installing")) {
             valign = Gtk.Align.START
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
@@ -61,7 +61,7 @@ public class Installer.CheckView : AbstractInstallerView {
         var vm_view = new CheckView (
             _("Virtual Machine"),
             _("Some parts of %s may run slowly, freeze, or not function properly.").printf (Utils.get_pretty_name ()),
-            "computer"
+            "computer-fail"
         );
 
         var specs_view = new CheckView (
@@ -112,11 +112,11 @@ public class Installer.CheckView : AbstractInstallerView {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        if (get_vm ()) {
+        if (get_vm () || Installer.App.test_mode) {
             message_box.add (vm_view);
         }
 
-        if (!minimum_specs) {
+        if (!minimum_specs || Installer.App.test_mode) {
             message_box.add (specs_view);
         }
 
