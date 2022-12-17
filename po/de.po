@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2022-12-02 06:10+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
@@ -100,8 +100,10 @@ msgstr ""
 "Stillstand kommt."
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "Ignorieren"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "%s installieren"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -525,6 +527,9 @@ msgstr "Dateisystem:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Standard (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignorieren"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "Zu wenig Speicherplatz"

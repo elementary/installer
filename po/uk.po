@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2022-12-02 06:10+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
@@ -94,8 +94,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "Це може спричинити сповільнення роботи або зависання."
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "Знехтувати"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Встановити %s"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -518,6 +520,9 @@ msgstr "Файлова система:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Типова (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Знехтувати"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "Бракує простору"

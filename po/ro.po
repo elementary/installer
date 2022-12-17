@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2017-04-11 09:26+0000\n"
 "Last-Translator: Sorin Fatu <sorin.fatu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/installer/"
@@ -88,7 +88,7 @@ msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
+msgid "Install Anyway"
 msgstr ""
 
 #: src/Views/CheckView.vala:210

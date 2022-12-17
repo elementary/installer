@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2022-04-20 09:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/installer/"
@@ -90,8 +90,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "উপেক্ষা করুন"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "%s ইনস্টল করুন"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -508,6 +510,9 @@ msgstr ""
 #, fuzzy
 msgid "Default (ext4)"
 msgstr "ডিফল্ট"
+
+#~ msgid "Ignore"
+#~ msgstr "উপেক্ষা করুন"
 
 #, fuzzy
 #~ msgid "Not Enough Space"

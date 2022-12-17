@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2021-09-04 16:04+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
@@ -89,8 +89,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "تجاهل"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "ثبت %s"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -514,6 +516,9 @@ msgstr "نظام الملفات:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "الافتراضي (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "تجاهل"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "لا يوجد مساحة كافية"

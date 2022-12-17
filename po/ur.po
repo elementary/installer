@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2018-02-04 22:34+0000\n"
 "Last-Translator: Yasir Rehman <HazardDroidOfficial@gmail.com>\n"
 "Language-Team: Urdu <https://weblate.elementary.io/projects/installer/"
@@ -89,8 +89,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "ایگنور"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "انسٹال %s 1"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -493,6 +495,9 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr ""
+
+#~ msgid "Ignore"
+#~ msgstr "ایگنور"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "جگہ کافی نہیں ہے"

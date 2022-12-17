@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2018-06-01 00:07+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/installer/"
@@ -87,8 +87,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "Ihmal bike"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "%s Saz bike"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -488,6 +490,9 @@ msgstr ""
 #, fuzzy
 msgid "Default (ext4)"
 msgstr "Wekî erkên destpêkê"
+
+#~ msgid "Ignore"
+#~ msgstr "Ihmal bike"
 
 #~ msgid "Restart"
 #~ msgstr "Ji nû ve dest pê bike"

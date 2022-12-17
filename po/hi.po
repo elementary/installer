@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2018-05-15 00:05+0000\n"
 "Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/installer/"
@@ -89,8 +89,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "नज़रअंदाज़ करें"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "इनस्टॉल %s"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -488,6 +490,9 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr ""
+
+#~ msgid "Ignore"
+#~ msgstr "नज़रअंदाज़ करें"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "स्थान पर्याप्त नहीं"
