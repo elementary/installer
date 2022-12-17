@@ -25,6 +25,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
         keyboard_settings = new GLib.Settings ("org.gnome.desktop.input-sources");
 
         var image = new Gtk.Image.from_icon_name ("input-keyboard", Gtk.IconSize.DIALOG) {
+            pixel_size = 128,
             valign = Gtk.Align.END
         };
 
