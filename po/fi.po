@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2022-12-15 19:25+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
@@ -91,8 +91,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "Tämän vuoksi toiminta saattaa olla hidasta tai takkuilevaa."
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "Ohita"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Asenna %s"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -511,6 +513,9 @@ msgstr "Tiedostojärjestelmä:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Oletus (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Ohita"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "Tilaa ei ole riittävästi"

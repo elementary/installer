@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2018-04-06 00:03+0000\n"
 "Last-Translator: Coder206 <patrick.arrow206@outlook.com>\n"
 "Language-Team: French (Canada) <https://weblate.elementary.io/projects/"
@@ -87,8 +87,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "Ignorer"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Installer %s"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -484,6 +486,9 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr ""
+
+#~ msgid "Ignore"
+#~ msgstr "Ignorer"
 
 #~ msgid "Cancel"
 #~ msgstr "Annuler"

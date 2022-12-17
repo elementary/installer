@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
@@ -93,8 +93,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -509,6 +511,9 @@ msgstr "ਫ਼ਾਇਲ-ਸਿਸਟਮ:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "ਡਿਫ਼ਾਲਟ (ਈ.ਐਕਸ.ਟੀ4)"
+
+#~ msgid "Ignore"
+#~ msgstr "ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "ਜਗ੍ਹਾ ਕਾਫ਼ੀ ਨਹੀਂ ਹੈ"

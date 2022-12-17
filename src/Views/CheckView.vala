@@ -82,7 +82,7 @@ public class Installer.CheckView : AbstractInstallerView {
         content_area.attach (title_label, 0, 1);
         content_area.attach (message_box, 1, 0, 1, 2);
 
-        var ignore_button = new Gtk.Button.with_label (_("Ignore"));
+        var ignore_button = new Gtk.Button.with_label (_("Install Anyway"));
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (() => next_step ());
 

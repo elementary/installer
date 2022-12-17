@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2022-12-02 06:10+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
@@ -93,8 +93,10 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "Cela peut entraîner un fonctionnement lent ou des blocages."
 
 #: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "Ignorer"
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Installer %s"
 
 #: src/Views/CheckView.vala:210
 msgid "Recommended:"
@@ -517,6 +519,9 @@ msgstr "Système de fichiers :"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Défaut (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignorer"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "Pas assez d'espace"
