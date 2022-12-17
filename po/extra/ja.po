@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 00:44+0000\n"
 "PO-Revision-Date: 2022-12-15 19:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/extra/"
@@ -58,7 +58,8 @@ msgstr "翻訳の更新"
 
 #: data/installer.appdata.xml.in:33
 msgid "Double the boot partition size for encrypted installs"
-msgstr "暗号化を有効にしたインストールではブートパーティションのサイズを2倍にするよう"
+msgstr ""
+"暗号化を有効にしたインストールではブートパーティションのサイズを2倍にするよう"
 "に修正"
 
 #: data/installer.appdata.xml.in:43
