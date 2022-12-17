@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 01:08+0000\n"
-"PO-Revision-Date: 2022-12-02 06:10+0000\n"
+"PO-Revision-Date: 2022-12-18 22:25+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -56,10 +56,8 @@ msgid "Test Mode"
 msgstr "מצב התנסות"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "לנסות להתקין שוב"
+msgstr "לפני ההתקנה"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
@@ -91,10 +89,8 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "עלול לגרום להאטת הפעילות או לקפאון."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "התקנת %s"
+msgstr "להתקין בכל זאת"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
