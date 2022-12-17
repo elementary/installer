@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 01:08+0000\n"
-"PO-Revision-Date: 2021-12-09 06:08+0000\n"
+"PO-Revision-Date: 2022-12-18 22:25+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/installer/nb/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:42
@@ -65,13 +65,15 @@ msgstr "Prøv å installere igjen"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Forhåndsutgivelsesversjon"
 
 #: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Kun installer på enheter tiltenkt utvikling. <b>Du vil ikke kunne oppgradere "
+"til en stabil utgave</b>."
 
 #: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
@@ -81,6 +83,7 @@ msgstr "Virtuell maskin"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Noen deler av %s kan kjøre tregt, henge seg, eller ikke fungere slik de skal."
 
 #: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
@@ -88,7 +91,7 @@ msgstr "Enheten din kan være for treg"
 
 #: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Dette kan forårsake treg funksjonalitet, eller at ting stopper."
 
 #: src/Views/CheckView.vala:85
 #, fuzzy
