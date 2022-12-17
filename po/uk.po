@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 01:08+0000\n"
-"PO-Revision-Date: 2022-12-02 06:10+0000\n"
+"PO-Revision-Date: 2022-12-18 22:25+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -59,10 +59,8 @@ msgid "Test Mode"
 msgstr "Режим тестування"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Повторити спробу встановлення"
+msgstr "До встановлення"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
@@ -96,10 +94,8 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "Це може спричинити сповільнення роботи або зависання."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Встановити %s"
+msgstr "Усе одно встановити"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
