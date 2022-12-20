@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 01:08+0000\n"
-"PO-Revision-Date: 2022-12-02 06:10+0000\n"
+"PO-Revision-Date: 2022-12-21 13:25+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -58,10 +58,8 @@ msgid "Test Mode"
 msgstr "Mode Test"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Essayer d'installer à nouveau"
+msgstr "Avant l'installation"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
@@ -95,10 +93,8 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "Cela peut entraîner un fonctionnement lent ou des blocages."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Installer %s"
+msgstr "Installer quand même"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
