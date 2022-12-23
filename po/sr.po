@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 01:08+0000\n"
 "PO-Revision-Date: 2021-03-12 08:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/installer/"
@@ -45,7 +45,7 @@ msgstr "Поновно подизање система у режиму проб�
 msgid "Test mode switch user"
 msgstr "Промена корисника режима пробе"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -58,62 +58,66 @@ msgstr "Откажи инсталацију"
 msgid "Test Mode"
 msgstr "Режим пробе"
 
-#: src/Views/CheckView.vala:49
-msgid "System Requirements"
-msgstr ""
+#: src/Views/CheckView.vala:50
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Before Installing"
+msgstr "Пробај поновну инсталацију"
 
-#: src/Views/CheckView.vala:55
+#: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
 msgstr ""
 
-#: src/Views/CheckView.vala:56
+#: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:62
+#: src/Views/CheckView.vala:63
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:67
+#: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
 msgstr "Ваш уређај може бити превише спор"
 
-#: src/Views/CheckView.vala:68
+#: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "Занемари"
+#: src/Views/CheckView.vala:85
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Инсталирање „%s“"
 
-#: src/Views/CheckView.vala:210
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "Препоручено:"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "Ваш уређај:"
 
-#: src/Views/CheckView.vala:222 src/Views/CheckView.vala:226
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "Процесор:"
 
-#: src/Views/CheckView.vala:238 src/Views/CheckView.vala:242
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "Меморија:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
 msgstr "Изаберите диск"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -121,11 +125,11 @@ msgstr ""
 "Ово ће обрисати све податке на изабраном диску. Ако нисте направили резерву "
 "ваших података, можете отказати инсталацију и користити демо режим."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Добављам текуће подешавање…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Обриши и инсталирај"
 
@@ -190,8 +194,8 @@ msgstr "Изабери лозинку шифровања"
 msgid "Confirm Password"
 msgstr "Потврди лозинку"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Назад"
 
@@ -209,11 +213,11 @@ msgstr "Изабери лозинку шифровања"
 msgid "Passwords do not match"
 msgstr "Лозинке се не поклапају"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "Не могу да инсталирам"
 
-#: src/Views/ErrorView.vala:35
+#: src/Views/ErrorView.vala:36
 #, fuzzy, c-format
 #| msgid ""
 #| "Installing %s failed, possibly due to a hardware error. Your device may "
@@ -225,75 +229,75 @@ msgstr ""
 "Инсталирање „%s“ није успело, вероватно због грешке у хардверу. Ваш уређај "
 "не може поново да се покрене исправно. Можете покушати следеће:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:47
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "• Да покушате поновну инсталацију"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:58
 #, fuzzy
 #| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "• Да користите демо режим и покушате ручну поправку"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:68
 #, fuzzy
 #| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
 msgstr "• Да поново покренете уређај да бисте подигли систем са другог диска"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr "Појединости"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Поново покрени уређај"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Пробај демо режим"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "Пробај поновну инсталацију"
 
-#: src/Views/KeyboardLayoutView.vala:31
+#: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Распоред тастатуре"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Упишите нешто да испробате распоред тастатуре"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Прикажи распоред тастатуре"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Изабери"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr "Основно"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr "Језик уноса"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Језици"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Изаберите језик"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "Тренутно активан језик"
 
@@ -371,11 +375,11 @@ msgstr "Подешавам систем"
 msgid "Finishing the Installation"
 msgstr "Завршавам инсталацију"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
 msgstr "Проба или инсталација"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -383,24 +387,24 @@ msgstr ""
 "Измене неће бити сачуване, а подаци са вашег претходног ОС-а неће бити "
 "измењени. Учинковитост и функције неће одразити инсталирано искуство."
 
-#: src/Views/TryInstallView.vala:46
+#: src/Views/TryInstallView.vala:47
 #, fuzzy
 #| msgid "Erase and Install"
 msgid "Erase Disk and Install"
 msgstr "Обриши и инсталирај"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Обришите све и инсталирајте свеж примерак „%s“."
 
-#: src/Views/TryInstallView.vala:54
+#: src/Views/TryInstallView.vala:55
 #, fuzzy
 #| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
 msgstr "Произвољно (напредно)"
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -408,31 +412,31 @@ msgstr ""
 "Направите, промените величину или другачије управљајте партицијама ручно. "
 "Ова метода може довести до губитка података."
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr "Следеће"
 
-#: src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:114
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "Не могу да инсталирам"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
 msgstr "Настави подешавања"
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, fuzzy, c-format
 #| msgid "%s has been installed."
 msgid "%s has been installed"
 msgstr "„%s“ је инсталиран."
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Угаси"
 
-#: src/Views/SuccessView.vala:96
+#: src/Views/SuccessView.vala:97
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
@@ -440,7 +444,7 @@ msgstr[0] "Ваш уређај ће се сам поново покренути 
 msgstr[1] "Ваш уређај ће се сам поново покренути за %i секунде."
 msgstr[2] "Ваш уређај ће се сам поново покренути за %i секунди."
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -538,6 +542,9 @@ msgstr "Систем датотека:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Основни (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Занемари"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "Нема довољно места"

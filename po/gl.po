@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 01:08+0000\n"
 "PO-Revision-Date: 2022-04-20 09:24+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/installer/"
@@ -44,7 +44,7 @@ msgstr "Reiniciar en modo de proba"
 msgid "Test mode switch user"
 msgstr "Cambiar de usuario en modo de proba"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -57,62 +57,66 @@ msgstr "Cancelar Instalación"
 msgid "Test Mode"
 msgstr "Modo de Proba"
 
-#: src/Views/CheckView.vala:49
-msgid "System Requirements"
-msgstr ""
+#: src/Views/CheckView.vala:50
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Before Installing"
+msgstr "Proba Instalando de Novo"
 
-#: src/Views/CheckView.vala:55
+#: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
 msgstr ""
 
-#: src/Views/CheckView.vala:56
+#: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:62
+#: src/Views/CheckView.vala:63
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:67
+#: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
 msgstr "Pode Que O Teu Dispositivo Sexa Moi Lento"
 
-#: src/Views/CheckView.vala:68
+#: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "Ignorar"
+#: src/Views/CheckView.vala:85
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Instalar %s"
 
-#: src/Views/CheckView.vala:210
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "Recomendado:"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "O Teu Dispositivo:"
 
-#: src/Views/CheckView.vala:222 src/Views/CheckView.vala:226
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "Procesador:"
 
-#: src/Views/CheckView.vala:238 src/Views/CheckView.vala:242
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "Memoria:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
 msgstr "Selecciona un Disco"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -120,11 +124,11 @@ msgstr ""
 "Isto eliminará tódolos datos no disco seleccionado. Se non fixo unha copia "
 "de seguridade, pode cancelar a instalación e usalo Modo Demo."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Cargando a configuración actual…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Borrar e Instalar"
 
@@ -194,8 +198,8 @@ msgstr "Elixa un Contrasinal de Cifrado"
 msgid "Confirm Password"
 msgstr "Confirma o Contrasinal"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Atrás"
 
@@ -213,11 +217,11 @@ msgstr "Elixa un Contrasinal de Cifrado"
 msgid "Passwords do not match"
 msgstr "Os contrasinais non coinciden"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "Non foi Posíbel a Instalación"
 
-#: src/Views/ErrorView.vala:35
+#: src/Views/ErrorView.vala:36
 #, fuzzy, c-format
 #| msgid ""
 #| "Installing %s failed, possibly due to a hardware error. Your device may "
@@ -229,75 +233,75 @@ msgstr ""
 "A instalación de %s faiou, posiblemente debido a un erro no hardware. O "
 "dispositivo podería non reiniciarse debidamente. Pode intentar o seguinte:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:47
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "• Proba a instalar de novo"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:58
 #, fuzzy
 #| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "• Usa o Modo Demo e intenta a recuperación manual"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:68
 #, fuzzy
 #| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
 msgstr "• Reinicia o teu dispositivo para arrancar dende outro disco"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr "Detalles"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Reinicia o Dispositivo"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Proba o Modo Demo"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "Proba Instalando de Novo"
 
-#: src/Views/KeyboardLayoutView.vala:31
+#: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Distribución do Teclado"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Escribe para probar a distribución do teclado"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Mostrar distribución do teclado"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Seleccionar"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr "Por Defecto"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr "Linguaxe de Entrada"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Linguaxes"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Seleccionar unha Linguaxe"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "Linguaxe actualmente activa"
 
@@ -375,11 +379,11 @@ msgstr "Configurando o sistema"
 msgid "Finishing the Installation"
 msgstr "Finalizando a instalación"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
 msgstr "Probar ou instalar"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -389,24 +393,24 @@ msgstr ""
 "características poderían non reflectir a experiencia do sistema operativo ao "
 "ser instalado."
 
-#: src/Views/TryInstallView.vala:46
+#: src/Views/TryInstallView.vala:47
 #, fuzzy
 #| msgid "Erase and Install"
 msgid "Erase Disk and Install"
 msgstr "Borrar e Instalar"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Eliminar todo e instalar unha nova copia de %s."
 
-#: src/Views/TryInstallView.vala:54
+#: src/Views/TryInstallView.vala:55
 #, fuzzy
 #| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
 msgstr "Personalizado (avanzado)"
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -414,37 +418,37 @@ msgstr ""
 "Cree, cambie o tamaño ou administre as particións manualmente. Este método "
 "pode levar á pérdida de datos."
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr "Seguinte"
 
-#: src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:114
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "Non foi Posíbel a Instalación"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
 msgstr "Continuar coa configuración"
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Apagar"
 
-#: src/Views/SuccessView.vala:96
+#: src/Views/SuccessView.vala:97
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -542,6 +546,9 @@ msgstr "Sistema de ficheiros:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Predeterminado (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignorar"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "Non hai espazo suficiente"

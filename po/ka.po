@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
+"POT-Creation-Date: 2022-12-17 01:08+0000\n"
 "PO-Revision-Date: 2018-06-06 00:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Georgian <https://weblate.elementary.io/projects/installer/"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Test mode switch user"
 msgstr ""
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr ""
@@ -56,73 +56,76 @@ msgstr "ინსტალაციის გაუქმება"
 msgid "Test Mode"
 msgstr "სცადეთ სადემონსტარციო ვერსია"
 
-#: src/Views/CheckView.vala:49
-msgid "System Requirements"
-msgstr ""
+#: src/Views/CheckView.vala:50
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Before Installing"
+msgstr "სცადეთ ინსტალაცია თავიდან"
 
-#: src/Views/CheckView.vala:55
+#: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
 msgstr ""
 
-#: src/Views/CheckView.vala:56
+#: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:62
+#: src/Views/CheckView.vala:63
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:67
+#: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
 msgstr ""
 
-#: src/Views/CheckView.vala:68
+#: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "უგულვებელყოფა"
+#: src/Views/CheckView.vala:85
+#, fuzzy
+msgid "Install Anyway"
+msgstr "დააინსტალირე %s"
 
-#: src/Views/CheckView.vala:210
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "რეკომენდებულია:"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr ""
 
-#: src/Views/CheckView.vala:222 src/Views/CheckView.vala:226
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "პროცესორი:"
 
-#: src/Views/CheckView.vala:238 src/Views/CheckView.vala:242
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "მეხსიერება:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 #, fuzzy
 msgid "Select a Drive"
 msgstr "აირჩიეთ ენა"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr "ეს წაშლის ყველა მონაემს არჩეულ დისკზე."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr ""
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "წაშალე და ჩაწერე"
 
@@ -173,8 +176,8 @@ msgstr ""
 msgid "Confirm Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "უკუშლა"
 
@@ -190,12 +193,12 @@ msgstr ""
 msgid "Passwords do not match"
 msgstr ""
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 #, fuzzy
 msgid "Could Not Install"
 msgstr "შეუძლებელია ინსტალაცია"
 
-#: src/Views/ErrorView.vala:35
+#: src/Views/ErrorView.vala:36
 #, fuzzy, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -204,71 +207,71 @@ msgstr ""
 "ინსტალაცია წარუმატებელია, შესაბამისად თქვენი კომპიუტერი შეიძლება არ "
 "გადაიტვირთოს სწორად. შეგიძლიათ ცადოთ ქვემოთ ჩამოთვლილთაგან ერთ-ერთი:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:47
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "სცადეთ ინსტალაცია ახლიდან"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:58
 msgid "Use Demo Mode and try to manually recover"
 msgstr ""
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:68
 msgid "Restart the device and boot from another drive"
 msgstr ""
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "გადატვირთეთ კომპიუტერი"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "სცადეთ სადემონსტარციო ვერსია"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "სცადეთ ინსტალაცია თავიდან"
 
-#: src/Views/KeyboardLayoutView.vala:31
+#: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "კლავიატურის სქემა"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "დაბეჭდეთ რათა გამოსცადოთ განლაგება"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "გამოაჩინე კლავიატურის განლაგება"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "არჩევა"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr ""
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr ""
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "ენა"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "აირჩიეთ ენა"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "თარგმანი"
 
@@ -342,67 +345,67 @@ msgstr "სისტემის კონფიგურაცია"
 msgid "Finishing the Installation"
 msgstr "სრულდება ინსტალაცია"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 #, fuzzy
 msgid "Try or Install"
 msgstr "სცადეთ ინსტალაცია თავიდან"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:46
+#: src/Views/TryInstallView.vala:47
 #, fuzzy
 #| msgid "Erase and Install"
 msgid "Erase Disk and Install"
 msgstr "წაშალე და ჩაწერე"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:54
+#: src/Views/TryInstallView.vala:55
 msgid "Custom Install (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:114
 #, fuzzy
 msgid "Custom Install"
 msgstr "შეუძლებელია ინსტალაცია"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
 msgstr ""
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "გამორთვა"
 
-#: src/Views/SuccessView.vala:96
+#: src/Views/SuccessView.vala:97
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] ""
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -493,6 +496,9 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr ""
+
+#~ msgid "Ignore"
+#~ msgstr "უგულვებელყოფა"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "არ არის საკმარისი მოცულობა"

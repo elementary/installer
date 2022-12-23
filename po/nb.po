@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 21:41+0000\n"
-"PO-Revision-Date: 2021-12-09 06:08+0000\n"
+"POT-Creation-Date: 2022-12-17 01:08+0000\n"
+"PO-Revision-Date: 2022-12-18 22:25+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/installer/nb/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:42
@@ -44,7 +44,7 @@ msgstr "Testmodus-omstart"
 msgid "Test mode switch user"
 msgstr "Testmodus-brukerbytte"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -57,62 +57,69 @@ msgstr "Avbryt installasjon"
 msgid "Test Mode"
 msgstr "Prøv demo-modus"
 
-#: src/Views/CheckView.vala:49
-msgid "System Requirements"
-msgstr ""
-
-#: src/Views/CheckView.vala:55
-msgid "Pre-Release Version"
-msgstr ""
+#: src/Views/CheckView.vala:50
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Before Installing"
+msgstr "Prøv å installere igjen"
 
 #: src/Views/CheckView.vala:56
+msgid "Pre-Release Version"
+msgstr "Forhåndsutgivelsesversjon"
+
+#: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Kun installer på enheter tiltenkt utvikling. <b>Du vil ikke kunne oppgradere "
+"til en stabil utgave</b>."
 
-#: src/Views/CheckView.vala:61
+#: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
 msgstr "Virtuell maskin"
 
-#: src/Views/CheckView.vala:62
+#: src/Views/CheckView.vala:63
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Noen deler av %s kan kjøre tregt, henge seg, eller ikke fungere slik de skal."
 
-#: src/Views/CheckView.vala:67
+#: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
 msgstr "Enheten din kan være for treg"
 
-#: src/Views/CheckView.vala:68
+#: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Dette kan forårsake treg funksjonalitet, eller at ting stopper."
 
-#: src/Views/CheckView.vala:84
-msgid "Ignore"
-msgstr "Ignorer"
+#: src/Views/CheckView.vala:85
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Installer %s"
 
-#: src/Views/CheckView.vala:210
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "Anbefalt:"
 
-#: src/Views/CheckView.vala:216
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "Enheten din:"
 
-#: src/Views/CheckView.vala:222 src/Views/CheckView.vala:226
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "Prosessor:"
 
-#: src/Views/CheckView.vala:238 src/Views/CheckView.vala:242
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "Minne:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
 msgstr "Velg en disk"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -121,11 +128,11 @@ msgstr ""
 "sikkerhetskopiert dataene dine, kan du avbryte installasjonen og bruke demo-"
 "modus."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Henter gjeldende oppsett…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Slett og installer"
 
@@ -189,8 +196,8 @@ msgstr "Velg krypteringspassord"
 msgid "Confirm Password"
 msgstr "Bekreft passord"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Tilbake"
 
@@ -206,11 +213,11 @@ msgstr "Sett krypteringspassord"
 msgid "Passwords do not match"
 msgstr "Passordene samsvarer ikke"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "Kunne ikke installere"
 
-#: src/Views/ErrorView.vala:35
+#: src/Views/ErrorView.vala:36
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -219,67 +226,67 @@ msgstr ""
 "Installasjonen av %s mislyktes antagelig som følge av en maskinvarefeil. "
 "Enheten din kan ha problemer med å starte på nytt. Prøv én av følgende:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:47
 msgid "Try the installation again"
 msgstr "Prøv å installere igjen"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:58
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Bruk demo-modus for å prøve å tilbakestille manuelt"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:68
 msgid "Restart the device and boot from another drive"
 msgstr "Start enheten på nytt og start opp igjen fra en annen lagringsstasjon"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr "Detaljer"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Start maskinen på nytt"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Prøv demo-modus"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "Prøv å installere igjen"
 
-#: src/Views/KeyboardLayoutView.vala:31
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "Velg tastaturoppsett"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Skriv for å teste ditt oppsett"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Vis tastaturoppsett"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Velg"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr "Forvalg"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr "Inndataspråk"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Språk"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Velg et språk"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "Nåværende språk"
 
@@ -357,11 +364,11 @@ msgstr "Setter opp systemet"
 msgid "Finishing the Installation"
 msgstr "Fullfører installasjonen"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
 msgstr "Prøv eller installer"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -370,20 +377,20 @@ msgstr ""
 "tidligere operativsystem vil forbli uendret. Ytelse og funksjoner er ikke på "
 "samme nivå som ved faktisk installasjon."
 
-#: src/Views/TryInstallView.vala:46
+#: src/Views/TryInstallView.vala:47
 msgid "Erase Disk and Install"
 msgstr "Slett disk og installer"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Slett alt og installer en ny kopi av %s."
 
-#: src/Views/TryInstallView.vala:54
+#: src/Views/TryInstallView.vala:55
 msgid "Custom Install (Advanced)"
 msgstr "Egendefinert installasjon (avansert)"
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -391,35 +398,35 @@ msgstr ""
 "Opprett, endre størrelse, og på annet vis behandle partisjoner. Denne "
 "metoden kan lede til datatap."
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr "Neste"
 
-#: src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
 msgstr "Egendefinert installasjon"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
 msgstr "Fortsett oppsett"
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
 msgstr "%s har blitt installert"
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Slå av"
 
-#: src/Views/SuccessView.vala:96
+#: src/Views/SuccessView.vala:97
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "Omstart av enheten vil skje om %i sekund."
 msgstr[1] "Omstart av enheten vil skje om %i sekunder."
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -512,6 +519,9 @@ msgstr "Filsystem:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Forvalg (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignorer"
 
 #~ msgid "Not Enough Space"
 #~ msgstr "Ikke nok plass"
