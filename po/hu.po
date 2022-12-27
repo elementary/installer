@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 01:08+0000\n"
-"PO-Revision-Date: 2022-12-02 06:10+0000\n"
+"PO-Revision-Date: 2022-12-28 22:25+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
@@ -58,10 +58,8 @@ msgid "Test Mode"
 msgstr "Tesztmód"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Próbálja újra telepíteni"
+msgstr "Telepítés előtt"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
@@ -95,10 +93,8 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "Ez lassú működést vagy fagyást okozhat."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "%s telepítése"
+msgstr "Telepítés mindenképp"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
