@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 01:08+0000\n"
+"POT-Creation-Date: 2023-01-03 20:14+0000\n"
 "PO-Revision-Date: 2019-09-07 18:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/installer/extra/"
@@ -27,51 +27,55 @@ msgstr "Instalați sistemul de operare"
 msgid "Step by step installer for elementary OS itself."
 msgstr ""
 
-#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:31
-#: data/installer.appdata.xml.in:41 data/installer.appdata.xml.in:51
+#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
+#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
 #: data/installer.appdata.xml.in:62
 msgid "Improvements:"
 msgstr ""
 
 #: data/installer.appdata.xml.in:18
-msgid "Show an infobar on battery instead of switching to a different page"
+msgid "Use large icons in views"
 msgstr ""
 
 #: data/installer.appdata.xml.in:19
-msgid "Show all system requirements warnings on a single page"
+msgid "Add a custom icon for Before Installing view"
 msgstr ""
 
-#: data/installer.appdata.xml.in:20
-msgid "Warn about installing developer builds"
-msgstr ""
-
-#: data/installer.appdata.xml.in:21 data/installer.appdata.xml.in:34
-#: data/installer.appdata.xml.in:44 data/installer.appdata.xml.in:55
-#: data/installer.appdata.xml.in:65
+#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
+#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
+#: data/installer.appdata.xml.in:66
 msgid "Updated translations"
 msgstr ""
 
-#: data/installer.appdata.xml.in:33
+#: data/installer.appdata.xml.in:29
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr ""
+
+#: data/installer.appdata.xml.in:30
+msgid "Show all system requirements warnings on a single page"
+msgstr ""
+
+#: data/installer.appdata.xml.in:31
+msgid "Warn about installing developer builds"
+msgstr ""
+
+#: data/installer.appdata.xml.in:44
 msgid "Double the boot partition size for encrypted installs"
 msgstr ""
 
-#: data/installer.appdata.xml.in:43
+#: data/installer.appdata.xml.in:54
 msgid "Warn about installing in a VM"
 msgstr ""
 
-#: data/installer.appdata.xml.in:53
+#: data/installer.appdata.xml.in:64
 msgid "Avoid political naming of certain locales"
 msgstr ""
 
-#: data/installer.appdata.xml.in:54
+#: data/installer.appdata.xml.in:65
 msgid "Fix styles for \"Unused\" disk partitions"
 msgstr ""
 
-#: data/installer.appdata.xml.in:64
-msgid "Ensure a usable hostname"
-msgstr ""
-
-#: data/installer.appdata.xml.in:94
+#: data/installer.appdata.xml.in:95
 msgid "elementary, Inc."
 msgstr ""
 

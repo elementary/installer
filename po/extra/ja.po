@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 01:08+0000\n"
+"POT-Creation-Date: 2023-01-03 20:14+0000\n"
 "PO-Revision-Date: 2022-12-15 19:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/extra/"
@@ -32,53 +32,57 @@ msgstr "elementary OS をインストール"
 msgid "Step by step installer for elementary OS itself."
 msgstr "elementary OS 向けのステップバイステップなインストーラーです。"
 
-#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:31
-#: data/installer.appdata.xml.in:41 data/installer.appdata.xml.in:51
+#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
+#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
 #: data/installer.appdata.xml.in:62
 msgid "Improvements:"
 msgstr "改善点:"
 
 #: data/installer.appdata.xml.in:18
-msgid "Show an infobar on battery instead of switching to a different page"
-msgstr "バッテリー稼働時の警告を独立したページではなく情報バーとして表示"
+msgid "Use large icons in views"
+msgstr ""
 
 #: data/installer.appdata.xml.in:19
-msgid "Show all system requirements warnings on a single page"
-msgstr "全システム要件に関する警告をひとつのページに表示するように修正"
+msgid "Add a custom icon for Before Installing view"
+msgstr ""
 
-#: data/installer.appdata.xml.in:20
-msgid "Warn about installing developer builds"
-msgstr "開発ビルドのインストール時に警告を表示するように修正"
-
-#: data/installer.appdata.xml.in:21 data/installer.appdata.xml.in:34
-#: data/installer.appdata.xml.in:44 data/installer.appdata.xml.in:55
-#: data/installer.appdata.xml.in:65
+#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
+#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
+#: data/installer.appdata.xml.in:66
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
-#: data/installer.appdata.xml.in:33
+#: data/installer.appdata.xml.in:29
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr "バッテリー稼働時の警告を独立したページではなく情報バーとして表示"
+
+#: data/installer.appdata.xml.in:30
+msgid "Show all system requirements warnings on a single page"
+msgstr "全システム要件に関する警告をひとつのページに表示するように修正"
+
+#: data/installer.appdata.xml.in:31
+msgid "Warn about installing developer builds"
+msgstr "開発ビルドのインストール時に警告を表示するように修正"
+
+#: data/installer.appdata.xml.in:44
 msgid "Double the boot partition size for encrypted installs"
 msgstr ""
 "暗号化を有効にしたインストールではブートパーティションのサイズを2倍にするよう"
 "に修正"
 
-#: data/installer.appdata.xml.in:43
+#: data/installer.appdata.xml.in:54
 msgid "Warn about installing in a VM"
 msgstr "VM へのインストール時に警告を表示するように修正"
 
-#: data/installer.appdata.xml.in:53
+#: data/installer.appdata.xml.in:64
 msgid "Avoid political naming of certain locales"
 msgstr "一部地域名に政治的な問題があったのを修正"
 
-#: data/installer.appdata.xml.in:54
+#: data/installer.appdata.xml.in:65
 msgid "Fix styles for \"Unused\" disk partitions"
 msgstr "\"未使用\" のディスクパーティションに適用されるスタイルを修正"
 
-#: data/installer.appdata.xml.in:64
-msgid "Ensure a usable hostname"
-msgstr "そのまま使えるようなホスト名をデフォルトで設定するように修正"
-
-#: data/installer.appdata.xml.in:94
+#: data/installer.appdata.xml.in:95
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -89,6 +93,9 @@ msgstr "システムをインストールします"
 #: data/io.elementary.installer.desktop.in:6
 msgid "io.elementary.installer"
 msgstr ""
+
+#~ msgid "Ensure a usable hostname"
+#~ msgstr "そのまま使えるようなホスト名をデフォルトで設定するように修正"
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 01:08+0000\n"
+"POT-Creation-Date: 2023-01-03 20:14+0000\n"
 "PO-Revision-Date: 2022-12-08 11:25+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/extra/"
@@ -25,54 +25,58 @@ msgstr "Instal·la l'elementary OS"
 msgid "Step by step installer for elementary OS itself."
 msgstr "Instal·lador de pas a pas per a elementary OS."
 
-#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:31
-#: data/installer.appdata.xml.in:41 data/installer.appdata.xml.in:51
+#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
+#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
 #: data/installer.appdata.xml.in:62
 msgid "Improvements:"
 msgstr "Millores:"
 
 #: data/installer.appdata.xml.in:18
+msgid "Use large icons in views"
+msgstr ""
+
+#: data/installer.appdata.xml.in:19
+msgid "Add a custom icon for Before Installing view"
+msgstr ""
+
+#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
+#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
+#: data/installer.appdata.xml.in:66
+msgid "Updated translations"
+msgstr "Traduccions actualitzades"
+
+#: data/installer.appdata.xml.in:29
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Mostra una barra d'informació a la bateria en lloc de canviar a una pàgina "
 "diferent."
 
-#: data/installer.appdata.xml.in:19
+#: data/installer.appdata.xml.in:30
 msgid "Show all system requirements warnings on a single page"
 msgstr "Mostra tots els avisos de requisits del sistema en una sola pàgina."
 
-#: data/installer.appdata.xml.in:20
+#: data/installer.appdata.xml.in:31
 msgid "Warn about installing developer builds"
 msgstr "Avisa sobre la instal·lació de compilacions de desenvolupadors."
 
-#: data/installer.appdata.xml.in:21 data/installer.appdata.xml.in:34
-#: data/installer.appdata.xml.in:44 data/installer.appdata.xml.in:55
-#: data/installer.appdata.xml.in:65
-msgid "Updated translations"
-msgstr "Traduccions actualitzades"
-
-#: data/installer.appdata.xml.in:33
+#: data/installer.appdata.xml.in:44
 msgid "Double the boot partition size for encrypted installs"
 msgstr ""
 "Doble mida de la partició d'arrencada per a les instal·lacions encriptades"
 
-#: data/installer.appdata.xml.in:43
+#: data/installer.appdata.xml.in:54
 msgid "Warn about installing in a VM"
 msgstr "Avisa sobre la instal·lació en una màquina virtual."
 
-#: data/installer.appdata.xml.in:53
+#: data/installer.appdata.xml.in:64
 msgid "Avoid political naming of certain locales"
 msgstr "Evita els noms polítics de determinades localitats."
 
-#: data/installer.appdata.xml.in:54
+#: data/installer.appdata.xml.in:65
 msgid "Fix styles for \"Unused\" disk partitions"
 msgstr "Correcció dels estils per a les particions de disc no utilitzades"
 
-#: data/installer.appdata.xml.in:64
-msgid "Ensure a usable hostname"
-msgstr "Assegura un nom d'amfitrió utilitzable."
-
-#: data/installer.appdata.xml.in:94
+#: data/installer.appdata.xml.in:95
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -83,6 +87,9 @@ msgstr "Instal·la el sistema"
 #: data/io.elementary.installer.desktop.in:6
 msgid "io.elementary.installer"
 msgstr "io.elementary.installer"
+
+#~ msgid "Ensure a usable hostname"
+#~ msgstr "Assegura un nom d'amfitrió utilitzable."
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"
