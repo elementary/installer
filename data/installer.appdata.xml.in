@@ -11,6 +11,17 @@
   </description>
 
   <releases>
+    <release version="1.0.7" date="2023-01-03" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Use large icons in views</li>
+          <li>Add a custom icon for Before Installing view</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="1.0.6" date="2022-12-05" urgency="medium">
       <description>
         <p>Improvements:</p>
@@ -52,16 +63,6 @@
         <ul>
           <li>Avoid political naming of certain locales</li>
           <li>Fix styles for "Unused" disk partitions</li>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
-    <release version="1.0.2" date="2021-08-20" urgency="medium">
-      <description>
-        <p>Improvements:</p>
-        <ul>
-          <li>Ensure a usable hostname</li>
           <li>Updated translations</li>
         </ul>
       </description>
