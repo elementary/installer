@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-03 20:14+0000\n"
-"PO-Revision-Date: 2022-12-09 22:25+0000\n"
+"PO-Revision-Date: 2023-01-05 22:25+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/extra/"
 "he/>\n"
@@ -33,11 +33,11 @@ msgstr "שיפורים:"
 
 #: data/installer.appdata.xml.in:18
 msgid "Use large icons in views"
-msgstr ""
+msgstr "נעשה שימוש בסמלים גדולים בתצוגות"
 
 #: data/installer.appdata.xml.in:19
 msgid "Add a custom icon for Before Installing view"
-msgstr ""
+msgstr "נוסף סמל מותאם לתצוגת טרום ההתקנה"
 
 #: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
 #: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
