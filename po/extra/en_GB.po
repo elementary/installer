@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 20:14+0000\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
 "PO-Revision-Date: 2021-07-17 23:45+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -80,10 +80,6 @@ msgstr "elementary, Inc."
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Install the System"
-
-#: data/io.elementary.installer.desktop.in:6
-msgid "io.elementary.installer"
-msgstr ""
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"

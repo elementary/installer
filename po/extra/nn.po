@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 20:14+0000\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
 "PO-Revision-Date: 2019-01-05 02:23+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -82,10 +82,6 @@ msgstr ""
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Installer systemet"
-
-#: data/io.elementary.installer.desktop.in:6
-msgid "io.elementary.installer"
-msgstr ""
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"

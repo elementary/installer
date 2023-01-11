@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 20:14+0000\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
@@ -71,8 +71,4 @@ msgstr ""
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
-msgstr ""
-
-#: data/io.elementary.installer.desktop.in:6
-msgid "io.elementary.installer"
 msgstr ""

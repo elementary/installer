@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 20:14+0000\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
 "PO-Revision-Date: 2021-07-20 22:48+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/extra/"
@@ -87,10 +87,6 @@ msgstr "elementary, Inc."
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "System installieren"
-
-#: data/io.elementary.installer.desktop.in:6
-msgid "io.elementary.installer"
-msgstr ""
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"

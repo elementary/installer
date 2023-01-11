@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-03 20:14+0000\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
 "PO-Revision-Date: 2023-01-05 22:25+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/extra/"
@@ -90,10 +90,6 @@ msgstr "elementary, Inc."
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Установка системы"
-
-#: data/io.elementary.installer.desktop.in:6
-msgid "io.elementary.installer"
-msgstr ""
 
 #~ msgid "Ensure a usable hostname"
 #~ msgstr "Исправлено генерируемое имя хоста"
