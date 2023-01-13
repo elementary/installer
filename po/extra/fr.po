@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-12-06 15:09+0000\n"
+"PO-Revision-Date: 2023-01-13 19:39+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/extra/"
 "fr/>\n"
@@ -40,11 +40,11 @@ msgstr "Améliorations :"
 
 #: data/installer.appdata.xml.in:18
 msgid "Use large icons in views"
-msgstr ""
+msgstr "Utilisation de grandes icônes dans la page"
 
 #: data/installer.appdata.xml.in:19
 msgid "Add a custom icon for Before Installing view"
-msgstr ""
+msgstr "Ajout d'une icône personnalisée avant la page d'installation"
 
 #: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
 #: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
