@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2021-07-21 18:17+0000\n"
+"PO-Revision-Date: 2023-01-26 09:25+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/extra/"
 "fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.appdata.xml.in:7
@@ -36,7 +36,7 @@ msgstr "elementary OS:n vaiheittainen asennus."
 #: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
 #: data/installer.appdata.xml.in:62
 msgid "Improvements:"
-msgstr ""
+msgstr "Parannukset:"
 
 #: data/installer.appdata.xml.in:18
 msgid "Use large icons in views"
