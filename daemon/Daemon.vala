@@ -312,6 +312,13 @@ public class InstallerDaemon.Daemon : GLib.Object {
             throw new GLib.IOError.FAILED ("Unable to write partition table to %s", disk_path);
         }
 
+        // Commit the new partition table.
+        result = disk.commit ();
+
+        if (result != 0) {
+            throw new GLib.IOError.FAILED ("Unable to commit partition table to %s", disk_path);
+        }
+
         var start = disk.get_sector (ref start_sector);
         var end = disk.get_sector (ref boot_sector);
 
