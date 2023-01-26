@@ -305,6 +305,11 @@ public class InstallerDaemon.Daemon : GLib.Object {
             value = 0
         };
 
+        unowned var partitions = disk.list_partitions ();
+        foreach (unowned var partition in partitions) {
+            disk.remove_partition (partition.get_number ());
+        }
+
         // Prepares a new partition table.
         int result = disk.mklabel (bootloader);
 
