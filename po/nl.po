@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-01-14 20:16+0000\n"
+"PO-Revision-Date: 2023-01-31 17:57+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -58,20 +58,20 @@ msgid "Test Mode"
 msgstr "Testmodus"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Probeer de installatie opnieuw"
+msgstr "Voordat u installeert"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Pre-release versie"
 
 #: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Installeer alleen op apparaten die zijn bedoeld voor ontwikkeling. <b>U kunt "
+"niet upgraden naar een stabiele uitgave</b>."
 
 #: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
@@ -81,6 +81,8 @@ msgstr "Virtuele machine"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Sommige componenten van %s kunnen mogelijk vertraagt presteren, haperingen "
+"ervaren of fouten bevatten."
 
 #: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
@@ -89,12 +91,11 @@ msgstr "Uw apparaat is mogelijk te traag"
 #: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
+"Dit kan er toe leiden dat u verminderde prestaties of haperingen ervaart."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Installeer %s"
+msgstr "Toch installeren"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
