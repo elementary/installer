@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2023-01-31 17:58+0000\n"
+"PO-Revision-Date: 2023-02-01 18:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -90,7 +90,7 @@ msgstr "Uw apparaat is mogelijk te traag"
 
 #: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
-msgstr "Dit kan ervoor zorgen dat het traag reageert of vastloopt."
+msgstr "Dit kan ervoor zorgen dat het vertraagd reageert of vastloopt."
 
 #: src/Views/CheckView.vala:85
 msgid "Install Anyway"
@@ -170,8 +170,8 @@ msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
-"Een ingebouwd of USB-toetsenbord is benodigd om het sleutelwachtwoord in te "
-"typen elke keer dat het apparaat wordt opgestart."
+"Een ingebouwd toetsenbord of USB-toetsenbord is benodigd om het "
+"sleutelwachtwoord in te kunnen voeren wanneer u de computer opstart."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -185,7 +185,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
-msgstr "Kies encryptie wachtwoord"
+msgstr "Kies een sleutelwachtwoord"
 
 #: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
