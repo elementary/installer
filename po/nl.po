@@ -90,8 +90,7 @@ msgstr "Uw apparaat is mogelijk te traag"
 
 #: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
-"Dit kan er toe leiden dat u verminderde prestaties of haperingen ervaart."
+msgstr "Dit kan ervoor zorgen dat het traag reageert of vastloopt."
 
 #: src/Views/CheckView.vala:85
 msgid "Install Anyway"
