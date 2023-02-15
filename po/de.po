@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-12-02 06:10+0000\n"
+"PO-Revision-Date: 2023-02-07 09:25+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -63,10 +63,8 @@ msgid "Test Mode"
 msgstr "Testmodus"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Installation erneut starten"
+msgstr "Vor der Installation"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
@@ -102,10 +100,8 @@ msgstr ""
 "Stillstand kommt."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "%s installieren"
+msgstr "Trotzdem installieren"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
