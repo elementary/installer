@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-01-14 20:16+0000\n"
+"PO-Revision-Date: 2023-02-01 18:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -58,20 +58,20 @@ msgid "Test Mode"
 msgstr "Testmodus"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Probeer de installatie opnieuw"
+msgstr "Voordat u installeert"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Pre-release versie"
 
 #: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Installeer alleen op apparaten die zijn bedoeld voor ontwikkeling. <b>U kunt "
+"niet upgraden naar een stabiele uitgave</b>."
 
 #: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
@@ -81,6 +81,8 @@ msgstr "Virtuele machine"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Sommige onderdelen van %s kunnen vertraagd reageren, vastlopen of niet naar "
+"behoren werken."
 
 #: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
@@ -88,13 +90,11 @@ msgstr "Uw apparaat is mogelijk te traag"
 
 #: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Dit kan ervoor zorgen dat het vertraagd reageert of vastloopt."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Installeer %s"
+msgstr "Toch installeren"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
@@ -170,8 +170,8 @@ msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
-"Een ingebouwd of USB-toetsenbord is benodigd om het sleutelwachtwoord in te "
-"typen elke keer dat het apparaat wordt opgestart."
+"Een ingebouwd toetsenbord of USB-toetsenbord is benodigd om het "
+"sleutelwachtwoord in te kunnen voeren wanneer u de computer opstart."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -185,7 +185,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
-msgstr "Kies encryptie wachtwoord"
+msgstr "Kies een sleutelwachtwoord"
 
 #: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
