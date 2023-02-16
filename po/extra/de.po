@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2021-07-20 22:48+0000\n"
-"Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
+"PO-Revision-Date: 2023-02-18 09:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/extra/"
 "de/>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.appdata.xml.in:7
@@ -50,7 +50,7 @@ msgstr ""
 #: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
 #: data/installer.appdata.xml.in:66
 msgid "Updated translations"
-msgstr ""
+msgstr "Aktualisierte Übersetzungen"
 
 #: data/installer.appdata.xml.in:29
 msgid "Show an infobar on battery instead of switching to a different page"
