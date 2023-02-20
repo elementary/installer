@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2021-07-17 23:45+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
+"PO-Revision-Date: 2023-02-18 09:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "installer/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/installer.appdata.xml.in:7
 msgid "Installer"
@@ -29,49 +29,49 @@ msgstr "Step by step installer for elementary OS itself."
 #: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
 #: data/installer.appdata.xml.in:62
 msgid "Improvements:"
-msgstr ""
+msgstr "Improvements:"
 
 #: data/installer.appdata.xml.in:18
 msgid "Use large icons in views"
-msgstr ""
+msgstr "Use large icons in views"
 
 #: data/installer.appdata.xml.in:19
 msgid "Add a custom icon for Before Installing view"
-msgstr ""
+msgstr "Add a custom icon for Before Installing view"
 
 #: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
 #: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
 #: data/installer.appdata.xml.in:66
 msgid "Updated translations"
-msgstr ""
+msgstr "Updated translations"
 
 #: data/installer.appdata.xml.in:29
 msgid "Show an infobar on battery instead of switching to a different page"
-msgstr ""
+msgstr "Show an infobar on battery instead of switching to a different page"
 
 #: data/installer.appdata.xml.in:30
 msgid "Show all system requirements warnings on a single page"
-msgstr ""
+msgstr "Show all system requirements warnings on a single page"
 
 #: data/installer.appdata.xml.in:31
 msgid "Warn about installing developer builds"
-msgstr ""
+msgstr "Warn about installing developer builds"
 
 #: data/installer.appdata.xml.in:44
 msgid "Double the boot partition size for encrypted installs"
-msgstr ""
+msgstr "Double the boot partition size for encrypted installs"
 
 #: data/installer.appdata.xml.in:54
 msgid "Warn about installing in a VM"
-msgstr ""
+msgstr "Warn about installing in a VM"
 
 #: data/installer.appdata.xml.in:64
 msgid "Avoid political naming of certain locales"
-msgstr ""
+msgstr "Avoid political naming of certain locales"
 
 #: data/installer.appdata.xml.in:65
 msgid "Fix styles for \"Unused\" disk partitions"
-msgstr ""
+msgstr "Fix styles for \"Unused\" disk partitions"
 
 #: data/installer.appdata.xml.in:95
 msgid "elementary, Inc."
