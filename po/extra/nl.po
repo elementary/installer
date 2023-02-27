@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2023-02-10 17:25+0000\n"
+"PO-Revision-Date: 2023-02-28 04:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/extra/nl/"
 ">\n"
@@ -29,7 +29,7 @@ msgstr "Stap voor stap installatie voor elementary OS."
 #: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
 #: data/installer.appdata.xml.in:62
 msgid "Improvements:"
-msgstr ""
+msgstr "Verbeteringen:"
 
 #: data/installer.appdata.xml.in:18
 msgid "Use large icons in views"
