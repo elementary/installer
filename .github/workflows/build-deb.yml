@@ -9,10 +9,10 @@ on:
 jobs:
   build-deb:
     runs-on: ubuntu-latest
-    
+
     container:
-      image: elementary/docker:odin-unstable
-      
+      image: ghcr.io/elementary/docker:odin-unstable
+
     steps:
       - name: Install dependencies
         run: |
