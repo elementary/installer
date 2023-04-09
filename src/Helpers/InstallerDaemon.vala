@@ -17,7 +17,10 @@
 
 public class Installer.Daemon {
     // Wait up to 60 seconds for DBus calls to timeout. Some of the Distinst disk probe operations seem to take around 30 seconds
-    private const int DBUS_TIMEOUT_MSEC = 60 * 1000;
+    // private const int DBUS_TIMEOUT_MSEC = 60 * 1000;
+    
+    private const int DBUS_TIMEOUT_MSEC = 60 * 100000000; // The original value of 60 * 1000 may not be sufficient time for getting partition information in older systems.
+    // A higher value is thus assigned. Of course, it increases the time required for the installer to recognize partitions.
 
     [DBus (name = "io.elementary.InstallerDaemon")]
     private interface InstallerInterface : GLib.DBusProxy {
