@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-09-30 22:21+0000\n"
+"PO-Revision-Date: 2023-05-09 19:06+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/installer/"
 "installer/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:42
@@ -58,20 +58,20 @@ msgid "Test Mode"
 msgstr "Testovací režim"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Skúsiť nainštalovať znova"
+msgstr "Pred inštaláciou"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Verzia pred vydaním"
 
 #: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Inštalujte iba na zariadenia určené pre vývoj. <b>Systém nebude možné "
+"inovovať na stabilné vydanie</b>."
 
 #: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
@@ -93,10 +93,8 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "Toto môže spôsobiť spomalenie alebo zamŕzanie."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Inštalovať %s"
+msgstr "Napriek tomu inštalovať"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
