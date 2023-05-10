@@ -17,7 +17,18 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
+[DBus (name = "org.freedesktop.UPower")]
+public interface UPower : GLib.Object {
+    public abstract bool on_battery { owned get; set; }
+}
+
 public class Installer.MainWindow : Hdy.Window {
+    // We have to do it step by step because the vala compiler has overflows with big numbers.
+    private const uint64 ONE_GB = 1000 * 1000 * 1000;
+    // Minimum 15 GB
+    private const uint64 MINIMUM_SPACE = 15 * ONE_GB;
+
+    private Gtk.Label infobar_label;
     private Gtk.Stack stack;
 
     private LanguageView language_view;
@@ -33,18 +44,6 @@ public class Installer.MainWindow : Hdy.Window {
     private bool check_ignored = false;
 
 
-    public MainWindow () {
-        Object (
-            deletable: false,
-            height_request: 700,
-            icon_name: "system-os-installer",
-            resizable: false,
-            title: _("Install %s").printf (Utils.get_pretty_name ()),
-            width_request: 950,
-            window_position: Gtk.WindowPosition.CENTER_ALWAYS
-        );
-    }
-
     construct {
         language_view = new LanguageView ();
 
@@ -55,9 +54,54 @@ public class Installer.MainWindow : Hdy.Window {
         };
         stack.add (language_view);
 
-        add (stack);
+        infobar_label = new Gtk.Label ("") {
+            use_markup = true
+        };
+        set_infobar_string ();
 
-        language_view.next_step.connect (() => load_keyboard_view ());
+        var battery_infobar = new Gtk.InfoBar () {
+            message_type = Gtk.MessageType.WARNING,
+            margin_end = 7,
+            margin_bottom = 7,
+            margin_start = 7,
+            show_close_button = true,
+            halign = Gtk.Align.START, // Can't cover action area; need to select language
+            valign = Gtk.Align.END
+        };
+        battery_infobar.get_content_area ().add (infobar_label);
+        battery_infobar.get_style_context ().add_class ("frame");
+
+        var overlay = new Gtk.Overlay ();
+        overlay.add (stack);
+        overlay.add_overlay (battery_infobar);
+
+        add (overlay);
+
+        language_view.next_step.connect (() => {
+            // Reset when language selection changes
+            set_infobar_string ();
+            load_keyboard_view ();
+        });
+
+        try {
+            UPower upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
+
+            battery_infobar.revealed = upower.on_battery;
+
+            ((DBusProxy) upower).g_properties_changed.connect ((changed, invalid) => {
+                var _on_battery = changed.lookup_value ("OnBattery", GLib.VariantType.BOOLEAN);
+                if (_on_battery != null) {
+                    battery_infobar.revealed = upower.on_battery;
+                }
+            });
+        } catch (Error e) {
+            warning (e.message);
+            battery_infobar.revealed = false;
+        }
+
+        battery_infobar.response.connect (() => {
+            battery_infobar.revealed = false;
+        });
     }
 
     /*
@@ -110,12 +154,6 @@ public class Installer.MainWindow : Hdy.Window {
         check_view = new Installer.CheckView ();
         stack.add (check_view);
 
-        check_view.status_changed.connect ((met_requirements) => {
-            if (!check_ignored) {
-                set_check_view_visible (!met_requirements);
-            }
-        });
-
         check_view.cancel.connect (() => {
             stack.visible_child = try_install_view;
             check_view.previous_view = null;
@@ -127,7 +165,7 @@ public class Installer.MainWindow : Hdy.Window {
             set_check_view_visible (false);
         });
 
-        set_check_view_visible (!check_ignored && !check_view.check_requirements ());
+        set_check_view_visible (!check_ignored && check_view.has_messages);
     }
 
     private void load_encrypt_view () {
@@ -156,7 +194,7 @@ public class Installer.MainWindow : Hdy.Window {
         disk_view.previous_view = try_install_view;
         stack.add (disk_view);
         stack.visible_child = disk_view;
-        disk_view.load.begin (CheckView.MINIMUM_SPACE);
+        disk_view.load.begin (MINIMUM_SPACE);
 
         load_check_view ();
 
@@ -172,7 +210,7 @@ public class Installer.MainWindow : Hdy.Window {
             partitioning_view.destroy ();
         }
 
-        partitioning_view = new PartitioningView (CheckView.MINIMUM_SPACE);
+        partitioning_view = new PartitioningView (MINIMUM_SPACE);
         partitioning_view.previous_view = try_install_view;
         stack.add (partitioning_view);
         stack.visible_child = partitioning_view;
@@ -222,5 +260,14 @@ public class Installer.MainWindow : Hdy.Window {
         stack.visible_child = error_view;
 
         error_view.previous_view = disk_view;
+    }
+
+    private void set_infobar_string () {
+        var infobar_string = "%s\n%s".printf (
+            _("Connect to a Power Source"),
+            Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (_("Your device is running on battery power. It's recommended to be plugged in while installing."))
+        );
+
+        infobar_label.label = infobar_string;
     }
 }

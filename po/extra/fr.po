@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-07-30 21:34+0000\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"PO-Revision-Date: 2023-01-13 19:39+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/extra/"
 "fr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.appdata.xml.in:7
@@ -32,7 +32,60 @@ msgstr "Installer elementary OS"
 msgid "Step by step installer for elementary OS itself."
 msgstr "Assistant d'installation étape par étape pour installer elementary OS."
 
-#: data/installer.appdata.xml.in:17
+#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
+#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
+#: data/installer.appdata.xml.in:62
+msgid "Improvements:"
+msgstr "Améliorations :"
+
+#: data/installer.appdata.xml.in:18
+msgid "Use large icons in views"
+msgstr "Utilisation de grandes icônes dans la page"
+
+#: data/installer.appdata.xml.in:19
+msgid "Add a custom icon for Before Installing view"
+msgstr "Ajout d'une icône personnalisée avant la page d'installation"
+
+#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
+#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
+#: data/installer.appdata.xml.in:66
+msgid "Updated translations"
+msgstr "Mise à jour des traductions"
+
+#: data/installer.appdata.xml.in:29
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr ""
+"Affichage d'une barre d'information sur la batterie plutôt que de passer à "
+"une autre page"
+
+#: data/installer.appdata.xml.in:30
+msgid "Show all system requirements warnings on a single page"
+msgstr ""
+"Affichage de tous les avertissements relatifs à la configuration requise sur "
+"une seule page"
+
+#: data/installer.appdata.xml.in:31
+msgid "Warn about installing developer builds"
+msgstr "Avertissement sur l'installation des versions pour les développeurs"
+
+#: data/installer.appdata.xml.in:44
+msgid "Double the boot partition size for encrypted installs"
+msgstr ""
+"Doublement de la taille de la partition pour les installations chiffrées"
+
+#: data/installer.appdata.xml.in:54
+msgid "Warn about installing in a VM"
+msgstr "Avertissement concernant l'installation sur une machine virtuelle"
+
+#: data/installer.appdata.xml.in:64
+msgid "Avoid political naming of certain locales"
+msgstr "Nous avons évité les appellations politiques de certains lieux"
+
+#: data/installer.appdata.xml.in:65
+msgid "Fix styles for \"Unused\" disk partitions"
+msgstr "Correction de l'apparence pour les partitions de disque « Inutilisé »"
+
+#: data/installer.appdata.xml.in:95
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
@@ -40,9 +93,11 @@ msgstr "elementary, Inc."
 msgid "Install the system"
 msgstr "Installer le système"
 
-#: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+#~ msgid "Ensure a usable hostname"
+#~ msgstr "Nous nous sommes assurés que le nom d'hôte soit utilisable"
+
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"
 
 #~ msgid "Install elementary OS on your machine"
 #~ msgstr "Installer elementary OS sur votre machine"

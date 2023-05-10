@@ -2,24 +2,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-08-06 20:34+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"PO-Revision-Date: 2023-04-10 06:59+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.16.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:42
+#: src/Application.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Установка %s"
+
+#: src/MainWindow.vala:267
+msgid "Connect to a Power Source"
+msgstr "Подключитесь к источнику питания"
+
+#: src/MainWindow.vala:268
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"Ваше устройство работает от батареи. Рекомендуется подключить зарядное "
+"устройство на время установки."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -33,7 +45,7 @@ msgstr "Перезагрузить тестовый режим"
 msgid "Test mode switch user"
 msgstr "Сменить пользователя в тестовом режиме"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -46,80 +58,78 @@ msgstr "Отменить установку"
 msgid "Test Mode"
 msgstr "Режим тестирования"
 
-#: src/Views/CheckView.vala:63
-msgid "Ignore"
-msgstr "Игнорировать"
+#: src/Views/CheckView.vala:50
+msgid "Before Installing"
+msgstr "Перед установкой"
 
-#: src/Views/CheckView.vala:218
-msgid "Not Enough Space"
-msgstr "Недостаточно места"
+#: src/Views/CheckView.vala:56
+msgid "Pre-Release Version"
+msgstr "Предварительная версия"
 
-#: src/Views/CheckView.vala:219
-#, c-format
+#: src/Views/CheckView.vala:57
 msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+"Only install on devices dedicated for development. <b>You will not be able "
+"to upgrade to a stable release</b>."
 msgstr ""
-"Недостаточно места на вашем устройстве для установки %s. Рекомендуется как "
-"минимум %s."
+"Устанавливайте только на устройства для разработки. <b>Вы не сможете "
+"обновить этот выпуск до стабильной версии</b>."
 
-#: src/Views/CheckView.vala:229
+#: src/Views/CheckView.vala:62
+msgid "Virtual Machine"
+msgstr "Виртуальная машина"
+
+#: src/Views/CheckView.vala:63
+#, c-format
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
+msgstr ""
+"Некоторые части %s могут выполняться медленно, зависать или функционировать "
+"неправильно."
+
+#: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
 msgstr "Ваше устройство может быть слишком медленным"
 
-#: src/Views/CheckView.vala:230
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
-msgstr ""
-"Ваше устройство не соответствует рекомендуемым требованиям оборудования. Это "
-"может привести к замедлению работы или зависанию."
+#: src/Views/CheckView.vala:69
+msgid "This may cause it to run slowly or freeze."
+msgstr "Это может привести к медленной работе или зависаниям."
 
-#: src/Views/CheckView.vala:245
-msgid "Connect to a Power Source"
-msgstr "Подключитесь к источнику питания"
+#: src/Views/CheckView.vala:85
+msgid "Install Anyway"
+msgstr "Всё равно установить"
 
-#: src/Views/CheckView.vala:246
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"Ваше устройство работает от батареи. Рекомендуется подключить зарядное "
-"устройство на время установки."
-
-#: src/Views/CheckView.vala:299
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "Рекомендации:"
 
-#: src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "Ваше устройство:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "Процессор:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "Память:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
 msgstr "Выберите диск"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"Это удалит все данные на выбранном диске. Если вы не сохранили ваши данные, "
-"вы можете отменить установку и использовать демо-режим."
+"Это сотрёт все данные на выбранном диске. Если вы не создали резервную копию "
+"данных, вы можете отменить установку и перейти в демонстрационный режим."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Получение текущей конфигурации…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Стереть и установить"
 
@@ -170,7 +180,7 @@ msgid ""
 "your user account."
 msgstr ""
 "Если вы забудете пароль шифрования, <b>вы не сможете восстановить данные.</"
-"b> Это уникальный пароль для этого устройства, а не пароль для учетной "
+"b> Это уникальный пароль для этого устройства, а не пароль для учётной "
 "записи пользователя."
 
 #: src/Views/EncryptView.vala:113
@@ -181,8 +191,8 @@ msgstr "Выберите пароль шифрования"
 msgid "Confirm Password"
 msgstr "Подтвердите пароль"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Назад"
 
@@ -198,11 +208,11 @@ msgstr "Установите пароль шифрования"
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "Не удалось установить"
 
-#: src/Views/ErrorView.vala:35
+#: src/Views/ErrorView.vala:36
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -211,67 +221,67 @@ msgstr ""
 "Установка %s не удалась, возможно, из-за аппаратной ошибки. Устройство может "
 "не перезагрузиться должным образом. Вы можете попробовать следующее:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:47
 msgid "Try the installation again"
 msgstr "Попробовать установить заново"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:58
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Использовать демонстрационный режим и попробовать восстановить вручную"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:68
 msgid "Restart the device and boot from another drive"
 msgstr "Перезагрузить устройство для загрузки с другого диска"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr "Подробнее"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Перезагрузить устройство"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
-msgstr "Попробовать Демо-режим"
+msgstr "Демонстрационный режим"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "Попробовать установить заново"
 
-#: src/Views/KeyboardLayoutView.vala:31
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "Выберите раскладку клавиатуры"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Введите что-то для проверки раскладки"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Показать раскладку клавиатуры"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Выбрать"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr "По умолчанию"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr "Язык ввода"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Языки"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Выберите язык"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "Текущий язык"
 
@@ -280,8 +290,8 @@ msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"Выберите, какие разделы использовать на всех дисках. <b>Выбор \"Форматировать"
-"\" приведет к очистке ВСЕХ данных на выбранном разделе.</b>"
+"Выберите, какие разделы использовать на всех дисках. <b>Выбор "
+"«Форматировать» приведёт к очистке ВСЕХ данных на выбранном разделе.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
@@ -299,7 +309,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "Также рекомендуется выбрать раздел <b>подкачки (Swap)</b>."
+msgstr "Также рекомендуется выбрать <b>Раздел подкачки (Swap)</b>."
 
 #: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
@@ -349,11 +359,11 @@ msgstr "Настройка системы"
 msgid "Finishing the Installation"
 msgstr "Завершение установки"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
 msgstr "Попробовать или установить"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -362,20 +372,20 @@ msgstr ""
 "останутся без изменений. Производительность и функции могут не "
 "соответствовать установленной системе."
 
-#: src/Views/TryInstallView.vala:46
+#: src/Views/TryInstallView.vala:47
 msgid "Erase Disk and Install"
 msgstr "Стереть диск и установить"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Удалить всё и установить новую копию %s."
 
-#: src/Views/TryInstallView.vala:54
+#: src/Views/TryInstallView.vala:55
 msgid "Custom Install (Advanced)"
-msgstr "Пользовательская установка (Для опытных)"
+msgstr "Пользовательская установка (для опытных)"
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -383,28 +393,28 @@ msgstr ""
 "Создание и изменение разделов вручную. Этот способ может привести к потере "
 "данных."
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr "Далее"
 
-#: src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
 msgstr "Пользовательская установка"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
 msgstr "Продолжить установку"
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
 msgstr "%s установлено"
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Выключить"
 
-#: src/Views/SuccessView.vala:96
+#: src/Views/SuccessView.vala:97
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
@@ -412,13 +422,13 @@ msgstr[0] "Ваше устройство автоматически переза
 msgstr[1] "Ваше устройство автоматически перезагрузится через %i секунды."
 msgstr[2] "Ваше устройство автоматически перезагрузится через %i секунд."
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"После перезагрузки вы сможете настроить новую учетную запись, или вы можете "
-"выключить компьютер сейчас и настроить новую учетную запись позже."
+"После перезагрузки вы сможете настроить новую учётную запись, или вы можете "
+"выключить компьютер сейчас и настроить новую учётную запись позже."
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -446,7 +456,7 @@ msgstr "Расшифровать"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr "Том LUKS был рашифрован"
+msgstr "Том LUKS был расшифрован"
 
 #: src/Widgets/DiskBar.vala:135
 #, c-format
@@ -468,7 +478,7 @@ msgstr "Форматировать"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr "Удалите все данные и установить новую файловую систему"
+msgstr "Удалить все данные и установить новую файловую систему"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
@@ -489,7 +499,7 @@ msgstr "Загрузка (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr "Swap"
+msgstr "Раздел подкачки (Swap)"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
@@ -506,6 +516,43 @@ msgstr "Файловая система:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "По умолчанию (ext4)"
+
+#~ msgid "System Requirements"
+#~ msgstr "Системные требования"
+
+#~ msgid "Ignore"
+#~ msgstr "Игнорировать"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "Недостаточно места"
+
+#, c-format
+#~ msgid "%s of storage or more is required to install %s."
+#~ msgstr "%s свободного места или больше необходимо для установки %s."
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "Недостаточно места на вашем устройстве для установки %s. Рекомендуется "
+#~ "как минимум %s."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "Ваше устройство не соответствует рекомендуемым требованиям оборудования. "
+#~ "Это может привести к замедлению работы или зависанию."
+
+#~ msgid ""
+#~ "You appear to be installing in a virtual machine. Some parts of %s may "
+#~ "run slowly, freeze, or not function properly in a virtual machine. It's "
+#~ "recommended to install on real hardware."
+#~ msgstr ""
+#~ "Похоже, что вы устанавливаете систему на виртуальную машину. Некоторые "
+#~ "функции %s могут работать медленно, зависать или не функционировать "
+#~ "должным образом на виртуальной машине. Рекомендуем установить систему на "
+#~ "реальное оборудование."
 
 #~ msgid "Set Password"
 #~ msgstr "Установить пароль"

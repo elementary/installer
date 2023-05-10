@@ -29,9 +29,21 @@ public class Installer.DiskView : AbstractInstallerView {
     }
 
     construct {
-        var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG) {
+        var install_image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG) {
+            pixel_size = 128
+        };
+
+        var install_badge = new Gtk.Image.from_icon_name ("io.elementary.installer.emblem-downloads", Gtk.IconSize.DND) {
+            pixel_size = 64,
+            halign = Gtk.Align.END,
             valign = Gtk.Align.END
         };
+
+        var image_overlay = new Gtk.Overlay () {
+            valign = Gtk.Align.END
+        };
+        image_overlay.add (install_image);
+        image_overlay.add_overlay (install_badge);
 
         var install_label = new Gtk.Label (_("Select a Drive")) {
             valign = Gtk.Align.START
@@ -89,7 +101,7 @@ public class Installer.DiskView : AbstractInstallerView {
             valign = Gtk.Align.CENTER,
             row_spacing = 12
         };
-        title_grid.attach (install_image, 0, 0);
+        title_grid.attach (image_overlay, 0, 0);
         title_grid.attach (install_label, 0, 1);
 
         content_area.margin_start = content_area.margin_end = 12;

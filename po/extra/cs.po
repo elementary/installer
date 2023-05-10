@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2020-05-30 21:11+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"PO-Revision-Date: 2022-01-09 20:32+0000\n"
+"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/extra/cs/"
 ">\n"
 "Language: cs\n"
@@ -11,13 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/installer.appdata.xml.in:7
-#, fuzzy
-#| msgid "Install elementary OS"
 msgid "Installer"
-msgstr "Nainstalovat elementary OS"
+msgstr "Instalátor"
 
 #: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
@@ -25,16 +23,63 @@ msgstr "Nainstalovat elementary OS"
 
 #: data/installer.appdata.xml.in:10
 msgid "Step by step installer for elementary OS itself."
+msgstr "Instalátor pro elementary OS – krok za krokem."
+
+#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
+#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
+#: data/installer.appdata.xml.in:62
+msgid "Improvements:"
 msgstr ""
 
-#: data/installer.appdata.xml.in:17
-msgid "elementary, Inc."
+#: data/installer.appdata.xml.in:18
+msgid "Use large icons in views"
 msgstr ""
+
+#: data/installer.appdata.xml.in:19
+msgid "Add a custom icon for Before Installing view"
+msgstr ""
+
+#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
+#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
+#: data/installer.appdata.xml.in:66
+msgid "Updated translations"
+msgstr ""
+
+#: data/installer.appdata.xml.in:29
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr ""
+
+#: data/installer.appdata.xml.in:30
+msgid "Show all system requirements warnings on a single page"
+msgstr ""
+
+#: data/installer.appdata.xml.in:31
+msgid "Warn about installing developer builds"
+msgstr ""
+
+#: data/installer.appdata.xml.in:44
+msgid "Double the boot partition size for encrypted installs"
+msgstr ""
+
+#: data/installer.appdata.xml.in:54
+msgid "Warn about installing in a VM"
+msgstr ""
+
+#: data/installer.appdata.xml.in:64
+msgid "Avoid political naming of certain locales"
+msgstr ""
+
+#: data/installer.appdata.xml.in:65
+msgid "Fix styles for \"Unused\" disk partitions"
+msgstr ""
+
+#: data/installer.appdata.xml.in:95
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Nainstalovat systém"
 
-#: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2020-05-21 13:11+0000\n"
-"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"PO-Revision-Date: 2021-09-04 16:04+0000\n"
+"Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
 "installer/ar/>\n"
 "Language: ar\n"
@@ -13,151 +13,165 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:39+0000\n"
 
-#: src/MainWindow.vala:42
+#: src/Application.vala:42
 #, c-format
 msgid "Install %s"
-msgstr "تثبيت %s"
+msgstr "ثبت %s"
+
+#: src/MainWindow.vala:267
+msgid "Connect to a Power Source"
+msgstr "قم بوصل الجهاز بمصدر للطاقة"
+
+#: src/MainWindow.vala:268
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"جهازك يعمل الآن على البطارية. من الأفضل أن توصله بمنفذ كهرباء خلال التثبيت."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
-msgstr "ايقاف تشغيل الوضع التجريبي"
+msgstr "أوقف التشغيل في الوضع التجريبي"
 
 #: src/Utils.vala:48
 msgid "Test mode reboot"
-msgstr "إعادة تشغيل الوضع التجريبي"
+msgstr "أعد تشغيل الجهاز في الوضع التجريبي"
 
 #: src/Utils.vala:74
 msgid "Test mode switch user"
-msgstr "تبديل حسابات الوضع التجريبي"
+msgstr "قم بتبديل الحسابات في الوضع التجريبي"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
 #: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
-msgstr "إلغاء التثبيت"
+msgstr "ألغ عملية التثبيت"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "الوضع التجريبي"
 
+#: src/Views/CheckView.vala:50
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Before Installing"
+msgstr "جرب إعادة التثبيت"
+
+#: src/Views/CheckView.vala:56
+msgid "Pre-Release Version"
+msgstr ""
+
+#: src/Views/CheckView.vala:57
+msgid ""
+"Only install on devices dedicated for development. <b>You will not be able "
+"to upgrade to a stable release</b>."
+msgstr ""
+
+#: src/Views/CheckView.vala:62
+msgid "Virtual Machine"
+msgstr ""
+
 #: src/Views/CheckView.vala:63
-msgid "Ignore"
-msgstr "تجاهل"
-
-#: src/Views/CheckView.vala:218
-msgid "Not Enough Space"
-msgstr "لا يوجد مساحة كافية"
-
-#: src/Views/CheckView.vala:219
 #, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
-msgstr "ليس هناك مساحة كافية لتثبيت %s. ننصح باتاحة مساحة %s على الأقل."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
+msgstr ""
 
-#: src/Views/CheckView.vala:229
+#: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
-msgstr "قد يكون جهازك بطيئا جدا"
+msgstr "قد يكون جهازك بطيئاً جداً"
 
-#: src/Views/CheckView.vala:230
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
+#: src/Views/CheckView.vala:69
+msgid "This may cause it to run slowly or freeze."
 msgstr ""
-"جهازك لا يطابق المواصفات المقترحة. هذا قد يسبب بطء في الجهاز أو توقف في عمله."
 
-#: src/Views/CheckView.vala:245
-msgid "Connect to a Power Source"
-msgstr "اشبك منفذ طاقة"
+#: src/Views/CheckView.vala:85
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "ثبت %s"
 
-#: src/Views/CheckView.vala:246
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"جهازك يعمل الآن على البطارية. من المفضل أن توصله بمنفذ طاقة خلال التثبيت."
-
-#: src/Views/CheckView.vala:299
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
-msgstr "موصى به:"
+msgstr "مستحسن:"
 
-#: src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "جهازك:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "المعالج:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "الذاكرة:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
-msgstr "اختر القرص"
+msgstr "اختر وسيط تخزين"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
-"سيؤدي هذا إلى مسح جميع البيانات الموجودة على محرك الأقراص المحدد. إذا لم تقم "
-"بعمل نسخة احتياطية من بياناتك ، فيمكنك إلغاء التثبيت واستخدام الوضع التجريبي."
+"سيؤدي هذا إلى مسح جميع البيانات الموجودة على وسيط التخزين المحدد. إذا لم تقم "
+"بعمل نسخة احتياطية لبياناتك ، فيمكنك إلغاء عملية التثبيت واستخدام الوضع "
+"التجريبي."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
-msgstr "الحصول على الإعدادات الحالية …"
+msgstr "قيد الحصول على الإعدادات الحالية…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
-msgstr "امسح و ثبت"
+msgstr "امسح وثبت"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "لا تشفر"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "تشفير القرص"
+msgstr "قم بتشفير وسيط التخزين"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"قم بتشفير وسيط تخزين هذا الجهاز إذا كان مطلوباً لحماية إضافية، ولكن تأكد من "
+"فهمك للتالي:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr "البيانات ستكون محمية من الآخرين مع سماح للوصول بشكل فيزيائي."
+msgstr ""
+"البيانات ستكون محمية فقط من الآخرين الذين لديهم وصول مادي للجهاز عندما يكون "
+"مطفئاً."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"كلمة سر التشفير ستكون مطلوبة في كل مرة تقوم بفتح الجهاز. احفظها بمكان آمن."
+"كلمة مرور التشفير ستكون مطلوبة في كل مرة تقوم بفتح الجهاز. احفظها في مكان "
+"آمن."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"سيكون من المطلوب وجود لوحة مفاتيح مدمجة أو موصولة بواسطة USB للتمكن من كتابة "
+"كلمة مرور التشفير في كل مرة يتم تشغيل هذا الجهاز."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -165,136 +179,123 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"إذا نسيت كلمة سر التشفير، <b> لن تكون قادرا على استعادة البيانات.</b> كلمة "
-"سر هذه مميزة للقرص الخاص بك، ليست كلمة السر الخاصة بحسابك."
+"إذا نسيت كلمة مرور التشفير، <b>لن تكون قادراً على استعادة البيانات.</b> هذه "
+"كلمة مرور مميزة لوسيط التخزين الخاص بك، وليست كلمة المرور الخاصة بحسابك."
 
 #: src/Views/EncryptView.vala:113
 msgid "Choose Encryption Password"
-msgstr "إختر كلمة سر مشفرة"
+msgstr "اختر كلمة مرور للتشفير"
 
 #: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
-msgstr "تأكيد كلمة المرور"
+msgstr "قم بتأكيد كلمة المرور"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
 msgid "Back"
-msgstr "للخلف"
+msgstr "ارجع"
 
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
-msgstr "إختر كلمة السر"
+msgstr "اختر كلمة مرور"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "إختر كلمة سر مشفرة"
+msgstr "اضبط كلمة مرور التشفير"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
 msgstr "كلمتا المرور غير متطابقتين"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "تعذر التثبيت"
 
-#: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#: src/Views/ErrorView.vala:36
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"تثبيت %s قد فشل، يحتمل أن يكون خطأ بسبب مشكلة فيزيائية. جهازك قد لا يعيد "
+"فشل تثبيت %s، ويحتمل أن يكون خطأً بسبب مشكلة في العتاد. جهازك قد لا يعيد "
 "التشغيل بشكل صحيح. يمكنك محاولة التالي:"
 
-#: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
+#: src/Views/ErrorView.vala:47
 msgid "Try the installation again"
-msgstr "• حاول التثبيت مرة أخرى"
+msgstr "حاول التثبيت مرة أخرى"
 
-#: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
+#: src/Views/ErrorView.vala:58
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• استخدم الوضع التجريبي وحاول الإستعادة يدويًا"
+msgstr "استخدم الوضع التجريبي وحاول الاستعادة يدوياً"
 
-#: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
+#: src/Views/ErrorView.vala:68
 msgid "Restart the device and boot from another drive"
-msgstr "• أعد تشغيل جهازك للإقلاع من محرك أقراص آخر"
+msgstr "أعد تشغيل الجهاز للإقلاع من وسيط تخزين آخر"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr "التفاصيل"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "أعد تشغيل الجهاز"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
-msgstr "جرب النسخة التجريبية"
+msgstr "جرب الوضع التجريبي"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "جرب إعادة التثبيت"
 
-#: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
-msgstr "تخطيط لوحة المفاتيح"
+msgstr "اختر تخطيط لوحة المفاتيح"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "اكتب لاختبار تخطيطك"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
-msgstr "اظهر تخطيط لوحة المفاتيح"
+msgstr "أظهر تخطيط لوحة المفاتيح"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
-msgstr "إختر"
+msgstr "اختر"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
-msgstr "الإفتراضي"
+msgstr "الافتراضي"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
-msgstr "اختر لغة الإدخال"
+msgstr "لغة الإدخال"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "اللغات"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "اختر اللغة"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
-msgstr "اللغة المفعلة حاليا"
+msgstr "اللغة المفعلة حالياً"
 
 #: src/Views/PartitioningView.vala:52
 msgid ""
 "Select which partitions to use across all drives. <b>Selecting \"Format\" "
 "will erase ALL data on the selected partition.</b>"
 msgstr ""
-"اختر أي قسم ليتم استخدامه من بين جميع الأقراص. <b> عند اختيار “اعادة "
-"التهيئة” سيقوم بإزالة جميع البيانات في القسم الذي تم تحديده.</b>"
+"اختر أي قسم ليتم استخدامه من بين جميع وسائط التخزين. <b> عند اختيار \"إعادة "
+"التهيئة\"، سيتم إزالة جميع البيانات في القسم الذي تم تحديده.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr "يجب على الأقل اختيار قسم الجذر <b> Root (/) </b>."
+msgstr "يجب اختيار قسم <b>الجذر (/)</b> واحد على الأقل."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
@@ -302,15 +303,17 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
 "efi)</b> partition."
 msgstr ""
-"يجب على الأقل اختيار قسم <b>الجذر (/)</b> وقسم <b>الاقلاع (/boot/efi)</b>."
+"يجب على الأقل اختيار قسم <b>الجذر (/)</b> وقسم <b>الإقلاع (/boot/efi)</b>."
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr ""
+"من المستحسن أيضاً اختيار قسم <b>المبادلة</b> كذاكرة مساعدة لذاكرة النظام "
+"(RAM)."
 
 #: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
-msgstr "تعديل للأقسام…"
+msgstr "عدل الأقسام…"
 
 #: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
@@ -318,123 +321,116 @@ msgstr "يحتوي قسم EFI على نظام ملفات خاطئ"
 
 #: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
-msgstr "قسم EFI صغير جدًا"
+msgstr "قسم EFI صغير جداً"
 
 #: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
-msgstr "نظام الملفات غير صالح للجذر"
+msgstr "نظام ملفات غير صالح للجذر (root)"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
-msgstr "نظام الملفات غير صالح لمجلد المنزل"
+msgstr "نظام ملفات غير صالح لمجلد المنزل (home)"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "أظهر التسجيلات"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "أخف التسجيلات"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
 msgid "Partitioning Drive"
-msgstr "جاري قسم القرص"
+msgstr "قيد تقسيم وسيط التخزين"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:226
 msgid "Extracting Files"
-msgstr "استخراج الملفات"
+msgstr "قيد استخراج الملفات"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:231
 msgid "Configuring the System"
-msgstr "تخصيص النظام"
+msgstr "قيد إعداد النظام"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:236
 msgid "Finishing the Installation"
-msgstr "الانتهاء من التثبيت"
+msgstr "قيد الانتهاء من التثبيت"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
-msgstr "تثبيت أو جرب"
+msgstr "جرب أو ثبت"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
-"التغييرات لن يتم حفظها، والبيانات من نظام التشغيل السابق لن يتم المساس به. "
-"الأداء والمميزات ليست كالنسخة المثبتة."
+"لن يتم حفظ التغييرات، والبيانات الموجودة من نظام التشغيل السابق لن تتغير. "
+"الأداء والميزات لن يكونا كالنسخة المثبتة."
 
-#: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
+#: src/Views/TryInstallView.vala:47
 msgid "Erase Disk and Install"
-msgstr "امسح و ثبت"
+msgstr "امسح وسيط التخزين وثبت"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "حذف كل شيء وبدء تنزيل نسخة جديدة من %s."
+msgstr "احذف كل شيء وثبت نسخة جديدة من %s."
 
-#: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:55
 msgid "Custom Install (Advanced)"
-msgstr "تخصيص (متقدم)"
+msgstr "تثبيت مخصص (متقدم)"
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"أنشئ، أعد تحجيم، أو تحكم بالأقسام يدويا، هذه الطريقة قد تؤدي إلى فقدان "
-"البيانات."
+"قم بإنشاء الأقسام، وتغيير حجمها، وإدارتها بطرق أخرى يدوياً. قد تؤدي هذه "
+"الطريقة إلى فقدان البيانات."
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr "التالي"
 
-#: src/Views/TryInstallView.vala:113
-#, fuzzy
-#| msgid "Could Not Install"
+#: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
-msgstr "تعذر التثبيت"
+msgstr "تثبيت مخصص"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
-msgstr "اكمال التجهيز"
+msgstr "أكمل الإعداد"
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "تم تثبيت %s"
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
-msgstr "إيقاف التشغيل"
+msgstr "أوقف التشغيل"
 
-#: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#: src/Views/SuccessView.vala:97
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[1] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[2] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[3] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[4] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
-msgstr[5] "جهازك سيقوم بإعادة التشغيل تلقائيا إلى %s بعد %i ثواني."
+msgstr[0] "ستتم إعادة تشغيل جهازك تلقائياً الآن."
+msgstr[1] "ستتم إعادة تشغيل جهازك تلقائياً بعد ثانية واحدة."
+msgstr[2] "ستتم إعادة تشغيل جهازك تلقائياً بعد ثانيتين."
+msgstr[3] "ستتم إعادة تشغيل جهازك تلقائياً بعد %i ثوان."
+msgstr[4] "ستتم إعادة تشغيل جهازك تلقائياً بعد %i ثانية."
+msgstr[5] "ستتم إعادة تشغيل جهازك تلقائياً بعد عدد %i من الثواني."
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"بعد إعادة التشغيل يمكنك إنشاء مستخدم جديد، أو بإمكانك إيقاف التشغيل الآن "
-"وإنشاء مستخدم جديد لاحقا."
+"بعد إعادة التشغيل، يمكنك إنشاء مستخدم جديد، أو يمكنك إيقاف التشغيل الآن "
+"وإنشاء مستخدم جديد لاحقاً."
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -445,12 +441,12 @@ msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"أدخل كلمة سر التشفير الخاصة بالقسم وقم بتعيين اسم الجهاز للقسم الذي تم فك "
+"أدخل كلمة مرور التشفير الخاصة بالقسم وقم بتعيين اسم الجهاز للقسم الذي تم فك "
 "تشفيره."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
-msgstr "كلمة السر:"
+msgstr "كلمة المرور:"
 
 #: src/Widgets/DecryptMenu.vala:88
 msgid "Device name:"
@@ -462,7 +458,7 @@ msgstr "فك التشفير"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr "تم فك تشفير LUKS للقسم"
+msgstr "تم فك تشفير وحدة تخزين LUKS"
 
 #: src/Widgets/DiskBar.vala:135
 #, c-format
@@ -475,24 +471,20 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "استخدام القسم:"
+msgstr "استخدم القسم"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "الصيغة:"
+msgstr "أعد التهيئة"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "امسح جميع البيانات وقم بإعداد نظام ملفات جديد"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr "كما تستخدم:"
+msgstr "استخدمه ك:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
@@ -505,15 +497,15 @@ msgstr "المنزل (home/)"
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
-msgstr "الاقلاع (%s)"
+msgstr "الإقلاع (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr "تبديل"
+msgstr "المبادلة (Swap)"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr "تخصيص"
+msgstr "مخصص"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
@@ -526,6 +518,25 @@ msgstr "نظام الملفات:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "الافتراضي (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "تجاهل"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "لا يوجد مساحة كافية"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "ليس هناك مساحة كافية على جهازك لتثبيت %s. ننصحك بإتاحة مساحة %s على الأقل."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "جهازك لا يطابق المواصفات المقترحة. قد يسبب هذا بطئاً في الجهاز أو توقف "
+#~ "حركته."
 
 #~ msgid "Set Password"
 #~ msgstr "حدد كلمة السر"

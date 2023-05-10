@@ -1,22 +1,34 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2018-05-27 00:05+0000\n"
-"Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
-"Language-Team: Moldovan <https://weblate.elementary.io/projects/installer/"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"PO-Revision-Date: 2022-04-20 09:24+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"Language-Team: Moldovan <https://l10n.elementary.io/projects/installer/"
 "installer/mo/>\n"
 "Language: mo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 
-#: src/MainWindow.vala:42
+#: src/Application.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Instalați %s 1"
+
+#: src/MainWindow.vala:267
+msgid "Connect to a Power Source"
+msgstr "Conectați-vă la o sursă de alimentare"
+
+#: src/MainWindow.vala:268
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"Dispozitivul dvs. rulează cu baterie. Se recomandă conectarea la o sursă de "
+"curent înainte de instalare."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -30,7 +42,7 @@ msgstr "Mod de testare reporniți"
 msgid "Test mode switch user"
 msgstr "Utilizator comutator mod de testare"
 
-#: src/Helpers/LocaleHelper.vala:114 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s 1…"
@@ -43,68 +55,66 @@ msgstr "Anularea instalării"
 msgid "Test Mode"
 msgstr "Modul test"
 
-#: src/Views/CheckView.vala:63
-msgid "Ignore"
-msgstr "Ignoră"
+#: src/Views/CheckView.vala:50
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Before Installing"
+msgstr "Încercați să instalați din nou"
 
-#: src/Views/CheckView.vala:218
-msgid "Not Enough Space"
-msgstr "Spațiu insuficient"
-
-#: src/Views/CheckView.vala:219
-#, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+#: src/Views/CheckView.vala:56
+msgid "Pre-Release Version"
 msgstr ""
-"Nu este suficient spațiu pe dispozitivul dvs. pentru a instala %s 1. Vă "
-"recomandăm un minim de %s 2 de stocare."
 
-#: src/Views/CheckView.vala:229
+#: src/Views/CheckView.vala:57
+msgid ""
+"Only install on devices dedicated for development. <b>You will not be able "
+"to upgrade to a stable release</b>."
+msgstr ""
+
+#: src/Views/CheckView.vala:62
+msgid "Virtual Machine"
+msgstr ""
+
+#: src/Views/CheckView.vala:63
+#, c-format
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
+msgstr ""
+
+#: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
 msgstr "Dispozitivul dvs. poate fi prea lent"
 
-#: src/Views/CheckView.vala:230
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
+#: src/Views/CheckView.vala:69
+msgid "This may cause it to run slowly or freeze."
 msgstr ""
-"Dispozitivul dvs. nu îndeplinește cerințele hardware recomandate. Acest "
-"lucru poate cauza încetinirea sau înghețarea."
 
-#: src/Views/CheckView.vala:245
-msgid "Connect to a Power Source"
-msgstr "Conectați-vă la o sursă de alimentare"
+#: src/Views/CheckView.vala:85
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Instalați %s 1"
 
-#: src/Views/CheckView.vala:246
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"Dispozitivul dvs. rulează cu baterie. Se recomandă conectarea la o sursă de "
-"curent înainte de instalare."
-
-#: src/Views/CheckView.vala:299
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "Recomandat:"
 
-#: src/Views/CheckView.vala:303
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "Dispozitivul tău:"
 
-#: src/Views/CheckView.vala:307 src/Views/CheckView.vala:309
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "Procesador:"
 
-#: src/Views/CheckView.vala:315 src/Views/CheckView.vala:317
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "Memorie:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
 msgstr "Selectați unitate"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -112,11 +122,11 @@ msgstr ""
 "Aceasta va șterge toate datele de pe unitatea selectată. Dacă nu ați "
 "susținut datele, puteți să anulați instalarea și să utilizați modul Demo."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Obținerea configurației curente …"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
 msgid "Erase and Install"
 msgstr "Ștergeți și instalați"
 
@@ -186,8 +196,8 @@ msgstr "Alegeți parola de criptare"
 msgid "Confirm Password"
 msgstr "Confirmă parola"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
+#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
+#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Înapoi"
 
@@ -205,11 +215,11 @@ msgstr "Alegeți parola de criptare"
 msgid "Passwords do not match"
 msgstr "Parolele nu se potrivesc"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "Nu sa putet instala"
 
-#: src/Views/ErrorView.vala:35
+#: src/Views/ErrorView.vala:36
 #, fuzzy, c-format
 #| msgid ""
 #| "Installing %s failed, possibly due to a hardware error. Your device may "
@@ -221,75 +231,75 @@ msgstr ""
 "Instalarea %s 1 a eșuat, posibil din cauza unei erori de hardware. Este "
 "posibil ca Pc Dvs. să nu se repornească corect. Puteți încerca următoarele:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:47
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "• Încercați instalarea din nou"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:58
 #, fuzzy
 #| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "• Utilizați modul Demo și încercați să recuperați manualmente"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:68
 #, fuzzy
 #| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
 msgstr "• Reporniți dispozitivul pentru a porni de la o altă unitate"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Reporniți dispozitivul"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Încercați modul Demo"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "Încercați să instalați din nou"
 
-#: src/Views/KeyboardLayoutView.vala:31
+#: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Configurarea tastaturii"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Tastați pentru a testa aspectul"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Afișați aspectul tastaturii"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Selectați"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr "Mod implicit"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr "Limba de introducere"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Limbi"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Selectați limba"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "Limba activă în prezent"
 
@@ -367,12 +377,12 @@ msgstr "Configurarea sistemului"
 msgid "Finishing the Installation"
 msgstr "Finalizarea instalării"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 #, fuzzy
 msgid "Try or Install"
 msgstr "Încercați să instalați din nou"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 #, fuzzy
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
@@ -382,59 +392,58 @@ msgstr ""
 "din sistemul de operare anterior vor fi neschimbate. Este posibil ca "
 "performanțele și caracteristicile să nu reflecte experiența instalată."
 
-#: src/Views/TryInstallView.vala:46
+#: src/Views/TryInstallView.vala:47
 #, fuzzy
 #| msgid "Erase and Install"
 msgid "Erase Disk and Install"
 msgstr "Ștergeți și instalați"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:54
+#: src/Views/TryInstallView.vala:55
 msgid "Custom Install (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:87
+#: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:114
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "Nu sa putet instala"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
 msgstr "Continuați să configurați"
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Închide"
 
-#: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#: src/Views/SuccessView.vala:97
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "Pc dvs. va reporni automat la%s 1 în%i 2 secunde."
-msgstr[1] "Pc dvs. va reporni automat la%s 1 în%i 2 secunde."
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -533,6 +542,26 @@ msgstr "Sistemul de fișiere:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Implicit (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignoră"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "Spațiu insuficient"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "Nu este suficient spațiu pe dispozitivul dvs. pentru a instala %s 1. Vă "
+#~ "recomandăm un minim de %s 2 de stocare."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "Dispozitivul dvs. nu îndeplinește cerințele hardware recomandate. Acest "
+#~ "lucru poate cauza încetinirea sau înghețarea."
 
 #~ msgid "Set Password"
 #~ msgstr "Setați parola"

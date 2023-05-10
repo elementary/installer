@@ -1,23 +1,23 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2018-07-20 01:05+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
-"Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"PO-Revision-Date: 2023-03-02 10:25+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/extra/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/installer.appdata.xml.in:7
 #, fuzzy
 #| msgid "Install elementary OS"
 msgid "Installer"
-msgstr "Installer elementary OS"
+msgstr "Installer"
 
 #: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
@@ -25,16 +25,67 @@ msgstr "Installer elementary OS"
 
 #: data/installer.appdata.xml.in:10
 msgid "Step by step installer for elementary OS itself."
+msgstr "Stegvis installasjon av selve elementary OS."
+
+#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
+#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
+#: data/installer.appdata.xml.in:62
+msgid "Improvements:"
+msgstr "Forbedringer:"
+
+#: data/installer.appdata.xml.in:18
+msgid "Use large icons in views"
+msgstr "Større ikoner i visninger"
+
+#: data/installer.appdata.xml.in:19
+msgid "Add a custom icon for Before Installing view"
 msgstr ""
 
-#: data/installer.appdata.xml.in:17
-msgid "elementary, Inc."
+#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
+#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
+#: data/installer.appdata.xml.in:66
+msgid "Updated translations"
+msgstr "Oppdaterte oversettelser"
+
+#: data/installer.appdata.xml.in:29
+msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
+
+#: data/installer.appdata.xml.in:30
+msgid "Show all system requirements warnings on a single page"
+msgstr ""
+
+#: data/installer.appdata.xml.in:31
+msgid "Warn about installing developer builds"
+msgstr ""
+
+#: data/installer.appdata.xml.in:44
+msgid "Double the boot partition size for encrypted installs"
+msgstr ""
+
+#: data/installer.appdata.xml.in:54
+msgid "Warn about installing in a VM"
+msgstr ""
+
+#: data/installer.appdata.xml.in:64
+msgid "Avoid political naming of certain locales"
+msgstr "Ungått politiske navn for noen lokaliteter"
+
+#: data/installer.appdata.xml.in:65
+msgid "Fix styles for \"Unused\" disk partitions"
+msgstr "Fikset stiler for «ubrukte» diskpartisjoner"
+
+#: data/installer.appdata.xml.in:95
+#, fuzzy
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Installer systemet"
 
-#: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+#~ msgid "io.elementary.installer"
+#~ msgstr "io.elementary.installer"
+
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"

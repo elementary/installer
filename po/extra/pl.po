@@ -7,25 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2017-09-22 13:15+0000\n"
-"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
-"Language-Team: Polish <https://weblate.elementary.io/projects/installer/"
-"extra/pl/>\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"PO-Revision-Date: 2023-01-05 22:25+0000\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Language-Team: Polish <https://l10n.elementary.io/projects/installer/extra/"
+"pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.appdata.xml.in:7
-#, fuzzy
-#| msgid "Install elementary OS"
 msgid "Installer"
-msgstr "Zainstaluj elementary OS"
+msgstr "Instalator"
 
 #: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
@@ -33,19 +31,75 @@ msgstr "Zainstaluj elementary OS"
 
 #: data/installer.appdata.xml.in:10
 msgid "Step by step installer for elementary OS itself."
-msgstr ""
+msgstr "Instalator krok po kroku dla elementary OS."
 
-#: data/installer.appdata.xml.in:17
-msgid "elementary, Inc."
+#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
+#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
+#: data/installer.appdata.xml.in:62
+msgid "Improvements:"
+msgstr "Ulepszenia:"
+
+#: data/installer.appdata.xml.in:18
+msgid "Use large icons in views"
+msgstr "W widokach są teraz użyte duże ikony"
+
+#: data/installer.appdata.xml.in:19
+msgid "Add a custom icon for Before Installing view"
+msgstr "Dodano specjalną ikonę dla widoku „Przed instalacją”"
+
+#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
+#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
+#: data/installer.appdata.xml.in:66
+msgid "Updated translations"
+msgstr "Zaktualizowano tłumaczenia"
+
+#: data/installer.appdata.xml.in:29
+msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
+"Pokazanie pasku z informacjami na baterii zamiast zmieniania na inną stronę"
+
+#: data/installer.appdata.xml.in:30
+msgid "Show all system requirements warnings on a single page"
+msgstr ""
+"Wszystkie ostrzeżenia o wymaganiach systemowych są pokazywane na jednej "
+"stronie"
+
+#: data/installer.appdata.xml.in:31
+msgid "Warn about installing developer builds"
+msgstr "Ostrzeżenie o instalacji wersji deweloperskich"
+
+#: data/installer.appdata.xml.in:44
+msgid "Double the boot partition size for encrypted installs"
+msgstr "Podwojono rozmiar partycji dla szyfrowanych instalacji"
+
+#: data/installer.appdata.xml.in:54
+msgid "Warn about installing in a VM"
+msgstr "Ostrzeżenie o instalacji w maszynie wirtualnej"
+
+#: data/installer.appdata.xml.in:64
+msgid "Avoid political naming of certain locales"
+msgstr "Uniknięcie upolitycznionych nazw niektórych ustawień regionalnych"
+
+#: data/installer.appdata.xml.in:65
+msgid "Fix styles for \"Unused\" disk partitions"
+msgstr "Naprawiono style dla \"Nieużywanych\" partycji dysku"
+
+#: data/installer.appdata.xml.in:95
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Zainstaluj system"
 
-#: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+#~ msgid "io.elementary.installer"
+#~ msgstr "io.elementary.installer"
+
+#~ msgid "Ensure a usable hostname"
+#~ msgstr "Upewniono się, że hostname jest możliwy do użycia"
+
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"
 
 #~ msgid "Calculator"
 #~ msgstr "Kalkulator"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 22:59+0000\n"
-"PO-Revision-Date: 2021-07-16 10:41+0000\n"
+"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"PO-Revision-Date: 2023-01-05 22:25+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/extra/"
 "he/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/installer.appdata.xml.in:7
 msgid "Installer"
@@ -25,7 +25,55 @@ msgstr "התקנת elementary OS"
 msgid "Step by step installer for elementary OS itself."
 msgstr "תכנית התקנה ל־elementary OS שלוקחת אותך שלב אחר שלב."
 
-#: data/installer.appdata.xml.in:17
+#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
+#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
+#: data/installer.appdata.xml.in:62
+msgid "Improvements:"
+msgstr "שיפורים:"
+
+#: data/installer.appdata.xml.in:18
+msgid "Use large icons in views"
+msgstr "נעשה שימוש בסמלים גדולים בתצוגות"
+
+#: data/installer.appdata.xml.in:19
+msgid "Add a custom icon for Before Installing view"
+msgstr "נוסף סמל מותאם לתצוגת טרום ההתקנה"
+
+#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
+#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
+#: data/installer.appdata.xml.in:66
+msgid "Updated translations"
+msgstr "עודכנו התרגומים"
+
+#: data/installer.appdata.xml.in:29
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr "מופיעה שורת מידע על הסוללה במקום לעבור לעמוד אחר"
+
+#: data/installer.appdata.xml.in:30
+msgid "Show all system requirements warnings on a single page"
+msgstr "כל אזהרות דרישות המערכת הן בעמוד אחד"
+
+#: data/installer.appdata.xml.in:31
+msgid "Warn about installing developer builds"
+msgstr "להתקנת מהדורות למפתחים מצורפת אזהרה"
+
+#: data/installer.appdata.xml.in:44
+msgid "Double the boot partition size for encrypted installs"
+msgstr "גודל מחיצת הטעינה תוכפל להתקנות מוצפנות"
+
+#: data/installer.appdata.xml.in:54
+msgid "Warn about installing in a VM"
+msgstr "להתקנה במכונה וירטואלית מצורפת אזהרה"
+
+#: data/installer.appdata.xml.in:64
+msgid "Avoid political naming of certain locales"
+msgstr "קיימת מניעה ממתן שמות פוליטיים בשפות מסוימות"
+
+#: data/installer.appdata.xml.in:65
+msgid "Fix styles for \"Unused\" disk partitions"
+msgstr "תוקנו סגנונות של מחיצות כונן „שאינן בשימוש”"
+
+#: data/installer.appdata.xml.in:95
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 
@@ -33,6 +81,8 @@ msgstr "elementary בע״מ"
 msgid "Install the system"
 msgstr "התקנת המערכת"
 
-#: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+#~ msgid "Ensure a usable hostname"
+#~ msgstr "נוסף אימות ששם המכונה שמיש"
+
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"
