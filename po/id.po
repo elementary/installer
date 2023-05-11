@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
 "PO-Revision-Date: 2023-05-11 15:54+0000\n"
-"Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
+"Last-Translator: Rtr0ID <Albertong27@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/installer/"
 "installer/id/>\n"
 "Language: id\n"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
-msgstr ""
+msgstr "Mesin Virtual"
 
 #: src/Views/CheckView.vala:63
 #, c-format
@@ -146,6 +146,8 @@ msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"Enkripsi deive perangkat ini jika diperlukan untuk proteksi tambahan, tetapi "
+"pastikan anda memahami:"
 
 #: src/Views/EncryptView.vala:65
 #, fuzzy
