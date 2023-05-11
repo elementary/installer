@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2023-05-11 15:54+0000\n"
-"Last-Translator: Rtr0ID <Albertong27@gmail.com>\n"
+"PO-Revision-Date: 2023-05-12 16:06+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/installer/"
 "installer/id/>\n"
 "Language: id\n"
@@ -146,20 +147,16 @@ msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
-"Enkripsi deive perangkat ini jika diperlukan untuk proteksi tambahan, tetapi "
+"Enkripsi drive perangkat ini jika diperlukan untuk proteksi tambahan, tetapi "
 "pastikan anda memahami:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"Mengenkripsi drive ini melindungi data terbaca oleh orang lain yang "
-"menggunakan akses secara fisik ke drive ini."
+"Data hanya akan dilindungi dari orang lain dengan akses fisik ke perangkat "
+"ini saat dimatikan."
 
 #: src/Views/EncryptView.vala:74
 #, fuzzy
@@ -178,6 +175,8 @@ msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"Keyboard internal atau USB akan diperlukan untuk mengetikkan kata sandi "
+"enkripsi setiap kali perangkat ini dihidupkan."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -207,10 +206,8 @@ msgid "Choose Password"
 msgstr "Pilih Kata Sandi"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Pilih Kata Sandi Enkripsi"
+msgstr "Atur Kata Sandi Enkripsi"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
@@ -221,23 +218,18 @@ msgid "Could Not Install"
 msgstr "Tidak Dapat Memasang"
 
 #: src/Views/ErrorView.vala:36
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
 "Pemasangan %s gagal, kemungkinan kesalahan pada perangkat keras. Kemungkinan "
-"perangkat Anda tidak dinyalakan ulang dengan benar. Anda dapat mencoba hal "
+"perangkat tidak dinyalakan ulang dengan benar. Anda dapat mencoba hal "
 "berikut:"
 
 #: src/Views/ErrorView.vala:47
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• Coba pemasangan lagi"
+msgstr "Coba pemasangan lagi"
 
 #: src/Views/ErrorView.vala:58
 #, fuzzy
@@ -354,11 +346,11 @@ msgstr "Berkas sistem untuk beranda tidak valid"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "Tampilkan log"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "Sembuyikan log"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:221
@@ -394,10 +386,8 @@ msgstr ""
 "mencerminkan pengalaman saat sudah terpasang."
 
 #: src/Views/TryInstallView.vala:47
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Hapus dan Pasang"
+msgstr "Hapus Diska dan Pasang"
 
 #: src/Views/TryInstallView.vala:49
 #, c-format
@@ -405,10 +395,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Hapus semua dan pasang salinan baru dari %s."
 
 #: src/Views/TryInstallView.vala:55
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Kustom (Mahir)"
+msgstr "Pemasangan Kustom (Mahir)"
 
 #: src/Views/TryInstallView.vala:57
 msgid ""
@@ -423,10 +411,8 @@ msgid "Next"
 msgstr "Selanjutnya"
 
 #: src/Views/TryInstallView.vala:114
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Tidak Dapat Memasang"
+msgstr "Pemasangan Kustom"
 
 #: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
@@ -435,7 +421,7 @@ msgstr "Lanjutkan Pengaturan"
 #: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s telah dipasang"
 
 #: src/Views/SuccessView.vala:63
 msgid "Shut Down"
@@ -445,7 +431,7 @@ msgstr "Matikan"
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
+msgstr[0] "Perangkat Anda akan dimulai ulang secara otomatis dalam %i detik."
 
 #: src/Views/SuccessView.vala:101
 msgid ""
@@ -494,20 +480,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Gunakan partisi:"
+msgstr "Gunakan Partisi"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "Format:"
+msgstr "Format"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Hapus semua data dan siapkan berkas sistem baru"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
