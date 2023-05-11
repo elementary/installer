@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-04-20 09:24+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2023-05-11 15:54+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/installer/"
 "installer/id/>\n"
 "Language: id\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -58,20 +58,20 @@ msgid "Test Mode"
 msgstr "Mode Tes"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Coba Pemasangan Lagi"
+msgstr "Sebelum Memasang"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Versi Prarilis"
 
 #: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Hanya pasang pada perangkat yang didedikasikan untuk pengembangan. <b>Anda "
+"tidak akan dapat meningkatkan ke rilis stabil</b>."
 
 #: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
@@ -81,6 +81,8 @@ msgstr ""
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Beberapa bagian %s mungkin berjalan lambat, membeku, atau tidak berfungsi "
+"dengan baik."
 
 #: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
@@ -88,13 +90,11 @@ msgstr "Perangkat Anda Mungkin Terlalu Lambat"
 
 #: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Hal ini dapat menyebabkannya berjalan lambat atau membeku."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Pasang %s"
+msgstr "Tetap Pasang"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
@@ -134,16 +134,12 @@ msgid "Erase and Install"
 msgstr "Hapus dan Pasang"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Jangan Enkripsi"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Enkripsi Drive"
+msgstr "Aktifkan Enkripsi Drive"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
