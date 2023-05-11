@@ -2,8 +2,9 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2019-06-18 03:44+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2023-05-12 16:06+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/installer/"
 "extra/id/>\n"
 "Language: id\n"
@@ -11,13 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #: data/installer.appdata.xml.in:7
-#, fuzzy
-#| msgid "Install elementary OS"
 msgid "Installer"
-msgstr "Pasang OS elementary"
+msgstr "Pemasangan"
 
 #: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
@@ -25,59 +24,59 @@ msgstr "Pasang OS elementary"
 
 #: data/installer.appdata.xml.in:10
 msgid "Step by step installer for elementary OS itself."
-msgstr ""
+msgstr "Langkah demi langkah pemasang untuk elementary OS itu sendiri."
 
 #: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
 #: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
 #: data/installer.appdata.xml.in:62
 msgid "Improvements:"
-msgstr ""
+msgstr "Peningkatan:"
 
 #: data/installer.appdata.xml.in:18
 msgid "Use large icons in views"
-msgstr ""
+msgstr "Menggunakan ikon besar dalam tampilan"
 
 #: data/installer.appdata.xml.in:19
 msgid "Add a custom icon for Before Installing view"
-msgstr ""
+msgstr "Tambahkan ikon kustom untuk tampilan Sebelum Memasang"
 
 #: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
 #: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
 #: data/installer.appdata.xml.in:66
 msgid "Updated translations"
-msgstr ""
+msgstr "Terjemahan yang diperbarui"
 
 #: data/installer.appdata.xml.in:29
 msgid "Show an infobar on battery instead of switching to a different page"
-msgstr ""
+msgstr "Perlihatkan bilah info tentang baterai daripada beralih ke halaman lain"
 
 #: data/installer.appdata.xml.in:30
 msgid "Show all system requirements warnings on a single page"
-msgstr ""
+msgstr "Menampilkan semua peringatan persyaratan sistem pada satu halaman"
 
 #: data/installer.appdata.xml.in:31
 msgid "Warn about installing developer builds"
-msgstr ""
+msgstr "Memperingatkan tentang memasang build developer"
 
 #: data/installer.appdata.xml.in:44
 msgid "Double the boot partition size for encrypted installs"
-msgstr ""
+msgstr "Gandakan ukuran partisi boot untuk pemasangan terenkripsi"
 
 #: data/installer.appdata.xml.in:54
 msgid "Warn about installing in a VM"
-msgstr ""
+msgstr "Memperingatkan tentang pemasangan di VM"
 
 #: data/installer.appdata.xml.in:64
 msgid "Avoid political naming of certain locales"
-msgstr ""
+msgstr "Hindari penamaan politik untuk lokal tertentu"
 
 #: data/installer.appdata.xml.in:65
 msgid "Fix styles for \"Unused\" disk partitions"
-msgstr ""
+msgstr "Perbaiki gaya untuk partisi diska yang \"Tidak Digunakan\""
 
 #: data/installer.appdata.xml.in:95
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
