@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-12-03 07:25+0000\n"
+"PO-Revision-Date: 2023-05-18 16:52+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
 "installer/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:42
@@ -57,10 +57,8 @@ msgid "Test Mode"
 msgstr "Test Modu"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Tekrar Yüklemeyi Deneyin"
+msgstr "Yüklemeden Önce"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
@@ -94,10 +92,8 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "Bu, yavaş çalışmasına veya donmasına neden olabilir."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "%s'i yükleyin"
+msgstr "Yine de Yükle"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
