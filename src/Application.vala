@@ -56,7 +56,11 @@ public class Installer.App : Gtk.Application {
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
 
-        Inhibitor.get_instance ().inhibit ();
+        inhibit (
+            get_active_window (),
+            Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
+            _("operating system is being installed")
+        );
     }
 }
 
