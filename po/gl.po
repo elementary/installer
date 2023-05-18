@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"POT-Creation-Date: 2023-05-18 16:52+0000\n"
 "PO-Revision-Date: 2022-04-20 09:24+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/installer/"
@@ -19,6 +19,10 @@ msgstr ""
 #, c-format
 msgid "Install %s"
 msgstr "Instalar %s"
+
+#: src/Application.vala:62
+msgid "operating system is being installed"
+msgstr ""
 
 #: src/MainWindow.vala:267
 msgid "Connect to a Power Source"

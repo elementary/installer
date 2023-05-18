@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"POT-Creation-Date: 2023-05-18 16:52+0000\n"
 "PO-Revision-Date: 2017-04-01 19:21+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: ak (generated) <http://weblate.elementary.io/projects/desktop/"
@@ -18,6 +18,10 @@ msgstr ""
 #: src/Application.vala:42
 #, c-format
 msgid "Install %s"
+msgstr ""
+
+#: src/Application.vala:62
+msgid "operating system is being installed"
 msgstr ""
 
 #: src/MainWindow.vala:267
