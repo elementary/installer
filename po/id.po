@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-18 16:52+0000\n"
-"PO-Revision-Date: 2023-05-12 16:06+0000\n"
-"Last-Translator: Rtr0ID <Albertong27@gmail.com>\n"
+"PO-Revision-Date: 2023-05-19 14:49+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/installer/"
 "installer/id/>\n"
 "Language: id\n"
@@ -21,10 +22,8 @@ msgid "Install %s"
 msgstr "Pasang %s"
 
 #: src/Application.vala:62
-#, fuzzy
-#| msgid "%s has been installed"
 msgid "operating system is being installed"
-msgstr "%s telah dipasang"
+msgstr "sistem operasi sedang dipasang"
 
 #: src/MainWindow.vala:267
 msgid "Connect to a Power Source"
@@ -40,15 +39,15 @@ msgstr ""
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
-msgstr "Matikan mode tes"
+msgstr "Mode uji shutdown"
 
 #: src/Utils.vala:48
 msgid "Test mode reboot"
-msgstr "Mode tes reboot"
+msgstr "Mode uji reboot"
 
 #: src/Utils.vala:74
 msgid "Test mode switch user"
-msgstr "Mode tes ganti pengguna"
+msgstr "Mode uji ganti pengguna"
 
 #: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
@@ -61,7 +60,7 @@ msgstr "Batalkan Pemasangan"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
-msgstr "Mode Tes"
+msgstr "Mode Uji"
 
 #: src/Views/CheckView.vala:50
 msgid "Before Installing"
@@ -88,7 +87,7 @@ msgstr "Mesin Virtual"
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 "Beberapa bagian %s mungkin berjalan lambat, membeku, atau tidak berfungsi "
-"dengan baik."
+"dengan selayaknya."
 
 #: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
@@ -128,8 +127,8 @@ msgid ""
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
 "Ini akan menghapus semua data pada drive yang dipilih. Jika Anda belum "
-"mencadangkan data Anda, Anda dapat membatalkan pemasangan dan menggunakan "
-"Mode Demo."
+"mencadangkan data, Anda dapat membatalkan pemasangan dan menggunakan Mode "
+"Demo."
 
 #: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
@@ -208,11 +207,11 @@ msgstr "Pilih Kata Sandi"
 
 #: src/Views/EncryptView.vala:191
 msgid "Set Encryption Password"
-msgstr "Atur Kata Sandi Enkripsi"
+msgstr "Tetapkan Kata Sandi Enkripsi"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
-msgstr "Password tidak sesuai"
+msgstr "Kata sandi tidak cocok"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
@@ -224,8 +223,8 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Pemasangan %s gagal, kemungkinan kesalahan pada perangkat keras. Kemungkinan "
-"perangkat tidak dinyalakan ulang dengan benar. Anda dapat mencoba hal "
+"Pemasangan %s gagal, mungkin dikarenakan kesalahan perangkat keras. "
+"Perangkat mungkin tidak dimulai ulang dengan benar. Anda dapat mencoba hal "
 "berikut:"
 
 #: src/Views/ErrorView.vala:47
@@ -238,7 +237,7 @@ msgstr "Gunakan Mode Demo dan coba untuk memulihkan secara manual"
 
 #: src/Views/ErrorView.vala:68
 msgid "Restart the device and boot from another drive"
-msgstr "Menyalakan ulang perangkat Anda dan lakukan booting dari drive lain"
+msgstr "Mulai ulang perangkat dan boot dari drive lain"
 
 #: src/Views/ErrorView.vala:78
 msgid "Details"
