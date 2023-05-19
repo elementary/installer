@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-18 16:52+0000\n"
-"PO-Revision-Date: 2023-05-19 14:49+0000\n"
-"Last-Translator: Rtr0ID <Albertong27@gmail.com>\n"
+"PO-Revision-Date: 2023-05-20 18:06+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/installer/"
 "installer/id/>\n"
 "Language: id\n"
@@ -240,11 +241,11 @@ msgstr "Mulai ulang perangkat dan boot dari drive lain"
 
 #: src/Views/ErrorView.vala:78
 msgid "Details"
-msgstr "Detil"
+msgstr "Rincian"
 
 #: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
-msgstr "Menyalakan Ulang Perangkat"
+msgstr "Mulai Ulang Perangkat"
 
 #: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
@@ -256,7 +257,7 @@ msgstr "Coba Pemasangan Lagi"
 
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
-msgstr "Pilih Susunan Keyboard"
+msgstr "Pilih Tata Letak Papan Ketik"
 
 #: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
@@ -264,7 +265,7 @@ msgstr "Ketik untuk menguji tata letak Anda"
 
 #: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
-msgstr "Tampilkan tata letak papan tik"
+msgstr "Tampilkan tata letak papan ketik"
 
 #: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
@@ -288,7 +289,7 @@ msgstr "Pilih Bahasa"
 
 #: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
-msgstr "Bahasa yang Aktif Saat Ini"
+msgstr "Bahasa yang aktif saat ini"
 
 #: src/Views/PartitioningView.vala:52
 msgid ""
@@ -322,7 +323,7 @@ msgstr "Memodifikasi Partisi…"
 
 #: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
-msgstr "Partisi EFI memiliki berkas sistem yang salah"
+msgstr "Partisi EFI memiliki sistem berkas yang salah"
 
 #: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
@@ -330,11 +331,11 @@ msgstr "Partisi EFI terlalu kecil"
 
 #: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
-msgstr "Berkas sistem untuk root tidak valid"
+msgstr "Sistem berkas untuk root tidak valid"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
-msgstr "Berkas sistem untuk beranda tidak valid"
+msgstr "Sistem berkas untuk beranda tidak valid"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
@@ -352,7 +353,7 @@ msgstr "Mempartisi Drive"
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:226
 msgid "Extracting Files"
-msgstr "Ekstrak File"
+msgstr "Mengekstrak Berkas"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:231
@@ -362,7 +363,7 @@ msgstr "Mengkonfigurasi Sistem"
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:236
 msgid "Finishing the Installation"
-msgstr "Selesaikan Pemasangan"
+msgstr "Menyelesaikan Pemasangan"
 
 #: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
@@ -388,15 +389,15 @@ msgstr "Hapus semua dan pasang salinan baru dari %s."
 
 #: src/Views/TryInstallView.vala:55
 msgid "Custom Install (Advanced)"
-msgstr "Pemasangan Kustom (Mahir)"
+msgstr "Pemasangan Kustom (Lanjutan)"
 
 #: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"Buat, ubah ukuran, atau jika tidak kelola partisi secara manual. Metode ini "
-"dapat menyebabkan kehilangan data."
+"Buat, ubah ukuran, atau kelola partisi secara manual. Metode ini dapat "
+"menyebabkan hilangnya data."
 
 #: src/Views/TryInstallView.vala:88
 msgid "Next"
@@ -408,7 +409,7 @@ msgstr "Pemasangan Kustom"
 
 #: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
-msgstr "Lanjutkan Pengaturan"
+msgstr "Lanjutkan Penyiapan"
 
 #: src/Views/SuccessView.vala:34
 #, c-format
@@ -430,8 +431,8 @@ msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Setelah memulai ulang Anda dapat mengatur pengguna baru, atau sekarang Anda "
-"dapat mematikan dan mengatur pengguna baru nanti."
+"Setelah memulai ulang Anda dapat menyiapkan pengguna baru, atau Anda dapat "
+"mematikan dan menyiapkan pengguna baru nanti."
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -442,8 +443,8 @@ msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Masukkan kata sandi enkripsi partisi dan atur sebuah nama perangkat untuk "
-"partisi yang didekripsi."
+"Masukkan kata sandi enkripsi partisi dan tetapkan sebuah nama perangkat "
+"untuk partisi yang didekripsi."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
@@ -459,7 +460,7 @@ msgstr "Dekripsi"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr "Volume LUKS sudah didekripsi"
+msgstr "Volume LUKS didekripsi"
 
 #: src/Widgets/DiskBar.vala:135
 #, c-format
@@ -481,11 +482,11 @@ msgstr "Format"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr "Hapus semua data dan siapkan berkas sistem baru"
+msgstr "Hapus semua data dan siapkan sistem berkas baru"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr "Gunakan sebagai :"
+msgstr "Gunakan sebagai:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
@@ -493,7 +494,7 @@ msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
-msgstr "Beranda (/home)"
+msgstr "Home (/home)"
 
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
@@ -514,7 +515,7 @@ msgstr "Kustom:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
-msgstr "Berkas sistem:"
+msgstr "Sistem Berkas:"
 
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
