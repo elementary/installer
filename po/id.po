@@ -4,8 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-18 16:52+0000\n"
 "PO-Revision-Date: 2023-05-19 14:49+0000\n"
-"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
-"io>\n"
+"Last-Translator: Rtr0ID <Albertong27@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/installer/"
 "installer/id/>\n"
 "Language: id\n"
@@ -159,8 +158,8 @@ msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"Data hanya akan dilindungi dari orang lain dengan akses fisik ke perangkat "
-"ini saat dimatikan."
+"Data hanya akan terproteksi dari orang lain yang memiliki akses fisik ke "
+"perangkat ini saat perangkat ini dimatikan."
 
 #: src/Views/EncryptView.vala:74
 msgid ""
@@ -175,8 +174,8 @@ msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
-"Keyboard internal atau USB akan diperlukan untuk mengetikkan kata sandi "
-"enkripsi setiap kali perangkat ini dihidupkan."
+"Sebuah keyboard akan dibutuhkan untuk mengetik kata sandi enkripsi setiap "
+"perangkat ini dihidupkan."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -241,7 +240,7 @@ msgstr "Mulai ulang perangkat dan boot dari drive lain"
 
 #: src/Views/ErrorView.vala:78
 msgid "Details"
-msgstr "Detail"
+msgstr "Detil"
 
 #: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
