@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-18 16:52+0000\n"
-"PO-Revision-Date: 2023-05-07 01:06+0000\n"
+"PO-Revision-Date: 2023-05-26 21:06+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -21,10 +21,8 @@ msgid "Install %s"
 msgstr "Installeer %s"
 
 #: src/Application.vala:62
-#, fuzzy
-#| msgid "%s has been installed"
 msgid "operating system is being installed"
-msgstr "%s is geïnstalleerd"
+msgstr "besturingssysteem wordt geïnstalleerd"
 
 #: src/MainWindow.vala:267
 msgid "Connect to a Power Source"
