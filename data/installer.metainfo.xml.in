@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2021 elementary, Inc. <contact@elementary.io> -->
-<component>
+<component type="desktop-application">
   <id>io.elementary.installer</id>
+  <translation type="gettext">io.elementary.installer</translation>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
+
   <name>Installer</name>
   <summary>Install elementary OS</summary>
   <description>
     <p>Step by step installer for elementary OS itself.</p>
   </description>
+
+  <screenshots>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/1.0.7/data/screenshot-language.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-keyboard.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-try-install.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-custom.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-encrypt.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-progress.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-success.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1" />
+
+  <provides>
+    <binary>io.elementary.installer</binary>
+    <binary>io.elementary.installer-daemon</binary>
+  </provides>
+
+  <url type="bugtracker">https://github.com/elementary/installer/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://github.com/elementary/installer/discussions</url>
+  <url type="homepage">https://elementary.io/</url>
+  <url type="translate">https://l10n.elementary.io/projects/installer</url>
+
+  <developer_name>elementary, Inc.</developer_name>
+  <project_group>elementary</project_group>
+  <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
     <release version="1.0.7" date="2023-01-11" urgency="medium">
@@ -68,31 +111,4 @@
       </description>
     </release>
   </releases>
-
-  <screenshots>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/1.0.7/data/screenshot-language.png</image>
-    </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-keyboard.png</image>
-    </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-try-install.png</image>
-    </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-custom.png</image>
-    </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-encrypt.png</image>
-    </screenshot>
-    <screenshot>
-      <image type="default">https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-progress.png</image>
-    </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-success.png</image>
-    </screenshot>
-  </screenshots>
-  <developer_name>elementary, Inc.</developer_name>
-  <url type="homepage">https://elementary.io</url>
-  <url type="bugtracker">https://github.com/elementary/installer/issues</url>
 </component>
