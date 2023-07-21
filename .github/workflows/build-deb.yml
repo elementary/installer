@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/elementary/docker:odin-unstable
+      image: ghcr.io/elementary/docker:horus-unstable
 
     steps:
       - name: Install dependencies
