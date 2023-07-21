@@ -42,7 +42,7 @@ public class Installer.MainWindow : Hdy.Window {
     private EncryptView encrypt_view;
     private ErrorView error_view;
     private bool check_ignored = false;
-
+    private uint orca_timeout_id = 0;
 
     construct {
         language_view = new LanguageView ();
@@ -78,6 +78,10 @@ public class Installer.MainWindow : Hdy.Window {
         add (overlay);
 
         language_view.next_step.connect (() => {
+            if (orca_timeout_id != 0) {
+                Source.remove (orca_timeout_id);
+            }
+
             // Reset when language selection changes
             set_infobar_string ();
             load_keyboard_view ();
@@ -101,6 +105,18 @@ public class Installer.MainWindow : Hdy.Window {
 
         battery_infobar.response.connect (() => {
             battery_infobar.revealed = false;
+        });
+
+        var orca_prompt = "Screen reader can be turned on with the keyboard shorcut super + alt + S";
+
+        orca_timeout_id = Timeout.add_seconds (3, () => {
+            try {
+                Process.spawn_command_line_async ("espeak '%s'".printf (orca_prompt));
+            } catch (SpawnError e) {
+                critical ("Couldn't read Orca prompt: %s", e.message);
+            }
+
+            return Source.REMOVE;
         });
     }
 
