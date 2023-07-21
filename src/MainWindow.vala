@@ -110,7 +110,7 @@ public class Installer.MainWindow : Hdy.Window {
 
         var mediakeys_settings = new Settings ("org.gnome.settings-daemon.plugins.media-keys");
 
-        orca_timeout_id = Timeout.add_seconds (3, () => {
+        orca_timeout_id = Timeout.add_seconds (10, () => {
             var shortcut_string = Granite.accel_to_string (
                 mediakeys_settings.get_strv ("screenreader")[0]
             );
