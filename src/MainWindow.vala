@@ -78,6 +78,7 @@ public class Installer.MainWindow : Hdy.Window {
         add (overlay);
 
         language_view.next_step.connect (() => {
+            // Don't prompt for screen reader if we're able to navigate without it
             if (orca_timeout_id != 0) {
                 Source.remove (orca_timeout_id);
             }
