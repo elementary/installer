@@ -109,8 +109,15 @@ public class Installer.MainWindow : Hdy.Window {
         });
 
         var mediakeys_settings = new Settings ("org.gnome.settings-daemon.plugins.media-keys");
+        var a11y_settings = new Settings ("org.gnome.desktop.a11y.applications");
 
         orca_timeout_id = Timeout.add_seconds (10, () => {
+            orca_timeout_id = 0;
+
+            if (a11y_settings.get_boolean ("screen-reader-enabled")) {
+                return Source.REMOVE;
+            }
+
             var shortcut_string = Granite.accel_to_string (
                 mediakeys_settings.get_strv ("screenreader")[0]
             );
@@ -126,7 +133,6 @@ public class Installer.MainWindow : Hdy.Window {
                 critical ("Couldn't read Orca prompt: %s", e.message);
             }
 
-            orca_timeout_id = 0;
             return Source.REMOVE;
         });
     }
