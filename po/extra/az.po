@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:00+0000\n"
+"POT-Creation-Date: 2023-07-21 19:05+0000\n"
 "PO-Revision-Date: 2019-09-07 18:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Azerbaijani <https://l10n.elementary.io/projects/installer/"
@@ -31,52 +31,44 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:70
-#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:95
-#: data/installer.metainfo.xml.in:105
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:72
+#: data/installer.metainfo.xml.in:83 data/installer.metainfo.xml.in:98
+#: data/installer.metainfo.xml.in:108
 msgid "Improvements:"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:61
-msgid "Use large icons in views"
-msgstr ""
-
-#: data/installer.metainfo.xml.in:62
-msgid "Add a custom icon for Before Installing view"
-msgstr ""
-
-#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:75
-#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:98
-#: data/installer.metainfo.xml.in:109
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:76
+#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:111
 msgid "Updated translations"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:72
+#: data/installer.metainfo.xml.in:74
+msgid "Use large icons in views"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:75
+msgid "Add a custom icon for Before Installing view"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:85
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:86
 msgid "Show all system requirements warnings on a single page"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:74
+#: data/installer.metainfo.xml.in:87
 msgid "Warn about installing developer builds"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:87
+#: data/installer.metainfo.xml.in:100
 msgid "Double the boot partition size for encrypted installs"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:97
+#: data/installer.metainfo.xml.in:110
 msgid "Warn about installing in a VM"
-msgstr ""
-
-#: data/installer.metainfo.xml.in:107
-msgid "Avoid political naming of certain locales"
-msgstr ""
-
-#: data/installer.metainfo.xml.in:108
-msgid "Fix styles for \"Unused\" disk partitions"
 msgstr ""
 
 #: data/io.elementary.installer.desktop.in:4

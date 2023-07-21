@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:00+0000\n"
+"POT-Creation-Date: 2023-07-21 19:05+0000\n"
 "PO-Revision-Date: 2023-01-05 22:25+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/extra/"
@@ -29,57 +29,55 @@ msgstr "תכנית התקנה ל־elementary OS שלוקחת אותך שלב א�
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 
-#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:70
-#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:95
-#: data/installer.metainfo.xml.in:105
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:72
+#: data/installer.metainfo.xml.in:83 data/installer.metainfo.xml.in:98
+#: data/installer.metainfo.xml.in:108
 msgid "Improvements:"
 msgstr "שיפורים:"
 
-#: data/installer.metainfo.xml.in:61
-msgid "Use large icons in views"
-msgstr "נעשה שימוש בסמלים גדולים בתצוגות"
-
-#: data/installer.metainfo.xml.in:62
-msgid "Add a custom icon for Before Installing view"
-msgstr "נוסף סמל מותאם לתצוגת טרום ההתקנה"
-
-#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:75
-#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:98
-#: data/installer.metainfo.xml.in:109
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:76
+#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:111
 msgid "Updated translations"
 msgstr "עודכנו התרגומים"
 
-#: data/installer.metainfo.xml.in:72
+#: data/installer.metainfo.xml.in:74
+msgid "Use large icons in views"
+msgstr "נעשה שימוש בסמלים גדולים בתצוגות"
+
+#: data/installer.metainfo.xml.in:75
+msgid "Add a custom icon for Before Installing view"
+msgstr "נוסף סמל מותאם לתצוגת טרום ההתקנה"
+
+#: data/installer.metainfo.xml.in:85
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr "מופיעה שורת מידע על הסוללה במקום לעבור לעמוד אחר"
 
-#: data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:86
 msgid "Show all system requirements warnings on a single page"
 msgstr "כל אזהרות דרישות המערכת הן בעמוד אחד"
 
-#: data/installer.metainfo.xml.in:74
+#: data/installer.metainfo.xml.in:87
 msgid "Warn about installing developer builds"
 msgstr "להתקנת מהדורות למפתחים מצורפת אזהרה"
 
-#: data/installer.metainfo.xml.in:87
+#: data/installer.metainfo.xml.in:100
 msgid "Double the boot partition size for encrypted installs"
 msgstr "גודל מחיצת הטעינה תוכפל להתקנות מוצפנות"
 
-#: data/installer.metainfo.xml.in:97
+#: data/installer.metainfo.xml.in:110
 msgid "Warn about installing in a VM"
 msgstr "להתקנה במכונה וירטואלית מצורפת אזהרה"
-
-#: data/installer.metainfo.xml.in:107
-msgid "Avoid political naming of certain locales"
-msgstr "קיימת מניעה ממתן שמות פוליטיים בשפות מסוימות"
-
-#: data/installer.metainfo.xml.in:108
-msgid "Fix styles for \"Unused\" disk partitions"
-msgstr "תוקנו סגנונות של מחיצות כונן „שאינן בשימוש”"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "התקנת המערכת"
+
+#~ msgid "Avoid political naming of certain locales"
+#~ msgstr "קיימת מניעה ממתן שמות פוליטיים בשפות מסוימות"
+
+#~ msgid "Fix styles for \"Unused\" disk partitions"
+#~ msgstr "תוקנו סגנונות של מחיצות כונן „שאינן בשימוש”"
 
 #~ msgid "Ensure a usable hostname"
 #~ msgstr "נוסף אימות ששם המכונה שמיש"

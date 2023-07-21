@@ -42,7 +42,7 @@ public class Installer.MainWindow : Hdy.Window {
     private EncryptView encrypt_view;
     private ErrorView error_view;
     private bool check_ignored = false;
-
+    private uint orca_timeout_id = 0;
 
     construct {
         language_view = new LanguageView ();
@@ -78,6 +78,11 @@ public class Installer.MainWindow : Hdy.Window {
         add (overlay);
 
         language_view.next_step.connect (() => {
+            // Don't prompt for screen reader if we're able to navigate without it
+            if (orca_timeout_id != 0) {
+                Source.remove (orca_timeout_id);
+            }
+
             // Reset when language selection changes
             set_infobar_string ();
             load_keyboard_view ();
@@ -101,6 +106,28 @@ public class Installer.MainWindow : Hdy.Window {
 
         battery_infobar.response.connect (() => {
             battery_infobar.revealed = false;
+        });
+
+        var mediakeys_settings = new Settings ("org.gnome.settings-daemon.plugins.media-keys");
+
+        orca_timeout_id = Timeout.add_seconds (10, () => {
+            var shortcut_string = Granite.accel_to_string (
+                mediakeys_settings.get_strv ("screenreader")[0]
+            );
+
+            // Espeak can't read ⌘
+            shortcut_string = shortcut_string.replace ("⌘", "Super");
+
+            var orca_prompt = "Screen reader can be turned on with the keyboard shorcut %s".printf (shortcut_string);
+
+            try {
+                Process.spawn_command_line_async ("espeak '%s'".printf (orca_prompt));
+            } catch (SpawnError e) {
+                critical ("Couldn't read Orca prompt: %s", e.message);
+            }
+
+            orca_timeout_id = 0;
+            return Source.REMOVE;
         });
     }
 
