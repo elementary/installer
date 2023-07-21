@@ -126,6 +126,7 @@ public class Installer.MainWindow : Hdy.Window {
                 critical ("Couldn't read Orca prompt: %s", e.message);
             }
 
+            orca_timeout_id = 0;
             return Source.REMOVE;
         });
     }
