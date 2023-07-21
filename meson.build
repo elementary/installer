@@ -1,6 +1,7 @@
 project(
     'io.elementary.installer',
     'vala', 'c',
+    meson_version : '>= 0.56.0',
     version: '1.0.7'
 )
 

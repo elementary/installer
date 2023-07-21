@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2021 elementary, Inc. <contact@elementary.io> -->
+<component type="desktop-application">
+  <id>io.elementary.installer</id>
+  <translation type="gettext">io.elementary.installer</translation>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+
+  <name>Installer</name>
+  <summary>Install elementary OS</summary>
+  <description>
+    <p>Step by step installer for elementary OS itself.</p>
+  </description>
+
+  <screenshots>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/1.0.7/data/screenshot-language.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-keyboard.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-try-install.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-custom.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-encrypt.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-progress.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/elementary/installer/master/data/screenshot-success.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1" />
+
+  <provides>
+    <binary>io.elementary.installer</binary>
+    <binary>io.elementary.installer-daemon</binary>
+  </provides>
+
+  <url type="bugtracker">https://github.com/elementary/installer/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://github.com/elementary/installer/discussions</url>
+  <url type="homepage">https://elementary.io/</url>
+  <url type="translate">https://l10n.elementary.io/projects/installer</url>
+
+  <developer_name>elementary, Inc.</developer_name>
+  <project_group>elementary</project_group>
+  <update_contact>contact_at_elementary.io</update_contact>
+
+  <releases>
+    <release version="1.0.8" date="2023-07-20" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/installer/issues/590">Laptop goes to standby during installation process</issue>
+        <issue url="https://github.com/elementary/installer/issues/617">Installer not showing disk or partitions, can't install</issue>
+      </issues>
+    </release>
+
+    <release version="1.0.7" date="2023-01-11" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Use large icons in views</li>
+          <li>Add a custom icon for Before Installing view</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="1.0.6" date="2022-12-05" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Show an infobar on battery instead of switching to a different page</li>
+          <li>Show all system requirements warnings on a single page</li>
+          <li>Warn about installing developer builds</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/installer/issues/491">Installer too big in VirtualBox</issue>
+      </issues>
+    </release>
+
+    <release version="1.0.5" date="2021-12-17" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Double the boot partition size for encrypted installs</li>
+          <li>Updated translations</li>
+       </ul>
+      </description>
+    </release>
+
+    <release version="1.0.4" date="2021-12-13" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Warn about installing in a VM</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="1.0.3" date="2021-08-25" />
+  </releases>
+</component>
