@@ -107,9 +107,18 @@ public class Installer.MainWindow : Hdy.Window {
             battery_infobar.revealed = false;
         });
 
-        var orca_prompt = "Screen reader can be turned on with the keyboard shorcut super + alt + S";
+        var mediakeys_settings = new Settings ("org.gnome.settings-daemon.plugins.media-keys");
 
         orca_timeout_id = Timeout.add_seconds (3, () => {
+            var shortcut_string = Granite.accel_to_string (
+                mediakeys_settings.get_strv ("screenreader")[0]
+            );
+
+            // Espeak can't read ⌘
+            shortcut_string = shortcut_string.replace ("⌘", "Super");
+
+            var orca_prompt = "Screen reader can be turned on with the keyboard shorcut %s".printf (shortcut_string);
+
             try {
                 Process.spawn_command_line_async ("espeak '%s'".printf (orca_prompt));
             } catch (SpawnError e) {
