@@ -129,7 +129,7 @@ public class ProgressView : AbstractInstallerView {
         daemon.on_error.connect (installation_error_callback);
         daemon.on_status.connect (installation_status_callback);
         daemon.on_log_message.connect (log_helper.log_func);
-        
+
         unowned Configuration current_config = Configuration.get_default ();
 
         var config = InstallerDaemon.InstallConfig ();
