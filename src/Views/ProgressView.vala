@@ -1,5 +1,5 @@
 /*-
- * Copyright 2017-2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2017-2023 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -129,13 +129,17 @@ public class ProgressView : AbstractInstallerView {
         daemon.on_error.connect (installation_error_callback);
         daemon.on_status.connect (installation_status_callback);
         daemon.on_log_message.connect (log_helper.log_func);
+        
+        unowned Configuration current_config = Configuration.get_default ();
 
         var config = InstallerDaemon.InstallConfig ();
         config.flags = Distinst.MODIFY_BOOT_ORDER;
+        if (current_config.install_drivers) {
+            config.flags |= Distinst.RUN_UBUNTU_DRIVERS;
+        }
         config.hostname = Utils.get_hostname ();
         config.lang = "en_US.UTF-8";
 
-        unowned Configuration current_config = Configuration.get_default ();
 
         debug ("language: %s\n", current_config.lang);
         string lang = current_config.lang;

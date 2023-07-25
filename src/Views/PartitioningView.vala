@@ -120,8 +120,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
-        next_button = new Gtk.Button.with_label (_("Erase and Install"));
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        next_button = new Gtk.Button.with_label (_("Next"));
+        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.sensitive = false;
 
         action_area.add (modify_partitions_button);

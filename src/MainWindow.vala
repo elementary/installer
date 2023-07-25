@@ -37,6 +37,7 @@ public class Installer.MainWindow : Hdy.Window {
     private Installer.CheckView check_view;
     private DiskView disk_view;
     private PartitioningView partitioning_view;
+    private DriversView drivers_view;
     private ProgressView progress_view;
     private SuccessView success_view;
     private EncryptView encrypt_view;
@@ -215,7 +216,10 @@ public class Installer.MainWindow : Hdy.Window {
             stack.visible_child = try_install_view;
         });
 
-        encrypt_view.next_step.connect (() => load_progress_view ());
+        encrypt_view.next_step.connect (() => {
+            load_drivers_view ();
+            drivers_view.previous_view = encrypt_view;
+        });
     }
 
     private void load_disk_view () {
@@ -252,8 +256,21 @@ public class Installer.MainWindow : Hdy.Window {
             unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;
             config.mounts = (owned) partitioning_view.mounts;
-            load_progress_view ();
+            load_drivers_view ();
+            drivers_view.previous_view = partitioning_view;
         });
+    }
+
+    private void load_drivers_view () {
+        if (drivers_view != null) {
+            drivers_view.destroy ();
+        }
+
+        drivers_view = new DriversView ();
+        stack.add (drivers_view);
+        stack.visible_child = drivers_view;
+
+        drivers_view.next_step.connect (() => load_progress_view ());
     }
 
     private void load_progress_view () {
