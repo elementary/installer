@@ -39,8 +39,7 @@ public class Installer.App : Gtk.Application {
             default_height = 600,
             default_width = 850,
             icon_name = application_id,
-            title = _("Install %s").printf (Utils.get_pretty_name ()),
-            window_position = Gtk.WindowPosition.CENTER_ALWAYS
+            title = _("Install %s").printf (Utils.get_pretty_name ())
         };
         window.show_all ();
         add_window (window);
