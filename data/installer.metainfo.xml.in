@@ -54,7 +54,7 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
-      <release version="1.2.0" date="2023-07-26" urgency="medium">
+    <release version="1.2.0" date="2023-07-26" urgency="medium">
       <description>
         <p>Improvements:</p>
         <ul>
@@ -116,16 +116,7 @@
       </description>
     </release>
 
-    <release version="1.0.4" date="2021-12-13" urgency="medium">
-      <description>
-        <p>Improvements:</p>
-        <ul>
-          <li>Warn about installing in a VM</li>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
+    <release version="1.0.4" date="2021-12-13" />
     <release version="1.0.3" date="2021-08-25" />
   </releases>
 </component>
