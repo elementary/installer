@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2023-05-19 14:49+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "Install %s"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 msgid "operating system is being installed"
 msgstr "operating system is being installed"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "Connect to a Power Source"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -131,8 +131,9 @@ msgid "Getting the current configuration…"
 msgstr "Getting the current configuration…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "Erase and Install"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Next"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -341,22 +342,22 @@ msgid "Hide log"
 msgstr "Hide log"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Partitioning Drive"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Extracting Files"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Configuring the System"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Finishing the Installation"
 
@@ -392,10 +393,6 @@ msgid ""
 msgstr ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Next"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -515,6 +512,9 @@ msgstr "Filesystem:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Default (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "Erase and Install"
 
 #~ msgid "Ignore"
 #~ msgstr "Ignore"

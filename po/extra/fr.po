@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2023-01-13 19:39+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/extra/"
@@ -36,48 +36,48 @@ msgstr "Assistant d'installation étape par étape pour installer elementary OS.
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:72
-#: data/installer.metainfo.xml.in:83 data/installer.metainfo.xml.in:98
-#: data/installer.metainfo.xml.in:108
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:84 data/installer.metainfo.xml.in:99
+#: data/installer.metainfo.xml.in:109
 msgid "Improvements:"
 msgstr "Améliorations :"
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:76
-#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:101
-#: data/installer.metainfo.xml.in:111
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:77
+#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:112
 msgid "Updated translations"
 msgstr "Mise à jour des traductions"
 
-#: data/installer.metainfo.xml.in:74
+#: data/installer.metainfo.xml.in:75
 msgid "Use large icons in views"
 msgstr "Utilisation de grandes icônes dans la page"
 
-#: data/installer.metainfo.xml.in:75
+#: data/installer.metainfo.xml.in:76
 msgid "Add a custom icon for Before Installing view"
 msgstr "Ajout d'une icône personnalisée avant la page d'installation"
 
-#: data/installer.metainfo.xml.in:85
+#: data/installer.metainfo.xml.in:86
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Affichage d'une barre d'information sur la batterie plutôt que de passer à "
 "une autre page"
 
-#: data/installer.metainfo.xml.in:86
+#: data/installer.metainfo.xml.in:87
 msgid "Show all system requirements warnings on a single page"
 msgstr ""
 "Affichage de tous les avertissements relatifs à la configuration requise sur "
 "une seule page"
 
-#: data/installer.metainfo.xml.in:87
+#: data/installer.metainfo.xml.in:88
 msgid "Warn about installing developer builds"
 msgstr "Avertissement sur l'installation des versions pour les développeurs"
 
-#: data/installer.metainfo.xml.in:100
+#: data/installer.metainfo.xml.in:101
 msgid "Double the boot partition size for encrypted installs"
 msgstr ""
 "Doublement de la taille de la partition pour les installations chiffrées"
 
-#: data/installer.metainfo.xml.in:110
+#: data/installer.metainfo.xml.in:111
 msgid "Warn about installing in a VM"
 msgstr "Avertissement concernant l'installation sur une machine virtuelle"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2022-04-20 09:24+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/installer/"
@@ -21,15 +21,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "Įdiegti %s"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 msgid "operating system is being installed"
 msgstr ""
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "Prisijunkite prie elektros maitinimo šaltinio"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -135,8 +135,9 @@ msgid "Getting the current configuration…"
 msgstr "Gaunama esama konfigūracija…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "Ištrinti ir įdiegti"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Kitas"
 
 #: src/Views/EncryptView.vala:28
 #, fuzzy
@@ -368,22 +369,22 @@ msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Skaidomas diskas"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Išskleidžiami failai"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Konfigūruojama sistema"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Užbaigiamas įdiegimas"
 
@@ -424,10 +425,6 @@ msgid ""
 msgstr ""
 "Kurti skaidinius, keisti jų dydį ar kitaip rankiniu būdu juos tvarkyti. Šis "
 "būdas gali privesti prie duomenų praradimo."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Kitas"
 
 #: src/Views/TryInstallView.vala:114
 #, fuzzy
@@ -555,6 +552,9 @@ msgstr "Failų sistema:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Numatytasis (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "Ištrinti ir įdiegti"
 
 #~ msgid "Ignore"
 #~ msgstr "Nepaisyti"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2023-05-20 18:06+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -21,15 +21,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "Pasang %s"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 msgid "operating system is being installed"
 msgstr "sistem operasi sedang dipasang"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "Sambungkan ke Sumber Daya"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -135,8 +135,9 @@ msgid "Getting the current configuration…"
 msgstr "Mendapatkan konfigurasi saat ini…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "Hapus dan Pasang"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Selanjutnya"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -346,22 +347,22 @@ msgid "Hide log"
 msgstr "Sembuyikan log"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Mempartisi Drive"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Mengekstrak Berkas"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Mengkonfigurasi Sistem"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Menyelesaikan Pemasangan"
 
@@ -398,10 +399,6 @@ msgid ""
 msgstr ""
 "Buat, ubah ukuran, atau kelola partisi secara manual. Metode ini dapat "
 "menyebabkan hilangnya data."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Selanjutnya"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -520,6 +517,9 @@ msgstr "Sistem Berkas:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Bawaan (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "Hapus dan Pasang"
 
 #~ msgid "Ignore"
 #~ msgstr "Abaikan"

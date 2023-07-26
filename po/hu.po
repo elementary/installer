@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2023-05-19 14:49+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "%s telepítése"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 msgid "operating system is being installed"
 msgstr "operációs rendszer telepítés alatt áll"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "Csatlakozzon az elektromos hálózatra"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -133,8 +133,9 @@ msgid "Getting the current configuration…"
 msgstr "Az aktuális konfiguráció megszerzése…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "Törlés és telepítés"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Következő"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -344,22 +345,22 @@ msgid "Hide log"
 msgstr "Naplózás elrejtése"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Meghajtó partícionálása"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Fájlok kibontása"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "A rendszer konfigurálása"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "A telepítés befejezése"
 
@@ -396,10 +397,6 @@ msgid ""
 msgstr ""
 "A partíciókat kézzel létrehozhatja, átméretezheti és kezelheti. Ez a módszer "
 "adatvesztést okozhat."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Következő"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -519,6 +516,9 @@ msgstr "Fájlrendszer:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Alapértelmezett (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "Törlés és telepítés"
 
 #~ msgid "System Requirements"
 #~ msgstr "Rendszerkövetelmények"
