@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-26 18:25+0000\n"
+"POT-Creation-Date: 2023-07-26 18:30+0000\n"
 "PO-Revision-Date: 2023-01-05 22:25+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/extra/"
@@ -37,52 +37,51 @@ msgstr "Instalator krok po kroku dla elementary OS."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:73
-#: data/installer.metainfo.xml.in:84 data/installer.metainfo.xml.in:99
-#: data/installer.metainfo.xml.in:109
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:71
+#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:96
+#: data/installer.metainfo.xml.in:111
 msgid "Improvements:"
 msgstr "Ulepszenia:"
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:77
-#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:102
-#: data/installer.metainfo.xml.in:112
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:114
 msgid "Updated translations"
 msgstr "Zaktualizowano tłumaczenia"
 
-#: data/installer.metainfo.xml.in:75
+#: data/installer.metainfo.xml.in:87
 msgid "Use large icons in views"
 msgstr "W widokach są teraz użyte duże ikony"
 
-#: data/installer.metainfo.xml.in:76
+#: data/installer.metainfo.xml.in:88
 msgid "Add a custom icon for Before Installing view"
 msgstr "Dodano specjalną ikonę dla widoku „Przed instalacją”"
 
-#: data/installer.metainfo.xml.in:86
+#: data/installer.metainfo.xml.in:98
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Pokazanie pasku z informacjami na baterii zamiast zmieniania na inną stronę"
 
-#: data/installer.metainfo.xml.in:87
+#: data/installer.metainfo.xml.in:99
 msgid "Show all system requirements warnings on a single page"
 msgstr ""
 "Wszystkie ostrzeżenia o wymaganiach systemowych są pokazywane na jednej "
 "stronie"
 
-#: data/installer.metainfo.xml.in:88
+#: data/installer.metainfo.xml.in:100
 msgid "Warn about installing developer builds"
 msgstr "Ostrzeżenie o instalacji wersji deweloperskich"
 
-#: data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:113
 msgid "Double the boot partition size for encrypted installs"
 msgstr "Podwojono rozmiar partycji dla szyfrowanych instalacji"
-
-#: data/installer.metainfo.xml.in:111
-msgid "Warn about installing in a VM"
-msgstr "Ostrzeżenie o instalacji w maszynie wirtualnej"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Zainstaluj system"
+
+#~ msgid "Warn about installing in a VM"
+#~ msgstr "Ostrzeżenie o instalacji w maszynie wirtualnej"
 
 #~ msgid "Avoid political naming of certain locales"
 #~ msgstr "Uniknięcie upolitycznionych nazw niektórych ustawień regionalnych"
