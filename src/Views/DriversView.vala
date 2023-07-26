@@ -47,7 +47,7 @@
 
         var legal_image = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", LARGE_TOOLBAR);
 
-        var legal_label = new Gtk.Label (_("These drivers come with their own licensing terms. For that reason, we cannot redistribute them freely.")) {
+        var legal_label = new Gtk.Label (_("Proprietary drivers are subject to their own license terms. By installing, you agree to their terms of use.")) {
             hexpand = true,
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
