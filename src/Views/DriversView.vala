@@ -29,7 +29,7 @@
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var description_label = new Gtk.Label (_("Proprietary drivers are required for some devices, such as Wi-Fi adapters or graphics cards, to work properly.")) {
+        var description_label = new Gtk.Label (_("Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not function properly without proprietary drivers. Most devices do not require additional drivers.")) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
