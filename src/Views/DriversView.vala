@@ -19,7 +19,7 @@
     public signal void next_step ();
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("application-x-executable", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("application-x-firmware", Gtk.IconSize.INVALID) {
             pixel_size = 128,
             valign = Gtk.Align.END
         };
