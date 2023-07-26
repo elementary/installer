@@ -37,6 +37,8 @@
         description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var warning_image = new Gtk.Image.from_icon_name ("security-low-symbolic", LARGE_TOOLBAR);
+        warning_image.get_style_context ().add_class ("accent");
+        warning_image.get_style_context ().add_class ("yellow");
 
         var warning_label = new Gtk.Label (_("Proprietary drivers contain private code that can't be reviewed. Security and other updates are dependent on the driver vendor.")) {
             hexpand = true,
