@@ -24,7 +24,7 @@
             valign = Gtk.Align.END
         };
 
-        var title_label = new Gtk.Label (_("Install Drivers")) {
+        var title_label = new Gtk.Label (_("Additional Drivers")) {
             valign = Gtk.Align.START
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
