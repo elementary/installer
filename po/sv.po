@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2018-10-24 00:08+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/installer/"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "Installera %s"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 msgid "operating system is being installed"
 msgstr ""
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "Anslut till en strömkälla"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -134,8 +134,9 @@ msgid "Getting the current configuration…"
 msgstr "Hämtar nuvarande konfiguration…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "Radera och installera"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr ""
 
 #: src/Views/EncryptView.vala:28
 #, fuzzy
@@ -367,22 +368,22 @@ msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Partitionerar disk"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Extraherar filer"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Konfigurerar systemet"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Slutför installationen"
 
@@ -415,10 +416,6 @@ msgstr ""
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
-msgstr ""
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
 msgstr ""
 
 #: src/Views/TryInstallView.vala:114
@@ -539,6 +536,9 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Förval (etx4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "Radera och installera"
 
 #~ msgid "Ignore"
 #~ msgstr "Ignorera"

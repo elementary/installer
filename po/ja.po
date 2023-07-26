@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2023-05-19 14:49+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "%s をインストール"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 msgid "operating system is being installed"
 msgstr "オペレーティングシステムをインストール中"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "電源に接続してください"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -134,8 +134,9 @@ msgid "Getting the current configuration…"
 msgstr "現在の設定を取得しています…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "削除してインストール"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "次へ"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -344,22 +345,22 @@ msgid "Hide log"
 msgstr "ログを非表示"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "ドライブのパーティションを作成しています"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "ファイルを展開しています"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "システムを設定しています"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "インストールを終了しています"
 
@@ -395,10 +396,6 @@ msgid ""
 msgstr ""
 "手動でパーティションの作成やサイズ変更、管理を行います。この方法はデータの損"
 "失につながることがあります。"
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "次へ"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -517,6 +514,9 @@ msgstr "ファイルシステム:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "デフォルト (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "削除してインストール"
 
 #~ msgid "System Requirements"
 #~ msgstr "システム要件"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2023-05-09 19:06+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/installer/"
@@ -20,17 +20,17 @@ msgstr ""
 msgid "Install %s"
 msgstr "Inštalovať %s"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
 msgstr "%s bol nainštalovaný"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "Pripojte zdroj napájania"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -135,8 +135,9 @@ msgid "Getting the current configuration…"
 msgstr "Zisťovanie aktuálnej konfigurácie…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "Vymazať a nainštalovať"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Ďalej"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -345,22 +346,22 @@ msgid "Hide log"
 msgstr "Skryť záznam"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Vytvárajú sa oddiely na jednotke"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Rozbaľujú sa súbory"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Nastavuje sa systém"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Dokončuje sa inštalácia"
 
@@ -397,10 +398,6 @@ msgid ""
 msgstr ""
 "Vytvorte oddiely, meňte ich veľkosť alebo ich inak spravujte ručne. Táto "
 "metóda môže viesť k strate dát."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Ďalej"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -521,6 +518,9 @@ msgstr "Súborový systém:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Predvolený (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "Vymazať a nainštalovať"
 
 #~ msgid "System Requirements"
 #~ msgstr "Systémové požiadavky"

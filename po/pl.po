@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2023-05-24 20:06+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/"
@@ -21,15 +21,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "Zainstaluj %s"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 msgid "operating system is being installed"
 msgstr "system operacyjny jest instalowany"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "Podłącz do źródła zasilania"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -135,8 +135,9 @@ msgid "Getting the current configuration…"
 msgstr "Pobieranie bieżącej konfiguracji…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "Wyczyść i zainstaluj"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Dalej"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -346,22 +347,22 @@ msgid "Hide log"
 msgstr "Ukryj dziennik"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Partycjonowanie napędu"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Rozpakowywanie plików"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Konfigurowanie systemu"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Kończenie instalacji"
 
@@ -398,10 +399,6 @@ msgid ""
 msgstr ""
 "Ręcznie twórz, zmieniaj rozmiar i dokonuj wszelkich operacji na partycjach. "
 "Ta metoda może spowodować utratę danych."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Dalej"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -525,6 +522,9 @@ msgstr "System plików:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Domyślny (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "Wyczyść i zainstaluj"
 
 #~ msgid "System Requirements"
 #~ msgstr "Wymagania systemowe"

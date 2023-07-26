@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2021-09-04 16:04+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
@@ -21,17 +21,17 @@ msgstr ""
 msgid "Install %s"
 msgstr "ثبت %s"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
 msgstr "تم تثبيت %s"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "قم بوصل الجهاز بمصدر للطاقة"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -136,8 +136,9 @@ msgid "Getting the current configuration…"
 msgstr "قيد الحصول على الإعدادات الحالية…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "امسح وثبت"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "التالي"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -346,22 +347,22 @@ msgid "Hide log"
 msgstr "أخف التسجيلات"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "قيد تقسيم وسيط التخزين"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "قيد استخراج الملفات"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "قيد إعداد النظام"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "قيد الانتهاء من التثبيت"
 
@@ -397,10 +398,6 @@ msgid ""
 msgstr ""
 "قم بإنشاء الأقسام، وتغيير حجمها، وإدارتها بطرق أخرى يدوياً. قد تؤدي هذه "
 "الطريقة إلى فقدان البيانات."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "التالي"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -524,6 +521,9 @@ msgstr "نظام الملفات:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "الافتراضي (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "امسح وثبت"
 
 #~ msgid "Ignore"
 #~ msgstr "تجاهل"

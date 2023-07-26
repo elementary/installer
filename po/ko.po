@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2022-08-07 18:13+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
@@ -20,17 +20,17 @@ msgstr ""
 msgid "Install %s"
 msgstr "%s 설치합니다"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
 msgstr "%s 설치를 마쳤습니다"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "전원에 연결하세요"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -135,8 +135,9 @@ msgid "Getting the current configuration…"
 msgstr "현재 설정을 가져오고 있습니다…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "디스크를 지우고 설치하기"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "다음"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -344,22 +345,22 @@ msgid "Hide log"
 msgstr "로그 숨기기"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "드라이브 파티션 나누기"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "파일 압축 풀기"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "시스템 구성 하기"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "설치 마무리 하기"
 
@@ -395,10 +396,6 @@ msgid ""
 msgstr ""
 "파티션을 새로 만들거나, 크기를 조절하거나, 등의 조절을 사용자가 직접 합니다. "
 "데이터를 잃어버릴 위험이 있는 방법입니다."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "다음"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -517,6 +514,9 @@ msgstr "파일 시스템:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "기본 (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "디스크를 지우고 설치하기"
 
 #~ msgid "Ignore"
 #~ msgstr "그냥 넘기기"

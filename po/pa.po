@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
@@ -24,17 +24,17 @@ msgstr ""
 msgid "Install %s"
 msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
 msgstr "%s ਸਥਾਪਤ ਹੋ ਚੁੱਕਿਐ"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "ਕਿਸੇ ਊਰਜਾ ਸਰੋਤ ਨਾਲ਼ ਜੋੜੋ"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -139,8 +139,9 @@ msgid "Getting the current configuration…"
 msgstr "ਮੌਜੂਦਾ ਸੈਟਿੰਗਾਂ ਪੜ੍ਹ ਰਿਹੈ…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "ਮਿਟਾਓ ਅਤੇ ਸਥਾਪਤ ਕਰੋ"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "ਅਗਲਾ"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -346,22 +347,22 @@ msgid "Hide log"
 msgstr "ਲਾਗ ਲੁਕਾਓ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "ਡਰਾਈਵ ਵੰਡ ਹੋ ਰਹੀ ਹੈ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "ਫ਼ਾਇਲਾਂ ਕੱਢੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "ਸਿਸਟਮ ਨੂੰ ਕਨਫਿਗਰ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "ਸਥਾਪਨ ਮੁਕੰਮਲ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
@@ -398,10 +399,6 @@ msgid ""
 msgstr ""
 "ਵੰਡਾਂ ਨੂੰ ਹੱਥੀਂ ਬਣਾਓ, ਇਹਨਾਂ ਦਾ ਸਾਈਜ਼ ਬਦਲੋ ਜਾਂ ਹੋਰ ਰੱਖ-ਰਖਾਓ ਕਰੋ। ਇਹ ਤਰੀਕੇ ਨਾਲ਼ ਤੁਸੀਂ ਡੇਟਾ ਗਵਾ "
 "ਵੀ ਸਕਦੇ ਹੋ।"
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "ਅਗਲਾ"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -519,6 +516,9 @@ msgstr "ਫ਼ਾਇਲ-ਸਿਸਟਮ:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "ਡਿਫ਼ਾਲਟ (ਈ.ਐਕਸ.ਟੀ4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "ਮਿਟਾਓ ਅਤੇ ਸਥਾਪਤ ਕਰੋ"
 
 #~ msgid "Ignore"
 #~ msgstr "ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ"

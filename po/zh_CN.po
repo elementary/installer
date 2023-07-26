@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2022-12-09 22:25+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -20,17 +20,17 @@ msgstr ""
 msgid "Install %s"
 msgstr "安装 %s"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
 msgstr "%s 已安装"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "接入电源"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -133,8 +133,9 @@ msgid "Getting the current configuration…"
 msgstr "正在获取当前配置…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "抹掉并安装"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "继续"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -333,22 +334,22 @@ msgid "Hide log"
 msgstr "隐藏日志"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "正在分区硬盘"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "正在解压文件"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "正在配置系统"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "正在完成安装"
 
@@ -383,10 +384,6 @@ msgid ""
 "lead to data loss."
 msgstr ""
 "手动进行分区管理、分区大小调整以及其它的管理操作。该方法可能造成数据丢失。"
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "继续"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -501,6 +498,9 @@ msgstr "文件系统："
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "默认（ext4）"
+
+#~ msgid "Erase and Install"
+#~ msgstr "抹掉并安装"
 
 #~ msgid "System Requirements"
 #~ msgstr "系统需求"

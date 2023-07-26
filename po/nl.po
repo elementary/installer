@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 19:05+0000\n"
+"POT-Creation-Date: 2023-07-26 18:25+0000\n"
 "PO-Revision-Date: 2023-05-26 21:06+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "Installeer %s"
 
-#: src/Application.vala:62
+#: src/Application.vala:61
 msgid "operating system is being installed"
 msgstr "besturingssysteem wordt geïnstalleerd"
 
-#: src/MainWindow.vala:267
+#: src/MainWindow.vala:317
 msgid "Connect to a Power Source"
 msgstr "Verbinding met een voedingsbron maken"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:318
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -134,8 +134,9 @@ msgid "Getting the current configuration…"
 msgstr "Huidige configuratie aan het ophalen…"
 
 #: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
-msgid "Erase and Install"
-msgstr "Installeren en wissen"
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Volgende"
 
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
@@ -347,22 +348,22 @@ msgid "Hide log"
 msgstr "Verberg logboek"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Schijf partitioneren"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Bestanden uitpakken"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Systeem configureren"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Installatie afronden"
 
@@ -401,10 +402,6 @@ msgid ""
 msgstr ""
 "Maak partities, pas de grootte aan, of bewerk partities handmatig. Deze "
 "methode kan tot het verlies van gegevens leiden."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Volgende"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -524,6 +521,9 @@ msgstr "Bestandsysteem:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Standaard (ext4)"
+
+#~ msgid "Erase and Install"
+#~ msgstr "Installeren en wissen"
 
 #~ msgid "Ignore"
 #~ msgstr "Negeren"
