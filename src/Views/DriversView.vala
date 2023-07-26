@@ -69,15 +69,7 @@
             xalign = 0
         };
 
-        var drivers_label = new Gtk.Label (_("Install Proprietary Drivers:"));
-
-        var drivers_switch = new Gtk.Switch ();
-
-        var drivers_box = new Gtk.Box (HORIZONTAL, 12) {
-            halign = CENTER
-        };
-        drivers_box.add (drivers_label);
-        drivers_box.add (drivers_switch);
+        var drivers_check = new Gtk.CheckButton.with_label (_("Include third-party proprietary drivers when installing"));
 
         var message_grid = new Gtk.Grid () {
             valign = CENTER,
@@ -91,7 +83,7 @@
         message_grid.attach (legal_label, 1, 2);
         message_grid.attach (install_later_image, 0, 3);
         message_grid.attach (install_later_label, 1, 3);
-        message_grid.attach (drivers_box, 0, 4, 2, 1);
+        message_grid.attach (drivers_check, 0, 4, 2, 1);
 
         content_area.column_homogeneous = true;
         content_area.margin_start = content_area.margin_end = 12;
@@ -110,9 +102,9 @@
         action_area.add (back_button);
         action_area.add (next_button);
 
-        drivers_switch.notify["active"].connect (() => {
+        drivers_check.toggled.connect (() => {
             unowned var configuration = Configuration.get_default ();
-            configuration.install_drivers = drivers_switch.active;
+            configuration.install_drivers = drivers_check.active;
         });
 
         show_all ();
