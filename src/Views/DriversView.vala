@@ -56,7 +56,7 @@
 
         var install_later_image = new Gtk.Image.from_icon_name ("system-software-install-symbolic", LARGE_TOOLBAR);
 
-        var install_later_label = new Gtk.Label (_("You can always install them later through AppCenter. But in this case, you may encounter non-working hardware on the first boot.")) {
+        var install_later_label = new Gtk.Label (_("Proprietary drivers can be installed later through AppCenter, but this will require a working Internet connection.")) {
             hexpand = true,
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
