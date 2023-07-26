@@ -38,7 +38,7 @@
 
         var warning_image = new Gtk.Image.from_icon_name ("security-low-symbolic", LARGE_TOOLBAR);
 
-        var warning_label = new Gtk.Label (_("Proprietary drivers contain closed-source components. You may prefer not to install them due to hardware compatibility issues.")) {
+        var warning_label = new Gtk.Label (_("Proprietary drivers contain private code that can't be reviewed. Security and other updates are dependent on the driver vendor.")) {
             hexpand = true,
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
