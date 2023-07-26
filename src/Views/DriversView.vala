@@ -48,6 +48,8 @@
         };
 
         var legal_image = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", LARGE_TOOLBAR);
+        legal_image.get_style_context ().add_class ("accent");
+        legal_image.get_style_context ().add_class ("slate");
 
         var legal_label = new Gtk.Label (_("Proprietary drivers are subject to their own license terms. By installing, you agree to their terms of use.")) {
             hexpand = true,
