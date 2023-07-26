@@ -59,6 +59,8 @@
         };
 
         var install_later_image = new Gtk.Image.from_icon_name ("system-software-install-symbolic", LARGE_TOOLBAR);
+        install_later_image.get_style_context ().add_class ("accent");
+        install_later_image.get_style_context ().add_class ("purple");
 
         var install_later_label = new Gtk.Label (_("Proprietary drivers can be installed later through AppCenter, but this will require a working Internet connection.")) {
             hexpand = true,
