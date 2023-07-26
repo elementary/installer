@@ -36,6 +36,33 @@
         };
         description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
+        var warning_image = new Gtk.Image.from_icon_name ("security-low-symbolic", LARGE_TOOLBAR);
+
+        var warning_label = new Gtk.Label (_("Proprietary drivers contain closed-source components. You may prefer not to install them due to hardware compatibility issues.")) {
+            hexpand = true,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
+            wrap = true,
+            xalign = 0
+        };
+
+        var legal_image = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", LARGE_TOOLBAR);
+
+        var legal_label = new Gtk.Label (_("These drivers come with their own licensing terms. For that reason, we cannot redistribute them freely.")) {
+            hexpand = true,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
+            wrap = true,
+            xalign = 0
+        };
+
+        var install_later_image = new Gtk.Image.from_icon_name ("system-software-install-symbolic", LARGE_TOOLBAR);
+
+        var install_later_label = new Gtk.Label (_("You can always install them later through AppCenter. But in this case, you may encounter non-working hardware on the first boot.")) {
+            hexpand = true,
+            max_width_chars = 1, // Make Gtk wrap, but not expand the window
+            wrap = true,
+            xalign = 0
+        };
+
         var drivers_label = new Gtk.Label (_("Install Proprietary Drivers:"));
 
         var drivers_switch = new Gtk.Switch ();
@@ -46,18 +73,26 @@
         drivers_box.add (drivers_label);
         drivers_box.add (drivers_switch);
 
-        var message_box = new Gtk.Box (VERTICAL, 32) {
-            valign = CENTER
+        var message_grid = new Gtk.Grid () {
+            valign = CENTER,
+            row_spacing = 32,
+            column_spacing = 12
         };
-        message_box.add (description_label);
-        message_box.add (drivers_box);
+        message_grid.attach (description_label, 0, 0, 2, 1);
+        message_grid.attach (warning_image, 0, 1);
+        message_grid.attach (warning_label, 1, 1);
+        message_grid.attach (legal_image, 0, 2);
+        message_grid.attach (legal_label, 1, 2);
+        message_grid.attach (install_later_image, 0, 3);
+        message_grid.attach (install_later_label, 1, 3);
+        message_grid.attach (drivers_box, 0, 4, 2, 1);
 
         content_area.column_homogeneous = true;
         content_area.margin_start = content_area.margin_end = 12;
         content_area.valign = Gtk.Align.CENTER;
         content_area.attach (image, 0, 0);
         content_area.attach (title_label, 0, 1);
-        content_area.attach (message_box, 1, 0, 1, 2);
+        content_area.attach (message_grid, 1, 0, 1, 2);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
         back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
