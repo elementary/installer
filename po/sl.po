@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-26 18:30+0000\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
 "PO-Revision-Date: 2022-04-20 09:24+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/installer/"
@@ -136,6 +136,51 @@ msgstr "Pridobivam trenutno konfiguracijo…"
 msgid "Next"
 msgstr "Naprej"
 
+#: src/Views/DriversView.vala:27
+#, fuzzy
+#| msgid "Partitioning Drive"
+msgid "Additional Drivers"
+msgstr "Ustvarjanje particij"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
+"function properly without proprietary drivers. Most devices do not require "
+"additional drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+
+#: src/Views/DriversView.vala:54
+msgid ""
+"Proprietary drivers are subject to their own license terms. By installing, "
+"you agree to their terms of use."
+msgstr ""
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but this will "
+"require a working Internet connection."
+msgstr ""
+
+#: src/Views/DriversView.vala:72
+msgid "Include third-party proprietary drivers when installing"
+msgstr ""
+
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Nazaj"
+
+#: src/Views/DriversView.vala:98
+msgid "Erase and Install"
+msgstr "Izbriši in namesti"
+
 #: src/Views/EncryptView.vala:28
 #, fuzzy
 #| msgid "Don't Encrypt"
@@ -198,11 +243,6 @@ msgstr "Izberite geslo za šifriranje"
 #: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "Ponovite geslo"
-
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
-msgid "Back"
-msgstr "Nazaj"
 
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
@@ -540,9 +580,6 @@ msgstr "Datotečni sistem:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Privzet (ext4)"
-
-#~ msgid "Erase and Install"
-#~ msgstr "Izbriši in namesti"
 
 #~ msgid "Ignore"
 #~ msgstr "Ignoriraj"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-26 18:30+0000\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
 "PO-Revision-Date: 2022-08-07 18:13+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
@@ -139,6 +139,51 @@ msgstr "현재 설정을 가져오고 있습니다…"
 msgid "Next"
 msgstr "다음"
 
+#: src/Views/DriversView.vala:27
+#, fuzzy
+#| msgid "Partitioning Drive"
+msgid "Additional Drivers"
+msgstr "드라이브 파티션 나누기"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
+"function properly without proprietary drivers. Most devices do not require "
+"additional drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+
+#: src/Views/DriversView.vala:54
+msgid ""
+"Proprietary drivers are subject to their own license terms. By installing, "
+"you agree to their terms of use."
+msgstr ""
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but this will "
+"require a working Internet connection."
+msgstr ""
+
+#: src/Views/DriversView.vala:72
+msgid "Include third-party proprietary drivers when installing"
+msgstr ""
+
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "뒤로"
+
+#: src/Views/DriversView.vala:98
+msgid "Erase and Install"
+msgstr "디스크를 지우고 설치하기"
+
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
 msgstr "암호화하지 않겠습니다"
@@ -195,11 +240,6 @@ msgstr "암호화 비밀번호 선택"
 #: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "비밀번호 확인"
-
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
-msgid "Back"
-msgstr "뒤로"
 
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
@@ -514,9 +554,6 @@ msgstr "파일 시스템:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "기본 (ext4)"
-
-#~ msgid "Erase and Install"
-#~ msgstr "디스크를 지우고 설치하기"
 
 #~ msgid "Ignore"
 #~ msgstr "그냥 넘기기"

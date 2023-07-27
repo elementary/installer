@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-26 18:30+0000\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
 "PO-Revision-Date: 2022-02-17 14:34+0000\n"
 "Last-Translator: Jose Manuel Hernandez Farias <ing.josemhf@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
@@ -139,6 +139,51 @@ msgstr "Obteniendo la configuración actual…"
 msgid "Next"
 msgstr "Siguiente"
 
+#: src/Views/DriversView.vala:27
+#, fuzzy
+#| msgid "Partitioning Drive"
+msgid "Additional Drivers"
+msgstr "Particionando el disco"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
+"function properly without proprietary drivers. Most devices do not require "
+"additional drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+
+#: src/Views/DriversView.vala:54
+msgid ""
+"Proprietary drivers are subject to their own license terms. By installing, "
+"you agree to their terms of use."
+msgstr ""
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but this will "
+"require a working Internet connection."
+msgstr ""
+
+#: src/Views/DriversView.vala:72
+msgid "Include third-party proprietary drivers when installing"
+msgstr ""
+
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Atrás"
+
+#: src/Views/DriversView.vala:98
+msgid "Erase and Install"
+msgstr "Borrar e instalar"
+
 #: src/Views/EncryptView.vala:28
 msgid "Don’t Encrypt"
 msgstr "No cifrar"
@@ -196,11 +241,6 @@ msgstr "Elija una contraseña de cifrado"
 #: src/Views/EncryptView.vala:127
 msgid "Confirm Password"
 msgstr "Confirmar contraseña"
-
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
-msgid "Back"
-msgstr "Atrás"
 
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
@@ -521,9 +561,6 @@ msgstr "Sistema de archivos:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Predeterminado (ext4)"
-
-#~ msgid "Erase and Install"
-#~ msgstr "Borrar e instalar"
 
 #~ msgid "Ignore"
 #~ msgstr "Ignorar"
