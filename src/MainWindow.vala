@@ -176,9 +176,7 @@ public class Installer.MainWindow : Hdy.Window {
         deck.add (disk_view);
 
         disk_view.load.begin (MINIMUM_SPACE);
-
         disk_view.cancel.connect (() => deck.navigate (BACK));
-        disk_view.next_step.connect (() => deck.navigate (FORWARD));
     }
 
     private void load_check_view () {
@@ -207,8 +205,6 @@ public class Installer.MainWindow : Hdy.Window {
         encrypt_view.cancel.connect (() => {
             deck.visible_child = try_install_view;
         });
-
-        encrypt_view.next_step.connect (() => deck.navigate (FORWARD));
     }
 
     private void load_partitioning_view () {

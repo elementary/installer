@@ -18,8 +18,6 @@
  */
 
 public class Installer.DiskView : AbstractInstallerView {
-    public signal void next_step ();
-
     private Gtk.Button next_button;
     private Gtk.Grid disk_grid;
     private Gtk.Stack load_stack;
@@ -116,7 +114,7 @@ public class Installer.DiskView : AbstractInstallerView {
             sensitive = Installer.App.test_mode
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        next_button.clicked.connect (() => next_step ());
+        next_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (FORWARD));
 
         action_area.add (next_button);
 
