@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-27 05:46+0000\n"
-"PO-Revision-Date: 2023-05-19 14:49+0000\n"
+"PO-Revision-Date: 2023-07-29 21:08+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
@@ -139,10 +139,8 @@ msgid "Next"
 msgstr "Далее"
 
 #: src/Views/DriversView.vala:27
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "Разметка диска"
+msgstr "Дополнительные драйверы"
 
 #: src/Views/DriversView.vala:32
 msgid ""
@@ -150,28 +148,37 @@ msgid ""
 "function properly without proprietary drivers. Most devices do not require "
 "additional drivers."
 msgstr ""
+"Некоторые устройства с графическими картами NVIDIA® или Wi-Fi адаптерами от "
+"Broadcom® могут функционировать неправильно без проприетарных драйверов. "
+"Большинство устройств не требует дополнительных драйверов."
 
 #: src/Views/DriversView.vala:43
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"Проприетарные драйверы содержат закрытый код, который нельзя просмотреть. "
+"Безопасность и обновления зависят от поставщика драйвера."
 
 #: src/Views/DriversView.vala:54
 msgid ""
 "Proprietary drivers are subject to their own license terms. By installing, "
 "you agree to their terms of use."
 msgstr ""
+"На проприетарные драйверы распространяются их собственные лицензионные "
+"условия. Устанавливая, вы соглашаетесь с их условиями использования."
 
 #: src/Views/DriversView.vala:65
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but this will "
 "require a working Internet connection."
 msgstr ""
+"Проприетарные драйверы можно установить позже через AppCenter, но для этого "
+"потребуется работающее Интернет-соединение."
 
 #: src/Views/DriversView.vala:72
 msgid "Include third-party proprietary drivers when installing"
-msgstr ""
+msgstr "Установить сторонние проприетарные драйверы"
 
 #: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
 #: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
