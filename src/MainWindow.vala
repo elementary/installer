@@ -31,16 +31,7 @@ public class Installer.MainWindow : Hdy.Window {
     private Gtk.Label infobar_label;
     private Hdy.Deck deck;
     private LanguageView language_view;
-    private KeyboardLayoutView keyboard_layout_view;
     private TryInstallView try_install_view;
-    private Installer.CheckView check_view;
-    private DiskView disk_view;
-    private PartitioningView partitioning_view;
-    private DriversView drivers_view;
-    private ProgressView progress_view;
-    private SuccessView success_view;
-    private EncryptView encrypt_view;
-    private ErrorView error_view;
     private bool check_ignored = false;
     private uint orca_timeout_id = 0;
 
@@ -80,11 +71,6 @@ public class Installer.MainWindow : Hdy.Window {
             // Don't prompt for screen reader if we're able to navigate without it
             if (orca_timeout_id != 0) {
                 Source.remove (orca_timeout_id);
-            }
-
-            // We need to rebuild the views to reflect language changes
-            while (deck.get_adjacent_child (FORWARD) != null) {
-                deck.remove (deck.get_adjacent_child (FORWARD));
             }
 
             // Reset when language selection changes
@@ -139,10 +125,29 @@ public class Installer.MainWindow : Hdy.Window {
 
             return Source.REMOVE;
         });
+
+        deck.notify["visible-child"].connect (() => {
+            update_navigation ();
+        });
+
+        deck.notify["transition-running"].connect (() => {
+            update_navigation ();
+        });
+    }
+
+    private void update_navigation () {
+        if (!deck.transition_running) {
+            // We need to rebuild the views to reflect language changes and forking paths
+            if (deck.visible_child == language_view || deck.visible_child == try_install_view) {
+                while (deck.get_adjacent_child (FORWARD) != null) {
+                    deck.remove (deck.get_adjacent_child (FORWARD));
+                }
+            }
+        }
     }
 
     private void load_keyboard_view () {
-        keyboard_layout_view = new KeyboardLayoutView ();
+        var keyboard_layout_view = new KeyboardLayoutView ();
         try_install_view = new TryInstallView ();
 
         deck.add (keyboard_layout_view);
@@ -150,89 +155,83 @@ public class Installer.MainWindow : Hdy.Window {
 
         deck.visible_child = keyboard_layout_view;
 
-        try_install_view.custom_step.connect (() => load_partitioning_view ());
-        try_install_view.next_step.connect (() => load_disk_view ());
+        try_install_view.custom_step.connect (() => {
+            load_check_view ();
+            load_partitioning_view ();
+            load_drivers_view ();
+            deck.navigate (FORWARD);
+        });
+
+        try_install_view.next_step.connect (() => {
+            load_check_view ();
+            load_disk_view ();
+            load_encrypt_view ();
+            load_drivers_view ();
+            deck.navigate (FORWARD);
+        });
     }
 
-    private void set_check_view_visible (bool show) {
-        if (show) {
-            deck.visible_child = check_view;
-        } else {
-            deck.navigate (Hdy.NavigationDirection.BACK);
-        }
+    private void load_disk_view () {
+        var disk_view = new DiskView ();
+        deck.add (disk_view);
+
+        disk_view.load.begin (MINIMUM_SPACE);
+
+        disk_view.cancel.connect (() => deck.navigate (BACK));
+        disk_view.next_step.connect (() => deck.navigate (FORWARD));
     }
 
     private void load_check_view () {
-        check_view = new Installer.CheckView ();
-        deck.add (check_view);
+        if (check_ignored) {
+            return;
+        }
 
-        check_view.cancel.connect (() => {
-            deck.visible_child = try_install_view;
-            check_view.destroy ();
-        });
+        var check_view = new Installer.CheckView ();
+        if (check_view.has_messages) {
+            deck.add (check_view);
+        }
+
+        check_view.cancel.connect (() => deck.navigate (BACK));
 
         check_view.next_step.connect (() => {
             check_ignored = true;
-            set_check_view_visible (false);
+            deck.navigate (FORWARD);
+            deck.remove (check_view);
         });
-
-        set_check_view_visible (!check_ignored && check_view.has_messages);
     }
 
     private void load_encrypt_view () {
-        encrypt_view = new EncryptView ();
+        var encrypt_view = new EncryptView ();
         deck.add (encrypt_view);
-        deck.visible_child = encrypt_view;
 
         encrypt_view.cancel.connect (() => {
             deck.visible_child = try_install_view;
         });
 
-        encrypt_view.next_step.connect (() => {
-            load_drivers_view ();
-        });
-    }
-
-    private void load_disk_view () {
-        disk_view = new DiskView ();
-        deck.add (disk_view);
-        deck.visible_child = disk_view;
-        disk_view.load.begin (MINIMUM_SPACE);
-
-        load_check_view ();
-
-        disk_view.cancel.connect (() => {
-            deck.visible_child = try_install_view;
-        });
-
-        disk_view.next_step.connect (() => load_encrypt_view ());
+        encrypt_view.next_step.connect (() => deck.navigate (FORWARD));
     }
 
     private void load_partitioning_view () {
-        partitioning_view = new PartitioningView (MINIMUM_SPACE);
-
+        var partitioning_view = new PartitioningView (MINIMUM_SPACE);
         deck.add (partitioning_view);
-        deck.visible_child = partitioning_view;
 
         partitioning_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;
             config.mounts = (owned) partitioning_view.mounts;
-            load_drivers_view ();
+            deck.navigate (FORWARD);
         });
     }
 
     private void load_drivers_view () {
-        drivers_view = new DriversView ();
-
+        var drivers_view = new DriversView ();
         deck.add (drivers_view);
-        deck.visible_child = drivers_view;
 
         drivers_view.next_step.connect (() => load_progress_view ());
     }
 
     private void load_progress_view () {
-        progress_view = new ProgressView ();
+        var progress_view = new ProgressView ();
 
         deck.add (progress_view);
         deck.visible_child = progress_view;
@@ -248,13 +247,13 @@ public class Installer.MainWindow : Hdy.Window {
     }
 
     private void load_success_view () {
-        success_view = new SuccessView ();
+        var success_view = new SuccessView ();
         deck.add (success_view);
         deck.visible_child = success_view;
     }
 
     private void load_error_view (string log) {
-        error_view = new ErrorView (log);
+        var error_view = new ErrorView (log);
         deck.add (error_view);
         deck.visible_child = error_view;
     }
