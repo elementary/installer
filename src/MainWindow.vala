@@ -82,6 +82,11 @@ public class Installer.MainWindow : Hdy.Window {
                 Source.remove (orca_timeout_id);
             }
 
+            // We need to rebuild the views to reflect language changes
+            while (deck.get_adjacent_child (FORWARD) != null) {
+                deck.remove (deck.get_adjacent_child (FORWARD));
+            }
+
             // Reset when language selection changes
             set_infobar_string ();
             load_keyboard_view ();
@@ -134,41 +139,16 @@ public class Installer.MainWindow : Hdy.Window {
 
             return Source.REMOVE;
         });
-
-        deck.notify["visible-child"].connect (() => {
-            update_navigation ();
-        });
-
-        deck.notify["transition-running"].connect (() => {
-            update_navigation ();
-        });
     }
-
-    private void update_navigation () {
-        if (!deck.transition_running) {
-            while (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD) != null) {
-                deck.remove (deck.get_adjacent_child (Hdy.NavigationDirection.FORWARD));
-            }
-        }
-    }
-
-    /*
-     * We need to load all the view after the language has being chosen and set.
-     * We need to rebuild the view everytime the next button is clicked to reflect language changes.
-     */
 
     private void load_keyboard_view () {
         keyboard_layout_view = new KeyboardLayoutView ();
-        deck.add (keyboard_layout_view);
-        deck.visible_child = keyboard_layout_view;
-
-        keyboard_layout_view.next_step.connect (() => load_try_install_view ());
-    }
-
-    private void load_try_install_view () {
         try_install_view = new TryInstallView ();
+
+        deck.add (keyboard_layout_view);
         deck.add (try_install_view);
-        deck.visible_child = try_install_view;
+
+        deck.visible_child = keyboard_layout_view;
 
         try_install_view.custom_step.connect (() => load_partitioning_view ());
         try_install_view.next_step.connect (() => load_disk_view ());
