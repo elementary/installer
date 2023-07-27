@@ -22,6 +22,7 @@ public class SuccessView : AbstractInstallerView {
 
     construct {
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG) {
+            pixel_size = 128,
             valign = Gtk.Align.END
         };
 

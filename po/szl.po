@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2020-06-17 00:11+0000\n"
-"Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"PO-Revision-Date: 2022-04-20 09:24+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/installer/"
 "installer/szl/>\n"
 "Language: szl\n"
@@ -12,12 +12,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
-#: src/MainWindow.vala:43
+#: src/Application.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Instaluj %s"
+
+#: src/Application.vala:61
+msgid "operating system is being installed"
+msgstr ""
+
+#: src/MainWindow.vala:317
+msgid "Connect to a Power Source"
+msgstr "Podłōncz do sztrōmu"
+
+#: src/MainWindow.vala:318
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"Twoje maszina funguje na bateryji. Na czas instalacyje nojlepij podłōnczyć "
+"jōm do sztrōmu."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -31,7 +47,7 @@ msgstr "Resztart trybu testowego"
 msgid "Test mode switch user"
 msgstr "Przeszaltrowanie używocza trybu testowego"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -44,80 +60,66 @@ msgstr "Pociep instalacyjo"
 msgid "Test Mode"
 msgstr "Tryb testowy"
 
-#: src/Views/CheckView.vala:65
-msgid "Ignore"
-msgstr "Ignoruj"
+#: src/Views/CheckView.vala:50
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Before Installing"
+msgstr "Sprōbuj zainstalować jeszcze roz"
 
-#: src/Views/CheckView.vala:258
-msgid "Not Enough Space"
-msgstr "Niy styko placu"
-
-#: src/Views/CheckView.vala:259
-#, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+#: src/Views/CheckView.vala:56
+msgid "Pre-Release Version"
 msgstr ""
-"Na twojij maszinie niy styko placu, coby zainstalować %s. Doradzōmy minimum "
-"%s przestrzyństwa."
 
-#: src/Views/CheckView.vala:269
-msgid "Your Device May Be Too Slow"
-msgstr "Twoja maszina może być za pōmało"
-
-#: src/Views/CheckView.vala:270
+#: src/Views/CheckView.vala:57
 msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
+"Only install on devices dedicated for development. <b>You will not be able "
+"to upgrade to a stable release</b>."
 msgstr ""
-"Twoja maszina niy społnio zalycanych wymogań sprzyntowych. Może fungować za "
-"pōmału abo sie zawieszać."
 
-#: src/Views/CheckView.vala:285
+#: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:286
+#: src/Views/CheckView.vala:63
 #, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:300
-msgid "Connect to a Power Source"
-msgstr "Podłōncz do sztrōmu"
+#: src/Views/CheckView.vala:68
+msgid "Your Device May Be Too Slow"
+msgstr "Twoja maszina może być za pōmało"
 
-#: src/Views/CheckView.vala:301
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
+#: src/Views/CheckView.vala:69
+msgid "This may cause it to run slowly or freeze."
 msgstr ""
-"Twoje maszina funguje na bateryji. Na czas instalacyje nojlepij podłōnczyć "
-"jōm do sztrōmu."
 
-#: src/Views/CheckView.vala:352
+#: src/Views/CheckView.vala:85
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Instaluj %s"
+
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "Rekōmandowane:"
 
-#: src/Views/CheckView.vala:358
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "Twoja maszina:"
 
-#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "Procesōr:"
 
-#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "Pamiyńć:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
 msgstr "Ôbier napynd"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -126,11 +128,57 @@ msgstr ""
 "stworzōno kopijo ibryczno twojich danych, możesz pociepnōńć instalacyjo i "
 "użyć trybu dymōnstracyjnego."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Pobiyranie teroźnyj kōnfiguracyje…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Dalij"
+
+#: src/Views/DriversView.vala:27
+#, fuzzy
+#| msgid "Partitioning Drive"
+msgid "Additional Drivers"
+msgstr "Partycjōnowanie napyndu"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
+"function properly without proprietary drivers. Most devices do not require "
+"additional drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+
+#: src/Views/DriversView.vala:54
+msgid ""
+"Proprietary drivers are subject to their own license terms. By installing, "
+"you agree to their terms of use."
+msgstr ""
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but this will "
+"require a working Internet connection."
+msgstr ""
+
+#: src/Views/DriversView.vala:72
+msgid "Include third-party proprietary drivers when installing"
+msgstr ""
+
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Nazod"
+
+#: src/Views/DriversView.vala:98
 msgid "Erase and Install"
 msgstr "Wymaż i zainstaluj"
 
@@ -194,11 +242,6 @@ msgstr "Ôbier hasło szyfrowanio"
 msgid "Confirm Password"
 msgstr "Potwiyrdź hasło"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
-msgid "Back"
-msgstr "Nazod"
-
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Ôbier hasło"
@@ -213,11 +256,11 @@ msgstr "Ôbier hasło szyfrowanio"
 msgid "Passwords do not match"
 msgstr "Hasła niy sztymujōm"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "Niy idzie zainstalować"
 
-#: src/Views/ErrorView.vala:35
+#: src/Views/ErrorView.vala:36
 #, fuzzy, c-format
 #| msgid ""
 #| "Installing %s failed, possibly due to a hardware error. Your device may "
@@ -229,75 +272,75 @@ msgstr ""
 "Instalacyjo %s sie niy podarziła, możno skirz błyndu sprzyntowego. Maszina "
 "może sie niy zresztartować. Możesz sprōbować wykōnać jedna z czynności niżyj:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:47
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "• Sprōbuj zainstalować jeszcze roz"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:58
 #, fuzzy
 #| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "• Użyj trybu dymōnstracyjnego, coby ryncznie rozwiōnzać problym"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:68
 #, fuzzy
 #| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
 msgstr "• Sztartnij zaś maszina z inkszego dysku"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr "Informacyje"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Zresztartuj maszina"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Wyprōbuj tryb dymōnstracyjny"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "Sprōbuj zainstalować jeszcze roz"
 
-#: src/Views/KeyboardLayoutView.vala:31
+#: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Ukłod tastatury"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Pisz, żeby przetestować ukłod"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Pokoż ukłod tastatury"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Ôbier"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr "Wychodno"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr "Jynzyk wchodu"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Jynzyki"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Ôbier jynzyk"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "Teroźnie aktywny jynzyk"
 
@@ -356,30 +399,30 @@ msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Partycjōnowanie napyndu"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Rozpakowowanie zbiorōw"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Kōnfigurowanie systymu"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Kōńczynie instalacyje"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
 msgstr "Wyprōbuj abo zainstaluj"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -388,24 +431,24 @@ msgstr ""
 "bydōm zmiyniōne. Wydajność i funkcyje mogōm niy być take, jak po "
 "zainstalowaniu."
 
-#: src/Views/TryInstallView.vala:46
+#: src/Views/TryInstallView.vala:47
 #, fuzzy
 #| msgid "Erase and Install"
 msgid "Erase Disk and Install"
 msgstr "Wymaż i zainstaluj"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Ôprōznij wszyjsko i zainstaluj świyżo kopijo %s."
 
-#: src/Views/TryInstallView.vala:54
+#: src/Views/TryInstallView.vala:55
 #, fuzzy
 #| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
 msgstr "Włosno (Rozszyrzōno)"
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -413,42 +456,34 @@ msgstr ""
 "Ryncznie twōrz, zmiyniej miara i dokōnuj ôperacyji na partycyjach. Ta metoda "
 "może prziniyś strata danych."
 
-#: src/Views/TryInstallView.vala:87
-msgid "Next"
-msgstr "Dalij"
-
-#: src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:114
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "Niy idzie zainstalować"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
 msgstr "Kōntynuuj sztalowanie"
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Zastow kōmputer"
 
-#: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#: src/Views/SuccessView.vala:97
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] ""
-"Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
 msgstr[1] ""
-"Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
 msgstr[2] ""
-"Twoja maszina bydzie zresztartowano autōmatycznie do %s za %i sekund."
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -546,6 +581,26 @@ msgstr "Systym zbiorōw:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Wychodny (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignoruj"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "Niy styko placu"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "Na twojij maszinie niy styko placu, coby zainstalować %s. Doradzōmy "
+#~ "minimum %s przestrzyństwa."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "Twoja maszina niy społnio zalycanych wymogań sprzyntowych. Może fungować "
+#~ "za pōmału abo sie zawieszać."
 
 #~ msgid "Set Password"
 #~ msgstr "Sztalowanie hasła"

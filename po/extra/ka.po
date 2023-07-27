@@ -1,30 +1,79 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"PO-Revision-Date: 2023-03-12 12:25+0000\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://l10n.elementary.io/projects/installer/extra/"
+"ka/>\n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.2\n"
 
-#: data/installer.appdata.xml.in:7
+#: data/installer.metainfo.xml.in:9
 msgid "Installer"
-msgstr ""
+msgstr "დაყენება"
 
-#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
+#: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
-msgstr ""
+msgstr "Elementary OS-ის დაყენება"
 
-#: data/installer.appdata.xml.in:10
+#: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
-msgstr ""
+msgstr "პროგრამა, რომელიც elementary OS-ს ნაბიჯ-ნაბიჯ დაგაყენებინებთ."
 
-#: data/installer.appdata.xml.in:69
+#: data/installer.metainfo.xml.in:52
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
+
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:71
+#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:96
+#: data/installer.metainfo.xml.in:111
+msgid "Improvements:"
+msgstr "გაუმჯობესებები:"
+
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:114
+msgid "Updated translations"
+msgstr "განახლებული თარგმანები"
+
+#: data/installer.metainfo.xml.in:87
+msgid "Use large icons in views"
+msgstr "დიდი ხატულების ჩვენება"
+
+#: data/installer.metainfo.xml.in:88
+msgid "Add a custom icon for Before Installing view"
+msgstr "ხატულის დამატება ხედის დაყენებამდე"
+
+#: data/installer.metainfo.xml.in:98
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr "სხვა გვერდზე გადართვის მაგიერ ელემენტის ინფორმაციის ჩვენება"
+
+#: data/installer.metainfo.xml.in:99
+msgid "Show all system requirements warnings on a single page"
+msgstr "სისტემური მოთხოვნების შესახებ გაფრთხილებების ერთ გვერდზე ჩვენება"
+
+#: data/installer.metainfo.xml.in:100
+msgid "Warn about installing developer builds"
+msgstr "გაფრთხილება არასტაბილური აგებების შესახებ"
+
+#: data/installer.metainfo.xml.in:113
+msgid "Double the boot partition size for encrypted installs"
+msgstr "დაშიფრული დისკებისთვის ჩამტვირთავი დანაყოფის ზომა ორჯერ გაიზარდა"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
-msgstr ""
+msgstr "სისტემის დაყენება"
 
-#: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr ""
+#~ msgid "Warn about installing in a VM"
+#~ msgstr "გაფრთხლება VM-ში დაყენების შესახებ"
+
+#~ msgid "Avoid political naming of certain locales"
+#~ msgstr "ზოგიერთი ენის პოლიტიკური სახელების თავიდან აცილება"
+
+#~ msgid "Fix styles for \"Unused\" disk partitions"
+#~ msgstr "\"გამოუყენებელ\" დისკის დანაყოფების სტილის გასწორება"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
 "PO-Revision-Date: 2019-07-13 05:46+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/installer/"
@@ -13,28 +13,63 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.6.1\n"
 
-#: data/installer.appdata.xml.in:7
+#: data/installer.metainfo.xml.in:9
 #, fuzzy
 #| msgid "Install elementary OS"
 msgid "Installer"
 msgstr "Instali operaciumon elementary"
 
-#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
+#: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Instali operaciumon elementary"
 
-#: data/installer.appdata.xml.in:10
+#: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr ""
 
-#: data/installer.appdata.xml.in:69
+#: data/installer.metainfo.xml.in:52
 msgid "elementary, Inc."
+msgstr ""
+
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:71
+#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:96
+#: data/installer.metainfo.xml.in:111
+msgid "Improvements:"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:114
+msgid "Updated translations"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:87
+msgid "Use large icons in views"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:88
+msgid "Add a custom icon for Before Installing view"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:98
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:99
+msgid "Show all system requirements warnings on a single page"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:100
+msgid "Warn about installing developer builds"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:113
+msgid "Double the boot partition size for encrypted installs"
 msgstr ""
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Instali la sistemon"
 
-#: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"

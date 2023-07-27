@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
 "PO-Revision-Date: 2018-10-24 00:08+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/installer/"
@@ -15,10 +15,26 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:43
+#: src/Application.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Installera %s"
+
+#: src/Application.vala:61
+msgid "operating system is being installed"
+msgstr ""
+
+#: src/MainWindow.vala:317
+msgid "Connect to a Power Source"
+msgstr "Anslut till en strömkälla"
+
+#: src/MainWindow.vala:318
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"Din enhet går på batteridrift. Vi rekommenderar att ansluta den till en "
+"strömkälla under installation."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -32,7 +48,7 @@ msgstr "Testläge, starta om"
 msgid "Test mode switch user"
 msgstr "Testläge, växla användare"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -45,80 +61,66 @@ msgstr "Avbryt installation"
 msgid "Test Mode"
 msgstr "Testläge"
 
-#: src/Views/CheckView.vala:65
-msgid "Ignore"
-msgstr "Ignorera"
+#: src/Views/CheckView.vala:50
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Before Installing"
+msgstr "Testa att installera på nytt"
 
-#: src/Views/CheckView.vala:258
-msgid "Not Enough Space"
-msgstr "Inte tillräckligt med utrymme"
-
-#: src/Views/CheckView.vala:259
-#, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+#: src/Views/CheckView.vala:56
+msgid "Pre-Release Version"
 msgstr ""
-"Det finns inte tillräckligt med utrymme på din enhet för att installera %s. "
-"Vi rekommenderar ett minimum av %s utrymme."
 
-#: src/Views/CheckView.vala:269
-msgid "Your Device May Be Too Slow"
-msgstr "Din enhet kan vara för långsam"
-
-#: src/Views/CheckView.vala:270
+#: src/Views/CheckView.vala:57
 msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
+"Only install on devices dedicated for development. <b>You will not be able "
+"to upgrade to a stable release</b>."
 msgstr ""
-"Din enhet möter inte de rekommenderade hårdvarukraven. Detta kan leda till "
-"att enheten går långsamt, eller fryser."
 
-#: src/Views/CheckView.vala:285
+#: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:286
+#: src/Views/CheckView.vala:63
 #, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:300
-msgid "Connect to a Power Source"
-msgstr "Anslut till en strömkälla"
+#: src/Views/CheckView.vala:68
+msgid "Your Device May Be Too Slow"
+msgstr "Din enhet kan vara för långsam"
 
-#: src/Views/CheckView.vala:301
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
+#: src/Views/CheckView.vala:69
+msgid "This may cause it to run slowly or freeze."
 msgstr ""
-"Din enhet går på batteridrift. Vi rekommenderar att ansluta den till en "
-"strömkälla under installation."
 
-#: src/Views/CheckView.vala:352
+#: src/Views/CheckView.vala:85
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Installera %s"
+
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "Rekommenderat:"
 
-#: src/Views/CheckView.vala:358
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "Din enhet:"
 
-#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "Processor:"
 
-#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "Minne:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
 msgstr "Välj en diskenhet"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -127,11 +129,57 @@ msgstr ""
 "säkerhetskopierat din data kan du avbryta installationen och använda "
 "demoläge."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Hämtar nuvarande konfiguration…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr ""
+
+#: src/Views/DriversView.vala:27
+#, fuzzy
+#| msgid "Partitioning Drive"
+msgid "Additional Drivers"
+msgstr "Partitionerar disk"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
+"function properly without proprietary drivers. Most devices do not require "
+"additional drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+
+#: src/Views/DriversView.vala:54
+msgid ""
+"Proprietary drivers are subject to their own license terms. By installing, "
+"you agree to their terms of use."
+msgstr ""
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but this will "
+"require a working Internet connection."
+msgstr ""
+
+#: src/Views/DriversView.vala:72
+msgid "Include third-party proprietary drivers when installing"
+msgstr ""
+
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Tillbaka"
+
+#: src/Views/DriversView.vala:98
 msgid "Erase and Install"
 msgstr "Radera och installera"
 
@@ -200,11 +248,6 @@ msgstr "Välj krypteringslösenord"
 msgid "Confirm Password"
 msgstr "Bekräfta lösenord"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
-msgid "Back"
-msgstr "Tillbaka"
-
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Välj lösenord"
@@ -219,11 +262,11 @@ msgstr "Välj krypteringslösenord"
 msgid "Passwords do not match"
 msgstr "Lösenorden stämmer inte överens med varandra"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "Kunde inte installera"
 
-#: src/Views/ErrorView.vala:35
+#: src/Views/ErrorView.vala:36
 #, fuzzy, c-format
 #| msgid ""
 #| "Installing %s failed, possibly due to a hardware error. Your device may "
@@ -236,75 +279,75 @@ msgstr ""
 "enhet kanske inte kommer starta om ordentligt. Du kan testa något av "
 "följande:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:47
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "• Testa att installera på nytt"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:58
 #, fuzzy
 #| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "• Använd demoläge och försök att återställa manuellt"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:68
 #, fuzzy
 #| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
 msgstr "• Starta om din enhet för att boota från en annan diskenhet"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Starta om enheten"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Testa demoläge"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "Testa att installera på nytt"
 
-#: src/Views/KeyboardLayoutView.vala:31
+#: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Tangentbordsuppsättning"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Skriv för att kontrollera din uppsättning"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Visa tangentbordsuppsättning"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Välj"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr "Standard"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr "Inmatningsspråk"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Språk"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Välj ett språk"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "Nuvarande aktivt språk"
 
@@ -365,87 +408,83 @@ msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Partitionerar disk"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Extraherar filer"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Konfigurerar systemet"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Slutför installationen"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
 msgstr "Prova eller installera"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:46
+#: src/Views/TryInstallView.vala:47
 #, fuzzy
 #| msgid "Erase and Install"
 msgid "Erase Disk and Install"
 msgstr "Radera och installera"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:54
+#: src/Views/TryInstallView.vala:55
 msgid "Custom Install (Advanced)"
 msgstr ""
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
 
-#: src/Views/TryInstallView.vala:87
-msgid "Next"
-msgstr ""
-
-#: src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:114
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "Kunde inte installera"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
 msgstr ""
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Stäng av"
 
-#: src/Views/SuccessView.vala:96
+#: src/Views/SuccessView.vala:97
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -537,6 +576,26 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Förval (etx4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignorera"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "Inte tillräckligt med utrymme"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "Det finns inte tillräckligt med utrymme på din enhet för att installera "
+#~ "%s. Vi rekommenderar ett minimum av %s utrymme."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "Din enhet möter inte de rekommenderade hårdvarukraven. Detta kan leda "
+#~ "till att enheten går långsamt, eller fryser."
 
 #~ msgid "Set Password"
 #~ msgstr "Ställ in lösenord"

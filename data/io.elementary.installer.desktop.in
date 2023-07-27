@@ -2,7 +2,7 @@
 Name=Install elementary OS
 Comment=Install the system
 Exec=gnome-session-quit --logout
-Icon=system-os-installer
+Icon=io.elementary.installer
 Terminal=false
 Type=Application
 StartupNotify=true

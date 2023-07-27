@@ -34,9 +34,15 @@ public class Installer.App : Gtk.Application {
     }
 
     public override void activate () {
-        var window = new MainWindow ();
+        var window = new MainWindow () {
+            deletable = false,
+            default_height = 600,
+            default_width = 850,
+            icon_name = application_id,
+            title = _("Install %s").printf (Utils.get_pretty_name ())
+        };
         window.show_all ();
-        this.add_window (window);
+        add_window (window);
 
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/installer");
@@ -49,7 +55,11 @@ public class Installer.App : Gtk.Application {
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
 
-        Inhibitor.get_instance ().inhibit ();
+        inhibit (
+            get_active_window (),
+            Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
+            _("operating system is being installed")
+        );
     }
 }
 

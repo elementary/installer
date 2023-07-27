@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2019-11-30 20:24+0000\n"
-"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"PO-Revision-Date: 2023-05-20 18:06+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/installer/"
 "installer/id/>\n"
 "Language: id\n"
@@ -12,27 +13,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/MainWindow.vala:43
+#: src/Application.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Pasang %s"
 
+#: src/Application.vala:61
+msgid "operating system is being installed"
+msgstr "sistem operasi sedang dipasang"
+
+#: src/MainWindow.vala:317
+msgid "Connect to a Power Source"
+msgstr "Sambungkan ke Sumber Daya"
+
+#: src/MainWindow.vala:318
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"Perangkat Anda beroperasi dengan daya baterai. Dianjurkan untuk dipasang ke "
+"sumber daya saat memasang."
+
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
-msgstr "Matikan mode tes"
+msgstr "Mode uji shutdown"
 
 #: src/Utils.vala:48
 msgid "Test mode reboot"
-msgstr "Mode tes reboot"
+msgstr "Mode uji reboot"
 
 #: src/Utils.vala:74
 msgid "Test mode switch user"
-msgstr "Mode tes ganti pengguna"
+msgstr "Mode uji ganti pengguna"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -43,146 +60,169 @@ msgstr "Batalkan Pemasangan"
 
 #: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
-msgstr "Mode Tes"
+msgstr "Mode Uji"
 
-#: src/Views/CheckView.vala:65
-msgid "Ignore"
-msgstr "Abaikan"
+#: src/Views/CheckView.vala:50
+msgid "Before Installing"
+msgstr "Sebelum Memasang"
 
-#: src/Views/CheckView.vala:258
-msgid "Not Enough Space"
-msgstr "Tidak Cukup Ruang"
+#: src/Views/CheckView.vala:56
+msgid "Pre-Release Version"
+msgstr "Versi Prarilis"
 
-#: src/Views/CheckView.vala:259
-#, c-format
+#: src/Views/CheckView.vala:57
 msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+"Only install on devices dedicated for development. <b>You will not be able "
+"to upgrade to a stable release</b>."
 msgstr ""
-"Tidak ada cukup ruang pada perangkat Anda untuk memasang %s. Sebaiknya "
-"minimal %s dari penyimpanan."
+"Hanya pasang pada perangkat yang didedikasikan untuk pengembangan. <b>Anda "
+"tidak akan dapat meningkatkan ke rilis stabil</b>."
 
-#: src/Views/CheckView.vala:269
+#: src/Views/CheckView.vala:62
+msgid "Virtual Machine"
+msgstr "Mesin Virtual"
+
+#: src/Views/CheckView.vala:63
+#, c-format
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
+msgstr ""
+"Beberapa bagian %s mungkin berjalan lambat, membeku, atau tidak berfungsi "
+"dengan selayaknya."
+
+#: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
 msgstr "Perangkat Anda Mungkin Terlalu Lambat"
 
-#: src/Views/CheckView.vala:270
-msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
-msgstr ""
-"Perangkat Anda tidak memenuhi persyaratan perangkat keras yang "
-"direkomendasikan. Hal ini dapat menyebabkannya berjalan perlahan atau "
-"membeku."
+#: src/Views/CheckView.vala:69
+msgid "This may cause it to run slowly or freeze."
+msgstr "Hal ini dapat menyebabkannya berjalan lambat atau membeku."
 
-#: src/Views/CheckView.vala:285
-msgid "Virtual Machine"
-msgstr ""
+#: src/Views/CheckView.vala:85
+msgid "Install Anyway"
+msgstr "Tetap Pasang"
 
-#: src/Views/CheckView.vala:286
-#, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
-msgstr ""
-
-#: src/Views/CheckView.vala:300
-msgid "Connect to a Power Source"
-msgstr "Sambungkan ke Sumber Daya"
-
-#: src/Views/CheckView.vala:301
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"Perangkat Anda beroperasi dengan daya baterai. Dianjurkan untuk dipasang ke "
-"sumber daya saat memasang."
-
-#: src/Views/CheckView.vala:352
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "Direkomendasikan:"
 
-#: src/Views/CheckView.vala:358
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "Perangkat Anda:"
 
-#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "Prosesor:"
 
-#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "Memori:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
 msgstr "Pilih sebuah Drive"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
 "Ini akan menghapus semua data pada drive yang dipilih. Jika Anda belum "
-"mencadangkan data Anda, Anda dapat membatalkan pemasangan dan menggunakan "
-"Mode Demo."
+"mencadangkan data, Anda dapat membatalkan pemasangan dan menggunakan Mode "
+"Demo."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Mendapatkan konfigurasi saat ini…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Selanjutnya"
+
+#: src/Views/DriversView.vala:27
+#, fuzzy
+#| msgid "Partitioning Drive"
+msgid "Additional Drivers"
+msgstr "Mempartisi Drive"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
+"function properly without proprietary drivers. Most devices do not require "
+"additional drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+
+#: src/Views/DriversView.vala:54
+msgid ""
+"Proprietary drivers are subject to their own license terms. By installing, "
+"you agree to their terms of use."
+msgstr ""
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but this will "
+"require a working Internet connection."
+msgstr ""
+
+#: src/Views/DriversView.vala:72
+msgid "Include third-party proprietary drivers when installing"
+msgstr ""
+
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Kembali"
+
+#: src/Views/DriversView.vala:98
 msgid "Erase and Install"
 msgstr "Hapus dan Pasang"
 
 #: src/Views/EncryptView.vala:28
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Jangan Enkripsi"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "Enkripsi Drive"
+msgstr "Aktifkan Enkripsi Drive"
 
 #: src/Views/EncryptView.vala:55
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"Enkripsi drive perangkat ini jika diperlukan untuk proteksi tambahan, tetapi "
+"pastikan anda memahami:"
 
 #: src/Views/EncryptView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"Mengenkripsi drive ini melindungi data terbaca oleh orang lain yang "
-"menggunakan akses secara fisik ke drive ini."
+"Data hanya akan terproteksi dari orang lain yang memiliki akses fisik ke "
+"perangkat ini saat perangkat ini dimatikan."
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
-"Kata sandi enkripsi dibutuhkan setiap kali Anda menyalakan perangkat ini "
-"atau menyalakan ulang."
+"Kata sandi enkripsi dibutuhkan setiap kali perangkat ini dihidupkan. Simpan "
+"di tempat yang aman."
 
 #: src/Views/EncryptView.vala:83
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"Sebuah keyboard akan dibutuhkan untuk mengetik kata sandi enkripsi setiap "
+"perangkat ini dihidupkan."
 
 #: src/Views/EncryptView.vala:103
 msgid ""
@@ -202,114 +242,95 @@ msgstr "Pilih Kata Sandi Enkripsi"
 msgid "Confirm Password"
 msgstr "Konfirmasi Kata Sandi"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
-msgid "Back"
-msgstr "Kembali"
-
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Pilih Kata Sandi"
 
 #: src/Views/EncryptView.vala:191
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Pilih Kata Sandi Enkripsi"
+msgstr "Tetapkan Kata Sandi Enkripsi"
 
 #: src/Views/EncryptView.vala:260
 msgid "Passwords do not match"
-msgstr "Password tidak sesuai"
+msgstr "Kata sandi tidak cocok"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "Tidak Dapat Memasang"
 
-#: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#: src/Views/ErrorView.vala:36
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Pemasangan %s gagal, kemungkinan kesalahan pada perangkat keras. Kemungkinan "
-"perangkat Anda tidak dinyalakan ulang dengan benar. Anda dapat mencoba hal "
+"Pemasangan %s gagal, mungkin dikarenakan kesalahan perangkat keras. "
+"Perangkat mungkin tidak dimulai ulang dengan benar. Anda dapat mencoba hal "
 "berikut:"
 
-#: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
+#: src/Views/ErrorView.vala:47
 msgid "Try the installation again"
-msgstr "• Coba pemasangan lagi"
+msgstr "Coba pemasangan lagi"
 
-#: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
+#: src/Views/ErrorView.vala:58
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• Gunakan Mode Demo dan coba untuk memulihkan secara manual"
+msgstr "Gunakan Mode Demo dan coba untuk memulihkan secara manual"
 
-#: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
+#: src/Views/ErrorView.vala:68
 msgid "Restart the device and boot from another drive"
-msgstr ""
-"• Menyalakan ulang perangkat Anda untuk melakukan booting dari drive lain"
+msgstr "Mulai ulang perangkat dan boot dari drive lain"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
-msgstr "Detail"
+msgstr "Rincian"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
-msgstr "Menyalakan Ulang Perangkat"
+msgstr "Mulai Ulang Perangkat"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Coba Mode Demo"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "Coba Pemasangan Lagi"
 
-#: src/Views/KeyboardLayoutView.vala:31
-#, fuzzy
-#| msgid "Keyboard Layout"
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
-msgstr "Susunan Papan Tik"
+msgstr "Pilih Tata Letak Papan Ketik"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Ketik untuk menguji tata letak Anda"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
-msgstr "Tampilkan tata letak papan tik"
+msgstr "Tampilkan tata letak papan ketik"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Pilih"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr "Bawaan"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr "Bahasa Masukan"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Bahasa"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Pilih Bahasa"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
-msgstr "Bahasa yang Aktif Saat Ini"
+msgstr "Bahasa yang aktif saat ini"
 
 #: src/Views/PartitioningView.vala:52
 msgid ""
@@ -343,7 +364,7 @@ msgstr "Memodifikasi Partisi…"
 
 #: src/Views/PartitioningView.vala:271
 msgid "EFI partition has the wrong file system"
-msgstr "Partisi EFI memiliki berkas sistem yang salah"
+msgstr "Partisi EFI memiliki sistem berkas yang salah"
 
 #: src/Views/PartitioningView.vala:273
 msgid "EFI partition is too small"
@@ -351,45 +372,45 @@ msgstr "Partisi EFI terlalu kecil"
 
 #: src/Views/PartitioningView.vala:276
 msgid "Invalid file system for root"
-msgstr "Berkas sistem untuk root tidak valid"
+msgstr "Sistem berkas untuk root tidak valid"
 
 #: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for home"
-msgstr "Berkas sistem untuk beranda tidak valid"
+msgstr "Sistem berkas untuk beranda tidak valid"
 
 #: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
 msgid "Show log"
-msgstr ""
+msgstr "Tampilkan log"
 
 #: src/Views/ProgressView.vala:96
 msgid "Hide log"
-msgstr ""
+msgstr "Sembuyikan log"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Mempartisi Drive"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
-msgstr "Ekstrak File"
+msgstr "Mengekstrak Berkas"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Mengkonfigurasi Sistem"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
-msgstr "Selesaikan Pemasangan"
+msgstr "Menyelesaikan Pemasangan"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
 msgstr "Coba atau Pasang"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -398,69 +419,57 @@ msgstr ""
 "sebelumnya tidak akan berubah. Performa dan fitur-fitur kemungkinan tidak "
 "mencerminkan pengalaman saat sudah terpasang."
 
-#: src/Views/TryInstallView.vala:46
-#, fuzzy
-#| msgid "Erase and Install"
+#: src/Views/TryInstallView.vala:47
 msgid "Erase Disk and Install"
-msgstr "Hapus dan Pasang"
+msgstr "Hapus Diska dan Pasang"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Hapus semua dan pasang salinan baru dari %s."
 
-#: src/Views/TryInstallView.vala:54
-#, fuzzy
-#| msgid "Custom (Advanced)"
+#: src/Views/TryInstallView.vala:55
 msgid "Custom Install (Advanced)"
-msgstr "Kustom (Mahir)"
+msgstr "Pemasangan Kustom (Lanjutan)"
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"Buat, ubah ukuran, atau jika tidak kelola partisi secara manual. Metode ini "
-"dapat menyebabkan kehilangan data."
+"Buat, ubah ukuran, atau kelola partisi secara manual. Metode ini dapat "
+"menyebabkan hilangnya data."
 
-#: src/Views/TryInstallView.vala:87
-msgid "Next"
-msgstr "Selanjutnya"
-
-#: src/Views/TryInstallView.vala:113
-#, fuzzy
-#| msgid "Could Not Install"
+#: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
-msgstr "Tidak Dapat Memasang"
+msgstr "Pemasangan Kustom"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
-msgstr "Lanjutkan Pengaturan"
+msgstr "Lanjutkan Penyiapan"
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s telah dipasang"
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Matikan"
 
-#: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#: src/Views/SuccessView.vala:97
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
-"Perangkat Anda akan secara otomatis memulai ulang ke %s dalam %i detik."
+msgstr[0] "Perangkat Anda akan dimulai ulang secara otomatis dalam %i detik."
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
-"Setelah memulai ulang Anda dapat mengatur pengguna baru, atau sekarang Anda "
-"dapat mematikan dan mengatur pengguna baru nanti."
+"Setelah memulai ulang Anda dapat menyiapkan pengguna baru, atau Anda dapat "
+"mematikan dan menyiapkan pengguna baru nanti."
 
 #: src/Widgets/DecryptMenu.vala:58
 msgid "Decrypt This Partition"
@@ -471,8 +480,8 @@ msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
-"Masukkan kata sandi enkripsi partisi dan atur sebuah nama perangkat untuk "
-"partisi yang didekripsi."
+"Masukkan kata sandi enkripsi partisi dan tetapkan sebuah nama perangkat "
+"untuk partisi yang didekripsi."
 
 #: src/Widgets/DecryptMenu.vala:75
 msgid "Password:"
@@ -488,7 +497,7 @@ msgstr "Dekripsi"
 
 #: src/Widgets/DecryptMenu.vala:175
 msgid "LUKS volume was decrypted"
-msgstr "Volume LUKS sudah didekripsi"
+msgstr "Volume LUKS didekripsi"
 
 #: src/Widgets/DiskBar.vala:135
 #, c-format
@@ -501,24 +510,20 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Gunakan partisi:"
+msgstr "Gunakan Partisi"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "Format:"
+msgstr "Format"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Hapus semua data dan siapkan sistem berkas baru"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr "Gunakan sebagai :"
+msgstr "Gunakan sebagai:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
@@ -526,7 +531,7 @@ msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
-msgstr "Beranda (/home)"
+msgstr "Home (/home)"
 
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
@@ -547,11 +552,32 @@ msgstr "Kustom:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
-msgstr "Berkas sistem:"
+msgstr "Sistem Berkas:"
 
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Bawaan (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Abaikan"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "Tidak Cukup Ruang"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "Tidak ada cukup ruang pada perangkat Anda untuk memasang %s. Sebaiknya "
+#~ "minimal %s dari penyimpanan."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "Perangkat Anda tidak memenuhi persyaratan perangkat keras yang "
+#~ "direkomendasikan. Hal ini dapat menyebabkannya berjalan perlahan atau "
+#~ "membeku."
 
 #~ msgid "Set Password"
 #~ msgstr "Atur Kata Sandi"

@@ -1,5 +1,5 @@
 /*-
- * Copyright 2016-2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2016-2022 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,58 +20,75 @@
 public class Installer.CheckView : AbstractInstallerView {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     public const uint64 ONE_GB = 1000 * 1000 * 1000;
-    // Minimum 15 GB
-    public const uint64 MINIMUM_SPACE = 15 * ONE_GB;
     // Minimum 1.2 GHz
     public const int MINIMUM_FREQUENCY = 1200 * 1000;
     // Minimum 1GB
     public const uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
     public signal void next_step ();
-    public signal void status_changed (bool met_requirements);
 
-    bool enough_space = true;
-    bool minimum_specs = true;
-    bool vm = false;
-    bool powered = true;
-
-    int frequency = 0;
-    uint64 memory = 0;
-
-    private UPower upower;
-
-    enum State {
-        NONE,
-        SPACE,
-        SPECS,
-        VM,
-        POWERED
+    private Gtk.Box message_box;
+    public bool has_messages {
+        get {
+            return message_box.get_children ().length () > 0;
+        }
     }
 
-    private State current_state = State.NONE;
-    private Gtk.Button ignore_button;
-    private Gtk.Stack stack;
+    private int frequency = 0;
+    private uint64 memory = 0;
 
     public CheckView () {
         Object (cancellable: true);
     }
 
     construct {
-        stack = new Gtk.Stack ();
-        stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        var image = new Gtk.Image.from_icon_name ("io.elementary.installer.caution", Gtk.IconSize.DIALOG) {
+            pixel_size = 128,
+            valign = Gtk.Align.END
+        };
 
-        content_area.add (stack);
+        var title_label = new Gtk.Label (_("Before Installing")) {
+            valign = Gtk.Align.START
+        };
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        ignore_button = new Gtk.Button.with_label (_("Ignore"));
+        var beta_view = new CheckView (
+            _("Pre-Release Version"),
+            _("Only install on devices dedicated for development. <b>You will not be able to upgrade to a stable release</b>."),
+            "applications-development"
+        );
+
+        var vm_view = new CheckView (
+            _("Virtual Machine"),
+            _("Some parts of %s may run slowly, freeze, or not function properly.").printf (Utils.get_pretty_name ()),
+            "computer-fail"
+        );
+
+        var specs_view = new CheckView (
+            _("Your Device May Be Too Slow"),
+            _("This may cause it to run slowly or freeze."),
+            "application-x-firmware"
+        );
+        specs_view.attach (get_comparison_grid (), 1, 2);
+
+        message_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32) {
+            valign = Gtk.Align.CENTER
+        };
+
+        content_area.column_homogeneous = true;
+        content_area.margin_start = content_area.margin_end = 12;
+        content_area.valign = Gtk.Align.CENTER;
+        content_area.attach (image, 0, 0);
+        content_area.attach (title_label, 0, 1);
+        content_area.attach (message_box, 1, 0, 1, 2);
+
+        var ignore_button = new Gtk.Button.with_label (_("Install Anyway"));
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        ignore_button.clicked.connect (() => show_next ());
+        ignore_button.clicked.connect (() => next_step ());
 
-        show_all ();
-    }
+        action_area.add (ignore_button);
 
-    // If all the requirements are met, skip this view (return true);
-    public bool check_requirements () {
-        enough_space = get_has_enough_space ();
+        bool minimum_specs = true;
 
         frequency = get_frequency ();
         if (frequency < MINIMUM_FREQUENCY && frequency > 0) {
@@ -83,44 +100,27 @@ public class Installer.CheckView : AbstractInstallerView {
             minimum_specs = false;
         }
 
-        powered = !get_is_on_battery ();
+        var apt_sources = File.new_for_path ("/etc/apt/sources.list.d/elementary.list");
+        try {
+            var @is = apt_sources.read ();
+            var dis = new DataInputStream (@is);
 
-        vm = get_vm ();
-
-        bool result = enough_space && minimum_specs && !vm && powered;
-        if (result == false) {
-            show_next ();
-        }
-        return result;
-    }
-
-    private static bool get_has_enough_space () {
-        var loop = new MainLoop ();
-        InstallerDaemon.DiskInfo? disks = null;
-
-        Daemon.get_default ().get_disks.begin (false, (obj, res) => {
-            try {
-                disks = ((Daemon)obj).get_disks.end (res);
-            } catch (Error e) {
-                critical ("Unable to get disks list: %s", e.message);
-            } finally {
-                loop.quit ();
+            if ("daily" in dis.read_line ()) {
+                message_box.add (beta_view);
             }
-        });
-
-        loop.run ();
-
-        if (disks == null) {
-            return false;
+        } catch (Error e) {
+            critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
-            uint64 size = disk.sectors * disk.sector_size;
-            if (size > MINIMUM_SPACE) {
-                return true;
-            }
+        if (get_vm ()) {
+            message_box.add (vm_view);
         }
-        return false;
+
+        if (!minimum_specs) {
+            message_box.add (specs_view);
+        }
+
+        show_all ();
     }
 
     private int get_frequency () {
@@ -159,26 +159,6 @@ public class Installer.CheckView : AbstractInstallerView {
         return 0;
     }
 
-    private bool get_is_on_battery () {
-        if (upower == null) {
-            try {
-                upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
-
-                (upower as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
-                    var _on_battery = changed.lookup_value ("OnBattery", GLib.VariantType.BOOLEAN);
-                    if (_on_battery != null) {
-                        status_changed (check_requirements ());
-                    }
-                });
-            } catch (Error e) {
-                warning (e.message);
-                return false;
-            }
-        }
-
-        return upower.on_battery;
-    }
-
     private static bool get_vm () {
         File file = File.new_for_path ("/proc/cpuinfo");
         try {
@@ -196,153 +176,32 @@ public class Installer.CheckView : AbstractInstallerView {
         return false;
     }
 
-    private void show_next () {
-        State next_state = State.NONE;
-        switch (current_state) {
-            case State.NONE:
-                if (!enough_space) {
-                    next_state = State.SPACE;
-                } else if (!minimum_specs) {
-                    next_state = State.SPECS;
-                } else if (vm) {
-                    next_state = State.VM;
-                } else if (!powered) {
-                    next_state = State.POWERED;
-                } else {
-                    next_step ();
-                    return;
-                }
-
-                break;
-            case State.SPACE:
-                if (!minimum_specs) {
-                    next_state = State.SPECS;
-                } else if (vm) {
-                    next_state = State.VM;
-                } else if (!powered) {
-                    next_state = State.POWERED;
-                } else {
-                    next_step ();
-                    return;
-                }
-
-                break;
-            case State.SPECS:
-                if (vm) {
-                    next_state = State.VM;
-                } else if (!powered) {
-                    next_state = State.POWERED;
-                } else {
-                    next_step ();
-                    return;
-                }
-
-                break;
-            case State.VM:
-                if (!powered) {
-                    next_state = State.POWERED;
-                } else {
-                    next_step ();
-                    return;
-                }
-
-                break;
-            case State.POWERED:
-                next_step ();
-                return;
-        }
-
-        switch (next_state) {
-            case State.SPACE:
-                var grid = new CheckView (
-                    _("Not Enough Space"),
-                    _("There is not enough room on your device to install %s. We recommend a minimum of %s of storage.").printf (Utils.get_pretty_name (), GLib.format_size (MINIMUM_SPACE)),
-                    "drive-harddisk"
-                );
-
-                stack.add (grid);
-                stack.set_visible_child (grid);
-                break;
-
-            case State.SPECS:
-                var grid = new CheckView (
-                    _("Your Device May Be Too Slow"),
-                    _("Your device doesn't meet the recommended hardware requirements. This may cause it to run slowly or freeze."),
-                    "application-x-firmware"
-                );
-                grid.attach (get_comparison_grid (), 1, 2);
-
-                if (ignore_button.parent == null) {
-                    action_area.add (ignore_button);
-                }
-
-                stack.add (grid);
-                stack.set_visible_child (grid);
-                break;
-
-            case State.VM:
-                var grid = new CheckView (
-                    _("Virtual Machine"),
-                    _("You appear to be installing in a virtual machine. Some parts of %s may run slowly, freeze, or not function properly in a virtual machine. It's recommended to install on real hardware.").printf (Utils.get_pretty_name ()),
-                    "utilities-system-monitor"
-                );
-
-                if (ignore_button.parent == null) {
-                    action_area.add (ignore_button);
-                }
-
-                stack.add (grid);
-                stack.set_visible_child (grid);
-                break;
-
-            case State.POWERED:
-                var grid = new CheckView (
-                    _("Connect to a Power Source"),
-                    _("Your device is running on battery power. It's recommended to be plugged in while installing."),
-                    "battery-ac-adapter"
-                );
-
-                if (ignore_button.parent == null) {
-                    action_area.add (ignore_button);
-                }
-
-                stack.add (grid);
-                stack.set_visible_child (grid);
-                break;
-        }
-
-        show_all ();
-        current_state = next_state;
-    }
-
     private class CheckView : Gtk.Grid {
         public CheckView (string title, string description, string icon_name) {
-            var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG) {
-                valign = Gtk.Align.END
+            var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
+                valign = Gtk.Align.START
             };
 
             var title_label = new Gtk.Label (title) {
-                valign = Gtk.Align.START
+                hexpand = true,
+                max_width_chars = 1,
+                wrap = true,
+                xalign = 0
             };
-            title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+            title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var description_label = new Gtk.Label (description) {
                 max_width_chars = 1, // Make Gtk wrap, but not expand the window
+                use_markup = true,
                 wrap = true,
                 xalign = 0
             };
 
-            column_homogeneous = true;
             column_spacing = 12;
-            row_spacing = 12;
-            expand = true;
-            margin_end = 10;
-            margin_start = 10;
-            valign = Gtk.Align.CENTER;
 
-            attach (image, 0, 0);
-            attach (title_label, 0, 1);
-            attach (description_label, 1, 0, 1, 2);
+            attach (image, 0, 0, 1, 2);
+            attach (title_label, 1, 0);
+            attach (description_label, 1, 1);
 
             show_all ();
         }
@@ -424,9 +283,4 @@ public class Installer.CheckView : AbstractInstallerView {
             return "%d kHz".printf (freq);
         }
     }
-}
-
-[DBus (name = "org.freedesktop.UPower")]
-public interface UPower : GLib.Object {
-    public abstract bool on_battery { owned get; set; }
 }

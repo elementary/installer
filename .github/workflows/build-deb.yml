@@ -9,10 +9,10 @@ on:
 jobs:
   build-deb:
     runs-on: ubuntu-latest
-    
+
     container:
-      image: elementary/docker:odin-unstable
-      
+      image: ghcr.io/elementary/docker:horus-unstable
+
     steps:
       - name: Install dependencies
         run: |
@@ -20,12 +20,14 @@ jobs:
           apt install -y git
 
       - name: Checkout main
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Checkout debian packaging folder
-        run: git checkout origin/deb-packaging -- debian
+        run: |
+          git config --global --add safe.directory /__w/installer/installer
+          git checkout origin/deb-packaging -- debian
 
       - name: Install build dependencies
         run: |
@@ -38,7 +40,7 @@ jobs:
           cp ../*.deb output/
 
       - name: Save .deb package
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: deb-files
           path: output/*.deb

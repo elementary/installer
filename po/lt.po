@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2019-07-06 01:28+0000\n"
-"Last-Translator: Moo <hazap@hotmail.com>\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"PO-Revision-Date: 2022-04-20 09:24+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/installer/"
 "installer/lt/>\n"
 "Language: lt\n"
@@ -13,13 +13,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/MainWindow.vala:43
+#: src/Application.vala:42
 #, c-format
 msgid "Install %s"
 msgstr "Įdiegti %s"
+
+#: src/Application.vala:61
+msgid "operating system is being installed"
+msgstr ""
+
+#: src/MainWindow.vala:317
+msgid "Connect to a Power Source"
+msgstr "Prisijunkite prie elektros maitinimo šaltinio"
+
+#: src/MainWindow.vala:318
+msgid ""
+"Your device is running on battery power. It's recommended to be plugged in "
+"while installing."
+msgstr ""
+"Jūsų įrenginys veikia, naudodamas baterijos energiją. Įdiegiant sistemą, "
+"rekomenduojama jį prijungti prie elektros maitinimo šaltinio."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -33,7 +49,7 @@ msgstr "Išbandymo veiksenos paleidimas iš naujo"
 msgid "Test mode switch user"
 msgstr "Išbandymo veiksenos naudotojo perjungimas"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:222
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -46,80 +62,66 @@ msgstr "Atsisakyti įdiegimo"
 msgid "Test Mode"
 msgstr "Išbandymo veiksena"
 
-#: src/Views/CheckView.vala:65
-msgid "Ignore"
-msgstr "Nepaisyti"
+#: src/Views/CheckView.vala:50
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Before Installing"
+msgstr "Bandyti įdiegti dar kartą"
 
-#: src/Views/CheckView.vala:258
-msgid "Not Enough Space"
-msgstr "Trūksta vietos"
-
-#: src/Views/CheckView.vala:259
-#, c-format
-msgid ""
-"There is not enough room on your device to install %s. We recommend a "
-"minimum of %s of storage."
+#: src/Views/CheckView.vala:56
+msgid "Pre-Release Version"
 msgstr ""
-"Jūsų įrenginyje trūksta vietos %s įdiegimui. Rekomenduojame mažiausiai %s "
-"kaupiklio vietos."
 
-#: src/Views/CheckView.vala:269
-msgid "Your Device May Be Too Slow"
-msgstr "Jūsų įrenginys gali būti per lėtas"
-
-#: src/Views/CheckView.vala:270
+#: src/Views/CheckView.vala:57
 msgid ""
-"Your device doesn't meet the recommended hardware requirements. This may "
-"cause it to run slowly or freeze."
+"Only install on devices dedicated for development. <b>You will not be able "
+"to upgrade to a stable release</b>."
 msgstr ""
-"Jūsų įrenginys neatitinka rekomenduojamų aparatinės įrangos reikalavimų. Tai "
-"gali būti lėto įrenginio darbo ir strigčių priežastimi."
 
-#: src/Views/CheckView.vala:285
+#: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:286
+#: src/Views/CheckView.vala:63
 #, c-format
-msgid ""
-"You appear to be installing in a virtual machine. Some parts of %s may run "
-"slowly, freeze, or not function properly in a virtual machine. It's "
-"recommended to install on real hardware."
+msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:300
-msgid "Connect to a Power Source"
-msgstr "Prisijunkite prie elektros maitinimo šaltinio"
+#: src/Views/CheckView.vala:68
+msgid "Your Device May Be Too Slow"
+msgstr "Jūsų įrenginys gali būti per lėtas"
 
-#: src/Views/CheckView.vala:301
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
+#: src/Views/CheckView.vala:69
+msgid "This may cause it to run slowly or freeze."
 msgstr ""
-"Jūsų įrenginys veikia, naudodamas baterijos energiją. Įdiegiant sistemą, "
-"rekomenduojama jį prijungti prie elektros maitinimo šaltinio."
 
-#: src/Views/CheckView.vala:352
+#: src/Views/CheckView.vala:85
+#, fuzzy
+#| msgid "Install %s"
+msgid "Install Anyway"
+msgstr "Įdiegti %s"
+
+#: src/Views/CheckView.vala:211
 msgid "Recommended:"
 msgstr "Rekomenduojami:"
 
-#: src/Views/CheckView.vala:358
+#: src/Views/CheckView.vala:217
 msgid "Your Device:"
 msgstr "Jūsų įrenginio:"
 
-#: src/Views/CheckView.vala:364 src/Views/CheckView.vala:368
+#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
 msgid "Processor:"
 msgstr "Procesorius:"
 
-#: src/Views/CheckView.vala:380 src/Views/CheckView.vala:384
+#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
 msgid "Memory:"
 msgstr "Atmintis:"
 
-#: src/Views/DiskView.vala:36
+#: src/Views/DiskView.vala:48
 msgid "Select a Drive"
 msgstr "Pasirinkite diską"
 
-#: src/Views/DiskView.vala:42
+#: src/Views/DiskView.vala:54
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -128,11 +130,57 @@ msgstr ""
 "pasidarę atsarginės savo duomenų kopijos, galite atsisakyti įdiegimo ir "
 "naudoti demonstracinę veikseną."
 
-#: src/Views/DiskView.vala:66 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Gaunama esama konfigūracija…"
 
-#: src/Views/DiskView.vala:102 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Kitas"
+
+#: src/Views/DriversView.vala:27
+#, fuzzy
+#| msgid "Partitioning Drive"
+msgid "Additional Drivers"
+msgstr "Skaidomas diskas"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
+"function properly without proprietary drivers. Most devices do not require "
+"additional drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+
+#: src/Views/DriversView.vala:54
+msgid ""
+"Proprietary drivers are subject to their own license terms. By installing, "
+"you agree to their terms of use."
+msgstr ""
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but this will "
+"require a working Internet connection."
+msgstr ""
+
+#: src/Views/DriversView.vala:72
+msgid "Include third-party proprietary drivers when installing"
+msgstr ""
+
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Atgal"
+
+#: src/Views/DriversView.vala:98
 msgid "Erase and Install"
 msgstr "Ištrinti ir įdiegti"
 
@@ -202,11 +250,6 @@ msgstr "Pasirinkite šifravimo slaptažodį"
 msgid "Confirm Password"
 msgstr "Patvirtinkite slaptažodį"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:59
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:85
-msgid "Back"
-msgstr "Atgal"
-
 #: src/Views/EncryptView.vala:168
 msgid "Choose Password"
 msgstr "Pasirinkti slaptažodį"
@@ -221,11 +264,11 @@ msgstr "Pasirinkite šifravimo slaptažodį"
 msgid "Passwords do not match"
 msgstr "Slaptažodžiai nesutampa"
 
-#: src/Views/ErrorView.vala:30
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "Nepavyko įdiegti"
 
-#: src/Views/ErrorView.vala:35
+#: src/Views/ErrorView.vala:36
 #, fuzzy, c-format
 #| msgid ""
 #| "Installing %s failed, possibly due to a hardware error. Your device may "
@@ -238,75 +281,75 @@ msgstr ""
 "įrenginiui gali nepavykti tinkamai pasileisti iš naujo. Galite pabandyti "
 "vieną iš šių variantų:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:47
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "• Bandyti įdiegti dar kartą"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:58
 #, fuzzy
 #| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "• Naudoti demonstracinę veikseną ir bandyti atkurti rankiniu būdu"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:68
 #, fuzzy
 #| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
 msgstr "• Paleisti savo įrenginį iš naujo, norint jį paleisti iš kito disko"
 
-#: src/Views/ErrorView.vala:77
+#: src/Views/ErrorView.vala:78
 msgid "Details"
 msgstr "Išsamiau"
 
-#: src/Views/ErrorView.vala:112 src/Views/SuccessView.vala:65
+#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Paleisti įrenginį iš naujo"
 
-#: src/Views/ErrorView.vala:114 src/Views/TryInstallView.vala:38
+#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Išbandyti demonstracinę veikseną"
 
-#: src/Views/ErrorView.vala:116
+#: src/Views/ErrorView.vala:117
 msgid "Try Installing Again"
 msgstr "Bandyti įdiegti dar kartą"
 
-#: src/Views/KeyboardLayoutView.vala:31
+#: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Klaviatūros išdėstymas"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Rašykite, norėdami išbandyti savo išdėstymą"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Rodyti klaviatūros išdėstymą"
 
-#: src/Views/KeyboardLayoutView.vala:61 src/Views/LanguageView.vala:113
+#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Pasirinkti"
 
-#: src/Views/KeyboardLayoutView.vala:125
+#: src/Views/KeyboardLayoutView.vala:126
 msgid "Default"
 msgstr "Numatytasis"
 
-#: src/Views/KeyboardLayoutView.vala:132
+#: src/Views/KeyboardLayoutView.vala:133
 msgid "Input Language"
 msgstr "Įvesties kalba"
 
-#: src/Views/LanguageView.vala:261
+#: src/Views/LanguageView.vala:259
 msgid "Languages"
 msgstr "Kalbos"
 
-#: src/Views/LanguageView.vala:278
+#: src/Views/LanguageView.vala:276
 msgid "Select a Language"
 msgstr "Pasirinkite kalbą"
 
-#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:351
+#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
 msgid "Currently active language"
 msgstr "Šiuo metu aktyvi kalba"
 
@@ -366,30 +409,30 @@ msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Skaidomas diskas"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Išskleidžiami failai"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Konfigūruojama sistema"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Užbaigiamas įdiegimas"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
 msgstr "Išbandyti arba Įdiegti"
 
-#: src/Views/TryInstallView.vala:40
+#: src/Views/TryInstallView.vala:41
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -398,24 +441,24 @@ msgstr ""
 "duomenys išliks nepakitę. Našumas ir ypatybės gali neatitikti to patyrimo, "
 "kuris gaunamas įdiegus sistemą."
 
-#: src/Views/TryInstallView.vala:46
+#: src/Views/TryInstallView.vala:47
 #, fuzzy
 #| msgid "Erase and Install"
 msgid "Erase Disk and Install"
 msgstr "Ištrinti ir įdiegti"
 
-#: src/Views/TryInstallView.vala:48
+#: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Viską ištrinti ir įdiegti naują %s kopiją."
 
-#: src/Views/TryInstallView.vala:54
+#: src/Views/TryInstallView.vala:55
 #, fuzzy
 #| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
 msgstr "Tinkintas (Išplėstinis)"
 
-#: src/Views/TryInstallView.vala:56
+#: src/Views/TryInstallView.vala:57
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -423,44 +466,35 @@ msgstr ""
 "Kurti skaidinius, keisti jų dydį ar kitaip rankiniu būdu juos tvarkyti. Šis "
 "būdas gali privesti prie duomenų praradimo."
 
-#: src/Views/TryInstallView.vala:87
-msgid "Next"
-msgstr "Kitas"
-
-#: src/Views/TryInstallView.vala:113
+#: src/Views/TryInstallView.vala:114
 #, fuzzy
 #| msgid "Could Not Install"
 msgid "Custom Install"
 msgstr "Nepavyko įdiegti"
 
-#: src/Views/SuccessView.vala:28
+#: src/Views/SuccessView.vala:29
 msgid "Continue Setting Up"
 msgstr "Tęskite nustatymą"
 
-#: src/Views/SuccessView.vala:33
+#: src/Views/SuccessView.vala:34
 #, c-format
 msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:62
+#: src/Views/SuccessView.vala:63
 msgid "Shut Down"
 msgstr "Išjungti"
 
-#: src/Views/SuccessView.vala:96
-#, fuzzy, c-format
-#| msgid "Your device will automatically restart to %s in %i seconds."
+#: src/Views/SuccessView.vala:97
+#, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] ""
-"Jūsų įrenginys po %i sekundžių bus automatiškai paleistas iš naujo į %s."
 msgstr[1] ""
-"Jūsų įrenginys po %i sekundžių bus automatiškai paleistas iš naujo į %s."
 msgstr[2] ""
-"Jūsų įrenginys po %i sekundžių bus automatiškai paleistas iš naujo į %s."
 msgstr[3] ""
-"Jūsų įrenginys po %i sekundžių bus automatiškai paleistas iš naujo į %s."
 
-#: src/Views/SuccessView.vala:100
+#: src/Views/SuccessView.vala:101
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -558,6 +592,26 @@ msgstr "Failų sistema:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Numatytasis (ext4)"
+
+#~ msgid "Ignore"
+#~ msgstr "Nepaisyti"
+
+#~ msgid "Not Enough Space"
+#~ msgstr "Trūksta vietos"
+
+#~ msgid ""
+#~ "There is not enough room on your device to install %s. We recommend a "
+#~ "minimum of %s of storage."
+#~ msgstr ""
+#~ "Jūsų įrenginyje trūksta vietos %s įdiegimui. Rekomenduojame mažiausiai %s "
+#~ "kaupiklio vietos."
+
+#~ msgid ""
+#~ "Your device doesn't meet the recommended hardware requirements. This may "
+#~ "cause it to run slowly or freeze."
+#~ msgstr ""
+#~ "Jūsų įrenginys neatitinka rekomenduojamų aparatinės įrangos reikalavimų. "
+#~ "Tai gali būti lėto įrenginio darbo ir strigčių priežastimi."
 
 #~ msgid "Set Password"
 #~ msgstr "Nustatyti slaptažodį"

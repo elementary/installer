@@ -20,7 +20,8 @@ public class Installer.TryInstallView : AbstractInstallerView {
     public signal void next_step ();
 
     construct {
-        var type_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG) {
+        var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id, Gtk.IconSize.DIALOG) {
+            pixel_size = 128,
             valign = Gtk.Align.END
         };
 

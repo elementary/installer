@@ -17,33 +17,32 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.MainWindow : Hdy.Window {
-    private Hdy.Deck deck;
+[DBus (name = "org.freedesktop.UPower")]
+public interface UPower : GLib.Object {
+    public abstract bool on_battery { owned get; set; }
+}
 
+public class Installer.MainWindow : Hdy.Window {
+    // We have to do it step by step because the vala compiler has overflows with big numbers.
+    private const uint64 ONE_GB = 1000 * 1000 * 1000;
+    // Minimum 15 GB
+    private const uint64 MINIMUM_SPACE = 15 * ONE_GB;
+
+    private Gtk.Label infobar_label;
+    private Hdy.Deck deck;
     private LanguageView language_view;
     private KeyboardLayoutView keyboard_layout_view;
     private TryInstallView try_install_view;
     private Installer.CheckView check_view;
     private DiskView disk_view;
     private PartitioningView partitioning_view;
+    private DriversView drivers_view;
     private ProgressView progress_view;
     private SuccessView success_view;
     private EncryptView encrypt_view;
     private ErrorView error_view;
     private bool check_ignored = false;
-
-
-    public MainWindow () {
-        Object (
-            deletable: false,
-            default_height: 600,
-            default_width: 850,
-            icon_name: "system-os-installer",
-            resizable: false,
-            title: _("Install %s").printf (Utils.get_pretty_name ()),
-            window_position: Gtk.WindowPosition.CENTER_ALWAYS
-        );
-    }
+    private uint orca_timeout_id = 0;
 
     construct {
         language_view = new LanguageView ();
@@ -53,9 +52,88 @@ public class Installer.MainWindow : Hdy.Window {
         };
         deck.add (language_view);
 
-        add (deck);
+        infobar_label = new Gtk.Label ("") {
+            use_markup = true
+        };
+        set_infobar_string ();
 
-        language_view.next_step.connect (() => load_keyboard_view ());
+        var battery_infobar = new Gtk.InfoBar () {
+            message_type = Gtk.MessageType.WARNING,
+            margin_end = 7,
+            margin_bottom = 7,
+            margin_start = 7,
+            show_close_button = true,
+            halign = Gtk.Align.START, // Can't cover action area; need to select language
+            valign = Gtk.Align.END
+        };
+        battery_infobar.get_content_area ().add (infobar_label);
+        battery_infobar.get_style_context ().add_class ("frame");
+
+        var overlay = new Gtk.Overlay () {
+            child = deck
+        };
+        overlay.add_overlay (battery_infobar);
+
+        child = overlay;
+
+        language_view.next_step.connect (() => {
+            // Don't prompt for screen reader if we're able to navigate without it
+            if (orca_timeout_id != 0) {
+                Source.remove (orca_timeout_id);
+            }
+
+            // Reset when language selection changes
+            set_infobar_string ();
+            load_keyboard_view ();
+        });
+
+        try {
+            UPower upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
+
+            battery_infobar.revealed = upower.on_battery;
+
+            ((DBusProxy) upower).g_properties_changed.connect ((changed, invalid) => {
+                var _on_battery = changed.lookup_value ("OnBattery", GLib.VariantType.BOOLEAN);
+                if (_on_battery != null) {
+                    battery_infobar.revealed = upower.on_battery;
+                }
+            });
+        } catch (Error e) {
+            warning (e.message);
+            battery_infobar.revealed = false;
+        }
+
+        battery_infobar.response.connect (() => {
+            battery_infobar.revealed = false;
+        });
+
+        var mediakeys_settings = new Settings ("org.gnome.settings-daemon.plugins.media-keys");
+        var a11y_settings = new Settings ("org.gnome.desktop.a11y.applications");
+
+        orca_timeout_id = Timeout.add_seconds (10, () => {
+            orca_timeout_id = 0;
+
+            if (a11y_settings.get_boolean ("screen-reader-enabled")) {
+                return Source.REMOVE;
+            }
+
+            var shortcut_string = Granite.accel_to_string (
+                mediakeys_settings.get_strv ("screenreader")[0]
+            );
+
+            // Espeak can't read ⌘
+            shortcut_string = shortcut_string.replace ("⌘", "Super");
+
+            var orca_prompt = "Screen reader can be turned on with the keyboard shorcut %s".printf (shortcut_string);
+
+            try {
+                Process.spawn_command_line_async ("espeak '%s'".printf (orca_prompt));
+            } catch (SpawnError e) {
+                critical ("Couldn't read Orca prompt: %s", e.message);
+            }
+
+            return Source.REMOVE;
+        });
 
         deck.notify["visible-child"].connect (() => {
             update_navigation ();
@@ -108,12 +186,6 @@ public class Installer.MainWindow : Hdy.Window {
         check_view = new Installer.CheckView ();
         deck.add (check_view);
 
-        check_view.status_changed.connect ((met_requirements) => {
-            if (!check_ignored) {
-                set_check_view_visible (!met_requirements);
-            }
-        });
-
         check_view.cancel.connect (() => {
             deck.visible_child = try_install_view;
             check_view.destroy ();
@@ -124,7 +196,7 @@ public class Installer.MainWindow : Hdy.Window {
             set_check_view_visible (false);
         });
 
-        set_check_view_visible (!check_ignored && !check_view.check_requirements ());
+        set_check_view_visible (!check_ignored && check_view.has_messages);
     }
 
     private void load_encrypt_view () {
@@ -136,14 +208,16 @@ public class Installer.MainWindow : Hdy.Window {
             deck.visible_child = try_install_view;
         });
 
-        encrypt_view.next_step.connect (() => load_progress_view ());
+        encrypt_view.next_step.connect (() => {
+            load_drivers_view ();
+        });
     }
 
     private void load_disk_view () {
         disk_view = new DiskView ();
         deck.add (disk_view);
         deck.visible_child = disk_view;
-        disk_view.load.begin (CheckView.MINIMUM_SPACE);
+        disk_view.load.begin (MINIMUM_SPACE);
 
         load_check_view ();
 
@@ -155,7 +229,12 @@ public class Installer.MainWindow : Hdy.Window {
     }
 
     private void load_partitioning_view () {
-        partitioning_view = new PartitioningView (CheckView.MINIMUM_SPACE);
+        if (partitioning_view != null) {
+            partitioning_view.destroy ();
+        }
+
+        partitioning_view = new PartitioningView (MINIMUM_SPACE);
+
         deck.add (partitioning_view);
         deck.visible_child = partitioning_view;
 
@@ -163,8 +242,21 @@ public class Installer.MainWindow : Hdy.Window {
             unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;
             config.mounts = (owned) partitioning_view.mounts;
-            load_progress_view ();
+            load_drivers_view ();
         });
+    }
+
+    private void load_drivers_view () {
+        if (drivers_view != null) {
+            drivers_view.destroy ();
+        }
+
+        drivers_view = new DriversView ();
+
+        deck.add (drivers_view);
+        deck.visible_child = drivers_view;
+
+        drivers_view.next_step.connect (() => load_progress_view ());
     }
 
     private void load_progress_view () {
@@ -193,5 +285,14 @@ public class Installer.MainWindow : Hdy.Window {
         error_view = new ErrorView (log);
         deck.add (error_view);
         deck.visible_child = error_view;
+    }
+
+    private void set_infobar_string () {
+        var infobar_string = "%s\n%s".printf (
+            _("Connect to a Power Source"),
+            Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (_("Your device is running on battery power. It's recommended to be plugged in while installing."))
+        );
+
+        infobar_label.label = infobar_string;
     }
 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2021-07-19 23:30+0000\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"PO-Revision-Date: 2023-01-11 08:18+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/extra/"
 "ca/>\n"
@@ -11,28 +11,81 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
-#: data/installer.appdata.xml.in:7
+#: data/installer.metainfo.xml.in:9
 msgid "Installer"
 msgstr "Instal·lador"
 
-#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
+#: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Instal·la l'elementary OS"
 
-#: data/installer.appdata.xml.in:10
+#: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "Instal·lador de pas a pas per a elementary OS."
 
-#: data/installer.appdata.xml.in:69
+#: data/installer.metainfo.xml.in:52
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
+
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:71
+#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:96
+#: data/installer.metainfo.xml.in:111
+msgid "Improvements:"
+msgstr "Millores:"
+
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:114
+msgid "Updated translations"
+msgstr "Traduccions actualitzades"
+
+#: data/installer.metainfo.xml.in:87
+msgid "Use large icons in views"
+msgstr "Usa icones grans a les vistes"
+
+#: data/installer.metainfo.xml.in:88
+msgid "Add a custom icon for Before Installing view"
+msgstr "Addició d'una icona personalitzada per a la vista d'Abans d'instal·lar"
+
+#: data/installer.metainfo.xml.in:98
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr ""
+"Mostra una barra d'informació a la bateria en lloc de canviar a una pàgina "
+"diferent."
+
+#: data/installer.metainfo.xml.in:99
+msgid "Show all system requirements warnings on a single page"
+msgstr "Mostra tots els avisos de requisits del sistema en una sola pàgina."
+
+#: data/installer.metainfo.xml.in:100
+msgid "Warn about installing developer builds"
+msgstr "Avisa sobre la instal·lació de compilacions de desenvolupadors."
+
+#: data/installer.metainfo.xml.in:113
+msgid "Double the boot partition size for encrypted installs"
+msgstr ""
+"Doble mida de la partició d'arrencada per a les instal·lacions encriptades"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Instal·la el sistema"
 
-#: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+#~ msgid "Warn about installing in a VM"
+#~ msgstr "Avisa sobre la instal·lació en una màquina virtual."
+
+#~ msgid "Avoid political naming of certain locales"
+#~ msgstr "Evita els noms polítics de determinades localitats."
+
+#~ msgid "Fix styles for \"Unused\" disk partitions"
+#~ msgstr "Correcció dels estils per a les particions de disc no utilitzades"
+
+#~ msgid "io.elementary.installer"
+#~ msgstr "io.elementary.installer"
+
+#~ msgid "Ensure a usable hostname"
+#~ msgstr "Assegura un nom d'amfitrió utilitzable."
+
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"

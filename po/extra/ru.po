@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-09 03:22+0000\n"
-"PO-Revision-Date: 2021-08-14 21:50+0000\n"
-"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
+"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"PO-Revision-Date: 2023-01-05 22:25+0000\n"
+"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -18,32 +18,81 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: data/installer.appdata.xml.in:7
+#: data/installer.metainfo.xml.in:9
 msgid "Installer"
 msgstr "Установщик"
 
-#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
+#: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Установить elementary OS"
 
-#: data/installer.appdata.xml.in:10
+#: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "Пошаговый установщик для самой elementary OS."
 
-#: data/installer.appdata.xml.in:69
+#: data/installer.metainfo.xml.in:52
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
+
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:71
+#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:96
+#: data/installer.metainfo.xml.in:111
+msgid "Improvements:"
+msgstr "Улучшения:"
+
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:114
+msgid "Updated translations"
+msgstr "Обновлены переводы"
+
+#: data/installer.metainfo.xml.in:87
+msgid "Use large icons in views"
+msgstr "Крупные значки в представлениях"
+
+#: data/installer.metainfo.xml.in:88
+msgid "Add a custom icon for Before Installing view"
+msgstr "Новый особый значок для представления «Перед установкой»"
+
+#: data/installer.metainfo.xml.in:98
+msgid "Show an infobar on battery instead of switching to a different page"
+msgstr ""
+"Отображение небольшой панели при работе от батареи вместо переключения на "
+"другую страницу"
+
+#: data/installer.metainfo.xml.in:99
+msgid "Show all system requirements warnings on a single page"
+msgstr "Показывать все предупрждения о системных требованиях на одной странице"
+
+#: data/installer.metainfo.xml.in:100
+msgid "Warn about installing developer builds"
+msgstr "Теперь есть предупреждение об установке версии для разработчиков"
+
+#: data/installer.metainfo.xml.in:113
+msgid "Double the boot partition size for encrypted installs"
+msgstr "Был удвоен размер раздела загрузки для зашиырованных установок"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Установка системы"
 
-#: data/io.elementary.installer.desktop.in:6
-msgid "system-os-installer"
-msgstr "system-os-installer"
+#~ msgid "Warn about installing in a VM"
+#~ msgstr "Предупреждать об установке в виртуальной машине"
+
+#~ msgid "Avoid political naming of certain locales"
+#~ msgstr "Не использовать политические названия на некоторых языках"
+
+#~ msgid "Fix styles for \"Unused\" disk partitions"
+#~ msgstr "Исправлены стили для неиспользованных разделов диска"
+
+#~ msgid "Ensure a usable hostname"
+#~ msgstr "Исправлено генерируемое имя хоста"
+
+#~ msgid "system-os-installer"
+#~ msgstr "system-os-installer"
 
 #~ msgid "Calculator"
 #~ msgstr "Калькулятор"
