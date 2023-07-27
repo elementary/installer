@@ -33,8 +33,7 @@ public class EncryptView : AbstractInstallerView {
 
     construct {
         var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.INVALID) {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
         var overlay_image = new Gtk.Image.from_icon_name ("security-high", Gtk.IconSize.INVALID) {
