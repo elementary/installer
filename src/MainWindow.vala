@@ -1,5 +1,5 @@
 /*-
- * Copyright 2016-2020 elementary, Inc. (https://elementary.io)
+ * Copyright 2016-2023 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -209,10 +209,6 @@ public class Installer.MainWindow : Hdy.Window {
     }
 
     private void load_partitioning_view () {
-        if (partitioning_view != null) {
-            partitioning_view.destroy ();
-        }
-
         partitioning_view = new PartitioningView (MINIMUM_SPACE);
 
         deck.add (partitioning_view);
@@ -227,10 +223,6 @@ public class Installer.MainWindow : Hdy.Window {
     }
 
     private void load_drivers_view () {
-        if (drivers_view != null) {
-            drivers_view.destroy ();
-        }
-
         drivers_view = new DriversView ();
 
         deck.add (drivers_view);
