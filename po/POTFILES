@@ -9,6 +9,7 @@ src/Objects/Mount.vala
 src/Views/AbstractInstallerView.vala
 src/Views/CheckView.vala
 src/Views/DiskView.vala
+src/Views/DriversView.vala
 src/Views/EncryptView.vala
 src/Views/ErrorView.vala
 src/Views/KeyboardLayoutView.vala
