@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-27 05:46+0000\n"
-"PO-Revision-Date: 2023-04-06 22:59+0000\n"
+"PO-Revision-Date: 2023-07-29 21:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "extra/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -50,27 +50,29 @@ msgstr "Frissített fordítások"
 
 #: data/installer.metainfo.xml.in:87
 msgid "Use large icons in views"
-msgstr ""
+msgstr "Nagyobb ikonok használata a nézetekben"
 
 #: data/installer.metainfo.xml.in:88
 msgid "Add a custom icon for Before Installing view"
-msgstr ""
+msgstr "Egyedi ikon hozzáadva a Telepítés előtt nézethez"
 
 #: data/installer.metainfo.xml.in:98
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
+"Egy információs sáv kijelzése az akkumulátorral kapcsolatban új lapra lépés "
+"helyett"
 
 #: data/installer.metainfo.xml.in:99
 msgid "Show all system requirements warnings on a single page"
-msgstr ""
+msgstr "Minden rendszerkövetelmény-figyelmeztetés kijelzése egy lapon"
 
 #: data/installer.metainfo.xml.in:100
 msgid "Warn about installing developer builds"
-msgstr ""
+msgstr "Figyelmeztetés fejlesztői verziók telepítéséről"
 
 #: data/installer.metainfo.xml.in:113
 msgid "Double the boot partition size for encrypted installs"
-msgstr ""
+msgstr "A boot partíció méretének duplázása a titkosított telepítéseknél"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
