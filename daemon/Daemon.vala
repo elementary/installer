@@ -181,6 +181,9 @@ public class InstallerDaemon.Daemon : GLib.Object {
     }
 
     private void install (InstallConfig config, owned Distinst.Disks disks) {
+        // Ensure existing LVM devices are deactivated before installing
+        Distinst.deactivate_logical_devices ();
+
         var installer = new Distinst.Installer ();
         installer.on_error ((error) => on_error (error));
         installer.on_status ((status) => on_status (status));
