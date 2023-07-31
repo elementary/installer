@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-27 05:46+0000\n"
-"PO-Revision-Date: 2023-05-24 20:06+0000\n"
+"PO-Revision-Date: 2023-08-01 18:43+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/"
 "installer/pl/>\n"
@@ -140,10 +140,8 @@ msgid "Next"
 msgstr "Dalej"
 
 #: src/Views/DriversView.vala:27
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "Partycjonowanie napędu"
+msgstr "Dodatkowe sterowniki"
 
 #: src/Views/DriversView.vala:32
 msgid ""
@@ -151,28 +149,38 @@ msgid ""
 "function properly without proprietary drivers. Most devices do not require "
 "additional drivers."
 msgstr ""
+"Niektóre urządzenia takie jak karty graficzne NVIDIA® czy adapter Wi-Fi "
+"Broadcom® mogą nie działać poprawnie bez własnościowych sterowników. "
+"Większość urządzeń nie potrzebuje dodatkowych sterowników."
 
 #: src/Views/DriversView.vala:43
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"Własnościowe sterowniki zawierają prywatny kod źródłowy którego nie można "
+"zweryfikować. Aktualizacje dotyczące bezpieczeństwa oraz innych aspektów "
+"urządzenia są uzależnione od producenta sterowników."
 
 #: src/Views/DriversView.vala:54
 msgid ""
 "Proprietary drivers are subject to their own license terms. By installing, "
 "you agree to their terms of use."
 msgstr ""
+"Własnościowe sterowniki podlegają osobnym warunkom licencyjnym. Instalując "
+"je zgadzasz się z ich warunkami użytkowania."
 
 #: src/Views/DriversView.vala:65
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but this will "
 "require a working Internet connection."
 msgstr ""
+"Własnościowe sterowniki mogą zostać zainstalowane później przez AppCenter, "
+"jednak będzie to wymagać działającego połączenia z internetem."
 
 #: src/Views/DriversView.vala:72
 msgid "Include third-party proprietary drivers when installing"
-msgstr ""
+msgstr "Dołącz własnościowe sterowniki stron trzecich podczas instalacji"
 
 #: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
 #: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
