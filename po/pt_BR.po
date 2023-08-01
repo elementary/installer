@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"POT-Creation-Date: 2023-08-01 18:43+0000\n"
 "PO-Revision-Date: 2022-02-03 04:34+0000\n"
 "Last-Translator: Leomar Marcelo Marschalk <business@leomarmm.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -24,11 +24,11 @@ msgstr "Instalar %s"
 msgid "operating system is being installed"
 msgstr ""
 
-#: src/MainWindow.vala:317
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr "Conecte a uma fonte de energia"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -48,16 +48,16 @@ msgstr "Reiniciar modo de demonstração"
 msgid "Test mode switch user"
 msgstr "Modo de teste trocar o usuário"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:46
 msgid "Cancel Installation"
 msgstr "Cancelar instalação"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Modo de demonstração"
 
@@ -116,11 +116,11 @@ msgstr "Processador:"
 msgid "Memory:"
 msgstr "Memória:"
 
-#: src/Views/DiskView.vala:48
+#: src/Views/DiskView.vala:46
 msgid "Select a Drive"
 msgstr "Selecione um Drive"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:52
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -128,11 +128,11 @@ msgstr ""
 "Isto vai apagar todos os dados que está na unidade selecionada. Se não fez "
 "backup, você pode cancelar a instalação e usar o Modo de Demonstração."
 
-#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Obtendo a configuração atual…"
 
-#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
 #: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr "Próximo"
@@ -172,8 +172,8 @@ msgstr ""
 msgid "Include third-party proprietary drivers when installing"
 msgstr ""
 
-#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:167
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
 #: src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Voltar"
@@ -182,23 +182,23 @@ msgstr "Voltar"
 msgid "Erase and Install"
 msgstr "Apagar e Instalar"
 
-#: src/Views/EncryptView.vala:28
+#: src/Views/EncryptView.vala:26
 #, fuzzy
 #| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Não Criptografar"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "Ativar Encriptação do disco"
 
-#: src/Views/EncryptView.vala:55
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
 
-#: src/Views/EncryptView.vala:65
+#: src/Views/EncryptView.vala:66
 #, fuzzy
 #| msgid ""
 #| "Data will be protected from others with physical access to this device."
@@ -209,7 +209,7 @@ msgstr ""
 "Os dados serão protegidos de outras pessoas com acesso físico a este "
 "dispositivo."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:75
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -217,13 +217,13 @@ msgstr ""
 "A senha de criptografia será necessária sempre que este dispositivo for "
 "ligado. Guarde em algum lugar seguro."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:84
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:103
+#: src/Views/EncryptView.vala:104
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -233,33 +233,33 @@ msgstr ""
 "</b> Esta é uma senha única para esse dispositivo, não é a senha da sua "
 "conta de usuário."
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:114
 msgid "Choose Encryption Password"
 msgstr "Escolher Senha de Encriptação"
 
-#: src/Views/EncryptView.vala:127
+#: src/Views/EncryptView.vala:128
 msgid "Confirm Password"
 msgstr "Confirmar a Senha"
 
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Choose Password"
 msgstr "Escolher Senha"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:192
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
 msgstr "Escolher Senha de Encriptação"
 
-#: src/Views/EncryptView.vala:260
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Senhas não coincidem"
 
-#: src/Views/ErrorView.vala:31
+#: src/Views/ErrorView.vala:32
 msgid "Could Not Install"
 msgstr "Não foi possível instalar"
 
-#: src/Views/ErrorView.vala:36
+#: src/Views/ErrorView.vala:37
 #, fuzzy, c-format
 #| msgid ""
 #| "Installing %s failed, possibly due to a hardware error. Your device may "
@@ -272,63 +272,63 @@ msgstr ""
 "dispositivo pode não reiniciar corretamente. Você pode tentar as seguintes "
 "opções:"
 
-#: src/Views/ErrorView.vala:47
+#: src/Views/ErrorView.vala:48
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "• Tentar instalar de novo"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:59
 #, fuzzy
 #| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "• Usar o Modo de Demonstração e tentar recuperar manualmente"
 
-#: src/Views/ErrorView.vala:68
+#: src/Views/ErrorView.vala:69
 #, fuzzy
 #| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
 msgstr "• Reiniciar o dispositivo para iniciar de outra unidade"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:79
 msgid "Details"
 msgstr "Detalhes"
 
-#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Reiniciar dispositivo"
 
-#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Tentar modo de demonstração"
 
-#: src/Views/ErrorView.vala:117
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Tentar instalar novamente"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:30
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Layout de teclado"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:38
 msgid "Type to test your layout"
 msgstr "Digite para testar seu layout"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:41
 msgid "Show keyboard layout"
 msgstr "Mostrar layout de teclado"
 
-#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Selecionar"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:124
 msgid "Default"
 msgstr "Padrão"
 
-#: src/Views/KeyboardLayoutView.vala:133
+#: src/Views/KeyboardLayoutView.vala:131
 msgid "Input Language"
 msgstr "Idioma de Entrada"
 

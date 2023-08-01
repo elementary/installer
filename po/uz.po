@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"POT-Creation-Date: 2023-08-01 18:43+0000\n"
 "PO-Revision-Date: 2021-03-21 22:19+0000\n"
 "Last-Translator: Shukrullo Turgunov <shookrullo@gmail.com>\n"
 "Language-Team: Uzbek <https://l10n.elementary.io/projects/installer/"
@@ -24,11 +24,11 @@ msgstr "%sni o'rnatish"
 msgid "operating system is being installed"
 msgstr ""
 
-#: src/MainWindow.vala:317
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr "Ta'minot qurilmasiga ulang"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -48,16 +48,16 @@ msgstr "Sinov tartibini qayta yuklash"
 msgid "Test mode switch user"
 msgstr "Sinov tartibida foydalanuvchini almashtirish"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:46
 msgid "Cancel Installation"
 msgstr "O'rnatishni bekor qilish"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Sinab ko'rish tartibi"
 
@@ -116,11 +116,11 @@ msgstr "Protsessor:"
 msgid "Memory:"
 msgstr "Xotira:"
 
-#: src/Views/DiskView.vala:48
+#: src/Views/DiskView.vala:46
 msgid "Select a Drive"
 msgstr "Diskni tanlang"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:52
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -129,11 +129,11 @@ msgstr ""
 "ma'lumotlaringizni saqlab qo'ymagan bo'lsangiz, o'rnatishni bekor qilib demo-"
 "tartibida foydalansangiz bo'ladi."
 
-#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Joriy konfiguratsiyalarni olish…"
 
-#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
 #: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr "Keyingi"
@@ -171,8 +171,8 @@ msgstr ""
 msgid "Include third-party proprietary drivers when installing"
 msgstr ""
 
-#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:167
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
 #: src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Orqaga"
@@ -181,25 +181,25 @@ msgstr "Orqaga"
 msgid "Erase and Install"
 msgstr "Tozalash va o'rnatish"
 
-#: src/Views/EncryptView.vala:28
+#: src/Views/EncryptView.vala:26
 #, fuzzy
 #| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Shifrlash shart emas"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "Diskni shifrlash"
 
-#: src/Views/EncryptView.vala:55
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
 
-#: src/Views/EncryptView.vala:65
+#: src/Views/EncryptView.vala:66
 #, fuzzy
 #| msgid ""
 #| "Data will be protected from others with physical access to this device."
@@ -210,7 +210,7 @@ msgstr ""
 "Ushbu qurilmalarga jismonan kirish huquqi bo'lgan shaxslardan ma'lumotlarni "
 "himoyalaydi."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:75
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -218,7 +218,7 @@ msgstr ""
 "Har safar qurilmani yoqqanda shifrlash parolini kiritish talab etiladi. Uni "
 "havfsiz joyda saqlang."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:84
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -226,7 +226,7 @@ msgstr ""
 "Ushbu qurilmani har safar yoqganingizda shifrlash parolini kiritish uchun "
 "sizga ichki yoki USB klaviatura kerak bo'ladi."
 
-#: src/Views/EncryptView.vala:103
+#: src/Views/EncryptView.vala:104
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -236,96 +236,96 @@ msgstr ""
 "qayta tiklay olmaysiz. </b> Bu foydalanuvchi hisob qaydnomasi uchun parol "
 "emas, balki ushbu qurilma uchun noyob paroldir."
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:114
 msgid "Choose Encryption Password"
 msgstr "Shifrlash parolini tanlang"
 
-#: src/Views/EncryptView.vala:127
+#: src/Views/EncryptView.vala:128
 msgid "Confirm Password"
 msgstr "Parolni qaytadan kiriting"
 
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Choose Password"
 msgstr "Parolni kiriting"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:192
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
 msgstr "Shifrlash parolini tanlang"
 
-#: src/Views/EncryptView.vala:260
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Parollar mos kelmadi"
 
-#: src/Views/ErrorView.vala:31
+#: src/Views/ErrorView.vala:32
 msgid "Could Not Install"
 msgstr "O'rnatish bo'lmadi"
 
-#: src/Views/ErrorView.vala:36
+#: src/Views/ErrorView.vala:37
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
 
-#: src/Views/ErrorView.vala:47
+#: src/Views/ErrorView.vala:48
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "• Qaytadan o'rnatishga urinib ko'ring"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:59
 #, fuzzy
 #| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "• Demo tartibdan foydalaning yoki qo'lda tiklashga urinib ko'ring"
 
-#: src/Views/ErrorView.vala:68
+#: src/Views/ErrorView.vala:69
 #, fuzzy
 #| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
 msgstr "• Boshqa qurilmadan yuklash uchun qurilmani qayta ishga tushiring"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:79
 msgid "Details"
 msgstr "Batafsil"
 
-#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Qurilmani qayta ishga tushirish"
 
-#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Dem-tartibni sinab ko'rish"
 
-#: src/Views/ErrorView.vala:117
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Qaytadan o'rnatishga urinib ko'rish"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:30
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Klaviatura tili"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:38
 msgid "Type to test your layout"
 msgstr "Klaviatura yozuv tilini sinab ko'rish uchun nimadir yozib ko'ring"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:41
 msgid "Show keyboard layout"
 msgstr "Klaviatura yozuv tilini ko'rsatish"
 
-#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Tanlash"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:124
 msgid "Default"
 msgstr "Odatdagi"
 
-#: src/Views/KeyboardLayoutView.vala:133
+#: src/Views/KeyboardLayoutView.vala:131
 msgid "Input Language"
 msgstr "Kiritish tili"
 

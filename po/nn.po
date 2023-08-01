@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"POT-Creation-Date: 2023-08-01 18:43+0000\n"
 "PO-Revision-Date: 2023-02-07 09:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -26,11 +26,11 @@ msgstr "Installer %s"
 msgid "operating system is being installed"
 msgstr "%s har blitt installert"
 
-#: src/MainWindow.vala:317
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr "Kople til ei straumkjelde"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -50,16 +50,16 @@ msgstr "Testmodus-omstart"
 msgid "Test mode switch user"
 msgstr "Testmodus-brukarbyte"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:46
 msgid "Cancel Installation"
 msgstr "Avbryt installering"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Prøv demo-modus"
 
@@ -118,11 +118,11 @@ msgstr "Prosessor:"
 msgid "Memory:"
 msgstr "Minne:"
 
-#: src/Views/DiskView.vala:48
+#: src/Views/DiskView.vala:46
 msgid "Select a Drive"
 msgstr "Vel ein disk"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:52
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -131,11 +131,11 @@ msgstr ""
 "har sikkerheitskopiert dataa dine, kan du avbryte installeringa og bruke "
 "demo-modus."
 
-#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Hentar gjeldande oppsett…"
 
-#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
 #: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr "Neste"
@@ -175,8 +175,8 @@ msgstr ""
 msgid "Include third-party proprietary drivers when installing"
 msgstr ""
 
-#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:167
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
 #: src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Tilbake"
@@ -185,15 +185,15 @@ msgstr "Tilbake"
 msgid "Erase and Install"
 msgstr "Slett og installer"
 
-#: src/Views/EncryptView.vala:28
+#: src/Views/EncryptView.vala:26
 msgid "Don’t Encrypt"
 msgstr "Ikkje krypter"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "Slå på kryptering av disken"
 
-#: src/Views/EncryptView.vala:55
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
@@ -201,7 +201,7 @@ msgstr ""
 "Krypter disken på denne eininga for meir tryggleik. Men ver sikker på at du "
 "forstår:"
 
-#: src/Views/EncryptView.vala:65
+#: src/Views/EncryptView.vala:66
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -209,7 +209,7 @@ msgstr ""
 "Informasjonen vil kun vera trygg mot dei som har fysisk tilgong til denne "
 "eininga når den er slått av."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:75
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -217,7 +217,7 @@ msgstr ""
 "Du må skriva inn krypteringspassordet kvar gong eininga blir skrudd på. Ta "
 "vare på krypteringspassordet på ein trygg plass."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:84
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -225,7 +225,7 @@ msgstr ""
 "For å skriva inn krypteringspassordet treng du eit innebygd- eller USB-"
 "tastatur kopla til."
 
-#: src/Views/EncryptView.vala:103
+#: src/Views/EncryptView.vala:104
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -235,31 +235,31 @@ msgstr ""
 "dataa.</b> Dette er eit unikt passord for denne eininga, ikkje passordet til "
 "brukarkontoen din."
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:114
 msgid "Choose Encryption Password"
 msgstr "Vel krypteringspassord"
 
-#: src/Views/EncryptView.vala:127
+#: src/Views/EncryptView.vala:128
 msgid "Confirm Password"
 msgstr "Stadfest passord"
 
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Choose Password"
 msgstr "Vel passord"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:192
 msgid "Set Encryption Password"
 msgstr "Vel eit krypteringspassord"
 
-#: src/Views/EncryptView.vala:260
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Passorda samsvarar ikkje"
 
-#: src/Views/ErrorView.vala:31
+#: src/Views/ErrorView.vala:32
 msgid "Could Not Install"
 msgstr "Kunne ikkje installere"
 
-#: src/Views/ErrorView.vala:36
+#: src/Views/ErrorView.vala:37
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -268,55 +268,55 @@ msgstr ""
 "På grunn av eit problem med maskinvara har installeringa av %s gått galt. "
 "Eininga vil kanskje ikkje starte om att som den skal. Du kan prøve følgjande:"
 
-#: src/Views/ErrorView.vala:47
+#: src/Views/ErrorView.vala:48
 msgid "Try the installation again"
 msgstr "Prøv å innstallera på nytt"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:59
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Bruk demomodus og hent attende manuellt"
 
-#: src/Views/ErrorView.vala:68
+#: src/Views/ErrorView.vala:69
 msgid "Restart the device and boot from another drive"
 msgstr "Start maskina på nytt og start opp frå ein anna lagringsstasjon"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:79
 msgid "Details"
 msgstr "Detaljar"
 
-#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Start maskina om att"
 
-#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Prøv demo-modus"
 
-#: src/Views/ErrorView.vala:117
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Prøv å installere igjen"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:30
 msgid "Select Keyboard Layout"
 msgstr "Vel tastaturoppsett"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:38
 msgid "Type to test your layout"
 msgstr "Skriv for å teste oppsettet ditt"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:41
 msgid "Show keyboard layout"
 msgstr "Vis tastaturoppsett"
 
-#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Vel"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:124
 msgid "Default"
 msgstr "Standardval"
 
-#: src/Views/KeyboardLayoutView.vala:133
+#: src/Views/KeyboardLayoutView.vala:131
 msgid "Input Language"
 msgstr "Inndataspråk"
 

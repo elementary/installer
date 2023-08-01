@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"POT-Creation-Date: 2023-08-01 18:43+0000\n"
 "PO-Revision-Date: 2023-07-29 21:08+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
@@ -24,11 +24,11 @@ msgstr "Installeer %s"
 msgid "operating system is being installed"
 msgstr "besturingssysteem wordt geïnstalleerd"
 
-#: src/MainWindow.vala:317
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr "Verbinding met een voedingsbron maken"
 
-#: src/MainWindow.vala:318
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -48,16 +48,16 @@ msgstr "Opnieuw opstarten in testmodus"
 msgid "Test mode switch user"
 msgstr "Testmodus wissel gebruiker"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:46
 msgid "Cancel Installation"
 msgstr "Installatie annuleren"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Testmodus"
 
@@ -116,11 +116,11 @@ msgstr "Processor:"
 msgid "Memory:"
 msgstr "Geheugen:"
 
-#: src/Views/DiskView.vala:48
+#: src/Views/DiskView.vala:46
 msgid "Select a Drive"
 msgstr "Een schijf selecteren"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:52
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -129,11 +129,11 @@ msgstr ""
 "heeft van uw data, dan kunt u de installatie annuleren en de demomodus "
 "gebruiken."
 
-#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Huidige configuratie aan het ophalen…"
 
-#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
 #: src/Views/TryInstallView.vala:88
 msgid "Next"
 msgstr "Volgende"
@@ -180,8 +180,8 @@ msgstr ""
 msgid "Include third-party proprietary drivers when installing"
 msgstr "Installeer propriëtaire drivers mee tijdens installatie"
 
-#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
+#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:167
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
 #: src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Terug"
@@ -190,15 +190,15 @@ msgstr "Terug"
 msgid "Erase and Install"
 msgstr "Installeren en wissen"
 
-#: src/Views/EncryptView.vala:28
+#: src/Views/EncryptView.vala:26
 msgid "Don’t Encrypt"
 msgstr "Niet versleutelen"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "Schijfversleuteling inschakelen"
 
-#: src/Views/EncryptView.vala:55
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
@@ -206,7 +206,7 @@ msgstr ""
 "Versleutel de opslag van dit apparaat voor extra beveiliging, maar wees je "
 "bewust van het volgende:"
 
-#: src/Views/EncryptView.vala:65
+#: src/Views/EncryptView.vala:66
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -214,7 +214,7 @@ msgstr ""
 "Gegevens worden alleen beschermd tegen anderen met fysieke toegang tot dit "
 "apparaat wanneer het is uitgeschakeld."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:75
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -222,7 +222,7 @@ msgstr ""
 "Het sleutelwachtwoord is vereist telkens wanneer u dit apparaat inschakelt. "
 "Bewaar dit wachtwoord op een veilige plek."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:84
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -230,7 +230,7 @@ msgstr ""
 "Een ingebouwd toetsenbord of USB-toetsenbord is benodigd om het "
 "sleutelwachtwoord in te kunnen voeren wanneer u de computer opstart."
 
-#: src/Views/EncryptView.vala:103
+#: src/Views/EncryptView.vala:104
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -240,31 +240,31 @@ msgstr ""
 "kunnen herstellen.</b> Dit wachtwoord is specifiek voor dit apparaat, niet "
 "het wachtwoord van uw gebruikersaccount."
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:114
 msgid "Choose Encryption Password"
 msgstr "Kies een sleutelwachtwoord"
 
-#: src/Views/EncryptView.vala:127
+#: src/Views/EncryptView.vala:128
 msgid "Confirm Password"
 msgstr "Wachtwoord bevestigen"
 
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Choose Password"
 msgstr "Wachtwoord kiezen"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:192
 msgid "Set Encryption Password"
 msgstr "Stel sleutelwachtwoord in"
 
-#: src/Views/EncryptView.vala:260
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Wachtwoorden komen niet overeen"
 
-#: src/Views/ErrorView.vala:31
+#: src/Views/ErrorView.vala:32
 msgid "Could Not Install"
 msgstr "Kon niet installeren"
 
-#: src/Views/ErrorView.vala:36
+#: src/Views/ErrorView.vala:37
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -274,55 +274,55 @@ msgstr ""
 "dat uw apparaat niet correct kan herstarten. U kunt een van de volgende "
 "opties proberen:"
 
-#: src/Views/ErrorView.vala:47
+#: src/Views/ErrorView.vala:48
 msgid "Try the installation again"
 msgstr "Probeer de installatie opnieuw"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:59
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Gebruik de demomodus en probeer het systeem handmatig te herstellen"
 
-#: src/Views/ErrorView.vala:68
+#: src/Views/ErrorView.vala:69
 msgid "Restart the device and boot from another drive"
 msgstr "Herstart de computer om vervolgens van een andere schijf op te starten"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:79
 msgid "Details"
 msgstr "Details"
 
-#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Herstart apparaat"
 
-#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Probeer de demonstratiemodus"
 
-#: src/Views/ErrorView.vala:117
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Probeer de installatie opnieuw"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:30
 msgid "Select Keyboard Layout"
 msgstr "Selecteer toetsenbordindeling"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:38
 msgid "Type to test your layout"
 msgstr "Typ om uw indeling uit te proberen"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:41
 msgid "Show keyboard layout"
 msgstr "Toon toetsenbordindeling"
 
-#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Selecteer"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:124
 msgid "Default"
 msgstr "Standaard"
 
-#: src/Views/KeyboardLayoutView.vala:133
+#: src/Views/KeyboardLayoutView.vala:131
 msgid "Input Language"
 msgstr "Invoertaal"
 
