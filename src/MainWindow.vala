@@ -253,6 +253,7 @@ public class Installer.MainWindow : Hdy.Window {
 
         error_view.retry_install.connect (() => {
             deck.visible_child = try_install_view;
+            deck.can_swipe_back = true;
         });
     }
 
