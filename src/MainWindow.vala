@@ -194,7 +194,6 @@ public class Installer.MainWindow : Hdy.Window {
         check_view.next_step.connect (() => {
             check_ignored = true;
             deck.navigate (FORWARD);
-            deck.remove (check_view);
         });
     }
 
