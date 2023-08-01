@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-27 05:46+0000\n"
+"POT-Creation-Date: 2023-08-01 18:43+0000\n"
 "PO-Revision-Date: 2023-03-12 12:25+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/installer/extra/"
@@ -29,39 +29,43 @@ msgstr "პროგრამა, რომელიც elementary OS-ს ნა
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:71
-#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:96
-#: data/installer.metainfo.xml.in:111
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:72
+#: data/installer.metainfo.xml.in:86 data/installer.metainfo.xml.in:97
+#: data/installer.metainfo.xml.in:112
 msgid "Improvements:"
 msgstr "გაუმჯობესებები:"
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
-#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:101
-#: data/installer.metainfo.xml.in:114
+#: data/installer.metainfo.xml.in:61
+msgid "Swipe to navigate back"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:74
+#: data/installer.metainfo.xml.in:90 data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:115
 msgid "Updated translations"
 msgstr "განახლებული თარგმანები"
 
-#: data/installer.metainfo.xml.in:87
+#: data/installer.metainfo.xml.in:88
 msgid "Use large icons in views"
 msgstr "დიდი ხატულების ჩვენება"
 
-#: data/installer.metainfo.xml.in:88
+#: data/installer.metainfo.xml.in:89
 msgid "Add a custom icon for Before Installing view"
 msgstr "ხატულის დამატება ხედის დაყენებამდე"
 
-#: data/installer.metainfo.xml.in:98
+#: data/installer.metainfo.xml.in:99
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr "სხვა გვერდზე გადართვის მაგიერ ელემენტის ინფორმაციის ჩვენება"
 
-#: data/installer.metainfo.xml.in:99
+#: data/installer.metainfo.xml.in:100
 msgid "Show all system requirements warnings on a single page"
 msgstr "სისტემური მოთხოვნების შესახებ გაფრთხილებების ერთ გვერდზე ჩვენება"
 
-#: data/installer.metainfo.xml.in:100
+#: data/installer.metainfo.xml.in:101
 msgid "Warn about installing developer builds"
 msgstr "გაფრთხილება არასტაბილური აგებების შესახებ"
 
-#: data/installer.metainfo.xml.in:113
+#: data/installer.metainfo.xml.in:114
 msgid "Double the boot partition size for encrypted installs"
 msgstr "დაშიფრული დისკებისთვის ჩამტვირთავი დანაყოფის ზომა ორჯერ გაიზარდა"
 
