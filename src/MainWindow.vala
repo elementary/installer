@@ -250,6 +250,10 @@ public class Installer.MainWindow : Hdy.Window {
         var error_view = new ErrorView (log);
         deck.add (error_view);
         deck.visible_child = error_view;
+
+        error_view.retry_install.connect (() => {
+            deck.visible_child = try_install_view;
+        });
     }
 
     private void set_infobar_string () {
