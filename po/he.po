@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-27 05:46+0000\n"
-"PO-Revision-Date: 2023-05-19 14:49+0000\n"
+"PO-Revision-Date: 2023-07-29 21:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -134,10 +134,8 @@ msgid "Next"
 msgstr "הבא"
 
 #: src/Views/DriversView.vala:27
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "הכונן מחולק למחיצות"
+msgstr "מנהלי התקנים נוספים"
 
 #: src/Views/DriversView.vala:32
 msgid ""
@@ -145,28 +143,37 @@ msgid ""
 "function properly without proprietary drivers. Most devices do not require "
 "additional drivers."
 msgstr ""
+"חלק מההתקנים, כגון כרטיסי מסך של Nvidia®‎ או כרטיסי רשת אלחוטית של Broadcom®‎"
+", עשויים לתפקד חלקית ללא מנהלי ההתקנים הקנייניים. רוב ההתקנים לא דורשים "
+"מנהלי התקנים נוספים."
 
 #: src/Views/DriversView.vala:43
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"מנהלי התקנים קנייניים מכילים קוד פרטים שאי אפשר לסקור אותו. עדכוני אבטחה "
+"ואחרים תלויים בספק מנהל ההתקן."
 
 #: src/Views/DriversView.vala:54
 msgid ""
 "Proprietary drivers are subject to their own license terms. By installing, "
 "you agree to their terms of use."
 msgstr ""
+"מנהלי התקנים קנייניים כפופים לתנאי רישוי משל עצמם. התקנתם מהווה את הסכמתך "
+"לתנאי השימוש בהם."
 
 #: src/Views/DriversView.vala:65
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but this will "
 "require a working Internet connection."
 msgstr ""
+"אפשר להתקין מנהלי התקנים קנייניים מאוחר יותר דרך מרכז היישומים אך פעולה זו "
+"תדרוש חיבור פעיל לאינטרנט."
 
 #: src/Views/DriversView.vala:72
 msgid "Include third-party proprietary drivers when installing"
-msgstr ""
+msgstr "לכלול מנהלי התקנים קנייניים מגופי צד־שלישי בעת ההתקנה"
 
 #: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
 #: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
