@@ -16,6 +16,7 @@
  */
 
 public class ErrorView : AbstractInstallerView {
+    public signal void retry_install ();
     public string log { get; construct; }
 
     public ErrorView (string log) {
@@ -125,9 +126,7 @@ public class ErrorView : AbstractInstallerView {
 
         demo_button.clicked.connect (Utils.demo_mode);
 
-        install_button.clicked.connect (() => {
-            ((Gtk.Stack) get_parent ()).visible_child = previous_view;
-        });
+        install_button.clicked.connect (() => retry_install ());
 
         terminal_button.toggled.connect (() => {
             terminal_revealer.reveal_child = terminal_button.active;

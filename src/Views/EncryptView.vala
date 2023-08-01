@@ -16,8 +16,6 @@
  */
 
 public class EncryptView : AbstractInstallerView {
-    public signal void next_step ();
-
     private ErrorRevealer confirm_entry_revealer;
     private ErrorRevealer pw_error_revealer;
     private Gtk.Button next_button;
@@ -28,7 +26,7 @@ public class EncryptView : AbstractInstallerView {
     private const string SKIP_STRING = _("Don’t Encrypt");
 
     public EncryptView () {
-        Object (cancellable: false);
+        Object (cancellable: true);
     }
 
     construct {
@@ -204,7 +202,7 @@ public class EncryptView : AbstractInstallerView {
                 Configuration.get_default ().encryption_password = pw_entry.text;
             }
 
-            next_step ();
+            ((Hdy.Deck) get_parent ()).navigate (FORWARD);
         });
 
         pw_entry.changed.connect (() => {

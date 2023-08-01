@@ -1,5 +1,5 @@
 /*-
- * Copyright 2016-2020 elementary, Inc. (https://elementary.io)
+ * Copyright 2016-2023 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,31 +29,19 @@ public class Installer.MainWindow : Hdy.Window {
     private const uint64 MINIMUM_SPACE = 15 * ONE_GB;
 
     private Gtk.Label infobar_label;
-    private Gtk.Stack stack;
-
+    private Hdy.Deck deck;
     private LanguageView language_view;
-    private KeyboardLayoutView keyboard_layout_view;
     private TryInstallView try_install_view;
-    private Installer.CheckView check_view;
-    private DiskView disk_view;
-    private PartitioningView partitioning_view;
-    private DriversView drivers_view;
-    private ProgressView progress_view;
-    private SuccessView success_view;
-    private EncryptView encrypt_view;
-    private ErrorView error_view;
     private bool check_ignored = false;
     private uint orca_timeout_id = 0;
 
     construct {
         language_view = new LanguageView ();
 
-        stack = new Gtk.Stack () {
-            margin_bottom = 12,
-            margin_top = 12,
-            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+        deck = new Hdy.Deck () {
+            can_swipe_back = true
         };
-        stack.add (language_view);
+        deck.add (language_view);
 
         infobar_label = new Gtk.Label ("") {
             use_markup = true
@@ -72,11 +60,12 @@ public class Installer.MainWindow : Hdy.Window {
         battery_infobar.get_content_area ().add (infobar_label);
         battery_infobar.get_style_context ().add_class ("frame");
 
-        var overlay = new Gtk.Overlay ();
-        overlay.add (stack);
+        var overlay = new Gtk.Overlay () {
+            child = deck
+        };
         overlay.add_overlay (battery_infobar);
 
-        add (overlay);
+        child = overlay;
 
         language_view.next_step.connect (() => {
             // Don't prompt for screen reader if we're able to navigate without it
@@ -136,151 +125,112 @@ public class Installer.MainWindow : Hdy.Window {
 
             return Source.REMOVE;
         });
+
+        deck.notify["visible-child"].connect (() => {
+            update_navigation ();
+        });
+
+        deck.notify["transition-running"].connect (() => {
+            update_navigation ();
+        });
     }
 
-    /*
-     * We need to load all the view after the language has being chosen and set.
-     * We need to rebuild the view everytime the next button is clicked to reflect language changes.
-     */
+    private void update_navigation () {
+        if (!deck.transition_running) {
+            // We need to rebuild the views to reflect language changes and forking paths
+            if (deck.visible_child == language_view || deck.visible_child == try_install_view) {
+                while (deck.get_adjacent_child (FORWARD) != null) {
+                    deck.remove (deck.get_adjacent_child (FORWARD));
+                }
+            }
+        }
+    }
 
     private void load_keyboard_view () {
-        if (keyboard_layout_view != null) {
-            keyboard_layout_view.destroy ();
-        }
-
-        keyboard_layout_view = new KeyboardLayoutView ();
-        keyboard_layout_view.previous_view = language_view;
-        stack.add (keyboard_layout_view);
-        stack.visible_child = keyboard_layout_view;
-
-        keyboard_layout_view.next_step.connect (() => load_try_install_view ());
-    }
-
-    private void load_try_install_view () {
-        if (try_install_view != null) {
-            try_install_view.destroy ();
-        }
-
+        var keyboard_layout_view = new KeyboardLayoutView ();
         try_install_view = new TryInstallView ();
-        try_install_view.previous_view = keyboard_layout_view;
-        stack.add (try_install_view);
-        stack.visible_child = try_install_view;
 
-        try_install_view.custom_step.connect (() => load_partitioning_view ());
-        try_install_view.next_step.connect (() => load_disk_view ());
-    }
+        deck.add (keyboard_layout_view);
+        deck.add (try_install_view);
 
-    private void set_check_view_visible (bool show) {
-        if (show) {
-            check_view.previous_view = stack.visible_child;
-            stack.visible_child = check_view;
-        } else if (check_view.previous_view != null) {
-            stack.visible_child = check_view.previous_view;
-            check_view.previous_view = null;
-        }
-    }
+        deck.visible_child = keyboard_layout_view;
 
-    private void load_check_view () {
-        if (check_view != null) {
-            check_view.destroy ();
-        }
-
-        check_view = new Installer.CheckView ();
-        stack.add (check_view);
-
-        check_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
-            check_view.previous_view = null;
-            check_view.destroy ();
-        });
-
-        check_view.next_step.connect (() => {
-            check_ignored = true;
-            set_check_view_visible (false);
-        });
-
-        set_check_view_visible (!check_ignored && check_view.has_messages);
-    }
-
-    private void load_encrypt_view () {
-        if (encrypt_view != null) {
-            encrypt_view.destroy ();
-        }
-
-        encrypt_view = new EncryptView ();
-        encrypt_view.previous_view = disk_view;
-        stack.add (encrypt_view);
-        stack.visible_child = encrypt_view;
-
-        encrypt_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
-        });
-
-        encrypt_view.next_step.connect (() => {
+        try_install_view.custom_step.connect (() => {
+            load_check_view ();
+            load_partitioning_view ();
             load_drivers_view ();
-            drivers_view.previous_view = encrypt_view;
+            deck.navigate (FORWARD);
+        });
+
+        try_install_view.next_step.connect (() => {
+            load_check_view ();
+            load_disk_view ();
+            load_encrypt_view ();
+            load_drivers_view ();
+            deck.navigate (FORWARD);
         });
     }
 
     private void load_disk_view () {
-        if (disk_view != null) {
-            disk_view.destroy ();
+        var disk_view = new DiskView ();
+        deck.add (disk_view);
+
+        disk_view.load.begin (MINIMUM_SPACE);
+        disk_view.cancel.connect (() => deck.navigate (BACK));
+    }
+
+    private void load_check_view () {
+        if (check_ignored) {
+            return;
         }
 
-        disk_view = new DiskView ();
-        disk_view.previous_view = try_install_view;
-        stack.add (disk_view);
-        stack.visible_child = disk_view;
-        disk_view.load.begin (MINIMUM_SPACE);
+        var check_view = new Installer.CheckView ();
+        if (check_view.has_messages) {
+            deck.add (check_view);
+        }
 
-        load_check_view ();
+        check_view.cancel.connect (() => deck.navigate (BACK));
 
-        disk_view.cancel.connect (() => {
-            stack.visible_child = try_install_view;
+        check_view.next_step.connect (() => {
+            check_ignored = true;
+            deck.navigate (FORWARD);
         });
+    }
 
-        disk_view.next_step.connect (() => load_encrypt_view ());
+    private void load_encrypt_view () {
+        var encrypt_view = new EncryptView ();
+        deck.add (encrypt_view);
+
+        encrypt_view.cancel.connect (() => {
+            deck.visible_child = try_install_view;
+        });
     }
 
     private void load_partitioning_view () {
-        if (partitioning_view != null) {
-            partitioning_view.destroy ();
-        }
-
-        partitioning_view = new PartitioningView (MINIMUM_SPACE);
-        partitioning_view.previous_view = try_install_view;
-        stack.add (partitioning_view);
-        stack.visible_child = partitioning_view;
+        var partitioning_view = new PartitioningView (MINIMUM_SPACE);
+        deck.add (partitioning_view);
 
         partitioning_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;
             config.mounts = (owned) partitioning_view.mounts;
-            load_drivers_view ();
-            drivers_view.previous_view = partitioning_view;
+            deck.navigate (FORWARD);
         });
     }
 
     private void load_drivers_view () {
-        if (drivers_view != null) {
-            drivers_view.destroy ();
-        }
-
-        drivers_view = new DriversView ();
-        stack.add (drivers_view);
-        stack.visible_child = drivers_view;
+        var drivers_view = new DriversView ();
+        deck.add (drivers_view);
 
         drivers_view.next_step.connect (() => load_progress_view ());
     }
 
     private void load_progress_view () {
-        if (progress_view != null) {
-            progress_view.destroy ();
-        }
+        var progress_view = new ProgressView ();
 
-        progress_view = new ProgressView ();
-        stack.add (progress_view);
-        stack.visible_child = progress_view;
+        deck.add (progress_view);
+        deck.visible_child = progress_view;
+        deck.can_swipe_back = false;
 
         progress_view.on_success.connect (() => load_success_view ());
 
@@ -291,25 +241,20 @@ public class Installer.MainWindow : Hdy.Window {
     }
 
     private void load_success_view () {
-        if (success_view != null) {
-            success_view.destroy ();
-        }
-
-        success_view = new SuccessView ();
-        stack.add (success_view);
-        stack.visible_child = success_view;
+        var success_view = new SuccessView ();
+        deck.add (success_view);
+        deck.visible_child = success_view;
     }
 
     private void load_error_view (string log) {
-        if (error_view != null) {
-            error_view.destroy ();
-        }
+        var error_view = new ErrorView (log);
+        deck.add (error_view);
+        deck.visible_child = error_view;
 
-        error_view = new ErrorView (log);
-        stack.add (error_view);
-        stack.visible_child = error_view;
-
-        error_view.previous_view = disk_view;
+        error_view.retry_install.connect (() => {
+            deck.visible_child = try_install_view;
+            deck.can_swipe_back = true;
+        });
     }
 
     private void set_infobar_string () {
