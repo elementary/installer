@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-27 05:46+0000\n"
-"PO-Revision-Date: 2023-05-23 08:06+0000\n"
+"PO-Revision-Date: 2023-08-01 18:43+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -139,10 +139,8 @@ msgid "Next"
 msgstr "Suivant"
 
 #: src/Views/DriversView.vala:27
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "Partitionnement du disque"
+msgstr "Pilotes additionnels"
 
 #: src/Views/DriversView.vala:32
 msgid ""
@@ -150,28 +148,40 @@ msgid ""
 "function properly without proprietary drivers. Most devices do not require "
 "additional drivers."
 msgstr ""
+"Certains périphériques, tels que les cartes graphiques NVIDIA® ou les cartes "
+"Wi-Fi Broadcom®, peuvent ne pas fonctionner correctement sans les pilotes "
+"propriétaires. La plupart des périphériques ne nécessitent pas de pilotes "
+"additionnels."
 
 #: src/Views/DriversView.vala:43
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"Les pilotes propriétaires contiennent du code privé qui ne peut être "
+"vérifié. Les mises à jour relatives à la sécurité et à divers autres aspects "
+"dépendent du fournisseur du pilote."
 
 #: src/Views/DriversView.vala:54
 msgid ""
 "Proprietary drivers are subject to their own license terms. By installing, "
 "you agree to their terms of use."
 msgstr ""
+"Les pilotes propriétaires sont soumis à leurs propres conditions de licence. "
+"En les installant, vous acceptez leurs conditions d'utilisation."
 
 #: src/Views/DriversView.vala:65
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but this will "
 "require a working Internet connection."
 msgstr ""
+"Les pilotes propriétaires peuvent être installés ultérieurement par "
+"l'intermédiaire du centre d'applications, mais il faut pour cela disposer "
+"d'une connexion Internet opérationnelle."
 
 #: src/Views/DriversView.vala:72
 msgid "Include third-party proprietary drivers when installing"
-msgstr ""
+msgstr "Inclure les pilotes propriétaires tiers lors de l'installation"
 
 #: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:166
 #: src/Views/KeyboardLayoutView.vala:60 src/Views/PartitioningView.vala:121
