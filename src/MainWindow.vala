@@ -250,7 +250,6 @@ public class Installer.MainWindow : Hdy.Window {
         var error_view = new ErrorView (log);
         deck.add (error_view);
         deck.visible_child = error_view;
-        deck.can_swipe_back = true;
     }
 
     private void set_infobar_string () {
