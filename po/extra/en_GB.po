@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-01 18:43+0000\n"
-"PO-Revision-Date: 2023-02-18 09:25+0000\n"
+"PO-Revision-Date: 2023-08-03 16:08+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "installer/extra/en_GB/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 
 #: data/installer.metainfo.xml.in:9
 msgid "Installer"
@@ -37,7 +37,7 @@ msgstr "Improvements:"
 
 #: data/installer.metainfo.xml.in:61
 msgid "Swipe to navigate back"
-msgstr ""
+msgstr "Swipe to navigate back"
 
 #: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:74
 #: data/installer.metainfo.xml.in:90 data/installer.metainfo.xml.in:102
