@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-01 18:43+0000\n"
-"PO-Revision-Date: 2023-07-29 21:08+0000\n"
+"PO-Revision-Date: 2023-08-05 15:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "extra/hu/>\n"
@@ -44,7 +44,7 @@ msgstr "Fejlesztések:"
 
 #: data/installer.metainfo.xml.in:61
 msgid "Swipe to navigate back"
-msgstr ""
+msgstr "Visszalépés csúsztatással"
 
 #: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:74
 #: data/installer.metainfo.xml.in:90 data/installer.metainfo.xml.in:102
