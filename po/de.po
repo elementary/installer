@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-01 18:43+0000\n"
-"PO-Revision-Date: 2023-05-30 18:07+0000\n"
+"PO-Revision-Date: 2023-08-08 12:08+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -146,10 +146,8 @@ msgid "Next"
 msgstr "Weiter"
 
 #: src/Views/DriversView.vala:27
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "Laufwerk partionieren"
+msgstr "Zusätzliche Treiber"
 
 #: src/Views/DriversView.vala:32
 msgid ""
@@ -157,28 +155,37 @@ msgid ""
 "function properly without proprietary drivers. Most devices do not require "
 "additional drivers."
 msgstr ""
+"Einige Geräte wie beispielsweise NVIDIA®-Grafikkarten oder Broadcom®-Wi-Fi-"
+"Adapter arbeiten möglicherweise nicht ordnungsgemäß ohne proprietäre "
+"Treiber. Die meisten Geräte benötigen keine zusätzliche Treiber."
 
 #: src/Views/DriversView.vala:43
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"Proprietäre Treiber enthalten vertraulichen Code, der nicht überprüft werden "
+"kann. Sicherheit und Aktualisierungen hängen vom Treiberhersteller ab."
 
 #: src/Views/DriversView.vala:54
 msgid ""
 "Proprietary drivers are subject to their own license terms. By installing, "
 "you agree to their terms of use."
 msgstr ""
+"Proprietäre Treiber unterliegen eigenen Lizenzbedingungen. Mit der "
+"Installation stimmen Sie den Nutzungsbedingungen zu."
 
 #: src/Views/DriversView.vala:65
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but this will "
 "require a working Internet connection."
 msgstr ""
+"Proprietäre Treiber können im AppCenter installiert werden, erfordern aber "
+"eine Internet-Verbindung."
 
 #: src/Views/DriversView.vala:72
 msgid "Include third-party proprietary drivers when installing"
-msgstr ""
+msgstr "Auch proprietäre Treiber von dritter Seite installieren"
 
 #: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
