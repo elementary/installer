@@ -62,7 +62,7 @@
         install_later_image.get_style_context ().add_class ("accent");
         install_later_image.get_style_context ().add_class ("purple");
 
-        var install_later_label = new Gtk.Label (_("Proprietary drivers can be installed later through AppCenter, but an Internet connection will be required.")) {
+        var install_later_label = new Gtk.Label (_("Proprietary drivers can be installed later through AppCenter, but an Internet connection will be required for all drivers.")) {
             hexpand = true,
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
