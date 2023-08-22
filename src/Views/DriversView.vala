@@ -29,7 +29,7 @@
         };
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var description_label = new Gtk.Label (_("Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not function properly without proprietary drivers. Most devices do not require additional drivers.")) {
+        var description_label = new Gtk.Label (_("Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may not function properly without additional drivers. Most devices do not require additional drivers.")) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
@@ -47,11 +47,11 @@
             xalign = 0
         };
 
-        var legal_image = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", LARGE_TOOLBAR);
-        legal_image.get_style_context ().add_class ("accent");
-        legal_image.get_style_context ().add_class ("slate");
+        var internet_image = new Gtk.Image.from_icon_name ("network-wireless-symbolic", LARGE_TOOLBAR);
+        internet_image.get_style_context ().add_class ("accent");
+        internet_image.get_style_context ().add_class ("blue");
 
-        var legal_label = new Gtk.Label (_("Proprietary drivers are subject to their own license terms. By installing, you agree to their terms of use.")) {
+        var internet_label = new Gtk.Label (_("An Internet connection is required to install NVIDIA® graphics drivers.")) {
             hexpand = true,
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
@@ -62,14 +62,20 @@
         install_later_image.get_style_context ().add_class ("accent");
         install_later_image.get_style_context ().add_class ("purple");
 
-        var install_later_label = new Gtk.Label (_("Proprietary drivers can be installed later through AppCenter, but this will require a working Internet connection.")) {
+        var install_later_label = new Gtk.Label (_("Proprietary drivers can be installed later through AppCenter, but an Internet connection will be required.")) {
             hexpand = true,
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
 
-        var drivers_check = new Gtk.CheckButton.with_label (_("Include third-party proprietary drivers when installing"));
+        var checkbutton_label = new Gtk.Label (_("Include third-party proprietary drivers when installing. I agree to their respective licenses and terms of use.")) {
+            wrap = true
+        };
+
+        var drivers_check = new Gtk.CheckButton () {
+            child = checkbutton_label
+        };
 
         var message_grid = new Gtk.Grid () {
             valign = CENTER,
@@ -79,11 +85,11 @@
         message_grid.attach (description_label, 0, 0, 2, 1);
         message_grid.attach (warning_image, 0, 1);
         message_grid.attach (warning_label, 1, 1);
-        message_grid.attach (legal_image, 0, 2);
-        message_grid.attach (legal_label, 1, 2);
+        message_grid.attach (internet_image, 0, 2);
+        message_grid.attach (internet_label, 1, 2);
         message_grid.attach (install_later_image, 0, 3);
         message_grid.attach (install_later_label, 1, 3);
-        message_grid.attach (drivers_check, 0, 4, 2, 1);
+        message_grid.attach (drivers_check, 0, 4, 2);
 
         content_area.column_homogeneous = true;
         content_area.margin_start = content_area.margin_end = 12;
