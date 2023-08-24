@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 18:43+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
 "PO-Revision-Date: 2023-08-06 17:08+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
@@ -140,10 +140,15 @@ msgid "Additional Drivers"
 msgstr "Lisäajurit"
 
 #: src/Views/DriversView.vala:32
+#, fuzzy
+#| msgid ""
+#| "Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may "
+#| "not function properly without proprietary drivers. Most devices do not "
+#| "require additional drivers."
 msgid ""
-"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
-"function properly without proprietary drivers. Most devices do not require "
-"additional drivers."
+"Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
+"not function properly without additional drivers. Most devices do not "
+"require additional drivers."
 msgstr ""
 "Jotkin laitteet, kuten NVIDIA®-näytönohjaimet tai Broadcom®-Wi-Fi-adapterit, "
 "eivät välttämättä toimi kunnolla ilman suljettuja ajureita. Useimmat "
@@ -159,32 +164,36 @@ msgstr ""
 "riippuvaisia ajurin valmistajasta."
 
 #: src/Views/DriversView.vala:54
-msgid ""
-"Proprietary drivers are subject to their own license terms. By installing, "
-"you agree to their terms of use."
+msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
-"Suljetut ajurit ovat niiden omien lisenssiehtojen alaisia. Asentamalla "
-"suljetun ajurin hyväksyt sen käyttöehdot."
 
 #: src/Views/DriversView.vala:65
+#, fuzzy
+#| msgid ""
+#| "Proprietary drivers can be installed later through AppCenter, but this "
+#| "will require a working Internet connection."
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but this will "
-"require a working Internet connection."
+"Proprietary drivers can be installed later through AppCenter, but an "
+"Internet connection will be required for all drivers."
 msgstr ""
 "Sovelluskeskuksesta on mahdollista asentaa suljettuja ajureita, mutta se "
 "vaatii toimivan Internet-yhteyden."
 
 #: src/Views/DriversView.vala:72
-msgid "Include third-party proprietary drivers when installing"
+#, fuzzy
+#| msgid "Include third-party proprietary drivers when installing"
+msgid ""
+"Include third-party proprietary drivers when installing. I agree to their "
+"respective licenses and terms of use."
 msgstr "Sisällytä kolmannen osapuolen suljetut ajurit asentamisen yhteydessä"
 
-#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:167
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
 #: src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Takaisin"
 
-#: src/Views/DriversView.vala:98
+#: src/Views/DriversView.vala:104
 msgid "Erase and Install"
 msgstr "Tyhjennä ja asenna"
 
@@ -560,6 +569,13 @@ msgstr "Tiedostojärjestelmä:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Oletus (ext4)"
+
+#~ msgid ""
+#~ "Proprietary drivers are subject to their own license terms. By "
+#~ "installing, you agree to their terms of use."
+#~ msgstr ""
+#~ "Suljetut ajurit ovat niiden omien lisenssiehtojen alaisia. Asentamalla "
+#~ "suljetun ajurin hyväksyt sen käyttöehdot."
 
 #~ msgid "System Requirements"
 #~ msgstr "Järjestelmävaatimukset"
