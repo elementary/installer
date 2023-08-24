@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 18:43+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
 "PO-Revision-Date: 2019-09-07 18:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/installer/extra/"
@@ -31,9 +31,9 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:72
-#: data/installer.metainfo.xml.in:86 data/installer.metainfo.xml.in:97
-#: data/installer.metainfo.xml.in:112
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:87 data/installer.metainfo.xml.in:98
+#: data/installer.metainfo.xml.in:113
 msgid "Improvements:"
 msgstr ""
 
@@ -41,33 +41,33 @@ msgstr ""
 msgid "Swipe to navigate back"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:74
-#: data/installer.metainfo.xml.in:90 data/installer.metainfo.xml.in:102
-#: data/installer.metainfo.xml.in:115
+#: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:75
+#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:103
+#: data/installer.metainfo.xml.in:116
 msgid "Updated translations"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:88
+#: data/installer.metainfo.xml.in:89
 msgid "Use large icons in views"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:89
+#: data/installer.metainfo.xml.in:90
 msgid "Add a custom icon for Before Installing view"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:99
+#: data/installer.metainfo.xml.in:100
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:100
+#: data/installer.metainfo.xml.in:101
 msgid "Show all system requirements warnings on a single page"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:102
 msgid "Warn about installing developer builds"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:114
+#: data/installer.metainfo.xml.in:115
 msgid "Double the boot partition size for encrypted installs"
 msgstr ""
 
