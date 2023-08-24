@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 18:43+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
 "PO-Revision-Date: 2023-08-01 18:43+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
@@ -143,10 +143,15 @@ msgid "Additional Drivers"
 msgstr "Pilotes additionnels"
 
 #: src/Views/DriversView.vala:32
+#, fuzzy
+#| msgid ""
+#| "Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may "
+#| "not function properly without proprietary drivers. Most devices do not "
+#| "require additional drivers."
 msgid ""
-"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
-"function properly without proprietary drivers. Most devices do not require "
-"additional drivers."
+"Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
+"not function properly without additional drivers. Most devices do not "
+"require additional drivers."
 msgstr ""
 "Certains périphériques, tels que les cartes graphiques NVIDIA® ou les cartes "
 "Wi-Fi Broadcom®, peuvent ne pas fonctionner correctement sans les pilotes "
@@ -163,33 +168,37 @@ msgstr ""
 "dépendent du fournisseur du pilote."
 
 #: src/Views/DriversView.vala:54
-msgid ""
-"Proprietary drivers are subject to their own license terms. By installing, "
-"you agree to their terms of use."
+msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
-"Les pilotes propriétaires sont soumis à leurs propres conditions de licence. "
-"En les installant, vous acceptez leurs conditions d'utilisation."
 
 #: src/Views/DriversView.vala:65
+#, fuzzy
+#| msgid ""
+#| "Proprietary drivers can be installed later through AppCenter, but this "
+#| "will require a working Internet connection."
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but this will "
-"require a working Internet connection."
+"Proprietary drivers can be installed later through AppCenter, but an "
+"Internet connection will be required for all drivers."
 msgstr ""
 "Les pilotes propriétaires peuvent être installés ultérieurement par "
 "l'intermédiaire du centre d'applications, mais il faut pour cela disposer "
 "d'une connexion Internet opérationnelle."
 
 #: src/Views/DriversView.vala:72
-msgid "Include third-party proprietary drivers when installing"
+#, fuzzy
+#| msgid "Include third-party proprietary drivers when installing"
+msgid ""
+"Include third-party proprietary drivers when installing. I agree to their "
+"respective licenses and terms of use."
 msgstr "Inclure les pilotes propriétaires tiers lors de l'installation"
 
-#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:167
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
 #: src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Précédent"
 
-#: src/Views/DriversView.vala:98
+#: src/Views/DriversView.vala:104
 msgid "Erase and Install"
 msgstr "Supprimer et installer"
 
@@ -568,6 +577,13 @@ msgstr "Système de fichiers :"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Défaut (ext4)"
+
+#~ msgid ""
+#~ "Proprietary drivers are subject to their own license terms. By "
+#~ "installing, you agree to their terms of use."
+#~ msgstr ""
+#~ "Les pilotes propriétaires sont soumis à leurs propres conditions de "
+#~ "licence. En les installant, vous acceptez leurs conditions d'utilisation."
 
 #~ msgid "System Requirements"
 #~ msgstr "Configuration requise"

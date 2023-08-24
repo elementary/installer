@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 18:43+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
 "PO-Revision-Date: 2023-08-16 12:08+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
@@ -142,10 +142,15 @@ msgid "Additional Drivers"
 msgstr "Controladors addicionals"
 
 #: src/Views/DriversView.vala:32
+#, fuzzy
+#| msgid ""
+#| "Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may "
+#| "not function properly without proprietary drivers. Most devices do not "
+#| "require additional drivers."
 msgid ""
-"Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may not "
-"function properly without proprietary drivers. Most devices do not require "
-"additional drivers."
+"Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
+"not function properly without additional drivers. Most devices do not "
+"require additional drivers."
 msgstr ""
 "Alguns dispositius, com ara els gràfics NVIDIA® o els adaptadors Wi-Fi "
 "Broadcom®, poden no funcionar correctament sense controladors de propietat. "
@@ -160,33 +165,37 @@ msgstr ""
 "seguretat i altres actualitzacions depenen del proveïdor del controlador."
 
 #: src/Views/DriversView.vala:54
-msgid ""
-"Proprietary drivers are subject to their own license terms. By installing, "
-"you agree to their terms of use."
+msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
-"Els controladors de propietat estan subjectes a les pròpies condicions de "
-"llicència. En instal·lar-ne, n'accepteu les condicions d'ús."
 
 #: src/Views/DriversView.vala:65
+#, fuzzy
+#| msgid ""
+#| "Proprietary drivers can be installed later through AppCenter, but this "
+#| "will require a working Internet connection."
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but this will "
-"require a working Internet connection."
+"Proprietary drivers can be installed later through AppCenter, but an "
+"Internet connection will be required for all drivers."
 msgstr ""
 "Els controladors de propietat es poden instal·lar més tard mitjançant el "
 "Centre d'aplicacions, però això requerirà una connexió a Internet que "
 "funcioni."
 
 #: src/Views/DriversView.vala:72
-msgid "Include third-party proprietary drivers when installing"
+#, fuzzy
+#| msgid "Include third-party proprietary drivers when installing"
+msgid ""
+"Include third-party proprietary drivers when installing. I agree to their "
+"respective licenses and terms of use."
 msgstr "Inclou controladors de propietat de tercers durant la instal·lació."
 
-#: src/Views/DriversView.vala:95 src/Views/EncryptView.vala:167
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
 #: src/Views/TryInstallView.vala:86
 msgid "Back"
 msgstr "Enrere"
 
-#: src/Views/DriversView.vala:98
+#: src/Views/DriversView.vala:104
 msgid "Erase and Install"
 msgstr "Esborra i instal·la"
 
@@ -564,6 +573,13 @@ msgstr "Sistema de fitxers:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Per defecte (ext4)"
+
+#~ msgid ""
+#~ "Proprietary drivers are subject to their own license terms. By "
+#~ "installing, you agree to their terms of use."
+#~ msgstr ""
+#~ "Els controladors de propietat estan subjectes a les pròpies condicions de "
+#~ "llicència. En instal·lar-ne, n'accepteu les condicions d'ús."
 
 #~ msgid "System Requirements"
 #~ msgstr "Requisits del sistema"
