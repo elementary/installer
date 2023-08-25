@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-07-29 21:08+0000\n"
+"PO-Revision-Date: 2023-08-25 03:04+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
@@ -144,19 +144,14 @@ msgid "Additional Drivers"
 msgstr "Додаткові драйвери"
 
 #: src/Views/DriversView.vala:32
-#, fuzzy
-#| msgid ""
-#| "Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may "
-#| "not function properly without proprietary drivers. Most devices do not "
-#| "require additional drivers."
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
-"Деякі пристрої, такі як графічні адаптери NVIDIA® або Wi-Fi адаптери "
-"Broadcom®, можуть не працювати належним чином без фірмових драйверів. "
-"Більшість пристроїв не потребують додаткових драйверів."
+"Wi-Fi адаптери Broadcom®, відеокарта NVIDIA® та деякі віртуальні машини "
+"можуть не працювати належним чином без додаткових драйверів. Більшість "
+"пристроїв не потребують додаткових драйверів."
 
 #: src/Views/DriversView.vala:43
 msgid ""
@@ -169,27 +164,23 @@ msgstr ""
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"Для встановлення графічних драйверів NVIDIA® потрібне інтернет-з'єднання."
 
 #: src/Views/DriversView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but this "
-#| "will require a working Internet connection."
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
-"Пропрієтарні драйвери можна встановити пізніше через Центр застосунків, але "
-"для цього потрібне робоче з'єднання з інтернетом."
+"Власницькі драйвери можна встановити пізніше через Центр застосунків, але "
+"інтернет-з'єднання буде необхідним для всіх драйверів."
 
 #: src/Views/DriversView.vala:72
-#, fuzzy
-#| msgid "Include third-party proprietary drivers when installing"
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
-"Під час встановлення включити пропрієтарні драйвери сторонніх розробників"
+"Під час встановлення включити власницькі драйвери сторонніх розробників. Я "
+"погоджуюся з їхніми відповідними ліцензіями та умовами користування."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
