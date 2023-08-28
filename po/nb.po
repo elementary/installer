@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2022-12-18 22:25+0000\n"
+"PO-Revision-Date: 2023-08-25 03:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/installer/nb/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:42
@@ -150,33 +150,46 @@ msgid "Additional Drivers"
 msgstr "Partisjonerer enhet"
 
 #: src/Views/DriversView.vala:32
+#, fuzzy
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
+"Broadcom® Wi-Fi-kort NVIDIA®-grafikk, og noen virutelle maskiner kan slutte "
+"å fungere uten ytterligere driverrutiner. De fleste enheter krever ikke "
+"dette."
 
 #: src/Views/DriversView.vala:43
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"Ufrie driverrutiner inneholder privat kode som ikke kan gjennomses. "
+"Sikkerhet og oppdateringer avhenger av tilbyderen."
 
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"Tilkobling til Internett kreves for å installere driverrutiner for "
+"NVIDIA®-grafikk."
 
 #: src/Views/DriversView.vala:65
+#, fuzzy
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
+"Ufrie drivere kan installeres senere gjennom AppSenter, men en tilkobling "
+"til Internett kreves fremdeles for innhenting av alle driverrutiner."
 
 #: src/Views/DriversView.vala:72
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
+"Inkluder ufrie drivere fra tredjeparter under installasjon. Jeg samtykker "
+"til respektive lisenser og bruksvilkår."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121

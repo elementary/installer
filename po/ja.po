@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-08-10 12:08+0000\n"
+"PO-Revision-Date: 2023-08-25 03:04+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -143,19 +143,14 @@ msgid "Additional Drivers"
 msgstr "追加のドライバー"
 
 #: src/Views/DriversView.vala:32
-#, fuzzy
-#| msgid ""
-#| "Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may "
-#| "not function properly without proprietary drivers. Most devices do not "
-#| "require additional drivers."
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
-"NVIDIA® グラフィックスや Broadcom® Wi-Fi アダプターなどの一部デバイスは、プロ"
-"プライエタリードライバーがないと正しく動作しないことがあります。ほとんどのデ"
-"バイスには追加のドライバーは不要です。"
+"Broadcom® Wi-Fi アダプター、NVIDIA® グラフィックス、およびの一部仮想マシンは"
+"、追加のドライバーがないと正しく動作しないことがあります。ほとんどのデバイス"
+"には追加のドライバーは不要です。"
 
 #: src/Views/DriversView.vala:43
 msgid ""
@@ -168,28 +163,24 @@ msgstr ""
 
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
-msgstr ""
+msgstr "NVIDIA® グラフィックスドライバーをインストールするには、インターネット接続が"
+"必要です。"
 
 #: src/Views/DriversView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but this "
-#| "will require a working Internet connection."
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
-"プロプライエタリードライバーは後からでも AppCenter 経由でインストール可能です"
-"が、これには通信可能なインターネット接続が必要になります。"
+"プロプライエタリードライバーは後からでも AppCenter "
+"経由でインストール可能ですが、NVIDIA® "
+"グラフィックス以外のドライバーでもインターネット接続が必要になります。"
 
 #: src/Views/DriversView.vala:72
-#, fuzzy
-#| msgid "Include third-party proprietary drivers when installing"
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
-msgstr ""
-"インストール時にサードパーティー製のプロプライエタリードライバーを含める"
+msgstr "インストール時にサードパーティー製のプロプライエタリードライバーを導入します"
+"。各ライセンスおよび利用規約に合意します。"
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-08-01 18:43+0000\n"
+"PO-Revision-Date: 2023-08-27 08:08+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/"
 "installer/pl/>\n"
@@ -144,19 +144,14 @@ msgid "Additional Drivers"
 msgstr "Dodatkowe sterowniki"
 
 #: src/Views/DriversView.vala:32
-#, fuzzy
-#| msgid ""
-#| "Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may "
-#| "not function properly without proprietary drivers. Most devices do not "
-#| "require additional drivers."
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
-"Niektóre urządzenia takie jak karty graficzne NVIDIA® czy adapter Wi-Fi "
-"Broadcom® mogą nie działać poprawnie bez własnościowych sterowników. "
-"Większość urządzeń nie potrzebuje dodatkowych sterowników."
+"Adaptery Wi-Fi Broadcom®, karty graficzne NVIDIA® oraz niektóre maszyny "
+"wirtualne nie działać poprawnie bez własnościowych sterowników. Większość "
+"urządzeń nie potrzebuje dodatkowych sterowników."
 
 #: src/Views/DriversView.vala:43
 msgid ""
@@ -170,26 +165,25 @@ msgstr ""
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"Połączenie internetowe jest wymagane do zainstalowania sterowników "
+"graficznych kart NVIDIA®."
 
 #: src/Views/DriversView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but this "
-#| "will require a working Internet connection."
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
 "Własnościowe sterowniki mogą zostać zainstalowane później przez AppCenter, "
-"jednak będzie to wymagać działającego połączenia z internetem."
+"jednak działające połączenie z internetem będzie wymagane dla każdego "
+"sterownika."
 
 #: src/Views/DriversView.vala:72
-#, fuzzy
-#| msgid "Include third-party proprietary drivers when installing"
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
-msgstr "Dołącz własnościowe sterowniki stron trzecich podczas instalacji"
+msgstr ""
+"Dołącz własnościowe sterowniki stron trzecich podczas instalacji. Akceptuję "
+"ich odpowiednie licencje oraz warunki użytkowania."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
