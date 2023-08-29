@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2022-01-09 20:41+0000\n"
-"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
+"PO-Revision-Date: 2023-08-30 12:08+0000\n"
+"Last-Translator: Jakub Kyzr <jakubkyzr@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
 "installer/cs/>\n"
 "Language: cs\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -21,10 +21,8 @@ msgid "Install %s"
 msgstr "Nainstalovat %s"
 
 #: src/Application.vala:61
-#, fuzzy
-#| msgid "%s has been installed"
 msgid "operating system is being installed"
-msgstr "%s byl nainstalován"
+msgstr "operační systém se instaluje"
 
 #: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
@@ -64,20 +62,20 @@ msgid "Test Mode"
 msgstr "Testovací režim"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Zkusit nainstalovat znovu"
+msgstr "Před instalací"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Verze před vydáním"
 
 #: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Instalujte pouze na zařízení určená pro vývoj. <b>Nebudete mít možnost "
+"aktualizovat na stabilní verzi</b>."
 
 #: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
@@ -94,13 +92,11 @@ msgstr "Váš počítač může být příliš pomalý"
 
 #: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Toto může způsobit pomalý běh nebo zamrznutí."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Nainstalovat %s"
+msgstr "Přesto nainstalovat"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
@@ -140,10 +136,8 @@ msgid "Next"
 msgstr "Další"
 
 #: src/Views/DriversView.vala:27
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "Vytvářejí se oddíly na jednotce"
+msgstr "Dodatečné ovladače"
 
 #: src/Views/DriversView.vala:32
 msgid ""
@@ -151,28 +145,39 @@ msgid ""
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
+"Broadcom® Wi-Fi adaptéry, NVIDIA® grafiky, a některé virtuální počítače "
+"nemusejí správně fungovat bez dodatečných ovladačů. Většina zařízení "
+"nepotřebuje dodatečné ovladače."
 
 #: src/Views/DriversView.vala:43
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"Proprietární ovladače obsahují soukromý kód, který nelze zkontrolovat. "
+"Bezpečnost a další aktualizace závisí na dodavateli ovladače."
 
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"Internetové připojení je vyžadováno pro instalaci NVIDIA® grafických "
+"ovladačů."
 
 #: src/Views/DriversView.vala:65
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
+"Proprietární ovladače mohou být nainstalovány později skrze Centrum "
+"aplikací, ale internetové připojení bude vyžadováno pro všechny ovladače."
 
 #: src/Views/DriversView.vala:72
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
+"Zahrnout proprietární ovladače třetích stran při instalaci. Souhlasím s "
+"jejich licencemi a podmínkami použití."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
