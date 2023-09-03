@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-08-27 08:08+0000\n"
+"PO-Revision-Date: 2023-09-04 08:08+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
 "installer/fi/>\n"
@@ -411,7 +411,7 @@ msgstr "Valmistellaan asennusta"
 
 #: src/Views/TryInstallView.vala:28
 msgid "Try or Install"
-msgstr "Yritä tai asenna"
+msgstr "Kokeile tai asenna"
 
 #: src/Views/TryInstallView.vala:41
 msgid ""
