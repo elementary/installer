@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-07-29 21:08+0000\n"
+"PO-Revision-Date: 2023-09-26 22:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
@@ -142,19 +142,14 @@ msgid "Additional Drivers"
 msgstr "További illesztőprogramok"
 
 #: src/Views/DriversView.vala:32
-#, fuzzy
-#| msgid ""
-#| "Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may "
-#| "not function properly without proprietary drivers. Most devices do not "
-#| "require additional drivers."
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
-"Néhány eszköz, mint az NVIDIA® grafikus kártyák vagy a Broadcom® Wi-Fi "
-"adapterek, nem feltétlen működnek a zárt forráskódú illesztőprogramjaik "
-"nélkül. A legtöbb eszköznek nincs szüksége további illesztőprogramokra."
+"A Broadcom® Wi-Fi adapterek, NVIDIA® grafikus kártyák és néhány virtuális "
+"gép nem feltétlen működnek további illesztőprogramok nélkül. A legtöbb "
+"eszköznek nincs szüksége további illesztőprogramokra."
 
 #: src/Views/DriversView.vala:43
 msgid ""
@@ -167,26 +162,23 @@ msgstr ""
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"Az NVIDIA® grafikus illesztőprogramok letöltése internetkapcsolatot igényel."
 
 #: src/Views/DriversView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but this "
-#| "will require a working Internet connection."
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
 "A zárt forráskódú illesztőprogramok később is telepíthetőek az "
-"Appközpontból, de ehhez működő internetkapcsolatra lesz szüksége."
+"Appközpontból, de ehhez internetkapcsolatra lesz szüksége."
 
 #: src/Views/DriversView.vala:72
-#, fuzzy
-#| msgid "Include third-party proprietary drivers when installing"
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
-msgstr "Harmadik féltől származó, zárt forráskódú illesztőprogramok telepítése"
+msgstr ""
+"Harmadik féltől származó, zárt forráskódú illesztőprogramok telepítése, "
+"elfogadom a licenceiket és felhasználási feltételeiket."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
