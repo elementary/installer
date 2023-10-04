@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-08-08 12:08+0000\n"
+"PO-Revision-Date: 2023-10-05 22:08+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -150,19 +150,14 @@ msgid "Additional Drivers"
 msgstr "Zusätzliche Treiber"
 
 #: src/Views/DriversView.vala:32
-#, fuzzy
-#| msgid ""
-#| "Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may "
-#| "not function properly without proprietary drivers. Most devices do not "
-#| "require additional drivers."
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
-"Einige Geräte wie beispielsweise NVIDIA®-Grafikkarten oder Broadcom®-Wi-Fi-"
-"Adapter arbeiten möglicherweise nicht ordnungsgemäß ohne proprietäre "
-"Treiber. Die meisten Geräte benötigen keine zusätzliche Treiber."
+"Broadcom®-Wi-Fi-Adapter, NVIDIA®-Grafikkarten und einige virtuelle Maschinen "
+"arbeiten möglicherweise nicht ordnungsgemäß ohne zusätzliche Treiber. Die "
+"meisten Geräte benötigen keine zusätzliche Treiber."
 
 #: src/Views/DriversView.vala:43
 msgid ""
@@ -175,26 +170,23 @@ msgstr ""
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"Zur Installation der NVIDIA®-Treiber wird eine Internet-Verbindung benötigt."
 
 #: src/Views/DriversView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but this "
-#| "will require a working Internet connection."
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
-"Proprietäre Treiber können im AppCenter installiert werden, erfordern aber "
-"eine Internet-Verbindung."
+"Proprietäre Treiber können später im AppCenter installiert werden, "
+"allerdings wird für alle Treiber eine Internet-Verbindung benötigt."
 
 #: src/Views/DriversView.vala:72
-#, fuzzy
-#| msgid "Include third-party proprietary drivers when installing"
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
-msgstr "Auch proprietäre Treiber von dritter Seite installieren"
+msgstr ""
+"Auch proprietäre Treiber von dritter Seite installieren. Ich stimme ihren "
+"jeweiligen Lizenzen und Nutzungsbedingungen zu."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
