@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-07-29 21:08+0000\n"
+"PO-Revision-Date: 2023-10-05 22:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -138,19 +138,14 @@ msgid "Additional Drivers"
 msgstr "מנהלי התקנים נוספים"
 
 #: src/Views/DriversView.vala:32
-#, fuzzy
-#| msgid ""
-#| "Some devices, such as NVIDIA® graphics or Broadcom® Wi-Fi adapters, may "
-#| "not function properly without proprietary drivers. Most devices do not "
-#| "require additional drivers."
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
-"חלק מההתקנים, כגון כרטיסי מסך של Nvidia®‎ או כרטיסי רשת אלחוטית של Broadcom®‎, "
-"עשויים לתפקד חלקית ללא מנהלי ההתקנים הקנייניים. רוב ההתקנים לא דורשים מנהלי "
-"התקנים נוספים."
+"מתאמים אלחוטיים של Broadcom®‎, מאיצים גרפיים של NVIDIA®‎ ומכונות וירטואליות "
+"כאלה ואחרות לא יעבדו היטב ללא מנהלי התקנים מתאימים. רוב ההתקנים לא דורשים "
+"מנהלי התקנים נוספים."
 
 #: src/Views/DriversView.vala:43
 msgid ""
@@ -162,27 +157,23 @@ msgstr ""
 
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
-msgstr ""
+msgstr "צריך חיבור לאינטרנט כדי להתקין מנהלי התקנים של NVIDIA®‎."
 
 #: src/Views/DriversView.vala:65
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but this "
-#| "will require a working Internet connection."
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
-"אפשר להתקין מנהלי התקנים קנייניים מאוחר יותר דרך מרכז היישומים אך פעולה זו "
-"תדרוש חיבור פעיל לאינטרנט."
+"אפשר להתקין מנהלי התקנים קנייניים מאוחר יותר דרך מרכז היישומים אך צריך חיבור "
+"לאינטרנט לכל מנהלי ההתקנים."
 
 #: src/Views/DriversView.vala:72
-#, fuzzy
-#| msgid "Include third-party proprietary drivers when installing"
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
-msgstr "לכלול מנהלי התקנים קנייניים מגופי צד־שלישי בעת ההתקנה"
+msgstr ""
+"לכלול מנהלי התקנים קנייניים מגופי צד־שלישי בעת ההתקנה. הרישיונות ותנאי "
+"השימוש שלהם מוסכמים עלי באשר הם."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
