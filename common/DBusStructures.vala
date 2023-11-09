@@ -62,8 +62,6 @@ public enum InstallerDaemon.FileSystem {
                 return "fat16";
             case FAT32:
                 return "fat32";
-            case NONE:
-                return "none";
             case NTFS:
                 return "ntfs";
             case SWAP:
@@ -74,9 +72,10 @@ public enum InstallerDaemon.FileSystem {
                 return "lvm";
             case LUKS:
                 return "luks";
+            case NONE:
+            default:
+                return "none";
         }
-
-        return "none";
     }
 }
 
