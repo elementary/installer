@@ -596,14 +596,13 @@ public class InstallerDaemon.Daemon : GLib.Object {
         }
     }
 
-    public InstallerDaemon.PartitionTable to_common_usage_bootloader (Distinst.PartitionTable bootloader) {
+    private InstallerDaemon.PartitionTable to_common_usage_bootloader (Distinst.PartitionTable bootloader) {
         switch (bootloader) {
             case GPT:
                 return InstallerDaemon.PartitionTable.GPT;
             case MSDOS:
                 return InstallerDaemon.PartitionTable.MSDOS;
             case NONE:
-                return InstallerDaemon.PartitionTable.NONE;
             default:
                 return InstallerDaemon.PartitionTable.NONE;
         }
