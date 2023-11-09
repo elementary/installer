@@ -111,6 +111,19 @@ public struct InstallerDaemon.Status {
     int percent;
 }
 
+public enum InstallerDaemon.LogLevel {
+    TRACE,
+    DEBUG,
+    INFO,
+    WARN,
+    ERROR;
+}
+
+public struct InstallerDaemon.Error {
+    Step step;
+    int err;
+}
+
 public struct InstallerDaemon.Partition {
     string device_path;
 

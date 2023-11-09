@@ -167,7 +167,7 @@ public class ProgressView : AbstractInstallerView {
                     current_config.encryption_password ?? ""
                 );
             } catch (Error e) {
-                log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
+                log_helper.log_func (InstallerDaemon.LogLevel.ERROR, e.message);
                 on_error ();
             }
         } else {
@@ -193,7 +193,7 @@ public class ProgressView : AbstractInstallerView {
             try {
                 yield daemon.install_with_custom_disk_layout (config, mounts, creds);
             } catch (Error e) {
-                log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
+                log_helper.log_func (InstallerDaemon.LogLevel.ERROR, e.message);
                 on_error ();
             }
         }
@@ -247,7 +247,7 @@ public class ProgressView : AbstractInstallerView {
         });
     }
 
-    private void installation_error_callback (Distinst.Error error) {
+    private void installation_error_callback (InstallerDaemon.Error error) {
         Idle.add (() => {
             on_error ();
             return GLib.Source.REMOVE;

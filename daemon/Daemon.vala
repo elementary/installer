@@ -19,16 +19,16 @@ private static GLib.MainLoop loop;
 
 [DBus (name = "io.elementary.InstallerDaemon")]
 public class InstallerDaemon.Daemon : GLib.Object {
-    public signal void on_log_message (Distinst.LogLevel level, string message);
-    public signal void on_status (Distinst.Status status);
-    public signal void on_error (Distinst.Error error);
+    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
+    public signal void on_status (InstallerDaemon.Status status);
+    public signal void on_error (InstallerDaemon.Error error);
 
     private Distinst.Disks disks;
 
     construct {
         Distinst.log ((level, message) => {
             Idle.add (() => {
-                on_log_message (level, message);
+                on_log_message (to_common_log_level (level), message);
             });
         });
     }
@@ -182,8 +182,8 @@ public class InstallerDaemon.Daemon : GLib.Object {
 
     private void install (InstallConfig config, owned Distinst.Disks disks) {
         var installer = new Distinst.Installer ();
-        installer.on_error ((error) => on_error (error));
-        installer.on_status ((status) => on_status (status));
+        installer.on_error ((error) => on_error (to_common_error (error)));
+        installer.on_status ((status) => on_status (to_common_status (status)));
 
         var distinst_config = Distinst.Config ();
         uint8 flags = 0;
@@ -212,7 +212,7 @@ public class InstallerDaemon.Daemon : GLib.Object {
         new Thread<void*> (null, () => {
             if (installer.install ((owned) disks, distinst_config) != 0) {
                 Idle.add (() => {
-                    on_error (Distinst.Error ());
+                    on_error (InstallerDaemon.Error ());
                     return GLib.Source.REMOVE;
                 });
             }
@@ -229,7 +229,7 @@ public class InstallerDaemon.Daemon : GLib.Object {
         var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
         try {
             demo_mode_file.create (GLib.FileCreateFlags.NONE);
-        } catch (Error e) {
+        } catch (GLib.Error e) {
             if (!(e is GLib.IOError.EXISTS)) {
                 throw e;
             }
@@ -606,6 +606,54 @@ public class InstallerDaemon.Daemon : GLib.Object {
             default:
                 return InstallerDaemon.PartitionTable.NONE;
         }
+    }
+
+    private InstallerDaemon.LogLevel to_common_log_level (Distinst.LogLevel level) {
+        switch (level) {
+            case DEBUG:
+                return InstallerDaemon.LogLevel.DEBUG;
+            case INFO:
+                return InstallerDaemon.LogLevel.INFO;
+            case WARN:
+                return InstallerDaemon.LogLevel.WARN;
+            case ERROR:
+                return InstallerDaemon.LogLevel.ERROR;
+            case TRACE:
+            default:
+                return InstallerDaemon.LogLevel.TRACE;
+        }
+    }
+
+    private InstallerDaemon.Error to_common_error (Distinst.Error error) {
+        return InstallerDaemon.Error () {
+            step = to_common_step (error.step),
+            err = error.err
+        };
+    }
+
+    private InstallerDaemon.Step to_common_step (Distinst.Step step) {
+        switch (step) {
+            case BACKUP:
+                return InstallerDaemon.Step.BACKUP;
+            case PARTITION:
+                return InstallerDaemon.Step.PARTITION;
+            case EXTRACT:
+                return InstallerDaemon.Step.EXTRACT;
+            case CONFIGURE:
+                return InstallerDaemon.Step.CONFIGURE;
+            case BOOTLOADER:
+                return InstallerDaemon.Step.BOOTLOADER;
+            case INIT:
+            default:
+                return InstallerDaemon.Step.INIT;
+        }
+    }
+
+    private InstallerDaemon.Status to_common_status (Distinst.Status status) {
+        return InstallerDaemon.Status () {
+            step = to_common_step (status.step),
+            percent = status.percent
+        };
     }
 }
 

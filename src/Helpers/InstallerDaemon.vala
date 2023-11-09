@@ -23,9 +23,9 @@ public class Installer.Daemon {
 
     [DBus (name = "io.elementary.InstallerDaemon")]
     private interface InstallerInterface : GLib.DBusProxy {
-        public signal void on_error (Distinst.Error error);
-        public signal void on_status (Distinst.Status status);
-        public signal void on_log_message (Distinst.LogLevel level, string message);
+        public signal void on_error (InstallerDaemon.Error error);
+        public signal void on_status (InstallerDaemon.Status status);
+        public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
 
         public abstract InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error;
 
@@ -38,9 +38,9 @@ public class Installer.Daemon {
         public async abstract void trigger_demo_mode () throws GLib.Error;
     }
 
-    public signal void on_error (Distinst.Error error);
-    public signal void on_status (Distinst.Status status);
-    public signal void on_log_message (Distinst.LogLevel level, string message);
+    public signal void on_error (InstallerDaemon.Error error);
+    public signal void on_status (InstallerDaemon.Status status);
+    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
 
     private InstallerInterface daemon;
 
