@@ -69,10 +69,10 @@ public class InstallerDaemon.Daemon : GLib.Object {
 
                     partitions += Partition () {
                         device_path = string_from_utf8 (part.get_device_path ()),
-                        filesystem = part.get_file_system (),
+                        filesystem = to_common_fs (part.get_file_system ()),
                         start_sector = part.get_start_sector (),
                         end_sector = part.get_end_sector (),
-                        sectors_used = part.sectors_used (disk.get_sector_size ()),
+                        sectors_used = to_common_usage (part.sectors_used (disk.get_sector_size ())),
                         current_lvm_volume_group = lvm_vg
                     };
                 }
@@ -103,10 +103,10 @@ public class InstallerDaemon.Daemon : GLib.Object {
 
                     partitions += Partition () {
                         device_path = string_from_utf8 (part.get_device_path ()),
-                        filesystem = part.get_file_system (),
+                        filesystem = to_common_fs (part.get_file_system ()),
                         start_sector = part.get_start_sector (),
                         end_sector = part.get_end_sector (),
-                        sectors_used = part.sectors_used (disk.get_sector_size ()),
+                        sectors_used = to_common_usage (part.sectors_used (disk.get_sector_size ())),
                         current_lvm_volume_group = lvm_vg
                     };
                 }
@@ -149,10 +149,10 @@ public class InstallerDaemon.Daemon : GLib.Object {
 
             partitions += Partition () {
                 device_path = string_from_utf8 (part.get_device_path ()),
-                filesystem = part.get_file_system (),
+                filesystem = to_common_fs (part.get_file_system ()),
                 start_sector = part.get_start_sector (),
                 end_sector = part.get_end_sector (),
-                sectors_used = part.sectors_used (disk.get_sector_size ()),
+                sectors_used = to_common_usage (part.sectors_used (disk.get_sector_size ())),
                 current_lvm_volume_group = lvm_vg
             };
         }
@@ -451,7 +451,7 @@ public class InstallerDaemon.Daemon : GLib.Object {
                 if (m.mount_point == "/boot/efi") {
                     if (m.is_valid_boot_mount ()) {
                         if (m.should_format ()) {
-                            partition.format_with (m.filesystem);
+                            partition.format_with (to_distinst_fs (m.filesystem));
                         }
 
                         partition.set_mount (m.mount_point);
@@ -460,7 +460,7 @@ public class InstallerDaemon.Daemon : GLib.Object {
                         throw new GLib.IOError.FAILED ("Unreachable code path -- EFI partition is invalid");
                     }
                 } else {
-                    if (m.filesystem != Distinst.FileSystem.SWAP) {
+                    if (m.filesystem != InstallerDaemon.FileSystem.SWAP) {
                         partition.set_mount (m.mount_point);
                     }
 
@@ -469,7 +469,7 @@ public class InstallerDaemon.Daemon : GLib.Object {
                     }
 
                     if (m.should_format ()) {
-                        partition.format_with (m.filesystem);
+                        partition.format_with (to_distinst_fs (m.filesystem));
                     }
                 }
             }
@@ -498,12 +498,12 @@ public class InstallerDaemon.Daemon : GLib.Object {
                 throw new GLib.IOError.FAILED ("could not find %s", m.partition_path);
             }
 
-            if (m.filesystem != Distinst.FileSystem.SWAP) {
+            if (m.filesystem != InstallerDaemon.FileSystem.SWAP) {
                 partition.set_mount (m.mount_point);
             }
 
             if (m.should_format ()) {
-                partition.format_and_keep_name (m.filesystem);
+                partition.format_and_keep_name (to_distinst_fs (m.filesystem));
             }
         }
     }
@@ -512,6 +512,79 @@ public class InstallerDaemon.Daemon : GLib.Object {
         var builder = new GLib.StringBuilder.sized (input.length);
         builder.append_len ((string) input, input.length);
         return (owned) builder.str;
+    }
+
+    private InstallerDaemon.FileSystem to_common_fs (Distinst.FileSystem fs) {
+        switch (fs) {
+            case BTRFS:
+                return InstallerDaemon.FileSystem.BTRFS;
+            case EXT2:
+                return InstallerDaemon.FileSystem.EXT2;
+            case EXT3:
+                return InstallerDaemon.FileSystem.EXT3;
+            case EXT4:
+                return InstallerDaemon.FileSystem.EXT4;
+            case F2FS:
+                return InstallerDaemon.FileSystem.F2FS;
+            case FAT16:
+                return InstallerDaemon.FileSystem.FAT16;
+            case FAT32:
+                return InstallerDaemon.FileSystem.FAT32;
+            case NONE:
+                return InstallerDaemon.FileSystem.NONE;
+            case NTFS:
+                return InstallerDaemon.FileSystem.NTFS;
+            case SWAP:
+                return InstallerDaemon.FileSystem.SWAP;
+            case XFS:
+                return InstallerDaemon.FileSystem.XFS;
+            case LVM:
+                return InstallerDaemon.FileSystem.LVM;
+            case LUKS:
+                return InstallerDaemon.FileSystem.LUKS;
+            default:
+                return InstallerDaemon.FileSystem.NONE;
+        }
+    }
+
+    private InstallerDaemon.PartitionUsage to_common_usage (Distinst.PartitionUsage usage) {
+        return InstallerDaemon.PartitionUsage () {
+            tag = usage.tag,
+            value = usage.value
+        };
+    }
+
+    private Distinst.FileSystem to_distinst_fs (InstallerDaemon.FileSystem fs) {
+        switch (fs) {
+            case BTRFS:
+                return Distinst.FileSystem.BTRFS;
+            case EXT2:
+                return Distinst.FileSystem.EXT2;
+            case EXT3:
+                return Distinst.FileSystem.EXT3;
+            case EXT4:
+                return Distinst.FileSystem.EXT4;
+            case F2FS:
+                return Distinst.FileSystem.F2FS;
+            case FAT16:
+                return Distinst.FileSystem.FAT16;
+            case FAT32:
+                return Distinst.FileSystem.FAT32;
+            case NONE:
+                return Distinst.FileSystem.NONE;
+            case NTFS:
+                return Distinst.FileSystem.NTFS;
+            case SWAP:
+                return Distinst.FileSystem.SWAP;
+            case XFS:
+                return Distinst.FileSystem.XFS;
+            case LVM:
+                return Distinst.FileSystem.LVM;
+            case LUKS:
+                return Distinst.FileSystem.LUKS;
+            default:
+                return Distinst.FileSystem.NONE;
+        }
     }
 }
 
