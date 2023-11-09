@@ -44,7 +44,40 @@ public enum InstallerDaemon.FileSystem {
     SWAP,
     XFS,
     LVM,
-    LUKS,
+    LUKS;
+
+    public string to_string () {
+        switch (this) {
+            case BTRFS:
+                return "btrfs";
+            case EXT2:
+                return "ext2";
+            case EXT3:
+                return "ext3";
+            case EXT4:
+                return "ext4";
+            case F2FS:
+                return "f2fs";
+            case FAT16:
+                return "fat16";
+            case FAT32:
+                return "fat32";
+            case NONE:
+                return "none";
+            case NTFS:
+                return "ntfs";
+            case SWAP:
+                return "swap";
+            case XFS:
+                return "xfs";
+            case LVM:
+                return "lvm";
+            case LUKS:
+                return "luks";
+        }
+
+        return "none";
+    }
 }
 
 public struct InstallerDaemon.PartitionUsage {
