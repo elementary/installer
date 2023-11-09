@@ -31,14 +31,41 @@ public struct InstallerDaemon.Disk {
     Partition[] partitions;
 }
 
+public enum InstallerDaemon.FileSystem {
+    NONE,
+    BTRFS,
+    EXT2,
+    EXT3,
+    EXT4,
+    F2FS,
+    FAT16,
+    FAT32,
+    NTFS,
+    SWAP,
+    XFS,
+    LVM,
+    LUKS,
+}
+
+public struct InstallerDaemon.PartitionUsage {
+    /**
+     * None = 0; Some(usage) = 1;
+     */
+    public uint8 tag;
+    /**
+     * The size, in sectors, that a partition is used.
+     */
+    public uint64 value;
+}
+
 public struct InstallerDaemon.Partition {
     string device_path;
 
-    Distinst.FileSystem filesystem;
+    FileSystem filesystem;
 
     uint64 start_sector;
     uint64 end_sector;
-    Distinst.PartitionUsage sectors_used;
+    PartitionUsage sectors_used;
     string? current_lvm_volume_group;
 }
 
@@ -62,18 +89,18 @@ public struct InstallerDaemon.Mount {
     string parent_disk;
     string mount_point;
     uint64 sectors;
-    Distinst.FileSystem filesystem;
+    FileSystem filesystem;
     MountFlags flags;
 
     public bool is_valid_boot_mount () {
-        return filesystem == Distinst.FileSystem.FAT16
-            || filesystem == Distinst.FileSystem.FAT32;
+        return filesystem == FileSystem.FAT16
+            || filesystem == FileSystem.FAT32;
     }
 
     public bool is_valid_root_mount () {
-        return filesystem != Distinst.FileSystem.FAT16
-            && filesystem != Distinst.FileSystem.FAT32
-            && filesystem != Distinst.FileSystem.NTFS;
+        return filesystem != FileSystem.FAT16
+            && filesystem != FileSystem.FAT32
+            && filesystem != FileSystem.NTFS;
     }
 
     public bool is_lvm () {
