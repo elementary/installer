@@ -186,7 +186,16 @@ public class InstallerDaemon.Daemon : GLib.Object {
         installer.on_status ((status) => on_status (status));
 
         var distinst_config = Distinst.Config ();
-        distinst_config.flags = config.flags;
+        uint8 flags = 0;
+        if (config.modify_boot_order) {
+            flags = Distinst.MODIFY_BOOT_ORDER;
+        }
+
+        if (config.install_drivers) {
+            flags |= Distinst.RUN_UBUNTU_DRIVERS;
+        }
+
+        distinst_config.flags = flags;
         distinst_config.hostname = config.hostname;
 
         var casper = casper_dir ();

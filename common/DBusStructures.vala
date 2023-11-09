@@ -97,6 +97,20 @@ public enum InstallerDaemon.PartitionTable {
     MSDOS;
 }
 
+public enum InstallerDaemon.Step {
+    BACKUP,
+    INIT,
+    PARTITION,
+    EXTRACT,
+    CONFIGURE,
+    BOOTLOADER;
+}
+
+public struct InstallerDaemon.Status {
+    Step step;
+    int percent;
+}
+
 public struct InstallerDaemon.Partition {
     string device_path;
 
@@ -113,7 +127,8 @@ public struct InstallerDaemon.InstallConfig {
     string keyboard_layout;
     string keyboard_variant;
     string lang;
-    uint8 flags;
+    bool modify_boot_order;
+    bool install_drivers;
 }
 
 [Flags]
