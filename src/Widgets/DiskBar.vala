@@ -89,7 +89,7 @@ public class Installer.DiskBar: Gtk.Grid {
         legend.add (legend_container);
 
         foreach (PartitionBar p in partitions) {
-            add_legend (p.path, p.get_size () * 512, Distinst.strfilesys (p.filesystem), p.vg, p.menu);
+            add_legend (p.path, p.get_size () * 512, p.filesystem.to_string (), p.vg, p.menu);
         }
 
         uint64 used = 0;
