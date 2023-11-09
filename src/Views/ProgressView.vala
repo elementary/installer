@@ -135,7 +135,7 @@ public class ProgressView : AbstractInstallerView {
         var config = InstallerDaemon.InstallConfig ();
         config.modify_boot_order = true;
         if (current_config.install_drivers) {
-            config.install_drivers = true;            
+            config.install_drivers = true;
         }
         config.hostname = Utils.get_hostname ();
         config.lang = "en_US.UTF-8";
