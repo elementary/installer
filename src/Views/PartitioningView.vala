@@ -53,11 +53,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
-            case Distinst.PartitionTable.MSDOS:
+            case MSDOS:
                 // Device is in BIOS mode, so we just require a root partition
                 required_description = _("You must at least select a <b>Root (/)</b> partition.");
                 break;
-            case Distinst.PartitionTable.GPT:
+            case GPT:
                 // Device is in EFI mode, so we also require a boot partition
                 required_description = _("You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/efi)</b> partition.");
                 break;
@@ -222,9 +222,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
-            case Distinst.PartitionTable.MSDOS:
+            case MSDOS:
                 break;
-            case Distinst.PartitionTable.GPT:
+            case GPT:
                 required |= Defined.EFI;
                 break;
         }

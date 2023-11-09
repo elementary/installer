@@ -33,8 +33,8 @@ public class InstallerDaemon.Daemon : GLib.Object {
         });
     }
 
-    public Distinst.PartitionTable bootloader_detect () throws GLib.Error {
-        return Distinst.bootloader_detect ();
+    public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
+        return to_common_usage_bootloader (Distinst.bootloader_detect ());
     }
 
     public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
@@ -584,6 +584,19 @@ public class InstallerDaemon.Daemon : GLib.Object {
                 return Distinst.FileSystem.LUKS;
             default:
                 return Distinst.FileSystem.NONE;
+        }
+    }
+
+    public InstallerDaemon.PartitionTable to_common_usage_bootloader (Distinst.PartitionTable bootloader) {
+        switch (bootloader) {
+            case GPT:
+                return InstallerDaemon.PartitionTable.GPT;
+            case MSDOS:
+                return InstallerDaemon.PartitionTable.MSDOS;
+            case NONE:
+                return InstallerDaemon.PartitionTable.NONE;
+            default:
+                return InstallerDaemon.PartitionTable.NONE;
         }
     }
 }

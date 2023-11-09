@@ -91,6 +91,12 @@ public struct InstallerDaemon.PartitionUsage {
     public uint64 value;
 }
 
+public enum InstallerDaemon.PartitionTable {
+    NONE,
+    GPT,
+    MSDOS;
+}
+
 public struct InstallerDaemon.Partition {
     string device_path;
 
