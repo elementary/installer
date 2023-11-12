@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
 "PO-Revision-Date: 2023-02-18 09:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/extra/"
@@ -20,69 +20,61 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: data/installer.appdata.xml.in:7
+#: data/installer.metainfo.xml.in:9
 msgid "Installer"
 msgstr "Installer"
 
-#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
+#: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Elementary OS installieren"
 
-#: data/installer.appdata.xml.in:10
+#: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "Step by Step Installer für elementary OS selbst."
 
-#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
-#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
-#: data/installer.appdata.xml.in:62
+#: data/installer.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:87 data/installer.metainfo.xml.in:98
+#: data/installer.metainfo.xml.in:113
 msgid "Improvements:"
 msgstr ""
 
-#: data/installer.appdata.xml.in:18
-msgid "Use large icons in views"
+#: data/installer.metainfo.xml.in:61
+msgid "Swipe to navigate back"
 msgstr ""
 
-#: data/installer.appdata.xml.in:19
-msgid "Add a custom icon for Before Installing view"
-msgstr ""
-
-#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
-#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
-#: data/installer.appdata.xml.in:66
+#: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:75
+#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:103
+#: data/installer.metainfo.xml.in:116
 msgid "Updated translations"
 msgstr "Aktualisierte Übersetzungen"
 
-#: data/installer.appdata.xml.in:29
+#: data/installer.metainfo.xml.in:89
+msgid "Use large icons in views"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:90
+msgid "Add a custom icon for Before Installing view"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:100
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 
-#: data/installer.appdata.xml.in:30
+#: data/installer.metainfo.xml.in:101
 msgid "Show all system requirements warnings on a single page"
 msgstr ""
 
-#: data/installer.appdata.xml.in:31
+#: data/installer.metainfo.xml.in:102
 msgid "Warn about installing developer builds"
 msgstr ""
 
-#: data/installer.appdata.xml.in:44
+#: data/installer.metainfo.xml.in:115
 msgid "Double the boot partition size for encrypted installs"
 msgstr ""
-
-#: data/installer.appdata.xml.in:54
-msgid "Warn about installing in a VM"
-msgstr ""
-
-#: data/installer.appdata.xml.in:64
-msgid "Avoid political naming of certain locales"
-msgstr ""
-
-#: data/installer.appdata.xml.in:65
-msgid "Fix styles for \"Unused\" disk partitions"
-msgstr ""
-
-#: data/installer.appdata.xml.in:95
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"

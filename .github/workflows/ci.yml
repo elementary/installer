@@ -10,12 +10,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [stable, unstable, development-target]
     container:
-      image: elementary/docker:odin-unstable
-    
+      image: ghcr.io/elementary/docker:${{ matrix.version }}
+
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Install Dependencies
       run: |
         apt update
@@ -27,11 +31,11 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    
+
     container:
       image: valalang/lint
-      
+
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Lint
       run: io.elementary.vala-lint -d .

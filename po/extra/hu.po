@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-12-06 15:09+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"PO-Revision-Date: 2023-08-05 15:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "extra/hu/>\n"
@@ -17,72 +17,66 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: data/installer.appdata.xml.in:7
+#: data/installer.metainfo.xml.in:9
 msgid "Installer"
 msgstr "Telepítő"
 
-#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
+#: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Elementary OS telepítése"
 
-#: data/installer.appdata.xml.in:10
+#: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "Telepítő az Elementary OS-hez lépésről-lépésre."
 
-#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
-#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
-#: data/installer.appdata.xml.in:62
+#: data/installer.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:87 data/installer.metainfo.xml.in:98
+#: data/installer.metainfo.xml.in:113
 msgid "Improvements:"
-msgstr ""
+msgstr "Fejlesztések:"
 
-#: data/installer.appdata.xml.in:18
-msgid "Use large icons in views"
-msgstr ""
+#: data/installer.metainfo.xml.in:61
+msgid "Swipe to navigate back"
+msgstr "Visszalépés csúsztatással"
 
-#: data/installer.appdata.xml.in:19
-msgid "Add a custom icon for Before Installing view"
-msgstr ""
-
-#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
-#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
-#: data/installer.appdata.xml.in:66
+#: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:75
+#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:103
+#: data/installer.metainfo.xml.in:116
 msgid "Updated translations"
 msgstr "Frissített fordítások"
 
-#: data/installer.appdata.xml.in:29
+#: data/installer.metainfo.xml.in:89
+msgid "Use large icons in views"
+msgstr "Nagyobb ikonok használata a nézetekben"
+
+#: data/installer.metainfo.xml.in:90
+msgid "Add a custom icon for Before Installing view"
+msgstr "Egyedi ikon hozzáadva a Telepítés előtt nézethez"
+
+#: data/installer.metainfo.xml.in:100
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
+"Egy információs sáv kijelzése az akkumulátorral kapcsolatban új lapra lépés "
+"helyett"
 
-#: data/installer.appdata.xml.in:30
+#: data/installer.metainfo.xml.in:101
 msgid "Show all system requirements warnings on a single page"
-msgstr ""
+msgstr "Minden rendszerkövetelmény-figyelmeztetés kijelzése egy lapon"
 
-#: data/installer.appdata.xml.in:31
+#: data/installer.metainfo.xml.in:102
 msgid "Warn about installing developer builds"
-msgstr ""
+msgstr "Figyelmeztetés fejlesztői verziók telepítéséről"
 
-#: data/installer.appdata.xml.in:44
+#: data/installer.metainfo.xml.in:115
 msgid "Double the boot partition size for encrypted installs"
-msgstr ""
-
-#: data/installer.appdata.xml.in:54
-msgid "Warn about installing in a VM"
-msgstr ""
-
-#: data/installer.appdata.xml.in:64
-msgid "Avoid political naming of certain locales"
-msgstr ""
-
-#: data/installer.appdata.xml.in:65
-msgid "Fix styles for \"Unused\" disk partitions"
-msgstr ""
-
-#: data/installer.appdata.xml.in:95
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
+msgstr "A boot partíció méretének duplázása a titkosított telepítéseknél"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"

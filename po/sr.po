@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
 "PO-Revision-Date: 2021-03-12 08:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/installer/"
@@ -21,11 +21,17 @@ msgstr ""
 msgid "Install %s"
 msgstr "Инсталирање „%s“"
 
-#: src/MainWindow.vala:267
+#: src/Application.vala:61
+#, fuzzy
+#| msgid "%s has been installed."
+msgid "operating system is being installed"
+msgstr "„%s“ је инсталиран."
+
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr "Повежи на мрежно напајање"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -45,16 +51,16 @@ msgstr "Поновно подизање система у режиму проб�
 msgid "Test mode switch user"
 msgstr "Промена корисника режима пробе"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:46
 msgid "Cancel Installation"
 msgstr "Откажи инсталацију"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Режим пробе"
 
@@ -113,11 +119,11 @@ msgstr "Процесор:"
 msgid "Memory:"
 msgstr "Меморија:"
 
-#: src/Views/DiskView.vala:48
+#: src/Views/DiskView.vala:46
 msgid "Select a Drive"
 msgstr "Изаберите диск"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:52
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -125,33 +131,79 @@ msgstr ""
 "Ово ће обрисати све податке на изабраном диску. Ако нисте направили резерву "
 "ваших података, можете отказати инсталацију и користити демо режим."
 
-#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Добављам текуће подешавање…"
 
-#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Следеће"
+
+#: src/Views/DriversView.vala:27
+#, fuzzy
+#| msgid "Partitioning Drive"
+msgid "Additional Drivers"
+msgstr "Партициониран уређај"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
+"not function properly without additional drivers. Most devices do not "
+"require additional drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+
+#: src/Views/DriversView.vala:54
+msgid "An Internet connection is required to install NVIDIA® graphics drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but an "
+"Internet connection will be required for all drivers."
+msgstr ""
+
+#: src/Views/DriversView.vala:72
+msgid ""
+"Include third-party proprietary drivers when installing. I agree to their "
+"respective licenses and terms of use."
+msgstr ""
+
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Назад"
+
+#: src/Views/DriversView.vala:104
 msgid "Erase and Install"
 msgstr "Обриши и инсталирај"
 
-#: src/Views/EncryptView.vala:28
+#: src/Views/EncryptView.vala:26
 #, fuzzy
 #| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Не шифруј"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "Шифровање диска"
 
-#: src/Views/EncryptView.vala:55
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
 
-#: src/Views/EncryptView.vala:65
+#: src/Views/EncryptView.vala:66
 #, fuzzy
 #| msgid ""
 #| "Data will be protected from others with physical access to this device."
@@ -160,7 +212,7 @@ msgid ""
 "when it is shut down."
 msgstr "Подаци ће бити заштићени од других са физичким приступом овом уређају."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:75
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -168,7 +220,7 @@ msgstr ""
 "Лозинка шифровања ће бити затражена при сваком укључивању овог уређаја. "
 "Забележите је на неком безбедном месту."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:84
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -176,7 +228,7 @@ msgstr ""
 "Уграђена или УСБ тастатура биће затражена за уписивање лозинке шифровања "
 "сваког пута када се овај уређај укључи."
 
-#: src/Views/EncryptView.vala:103
+#: src/Views/EncryptView.vala:104
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -186,38 +238,33 @@ msgstr ""
 "податке.</b> Ово је јединствена лозинка за овај уређај, а не лозинка за ваш "
 "кориснички налог."
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:114
 msgid "Choose Encryption Password"
 msgstr "Изабери лозинку шифровања"
 
-#: src/Views/EncryptView.vala:127
+#: src/Views/EncryptView.vala:128
 msgid "Confirm Password"
 msgstr "Потврди лозинку"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
-msgid "Back"
-msgstr "Назад"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Choose Password"
 msgstr "Изабери лозинку"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:192
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
 msgstr "Изабери лозинку шифровања"
 
-#: src/Views/EncryptView.vala:260
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Лозинке се не поклапају"
 
-#: src/Views/ErrorView.vala:31
+#: src/Views/ErrorView.vala:32
 msgid "Could Not Install"
 msgstr "Не могу да инсталирам"
 
-#: src/Views/ErrorView.vala:36
+#: src/Views/ErrorView.vala:37
 #, fuzzy, c-format
 #| msgid ""
 #| "Installing %s failed, possibly due to a hardware error. Your device may "
@@ -229,63 +276,63 @@ msgstr ""
 "Инсталирање „%s“ није успело, вероватно због грешке у хардверу. Ваш уређај "
 "не може поново да се покрене исправно. Можете покушати следеће:"
 
-#: src/Views/ErrorView.vala:47
+#: src/Views/ErrorView.vala:48
 #, fuzzy
 #| msgid "• Try the installation again"
 msgid "Try the installation again"
 msgstr "• Да покушате поновну инсталацију"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:59
 #, fuzzy
 #| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "• Да користите демо режим и покушате ручну поправку"
 
-#: src/Views/ErrorView.vala:68
+#: src/Views/ErrorView.vala:69
 #, fuzzy
 #| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
 msgstr "• Да поново покренете уређај да бисте подигли систем са другог диска"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:79
 msgid "Details"
 msgstr "Појединости"
 
-#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Поново покрени уређај"
 
-#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Пробај демо режим"
 
-#: src/Views/ErrorView.vala:117
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Пробај поновну инсталацију"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:30
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Распоред тастатуре"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:38
 msgid "Type to test your layout"
 msgstr "Упишите нешто да испробате распоред тастатуре"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:41
 msgid "Show keyboard layout"
 msgstr "Прикажи распоред тастатуре"
 
-#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Изабери"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:124
 msgid "Default"
 msgstr "Основно"
 
-#: src/Views/KeyboardLayoutView.vala:133
+#: src/Views/KeyboardLayoutView.vala:131
 msgid "Input Language"
 msgstr "Језик уноса"
 
@@ -356,22 +403,22 @@ msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Партициониран уређај"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Извлачим датотеке"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Подешавам систем"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Завршавам инсталацију"
 
@@ -411,10 +458,6 @@ msgid ""
 msgstr ""
 "Направите, промените величину или другачије управљајте партицијама ручно. "
 "Ова метода може довести до губитка података."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Следеће"
 
 #: src/Views/TryInstallView.vala:114
 #, fuzzy

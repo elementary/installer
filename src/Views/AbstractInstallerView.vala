@@ -17,7 +17,6 @@
 
 public abstract class AbstractInstallerView : Gtk.Grid {
     public bool cancellable { get; construct; }
-    public unowned Gtk.Widget? previous_view { get; set; }
 
     public signal void cancel ();
 
@@ -63,6 +62,8 @@ public abstract class AbstractInstallerView : Gtk.Grid {
 
         orientation = Gtk.Orientation.VERTICAL;
         row_spacing = 24;
+        margin_top = 12;
+        margin_bottom = 12;
         add (content_area);
         add (action_area);
     }

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-01-09 20:41+0000\n"
-"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"PO-Revision-Date: 2023-08-30 12:08+0000\n"
+"Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
 "installer/cs/>\n"
 "Language: cs\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -20,11 +20,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "Nainstalovat %s"
 
-#: src/MainWindow.vala:267
+#: src/Application.vala:61
+msgid "operating system is being installed"
+msgstr "operační systém se instaluje"
+
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr "Připojte zdroj napájení"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -44,34 +48,34 @@ msgstr "Restartovat v rámci testovacího režimu"
 msgid "Test mode switch user"
 msgstr "Přepnout uživatele v rámci testovacího režimu"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:46
 msgid "Cancel Installation"
 msgstr "Zrušit instalaci"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Testovací režim"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Zkusit nainstalovat znovu"
+msgstr "Před instalací"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Verze před vydáním"
 
 #: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Instalujte pouze na zařízení určená pro vývoj. <b>Nebudete mít možnost "
+"aktualizovat na stabilní verzi</b>."
 
 #: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
@@ -81,6 +85,7 @@ msgstr "Virtuální stroj"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Některé části %s mohou běžet pomalu, zamrzat nebo nemusí fungovat správně."
 
 #: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
@@ -88,13 +93,11 @@ msgstr "Váš počítač může být příliš pomalý"
 
 #: src/Views/CheckView.vala:69
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Toto může způsobit pomalý běh nebo zamrznutí."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Nainstalovat %s"
+msgstr "Přesto nainstalovat"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
@@ -112,11 +115,11 @@ msgstr "Procesor:"
 msgid "Memory:"
 msgstr "Operační paměť:"
 
-#: src/Views/DiskView.vala:48
+#: src/Views/DiskView.vala:46
 msgid "Select a Drive"
 msgstr "Vybrat jednotku"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:52
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -124,23 +127,78 @@ msgstr ""
 "Toto smaže všechna data na vybrané jednotce. Pokud jste si svá data ještě "
 "nezazálohovali, můžete instalaci přerušit a použít Režim pro ukázku."
 
-#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Zjišťování stávajícího uspořádání…"
 
-#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Další"
+
+#: src/Views/DriversView.vala:27
+msgid "Additional Drivers"
+msgstr "Dodatečné ovladače"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
+"not function properly without additional drivers. Most devices do not "
+"require additional drivers."
+msgstr ""
+"Broadcom® Wi-Fi adaptéry, NVIDIA® grafiky, a některé virtuální počítače "
+"nemusejí správně fungovat bez dodatečných ovladačů. Většina zařízení "
+"nepotřebuje dodatečné ovladače."
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+"Proprietární ovladače obsahují soukromý kód, který nelze zkontrolovat. "
+"Bezpečnost a další aktualizace závisí na dodavateli ovladače."
+
+#: src/Views/DriversView.vala:54
+msgid "An Internet connection is required to install NVIDIA® graphics drivers."
+msgstr ""
+"Internetové připojení je vyžadováno pro instalaci NVIDIA® grafických "
+"ovladačů."
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but an "
+"Internet connection will be required for all drivers."
+msgstr ""
+"Proprietární ovladače mohou být nainstalovány později skrze Centrum "
+"aplikací, ale internetové připojení bude vyžadováno pro všechny ovladače."
+
+#: src/Views/DriversView.vala:72
+msgid ""
+"Include third-party proprietary drivers when installing. I agree to their "
+"respective licenses and terms of use."
+msgstr ""
+"Zahrnout proprietární ovladače třetích stran při instalaci. Souhlasím s "
+"jejich licencemi a podmínkami použití."
+
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Zpět"
+
+#: src/Views/DriversView.vala:104
 msgid "Erase and Install"
 msgstr "Vymazat a nainstalovat"
 
-#: src/Views/EncryptView.vala:28
+#: src/Views/EncryptView.vala:26
 msgid "Don’t Encrypt"
 msgstr "Nešifrovat"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "Šifrovat jednotku"
 
-#: src/Views/EncryptView.vala:55
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
@@ -148,7 +206,7 @@ msgstr ""
 "Pokud potřebujete vyšší zabezpečení, zapněte šifrování úložiště. Nejprve se "
 "ale ujistěte, že rozumíte následujícímu:"
 
-#: src/Views/EncryptView.vala:65
+#: src/Views/EncryptView.vala:66
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -156,7 +214,7 @@ msgstr ""
 "Data budou chráněna před ostatními, kteří mají k tomuto počítači fyzický "
 "přístup, pouze pokud je zařízení vypnuté."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:75
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -164,7 +222,7 @@ msgstr ""
 "Šifrovací heslo bude vyžadováno pokaždé, když tento počítač zapnete. Uložte "
 "si ho někde bezpečně."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:84
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -172,7 +230,7 @@ msgstr ""
 "Vestavěná nebo USB klávesnice bude potřeba pro zadání šifrovacího hesla při "
 "každém zapnutí počítače."
 
-#: src/Views/EncryptView.vala:103
+#: src/Views/EncryptView.vala:104
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -182,36 +240,31 @@ msgstr ""
 "se o samostatné heslo k celému počítači, ne heslo k vašemu uživatelskému "
 "účtu."
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:114
 msgid "Choose Encryption Password"
 msgstr "Zvolte šifrovací heslo"
 
-#: src/Views/EncryptView.vala:127
+#: src/Views/EncryptView.vala:128
 msgid "Confirm Password"
 msgstr "Potvrďte heslo"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
-msgid "Back"
-msgstr "Zpět"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Choose Password"
 msgstr "Zvolte si heslo"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:192
 msgid "Set Encryption Password"
 msgstr "Nastavte šifrovací heslo"
 
-#: src/Views/EncryptView.vala:260
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Zadání hesla se neshodují"
 
-#: src/Views/ErrorView.vala:31
+#: src/Views/ErrorView.vala:32
 msgid "Could Not Install"
 msgstr "Nelze nainstalovat"
 
-#: src/Views/ErrorView.vala:36
+#: src/Views/ErrorView.vala:37
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -220,55 +273,55 @@ msgstr ""
 "Instalace %s se nezdařila, pravděpodobně kvůli hardwarové chybě. Zařízení se "
 "nemusí restartovat správně. Můžete zkusit následující řešení:"
 
-#: src/Views/ErrorView.vala:47
+#: src/Views/ErrorView.vala:48
 msgid "Try the installation again"
 msgstr "Zkuste instalaci znovu"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:59
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Použijte Režim pro ukázku a pokuste se problémy opravit ručně"
 
-#: src/Views/ErrorView.vala:68
+#: src/Views/ErrorView.vala:69
 msgid "Restart the device and boot from another drive"
 msgstr "Restartujte zařízení a načtěte systém z jiné diskové jednotky"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:79
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Restartovat zařízení"
 
-#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Vyzkoušet Režim pro ukázku"
 
-#: src/Views/ErrorView.vala:117
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Zkusit nainstalovat znovu"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:30
 msgid "Select Keyboard Layout"
 msgstr "Vyberte rozložení klávesnice"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:38
 msgid "Type to test your layout"
 msgstr "Vyzkoušejte rozvržení klávesnice psaním"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:41
 msgid "Show keyboard layout"
 msgstr "Zobrazit rozložení klávesnice"
 
-#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Vybrat"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:124
 msgid "Default"
 msgstr "Výchozí"
 
-#: src/Views/KeyboardLayoutView.vala:133
+#: src/Views/KeyboardLayoutView.vala:131
 msgid "Input Language"
 msgstr "Jazyk vstupu z klávesnice"
 
@@ -339,22 +392,22 @@ msgid "Hide log"
 msgstr "Skrýt protokol"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Vytvářejí se oddíly na jednotce"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Rozbalují se soubory"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Nastavuje se systém"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Dokončuje se instalace"
 
@@ -391,10 +444,6 @@ msgid ""
 msgstr ""
 "Vytvořte oddíly, měňte jejich velikost, nebo jinak spravujte ručně. Tato "
 "metoda může vést ke ztrátě dat."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Další"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"

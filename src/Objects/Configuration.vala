@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016 elementary LLC. (https://elementary.io)
+ * Copyright 2016-2023 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,4 +35,5 @@ public class Configuration : GLib.Object {
     public string disk { get; set; }
     public Gee.ArrayList<Installer.Mount>? mounts { get; set; default = null; }
     public Gee.ArrayList<InstallerDaemon.LuksCredentials?>? luks { get; set; default = null; }
+    public bool install_drivers { get; set; default = false; }
 }

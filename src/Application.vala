@@ -39,8 +39,7 @@ public class Installer.App : Gtk.Application {
             default_height = 600,
             default_width = 850,
             icon_name = application_id,
-            title = _("Install %s").printf (Utils.get_pretty_name ()),
-            window_position = Gtk.WindowPosition.CENTER_ALWAYS
+            title = _("Install %s").printf (Utils.get_pretty_name ())
         };
         window.show_all ();
         add_window (window);
@@ -56,7 +55,11 @@ public class Installer.App : Gtk.Application {
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
 
-        Inhibitor.get_instance ().inhibit ();
+        inhibit (
+            get_active_window (),
+            Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
+            _("operating system is being installed")
+        );
     }
 }
 

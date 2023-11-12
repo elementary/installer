@@ -16,8 +16,6 @@
  */
 
 public class KeyboardLayoutView : AbstractInstallerView {
-    public signal void next_step ();
-
     private VariantWidget input_variant_widget;
     private GLib.Settings keyboard_settings;
 
@@ -87,7 +85,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             next_button.activate ();
         });
 
-        back_button.clicked.connect (() => ((Gtk.Stack) get_parent ()).visible_child = previous_view);
+        back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (BACK));
 
         next_button.clicked.connect (() => {
             unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
@@ -112,7 +110,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 return;
             }
 
-            next_step ();
+            ((Hdy.Deck) get_parent ()).navigate (FORWARD);
         });
 
         input_variant_widget.main_listbox.row_activated.connect ((row) => {
