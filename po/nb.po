@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-12-18 22:25+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"PO-Revision-Date: 2023-08-25 03:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/installer/nb/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:42
@@ -20,11 +20,17 @@ msgstr ""
 msgid "Install %s"
 msgstr "Installer %s"
 
-#: src/MainWindow.vala:267
+#: src/Application.vala:61
+#, fuzzy
+#| msgid "%s has been installed"
+msgid "operating system is being installed"
+msgstr "%s har blitt installert"
+
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr "Koble til en strømkilde"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -44,16 +50,16 @@ msgstr "Testmodus-omstart"
 msgid "Test mode switch user"
 msgstr "Testmodus-brukerbytte"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:46
 msgid "Cancel Installation"
 msgstr "Avbryt installasjon"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Prøv demo-modus"
 
@@ -115,11 +121,11 @@ msgstr "Prosessor:"
 msgid "Memory:"
 msgstr "Minne:"
 
-#: src/Views/DiskView.vala:48
+#: src/Views/DiskView.vala:46
 msgid "Select a Drive"
 msgstr "Velg en disk"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:52
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -128,25 +134,84 @@ msgstr ""
 "sikkerhetskopiert dataene dine, kan du avbryte installasjonen og bruke demo-"
 "modus."
 
-#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Henter gjeldende oppsett…"
 
-#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Neste"
+
+#: src/Views/DriversView.vala:27
+#, fuzzy
+#| msgid "Partitioning Drive"
+msgid "Additional Drivers"
+msgstr "Partisjonerer enhet"
+
+#: src/Views/DriversView.vala:32
+#, fuzzy
+msgid ""
+"Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
+"not function properly without additional drivers. Most devices do not "
+"require additional drivers."
+msgstr ""
+"Broadcom® Wi-Fi-kort NVIDIA®-grafikk, og noen virutelle maskiner kan slutte "
+"å fungere uten ytterligere driverrutiner. De fleste enheter krever ikke "
+"dette."
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+"Ufrie driverrutiner inneholder privat kode som ikke kan gjennomses. "
+"Sikkerhet og oppdateringer avhenger av tilbyderen."
+
+#: src/Views/DriversView.vala:54
+msgid "An Internet connection is required to install NVIDIA® graphics drivers."
+msgstr ""
+"Tilkobling til Internett kreves for å installere driverrutiner for "
+"NVIDIA®-grafikk."
+
+#: src/Views/DriversView.vala:65
+#, fuzzy
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but an "
+"Internet connection will be required for all drivers."
+msgstr ""
+"Ufrie drivere kan installeres senere gjennom AppSenter, men en tilkobling "
+"til Internett kreves fremdeles for innhenting av alle driverrutiner."
+
+#: src/Views/DriversView.vala:72
+msgid ""
+"Include third-party proprietary drivers when installing. I agree to their "
+"respective licenses and terms of use."
+msgstr ""
+"Inkluder ufrie drivere fra tredjeparter under installasjon. Jeg samtykker "
+"til respektive lisenser og bruksvilkår."
+
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Tilbake"
+
+#: src/Views/DriversView.vala:104
 msgid "Erase and Install"
 msgstr "Slett og installer"
 
-#: src/Views/EncryptView.vala:28
+#: src/Views/EncryptView.vala:26
 msgid "Don’t Encrypt"
 msgstr "Ikke krypter"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "Skru på diskkryptering"
 
-#: src/Views/EncryptView.vala:55
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
@@ -154,7 +219,7 @@ msgstr ""
 "Krypter denne enhetens lagring hvis det kreves for ekstra beskyttelse, men "
 "forsikre deg om at du forstår følgende:"
 
-#: src/Views/EncryptView.vala:65
+#: src/Views/EncryptView.vala:66
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -162,7 +227,7 @@ msgstr ""
 "Data vil kun bli beskyttes fra andre med fysisk tilgang til denne enheten "
 "når den slås av."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:75
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -170,7 +235,7 @@ msgstr ""
 "Krypteringspassordet kreves hver gang du skrur på denne enheten. Lagre det "
 "en trygg plass."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:84
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -178,7 +243,7 @@ msgstr ""
 "Et innebygd- eller USB-tastatur kreves for å skrive krypteringspassordet "
 "hver gang denne enheten skrus på."
 
-#: src/Views/EncryptView.vala:103
+#: src/Views/EncryptView.vala:104
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -188,36 +253,31 @@ msgstr ""
 "</b> Dette er et unikt passord for denne enheten, ikke passordet til "
 "brukerkontoen din."
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:114
 msgid "Choose Encryption Password"
 msgstr "Velg krypteringspassord"
 
-#: src/Views/EncryptView.vala:127
+#: src/Views/EncryptView.vala:128
 msgid "Confirm Password"
 msgstr "Bekreft passord"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
-msgid "Back"
-msgstr "Tilbake"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Choose Password"
 msgstr "Velg passord"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:192
 msgid "Set Encryption Password"
 msgstr "Sett krypteringspassord"
 
-#: src/Views/EncryptView.vala:260
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Passordene samsvarer ikke"
 
-#: src/Views/ErrorView.vala:31
+#: src/Views/ErrorView.vala:32
 msgid "Could Not Install"
 msgstr "Kunne ikke installere"
 
-#: src/Views/ErrorView.vala:36
+#: src/Views/ErrorView.vala:37
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -226,55 +286,55 @@ msgstr ""
 "Installasjonen av %s mislyktes antagelig som følge av en maskinvarefeil. "
 "Enheten din kan ha problemer med å starte på nytt. Prøv én av følgende:"
 
-#: src/Views/ErrorView.vala:47
+#: src/Views/ErrorView.vala:48
 msgid "Try the installation again"
 msgstr "Prøv å installere igjen"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:59
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Bruk demo-modus for å prøve å tilbakestille manuelt"
 
-#: src/Views/ErrorView.vala:68
+#: src/Views/ErrorView.vala:69
 msgid "Restart the device and boot from another drive"
 msgstr "Start enheten på nytt og start opp igjen fra en annen lagringsstasjon"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:79
 msgid "Details"
 msgstr "Detaljer"
 
-#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Start maskinen på nytt"
 
-#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Prøv demo-modus"
 
-#: src/Views/ErrorView.vala:117
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Prøv å installere igjen"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:30
 msgid "Select Keyboard Layout"
 msgstr "Velg tastaturoppsett"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:38
 msgid "Type to test your layout"
 msgstr "Skriv for å teste ditt oppsett"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:41
 msgid "Show keyboard layout"
 msgstr "Vis tastaturoppsett"
 
-#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Velg"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:124
 msgid "Default"
 msgstr "Forvalg"
 
-#: src/Views/KeyboardLayoutView.vala:133
+#: src/Views/KeyboardLayoutView.vala:131
 msgid "Input Language"
 msgstr "Inndataspråk"
 
@@ -345,22 +405,22 @@ msgid "Hide log"
 msgstr "Skjul logg"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Partisjonerer enhet"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Pakker ut filer"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Setter opp systemet"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Fullfører installasjonen"
 
@@ -397,10 +457,6 @@ msgid ""
 msgstr ""
 "Opprett, endre størrelse, og på annet vis behandle partisjoner. Denne "
 "metoden kan lede til datatap."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Neste"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"

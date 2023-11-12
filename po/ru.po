@@ -2,18 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-12-18 22:25+0000\n"
-"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"PO-Revision-Date: 2023-08-25 03:04+0000\n"
+"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
 "installer/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:42
@@ -21,11 +21,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "Установка %s"
 
-#: src/MainWindow.vala:267
+#: src/Application.vala:61
+msgid "operating system is being installed"
+msgstr "операционная система устанавливается"
+
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr "Подключитесь к источнику питания"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -45,16 +49,16 @@ msgstr "Перезагрузить тестовый режим"
 msgid "Test mode switch user"
 msgstr "Сменить пользователя в тестовом режиме"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:46
 msgid "Cancel Installation"
 msgstr "Отменить установку"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Режим тестирования"
 
@@ -113,11 +117,11 @@ msgstr "Процессор:"
 msgid "Memory:"
 msgstr "Память:"
 
-#: src/Views/DiskView.vala:48
+#: src/Views/DiskView.vala:46
 msgid "Select a Drive"
 msgstr "Выберите диск"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:52
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -125,23 +129,78 @@ msgstr ""
 "Это сотрёт все данные на выбранном диске. Если вы не создали резервную копию "
 "данных, вы можете отменить установку и перейти в демонстрационный режим."
 
-#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Получение текущей конфигурации…"
 
-#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "Далее"
+
+#: src/Views/DriversView.vala:27
+msgid "Additional Drivers"
+msgstr "Дополнительные драйверы"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
+"not function properly without additional drivers. Most devices do not "
+"require additional drivers."
+msgstr ""
+"Wi-Fi адаптеры Broadcom®, графические карты NVIDIA® и некоторые виртуальные "
+"машины могут функционировать некорректно без проприетарных драйверов. "
+"Большинство устройств не требует дополнительных драйверов."
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+"Проприетарные драйверы содержат закрытый код, который нельзя просмотреть. "
+"Безопасность и обновления зависят от поставщика драйвера."
+
+#: src/Views/DriversView.vala:54
+msgid "An Internet connection is required to install NVIDIA® graphics drivers."
+msgstr ""
+"Для установки драйверов для графических карт NVIDIA® необходимо "
+"Интернет-соединение."
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but an "
+"Internet connection will be required for all drivers."
+msgstr ""
+"Проприетарные драйверы можно установить позже через AppCenter, но для этого "
+"потребуется Интернет-соединение."
+
+#: src/Views/DriversView.vala:72
+msgid ""
+"Include third-party proprietary drivers when installing. I agree to their "
+"respective licenses and terms of use."
+msgstr ""
+"Установить сторонние проприетарные драйверы. Я соглашаюсь с соответствующими "
+"лицензиями и условиями использования."
+
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "Назад"
+
+#: src/Views/DriversView.vala:104
 msgid "Erase and Install"
 msgstr "Стереть и установить"
 
-#: src/Views/EncryptView.vala:28
+#: src/Views/EncryptView.vala:26
 msgid "Don’t Encrypt"
 msgstr "Не шифровать"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "Включить шифрование диска"
 
-#: src/Views/EncryptView.vala:55
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
@@ -149,7 +208,7 @@ msgstr ""
 "При необходимости зашифруйте диск этого устройства для дополнительной "
 "защиты, но убедитесь, что понимаете, что:"
 
-#: src/Views/EncryptView.vala:65
+#: src/Views/EncryptView.vala:66
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -157,7 +216,7 @@ msgstr ""
 "Данные будут защищены от других при физическому доступу к этому устройству, "
 "только когда оно выключено."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:75
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -165,7 +224,7 @@ msgstr ""
 "При каждом включении устройства потребуется пароль шифрования. Храните его в "
 "безопасном месте."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:84
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -173,46 +232,41 @@ msgstr ""
 "Для ввода пароля шифрования при каждом включении этого устройства, "
 "потребуется встроенная или USB-клавиатура."
 
-#: src/Views/EncryptView.vala:103
+#: src/Views/EncryptView.vala:104
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
 "Если вы забудете пароль шифрования, <b>вы не сможете восстановить данные.</"
-"b> Это уникальный пароль для этого устройства, а не пароль для учетной "
+"b> Это уникальный пароль для этого устройства, а не пароль для учётной "
 "записи пользователя."
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:114
 msgid "Choose Encryption Password"
 msgstr "Выберите пароль шифрования"
 
-#: src/Views/EncryptView.vala:127
+#: src/Views/EncryptView.vala:128
 msgid "Confirm Password"
 msgstr "Подтвердите пароль"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
-msgid "Back"
-msgstr "Назад"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Choose Password"
 msgstr "Введите пароль"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:192
 msgid "Set Encryption Password"
 msgstr "Установите пароль шифрования"
 
-#: src/Views/EncryptView.vala:260
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "Пароли не совпадают"
 
-#: src/Views/ErrorView.vala:31
+#: src/Views/ErrorView.vala:32
 msgid "Could Not Install"
 msgstr "Не удалось установить"
 
-#: src/Views/ErrorView.vala:36
+#: src/Views/ErrorView.vala:37
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -221,55 +275,55 @@ msgstr ""
 "Установка %s не удалась, возможно, из-за аппаратной ошибки. Устройство может "
 "не перезагрузиться должным образом. Вы можете попробовать следующее:"
 
-#: src/Views/ErrorView.vala:47
+#: src/Views/ErrorView.vala:48
 msgid "Try the installation again"
 msgstr "Попробовать установить заново"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:59
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Использовать демонстрационный режим и попробовать восстановить вручную"
 
-#: src/Views/ErrorView.vala:68
+#: src/Views/ErrorView.vala:69
 msgid "Restart the device and boot from another drive"
 msgstr "Перезагрузить устройство для загрузки с другого диска"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:79
 msgid "Details"
 msgstr "Подробнее"
 
-#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Перезагрузить устройство"
 
-#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Демонстрационный режим"
 
-#: src/Views/ErrorView.vala:117
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Попробовать установить заново"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:30
 msgid "Select Keyboard Layout"
 msgstr "Выберите раскладку клавиатуры"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:38
 msgid "Type to test your layout"
 msgstr "Введите что-то для проверки раскладки"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:41
 msgid "Show keyboard layout"
 msgstr "Показать раскладку клавиатуры"
 
-#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "Выбрать"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:124
 msgid "Default"
 msgstr "По умолчанию"
 
-#: src/Views/KeyboardLayoutView.vala:133
+#: src/Views/KeyboardLayoutView.vala:131
 msgid "Input Language"
 msgstr "Язык ввода"
 
@@ -340,22 +394,22 @@ msgid "Hide log"
 msgstr "Скрыть журнал"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Разметка диска"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Извлечение файлов"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Настройка системы"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Завершение установки"
 
@@ -392,10 +446,6 @@ msgid ""
 msgstr ""
 "Создание и изменение разделов вручную. Этот способ может привести к потере "
 "данных."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "Далее"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -516,6 +566,13 @@ msgstr "Файловая система:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "По умолчанию (ext4)"
+
+#~ msgid ""
+#~ "Proprietary drivers are subject to their own license terms. By "
+#~ "installing, you agree to their terms of use."
+#~ msgstr ""
+#~ "На проприетарные драйверы распространяются их собственные лицензионные "
+#~ "условия. Устанавливая, вы соглашаетесь с их условиями использования."
 
 #~ msgid "System Requirements"
 #~ msgstr "Системные требования"

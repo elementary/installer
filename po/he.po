@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2022-12-18 22:25+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"PO-Revision-Date: 2023-10-05 22:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -20,11 +20,15 @@ msgstr ""
 msgid "Install %s"
 msgstr "התקנת %s"
 
-#: src/MainWindow.vala:267
+#: src/Application.vala:61
+msgid "operating system is being installed"
+msgstr "מערכת ההפעלה מותקנת"
+
+#: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
 msgstr "נא לחבר למקור חשמל"
 
-#: src/MainWindow.vala:268
+#: src/MainWindow.vala:263
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -42,16 +46,16 @@ msgstr "הפעלה מחדש במצב בדיקה"
 msgid "Test mode switch user"
 msgstr "החלפת משתמש במצב הדגמה"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:223
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
+#: src/Views/AbstractInstallerView.vala:46
 msgid "Cancel Installation"
 msgstr "ביטול ההתקנה"
 
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "מצב התנסות"
 
@@ -108,11 +112,11 @@ msgstr "מעבד:"
 msgid "Memory:"
 msgstr "זיכרון:"
 
-#: src/Views/DiskView.vala:48
+#: src/Views/DiskView.vala:46
 msgid "Select a Drive"
 msgstr "בחירת כונן"
 
-#: src/Views/DiskView.vala:54
+#: src/Views/DiskView.vala:52
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -120,42 +124,95 @@ msgstr ""
 "פעולה זו תמחק את כל הנתונים על הכונן הנבחר. אם לא גיבית את הנתונים שלך, ניתן "
 "לבטל את ההתקנה ולהשתמש במצב הדגמה."
 
-#: src/Views/DiskView.vala:78 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "התצורה הנוכחית מתקבלת…"
 
-#: src/Views/DiskView.vala:114 src/Views/PartitioningView.vala:123
+#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
+#: src/Views/TryInstallView.vala:88
+msgid "Next"
+msgstr "הבא"
+
+#: src/Views/DriversView.vala:27
+msgid "Additional Drivers"
+msgstr "מנהלי התקנים נוספים"
+
+#: src/Views/DriversView.vala:32
+msgid ""
+"Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
+"not function properly without additional drivers. Most devices do not "
+"require additional drivers."
+msgstr ""
+"מתאמים אלחוטיים של Broadcom®‎, מאיצים גרפיים של NVIDIA®‎ ומכונות וירטואליות "
+"כאלה ואחרות לא יעבדו היטב ללא מנהלי התקנים מתאימים. רוב ההתקנים לא דורשים "
+"מנהלי התקנים נוספים."
+
+#: src/Views/DriversView.vala:43
+msgid ""
+"Proprietary drivers contain private code that can't be reviewed. Security "
+"and other updates are dependent on the driver vendor."
+msgstr ""
+"מנהלי התקנים קנייניים מכילים קוד פרטים שאי אפשר לסקור אותו. עדכוני אבטחה "
+"ואחרים תלויים בספק מנהל ההתקן."
+
+#: src/Views/DriversView.vala:54
+msgid "An Internet connection is required to install NVIDIA® graphics drivers."
+msgstr "צריך חיבור לאינטרנט כדי להתקין מנהלי התקנים של NVIDIA®‎."
+
+#: src/Views/DriversView.vala:65
+msgid ""
+"Proprietary drivers can be installed later through AppCenter, but an "
+"Internet connection will be required for all drivers."
+msgstr ""
+"אפשר להתקין מנהלי התקנים קנייניים מאוחר יותר דרך מרכז היישומים אך צריך חיבור "
+"לאינטרנט לכל מנהלי ההתקנים."
+
+#: src/Views/DriversView.vala:72
+msgid ""
+"Include third-party proprietary drivers when installing. I agree to their "
+"respective licenses and terms of use."
+msgstr ""
+"לכלול מנהלי התקנים קנייניים מגופי צד־שלישי בעת ההתקנה. הרישיונות ותנאי "
+"השימוש שלהם מוסכמים עלי באשר הם."
+
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
+#: src/Views/TryInstallView.vala:86
+msgid "Back"
+msgstr "חזרה"
+
+#: src/Views/DriversView.vala:104
 msgid "Erase and Install"
 msgstr "למחוק ולהתקין"
 
-#: src/Views/EncryptView.vala:28
+#: src/Views/EncryptView.vala:26
 msgid "Don’t Encrypt"
 msgstr "לא להצפין"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "הפעלת הצפנת כונן"
 
-#: src/Views/EncryptView.vala:55
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
 "ניתן להצפין את כונן המכשיר הזה אם זה נחוץ לשיפור האבטחה, אך חשוב להבין:"
 
-#: src/Views/EncryptView.vala:65
+#: src/Views/EncryptView.vala:66
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr "הנתונים יהיו מוגנים רק מפני זרים עם גישה פיזית למכשיר הזה כשהוא כבוי."
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:75
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr "ססמת ההצפנה תידרש עם כל הפעלה של מכשיר זה. יש לאחסן אותה במקום בטוח."
 
-#: src/Views/EncryptView.vala:83
+#: src/Views/EncryptView.vala:84
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -163,7 +220,7 @@ msgstr ""
 "נדרשת מקלדת מובנית או ב־USB כדי להקליד את ססמת ההצפנה עם כל הפעלה של המכשיר "
 "הזה."
 
-#: src/Views/EncryptView.vala:103
+#: src/Views/EncryptView.vala:104
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -172,36 +229,31 @@ msgstr ""
 "<b>לא תהיה אפשרות לשחזר את הנתונים.</b> במקרה שססמת ההצפנה שלך אבדה. ססמה זו "
 "היא ייחודית להתקן, זאת אינה הססמה של חשבון המשתמש שלך."
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:114
 msgid "Choose Encryption Password"
 msgstr "נא לבחור ססמת הצפנה"
 
-#: src/Views/EncryptView.vala:127
+#: src/Views/EncryptView.vala:128
 msgid "Confirm Password"
 msgstr "אימות ססמה"
 
-#: src/Views/EncryptView.vala:166 src/Views/KeyboardLayoutView.vala:60
-#: src/Views/PartitioningView.vala:121 src/Views/TryInstallView.vala:86
-msgid "Back"
-msgstr "חזרה"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:169
 msgid "Choose Password"
 msgstr "נא לבחור ססמה"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:192
 msgid "Set Encryption Password"
 msgstr "הגדרת ססמת הצפנה"
 
-#: src/Views/EncryptView.vala:260
+#: src/Views/EncryptView.vala:261
 msgid "Passwords do not match"
 msgstr "הססמאות אינן תואמות"
 
-#: src/Views/ErrorView.vala:31
+#: src/Views/ErrorView.vala:32
 msgid "Could Not Install"
 msgstr "לא ניתן להתקין"
 
-#: src/Views/ErrorView.vala:36
+#: src/Views/ErrorView.vala:37
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -210,55 +262,55 @@ msgstr ""
 "ההתקנה של %s נכשלה, כנראה עקב תקלת חומרה. יתכן שההתקן לא יופעל מחדש כראוי. "
 "ניתן לנסות להיעזר באחת ההצעות הבאות:"
 
-#: src/Views/ErrorView.vala:47
+#: src/Views/ErrorView.vala:48
 msgid "Try the installation again"
 msgstr "לנסות להתקין שוב"
 
-#: src/Views/ErrorView.vala:58
+#: src/Views/ErrorView.vala:59
 msgid "Use Demo Mode and try to manually recover"
 msgstr "להשתמש במצב הדגמה ולנסות לשקם ידנית"
 
-#: src/Views/ErrorView.vala:68
+#: src/Views/ErrorView.vala:69
 msgid "Restart the device and boot from another drive"
 msgstr "להפעיל את ההתקן מחדש ולהעלות את ההתקן מכונן אחר"
 
-#: src/Views/ErrorView.vala:78
+#: src/Views/ErrorView.vala:79
 msgid "Details"
 msgstr "פרטים"
 
-#: src/Views/ErrorView.vala:113 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "הפעלת ההתקן מחדש"
 
-#: src/Views/ErrorView.vala:115 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "התנסות במצב הדגמה"
 
-#: src/Views/ErrorView.vala:117
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "לנסות להתקין שוב"
 
-#: src/Views/KeyboardLayoutView.vala:32
+#: src/Views/KeyboardLayoutView.vala:30
 msgid "Select Keyboard Layout"
 msgstr "בחירת פריסת מקלדת"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:38
 msgid "Type to test your layout"
 msgstr "יש להקליד כדי לבדוק את הפריסה שלך"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:41
 msgid "Show keyboard layout"
 msgstr "הצגת פריסת המקלדת"
 
-#: src/Views/KeyboardLayoutView.vala:62 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
 msgid "Select"
 msgstr "בחירה"
 
-#: src/Views/KeyboardLayoutView.vala:126
+#: src/Views/KeyboardLayoutView.vala:124
 msgid "Default"
 msgstr "בררת מחדל"
 
-#: src/Views/KeyboardLayoutView.vala:133
+#: src/Views/KeyboardLayoutView.vala:131
 msgid "Input Language"
 msgstr "שפת קלט"
 
@@ -328,22 +380,22 @@ msgid "Hide log"
 msgstr "להסתיר יומן"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:221
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "הכונן מחולק למחיצות"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:226
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "הקבצים מחולצים"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:231
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "המערכת מוגדרת"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:236
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "ההתקנה מסתיימת"
 
@@ -379,10 +431,6 @@ msgid ""
 msgstr ""
 "יצירה, שינוי גודל או ניהול של מחיצות באופן ידני. שיטה זו עשויה לגרום לאובדן "
 "מידע."
-
-#: src/Views/TryInstallView.vala:88
-msgid "Next"
-msgstr "הבא"
 
 #: src/Views/TryInstallView.vala:114
 msgid "Custom Install"
@@ -501,6 +549,13 @@ msgstr "מערכת קבצים:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "בררת מחדל (ext4)"
+
+#~ msgid ""
+#~ "Proprietary drivers are subject to their own license terms. By "
+#~ "installing, you agree to their terms of use."
+#~ msgstr ""
+#~ "מנהלי התקנים קנייניים כפופים לתנאי רישוי משל עצמם. התקנתם מהווה את הסכמתך "
+#~ "לתנאי השימוש בהם."
 
 #~ msgid "System Requirements"
 #~ msgstr "דרישות המערכת"

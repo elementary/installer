@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-11 17:56+0000\n"
-"PO-Revision-Date: 2023-01-05 22:25+0000\n"
+"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"PO-Revision-Date: 2023-08-03 16:08+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "extra/uk/>\n"
@@ -18,77 +18,78 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: data/installer.appdata.xml.in:7
+#: data/installer.metainfo.xml.in:9
 msgid "Installer"
 msgstr "Встановлювач"
 
-#: data/installer.appdata.xml.in:8 data/io.elementary.installer.desktop.in:3
+#: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
 msgstr "Встановлення elementary OS"
 
-#: data/installer.appdata.xml.in:10
+#: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "Покроковий встановлювач самої elementary OS."
 
-#: data/installer.appdata.xml.in:16 data/installer.appdata.xml.in:27
-#: data/installer.appdata.xml.in:42 data/installer.appdata.xml.in:52
-#: data/installer.appdata.xml.in:62
+#: data/installer.metainfo.xml.in:52
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:87 data/installer.metainfo.xml.in:98
+#: data/installer.metainfo.xml.in:113
 msgid "Improvements:"
 msgstr "Удосконалення:"
 
-#: data/installer.appdata.xml.in:18
-msgid "Use large icons in views"
-msgstr "Додано великі піктограми у поданнях"
+#: data/installer.metainfo.xml.in:61
+msgid "Swipe to navigate back"
+msgstr "Перехід назад посуванням"
 
-#: data/installer.appdata.xml.in:19
-msgid "Add a custom icon for Before Installing view"
-msgstr "Додано користувацьку піктограму для подання перед встановленням"
-
-#: data/installer.appdata.xml.in:20 data/installer.appdata.xml.in:32
-#: data/installer.appdata.xml.in:45 data/installer.appdata.xml.in:55
-#: data/installer.appdata.xml.in:66
+#: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:75
+#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:103
+#: data/installer.metainfo.xml.in:116
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/installer.appdata.xml.in:29
+#: data/installer.metainfo.xml.in:89
+msgid "Use large icons in views"
+msgstr "Додано великі піктограми у поданнях"
+
+#: data/installer.metainfo.xml.in:90
+msgid "Add a custom icon for Before Installing view"
+msgstr "Додано користувацьку піктограму для подання перед встановленням"
+
+#: data/installer.metainfo.xml.in:100
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Показ інфопанелі про заряд акумулятора замість переходу на іншу сторінку"
 
-#: data/installer.appdata.xml.in:30
+#: data/installer.metainfo.xml.in:101
 msgid "Show all system requirements warnings on a single page"
 msgstr "Показ всіх попереджень про системні вимоги на одній сторінці"
 
-#: data/installer.appdata.xml.in:31
+#: data/installer.metainfo.xml.in:102
 msgid "Warn about installing developer builds"
 msgstr "Попередження про встановлення збірок розробника"
 
-#: data/installer.appdata.xml.in:44
+#: data/installer.metainfo.xml.in:115
 msgid "Double the boot partition size for encrypted installs"
 msgstr "Подвоєно розмір завантажувального розділу для зашифрованих встановлень"
-
-#: data/installer.appdata.xml.in:54
-msgid "Warn about installing in a VM"
-msgstr "Попередження про встановлення у віртуальній машині"
-
-#: data/installer.appdata.xml.in:64
-msgid "Avoid political naming of certain locales"
-msgstr "Уникнення політичних назв окремих локалей"
-
-#: data/installer.appdata.xml.in:65
-msgid "Fix styles for \"Unused\" disk partitions"
-msgstr "Виправлення стилів для «Невикористовуваних» розділів диска"
-
-#: data/installer.appdata.xml.in:95
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Встановлення системи"
+
+#~ msgid "Warn about installing in a VM"
+#~ msgstr "Попередження про встановлення у віртуальній машині"
+
+#~ msgid "Avoid political naming of certain locales"
+#~ msgstr "Уникнення політичних назв окремих локалей"
+
+#~ msgid "Fix styles for \"Unused\" disk partitions"
+#~ msgstr "Виправлення стилів для «Невикористовуваних» розділів диска"
 
 #~ msgid "io.elementary.installer"
 #~ msgstr "io.elementary.installer"
