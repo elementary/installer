@@ -16,17 +16,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-static string level_name (Distinst.LogLevel level) {
+static string level_name (InstallerDaemon.LogLevel level) {
     switch (level) {
-        case Distinst.LogLevel.TRACE:
+        case TRACE:
             return "TRACE";
-        case Distinst.LogLevel.DEBUG:
+        case DEBUG:
             return "DEBUG";
-        case Distinst.LogLevel.INFO:
+        case INFO:
             return "INFO";
-        case Distinst.LogLevel.WARN:
+        case WARN:
             return "WARN";
-        case Distinst.LogLevel.ERROR:
+        case ERROR:
             return "ERROR";
         default:
             return "UNKNOWN";
@@ -50,7 +50,7 @@ public class LogHelper : GLib.Object {
         buffer.text = "";
     }
 
-    public void log_func (Distinst.LogLevel level, string message) {
+    public void log_func (InstallerDaemon.LogLevel level, string message) {
         stdout.printf ("log: %s: %s\n", level_name (level), message);
         Gtk.TextIter end_iter;
         buffer.get_end_iter (out end_iter);

@@ -23,11 +23,11 @@ public class Installer.Daemon {
 
     [DBus (name = "io.elementary.InstallerDaemon")]
     private interface InstallerInterface : GLib.DBusProxy {
-        public signal void on_error (Distinst.Error error);
-        public signal void on_status (Distinst.Status status);
-        public signal void on_log_message (Distinst.LogLevel level, string message);
+        public signal void on_error (InstallerDaemon.Error error);
+        public signal void on_status (InstallerDaemon.Status status);
+        public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
 
-        public abstract Distinst.PartitionTable bootloader_detect () throws GLib.Error;
+        public abstract InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error;
 
         public async abstract InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error;
         public async abstract int decrypt_partition (string path, string pv, string password) throws GLib.Error;
@@ -38,9 +38,9 @@ public class Installer.Daemon {
         public async abstract void trigger_demo_mode () throws GLib.Error;
     }
 
-    public signal void on_error (Distinst.Error error);
-    public signal void on_status (Distinst.Status status);
-    public signal void on_log_message (Distinst.LogLevel level, string message);
+    public signal void on_error (InstallerDaemon.Error error);
+    public signal void on_status (InstallerDaemon.Status status);
+    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
 
     private InstallerInterface daemon;
 
@@ -59,7 +59,7 @@ public class Installer.Daemon {
         daemon.on_log_message.connect ((level, message) => on_log_message (level, message));
     }
 
-    public Distinst.PartitionTable bootloader_detect () {
+    public InstallerDaemon.PartitionTable bootloader_detect () {
         if (daemon == null) {
             return fallback_bootloader_detect ();
         }
@@ -71,12 +71,12 @@ public class Installer.Daemon {
         }
     }
 
-    private Distinst.PartitionTable fallback_bootloader_detect () {
+    private InstallerDaemon.PartitionTable fallback_bootloader_detect () {
         var efi_file = GLib.File.new_for_path ("/sys/firmware/efi");
         if (efi_file.query_exists ()) {
-            return Distinst.PartitionTable.GPT;
+            return InstallerDaemon.PartitionTable.GPT;
         } else {
-            return Distinst.PartitionTable.MSDOS;
+            return InstallerDaemon.PartitionTable.MSDOS;
         }
     }
 

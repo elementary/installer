@@ -12,7 +12,6 @@ add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi
 gnome = import('gnome')
 i18n = import('i18n')
 
-distinst_dep = dependency('distinst')
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
 gtk_dep = dependency('gtk+-3.0')
@@ -26,6 +25,13 @@ gnome_keyboard_dep = dependency('libgnomekbd')
 gnome_keyboard_ui_dep = meson.get_compiler('c').find_library('gnomekbdui')
 pwquality_dep = dependency('pwquality')
 systemd_dep = dependency('systemd')
+
+installer_backend = get_option('installer_backend')
+if installer_backend == 'distinst'
+    distinst_dep = dependency('distinst')
+else
+    error('No supported installer backend provided')
+endif
 
 asresources = gnome.compile_resources(
     'as-resources', 'data/' + meson.project_name() + '.gresource.xml',
