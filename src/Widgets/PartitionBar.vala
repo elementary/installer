@@ -29,7 +29,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
     public Gtk.Label label;
     public Gtk.Popover menu;
-    public Distinst.FileSystem filesystem;
+    public InstallerDaemon.FileSystem filesystem;
 
     public signal void decrypted (InstallerDaemon.LuksCredentials credential);
 
@@ -48,17 +48,17 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
         path = part.device_path;
         filesystem = part.filesystem;
-        vg = (Distinst.FileSystem.LVM == filesystem)
+        vg = (InstallerDaemon.FileSystem.LVM == filesystem)
             ? part.current_lvm_volume_group
             : null;
         tooltip_text = path;
 
         var style_context = get_style_context ();
-        style_context.add_class (Distinst.strfilesys (filesystem));
+        style_context.add_class (filesystem.to_string ());
 
         container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
-        if (filesystem == Distinst.FileSystem.LUKS) {
+        if (filesystem == InstallerDaemon.FileSystem.LUKS) {
             menu = new DecryptMenu (path);
             ((DecryptMenu)menu).decrypted.connect ((creds) => decrypted (creds));
         } else {
