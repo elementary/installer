@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-03-12 12:25+0000\n"
+"PO-Revision-Date: 2023-12-22 19:35+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/installer/extra/"
 "ka/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #: data/installer.metainfo.xml.in:9
 msgid "Installer"
@@ -37,7 +37,7 @@ msgstr "გაუმჯობესებები:"
 
 #: data/installer.metainfo.xml.in:61
 msgid "Swipe to navigate back"
-msgstr ""
+msgstr "გაუსვით უკან გადასასვლელად"
 
 #: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:75
 #: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:103
