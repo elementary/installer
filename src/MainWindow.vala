@@ -22,14 +22,14 @@ public interface UPower : GLib.Object {
     public abstract bool on_battery { owned get; set; }
 }
 
-public class Installer.MainWindow : Hdy.Window {
+public class Installer.MainWindow : Gtk.Window {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     private const uint64 ONE_GB = 1000 * 1000 * 1000;
     // Minimum 15 GB
     private const uint64 MINIMUM_SPACE = 15 * ONE_GB;
 
     private Gtk.Label infobar_label;
-    private Hdy.Deck deck;
+    private Adw.Leaflet leaflet;
     private LanguageView language_view;
     private TryInstallView try_install_view;
     private bool check_ignored = false;
@@ -38,10 +38,11 @@ public class Installer.MainWindow : Hdy.Window {
     construct {
         language_view = new LanguageView ();
 
-        deck = new Hdy.Deck () {
-            can_swipe_back = true
+        leaflet = new Adw.Leaflet () {
+            can_navigate_back = true,
+            can_unfold = false
         };
-        deck.add (language_view);
+        leaflet.add (language_view);
 
         infobar_label = new Gtk.Label ("") {
             use_markup = true
@@ -61,7 +62,7 @@ public class Installer.MainWindow : Hdy.Window {
         battery_infobar.get_style_context ().add_class ("frame");
 
         var overlay = new Gtk.Overlay () {
-            child = deck
+            child = leaflet
         };
         overlay.add_overlay (battery_infobar);
 
@@ -126,21 +127,21 @@ public class Installer.MainWindow : Hdy.Window {
             return Source.REMOVE;
         });
 
-        deck.notify["visible-child"].connect (() => {
+        leaflet.notify["visible-child"].connect (() => {
             update_navigation ();
         });
 
-        deck.notify["transition-running"].connect (() => {
+        leaflet.notify["transition-running"].connect (() => {
             update_navigation ();
         });
     }
 
     private void update_navigation () {
-        if (!deck.transition_running) {
+        if (!leaflet.transition_running) {
             // We need to rebuild the views to reflect language changes and forking paths
-            if (deck.visible_child == language_view || deck.visible_child == try_install_view) {
-                while (deck.get_adjacent_child (FORWARD) != null) {
-                    deck.remove (deck.get_adjacent_child (FORWARD));
+            if (leaflet.visible_child == language_view || leaflet.visible_child == try_install_view) {
+                while (leaflet.get_adjacent_child (FORWARD) != null) {
+                    leaflet.remove (leaflet.get_adjacent_child (FORWARD));
                 }
             }
         }
@@ -150,16 +151,16 @@ public class Installer.MainWindow : Hdy.Window {
         var keyboard_layout_view = new KeyboardLayoutView ();
         try_install_view = new TryInstallView ();
 
-        deck.add (keyboard_layout_view);
-        deck.add (try_install_view);
+        leaflet.add (keyboard_layout_view);
+        leaflet.add (try_install_view);
 
-        deck.visible_child = keyboard_layout_view;
+        leaflet.visible_child = keyboard_layout_view;
 
         try_install_view.custom_step.connect (() => {
             load_check_view ();
             load_partitioning_view ();
             load_drivers_view ();
-            deck.navigate (FORWARD);
+            leaflet.navigate (FORWARD);
         });
 
         try_install_view.next_step.connect (() => {
@@ -167,16 +168,16 @@ public class Installer.MainWindow : Hdy.Window {
             load_disk_view ();
             load_encrypt_view ();
             load_drivers_view ();
-            deck.navigate (FORWARD);
+            leaflet.navigate (FORWARD);
         });
     }
 
     private void load_disk_view () {
         var disk_view = new DiskView ();
-        deck.add (disk_view);
+        leaflet.add (disk_view);
 
         disk_view.load.begin (MINIMUM_SPACE);
-        disk_view.cancel.connect (() => deck.navigate (BACK));
+        disk_view.cancel.connect (() => leaflet.navigate (BACK));
     }
 
     private void load_check_view () {
@@ -186,41 +187,41 @@ public class Installer.MainWindow : Hdy.Window {
 
         var check_view = new Installer.CheckView ();
         if (check_view.has_messages) {
-            deck.add (check_view);
+            leaflet.add (check_view);
         }
 
-        check_view.cancel.connect (() => deck.navigate (BACK));
+        check_view.cancel.connect (() => leaflet.navigate (BACK));
 
         check_view.next_step.connect (() => {
             check_ignored = true;
-            deck.navigate (FORWARD);
+            leaflet.navigate (FORWARD);
         });
     }
 
     private void load_encrypt_view () {
         var encrypt_view = new EncryptView ();
-        deck.add (encrypt_view);
+        leaflet.add (encrypt_view);
 
         encrypt_view.cancel.connect (() => {
-            deck.visible_child = try_install_view;
+            leaflet.visible_child = try_install_view;
         });
     }
 
     private void load_partitioning_view () {
         var partitioning_view = new PartitioningView (MINIMUM_SPACE);
-        deck.add (partitioning_view);
+        leaflet.add (partitioning_view);
 
         partitioning_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;
             config.mounts = (owned) partitioning_view.mounts;
-            deck.navigate (FORWARD);
+            leaflet.navigate (FORWARD);
         });
     }
 
     private void load_drivers_view () {
         var drivers_view = new DriversView ();
-        deck.add (drivers_view);
+        leaflet.add (drivers_view);
 
         drivers_view.next_step.connect (() => load_progress_view ());
     }
@@ -228,9 +229,9 @@ public class Installer.MainWindow : Hdy.Window {
     private void load_progress_view () {
         var progress_view = new ProgressView ();
 
-        deck.add (progress_view);
-        deck.visible_child = progress_view;
-        deck.can_swipe_back = false;
+        leaflet.add (progress_view);
+        leaflet.visible_child = progress_view;
+        leaflet.can_swipe_back = false;
 
         progress_view.on_success.connect (() => load_success_view ());
 
@@ -242,18 +243,18 @@ public class Installer.MainWindow : Hdy.Window {
 
     private void load_success_view () {
         var success_view = new SuccessView ();
-        deck.add (success_view);
-        deck.visible_child = success_view;
+        leaflet.add (success_view);
+        leaflet.visible_child = success_view;
     }
 
     private void load_error_view (string log) {
         var error_view = new ErrorView (log);
-        deck.add (error_view);
-        deck.visible_child = error_view;
+        leaflet.add (error_view);
+        leaflet.visible_child = error_view;
 
         error_view.retry_install.connect (() => {
-            deck.visible_child = try_install_view;
-            deck.can_swipe_back = true;
+            leaflet.visible_child = try_install_view;
+            leaflet.can_swipe_back = true;
         });
     }
 

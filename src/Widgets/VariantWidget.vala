@@ -24,7 +24,7 @@ public class VariantWidget : Gtk.Frame {
     private Gtk.Button back_button;
     private Gtk.Grid variant_grid;
     private Gtk.Label variant_title;
-    private Hdy.Deck deck;
+    private Adw.Leaflet deck;
 
     construct {
         main_listbox = new Gtk.ListBox ();
@@ -63,8 +63,9 @@ public class VariantWidget : Gtk.Frame {
         variant_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         variant_grid.add (variant_scrolled);
 
-        deck = new Hdy.Deck () {
-            can_swipe_back = true
+        deck = new Adw.Leaflet () {
+            can_navigate_back = true,
+            can_unfold = false
         };
         deck.add (main_scrolled);
         deck.add (variant_grid);
