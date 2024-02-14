@@ -29,17 +29,19 @@ public class VariantWidget : Gtk.Frame {
     construct {
         main_listbox = new Gtk.ListBox ();
 
-        var main_scrolled = new Gtk.ScrolledWindow (null, null);
-        main_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        main_scrolled.add (main_listbox);
+        var main_scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = main_listbox,
+            hscrollbar_policy = NEVER
+        };
 
         variant_listbox = new Gtk.ListBox ();
         variant_listbox.activate_on_single_click = false;
 
-        var variant_scrolled = new Gtk.ScrolledWindow (null, null);
-        variant_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        variant_scrolled.vexpand = true;
-        variant_scrolled.add (variant_listbox);
+        var variant_scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = variant_listbox,
+            hscrollbar_policy = NEVER,
+            vexpand = true
+        };
 
         back_button = new Gtk.Button () {
             halign = START,
