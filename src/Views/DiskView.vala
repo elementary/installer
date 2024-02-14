@@ -109,7 +109,7 @@ public class Installer.DiskView : AbstractInstallerView {
             sensitive = Installer.App.test_mode
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        next_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (FORWARD));
+        next_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (FORWARD));
 
         action_area.add (next_button);
 

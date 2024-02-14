@@ -82,7 +82,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             next_button.activate ();
         });
 
-        back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (BACK));
+        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
 
         next_button.clicked.connect (() => {
             unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
@@ -107,7 +107,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 return;
             }
 
-            ((Hdy.Deck) get_parent ()).navigate (FORWARD);
+            ((Adw.Leaflet) get_parent ()).navigate (FORWARD);
         });
 
         input_variant_widget.main_listbox.row_activated.connect ((row) => {
