@@ -31,7 +31,8 @@ public abstract class AbstractInstallerView : Gtk.Grid {
         content_area = new Gtk.Grid () {
             column_spacing = 12,
             row_spacing = 12,
-            expand = true,
+            hexpand = true,
+            vexpand = true,
             orientation = Gtk.Orientation.VERTICAL
         };
 
