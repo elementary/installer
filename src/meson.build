@@ -59,7 +59,7 @@ gui_dependencies = [
     gobject_dep,
     granite_dep,
     gtk_dep,
-    handy_dep,
+    adw_dep,
     json_glib_dep,
     pwquality_dep,
     xml2_dep
