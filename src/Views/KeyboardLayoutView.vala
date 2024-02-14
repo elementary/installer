@@ -223,7 +223,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
             var label = new Gtk.Label (layout_description) {
                 ellipsize = Pango.EllipsizeMode.END,
-                margin = 6,
+                margin_top = 6,
+                margin_end = 6,
+                margin_bottom = 6,
+                margin_start = 6,
                 xalign = 0
             };
             label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
@@ -247,7 +250,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
         construct {
             var label = new Gtk.Label (description) {
                 ellipsize = Pango.EllipsizeMode.END,
-                margin = 6,
+                margin_top = 6,
+                margin_end = 6,
+                margin_bottom = 6,
+                margin_start = 6,
                 xalign = 0
             };
             label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);

@@ -37,7 +37,10 @@ public class ProgressView : AbstractInstallerView {
             // In case the wallpaper can't be loaded, we don't want an icon or text
             icon_name = "invalid-icon-name",
             // We need this for the shadow to not get clipped by Gtk.Overlay
-            margin = 6
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
         };
         logo.loadable_icon = new FileIcon (File.new_for_uri ("resource://io/elementary/installer/wallpaper.jpg"));
         logo.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);

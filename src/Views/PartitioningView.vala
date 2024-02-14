@@ -109,7 +109,10 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_stack.add_named (load_grid, "loading");
         load_stack.add_named (disk_scroller, "disk");
 
-        content_area.margin = 12;
+        content_area.margin_top = 12;
+        content_area.margin_end = 12;
+        content_area.margin_bottom = 12;
+        content_area.margin_start = 12;
         content_area.attach (description, 0, 0);
         content_area.attach (load_stack, 0, 1);
 
