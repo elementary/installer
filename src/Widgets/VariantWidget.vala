@@ -41,9 +41,13 @@ public class VariantWidget : Gtk.Frame {
         variant_scrolled.vexpand = true;
         variant_scrolled.add (variant_listbox);
 
-        back_button = new Gtk.Button ();
-        back_button.halign = Gtk.Align.START;
-        back_button.margin = 6;
+        back_button = new Gtk.Button () {
+            halign = START,
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
+        };
         back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
         variant_title = new Gtk.Label (null);

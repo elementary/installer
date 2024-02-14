@@ -33,8 +33,12 @@ public class Installer.DecryptMenu: Gtk.Popover {
     public DecryptMenu (string device_path) {
         this.device_path = device_path;
 
-        stack = new Gtk.Stack ();
-        stack.margin = 12;
+        stack = new Gtk.Stack () {
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 12,
+            margin_start = 12
+        };
         create_decrypt_view ();
         add (stack);
         stack.show_all ();

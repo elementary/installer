@@ -55,9 +55,8 @@ public class Installer.DiskButton : Gtk.RadioButton {
         var grid = new Gtk.Grid () {
             column_spacing = 3,
             row_spacing = 6,
-            margin = 3,
-            margin_bottom = 0,
-            margin_top = 0,
+            margin_end = 3,
+            margin_start = 3,
             hexpand = true
         };
         grid.attach (disk_image, 0, 0, 1, 2);

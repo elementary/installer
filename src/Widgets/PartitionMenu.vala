@@ -107,8 +107,10 @@ public class Installer.PartitionMenu : Gtk.Popover {
         var bottom_controls = new Gtk.Grid () {
             column_spacing = 12,
             row_spacing = 6,
-            margin = 12,
-            margin_bottom = 9
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 9,
+            margin_start = 12
         };
         bottom_controls.attach (use_as_label, 0, 2);
         bottom_controls.attach (use_as, 1, 2);
@@ -282,7 +284,10 @@ public class Installer.PartitionMenu : Gtk.Popover {
         ) {
             halign = Gtk.Align.END,
             valign = Gtk.Align.END,
-            margin = 6
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
         };
 
         if (error != null) {
