@@ -40,7 +40,7 @@ jobs:
           cp ../*.deb output/
 
       - name: Save .deb package
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deb-files
           path: output/*.deb
