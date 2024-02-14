@@ -363,7 +363,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             image.icon_size = Gtk.IconSize.BUTTON;
 
             var label = new Gtk.Label (country_entry.name);
-            label.get_style_context ().add_class ("h3");
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
             label.xalign = 0;
 
             var grid = new Gtk.Grid ();
