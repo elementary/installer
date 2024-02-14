@@ -38,9 +38,9 @@ public class Installer.DiskView : AbstractInstallerView {
         };
 
         var image_overlay = new Gtk.Overlay () {
-            valign = Gtk.Align.END
+            child = install_image,
+            valign = END
         };
-        image_overlay.add (install_image);
         image_overlay.add_overlay (install_badge);
 
         var install_label = new Gtk.Label (_("Select a Drive")) {

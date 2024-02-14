@@ -55,10 +55,10 @@ public class ProgressView : AbstractInstallerView {
         icon_style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var logo_overlay = new Gtk.Overlay () {
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.CENTER
+            child = logo,
+            halign = CENTER,
+            valign = CENTER
         };
-        logo_overlay.add (logo);
         logo_overlay.add_overlay (icon);
 
         unowned LogHelper log_helper = LogHelper.get_default ();
