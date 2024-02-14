@@ -124,8 +124,9 @@ public class Installer.PartitionMenu : Gtk.Popover {
         bottom_grid.attach (separator, 0, 1);
         bottom_grid.attach (bottom_controls, 0, 2);
 
-        var bottom_revealer = new Gtk.Revealer ();
-        bottom_revealer.add (bottom_grid);
+        var bottom_revealer = new Gtk.Revealer () {
+            child = bottom_grid
+        };
 
         var grid = new Gtk.Grid () {
             margin_top = 3,
