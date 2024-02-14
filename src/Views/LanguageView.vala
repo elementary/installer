@@ -326,17 +326,16 @@ public class Installer.LanguageView : AbstractInstallerView {
             };
             label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            var grid = new Gtk.Grid () {
-                column_spacing = 6,
+            var box = new Gtk.Box (HORIZONTAL, 6) {
                 margin_top = 6,
                 margin_end = 6,
                 margin_bottom = 6,
                 margin_start = 6
             };
-            grid.add (label);
-            grid.add (image);
+            box.add (label);
+            box.add (image);
 
-            add (grid);
+            child = box;
         }
     }
 
