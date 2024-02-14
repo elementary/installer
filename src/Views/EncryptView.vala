@@ -135,18 +135,15 @@ public class EncryptView : AbstractInstallerView {
         confirm_entry_revealer = new ErrorRevealer (".");
         confirm_entry_revealer.label_widget.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
 
-        var password_grid = new Gtk.Grid () {
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 3
-        };
-        password_grid.add (description);
-        password_grid.add (pw_label);
-        password_grid.add (pw_entry);
-        password_grid.add (pw_levelbar);
-        password_grid.add (pw_error_revealer);
-        password_grid.add (confirm_label);
-        password_grid.add (confirm_entry);
-        password_grid.add (confirm_entry_revealer);
+        var password_box = new Gtk.Box (VERTICAL, 3);
+        password_box.add (description);
+        password_box.add (pw_label);
+        password_box.add (pw_entry);
+        password_box.add (pw_levelbar);
+        password_box.add (pw_error_revealer);
+        password_box.add (confirm_label);
+        password_box.add (confirm_entry);
+        password_box.add (confirm_entry_revealer);
 
         var stack = new Gtk.Stack () {
             vhomogeneous = false,
@@ -155,7 +152,7 @@ public class EncryptView : AbstractInstallerView {
             vexpand = true
         };
         stack.add (choice_grid);
-        stack.add (password_grid);
+        stack.add (password_box);
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;
@@ -188,7 +185,7 @@ public class EncryptView : AbstractInstallerView {
         });
 
         encrypt_button.clicked.connect (() => {
-            stack.visible_child = password_grid;
+            stack.visible_child = password_box;
             next_button.label = _("Set Encryption Password");
             update_next_button ();
             back_button.show ();
@@ -198,7 +195,7 @@ public class EncryptView : AbstractInstallerView {
         });
 
         next_button.clicked.connect (() => {
-            if (stack.visible_child == password_grid) {
+            if (stack.visible_child == password_box) {
                 Configuration.get_default ().encryption_password = pw_entry.text;
             }
 
