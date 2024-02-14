@@ -41,11 +41,11 @@ public class EncryptView : AbstractInstallerView {
         };
 
         var overlay = new Gtk.Overlay () {
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.END,
+            child = image,
+            halign = CENTER,
+            valign = END,
             width_request = 60
         };
-        overlay.add (image);
         overlay.add_overlay (overlay_image);
 
         var title_label = new Gtk.Label (_("Enable Drive Encryption")) {

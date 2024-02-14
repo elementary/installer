@@ -52,11 +52,12 @@ public class Installer.DecryptMenu: Gtk.Popover {
         overlay_image.halign = Gtk.Align.END;
         overlay_image.valign = Gtk.Align.END;
 
-        var overlay = new Gtk.Overlay ();
-        overlay.halign = Gtk.Align.CENTER;
-        overlay.valign = Gtk.Align.END;
-        overlay.width_request = 60;
-        overlay.add (image);
+        var overlay = new Gtk.Overlay () {
+            child = image,
+            halign = CENTER,
+            valign = END,
+            width_request = 60
+        };
         overlay.add_overlay (overlay_image);
 
         var primary_label = new Gtk.Label (_("Decrypt This Partition"));
