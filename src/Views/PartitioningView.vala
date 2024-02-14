@@ -95,18 +95,18 @@ public class Installer.PartitioningView : AbstractInstallerView {
         var load_label = new Gtk.Label (_("Getting the current configuration…"));
         load_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var load_grid = new Gtk.Grid ();
-        load_grid.row_spacing = 12;
-        load_grid.expand = true;
-        load_grid.orientation = Gtk.Orientation.VERTICAL;
-        load_grid.valign = Gtk.Align.CENTER;
-        load_grid.halign = Gtk.Align.CENTER;
-        load_grid.add (load_spinner);
-        load_grid.add (load_label);
+        var load_box = new Gtk.Box (VERTICAL, 12) {
+            hexpand = true,
+            vexpand = true,
+            valign = CENTER,
+            halign = CENTER
+        };
+        load_box.add (load_spinner);
+        load_box.add (load_label);
 
         load_stack = new Gtk.Stack ();
         load_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-        load_stack.add_named (load_grid, "loading");
+        load_stack.add_named (load_box, "loading");
         load_stack.add_named (disk_scroller, "disk");
 
         content_area.margin_top = 12;
