@@ -50,7 +50,10 @@ public class Installer.InstallTypeButton : Gtk.RadioButton {
         var grid = new Gtk.Grid () {
             column_spacing = 3,
             row_spacing = 6,
-            margin = 3
+            margin_top = 3,
+            margin_end = 3,
+            margin_bottom = 3,
+            margin_start = 3
         };
         grid.attach (image, 0, 0, 1, 2);
         grid.attach (title_label, 1, 0);

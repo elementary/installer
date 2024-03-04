@@ -87,8 +87,9 @@ public class ErrorView : AbstractInstallerView {
 
         var terminal_view = new Installer.Terminal (buffer);
 
-        var terminal_revealer = new Gtk.Revealer ();
-        terminal_revealer.add (terminal_view);
+        var terminal_revealer = new Gtk.Revealer () {
+            child = terminal_view
+        };
 
         var grid = new Gtk.Grid () {
             column_spacing = 6,
