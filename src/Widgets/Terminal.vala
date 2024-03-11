@@ -47,7 +47,8 @@ public class Installer.Terminal : Gtk.ScrolledWindow {
         view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
 
         hscrollbar_policy = Gtk.PolicyType.NEVER;
-        expand = true;
+        hexpand = true;
+        vexpand = true;
         min_content_height = 120;
         add (view);
         get_style_context ().add_class (Granite.STYLE_CLASS_TERMINAL);

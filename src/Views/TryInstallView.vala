@@ -59,21 +59,19 @@ public class Installer.TryInstallView : AbstractInstallerView {
             group = no_selection
         };
 
-        var type_grid = new Gtk.Grid () {
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 6,
-            valign = Gtk.Align.CENTER
+        var type_box = new Gtk.Box (VERTICAL, 6) {
+            valign = CENTER
         };
-        type_grid.add (demo_button);
-        type_grid.add (clean_install_button);
-        type_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        type_grid.add (custom_button);
+        type_box.add (demo_button);
+        type_box.add (clean_install_button);
+        type_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        type_box.add (custom_button);
 
         var type_scrolled = new Gtk.ScrolledWindow (null, null) {
-            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            child = type_box,
+            hscrollbar_policy = NEVER,
             propagate_natural_height = true
         };
-        type_scrolled.add (type_grid);
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;

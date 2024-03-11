@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public abstract class AbstractInstallerView : Gtk.Grid {
+public abstract class AbstractInstallerView : Gtk.Box {
     public bool cancellable { get; construct; }
 
     public signal void cancel ();
@@ -31,7 +31,8 @@ public abstract class AbstractInstallerView : Gtk.Grid {
         content_area = new Gtk.Grid () {
             column_spacing = 12,
             row_spacing = 12,
-            expand = true,
+            hexpand = true,
+            vexpand = true,
             orientation = Gtk.Orientation.VERTICAL
         };
 
@@ -60,8 +61,8 @@ public abstract class AbstractInstallerView : Gtk.Grid {
             action_area.set_child_secondary (test_label, true);
         }
 
-        orientation = Gtk.Orientation.VERTICAL;
-        row_spacing = 24;
+        orientation = VERTICAL;
+        spacing = 24;
         margin_top = 12;
         margin_bottom = 12;
         add (content_area);
