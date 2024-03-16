@@ -157,8 +157,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         keyboard_test_entry.icon_release.connect (() => {
-            var layout = new LayoutWidget ();
-
             string layout_string;
             unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
             if (row != null) {
@@ -173,11 +171,12 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 layout_string = "us";
             }
 
-            layout.set_layout (layout_string);
-
-            var popover = new Gtk.Popover (keyboard_test_entry);
-            popover.add (layout);
-            popover.show_all ();
+            string command = "gkbd-keyboard-display --layout=%s".printf (layout_string);
+            try {
+                AppInfo.create_from_commandline (command, null, NONE).launch (null, null);
+            } catch (Error e) {
+                warning ("Error launching keyboard layout display: %s", e.message);
+            }
         });
 
         foreach (var layout in KeyboardLayoutHelper.get_layouts ()) {
