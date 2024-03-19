@@ -57,12 +57,10 @@ gui_dependencies = [
     distinst_dep,
     gee_dep,
     glib_dep,
-    gnome_keyboard_dep,
-    gnome_keyboard_ui_dep,
     gobject_dep,
     granite_dep,
     gtk_dep,
-    handy_dep,
+    adw_dep,
     json_glib_dep,
     pwquality_dep,
     xml2_dep
