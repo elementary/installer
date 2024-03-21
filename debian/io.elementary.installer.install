@@ -1,7 +1,7 @@
+lib/systemd/system
 usr/bin
 usr/share/applications
+usr/share/dbus-1/system.d
+usr/share/icons/hicolor
 usr/share/locale
 usr/share/metainfo
-usr/share/icons/hicolor
-usr/share/dbus-1/system.d
-lib/systemd/system
