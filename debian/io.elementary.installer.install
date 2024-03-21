@@ -1,5 +1,5 @@
-lib/systemd/system
 usr/bin
+usr/lib/systemd/system
 usr/share/applications
 usr/share/dbus-1/system.d
 usr/share/icons/hicolor
