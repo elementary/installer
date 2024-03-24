@@ -23,12 +23,13 @@ public class Installer.Mount {
     public string parent_disk;
     public string mount_point;
     public uint64 sectors;
+    public uint64 sector_size;
     public Distinst.FileSystem filesystem;
     public InstallerDaemon.MountFlags flags;
     public PartitionMenu menu;
 
     public Mount (string partition, string parent_disk, string mount,
-                  uint64 sectors, InstallerDaemon.MountFlags flags, Distinst.FileSystem fs,
+                  uint64 sectors, uint64 sector_size, InstallerDaemon.MountFlags flags, Distinst.FileSystem fs,
                   PartitionMenu menu) {
         filesystem = fs;
         mount_point = mount;
@@ -37,6 +38,7 @@ public class Installer.Mount {
         this.menu = menu;
         this.parent_disk = parent_disk;
         this.sectors = sectors;
+        this.sector_size = sector_size;
     }
 
     public bool is_valid_boot_mount () {
