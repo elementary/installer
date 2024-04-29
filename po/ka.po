@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-03-12 12:25+0000\n"
+"PO-Revision-Date: 2024-03-08 08:12+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/installer/"
 "installer/ka/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -21,10 +21,8 @@ msgid "Install %s"
 msgstr "%s-ის დაყენება"
 
 #: src/Application.vala:61
-#, fuzzy
-#| msgid "%s has been installed"
 msgid "operating system is being installed"
-msgstr "\"%s\" დაყენებულია"
+msgstr "მიმდინარეობს ოპერაციული სისტემის დაყენება"
 
 #: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
@@ -84,6 +82,8 @@ msgstr "ვირტუალური მანქანა"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"%s-ის ზოგიერთი ნაწილი შეიძლება, ნელი იყოს, ჭედავდეს, ან არასწორად "
+"ფუნქციონირებდეს."
 
 #: src/Views/CheckView.vala:68
 msgid "Your Device May Be Too Slow"
@@ -135,10 +135,8 @@ msgid "Next"
 msgstr "შემდეგი"
 
 #: src/Views/DriversView.vala:27
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "დისკის დაყოფა"
+msgstr "დამატებითი დრაივერები"
 
 #: src/Views/DriversView.vala:32
 msgid ""
@@ -156,6 +154,7 @@ msgstr ""
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"NVIDIA®-ის გრაფიკული დრაივერების დასაყენებლად ინტერნეტკავშირი აუცილებელია."
 
 #: src/Views/DriversView.vala:65
 msgid ""
@@ -257,11 +256,11 @@ msgstr "სცადეთ, თავიდან დააყენოთ"
 
 #: src/Views/ErrorView.vala:59
 msgid "Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "გამოიყენეთ საცდელი რეჟიმი და სცადეთ, ხელით აღადგინოთ"
 
 #: src/Views/ErrorView.vala:69
 msgid "Restart the device and boot from another drive"
-msgstr ""
+msgstr "გადატვირთეთ მოწყობილობა და ჩაიტვირთეთ სხვა დისკიდან"
 
 #: src/Views/ErrorView.vala:79
 msgid "Details"
@@ -324,7 +323,7 @@ msgstr ""
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:58
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "სულ ცოტა, <b>საწყისი (/)</b> დანაყოფი უნდა შექმნათ."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
@@ -335,7 +334,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "ასევე, რეკომენდებულია, <b>სვოპის</b> დანაყოფიც შექმნათ."
 
 #: src/Views/PartitioningView.vala:118
 msgid "Modify Partitions…"
@@ -402,7 +401,7 @@ msgstr "დისკის წაშლა და დაყენება"
 #: src/Views/TryInstallView.vala:49
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "ყველაფრის წაშლა და %s-ის დაყენება."
 
 #: src/Views/TryInstallView.vala:55
 msgid "Custom Install (Advanced)"
@@ -489,7 +488,7 @@ msgstr "ფორმატი"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "მონაცემების წაშლა და ახალი ფაილური სისტემის აწყობა"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"

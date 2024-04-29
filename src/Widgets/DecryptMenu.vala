@@ -33,8 +33,12 @@ public class Installer.DecryptMenu: Gtk.Popover {
     public DecryptMenu (string device_path) {
         this.device_path = device_path;
 
-        stack = new Gtk.Stack ();
-        stack.margin = 12;
+        stack = new Gtk.Stack () {
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 12,
+            margin_start = 12
+        };
         create_decrypt_view ();
         add (stack);
         stack.show_all ();
@@ -48,11 +52,12 @@ public class Installer.DecryptMenu: Gtk.Popover {
         overlay_image.halign = Gtk.Align.END;
         overlay_image.valign = Gtk.Align.END;
 
-        var overlay = new Gtk.Overlay ();
-        overlay.halign = Gtk.Align.CENTER;
-        overlay.valign = Gtk.Align.END;
-        overlay.width_request = 60;
-        overlay.add (image);
+        var overlay = new Gtk.Overlay () {
+            child = image,
+            halign = CENTER,
+            valign = END,
+            width_request = 60
+        };
         overlay.add_overlay (overlay_image);
 
         var primary_label = new Gtk.Label (_("Decrypt This Partition"));

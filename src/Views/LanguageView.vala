@@ -87,11 +87,13 @@ public class Installer.LanguageView : AbstractInstallerView {
             row.set_header (null);
             if (!((LangRow)row).preferred_row) {
                 if (before != null && ((LangRow)before).preferred_row) {
-                    var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+                    var separator = new Gtk.Separator (HORIZONTAL) {
+                        margin_top = 3,
+                        margin_end = 6,
+                        margin_bottom = 3,
+                        margin_start = 6
+                    };
                     separator.show_all ();
-                    separator.margin = 3;
-                    separator.margin_end = 6;
-                    separator.margin_start = 6;
                     row.set_header (separator);
                 }
             }
@@ -324,13 +326,16 @@ public class Installer.LanguageView : AbstractInstallerView {
             };
             label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            var grid = new Gtk.Grid ();
-            grid.column_spacing = 6;
-            grid.margin = 6;
-            grid.add (label);
-            grid.add (image);
+            var box = new Gtk.Box (HORIZONTAL, 6) {
+                margin_top = 6,
+                margin_end = 6,
+                margin_bottom = 6,
+                margin_start = 6
+            };
+            box.add (label);
+            box.add (image);
 
-            add (grid);
+            child = box;
         }
     }
 
@@ -363,16 +368,19 @@ public class Installer.LanguageView : AbstractInstallerView {
             image.icon_size = Gtk.IconSize.BUTTON;
 
             var label = new Gtk.Label (country_entry.name);
-            label.get_style_context ().add_class ("h3");
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
             label.xalign = 0;
 
-            var grid = new Gtk.Grid ();
-            grid.column_spacing = 6;
-            grid.margin = 6;
-            grid.add (label);
-            grid.add (image);
+            var box = new Gtk.Box (HORIZONTAL, 6) {
+                margin_top = 6,
+                margin_end = 6,
+                margin_bottom = 6,
+                margin_start = 6
+            };
+            box.add (label);
+            box.add (image);
 
-            add (grid);
+            child = box;
         }
     }
 }

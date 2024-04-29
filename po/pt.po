@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2022-10-09 17:26+0000\n"
+"PO-Revision-Date: 2024-03-26 22:13+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
 "installer/pt/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:42
@@ -21,10 +21,8 @@ msgid "Install %s"
 msgstr "Instalar o %s"
 
 #: src/Application.vala:61
-#, fuzzy
-#| msgid "%s has been installed"
 msgid "operating system is being installed"
-msgstr "%s foi instalado"
+msgstr "o sistema operativo está a ser instalado"
 
 #: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
@@ -64,20 +62,20 @@ msgid "Test Mode"
 msgstr "Modo de Teste"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Tentar instalar novamente"
+msgstr "Antes de instalar"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Versão de pré-lançamento"
 
 #: src/Views/CheckView.vala:57
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Instale apenas em dispositivos dedicados ao desenvolvimento. <b>Não será "
+"possível atualizar para uma versão estável</b>."
 
 #: src/Views/CheckView.vala:62
 msgid "Virtual Machine"
@@ -99,10 +97,8 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "Isto pode causar o seu funcionamento lento ou o seu congelamento."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Instalar o %s"
+msgstr "Instalar mesmo assim"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
@@ -142,10 +138,8 @@ msgid "Next"
 msgstr "Seguinte"
 
 #: src/Views/DriversView.vala:27
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "A particionar a unidade"
+msgstr "Controladores adicionais"
 
 #: src/Views/DriversView.vala:32
 msgid ""
@@ -153,28 +147,41 @@ msgid ""
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
+"Adaptadores Wi-Fi Broadcom®, placas gráficas NVIDIA® e algumas máquinas "
+"virtuais podem não funcionar corretamente sem controladores adicionais. A "
+"maioria dos dispositivos não necessita de controladores adicionais."
 
 #: src/Views/DriversView.vala:43
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"Os controladores proprietários contêm código privado que não pode ser "
+"revisto. As atualizações de segurança e outras dependem do fabricante do "
+"controlador."
 
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"É necessária uma ligação à Internet para instalar os controladores de placas "
+"gráficas NVIDIA®."
 
 #: src/Views/DriversView.vala:65
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
+"Os controladores proprietários podem ser instalados posteriormente através "
+"do centro de Aplicações, mas será necessária uma ligação à Internet para "
+"todos os controladores."
 
 #: src/Views/DriversView.vala:72
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
+"Incluir controladores proprietários de terceiros aquando da instalação. "
+"Aceito as respetivas licenças e termos de utilização."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121

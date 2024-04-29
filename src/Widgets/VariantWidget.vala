@@ -22,28 +22,34 @@ public class VariantWidget : Gtk.Frame {
     public signal void going_to_main ();
 
     private Gtk.Button back_button;
-    private Gtk.Grid variant_grid;
+    private Gtk.Box variant_box;
     private Gtk.Label variant_title;
     private Hdy.Deck deck;
 
     construct {
         main_listbox = new Gtk.ListBox ();
 
-        var main_scrolled = new Gtk.ScrolledWindow (null, null);
-        main_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        main_scrolled.add (main_listbox);
+        var main_scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = main_listbox,
+            hscrollbar_policy = NEVER
+        };
 
         variant_listbox = new Gtk.ListBox ();
         variant_listbox.activate_on_single_click = false;
 
-        var variant_scrolled = new Gtk.ScrolledWindow (null, null);
-        variant_scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        variant_scrolled.vexpand = true;
-        variant_scrolled.add (variant_listbox);
+        var variant_scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = variant_listbox,
+            hscrollbar_policy = NEVER,
+            vexpand = true
+        };
 
-        back_button = new Gtk.Button ();
-        back_button.halign = Gtk.Align.START;
-        back_button.margin = 6;
+        back_button = new Gtk.Button () {
+            halign = START,
+            margin_top = 6,
+            margin_end = 6,
+            margin_bottom = 6,
+            margin_start = 6
+        };
         back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
         variant_title = new Gtk.Label (null);
@@ -56,18 +62,17 @@ public class VariantWidget : Gtk.Frame {
         header_box.add (back_button);
         header_box.set_center_widget (variant_title);
 
-        variant_grid = new Gtk.Grid ();
-        variant_grid.orientation = Gtk.Orientation.VERTICAL;
-        variant_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        variant_grid.add (header_box);
-        variant_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        variant_grid.add (variant_scrolled);
+        variant_box = new Gtk.Box (VERTICAL, 0);
+        variant_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        variant_box.add (header_box);
+        variant_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        variant_box.add (variant_scrolled);
 
         deck = new Hdy.Deck () {
             can_swipe_back = true
         };
         deck.add (main_scrolled);
-        deck.add (variant_grid);
+        deck.add (variant_box);
 
         add (deck);
 
@@ -80,7 +85,7 @@ public class VariantWidget : Gtk.Frame {
     public void show_variants (string back_button_label, string variant_title_label) {
         back_button.label = back_button_label;
         variant_title.label = variant_title_label;
-        deck.visible_child = variant_grid;
+        deck.visible_child = variant_box;
     }
 
     public void clear_variants () {

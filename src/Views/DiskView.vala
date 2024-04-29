@@ -19,7 +19,7 @@
 
 public class Installer.DiskView : AbstractInstallerView {
     private Gtk.Button next_button;
-    private Gtk.Grid disk_grid;
+    private Gtk.Box disk_box;
     private Gtk.Stack load_stack;
 
     public DiskView () {
@@ -38,9 +38,9 @@ public class Installer.DiskView : AbstractInstallerView {
         };
 
         var image_overlay = new Gtk.Overlay () {
-            valign = Gtk.Align.END
+            child = install_image,
+            valign = END
         };
-        image_overlay.add (install_image);
         image_overlay.add_overlay (install_badge);
 
         var install_label = new Gtk.Label (_("Select a Drive")) {
@@ -56,16 +56,13 @@ public class Installer.DiskView : AbstractInstallerView {
             xalign = 0
         };
 
-        disk_grid = new Gtk.Grid () {
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 6
-        };
+        disk_box = new Gtk.Box (VERTICAL, 6);
 
         var disk_scrolled = new Gtk.ScrolledWindow (null, null) {
+            child = disk_box,
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             propagate_natural_height = true
         };
-        disk_scrolled.add (disk_grid);
 
         var load_spinner = new Gtk.Spinner () {
             halign = Gtk.Align.CENTER,
@@ -79,19 +76,17 @@ public class Installer.DiskView : AbstractInstallerView {
         };
         load_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var load_grid = new Gtk.Grid () {
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.CENTER,
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 12
+        var load_box = new Gtk.Box (VERTICAL, 12) {
+            halign = CENTER,
+            valign = CENTER
         };
-        load_grid.add (load_spinner);
-        load_grid.add (load_label);
+        load_box.add (load_spinner);
+        load_box.add (load_label);
 
         load_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE
         };
-        load_stack.add (load_grid);
+        load_stack.add (load_box);
         load_stack.add_named (disk_scrolled, "disk");
 
         var title_grid = new Gtk.Grid () {
@@ -180,15 +175,15 @@ public class Installer.DiskView : AbstractInstallerView {
 
         foreach (DiskButton disk_button in enabled_buttons) {
             disk_button.group = no_selection;
-            disk_grid.add (disk_button);
+            disk_box.add (disk_button);
         }
 
         foreach (DiskButton disk_button in disabled_buttons) {
             disk_button.group = no_selection;
-            disk_grid.add (disk_button);
+            disk_box.add (disk_button);
         }
 
-        disk_grid.show_all ();
+        disk_box.show_all ();
         load_stack.set_visible_child_name ("disk");
     }
 }
