@@ -225,7 +225,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 update_values (set_mount);
             } else {
                 unset_mount (partition_path);
-                partition_bar.container.get_children ().foreach ((c) => c.destroy ());
+                partition_bar.icon = null;
             }
 
             bottom_revealer.reveal_child = use_partition.active;
@@ -241,7 +241,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.visible = true;
         custom.visible = false;
         disable_signals = false;
-        partition_bar.container.get_children ().foreach ((c) => c.destroy ());
+        partition_bar.icon = null;
     }
 
     private void set_format_sensitivity () {
@@ -268,7 +268,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 partition_path,
                 parent_disk,
                 mount,
-                partition_bar.end - partition_bar.start,
+                partition_bar.get_size (),
                 (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0)
                     + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
                 filesystem,
@@ -278,25 +278,13 @@ public class Installer.PartitionMenu : Gtk.Popover {
             error = why.message;
         }
 
-        var mount_icon = new Gtk.Image.from_icon_name (
-            error == null ? "process-completed-symbolic" : "dialog-warning-symbolic",
-            Gtk.IconSize.SMALL_TOOLBAR
-        ) {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.END,
-            margin_top = 6,
-            margin_end = 6,
-            margin_bottom = 6,
-            margin_start = 6
-        };
+        partition_bar.icon = new ThemedIcon (
+            error == null ? "process-completed-symbolic" : "dialog-warning-symbolic"
+        );
 
         if (error != null) {
             partition_bar.tooltip_text = error;
         }
-
-        partition_bar.container.get_children ().foreach ((c) => c.destroy ());
-        partition_bar.container.pack_start (mount_icon, true, true, 0);
-        partition_bar.container.show_all ();
     }
 
     private bool has_same_filesystem () {
