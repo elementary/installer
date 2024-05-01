@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/elementary/docker:horus-unstable
+      image: ghcr.io/elementary/docker:development-target
 
     steps:
       - name: Install dependencies
