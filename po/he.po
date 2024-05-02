@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-02 03:15+0000\n"
-"PO-Revision-Date: 2023-10-05 22:08+0000\n"
+"PO-Revision-Date: 2024-05-03 04:13+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -341,19 +341,16 @@ msgstr "עליך לבחור במחיצת <b>שורש (/)</b> לכל הפחות."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
-#, fuzzy
-#| msgid ""
-#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-#| "efi)</b> partition."
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
 msgstr ""
-"עליך לבחור במחיצת <b>שורש (/)</b> ובמחיצת <b>הפעלה (‎/boot/efi)</b> לכל הפחות."
+"יש לבחור במחיצת <b>שורש (/)</b> אך מחיצת <b>טעינה (‎/boot/efi)</b> היא בגדר "
+"רשות."
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr "מומלץ לבחור גם במחיצת <b>החלפה</b>."
+msgstr "מומלץ לבחור גם במחיצת <b>החלפה/Swap</b>."
 
 #: src/Views/PartitioningView.vala:121
 msgid "Modify Partitions…"
