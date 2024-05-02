@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"POT-Creation-Date: 2024-05-02 03:15+0000\n"
 "PO-Revision-Date: 2022-09-10 12:23+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -50,16 +50,16 @@ msgstr "پێکردنەوەی دۆخی تاقیکردنەوە"
 msgid "Test mode switch user"
 msgstr "گۆڕینی بەکارهێنەر لە دۆخی تاقیکردنەوەدا"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:218
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:46
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "هەڵەوەشاندنەوەی دامەزراندن"
 
-#: src/Views/AbstractInstallerView.vala:55
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "دۆخی تاقیکردنەوە"
 
@@ -130,12 +130,12 @@ msgstr ""
 "هەموو داتای سەر درایڤەکە ڕەش دەبێتەوە، ئەگەر درایڤەکەت باکئەپ نەکردووە، "
 "دەتوانیت دامەزراندنەکە هەڵوەشێنییەوە و دۆخی تاقیکردنەوە بەکار بهێنیت."
 
-#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "نوێکردنەوە…"
 
-#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
-#: src/Views/TryInstallView.vala:88
+#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:126
+#: src/Views/TryInstallView.vala:86
 msgid "Next"
 msgstr "دواتر"
 
@@ -174,9 +174,9 @@ msgid ""
 "respective licenses and terms of use."
 msgstr ""
 
-#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
-#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
-#: src/Views/TryInstallView.vala:86
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:164
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:124
+#: src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "گەڕانەوە"
 
@@ -242,15 +242,15 @@ msgstr "تێپەڕەوشەیەک بۆ کۆدکردن بنووسە"
 msgid "Confirm Password"
 msgstr "دووبارە تێپەڕەوشەکە بنووسەوە بۆ دڵنیابوونەوە"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:166
 msgid "Choose Password"
 msgstr "تێپەڕەوشە بنووسە"
 
-#: src/Views/EncryptView.vala:192
+#: src/Views/EncryptView.vala:189
 msgid "Set Encryption Password"
 msgstr "دانانی تێپەڕەوشەی کۆدکردن"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:258
 msgid "Passwords do not match"
 msgstr "تێپەڕەوشەکان هاوتا نین"
 
@@ -283,15 +283,15 @@ msgstr "ئامێرەکە پێبکەوە و لە درایڤێکی ترەوە بو
 msgid "Details"
 msgstr "وردەکارییەکان"
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:115 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "پێکردنەوەی ئامێر"
 
-#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:117 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "تاقیکردنەوەی دۆخی تاقیکردنەوە"
 
-#: src/Views/ErrorView.vala:118
+#: src/Views/ErrorView.vala:119
 msgid "Try Installing Again"
 msgstr "دوبارە هەوڵی دامەزراندن بدەوە"
 
@@ -307,27 +307,27 @@ msgstr "لێرە بنووسە بۆ تاقیکردنەوەی ڕووکاری تە�
 msgid "Show keyboard layout"
 msgstr "پشاندانی ڕووکاری تەختەکلیل"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "دیاریکردن"
 
-#: src/Views/KeyboardLayoutView.vala:124
+#: src/Views/KeyboardLayoutView.vala:121
 msgid "Default"
 msgstr "بنەڕەت"
 
-#: src/Views/KeyboardLayoutView.vala:131
+#: src/Views/KeyboardLayoutView.vala:128
 msgid "Input Language"
 msgstr "زمانی بەکارهێنان"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "زمانەکان"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "زمانێک دیاریکە"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:354
 msgid "Currently active language"
 msgstr "زمانی کارای ئێستا"
 
@@ -346,9 +346,13 @@ msgstr "لانیکەم دەبێت پارتششنێکی <b>Root (/)</b> هەڵب�
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
+#, fuzzy
+#| msgid ""
+#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
+#| "efi)</b> partition."
 msgid ""
-"You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-"efi)</b> partition."
+"You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
+"(/boot/efi)</b> partition."
 msgstr ""
 "دەبێت لانیکەم پارتێشنێکی <b>Root (/)</b> و پارتێشنێکی <b>Boot (/boot/efi)</"
 "b> دیاری بکەیت."
@@ -357,51 +361,51 @@ msgstr ""
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "هەروەها پێشنیارکراوە کە پارتێشنێکی <b>Swap</b>یش دیاری بکەت."
 
-#: src/Views/PartitioningView.vala:118
+#: src/Views/PartitioningView.vala:121
 msgid "Modify Partitions…"
 msgstr "دەستکاریکردنی پارتێشنەکان…"
 
-#: src/Views/PartitioningView.vala:271
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition has the wrong file system"
 msgstr "پارتێشنی EFI فایل سیستەمێکی هەڵەی هەیە"
 
-#: src/Views/PartitioningView.vala:273
+#: src/Views/PartitioningView.vala:275
 msgid "EFI partition is too small"
 msgstr "قەبارەی پارتێشنی EFI زۆر بچووکە"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for root"
 msgstr "فایل سیستەمێکی هەڵە بۆ ڕووت"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:280
 msgid "Invalid file system for home"
 msgstr "فایل سیستەمێکی بۆ هۆم"
 
-#: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
+#: src/Views/ProgressView.vala:76 src/Views/ProgressView.vala:103
 msgid "Show log"
 msgstr "پشاندانی تۆمار"
 
-#: src/Views/ProgressView.vala:96
+#: src/Views/ProgressView.vala:99
 msgid "Hide log"
 msgstr "شاردنەوەی تۆمار"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:225
+#: src/Views/ProgressView.vala:228
 msgid "Partitioning Drive"
 msgstr "پارتێشنکردنی درایڤ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:230
+#: src/Views/ProgressView.vala:233
 msgid "Extracting Files"
 msgstr "دەرکردنی پەڕگەکان"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:235
+#: src/Views/ProgressView.vala:238
 msgid "Configuring the System"
 msgstr "ڕێکخستنی سیستەمەکە"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:240
+#: src/Views/ProgressView.vala:243
 msgid "Finishing the Installation"
 msgstr "تەواوکردنی دامەزراندنەکە"
 
@@ -439,7 +443,7 @@ msgstr ""
 "دروستکردن و قەبارەگۆڕین یان بەڕێوەبردنی پارتێشنەکان بەدەستی. لەوەیە ئەم "
 "ڕێگەیە سەربکێشێت بۆ لەدەستدانی داتا."
 
-#: src/Views/TryInstallView.vala:114
+#: src/Views/TryInstallView.vala:112
 msgid "Custom Install"
 msgstr "دامەزراندنی تایبەت"
 
@@ -471,11 +475,11 @@ msgstr ""
 "دوای پێکردنەوە، دەتوانیت ئامادەکردنی سیستەمەکەت تەواو بکەیت و بەکارهێنەری "
 "تازە دروست بکەت یانیش بیکوژێنیتەوە و دواتر ئەنجامی بدەیت."
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:63
 msgid "Decrypt This Partition"
 msgstr "کردنەوەی کۆدەکانی ئەم پارتێشنە"
 
-#: src/Widgets/DecryptMenu.vala:62
+#: src/Widgets/DecryptMenu.vala:67
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
@@ -483,28 +487,28 @@ msgstr ""
 "تێپەڕەوشەی کۆدکردنی پارتێشنەکە بنووسە و ناوی ئامێرێک بۆ پارتێشنی کۆدلێکراوە "
 "دابنێ."
 
-#: src/Widgets/DecryptMenu.vala:75
+#: src/Widgets/DecryptMenu.vala:80
 msgid "Password:"
 msgstr "تێپەڕەوشە:"
 
-#: src/Widgets/DecryptMenu.vala:88
+#: src/Widgets/DecryptMenu.vala:93
 msgid "Device name:"
 msgstr "ناوی ئامێر:"
 
-#: src/Widgets/DecryptMenu.vala:101
+#: src/Widgets/DecryptMenu.vala:106
 msgid "Decrypt"
 msgstr "کردنەوەی کۆد"
 
-#: src/Widgets/DecryptMenu.vala:175
+#: src/Widgets/DecryptMenu.vala:180
 msgid "LUKS volume was decrypted"
 msgstr "کۆدی ڤۆلیومی LUKS کرایەوە"
 
-#: src/Widgets/DiskBar.vala:135
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:136
+#: src/Widgets/DiskBar.vala:137
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

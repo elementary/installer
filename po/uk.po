@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"POT-Creation-Date: 2024-05-02 03:15+0000\n"
 "PO-Revision-Date: 2024-03-15 21:13+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
@@ -49,16 +49,16 @@ msgstr "Перезавантажити тестовий режим"
 msgid "Test mode switch user"
 msgstr "Змінити користувача тестового режиму"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:218
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:46
+#: src/Views/AbstractInstallerView.vala:47
 msgid "Cancel Installation"
 msgstr "Скасувати встановлення"
 
-#: src/Views/AbstractInstallerView.vala:55
+#: src/Views/AbstractInstallerView.vala:56
 msgid "Test Mode"
 msgstr "Режим тестування"
 
@@ -130,12 +130,12 @@ msgstr ""
 "даних, ви можете скасувати встановлення та скористатися демонстраційним "
 "режимом."
 
-#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:95
 msgid "Getting the current configuration…"
 msgstr "Отримання поточної конфігурації…"
 
-#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
-#: src/Views/TryInstallView.vala:88
+#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:126
+#: src/Views/TryInstallView.vala:86
 msgid "Next"
 msgstr "Далі"
 
@@ -182,9 +182,9 @@ msgstr ""
 "Під час встановлення включити власницькі драйвери сторонніх розробників. Я "
 "погоджуюся з їхніми відповідними ліцензіями та умовами користування."
 
-#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
-#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
-#: src/Views/TryInstallView.vala:86
+#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:164
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:124
+#: src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "Назад"
 
@@ -250,15 +250,15 @@ msgstr "Обрати пароль шифрування"
 msgid "Confirm Password"
 msgstr "Підтвердити пароль"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:166
 msgid "Choose Password"
 msgstr "Оберіть пароль"
 
-#: src/Views/EncryptView.vala:192
+#: src/Views/EncryptView.vala:189
 msgid "Set Encryption Password"
 msgstr "Встановити пароль шифрування"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:258
 msgid "Passwords do not match"
 msgstr "Паролі не збігаються"
 
@@ -292,15 +292,15 @@ msgstr "Перезапустити пристрій та завантажити 
 msgid "Details"
 msgstr "Докладніше"
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:115 src/Views/SuccessView.vala:66
 msgid "Restart Device"
 msgstr "Перезапустити пристрій"
 
-#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:117 src/Views/TryInstallView.vala:39
 msgid "Try Demo Mode"
 msgstr "Спробувати демонстраційний режим"
 
-#: src/Views/ErrorView.vala:118
+#: src/Views/ErrorView.vala:119
 msgid "Try Installing Again"
 msgstr "Повторити спробу встановлення"
 
@@ -316,27 +316,27 @@ msgstr "Введіть щось для перевірки розкладки"
 msgid "Show keyboard layout"
 msgstr "Показати розкладку клавіатури"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:113
 msgid "Select"
 msgstr "Вибрати"
 
-#: src/Views/KeyboardLayoutView.vala:124
+#: src/Views/KeyboardLayoutView.vala:121
 msgid "Default"
 msgstr "Типово"
 
-#: src/Views/KeyboardLayoutView.vala:131
+#: src/Views/KeyboardLayoutView.vala:128
 msgid "Input Language"
 msgstr "Мова введення"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:261
 msgid "Languages"
 msgstr "Мови"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:278
 msgid "Select a Language"
 msgstr "Виберіть мову"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:306 src/Views/LanguageView.vala:354
 msgid "Currently active language"
 msgstr "Поточна мова"
 
@@ -355,9 +355,13 @@ msgstr "Необхідно вибрати принаймні <b>кореневи
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
+#, fuzzy
+#| msgid ""
+#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
+#| "efi)</b> partition."
 msgid ""
-"You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-"efi)</b> partition."
+"You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
+"(/boot/efi)</b> partition."
 msgstr ""
 "Необхідно вибрати принаймні <b>кореневий (/)</b> та розділ <b>завантаження (/"
 "boot/efi)</b>."
@@ -366,51 +370,51 @@ msgstr ""
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Також рекомендовано вибрати розділ <b>обміну (Swap)</b>."
 
-#: src/Views/PartitioningView.vala:118
+#: src/Views/PartitioningView.vala:121
 msgid "Modify Partitions…"
 msgstr "Змінити розділи…"
 
-#: src/Views/PartitioningView.vala:271
+#: src/Views/PartitioningView.vala:273
 msgid "EFI partition has the wrong file system"
 msgstr "Розділу EFI призначено неправильну файлову систему"
 
-#: src/Views/PartitioningView.vala:273
+#: src/Views/PartitioningView.vala:275
 msgid "EFI partition is too small"
 msgstr "Розділ EFI замалий"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:278
 msgid "Invalid file system for root"
 msgstr "Неправильна файлова система кореневого розділу"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:280
 msgid "Invalid file system for home"
 msgstr "Неправильна файлова система для home"
 
-#: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
+#: src/Views/ProgressView.vala:76 src/Views/ProgressView.vala:103
 msgid "Show log"
 msgstr "Показати журнал"
 
-#: src/Views/ProgressView.vala:96
+#: src/Views/ProgressView.vala:99
 msgid "Hide log"
 msgstr "Сховати журнал"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:225
+#: src/Views/ProgressView.vala:228
 msgid "Partitioning Drive"
 msgstr "Розподілення диска"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:230
+#: src/Views/ProgressView.vala:233
 msgid "Extracting Files"
 msgstr "Видобування файлів"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:235
+#: src/Views/ProgressView.vala:238
 msgid "Configuring the System"
 msgstr "Налаштовування системи"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:240
+#: src/Views/ProgressView.vala:243
 msgid "Finishing the Installation"
 msgstr "Завершення встановлення"
 
@@ -448,7 +452,7 @@ msgstr ""
 "Створюйте, змінюйте розмір або керуйте розділами власноруч. Цей метод може "
 "призвести до втрати даних."
 
-#: src/Views/TryInstallView.vala:114
+#: src/Views/TryInstallView.vala:112
 msgid "Custom Install"
 msgstr "Налаштувати встановлення"
 
@@ -481,11 +485,11 @@ msgstr ""
 "Після перезапуску ви можете налаштувати нового користувача або вимкнути "
 "зараз і налаштувати нового користувача пізніше."
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:63
 msgid "Decrypt This Partition"
 msgstr "Розшифрувати цей розділ"
 
-#: src/Widgets/DecryptMenu.vala:62
+#: src/Widgets/DecryptMenu.vala:67
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
@@ -493,28 +497,28 @@ msgstr ""
 "Введіть пароль шифрування розділу та встановіть назву пристрою для "
 "розшифрованого розділу."
 
-#: src/Widgets/DecryptMenu.vala:75
+#: src/Widgets/DecryptMenu.vala:80
 msgid "Password:"
 msgstr "Пароль:"
 
-#: src/Widgets/DecryptMenu.vala:88
+#: src/Widgets/DecryptMenu.vala:93
 msgid "Device name:"
 msgstr "Назва пристрою:"
 
-#: src/Widgets/DecryptMenu.vala:101
+#: src/Widgets/DecryptMenu.vala:106
 msgid "Decrypt"
 msgstr "Розшифрувати"
 
-#: src/Widgets/DecryptMenu.vala:175
+#: src/Widgets/DecryptMenu.vala:180
 msgid "LUKS volume was decrypted"
 msgstr "Том LUKS розшифровано"
 
-#: src/Widgets/DiskBar.vala:135
+#: src/Widgets/DiskBar.vala:136
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:136
+#: src/Widgets/DiskBar.vala:137
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
