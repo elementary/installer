@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"POT-Creation-Date: 2024-05-02 03:15+0000\n"
 "PO-Revision-Date: 2023-08-03 16:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/extra/"
@@ -32,47 +32,43 @@ msgstr "elementary OS をインストール"
 msgid "Step by step installer for elementary OS itself."
 msgstr "elementary OS 向けのステップバイステップなインストーラーです。"
 
-#: data/installer.metainfo.xml.in:52
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
-#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:73
-#: data/installer.metainfo.xml.in:87 data/installer.metainfo.xml.in:98
-#: data/installer.metainfo.xml.in:113
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75
+#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:100
+#: data/installer.metainfo.xml.in:115
 msgid "Improvements:"
 msgstr "改善点:"
 
-#: data/installer.metainfo.xml.in:61
+#: data/installer.metainfo.xml.in:63
 msgid "Swipe to navigate back"
 msgstr "スワイプして前の画面に戻れるように修正"
 
-#: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:75
-#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:103
-#: data/installer.metainfo.xml.in:116
+#: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:77
+#: data/installer.metainfo.xml.in:93 data/installer.metainfo.xml.in:105
+#: data/installer.metainfo.xml.in:118
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
-#: data/installer.metainfo.xml.in:89
+#: data/installer.metainfo.xml.in:91
 msgid "Use large icons in views"
 msgstr "各画面でより大きなアイコンを使用するように修正"
 
-#: data/installer.metainfo.xml.in:90
+#: data/installer.metainfo.xml.in:92
 msgid "Add a custom icon for Before Installing view"
 msgstr "“インストールの前に”画面にカスタムアイコンを追加"
 
-#: data/installer.metainfo.xml.in:100
+#: data/installer.metainfo.xml.in:102
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr "バッテリー稼働時の警告を独立したページではなく情報バーとして表示"
 
-#: data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:103
 msgid "Show all system requirements warnings on a single page"
 msgstr "全システム要件に関する警告をひとつのページに表示するように修正"
 
-#: data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:104
 msgid "Warn about installing developer builds"
 msgstr "開発ビルドのインストール時に警告を表示するように修正"
 
-#: data/installer.metainfo.xml.in:115
+#: data/installer.metainfo.xml.in:117
 msgid "Double the boot partition size for encrypted installs"
 msgstr ""
 "暗号化を有効にしたインストールではブートパーティションのサイズを2倍にするよう"
@@ -81,6 +77,9 @@ msgstr ""
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "システムをインストールします"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "Warn about installing in a VM"
 #~ msgstr "VM へのインストール時に警告を表示するように修正"
