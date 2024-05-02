@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-02 03:15+0000\n"
-"PO-Revision-Date: 2024-02-10 13:11+0000\n"
+"PO-Revision-Date: 2024-05-03 04:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -356,16 +356,12 @@ msgstr "少なくとも<b>ルート (/)</b>パーティションを選択する�
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
-#, fuzzy
-#| msgid ""
-#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-#| "efi)</b> partition."
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
 msgstr ""
-"少なくとも<b>ルート (/)</b>パーティションと<b>ブート (/boot/efi)</b>パーティ"
-"ションを選択する必要があります。"
+"少なくとも<b>ルート (/)</b>パーティションを選択する必要があります。<b>ブート "
+"(/boot/efi)</b>パーティションは任意です。"
 
 #: src/Views/PartitioningView.vala:66
 msgid "It is also recommended to select a <b>Swap</b> partition."
