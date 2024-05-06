@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-02 03:15+0000\n"
-"PO-Revision-Date: 2024-05-03 04:13+0000\n"
+"PO-Revision-Date: 2024-05-07 05:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -274,7 +274,7 @@ msgid ""
 "restart properly. You can try the following:"
 msgstr ""
 "%s のインストールに失敗しました。ハードウェアのエラーが原因と思われます。デバ"
-"イスが正しく再起動しない可能性があります。以下の操作を試すことができます。"
+"イスが正しく再起動しない可能性があります。以下をお試しください。"
 
 #: src/Views/ErrorView.vala:48
 msgid "Try the installation again"
@@ -469,7 +469,7 @@ msgstr "シャットダウン"
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] "お使いのデバイスは%i秒後に自動的に再起動します。"
+msgstr[0] "お使いのデバイスは %i 秒後に自動的に再起動します。"
 
 #: src/Views/SuccessView.vala:101
 msgid ""
