@@ -59,8 +59,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (back_button);
-        action_area.add (next_button);
+        action_box_end.add (back_button);
+        action_box_end.add (next_button);
 
         input_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
             return ((LayoutRow) row1).layout.description.collate (((LayoutRow) row2).layout.description);
