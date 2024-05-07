@@ -18,7 +18,7 @@
  */
 
 levelbar block {
-    border-radius: 0.333em;
+    border-radius: 3px;
 }
 
 levelbar block:not(:first-child) {
@@ -84,7 +84,6 @@ levelbar block.unused {
 }
 
 levelbar block image {
-    padding: 0.5em;
     -gtk-icon-palette: error #fff, success #fff, warning #fff;
     -gtk-icon-shadow:
         0 1px 1px alpha(#000, 0.2),
