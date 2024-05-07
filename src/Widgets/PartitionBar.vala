@@ -5,7 +5,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.PartitionBar : Gtk.Box {
+public class Installer.PartitionBar : Gtk.EventBox {
     public signal void decrypted (InstallerDaemon.LuksCredentials credential);
 
     public Icon? icon { get; set; default = null; }
@@ -43,6 +43,9 @@ public class Installer.PartitionBar : Gtk.Box {
 
         menu.relative_to = this;
         menu.position = BOTTOM;
+
+        click_gesture = new Gtk.GestureMultiPress (this);
+        click_gesture.released.connect (menu.popup);
     }
 
     class construct {
@@ -63,9 +66,6 @@ public class Installer.PartitionBar : Gtk.Box {
         tooltip_text = partition.device_path;
 
         get_style_context ().add_class (Distinst.strfilesys (partition.filesystem));
-
-        click_gesture = new Gtk.GestureMultiPress (this);
-        click_gesture.released.connect (menu.popup);
 
         bind_property ("icon", image, "gicon", SYNC_CREATE);
     }
