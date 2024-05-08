@@ -186,7 +186,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
         show_all ();
 
-        Idle.add (() => {
+        Idle.add_once (() => {
             string? country = Configuration.get_default ().country;
             if (country != null) {
                 string default_layout = country.down ();
