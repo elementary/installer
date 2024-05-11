@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-05-11 02:29+0000\n"
 "PO-Revision-Date: 2023-08-03 16:08+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
@@ -32,6 +32,10 @@ msgstr "Встановлення elementary OS"
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "Покроковий встановлювач самої elementary OS."
+
+#: data/installer.metainfo.xml.in:53
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75
 #: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:100
@@ -77,9 +81,6 @@ msgstr "Подвоєно розмір завантажувального роз�
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Встановлення системи"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Warn about installing in a VM"
 #~ msgstr "Попередження про встановлення у віртуальній машині"

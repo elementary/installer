@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-05-11 02:29+0000\n"
 "PO-Revision-Date: 2019-09-07 18:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Kurdish <https://l10n.elementary.io/projects/installer/extra/"
@@ -25,6 +25,10 @@ msgstr "elementary OS Saz bike"
 
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
+msgstr ""
+
+#: data/installer.metainfo.xml.in:53
+msgid "elementary, Inc."
 msgstr ""
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75

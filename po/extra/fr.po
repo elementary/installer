@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-05-11 02:29+0000\n"
 "PO-Revision-Date: 2023-08-08 12:08+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/extra/"
@@ -31,6 +31,10 @@ msgstr "Installer elementary OS"
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "Assistant d'installation étape par étape pour installer elementary OS."
+
+#: data/installer.metainfo.xml.in:53
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75
 #: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:100
@@ -80,9 +84,6 @@ msgstr ""
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Installer le système"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Warn about installing in a VM"
 #~ msgstr "Avertissement concernant l'installation sur une machine virtuelle"

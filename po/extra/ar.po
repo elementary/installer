@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-05-11 02:29+0000\n"
 "PO-Revision-Date: 2021-08-27 17:59+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/extra/"
@@ -25,6 +25,10 @@ msgstr "ثبت elementary OS"
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "مثبت سهل ل elementary OS بنفسه."
+
+#: data/installer.metainfo.xml.in:53
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75
 #: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:100
@@ -69,9 +73,6 @@ msgstr ""
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "ثبت النظام"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"

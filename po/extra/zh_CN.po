@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-05-11 02:29+0000\n"
 "PO-Revision-Date: 2021-11-01 08:19+0000\n"
 "Last-Translator: Guochengjie <i@guoch.xyz>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -31,6 +31,10 @@ msgstr "安装 elementary OS"
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "逐步安装elementary OS。"
+
+#: data/installer.metainfo.xml.in:53
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75
 #: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:100
@@ -75,9 +79,6 @@ msgstr ""
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "安装系统"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"
