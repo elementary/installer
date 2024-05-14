@@ -83,9 +83,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         );
 
         var description_box = new Gtk.Box (VERTICAL, 12) {
-            margin_top = 12,
             margin_end = 12,
-            margin_bottom = 12,
             margin_start = 12
         };
         description_box.add (format_row);
@@ -93,12 +91,10 @@ public class Installer.PartitioningView : AbstractInstallerView {
         description_box.add (recommended_row);
 
         disk_list = new Gtk.Grid () {
-            margin_top = 12,
             margin_end = 12,
-            margin_bottom = 12,
             margin_start = 12,
             row_spacing = 24,
-            orientation = Gtk.Orientation.VERTICAL,
+            orientation = VERTICAL,
             valign = Gtk.Align.CENTER
         };
 
