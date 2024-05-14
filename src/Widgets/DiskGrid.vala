@@ -17,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.DiskButton : Gtk.RadioButton {
+public class Installer.DiskButton : Gtk.CheckButton {
     public string disk_name { get; construct; }
     public string icon_name { get; construct; }
     public string disk_path { get; construct; }

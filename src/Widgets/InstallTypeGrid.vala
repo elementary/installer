@@ -17,7 +17,7 @@
  * Authored by: Cassidy James Blaede <c@ssidyjam.es>
  */
 
-public class Installer.InstallTypeButton : Gtk.RadioButton {
+public class Installer.InstallTypeButton : Gtk.CheckButton {
     public string title { get; construct; }
     public string icon_name { get; construct; }
     public string subtitle { get; construct; }

@@ -5,7 +5,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.PartitionBar : Gtk.EventBox {
+public class Installer.PartitionBar : Gtk.Box {
     public signal void decrypted (InstallerDaemon.LuksCredentials credential);
 
     public Icon? icon { get; set; default = null; }
@@ -17,7 +17,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
     public string? volume_group { get; private set; }
     public Gtk.Popover menu { get; private set; }
 
-    private Gtk.GestureMultiPress click_gesture;
+    private Gtk.GestureClick click_gesture;
 
     public PartitionBar (
         InstallerDaemon.Partition partition,
@@ -44,8 +44,10 @@ public class Installer.PartitionBar : Gtk.EventBox {
         menu.relative_to = this;
         menu.position = BOTTOM;
 
-        click_gesture = new Gtk.GestureMultiPress (this);
+        click_gesture = new Gtk.GestureClickPress ();
         click_gesture.released.connect (menu.popup);
+
+        add_controller (click_gesture);
     }
 
     class construct {
@@ -61,7 +63,7 @@ public class Installer.PartitionBar : Gtk.EventBox {
             valign = END
         };
 
-        add (image);
+        append (image);
         hexpand = true;
         tooltip_text = partition.device_path;
 
