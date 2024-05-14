@@ -52,7 +52,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Select Partitions"));
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-        var format_row = new ListRow (
+        var format_row = new DescriptionRow (
             _("Selecting “Format” will erase ALL data on the selected partition."),
             "dialog-warning-symbolic",
             "orange"
@@ -70,13 +70,13 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 break;
         }
 
-        var required_row = new ListRow (
+        var required_row = new DescriptionRow (
             required_description,
             "emblem-system-symbolic",
             "orange"
         );
 
-        var recommended_row = new ListRow (
+        var recommended_row = new DescriptionRow (
             _("It is also recommended to select a <b>Swap</b> partition."),
             "dialog-information-symbolic",
             "blue"
@@ -347,8 +347,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
         return array.remove_at (array.size - 1);
     }
 
-    private class ListRow : Gtk.Box {
-        public ListRow (string description, string icon_name, string color) {
+    private class DescriptionRow : Gtk.Box {
+        public DescriptionRow (string description, string icon_name, string color) {
             var image = new Gtk.Image.from_icon_name (icon_name, MENU) {
                 valign = Gtk.Align.START
             };
