@@ -27,11 +27,11 @@ public class Installer.DiskView : AbstractInstallerView {
     }
 
     construct {
-        var install_image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG) {
+        var install_image = new Gtk.Image.from_icon_name ("drive-harddisk") {
             pixel_size = 128
         };
 
-        var install_badge = new Gtk.Image.from_icon_name ("io.elementary.installer.emblem-downloads", Gtk.IconSize.DND) {
+        var install_badge = new Gtk.Image.from_icon_name ("io.elementary.installer.emblem-downloads") {
             pixel_size = 64,
             halign = Gtk.Align.END,
             valign = Gtk.Align.END

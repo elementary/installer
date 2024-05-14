@@ -21,7 +21,7 @@ public class SuccessView : AbstractInstallerView {
     private Gtk.Label secondary_label;
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("process-completed") {
             pixel_size = 128,
             valign = Gtk.Align.END
         };

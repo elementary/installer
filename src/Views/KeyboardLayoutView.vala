@@ -22,7 +22,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
     construct {
         keyboard_settings = new GLib.Settings ("org.gnome.desktop.input-sources");
 
-        var image = new Gtk.Image.from_icon_name ("input-keyboard", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("input-keyboard") {
             pixel_size = 128,
             valign = Gtk.Align.END
         };

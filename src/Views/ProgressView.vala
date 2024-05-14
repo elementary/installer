@@ -72,7 +72,7 @@ public class ProgressView : AbstractInstallerView {
 
         var terminal_button = new Gtk.ToggleButton () {
             halign = Gtk.Align.END,
-            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic"),
             tooltip_text = _("Show log")
         };
         terminal_button.add_css_class (Granite.STYLE_CLASS_FLAT);

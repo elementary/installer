@@ -44,10 +44,14 @@ public class Installer.DecryptMenu: Gtk.Popover {
     }
 
     private void create_decrypt_view () {
-        var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG);
+        var image = new Gtk.Image.from_icon_name ("drive-harddisk") {
+            pixel_size = 48
+        };
         image.valign = Gtk.Align.START;
 
-        var overlay_image = new Gtk.Image.from_icon_name ("dialog-password", Gtk.IconSize.DND);
+        var overlay_image = new Gtk.Image.from_icon_name ("dialog-password") {
+            icon_size = LARGE
+        };
         overlay_image.halign = Gtk.Align.END;
         overlay_image.valign = Gtk.Align.END;
 

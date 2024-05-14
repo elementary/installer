@@ -33,7 +33,9 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
     construct {
         add_css_class ("image-button");
 
-        var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
+        var image = new Gtk.Image.from_icon_name (icon_name) {
+            pixel_size = 48
+        };
 
         var title_label = new Gtk.Label (title) {
             hexpand = true,

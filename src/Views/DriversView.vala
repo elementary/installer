@@ -19,7 +19,7 @@
     public signal void next_step ();
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("application-x-firmware", Gtk.IconSize.INVALID) {
+        var image = new Gtk.Image.from_icon_name ("application-x-firmware") {
             pixel_size = 128,
             valign = Gtk.Align.END
         };
@@ -36,7 +36,9 @@
         };
         description_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var warning_image = new Gtk.Image.from_icon_name ("security-low-symbolic", LARGE_TOOLBAR);
+        var warning_image = new Gtk.Image.from_icon_name ("security-low-symbolic") {
+            pixel_size = 24
+        };
         warning_image.add_css_class ("accent");
         warning_image.add_css_class ("yellow");
 
@@ -47,7 +49,9 @@
             xalign = 0
         };
 
-        var internet_image = new Gtk.Image.from_icon_name ("network-wireless-symbolic", LARGE_TOOLBAR);
+        var internet_image = new Gtk.Image.from_icon_name ("network-wireless-symbolic") {
+            pixel_size = 24
+        };
         internet_image.add_css_class ("accent");
         internet_image.add_css_class ("blue");
 
@@ -58,7 +62,9 @@
             xalign = 0
         };
 
-        var install_later_image = new Gtk.Image.from_icon_name ("system-software-install-symbolic", LARGE_TOOLBAR);
+        var install_later_image = new Gtk.Image.from_icon_name ("system-software-install-symbolic") {
+            pixel_size = 24
+        };
         install_later_image.add_css_class ("accent");
         install_later_image.add_css_class ("purple");
 

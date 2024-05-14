@@ -38,7 +38,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             preferred_langs.add (lang);
         }
 
-        var image = new Gtk.Image.from_icon_name ("preferences-desktop-locale", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("preferences-desktop-locale") {
             pixel_size = 128,
             valign = Gtk.Align.END
         };
@@ -315,7 +315,6 @@ public class Installer.LanguageView : AbstractInstallerView {
             image = new Gtk.Image ();
             image.hexpand = true;
             image.halign = Gtk.Align.END;
-            image.icon_size = Gtk.IconSize.BUTTON;
 
             var label = new Gtk.Label (lang_entry.name) {
                 ellipsize = Pango.EllipsizeMode.END,
@@ -362,7 +361,6 @@ public class Installer.LanguageView : AbstractInstallerView {
             image = new Gtk.Image ();
             image.hexpand = true;
             image.halign = Gtk.Align.END;
-            image.icon_size = Gtk.IconSize.BUTTON;
 
             var label = new Gtk.Label (country_entry.name);
             label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);

@@ -24,7 +24,7 @@ public class ErrorView : AbstractInstallerView {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("dialog-error") {
             pixel_size = 128,
             valign = Gtk.Align.END
         };
@@ -41,7 +41,7 @@ public class ErrorView : AbstractInstallerView {
             xalign = 0
         };
 
-        var redo_image = new Gtk.Image.from_icon_name ("edit-undo-symbolic", Gtk.IconSize.MENU) {
+        var redo_image = new Gtk.Image.from_icon_name ("edit-undo-symbolic") {
             margin_start = 6
         };
 
@@ -52,7 +52,7 @@ public class ErrorView : AbstractInstallerView {
             xalign = 0
         };
 
-        var demo_image = new Gtk.Image.from_icon_name ("document-properties-symbolic", Gtk.IconSize.MENU) {
+        var demo_image = new Gtk.Image.from_icon_name ("document-properties-symbolic") {
             margin_start = 6
         };
 
@@ -62,7 +62,7 @@ public class ErrorView : AbstractInstallerView {
             xalign = 0
         };
 
-        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic", Gtk.IconSize.MENU) {
+        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic") {
             margin_start = 6
         };
 
@@ -75,7 +75,7 @@ public class ErrorView : AbstractInstallerView {
         var terminal_button = new Gtk.ToggleButton () {
             always_show_image = true,
             halign = Gtk.Align.START,
-            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic"),
             label = _("Details"),
             margin_top = 12
         };

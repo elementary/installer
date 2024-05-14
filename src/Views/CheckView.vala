@@ -42,7 +42,7 @@ public class Installer.CheckView : AbstractInstallerView {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("io.elementary.installer.caution", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("io.elementary.installer.caution") {
             pixel_size = 128,
             valign = Gtk.Align.END
         };
@@ -176,7 +176,8 @@ public class Installer.CheckView : AbstractInstallerView {
 
     private class CheckView : Gtk.Grid {
         public CheckView (string title, string description, string icon_name) {
-            var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
+            var image = new Gtk.Image.from_icon_name (icon_name) {
+                icon_size = LARGE,
                 valign = Gtk.Align.START
             };
 

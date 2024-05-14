@@ -35,7 +35,8 @@ public class Installer.DiskButton : Gtk.CheckButton {
     construct {
         add_css_class ("image-button");
 
-        var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG) {
+        var disk_image = new Gtk.Image.from_icon_name (icon_name) {
+            pixel_size = 48,
             use_fallback = true
         };
 

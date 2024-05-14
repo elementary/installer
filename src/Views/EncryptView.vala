@@ -30,11 +30,11 @@ public class EncryptView : AbstractInstallerView {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.INVALID) {
+        var image = new Gtk.Image.from_icon_name ("drive-harddisk") {
             pixel_size = 128
         };
 
-        var overlay_image = new Gtk.Image.from_icon_name ("security-high", Gtk.IconSize.INVALID) {
+        var overlay_image = new Gtk.Image.from_icon_name ("security-high") {
             pixel_size = 64,
             halign = Gtk.Align.END,
             valign = Gtk.Align.END
@@ -61,7 +61,9 @@ public class EncryptView : AbstractInstallerView {
         };
         details_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic") {
+            pixel_size = 24
+        };
 
         var protect_label = new Gtk.Label (_("Data will only be protected from others with physical access to this device when it is shut down.")) {
             hexpand = true,
@@ -70,7 +72,9 @@ public class EncryptView : AbstractInstallerView {
             xalign = 0
         };
 
-        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic") {
+            pixel_size = 24
+        };
 
         var restart_label = new Gtk.Label (_("The encryption password will be required each time this device is turned on. Store it somewhere safe.")) {
             hexpand = true,
@@ -79,7 +83,9 @@ public class EncryptView : AbstractInstallerView {
             xalign = 0
         };
 
-        var keyboard_image = new Gtk.Image.from_icon_name ("input-keyboard-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var keyboard_image = new Gtk.Image.from_icon_name ("input-keyboard-symbolic") {
+            pixel_size = 24
+        };
 
         var keyboard_label = new Gtk.Label (_("A built-in or USB keyboard will be required to type the encryption password each time this device is turned on.")) {
             hexpand = true,
