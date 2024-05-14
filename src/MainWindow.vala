@@ -42,7 +42,7 @@ public class Installer.MainWindow : Gtk.Window {
             can_navigate_back = true,
             can_unfold = false
         };
-        leaflet.add (language_view);
+        leaflet.append (language_view);
 
         infobar_label = new Gtk.Label ("") {
             use_markup = true
@@ -151,8 +151,8 @@ public class Installer.MainWindow : Gtk.Window {
         var keyboard_layout_view = new KeyboardLayoutView ();
         try_install_view = new TryInstallView ();
 
-        leaflet.add (keyboard_layout_view);
-        leaflet.add (try_install_view);
+        leaflet.append (keyboard_layout_view);
+        leaflet.append (try_install_view);
 
         leaflet.visible_child = keyboard_layout_view;
 
@@ -174,7 +174,7 @@ public class Installer.MainWindow : Gtk.Window {
 
     private void load_disk_view () {
         var disk_view = new DiskView ();
-        leaflet.add (disk_view);
+        leaflet.append (disk_view);
 
         disk_view.load.begin (MINIMUM_SPACE);
         disk_view.cancel.connect (() => leaflet.navigate (BACK));
@@ -187,7 +187,7 @@ public class Installer.MainWindow : Gtk.Window {
 
         var check_view = new Installer.CheckView ();
         if (check_view.has_messages) {
-            leaflet.add (check_view);
+            leaflet.append (check_view);
         }
 
         check_view.cancel.connect (() => leaflet.navigate (BACK));
@@ -200,7 +200,7 @@ public class Installer.MainWindow : Gtk.Window {
 
     private void load_encrypt_view () {
         var encrypt_view = new EncryptView ();
-        leaflet.add (encrypt_view);
+        leaflet.append (encrypt_view);
 
         encrypt_view.cancel.connect (() => {
             leaflet.visible_child = try_install_view;
@@ -209,7 +209,7 @@ public class Installer.MainWindow : Gtk.Window {
 
     private void load_partitioning_view () {
         var partitioning_view = new PartitioningView (MINIMUM_SPACE);
-        leaflet.add (partitioning_view);
+        leaflet.append (partitioning_view);
 
         partitioning_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
@@ -221,7 +221,7 @@ public class Installer.MainWindow : Gtk.Window {
 
     private void load_drivers_view () {
         var drivers_view = new DriversView ();
-        leaflet.add (drivers_view);
+        leaflet.append (drivers_view);
 
         drivers_view.next_step.connect (() => load_progress_view ());
     }
@@ -229,9 +229,9 @@ public class Installer.MainWindow : Gtk.Window {
     private void load_progress_view () {
         var progress_view = new ProgressView ();
 
-        leaflet.add (progress_view);
+        leaflet.append (progress_view);
         leaflet.visible_child = progress_view;
-        leaflet.can_swipe_back = false;
+        leaflet.can_navigate_back = false;
 
         progress_view.on_success.connect (() => load_success_view ());
 
@@ -243,18 +243,18 @@ public class Installer.MainWindow : Gtk.Window {
 
     private void load_success_view () {
         var success_view = new SuccessView ();
-        leaflet.add (success_view);
+        leaflet.append (success_view);
         leaflet.visible_child = success_view;
     }
 
     private void load_error_view (string log) {
         var error_view = new ErrorView (log);
-        leaflet.add (error_view);
+        leaflet.append (error_view);
         leaflet.visible_child = error_view;
 
         error_view.retry_install.connect (() => {
             leaflet.visible_child = try_install_view;
-            leaflet.can_swipe_back = true;
+            leaflet.can_navigate_back = true;
         });
     }
 
