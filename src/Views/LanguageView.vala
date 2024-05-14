@@ -114,7 +114,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         next_button.sensitive = false;
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (next_button);
+        action_box_end.add (next_button);
 
         lang_variant_widget.main_listbox.row_selected.connect (row_selected);
         lang_variant_widget.main_listbox.select_row (lang_variant_widget.main_listbox.get_row_at_index (0));

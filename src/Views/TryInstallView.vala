@@ -88,8 +88,8 @@ public class Installer.TryInstallView : AbstractInstallerView {
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (back_button);
-        action_area.add (next_button);
+        action_box_end.add (back_button);
+        action_box_end.add (next_button);
 
         back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
 

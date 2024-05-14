@@ -111,7 +111,7 @@ public class Installer.DiskView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (FORWARD));
 
-        action_area.add (next_button);
+        action_box_end.add (next_button);
 
         show_all ();
     }

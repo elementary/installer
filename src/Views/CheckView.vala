@@ -86,7 +86,7 @@ public class Installer.CheckView : AbstractInstallerView {
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (() => next_step ());
 
-        action_area.add (ignore_button);
+        action_box_end.add (ignore_button);
 
         bool minimum_specs = true;
 

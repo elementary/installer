@@ -127,11 +127,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.sensitive = false;
 
-        action_area.add (modify_partitions_button);
-        action_area.set_child_secondary (modify_partitions_button, true);
-        action_area.set_child_non_homogeneous (modify_partitions_button, true);
-        action_area.add (back_button);
-        action_area.add (next_button);
+        action_box_start.add (modify_partitions_button);
+        action_box_end.add (back_button);
+        action_box_end.add (next_button);
 
         back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
         next_button.clicked.connect (() => next_step ());

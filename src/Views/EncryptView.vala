@@ -170,9 +170,9 @@ public class EncryptView : AbstractInstallerView {
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (back_button);
-        action_area.add (encrypt_button);
-        action_area.add (next_button);
+        action_box_end.add (back_button);
+        action_box_end.add (encrypt_button);
+        action_box_end.add (next_button);
 
         next_button.grab_focus ();
 

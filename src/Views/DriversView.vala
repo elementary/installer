@@ -105,8 +105,8 @@
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.clicked.connect (() => next_step ());
 
-        action_area.add (back_button);
-        action_area.add (next_button);
+        action_box_end.add (back_button);
+        action_box_end.add (next_button);
 
         drivers_check.toggled.connect (() => {
             unowned var configuration = Configuration.get_default ();
