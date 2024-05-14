@@ -141,7 +141,6 @@ public class Installer.DiskBar: Gtk.Grid {
 
         var event_box = new Gtk.EventBox ();
         event_box.add (legend);
-        event_box.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
 
         if (menu != null) {
             event_box.button_press_event.connect (() => {
