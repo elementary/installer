@@ -82,7 +82,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             valign = Gtk.Align.CENTER
         };
 
-        var disk_scroller = new Gtk.ScrolledWindow (null, null);
+        var disk_scroller = new Gtk.ScrolledWindow ();
         disk_scroller.hexpand = true;
         disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
         disk_scroller.add (disk_list);

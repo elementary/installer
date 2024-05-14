@@ -29,7 +29,7 @@ public class VariantWidget : Gtk.Frame {
     construct {
         main_listbox = new Gtk.ListBox ();
 
-        var main_scrolled = new Gtk.ScrolledWindow (null, null) {
+        var main_scrolled = new Gtk.ScrolledWindow () {
             child = main_listbox,
             hscrollbar_policy = NEVER
         };
@@ -37,7 +37,7 @@ public class VariantWidget : Gtk.Frame {
         variant_listbox = new Gtk.ListBox ();
         variant_listbox.activate_on_single_click = false;
 
-        var variant_scrolled = new Gtk.ScrolledWindow (null, null) {
+        var variant_scrolled = new Gtk.ScrolledWindow () {
             child = variant_listbox,
             hscrollbar_policy = NEVER,
             vexpand = true

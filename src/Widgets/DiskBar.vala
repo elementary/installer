@@ -84,7 +84,7 @@ public class Installer.DiskBar: Gtk.Grid {
         legend_container.halign = Gtk.Align.CENTER;
         legend_container.margin_bottom = 9;
 
-        var legend = new Gtk.ScrolledWindow (null, null);
+        var legend = new Gtk.ScrolledWindow ();
         legend.vscrollbar_policy = Gtk.PolicyType.NEVER;
         legend.add (legend_container);
 

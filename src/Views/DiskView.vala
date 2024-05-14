@@ -58,7 +58,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
         disk_box = new Gtk.Box (VERTICAL, 6);
 
-        var disk_scrolled = new Gtk.ScrolledWindow (null, null) {
+        var disk_scrolled = new Gtk.ScrolledWindow () {
             child = disk_box,
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             propagate_natural_height = true

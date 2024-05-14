@@ -67,7 +67,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         type_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         type_box.append (custom_button);
 
-        var type_scrolled = new Gtk.ScrolledWindow (null, null) {
+        var type_scrolled = new Gtk.ScrolledWindow () {
             child = type_box,
             hscrollbar_policy = NEVER,
             propagate_natural_height = true
