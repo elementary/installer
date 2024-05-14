@@ -135,26 +135,22 @@ public class Installer.DiskBar: Gtk.Grid {
         var legend = new Gtk.Grid () {
             column_spacing = 6
         };
-        legend.attach (set_menu (fill_round, menu), 0, 0, 1, 2);
-        legend.attach (set_menu (path, menu), 1, 0);
+        legend.attach (fill_round, 0, 0, 1, 2);
+        legend.attach (path, 1, 0);
         legend.attach (info, 1, 1);
 
-        legend_container.add (legend);
-    }
+        var event_box = new Gtk.EventBox ();
+        event_box.add (legend);
+        event_box.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
 
-    private Gtk.Widget set_menu (Gtk.Widget widget, Gtk.Popover? menu) {
         if (menu != null) {
-            var event_box = new Gtk.EventBox ();
-            event_box.add (widget);
-            event_box.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
             event_box.button_press_event.connect (() => {
                 menu.popup ();
                 return true;
             });
-            return event_box;
         }
 
-        return widget;
+        legend_container.add (event_box);
     }
 
     private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, Gtk.Allocation alloc) {
