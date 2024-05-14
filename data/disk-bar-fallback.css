@@ -19,7 +19,6 @@
 
 levelbar block {
     border-radius: 0.333em;
-    min-height: 2em;
 }
 
 levelbar block:not(:first-child) {
