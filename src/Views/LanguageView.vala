@@ -51,7 +51,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         select_stack.valign = Gtk.Align.START;
         select_stack.add_css_class ("h2");
         select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-        select_stack.add (select_label);
+        select_stack.add_child (select_label);
 
         select_stack.notify["transition-running"].connect (() => {
             if (!select_stack.transition_running) {
@@ -274,7 +274,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         Environment.set_variable ("LANGUAGE", ((LangRow) row).lang_entry.get_code (), true);
         Intl.textdomain (Build.GETTEXT_PACKAGE);
         select_label = new Gtk.Label (_("Select a Language"));
-        select_stack.add (select_label);
+        select_stack.add_child (select_label);
         select_stack.set_visible_child (select_label);
 
         if (current_lang != null) {

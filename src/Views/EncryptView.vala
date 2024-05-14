@@ -157,8 +157,8 @@ public class EncryptView : AbstractInstallerView {
             valign = Gtk.Align.CENTER,
             vexpand = true
         };
-        stack.add (choice_grid);
-        stack.add (password_box);
+        stack.add_child (choice_grid);
+        stack.add_child (password_box);
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;

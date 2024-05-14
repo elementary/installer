@@ -86,7 +86,7 @@ public class Installer.DiskView : AbstractInstallerView {
         load_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE
         };
-        load_stack.add (load_box);
+        load_stack.add_child (load_box);
         load_stack.add_named (disk_scrolled, "disk");
 
         var title_grid = new Gtk.Grid () {

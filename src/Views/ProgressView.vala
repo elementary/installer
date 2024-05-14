@@ -67,8 +67,8 @@ public class ProgressView : AbstractInstallerView {
         var logo_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.OVER_UP_DOWN
         };
-        logo_stack.add (logo_overlay);
-        logo_stack.add (terminal_view);
+        logo_stack.add_child (logo_overlay);
+        logo_stack.add_child (terminal_view);
 
         var terminal_button = new Gtk.ToggleButton () {
             halign = Gtk.Align.END,

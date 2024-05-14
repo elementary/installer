@@ -125,7 +125,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         decrypt_view.attach (pv_entry, 1, 2);
         decrypt_view.attach (decrypt_button, 0, 3, 2);
 
-        stack.add (decrypt_view);
+        stack.add_child (decrypt_view);
         stack.visible_child = decrypt_view;
         pass_entry.grab_focus_without_selecting ();
     }
@@ -186,7 +186,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         box.append (label);
         box.append (info);
 
-        stack.add (box);
+        stack.add_child (box);
         stack.visible_child = box;
     }
 
