@@ -75,7 +75,7 @@ public class ErrorView : AbstractInstallerView {
         var terminal_button = new Gtk.ToggleButton () {
             always_show_image = true,
             halign = Gtk.Align.START,
-            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic"),
+            icon_name = "utilities-terminal-symbolic",
             label = _("Details"),
             margin_top = 12
         };
