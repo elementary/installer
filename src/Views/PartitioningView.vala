@@ -53,7 +53,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var format_row = new DescriptionRow (
-            _("Selecting “Format” will erase ALL data on the selected partition."),
+            _("Selecting “Format” will erase <i>all</i> data on the selected partition."),
             "dialog-warning-symbolic",
             "orange"
         );
