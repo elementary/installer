@@ -1,19 +1,6 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2018 elementary LLC. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2018-2024 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
@@ -26,7 +13,7 @@ public class Installer.DiskBar: Gtk.Grid {
 
     private static Gtk.SizeGroup label_sizegroup;
 
-    private Gtk.Grid legend_container;
+    private Gtk.Box legend_container;
 
     public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBar> partitions) {
         Object (
@@ -42,7 +29,7 @@ public class Installer.DiskBar: Gtk.Grid {
     }
 
     static construct {
-        label_sizegroup = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        label_sizegroup = new Gtk.SizeGroup (HORIZONTAL);
     }
 
     construct {
@@ -54,17 +41,14 @@ public class Installer.DiskBar: Gtk.Grid {
         var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
             xalign = 1
         };
+        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        size_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        unowned var size_label_context = size_label.get_style_context ();
-        size_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        size_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
-
-        var label = new Gtk.Grid ();
-        label.orientation = Gtk.Orientation.VERTICAL;
-        label.row_spacing = 6;
-        label.valign = Gtk.Align.CENTER;
-        label.add (name_label);
-        label.add (size_label);
+        var label_box = new Gtk.Box (VERTICAL, 6) {
+            valign = CENTER
+        };
+        label_box.add (name_label);
+        label_box.add (size_label);
 
         label_sizegroup.add_widget (name_label);
         label_sizegroup.add_widget (size_label);
@@ -79,17 +63,24 @@ public class Installer.DiskBar: Gtk.Grid {
             bar.add (part);
         }
 
-        legend_container = new Gtk.Grid ();
-        legend_container.column_spacing = 24;
-        legend_container.halign = Gtk.Align.CENTER;
-        legend_container.margin_bottom = 9;
+        legend_container = new Gtk.Box (HORIZONTAL, 24) {
+            halign = CENTER,
+            margin_bottom = 9
+        };
 
-        var legend = new Gtk.ScrolledWindow (null, null);
-        legend.vscrollbar_policy = Gtk.PolicyType.NEVER;
-        legend.add (legend_container);
+        var legend = new Gtk.ScrolledWindow (null, null) {
+            child = legend_container,
+            vscrollbar_policy = NEVER
+        };
 
         foreach (PartitionBar p in partitions) {
-            add_legend (p.partition.device_path, p.get_size () * 512, Distinst.strfilesys (p.partition.filesystem), p.volume_group, p.menu);
+            add_legend (
+                p.partition.device_path,
+                p.get_size () * 512,
+                Distinst.strfilesys (p.partition.filesystem),
+                p.volume_group,
+                p.menu
+            );
         }
 
         uint64 used = 0;
@@ -113,7 +104,7 @@ public class Installer.DiskBar: Gtk.Grid {
         column_spacing = 12;
         hexpand = true;
         get_style_context ().add_class (Granite.STYLE_CLASS_STORAGEBAR);
-        attach (label, 0, 1);
+        attach (label_box, 0, 1);
         attach (legend, 1, 0);
         attach (bar, 1, 1);
 
@@ -121,13 +112,13 @@ public class Installer.DiskBar: Gtk.Grid {
     }
 
     private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {
-        var fill_round = new Block ();
-        fill_round.width_request = fill_round.height_request = 14;
-        fill_round.valign = Gtk.Align.CENTER;
-
-        var context = fill_round.get_style_context ();
-        context.add_class ("legend");
-        context.add_class (fs);
+        var fill_round = new Block () {
+            width_request = 14,
+            height_request = 14,
+            valign = CENTER
+        };
+        fill_round.get_style_context ().add_class ("legend");
+        fill_round.get_style_context ().add_class (fs);
 
         var format_size = GLib.format_size (size);
 
@@ -138,12 +129,14 @@ public class Installer.DiskBar: Gtk.Grid {
         );
         info.use_markup = true;
 
-        var path = new Gtk.Label ("<b>%s</b>".printf (ppath));
-        path.halign = Gtk.Align.START;
-        path.use_markup = true;
+        var path = new Gtk.Label ("<b>%s</b>".printf (ppath)) {
+            halign = START,
+            use_markup = true
+        };
 
-        var legend = new Gtk.Grid ();
-        legend.column_spacing = 6;
+        var legend = new Gtk.Grid () {
+            column_spacing = 6
+        };
         legend.attach (set_menu (fill_round, menu), 0, 0, 1, 2);
         legend.attach (set_menu (path, menu), 1, 0);
         legend.attach (info, 1, 1);
