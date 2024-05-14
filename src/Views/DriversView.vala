@@ -112,7 +112,5 @@
             unowned var configuration = Configuration.get_default ();
             configuration.install_drivers = drivers_check.active;
         });
-
-        show_all ();
     }
 }

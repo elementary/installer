@@ -41,7 +41,6 @@ public class Installer.DecryptMenu: Gtk.Popover {
         };
         create_decrypt_view ();
         add (stack);
-        stack.show_all ();
     }
 
     private void create_decrypt_view () {
@@ -182,7 +181,6 @@ public class Installer.DecryptMenu: Gtk.Popover {
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
         box.add (label);
         box.add (info);
-        box.show_all ();
 
         stack.add (box);
         stack.visible_child = box;

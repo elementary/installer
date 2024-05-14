@@ -183,8 +183,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
             input_variant_widget.main_listbox.add (new LayoutRow (layout));
         }
 
-        show_all ();
-
         Idle.add_once (() => {
             string? country = Configuration.get_default ().country;
             if (country != null) {
@@ -228,7 +226,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
             label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             add (label);
-            show_all ();
         }
     }
 
@@ -255,7 +252,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
             label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             add (label);
-            show_all ();
         }
     }
 }

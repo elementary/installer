@@ -112,8 +112,6 @@ public class Installer.DiskView : AbstractInstallerView {
         next_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (FORWARD));
 
         action_box_end.add (next_button);
-
-        show_all ();
     }
 
     public async void load (uint64 minimum_disk_size) {
@@ -183,7 +181,6 @@ public class Installer.DiskView : AbstractInstallerView {
             disk_box.add (disk_button);
         }
 
-        disk_box.show_all ();
         load_stack.set_visible_child_name ("disk");
     }
 }

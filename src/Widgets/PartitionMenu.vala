@@ -136,7 +136,6 @@ public class Installer.PartitionMenu : Gtk.Popover {
         };
         grid.attach (use_partition, 0, 0);
         grid.attach (bottom_revealer, 0, 1);
-        grid.show_all ();
 
         add (grid);
 

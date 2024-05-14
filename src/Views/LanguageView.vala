@@ -93,7 +93,6 @@ public class Installer.LanguageView : AbstractInstallerView {
                         margin_bottom = 3,
                         margin_start = 6
                     };
-                    separator.show_all ();
                     row.set_header (separator);
                 }
             }
@@ -255,7 +254,6 @@ public class Installer.LanguageView : AbstractInstallerView {
 
             lang_variant_widget.variant_listbox.select_row (lang_variant_widget.variant_listbox.get_row_at_index (0));
 
-            lang_variant_widget.variant_listbox.show_all ();
             Environment.set_variable ("LANGUAGE", lang_entry.get_code (), true);
             Intl.textdomain (Build.GETTEXT_PACKAGE);
             lang_variant_widget.show_variants (_("Languages"), "<b>%s</b>".printf (lang_entry.name));
@@ -276,7 +274,6 @@ public class Installer.LanguageView : AbstractInstallerView {
         Environment.set_variable ("LANGUAGE", ((LangRow) row).lang_entry.get_code (), true);
         Intl.textdomain (Build.GETTEXT_PACKAGE);
         select_label = new Gtk.Label (_("Select a Language"));
-        select_label.show_all ();
         select_stack.add (select_label);
         select_stack.set_visible_child (select_label);
 

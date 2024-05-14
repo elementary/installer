@@ -213,7 +213,6 @@ public class EncryptView : AbstractInstallerView {
             update_next_button ();
         });
 
-        show_all ();
         back_button.hide ();
     }
 

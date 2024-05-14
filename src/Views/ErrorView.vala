@@ -135,7 +135,5 @@ public class ErrorView : AbstractInstallerView {
                 terminal_view.attempt_scroll ();
             }
         });
-
-        show_all ();
     }
 }

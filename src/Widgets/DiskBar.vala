@@ -116,8 +116,6 @@ public class Installer.DiskBar: Gtk.Grid {
         attach (label, 0, 1);
         attach (legend, 1, 0);
         attach (bar, 1, 1);
-
-        show_all ();
     }
 
     private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {

@@ -123,7 +123,5 @@ public class Installer.TryInstallView : AbstractInstallerView {
                 custom_step ();
             }
         });
-
-        show_all ();
     }
 }

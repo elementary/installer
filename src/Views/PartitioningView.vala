@@ -133,8 +133,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
         next_button.clicked.connect (() => next_step ());
-
-        show_all ();
     }
 
     private async void load_disks () {
@@ -169,8 +167,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
         foreach (unowned InstallerDaemon.Disk disk in disks.logical_disks) {
             add_logical_disk (disk);
         }
-
-        disk_list.show_all ();
 
         load_stack.set_visible_child_name ("disk");
     }

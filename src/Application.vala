@@ -41,7 +41,7 @@ public class Installer.App : Gtk.Application {
             icon_name = application_id,
             title = _("Install %s").printf (Utils.get_pretty_name ())
         };
-        window.show_all ();
+        window.present ();
         add_window (window);
 
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();

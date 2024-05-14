@@ -87,8 +87,6 @@ public class SuccessView : AbstractInstallerView {
 
             return Source.CONTINUE;
         });
-
-        show_all ();
     }
 
     private void update_secondary_label () {

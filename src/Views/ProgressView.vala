@@ -104,8 +104,6 @@ public class ProgressView : AbstractInstallerView {
                 logo_stack.visible_child = logo_overlay;
             }
         });
-
-        show_all ();
     }
 
     public string get_log () {

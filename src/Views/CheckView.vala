@@ -119,8 +119,6 @@ public class Installer.CheckView : AbstractInstallerView {
         if (!minimum_specs) {
             message_box.add (specs_view);
         }
-
-        show_all ();
     }
 
     private int get_frequency () {
@@ -202,8 +200,6 @@ public class Installer.CheckView : AbstractInstallerView {
             attach (image, 0, 0, 1, 2);
             attach (title_label, 1, 0);
             attach (description_label, 1, 1);
-
-            show_all ();
         }
     }
 
