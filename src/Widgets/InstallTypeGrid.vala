@@ -31,7 +31,7 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
     }
 
     construct {
-        get_style_context ().add_class ("image-button");
+        add_css_class ("image-button");
 
         var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
 
@@ -39,7 +39,7 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
             hexpand = true,
             xalign = 0
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        title_label.add_css_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
         var subtitle_label = new Gtk.Label (subtitle) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window

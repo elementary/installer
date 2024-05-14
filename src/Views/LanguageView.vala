@@ -49,7 +49,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         select_stack = new Gtk.Stack ();
         select_stack.valign = Gtk.Align.START;
-        select_stack.get_style_context ().add_class ("h2");
+        select_stack.add_css_class ("h2");
         select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         select_stack.add (select_label);
 
@@ -112,7 +112,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         next_button = new Gtk.Button.with_label (_("Select"));
         next_button.sensitive = false;
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_box_end.add (next_button);
 
@@ -324,7 +324,7 @@ public class Installer.LanguageView : AbstractInstallerView {
                 ellipsize = Pango.EllipsizeMode.END,
                 xalign = 0
             };
-            label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var box = new Gtk.Box (HORIZONTAL, 6) {
                 margin_top = 6,
@@ -368,7 +368,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             image.icon_size = Gtk.IconSize.BUTTON;
 
             var label = new Gtk.Label (country_entry.name);
-            label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
             label.xalign = 0;
 
             var box = new Gtk.Box (HORIZONTAL, 6) {

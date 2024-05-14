@@ -27,18 +27,18 @@
         var title_label = new Gtk.Label (_("Additional Drivers")) {
             valign = Gtk.Align.START
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var description_label = new Gtk.Label (_("Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may not function properly without additional drivers. Most devices do not require additional drivers.")) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
-        description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        description_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var warning_image = new Gtk.Image.from_icon_name ("security-low-symbolic", LARGE_TOOLBAR);
-        warning_image.get_style_context ().add_class ("accent");
-        warning_image.get_style_context ().add_class ("yellow");
+        warning_image.add_css_class ("accent");
+        warning_image.add_css_class ("yellow");
 
         var warning_label = new Gtk.Label (_("Proprietary drivers contain private code that can't be reviewed. Security and other updates are dependent on the driver vendor.")) {
             hexpand = true,
@@ -48,8 +48,8 @@
         };
 
         var internet_image = new Gtk.Image.from_icon_name ("network-wireless-symbolic", LARGE_TOOLBAR);
-        internet_image.get_style_context ().add_class ("accent");
-        internet_image.get_style_context ().add_class ("blue");
+        internet_image.add_css_class ("accent");
+        internet_image.add_css_class ("blue");
 
         var internet_label = new Gtk.Label (_("An Internet connection is required to install NVIDIA® graphics drivers.")) {
             hexpand = true,
@@ -59,8 +59,8 @@
         };
 
         var install_later_image = new Gtk.Image.from_icon_name ("system-software-install-symbolic", LARGE_TOOLBAR);
-        install_later_image.get_style_context ().add_class ("accent");
-        install_later_image.get_style_context ().add_class ("purple");
+        install_later_image.add_css_class ("accent");
+        install_later_image.add_css_class ("purple");
 
         var install_later_label = new Gtk.Label (_("Proprietary drivers can be installed later through AppCenter, but an Internet connection will be required for all drivers.")) {
             hexpand = true,
@@ -102,7 +102,7 @@
         back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
 
         var next_button = new Gtk.Button.with_label (_("Erase and Install"));
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.clicked.connect (() => next_step ());
 
         action_box_end.add (back_button);

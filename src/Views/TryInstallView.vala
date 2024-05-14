@@ -28,7 +28,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var type_label = new Gtk.Label (_("Try or Install")) {
             valign = Gtk.Align.START
         };
-        type_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        type_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         // Force the user to make a conscious selection, not spam "Next"
         var no_selection = new Gtk.RadioButton (null) {
@@ -86,7 +86,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var next_button = new Gtk.Button.with_label (_("Next")) {
             sensitive = false
         };
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_box_end.add (back_button);
         action_box_end.add (next_button);

@@ -50,7 +50,7 @@ public class Installer.CheckView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Before Installing")) {
             valign = Gtk.Align.START
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var beta_view = new CheckView (
             _("Pre-Release Version"),
@@ -83,7 +83,7 @@ public class Installer.CheckView : AbstractInstallerView {
         content_area.attach (message_box, 1, 0, 1, 2);
 
         var ignore_button = new Gtk.Button.with_label (_("Install Anyway"));
-        ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        ignore_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (() => next_step ());
 
         action_box_end.add (ignore_button);
@@ -188,7 +188,7 @@ public class Installer.CheckView : AbstractInstallerView {
                 wrap = true,
                 xalign = 0
             };
-            title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            title_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var description_label = new Gtk.Label (description) {
                 max_width_chars = 1, // Make Gtk wrap, but not expand the window
@@ -212,13 +212,13 @@ public class Installer.CheckView : AbstractInstallerView {
             hexpand = true,
             xalign = 0
         };
-        recommended_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        recommended_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var your_device_label = new Gtk.Label (_("Your Device:")) {
             hexpand = true,
             xalign = 0
         };
-        your_device_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        your_device_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var processor_1 = new Gtk.Label (_("Processor:")) {
             xalign = 1

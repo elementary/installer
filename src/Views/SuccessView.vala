@@ -29,7 +29,7 @@ public class SuccessView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Continue Setting Up")) {
             valign = Gtk.Align.START
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var primary_label = new Gtk.Label (_("%s has been installed").printf (Utils.get_pretty_name ())) {
             hexpand = true,
@@ -37,7 +37,7 @@ public class SuccessView : AbstractInstallerView {
             wrap = true,
             xalign = 0
         };
-        primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        primary_label.add_css_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
         secondary_label = new Gtk.Label (null) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
@@ -64,7 +64,7 @@ public class SuccessView : AbstractInstallerView {
         shutdown_button.clicked.connect (Utils.shutdown);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
-        restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        restart_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         restart_button.clicked.connect (Utils.restart);
 
         action_box_end.add (shutdown_button);

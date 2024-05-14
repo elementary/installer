@@ -61,7 +61,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         overlay.add_overlay (overlay_image);
 
         var primary_label = new Gtk.Label (_("Decrypt This Partition"));
-        primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        primary_label.add_css_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
         primary_label.halign = Gtk.Align.START;
 
         var secondary_label = new Gtk.Label (_("Enter the partition's encryption password and set a device name for the decrypted partition."));
@@ -106,7 +106,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         decrypt_button = new Gtk.Button.with_label (_("Decrypt"));
         decrypt_button.halign = Gtk.Align.END;
         decrypt_button.sensitive = false;
-        decrypt_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        decrypt_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         decrypt_button.clicked.connect (() => {
             decrypt.begin (pv_entry.get_text ());
         });

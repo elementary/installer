@@ -33,7 +33,7 @@ public class Installer.DiskButton : Gtk.CheckButton {
     }
 
     construct {
-        get_style_context ().add_class ("image-button");
+        add_css_class ("image-button");
 
         var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG) {
             use_fallback = true
@@ -44,7 +44,7 @@ public class Installer.DiskButton : Gtk.CheckButton {
             halign = Gtk.Align.START,
             valign = Gtk.Align.END
         };
-        name_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        name_label.add_css_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
 
         var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,

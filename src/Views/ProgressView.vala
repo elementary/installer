@@ -75,13 +75,13 @@ public class ProgressView : AbstractInstallerView {
             image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
             tooltip_text = _("Show log")
         };
-        terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        terminal_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         progressbar_label = new Gtk.Label (null) {
             use_markup = true,
             xalign = 0
         };
-        progressbar_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        progressbar_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         progressbar = new Gtk.ProgressBar () {
             hexpand = true

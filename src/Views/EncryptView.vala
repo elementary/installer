@@ -51,7 +51,7 @@ public class EncryptView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Enable Drive Encryption")) {
             valign = Gtk.Align.START
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var details_label = new Gtk.Label (_("Encrypt this device's drive if required for added protection, but be sure you understand:")) {
             hexpand = true,
@@ -59,7 +59,7 @@ public class EncryptView : AbstractInstallerView {
             wrap = true,
             xalign = 0
         };
-        details_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        details_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var protect_image = new Gtk.Image.from_icon_name ("security-high-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
@@ -114,7 +114,7 @@ public class EncryptView : AbstractInstallerView {
         var pw_label = new Granite.HeaderLabel (_("Choose Encryption Password"));
 
         pw_error_revealer = new ErrorRevealer (".");
-        pw_error_revealer.label_widget.get_style_context ().add_class (Gtk.STYLE_CLASS_WARNING);
+        pw_error_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_WARNING);
 
         pw_entry = new ValidatedEntry ();
         pw_entry.visibility = false;
@@ -133,7 +133,7 @@ public class EncryptView : AbstractInstallerView {
         };
 
         confirm_entry_revealer = new ErrorRevealer (".");
-        confirm_entry_revealer.label_widget.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+        confirm_entry_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_ERROR);
 
         var password_box = new Gtk.Box (VERTICAL, 3);
         password_box.add (description);
@@ -168,7 +168,7 @@ public class EncryptView : AbstractInstallerView {
         next_button = new Gtk.Button.with_label (_(SKIP_STRING)) {
             can_default = true
         };
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_box_end.add (back_button);
         action_box_end.add (encrypt_button);

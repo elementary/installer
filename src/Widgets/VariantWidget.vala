@@ -50,7 +50,7 @@ public class VariantWidget : Gtk.Frame {
             margin_bottom = 6,
             margin_start = 6
         };
-        back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
+        back_button.add_css_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
         variant_title = new Gtk.Label (null);
         variant_title.ellipsize = Pango.EllipsizeMode.END;
@@ -63,7 +63,7 @@ public class VariantWidget : Gtk.Frame {
         header_box.set_center_widget (variant_title);
 
         variant_box = new Gtk.Box (VERTICAL, 0);
-        variant_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        variant_box.add_css_class (Granite.STYLE_CLASS_VIEW);
         variant_box.add (header_box);
         variant_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         variant_box.add (variant_scrolled);

@@ -32,7 +32,7 @@ public class ErrorView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Could Not Install")) {
             valign = Gtk.Align.START
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. The device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ())) {
             margin_bottom = 12,
@@ -79,7 +79,7 @@ public class ErrorView : AbstractInstallerView {
             label = _("Details"),
             margin_top = 12
         };
-        terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        terminal_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         var buffer = new Gtk.TextBuffer (null) {
             text = log
@@ -117,7 +117,7 @@ public class ErrorView : AbstractInstallerView {
         var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
 
         var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
-        install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        install_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_box_end.add (restart_button);
         action_box_end.add (demo_button);

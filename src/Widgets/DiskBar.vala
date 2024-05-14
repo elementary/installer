@@ -56,7 +56,7 @@ public class Installer.DiskBar: Gtk.Grid {
         };
 
         unowned var size_label_context = size_label.get_style_context ();
-        size_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        size_label_context.add_class (Granite.STYLE_CLASS_DIM_LABEL);
         size_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         var label = new Gtk.Grid ();
@@ -105,14 +105,14 @@ public class Installer.DiskBar: Gtk.Grid {
                 hexpand = true,
                 vexpand = true
             };
-            unused_bar.get_style_context ().add_class ("unused");
+            unused_bar.add_css_class ("unused");
 
             bar.add (unused_bar);
         }
 
         column_spacing = 12;
         hexpand = true;
-        get_style_context ().add_class (Granite.STYLE_CLASS_STORAGEBAR);
+        add_css_class (Granite.STYLE_CLASS_STORAGEBAR);
         attach (label, 0, 1);
         attach (legend, 1, 0);
         attach (bar, 1, 1);

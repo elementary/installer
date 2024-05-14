@@ -93,7 +93,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_spinner.start ();
 
         var load_label = new Gtk.Label (_("Getting the current configuration…"));
-        load_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        load_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var load_box = new Gtk.Box (VERTICAL, 12) {
             hexpand = true,
@@ -124,7 +124,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         var back_button = new Gtk.Button.with_label (_("Back"));
 
         next_button = new Gtk.Button.with_label (_("Next"));
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.sensitive = false;
 
         action_box_start.add (modify_partitions_button);

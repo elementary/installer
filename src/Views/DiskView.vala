@@ -46,7 +46,7 @@ public class Installer.DiskView : AbstractInstallerView {
         var install_label = new Gtk.Label (_("Select a Drive")) {
             valign = Gtk.Align.START
         };
-        install_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        install_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var install_desc_label = new Gtk.Label (
             _("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode.")
@@ -74,7 +74,7 @@ public class Installer.DiskView : AbstractInstallerView {
             max_width_chars = 45,
             wrap = true
         };
-        load_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        load_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var load_box = new Gtk.Box (VERTICAL, 12) {
             halign = CENTER,
@@ -108,7 +108,7 @@ public class Installer.DiskView : AbstractInstallerView {
             // Make sure we can skip this view in Test Mode
             sensitive = Installer.App.test_mode
         };
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (FORWARD));
 
         action_box_end.add (next_button);
