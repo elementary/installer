@@ -5,15 +5,13 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.DiskBar: Gtk.Grid {
+public class Installer.DiskBar: Gtk.Box {
     public string disk_name { get; construct; }
     public string disk_path { get; construct; }
     public uint64 size { get; construct; }
     public Gee.ArrayList<PartitionBar> partitions { get; construct; }
 
-    private static Gtk.SizeGroup label_sizegroup;
-
-    private Gtk.Box legend_container;
+    private Gtk.Box legend_box;
 
     public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBar> partitions) {
         Object (
@@ -28,30 +26,18 @@ public class Installer.DiskBar: Gtk.Grid {
         set_css_name ("levelbar");
     }
 
-    static construct {
-        label_sizegroup = new Gtk.SizeGroup (HORIZONTAL);
-    }
-
     construct {
-        var name_label = new Gtk.Label ("<b>%s</b>".printf (disk_name)) {
-            xalign = 1,
-            use_markup = true
-        };
+        var name_label = new Granite.HeaderLabel (disk_name);
 
         var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
-            xalign = 1
+            xalign = 0
         };
         size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         size_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        var label_box = new Gtk.Box (VERTICAL, 6) {
-            valign = CENTER
-        };
+        var label_box = new Gtk.Box (VERTICAL, 0);
         label_box.add (name_label);
         label_box.add (size_label);
-
-        label_sizegroup.add_widget (name_label);
-        label_sizegroup.add_widget (size_label);
 
         var bar = new Gtk.Grid ();
 
@@ -63,14 +49,8 @@ public class Installer.DiskBar: Gtk.Grid {
             bar.add (part);
         }
 
-        legend_container = new Gtk.Box (HORIZONTAL, 24) {
-            halign = CENTER,
-            margin_bottom = 9
-        };
-
-        var legend = new Gtk.ScrolledWindow (null, null) {
-            child = legend_container,
-            vscrollbar_policy = NEVER
+        legend_box = new Gtk.Box (VERTICAL, 6) {
+            halign = START
         };
 
         foreach (PartitionBar p in partitions) {
@@ -101,13 +81,12 @@ public class Installer.DiskBar: Gtk.Grid {
             bar.add (unused_bar);
         }
 
-        column_spacing = 12;
+        orientation = VERTICAL;
         hexpand = true;
-        get_style_context ().add_class (Granite.STYLE_CLASS_STORAGEBAR);
-        attach (label_box, 0, 1);
-        attach (legend, 1, 0);
-        attach (bar, 1, 1);
-
+        spacing = 12;
+        add (label_box);
+        add (bar);
+        add (legend_box);
         show_all ();
     }
 
@@ -124,16 +103,19 @@ public class Installer.DiskBar: Gtk.Grid {
             (vg == null)
                 ? _("%s (%s)").printf (format_size, fs)
                 : _("%s (%s: <b>%s</b>)").printf (format_size, fs, vg)
-        );
+        ) {
+            halign = START,
+        };
+        info.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        info.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
         info.use_markup = true;
 
-        var path = new Gtk.Label ("<b>%s</b>".printf (ppath)) {
-            halign = START,
-            use_markup = true
+        var path = new Gtk.Label (ppath) {
+            halign = START
         };
 
         var legend = new Gtk.Grid () {
-            column_spacing = 6
+            column_spacing = 12
         };
         legend.attach (fill_round, 0, 0, 1, 2);
         legend.attach (path, 1, 0);
@@ -149,7 +131,7 @@ public class Installer.DiskBar: Gtk.Grid {
             });
         }
 
-        legend_container.add (event_box);
+        legend_box.add (event_box);
     }
 
     private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, Gtk.Allocation alloc) {
