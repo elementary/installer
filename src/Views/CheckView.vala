@@ -86,7 +86,7 @@ public class Installer.CheckView : AbstractInstallerView {
         ignore_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (() => next_step ());
 
-        action_box_end.add (ignore_button);
+        action_box_end.append (ignore_button);
 
         bool minimum_specs = true;
 
@@ -106,18 +106,18 @@ public class Installer.CheckView : AbstractInstallerView {
             var dis = new DataInputStream (@is);
 
             if ("daily" in dis.read_line ()) {
-                message_box.add (beta_view);
+                message_box.append (beta_view);
             }
         } catch (Error e) {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
         if (get_vm ()) {
-            message_box.add (vm_view);
+            message_box.append (vm_view);
         }
 
         if (!minimum_specs) {
-            message_box.add (specs_view);
+            message_box.append (specs_view);
         }
     }
 

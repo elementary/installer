@@ -101,8 +101,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
             valign = CENTER,
             halign = CENTER
         };
-        load_box.add (load_spinner);
-        load_box.add (load_label);
+        load_box.append (load_spinner);
+        load_box.append (load_label);
 
         load_stack = new Gtk.Stack ();
         load_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -128,8 +128,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.sensitive = false;
 
         action_box_start.add (modify_partitions_button);
-        action_box_end.add (back_button);
-        action_box_end.add (next_button);
+        action_box_end.append (back_button);
+        action_box_end.append (next_button);
 
         back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
         next_button.clicked.connect (() => next_step ());

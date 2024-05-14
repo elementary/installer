@@ -119,9 +119,9 @@ public class ErrorView : AbstractInstallerView {
         var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
         install_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.add (restart_button);
-        action_box_end.add (demo_button);
-        action_box_end.add (install_button);
+        action_box_end.append (restart_button);
+        action_box_end.append (demo_button);
+        action_box_end.append (install_button);
 
         restart_button.clicked.connect (Utils.restart);
 

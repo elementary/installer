@@ -80,8 +80,8 @@ public class Installer.DiskView : AbstractInstallerView {
             halign = CENTER,
             valign = CENTER
         };
-        load_box.add (load_spinner);
-        load_box.add (load_label);
+        load_box.append (load_spinner);
+        load_box.append (load_label);
 
         load_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE
@@ -111,7 +111,7 @@ public class Installer.DiskView : AbstractInstallerView {
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (FORWARD));
 
-        action_box_end.add (next_button);
+        action_box_end.append (next_button);
     }
 
     public async void load (uint64 minimum_disk_size) {
@@ -173,12 +173,12 @@ public class Installer.DiskView : AbstractInstallerView {
 
         foreach (DiskButton disk_button in enabled_buttons) {
             disk_button.group = no_selection;
-            disk_box.add (disk_button);
+            disk_box.append (disk_button);
         }
 
         foreach (DiskButton disk_button in disabled_buttons) {
             disk_button.group = no_selection;
-            disk_box.add (disk_button);
+            disk_box.append (disk_button);
         }
 
         load_stack.set_visible_child_name ("disk");

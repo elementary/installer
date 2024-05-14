@@ -62,10 +62,10 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var type_box = new Gtk.Box (VERTICAL, 6) {
             valign = CENTER
         };
-        type_box.add (demo_button);
-        type_box.add (clean_install_button);
-        type_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        type_box.add (custom_button);
+        type_box.append (demo_button);
+        type_box.append (clean_install_button);
+        type_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        type_box.append (custom_button);
 
         var type_scrolled = new Gtk.ScrolledWindow (null, null) {
             child = type_box,
@@ -88,8 +88,8 @@ public class Installer.TryInstallView : AbstractInstallerView {
         };
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.add (back_button);
-        action_box_end.add (next_button);
+        action_box_end.append (back_button);
+        action_box_end.append (next_button);
 
         back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
 

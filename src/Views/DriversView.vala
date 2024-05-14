@@ -105,8 +105,8 @@
         next_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.clicked.connect (() => next_step ());
 
-        action_box_end.add (back_button);
-        action_box_end.add (next_button);
+        action_box_end.append (back_button);
+        action_box_end.append (next_button);
 
         drivers_check.toggled.connect (() => {
             unowned var configuration = Configuration.get_default ();

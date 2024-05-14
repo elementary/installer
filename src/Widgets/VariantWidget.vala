@@ -59,14 +59,14 @@ public class VariantWidget : Gtk.Frame {
 
         var header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
         header_box.hexpand = true;
-        header_box.add (back_button);
+        header_box.append (back_button);
         header_box.set_center_widget (variant_title);
 
         variant_box = new Gtk.Box (VERTICAL, 0);
         variant_box.add_css_class (Granite.STYLE_CLASS_VIEW);
-        variant_box.add (header_box);
-        variant_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        variant_box.add (variant_scrolled);
+        variant_box.append (header_box);
+        variant_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        variant_box.append (variant_scrolled);
 
         deck = new Adw.Leaflet () {
             can_navigate_back = true,

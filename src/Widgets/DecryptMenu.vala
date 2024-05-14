@@ -179,8 +179,8 @@ public class Installer.DecryptMenu: Gtk.Popover {
         var info = new Gtk.Label (_("LUKS volume was decrypted"));
 
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        box.add (label);
-        box.add (info);
+        box.append (label);
+        box.append (info);
 
         stack.add (box);
         stack.visible_child = box;

@@ -59,8 +59,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
         };
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.add (back_button);
-        action_box_end.add (next_button);
+        action_box_end.append (back_button);
+        action_box_end.append (next_button);
 
         input_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
             return ((LayoutRow) row1).layout.description.collate (((LayoutRow) row2).layout.description);

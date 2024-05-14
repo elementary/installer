@@ -68,7 +68,7 @@ public abstract class AbstractInstallerView : Gtk.Box {
                 cancel ();
             });
 
-            action_box_end.add (cancel_button);
+            action_box_end.append (cancel_button);
         }
 
         orientation = VERTICAL;

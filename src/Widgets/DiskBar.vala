@@ -152,7 +152,7 @@ public class Installer.DiskBar: Gtk.Grid {
     private Gtk.Widget set_menu (Gtk.Widget widget, Gtk.Popover? menu) {
         if (menu != null) {
             var event_box = new Gtk.EventBox ();
-            event_box.add (widget);
+            event_box.append (widget);
             event_box.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
             event_box.button_press_event.connect (() => {
                 menu.popup ();

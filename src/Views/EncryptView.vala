@@ -136,14 +136,14 @@ public class EncryptView : AbstractInstallerView {
         confirm_entry_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_ERROR);
 
         var password_box = new Gtk.Box (VERTICAL, 3);
-        password_box.add (description);
-        password_box.add (pw_label);
-        password_box.add (pw_entry);
-        password_box.add (pw_levelbar);
-        password_box.add (pw_error_revealer);
-        password_box.add (confirm_label);
-        password_box.add (confirm_entry);
-        password_box.add (confirm_entry_revealer);
+        password_box.append (description);
+        password_box.append (pw_label);
+        password_box.append (pw_entry);
+        password_box.append (pw_levelbar);
+        password_box.append (pw_error_revealer);
+        password_box.append (confirm_label);
+        password_box.append (confirm_entry);
+        password_box.append (confirm_entry_revealer);
 
         var stack = new Gtk.Stack () {
             vhomogeneous = false,
@@ -170,9 +170,9 @@ public class EncryptView : AbstractInstallerView {
         };
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.add (back_button);
-        action_box_end.add (encrypt_button);
-        action_box_end.add (next_button);
+        action_box_end.append (back_button);
+        action_box_end.append (encrypt_button);
+        action_box_end.append (next_button);
 
         next_button.grab_focus ();
 

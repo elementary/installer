@@ -102,18 +102,18 @@ public class Installer.LanguageView : AbstractInstallerView {
             if (lang_entry.key in preferred_langs) {
                 var pref_langrow = new LangRow (lang_entry.value);
                 pref_langrow.preferred_row = true;
-                lang_variant_widget.main_listbox.add (pref_langrow);
+                lang_variant_widget.main_listbox.append (pref_langrow);
             }
 
             var langrow = new LangRow (lang_entry.value);
-            lang_variant_widget.main_listbox.add (langrow);
+            lang_variant_widget.main_listbox.append (langrow);
         }
 
         next_button = new Gtk.Button.with_label (_("Select"));
         next_button.sensitive = false;
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.add (next_button);
+        action_box_end.append (next_button);
 
         lang_variant_widget.main_listbox.row_selected.connect (row_selected);
         lang_variant_widget.main_listbox.select_row (lang_variant_widget.main_listbox.get_row_at_index (0));
@@ -249,7 +249,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             lang_variant_widget.clear_variants ();
             lang_variant_widget.variant_listbox.row_selected.connect (variant_row_selected);
             foreach (var country in countries) {
-                lang_variant_widget.variant_listbox.add (new CountryRow (country));
+                lang_variant_widget.variant_listbox.append (new CountryRow (country));
             }
 
             lang_variant_widget.variant_listbox.select_row (lang_variant_widget.variant_listbox.get_row_at_index (0));
@@ -329,8 +329,8 @@ public class Installer.LanguageView : AbstractInstallerView {
                 margin_bottom = 6,
                 margin_start = 6
             };
-            box.add (label);
-            box.add (image);
+            box.append (label);
+            box.append (image);
 
             child = box;
         }
@@ -374,8 +374,8 @@ public class Installer.LanguageView : AbstractInstallerView {
                 margin_bottom = 6,
                 margin_start = 6
             };
-            box.add (label);
-            box.add (image);
+            box.append (label);
+            box.append (image);
 
             child = box;
         }

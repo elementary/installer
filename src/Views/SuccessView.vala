@@ -67,8 +67,8 @@ public class SuccessView : AbstractInstallerView {
         restart_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         restart_button.clicked.connect (Utils.restart);
 
-        action_box_end.add (shutdown_button);
-        action_box_end.add (restart_button);
+        action_box_end.append (shutdown_button);
+        action_box_end.append (restart_button);
 
         update_secondary_label ();
 
