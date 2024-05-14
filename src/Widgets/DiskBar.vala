@@ -113,8 +113,6 @@ public class Installer.DiskBar: Gtk.Grid {
 
     private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {
         var fill_round = new Block () {
-            width_request = 14,
-            height_request = 14,
             valign = CENTER
         };
         fill_round.get_style_context ().add_class ("legend");

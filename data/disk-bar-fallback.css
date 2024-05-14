@@ -35,6 +35,8 @@ levelbar block:not(:last-child) {
 levelbar block.legend {
     border-radius: 50%;
     border-style: solid;
+    min-height: 14px;
+    min-width: 14px;
 }
 
 levelbar block.swap {
