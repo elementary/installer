@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-05-11 02:29+0000\n"
 "PO-Revision-Date: 2023-05-12 16:06+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -25,6 +25,10 @@ msgstr "Pasang OS elementary"
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
 msgstr "Langkah demi langkah pemasang untuk elementary OS itu sendiri."
+
+#: data/installer.metainfo.xml.in:53
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75
 #: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:100
@@ -70,9 +74,6 @@ msgstr "Gandakan ukuran partisi boot untuk pemasangan terenkripsi"
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Pasang Sistem"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Warn about installing in a VM"
 #~ msgstr "Memperingatkan tentang pemasangan di VM"

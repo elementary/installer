@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
+"POT-Creation-Date: 2024-05-11 02:29+0000\n"
 "PO-Revision-Date: 2018-11-04 21:47+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/installer/"
@@ -26,6 +26,10 @@ msgstr "Instaliraj elementary OS"
 
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
+msgstr ""
+
+#: data/installer.metainfo.xml.in:53
+msgid "elementary, Inc."
 msgstr ""
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-02 03:15+0000\n"
-"PO-Revision-Date: 2023-08-27 08:08+0000\n"
-"Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
+"POT-Creation-Date: 2024-05-11 02:29+0000\n"
+"PO-Revision-Date: 2024-05-12 12:13+0000\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
 "Language: nl\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:42
@@ -48,7 +48,7 @@ msgstr "Opnieuw opstarten in testmodus"
 msgid "Test mode switch user"
 msgstr "Testmodus wissel gebruiker"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:218
+#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:217
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -356,15 +356,11 @@ msgstr "U zult in ieder geval een <b>Root-partitie (/)</b> moeten kiezen."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:62
-#, fuzzy
-#| msgid ""
-#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-#| "efi)</b> partition."
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
 msgstr ""
-"U zult in ieder geval een <b>Root-partitie (/)</b> als ook een <b>Boot-"
+"U zult in ieder geval een <b>Root-partitie (/)</b> en optioneel een <b>Boot-"
 "partitie (/boot/efi)</b> moeten selecteren."
 
 #: src/Views/PartitioningView.vala:66
