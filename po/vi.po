@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 02:29+0000\n"
+"POT-Creation-Date: 2024-05-20 17:08+0000\n"
 "PO-Revision-Date: 2016-08-03 21:41+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -459,12 +459,12 @@ msgstr ""
 msgid "LUKS volume was decrypted"
 msgstr ""
 
-#: src/Widgets/DiskBar.vala:136
+#: src/Widgets/DiskBar.vala:104
 #, c-format
 msgid "%s (%s)"
 msgstr ""
 
-#: src/Widgets/DiskBar.vala:137
+#: src/Widgets/DiskBar.vala:105
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr ""
