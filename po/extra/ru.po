@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-20 17:08+0000\n"
-"PO-Revision-Date: 2023-08-03 16:08+0000\n"
+"PO-Revision-Date: 2024-05-21 23:13+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/extra/"
 "ru/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -45,7 +45,7 @@ msgstr "Улучшения:"
 
 #: data/installer.metainfo.xml.in:63
 msgid "Keyboard layout preview is now in a resizable window"
-msgstr ""
+msgstr "Предпросмотр раскладки клавиатуры теперь в окне с изменяемым размером"
 
 #: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:78
 #: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:107
