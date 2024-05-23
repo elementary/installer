@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 02:29+0000\n"
+"POT-Creation-Date: 2024-05-20 17:08+0000\n"
 "PO-Revision-Date: 2023-08-25 03:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -520,12 +520,12 @@ msgstr "Dekrypter"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS-partisjonen ble dekryptert"
 
-#: src/Widgets/DiskBar.vala:136
+#: src/Widgets/DiskBar.vala:104
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:137
+#: src/Widgets/DiskBar.vala:105
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

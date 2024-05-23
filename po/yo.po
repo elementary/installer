@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 02:29+0000\n"
+"POT-Creation-Date: 2024-05-20 17:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -462,12 +462,12 @@ msgstr ""
 msgid "LUKS volume was decrypted"
 msgstr ""
 
-#: src/Widgets/DiskBar.vala:136
+#: src/Widgets/DiskBar.vala:104
 #, c-format
 msgid "%s (%s)"
 msgstr ""
 
-#: src/Widgets/DiskBar.vala:137
+#: src/Widgets/DiskBar.vala:105
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr ""

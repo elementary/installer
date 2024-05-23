@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 02:29+0000\n"
+"POT-Creation-Date: 2024-05-20 17:08+0000\n"
 "PO-Revision-Date: 2022-08-07 18:13+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/installer/"
@@ -500,12 +500,12 @@ msgstr "암호화 해제"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS 볼륨의 암호화를 해제했습니다"
 
-#: src/Widgets/DiskBar.vala:136
+#: src/Widgets/DiskBar.vala:104
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:137
+#: src/Widgets/DiskBar.vala:105
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
