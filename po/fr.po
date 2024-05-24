@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 02:29+0000\n"
+"POT-Creation-Date: 2024-05-20 17:08+0000\n"
 "PO-Revision-Date: 2024-05-15 14:13+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
@@ -511,12 +511,12 @@ msgstr "Déchiffrer"
 msgid "LUKS volume was decrypted"
 msgstr "Le volume LUKS a été déchiffré"
 
-#: src/Widgets/DiskBar.vala:136
+#: src/Widgets/DiskBar.vala:104
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:137
+#: src/Widgets/DiskBar.vala:105
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s(%s : <b>%s</b>)"
