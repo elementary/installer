@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-20 17:08+0000\n"
+"POT-Creation-Date: 2024-05-24 15:16+0000\n"
 "PO-Revision-Date: 2024-05-08 14:13+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
@@ -130,11 +130,11 @@ msgstr ""
 "даних, ви можете скасувати встановлення та скористатися демонстраційним "
 "режимом."
 
-#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:113
 msgid "Getting the current configuration…"
 msgstr "Отримання поточної конфігурації…"
 
-#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:126
+#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:142
 #: src/Views/TryInstallView.vala:86
 msgid "Next"
 msgstr "Далі"
@@ -183,7 +183,7 @@ msgstr ""
 "погоджуюся з їхніми відповідними ліцензіями та умовами користування."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:164
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:124
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:140
 #: src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "Назад"
@@ -341,20 +341,29 @@ msgid "Currently active language"
 msgstr "Поточна мова"
 
 #: src/Views/PartitioningView.vala:52
+#, fuzzy
+#| msgid "Use Partition"
+msgid "Select Partitions"
+msgstr "Використати розділ"
+
+#: src/Views/PartitioningView.vala:56
+#, fuzzy
+#| msgid ""
+#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
+#| "will erase ALL data on the selected partition.</b>"
 msgid ""
-"Select which partitions to use across all drives. <b>Selecting \"Format\" "
-"will erase ALL data on the selected partition.</b>"
+"Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
 "Виберіть, які розділи використовувати на всіх дисках. <b>Натискання "
 "«Форматувати» призведе до стирання ВСІХ даних обраного розділу.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:58
+#: src/Views/PartitioningView.vala:65
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Необхідно вибрати принаймні <b>кореневий (/)</b> розділ."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:62
+#: src/Views/PartitioningView.vala:69
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
@@ -362,27 +371,27 @@ msgstr ""
 "Необхідно вибрати принаймні <b>кореневий (/)</b> та опційний розділ "
 "<b>завантаження (/boot/efi)</b>."
 
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Також рекомендовано вибрати розділ <b>обміну (Swap)</b>."
 
-#: src/Views/PartitioningView.vala:121
+#: src/Views/PartitioningView.vala:137
 msgid "Modify Partitions…"
 msgstr "Змінити розділи…"
 
-#: src/Views/PartitioningView.vala:273
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition has the wrong file system"
 msgstr "Розділу EFI призначено неправильну файлову систему"
 
-#: src/Views/PartitioningView.vala:275
+#: src/Views/PartitioningView.vala:291
 msgid "EFI partition is too small"
 msgstr "Розділ EFI замалий"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for root"
 msgstr "Неправильна файлова система кореневого розділу"
 
-#: src/Views/PartitioningView.vala:280
+#: src/Views/PartitioningView.vala:296
 msgid "Invalid file system for home"
 msgstr "Неправильна файлова система для home"
 

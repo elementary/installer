@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Lithuanian (Installer)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-20 17:08+0000\n"
+"POT-Creation-Date: 2024-05-24 15:16+0000\n"
 "PO-Revision-Date: 2022-04-20 09:24+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/installer/"
@@ -130,11 +130,11 @@ msgstr ""
 "pasidarę atsarginės savo duomenų kopijos, galite atsisakyti įdiegimo ir "
 "naudoti demonstracinę veikseną."
 
-#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:113
 msgid "Getting the current configuration…"
 msgstr "Gaunama esama konfigūracija…"
 
-#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:126
+#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:142
 #: src/Views/TryInstallView.vala:86
 msgid "Next"
 msgstr "Kitas"
@@ -175,7 +175,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:164
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:124
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:140
 #: src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "Atgal"
@@ -354,21 +354,30 @@ msgid "Currently active language"
 msgstr "Šiuo metu aktyvi kalba"
 
 #: src/Views/PartitioningView.vala:52
+#, fuzzy
+#| msgid "Use partition:"
+msgid "Select Partitions"
+msgstr "Naudoti skaidinį:"
+
+#: src/Views/PartitioningView.vala:56
+#, fuzzy
+#| msgid ""
+#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
+#| "will erase ALL data on the selected partition.</b>"
 msgid ""
-"Select which partitions to use across all drives. <b>Selecting \"Format\" "
-"will erase ALL data on the selected partition.</b>"
+"Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
 "Pasirinkite kuriuos skaidinius iš visų diskų naudoti. <b>Pasirinkus "
 "\"Formatuoti\", bus ištrinti VISI pasirinktame skaidinyje esantys duomenys.</"
 "b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:58
+#: src/Views/PartitioningView.vala:65
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Privalote pasirinkti bent <b>šaknies (/)</b> skaidinį."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:62
+#: src/Views/PartitioningView.vala:69
 #, fuzzy
 #| msgid ""
 #| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
@@ -380,27 +389,27 @@ msgstr ""
 "Privalote pasirinkti bent <b>šaknies (/)</b> skaidinį ir <b>paleidimo (/boot/"
 "efi)</b> skaidinį."
 
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Taip pat yra rekomenduojama pasirinkti <b>sukeitimų</b> skaidinį."
 
-#: src/Views/PartitioningView.vala:121
+#: src/Views/PartitioningView.vala:137
 msgid "Modify Partitions…"
 msgstr "Tvarkyti skaidinius…"
 
-#: src/Views/PartitioningView.vala:273
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition has the wrong file system"
 msgstr "EFI skaidinys yra neteisingos failų sistemos"
 
-#: src/Views/PartitioningView.vala:275
+#: src/Views/PartitioningView.vala:291
 msgid "EFI partition is too small"
 msgstr "EFI skaidinys yra per mažas"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for root"
 msgstr "Neteisinga šaknies failų sistema"
 
-#: src/Views/PartitioningView.vala:280
+#: src/Views/PartitioningView.vala:296
 msgid "Invalid file system for home"
 msgstr "Neteisinga namų failų sistema"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-20 17:08+0000\n"
+"POT-Creation-Date: 2024-05-24 15:16+0000\n"
 "PO-Revision-Date: 2024-05-15 14:13+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
@@ -129,11 +129,11 @@ msgstr ""
 "sauvegardé vos données, vous pouvez annuler l'installation et utiliser le "
 "mode de démonstration."
 
-#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:113
 msgid "Getting the current configuration…"
 msgstr "Vérification de la configuration actuelle…"
 
-#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:126
+#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:142
 #: src/Views/TryInstallView.vala:86
 msgid "Next"
 msgstr "Suivant"
@@ -186,7 +186,7 @@ msgstr ""
 "leurs licences et conditions d'utilisation respectives."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:164
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:124
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:140
 #: src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "Précédent"
@@ -344,20 +344,29 @@ msgid "Currently active language"
 msgstr "Langue actuellement active"
 
 #: src/Views/PartitioningView.vala:52
+#, fuzzy
+#| msgid "Use Partition"
+msgid "Select Partitions"
+msgstr "Utiliser la partition"
+
+#: src/Views/PartitioningView.vala:56
+#, fuzzy
+#| msgid ""
+#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
+#| "will erase ALL data on the selected partition.</b>"
 msgid ""
-"Select which partitions to use across all drives. <b>Selecting \"Format\" "
-"will erase ALL data on the selected partition.</b>"
+"Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
 "Sélectionnez les partitions à utiliser parmi les disques. <b>Sélectionner "
 "« Formater » effacera TOUTES les données sur la partition sélectionnée.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:58
+#: src/Views/PartitioningView.vala:65
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Vous devez choisir au moins une partition <b>Racine (/)</b>."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:62
+#: src/Views/PartitioningView.vala:69
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
@@ -365,27 +374,27 @@ msgstr ""
 "Vous devez au moins choisir une partition <b>Racine (/)</b> et en option une "
 "partition de <b>Démarrage (/boot/efi)</b>."
 
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Il est aussi recommandé de choisir une partition <b>Swap</b>."
 
-#: src/Views/PartitioningView.vala:121
+#: src/Views/PartitioningView.vala:137
 msgid "Modify Partitions…"
 msgstr "Modifier les partitions…"
 
-#: src/Views/PartitioningView.vala:273
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition has the wrong file system"
 msgstr "La partition EFI a un système de fichiers incorrect"
 
-#: src/Views/PartitioningView.vala:275
+#: src/Views/PartitioningView.vala:291
 msgid "EFI partition is too small"
 msgstr "La partition EFI est trop petite"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for root"
 msgstr "Système de fichier incompatible pour la partition racine"
 
-#: src/Views/PartitioningView.vala:280
+#: src/Views/PartitioningView.vala:296
 msgid "Invalid file system for home"
 msgstr "Le système de fichier est incompatible pour la partition « home »"
 
