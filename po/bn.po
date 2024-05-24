@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 15:16+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
 "PO-Revision-Date: 2022-04-20 09:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/installer/"
@@ -15,12 +15,12 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:42
+#: src/Application.vala:55
 #, c-format
 msgid "Install %s"
 msgstr "%s ইনস্টল করুন"
 
-#: src/Application.vala:61
+#: src/Application.vala:74
 msgid "operating system is being installed"
 msgstr ""
 
@@ -53,14 +53,14 @@ msgstr ""
 msgid "%s…"
 msgstr ""
 
-#: src/Views/AbstractInstallerView.vala:47
-msgid "Cancel Installation"
-msgstr "ইনস্টলেশন বাতিল করুন"
-
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 #, fuzzy
 msgid "Test Mode"
 msgstr "ডেমো মোড ব্যবহার করে দেখুন"
+
+#: src/Views/AbstractInstallerView.vala:67
+msgid "Cancel Installation"
+msgstr "ইনস্টলেশন বাতিল করুন"
 
 #: src/Views/CheckView.vala:50
 #, fuzzy
@@ -361,19 +361,19 @@ msgstr ""
 msgid "Modify Partitions…"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:287
 msgid "EFI partition has the wrong file system"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition is too small"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:292
 msgid "Invalid file system for root"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for home"
 msgstr ""
 

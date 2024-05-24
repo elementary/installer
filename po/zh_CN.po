@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 15:16+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
 "PO-Revision-Date: 2022-12-09 22:25+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -15,12 +15,12 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: src/Application.vala:42
+#: src/Application.vala:55
 #, c-format
 msgid "Install %s"
 msgstr "安装 %s"
 
-#: src/Application.vala:61
+#: src/Application.vala:74
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
@@ -53,13 +53,13 @@ msgstr "测试模式切换用户"
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
-msgid "Cancel Installation"
-msgstr "取消安装"
-
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "测试模式"
+
+#: src/Views/AbstractInstallerView.vala:67
+msgid "Cancel Installation"
+msgstr "取消安装"
 
 #: src/Views/CheckView.vala:50
 #, fuzzy
@@ -362,19 +362,19 @@ msgstr "同时建议您选择一个 <b>交换（Swap）</b> 分区。"
 msgid "Modify Partitions…"
 msgstr "修改分区…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:287
 msgid "EFI partition has the wrong file system"
 msgstr "EFI 分区文件系统有误"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition is too small"
 msgstr "EFI 分区空间过小"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:292
 msgid "Invalid file system for root"
 msgstr "Root 文件系统不可用"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for home"
 msgstr "主目录（Home）文件系统不可用"
 

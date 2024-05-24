@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 15:16+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
 "PO-Revision-Date: 2024-05-24 17:31+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/Application.vala:42
+#: src/Application.vala:55
 #, c-format
 msgid "Install %s"
 msgstr "Установка %s"
 
-#: src/Application.vala:61
+#: src/Application.vala:74
 msgid "operating system is being installed"
 msgstr "операционная система устанавливается"
 
@@ -54,13 +54,13 @@ msgstr "Сменить пользователя в тестовом режиме
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
-msgid "Cancel Installation"
-msgstr "Отменить установку"
-
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "Режим тестирования"
+
+#: src/Views/AbstractInstallerView.vala:67
+msgid "Cancel Installation"
+msgstr "Отменить установку"
 
 #: src/Views/CheckView.vala:50
 msgid "Before Installing"
@@ -372,19 +372,19 @@ msgstr "Также рекомендуется выбрать <b>Раздел п�
 msgid "Modify Partitions…"
 msgstr "Изменить разделы…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:287
 msgid "EFI partition has the wrong file system"
 msgstr "Раздел EFI имеет неправильную файловую систему"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition is too small"
 msgstr "Раздел EFI слишком мал"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:292
 msgid "Invalid file system for root"
 msgstr "Недопустимая файловая система для корневого раздела"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for home"
 msgstr "Недопустимая файловая система для домашнего каталога"
 

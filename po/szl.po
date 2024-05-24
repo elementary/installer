@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 15:16+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
 "PO-Revision-Date: 2022-04-20 09:24+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/installer/"
@@ -14,12 +14,12 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:42
+#: src/Application.vala:55
 #, c-format
 msgid "Install %s"
 msgstr "Instaluj %s"
 
-#: src/Application.vala:61
+#: src/Application.vala:74
 msgid "operating system is being installed"
 msgstr ""
 
@@ -52,13 +52,13 @@ msgstr "Przeszaltrowanie używocza trybu testowego"
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
-msgid "Cancel Installation"
-msgstr "Pociep instalacyjo"
-
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "Tryb testowy"
+
+#: src/Views/AbstractInstallerView.vala:67
+msgid "Cancel Installation"
+msgstr "Pociep instalacyjo"
 
 #: src/Views/CheckView.vala:50
 #, fuzzy
@@ -387,19 +387,19 @@ msgstr "Je tyż rekōmandowane ôbranie partycyje <b>Umiany (Swap)</b>."
 msgid "Modify Partitions…"
 msgstr "Modyfikacyjo partycyje…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:287
 msgid "EFI partition has the wrong file system"
 msgstr "Partycyjo EFI posiado niynoleżny systym zbiorōw"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition is too small"
 msgstr "Partycyjo EFI je za mało"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:292
 msgid "Invalid file system for root"
 msgstr "Niynoleżny systym zbiorōw dlo root"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for home"
 msgstr "Niynolezny systym zbiorōw dlo home"
 

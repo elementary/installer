@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 15:16+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
 "PO-Revision-Date: 2023-05-18 16:52+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/"
@@ -15,12 +15,12 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/Application.vala:42
+#: src/Application.vala:55
 #, c-format
 msgid "Install %s"
 msgstr "%s'i yükleyin"
 
-#: src/Application.vala:61
+#: src/Application.vala:74
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
@@ -54,13 +54,13 @@ msgstr "Test modu kullanıcı değiştir"
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
-msgid "Cancel Installation"
-msgstr "Kurulumu İptal Et"
-
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "Test Modu"
+
+#: src/Views/AbstractInstallerView.vala:67
+msgid "Cancel Installation"
+msgstr "Kurulumu İptal Et"
 
 #: src/Views/CheckView.vala:50
 msgid "Before Installing"
@@ -371,19 +371,19 @@ msgstr "Bir <b>Takas</b> bölümü de seçmeniz tavsiye edilir."
 msgid "Modify Partitions…"
 msgstr "Bölümleri Değiştir…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:287
 msgid "EFI partition has the wrong file system"
 msgstr "EFI bölümü yanlış dosya sistemine sahip"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition is too small"
 msgstr "EFI bölümü çok küçük"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:292
 msgid "Invalid file system for root"
 msgstr "Kök için geçersiz bir dosya sistemi"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for home"
 msgstr "Home için geçersiz bir dosya sistemi"
 

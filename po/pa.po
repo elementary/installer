@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 15:16+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
 "PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:42
+#: src/Application.vala:55
 #, c-format
 msgid "Install %s"
 msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Application.vala:61
+#: src/Application.vala:74
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
@@ -59,13 +59,13 @@ msgstr "ਟੈਸਟ ਮੋਡ ਵਰਤੋਂਕਾਰ ਬਦਲੋ"
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
-msgid "Cancel Installation"
-msgstr "ਸਥਾਪਨ ਰੱਦ ਕਰੋ"
-
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "ਟੈਸਟ ਮੋਡ"
+
+#: src/Views/AbstractInstallerView.vala:67
+msgid "Cancel Installation"
+msgstr "ਸਥਾਪਨ ਰੱਦ ਕਰੋ"
 
 #: src/Views/CheckView.vala:50
 #, fuzzy
@@ -375,19 +375,19 @@ msgstr "ਇੱਕ <b>ਸਵੈਪ</b> ਵੰਡ ਚੁਣਨ ਦੀ ਵੀ ਸ�
 msgid "Modify Partitions…"
 msgstr "ਵੰਡਾਂ ਵਿੱਚ ਤਬਦੀਲੀਆਂ ਕਰੋ…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:287
 msgid "EFI partition has the wrong file system"
 msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਗ਼ਲਤ ਹੈ"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition is too small"
 msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਬਹੁਤ ਹੀ ਛੋਟੀ ਹੈ"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:292
 msgid "Invalid file system for root"
 msgstr "ਰੂਟ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for home"
 msgstr "ਘਰ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
