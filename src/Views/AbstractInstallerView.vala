@@ -52,6 +52,7 @@ public abstract class AbstractInstallerView : Gtk.Box {
             margin_end = 10
         };
         action_area.add (action_box_start);
+        action_area.get_style_context ().add_class ("button-box");
 
         if (Installer.App.test_mode) {
             var test_label = new Gtk.Label (_("Test Mode"));
