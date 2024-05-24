@@ -67,8 +67,8 @@ public class SuccessView : AbstractInstallerView {
         restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         restart_button.clicked.connect (Utils.restart);
 
-        action_area.add (shutdown_button);
-        action_area.add (restart_button);
+        action_box_end.add (shutdown_button);
+        action_box_end.add (restart_button);
 
         update_secondary_label ();
 

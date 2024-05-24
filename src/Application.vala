@@ -33,6 +33,19 @@ public class Installer.App : Gtk.Application {
         add_main_option_entries (INSTALLER_OPTIONS);
     }
 
+    public override void startup () {
+        base.startup ();
+
+        var css_provider = new Gtk.CssProvider ();
+        css_provider.load_from_resource ("io/elementary/installer/Application.css");
+
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
+    }
+
     public override void activate () {
         var window = new MainWindow () {
             deletable = false,
