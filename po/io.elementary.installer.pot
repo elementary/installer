@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 15:16+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: src/Application.vala:42
+#: src/Application.vala:55
 #, c-format
 msgid "Install %s"
 msgstr ""
 
-#: src/Application.vala:61
+#: src/Application.vala:74
 msgid "operating system is being installed"
 msgstr ""
 
@@ -54,12 +54,12 @@ msgstr ""
 msgid "%s…"
 msgstr ""
 
-#: src/Views/AbstractInstallerView.vala:47
-msgid "Cancel Installation"
+#: src/Views/AbstractInstallerView.vala:58
+msgid "Test Mode"
 msgstr ""
 
-#: src/Views/AbstractInstallerView.vala:56
-msgid "Test Mode"
+#: src/Views/AbstractInstallerView.vala:67
+msgid "Cancel Installation"
 msgstr ""
 
 #: src/Views/CheckView.vala:50
@@ -338,19 +338,19 @@ msgstr ""
 msgid "Modify Partitions…"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:287
 msgid "EFI partition has the wrong file system"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition is too small"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:292
 msgid "Invalid file system for root"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for home"
 msgstr ""
 
