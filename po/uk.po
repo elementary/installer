@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-24 17:31+0000\n"
-"PO-Revision-Date: 2024-05-08 14:13+0000\n"
+"PO-Revision-Date: 2024-05-27 15:13+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -341,21 +341,15 @@ msgid "Currently active language"
 msgstr "Поточна мова"
 
 #: src/Views/PartitioningView.vala:52
-#, fuzzy
-#| msgid "Use Partition"
 msgid "Select Partitions"
-msgstr "Використати розділ"
+msgstr "Вибрати розділи"
 
 #: src/Views/PartitioningView.vala:56
-#, fuzzy
-#| msgid ""
-#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
-#| "will erase ALL data on the selected partition.</b>"
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
-"Виберіть, які розділи використовувати на всіх дисках. <b>Натискання "
-"«Форматувати» призведе до стирання ВСІХ даних обраного розділу.</b>"
+"Натискання «Форматувати» призведе до стирання <i>всіх</i> даних вибраного "
+"розділу."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:65
