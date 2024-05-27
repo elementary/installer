@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-24 17:31+0000\n"
-"PO-Revision-Date: 2024-05-07 05:13+0000\n"
+"PO-Revision-Date: 2024-05-27 15:13+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "installer/hu/>\n"
@@ -339,21 +339,15 @@ msgid "Currently active language"
 msgstr "Jelenlegi nyelv"
 
 #: src/Views/PartitioningView.vala:52
-#, fuzzy
-#| msgid "Use Partition"
 msgid "Select Partitions"
-msgstr "Partíció használata"
+msgstr "Partíció kiválasztása"
 
 #: src/Views/PartitioningView.vala:56
-#, fuzzy
-#| msgid ""
-#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
-#| "will erase ALL data on the selected partition.</b>"
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
-"Válassza ki mely partíciókat szeretné használni a meghajtókon. <b>A "
-"\"Formázás\" kiválasztásával az ÖSSZES adat elvész a kijelölt partíción.</b>"
+"A ”Formázás” kiválasztásával az <i>összes</i> adat elvész a kijelölt "
+"partíción."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:65
