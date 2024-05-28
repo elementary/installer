@@ -145,7 +145,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         action_box_end.append (back_button);
         action_box_end.append (next_button);
 
-        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
+        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
         next_button.clicked.connect (() => next_step ());
     }
 

@@ -43,7 +43,7 @@ public class Installer.Terminal : Gtk.ScrolledWindow {
             pixels_below_lines = 3,
             wrap_mode = Gtk.WrapMode.WORD
         };
-        view.get_style_context ().remove_class (Granite.STYLE_CLASS_VIEW);
+        view.remove_css_class (Granite.STYLE_CLASS_VIEW);
 
         hscrollbar_policy = Gtk.PolicyType.NEVER;
         hexpand = true;
