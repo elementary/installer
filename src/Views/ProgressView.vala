@@ -203,7 +203,9 @@ public class ProgressView : AbstractInstallerView {
     }
 
     private void fake_status (Distinst.Step step) {
+        unowned var log_helper = LogHelper.get_default ();
         for (var percent = 0; percent <= 100; percent++) {
+            log_helper.log_func (INFO, "I'm faking it!");
             Distinst.Status status = Distinst.Status () {
                 step = step,
                 percent = percent
