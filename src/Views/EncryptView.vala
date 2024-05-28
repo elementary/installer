@@ -291,25 +291,24 @@ public class EncryptView : AbstractInstallerView {
     }
 
     private class ErrorRevealer : Gtk.Revealer {
-        public Gtk.Label label_widget;
-
-        public string label {
-            set {
-                label_widget.label = "<span font_size=\"small\">%s</span>".printf (value);
-            }
-        }
+        public Gtk.Label label_widget { get; private set; }
+        public string label { get; set; }
 
         public ErrorRevealer (string label) {
-            label_widget = new Gtk.Label ("<span font_size=\"small\">%s</span>".printf (label));
-            label_widget.halign = Gtk.Align.END;
-            label_widget.justify = Gtk.Justification.RIGHT;
-            label_widget.max_width_chars = 55;
-            label_widget.use_markup = true;
-            label_widget.wrap = true;
-            label_widget.xalign = 1;
+            label_widget = new Gtk.Label (label) {
+                halign = Gtk.Align.END,
+                justify = Gtk.Justification.RIGHT,
+                max_width_chars = 55,
+                use_markup = true,
+                wrap = true,
+                xalign = 1
+            };
+            label_widget.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
             transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-            add (label_widget);
+            child = label_widget;
+
+            label_widget.bind_property ("label", this, "label");
         }
     }
 }

@@ -58,7 +58,7 @@ public class Installer.MainWindow : Gtk.Window {
             halign = Gtk.Align.START, // Can't cover action area; need to select language
             valign = Gtk.Align.END
         };
-        battery_infobar.get_content_area ().add (infobar_label);
+        battery_infobar.add_child (infobar_label);
         battery_infobar.add_css_class ("frame");
 
         var overlay = new Gtk.Overlay () {
