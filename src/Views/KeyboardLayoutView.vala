@@ -42,8 +42,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
         };
 
         var stack_box = new Gtk.Box (VERTICAL, 12);
-        stack_box.add (input_variant_widget);
-        stack_box.add (keyboard_test_entry);
+        stack_box.append (input_variant_widget);
+        stack_box.append (keyboard_test_entry);
 
         content_area.column_homogeneous = true;
         content_area.margin_end = 12;
@@ -118,9 +118,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
             }
 
             input_variant_widget.clear_variants ();
-            input_variant_widget.variant_listbox.add (new VariantRow (null, _("Default")));
+            input_variant_widget.variant_listbox.append (new VariantRow (null, _("Default")));
             foreach (var variant in variants.entries) {
-                input_variant_widget.variant_listbox.add (new VariantRow (variant.key, variant.value));
+                input_variant_widget.variant_listbox.append (new VariantRow (variant.key, variant.value));
             }
 
             input_variant_widget.variant_listbox.select_row (input_variant_widget.variant_listbox.get_row_at_index (0));
@@ -180,23 +180,26 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         foreach (var layout in KeyboardLayoutHelper.get_layouts ()) {
-            input_variant_widget.main_listbox.add (new LayoutRow (layout));
+            input_variant_widget.main_listbox.append (new LayoutRow (layout));
         }
 
         Idle.add_once (() => {
-            string? country = Configuration.get_default ().country;
+            unowned string? country = Configuration.get_default ().country;
             if (country != null) {
-                string default_layout = country.down ();
+                var default_layout = country.down ();
 
-                foreach (weak Gtk.Widget child in input_variant_widget.main_listbox.get_children ()) {
+                var child = input_variant_widget.main_listbox.get_first_child ();
+                while (child != null) {
                     if (child is LayoutRow) {
-                        weak LayoutRow row = (LayoutRow) child;
+                        unowned var row = (LayoutRow) child;
                         if (row.layout.name == default_layout) {
                             input_variant_widget.main_listbox.select_row (row);
                             row.grab_focus ();
                             break;
                         }
                     }
+
+                    child = child.get_next_sibling ();
                 }
             }
         });
@@ -225,7 +228,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             };
             label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            add (label);
+            child = label;
         }
     }
 
@@ -251,7 +254,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             };
             label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            add (label);
+            child = label;
         }
     }
 }

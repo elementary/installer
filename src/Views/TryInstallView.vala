@@ -31,7 +31,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         type_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         // Force the user to make a conscious selection, not spam "Next"
-        var no_selection = new Gtk.RadioButton (null) {
+        var no_selection = new Gtk.CheckButton () {
             active = true
         };
 
@@ -93,21 +93,21 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
 
-        demo_button.clicked.connect (() => {
+        demo_button.toggled.connect (() => {
             if (demo_button.active) {
                 next_button.label = demo_button.title;
                 next_button.sensitive = true;
             }
         });
 
-        clean_install_button.clicked.connect (() => {
+        clean_install_button.toggled.connect (() => {
             if (clean_install_button.active) {
                 next_button.label = clean_install_button.title;
                 next_button.sensitive = true;
             }
         });
 
-        custom_button.clicked.connect (() => {
+        custom_button.toggled.connect (() => {
             if (custom_button.active) {
                 next_button.label = _("Custom Install");
                 next_button.sensitive = true;

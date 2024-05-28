@@ -48,7 +48,7 @@ public class Installer.DiskBar: Gtk.Box {
         foreach (PartitionBar p in partitions) {
             add_legend (
                 p.partition.device_path,
-                p.get_size () * 512,
+                p.get_partition_size () * 512,
                 Distinst.strfilesys (p.partition.filesystem),
                 p.volume_group,
                 p.menu
@@ -57,7 +57,7 @@ public class Installer.DiskBar: Gtk.Box {
 
         uint64 used = 0;
         foreach (PartitionBar partition in partitions) {
-            used += partition.get_size ();
+            used += partition.get_partition_size ();
         }
 
         var unused = size - (used * 512);
@@ -70,7 +70,7 @@ public class Installer.DiskBar: Gtk.Box {
             };
             unused_bar.add_css_class ("unused");
 
-            bar.add (unused_bar);
+            bar.append (unused_bar);
         }
 
         orientation = VERTICAL;
@@ -159,7 +159,7 @@ public class Installer.DiskBar: Gtk.Box {
             }
 
             alloc_width -= requested;
-            disk_sectors -= part.get_size ();
+            disk_sectors -= part.get_partition_size ();
             lengths += requested;
         }
 

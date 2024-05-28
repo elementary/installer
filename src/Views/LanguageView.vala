@@ -55,11 +55,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         select_stack.notify["transition-running"].connect (() => {
             if (!select_stack.transition_running) {
-                select_stack.get_children ().foreach ((child) => {
-                    if (child != select_stack.get_visible_child ()) {
-                        child.destroy ();
-                    }
-                });
+                select_stack.remove (select_stack.get_visible_child ().get_prev_sibling ());
             }
         });
 
@@ -197,11 +193,12 @@ public class Installer.LanguageView : AbstractInstallerView {
         lang_variant_widget.variant_listbox.row_selected.connect (variant_row_selected);
 
         var current_lang = Environment.get_variable ("LANGUAGE");
-        var lang_entry = ((LangRow) row).lang_entry;
+        unowned var lang_entry = ((LangRow) row).lang_entry;
         Environment.set_variable ("LANGUAGE", lang_entry.get_code (), true);
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
-        foreach (Gtk.Widget child in lang_variant_widget.main_listbox.get_children ()) {
+        var child = lang_variant_widget.main_listbox.get_first_child ();
+        while (child != null) {
             if (child is LangRow) {
                 var lang_row = (LangRow) child;
                 if (lang_row.lang_entry.get_code () == lang_entry.get_code ()) {
@@ -210,6 +207,8 @@ public class Installer.LanguageView : AbstractInstallerView {
                     lang_row.selected = false;
                 }
             }
+
+            child = child.get_next_sibling ();
         }
 
         if (current_lang != null) {
@@ -222,16 +221,20 @@ public class Installer.LanguageView : AbstractInstallerView {
     }
 
     private void variant_row_selected (Gtk.ListBoxRow? row) {
-        var country_entry = ((CountryRow) row).country_entry;
-        foreach (Gtk.Widget child in lang_variant_widget.variant_listbox.get_children ()) {
+        unowned var country_entry = ((CountryRow) row).country_entry;
+
+        var child = lang_variant_widget.variant_listbox.get_first_child ();
+        while (child != null) {
             if (child is CountryRow) {
-                var country_row = (CountryRow) child;
+                unowned var country_row = (CountryRow) child;
                 if (country_row.country_entry.alpha_2 == country_entry.alpha_2) {
                     country_row.selected = true;
                 } else {
                     country_row.selected = false;
                 }
             }
+
+            child = child.get_next_sibling ();
         }
 
         next_button.sensitive = true;

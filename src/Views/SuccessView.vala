@@ -37,7 +37,7 @@ public class SuccessView : AbstractInstallerView {
             wrap = true,
             xalign = 0
         };
-        primary_label.add_css_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        primary_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
         secondary_label = new Gtk.Label (null) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window

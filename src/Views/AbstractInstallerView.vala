@@ -56,7 +56,7 @@ public abstract class AbstractInstallerView : Gtk.Box {
 
         if (Installer.App.test_mode) {
             var test_label = new Gtk.Label (_("Test Mode"));
-            test_label.add_css_class (Gtk.STYLE_CLASS_ERROR);
+            test_label.add_css_class (Granite.STYLE_CLASS_ERROR);
 
             action_area.append (test_label);
         }
@@ -76,7 +76,7 @@ public abstract class AbstractInstallerView : Gtk.Box {
         spacing = 24;
         margin_top = 12;
         margin_bottom = 12;
-        add (content_area);
-        add (action_area);
+        append (content_area);
+        append (action_area);
     }
 }

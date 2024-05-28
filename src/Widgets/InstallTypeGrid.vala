@@ -41,7 +41,7 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
             hexpand = true,
             xalign = 0
         };
-        title_label.add_css_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        title_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
 
         var subtitle_label = new Gtk.Label (subtitle) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
@@ -61,6 +61,6 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
         grid.attach (title_label, 1, 0);
         grid.attach (subtitle_label, 1, 1);
 
-        add (grid);
+        child = grid;
     }
 }

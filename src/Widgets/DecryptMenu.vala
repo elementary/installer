@@ -40,7 +40,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
             margin_start = 12
         };
         create_decrypt_view ();
-        add (stack);
+        child = stack;
     }
 
     private void create_decrypt_view () {
@@ -64,7 +64,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         overlay.add_overlay (overlay_image);
 
         var primary_label = new Gtk.Label (_("Decrypt This Partition"));
-        primary_label.add_css_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        primary_label.add_css_class (Granite.STYLE_CLASS_TITLE_LABEL);
         primary_label.halign = Gtk.Align.START;
 
         var secondary_label = new Gtk.Label (_("Enter the partition's encryption password and set a device name for the decrypted partition."));

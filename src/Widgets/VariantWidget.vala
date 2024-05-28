@@ -12,7 +12,7 @@ public class VariantWidget : Gtk.Frame {
     private Gtk.Button back_button;
     private Gtk.Box variant_box;
     private Gtk.Label variant_title;
-    private Adw.Leaflet deck;
+    private Adw.Leaflet leaflet;
 
     construct {
         main_listbox = new Gtk.ListBox ();
@@ -49,11 +49,11 @@ public class VariantWidget : Gtk.Frame {
             wrap = true
         };
 
-        var header_box = new Gtk.CenterBox (HORIZONTAL, 0) {
+        var header_box = new Gtk.CenterBox () {
+            start_widget = back_button,
+            center_widget = variant_title,
             hexpand = true
         };
-        header_box.pack_start (back_button);
-        header_box.set_center_widget (variant_title);
 
         variant_box = new Gtk.Box (VERTICAL, 0);
         variant_box.add_css_class (Granite.STYLE_CLASS_VIEW);
@@ -61,32 +61,30 @@ public class VariantWidget : Gtk.Frame {
         variant_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         variant_box.append (variant_scrolled);
 
-        deck = new Adw.Leaflet () {
+        leaflet = new Adw.Leaflet () {
             can_navigate_back = true,
             can_unfold = false
         };
-        deck.add (main_scrolled);
-        deck.add (variant_box);
+        leaflet.append (main_scrolled);
+        leaflet.append (variant_box);
 
-        child = deck;
+        child = leaflet;
         vexpand = true;
 
         back_button.clicked.connect (() => {
             going_to_main ();
-            deck.navigate (BACK);
+            leaflet.navigate (BACK);
         });
     }
 
     public void show_variants (string back_button_label, string variant_title_label) {
         back_button.label = back_button_label;
         variant_title.label = variant_title_label;
-        deck.visible_child = variant_box;
+        leaflet.visible_child = variant_box;
     }
 
     public void clear_variants () {
-        variant_listbox.get_children ().foreach ((child) => {
-            child.destroy ();
-        });
+        variant_listbox.remove_all ();
     }
 }
 
