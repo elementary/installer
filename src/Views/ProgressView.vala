@@ -33,7 +33,7 @@ public class ProgressView : AbstractInstallerView {
             logo_icon_name = "distributor-logo";
         }
 
-        var logo = new Hdy.Avatar (192, "", false) {
+        var logo = new Adw.Avatar (192, "", false) {
             // In case the wallpaper can't be loaded, we don't want an icon or text
             icon_name = "invalid-icon-name",
             // We need this for the shadow to not get clipped by Gtk.Overlay
@@ -49,10 +49,8 @@ public class ProgressView : AbstractInstallerView {
             icon_name = logo_icon_name + "-symbolic",
             pixel_size = 192
         };
-
-        unowned var icon_style_context = icon.get_style_context ();
-        icon_style_context.add_class ("logo");
-        icon_style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        icon.add_css_class ("logo");
+        icon.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var logo_overlay = new Gtk.Overlay () {
             child = logo,

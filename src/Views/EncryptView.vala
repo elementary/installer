@@ -172,7 +172,7 @@ public class EncryptView : AbstractInstallerView {
         var encrypt_button = new Gtk.Button.with_label (_("Choose Password"));
 
         next_button = new Gtk.Button.with_label (_(SKIP_STRING)) {
-            can_default = true
+            receives_default = true
         };
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
@@ -276,7 +276,7 @@ public class EncryptView : AbstractInstallerView {
     private void update_next_button () {
         if (pw_entry.is_valid && confirm_entry.is_valid) {
             next_button.sensitive = true;
-            next_button.has_default = true;
+            ((Gtk.Window) get_root ()).default_widget = next_button;
         } else {
             next_button.sensitive = false;
         }

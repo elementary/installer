@@ -156,7 +156,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
                 disabled_buttons += disk_button;
             } else {
-                disk_button.clicked.connect (() => {
+                disk_button.toggled.connect (() => {
                     if (disk_button.active) {
                         next_button.sensitive = true;
                     }
@@ -167,7 +167,7 @@ public class Installer.DiskView : AbstractInstallerView {
         }
 
         // Force the user to make a conscious selection, not spam "Next"
-        var no_selection = new Gtk.RadioButton (null) {
+        var no_selection = new Gtk.CheckButton () {
             active = true
         };
 

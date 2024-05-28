@@ -22,7 +22,6 @@ public class Installer.Terminal : Gtk.ScrolledWindow {
     public Gtk.TextBuffer buffer { get; construct; }
 
     private Gtk.TextView view;
-    private double prev_upper_adj = 0;
 
     public string log {
         owned get {
@@ -50,25 +49,13 @@ public class Installer.Terminal : Gtk.ScrolledWindow {
         hexpand = true;
         vexpand = true;
         min_content_height = 120;
-        add (view);
+        child = view;
         add_css_class (Granite.STYLE_CLASS_TERMINAL);
 
-        view.size_allocate.connect (() => attempt_scroll ());
+        buffer.changed.connect (attempt_scroll);
     }
 
     public void attempt_scroll () {
-        var adj = vadjustment;
-
-        var units_from_end = prev_upper_adj - adj.page_size - adj.value;
-        var view_size_difference = adj.upper - prev_upper_adj;
-        if (view_size_difference < 0) {
-            view_size_difference = 0;
-        }
-
-        if (prev_upper_adj <= adj.page_size || units_from_end <= 50) {
-            adj.value = adj.upper;
-        }
-
-        prev_upper_adj = adj.upper;
+        view.scroll_mark_onscreen (buffer.get_mark ("end"));
     }
 }
