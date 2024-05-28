@@ -122,7 +122,7 @@ public class Installer.DiskBar: Gtk.Box {
             });
         }
 
-        legend_box.add (event_box);
+        legend_box.append (event_box);
     }
 
     private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, Gtk.Allocation alloc) {

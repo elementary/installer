@@ -141,7 +141,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.sensitive = false;
 
-        action_box_start.add (modify_partitions_button);
+        action_box_start.append (modify_partitions_button);
         action_box_end.append (back_button);
         action_box_end.append (next_button);
 
@@ -352,8 +352,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
             };
 
             spacing = 12;
-            add (image);
-            add (description_label);
+            append (image);
+            append (description_label);
         }
     }
 }

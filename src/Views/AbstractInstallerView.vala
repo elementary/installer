@@ -51,17 +51,17 @@ public abstract class AbstractInstallerView : Gtk.Box {
             margin_start = 10,
             margin_end = 10
         };
-        action_area.add (action_box_start);
+        action_area.append (action_box_start);
         action_area.add_css_class ("button-box");
 
         if (Installer.App.test_mode) {
             var test_label = new Gtk.Label (_("Test Mode"));
             test_label.add_css_class (Gtk.STYLE_CLASS_ERROR);
 
-            action_area.add (test_label);
+            action_area.append (test_label);
         }
 
-        action_area.add (action_box_end);
+        action_area.append (action_box_end);
 
         if (cancellable) {
             var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
