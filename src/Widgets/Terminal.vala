@@ -17,7 +17,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.Terminal : Gtk.ScrolledWindow {
+public class Installer.Terminal : Gtk.Box {
     public signal void toggled (bool active);
     public Gtk.TextBuffer buffer { get; construct; }
 
@@ -45,12 +45,16 @@ public class Installer.Terminal : Gtk.ScrolledWindow {
         };
         view.remove_css_class (Granite.STYLE_CLASS_VIEW);
 
-        hscrollbar_policy = Gtk.PolicyType.NEVER;
-        hexpand = true;
-        vexpand = true;
-        min_content_height = 120;
-        child = view;
+        var scrolled_window = new Gtk.ScrolledWindow () {
+            child = view,
+            hexpand = true,
+            vexpand = true,
+            hscrollbar_policy = NEVER,
+            min_content_height = 120
+        };
         add_css_class (Granite.STYLE_CLASS_TERMINAL);
+
+        append (scrolled_window);
 
         buffer.changed.connect (attempt_scroll);
     }
