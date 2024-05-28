@@ -27,26 +27,18 @@ public class Installer.DiskBar: Gtk.Box {
     }
 
     construct {
-        var name_label = new Granite.HeaderLabel (disk_name);
-
-        var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
-            xalign = 0
+        var name_label = new Granite.HeaderLabel (disk_name) {
+            secondary_text = "%s %s".printf (disk_path, GLib.format_size (size))
         };
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        size_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        var label_box = new Gtk.Box (VERTICAL, 0);
-        label_box.append (name_label);
-        label_box.append (size_label);
-
-        var bar = new Gtk.Grid ();
+        var bar = new Gtk.Box (HORIZONTAL, 0);
 
         bar.size_allocate.connect ((alloc) => {
             update_sector_lengths (partitions, alloc);
         });
 
         foreach (PartitionBar part in partitions) {
-            bar.add (part);
+            bar.append (part);
         }
 
         legend_box = new Gtk.Box (VERTICAL, 6) {
@@ -84,7 +76,7 @@ public class Installer.DiskBar: Gtk.Box {
         orientation = VERTICAL;
         hexpand = true;
         spacing = 12;
-        append (label_box);
+        append (name_label );
         append (bar);
         append (legend_box);
     }
@@ -93,8 +85,8 @@ public class Installer.DiskBar: Gtk.Box {
         var fill_round = new Block () {
             valign = CENTER
         };
-        fill_round.get_style_context ().add_class ("legend");
-        fill_round.get_style_context ().add_class (fs);
+        fill_round.add_css_class ("legend");
+        fill_round.add_css_class (fs);
 
         var format_size = GLib.format_size (size);
 
@@ -105,8 +97,8 @@ public class Installer.DiskBar: Gtk.Box {
         ) {
             halign = START,
         };
-        info.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        info.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        info.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        info.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
         info.use_markup = true;
 
         var path = new Gtk.Label (ppath) {

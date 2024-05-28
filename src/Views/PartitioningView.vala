@@ -23,7 +23,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     private Gtk.Button next_button;
     private Gtk.Button modify_partitions_button;
-    private Gtk.Grid disk_list;
+    private Gtk.Box disk_list;
     private Gtk.Stack load_stack;
     private string required_description;
 
@@ -50,7 +50,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
 
         var title_label = new Gtk.Label (_("Select Partitions"));
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var format_row = new DescriptionRow (
             _("Selecting “Format” will erase <i>all</i> data on the selected partition."),
@@ -86,16 +86,14 @@ public class Installer.PartitioningView : AbstractInstallerView {
             margin_end = 12,
             margin_start = 12
         };
-        description_box.add (format_row);
-        description_box.add (required_row);
-        description_box.add (recommended_row);
+        description_box.append (format_row);
+        description_box.append (required_row);
+        description_box.append (recommended_row);
 
-        disk_list = new Gtk.Grid () {
+        disk_list = new Gtk.Box (VERTICAL, 24) {
             margin_end = 12,
             margin_start = 12,
-            row_spacing = 24,
-            orientation = VERTICAL,
-            valign = Gtk.Align.CENTER
+            valign = CENTER
         };
 
         var disk_scroller = new Gtk.ScrolledWindow () {
@@ -177,7 +175,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             }
 
             var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-            disk_list.add (disk_bar);
+            disk_list.append (disk_bar);
         }
 
         foreach (unowned InstallerDaemon.Disk disk in disks.logical_disks) {
@@ -226,7 +224,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
 
         var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-        disk_list.add (disk_bar);
+        disk_list.append (disk_bar);
     }
 
     private void validate_status () {
@@ -339,11 +337,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     private class DescriptionRow : Gtk.Box {
         public DescriptionRow (string description, string icon_name, string color) {
-            var image = new Gtk.Image.from_icon_name (icon_name, MENU) {
+            var image = new Gtk.Image.from_icon_name (icon_name) {
                 valign = Gtk.Align.START
             };
-            image.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
-            image.get_style_context ().add_class (color);
+            image.add_css_class (Granite.STYLE_CLASS_ACCENT);
+            image.add_css_class (color);
 
             var description_label = new Gtk.Label (description) {
                 hexpand = true,

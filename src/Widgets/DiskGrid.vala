@@ -64,7 +64,7 @@ public class Installer.DiskButton : Gtk.CheckButton {
         grid.attach (name_label, 1, 0);
         grid.attach (size_label, 1, 1);
 
-        add (grid);
+        child = grid;
 
         notify["active"].connect (() => {
             if (active) {
