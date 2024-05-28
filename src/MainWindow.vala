@@ -131,13 +131,13 @@ public class Installer.MainWindow : Gtk.Window {
             update_navigation ();
         });
 
-        leaflet.notify["transition-running"].connect (() => {
+        leaflet.notify["child-transition-running"].connect (() => {
             update_navigation ();
         });
     }
 
     private void update_navigation () {
-        if (!leaflet.transition_running) {
+        if (!leaflet.child_transition_running) {
             // We need to rebuild the views to reflect language changes and forking paths
             if (leaflet.visible_child == language_view || leaflet.visible_child == try_install_view) {
                 while (leaflet.get_adjacent_child (FORWARD) != null) {

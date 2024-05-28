@@ -17,8 +17,6 @@ public class Installer.PartitionBar : Gtk.Box {
     public string? volume_group { get; private set; }
     public Gtk.Popover menu { get; private set; }
 
-    private Gtk.GestureClick click_gesture;
-
     public PartitionBar (
         InstallerDaemon.Partition partition,
         string parent_path,
@@ -44,7 +42,7 @@ public class Installer.PartitionBar : Gtk.Box {
         menu.set_parent (this);
         menu.position = BOTTOM;
 
-        click_gesture = new Gtk.GestureClickPress ();
+        var click_gesture = new Gtk.GestureClick ();
         click_gesture.released.connect (menu.popup);
 
         add_controller (click_gesture);

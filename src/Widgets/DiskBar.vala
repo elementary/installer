@@ -112,17 +112,14 @@ public class Installer.DiskBar: Gtk.Box {
         legend.attach (path, 1, 0);
         legend.attach (info, 1, 1);
 
-        var event_box = new Gtk.EventBox ();
-        event_box.add (legend);
-
         if (menu != null) {
-            event_box.button_press_event.connect (() => {
-                menu.popup ();
-                return true;
-            });
+            var click_gesture = new Gtk.GestureClick ();
+            click_gesture.released.connect (menu.popup);
+
+            legend.add_controller (click_gesture);
         }
 
-        legend_box.append (event_box);
+        legend_box.append (legend);
     }
 
     private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, Gtk.Allocation alloc) {

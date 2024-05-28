@@ -42,7 +42,7 @@ public class ProgressView : AbstractInstallerView {
             margin_bottom = 6,
             margin_start = 6
         };
-        logo.loadable_icon = new FileIcon (File.new_for_uri ("resource://io/elementary/installer/wallpaper.jpg"));
+        logo.custom_image = Gdk.Texture.from_file (File.new_for_uri ("resource://io/elementary/installer/wallpaper.jpg"));
         logo.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var icon = new Gtk.Image () {
