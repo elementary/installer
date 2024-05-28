@@ -285,26 +285,35 @@ public class EncryptView : AbstractInstallerView {
         }
     }
 
-    private class ErrorRevealer : Gtk.Revealer {
-        public Gtk.Label label_widget;
-
-        public string label {
-            set {
-                label_widget.label = "<span font_size=\"small\">%s</span>".printf (value);
-            }
-        }
+    private class ErrorRevealer : Gtk.Box {
+        public bool reveal_child { get; set; }
+        public Gtk.Label label_widget { get; private set; }
+        public string label { get; construct set; }
 
         public ErrorRevealer (string label) {
-            label_widget = new Gtk.Label ("<span font_size=\"small\">%s</span>".printf (label));
-            label_widget.halign = Gtk.Align.END;
-            label_widget.justify = Gtk.Justification.RIGHT;
-            label_widget.max_width_chars = 55;
-            label_widget.use_markup = true;
-            label_widget.wrap = true;
-            label_widget.xalign = 1;
+            Object (label: label);
+        }
 
-            transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-            add (label_widget);
+        construct {
+            label_widget = new Gtk.Label (label) {
+                halign = END,
+                justify = RIGHT,
+                max_width_chars = 55,
+                use_markup = true,
+                wrap = true,
+                xalign = 1
+            };
+            label_widget.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+            var revealer = new Gtk.Revealer () {
+                child = label_widget,
+                transition_type = CROSSFADE
+            };
+
+            add (revealer);
+
+            bind_property ("reveal-child", revealer, "reveal-child");
+            bind_property ("label", label_widget, "label");
         }
     }
 }
