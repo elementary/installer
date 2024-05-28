@@ -203,7 +203,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     public void reset_view () {
         debug ("Resetting partitioning view");
-        disk_list.get_children ().foreach ((child) => child.destroy ());
+
+        while (disk_list.get_first_child () != null) {
+            disk_list.remove (disk_list.get_first_child ());
+        }
+
         mounts.clear ();
         luks.clear ();
         next_button.sensitive = false;

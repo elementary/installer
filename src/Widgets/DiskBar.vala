@@ -33,9 +33,9 @@ public class Installer.DiskBar: Gtk.Box {
 
         var bar = new Gtk.Box (HORIZONTAL, 0);
 
-        bar.size_allocate.connect ((alloc) => {
-            update_sector_lengths (partitions, alloc);
-        });
+        // bar.size_allocate.connect ((alloc) => {
+        //     update_sector_lengths (partitions, alloc);
+        // });
 
         foreach (PartitionBar part in partitions) {
             bar.append (part);
@@ -166,7 +166,7 @@ public class Installer.DiskBar: Gtk.Box {
         new_alloc.height = alloc.height;
         for (int x = 0; x < partitions.size; x++) {
             new_alloc.width = lengths[x];
-            partitions[x].size_allocate (new_alloc);
+            partitions[x].allocate_size (new_alloc, 0);
             new_alloc.x += new_alloc.width;
         }
     }
