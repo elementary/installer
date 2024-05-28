@@ -44,7 +44,7 @@ public class Installer.DiskButton : Gtk.RadioButton {
             halign = Gtk.Align.START,
             valign = Gtk.Align.END
         };
-        name_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,
