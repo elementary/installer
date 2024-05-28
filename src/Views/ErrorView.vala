@@ -87,6 +87,8 @@ public class ErrorView : AbstractInstallerView {
 
         terminal_button_label.mnemonic_widget = terminal_button;
 
+        terminal_button_label.mnemonic_widget = terminal_button;
+
         var buffer = new Gtk.TextBuffer (null) {
             text = log
         };
