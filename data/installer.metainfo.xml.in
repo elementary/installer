@@ -56,6 +56,20 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.0.0" date="2024-05-19" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Keyboard layout preview is now in a resizable window</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/installer/issues/662">Make EFI ESP optional during custom install</issue>
+        <issue url="https://github.com/elementary/installer/issues/691">Partitions legend seems clipped</issue>
+      </issues>
+    </release>
+
     <release version="1.2.0" date="2023-08-24" urgency="medium">
       <description>
         <p>Improvements:</p>
@@ -110,16 +124,7 @@
       </issues>
     </release>
 
-    <release version="1.0.5" date="2021-12-17" urgency="medium">
-      <description>
-        <p>Improvements:</p>
-        <ul>
-          <li>Double the boot partition size for encrypted installs</li>
-          <li>Updated translations</li>
-       </ul>
-      </description>
-    </release>
-
+    <release version="1.0.5" date="2021-12-17" />
     <release version="1.0.4" date="2021-12-13" />
     <release version="1.0.3" date="2021-08-25" />
   </releases>

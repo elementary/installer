@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 02:29+0000\n"
-"PO-Revision-Date: 2023-08-05 15:08+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
+"PO-Revision-Date: 2024-05-21 23:13+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
 "extra/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -37,50 +37,53 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75
-#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:100
-#: data/installer.metainfo.xml.in:115
+#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:103
+#: data/installer.metainfo.xml.in:114
 msgid "Improvements:"
 msgstr "Fejlesztések:"
 
 #: data/installer.metainfo.xml.in:63
-msgid "Swipe to navigate back"
-msgstr "Visszalépés csúsztatással"
+msgid "Keyboard layout preview is now in a resizable window"
+msgstr "A billentyűzetkiosztás előnézete átméretezhető ablak"
 
-#: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:77
-#: data/installer.metainfo.xml.in:93 data/installer.metainfo.xml.in:105
-#: data/installer.metainfo.xml.in:118
+#: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:78
+#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:107
+#: data/installer.metainfo.xml.in:119
 msgid "Updated translations"
 msgstr "Frissített fordítások"
 
-#: data/installer.metainfo.xml.in:91
+#: data/installer.metainfo.xml.in:77
+msgid "Swipe to navigate back"
+msgstr "Visszalépés csúsztatással"
+
+#: data/installer.metainfo.xml.in:105
 msgid "Use large icons in views"
 msgstr "Nagyobb ikonok használata a nézetekben"
 
-#: data/installer.metainfo.xml.in:92
+#: data/installer.metainfo.xml.in:106
 msgid "Add a custom icon for Before Installing view"
 msgstr "Egyedi ikon hozzáadva a Telepítés előtt nézethez"
 
-#: data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:116
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Egy információs sáv kijelzése az akkumulátorral kapcsolatban új lapra lépés "
 "helyett"
 
-#: data/installer.metainfo.xml.in:103
+#: data/installer.metainfo.xml.in:117
 msgid "Show all system requirements warnings on a single page"
 msgstr "Minden rendszerkövetelmény-figyelmeztetés kijelzése egy lapon"
 
-#: data/installer.metainfo.xml.in:104
+#: data/installer.metainfo.xml.in:118
 msgid "Warn about installing developer builds"
 msgstr "Figyelmeztetés fejlesztői verziók telepítéséről"
-
-#: data/installer.metainfo.xml.in:117
-msgid "Double the boot partition size for encrypted installs"
-msgstr "A boot partíció méretének duplázása a titkosított telepítéseknél"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "A rendszer telepítése"
+
+#~ msgid "Double the boot partition size for encrypted installs"
+#~ msgstr "A boot partíció méretének duplázása a titkosított telepítéseknél"
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"

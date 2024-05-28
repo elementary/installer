@@ -49,7 +49,14 @@ public class Installer.PartitioningView : AbstractInstallerView {
         mounts = new Gee.ArrayList<Installer.Mount> ();
         luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
 
-        var base_description = _("Select which partitions to use across all drives. <b>Selecting \"Format\" will erase ALL data on the selected partition.</b>");
+        var title_label = new Gtk.Label (_("Select Partitions"));
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+
+        var format_row = new DescriptionRow (
+            _("Selecting “Format” will erase <i>all</i> data on the selected partition."),
+            "dialog-warning-symbolic",
+            "orange"
+        );
 
         var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
@@ -63,33 +70,44 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 break;
         }
 
-        var recommended_description = _("It is also recommended to select a <b>Swap</b> partition.");
-
-        var full_description = "%s %s %s".printf (
-            base_description,
+        var required_row = new DescriptionRow (
             required_description,
-            recommended_description
+            "emblem-system-symbolic",
+            "orange"
         );
 
-        var description = new Gtk.Label (full_description);
-        description.max_width_chars = 72;
-        description.use_markup = true;
-        description.wrap = true;
+        var recommended_row = new DescriptionRow (
+            _("It is also recommended to select a <b>Swap</b> partition."),
+            "dialog-information-symbolic",
+            "blue"
+        );
+
+        var description_box = new Gtk.Box (VERTICAL, 12) {
+            margin_end = 12,
+            margin_start = 12
+        };
+        description_box.add (format_row);
+        description_box.add (required_row);
+        description_box.add (recommended_row);
 
         disk_list = new Gtk.Grid () {
+            margin_end = 12,
+            margin_start = 12,
             row_spacing = 24,
-            orientation = Gtk.Orientation.VERTICAL,
+            orientation = VERTICAL,
             valign = Gtk.Align.CENTER
         };
 
-        var disk_scroller = new Gtk.ScrolledWindow ();
-        disk_scroller.hexpand = true;
-        disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        disk_scroller.add (disk_list);
+        var disk_scroller = new Gtk.ScrolledWindow () {
+            child = disk_list,
+            hexpand = true,
+            hscrollbar_policy = NEVER
+        };
 
-        var load_spinner = new Gtk.Spinner ();
-        load_spinner.halign = Gtk.Align.CENTER;
-        load_spinner.valign = Gtk.Align.CENTER;
+        var load_spinner = new Gtk.Spinner () {
+            halign = CENTER,
+            valign = CENTER
+        };
         load_spinner.start ();
 
         var load_label = new Gtk.Label (_("Getting the current configuration…"));
@@ -104,17 +122,15 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_box.append (load_spinner);
         load_box.append (load_label);
 
-        load_stack = new Gtk.Stack ();
-        load_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        load_stack = new Gtk.Stack () {
+            transition_type = CROSSFADE
+        };
         load_stack.add_named (load_box, "loading");
         load_stack.add_named (disk_scroller, "disk");
 
-        content_area.margin_top = 12;
-        content_area.margin_end = 12;
-        content_area.margin_bottom = 12;
-        content_area.margin_start = 12;
-        content_area.attach (description, 0, 0);
-        content_area.attach (load_stack, 0, 1);
+        content_area.attach (title_label, 0, 0);
+        content_area.attach (description_box, 0, 1);
+        content_area.attach (load_stack, 0, 2);
 
         load_disks.begin ();
 
@@ -319,5 +335,27 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private Mount swap_remove_mount (Gee.ArrayList<Mount> array, int index) {
         array[index] = array[array.size - 1];
         return array.remove_at (array.size - 1);
+    }
+
+    private class DescriptionRow : Gtk.Box {
+        public DescriptionRow (string description, string icon_name, string color) {
+            var image = new Gtk.Image.from_icon_name (icon_name, MENU) {
+                valign = Gtk.Align.START
+            };
+            image.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
+            image.get_style_context ().add_class (color);
+
+            var description_label = new Gtk.Label (description) {
+                hexpand = true,
+                max_width_chars = 1, // Make Gtk wrap, but not expand the window
+                use_markup = true,
+                wrap = true,
+                xalign = 0
+            };
+
+            spacing = 12;
+            add (image);
+            add (description_label);
+        }
     }
 }

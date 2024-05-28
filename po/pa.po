@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 02:29+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
 "PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:42
+#: src/Application.vala:55
 #, c-format
 msgid "Install %s"
 msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Application.vala:61
+#: src/Application.vala:74
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
@@ -59,13 +59,13 @@ msgstr "ਟੈਸਟ ਮੋਡ ਵਰਤੋਂਕਾਰ ਬਦਲੋ"
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:47
-msgid "Cancel Installation"
-msgstr "ਸਥਾਪਨ ਰੱਦ ਕਰੋ"
-
-#: src/Views/AbstractInstallerView.vala:56
+#: src/Views/AbstractInstallerView.vala:58
 msgid "Test Mode"
 msgstr "ਟੈਸਟ ਮੋਡ"
+
+#: src/Views/AbstractInstallerView.vala:67
+msgid "Cancel Installation"
+msgstr "ਸਥਾਪਨ ਰੱਦ ਕਰੋ"
 
 #: src/Views/CheckView.vala:50
 #, fuzzy
@@ -134,11 +134,11 @@ msgstr ""
 "ਇਹ ਚੁਣੀ ਹੋਈ ਡਰਾਈਵ ਦਾ ਸਾਰਾ ਡੇਟਾ ਮਿਟਾ ਦੇਵੇਗਾ। ਜੇ ਤੁਸੀਂ ਹਾਲੇ ਆਪਣਾ ਡੇਟਾ ਬੈਕਅਪ ਨਹੀਂ ਕੀਤਾ ਤਾਂ "
 "ਤੁਸੀਂ ਸਥਾਪਨ ਨੂੰ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ ਜਾਂ ਮਿਸਾਲ ਮੋਡ ਵਰਤ ਸਕਦੇ ਹੋ।"
 
-#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:73 src/Views/PartitioningView.vala:113
 msgid "Getting the current configuration…"
 msgstr "ਮੌਜੂਦਾ ਸੈਟਿੰਗਾਂ ਪੜ੍ਹ ਰਿਹੈ…"
 
-#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:126
+#: src/Views/DiskView.vala:107 src/Views/PartitioningView.vala:142
 #: src/Views/TryInstallView.vala:86
 msgid "Next"
 msgstr "ਅਗਲਾ"
@@ -179,7 +179,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:164
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:124
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:140
 #: src/Views/TryInstallView.vala:84
 msgid "Back"
 msgstr "ਪਿੱਛੇ ਜਾਓ"
@@ -334,20 +334,29 @@ msgid "Currently active language"
 msgstr "ਮੌਜੂਦਾ ਚੁਣੀ ਹੋਈ ਭਾਸ਼ਾ"
 
 #: src/Views/PartitioningView.vala:52
+#, fuzzy
+#| msgid "Use Partition"
+msgid "Select Partitions"
+msgstr "ਇਹ ਵੰਡ ਵਰਤੋ"
+
+#: src/Views/PartitioningView.vala:56
+#, fuzzy
+#| msgid ""
+#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
+#| "will erase ALL data on the selected partition.</b>"
 msgid ""
-"Select which partitions to use across all drives. <b>Selecting \"Format\" "
-"will erase ALL data on the selected partition.</b>"
+"Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
 "ਸਾਰੀਆਂ ਡਰਾਈਵਾਂ ਤੇ ਵਰਤਣ ਲਈ ਅਪਨਸ਼ਨਾਂ ਚੁਣੋ। <b>\"ਫ਼ਾਰਮੈਟ\" ਕਰਨ ਨਾਲ਼ ਚੁਣੀ ਹੋਈ ਡਰਾਈਵ ਦਾ ਸਾਰਾ "
 "ਡੇਟਾ ਮਿਟ ਜਾਵੇਗਾ।</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:58
+#: src/Views/PartitioningView.vala:65
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਵੰਡ ਲਾਜ਼ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:62
+#: src/Views/PartitioningView.vala:69
 #, fuzzy
 #| msgid ""
 #| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
@@ -358,27 +367,27 @@ msgid ""
 msgstr ""
 "ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਅਤੇ ਇੱਕ <b>ਬੂਟ (/boot/efi)</b> ਵੰਡ ਲਾਜ਼ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
 
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "ਇੱਕ <b>ਸਵੈਪ</b> ਵੰਡ ਚੁਣਨ ਦੀ ਵੀ ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।"
 
-#: src/Views/PartitioningView.vala:121
+#: src/Views/PartitioningView.vala:137
 msgid "Modify Partitions…"
 msgstr "ਵੰਡਾਂ ਵਿੱਚ ਤਬਦੀਲੀਆਂ ਕਰੋ…"
 
-#: src/Views/PartitioningView.vala:273
+#: src/Views/PartitioningView.vala:287
 msgid "EFI partition has the wrong file system"
 msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਗ਼ਲਤ ਹੈ"
 
-#: src/Views/PartitioningView.vala:275
+#: src/Views/PartitioningView.vala:289
 msgid "EFI partition is too small"
 msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਬਹੁਤ ਹੀ ਛੋਟੀ ਹੈ"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:292
 msgid "Invalid file system for root"
 msgstr "ਰੂਟ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
-#: src/Views/PartitioningView.vala:280
+#: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for home"
 msgstr "ਘਰ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
@@ -502,12 +511,12 @@ msgstr "ਡੀਕ੍ਰਿਪਟ ਕਰੋ"
 msgid "LUKS volume was decrypted"
 msgstr "ਐੱਲਯੂਕੇਐੱਸ ਵੰਡ ਡੀਕ੍ਰਿਪਟ ਹੋ ਗਈ"
 
-#: src/Widgets/DiskBar.vala:136
+#: src/Widgets/DiskBar.vala:104
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:137
+#: src/Widgets/DiskBar.vala:105
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

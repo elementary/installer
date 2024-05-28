@@ -35,6 +35,8 @@ levelbar block:not(:last-child) {
 levelbar block.legend {
     border-radius: 50%;
     border-style: solid;
+    min-height: 14px;
+    min-width: 14px;
 }
 
 levelbar block.swap {
@@ -84,9 +86,15 @@ levelbar block.unused {
 }
 
 levelbar block image {
+    min-height: 16px; /* Preserve height when empty */
     padding: 0.5em;
     -gtk-icon-palette: error #fff, success #fff, warning #fff;
     -gtk-icon-shadow:
         0 1px 1px alpha(#000, 0.2),
         0 1px 3px alpha(#000, 0.1);
+}
+
+levelbar .h4 {
+    opacity: 1;
+    padding: 0;
 }
