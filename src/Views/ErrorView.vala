@@ -72,14 +72,20 @@ public class ErrorView : AbstractInstallerView {
             xalign = 0
         };
 
+        var terminal_button_label = new Gtk.Label (_("Details"));
+
+        var terminal_button_box = new Gtk.Box (HORIZONTAL, 0);
+        terminal_button_box.add (new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", BUTTON));
+        terminal_button_box.add (terminal_button_label);
+
         var terminal_button = new Gtk.ToggleButton () {
-            always_show_image = true,
-            halign = Gtk.Align.START,
-            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
-            label = _("Details"),
+            child = terminal_button_box,
+            halign = START,
             margin_top = 12
         };
         terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        terminal_button_label.mnemonic_widget = terminal_button;
 
         var buffer = new Gtk.TextBuffer (null) {
             text = log
