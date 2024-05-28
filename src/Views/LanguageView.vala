@@ -49,7 +49,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         select_stack = new Gtk.Stack ();
         select_stack.valign = Gtk.Align.START;
-        select_stack.add_css_class ("h2");
+        select_stack.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
         select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         select_stack.add_child (select_label);
 

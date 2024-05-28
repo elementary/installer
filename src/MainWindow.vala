@@ -67,6 +67,7 @@ public class Installer.MainWindow : Gtk.Window {
         overlay.add_overlay (battery_infobar);
 
         child = overlay;
+        titlebar = new Gtk.Label (null);
 
         language_view.next_step.connect (() => {
             // Don't prompt for screen reader if we're able to navigate without it
