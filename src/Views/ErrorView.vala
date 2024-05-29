@@ -25,13 +25,10 @@ public class ErrorView : AbstractInstallerView {
 
     construct {
         var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG) {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Could Not Install")) {
-            valign = Gtk.Align.START
-        };
+        var title_label = new Gtk.Label (_("Could Not Install"));
 
         var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. The device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ())) {
             margin_bottom = 12,

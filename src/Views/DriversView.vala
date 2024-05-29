@@ -20,13 +20,10 @@
 
     construct {
         var image = new Gtk.Image.from_icon_name ("application-x-firmware", Gtk.IconSize.INVALID) {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Additional Drivers")) {
-            valign = Gtk.Align.START
-        };
+        var title_label = new Gtk.Label (_("Additional Drivers"));
 
         var description_label = new Gtk.Label (_("Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may not function properly without additional drivers. Most devices do not require additional drivers.")) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window

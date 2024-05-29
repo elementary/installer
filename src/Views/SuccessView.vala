@@ -22,13 +22,10 @@ public class SuccessView : AbstractInstallerView {
 
     construct {
         var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG) {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Continue Setting Up")) {
-            valign = Gtk.Align.START
-        };
+        var title_label = new Gtk.Label (_("Continue Setting Up"));
 
         var primary_label = new Gtk.Label (_("%s has been installed").printf (Utils.get_pretty_name ())) {
             hexpand = true,

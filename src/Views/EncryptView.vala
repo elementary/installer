@@ -43,14 +43,11 @@ public class EncryptView : AbstractInstallerView {
         var overlay = new Gtk.Overlay () {
             child = image,
             halign = CENTER,
-            valign = END,
             width_request = 60
         };
         overlay.add_overlay (overlay_image);
 
-        var title_label = new Gtk.Label (_("Enable Drive Encryption")) {
-            valign = Gtk.Align.START
-        };
+        var title_label = new Gtk.Label (_("Enable Drive Encryption"));
 
         var details_label = new Gtk.Label (_("Encrypt this device's drive if required for added protection, but be sure you understand:")) {
             hexpand = true,

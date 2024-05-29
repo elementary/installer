@@ -21,13 +21,10 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
     construct {
         var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id, Gtk.IconSize.DIALOG) {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var type_label = new Gtk.Label (_("Try or Install")) {
-            valign = Gtk.Align.START
-        };
+        var type_label = new Gtk.Label (_("Try or Install"));
 
         // Force the user to make a conscious selection, not spam "Next"
         var no_selection = new Gtk.RadioButton (null) {
