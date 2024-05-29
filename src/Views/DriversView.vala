@@ -36,38 +36,23 @@
         };
         description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        var warning_image = new Gtk.Image.from_icon_name ("security-low-symbolic", LARGE_TOOLBAR);
-        warning_image.get_style_context ().add_class ("accent");
-        warning_image.get_style_context ().add_class ("yellow");
+        var warning_row = new DescriptionRow (
+            _("Proprietary drivers contain private code that can't be reviewed. Security and other updates are dependent on the driver vendor."),
+            "security-low-symbolic",
+            "yellow"
+        );
 
-        var warning_label = new Gtk.Label (_("Proprietary drivers contain private code that can't be reviewed. Security and other updates are dependent on the driver vendor.")) {
-            hexpand = true,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
-            wrap = true,
-            xalign = 0
-        };
+        var internet_row = new DescriptionRow (
+            _("An Internet connection is required to install NVIDIA® graphics drivers."),
+            "network-wireless-symbolic",
+            "blue"
+        );
 
-        var internet_image = new Gtk.Image.from_icon_name ("network-wireless-symbolic", LARGE_TOOLBAR);
-        internet_image.get_style_context ().add_class ("accent");
-        internet_image.get_style_context ().add_class ("blue");
-
-        var internet_label = new Gtk.Label (_("An Internet connection is required to install NVIDIA® graphics drivers.")) {
-            hexpand = true,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
-            wrap = true,
-            xalign = 0
-        };
-
-        var install_later_image = new Gtk.Image.from_icon_name ("system-software-install-symbolic", LARGE_TOOLBAR);
-        install_later_image.get_style_context ().add_class ("accent");
-        install_later_image.get_style_context ().add_class ("purple");
-
-        var install_later_label = new Gtk.Label (_("Proprietary drivers can be installed later through AppCenter, but an Internet connection will be required for all drivers.")) {
-            hexpand = true,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
-            wrap = true,
-            xalign = 0
-        };
+        var install_later_row = new DescriptionRow (
+            _("Proprietary drivers can be installed later through AppCenter, but an Internet connection will be required for all drivers."),
+            "system-software-install-symbolic",
+            "purple"
+        );
 
         var checkbutton_label = new Gtk.Label (_("Include third-party proprietary drivers when installing. I agree to their respective licenses and terms of use.")) {
             wrap = true
@@ -77,26 +62,21 @@
             child = checkbutton_label
         };
 
-        var message_grid = new Gtk.Grid () {
-            valign = CENTER,
-            row_spacing = 32,
-            column_spacing = 12
+        var message_box = new Gtk.Box (VERTICAL, 32) {
+            valign = CENTER
         };
-        message_grid.attach (description_label, 0, 0, 2, 1);
-        message_grid.attach (warning_image, 0, 1);
-        message_grid.attach (warning_label, 1, 1);
-        message_grid.attach (internet_image, 0, 2);
-        message_grid.attach (internet_label, 1, 2);
-        message_grid.attach (install_later_image, 0, 3);
-        message_grid.attach (install_later_label, 1, 3);
-        message_grid.attach (drivers_check, 0, 4, 2);
+        message_box.add (description_label);
+        message_box.add (warning_row);
+        message_box.add (internet_row);
+        message_box.add (install_later_row);
+        message_box.add (drivers_check);
 
         content_area.column_homogeneous = true;
         content_area.margin_start = content_area.margin_end = 12;
         content_area.valign = Gtk.Align.CENTER;
         content_area.attach (image, 0, 0);
         content_area.attach (title_label, 0, 1);
-        content_area.attach (message_grid, 1, 0, 1, 2);
+        content_area.attach (message_box, 1, 0, 1, 2);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
         back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (BACK));
