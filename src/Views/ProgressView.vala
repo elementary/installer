@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class ProgressView : AbstractInstallerView {
+public class ProgressView : Gtk.Box {
     public signal void on_success ();
     public signal void on_error ();
 
@@ -87,12 +87,19 @@ public class ProgressView : AbstractInstallerView {
             hexpand = true
         };
 
-        content_area.margin_end = 12;
-        content_area.margin_start = 12;
+        var content_area = new Gtk.Grid () {
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 12,
+            margin_start = 12,
+            row_spacing = 12
+        };
         content_area.attach (logo_stack, 0, 0, 2);
         content_area.attach (progressbar_label, 0, 1);
         content_area.attach (terminal_button, 1, 1);
         content_area.attach (progressbar, 0, 2, 2);
+
+        add (content_area);
 
         terminal_button.toggled.connect (() => {
             if (terminal_button.active) {

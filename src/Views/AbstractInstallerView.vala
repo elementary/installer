@@ -20,7 +20,8 @@ public abstract class AbstractInstallerView : Gtk.Box {
 
     public signal void cancel ();
 
-    protected Gtk.Grid content_area;
+    protected Gtk.Box title_area;
+    protected Gtk.Box content_area;
     protected Gtk.Box action_box_start;
     protected Gtk.Box action_box_end;
 
@@ -29,13 +30,20 @@ public abstract class AbstractInstallerView : Gtk.Box {
     }
 
     construct {
-        content_area = new Gtk.Grid () {
-            column_spacing = 12,
-            row_spacing = 12,
+        title_area = new Gtk.Box (VERTICAL, 12) {
+            valign = CENTER
+        };
+        title_area.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+
+        content_area = new Gtk.Box (VERTICAL, 24);
+
+        var box = new Gtk.Box (HORIZONTAL, 12) {
+            homogeneous = true,
             hexpand = true,
             vexpand = true,
-            orientation = Gtk.Orientation.VERTICAL
         };
+        box.add (title_area);
+        box.add (content_area);
 
         action_box_end = new Gtk.Box (HORIZONTAL, 6) {
             halign = END,
@@ -47,10 +55,7 @@ public abstract class AbstractInstallerView : Gtk.Box {
             homogeneous = true
         };
 
-        var action_area = new Gtk.Box (HORIZONTAL, 12) {
-            margin_start = 10,
-            margin_end = 10
-        };
+        var action_area = new Gtk.Box (HORIZONTAL, 12);
         action_area.add (action_box_start);
         action_area.get_style_context ().add_class ("button-box");
 
@@ -72,11 +77,15 @@ public abstract class AbstractInstallerView : Gtk.Box {
             action_box_end.add (cancel_button);
         }
 
-        orientation = VERTICAL;
-        spacing = 24;
-        margin_top = 12;
-        margin_bottom = 12;
-        add (content_area);
-        add (action_area);
+        var main_box = new Gtk.Box (VERTICAL, 24) {
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 12,
+            margin_start = 12
+        };
+        main_box.add (box);
+        main_box.add (action_area);
+
+        add (main_box);
     }
 }

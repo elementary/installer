@@ -51,7 +51,6 @@ public class EncryptView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Enable Drive Encryption")) {
             valign = Gtk.Align.START
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var details_label = new Gtk.Label (_("Encrypt this device's drive if required for added protection, but be sure you understand:")) {
             hexpand = true,
@@ -141,12 +140,10 @@ public class EncryptView : AbstractInstallerView {
         stack.add (description_box);
         stack.add (password_box);
 
-        content_area.column_homogeneous = true;
-        content_area.margin_end = 12;
-        content_area.margin_start = 12;
-        content_area.attach (overlay, 0, 0);
-        content_area.attach (title_label, 0, 1);
-        content_area.attach (stack, 1, 0, 1, 2);
+        title_area.add (overlay);
+        title_area.add (title_label);
+
+        content_area.add (stack);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
