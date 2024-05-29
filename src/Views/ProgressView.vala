@@ -25,9 +25,6 @@ public class ProgressView : AbstractInstallerView {
     private const int NUM_STEP = 5;
 
     construct {
-        var style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("io/elementary/installer/ProgressView.css");
-
         var logo_icon_name = Environment.get_os_info ("LOGO");
         if (logo_icon_name == "" || logo_icon_name == null) {
             logo_icon_name = "distributor-logo";
@@ -35,22 +32,15 @@ public class ProgressView : AbstractInstallerView {
 
         var logo = new Adw.Avatar (192, "", false) {
             // In case the wallpaper can't be loaded, we don't want an icon or text
-            icon_name = "invalid-icon-name",
-            // We need this for the shadow to not get clipped by Gtk.Overlay
-            margin_top = 6,
-            margin_end = 6,
-            margin_bottom = 6,
-            margin_start = 6
+            icon_name = "invalid-icon-name"
         };
-        logo.custom_image = Gdk.Texture.from_resource ("resource://io/elementary/installer/wallpaper.jpg");
-        logo.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        logo.custom_image = Gdk.Texture.from_resource ("/io/elementary/installer/wallpaper.jpg");
 
         var icon = new Gtk.Image () {
             icon_name = logo_icon_name + "-symbolic",
             pixel_size = 192
         };
         icon.add_css_class ("logo");
-        icon.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var logo_overlay = new Gtk.Overlay () {
             child = logo,
