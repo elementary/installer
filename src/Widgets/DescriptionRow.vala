@@ -21,8 +21,8 @@ public class DescriptionRow : Gtk.Box {
             pixel_size = 24,
             valign = START
         };
-        image.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
-        image.get_style_context ().add_class (color);
+        image.add_css_class (Granite.STYLE_CLASS_ACCENT);
+        image.add_css_class (color);
 
         var description_label = new Gtk.Label (description) {
             hexpand = true,
