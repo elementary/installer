@@ -78,7 +78,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         var recommended_row = new DescriptionRow (
             _("It is also recommended to select a <b>Swap</b> partition."),
-            "dialog-information-symbolic",
+            "media-memory-symbolic",
             "blue"
         );
 
@@ -337,27 +337,5 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private Mount swap_remove_mount (Gee.ArrayList<Mount> array, int index) {
         array[index] = array[array.size - 1];
         return array.remove_at (array.size - 1);
-    }
-
-    private class DescriptionRow : Gtk.Box {
-        public DescriptionRow (string description, string icon_name, string color) {
-            var image = new Gtk.Image.from_icon_name (icon_name) {
-                valign = Gtk.Align.START
-            };
-            image.add_css_class (Granite.STYLE_CLASS_ACCENT);
-            image.add_css_class (color);
-
-            var description_label = new Gtk.Label (description) {
-                hexpand = true,
-                max_width_chars = 1, // Make Gtk wrap, but not expand the window
-                use_markup = true,
-                wrap = true,
-                xalign = 0
-            };
-
-            spacing = 12;
-            append (image);
-            append (description_label);
-        }
     }
 }

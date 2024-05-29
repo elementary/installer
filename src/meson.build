@@ -21,6 +21,7 @@ vala_files = [
     'Views/TryInstallView.vala',
     'Views/SuccessView.vala',
     'Widgets/DecryptMenu.vala',
+    'Widgets/DescriptionRow.vala',
     'Widgets/DiskBar.vala',
     'Widgets/DiskGrid.vala',
     'Widgets/InstallTypeGrid.vala',
