@@ -79,13 +79,11 @@ public class ErrorView : AbstractInstallerView {
         terminal_button_box.append (terminal_button_label);
 
         var terminal_button = new Gtk.ToggleButton () {
-            halign = Gtk.Align.START,
-            has_frame = false,
             child = terminal_button_box,
+            halign = START,
+            has_frame = false,
             margin_top = 12
         };
-
-        terminal_button_label.mnemonic_widget = terminal_button;
 
         terminal_button_label.mnemonic_widget = terminal_button;
 
