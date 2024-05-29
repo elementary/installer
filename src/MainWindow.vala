@@ -40,7 +40,8 @@ public class Installer.MainWindow : Gtk.Window {
 
         leaflet = new Adw.Leaflet () {
             can_navigate_back = true,
-            can_unfold = false
+            can_unfold = false,
+            homogeneous = false
         };
         leaflet.append (language_view);
 
