@@ -22,14 +22,10 @@ public class SuccessView : AbstractInstallerView {
 
     construct {
         var image = new Gtk.Image.from_icon_name ("process-completed") {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Continue Setting Up")) {
-            valign = Gtk.Align.START
-        };
-        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
+        var title_label = new Gtk.Label (_("Continue Setting Up"));
 
         var primary_label = new Gtk.Label (_("%s has been installed").printf (Utils.get_pretty_name ())) {
             hexpand = true,
@@ -48,17 +44,16 @@ public class SuccessView : AbstractInstallerView {
 
         var message_grid = new Gtk.Grid () {
             row_spacing = 6,
-            valign = Gtk.Align.CENTER
+            valign = CENTER,
+            vexpand = true
         };
         message_grid.attach (primary_label, 0, 0);
         message_grid.attach (secondary_label, 0, 1);
 
-        content_area.column_homogeneous = true;
-        content_area.margin_start = content_area.margin_end = 12;
-        content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (image, 0, 0);
-        content_area.attach (title_label, 0, 1);
-        content_area.attach (message_grid, 1, 0, 1, 2);
+        title_area.append (image);
+        title_area.append (title_label);
+
+        content_area.append (message_grid);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
         shutdown_button.clicked.connect (Utils.shutdown);

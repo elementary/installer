@@ -21,14 +21,10 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
     construct {
         var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id) {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var type_label = new Gtk.Label (_("Try or Install")) {
-            valign = Gtk.Align.START
-        };
-        type_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
+        var type_label = new Gtk.Label (_("Try or Install"));
 
         // Force the user to make a conscious selection, not spam "Next"
         var no_selection = new Gtk.CheckButton () {
@@ -60,7 +56,8 @@ public class Installer.TryInstallView : AbstractInstallerView {
         };
 
         var type_box = new Gtk.Box (VERTICAL, 6) {
-            valign = CENTER
+            valign = CENTER,
+            vexpand = true
         };
         type_box.append (demo_button);
         type_box.append (clean_install_button);
@@ -73,13 +70,10 @@ public class Installer.TryInstallView : AbstractInstallerView {
             propagate_natural_height = true
         };
 
-        content_area.column_homogeneous = true;
-        content_area.margin_end = 12;
-        content_area.margin_start = 12;
-        content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (type_image, 0, 0);
-        content_area.attach (type_label, 0, 1);
-        content_area.attach (type_scrolled, 1, 0, 1, 2);
+        title_area.append (type_image);
+        title_area.append (type_label);
+
+        content_area.append (type_scrolled);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 

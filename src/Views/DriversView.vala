@@ -20,14 +20,10 @@
 
     construct {
         var image = new Gtk.Image.from_icon_name ("application-x-firmware") {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Additional Drivers")) {
-            valign = Gtk.Align.START
-        };
-        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
+        var title_label = new Gtk.Label (_("Additional Drivers"));
 
         var description_label = new Gtk.Label (_("Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may not function properly without additional drivers. Most devices do not require additional drivers.")) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
@@ -63,7 +59,8 @@
         };
 
         var message_box = new Gtk.Box (VERTICAL, 32) {
-            valign = CENTER
+            valign = CENTER,
+            vexpand = true
         };
         message_box.append (description_label);
         message_box.append (warning_row);
@@ -71,12 +68,10 @@
         message_box.append (install_later_row);
         message_box.append (drivers_check);
 
-        content_area.column_homogeneous = true;
-        content_area.margin_start = content_area.margin_end = 12;
-        content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (image, 0, 0);
-        content_area.attach (title_label, 0, 1);
-        content_area.attach (message_box, 1, 0, 1, 2);
+        title_area.append (image);
+        title_area.append (title_label);
+
+        content_area.append (message_box);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
         back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));

@@ -39,14 +39,11 @@ public class Installer.DiskView : AbstractInstallerView {
 
         var image_overlay = new Gtk.Overlay () {
             child = install_image,
-            valign = END
+            halign = CENTER
         };
         image_overlay.add_overlay (install_badge);
 
-        var install_label = new Gtk.Label (_("Select a Drive")) {
-            valign = Gtk.Align.START
-        };
-        install_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
+        var install_label = new Gtk.Label (_("Select a Drive"));
 
         var install_desc_label = new Gtk.Label (
             _("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode.")
@@ -89,20 +86,12 @@ public class Installer.DiskView : AbstractInstallerView {
         load_stack.add_child (load_box);
         load_stack.add_named (disk_scrolled, "disk");
 
-        var title_grid = new Gtk.Grid () {
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.CENTER,
-            row_spacing = 12
-        };
-        title_grid.attach (image_overlay, 0, 0);
-        title_grid.attach (install_label, 0, 1);
+        title_area.append (image_overlay);
+        title_area.append (install_label);
 
-        content_area.margin_start = content_area.margin_end = 12;
-        content_area.column_homogeneous = true;
-        content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (title_grid, 0, 0, 1, 2);
-        content_area.attach (install_desc_label, 1, 0);
-        content_area.attach (load_stack, 1, 1);
+        content_area.valign = CENTER;
+        content_area.append (install_desc_label);
+        content_area.append (load_stack);
 
         next_button = new Gtk.Button.with_label (_("Next")) {
             // Make sure we can skip this view in Test Mode

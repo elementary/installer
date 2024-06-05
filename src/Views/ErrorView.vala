@@ -25,14 +25,10 @@ public class ErrorView : AbstractInstallerView {
 
     construct {
         var image = new Gtk.Image.from_icon_name ("dialog-error") {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Could Not Install")) {
-            valign = Gtk.Align.START
-        };
-        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
+        var title_label = new Gtk.Label (_("Could Not Install"));
 
         var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. The device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ())) {
             margin_bottom = 12,
@@ -112,11 +108,10 @@ public class ErrorView : AbstractInstallerView {
         grid.attach (terminal_button, 0, 4, 2);
         grid.attach (terminal_revealer, 0, 5, 2);
 
-        content_area.column_homogeneous = true;
-        content_area.margin_start = content_area.margin_end = 12;
-        content_area.attach (image, 0, 0);
-        content_area.attach (title_label, 0, 1);
-        content_area.attach (grid, 1, 0, 1, 2);
+        title_area.append (image);
+        title_area.append (title_label);
+
+        content_area.append (grid);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 

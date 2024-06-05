@@ -30,7 +30,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Select Keyboard Layout")) {
             valign = Gtk.Align.START
         };
-        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         input_variant_widget = new VariantWidget ();
 
@@ -45,12 +44,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
         stack_box.append (input_variant_widget);
         stack_box.append (keyboard_test_entry);
 
-        content_area.column_homogeneous = true;
-        content_area.margin_end = 12;
-        content_area.margin_start = 12;
-        content_area.attach (image, 0, 0);
-        content_area.attach (title_label, 0, 1);
-        content_area.attach (stack_box, 1, 0, 1, 2);
+        title_area.append (image);
+        title_area.append (title_label);
+
+        content_area.append (stack_box);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 

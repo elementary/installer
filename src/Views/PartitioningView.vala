@@ -50,7 +50,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
         luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
 
         var title_label = new Gtk.Label (_("Select Partitions"));
-        title_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var format_row = new DescriptionRow (
             _("Selecting “Format” will erase <i>all</i> data on the selected partition."),
@@ -99,7 +98,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
         var disk_scroller = new Gtk.ScrolledWindow () {
             child = disk_list,
             hexpand = true,
-            hscrollbar_policy = NEVER
+            hscrollbar_policy = NEVER,
+            propagate_natural_height = true
         };
 
         var load_spinner = new Gtk.Spinner () {
@@ -126,9 +126,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_stack.add_named (load_box, "loading");
         load_stack.add_named (disk_scroller, "disk");
 
-        content_area.attach (title_label, 0, 0);
-        content_area.attach (description_box, 0, 1);
-        content_area.attach (load_stack, 0, 2);
+        title_area.append (title_label);
+
+        content_area.valign = CENTER;
+        content_area.append (description_box);
+        content_area.append (load_stack);
 
         load_disks.begin ();
 
