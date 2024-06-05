@@ -50,7 +50,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
         luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
 
         var title_label = new Gtk.Label (_("Select Partitions"));
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var format_row = new DescriptionRow (
             _("Selecting “Format” will erase <i>all</i> data on the selected partition."),
@@ -78,7 +77,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         var recommended_row = new DescriptionRow (
             _("It is also recommended to select a <b>Swap</b> partition."),
-            "dialog-information-symbolic",
+            "media-memory-symbolic",
             "blue"
         );
 
@@ -101,7 +100,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
         var disk_scroller = new Gtk.ScrolledWindow (null, null) {
             child = disk_list,
             hexpand = true,
-            hscrollbar_policy = NEVER
+            hscrollbar_policy = NEVER,
+            propagate_natural_height = true
         };
 
         var load_spinner = new Gtk.Spinner () {
@@ -128,9 +128,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_stack.add_named (load_box, "loading");
         load_stack.add_named (disk_scroller, "disk");
 
-        content_area.attach (title_label, 0, 0);
-        content_area.attach (description_box, 0, 1);
-        content_area.attach (load_stack, 0, 2);
+        title_area.add (title_label);
+
+        content_area.valign = CENTER;
+        content_area.add (description_box);
+        content_area.add (load_stack);
 
         load_disks.begin ();
 
@@ -339,27 +341,5 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private Mount swap_remove_mount (Gee.ArrayList<Mount> array, int index) {
         array[index] = array[array.size - 1];
         return array.remove_at (array.size - 1);
-    }
-
-    private class DescriptionRow : Gtk.Box {
-        public DescriptionRow (string description, string icon_name, string color) {
-            var image = new Gtk.Image.from_icon_name (icon_name, MENU) {
-                valign = Gtk.Align.START
-            };
-            image.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
-            image.get_style_context ().add_class (color);
-
-            var description_label = new Gtk.Label (description) {
-                hexpand = true,
-                max_width_chars = 1, // Make Gtk wrap, but not expand the window
-                use_markup = true,
-                wrap = true,
-                xalign = 0
-            };
-
-            spacing = 12;
-            add (image);
-            add (description_label);
-        }
     }
 }

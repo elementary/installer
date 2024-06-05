@@ -49,7 +49,6 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         select_stack = new Gtk.Stack ();
         select_stack.valign = Gtk.Align.START;
-        select_stack.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
         select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         select_stack.add (select_label);
 
@@ -165,12 +164,10 @@ public class Installer.LanguageView : AbstractInstallerView {
             lang_variant_widget.main_listbox.row_selected.disconnect (row_selected);
         });
 
-        content_area.column_homogeneous = true;
-        content_area.margin_end = 10;
-        content_area.margin_start = 10;
-        content_area.attach (image, 0, 0, 1, 1);
-        content_area.attach (select_stack, 0, 1, 1, 1);
-        content_area.attach (lang_variant_widget, 1, 0, 1, 2);
+        title_area.add (image);
+        title_area.add (select_stack);
+
+        content_area.add (lang_variant_widget);
 
         timeout ();
     }
