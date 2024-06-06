@@ -144,7 +144,7 @@ public class Installer.DiskBar: Gtk.Box {
                 var unused_bar = new Block ();
                 unused_bar.add_css_class ("unused");
 
-                append_partition (unused_bar, 1.0);
+                append_partition (unused_bar, unused / size);
             }
 
             var layout_manager = ((Gtk.ConstraintLayout) get_layout_manager ());
