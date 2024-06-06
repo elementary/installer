@@ -79,6 +79,9 @@ public class Installer.DiskBar: Gtk.Box {
         append (name_label );
         append (bar);
         append (legend_box);
+
+        // Lie about orientation for styling reasons
+        css_classes = {"horizontal"};
     }
 
     private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {
