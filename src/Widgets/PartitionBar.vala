@@ -73,11 +73,4 @@ public class Installer.PartitionBar : Gtk.Box {
     public uint64 get_partition_size () {
         return partition.end_sector - partition.start_sector;
     }
-
-    public int calculate_length (int alloc_width, uint64 disk_sectors) {
-        var percent = ((double) get_partition_size () / (double) disk_sectors);
-        var request = alloc_width * percent;
-        if (request < 20) request = 20;
-        return (int) request;
-    }
 }

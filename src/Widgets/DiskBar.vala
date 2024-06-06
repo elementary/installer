@@ -31,15 +31,7 @@ public class Installer.DiskBar: Gtk.Box {
             secondary_text = "%s %s".printf (disk_path, GLib.format_size (size))
         };
 
-        var bar = new Gtk.Box (HORIZONTAL, 0);
-
-        // bar.size_allocate.connect ((alloc) => {
-        //     update_sector_lengths (partitions, alloc);
-        // });
-
-        foreach (PartitionBar part in partitions) {
-            bar.append (part);
-        }
+        var bar = new PartitionContainer (size, partitions);
 
         legend_box = new Gtk.Box (VERTICAL, 6) {
             halign = START
@@ -63,14 +55,6 @@ public class Installer.DiskBar: Gtk.Box {
         var unused = size - (used * 512);
         if (size / 100 < unused) {
             add_legend ("unused", unused, "unused", null, null);
-
-            var unused_bar = new Block () {
-                hexpand = true,
-                vexpand = true
-            };
-            unused_bar.add_css_class ("unused");
-
-            bar.append (unused_bar);
         }
 
         orientation = VERTICAL;
@@ -125,52 +109,129 @@ public class Installer.DiskBar: Gtk.Box {
         legend_box.append (legend);
     }
 
-    private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, Gtk.Allocation alloc) {
-        var alloc_width = alloc.width;
-        var disk_sectors = this.size / 512;
+    private class PartitionContainer : Gtk.Widget {
+        public Gee.ArrayList<PartitionBar> partitions { get; construct; }
+        public uint64 size { get; construct; }
 
-        int[] lengths = {};
-        for (int x = 0; x < partitions.size; x++) {
-            var part = partitions[x];
-            var requested = part.calculate_length (alloc_width, disk_sectors);
-
-            var excess = requested - alloc_width;
-            while (excess > 0) {
-                var reduce_by = x / excess;
-                if (reduce_by == 0) reduce_by = 1;
-
-                // Begin by resizing all partitions over 20px wide.
-                bool excess_modified = false;
-                for (int y = 0; excess > 0 && y < x; y++) {
-                    if (lengths[y] <= 20) continue;
-                    lengths[y] -= reduce_by;
-                    excess -= reduce_by;
-                    excess_modified = true;
-                }
-
-                // In case all are below that width, shrink beyond limit.
-                if (!excess_modified) {
-                    for (int y = 0; excess > 0 && y < x; y++) {
-                        lengths[y] -= reduce_by;
-                        excess -= reduce_by;
-                        excess_modified = true;
-                    }
-                }
-            }
-
-            alloc_width -= requested;
-            disk_sectors -= part.get_partition_size ();
-            lengths += requested;
+        public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBar> partitions) {
+            Object (
+                partitions: partitions,
+                size: size
+            );
         }
 
-        var new_alloc = Gtk.Allocation ();
-        new_alloc.x = alloc.x;
-        new_alloc.y = alloc.y;
-        new_alloc.height = alloc.height;
-        for (int x = 0; x < partitions.size; x++) {
-            new_alloc.width = lengths[x];
-            partitions[x].allocate_size (new_alloc, 0);
-            new_alloc.x += new_alloc.width;
+        class construct {
+            set_layout_manager_type (typeof (Gtk.ConstraintLayout));
+        }
+
+        construct {
+            uint64 used = 0;
+            var disk_sectors = size / 512;
+            foreach (var partition in partitions) {
+                double percent_requested = (double) partition.get_partition_size () / disk_sectors;
+                percent_requested = percent_requested.clamp (0.01, 0.99);
+
+                used += partition.get_partition_size ();
+
+                append_partition (
+                    partition,
+                    percent_requested
+                );
+            }
+
+            var unused = size - (used * 512);
+            if (size / 100 < unused) {
+                var unused_bar = new Block ();
+                unused_bar.add_css_class ("unused");
+
+                append_partition (unused_bar, 1.0);
+            }
+
+            var layout_manager = ((Gtk.ConstraintLayout) get_layout_manager ());
+            // Position last child at end
+            layout_manager.add_constraint (
+                new Gtk.Constraint (
+                    get_last_child (),
+                    END,
+                    EQ,
+                    this,
+                    END,
+                    1.0,
+                    0.0,
+                    Gtk.ConstraintStrength.REQUIRED
+                )
+            );
+        }
+
+        ~PartitionContainer () {
+            while (get_first_child () != null) {
+                get_first_child ().unparent ();
+            }
+        }
+
+        private void append_partition (Gtk.Widget widget, double percentage) {
+            widget.set_parent (this);
+
+            var layout_manager = ((Gtk.ConstraintLayout) get_layout_manager ());
+
+            // Fill height of this
+            layout_manager.add_constraint (
+                new Gtk.Constraint (
+                    widget,
+                    HEIGHT,
+                    EQ,
+                    this,
+                    HEIGHT,
+                    1.0,
+                    0.0,
+                    Gtk.ConstraintStrength.REQUIRED
+                )
+            );
+
+            // Fill width based on partition size
+            layout_manager.add_constraint (
+                new Gtk.Constraint (
+                    widget,
+                    WIDTH,
+                    EQ,
+                    this,
+                    WIDTH,
+                    percentage,
+                    0,
+                    Gtk.ConstraintStrength.STRONG
+                )
+            );
+
+            var previous_child = widget.get_prev_sibling ();
+            if (previous_child == null) {
+                // Position at start
+                layout_manager.add_constraint (
+                    new Gtk.Constraint (
+                        widget,
+                        START,
+                        EQ,
+                        this,
+                        START,
+                        1.0,
+                        0.0,
+                        Gtk.ConstraintStrength.REQUIRED
+                    )
+                );
+            } else {
+                // Position end to end
+                layout_manager.add_constraint (
+                    new Gtk.Constraint (
+                        widget,
+                        START,
+                        EQ,
+                        previous_child,
+                        END,
+                        1.0,
+                        0.0,
+                        Gtk.ConstraintStrength.REQUIRED
+                    )
+                );
+            }
         }
     }
 
