@@ -93,8 +93,3 @@ levelbar block image {
         0 1px 1px alpha(#000, 0.2),
         0 1px 3px alpha(#000, 0.1);
 }
-
-levelbar .h4 {
-    opacity: 1;
-    padding: 0;
-}
