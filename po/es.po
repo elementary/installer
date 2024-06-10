@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-24 17:31+0000\n"
 "PO-Revision-Date: 2024-06-11 15:16+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Walter Walls <windowsfan589@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
 "Language: es\n"
@@ -62,10 +62,8 @@ msgid "Cancel Installation"
 msgstr "Cancelar instalación"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Intentar instalar nuevamente"
+msgstr "Antes de instalar"
 
 #: src/Views/CheckView.vala:56
 msgid "Pre-Release Version"
@@ -104,7 +102,7 @@ msgstr "Instalar de todos modos"
 
 #: src/Views/CheckView.vala:211
 msgid "Recommended:"
-msgstr "Recomendados:"
+msgstr "Recomendado:"
 
 #: src/Views/CheckView.vala:217
 msgid "Your Device:"
