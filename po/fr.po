@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-24 17:31+0000\n"
-"PO-Revision-Date: 2024-05-15 14:13+0000\n"
+"PO-Revision-Date: 2024-06-06 10:13+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/"
 "installer/fr/>\n"
@@ -344,21 +344,15 @@ msgid "Currently active language"
 msgstr "Langue actuellement active"
 
 #: src/Views/PartitioningView.vala:52
-#, fuzzy
-#| msgid "Use Partition"
 msgid "Select Partitions"
-msgstr "Utiliser la partition"
+msgstr "Sélectionner les partitions"
 
 #: src/Views/PartitioningView.vala:56
-#, fuzzy
-#| msgid ""
-#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
-#| "will erase ALL data on the selected partition.</b>"
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
-"Sélectionnez les partitions à utiliser parmi les disques. <b>Sélectionner "
-"« Formater » effacera TOUTES les données sur la partition sélectionnée.</b>"
+"Sélectionner « Formater » effacera <i>toutes</i> les données sur la "
+"partition sélectionnée."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:65
