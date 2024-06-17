@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-24 17:31+0000\n"
-"PO-Revision-Date: 2023-03-02 10:25+0000\n"
+"PO-Revision-Date: 2024-06-16 21:16+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "installer/extra/nb/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.5.5\n"
 
 #: data/installer.metainfo.xml.in:9
 #, fuzzy
@@ -50,7 +50,7 @@ msgstr "Oppdaterte oversettelser"
 
 #: data/installer.metainfo.xml.in:77
 msgid "Swipe to navigate back"
-msgstr ""
+msgstr "Dra for å navigere tilbake"
 
 #: data/installer.metainfo.xml.in:105
 msgid "Use large icons in views"
@@ -70,7 +70,7 @@ msgstr ""
 
 #: data/installer.metainfo.xml.in:118
 msgid "Warn about installing developer builds"
-msgstr ""
+msgstr "Advaring om installasjon om utviklerbygg"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
