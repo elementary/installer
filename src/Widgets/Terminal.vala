@@ -66,11 +66,10 @@ public class Installer.Terminal : Gtk.Box {
 
     public void attempt_scroll () {
         var adj = scrolled_window.vadjustment;
-
         var units_from_end = prev_upper_adj - adj.page_size - adj.value;
-        var view_size_difference = adj.upper - prev_upper_adj;
-        if (view_size_difference < 0) {
-            view_size_difference = 0;
+
+        if (adj.upper - prev_upper_adj <= 0) {
+            return;
         }
 
         if (prev_upper_adj <= adj.page_size || units_from_end <= 50) {
