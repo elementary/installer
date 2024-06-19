@@ -269,19 +269,13 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
         }
 
-        var current_lang = Environment.get_variable ("LANGUAGE");
-        Environment.set_variable ("LANGUAGE", ((LangRow) row).lang_entry.get_code (), true);
-        Intl.textdomain (Build.GETTEXT_PACKAGE);
-        select_label = new Gtk.Label (_("Select a Language"));
+        unowned var label_text = LocaleHelper.lang_gettext (N_("Select a Language"), ((LangRow) row).lang_entry.get_code ());
+        select_label = new Gtk.Label (label_text);
         select_label.show_all ();
         select_stack.add (select_label);
         select_stack.set_visible_child (select_label);
 
-        if (current_lang != null) {
-            Environment.set_variable ("LANGUAGE", current_lang, true);
-        } else {
-            Environment.unset_variable ("LANGUAGE");
-        }
+        lang_variant_widget.main_listbox.get_accessible ().accessible_name = label_text;
 
         select_number++;
         return GLib.Source.CONTINUE;

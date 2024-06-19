@@ -39,17 +39,20 @@ public class Installer.InstallTypeButton : Gtk.RadioButton {
             hexpand = true,
             xalign = 0
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var subtitle_label = new Gtk.Label (subtitle) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
+        subtitle_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+        get_accessible ().accessible_name = title;
+        get_accessible ().accessible_description = subtitle;
 
         var grid = new Gtk.Grid () {
             column_spacing = 3,
-            row_spacing = 6,
             margin_top = 3,
             margin_end = 3,
             margin_bottom = 3,

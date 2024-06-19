@@ -27,11 +27,11 @@ public class KeyboardLayoutView : AbstractInstallerView {
             valign = Gtk.Align.END
         };
 
-        var title_label = new Gtk.Label (_("Select Keyboard Layout")) {
-            valign = Gtk.Align.START
-        };
-
         input_variant_widget = new VariantWidget ();
+
+        var title_label = new Gtk.Label (_("Select Keyboard Layout")) {
+            mnemonic_widget = input_variant_widget.main_listbox
+        };
 
         var keyboard_test_entry = new Gtk.Entry () {
             placeholder_text = _("Type to test your layout"),

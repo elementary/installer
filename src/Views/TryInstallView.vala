@@ -24,7 +24,9 @@ public class Installer.TryInstallView : AbstractInstallerView {
             pixel_size = 128
         };
 
-        var type_label = new Gtk.Label (_("Try or Install"));
+        var type_label = new Gtk.Label (_("Try or Install")) {
+            mnemonic_widget = this
+        };
 
         // Force the user to make a conscious selection, not spam "Next"
         var no_selection = new Gtk.RadioButton (null) {
@@ -78,6 +80,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var back_button = new Gtk.Button.with_label (_("Back"));
 
         var next_button = new Gtk.Button.with_label (_("Next")) {
+            can_default = true,
             sensitive = false
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);

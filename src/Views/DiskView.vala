@@ -43,7 +43,9 @@ public class Installer.DiskView : AbstractInstallerView {
         };
         image_overlay.add_overlay (install_badge);
 
-        var install_label = new Gtk.Label (_("Select a Drive"));
+        var install_label = new Gtk.Label (_("Select a Drive")) {
+            mnemonic_widget = this
+        };
 
         var install_desc_label = new Gtk.Label (
             _("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode.")
