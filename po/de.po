@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-24 17:31+0000\n"
-"PO-Revision-Date: 2024-05-10 22:13+0000\n"
+"PO-Revision-Date: 2024-06-08 08:42+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:55
@@ -348,22 +348,15 @@ msgid "Currently active language"
 msgstr "Aktuell eingestellte Sprache"
 
 #: src/Views/PartitioningView.vala:52
-#, fuzzy
-#| msgid "Use Partition"
 msgid "Select Partitions"
-msgstr "Partition wählen"
+msgstr "Partitionen wählen"
 
 #: src/Views/PartitioningView.vala:56
-#, fuzzy
-#| msgid ""
-#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
-#| "will erase ALL data on the selected partition.</b>"
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
-"Wählen Sie auf allen vorhandenen Laufwerken, welche Partitionen verwendet "
-"werden sollen. <b>Wenn Sie »Formatieren« wählen, werden ALLE Daten auf der "
-"gewählten Partition gelöscht.</b>"
+"Wenn Sie »Formatieren« wählen, werden <i>alle</i> Daten auf der gewählten "
+"Partition gelöscht."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:65
