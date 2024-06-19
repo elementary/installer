@@ -49,7 +49,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
         mounts = new Gee.ArrayList<Installer.Mount> ();
         luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
 
-        var title_label = new Gtk.Label (_("Select Partitions"));
+        var title_label = new Gtk.Label (_("Select Partitions")) {
+            mnemonic_widget = this
+        };
 
         var format_row = new DescriptionRow (
             _("Selecting “Format” will erase <i>all</i> data on the selected partition."),

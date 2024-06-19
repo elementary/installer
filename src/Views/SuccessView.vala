@@ -25,7 +25,9 @@ public class SuccessView : AbstractInstallerView {
             pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Continue Setting Up"));
+        var title_label = new Gtk.Label (_("Continue Setting Up")) {
+            mnemonic_widget = this
+        };
 
         var primary_label = new Gtk.Label (_("%s has been installed").printf (Utils.get_pretty_name ())) {
             hexpand = true,

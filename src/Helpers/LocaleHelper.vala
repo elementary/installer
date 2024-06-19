@@ -219,4 +219,34 @@ namespace LocaleHelper {
 
         return null;
     }
+
+    private static GLib.Mutex lang_mutex;
+    /*
+     * Always use this function to translate into another language to make sure
+     * that no race occurs when switchbing the environment variable.
+     */
+    public unowned string lang_gettext (string source, string lang, string? domain = null) {
+        lang_mutex.lock ();
+        unowned string translation;
+        var current_lang = GLib.Environment.get_variable ("LANGUAGE");
+        GLib.Environment.set_variable ("LANGUAGE", lang, true);
+
+        if (domain == null) {
+            Intl.textdomain (Build.GETTEXT_PACKAGE);
+            translation = _(source);
+        } else {
+            translation = dgettext (domain, source);
+        }
+
+        if (current_lang != null) {
+            GLib.Environment.set_variable ("LANGUAGE", current_lang, true);
+        } else {
+            GLib.Environment.unset_variable ("LANGUAGE");
+        }
+
+        Intl.textdomain (Build.GETTEXT_PACKAGE);
+        lang_mutex.unlock ();
+
+        return translation;
+    }
 }

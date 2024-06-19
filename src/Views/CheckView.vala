@@ -48,7 +48,7 @@ public class Installer.CheckView : AbstractInstallerView {
         };
 
         var title_label = new Gtk.Label (_("Before Installing")) {
-            valign = Gtk.Align.START
+            mnemonic_widget = this
         };
 
         var beta_view = new CheckView (

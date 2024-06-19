@@ -45,6 +45,7 @@ public class VariantWidget : Gtk.Frame {
             justify = CENTER,
             margin_end = 6,
             margin_start = 6,
+            mnemonic_widget = variant_listbox,
             use_markup = true,
             wrap = true
         };
@@ -80,6 +81,7 @@ public class VariantWidget : Gtk.Frame {
         back_button.label = back_button_label;
         variant_title.label = variant_title_label;
         deck.visible_child = variant_box;
+        variant_listbox.get_selected_row ().grab_focus ();
     }
 
     public void clear_variants () {
