@@ -22,6 +22,8 @@ public class Installer.Terminal : Gtk.Box {
     public Gtk.TextBuffer buffer { get; construct; }
 
     private Gtk.TextView view;
+    private double prev_upper_adj = 0;
+    private Gtk.ScrolledWindow scrolled_window;
 
     public string log {
         owned get {
@@ -45,21 +47,35 @@ public class Installer.Terminal : Gtk.Box {
         };
         view.remove_css_class (Granite.STYLE_CLASS_VIEW);
 
-        var scrolled_window = new Gtk.ScrolledWindow () {
+        scrolled_window = new Gtk.ScrolledWindow () {
             child = view,
             hexpand = true,
             vexpand = true,
             hscrollbar_policy = NEVER,
             min_content_height = 120
         };
-        add_css_class (Granite.STYLE_CLASS_TERMINAL);
+        scrolled_window.get_style_context ().add_class (Granite.STYLE_CLASS_TERMINAL);
 
         append (scrolled_window);
 
-        buffer.changed.connect (attempt_scroll);
+        Idle.add (() => {
+            attempt_scroll ();
+            return GLib.Source.CONTINUE;
+        });
     }
 
     public void attempt_scroll () {
-        view.scroll_mark_onscreen (buffer.get_mark ("end"));
+        var adj = scrolled_window.vadjustment;
+        var units_from_end = prev_upper_adj - adj.page_size - adj.value;
+
+        if (adj.upper - prev_upper_adj <= 0) {
+            return;
+        }
+
+        if (prev_upper_adj <= adj.page_size || units_from_end <= 50) {
+            adj.value = adj.upper;
+        }
+
+        prev_upper_adj = adj.upper;
     }
 }
