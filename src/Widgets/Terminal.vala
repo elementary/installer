@@ -17,12 +17,13 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.Terminal : Gtk.ScrolledWindow {
+public class Installer.Terminal : Gtk.Box {
     public signal void toggled (bool active);
     public Gtk.TextBuffer buffer { get; construct; }
 
     private Gtk.TextView view;
     private double prev_upper_adj = 0;
+    private Gtk.ScrolledWindow scrolled_window;
 
     public string log {
         owned get {
@@ -46,23 +47,29 @@ public class Installer.Terminal : Gtk.ScrolledWindow {
         };
         view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
 
-        hscrollbar_policy = Gtk.PolicyType.NEVER;
-        hexpand = true;
-        vexpand = true;
-        min_content_height = 120;
-        add (view);
-        get_style_context ().add_class (Granite.STYLE_CLASS_TERMINAL);
+        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            child = view,
+            hexpand = true,
+            vexpand = true,
+            hscrollbar_policy = NEVER,
+            min_content_height = 120
+        };
+        scrolled_window.get_style_context ().add_class (Granite.STYLE_CLASS_TERMINAL);
 
-        view.size_allocate.connect (() => attempt_scroll ());
+        add (scrolled_window);
+
+        Idle.add (() => {
+            attempt_scroll ();
+            return GLib.Source.CONTINUE;
+        });
     }
 
     public void attempt_scroll () {
-        var adj = vadjustment;
-
+        var adj = scrolled_window.vadjustment;
         var units_from_end = prev_upper_adj - adj.page_size - adj.value;
-        var view_size_difference = adj.upper - prev_upper_adj;
-        if (view_size_difference < 0) {
-            view_size_difference = 0;
+
+        if (adj.upper - prev_upper_adj <= 0) {
+            return;
         }
 
         if (prev_upper_adj <= adj.page_size || units_from_end <= 50) {
