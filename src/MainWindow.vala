@@ -60,7 +60,7 @@ public class Installer.MainWindow : Gtk.Window {
             valign = Gtk.Align.END
         };
         battery_infobar.add_child (infobar_label);
-        battery_infobar.add_css_class ("frame");
+        battery_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
 
         var overlay = new Gtk.Overlay () {
             child = leaflet
