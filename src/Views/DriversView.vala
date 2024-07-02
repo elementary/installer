@@ -19,7 +19,7 @@
     public signal void next_step ();
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("application-x-firmware", Gtk.IconSize.INVALID) {
+        var image = new Gtk.Image.from_icon_name ("application-x-firmware") {
             pixel_size = 128
         };
 
@@ -30,7 +30,7 @@
             wrap = true,
             xalign = 0
         };
-        description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        description_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var warning_row = new DescriptionRow (
             _("Proprietary drivers contain private code that can't be reviewed. Security and other updates are dependent on the driver vendor."),
@@ -62,32 +62,30 @@
             valign = CENTER,
             vexpand = true
         };
-        message_box.add (description_label);
-        message_box.add (warning_row);
-        message_box.add (internet_row);
-        message_box.add (install_later_row);
-        message_box.add (drivers_check);
+        message_box.append (description_label);
+        message_box.append (warning_row);
+        message_box.append (internet_row);
+        message_box.append (install_later_row);
+        message_box.append (drivers_check);
 
-        title_area.add (image);
-        title_area.add (title_label);
+        title_area.append (image);
+        title_area.append (title_label);
 
-        content_area.add (message_box);
+        content_area.append (message_box);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
-        back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (BACK));
+        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
 
         var next_button = new Gtk.Button.with_label (_("Erase and Install"));
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
         next_button.clicked.connect (() => next_step ());
 
-        action_box_end.add (back_button);
-        action_box_end.add (next_button);
+        action_box_end.append (back_button);
+        action_box_end.append (next_button);
 
         drivers_check.toggled.connect (() => {
             unowned var configuration = Configuration.get_default ();
             configuration.install_drivers = drivers_check.active;
         });
-
-        show_all ();
     }
 }

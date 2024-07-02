@@ -136,9 +136,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
         };
         grid.attach (use_partition, 0, 0);
         grid.attach (bottom_revealer, 0, 1);
-        grid.show_all ();
 
-        add (grid);
+        child = grid;
 
         custom.visible = false;
 
@@ -268,7 +267,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 partition_path,
                 parent_disk,
                 mount,
-                partition_bar.get_size (),
+                partition_bar.get_partition_size (),
                 (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0)
                     + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
                 filesystem,

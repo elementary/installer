@@ -5,7 +5,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.PartitionBar : Gtk.EventBox {
+public class Installer.PartitionBar : Gtk.Box {
     public signal void decrypted (InstallerDaemon.LuksCredentials credential);
 
     public Icon? icon { get; set; default = null; }
@@ -16,8 +16,6 @@ public class Installer.PartitionBar : Gtk.EventBox {
 
     public string? volume_group { get; private set; }
     public Gtk.Popover menu { get; private set; }
-
-    private Gtk.GestureMultiPress click_gesture;
 
     public PartitionBar (
         InstallerDaemon.Partition partition,
@@ -41,11 +39,13 @@ public class Installer.PartitionBar : Gtk.EventBox {
             menu = new PartitionMenu (partition.device_path, parent_path, partition.filesystem, lvm, set_mount, unset_mount, mount_set, this);
         }
 
-        menu.relative_to = this;
+        menu.set_parent (this);
         menu.position = BOTTOM;
 
-        click_gesture = new Gtk.GestureMultiPress (this);
+        var click_gesture = new Gtk.GestureClick ();
         click_gesture.released.connect (menu.popup);
+
+        add_controller (click_gesture);
     }
 
     class construct {
@@ -61,23 +61,16 @@ public class Installer.PartitionBar : Gtk.EventBox {
             valign = END
         };
 
-        add (image);
+        append (image);
         hexpand = true;
         tooltip_text = partition.device_path;
 
-        get_style_context ().add_class (Distinst.strfilesys (partition.filesystem));
+        add_css_class (Distinst.strfilesys (partition.filesystem));
 
         bind_property ("icon", image, "gicon", SYNC_CREATE);
     }
 
-    public uint64 get_size () {
+    public uint64 get_partition_size () {
         return partition.end_sector - partition.start_sector;
-    }
-
-    public int calculate_length (int alloc_width, uint64 disk_sectors) {
-        var percent = ((double) get_size () / (double) disk_sectors);
-        var request = alloc_width * percent;
-        if (request < 20) request = 20;
-        return (int) request;
     }
 }

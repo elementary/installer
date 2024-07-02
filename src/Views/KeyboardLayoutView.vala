@@ -22,7 +22,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
     construct {
         keyboard_settings = new GLib.Settings ("org.gnome.desktop.input-sources");
 
-        var image = new Gtk.Image.from_icon_name ("input-keyboard", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("input-keyboard") {
             pixel_size = 128,
             valign = Gtk.Align.END
         };
@@ -41,23 +41,23 @@ public class KeyboardLayoutView : AbstractInstallerView {
         };
 
         var stack_box = new Gtk.Box (VERTICAL, 12);
-        stack_box.add (input_variant_widget);
-        stack_box.add (keyboard_test_entry);
+        stack_box.append (input_variant_widget);
+        stack_box.append (keyboard_test_entry);
 
-        title_area.add (image);
-        title_area.add (title_label);
+        title_area.append (image);
+        title_area.append (title_label);
 
-        content_area.add (stack_box);
+        content_area.append (stack_box);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
         var next_button = new Gtk.Button.with_label (_("Select")) {
             sensitive = false
         };
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.add (back_button);
-        action_box_end.add (next_button);
+        action_box_end.append (back_button);
+        action_box_end.append (next_button);
 
         input_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
             return ((LayoutRow) row1).layout.description.collate (((LayoutRow) row2).layout.description);
@@ -79,7 +79,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
             next_button.activate ();
         });
 
-        back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (BACK));
+        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
 
         next_button.clicked.connect (() => {
             unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
@@ -104,7 +104,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 return;
             }
 
-            ((Hdy.Deck) get_parent ()).navigate (FORWARD);
+            ((Adw.Leaflet) get_parent ()).navigate (FORWARD);
         });
 
         input_variant_widget.main_listbox.row_activated.connect ((row) => {
@@ -115,9 +115,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
             }
 
             input_variant_widget.clear_variants ();
-            input_variant_widget.variant_listbox.add (new VariantRow (null, _("Default")));
+            input_variant_widget.variant_listbox.append (new VariantRow (null, _("Default")));
             foreach (var variant in variants.entries) {
-                input_variant_widget.variant_listbox.add (new VariantRow (variant.key, variant.value));
+                input_variant_widget.variant_listbox.append (new VariantRow (variant.key, variant.value));
             }
 
             input_variant_widget.variant_listbox.select_row (input_variant_widget.variant_listbox.get_row_at_index (0));
@@ -177,25 +177,26 @@ public class KeyboardLayoutView : AbstractInstallerView {
         });
 
         foreach (var layout in KeyboardLayoutHelper.get_layouts ()) {
-            input_variant_widget.main_listbox.add (new LayoutRow (layout));
+            input_variant_widget.main_listbox.append (new LayoutRow (layout));
         }
 
-        show_all ();
-
         Idle.add_once (() => {
-            string? country = Configuration.get_default ().country;
+            unowned string? country = Configuration.get_default ().country;
             if (country != null) {
-                string default_layout = country.down ();
+                var default_layout = country.down ();
 
-                foreach (weak Gtk.Widget child in input_variant_widget.main_listbox.get_children ()) {
+                var child = input_variant_widget.main_listbox.get_first_child ();
+                while (child != null) {
                     if (child is LayoutRow) {
-                        weak LayoutRow row = (LayoutRow) child;
+                        unowned var row = (LayoutRow) child;
                         if (row.layout.name == default_layout) {
                             input_variant_widget.main_listbox.select_row (row);
                             row.grab_focus ();
                             break;
                         }
                     }
+
+                    child = child.get_next_sibling ();
                 }
             }
         });
@@ -222,10 +223,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 margin_start = 6,
                 xalign = 0
             };
-            label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            add (label);
-            show_all ();
+            child = label;
         }
     }
 
@@ -249,10 +249,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 margin_start = 6,
                 xalign = 0
             };
-            label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            add (label);
-            show_all ();
+            child = label;
         }
     }
 }

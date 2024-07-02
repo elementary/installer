@@ -23,7 +23,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     private Gtk.Button next_button;
     private Gtk.Button modify_partitions_button;
-    private Gtk.Grid disk_list;
+    private Gtk.Box disk_list;
     private Gtk.Stack load_stack;
     private string required_description;
 
@@ -85,19 +85,17 @@ public class Installer.PartitioningView : AbstractInstallerView {
             margin_end = 12,
             margin_start = 12
         };
-        description_box.add (format_row);
-        description_box.add (required_row);
-        description_box.add (recommended_row);
+        description_box.append (format_row);
+        description_box.append (required_row);
+        description_box.append (recommended_row);
 
-        disk_list = new Gtk.Grid () {
+        disk_list = new Gtk.Box (VERTICAL, 24) {
             margin_end = 12,
             margin_start = 12,
-            row_spacing = 24,
-            orientation = VERTICAL,
-            valign = Gtk.Align.CENTER
+            valign = CENTER
         };
 
-        var disk_scroller = new Gtk.ScrolledWindow (null, null) {
+        var disk_scroller = new Gtk.ScrolledWindow () {
             child = disk_list,
             hexpand = true,
             hscrollbar_policy = NEVER,
@@ -111,7 +109,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_spinner.start ();
 
         var load_label = new Gtk.Label (_("Getting the current configuration…"));
-        load_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        load_label.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var load_box = new Gtk.Box (VERTICAL, 12) {
             hexpand = true,
@@ -119,8 +117,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
             valign = CENTER,
             halign = CENTER
         };
-        load_box.add (load_spinner);
-        load_box.add (load_label);
+        load_box.append (load_spinner);
+        load_box.append (load_label);
 
         load_stack = new Gtk.Stack () {
             transition_type = CROSSFADE
@@ -128,11 +126,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_stack.add_named (load_box, "loading");
         load_stack.add_named (disk_scroller, "disk");
 
-        title_area.add (title_label);
+        title_area.append (title_label);
 
         content_area.valign = CENTER;
-        content_area.add (description_box);
-        content_area.add (load_stack);
+        content_area.append (description_box);
+        content_area.append (load_stack);
 
         load_disks.begin ();
 
@@ -142,17 +140,15 @@ public class Installer.PartitioningView : AbstractInstallerView {
         var back_button = new Gtk.Button.with_label (_("Back"));
 
         next_button = new Gtk.Button.with_label (_("Next"));
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.sensitive = false;
 
-        action_box_start.add (modify_partitions_button);
-        action_box_end.add (back_button);
-        action_box_end.add (next_button);
+        action_box_start.append (modify_partitions_button);
+        action_box_end.append (back_button);
+        action_box_end.append (next_button);
 
-        back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
+        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
         next_button.clicked.connect (() => next_step ());
-
-        show_all ();
     }
 
     private async void load_disks () {
@@ -181,14 +177,12 @@ public class Installer.PartitioningView : AbstractInstallerView {
             }
 
             var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-            disk_list.add (disk_bar);
+            disk_list.append (disk_bar);
         }
 
         foreach (unowned InstallerDaemon.Disk disk in disks.logical_disks) {
             add_logical_disk (disk);
         }
-
-        disk_list.show_all ();
 
         load_stack.set_visible_child_name ("disk");
     }
@@ -211,7 +205,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
     public void reset_view () {
         debug ("Resetting partitioning view");
-        disk_list.get_children ().foreach ((child) => child.destroy ());
+
+        while (disk_list.get_first_child () != null) {
+            disk_list.remove (disk_list.get_first_child ());
+        }
+
         mounts.clear ();
         luks.clear ();
         next_button.sensitive = false;
@@ -232,7 +230,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
 
         var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-        disk_list.add (disk_bar);
+        disk_list.append (disk_bar);
     }
 
     private void validate_status () {

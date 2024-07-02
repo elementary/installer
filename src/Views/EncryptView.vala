@@ -30,11 +30,11 @@ public class EncryptView : AbstractInstallerView {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.INVALID) {
+        var image = new Gtk.Image.from_icon_name ("drive-harddisk") {
             pixel_size = 128
         };
 
-        var overlay_image = new Gtk.Image.from_icon_name ("security-high", Gtk.IconSize.INVALID) {
+        var overlay_image = new Gtk.Image.from_icon_name ("security-high") {
             pixel_size = 64,
             halign = Gtk.Align.END,
             valign = Gtk.Align.END
@@ -55,7 +55,7 @@ public class EncryptView : AbstractInstallerView {
             wrap = true,
             xalign = 0
         };
-        details_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        details_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var protect_row = new DescriptionRow (
             _("Data will only be protected from others with physical access to this device when it is shut down."),
@@ -78,10 +78,10 @@ public class EncryptView : AbstractInstallerView {
         var description_box = new Gtk.Box (VERTICAL, 32) {
             valign = CENTER
         };
-        description_box.add (details_label);
-        description_box.add (protect_row);
-        description_box.add (restart_row);
-        description_box.add (keyboard_row);
+        description_box.append (details_label);
+        description_box.append (protect_row);
+        description_box.append (restart_row);
+        description_box.append (keyboard_row);
 
         var description = new Gtk.Label (
             _("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account.")
@@ -97,7 +97,7 @@ public class EncryptView : AbstractInstallerView {
         var pw_label = new Granite.HeaderLabel (_("Choose Encryption Password"));
 
         pw_error_revealer = new ErrorRevealer (".");
-        pw_error_revealer.label_widget.get_style_context ().add_class (Gtk.STYLE_CLASS_WARNING);
+        pw_error_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_WARNING);
 
         pw_entry = new ValidatedEntry ();
         pw_entry.visibility = false;
@@ -116,44 +116,44 @@ public class EncryptView : AbstractInstallerView {
         };
 
         confirm_entry_revealer = new ErrorRevealer (".");
-        confirm_entry_revealer.label_widget.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+        confirm_entry_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_ERROR);
 
         var password_box = new Gtk.Box (VERTICAL, 3) {
             valign = CENTER
         };
-        password_box.add (description);
-        password_box.add (pw_label);
-        password_box.add (pw_entry);
-        password_box.add (pw_levelbar);
-        password_box.add (pw_error_revealer);
-        password_box.add (confirm_label);
-        password_box.add (confirm_entry);
-        password_box.add (confirm_entry_revealer);
+        password_box.append (description);
+        password_box.append (pw_label);
+        password_box.append (pw_entry);
+        password_box.append (pw_levelbar);
+        password_box.append (pw_error_revealer);
+        password_box.append (confirm_label);
+        password_box.append (confirm_entry);
+        password_box.append (confirm_entry_revealer);
 
         var stack = new Gtk.Stack () {
             transition_type = SLIDE_LEFT_RIGHT,
             vexpand = true
         };
-        stack.add (description_box);
-        stack.add (password_box);
+        stack.add_child (description_box);
+        stack.add_child (password_box);
 
-        title_area.add (overlay);
-        title_area.add (title_label);
+        title_area.append (overlay);
+        title_area.append (title_label);
 
-        content_area.add (stack);
+        content_area.append (stack);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
         var encrypt_button = new Gtk.Button.with_label (_("Choose Password"));
 
         next_button = new Gtk.Button.with_label (_(SKIP_STRING)) {
-            can_default = true
+            receives_default = true
         };
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.add (back_button);
-        action_box_end.add (encrypt_button);
-        action_box_end.add (next_button);
+        action_box_end.append (back_button);
+        action_box_end.append (encrypt_button);
+        action_box_end.append (next_button);
 
         next_button.grab_focus ();
 
@@ -180,7 +180,7 @@ public class EncryptView : AbstractInstallerView {
                 Configuration.get_default ().encryption_password = pw_entry.text;
             }
 
-            ((Hdy.Deck) get_parent ()).navigate (FORWARD);
+            ((Adw.Leaflet) get_parent ()).navigate (FORWARD);
         });
 
         pw_entry.changed.connect (() => {
@@ -194,7 +194,6 @@ public class EncryptView : AbstractInstallerView {
             update_next_button ();
         });
 
-        show_all ();
         back_button.hide ();
     }
 
@@ -252,7 +251,7 @@ public class EncryptView : AbstractInstallerView {
     private void update_next_button () {
         if (pw_entry.is_valid && confirm_entry.is_valid) {
             next_button.sensitive = true;
-            next_button.has_default = true;
+            ((Gtk.Window) get_root ()).default_widget = next_button;
         } else {
             next_button.sensitive = false;
         }
@@ -284,14 +283,14 @@ public class EncryptView : AbstractInstallerView {
                 wrap = true,
                 xalign = 1
             };
-            label_widget.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            label_widget.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
             var revealer = new Gtk.Revealer () {
                 child = label_widget,
                 transition_type = CROSSFADE
             };
 
-            add (revealer);
+            append (revealer);
 
             bind_property ("reveal-child", revealer, "reveal-child");
             bind_property ("label", label_widget, "label");

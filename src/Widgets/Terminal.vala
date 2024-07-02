@@ -45,9 +45,9 @@ public class Installer.Terminal : Gtk.Box {
             pixels_below_lines = 3,
             wrap_mode = Gtk.WrapMode.WORD
         };
-        view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
+        view.remove_css_class (Granite.STYLE_CLASS_VIEW);
 
-        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+        scrolled_window = new Gtk.ScrolledWindow () {
             child = view,
             hexpand = true,
             vexpand = true,
@@ -56,7 +56,7 @@ public class Installer.Terminal : Gtk.Box {
         };
         scrolled_window.get_style_context ().add_class (Granite.STYLE_CLASS_TERMINAL);
 
-        add (scrolled_window);
+        append (scrolled_window);
 
         Idle.add (() => {
             attempt_scroll ();

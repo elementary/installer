@@ -17,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class Installer.DiskButton : Gtk.RadioButton {
+public class Installer.DiskButton : Gtk.CheckButton {
     public string disk_name { get; construct; }
     public string icon_name { get; construct; }
     public string disk_path { get; construct; }
@@ -33,9 +33,10 @@ public class Installer.DiskButton : Gtk.RadioButton {
     }
 
     construct {
-        get_style_context ().add_class ("image-button");
+        add_css_class ("image-button");
 
-        var disk_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG) {
+        var disk_image = new Gtk.Image.from_icon_name (icon_name) {
+            pixel_size = 48,
             use_fallback = true
         };
 
@@ -44,7 +45,7 @@ public class Installer.DiskButton : Gtk.RadioButton {
             halign = Gtk.Align.START,
             valign = Gtk.Align.END
         };
-        name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        name_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,
@@ -63,7 +64,7 @@ public class Installer.DiskButton : Gtk.RadioButton {
         grid.attach (name_label, 1, 0);
         grid.attach (size_label, 1, 1);
 
-        add (grid);
+        child = grid;
 
         notify["active"].connect (() => {
             if (active) {
