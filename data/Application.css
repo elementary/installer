@@ -1,0 +1,3 @@
+.button-box button {
+    min-width: 86px; /* https://github.com/elementary/granite/issues/577#issuecomment-1318979272 */
+}

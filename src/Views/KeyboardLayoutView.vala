@@ -30,7 +30,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Select Keyboard Layout")) {
             valign = Gtk.Align.START
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         input_variant_widget = new VariantWidget ();
 
@@ -45,12 +44,10 @@ public class KeyboardLayoutView : AbstractInstallerView {
         stack_box.add (input_variant_widget);
         stack_box.add (keyboard_test_entry);
 
-        content_area.column_homogeneous = true;
-        content_area.margin_end = 12;
-        content_area.margin_start = 12;
-        content_area.attach (image, 0, 0);
-        content_area.attach (title_label, 0, 1);
-        content_area.attach (stack_box, 1, 0, 1, 2);
+        title_area.add (image);
+        title_area.add (title_label);
+
+        content_area.add (stack_box);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
@@ -59,8 +56,8 @@ public class KeyboardLayoutView : AbstractInstallerView {
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (back_button);
-        action_area.add (next_button);
+        action_box_end.add (back_button);
+        action_box_end.add (next_button);
 
         input_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
             return ((LayoutRow) row1).layout.description.collate (((LayoutRow) row2).layout.description);

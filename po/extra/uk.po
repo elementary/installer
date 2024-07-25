@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 02:29+0000\n"
-"PO-Revision-Date: 2023-08-03 16:08+0000\n"
+"POT-Creation-Date: 2024-05-24 17:31+0000\n"
+"PO-Revision-Date: 2024-05-27 15:13+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "extra/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -38,49 +38,54 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75
-#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:100
-#: data/installer.metainfo.xml.in:115
+#: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:103
+#: data/installer.metainfo.xml.in:114
 msgid "Improvements:"
 msgstr "Удосконалення:"
 
 #: data/installer.metainfo.xml.in:63
-msgid "Swipe to navigate back"
-msgstr "Перехід назад посуванням"
+msgid "Keyboard layout preview is now in a resizable window"
+msgstr ""
+"Попередній перегляд розкладки клавіатури тепер у вікні зі змінним розміром"
 
-#: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:77
-#: data/installer.metainfo.xml.in:93 data/installer.metainfo.xml.in:105
-#: data/installer.metainfo.xml.in:118
+#: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:78
+#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:107
+#: data/installer.metainfo.xml.in:119
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/installer.metainfo.xml.in:91
+#: data/installer.metainfo.xml.in:77
+msgid "Swipe to navigate back"
+msgstr "Перехід назад посуванням"
+
+#: data/installer.metainfo.xml.in:105
 msgid "Use large icons in views"
 msgstr "Додано великі піктограми у поданнях"
 
-#: data/installer.metainfo.xml.in:92
+#: data/installer.metainfo.xml.in:106
 msgid "Add a custom icon for Before Installing view"
 msgstr "Додано користувацьку піктограму для подання перед встановленням"
 
-#: data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:116
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Показ інфопанелі про заряд акумулятора замість переходу на іншу сторінку"
 
-#: data/installer.metainfo.xml.in:103
+#: data/installer.metainfo.xml.in:117
 msgid "Show all system requirements warnings on a single page"
 msgstr "Показ всіх попереджень про системні вимоги на одній сторінці"
 
-#: data/installer.metainfo.xml.in:104
+#: data/installer.metainfo.xml.in:118
 msgid "Warn about installing developer builds"
 msgstr "Попередження про встановлення збірок розробника"
-
-#: data/installer.metainfo.xml.in:117
-msgid "Double the boot partition size for encrypted installs"
-msgstr "Подвоєно розмір завантажувального розділу для зашифрованих встановлень"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Встановлення системи"
+
+#~ msgid "Double the boot partition size for encrypted installs"
+#~ msgstr ""
+#~ "Подвоєно розмір завантажувального розділу для зашифрованих встановлень"
 
 #~ msgid "Warn about installing in a VM"
 #~ msgstr "Попередження про встановлення у віртуальній машині"

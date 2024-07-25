@@ -21,6 +21,7 @@ vala_files = [
     'Views/TryInstallView.vala',
     'Views/SuccessView.vala',
     'Widgets/DecryptMenu.vala',
+    'Widgets/DescriptionRow.vala',
     'Widgets/DiskBar.vala',
     'Widgets/DiskGrid.vala',
     'Widgets/InstallTypeGrid.vala',
@@ -34,6 +35,7 @@ vala_files = [
 configuration_data = configuration_data()
 configuration_data.set('GETTEXT_PACKAGE', meson.project_name())
 configuration_data.set('LANG_LIST', get_option('supported_languages'))
+configuration_data.set_quoted('LOCALEDIR', get_option('prefix') / get_option('localedir'))
 
 xkbconf = dependency('xkeyboard-config')
 xkb_base = xkbconf.get_pkgconfig_variable('xkb_base')

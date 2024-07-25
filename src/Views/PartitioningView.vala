@@ -49,7 +49,13 @@ public class Installer.PartitioningView : AbstractInstallerView {
         mounts = new Gee.ArrayList<Installer.Mount> ();
         luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
 
-        var base_description = _("Select which partitions to use across all drives. <b>Selecting \"Format\" will erase ALL data on the selected partition.</b>");
+        var title_label = new Gtk.Label (_("Select Partitions"));
+
+        var format_row = new DescriptionRow (
+            _("Selecting “Format” will erase <i>all</i> data on the selected partition."),
+            "dialog-warning-symbolic",
+            "orange"
+        );
 
         var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
@@ -63,33 +69,45 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 break;
         }
 
-        var recommended_description = _("It is also recommended to select a <b>Swap</b> partition.");
-
-        var full_description = "%s %s %s".printf (
-            base_description,
+        var required_row = new DescriptionRow (
             required_description,
-            recommended_description
+            "emblem-system-symbolic",
+            "orange"
         );
 
-        var description = new Gtk.Label (full_description);
-        description.max_width_chars = 72;
-        description.use_markup = true;
-        description.wrap = true;
+        var recommended_row = new DescriptionRow (
+            _("It is also recommended to select a <b>Swap</b> partition."),
+            "media-memory-symbolic",
+            "blue"
+        );
+
+        var description_box = new Gtk.Box (VERTICAL, 12) {
+            margin_end = 12,
+            margin_start = 12
+        };
+        description_box.add (format_row);
+        description_box.add (required_row);
+        description_box.add (recommended_row);
 
         disk_list = new Gtk.Grid () {
+            margin_end = 12,
+            margin_start = 12,
             row_spacing = 24,
-            orientation = Gtk.Orientation.VERTICAL,
+            orientation = VERTICAL,
             valign = Gtk.Align.CENTER
         };
 
-        var disk_scroller = new Gtk.ScrolledWindow (null, null);
-        disk_scroller.hexpand = true;
-        disk_scroller.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        disk_scroller.add (disk_list);
+        var disk_scroller = new Gtk.ScrolledWindow (null, null) {
+            child = disk_list,
+            hexpand = true,
+            hscrollbar_policy = NEVER,
+            propagate_natural_height = true
+        };
 
-        var load_spinner = new Gtk.Spinner ();
-        load_spinner.halign = Gtk.Align.CENTER;
-        load_spinner.valign = Gtk.Align.CENTER;
+        var load_spinner = new Gtk.Spinner () {
+            halign = CENTER,
+            valign = CENTER
+        };
         load_spinner.start ();
 
         var load_label = new Gtk.Label (_("Getting the current configuration…"));
@@ -104,17 +122,17 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_box.add (load_spinner);
         load_box.add (load_label);
 
-        load_stack = new Gtk.Stack ();
-        load_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        load_stack = new Gtk.Stack () {
+            transition_type = CROSSFADE
+        };
         load_stack.add_named (load_box, "loading");
         load_stack.add_named (disk_scroller, "disk");
 
-        content_area.margin_top = 12;
-        content_area.margin_end = 12;
-        content_area.margin_bottom = 12;
-        content_area.margin_start = 12;
-        content_area.attach (description, 0, 0);
-        content_area.attach (load_stack, 0, 1);
+        title_area.add (title_label);
+
+        content_area.valign = CENTER;
+        content_area.add (description_box);
+        content_area.add (load_stack);
 
         load_disks.begin ();
 
@@ -127,11 +145,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         next_button.sensitive = false;
 
-        action_area.add (modify_partitions_button);
-        action_area.set_child_secondary (modify_partitions_button, true);
-        action_area.set_child_non_homogeneous (modify_partitions_button, true);
-        action_area.add (back_button);
-        action_area.add (next_button);
+        action_box_start.add (modify_partitions_button);
+        action_box_end.add (back_button);
+        action_box_end.add (next_button);
 
         back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
         next_button.clicked.connect (() => next_step ());

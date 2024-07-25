@@ -25,14 +25,10 @@ public class ErrorView : AbstractInstallerView {
 
     construct {
         var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG) {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Could Not Install")) {
-            valign = Gtk.Align.START
-        };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        var title_label = new Gtk.Label (_("Could Not Install"));
 
         var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. The device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ())) {
             margin_bottom = 12,
@@ -72,14 +68,20 @@ public class ErrorView : AbstractInstallerView {
             xalign = 0
         };
 
+        var terminal_button_label = new Gtk.Label (_("Details"));
+
+        var terminal_button_box = new Gtk.Box (HORIZONTAL, 0);
+        terminal_button_box.add (new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", BUTTON));
+        terminal_button_box.add (terminal_button_label);
+
         var terminal_button = new Gtk.ToggleButton () {
-            always_show_image = true,
-            halign = Gtk.Align.START,
-            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
-            label = _("Details"),
+            child = terminal_button_box,
+            halign = START,
             margin_top = 12
         };
         terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        terminal_button_label.mnemonic_widget = terminal_button;
 
         var buffer = new Gtk.TextBuffer (null) {
             text = log
@@ -106,11 +108,10 @@ public class ErrorView : AbstractInstallerView {
         grid.attach (terminal_button, 0, 4, 2);
         grid.attach (terminal_revealer, 0, 5, 2);
 
-        content_area.column_homogeneous = true;
-        content_area.margin_start = content_area.margin_end = 12;
-        content_area.attach (image, 0, 0);
-        content_area.attach (title_label, 0, 1);
-        content_area.attach (grid, 1, 0, 1, 2);
+        title_area.add (image);
+        title_area.add (title_label);
+
+        content_area.add (grid);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 
@@ -119,9 +120,9 @@ public class ErrorView : AbstractInstallerView {
         var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
         install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (restart_button);
-        action_area.add (demo_button);
-        action_area.add (install_button);
+        action_box_end.add (restart_button);
+        action_box_end.add (demo_button);
+        action_box_end.add (install_button);
 
         restart_button.clicked.connect (Utils.restart);
 

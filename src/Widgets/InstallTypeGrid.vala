@@ -39,7 +39,7 @@ public class Installer.InstallTypeButton : Gtk.RadioButton {
             hexpand = true,
             xalign = 0
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_PRIMARY_LABEL);
+        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var subtitle_label = new Gtk.Label (subtitle) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window

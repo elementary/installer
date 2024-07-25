@@ -50,7 +50,6 @@ public class Installer.CheckView : AbstractInstallerView {
         var title_label = new Gtk.Label (_("Before Installing")) {
             valign = Gtk.Align.START
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var beta_view = new CheckView (
             _("Pre-Release Version"),
@@ -71,22 +70,21 @@ public class Installer.CheckView : AbstractInstallerView {
         );
         specs_view.attach (get_comparison_grid (), 1, 2);
 
-        message_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32) {
-            valign = Gtk.Align.CENTER
+        message_box = new Gtk.Box (VERTICAL, 32) {
+            valign = CENTER,
+            vexpand = true
         };
 
-        content_area.column_homogeneous = true;
-        content_area.margin_start = content_area.margin_end = 12;
-        content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (image, 0, 0);
-        content_area.attach (title_label, 0, 1);
-        content_area.attach (message_box, 1, 0, 1, 2);
+        title_area.add (image);
+        title_area.add (title_label);
+
+        content_area.add (message_box);
 
         var ignore_button = new Gtk.Button.with_label (_("Install Anyway"));
         ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (() => next_step ());
 
-        action_area.add (ignore_button);
+        action_box_end.add (ignore_button);
 
         bool minimum_specs = true;
 

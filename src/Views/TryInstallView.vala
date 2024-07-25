@@ -21,14 +21,10 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
     construct {
         var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id, Gtk.IconSize.DIALOG) {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+            pixel_size = 128
         };
 
-        var type_label = new Gtk.Label (_("Try or Install")) {
-            valign = Gtk.Align.START
-        };
-        type_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        var type_label = new Gtk.Label (_("Try or Install"));
 
         // Force the user to make a conscious selection, not spam "Next"
         var no_selection = new Gtk.RadioButton (null) {
@@ -60,7 +56,8 @@ public class Installer.TryInstallView : AbstractInstallerView {
         };
 
         var type_box = new Gtk.Box (VERTICAL, 6) {
-            valign = CENTER
+            valign = CENTER,
+            vexpand = true
         };
         type_box.add (demo_button);
         type_box.add (clean_install_button);
@@ -73,13 +70,10 @@ public class Installer.TryInstallView : AbstractInstallerView {
             propagate_natural_height = true
         };
 
-        content_area.column_homogeneous = true;
-        content_area.margin_end = 12;
-        content_area.margin_start = 12;
-        content_area.valign = Gtk.Align.CENTER;
-        content_area.attach (type_image, 0, 0);
-        content_area.attach (type_label, 0, 1);
-        content_area.attach (type_scrolled, 1, 0, 1, 2);
+        title_area.add (type_image);
+        title_area.add (type_label);
+
+        content_area.add (type_scrolled);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
@@ -88,8 +82,8 @@ public class Installer.TryInstallView : AbstractInstallerView {
         };
         next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (back_button);
-        action_area.add (next_button);
+        action_box_end.add (back_button);
+        action_box_end.add (next_button);
 
         back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
 

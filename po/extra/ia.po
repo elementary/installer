@@ -1,35 +1,28 @@
-# Slovenian translation for pantheon-calculator
-# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
-# This file is distributed under the same license as the pantheon-calculator package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pantheon-calculator\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-24 17:31+0000\n"
-"PO-Revision-Date: 2019-09-07 18:22+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
-"Language-Team: Slovenian <https://l10n.elementary.io/projects/installer/"
-"extra/sl/>\n"
-"Language: sl\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 3.7.1\n"
-"X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
-#, fuzzy
-#| msgid "Install elementary OS"
 msgid "Installer"
-msgstr "Namesti elementary OS"
+msgstr ""
 
 #: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
-msgstr "Namesti elementary OS"
+msgstr ""
 
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
@@ -81,25 +74,4 @@ msgstr ""
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
-msgstr "Namesti sistem"
-
-#~ msgid "system-os-installer"
-#~ msgstr "system-os-installer"
-
-#~ msgid "Calculator"
-#~ msgstr "Računalo"
-
-#~ msgid "Solve simple equations"
-#~ msgstr "Preprost kalkulator"
-
-#~ msgid "About Calculator"
-#~ msgstr "O Računalu"
-
-#~ msgid ""
-#~ "A simple calculator for everyday use. It supports basic and some "
-#~ "scientific calculations including trigonometry functions, sin, cos, and "
-#~ "tan."
-#~ msgstr ""
-#~ "Preprost kalkulator za vsakdanjo uporabo. Podpira osnovne in nekaj "
-#~ "znanstvenih izračunov vključno s trigonometričnimi funkcijami sin, cos in "
-#~ "tan."
+msgstr ""

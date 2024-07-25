@@ -20,28 +20,53 @@ public abstract class AbstractInstallerView : Gtk.Box {
 
     public signal void cancel ();
 
-    protected Gtk.Grid content_area;
-    protected Gtk.ButtonBox action_area;
+    protected Gtk.Box title_area;
+    protected Gtk.Box content_area;
+    protected Gtk.Box action_box_start;
+    protected Gtk.Box action_box_end;
 
     protected AbstractInstallerView (bool cancellable = false) {
         Object (cancellable: cancellable);
     }
 
     construct {
-        content_area = new Gtk.Grid () {
-            column_spacing = 12,
-            row_spacing = 12,
+        title_area = new Gtk.Box (VERTICAL, 12) {
+            valign = CENTER
+        };
+        title_area.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+
+        content_area = new Gtk.Box (VERTICAL, 24);
+
+        var box = new Gtk.Box (HORIZONTAL, 12) {
+            homogeneous = true,
             hexpand = true,
             vexpand = true,
-            orientation = Gtk.Orientation.VERTICAL
+        };
+        box.add (title_area);
+        box.add (content_area);
+
+        action_box_end = new Gtk.Box (HORIZONTAL, 6) {
+            halign = END,
+            hexpand = true,
+            homogeneous = true
         };
 
-        action_area = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL) {
-            layout_style = Gtk.ButtonBoxStyle.END,
-            margin_end = 10,
-            margin_start = 10,
-            spacing = 6
+        action_box_start = new Gtk.Box (HORIZONTAL, 6) {
+            homogeneous = true
         };
+
+        var action_area = new Gtk.Box (HORIZONTAL, 12);
+        action_area.add (action_box_start);
+        action_area.get_style_context ().add_class ("button-box");
+
+        if (Installer.App.test_mode) {
+            var test_label = new Gtk.Label (_("Test Mode"));
+            test_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+
+            action_area.add (test_label);
+        }
+
+        action_area.add (action_box_end);
 
         if (cancellable) {
             var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
@@ -49,23 +74,18 @@ public abstract class AbstractInstallerView : Gtk.Box {
                 cancel ();
             });
 
-            action_area.add (cancel_button);
+            action_box_end.add (cancel_button);
         }
 
-        if (Installer.App.test_mode) {
-            var test_label = new Gtk.Label (_("Test Mode"));
-            test_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+        var main_box = new Gtk.Box (VERTICAL, 24) {
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 12,
+            margin_start = 12
+        };
+        main_box.add (box);
+        main_box.add (action_area);
 
-            action_area.add (test_label);
-            action_area.set_child_non_homogeneous (test_label, true);
-            action_area.set_child_secondary (test_label, true);
-        }
-
-        orientation = VERTICAL;
-        spacing = 24;
-        margin_top = 12;
-        margin_bottom = 12;
-        add (content_area);
-        add (action_area);
+        add (main_box);
     }
 }
