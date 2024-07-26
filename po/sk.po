@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-24 17:31+0000\n"
-"PO-Revision-Date: 2023-05-09 19:06+0000\n"
+"PO-Revision-Date: 2024-07-11 09:16+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/installer/"
 "installer/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:55
@@ -21,10 +21,8 @@ msgid "Install %s"
 msgstr "Inštalovať %s"
 
 #: src/Application.vala:74
-#, fuzzy
-#| msgid "%s has been installed"
 msgid "operating system is being installed"
-msgstr "%s bol nainštalovaný"
+msgstr "operačný systém sa inštaluje"
 
 #: src/MainWindow.vala:262
 msgid "Connect to a Power Source"
@@ -140,10 +138,8 @@ msgid "Next"
 msgstr "Ďalej"
 
 #: src/Views/DriversView.vala:27
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "Vytvárajú sa oddiely na jednotke"
+msgstr "Dodatočné ovládače"
 
 #: src/Views/DriversView.vala:32
 msgid ""
@@ -151,28 +147,39 @@ msgid ""
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
+"Broadcom® Wi-Fi adaptéry, NVIDIA® grafiky a niektoré virtuálne zariadenia "
+"nemusia správne fungovať bez dodatočných ovládačov. Väčšina zariadení "
+"nepotrebuje dodatočné ovládače."
 
 #: src/Views/DriversView.vala:43
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"Proprietárne ovládače obsahujú súkromný kód, ktorý sa nedá preveriť. "
+"Bezpečnosť a ďalšie aktualizácie závisia na dodávateľovi ovládača."
 
 #: src/Views/DriversView.vala:54
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"Pre inštaláciu NVIDIA® grafických ovládačov je potrebné pripojenie na "
+"internet."
 
 #: src/Views/DriversView.vala:65
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
 msgstr ""
+"Proprietárne ovládače môžu byť nainštalované neskôr cez AppCentrum, pre "
+"všetky však bude vyžadované internetové pripojenie."
 
 #: src/Views/DriversView.vala:72
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
+"Zahrnúť proprietárne ovládače tretích strán pri inštalácii. Súhlasím s ich "
+"licenciami a podmienkami použitia."
 
 #: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:164
 #: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:140
@@ -332,21 +339,13 @@ msgid "Currently active language"
 msgstr "Práve používaný jazyk"
 
 #: src/Views/PartitioningView.vala:52
-#, fuzzy
-#| msgid "Use Partition"
 msgid "Select Partitions"
-msgstr "Použiť oddiel"
+msgstr "Vybrať oddiely"
 
 #: src/Views/PartitioningView.vala:56
-#, fuzzy
-#| msgid ""
-#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
-#| "will erase ALL data on the selected partition.</b>"
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
-msgstr ""
-"Vyberte z jednotiek tie oddiely, ktoré sa majú použiť. <b>Výberom "
-"„Formátovať“ vymažete VŠETKY údaje na vybranom oddieli.</b>"
+msgstr "Výberom „Formátovať“ vymažete <i>všetky</i> údaje na vybranom oddieli."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:65
@@ -355,16 +354,12 @@ msgstr "Je potrebné vybrať aspoň <b>Root (/)</b> oddiel."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:69
-#, fuzzy
-#| msgid ""
-#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-#| "efi)</b> partition."
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
 msgstr ""
-"Je potrebné vybrať aspoň <b>Root (/)</b> oddiel a <b>Boot (/boot/efi)</b> "
-"oddiel."
+"Je potrebné vybrať aspoň <b>Root (/)</b> oddiel a voliteľný <b>Boot (/boot/"
+"efi)</b> oddiel."
 
 #: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
