@@ -17,12 +17,12 @@ public class DescriptionRow : Gtk.Box {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name (icon_name, LARGE_TOOLBAR) {
+        var image = new Gtk.Image.from_icon_name (icon_name) {
             pixel_size = 24,
             valign = START
         };
-        image.get_style_context ().add_class (Granite.STYLE_CLASS_ACCENT);
-        image.get_style_context ().add_class (color);
+        image.add_css_class (Granite.STYLE_CLASS_ACCENT);
+        image.add_css_class (color);
 
         var description_label = new Gtk.Label (description) {
             hexpand = true,
@@ -33,7 +33,7 @@ public class DescriptionRow : Gtk.Box {
         };
 
         spacing = 12;
-        add (image);
-        add (description_label);
+        append (image);
+        append (description_label);
     }
 }

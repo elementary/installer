@@ -27,27 +27,11 @@ public class Installer.DiskBar: Gtk.Box {
     }
 
     construct {
-        var name_label = new Granite.HeaderLabel (disk_name);
-
-        var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
-            xalign = 0
+        var name_label = new Granite.HeaderLabel (disk_name) {
+            secondary_text = "%s %s".printf (disk_path, GLib.format_size (size))
         };
-        size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        size_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        var label_box = new Gtk.Box (VERTICAL, 0);
-        label_box.add (name_label);
-        label_box.add (size_label);
-
-        var bar = new Gtk.Grid ();
-
-        bar.size_allocate.connect ((alloc) => {
-            update_sector_lengths (partitions, alloc);
-        });
-
-        foreach (PartitionBar part in partitions) {
-            bar.add (part);
-        }
+        var bar = new PartitionContainer (size, partitions);
 
         legend_box = new Gtk.Box (VERTICAL, 6) {
             halign = START
@@ -56,7 +40,7 @@ public class Installer.DiskBar: Gtk.Box {
         foreach (PartitionBar p in partitions) {
             add_legend (
                 p.partition.device_path,
-                p.get_size () * 512,
+                p.get_partition_size () * 512,
                 Distinst.strfilesys (p.partition.filesystem),
                 p.volume_group,
                 p.menu
@@ -65,37 +49,31 @@ public class Installer.DiskBar: Gtk.Box {
 
         uint64 used = 0;
         foreach (PartitionBar partition in partitions) {
-            used += partition.get_size ();
+            used += partition.get_partition_size ();
         }
 
         var unused = size - (used * 512);
         if (size / 100 < unused) {
             add_legend ("unused", unused, "unused", null, null);
-
-            var unused_bar = new Block () {
-                hexpand = true,
-                vexpand = true
-            };
-            unused_bar.get_style_context ().add_class ("unused");
-
-            bar.add (unused_bar);
         }
 
         orientation = VERTICAL;
         hexpand = true;
         spacing = 12;
-        add (label_box);
-        add (bar);
-        add (legend_box);
-        show_all ();
+        append (name_label );
+        append (bar);
+        append (legend_box);
+
+        // Lie about orientation for styling reasons
+        css_classes = {"horizontal"};
     }
 
     private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {
         var fill_round = new Block () {
             valign = CENTER
         };
-        fill_round.get_style_context ().add_class ("legend");
-        fill_round.get_style_context ().add_class (fs);
+        fill_round.add_css_class ("legend");
+        fill_round.add_css_class (fs);
 
         var format_size = GLib.format_size (size);
 
@@ -106,8 +84,8 @@ public class Installer.DiskBar: Gtk.Box {
         ) {
             halign = START,
         };
-        info.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        info.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        info.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        info.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
         info.use_markup = true;
 
         var path = new Gtk.Label (ppath) {
@@ -121,65 +99,139 @@ public class Installer.DiskBar: Gtk.Box {
         legend.attach (path, 1, 0);
         legend.attach (info, 1, 1);
 
-        var event_box = new Gtk.EventBox ();
-        event_box.add (legend);
-
         if (menu != null) {
-            event_box.button_press_event.connect (() => {
-                menu.popup ();
-                return true;
-            });
+            var click_gesture = new Gtk.GestureClick ();
+            click_gesture.released.connect (menu.popup);
+
+            legend.add_controller (click_gesture);
         }
 
-        legend_box.add (event_box);
+        legend_box.append (legend);
     }
 
-    private void update_sector_lengths (Gee.ArrayList<PartitionBar> partitions, Gtk.Allocation alloc) {
-        var alloc_width = alloc.width;
-        var disk_sectors = this.size / 512;
+    private class PartitionContainer : Gtk.Widget {
+        public Gee.ArrayList<PartitionBar> partitions { get; construct; }
+        public uint64 size { get; construct; }
 
-        int[] lengths = {};
-        for (int x = 0; x < partitions.size; x++) {
-            var part = partitions[x];
-            var requested = part.calculate_length (alloc_width, disk_sectors);
-
-            var excess = requested - alloc_width;
-            while (excess > 0) {
-                var reduce_by = x / excess;
-                if (reduce_by == 0) reduce_by = 1;
-
-                // Begin by resizing all partitions over 20px wide.
-                bool excess_modified = false;
-                for (int y = 0; excess > 0 && y < x; y++) {
-                    if (lengths[y] <= 20) continue;
-                    lengths[y] -= reduce_by;
-                    excess -= reduce_by;
-                    excess_modified = true;
-                }
-
-                // In case all are below that width, shrink beyond limit.
-                if (!excess_modified) {
-                    for (int y = 0; excess > 0 && y < x; y++) {
-                        lengths[y] -= reduce_by;
-                        excess -= reduce_by;
-                        excess_modified = true;
-                    }
-                }
-            }
-
-            alloc_width -= requested;
-            disk_sectors -= part.get_size ();
-            lengths += requested;
+        public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBar> partitions) {
+            Object (
+                partitions: partitions,
+                size: size
+            );
         }
 
-        var new_alloc = Gtk.Allocation ();
-        new_alloc.x = alloc.x;
-        new_alloc.y = alloc.y;
-        new_alloc.height = alloc.height;
-        for (int x = 0; x < partitions.size; x++) {
-            new_alloc.width = lengths[x];
-            partitions[x].size_allocate (new_alloc);
-            new_alloc.x += new_alloc.width;
+        class construct {
+            set_layout_manager_type (typeof (Gtk.ConstraintLayout));
+        }
+
+        construct {
+            uint64 used = 0;
+            var disk_sectors = size / 512;
+            foreach (var partition in partitions) {
+                double percent_requested = (double) partition.get_partition_size () / disk_sectors;
+                percent_requested = percent_requested.clamp (0.01, 0.99);
+
+                used += partition.get_partition_size ();
+
+                append_partition (
+                    partition,
+                    percent_requested
+                );
+            }
+
+            var unused = size - (used * 512);
+            if (size / 100 < unused) {
+                var unused_bar = new Block ();
+                unused_bar.add_css_class ("unused");
+
+                append_partition (unused_bar, unused / size);
+            }
+
+            var layout_manager = ((Gtk.ConstraintLayout) get_layout_manager ());
+            // Position last child at end
+            layout_manager.add_constraint (
+                new Gtk.Constraint (
+                    get_last_child (),
+                    END,
+                    EQ,
+                    this,
+                    END,
+                    1.0,
+                    0.0,
+                    Gtk.ConstraintStrength.REQUIRED
+                )
+            );
+        }
+
+        ~PartitionContainer () {
+            while (get_first_child () != null) {
+                get_first_child ().unparent ();
+            }
+        }
+
+        private void append_partition (Gtk.Widget widget, double percentage) {
+            widget.set_parent (this);
+
+            var layout_manager = ((Gtk.ConstraintLayout) get_layout_manager ());
+
+            // Fill height of this
+            layout_manager.add_constraint (
+                new Gtk.Constraint (
+                    widget,
+                    HEIGHT,
+                    EQ,
+                    this,
+                    HEIGHT,
+                    1.0,
+                    0.0,
+                    Gtk.ConstraintStrength.REQUIRED
+                )
+            );
+
+            // Fill width based on partition size
+            layout_manager.add_constraint (
+                new Gtk.Constraint (
+                    widget,
+                    WIDTH,
+                    EQ,
+                    this,
+                    WIDTH,
+                    percentage,
+                    0,
+                    Gtk.ConstraintStrength.STRONG
+                )
+            );
+
+            var previous_child = widget.get_prev_sibling ();
+            if (previous_child == null) {
+                // Position at start
+                layout_manager.add_constraint (
+                    new Gtk.Constraint (
+                        widget,
+                        START,
+                        EQ,
+                        this,
+                        START,
+                        1.0,
+                        0.0,
+                        Gtk.ConstraintStrength.REQUIRED
+                    )
+                );
+            } else {
+                // Position end to end
+                layout_manager.add_constraint (
+                    new Gtk.Constraint (
+                        widget,
+                        START,
+                        EQ,
+                        previous_child,
+                        END,
+                        1.0,
+                        0.0,
+                        Gtk.ConstraintStrength.REQUIRED
+                    )
+                );
+            }
         }
     }
 

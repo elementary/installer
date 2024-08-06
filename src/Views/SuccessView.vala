@@ -21,7 +21,7 @@ public class SuccessView : AbstractInstallerView {
     private Gtk.Label secondary_label;
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("process-completed", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("process-completed") {
             pixel_size = 128
         };
 
@@ -33,7 +33,7 @@ public class SuccessView : AbstractInstallerView {
             wrap = true,
             xalign = 0
         };
-        primary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        primary_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         secondary_label = new Gtk.Label (null) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
@@ -50,20 +50,20 @@ public class SuccessView : AbstractInstallerView {
         message_grid.attach (primary_label, 0, 0);
         message_grid.attach (secondary_label, 0, 1);
 
-        title_area.add (image);
-        title_area.add (title_label);
+        title_area.append (image);
+        title_area.append (title_label);
 
-        content_area.add (message_grid);
+        content_area.append (message_grid);
 
         var shutdown_button = new Gtk.Button.with_label (_("Shut Down"));
         shutdown_button.clicked.connect (Utils.shutdown);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
-        restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        restart_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
         restart_button.clicked.connect (Utils.restart);
 
-        action_box_end.add (shutdown_button);
-        action_box_end.add (restart_button);
+        action_box_end.append (shutdown_button);
+        action_box_end.append (restart_button);
 
         update_secondary_label ();
 
@@ -82,8 +82,6 @@ public class SuccessView : AbstractInstallerView {
 
             return Source.CONTINUE;
         });
-
-        show_all ();
     }
 
     private void update_secondary_label () {

@@ -20,14 +20,14 @@ public class Installer.TryInstallView : AbstractInstallerView {
     public signal void next_step ();
 
     construct {
-        var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id, Gtk.IconSize.DIALOG) {
+        var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id) {
             pixel_size = 128
         };
 
         var type_label = new Gtk.Label (_("Try or Install"));
 
         // Force the user to make a conscious selection, not spam "Next"
-        var no_selection = new Gtk.RadioButton (null) {
+        var no_selection = new Gtk.CheckButton () {
             active = true
         };
 
@@ -59,49 +59,49 @@ public class Installer.TryInstallView : AbstractInstallerView {
             valign = CENTER,
             vexpand = true
         };
-        type_box.add (demo_button);
-        type_box.add (clean_install_button);
-        type_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        type_box.add (custom_button);
+        type_box.append (demo_button);
+        type_box.append (clean_install_button);
+        type_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        type_box.append (custom_button);
 
-        var type_scrolled = new Gtk.ScrolledWindow (null, null) {
+        var type_scrolled = new Gtk.ScrolledWindow () {
             child = type_box,
             hscrollbar_policy = NEVER,
             propagate_natural_height = true
         };
 
-        title_area.add (type_image);
-        title_area.add (type_label);
+        title_area.append (type_image);
+        title_area.append (type_label);
 
-        content_area.add (type_scrolled);
+        content_area.append (type_scrolled);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
 
         var next_button = new Gtk.Button.with_label (_("Next")) {
             sensitive = false
         };
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.add (back_button);
-        action_box_end.add (next_button);
+        action_box_end.append (back_button);
+        action_box_end.append (next_button);
 
-        back_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (Hdy.NavigationDirection.BACK));
+        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
 
-        demo_button.clicked.connect (() => {
+        demo_button.toggled.connect (() => {
             if (demo_button.active) {
                 next_button.label = demo_button.title;
                 next_button.sensitive = true;
             }
         });
 
-        clean_install_button.clicked.connect (() => {
+        clean_install_button.toggled.connect (() => {
             if (clean_install_button.active) {
                 next_button.label = clean_install_button.title;
                 next_button.sensitive = true;
             }
         });
 
-        custom_button.clicked.connect (() => {
+        custom_button.toggled.connect (() => {
             if (custom_button.active) {
                 next_button.label = _("Custom Install");
                 next_button.sensitive = true;
@@ -117,7 +117,5 @@ public class Installer.TryInstallView : AbstractInstallerView {
                 custom_step ();
             }
         });
-
-        show_all ();
     }
 }

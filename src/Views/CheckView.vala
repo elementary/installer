@@ -30,7 +30,7 @@ public class Installer.CheckView : AbstractInstallerView {
     private Gtk.Box message_box;
     public bool has_messages {
         get {
-            return message_box.get_children ().length () > 0;
+            return message_box.get_first_child != null;
         }
     }
 
@@ -42,7 +42,7 @@ public class Installer.CheckView : AbstractInstallerView {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("io.elementary.installer.caution", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("io.elementary.installer.caution") {
             pixel_size = 128,
             valign = Gtk.Align.END
         };
@@ -75,16 +75,16 @@ public class Installer.CheckView : AbstractInstallerView {
             vexpand = true
         };
 
-        title_area.add (image);
-        title_area.add (title_label);
+        title_area.append (image);
+        title_area.append (title_label);
 
-        content_area.add (message_box);
+        content_area.append (message_box);
 
         var ignore_button = new Gtk.Button.with_label (_("Install Anyway"));
-        ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        ignore_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
         ignore_button.clicked.connect (() => next_step ());
 
-        action_box_end.add (ignore_button);
+        action_box_end.append (ignore_button);
 
         bool minimum_specs = true;
 
@@ -104,21 +104,19 @@ public class Installer.CheckView : AbstractInstallerView {
             var dis = new DataInputStream (@is);
 
             if ("daily" in dis.read_line ()) {
-                message_box.add (beta_view);
+                message_box.append (beta_view);
             }
         } catch (Error e) {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
         if (get_vm ()) {
-            message_box.add (vm_view);
+            message_box.append (vm_view);
         }
 
         if (!minimum_specs) {
-            message_box.add (specs_view);
+            message_box.append (specs_view);
         }
-
-        show_all ();
     }
 
     private int get_frequency () {
@@ -176,7 +174,8 @@ public class Installer.CheckView : AbstractInstallerView {
 
     private class CheckView : Gtk.Grid {
         public CheckView (string title, string description, string icon_name) {
-            var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
+            var image = new Gtk.Image.from_icon_name (icon_name) {
+                icon_size = LARGE,
                 valign = Gtk.Align.START
             };
 
@@ -186,7 +185,7 @@ public class Installer.CheckView : AbstractInstallerView {
                 wrap = true,
                 xalign = 0
             };
-            title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            title_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var description_label = new Gtk.Label (description) {
                 max_width_chars = 1, // Make Gtk wrap, but not expand the window
@@ -200,8 +199,6 @@ public class Installer.CheckView : AbstractInstallerView {
             attach (image, 0, 0, 1, 2);
             attach (title_label, 1, 0);
             attach (description_label, 1, 1);
-
-            show_all ();
         }
     }
 
@@ -210,13 +207,13 @@ public class Installer.CheckView : AbstractInstallerView {
             hexpand = true,
             xalign = 0
         };
-        recommended_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        recommended_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var your_device_label = new Gtk.Label (_("Your Device:")) {
             hexpand = true,
             xalign = 0
         };
-        your_device_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        your_device_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var processor_1 = new Gtk.Label (_("Processor:")) {
             xalign = 1

@@ -27,11 +27,11 @@ public class Installer.DiskView : AbstractInstallerView {
     }
 
     construct {
-        var install_image = new Gtk.Image.from_icon_name ("drive-harddisk", Gtk.IconSize.DIALOG) {
+        var install_image = new Gtk.Image.from_icon_name ("drive-harddisk") {
             pixel_size = 128
         };
 
-        var install_badge = new Gtk.Image.from_icon_name ("io.elementary.installer.emblem-downloads", Gtk.IconSize.DND) {
+        var install_badge = new Gtk.Image.from_icon_name ("io.elementary.installer.emblem-downloads") {
             pixel_size = 64,
             halign = Gtk.Align.END,
             valign = Gtk.Align.END
@@ -55,7 +55,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
         disk_box = new Gtk.Box (VERTICAL, 6);
 
-        var disk_scrolled = new Gtk.ScrolledWindow (null, null) {
+        var disk_scrolled = new Gtk.ScrolledWindow () {
             child = disk_box,
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             propagate_natural_height = true
@@ -71,38 +71,36 @@ public class Installer.DiskView : AbstractInstallerView {
             max_width_chars = 45,
             wrap = true
         };
-        load_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        load_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var load_box = new Gtk.Box (VERTICAL, 12) {
             halign = CENTER,
             valign = CENTER
         };
-        load_box.add (load_spinner);
-        load_box.add (load_label);
+        load_box.append (load_spinner);
+        load_box.append (load_label);
 
         load_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.CROSSFADE
         };
-        load_stack.add (load_box);
+        load_stack.add_child (load_box);
         load_stack.add_named (disk_scrolled, "disk");
 
-        title_area.add (image_overlay);
-        title_area.add (install_label);
+        title_area.append (image_overlay);
+        title_area.append (install_label);
 
         content_area.valign = CENTER;
-        content_area.add (install_desc_label);
-        content_area.add (load_stack);
+        content_area.append (install_desc_label);
+        content_area.append (load_stack);
 
         next_button = new Gtk.Button.with_label (_("Next")) {
             // Make sure we can skip this view in Test Mode
             sensitive = Installer.App.test_mode
         };
-        next_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        next_button.clicked.connect (() => ((Hdy.Deck) get_parent ()).navigate (FORWARD));
+        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (FORWARD));
 
-        action_box_end.add (next_button);
-
-        show_all ();
+        action_box_end.append (next_button);
     }
 
     public async void load (uint64 minimum_disk_size) {
@@ -147,7 +145,7 @@ public class Installer.DiskView : AbstractInstallerView {
 
                 disabled_buttons += disk_button;
             } else {
-                disk_button.clicked.connect (() => {
+                disk_button.toggled.connect (() => {
                     if (disk_button.active) {
                         next_button.sensitive = true;
                     }
@@ -158,21 +156,20 @@ public class Installer.DiskView : AbstractInstallerView {
         }
 
         // Force the user to make a conscious selection, not spam "Next"
-        var no_selection = new Gtk.RadioButton (null) {
+        var no_selection = new Gtk.CheckButton () {
             active = true
         };
 
         foreach (DiskButton disk_button in enabled_buttons) {
             disk_button.group = no_selection;
-            disk_box.add (disk_button);
+            disk_box.append (disk_button);
         }
 
         foreach (DiskButton disk_button in disabled_buttons) {
             disk_button.group = no_selection;
-            disk_box.add (disk_button);
+            disk_box.append (disk_button);
         }
 
-        disk_box.show_all ();
         load_stack.set_visible_child_name ("disk");
     }
 }

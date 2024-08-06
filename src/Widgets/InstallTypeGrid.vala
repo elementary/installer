@@ -17,7 +17,7 @@
  * Authored by: Cassidy James Blaede <c@ssidyjam.es>
  */
 
-public class Installer.InstallTypeButton : Gtk.RadioButton {
+public class Installer.InstallTypeButton : Gtk.CheckButton {
     public string title { get; construct; }
     public string icon_name { get; construct; }
     public string subtitle { get; construct; }
@@ -31,15 +31,17 @@ public class Installer.InstallTypeButton : Gtk.RadioButton {
     }
 
     construct {
-        get_style_context ().add_class ("image-button");
+        add_css_class ("image-button");
 
-        var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
+        var image = new Gtk.Image.from_icon_name (icon_name) {
+            pixel_size = 48
+        };
 
         var title_label = new Gtk.Label (title) {
             hexpand = true,
             xalign = 0
         };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+        title_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var subtitle_label = new Gtk.Label (subtitle) {
             max_width_chars = 1, // Make Gtk wrap, but not expand the window
@@ -59,6 +61,6 @@ public class Installer.InstallTypeButton : Gtk.RadioButton {
         grid.attach (title_label, 1, 0);
         grid.attach (subtitle_label, 1, 1);
 
-        add (grid);
+        child = grid;
     }
 }

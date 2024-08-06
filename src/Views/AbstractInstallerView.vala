@@ -33,7 +33,7 @@ public abstract class AbstractInstallerView : Gtk.Box {
         title_area = new Gtk.Box (VERTICAL, 12) {
             valign = CENTER
         };
-        title_area.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        title_area.add_css_class (Granite.STYLE_CLASS_H2_LABEL);
 
         content_area = new Gtk.Box (VERTICAL, 24);
 
@@ -42,8 +42,8 @@ public abstract class AbstractInstallerView : Gtk.Box {
             hexpand = true,
             vexpand = true,
         };
-        box.add (title_area);
-        box.add (content_area);
+        box.append (title_area);
+        box.append (content_area);
 
         action_box_end = new Gtk.Box (HORIZONTAL, 6) {
             halign = END,
@@ -56,17 +56,17 @@ public abstract class AbstractInstallerView : Gtk.Box {
         };
 
         var action_area = new Gtk.Box (HORIZONTAL, 12);
-        action_area.add (action_box_start);
-        action_area.get_style_context ().add_class ("button-box");
+        action_area.append (action_box_start);
+        action_area.add_css_class ("button-box");
 
         if (Installer.App.test_mode) {
             var test_label = new Gtk.Label (_("Test Mode"));
-            test_label.get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+            test_label.add_css_class (Granite.STYLE_CLASS_ERROR);
 
-            action_area.add (test_label);
+            action_area.append (test_label);
         }
 
-        action_area.add (action_box_end);
+        action_area.append (action_box_end);
 
         if (cancellable) {
             var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
@@ -74,7 +74,7 @@ public abstract class AbstractInstallerView : Gtk.Box {
                 cancel ();
             });
 
-            action_box_end.add (cancel_button);
+            action_box_end.append (cancel_button);
         }
 
         var main_box = new Gtk.Box (VERTICAL, 24) {
@@ -83,9 +83,9 @@ public abstract class AbstractInstallerView : Gtk.Box {
             margin_bottom = 12,
             margin_start = 12
         };
-        main_box.add (box);
-        main_box.add (action_area);
+        main_box.append (box);
+        main_box.append (action_area);
 
-        add (main_box);
+        append (main_box);
     }
 }

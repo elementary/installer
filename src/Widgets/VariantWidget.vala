@@ -12,12 +12,12 @@ public class VariantWidget : Gtk.Frame {
     private Gtk.Button back_button;
     private Gtk.Box variant_box;
     private Gtk.Label variant_title;
-    private Hdy.Deck deck;
+    private Adw.Leaflet leaflet;
 
     construct {
         main_listbox = new Gtk.ListBox ();
 
-        var main_scrolled = new Gtk.ScrolledWindow (null, null) {
+        var main_scrolled = new Gtk.ScrolledWindow () {
             child = main_listbox,
             hscrollbar_policy = NEVER
         };
@@ -25,7 +25,7 @@ public class VariantWidget : Gtk.Frame {
         variant_listbox = new Gtk.ListBox ();
         variant_listbox.activate_on_single_click = false;
 
-        var variant_scrolled = new Gtk.ScrolledWindow (null, null) {
+        var variant_scrolled = new Gtk.ScrolledWindow () {
             child = variant_listbox,
             hscrollbar_policy = NEVER,
             vexpand = true
@@ -38,7 +38,7 @@ public class VariantWidget : Gtk.Frame {
             margin_bottom = 6,
             margin_start = 6
         };
-        back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
+        back_button.add_css_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
         variant_title = new Gtk.Label ("") {
             hexpand = true,
@@ -49,43 +49,42 @@ public class VariantWidget : Gtk.Frame {
             wrap = true
         };
 
-        var header_box = new Gtk.Box (HORIZONTAL, 0) {
+        var header_box = new Gtk.CenterBox () {
+            start_widget = back_button,
+            center_widget = variant_title,
             hexpand = true
         };
-        header_box.add (back_button);
-        header_box.set_center_widget (variant_title);
 
         variant_box = new Gtk.Box (VERTICAL, 0);
-        variant_box.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        variant_box.add (header_box);
-        variant_box.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        variant_box.add (variant_scrolled);
+        variant_box.add_css_class (Granite.STYLE_CLASS_VIEW);
+        variant_box.append (header_box);
+        variant_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        variant_box.append (variant_scrolled);
 
-        deck = new Hdy.Deck () {
-            can_swipe_back = true
+        leaflet = new Adw.Leaflet () {
+            can_navigate_back = true,
+            can_unfold = false
         };
-        deck.add (main_scrolled);
-        deck.add (variant_box);
+        leaflet.append (main_scrolled);
+        leaflet.append (variant_box);
 
-        child = deck;
+        child = leaflet;
         vexpand = true;
 
         back_button.clicked.connect (() => {
             going_to_main ();
-            deck.navigate (BACK);
+            leaflet.navigate (BACK);
         });
     }
 
     public void show_variants (string back_button_label, string variant_title_label) {
         back_button.label = back_button_label;
         variant_title.label = variant_title_label;
-        deck.visible_child = variant_box;
+        leaflet.visible_child = variant_box;
     }
 
     public void clear_variants () {
-        variant_listbox.get_children ().foreach ((child) => {
-            child.destroy ();
-        });
+        variant_listbox.remove_all ();
     }
 }
 

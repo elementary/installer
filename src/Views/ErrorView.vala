@@ -24,7 +24,7 @@ public class ErrorView : AbstractInstallerView {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG) {
+        var image = new Gtk.Image.from_icon_name ("dialog-error") {
             pixel_size = 128
         };
 
@@ -37,7 +37,7 @@ public class ErrorView : AbstractInstallerView {
             xalign = 0
         };
 
-        var redo_image = new Gtk.Image.from_icon_name ("edit-undo-symbolic", Gtk.IconSize.MENU) {
+        var redo_image = new Gtk.Image.from_icon_name ("edit-undo-symbolic") {
             margin_start = 6
         };
 
@@ -48,7 +48,7 @@ public class ErrorView : AbstractInstallerView {
             xalign = 0
         };
 
-        var demo_image = new Gtk.Image.from_icon_name ("document-properties-symbolic", Gtk.IconSize.MENU) {
+        var demo_image = new Gtk.Image.from_icon_name ("document-properties-symbolic") {
             margin_start = 6
         };
 
@@ -58,7 +58,7 @@ public class ErrorView : AbstractInstallerView {
             xalign = 0
         };
 
-        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic", Gtk.IconSize.MENU) {
+        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic") {
             margin_start = 6
         };
 
@@ -71,15 +71,15 @@ public class ErrorView : AbstractInstallerView {
         var terminal_button_label = new Gtk.Label (_("Details"));
 
         var terminal_button_box = new Gtk.Box (HORIZONTAL, 0);
-        terminal_button_box.add (new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", BUTTON));
-        terminal_button_box.add (terminal_button_label);
+        terminal_button_box.append (new Gtk.Image.from_icon_name ("utilities-terminal-symbolic"));
+        terminal_button_box.append (terminal_button_label);
 
         var terminal_button = new Gtk.ToggleButton () {
             child = terminal_button_box,
             halign = START,
+            has_frame = false,
             margin_top = 12
         };
-        terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         terminal_button_label.mnemonic_widget = terminal_button;
 
@@ -108,21 +108,21 @@ public class ErrorView : AbstractInstallerView {
         grid.attach (terminal_button, 0, 4, 2);
         grid.attach (terminal_revealer, 0, 5, 2);
 
-        title_area.add (image);
-        title_area.add (title_label);
+        title_area.append (image);
+        title_area.append (title_label);
 
-        content_area.add (grid);
+        content_area.append (grid);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 
         var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
 
         var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
-        install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        install_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.add (restart_button);
-        action_box_end.add (demo_button);
-        action_box_end.add (install_button);
+        action_box_end.append (restart_button);
+        action_box_end.append (demo_button);
+        action_box_end.append (install_button);
 
         restart_button.clicked.connect (Utils.restart);
 
@@ -136,7 +136,5 @@ public class ErrorView : AbstractInstallerView {
                 terminal_view.attempt_scroll ();
             }
         });
-
-        show_all ();
     }
 }
