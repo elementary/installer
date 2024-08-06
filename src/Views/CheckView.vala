@@ -47,7 +47,9 @@ public class Installer.CheckView : AbstractInstallerView {
             valign = Gtk.Align.END
         };
 
-        var title_label = new Gtk.Label (_("Before Installing")) {
+        title = _("Before Installing");
+
+        var title_label = new Gtk.Label (title) {
             valign = Gtk.Align.START
         };
 

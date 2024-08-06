@@ -19,7 +19,7 @@ You'll need the following dependencies:
  - libgranite-7-dev >=7.4.0
  - libgtk-4-dev
  - libgee-0.8-dev
- - libadwaita-1-dev >=1.0.0
+ - libadwaita-1-dev >=1.4.0
  - libjson-glib-dev
  - libpwquality-dev
  - libxml2-dev

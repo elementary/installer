@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class ProgressView : Gtk.Box {
+public class ProgressView : Adw.NavigationPage {
     public signal void on_success ();
     public signal void on_error ();
 
@@ -87,7 +87,8 @@ public class ProgressView : Gtk.Box {
         content_area.attach (terminal_button, 1, 1);
         content_area.attach (progressbar, 0, 2, 2);
 
-        append (content_area);
+        title = _("Installing");
+        child = content_area;
 
         terminal_button.toggled.connect (() => {
             if (terminal_button.active) {
