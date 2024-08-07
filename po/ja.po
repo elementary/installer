@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-08-04 00:16+0000\n"
+"PO-Revision-Date: 2024-08-08 10:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -394,10 +394,8 @@ msgid "Show log"
 msgstr "ログを表示"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Before Installing"
 msgid "Installing"
-msgstr "インストールの前に"
+msgstr "インストールしています"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
