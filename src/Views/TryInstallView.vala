@@ -24,7 +24,9 @@ public class Installer.TryInstallView : AbstractInstallerView {
             pixel_size = 128
         };
 
-        var type_label = new Gtk.Label (_("Try or Install"));
+        title = _("Try or Install");
+
+        var type_label = new Gtk.Label (title);
 
         // Force the user to make a conscious selection, not spam "Next"
         var no_selection = new Gtk.CheckButton () {

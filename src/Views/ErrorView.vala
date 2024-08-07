@@ -28,7 +28,9 @@ public class ErrorView : AbstractInstallerView {
             pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Could Not Install"));
+        title = _("Could Not Install");
+
+        var title_label = new Gtk.Label (title);
 
         var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. The device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ())) {
             margin_bottom = 12,

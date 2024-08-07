@@ -270,6 +270,7 @@ public class Installer.LanguageView : AbstractInstallerView {
         }
 
         unowned string label_text = LocaleHelper.lang_gettext (N_("Select a Language"), ((LangRow) row).lang_entry.get_code ());
+        title = label_text;
         select_label = new Gtk.Label (label_text);
         select_stack.add_child (select_label);
         select_stack.set_visible_child (select_label);
