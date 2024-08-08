@@ -33,14 +33,6 @@ public class Installer.App : Gtk.Application {
         base.startup ();
 
         Granite.init ();
-
-        var css_fallback = new Gtk.CssProvider ();
-        css_fallback.load_from_resource ("io/elementary/installer/disk-bar-fallback.css");
-        Gtk.StyleContext.add_provider_for_display (
-            Gdk.Display.get_default (),
-            css_fallback,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
     }
 
     public override void activate () {

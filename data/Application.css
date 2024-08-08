@@ -123,3 +123,80 @@
             0 2px 3px alpha(@BLUEBERRY_900, 0.2);
     }
 }
+
+navigation-view-page.partition levelbar block {
+    border-radius: 0.333em;
+}
+
+navigation-view-page.partition levelbar block:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+navigation-view-page.partition levelbar block:not(:last-child) {
+    border-right-style: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+navigation-view-page.partition levelbar block.legend {
+    border-radius: 50%;
+    border-style: solid;
+    min-height: 14px;
+    min-width: 14px;
+}
+
+navigation-view-page.partition levelbar block.swap {
+    background-color: @STRAWBERRY_500;
+}
+
+navigation-view-page.partition levelbar block.ext4 {
+    background-color: @LIME_500;
+}
+
+navigation-view-page.partition levelbar block.ext3 {
+    background-color: @MINT_500;
+}
+
+navigation-view-page.partition levelbar block.ext2 {
+    background-color: @BUBBLEGUM_500;
+}
+
+navigation-view-page.partition levelbar block.fat16,
+navigation-view-page.partition levelbar block.fat32 {
+    background-color: @BANANA_500;
+}
+
+navigation-view-page.partition levelbar block.btrfs {
+    background-color: @BLUEBERRY_500;
+}
+
+navigation-view-page.partition levelbar block.xfs {
+    background-color: @SLATE_100;
+}
+
+navigation-view-page.partition levelbar block.ntfs {
+    background-color: @COCOA_300;
+}
+
+navigation-view-page.partition levelbar block.luks {
+    background-color: @ORANGE_500;
+}
+
+navigation-view-page.partition levelbar block.lvm {
+    background-color: @GRAPE_500;
+}
+
+navigation-view-page.partition levelbar block.none,
+navigation-view-page.partition levelbar block.unused {
+    background-color: @SILVER_300;
+}
+
+navigation-view-page.partition levelbar block image {
+    min-height: 16px; /* Preserve height when empty */
+    padding: 0.5em;
+    -gtk-icon-palette: error #fff, success #fff, warning #fff;
+    -gtk-icon-shadow:
+        0 1px 1px alpha(#000, 0.2),
+        0 1px 3px alpha(#000, 0.1);
+}

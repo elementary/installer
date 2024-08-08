@@ -2,7 +2,6 @@
 <gresources>
   <gresource prefix="/io/elementary/installer">
     <file compressed="true">Application.css</file>
-    <file alias="disk-bar-fallback.css" compressed="true">disk-bar-fallback.css</file>
     <file compressed="true">wallpaper.jpg</file>
   </gresource>
   <gresource prefix="/io/elementary/installer/icons">
