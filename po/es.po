@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-06-25 03:16+0000\n"
+"PO-Revision-Date: 2024-08-09 22:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:52
@@ -397,10 +397,8 @@ msgid "Show log"
 msgstr "Mostrar registro"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Before Installing"
 msgid "Installing"
-msgstr "Antes de instalar"
+msgstr "Instalando"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
