@@ -49,6 +49,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         mounts = new Gee.ArrayList<Installer.Mount> ();
         luks = new Gee.ArrayList<InstallerDaemon.LuksCredentials?> ();
 
+        add_css_class ("partition");
         title = _("Select Partitions");
 
         var title_label = new Gtk.Label (title);
