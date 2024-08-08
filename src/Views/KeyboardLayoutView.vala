@@ -27,13 +27,14 @@ public class KeyboardLayoutView : AbstractInstallerView {
             valign = Gtk.Align.END
         };
 
+        input_variant_widget = new VariantWidget ();
+
         title = _("Select Keyboard Layout");
 
         var title_label = new Gtk.Label (title) {
+            mnemonic_widget = input_variant_widget.main_listbox,
             valign = Gtk.Align.START
         };
-
-        input_variant_widget = new VariantWidget ();
 
         var keyboard_test_entry = new Gtk.Entry () {
             placeholder_text = _("Type to test your layout"),
@@ -106,7 +107,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
             input_variant_widget.variant_listbox.select_row (input_variant_widget.variant_listbox.get_row_at_index (0));
 
-            input_variant_widget.show_variants (_("Input Language"), "<b>%s</b>".printf (layout.display_name));
+            input_variant_widget.show_variants (_("Input Language"), layout.display_name);
         });
 
         input_variant_widget.variant_listbox.row_selected.connect (() => {

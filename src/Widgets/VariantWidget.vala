@@ -45,9 +45,10 @@ public class VariantWidget : Gtk.Frame {
             justify = CENTER,
             margin_end = 6,
             margin_start = 6,
-            use_markup = true,
+            mnemonic_widget = variant_listbox,
             wrap = true
         };
+        variant_title.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var header_box = new Gtk.CenterBox () {
             start_widget = back_button,
@@ -81,6 +82,7 @@ public class VariantWidget : Gtk.Frame {
         back_button.label = back_button_label;
         variant_title.label = variant_title_label;
         leaflet.visible_child = variant_box;
+        variant_listbox.get_selected_row ().grab_focus ();
     }
 
     public void clear_variants () {
