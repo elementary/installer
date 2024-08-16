@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-05-31 19:13+0000\n"
+"PO-Revision-Date: 2024-08-17 10:16+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:52
@@ -395,10 +395,8 @@ msgid "Show log"
 msgstr "Toon logboek"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Before Installing"
 msgid "Installing"
-msgstr "Voordat u installeert"
+msgstr "Installeren"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
