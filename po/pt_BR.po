@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-08-17 20:24+0000\n"
-"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
+"PO-Revision-Date: 2024-08-17 20:27+0000\n"
+"Last-Translator: Bruno Costa Castro Alves <bruno.costa.castro.alves@gmail."
+"com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -193,8 +194,6 @@ msgid "Erase and Install"
 msgstr "Apagar e Instalar"
 
 #: src/Views/EncryptView.vala:26
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Não Criptografar"
 
@@ -209,15 +208,12 @@ msgid ""
 msgstr ""
 
 #: src/Views/EncryptView.vala:63
-#, fuzzy
-#| msgid ""
-#| "Data will be protected from others with physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"Os dados serão protegidos de outras pessoas com acesso físico a este "
-"dispositivo."
+"Os dados somente serão protegidos de outras pessoas com acesso físico a este "
+"dispositivo quando ele estiver desligado."
 
 #: src/Views/EncryptView.vala:69
 msgid ""
@@ -256,10 +252,8 @@ msgid "Choose Password"
 msgstr "Escolher Senha"
 
 #: src/Views/EncryptView.vala:172
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "Escolher Senha de Encriptação"
+msgstr "Definir a Senha de Encriptação"
 
 #: src/Views/EncryptView.vala:240
 msgid "Passwords do not match"
