@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2022-02-03 04:34+0000\n"
-"Last-Translator: Leomar Marcelo Marschalk <business@leomarmm.com>\n"
+"PO-Revision-Date: 2024-08-17 20:21+0000\n"
+"Last-Translator: Bruno Costa Castro Alves <bruno.costa.castro.alves@gmail."
+"com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/Application.vala:52
@@ -22,7 +23,7 @@ msgstr "Instalar %s"
 
 #: src/Application.vala:60
 msgid "operating system is being installed"
-msgstr ""
+msgstr "o sistema operacional está sendo instalado"
 
 #: src/MainWindow.vala:265
 msgid "Connect to a Power Source"
@@ -66,20 +67,20 @@ msgid "Cancel Installation"
 msgstr "Cancelar instalação"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "Tentar instalar novamente"
+msgstr "Antes de instalar"
 
 #: src/Views/CheckView.vala:57
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Versão de pré-lançamento"
 
 #: src/Views/CheckView.vala:58
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Instale apenas em dispositivos dedicados ao desenvolvimento. <b> Você não "
+"poderá atualizar para uma versão estável </b>."
 
 #: src/Views/CheckView.vala:63
 msgid "Virtual Machine"
@@ -89,6 +90,8 @@ msgstr ""
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Algumas partes do %s podem rodar lentamente, congelar ou não funcionar "
+"adequadamente."
 
 #: src/Views/CheckView.vala:69
 msgid "Your Device May Be Too Slow"
@@ -99,10 +102,8 @@ msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "Instalar %s"
+msgstr "Instalar mesmo assim"
 
 #: src/Views/CheckView.vala:208
 msgid "Recommended:"
@@ -142,10 +143,8 @@ msgid "Next"
 msgstr "Próximo"
 
 #: src/Views/DriversView.vala:26
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "Particionando unidade"
+msgstr "Drivers Adicionais"
 
 #: src/Views/DriversView.vala:30
 msgid ""
