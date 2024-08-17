@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
 "PO-Revision-Date: 2024-08-17 20:27+0000\n"
-"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
+"Last-Translator: Stéfany Larissa <stelar.dev@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -182,6 +182,8 @@ msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
+"Incluir gráficos proprietários de terceiros na instalação. Concordo com suas "
+"respectivas licenças e termos de uso."
 
 #: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:142
