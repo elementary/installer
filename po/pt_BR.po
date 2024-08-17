@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
 "PO-Revision-Date: 2024-08-17 20:21+0000\n"
-"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
+"Last-Translator: Neylson Soares <neylsonsoarest+weblate@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -98,7 +98,7 @@ msgstr "Seu dispositivo pode ser muito lento"
 
 #: src/Views/CheckView.vala:70
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Isso pode fazer com que ele execute lentamente ou congele."
 
 #: src/Views/CheckView.vala:85
 msgid "Install Anyway"
