@@ -54,7 +54,7 @@ public class Installer.Terminal : Gtk.Box {
             hscrollbar_policy = NEVER,
             min_content_height = 120
         };
-        scrolled_window.get_style_context ().add_class (Granite.STYLE_CLASS_TERMINAL);
+        scrolled_window.add_css_class (Granite.STYLE_CLASS_TERMINAL);
 
         append (scrolled_window);
 
