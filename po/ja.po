@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-08-30 14:16+0000\n"
+"PO-Revision-Date: 2024-09-01 01:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -94,7 +94,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:69
 msgid "Your Device May Be Too Slow"
-msgstr "デバイスの動作が遅すぎる可能性があります"
+msgstr "デバイスが遅すぎる可能性があります"
 
 #: src/Views/CheckView.vala:70
 msgid "This may cause it to run slowly or freeze."
@@ -122,7 +122,7 @@ msgstr "メモリー:"
 
 #: src/Views/DiskView.vala:46
 msgid "Select a Drive"
-msgstr "ドライブを選択してください"
+msgstr "ドライブを選択"
 
 #: src/Views/DiskView.vala:51
 msgid ""
@@ -314,7 +314,7 @@ msgstr "キーボードレイアウトを選択"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
-msgstr "入力してレイアウトを試してください"
+msgstr "入力してレイアウトを確認"
 
 #: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
@@ -375,7 +375,7 @@ msgstr "パーティションを修正…"
 
 #: src/Views/PartitioningView.vala:289
 msgid "EFI partition has the wrong file system"
-msgstr "EFI パーティションのファイルシステムが不適切です"
+msgstr "EFI パーティションのファイルシステムが間違っています"
 
 #: src/Views/PartitioningView.vala:291
 msgid "EFI partition is too small"
@@ -383,11 +383,11 @@ msgstr "EFI パーティションが小さすぎます"
 
 #: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for root"
-msgstr "ルートディレクトリのファイルシステムが不適切です"
+msgstr "ルートディレクトリのファイルシステムが無効です"
 
 #: src/Views/PartitioningView.vala:296
 msgid "Invalid file system for home"
-msgstr "ホームディレクトリのファイルシステムが不適切です"
+msgstr "ホームディレクトリのファイルシステムが無効です"
 
 #: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
