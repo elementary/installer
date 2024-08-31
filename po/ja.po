@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-08-08 10:16+0000\n"
+"PO-Revision-Date: 2024-08-30 14:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -487,15 +487,14 @@ msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:66
 msgid "Decrypt This Partition"
-msgstr "このパーティションを復号化"
+msgstr "このパーティションを復号"
 
 #: src/Widgets/DecryptMenu.vala:70
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
-msgstr ""
-"パーティションの暗号化パスワードを入力し、復号化するパーティションのデバイス"
-"名を選択してください。"
+msgstr "パーティションの暗号化パスワードを入力し、復号するパーティションのデバイス名"
+"を選択してください。"
 
 #: src/Widgets/DecryptMenu.vala:83
 msgid "Password:"
@@ -507,11 +506,11 @@ msgstr "デバイス名:"
 
 #: src/Widgets/DecryptMenu.vala:109
 msgid "Decrypt"
-msgstr "復号化"
+msgstr "復号"
 
 #: src/Widgets/DecryptMenu.vala:183
 msgid "LUKS volume was decrypted"
-msgstr "LUKS ボリュームが復号化されました"
+msgstr "LUKS ボリュームが復号されました"
 
 #: src/Widgets/DiskBar.vala:82
 #, c-format
