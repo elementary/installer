@@ -47,7 +47,7 @@
         );
 
         var install_later_row = new DescriptionRow (
-            _("Proprietary drivers can be installed later through AppCenter, but an Internet connection will be required for all drivers."),
+            _("Proprietary drivers can be installed later through System Settings → System, but an Internet connection will be required for all drivers."),
             "system-software-install-symbolic",
             "purple"
         );
