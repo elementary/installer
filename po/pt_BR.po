@@ -4,7 +4,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
 "PO-Revision-Date: 2024-09-02 00:57+0000\n"
-"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
+"Last-Translator: Bruno Costa Castro Alves <bruno.costa.castro.alves@gmail."
+"com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -525,10 +526,8 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Usar partição:"
+msgstr "Usar partição"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Format"
