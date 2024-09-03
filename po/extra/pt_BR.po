@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-08-17 10:16+0000\n"
+"PO-Revision-Date: 2024-09-02 00:57+0000\n"
 "Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "installer/extra/pt_BR/>\n"
@@ -21,10 +21,8 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
-#, fuzzy
-#| msgid "Install elementary OS"
 msgid "Installer"
-msgstr "Instalar o elementary OS"
+msgstr "Instalador"
 
 #: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
@@ -32,11 +30,11 @@ msgstr "Instalar o elementary OS"
 
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
-msgstr ""
+msgstr "Instalador passo a passo para o próprio elementary OS."
 
 #: data/installer.metainfo.xml.in:53
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:75
 #: data/installer.metainfo.xml.in:89 data/installer.metainfo.xml.in:103
@@ -47,6 +45,8 @@ msgstr "Melhorias:"
 #: data/installer.metainfo.xml.in:63
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr ""
+"A pré-visualização do layout do teclado agora está em uma janela "
+"redimensionável"
 
 #: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:78
 #: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:107
@@ -56,27 +56,29 @@ msgstr "Traduções atualizadas"
 
 #: data/installer.metainfo.xml.in:77
 msgid "Swipe to navigate back"
-msgstr ""
+msgstr "Deslize para navegar de volta"
 
 #: data/installer.metainfo.xml.in:105
 msgid "Use large icons in views"
-msgstr ""
+msgstr "Use ícones grandes nas visualizações"
 
 #: data/installer.metainfo.xml.in:106
 msgid "Add a custom icon for Before Installing view"
-msgstr ""
+msgstr "Adicione um ícone personalizado para a seção Antes da Instalação"
 
 #: data/installer.metainfo.xml.in:116
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
+"Mostrar uma barra de informações sobre a bateria em vez de alternar para uma "
+"página diferente"
 
 #: data/installer.metainfo.xml.in:117
 msgid "Show all system requirements warnings on a single page"
-msgstr ""
+msgstr "Mostrar todos os avisos de requisitos do sistema em uma única página"
 
 #: data/installer.metainfo.xml.in:118
 msgid "Warn about installing developer builds"
-msgstr ""
+msgstr "Avisar sobre a instalação de compilações de desenvolvedores"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"

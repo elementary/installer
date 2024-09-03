@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-08-18 21:16+0000\n"
-"Last-Translator: José Rafael <jrafaeldesantana@gmail.com>\n"
+"PO-Revision-Date: 2024-09-02 00:57+0000\n"
+"Last-Translator: Bruno Costa Castro Alves <bruno.costa.castro.alves@gmail."
+"com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -344,15 +345,11 @@ msgid "Select Partitions"
 msgstr "Selecionar partições"
 
 #: src/Views/PartitioningView.vala:57
-#, fuzzy
-#| msgid ""
-#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
-#| "will erase ALL data on the selected partition.</b>"
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
-"Selecione quais partições usar nos discos. <b>Selecionando \"Formatar\", "
-"TODOS os dados serão apagados da partição selecionada.</b>"
+"Selecionar \"Formatar\" apagará <i>todos</i> os dados na partição "
+"selecionada."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:66
@@ -361,16 +358,12 @@ msgstr "Você precisa selecionar ao menos uma partição <b>Root (/)</b>."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:70
-#, fuzzy
-#| msgid ""
-#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-#| "efi)</b> partition."
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
 msgstr ""
 "Você precisa selecionar ao menos uma partição <b>Root (/)</b> e uma partição "
-"<b>Boot (/boot/efi)</b>."
+"<b>Boot (/boot/efi)</b> opcional."
 
 #: src/Views/PartitioningView.vala:81
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -398,17 +391,15 @@ msgstr "Sistema de arquivos inválido para home"
 
 #: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
-msgstr ""
+msgstr "Mostrar logs"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Installing"
-msgstr "Tentar instalar novamente"
+msgstr "Instalando"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
-msgstr ""
+msgstr "Esconder logs"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:224
@@ -444,10 +435,8 @@ msgstr ""
 "instalada."
 
 #: src/Views/TryInstallView.vala:45
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "Apagar e Instalar"
+msgstr "Apagar disco e Instalar"
 
 #: src/Views/TryInstallView.vala:47
 #, c-format
@@ -455,10 +444,8 @@ msgid "Erase everything and install a fresh copy of %s."
 msgstr "Apague tudo e instale uma nova cópia de %s."
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "Personalizado (Avançado)"
+msgstr "Instalação personalizada (Avançado)"
 
 #: src/Views/TryInstallView.vala:55
 msgid ""
@@ -469,10 +456,8 @@ msgstr ""
 "à perda de dados."
 
 #: src/Views/TryInstallView.vala:108
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "Não foi possível instalar"
+msgstr "Instalação personalizada"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -481,7 +466,7 @@ msgstr "Continuar a configuração"
 #: src/Views/SuccessView.vala:32
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s foi instalado"
 
 #: src/Views/SuccessView.vala:60
 msgid "Shut Down"
@@ -541,20 +526,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "Usar partição:"
+msgstr "Usar partição"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "Formatar:"
+msgstr "Formatar"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Exclua todos os dados e configure um novo sistema de arquivos"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
