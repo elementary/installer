@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2022-04-20 09:24+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2024-09-07 17:04+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/Application.vala:52
@@ -22,7 +22,7 @@ msgstr "安裝 %s"
 
 #: src/Application.vala:60
 msgid "operating system is being installed"
-msgstr ""
+msgstr "作業系統正在安裝"
 
 #: src/MainWindow.vala:265
 msgid "Connect to a Power Source"
@@ -64,20 +64,18 @@ msgid "Cancel Installation"
 msgstr "取消安裝"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "嘗試再安裝一次"
+msgstr "安裝之前"
 
 #: src/Views/CheckView.vala:57
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "早期發佈版本"
 
 #: src/Views/CheckView.vala:58
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
-msgstr ""
+msgstr "請只安裝在開發用的裝置上。<b>您將無法更新到穩定版</b>。"
 
 #: src/Views/CheckView.vala:63
 msgid "Virtual Machine"
@@ -86,7 +84,7 @@ msgstr "虛擬機器"
 #: src/Views/CheckView.vala:64
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
-msgstr ""
+msgstr "%s 的某些部分可能會很慢、時常卡住，或是無法正常運作。"
 
 #: src/Views/CheckView.vala:69
 msgid "Your Device May Be Too Slow"
@@ -94,13 +92,11 @@ msgstr "您的裝置可能過慢"
 
 #: src/Views/CheckView.vala:70
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "運作可能會很慢或是時不時卡住。"
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "安裝 %s"
+msgstr "還是要安裝"
 
 #: src/Views/CheckView.vala:208
 msgid "Recommended:"
@@ -140,10 +136,8 @@ msgid "Next"
 msgstr "下一步"
 
 #: src/Views/DriversView.vala:26
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "分割磁碟"
+msgstr "額外驅動程式"
 
 #: src/Views/DriversView.vala:30
 msgid ""
@@ -151,28 +145,32 @@ msgid ""
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
+"Broadcom® Wi-Fi 轉接器、NVIDIA® 顯示卡和一些虛擬機器可能需要安裝額外驅動程式"
+"才能正常運作。大部分裝置不會需要額外驅動程式。"
 
 #: src/Views/DriversView.vala:38
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
-msgstr ""
+msgstr "私有驅動程式包含沒有人能夠檢閱的私人程式碼。安全性更新和其他更新皆依賴驅動程"
+"式製造商的支援。"
 
 #: src/Views/DriversView.vala:44
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
-msgstr ""
+msgstr "需要網際網路連線才能安裝 NVIDIA® 顯示卡驅動程式。"
 
 #: src/Views/DriversView.vala:50
 msgid ""
 "Proprietary drivers can be installed later through AppCenter, but an "
 "Internet connection will be required for all drivers."
-msgstr ""
+msgstr "私有驅動程式可以之後到《應用程式中心》安裝，但所有驅動程式在安裝時都需要網際"
+"網路連線。"
 
 #: src/Views/DriversView.vala:55
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
-msgstr ""
+msgstr "安裝時包含第三方的私有驅動程式。我同意它們個別的授權條款與使用條款。"
 
 #: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
 #: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:142
@@ -185,48 +183,36 @@ msgid "Erase and Install"
 msgstr "抹除並安裝"
 
 #: src/Views/EncryptView.vala:26
-#, fuzzy
-#| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "不要加密"
 
 #: src/Views/EncryptView.vala:50
-#, fuzzy
-#| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
-msgstr "磁碟加密"
+msgstr "啟用磁碟加密"
 
 #: src/Views/EncryptView.vala:54
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
-msgstr ""
+msgstr "如果您需要的話可以加密此裝置的磁碟來加強保護，但請確認您了解："
 
 #: src/Views/EncryptView.vala:63
-#, fuzzy
-#| msgid ""
-#| "Encrypting this drive protects data from being read by others with "
-#| "physical access to this device."
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
-msgstr "加密這個磁碟可保護資料，避免他人以物理方式存取此裝置的資料。"
+msgstr "磁碟加密只能在關機時防止他人以物理方式存取此裝置的資料。"
 
 #: src/Views/EncryptView.vala:69
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time you turn on this "
-#| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
-msgstr "每次您開啟或重新啟動此裝置時，將會需要使用加密密碼。"
+msgstr "此裝置每次開機時都會需要輸入加密密碼。請將它保管在安全的地方。"
 
 #: src/Views/EncryptView.vala:75
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
-msgstr ""
+msgstr "此裝置每次開機時都需要使用內建或插入 USB 鍵盤來輸入加密密碼。"
 
 #: src/Views/EncryptView.vala:89
 msgid ""
@@ -250,10 +236,8 @@ msgid "Choose Password"
 msgstr "選擇密碼"
 
 #: src/Views/EncryptView.vala:172
-#, fuzzy
-#| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
-msgstr "選擇加密密碼"
+msgstr "設定加密密碼"
 
 #: src/Views/EncryptView.vala:240
 msgid "Passwords do not match"
@@ -264,38 +248,28 @@ msgid "Could Not Install"
 msgstr "無法安裝"
 
 #: src/Views/ErrorView.vala:35
-#, fuzzy, c-format
-#| msgid ""
-#| "Installing %s failed, possibly due to a hardware error. Your device may "
-#| "not restart properly. You can try the following:"
+#, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
-msgstr ""
-"%s 安裝失敗，可能是硬體錯誤導致。您的裝置可能無法正常重新啟動。您可以嘗試下列"
+msgstr "%s 安裝失敗，可能是硬體錯誤導致。您的裝置可能無法正常重新啟動。您可以嘗試下列"
 "動作："
 
 #: src/Views/ErrorView.vala:46
-#, fuzzy
-#| msgid "• Try the installation again"
 msgid "Try the installation again"
-msgstr "• 嘗試重裝一次"
+msgstr "再次嘗試安裝"
 
 #: src/Views/ErrorView.vala:57
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
-msgstr "• 進入「展示模式」並嘗試手動還原"
+msgstr "進入「展示模式」並嘗試自行手動修復"
 
 #: src/Views/ErrorView.vala:67
-#, fuzzy
-#| msgid "• Restart your device to boot from another drive"
 msgid "Restart the device and boot from another drive"
-msgstr "• 重新啟動您的裝置以從另一個磁碟開機"
+msgstr "重新開機後從另一個磁碟開機"
 
 #: src/Views/ErrorView.vala:73
 msgid "Details"
-msgstr ""
+msgstr "詳細資料"
 
 #: src/Views/ErrorView.vala:118 src/Views/SuccessView.vala:63
 msgid "Restart Device"
@@ -310,10 +284,8 @@ msgid "Try Installing Again"
 msgstr "嘗試再安裝一次"
 
 #: src/Views/KeyboardLayoutView.vala:30
-#, fuzzy
-#| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
-msgstr "鍵盤配置"
+msgstr "選擇鍵盤配置"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -344,21 +316,13 @@ msgid "Currently active language"
 msgstr "目前使用中語言"
 
 #: src/Views/PartitioningView.vala:52
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Select Partitions"
-msgstr "使用分割區："
+msgstr "選擇分割區"
 
 #: src/Views/PartitioningView.vala:57
-#, fuzzy
-#| msgid ""
-#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
-#| "will erase ALL data on the selected partition.</b>"
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
-msgstr ""
-"請從磁碟中選取分割區。<b>選取「格式化」將會把已選取分割區內的所有資料清除。</"
-"b>"
+msgstr "選取「格式化」將會抹除所選分割區內的<i>所有資料</i>。"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:66
@@ -367,16 +331,11 @@ msgstr "您至少必須選取一個<b>根目錄 (/)</b>所在的分割區。"
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:70
-#, fuzzy
-#| msgid ""
-#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-#| "efi)</b> partition."
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
-msgstr ""
-"您至少必須選取一個<b>根目錄 (/)</b>所在的分割區和一個<b>啟動分區 (/boot/"
-"efi)</b>所在的分割區。"
+msgstr "您至少必須選取一個<b>根目錄 (/)</b>所在的分割區和一個<b>開機 (/boot/efi)</b> "
+"分割區。"
 
 #: src/Views/PartitioningView.vala:81
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -396,45 +355,43 @@ msgstr "EFI 分割區過小"
 
 #: src/Views/PartitioningView.vala:294
 msgid "Invalid file system for root"
-msgstr "根基的檔案系統無效"
+msgstr "根目錄的檔案系統無效"
 
 #: src/Views/PartitioningView.vala:296
 msgid "Invalid file system for home"
-msgstr "家屋的檔案系統無效"
+msgstr "家目錄檔案系統無效"
 
 #: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
-msgstr ""
+msgstr "顯示紀錄"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Installing"
-msgstr "嘗試再安裝一次"
+msgstr "安裝中"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
-msgstr ""
+msgstr "隱藏紀錄"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:224
 msgid "Partitioning Drive"
-msgstr "分割磁碟"
+msgstr "正在分割磁碟"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:229
 msgid "Extracting Files"
-msgstr "解壓縮檔案"
+msgstr "正在解壓縮檔案"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
-msgstr "設定系統"
+msgstr "正在設定系統"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:239
 msgid "Finishing the Installation"
-msgstr "完成安裝"
+msgstr "正在完成安裝"
 
 #: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
@@ -449,21 +406,17 @@ msgstr ""
 "安裝後的體驗不見得相同。"
 
 #: src/Views/TryInstallView.vala:45
-#, fuzzy
-#| msgid "Erase and Install"
 msgid "Erase Disk and Install"
-msgstr "抹除並安裝"
+msgstr "抹除磁碟並安裝"
 
 #: src/Views/TryInstallView.vala:47
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr "抹除任何資料並安裝全新的 %s 副本。"
+msgstr "抹除所有資料並安裝全新的 %s 副本。"
 
 #: src/Views/TryInstallView.vala:53
-#, fuzzy
-#| msgid "Custom (Advanced)"
 msgid "Custom Install (Advanced)"
-msgstr "自訂（進階）"
+msgstr "自訂安裝（進階）"
 
 #: src/Views/TryInstallView.vala:55
 msgid ""
@@ -472,10 +425,8 @@ msgid ""
 msgstr "手動建立、管理、或調整分割區大小等。採用這個方法可能會導致資料喪失。"
 
 #: src/Views/TryInstallView.vala:108
-#, fuzzy
-#| msgid "Could Not Install"
 msgid "Custom Install"
-msgstr "無法安裝"
+msgstr "自訂安裝"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -484,7 +435,7 @@ msgstr "繼續設定"
 #: src/Views/SuccessView.vala:32
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s 已完成安裝"
 
 #: src/Views/SuccessView.vala:60
 msgid "Shut Down"
@@ -494,7 +445,7 @@ msgstr "關機"
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
+msgstr[0] "您的裝置會在 %i 秒後自動重新啟動。"
 
 #: src/Views/SuccessView.vala:96
 msgid ""
@@ -540,20 +491,16 @@ msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s：<b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
-#, fuzzy
-#| msgid "Use partition:"
 msgid "Use Partition"
-msgstr "使用分割區："
+msgstr "使用分割區"
 
 #: src/Widgets/PartitionMenu.vala:60
-#, fuzzy
-#| msgid "Format:"
 msgid "Format"
-msgstr "格式化："
+msgstr "格式化"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "刪除所有資料並設定新的檔案系統"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
