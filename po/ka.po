@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-11 22:12+0000\n"
-"PO-Revision-Date: 2024-06-19 05:16+0000\n"
+"PO-Revision-Date: 2024-09-12 22:16+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/installer/"
 "installer/ka/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:44
@@ -315,15 +315,15 @@ msgid "Currently active language"
 msgstr "ამჟამად აქტიური ენა"
 
 #: src/Views/PartitioningView.vala:53
-#, fuzzy
-#| msgid "Use Partition"
 msgid "Select Partitions"
-msgstr "დანაყოფის გამოყენება"
+msgstr "აირჩიეთ დანაყოფები"
 
 #: src/Views/PartitioningView.vala:58
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
+"თუ \"დაფორმატებას\" აირჩევთ, ეს მონიშნულ დანაყოფზე <i>ყველა</i> მონაცემებს "
+"წაშლის."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:67
@@ -368,10 +368,8 @@ msgid "Show log"
 msgstr "ჟურნალის ჩვენება"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Before Installing"
 msgid "Installing"
-msgstr "დაყენებამდე"
+msgstr "დაყენება"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
