@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-07 03:52+0000\n"
+"POT-Creation-Date: 2024-09-11 22:12+0000\n"
 "PO-Revision-Date: 2023-08-30 12:08+0000\n"
 "Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
@@ -15,12 +15,12 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:52
+#: src/Application.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "Nainstalovat %s"
 
-#: src/Application.vala:60
+#: src/Application.vala:52
 msgid "operating system is being installed"
 msgstr "operační systém se instaluje"
 
@@ -48,7 +48,7 @@ msgstr "Restartovat v rámci testovacího režimu"
 msgid "Test mode switch user"
 msgstr "Přepnout uživatele v rámci testovacího režimu"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:200
+#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -131,11 +131,11 @@ msgstr ""
 "Toto smaže všechna data na vybrané jednotce. Pokud jste si svá data ještě "
 "nezazálohovali, můžete instalaci přerušit a použít Režim pro ukázku."
 
-#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:113
+#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
 msgid "Getting the current configuration…"
 msgstr "Zjišťování stávajícího uspořádání…"
 
-#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:144
+#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:82
 msgid "Next"
 msgstr "Další"
@@ -169,9 +169,13 @@ msgstr ""
 "ovladačů."
 
 #: src/Views/DriversView.vala:50
+#, fuzzy
+#| msgid ""
+#| "Proprietary drivers can be installed later through AppCenter, but an "
+#| "Internet connection will be required for all drivers."
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but an "
-"Internet connection will be required for all drivers."
+"Proprietary drivers can be installed later through System Settings → System, "
+"but an Internet connection will be required for all drivers."
 msgstr ""
 "Proprietární ovladače mohou být nainstalovány později skrze Centrum "
 "aplikací, ale internetové připojení bude vyžadováno pro všechny ovladače."
@@ -185,7 +189,7 @@ msgstr ""
 "jejich licencemi a podmínkami použití."
 
 #: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:142
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
 #: src/Views/TryInstallView.vala:80
 msgid "Back"
 msgstr "Zpět"
@@ -305,23 +309,23 @@ msgstr "Vyzkoušet Režim pro ukázku"
 msgid "Try Installing Again"
 msgstr "Zkusit nainstalovat znovu"
 
-#: src/Views/KeyboardLayoutView.vala:30
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "Vyberte rozložení klávesnice"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Vyzkoušejte rozvržení klávesnice psaním"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Zobrazit rozložení klávesnice"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:114
+#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
 msgid "Select"
 msgstr "Vybrat"
 
-#: src/Views/KeyboardLayoutView.vala:109
+#: src/Views/KeyboardLayoutView.vala:110
 msgid "Input Language"
 msgstr "Jazyk vstupu z klávesnice"
 
@@ -333,17 +337,17 @@ msgstr "Jazyky"
 msgid "Select a Language"
 msgstr "Vyberte jazyk"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
 msgid "Currently active language"
 msgstr "Právě používaný jazyk"
 
-#: src/Views/PartitioningView.vala:52
+#: src/Views/PartitioningView.vala:53
 #, fuzzy
 #| msgid "Use Partition"
 msgid "Select Partitions"
 msgstr "Použít oddíl"
 
-#: src/Views/PartitioningView.vala:57
+#: src/Views/PartitioningView.vala:58
 #, fuzzy
 #| msgid ""
 #| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
@@ -355,12 +359,12 @@ msgstr ""
 "smažete VŠECHNA data na vybraném oddílu.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:67
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Je třeba vybrat alespoň <b>kořenový (/)</b> oddíl."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:70
+#: src/Views/PartitioningView.vala:71
 #, fuzzy
 #| msgid ""
 #| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
@@ -372,27 +376,27 @@ msgstr ""
 "Je třeba vybrat alespoň oddíly pro <b>kořen (/)</b> a <b>zavádění (/boot/"
 "efi)</b>."
 
-#: src/Views/PartitioningView.vala:81
+#: src/Views/PartitioningView.vala:82
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Je také doporučeno vybrat oddíl pro <b>Swap</b>."
 
-#: src/Views/PartitioningView.vala:139
+#: src/Views/PartitioningView.vala:140
 msgid "Modify Partitions…"
 msgstr "Upravit oddíly…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:290
 msgid "EFI partition has the wrong file system"
 msgstr "Oddíl EFI nemá vhodný souborový systém"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:292
 msgid "EFI partition is too small"
 msgstr "Oddíl EFI je příliš malý"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:295
 msgid "Invalid file system for root"
 msgstr "Nevhodný souborový systém pro kořenový adresář"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:297
 msgid "Invalid file system for home"
 msgstr "Nevhodný souborový systém pro domovskou složku"
 
