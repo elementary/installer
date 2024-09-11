@@ -274,7 +274,7 @@ public class EncryptView : AbstractInstallerView {
 
         construct {
             label_widget = new Gtk.Label (label) {
-                halign = END,
+                hexpand = true,
                 justify = RIGHT,
                 use_markup = true,
                 wrap = true,
