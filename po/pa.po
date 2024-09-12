@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-07 03:52+0000\n"
+"POT-Creation-Date: 2024-09-11 22:12+0000\n"
 "PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:52
+#: src/Application.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Application.vala:60
+#: src/Application.vala:52
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
@@ -54,7 +54,7 @@ msgstr "ਟੈਸਟ ਮੋਡ ਰੀਬੂਟ"
 msgid "Test mode switch user"
 msgstr "ਟੈਸਟ ਮੋਡ ਵਰਤੋਂਕਾਰ ਬਦਲੋ"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:200
+#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -138,11 +138,11 @@ msgstr ""
 "ਇਹ ਚੁਣੀ ਹੋਈ ਡਰਾਈਵ ਦਾ ਸਾਰਾ ਡੇਟਾ ਮਿਟਾ ਦੇਵੇਗਾ। ਜੇ ਤੁਸੀਂ ਹਾਲੇ ਆਪਣਾ ਡੇਟਾ ਬੈਕਅਪ ਨਹੀਂ ਕੀਤਾ ਤਾਂ "
 "ਤੁਸੀਂ ਸਥਾਪਨ ਨੂੰ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ ਜਾਂ ਮਿਸਾਲ ਮੋਡ ਵਰਤ ਸਕਦੇ ਹੋ।"
 
-#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:113
+#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
 msgid "Getting the current configuration…"
 msgstr "ਮੌਜੂਦਾ ਸੈਟਿੰਗਾਂ ਪੜ੍ਹ ਰਿਹੈ…"
 
-#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:144
+#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:82
 msgid "Next"
 msgstr "ਅਗਲਾ"
@@ -172,8 +172,8 @@ msgstr ""
 
 #: src/Views/DriversView.vala:50
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but an "
-"Internet connection will be required for all drivers."
+"Proprietary drivers can be installed later through System Settings → System, "
+"but an Internet connection will be required for all drivers."
 msgstr ""
 
 #: src/Views/DriversView.vala:55
@@ -183,7 +183,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:142
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
 #: src/Views/TryInstallView.vala:80
 msgid "Back"
 msgstr "ਪਿੱਛੇ ਜਾਓ"
@@ -301,23 +301,23 @@ msgstr "ਡੈਮੋ ਮੋਡ ਅਜ਼ਮਾਓ"
 msgid "Try Installing Again"
 msgstr "ਦੁਬਾਰਾ ਸਥਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
-#: src/Views/KeyboardLayoutView.vala:30
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "ਕੀਬੋਰਡ ਲੇਆਊਟ ਚੁਣੋ"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "ਲੇਆਊਟ ਟੈਸਟ ਕਰਨ ਲਈ ਟਾਈਪ ਕਰੋ"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "ਕੀਬੋਰਡ ਲੇਆਊਟ ਵਿਖਾਓ"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:114
+#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
 msgid "Select"
 msgstr "ਚੁਣੋ"
 
-#: src/Views/KeyboardLayoutView.vala:109
+#: src/Views/KeyboardLayoutView.vala:110
 msgid "Input Language"
 msgstr "ਟਾਈਪਿੰਗ ਲਈ ਭਾਸ਼ਾ"
 
@@ -329,17 +329,17 @@ msgstr "ਭਾਸ਼ਾਵਾਂ"
 msgid "Select a Language"
 msgstr "ਕੋਈ ਭਾਸ਼ਾ ਚੁਣੋ"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
 msgid "Currently active language"
 msgstr "ਮੌਜੂਦਾ ਚੁਣੀ ਹੋਈ ਭਾਸ਼ਾ"
 
-#: src/Views/PartitioningView.vala:52
+#: src/Views/PartitioningView.vala:53
 #, fuzzy
 #| msgid "Use Partition"
 msgid "Select Partitions"
 msgstr "ਇਹ ਵੰਡ ਵਰਤੋ"
 
-#: src/Views/PartitioningView.vala:57
+#: src/Views/PartitioningView.vala:58
 #, fuzzy
 #| msgid ""
 #| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
@@ -351,12 +351,12 @@ msgstr ""
 "ਡੇਟਾ ਮਿਟ ਜਾਵੇਗਾ।</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:67
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਵੰਡ ਲਾਜ਼ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:70
+#: src/Views/PartitioningView.vala:71
 #, fuzzy
 #| msgid ""
 #| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
@@ -367,27 +367,27 @@ msgid ""
 msgstr ""
 "ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਅਤੇ ਇੱਕ <b>ਬੂਟ (/boot/efi)</b> ਵੰਡ ਲਾਜ਼ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
 
-#: src/Views/PartitioningView.vala:81
+#: src/Views/PartitioningView.vala:82
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "ਇੱਕ <b>ਸਵੈਪ</b> ਵੰਡ ਚੁਣਨ ਦੀ ਵੀ ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।"
 
-#: src/Views/PartitioningView.vala:139
+#: src/Views/PartitioningView.vala:140
 msgid "Modify Partitions…"
 msgstr "ਵੰਡਾਂ ਵਿੱਚ ਤਬਦੀਲੀਆਂ ਕਰੋ…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:290
 msgid "EFI partition has the wrong file system"
 msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਗ਼ਲਤ ਹੈ"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:292
 msgid "EFI partition is too small"
 msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਬਹੁਤ ਹੀ ਛੋਟੀ ਹੈ"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:295
 msgid "Invalid file system for root"
 msgstr "ਰੂਟ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:297
 msgid "Invalid file system for home"
 msgstr "ਘਰ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
