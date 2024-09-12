@@ -65,7 +65,6 @@
       </description>
       <issues>
         <issue url="https://github.com/elementary/installer/issues/538">Screen Reader ignores each view’s title text</issue>
-        <issue url="https://github.com/elementary/installer/issues/793">Clicking a partition in the custom install glitches the installer window</issue>
       </issues>
     </release>
 
