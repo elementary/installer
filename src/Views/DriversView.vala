@@ -16,8 +16,6 @@
  */
 
  public class DriversView : AbstractInstallerView {
-    public signal void next_step ();
-
     construct {
         var image = new Gtk.Image.from_icon_name ("application-x-firmware") {
             pixel_size = 128

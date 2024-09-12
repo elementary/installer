@@ -19,8 +19,6 @@
  */
 
 public class Installer.PartitioningView : AbstractInstallerView {
-    public signal void next_step ();
-
     private Gtk.Button next_button;
     private Gtk.Button modify_partitions_button;
     private Gtk.Box disk_list;

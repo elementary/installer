@@ -17,7 +17,6 @@
 
 public class Installer.TryInstallView : AbstractInstallerView {
     public signal void custom_step ();
-    public signal void next_step ();
 
     construct {
         var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id) {

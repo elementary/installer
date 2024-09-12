@@ -7,6 +7,7 @@ public abstract class AbstractInstallerView : Adw.NavigationPage {
     public bool cancellable { get; construct; }
 
     public signal void cancel ();
+    public signal void next_step ();
 
     protected Gtk.Box title_area;
     protected Gtk.Box content_area;

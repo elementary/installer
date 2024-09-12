@@ -92,7 +92,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 return;
             }
 
-            ((Adw.Leaflet) get_parent ()).navigate (FORWARD);
+            next_step ();
         });
 
         input_variant_widget.main_listbox.row_activated.connect ((row) => {
