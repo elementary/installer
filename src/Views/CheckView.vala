@@ -105,18 +105,18 @@ public class Installer.CheckView : AbstractInstallerView {
             var @is = apt_sources.read ();
             var dis = new DataInputStream (@is);
 
-            if ("daily" in dis.read_line ()) {
+            if ("daily" in dis.read_line () || Installer.App.test_mode) {
                 message_box.append (beta_view);
             }
         } catch (Error e) {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        if (get_vm ()) {
+        if (get_vm () || Installer.App.test_mode) {
             message_box.append (vm_view);
         }
 
-        if (!minimum_specs) {
+        if (!minimum_specs || Installer.App.test_mode) {
             message_box.append (specs_view);
         }
     }
