@@ -182,7 +182,7 @@ public class EncryptView : AbstractInstallerView {
                 Configuration.get_default ().encryption_password = pw_entry.text;
             }
 
-            ((Adw.Leaflet) get_parent ()).navigate (FORWARD);
+            next_step ();
         });
 
         pw_entry.changed.connect (() => {

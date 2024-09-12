@@ -74,7 +74,7 @@
         content_area.append (message_box);
 
         var back_button = new Gtk.Button.with_label (_("Back"));
-        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
+        back_button.clicked.connect (() => ((Adw.NavigationView) get_parent ()).pop ());
 
         var next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);

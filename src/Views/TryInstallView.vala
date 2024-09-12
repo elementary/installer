@@ -86,7 +86,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         action_box_end.append (back_button);
         action_box_end.append (next_button);
 
-        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
+        back_button.clicked.connect (() => ((Adw.NavigationView) get_parent ()).pop ());
 
         demo_button.toggled.connect (() => {
             if (demo_button.active) {

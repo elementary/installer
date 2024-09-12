@@ -32,6 +32,7 @@ public class Installer.MainWindow : Gtk.Window {
     private Adw.NavigationView navigation_view;
     private LanguageView language_view;
     private TryInstallView try_install_view;
+    private KeyboardLayoutView keyboard_layout_view;
     private bool check_ignored = false;
     private uint orca_timeout_id = 0;
 
@@ -127,7 +128,7 @@ public class Installer.MainWindow : Gtk.Window {
     }
 
     private void load_keyboard_view () {
-        var keyboard_layout_view = new KeyboardLayoutView ();
+        keyboard_layout_view = new KeyboardLayoutView ();
         try_install_view = new TryInstallView ();
 
         navigation_view.push (keyboard_layout_view);
@@ -160,10 +161,6 @@ public class Installer.MainWindow : Gtk.Window {
         }
 
         var check_view = new Installer.CheckView ();
-        if (check_view.has_messages) {
-            navigation_view.push (check_view);
-        }
-
         check_view.cancel.connect (() => navigation_view.pop ());
 
         check_view.next_step.connect (() => {
@@ -175,6 +172,12 @@ public class Installer.MainWindow : Gtk.Window {
                 load_disk_view ();
             }
         });
+
+        if (check_view.has_messages) {
+            navigation_view.push (check_view);
+        } else {
+            check_view.next_step ();
+        }
     }
 
     private void load_encrypt_view () {
@@ -208,24 +211,41 @@ public class Installer.MainWindow : Gtk.Window {
         var progress_view = new ProgressView ();
 
         progress_view.on_success.connect (() => {
-            navigation_view.push (new SuccessView ());
+            var success_view = new SuccessView ();
+            navigation_view.push (success_view);
+
+            success_view.shown.connect (() => {
+                 navigation_view.replace ({ success_view });
+            });
         });
 
         progress_view.on_error.connect (() => {
             load_error_view (progress_view.get_log ());
         });
-        progress_view.start_installation ();
+
+        progress_view.shown.connect (() => {
+            navigation_view.replace ({ progress_view });
+        });
 
         navigation_view.push (progress_view);
-        navigation_view.can_navigate_back = false;
+        progress_view.start_installation ();
     }
 
     private void load_error_view (string log) {
         var error_view = new ErrorView (log);
 
         error_view.retry_install.connect (() => {
-            navigation_view.pop_to_page (try_install_view);
-            navigation_view.can_swipe_back = true;
+            navigation_view.replace ({
+                language_view,
+                keyboard_layout_view,
+                try_install_view,
+                error_view
+            });
+            navigation_view.pop ();
+        });
+
+        error_view.shown.connect (() => {
+             navigation_view.replace ({ error_view });
         });
 
         navigation_view.push (error_view);

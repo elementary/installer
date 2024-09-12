@@ -100,7 +100,7 @@ public class Installer.DiskView : AbstractInstallerView {
             sensitive = Installer.App.test_mode
         };
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
-        next_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (FORWARD));
+        next_button.clicked.connect (() => next_step ());
 
         action_box_end.append (next_button);
     }
