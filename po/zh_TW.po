@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-11 22:12+0000\n"
-"PO-Revision-Date: 2024-09-07 17:04+0000\n"
+"PO-Revision-Date: 2024-09-13 00:58+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hant/>\n"
@@ -161,16 +161,11 @@ msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr "需要網際網路連線才能安裝 NVIDIA® 顯示卡驅動程式。"
 
 #: src/Views/DriversView.vala:50
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but an "
-#| "Internet connection will be required for all drivers."
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
-msgstr ""
-"私有驅動程式可以之後到《應用程式中心》安裝，但所有驅動程式在安裝時都需要網際"
-"網路連線。"
+msgstr "私有驅動程式可以之後到「系統設定值」→「系統」進行安裝，但所有驅動程式在安裝時"
+"都需要網際網路連線。"
 
 #: src/Views/DriversView.vala:55
 msgid ""
