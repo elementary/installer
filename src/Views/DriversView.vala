@@ -48,8 +48,8 @@
 
         var install_later_row = new DescriptionRow (
             _("Proprietary drivers can be installed later through System Settings → System, but an Internet connection will be required for all drivers."),
-            "system-software-install-symbolic",
-            "purple"
+            "io.elementary.settings-symbolic",
+            "slate"
         );
 
         var checkbutton_label = new Gtk.Label (_("Include third-party proprietary drivers when installing. I agree to their respective licenses and terms of use.")) {
