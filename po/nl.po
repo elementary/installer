@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-11 22:12+0000\n"
-"PO-Revision-Date: 2024-08-17 10:16+0000\n"
+"PO-Revision-Date: 2024-09-14 09:16+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -171,24 +171,22 @@ msgstr ""
 "installeren."
 
 #: src/Views/DriversView.vala:50
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but an "
-#| "Internet connection will be required for all drivers."
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
 msgstr ""
-"Propriëtaire drivers kunnen later geïnstalleerd worden in AppCenter, maar "
-"een internetverbinding is vereist voor alle drivers."
+"Propriëtaire drivers kunnen later geïnstalleerd worden in "
+"Systeeminstellingen → Systeem, maar een internetverbinding is vereist voor "
+"alle drivers."
 
 #: src/Views/DriversView.vala:55
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
-"Installeer propriëtaire drivers van derde partijen mee tijdens installatie. "
-"Ik ga akkoord met hun respectieve licenties en gebruikersvoorwaarden."
+"Installeer propriëtaire drivers van derde partijen tijdens installatie van "
+"het systeem. Ik ga akkoord met hun respectieve licenties en "
+"gebruikersvoorwaarden."
 
 #: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
 #: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
