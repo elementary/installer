@@ -255,7 +255,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 m.parent_disk,
                 m.partition_path,
                 m.mount_point,
-                Distinst.strfilesys (m.filesystem),
+                m.filesystem.to_string (),
                 m.should_format () ? "true" : "false"
             );
 
