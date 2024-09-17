@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-11 22:12+0000\n"
-"PO-Revision-Date: 2024-08-15 10:16+0000\n"
+"PO-Revision-Date: 2024-09-14 09:16+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -171,16 +171,12 @@ msgstr ""
 "Для встановлення графічних драйверів NVIDIA® потрібне інтернет-з'єднання."
 
 #: src/Views/DriversView.vala:50
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but an "
-#| "Internet connection will be required for all drivers."
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
 msgstr ""
-"Власницькі драйвери можна встановити пізніше через Центр застосунків, але "
-"інтернет-з'єднання буде необхідним для всіх драйверів."
+"Власницькі драйвери можна встановити пізніше через Налаштування системи → "
+"Система, але інтернет-з'єднання буде необхідним для всіх драйверів."
 
 #: src/Views/DriversView.vala:55
 msgid ""

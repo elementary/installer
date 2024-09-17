@@ -7,5 +7,7 @@
   <gresource prefix="/io/elementary/installer/icons">
     <file alias="io.elementary.installer.caution.svg" compressed="true" preprocess="xml-stripblanks">caution.svg</file>
     <file alias="io.elementary.installer.emblem-downloads.svg" compressed="true" preprocess="xml-stripblanks">emblem-downloads.svg</file>
+    <file alias="24x24/categories/io.elementary.settings-symbolic.svg" compressed="true" preprocess="xml-stripblanks">io.elementary.settings.svg</file>
+    <file alias="24x24@2/categories/io.elementary.settings-symbolic.svg" compressed="true" preprocess="xml-stripblanks">io.elementary.settings.svg</file>
   </gresource>
 </gresources>

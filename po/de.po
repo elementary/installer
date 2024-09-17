@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-11 22:12+0000\n"
-"PO-Revision-Date: 2024-08-17 20:21+0000\n"
+"PO-Revision-Date: 2024-09-16 17:16+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -177,16 +177,13 @@ msgstr ""
 "Zur Installation der NVIDIA®-Treiber wird eine Internet-Verbindung benötigt."
 
 #: src/Views/DriversView.vala:50
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but an "
-#| "Internet connection will be required for all drivers."
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
 msgstr ""
-"Proprietäre Treiber können später im AppCenter installiert werden, "
-"allerdings wird für alle Treiber eine Internet-Verbindung benötigt."
+"Proprietäre Treiber können später über Systemeinstellungen → System "
+"installiert werden, allerdings wird für alle Treiber eine Internet-"
+"Verbindung benötigt."
 
 #: src/Views/DriversView.vala:55
 msgid ""
