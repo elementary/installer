@@ -14,7 +14,6 @@ public class Installer.PartitionBar : Gtk.Box {
     public InstallerDaemon.Partition partition { get; construct; }
     public string parent_path { get; construct; }
 
-    public string? volume_group { get; private set; }
     public Gtk.Popover menu { get; private set; }
 
     public PartitionBar (
@@ -53,8 +52,6 @@ public class Installer.PartitionBar : Gtk.Box {
     }
 
     construct {
-        volume_group = (partition.filesystem == LVM) ? partition.current_lvm_volume_group : null;
-
         var image = new Gtk.Image () {
             hexpand = true,
             halign = END,
