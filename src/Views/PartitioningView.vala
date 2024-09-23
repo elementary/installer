@@ -167,19 +167,14 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
 
         foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
-            var sector_size = disk.sector_size;
-            var size = disk.sectors * sector_size;
-
-            unowned string path = disk.device_path;
-
             var partitions = new Gee.ArrayList<PartitionBar> ();
             foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set);
+                var partition = new PartitionBar (part, disk.device_path, disk.sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set);
                 partition.decrypted.connect (on_partition_decrypted);
                 partitions.add (partition);
             }
 
-            var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
+            var disk_bar = new DiskBar (disk, (owned) partitions);
             disk_list.append (disk_bar);
         }
 
@@ -220,19 +215,14 @@ public class Installer.PartitioningView : AbstractInstallerView {
     }
 
     private void add_logical_disk (InstallerDaemon.Disk disk) {
-        var sector_size = disk.sector_size;
-        var size = disk.sectors * sector_size;
-
-        unowned string path = disk.device_path;
-
         var partitions = new Gee.ArrayList<PartitionBar> ();
         foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set);
+            var partition = new PartitionBar (part, disk.device_path, disk.sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set);
             partition.decrypted.connect (on_partition_decrypted);
             partitions.add (partition);
         }
 
-        var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
+        var disk_bar = new DiskBar (disk, (owned) partitions);
         disk_list.append (disk_bar);
     }
 
