@@ -36,7 +36,7 @@ public class Installer.PartitionBar : Gtk.Box {
             menu = new DecryptMenu (partition.device_path);
             ((DecryptMenu)menu).decrypted.connect ((creds) => decrypted (creds));
         } else {
-            menu = new PartitionMenu (partition.device_path, parent_path, partition.filesystem, lvm, set_mount, unset_mount, mount_set, this);
+            menu = new PartitionMenu (partition, parent_path, lvm, set_mount, unset_mount, mount_set, this);
         }
 
         menu.set_parent (this);

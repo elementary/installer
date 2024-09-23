@@ -1,18 +1,6 @@
-/*-
- * Copyright 2018-2021 elementary, inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2018-2024 elementary, Inc. (https://elementary.io)
  *
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
@@ -24,46 +12,52 @@ public delegate void UnsetMount (string partition);
 public delegate bool MountSetFn (string mount_point);
 
 public class Installer.PartitionMenu : Gtk.Popover {
+    public InstallerDaemon.Partition partition { get; construct; }
+    public string parent_disk { get; construct; }
+    public bool is_lvm { get; construct; }
+    // A reference to the parent which owns this menu.
+    public PartitionBar partition_bar { get; construct; }
+
     private bool disable_signals;
-    private bool is_lvm;
-    private string parent_disk;
-    private string partition_path;
-    private InstallerDaemon.FileSystem original_filesystem;
 
     private Granite.SwitchModelButton format_partition;
     private Granite.SwitchModelButton use_partition;
     private Gtk.ComboBoxText type;
     private Gtk.ComboBoxText use_as;
     private Gtk.Entry custom;
-    private Gtk.Label custom_label;
-    private Gtk.Label type_label;
-    // A reference to the parent which owns this menu.
-    private PartitionBar partition_bar;
 
-    public PartitionMenu (string path, string parent, InstallerDaemon.FileSystem fs,
-                          bool lvm, SetMount set_mount, UnsetMount unset_mount,
-                          MountSetFn mount_set, PartitionBar partition_bar) {
-        this.partition_bar = partition_bar;
-        original_filesystem = fs;
-        is_lvm = lvm;
-        partition_path = path;
-        parent_disk = parent;
+    public PartitionMenu (
+        InstallerDaemon.Partition partition,
+        string parent,
+        bool lvm,
+        SetMount set_mount,
+        UnsetMount unset_mount,
+        MountSetFn mount_set,
+        PartitionBar partition_bar
+    ) {
+        Object (
+            partition: partition,
+            parent_disk: parent,
+            is_lvm: lvm,
+            partition_bar: partition_bar
+        );
 
-        string boot_partition = (Daemon.get_default ().bootloader_detect () == Distinst.PartitionTable.GPT)
+        var boot_partition = (Daemon.get_default ().bootloader_detect () == GPT)
             ? "/boot/efi"
             : "/boot";
 
         use_partition = new Granite.SwitchModelButton (_("Use Partition"));
 
-        var separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+        var separator = new Gtk.Separator (HORIZONTAL);
 
         format_partition = new Granite.SwitchModelButton (_("Format")) {
             description = _("Delete all data and set up a new file system")
         };
 
-        var use_as_label = new Gtk.Label (_("Use as:"));
-        use_as_label.halign = Gtk.Align.END;
-        use_as_label.xalign = 1;
+        var use_as_label = new Gtk.Label (_("Use as:")) {
+            halign = END,
+            xalign = 1
+        };
 
         use_as = new Gtk.ComboBoxText () {
             hexpand = true
@@ -76,18 +70,20 @@ public class Installer.PartitionMenu : Gtk.Popover {
         use_as.active = 0;
         use_as.bind_property ("visible", use_as_label, "visible");
 
-        custom_label = new Gtk.Label (_("Custom:"));
-        custom_label.halign = Gtk.Align.END;
-        custom_label.xalign = 1;
+        var custom_label = new Gtk.Label (_("Custom:")) {
+            halign = END,
+            xalign = 1
+        };
 
         custom = new Gtk.Entry ();
         custom.bind_property ("visible", custom_label, "visible");
 
-        type_label = new Gtk.Label (_("Filesystem:"));
-        type_label.halign = Gtk.Align.END;
-        type_label.xalign = 1;
+        var type_label = new Gtk.Label (_("Filesystem:")) {
+            halign = END,
+            xalign = 1
+        };
 
-        var label_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        var label_size_group = new Gtk.SizeGroup (HORIZONTAL);
         label_size_group.add_widget (use_as_label);
         label_size_group.add_widget (custom_label);
         label_size_group.add_widget (type_label);
@@ -205,13 +201,13 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 disable_signals = false;
 
                 int select = 0;
-                if (fs == InstallerDaemon.FileSystem.FAT16 || fs == InstallerDaemon.FileSystem.FAT32) {
+                if (partition.filesystem == FAT16 || partition.filesystem == FAT32) {
                     if (mount_set (boot_partition)) {
                         select = 4;
                     } else {
                         select = 2;
                     }
-                } else if (fs == InstallerDaemon.FileSystem.SWAP) {
+                } else if (partition.filesystem == SWAP) {
                     select = 3;
                 } else if (mount_set ("/")) {
                     if (mount_set ("/home" )) {
@@ -223,7 +219,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 use_as.set_active (select);
                 update_values (set_mount);
             } else {
-                unset_mount (partition_path);
+                unset_mount (partition.device_path);
                 partition_bar.icon = null;
             }
 
@@ -264,7 +260,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         string? error = null;
         try {
             set_mount (new Installer.Mount (
-                partition_path,
+                partition.device_path,
                 parent_disk,
                 mount,
                 partition_bar.get_partition_size (),
@@ -287,7 +283,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     }
 
     private bool has_same_filesystem () {
-        return original_filesystem == get_file_system ();
+        return partition.filesystem == get_file_system ();
     }
 
     private InstallerDaemon.FileSystem get_file_system () {
