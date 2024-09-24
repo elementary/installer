@@ -38,11 +38,11 @@ public class Installer.PartitionMenu : Gtk.Popover {
     private Gtk.Label custom_label;
     private Gtk.Label type_label;
     // A reference to the parent which owns this menu.
-    private PartitionBar partition_bar;
+    private PartitionBlock partition_bar;
 
     public PartitionMenu (string path, string parent, InstallerDaemon.FileSystem fs,
                           bool lvm, SetMount set_mount, UnsetMount unset_mount,
-                          MountSetFn mount_set, PartitionBar partition_bar) {
+                          MountSetFn mount_set, PartitionBlock partition_bar) {
         this.partition_bar = partition_bar;
         original_filesystem = fs;
         is_lvm = lvm;

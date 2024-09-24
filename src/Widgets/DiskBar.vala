@@ -9,9 +9,9 @@ public class Installer.DiskBar: Gtk.Box {
     public string disk_name { get; construct; }
     public string disk_path { get; construct; }
     public uint64 size { get; construct; }
-    public Gee.ArrayList<PartitionBar> partitions { get; construct; }
+    public Gee.ArrayList<PartitionBlock> partitions { get; construct; }
 
-    public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBar> partitions) {
+    public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBlock> partitions) {
         Object (
             disk_name: disk_name,
             disk_path: disk_path,
@@ -35,18 +35,18 @@ public class Installer.DiskBar: Gtk.Box {
             halign = START
         };
 
-        foreach (PartitionBar partition_bar in partitions) {
-            var legend = new Legend (partition_bar.partition);
+        foreach (PartitionBlock partition_block in partitions) {
+            var legend = new Legend (partition_block.partition);
             legend_box.append (legend);
 
             var click_gesture = new Gtk.GestureClick ();
-            click_gesture.released.connect (partition_bar.menu.popup);
+            click_gesture.released.connect (partition_block.menu.popup);
 
             legend.add_controller (click_gesture);
         }
 
         uint64 used = 0;
-        foreach (PartitionBar partition in partitions) {
+        foreach (PartitionBlock partition in partitions) {
             used += partition.get_partition_size ();
         }
 
@@ -68,10 +68,10 @@ public class Installer.DiskBar: Gtk.Box {
     }
 
     private class PartitionContainer : Gtk.Widget {
-        public Gee.ArrayList<PartitionBar> partitions { get; construct; }
+        public Gee.ArrayList<PartitionBlock> partitions { get; construct; }
         public uint64 size { get; construct; }
 
-        public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBar> partitions) {
+        public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBlock> partitions) {
             Object (
                 partitions: partitions,
                 size: size

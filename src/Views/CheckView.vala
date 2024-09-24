@@ -182,15 +182,12 @@ public class Installer.CheckView : AbstractInstallerView {
             };
 
             var title_label = new Gtk.Label (title) {
-                hexpand = true,
-                max_width_chars = 1,
                 wrap = true,
                 xalign = 0
             };
             title_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var description_label = new Gtk.Label (description) {
-                max_width_chars = 1, // Make Gtk wrap, but not expand the window
                 use_markup = true,
                 wrap = true,
                 xalign = 0
