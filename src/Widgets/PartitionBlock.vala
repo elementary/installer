@@ -30,8 +30,6 @@ public class Installer.PartitionBlock : Adw.Bin {
 
     public InstallerDaemon.Partition partition { get; construct; }
 
-    public string? volume_group { get; private set; }
-
     public PartitionBlock (InstallerDaemon.Partition partition) {
         Object (partition: partition);
     }
@@ -41,8 +39,6 @@ public class Installer.PartitionBlock : Adw.Bin {
     }
 
     construct {
-        volume_group = (partition.filesystem == LVM) ? partition.current_lvm_volume_group : null;
-
         var image = new Gtk.Image () {
             halign = END,
             valign = END
