@@ -16,7 +16,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     public string parent_disk { get; construct; }
     public bool is_lvm { get; construct; }
     // A reference to the parent which owns this menu.
-    public PartitionBar partition_bar { get; construct; }
+    public PartitionBlock partition_block { get; construct; }
 
     private bool disable_signals;
 
@@ -33,13 +33,13 @@ public class Installer.PartitionMenu : Gtk.Popover {
         SetMount set_mount,
         UnsetMount unset_mount,
         MountSetFn mount_set,
-        PartitionBar partition_bar
+        PartitionBlock partition_block
     ) {
         Object (
             partition: partition,
             parent_disk: parent,
             is_lvm: lvm,
-            partition_bar: partition_bar
+            partition_block: partition_block
         );
 
         var boot_partition = (Daemon.get_default ().bootloader_detect () == GPT)
@@ -220,7 +220,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 update_values (set_mount);
             } else {
                 unset_mount (partition.device_path);
-                partition_bar.icon = null;
+                partition_block.icon = null;
             }
 
             bottom_revealer.reveal_child = use_partition.active;
@@ -236,7 +236,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.visible = true;
         custom.visible = false;
         disable_signals = false;
-        partition_bar.icon = null;
+        partition_block.icon = null;
     }
 
     private void set_format_sensitivity () {
@@ -263,7 +263,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 partition.device_path,
                 parent_disk,
                 mount,
-                partition_bar.get_partition_size (),
+                partition_block.get_partition_size (),
                 (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0)
                     + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
                 filesystem,
@@ -273,12 +273,12 @@ public class Installer.PartitionMenu : Gtk.Popover {
             error = why.message;
         }
 
-        partition_bar.icon = new ThemedIcon (
+        partition_block.icon = new ThemedIcon (
             error == null ? "process-completed-symbolic" : "dialog-warning-symbolic"
         );
 
         if (error != null) {
-            partition_bar.tooltip_text = error;
+            partition_block.tooltip_text = error;
         }
     }
 
