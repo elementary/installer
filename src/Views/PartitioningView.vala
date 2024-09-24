@@ -171,19 +171,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
 
         foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
-            var partitions = new Gee.ArrayList<PartitionBlock> ();
-            foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-                var partition = new PartitionBlock (part, disk.device_path, disk.sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set);
-                partition.decrypted.connect (on_partition_decrypted);
-                partitions.add (partition);
-            }
-
-            var disk_bar = new DiskBar (disk, (owned) partitions);
-            disk_list.append (disk_bar);
+            disk_list.append (get_disk_bar (disk, false));
         }
 
         foreach (unowned InstallerDaemon.Disk disk in disks.logical_disks) {
-            add_logical_disk (disk);
+            disk_list.append (get_disk_bar (disk, true));
         }
 
         load_stack.set_visible_child_name ("disk");
@@ -218,16 +210,15 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_disks.begin ();
     }
 
-    private void add_logical_disk (InstallerDaemon.Disk disk) {
+    private DiskBar get_disk_bar (InstallerDaemon.Disk disk, bool lvm) {
         var partitions = new Gee.ArrayList<PartitionBlock> ();
         foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-            var partition = new PartitionBlock (part, disk.device_path, disk.sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set);
+            var partition = new PartitionBlock (part, disk.device_path, disk.sector_size, lvm, this.set_mount, this.unset_mount, this.mount_is_set);
             partition.decrypted.connect (on_partition_decrypted);
             partitions.add (partition);
         }
 
-        var disk_bar = new DiskBar (disk, (owned) partitions);
-        disk_list.append (disk_bar);
+        return new DiskBar (disk, (owned) partitions);
     }
 
     private void validate_status () {
@@ -269,7 +260,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         Daemon.get_default ().get_logical_device.begin (credentials.pv, (obj, res) => {
             try {
                 var disk = ((Daemon)obj).get_logical_device.end (res);
-                add_logical_disk (disk);
+                disk_list.append (get_disk_bar (disk, true));
             } catch (Error e) {
                 critical ("Unable to get logical device: %s", e.message);
             }
