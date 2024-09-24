@@ -263,7 +263,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 partition.device_path,
                 parent_disk,
                 mount,
-                partition_block.get_partition_size (),
+                partition.end_sector - partition.start_sector,
                 (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0)
                     + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
                 filesystem,
