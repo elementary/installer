@@ -65,7 +65,7 @@ public class Installer.PartitionBar : Gtk.Box {
         hexpand = true;
         tooltip_text = partition.device_path;
 
-        add_css_class (Distinst.strfilesys (partition.filesystem));
+        add_css_class (partition.filesystem.to_string ());
 
         bind_property ("icon", image, "gicon", SYNC_CREATE);
     }

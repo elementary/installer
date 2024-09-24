@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-08-12 08:16+0000\n"
-"Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
+"POT-Creation-Date: 2024-09-11 22:12+0000\n"
+"PO-Revision-Date: 2024-09-12 22:16+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/"
 "installer/pl/>\n"
 "Language: pl\n"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/Application.vala:52
+#: src/Application.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "Zainstaluj %s"
 
-#: src/Application.vala:60
+#: src/Application.vala:52
 msgid "operating system is being installed"
 msgstr "system operacyjny jest instalowany"
 
@@ -49,7 +49,7 @@ msgstr "Uruchomienie ponowne trybu testowego"
 msgid "Test mode switch user"
 msgstr "Przełączenie użytkownika trybu testowego"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:200
+#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -134,11 +134,11 @@ msgstr ""
 "wykonałeś kopii zapasowej swoich danych, możesz anulować instalację i użyć "
 "trybu demonstracyjnego."
 
-#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:113
+#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
 msgid "Getting the current configuration…"
 msgstr "Pobieranie bieżącej konfiguracji…"
 
-#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:144
+#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:82
 msgid "Next"
 msgstr "Dalej"
@@ -174,12 +174,12 @@ msgstr ""
 
 #: src/Views/DriversView.vala:50
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but an "
-"Internet connection will be required for all drivers."
+"Proprietary drivers can be installed later through System Settings → System, "
+"but an Internet connection will be required for all drivers."
 msgstr ""
-"Własnościowe sterowniki mogą zostać zainstalowane później przez AppCenter, "
-"jednak działające połączenie z internetem będzie wymagane dla każdego "
-"sterownika."
+"Własnościowe sterowniki można zainstalować później w Ustawienia systemu → "
+"System, ale w przypadku wszystkich sterowników wymagane będzie połączenie z "
+"Internetem."
 
 #: src/Views/DriversView.vala:55
 msgid ""
@@ -190,7 +190,7 @@ msgstr ""
 "ich odpowiednie licencje oraz warunki użytkowania."
 
 #: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:142
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
 #: src/Views/TryInstallView.vala:80
 msgid "Back"
 msgstr "Cofnij"
@@ -311,23 +311,23 @@ msgstr "Wypróbuj tryb demonstracyjny"
 msgid "Try Installing Again"
 msgstr "Ponów instalację"
 
-#: src/Views/KeyboardLayoutView.vala:30
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "Wybierz układ klawiatury"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Napisz, aby wypróbować swój układ"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Pokaż układ klawiatury"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:114
+#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
 msgid "Select"
 msgstr "Wybierz"
 
-#: src/Views/KeyboardLayoutView.vala:109
+#: src/Views/KeyboardLayoutView.vala:110
 msgid "Input Language"
 msgstr "Wpisz język"
 
@@ -339,15 +339,15 @@ msgstr "Języki"
 msgid "Select a Language"
 msgstr "Wybierz język"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
 msgid "Currently active language"
 msgstr "Aktywny język"
 
-#: src/Views/PartitioningView.vala:52
+#: src/Views/PartitioningView.vala:53
 msgid "Select Partitions"
 msgstr "Wybierz partycje"
 
-#: src/Views/PartitioningView.vala:57
+#: src/Views/PartitioningView.vala:58
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
@@ -355,12 +355,12 @@ msgstr ""
 "wybranej partycji."
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:67
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Musisz wskazać przynajmniej partycję <b>Główną (/)</b>."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:70
+#: src/Views/PartitioningView.vala:71
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
@@ -368,27 +368,27 @@ msgstr ""
 "Musisz wskazać przynajmniej partycję <b>Główną (/)</b> i opcjonalną "
 "partycję<b>Rozruchową (/boot/efi)</b>."
 
-#: src/Views/PartitioningView.vala:81
+#: src/Views/PartitioningView.vala:82
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Jest również polecane wybranie partycji <b>Wymiany (Swap)</b>."
 
-#: src/Views/PartitioningView.vala:139
+#: src/Views/PartitioningView.vala:140
 msgid "Modify Partitions…"
 msgstr "Modyfikacja partycji…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:290
 msgid "EFI partition has the wrong file system"
 msgstr "Partycja EFI posiada błędny system plików"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:292
 msgid "EFI partition is too small"
 msgstr "Partycja EFI jest zbyt mała"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:295
 msgid "Invalid file system for root"
 msgstr "Błędny system plików dla przestrzeni root"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:297
 msgid "Invalid file system for home"
 msgstr "Błędny system plików dla przestrzeni domowej"
 

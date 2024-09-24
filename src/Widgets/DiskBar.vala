@@ -41,7 +41,7 @@ public class Installer.DiskBar: Gtk.Box {
             add_legend (
                 p.partition.device_path,
                 p.get_partition_size () * 512,
-                Distinst.strfilesys (p.partition.filesystem),
+                p.partition.filesystem.to_string (),
                 p.volume_group,
                 p.menu
             );

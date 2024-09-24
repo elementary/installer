@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-08-08 10:16+0000\n"
+"POT-Creation-Date: 2024-09-11 22:12+0000\n"
+"PO-Revision-Date: 2024-09-12 22:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
 "installer/ca/>\n"
@@ -15,12 +15,12 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:52
+#: src/Application.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "Instal·la %s"
 
-#: src/Application.vala:60
+#: src/Application.vala:52
 msgid "operating system is being installed"
 msgstr "s'instal·la el sistema operatiu"
 
@@ -48,7 +48,7 @@ msgstr "Reinici del mode de prova"
 msgid "Test mode switch user"
 msgstr "Canvi d'usuari del mode de prova"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:200
+#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -132,11 +132,11 @@ msgstr ""
 "Això suprimirà totes les dades del dispositiu seleccionat. Si no n'heu fet "
 "una còpia de seguretat, podeu cancel·lar la instal·lació i usar el mode Demo."
 
-#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:113
+#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
 msgid "Getting the current configuration…"
 msgstr "S'obté la configuració actual…"
 
-#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:144
+#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:82
 msgid "Next"
 msgstr "Següent"
@@ -172,12 +172,12 @@ msgstr ""
 
 #: src/Views/DriversView.vala:50
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but an "
-"Internet connection will be required for all drivers."
+"Proprietary drivers can be installed later through System Settings → System, "
+"but an Internet connection will be required for all drivers."
 msgstr ""
-"Els controladors de propietat es poden instal·lar més tard mitjançant el "
-"Centre d'aplicacions, però caldrà una connexió a Internet per a tots els "
-"controladors."
+"Els controladors de propietat es poden instal·lar més tard mitjançant "
+"l'apartat de Sistema dels Paràmetres del sistema, però caldrà una connexió a "
+"Internet per a tots els controladors."
 
 #: src/Views/DriversView.vala:55
 msgid ""
@@ -188,7 +188,7 @@ msgstr ""
 "N'accepto les respectives llicències i condicions d'ús."
 
 #: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:142
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
 #: src/Views/TryInstallView.vala:80
 msgid "Back"
 msgstr "Enrere"
@@ -308,23 +308,23 @@ msgstr "Proveu el mode Demo"
 msgid "Try Installing Again"
 msgstr "Intenta tornar a fer una instal·lació"
 
-#: src/Views/KeyboardLayoutView.vala:30
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "Seleccioneu la disposició del teclat"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Teclegeu per provar la disposició del teclat."
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Mostra la disposició del teclat"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:114
+#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
 msgid "Select"
 msgstr "Selecciona"
 
-#: src/Views/KeyboardLayoutView.vala:109
+#: src/Views/KeyboardLayoutView.vala:110
 msgid "Input Language"
 msgstr "Llengua d'entrada"
 
@@ -336,15 +336,15 @@ msgstr "Llengües"
 msgid "Select a Language"
 msgstr "Seleccioneu una llengua"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
 msgid "Currently active language"
 msgstr "Llengua activa actual"
 
-#: src/Views/PartitioningView.vala:52
+#: src/Views/PartitioningView.vala:53
 msgid "Select Partitions"
 msgstr "Seleccioneu particions"
 
-#: src/Views/PartitioningView.vala:57
+#: src/Views/PartitioningView.vala:58
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
@@ -352,12 +352,12 @@ msgstr ""
 "partició seleccionada."
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:67
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Heu de seleccionar com a mínim una partició d'<b>arrel (/)</b>."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:70
+#: src/Views/PartitioningView.vala:71
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
@@ -365,27 +365,27 @@ msgstr ""
 "Heu de seleccionar almenys una partició d'<b>arrel (/)</b> i una partició "
 "d'<b>arrencada (/boot/efi)</b> opcional."
 
-#: src/Views/PartitioningView.vala:81
+#: src/Views/PartitioningView.vala:82
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "També és recomanable seleccionar una partició d'<b>intercanvi</b>."
 
-#: src/Views/PartitioningView.vala:139
+#: src/Views/PartitioningView.vala:140
 msgid "Modify Partitions…"
 msgstr "Modifica les particions…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:290
 msgid "EFI partition has the wrong file system"
 msgstr "La partició EFI té el sistema de fitxers incorrecte"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:292
 msgid "EFI partition is too small"
 msgstr "La partició EFI és massa petita"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:295
 msgid "Invalid file system for root"
 msgstr "Sistema de fitxers no vàlid per a l'arrel"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:297
 msgid "Invalid file system for home"
 msgstr "Sistema de fitxers no vàlid per a la partició de l'usuari"
 

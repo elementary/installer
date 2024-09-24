@@ -31,10 +31,58 @@ public struct InstallerDaemon.Disk {
     Partition[] partitions;
 }
 
+public enum InstallerDaemon.FileSystem {
+    NONE,
+    BTRFS,
+    EXT2,
+    EXT3,
+    EXT4,
+    F2FS,
+    FAT16,
+    FAT32,
+    NTFS,
+    SWAP,
+    XFS,
+    LVM,
+    LUKS;
+
+    public unowned string to_string () {
+        switch (this) {
+            case BTRFS:
+                return "btrfs";
+            case EXT2:
+                return "ext2";
+            case EXT3:
+                return "ext3";
+            case EXT4:
+                return "ext4";
+            case F2FS:
+                return "f2fs";
+            case FAT16:
+                return "fat16";
+            case FAT32:
+                return "fat32";
+            case NTFS:
+                return "ntfs";
+            case SWAP:
+                return "swap";
+            case XFS:
+                return "xfs";
+            case LVM:
+                return "lvm";
+            case LUKS:
+                return "luks";
+            case NONE:
+            default:
+                return "none";
+        }
+    }
+}
+
 public struct InstallerDaemon.Partition {
     string device_path;
 
-    Distinst.FileSystem filesystem;
+    FileSystem filesystem;
 
     uint64 start_sector;
     uint64 end_sector;
@@ -62,18 +110,18 @@ public struct InstallerDaemon.Mount {
     string parent_disk;
     string mount_point;
     uint64 sectors;
-    Distinst.FileSystem filesystem;
+    FileSystem filesystem;
     MountFlags flags;
 
     public bool is_valid_boot_mount () {
-        return filesystem == Distinst.FileSystem.FAT16
-            || filesystem == Distinst.FileSystem.FAT32;
+        return filesystem == FileSystem.FAT16
+            || filesystem == FileSystem.FAT32;
     }
 
     public bool is_valid_root_mount () {
-        return filesystem != Distinst.FileSystem.FAT16
-            && filesystem != Distinst.FileSystem.FAT32
-            && filesystem != Distinst.FileSystem.NTFS;
+        return filesystem != FileSystem.FAT16
+            && filesystem != FileSystem.FAT32
+            && filesystem != FileSystem.NTFS;
     }
 
     public bool is_lvm () {

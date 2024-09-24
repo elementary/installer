@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-07 03:52+0000\n"
+"POT-Creation-Date: 2024-09-11 22:12+0000\n"
 "PO-Revision-Date: 2021-03-12 08:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/installer/"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/Application.vala:52
+#: src/Application.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "Инсталирање „%s“"
 
-#: src/Application.vala:60
+#: src/Application.vala:52
 #, fuzzy
 #| msgid "%s has been installed."
 msgid "operating system is being installed"
@@ -51,7 +51,7 @@ msgstr "Поновно подизање система у режиму проб�
 msgid "Test mode switch user"
 msgstr "Промена корисника режима пробе"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:200
+#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -135,11 +135,11 @@ msgstr ""
 "Ово ће обрисати све податке на изабраном диску. Ако нисте направили резерву "
 "ваших података, можете отказати инсталацију и користити демо режим."
 
-#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:113
+#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
 msgid "Getting the current configuration…"
 msgstr "Добављам текуће подешавање…"
 
-#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:144
+#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:82
 msgid "Next"
 msgstr "Следеће"
@@ -169,8 +169,8 @@ msgstr ""
 
 #: src/Views/DriversView.vala:50
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but an "
-"Internet connection will be required for all drivers."
+"Proprietary drivers can be installed later through System Settings → System, "
+"but an Internet connection will be required for all drivers."
 msgstr ""
 
 #: src/Views/DriversView.vala:55
@@ -180,7 +180,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:142
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
 #: src/Views/TryInstallView.vala:80
 msgid "Back"
 msgstr "Назад"
@@ -314,25 +314,25 @@ msgstr "Пробај демо режим"
 msgid "Try Installing Again"
 msgstr "Пробај поновну инсталацију"
 
-#: src/Views/KeyboardLayoutView.vala:30
+#: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Распоред тастатуре"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "Упишите нешто да испробате распоред тастатуре"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "Прикажи распоред тастатуре"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:114
+#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
 msgid "Select"
 msgstr "Изабери"
 
-#: src/Views/KeyboardLayoutView.vala:109
+#: src/Views/KeyboardLayoutView.vala:110
 msgid "Input Language"
 msgstr "Језик уноса"
 
@@ -344,17 +344,17 @@ msgstr "Језици"
 msgid "Select a Language"
 msgstr "Изаберите језик"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
 msgid "Currently active language"
 msgstr "Тренутно активан језик"
 
-#: src/Views/PartitioningView.vala:52
+#: src/Views/PartitioningView.vala:53
 #, fuzzy
 #| msgid "Use partition:"
 msgid "Select Partitions"
 msgstr "Користи партицију:"
 
-#: src/Views/PartitioningView.vala:57
+#: src/Views/PartitioningView.vala:58
 #, fuzzy
 #| msgid ""
 #| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
@@ -366,12 +366,12 @@ msgstr ""
 "изаберете „Форматирај“ биће избрисани СВИ подаци на изабраној партицији.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:67
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Морате изабрати барем <b>корену (/)</b> партицију."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:70
+#: src/Views/PartitioningView.vala:71
 #, fuzzy
 #| msgid ""
 #| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
@@ -383,27 +383,27 @@ msgstr ""
 "Морате изабрати барем <b>корену (/)</b> и <b>подизну (/boot/efi)</b> "
 "партицију."
 
-#: src/Views/PartitioningView.vala:81
+#: src/Views/PartitioningView.vala:82
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Препоручује се да изаберете партицију <b>помоћне меморије</b>."
 
-#: src/Views/PartitioningView.vala:139
+#: src/Views/PartitioningView.vala:140
 msgid "Modify Partitions…"
 msgstr "Измени партиције…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:290
 msgid "EFI partition has the wrong file system"
 msgstr "ЕФИ партиција има погрешан систем датотека"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:292
 msgid "EFI partition is too small"
 msgstr "ЕФИ партиција је премала"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:295
 msgid "Invalid file system for root"
 msgstr "Неисправан систем датотека за корену фасциклу"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:297
 msgid "Invalid file system for home"
 msgstr "Неисправан систем датотека за личну фасциклу"
 

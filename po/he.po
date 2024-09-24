@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-07 03:52+0000\n"
-"PO-Revision-Date: 2024-08-08 10:16+0000\n"
+"POT-Creation-Date: 2024-09-11 22:12+0000\n"
+"PO-Revision-Date: 2024-09-12 22:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -15,12 +15,12 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:52
+#: src/Application.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "התקנת %s"
 
-#: src/Application.vala:60
+#: src/Application.vala:52
 msgid "operating system is being installed"
 msgstr "מערכת ההפעלה מותקנת"
 
@@ -46,7 +46,7 @@ msgstr "הפעלה מחדש במצב בדיקה"
 msgid "Test mode switch user"
 msgstr "החלפת משתמש במצב הדגמה"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:200
+#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -128,11 +128,11 @@ msgstr ""
 "פעולה זו תמחק את כל הנתונים על הכונן הנבחר. אם לא גיבית את הנתונים שלך, ניתן "
 "לבטל את ההתקנה ולהשתמש במצב הדגמה."
 
-#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:113
+#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
 msgid "Getting the current configuration…"
 msgstr "התצורה הנוכחית מתקבלת…"
 
-#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:144
+#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:82
 msgid "Next"
 msgstr "הבא"
@@ -165,11 +165,11 @@ msgstr "צריך חיבור לאינטרנט כדי להתקין מנהלי הת
 
 #: src/Views/DriversView.vala:50
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but an "
-"Internet connection will be required for all drivers."
+"Proprietary drivers can be installed later through System Settings → System, "
+"but an Internet connection will be required for all drivers."
 msgstr ""
-"אפשר להתקין מנהלי התקנים קנייניים מאוחר יותר דרך מרכז היישומים אך צריך חיבור "
-"לאינטרנט לכל מנהלי ההתקנים."
+"אפשר להתקין מנהלי התקנים קנייניים מאוחר יותר דרך הגדרת מערכת ← מערכת אך צריך "
+"חיבור לאינטרנט לטובת גישה לכל מנהלי ההתקנים."
 
 #: src/Views/DriversView.vala:55
 msgid ""
@@ -180,7 +180,7 @@ msgstr ""
 "השימוש שלהם מוסכמים עלי באשר הם."
 
 #: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:142
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
 #: src/Views/TryInstallView.vala:80
 msgid "Back"
 msgstr "חזרה"
@@ -294,23 +294,23 @@ msgstr "התנסות במצב הדגמה"
 msgid "Try Installing Again"
 msgstr "לנסות להתקין שוב"
 
-#: src/Views/KeyboardLayoutView.vala:30
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "בחירת פריסת מקלדת"
 
-#: src/Views/KeyboardLayoutView.vala:39
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "יש להקליד כדי לבדוק את הפריסה שלך"
 
-#: src/Views/KeyboardLayoutView.vala:42
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "הצגת פריסת המקלדת"
 
-#: src/Views/KeyboardLayoutView.vala:56 src/Views/LanguageView.vala:114
+#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
 msgid "Select"
 msgstr "בחירה"
 
-#: src/Views/KeyboardLayoutView.vala:109
+#: src/Views/KeyboardLayoutView.vala:110
 msgid "Input Language"
 msgstr "שפת קלט"
 
@@ -322,26 +322,26 @@ msgstr "שפות"
 msgid "Select a Language"
 msgstr "בחירת שפה"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
 msgid "Currently active language"
 msgstr "השפה הפעילה כרגע"
 
-#: src/Views/PartitioningView.vala:52
+#: src/Views/PartitioningView.vala:53
 msgid "Select Partitions"
 msgstr "בחירת מחיצות"
 
-#: src/Views/PartitioningView.vala:57
+#: src/Views/PartitioningView.vala:58
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr "בחירה ב„אתחול” תמחק את <i>כל</i> הנתונים במחיצה הנבחרת."
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:67
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "עליך לבחור במחיצת <b>שורש (/)</b> לכל הפחות."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:70
+#: src/Views/PartitioningView.vala:71
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
@@ -349,27 +349,27 @@ msgstr ""
 "יש לבחור במחיצת <b>שורש (/)</b> אך מחיצת <b>טעינה (‎/boot/efi)</b> היא בגדר "
 "רשות."
 
-#: src/Views/PartitioningView.vala:81
+#: src/Views/PartitioningView.vala:82
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "מומלץ לבחור גם במחיצת <b>החלפה/Swap</b>."
 
-#: src/Views/PartitioningView.vala:139
+#: src/Views/PartitioningView.vala:140
 msgid "Modify Partitions…"
 msgstr "עריכת מחיצות…"
 
-#: src/Views/PartitioningView.vala:289
+#: src/Views/PartitioningView.vala:290
 msgid "EFI partition has the wrong file system"
 msgstr "מערכת הקבצים במחיצת ה־EFI שגויה"
 
-#: src/Views/PartitioningView.vala:291
+#: src/Views/PartitioningView.vala:292
 msgid "EFI partition is too small"
 msgstr "מחיצת ה־EFI קטנה מדי"
 
-#: src/Views/PartitioningView.vala:294
+#: src/Views/PartitioningView.vala:295
 msgid "Invalid file system for root"
 msgstr "מערכת הקבצים למחיצת השורש שגויה"
 
-#: src/Views/PartitioningView.vala:296
+#: src/Views/PartitioningView.vala:297
 msgid "Invalid file system for home"
 msgstr "מערכת הקבצים למחיצת הבית שגויה"
 
