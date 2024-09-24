@@ -30,15 +30,12 @@ public class SuccessView : AbstractInstallerView {
         var title_label = new Gtk.Label (title);
 
         var primary_label = new Gtk.Label (_("%s has been installed").printf (Utils.get_pretty_name ())) {
-            hexpand = true,
-            max_width_chars = 1,
             wrap = true,
             xalign = 0
         };
         primary_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         secondary_label = new Gtk.Label (null) {
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             use_markup = true,
             wrap = true,
             xalign = 0

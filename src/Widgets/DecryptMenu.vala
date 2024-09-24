@@ -69,7 +69,6 @@ public class Installer.DecryptMenu: Gtk.Popover {
 
         var secondary_label = new Gtk.Label (_("Enter the partition's encryption password and set a device name for the decrypted partition."));
         secondary_label.halign = Gtk.Align.START;
-        secondary_label.max_width_chars = 50;
         secondary_label.selectable = true;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
