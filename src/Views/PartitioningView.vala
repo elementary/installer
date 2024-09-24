@@ -172,9 +172,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
             unowned string path = disk.device_path;
 
-            var partitions = new Gee.ArrayList<PartitionBar> ();
+            var partitions = new Gee.ArrayList<PartitionBlock> ();
             foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set);
+                var partition = new PartitionBlock (part, path, sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set);
                 partition.decrypted.connect (on_partition_decrypted);
                 partitions.add (partition);
             }
@@ -225,9 +225,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         unowned string path = disk.device_path;
 
-        var partitions = new Gee.ArrayList<PartitionBar> ();
+        var partitions = new Gee.ArrayList<PartitionBlock> ();
         foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set);
+            var partition = new PartitionBlock (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set);
             partition.decrypted.connect (on_partition_decrypted);
             partitions.add (partition);
         }

@@ -9,11 +9,11 @@ public class Installer.DiskBar: Gtk.Box {
     public string disk_name { get; construct; }
     public string disk_path { get; construct; }
     public uint64 size { get; construct; }
-    public Gee.ArrayList<PartitionBar> partitions { get; construct; }
+    public Gee.ArrayList<PartitionBlock> partitions { get; construct; }
 
     private Gtk.Box legend_box;
 
-    public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBar> partitions) {
+    public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBlock> partitions) {
         Object (
             disk_name: disk_name,
             disk_path: disk_path,
@@ -37,7 +37,7 @@ public class Installer.DiskBar: Gtk.Box {
             halign = START
         };
 
-        foreach (PartitionBar p in partitions) {
+        foreach (PartitionBlock p in partitions) {
             add_legend (
                 p.partition.device_path,
                 p.get_partition_size () * 512,
@@ -48,7 +48,7 @@ public class Installer.DiskBar: Gtk.Box {
         }
 
         uint64 used = 0;
-        foreach (PartitionBar partition in partitions) {
+        foreach (PartitionBlock partition in partitions) {
             used += partition.get_partition_size ();
         }
 
@@ -110,10 +110,10 @@ public class Installer.DiskBar: Gtk.Box {
     }
 
     private class PartitionContainer : Gtk.Widget {
-        public Gee.ArrayList<PartitionBar> partitions { get; construct; }
+        public Gee.ArrayList<PartitionBlock> partitions { get; construct; }
         public uint64 size { get; construct; }
 
-        public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBar> partitions) {
+        public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBlock> partitions) {
             Object (
                 partitions: partitions,
                 size: size
