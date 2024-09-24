@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-11 22:12+0000\n"
-"PO-Revision-Date: 2021-07-16 13:50+0000\n"
-"Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
+"PO-Revision-Date: 2024-09-21 10:16+0000\n"
+"Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -40,41 +40,42 @@ msgstr "elementary, Inc."
 #: data/installer.metainfo.xml.in:87 data/installer.metainfo.xml.in:101
 #: data/installer.metainfo.xml.in:115 data/installer.metainfo.xml.in:126
 msgid "Improvements:"
-msgstr ""
+msgstr "İyileştirmeler:"
 
 #: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:76
 #: data/installer.metainfo.xml.in:90 data/installer.metainfo.xml.in:103
 #: data/installer.metainfo.xml.in:119 data/installer.metainfo.xml.in:131
 msgid "Updated translations"
-msgstr ""
+msgstr "Güncellenmiş çeviriler"
 
 #: data/installer.metainfo.xml.in:75
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr ""
+"Klavye düzeni önizlemesi artık yeniden boyutlandırılabilir bir pencerede"
 
 #: data/installer.metainfo.xml.in:89
 msgid "Swipe to navigate back"
-msgstr ""
+msgstr "Geri gitmek için kaydırın"
 
 #: data/installer.metainfo.xml.in:117
 msgid "Use large icons in views"
-msgstr ""
+msgstr "Görünümlerde büyük simgeler kullanın"
 
 #: data/installer.metainfo.xml.in:118
 msgid "Add a custom icon for Before Installing view"
-msgstr ""
+msgstr "Yüklemeden Önce görünümü için özel bir simge ekle"
 
 #: data/installer.metainfo.xml.in:128
 msgid "Show an infobar on battery instead of switching to a different page"
-msgstr ""
+msgstr "Farklı bir sayfaya geçmek yerine pil hakkında bir bilgi çubuğu göster"
 
 #: data/installer.metainfo.xml.in:129
 msgid "Show all system requirements warnings on a single page"
-msgstr ""
+msgstr "Tüm sistem gereksinimleri uyarılarını tek bir sayfada göster"
 
 #: data/installer.metainfo.xml.in:130
 msgid "Warn about installing developer builds"
-msgstr ""
+msgstr "Geliştirici yapılarını yükleme konusunda uyar"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
