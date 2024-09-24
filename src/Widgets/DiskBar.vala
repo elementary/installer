@@ -6,17 +6,13 @@
  */
 
 public class Installer.DiskBar: Gtk.Box {
-    public string disk_name { get; construct; }
-    public string disk_path { get; construct; }
-    public uint64 size { get; construct; }
+    public InstallerDaemon.Disk disk { get; construct; }
     public Gee.ArrayList<PartitionBlock> partitions { get; construct; }
 
-    public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBlock> partitions) {
+    public DiskBar (InstallerDaemon.Disk disk, Gee.ArrayList<PartitionBlock> partitions) {
         Object (
-            disk_name: disk_name,
-            disk_path: disk_path,
-            partitions: partitions,
-            size: size
+            disk: disk,
+            partitions: partitions
         );
     }
 
@@ -25,8 +21,10 @@ public class Installer.DiskBar: Gtk.Box {
     }
 
     construct {
-        var name_label = new Granite.HeaderLabel (disk_name) {
-            secondary_text = "%s %s".printf (disk_path, GLib.format_size (size))
+        var size = disk.sectors * disk.sector_size;
+
+        var name_label = new Granite.HeaderLabel (disk.name) {
+            secondary_text = "%s %s".printf (disk.device_path, GLib.format_size (size))
         };
 
         var bar = new PartitionContainer (size, partitions);
