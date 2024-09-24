@@ -34,7 +34,6 @@ public class ErrorView : AbstractInstallerView {
 
         var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. The device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ())) {
             margin_bottom = 12,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
@@ -45,7 +44,6 @@ public class ErrorView : AbstractInstallerView {
 
         var try_label = new Gtk.Label (_("Try the installation again")) {
             hexpand = true,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
@@ -55,7 +53,6 @@ public class ErrorView : AbstractInstallerView {
         };
 
         var launch_label = new Gtk.Label (_("Use Demo Mode and try to manually recover")) {
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
@@ -65,7 +62,6 @@ public class ErrorView : AbstractInstallerView {
         };
 
         var restart_label = new Gtk.Label (_("Restart the device and boot from another drive")) {
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };

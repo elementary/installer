@@ -50,7 +50,6 @@ public class Installer.DiskView : AbstractInstallerView {
         var install_desc_label = new Gtk.Label (
             _("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode.")
         ) {
-            max_width_chars = 45,
             wrap = true,
             xalign = 0
         };
@@ -70,7 +69,6 @@ public class Installer.DiskView : AbstractInstallerView {
         load_spinner.start ();
 
         var load_label = new Gtk.Label (_("Getting the current configuration…")) {
-            max_width_chars = 45,
             wrap = true
         };
         load_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
