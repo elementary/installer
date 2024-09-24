@@ -25,13 +25,17 @@ public abstract class AbstractInstallerView : Adw.NavigationPage {
 
         content_area = new Gtk.Box (VERTICAL, 24);
 
+        var content_clamp = new Adw.Clamp () {
+            child = content_area
+        };
+
         var box = new Gtk.Box (HORIZONTAL, 12) {
             homogeneous = true,
             hexpand = true,
             vexpand = true,
         };
         box.append (title_area);
-        box.append (content_area);
+        box.append (content_clamp);
 
         action_box_end = new Gtk.Box (HORIZONTAL, 6) {
             halign = END,

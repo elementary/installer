@@ -26,7 +26,6 @@ public class DescriptionRow : Gtk.Box {
 
         var description_label = new Gtk.Label (description) {
             hexpand = true,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             use_markup = true,
             wrap = true,
             xalign = 0
