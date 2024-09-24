@@ -257,7 +257,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
 
         if (use_as.active == 4 && !custom.text.has_prefix ("/")) {
             partition_bar.icon = new ThemedIcon ("dialog-warning-symbolic");
-            partition_bar.tooltip_text = _("Custom value is invalid");
+            partition_bar.tooltip_text = _("Custom value must begin with /");
             return;
         }
 
