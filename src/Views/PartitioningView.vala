@@ -213,7 +213,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private DiskBar get_disk_bar (InstallerDaemon.Disk disk, bool lvm) {
         var partitions = new Gee.ArrayList<PartitionBlock> ();
         foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-            var partition = new PartitionBlock (part, disk.device_path, disk.sector_size);
+            var partition = new PartitionBlock (part);
 
             if (part.filesystem == LUKS) {
                 partition.menu = new DecryptMenu (part.device_path);

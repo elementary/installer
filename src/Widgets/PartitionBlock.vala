@@ -29,15 +29,11 @@ public class Installer.PartitionBlock : Adw.Bin {
     }
 
     public InstallerDaemon.Partition partition { get; construct; }
-    public string parent_path { get; construct; }
 
     public string? volume_group { get; private set; }
 
-    public PartitionBlock (InstallerDaemon.Partition partition, string parent_path, uint64 sector_size) {
-        Object (
-            parent_path: parent_path,
-            partition: partition
-        );
+    public PartitionBlock (InstallerDaemon.Partition partition) {
+        Object (partition: partition);
     }
 
     class construct {
