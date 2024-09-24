@@ -265,18 +265,16 @@ public class Installer.PartitionMenu : Gtk.Popover {
         var filesystem = mount == "swap" ? InstallerDaemon.FileSystem.SWAP : get_file_system ();
 
         try {
-            set_mount (
-                new Installer.Mount (
-                    partition_path,
-                    parent_disk,
-                    mount,
-                    partition_bar.get_partition_size (),
-                    (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0) +
-                    (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
-                    filesystem,
-                    this
-                )
-            );
+            set_mount (new Installer.Mount (
+                partition_path,
+                parent_disk,
+                mount,
+                partition_bar.get_partition_size (),
+                (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0)
+                + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
+                filesystem,
+                this
+            ));
 
             partition_bar.icon = new ThemedIcon ("process-completed-symbolic");
         } catch (GLib.Error e) {
