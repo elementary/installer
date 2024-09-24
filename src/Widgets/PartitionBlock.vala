@@ -5,7 +5,7 @@
  * Authored by: Michael Aaron Murphy <michael@system76.com>
  */
 
-public class Installer.PartitionBar : Gtk.Box {
+public class Installer.PartitionBlock : Adw.Bin {
     public signal void decrypted (InstallerDaemon.LuksCredentials credential);
 
     public Icon? icon { get; set; default = null; }
@@ -17,7 +17,7 @@ public class Installer.PartitionBar : Gtk.Box {
     public string? volume_group { get; private set; }
     public Gtk.Popover menu { get; private set; }
 
-    public PartitionBar (
+    public PartitionBlock (
         InstallerDaemon.Partition partition,
         string parent_path,
         uint64 sector_size,
@@ -56,13 +56,11 @@ public class Installer.PartitionBar : Gtk.Box {
         volume_group = (partition.filesystem == LVM) ? partition.current_lvm_volume_group : null;
 
         var image = new Gtk.Image () {
-            hexpand = true,
             halign = END,
             valign = END
         };
 
-        append (image);
-        hexpand = true;
+        child = image;
         tooltip_text = partition.device_path;
 
         add_css_class (partition.filesystem.to_string ());
