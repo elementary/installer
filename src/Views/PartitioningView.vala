@@ -238,7 +238,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         switch (bootloader) {
             case MSDOS:
                 break;
-            case Distinst.PartitionTable.GPT:
+            case InstallerDaemon.PartitionTable.GPT:
                 break;
         }
 
@@ -344,7 +344,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         InstallerDaemon.Partition[] partitions = {};
 
-        var usage_1 = Distinst.PartitionUsage () {
+        var usage_1 = InstallerDaemon.PartitionUsage () {
             tag = 1,
             value = 30312
         };
@@ -358,7 +358,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             current_lvm_volume_group = ""
         };
 
-        var usage_2 = Distinst.PartitionUsage () {
+        var usage_2 = InstallerDaemon.PartitionUsage () {
             tag = 0,
             value = 0
         };

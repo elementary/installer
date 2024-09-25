@@ -72,7 +72,7 @@ public class InstallerDaemon.Daemon : GLib.Object {
                         filesystem = to_common_fs (part.get_file_system ()),
                         start_sector = part.get_start_sector (),
                         end_sector = part.get_end_sector (),
-                        sectors_used = part.sectors_used (disk.get_sector_size ()),
+                        sectors_used = to_common_usage (part.sectors_used (disk.get_sector_size ())),
                         current_lvm_volume_group = lvm_vg
                     };
                 }
@@ -106,7 +106,7 @@ public class InstallerDaemon.Daemon : GLib.Object {
                         filesystem = to_common_fs (part.get_file_system ()),
                         start_sector = part.get_start_sector (),
                         end_sector = part.get_end_sector (),
-                        sectors_used = part.sectors_used (disk.get_sector_size ()),
+                        sectors_used = to_common_usage (part.sectors_used (disk.get_sector_size ())),
                         current_lvm_volume_group = lvm_vg
                     };
                 }
@@ -152,7 +152,7 @@ public class InstallerDaemon.Daemon : GLib.Object {
                 filesystem = to_common_fs (part.get_file_system ()),
                 start_sector = part.get_start_sector (),
                 end_sector = part.get_end_sector (),
-                sectors_used = part.sectors_used (disk.get_sector_size ()),
+                sectors_used = to_common_usage (part.sectors_used (disk.get_sector_size ())),
                 current_lvm_volume_group = lvm_vg
             };
         }
@@ -220,7 +220,7 @@ public class InstallerDaemon.Daemon : GLib.Object {
         var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
         try {
             demo_mode_file.create (GLib.FileCreateFlags.NONE);
-        } catch (Error e) {
+        } catch (GLib.Error e) {
             if (!(e is GLib.IOError.EXISTS)) {
                 throw e;
             }
@@ -545,6 +545,13 @@ public class InstallerDaemon.Daemon : GLib.Object {
             default:
                 return InstallerDaemon.FileSystem.NONE;
         }
+    }
+
+    private InstallerDaemon.PartitionUsage to_common_usage (Distinst.PartitionUsage usage) {
+        return InstallerDaemon.PartitionUsage () {
+            tag = usage.tag,
+            value = usage.value
+        };
     }
 
     private Distinst.FileSystem to_distinst_fs (InstallerDaemon.FileSystem fs) {

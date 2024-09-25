@@ -196,11 +196,11 @@ public class ProgressView : Adw.NavigationPage {
         }
     }
 
-    private void fake_status (Distinst.Step step) {
+    private void fake_status (InstallerDaemon.Step step) {
         unowned var log_helper = LogHelper.get_default ();
         for (var percent = 0; percent <= 100; percent++) {
             log_helper.log_func (INFO, "I'm faking it!");
-            Distinst.Status status = Distinst.Status () {
+            InstallerDaemon.Status status = InstallerDaemon.Status () {
                 step = step,
                 percent = percent
             };
