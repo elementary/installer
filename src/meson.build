@@ -3,10 +3,11 @@ vala_files = [
     'MainWindow.vala',
     'Utils.vala',
     'Helpers/InstallerDaemon.vala',
-    'Helpers/KeyboardLayoutHelper.vala',
     'Helpers/LocaleHelper.vala',
     'Helpers/LogHelper.vala',
     'Objects/Configuration.vala',
+    'Objects/KeyboardLayout.vala',
+    'Objects/KeyboardVariant.vala',
     'Objects/Mount.vala',
     'Views/AbstractInstallerView.vala',
     'Views/CheckView.vala',
@@ -21,11 +22,11 @@ vala_files = [
     'Views/TryInstallView.vala',
     'Views/SuccessView.vala',
     'Widgets/DecryptMenu.vala',
+    'Widgets/DescriptionRow.vala',
     'Widgets/DiskBar.vala',
     'Widgets/DiskGrid.vala',
     'Widgets/InstallTypeGrid.vala',
-    'Widgets/LayoutWidget.vala',
-    'Widgets/PartitionBar.vala',
+    'Widgets/PartitionBlock.vala',
     'Widgets/PartitionMenu.vala',
     'Widgets/Terminal.vala',
     'Widgets/VariantWidget.vala',
@@ -35,6 +36,7 @@ vala_files = [
 configuration_data = configuration_data()
 configuration_data.set('GETTEXT_PACKAGE', meson.project_name())
 configuration_data.set('LANG_LIST', get_option('supported_languages'))
+configuration_data.set_quoted('LOCALEDIR', get_option('prefix') / get_option('localedir'))
 
 xkbconf = dependency('xkeyboard-config')
 xkb_base = xkbconf.get_pkgconfig_variable('xkb_base')
@@ -56,12 +58,10 @@ config_file = configure_file(
 gui_dependencies = [
     gee_dep,
     glib_dep,
-    gnome_keyboard_dep,
-    gnome_keyboard_ui_dep,
     gobject_dep,
     granite_dep,
     gtk_dep,
-    handy_dep,
+    adw_dep,
     json_glib_dep,
     pwquality_dep,
     xml2_dep

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-24 17:42+0000\n"
+"POT-Creation-Date: 2024-09-11 22:12+0000\n"
 "PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
@@ -19,22 +19,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:42
+#: src/Application.vala:44
 #, c-format
 msgid "Install %s"
 msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Application.vala:61
+#: src/Application.vala:52
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
 msgstr "%s ਸਥਾਪਤ ਹੋ ਚੁੱਕਿਐ"
 
-#: src/MainWindow.vala:262
+#: src/MainWindow.vala:265
 msgid "Connect to a Power Source"
 msgstr "ਕਿਸੇ ਊਰਜਾ ਸਰੋਤ ਨਾਲ਼ ਜੋੜੋ"
 
-#: src/MainWindow.vala:263
+#: src/MainWindow.vala:266
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -54,18 +54,22 @@ msgstr "ਟੈਸਟ ਮੋਡ ਰੀਬੂਟ"
 msgid "Test mode switch user"
 msgstr "ਟੈਸਟ ਮੋਡ ਵਰਤੋਂਕਾਰ ਬਦਲੋ"
 
-#: src/Helpers/LocaleHelper.vala:121 src/Views/KeyboardLayoutView.vala:221
+#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
 
-#: src/Views/AbstractInstallerView.vala:46
-msgid "Cancel Installation"
-msgstr "ਸਥਾਪਨ ਰੱਦ ਕਰੋ"
+#: src/Objects/KeyboardVariant.vala:27
+msgid "Default"
+msgstr "ਡਿਫ਼ਾਲਟ"
 
-#: src/Views/AbstractInstallerView.vala:55
+#: src/Views/AbstractInstallerView.vala:51
 msgid "Test Mode"
 msgstr "ਟੈਸਟ ਮੋਡ"
+
+#: src/Views/AbstractInstallerView.vala:60
+msgid "Cancel Installation"
+msgstr "ਸਥਾਪਨ ਰੱਦ ਕਰੋ"
 
 #: src/Views/CheckView.vala:50
 #, fuzzy
@@ -73,30 +77,30 @@ msgstr "ਟੈਸਟ ਮੋਡ"
 msgid "Before Installing"
 msgstr "ਦੁਬਾਰਾ ਸਥਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
-#: src/Views/CheckView.vala:56
+#: src/Views/CheckView.vala:57
 msgid "Pre-Release Version"
 msgstr ""
 
-#: src/Views/CheckView.vala:57
+#: src/Views/CheckView.vala:58
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
 
-#: src/Views/CheckView.vala:62
+#: src/Views/CheckView.vala:63
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:63
+#: src/Views/CheckView.vala:64
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:68
+#: src/Views/CheckView.vala:69
 msgid "Your Device May Be Too Slow"
 msgstr "ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਸ਼ਾਇਦ ਬਹੁਤ ਹੀ ਮੱਠੀ ਹੈ"
 
-#: src/Views/CheckView.vala:69
+#: src/Views/CheckView.vala:70
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
@@ -106,19 +110,19 @@ msgstr ""
 msgid "Install Anyway"
 msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Views/CheckView.vala:211
+#: src/Views/CheckView.vala:208
 msgid "Recommended:"
 msgstr "ਸਿਫ਼ਾਰਸ਼ੀ:"
 
-#: src/Views/CheckView.vala:217
+#: src/Views/CheckView.vala:214
 msgid "Your Device:"
 msgstr "ਤੁਹਾਡੀ ਡਿਵਾਈਸ:"
 
-#: src/Views/CheckView.vala:223 src/Views/CheckView.vala:227
+#: src/Views/CheckView.vala:220 src/Views/CheckView.vala:224
 msgid "Processor:"
 msgstr "ਪ੍ਰੋਸੈਸਰ:"
 
-#: src/Views/CheckView.vala:239 src/Views/CheckView.vala:243
+#: src/Views/CheckView.vala:236 src/Views/CheckView.vala:240
 msgid "Memory:"
 msgstr "ਮੈਮਰੀ:"
 
@@ -126,7 +130,7 @@ msgstr "ਮੈਮਰੀ:"
 msgid "Select a Drive"
 msgstr "ਕੋਈ ਡਿਵਾਈਸ ਚੁਣੋ"
 
-#: src/Views/DiskView.vala:52
+#: src/Views/DiskView.vala:51
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
@@ -134,57 +138,57 @@ msgstr ""
 "ਇਹ ਚੁਣੀ ਹੋਈ ਡਰਾਈਵ ਦਾ ਸਾਰਾ ਡੇਟਾ ਮਿਟਾ ਦੇਵੇਗਾ। ਜੇ ਤੁਸੀਂ ਹਾਲੇ ਆਪਣਾ ਡੇਟਾ ਬੈਕਅਪ ਨਹੀਂ ਕੀਤਾ ਤਾਂ "
 "ਤੁਸੀਂ ਸਥਾਪਨ ਨੂੰ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ ਜਾਂ ਮਿਸਾਲ ਮੋਡ ਵਰਤ ਸਕਦੇ ਹੋ।"
 
-#: src/Views/DiskView.vala:76 src/Views/PartitioningView.vala:95
+#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
 msgid "Getting the current configuration…"
 msgstr "ਮੌਜੂਦਾ ਸੈਟਿੰਗਾਂ ਪੜ੍ਹ ਰਿਹੈ…"
 
-#: src/Views/DiskView.vala:112 src/Views/PartitioningView.vala:123
-#: src/Views/TryInstallView.vala:88
+#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
+#: src/Views/TryInstallView.vala:82
 msgid "Next"
 msgstr "ਅਗਲਾ"
 
-#: src/Views/DriversView.vala:27
+#: src/Views/DriversView.vala:26
 #, fuzzy
 #| msgid "Partitioning Drive"
 msgid "Additional Drivers"
 msgstr "ਡਰਾਈਵ ਵੰਡ ਹੋ ਰਹੀ ਹੈ"
 
-#: src/Views/DriversView.vala:32
+#: src/Views/DriversView.vala:30
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
 
-#: src/Views/DriversView.vala:43
+#: src/Views/DriversView.vala:38
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
 
-#: src/Views/DriversView.vala:54
+#: src/Views/DriversView.vala:44
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
 
-#: src/Views/DriversView.vala:65
+#: src/Views/DriversView.vala:50
 msgid ""
-"Proprietary drivers can be installed later through AppCenter, but an "
-"Internet connection will be required for all drivers."
+"Proprietary drivers can be installed later through System Settings → System, "
+"but an Internet connection will be required for all drivers."
 msgstr ""
 
-#: src/Views/DriversView.vala:72
+#: src/Views/DriversView.vala:55
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
 
-#: src/Views/DriversView.vala:101 src/Views/EncryptView.vala:167
-#: src/Views/KeyboardLayoutView.vala:58 src/Views/PartitioningView.vala:121
-#: src/Views/TryInstallView.vala:86
+#: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
+#: src/Views/TryInstallView.vala:80
 msgid "Back"
 msgstr "ਪਿੱਛੇ ਜਾਓ"
 
-#: src/Views/DriversView.vala:104
+#: src/Views/DriversView.vala:81
 msgid "Erase and Install"
 msgstr "ਮਿਟਾਓ ਅਤੇ ਸਥਾਪਤ ਕਰੋ"
 
@@ -192,11 +196,11 @@ msgstr "ਮਿਟਾਓ ਅਤੇ ਸਥਾਪਤ ਕਰੋ"
 msgid "Don’t Encrypt"
 msgstr "ਪਾਸਵਰਡ-ਸੁਰੱਖਿਅਤ ਨਾ ਕਰੋ"
 
-#: src/Views/EncryptView.vala:51
+#: src/Views/EncryptView.vala:50
 msgid "Enable Drive Encryption"
 msgstr "ਡਰਾਈਵ ਨੂੰ ਪਾਸਵਰਡ-ਸੁਰੱਖਿਅਤ ਕਰੋ"
 
-#: src/Views/EncryptView.vala:56
+#: src/Views/EncryptView.vala:54
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
@@ -204,14 +208,14 @@ msgstr ""
 "ਜੇ ਲੋੜ ਹੋਵੇ ਤਾਂ ਇਸ ਡਿਵਾਈਸ ਦੀ ਡਰਾਈਵ ਪਾਸਵਰਡ-ਰੱਖਿਅਤ ਕਰੋ, ਪਰ ਇਹ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਇਹ "
 "ਚੰਗੀ ਤਰ੍ਹਾਂ ਸਮਝਦੇ ਹੋਵੋਂ:"
 
-#: src/Views/EncryptView.vala:66
+#: src/Views/EncryptView.vala:63
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
 "ਇਸ ਡਿਵਾਈਸ ਤੱਕ ਸਰੀਰਕ ਪਹੁੰਚ ਰੱਖਣ ਵਾਲਿਆਂ ਤੋਂ ਡੇਟਾ ਸਿਰਫ਼ ਉਦੋਂ ਹੀ ਸੁਰੱਖਿਅਤ ਹੋਵੇਗਾ ਜਦੋਂ ਇਹ ਬੰਦ ਹੋਵੇਗੀ।"
 
-#: src/Views/EncryptView.vala:75
+#: src/Views/EncryptView.vala:69
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -219,7 +223,7 @@ msgstr ""
 "ਜਦੋਂ ਵੀ ਇਹ ਡਿਵਾਈਸ ਬੰਦ ਹਾਲਤ ਵਿੱਚੋਂ ਚਲਾਈ ਗਈ ਤਾਂ ਪਾਸਵਰਡ ਮੰਗਿਆ ਜਾਵੇਗਾ। ਪਾਸਵਰਡ ਨੂੰ ਕਿਸੇ ਮਹਿਫੂਜ਼ "
 "ਜਗ੍ਹਾ ਲੁਕਾਉਣਾ।"
 
-#: src/Views/EncryptView.vala:84
+#: src/Views/EncryptView.vala:75
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -227,7 +231,7 @@ msgstr ""
 "ਹਰ ਵਾਰ ਜਦੋਂ ਇਹ ਡਿਵਾਈਸ ਬੰਦ ਹਾਲਤ ਵਿੱਚੋਂ ਚਾਲੂ ਕੀਤੀ ਜਾਵੇਗੀ ਤਾਂ ਪਾਸਵਰਡ ਟਾਈਪ ਕਰਨ ਇੱਕ ਕੀਬੋਰਡ "
 "ਦੀ ਲੋੜ ਹੋਵੇਗੀ।"
 
-#: src/Views/EncryptView.vala:104
+#: src/Views/EncryptView.vala:89
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -236,31 +240,31 @@ msgstr ""
 "ਜੇ ਤੁਸੀਂ ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ ਤਾਂ ਤੁਸੀਂ <b>ਡੇਟਾ ਵਾਪਸ ਨਹੀਂ ਪਾ ਸਕੋਗੇ।</b> ਇਹ ਇਸ ਡਿਵਾਈਸ ਦਾ ਆਪਣਾ "
 "ਅਨੋਖਾ ਪਾਸਵਰਡ ਹੈ, ਨਾ ਕਿ ਤੁਹਾਡੇ ਵਰਤੋਂਕਾਰ ਖਾਤੇ ਵਾਲ਼ਾ ਪਾਸਵਰਡ।"
 
-#: src/Views/EncryptView.vala:114
+#: src/Views/EncryptView.vala:99
 msgid "Choose Encryption Password"
 msgstr "ਸੁਰੱਖਿਆ ਲਈ ਪਾਸਵਰਡ ਚੁਣੋ"
 
-#: src/Views/EncryptView.vala:128
+#: src/Views/EncryptView.vala:113
 msgid "Confirm Password"
 msgstr "ਪਾਸਵਰਡ ਤਸਦੀਕ ਕਰੋ"
 
-#: src/Views/EncryptView.vala:169
+#: src/Views/EncryptView.vala:149
 msgid "Choose Password"
 msgstr "ਪਾਸਵਰਡ ਚੁਣੋ"
 
-#: src/Views/EncryptView.vala:192
+#: src/Views/EncryptView.vala:172
 msgid "Set Encryption Password"
 msgstr "ਸੁਰੱਖਿਆ ਲਈ ਪਾਸਵਰਡ ਸੈੱਟ ਕਰੋ"
 
-#: src/Views/EncryptView.vala:261
+#: src/Views/EncryptView.vala:240
 msgid "Passwords do not match"
 msgstr "ਪਾਸਵਰਡ ਮੇਲ ਨਹੀਂ ਖਾਂਦੇ"
 
-#: src/Views/ErrorView.vala:32
+#: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
 msgstr "ਸਥਾਪਤ ਨਹੀਂ ਹੋ ਸਕਿਆ"
 
-#: src/Views/ErrorView.vala:37
+#: src/Views/ErrorView.vala:35
 #, c-format
 msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
@@ -269,148 +273,163 @@ msgstr ""
 "%s ਨੂੰ ਸਥਾਪਤ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ, ਸ਼ਾਇਦ ਹਾਰਡਵੇਅਰ ਦੀ ਖ਼ਰਾਬੀ ਕਰਕੇ ਹੀ। ਡਿਵਾਈਸ ਸ਼ਾਇਦ ਸਹੀ "
 "ਤਰ੍ਹਾਂ ਰੀਸਟਾਰਟ ਨਾ ਹੋਵੇ। ਤੁਸੀਂ ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੋਸ਼ਿਸ਼ ਕਰ ਸਕਦੇ ਹੋ:"
 
-#: src/Views/ErrorView.vala:48
+#: src/Views/ErrorView.vala:46
 msgid "Try the installation again"
 msgstr "ਦੁਬਾਰਾ ਸਥਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
-#: src/Views/ErrorView.vala:59
+#: src/Views/ErrorView.vala:57
 msgid "Use Demo Mode and try to manually recover"
 msgstr "ਡੈਮੋ ਮੋਡ ਵਰਤੋ ਅਤੇ ਹੱਥੀਂ ਰੀਕਵਰ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
-#: src/Views/ErrorView.vala:69
+#: src/Views/ErrorView.vala:67
 msgid "Restart the device and boot from another drive"
 msgstr "ਡਿਵਾਈਸ ਰੀਸਟਾਰਟ ਕਰੋ ਅਤੇ ਕਿਸੇ ਹੋਰ ਡਰਾਈਵ ਤੋਂ ਬੂਟ ਕਰੋ"
 
-#: src/Views/ErrorView.vala:79
+#: src/Views/ErrorView.vala:73
 msgid "Details"
 msgstr "ਵੇਰਵਾ"
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:66
+#: src/Views/ErrorView.vala:118 src/Views/SuccessView.vala:63
 msgid "Restart Device"
 msgstr "ਡਿਵਾਈਸ ਰੀਸਟਾਰਟ ਕਰੋ"
 
-#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:39
+#: src/Views/ErrorView.vala:120 src/Views/TryInstallView.vala:37
 msgid "Try Demo Mode"
 msgstr "ਡੈਮੋ ਮੋਡ ਅਜ਼ਮਾਓ"
 
-#: src/Views/ErrorView.vala:118
+#: src/Views/ErrorView.vala:122
 msgid "Try Installing Again"
 msgstr "ਦੁਬਾਰਾ ਸਥਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
-#: src/Views/KeyboardLayoutView.vala:30
+#: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "ਕੀਬੋਰਡ ਲੇਆਊਟ ਚੁਣੋ"
 
-#: src/Views/KeyboardLayoutView.vala:38
+#: src/Views/KeyboardLayoutView.vala:40
 msgid "Type to test your layout"
 msgstr "ਲੇਆਊਟ ਟੈਸਟ ਕਰਨ ਲਈ ਟਾਈਪ ਕਰੋ"
 
-#: src/Views/KeyboardLayoutView.vala:41
+#: src/Views/KeyboardLayoutView.vala:43
 msgid "Show keyboard layout"
 msgstr "ਕੀਬੋਰਡ ਲੇਆਊਟ ਵਿਖਾਓ"
 
-#: src/Views/KeyboardLayoutView.vala:60 src/Views/LanguageView.vala:111
+#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
 msgid "Select"
 msgstr "ਚੁਣੋ"
 
-#: src/Views/KeyboardLayoutView.vala:124
-msgid "Default"
-msgstr "ਡਿਫ਼ਾਲਟ"
-
-#: src/Views/KeyboardLayoutView.vala:131
+#: src/Views/KeyboardLayoutView.vala:110
 msgid "Input Language"
 msgstr "ਟਾਈਪਿੰਗ ਲਈ ਭਾਸ਼ਾ"
 
-#: src/Views/LanguageView.vala:259
+#: src/Views/LanguageView.vala:257
 msgid "Languages"
 msgstr "ਭਾਸ਼ਾਵਾਂ"
 
-#: src/Views/LanguageView.vala:276
+#: src/Views/LanguageView.vala:272
 msgid "Select a Language"
 msgstr "ਕੋਈ ਭਾਸ਼ਾ ਚੁਣੋ"
 
-#: src/Views/LanguageView.vala:304 src/Views/LanguageView.vala:349
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
 msgid "Currently active language"
 msgstr "ਮੌਜੂਦਾ ਚੁਣੀ ਹੋਈ ਭਾਸ਼ਾ"
 
-#: src/Views/PartitioningView.vala:52
+#: src/Views/PartitioningView.vala:53
+#, fuzzy
+#| msgid "Use Partition"
+msgid "Select Partitions"
+msgstr "ਇਹ ਵੰਡ ਵਰਤੋ"
+
+#: src/Views/PartitioningView.vala:58
+#, fuzzy
+#| msgid ""
+#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
+#| "will erase ALL data on the selected partition.</b>"
 msgid ""
-"Select which partitions to use across all drives. <b>Selecting \"Format\" "
-"will erase ALL data on the selected partition.</b>"
+"Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
 "ਸਾਰੀਆਂ ਡਰਾਈਵਾਂ ਤੇ ਵਰਤਣ ਲਈ ਅਪਨਸ਼ਨਾਂ ਚੁਣੋ। <b>\"ਫ਼ਾਰਮੈਟ\" ਕਰਨ ਨਾਲ਼ ਚੁਣੀ ਹੋਈ ਡਰਾਈਵ ਦਾ ਸਾਰਾ "
 "ਡੇਟਾ ਮਿਟ ਜਾਵੇਗਾ।</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:58
+#: src/Views/PartitioningView.vala:67
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਵੰਡ ਲਾਜ਼ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:62
+#: src/Views/PartitioningView.vala:71
+#, fuzzy
+#| msgid ""
+#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
+#| "efi)</b> partition."
 msgid ""
-"You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-"efi)</b> partition."
+"You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
+"(/boot/efi)</b> partition."
 msgstr ""
 "ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ <b>ਰੂਟ (/)</b> ਅਤੇ ਇੱਕ <b>ਬੂਟ (/boot/efi)</b> ਵੰਡ ਲਾਜ਼ਮਨ ਚੁਣਨੀ ਪਵੇਗੀ।"
 
-#: src/Views/PartitioningView.vala:66
+#: src/Views/PartitioningView.vala:82
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "ਇੱਕ <b>ਸਵੈਪ</b> ਵੰਡ ਚੁਣਨ ਦੀ ਵੀ ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ।"
 
-#: src/Views/PartitioningView.vala:118
+#: src/Views/PartitioningView.vala:140
 msgid "Modify Partitions…"
 msgstr "ਵੰਡਾਂ ਵਿੱਚ ਤਬਦੀਲੀਆਂ ਕਰੋ…"
 
-#: src/Views/PartitioningView.vala:271
+#: src/Views/PartitioningView.vala:290
 msgid "EFI partition has the wrong file system"
 msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਗ਼ਲਤ ਹੈ"
 
-#: src/Views/PartitioningView.vala:273
+#: src/Views/PartitioningView.vala:292
 msgid "EFI partition is too small"
 msgstr "ਈਐੱਫ਼ਆਈ ਵੰਡ ਬਹੁਤ ਹੀ ਛੋਟੀ ਹੈ"
 
-#: src/Views/PartitioningView.vala:276
+#: src/Views/PartitioningView.vala:295
 msgid "Invalid file system for root"
 msgstr "ਰੂਟ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
-#: src/Views/PartitioningView.vala:278
+#: src/Views/PartitioningView.vala:297
 msgid "Invalid file system for home"
 msgstr "ਘਰ ਦਾ ਫ਼ਾਇਲ ਸਿਸਟਮ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
-#: src/Views/ProgressView.vala:73 src/Views/ProgressView.vala:100
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
 msgstr "ਲਾਗ ਵਿਖਾਓ"
 
-#: src/Views/ProgressView.vala:96
+#: src/Views/ProgressView.vala:90
+#, fuzzy
+#| msgid "Try Installing Again"
+msgid "Installing"
+msgstr "ਦੁਬਾਰਾ ਸਥਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
+
+#: src/Views/ProgressView.vala:95
 msgid "Hide log"
 msgstr "ਲਾਗ ਲੁਕਾਓ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:225
+#: src/Views/ProgressView.vala:224
 msgid "Partitioning Drive"
 msgstr "ਡਰਾਈਵ ਵੰਡ ਹੋ ਰਹੀ ਹੈ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:230
+#: src/Views/ProgressView.vala:229
 msgid "Extracting Files"
 msgstr "ਫ਼ਾਇਲਾਂ ਕੱਢੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:235
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "ਸਿਸਟਮ ਨੂੰ ਕਨਫਿਗਰ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:240
+#: src/Views/ProgressView.vala:239
 msgid "Finishing the Installation"
 msgstr "ਸਥਾਪਨ ਮੁਕੰਮਲ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
-#: src/Views/TryInstallView.vala:28
+#: src/Views/TryInstallView.vala:27
 msgid "Try or Install"
 msgstr "ਅਜ਼ਮਾਓ ਜਾਂ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Views/TryInstallView.vala:41
+#: src/Views/TryInstallView.vala:39
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -419,20 +438,20 @@ msgstr ""
 "ਕੀਤੀ ਜਾਵੇਗੀ। ਫ਼ੀਚਰ ਅਤੇ ਕਾਰਗੁਜ਼ਾਰੀ ਸ਼ਾਇਦ ਉਹੋ ਜਿਹੀ ਨਾ ਹੋਵੇ ਜਿਹੋ ਜਿਹੀ ਸਥਾਪਤ ਕੀਤੇ ਅਪਰੇਟਿੰਗ "
 "ਸਿਸਟਮ ਦੀ ਹੁੰਦੀ ਹੈ।"
 
-#: src/Views/TryInstallView.vala:47
+#: src/Views/TryInstallView.vala:45
 msgid "Erase Disk and Install"
 msgstr "ਡਿਸਕ ਸਾਫ਼ ਕਰੋ (ਸਾਰਾ ਡੇਟਾ ਮਿਟਾਓ) ਅਤੇ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Views/TryInstallView.vala:49
+#: src/Views/TryInstallView.vala:47
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "ਸਭ ਕੁਝ ਮਿਟਾਓ ਅਤੇ %s ਦੀ ਇੱਕ ਤਾਜ਼ੀ ਨਕਲ ਸਥਾਪਤ ਕਰੋ।"
 
-#: src/Views/TryInstallView.vala:55
+#: src/Views/TryInstallView.vala:53
 msgid "Custom Install (Advanced)"
 msgstr "ਤਬਦੀਲੀਸ਼ੁਦਾ ਸਥਾਪਨ (ਜਾਣਕਾਰਾਂ ਲਈ)"
 
-#: src/Views/TryInstallView.vala:57
+#: src/Views/TryInstallView.vala:55
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -440,31 +459,31 @@ msgstr ""
 "ਵੰਡਾਂ ਨੂੰ ਹੱਥੀਂ ਬਣਾਓ, ਇਹਨਾਂ ਦਾ ਸਾਈਜ਼ ਬਦਲੋ ਜਾਂ ਹੋਰ ਰੱਖ-ਰਖਾਓ ਕਰੋ। ਇਹ ਤਰੀਕੇ ਨਾਲ਼ ਤੁਸੀਂ ਡੇਟਾ ਗਵਾ "
 "ਵੀ ਸਕਦੇ ਹੋ।"
 
-#: src/Views/TryInstallView.vala:114
+#: src/Views/TryInstallView.vala:108
 msgid "Custom Install"
 msgstr "ਤਬਦੀਲੀਸ਼ੁਦਾ ਸਥਾਪਨ"
 
-#: src/Views/SuccessView.vala:29
+#: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
 msgstr "ਸੈੱਟਅਪ ਕਰਨਾ ਜਾਰੀ ਰੱਖੋ"
 
-#: src/Views/SuccessView.vala:34
+#: src/Views/SuccessView.vala:32
 #, c-format
 msgid "%s has been installed"
 msgstr "%s ਸਥਾਪਤ ਹੋ ਚੁੱਕਿਐ"
 
-#: src/Views/SuccessView.vala:63
+#: src/Views/SuccessView.vala:60
 msgid "Shut Down"
 msgstr "ਬੰਦ ਕਰੋ"
 
-#: src/Views/SuccessView.vala:97
+#: src/Views/SuccessView.vala:92
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "ਤੁਹਾਡੀ ਡਿਵਾਈਸ %i ਸਕਿੰਟ ਵਿੱਚ ਆਪਣੇ-ਆਪ ਰੀਸਟਾਰਟ ਹੋ ਜਾਵੇਗੀ।"
 msgstr[1] "ਤੁਹਾਡੀ ਡਿਵਾਈਸ %i ਸਕਿੰਟਾਂ ਵਿੱਚ ਆਪਣੇ-ਆਪ ਰੀਸਟਾਰਟ ਹੋ ਜਾਵੇਗੀ।"
 
-#: src/Views/SuccessView.vala:101
+#: src/Views/SuccessView.vala:96
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -472,38 +491,38 @@ msgstr ""
 "ਰੀਸਟਾਰਟ ਤੋਂ ਬਾਅਦ ਤੁਸੀਂ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ, ਜਾਂ ਫਿਰ ਹੁਣ ਤੁਸੀਂ ਡਿਵਾਈਸ ਨੂੰ ਬੰਦ ਕਰ ਸਕਦੇ "
 "ਹੋ ਅਤੇ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਬਾਅਦ ਵਿੱਚ ਵੀ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ।"
 
-#: src/Widgets/DecryptMenu.vala:58
+#: src/Widgets/DecryptMenu.vala:66
 msgid "Decrypt This Partition"
 msgstr "ਇਸ ਵੰਡ ਨੂੰ ਡੀਕ੍ਰਿਪਟ ਕਰੋ"
 
-#: src/Widgets/DecryptMenu.vala:62
+#: src/Widgets/DecryptMenu.vala:70
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr "ਇਸ ਵੰਡ ਦਾ ਇਨਕ੍ਰਿਪਸ਼ਨ ਪਾਸਵਰਡ ਦਾਖ਼ਲ ਕਰੋ ਅਤੇ ਡੀਕ੍ਰਿਪਟ ਹੋਈ ਵੰਡ ਲਈ ਡਿਵਾਈਸ ਨਾਂ ਸੈੱਟ ਕਰੋ।"
 
-#: src/Widgets/DecryptMenu.vala:75
+#: src/Widgets/DecryptMenu.vala:83
 msgid "Password:"
 msgstr "ਪਾਸਵਰਡ:"
 
-#: src/Widgets/DecryptMenu.vala:88
+#: src/Widgets/DecryptMenu.vala:96
 msgid "Device name:"
 msgstr "ਡਿਵਾਈਸ ਦਾ ਨਾਂ:"
 
-#: src/Widgets/DecryptMenu.vala:101
+#: src/Widgets/DecryptMenu.vala:109
 msgid "Decrypt"
 msgstr "ਡੀਕ੍ਰਿਪਟ ਕਰੋ"
 
-#: src/Widgets/DecryptMenu.vala:175
+#: src/Widgets/DecryptMenu.vala:183
 msgid "LUKS volume was decrypted"
 msgstr "ਐੱਲਯੂਕੇਐੱਸ ਵੰਡ ਡੀਕ੍ਰਿਪਟ ਹੋ ਗਈ"
 
-#: src/Widgets/DiskBar.vala:135
+#: src/Widgets/DiskBar.vala:82
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:136
+#: src/Widgets/DiskBar.vala:83
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

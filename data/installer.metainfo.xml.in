@@ -14,25 +14,25 @@
 
   <screenshots>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/1.1.0/data/screenshot-language.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.0.0/data/screenshot-language.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/1.1.0/data/screenshot-keyboard.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.0.0/data/screenshot-keyboard.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/1.1.0/data/screenshot-try-install.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.0.0/data/screenshot-try-install.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/1.1.0/data/screenshot-custom.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.0.0/data/screenshot-custom.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/1.1.0/data/screenshot-encrypt.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.0.0/data/screenshot-encrypt.png</image>
     </screenshot>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/installer/1.1.0/data/screenshot-progress.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.0.0/data/screenshot-progress.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/1.1.0/data/screenshot-success.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.0.0/data/screenshot-success.png</image>
     </screenshot>
   </screenshots>
 
@@ -49,11 +49,40 @@
   <url type="homepage">https://elementary.io/</url>
   <url type="translate">https://l10n.elementary.io/projects/installer</url>
 
-  <developer_name>elementary, Inc.</developer_name>
+  <developer id="org.elementaryos">
+    <name>elementary, Inc.</name>
+  </developer>
   <project_group>elementary</project_group>
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.0.1" date="2024-09-11" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/installer/issues/538">Screen Reader ignores each view’s title text</issue>
+        <issue url="https://github.com/elementary/installer/issues/539">Second step of VariantWidget not focused</issue>
+      </issues>
+    </release>
+
+    <release version="8.0.0" date="2024-07-25" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Keyboard layout preview is now in a resizable window</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/installer/issues/662">Make EFI ESP optional during custom install</issue>
+        <issue url="https://github.com/elementary/installer/issues/691">Partitions legend seems clipped</issue>
+      </issues>
+    </release>
+
     <release version="1.2.0" date="2023-08-24" urgency="medium">
       <description>
         <p>Improvements:</p>
@@ -108,16 +137,7 @@
       </issues>
     </release>
 
-    <release version="1.0.5" date="2021-12-17" urgency="medium">
-      <description>
-        <p>Improvements:</p>
-        <ul>
-          <li>Double the boot partition size for encrypted installs</li>
-          <li>Updated translations</li>
-       </ul>
-      </description>
-    </release>
-
+    <release version="1.0.5" date="2021-12-17" />
     <release version="1.0.4" date="2021-12-13" />
     <release version="1.0.3" date="2021-08-25" />
   </releases>

@@ -24,62 +24,62 @@ public class ErrorView : AbstractInstallerView {
     }
 
     construct {
-        var image = new Gtk.Image.from_icon_name ("dialog-error", Gtk.IconSize.DIALOG) {
-            pixel_size = 128,
-            valign = Gtk.Align.END
+        var image = new Gtk.Image.from_icon_name ("dialog-error") {
+            pixel_size = 128
         };
 
-        var title_label = new Gtk.Label (_("Could Not Install")) {
-            valign = Gtk.Align.START
-        };
-        title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+        title = _("Could Not Install");
+
+        var title_label = new Gtk.Label (title);
 
         var description_label = new Gtk.Label (_("Installing %s failed, possibly due to a hardware error. The device may not restart properly. You can try the following:").printf (Utils.get_pretty_name ())) {
             margin_bottom = 12,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
 
-        var redo_image = new Gtk.Image.from_icon_name ("edit-undo-symbolic", Gtk.IconSize.MENU) {
+        var redo_image = new Gtk.Image.from_icon_name ("edit-undo-symbolic") {
             margin_start = 6
         };
 
         var try_label = new Gtk.Label (_("Try the installation again")) {
             hexpand = true,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
 
-        var demo_image = new Gtk.Image.from_icon_name ("document-properties-symbolic", Gtk.IconSize.MENU) {
+        var demo_image = new Gtk.Image.from_icon_name ("document-properties-symbolic") {
             margin_start = 6
         };
 
         var launch_label = new Gtk.Label (_("Use Demo Mode and try to manually recover")) {
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
 
-        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic", Gtk.IconSize.MENU) {
+        var restart_image = new Gtk.Image.from_icon_name ("system-reboot-symbolic") {
             margin_start = 6
         };
 
         var restart_label = new Gtk.Label (_("Restart the device and boot from another drive")) {
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
 
+        var terminal_button_label = new Gtk.Label (_("Details"));
+
+        var terminal_button_box = new Gtk.Box (HORIZONTAL, 0);
+        terminal_button_box.append (new Gtk.Image.from_icon_name ("utilities-terminal-symbolic"));
+        terminal_button_box.append (terminal_button_label);
+
         var terminal_button = new Gtk.ToggleButton () {
-            always_show_image = true,
-            halign = Gtk.Align.START,
-            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
-            label = _("Details"),
+            child = terminal_button_box,
+            halign = START,
+            has_frame = false,
             margin_top = 12
         };
-        terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+        terminal_button_label.mnemonic_widget = terminal_button;
 
         var buffer = new Gtk.TextBuffer (null) {
             text = log
@@ -87,8 +87,9 @@ public class ErrorView : AbstractInstallerView {
 
         var terminal_view = new Installer.Terminal (buffer);
 
-        var terminal_revealer = new Gtk.Revealer ();
-        terminal_revealer.add (terminal_view);
+        var terminal_revealer = new Gtk.Revealer () {
+            child = terminal_view
+        };
 
         var grid = new Gtk.Grid () {
             column_spacing = 6,
@@ -105,22 +106,21 @@ public class ErrorView : AbstractInstallerView {
         grid.attach (terminal_button, 0, 4, 2);
         grid.attach (terminal_revealer, 0, 5, 2);
 
-        content_area.column_homogeneous = true;
-        content_area.margin_start = content_area.margin_end = 12;
-        content_area.attach (image, 0, 0);
-        content_area.attach (title_label, 0, 1);
-        content_area.attach (grid, 1, 0, 1, 2);
+        title_area.append (image);
+        title_area.append (title_label);
+
+        content_area.append (grid);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
 
         var demo_button = new Gtk.Button.with_label (_("Try Demo Mode"));
 
         var install_button = new Gtk.Button.with_label (_("Try Installing Again"));
-        install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        install_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_area.add (restart_button);
-        action_area.add (demo_button);
-        action_area.add (install_button);
+        action_box_end.append (restart_button);
+        action_box_end.append (demo_button);
+        action_box_end.append (install_button);
 
         restart_button.clicked.connect (Utils.restart);
 
@@ -134,7 +134,5 @@ public class ErrorView : AbstractInstallerView {
                 terminal_view.attempt_scroll ();
             }
         });
-
-        show_all ();
     }
 }

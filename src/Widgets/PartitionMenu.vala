@@ -38,11 +38,11 @@ public class Installer.PartitionMenu : Gtk.Popover {
     private Gtk.Label custom_label;
     private Gtk.Label type_label;
     // A reference to the parent which owns this menu.
-    private PartitionBar partition_bar;
+    private PartitionBlock partition_bar;
 
     public PartitionMenu (string path, string parent, InstallerDaemon.FileSystem fs,
                           bool lvm, SetMount set_mount, UnsetMount unset_mount,
-                          MountSetFn mount_set, PartitionBar partition_bar) {
+                          MountSetFn mount_set, PartitionBlock partition_bar) {
         this.partition_bar = partition_bar;
         original_filesystem = fs;
         is_lvm = lvm;
@@ -107,8 +107,10 @@ public class Installer.PartitionMenu : Gtk.Popover {
         var bottom_controls = new Gtk.Grid () {
             column_spacing = 12,
             row_spacing = 6,
-            margin = 12,
-            margin_bottom = 9
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 9,
+            margin_start = 12
         };
         bottom_controls.attach (use_as_label, 0, 2);
         bottom_controls.attach (use_as, 1, 2);
@@ -124,8 +126,9 @@ public class Installer.PartitionMenu : Gtk.Popover {
         bottom_grid.attach (separator, 0, 1);
         bottom_grid.attach (bottom_controls, 0, 2);
 
-        var bottom_revealer = new Gtk.Revealer ();
-        bottom_revealer.add (bottom_grid);
+        var bottom_revealer = new Gtk.Revealer () {
+            child = bottom_grid
+        };
 
         var grid = new Gtk.Grid () {
             margin_top = 3,
@@ -133,9 +136,8 @@ public class Installer.PartitionMenu : Gtk.Popover {
         };
         grid.attach (use_partition, 0, 0);
         grid.attach (bottom_revealer, 0, 1);
-        grid.show_all ();
 
-        add (grid);
+        child = grid;
 
         custom.visible = false;
 
@@ -222,7 +224,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 update_values (set_mount);
             } else {
                 unset_mount (partition_path);
-                partition_bar.container.get_children ().foreach ((c) => c.destroy ());
+                partition_bar.icon = null;
             }
 
             bottom_revealer.reveal_child = use_partition.active;
@@ -238,7 +240,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         type.visible = true;
         custom.visible = false;
         disable_signals = false;
-        partition_bar.container.get_children ().foreach ((c) => c.destroy ());
+        partition_bar.icon = null;
     }
 
     private void set_format_sensitivity () {
@@ -265,7 +267,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 partition_path,
                 parent_disk,
                 mount,
-                partition_bar.end - partition_bar.start,
+                partition_bar.get_partition_size (),
                 (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0)
                     + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
                 filesystem,
@@ -275,22 +277,13 @@ public class Installer.PartitionMenu : Gtk.Popover {
             error = why.message;
         }
 
-        var mount_icon = new Gtk.Image.from_icon_name (
-            error == null ? "process-completed-symbolic" : "dialog-warning-symbolic",
-            Gtk.IconSize.SMALL_TOOLBAR
-        ) {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.END,
-            margin = 6
-        };
+        partition_bar.icon = new ThemedIcon (
+            error == null ? "process-completed-symbolic" : "dialog-warning-symbolic"
+        );
 
         if (error != null) {
             partition_bar.tooltip_text = error;
         }
-
-        partition_bar.container.get_children ().foreach ((c) => c.destroy ());
-        partition_bar.container.pack_start (mount_icon, true, true, 0);
-        partition_bar.container.show_all ();
     }
 
     private bool has_same_filesystem () {

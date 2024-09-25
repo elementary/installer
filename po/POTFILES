@@ -1,10 +1,11 @@
 src/Application.vala
 src/MainWindow.vala
 src/Utils.vala
-src/Helpers/KeyboardLayoutHelper.vala
 src/Helpers/LocaleHelper.vala
 src/Helpers/LogHelper.vala
 src/Objects/Configuration.vala
+src/Objects/KeyboardLayout.vala
+src/Objects/KeyboardVariant.vala
 src/Objects/Mount.vala
 src/Views/AbstractInstallerView.vala
 src/Views/CheckView.vala
@@ -22,7 +23,6 @@ src/Widgets/DecryptMenu.vala
 src/Widgets/DiskBar.vala
 src/Widgets/DiskGrid.vala
 src/Widgets/InstallTypeGrid.vala
-src/Widgets/LayoutWidget.vala
-src/Widgets/PartitionBar.vala
+src/Widgets/PartitionBlock.vala
 src/Widgets/PartitionMenu.vala
 src/Widgets/VariantWidget.vala

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class ProgressView : AbstractInstallerView {
+public class ProgressView : Adw.NavigationPage {
     public signal void on_success ();
     public signal void on_error ();
 
@@ -25,37 +25,28 @@ public class ProgressView : AbstractInstallerView {
     private const int NUM_STEP = 5;
 
     construct {
-        var style_provider = new Gtk.CssProvider ();
-        style_provider.load_from_resource ("io/elementary/installer/ProgressView.css");
-
         var logo_icon_name = Environment.get_os_info ("LOGO");
         if (logo_icon_name == "" || logo_icon_name == null) {
             logo_icon_name = "distributor-logo";
         }
 
-        var logo = new Hdy.Avatar (192, "", false) {
+        var logo = new Adw.Avatar (192, "", false) {
             // In case the wallpaper can't be loaded, we don't want an icon or text
-            icon_name = "invalid-icon-name",
-            // We need this for the shadow to not get clipped by Gtk.Overlay
-            margin = 6
+            icon_name = "invalid-icon-name"
         };
-        logo.loadable_icon = new FileIcon (File.new_for_uri ("resource://io/elementary/installer/wallpaper.jpg"));
-        logo.get_style_context ().add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        logo.custom_image = Gdk.Texture.from_resource ("/io/elementary/installer/wallpaper.jpg");
 
         var icon = new Gtk.Image () {
             icon_name = logo_icon_name + "-symbolic",
             pixel_size = 192
         };
-
-        unowned var icon_style_context = icon.get_style_context ();
-        icon_style_context.add_class ("logo");
-        icon_style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        icon.add_css_class ("logo");
 
         var logo_overlay = new Gtk.Overlay () {
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.CENTER
+            child = logo,
+            halign = CENTER,
+            valign = CENTER
         };
-        logo_overlay.add (logo);
         logo_overlay.add_overlay (icon);
 
         unowned LogHelper log_helper = LogHelper.get_default ();
@@ -64,32 +55,40 @@ public class ProgressView : AbstractInstallerView {
         var logo_stack = new Gtk.Stack () {
             transition_type = Gtk.StackTransitionType.OVER_UP_DOWN
         };
-        logo_stack.add (logo_overlay);
-        logo_stack.add (terminal_view);
+        logo_stack.add_child (logo_overlay);
+        logo_stack.add_child (terminal_view);
 
         var terminal_button = new Gtk.ToggleButton () {
             halign = Gtk.Align.END,
-            image = new Gtk.Image.from_icon_name ("utilities-terminal-symbolic", Gtk.IconSize.SMALL_TOOLBAR),
+            icon_name = "utilities-terminal-symbolic",
             tooltip_text = _("Show log")
         };
-        terminal_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        terminal_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         progressbar_label = new Gtk.Label (null) {
             use_markup = true,
             xalign = 0
         };
-        progressbar_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        progressbar_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         progressbar = new Gtk.ProgressBar () {
             hexpand = true
         };
 
-        content_area.margin_end = 12;
-        content_area.margin_start = 12;
+        var content_area = new Gtk.Grid () {
+            margin_top = 12,
+            margin_end = 12,
+            margin_bottom = 12,
+            margin_start = 12,
+            row_spacing = 12
+        };
         content_area.attach (logo_stack, 0, 0, 2);
         content_area.attach (progressbar_label, 0, 1);
         content_area.attach (terminal_button, 1, 1);
         content_area.attach (progressbar, 0, 2, 2);
+
+        title = _("Installing");
+        child = content_area;
 
         terminal_button.toggled.connect (() => {
             if (terminal_button.active) {
@@ -101,8 +100,6 @@ public class ProgressView : AbstractInstallerView {
                 logo_stack.visible_child = logo_overlay;
             }
         });
-
-        show_all ();
     }
 
     public string get_log () {
@@ -199,9 +196,11 @@ public class ProgressView : AbstractInstallerView {
         }
     }
 
-    private void fake_status (InstallerDaemon.Step step) {
+    private void fake_status (Distinst.Step step) {
+        unowned var log_helper = LogHelper.get_default ();
         for (var percent = 0; percent <= 100; percent++) {
-            InstallerDaemon.Status status = InstallerDaemon.Status () {
+            log_helper.log_func (INFO, "I'm faking it!");
+            Distinst.Status status = Distinst.Status () {
                 step = step,
                 percent = percent
             };
