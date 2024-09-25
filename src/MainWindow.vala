@@ -145,19 +145,15 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
         });
 
         try_install_view.custom_step.connect (() => {
-            if (check_ignored) {
+            if (!load_check_view ("custom")) {
                 load_partitioning_view ();
-            } else {
-                load_check_view ("custom");
-            }
+            };
         });
 
         try_install_view.next_step.connect (() => {
-            if (check_ignored) {
+            if (!load_check_view ("standard")) {
                 load_disk_view ();
-            } else {
-                load_check_view ("standard");
-            }
+            };
         });
     }
 
@@ -169,28 +165,28 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
         disk_view.next_step.connect (() => load_encrypt_view ());
     }
 
-    private void load_check_view (string path) {
-        var check_view = new Installer.CheckView ();
-
-        check_view.next_step.connect (() => {
-            check_ignored = true;
-
-            if (path == "custom") {
-                load_partitioning_view ();
-            } else if (path == "standard") {
-                load_disk_view ();
-            }
-        });
-
-        if (check_view.has_messages) {
-            navigation_view.push (check_view);
-        } else {
-            if (path == "custom") {
-                load_partitioning_view ();
-            } else if (path == "standard") {
-                load_disk_view ();
-            }
+    private bool load_check_view (string path) {
+        if (check_ignored) {
+            return false;
         }
+
+        var check_view = new Installer.CheckView ();
+        if (check_view.has_messages) {
+            check_view.next_step.connect (() => {
+                check_ignored = true;
+
+                if (path == "custom") {
+                    load_partitioning_view ();
+                } else if (path == "standard") {
+                    load_disk_view ();
+                }
+            });
+
+            navigation_view.push (check_view);
+            return true;
+        }
+
+        return false;
     }
 
     private void load_encrypt_view () {
