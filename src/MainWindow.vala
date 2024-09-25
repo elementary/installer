@@ -93,7 +93,7 @@ public class Installer.MainWindow : Gtk.Window {
                 }
             });
         } catch (Error e) {
-            warning (e.message);
+            warning ("Unable to query upower: %s", e.message);
             battery_infobar.revealed = false;
         }
 

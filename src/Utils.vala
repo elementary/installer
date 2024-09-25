@@ -38,7 +38,7 @@ namespace Utils {
             try {
                 system_instance.power_off (false);
             } catch (GLib.Error e) {
-                critical (e.message);
+                critical ("Unable to shutdown: %s", e.message);
             }
         }
     }
@@ -52,7 +52,7 @@ namespace Utils {
             try {
                 system_instance.reboot (false);
             } catch (GLib.Error e) {
-                critical (e.message);
+                critical ("Unable to restart: %s", e.message);
             }
         }
     }
@@ -102,7 +102,7 @@ namespace Utils {
                     "/org/freedesktop/login1"
                 );
             } catch (GLib.Error e) {
-                warning ("%s", e.message);
+                warning ("Unable to get system instance: %s", e.message);
             }
         }
     }
@@ -145,7 +145,7 @@ namespace Utils {
                     "/org/freedesktop/hostname1"
                 );
             } catch (GLib.Error e) {
-                warning ("%s", e.message);
+                warning ("Unable to get hostname instance: %s", e.message);
             }
         }
     }
@@ -161,7 +161,7 @@ namespace Utils {
         try {
             FileUtils.get_contents ("/etc/machine-id", out machine_id);
         } catch (FileError e) {
-            warning ("%s", e.message);
+            warning ("Unable to get machine id: %s", e.message);
             return null;
         }
 
@@ -173,7 +173,7 @@ namespace Utils {
         try {
             FileUtils.get_contents ("/sys/devices/virtual/dmi/id/sys_vendor", out vendor);
         } catch (FileError e) {
-            warning ("%s", e.message);
+            warning ("Unable to get sys vendor: %s", e.message);
             return null;
         }
 
@@ -185,7 +185,7 @@ namespace Utils {
         try {
             FileUtils.get_contents ("/sys/devices/virtual/dmi/id/product_name", out model);
         } catch (FileError e) {
-            warning ("%s", e.message);
+            warning ("Unable to get product name: %s", e.message);
             return null;
         }
 
@@ -197,7 +197,7 @@ namespace Utils {
         try {
             FileUtils.get_contents ("/sys/devices/virtual/dmi/id/product_version", out model);
         } catch (FileError e) {
-            warning ("%s", e.message);
+            warning ("Unable to get product version: %s", e.message);
             return null;
         }
 

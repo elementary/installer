@@ -54,8 +54,9 @@ namespace LocaleHelper {
             var langs = Build.LANG_LIST.split (";");
 
             var parser = new Json.Parser ();
+            string ISO_639_3_PATH = "%s/iso_639-3.json".printf (Build.ISO_CODES_LOCATION);
             try {
-                parser.load_from_file ("%s/iso_639-3.json".printf (Build.ISO_CODES_LOCATION));
+                parser.load_from_file (ISO_639_3_PATH);
                 weak Json.Object root_object = parser.get_root ().get_object ();
                 weak Json.Array 639_3_array = root_object.get_array_member ("639-3");
                 foreach (unowned Json.Node element in 639_3_array.get_elements ()) {
@@ -73,13 +74,14 @@ namespace LocaleHelper {
                     }
                 }
             } catch (Error e) {
-                critical (e.message);
+                critical ("Unable to parse '%s': %s", ISO_639_3_PATH, e.message);
             }
 
             var countries = new Gee.HashMap<string, CountryEntry?> ();
             parser = new Json.Parser ();
+            string ISO_3166_1_PATH = "%s/iso_3166-1.json".printf (Build.ISO_CODES_LOCATION);
             try {
-                parser.load_from_file ("%s/iso_3166-1.json".printf (Build.ISO_CODES_LOCATION));
+                parser.load_from_file (ISO_3166_1_PATH);
                 weak Json.Object root_object = parser.get_root ().get_object ();
                 weak Json.Array 3166_1_array = root_object.get_array_member ("3166-1");
                 foreach (unowned Json.Node element in 3166_1_array.get_elements ()) {
@@ -98,7 +100,7 @@ namespace LocaleHelper {
                     countries[entry.alpha_2] = entry;
                 }
             } catch (Error e) {
-                critical (e.message);
+                critical ("Unable to parse '%s': %s", ISO_3166_1_PATH, e.message);
             }
 
             foreach (var lang in langs) {
