@@ -145,14 +145,24 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
         });
 
         try_install_view.custom_step.connect (() => {
-            if (!load_check_view ("custom")) {
+            var check_view = load_check_view ();
+            if (check_view == null) {
                 load_partitioning_view ();
+            } else {
+                check_view.next_step.connect (() => {
+                    load_partitioning_view ();
+                });
             };
         });
 
         try_install_view.next_step.connect (() => {
-            if (!load_check_view ("standard")) {
+            var check_view = load_check_view ();
+            if (check_view == null) {
                 load_disk_view ();
+            } else {
+                check_view.next_step.connect (() => {
+                    load_disk_view ();
+                });
             };
         });
     }
@@ -165,28 +175,23 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
         disk_view.next_step.connect (() => load_encrypt_view ());
     }
 
-    private bool load_check_view (string path) {
+    private Installer.CheckView? load_check_view () {
         if (check_ignored) {
-            return false;
+            return null;
         }
 
         var check_view = new Installer.CheckView ();
         if (check_view.has_messages) {
             check_view.next_step.connect (() => {
                 check_ignored = true;
-
-                if (path == "custom") {
-                    load_partitioning_view ();
-                } else if (path == "standard") {
-                    load_disk_view ();
-                }
             });
 
             navigation_view.push (check_view);
-            return true;
+
+            return check_view;
         }
 
-        return false;
+        return null;
     }
 
     private void load_encrypt_view () {
