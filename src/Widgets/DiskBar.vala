@@ -188,14 +188,11 @@ public class Installer.DiskBar: Gtk.Box {
 
             // Fill width based on partition size
             layout_manager.add_constraint (
-                new Gtk.Constraint (
+                new Gtk.Constraint.const (
                     widget,
                     WIDTH,
-                    EQ,
-                    this,
-                    WIDTH,
-                    percentage,
-                    0,
+                    LE,
+                    percentage * get_width (),
                     Gtk.ConstraintStrength.STRONG
                 )
             );
