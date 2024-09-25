@@ -22,7 +22,7 @@ public interface UPower : GLib.Object {
     public abstract bool on_battery { owned get; set; }
 }
 
-public class Installer.MainWindow : Gtk.Window {
+public class Installer.MainWindow : Gtk.ApplicationWindow {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     private const uint64 ONE_GB = 1000 * 1000 * 1000;
     // Minimum 15 GB
@@ -66,6 +66,13 @@ public class Installer.MainWindow : Gtk.Window {
 
         child = overlay;
         titlebar = new Gtk.Grid () { visible = false };
+
+        var back_action = new SimpleAction ("back", null);
+        back_action.activate.connect (() => {
+            navigation_view.pop ();
+        });
+
+        add_action (back_action);
 
         language_view.next_step.connect (() => {
             // Don't prompt for screen reader if we're able to navigate without it

@@ -76,7 +76,9 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         content_area.append (type_scrolled);
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
+        var back_button = new Gtk.Button.with_label (_("Back")) {
+            action_name = "win.back"
+        };
 
         var next_button = new Gtk.Button.with_label (_("Next")) {
             sensitive = false
@@ -85,8 +87,6 @@ public class Installer.TryInstallView : AbstractInstallerView {
 
         action_box_end.append (back_button);
         action_box_end.append (next_button);
-
-        back_button.clicked.connect (() => ((Adw.NavigationView) get_parent ()).pop ());
 
         demo_button.toggled.connect (() => {
             if (demo_button.active) {
