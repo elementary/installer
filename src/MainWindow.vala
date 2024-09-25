@@ -166,13 +166,11 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
         navigation_view.push (disk_view);
 
         disk_view.load.begin (MINIMUM_SPACE);
-        disk_view.cancel.connect (() => navigation_view.pop ());
         disk_view.next_step.connect (() => load_encrypt_view ());
     }
 
     private void load_check_view (string path) {
         var check_view = new Installer.CheckView ();
-        check_view.cancel.connect (() => navigation_view.pop ());
 
         check_view.next_step.connect (() => {
             check_ignored = true;
@@ -197,7 +195,6 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
 
     private void load_encrypt_view () {
         var encrypt_view = new EncryptView ();
-        encrypt_view.cancel.connect (() => navigation_view.pop ());
         encrypt_view.next_step.connect (load_drivers_view);
 
         navigation_view.push (encrypt_view);
