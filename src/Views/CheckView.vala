@@ -132,7 +132,7 @@ public class Installer.CheckView : AbstractInstallerView {
                 return int.parse (line);
             }
         } catch (Error e) {
-            warning ("Unable to get frequency: %s\n", e.message);
+            stdout.printf ("Error: %s\n", e.message);
         }
 
         return 0;
@@ -151,7 +151,7 @@ public class Installer.CheckView : AbstractInstallerView {
                 }
             }
         } catch (Error e) {
-            warning ("Unable to get meminfo: %s", e.message);
+            warning (e.message);
         }
 
         return 0;
@@ -168,7 +168,7 @@ public class Installer.CheckView : AbstractInstallerView {
                 }
             }
         } catch (Error e) {
-            critical ("Unable to get vm: %s", e.message);
+            critical (e.message);
         }
 
         return false;
