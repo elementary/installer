@@ -229,7 +229,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         switch (bootloader) {
             case MSDOS:
                 break;
-            case InstallerDaemon.PartitionTable.GPT:
+            case GPT:
                 break;
         }
 
