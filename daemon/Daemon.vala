@@ -305,12 +305,25 @@ public class InstallerDaemon.Daemon : GLib.Object {
             value = 0
         };
 
+        unowned var partitions = disk.list_partitions ();
+        foreach (unowned var partition in partitions) {
+            disk.remove_partition (partition.get_number ());
+        }
+
         // Prepares a new partition table.
         int result = disk.mklabel (bootloader);
 
         if (result != 0) {
             throw new GLib.IOError.FAILED ("Unable to write partition table to %s", disk_path);
         }
+
+        // Commit the new partition table.
+        /*
+        result = disk.commit ();
+
+        if (result != 0) {
+            throw new GLib.IOError.FAILED ("Unable to commit partition table to %s", disk_path);
+        }*/
 
         var start = disk.get_sector (ref start_sector);
         var end = disk.get_sector (ref boot_sector);
