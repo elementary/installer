@@ -12,7 +12,6 @@ add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi
 gnome = import('gnome')
 i18n = import('i18n')
 
-distinst_dep = dependency('distinst')
 glib_dep = dependency('glib-2.0', version: '>=2.74')
 gobject_dep = dependency('gobject-2.0')
 gtk_dep = dependency('gtk4')

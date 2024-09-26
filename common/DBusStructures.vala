@@ -79,6 +79,50 @@ public enum InstallerDaemon.FileSystem {
     }
 }
 
+public struct InstallerDaemon.PartitionUsage {
+    /**
+     * None = 0; Some(usage) = 1;
+     */
+    public uint8 tag;
+    /**
+     * The size, in sectors, that a partition is used.
+     */
+    public uint64 value;
+}
+
+public enum InstallerDaemon.PartitionTable {
+    NONE,
+    GPT,
+    MSDOS;
+}
+
+public enum InstallerDaemon.Step {
+    BACKUP,
+    INIT,
+    PARTITION,
+    EXTRACT,
+    CONFIGURE,
+    BOOTLOADER;
+}
+
+public struct InstallerDaemon.Status {
+    Step step;
+    int percent;
+}
+
+public enum InstallerDaemon.LogLevel {
+    TRACE,
+    DEBUG,
+    INFO,
+    WARN,
+    ERROR;
+}
+
+public struct InstallerDaemon.Error {
+    Step step;
+    int err;
+}
+
 public struct InstallerDaemon.Partition {
     string device_path;
 
@@ -97,7 +141,6 @@ public struct InstallerDaemon.InstallConfig {
     string lang;
     bool modify_boot_order;
     bool install_drivers;
-    uint8 flags;
 }
 
 [Flags]
@@ -139,48 +182,4 @@ public struct InstallerDaemon.LuksCredentials {
     string device;
     string pv;
     string password;
-}
-
-public enum InstallerDaemon.LogLevel {
-    TRACE,
-    DEBUG,
-    INFO,
-    WARN,
-    ERROR;
-}
-
-public struct InstallerDaemon.Error {
-    Step step;
-    int err;
-}
-
-public enum InstallerDaemon.Step {
-    BACKUP,
-    INIT,
-    PARTITION,
-    EXTRACT,
-    CONFIGURE,
-    BOOTLOADER;
-}
-
-public struct InstallerDaemon.Status {
-    Step step;
-    int percent;
-}
-
-public struct InstallerDaemon.PartitionUsage {
-    /**
-     * None = 0; Some(usage) = 1;
-     */
-    public uint8 tag;
-    /**
-     * The size, in sectors, that a partition is used.
-     */
-    public uint64 value;
-}
-
-public enum InstallerDaemon.PartitionTable {
-    NONE,
-    GPT,
-    MSDOS;
 }
