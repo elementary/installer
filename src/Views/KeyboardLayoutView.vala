@@ -52,7 +52,9 @@ public class KeyboardLayoutView : AbstractInstallerView {
 
         content_area.append (stack_box);
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
+        var back_button = new Gtk.Button.with_label (_("Back")) {
+            action_name = "win.back"
+        };
 
         var next_button = new Gtk.Button.with_label (_("Select")) {
             sensitive = false
@@ -65,8 +67,6 @@ public class KeyboardLayoutView : AbstractInstallerView {
         input_variant_widget.variant_listbox.row_activated.connect (() => {
             next_button.activate ();
         });
-
-        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
 
         next_button.clicked.connect (() => {
             unowned Gtk.ListBoxRow row = input_variant_widget.main_listbox.get_selected_row ();
@@ -92,7 +92,7 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 return;
             }
 
-            ((Adw.Leaflet) get_parent ()).navigate (FORWARD);
+            next_step ();
         });
 
         input_variant_widget.main_listbox.row_activated.connect ((row) => {
