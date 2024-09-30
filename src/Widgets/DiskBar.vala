@@ -40,7 +40,7 @@ public class Installer.DiskBar: Gtk.Box {
                 p.partition.device_path,
                 p.get_partition_size () * 512,
                 p.partition.filesystem.to_string (),
-                p.volume_group,
+                p.partition.filesystem == LVM ? p.partition.current_lvm_volume_group : null,
                 p.menu
             );
         }
