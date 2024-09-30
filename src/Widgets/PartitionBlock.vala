@@ -6,45 +6,30 @@
  */
 
 public class Installer.PartitionBlock : Adw.Bin {
-    public signal void decrypted (InstallerDaemon.LuksCredentials credential);
-
     public Icon? icon { get; set; default = null; }
 
-    public bool lvm { get; construct; }
-    public InstallerDaemon.Partition partition { get; construct; }
-    public string parent_path { get; construct; }
-
-    public Gtk.Popover menu { get; private set; }
-
-    public PartitionBlock (
-        InstallerDaemon.Partition partition,
-        string parent_path,
-        uint64 sector_size,
-        bool lvm,
-        SetMount set_mount,
-        UnsetMount unset_mount,
-        MountSetFn mount_set
-    ) {
-        Object (
-            lvm: lvm,
-            parent_path: parent_path,
-            partition: partition
-        );
-
-        if (partition.filesystem == LUKS) {
-            menu = new DecryptMenu (partition.device_path);
-            ((DecryptMenu)menu).decrypted.connect ((creds) => decrypted (creds));
-        } else {
-            menu = new PartitionMenu (partition.device_path, parent_path, partition.filesystem, lvm, set_mount, unset_mount, mount_set, this);
+    private Gtk.Popover _menu;
+    public Gtk.Popover menu {
+        get {
+            return _menu;
         }
 
-        menu.set_parent (this);
-        menu.position = BOTTOM;
+        set {
+            _menu = value;
+            _menu.set_parent (this);
+            _menu.position = BOTTOM;
 
-        var click_gesture = new Gtk.GestureClick ();
-        click_gesture.released.connect (menu.popup);
+            var click_gesture = new Gtk.GestureClick ();
+            click_gesture.released.connect (_menu.popup);
 
-        add_controller (click_gesture);
+            add_controller (click_gesture);
+        }
+    }
+
+    public InstallerDaemon.Partition partition { get; construct; }
+
+    public PartitionBlock (InstallerDaemon.Partition partition) {
+        Object (partition: partition);
     }
 
     class construct {
