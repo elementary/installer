@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-11 22:12+0000\n"
-"PO-Revision-Date: 2022-04-14 23:02+0000\n"
-"Last-Translator: Pikhosh <pikhosh@gmail.com>\n"
+"PO-Revision-Date: 2024-09-30 16:16+0000\n"
+"Last-Translator: Hossein <hossein17@duck.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/installer/"
 "installer/fa/>\n"
 "Language: fa\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:44
@@ -22,7 +22,7 @@ msgstr "%s نصب"
 
 #: src/Application.vala:52
 msgid "operating system is being installed"
-msgstr ""
+msgstr "سیستم عامل در حال نصب است"
 
 #: src/MainWindow.vala:265
 msgid "Connect to a Power Source"
@@ -66,20 +66,20 @@ msgid "Cancel Installation"
 msgstr "انصراف از نصب"
 
 #: src/Views/CheckView.vala:50
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "مجددا تلاش برای نصب کنید"
+msgstr "قبل از نصب"
 
 #: src/Views/CheckView.vala:57
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "نسخه پیش از انتشار"
 
 #: src/Views/CheckView.vala:58
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"فقط بر روی دستگاه های مخصوص برنامه نویسی نصب کنید. <b>شما نمی توانید به نسخه "
+"پایدار ارتقا دهید</b>."
 
 #: src/Views/CheckView.vala:63
 msgid "Virtual Machine"
@@ -89,6 +89,8 @@ msgstr "ماشین مجازی"
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"برخی از بخش‌های %s ممکن است به کندی اجرا شوند، ثابت شوند یا به درستی کار "
+"نکنند."
 
 #: src/Views/CheckView.vala:69
 msgid "Your Device May Be Too Slow"
@@ -96,13 +98,11 @@ msgstr "دستگاه شما شاید خیلی کند است"
 
 #: src/Views/CheckView.vala:70
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "این ممکن است کند کار کند یا هنگ کند."
 
 #: src/Views/CheckView.vala:85
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "%s نصب"
+msgstr "به هر حال نصب کنید"
 
 #: src/Views/CheckView.vala:208
 msgid "Recommended:"
@@ -142,10 +142,8 @@ msgid "Next"
 msgstr "بعدی"
 
 #: src/Views/DriversView.vala:26
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "پارتشن بندی درایو"
+msgstr "درایورهای اضافی"
 
 #: src/Views/DriversView.vala:30
 msgid ""
@@ -153,6 +151,9 @@ msgid ""
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
+"ممکن است آداپتورهای Wi-Fi Broadcom®، گرافیک های NVIDIA® و برخی از ماشین های "
+"مجازی بدون درایورهای اضافی به درستی کار نکنند. اکثر دستگاه ها به درایورهای "
+"اضافی نیاز ندارند."
 
 #: src/Views/DriversView.vala:38
 msgid ""
