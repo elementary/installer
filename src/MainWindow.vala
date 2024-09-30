@@ -22,28 +22,25 @@ public interface UPower : GLib.Object {
     public abstract bool on_battery { owned get; set; }
 }
 
-public class Installer.MainWindow : Gtk.Window {
+public class Installer.MainWindow : Gtk.ApplicationWindow {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     private const uint64 ONE_GB = 1000 * 1000 * 1000;
     // Minimum 15 GB
     private const uint64 MINIMUM_SPACE = 15 * ONE_GB;
 
     private Gtk.Label infobar_label;
-    private Adw.Leaflet leaflet;
+    private Adw.NavigationView navigation_view;
     private LanguageView language_view;
     private TryInstallView try_install_view;
+    private KeyboardLayoutView keyboard_layout_view;
     private bool check_ignored = false;
     private uint orca_timeout_id = 0;
 
     construct {
         language_view = new LanguageView ();
 
-        leaflet = new Adw.Leaflet () {
-            can_navigate_back = true,
-            can_unfold = false,
-            homogeneous = false
-        };
-        leaflet.append (language_view);
+        navigation_view = new Adw.NavigationView ();
+        navigation_view.add (language_view);
 
         infobar_label = new Gtk.Label ("") {
             use_markup = true
@@ -63,12 +60,19 @@ public class Installer.MainWindow : Gtk.Window {
         battery_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
 
         var overlay = new Gtk.Overlay () {
-            child = leaflet
+            child = navigation_view
         };
         overlay.add_overlay (battery_infobar);
 
         child = overlay;
         titlebar = new Gtk.Grid () { visible = false };
+
+        var back_action = new SimpleAction ("back", null);
+        back_action.activate.connect (() => {
+            navigation_view.pop ();
+        });
+
+        add_action (back_action);
 
         language_view.next_step.connect (() => {
             // Don't prompt for screen reader if we're able to navigate without it
@@ -128,136 +132,136 @@ public class Installer.MainWindow : Gtk.Window {
 
             return Source.REMOVE;
         });
-
-        leaflet.notify["visible-child"].connect (() => {
-            update_navigation ();
-        });
-
-        leaflet.notify["child-transition-running"].connect (() => {
-            update_navigation ();
-        });
-    }
-
-    private void update_navigation () {
-        if (!leaflet.child_transition_running) {
-            // We need to rebuild the views to reflect language changes and forking paths
-            if (leaflet.visible_child == language_view || leaflet.visible_child == try_install_view) {
-                while (leaflet.get_adjacent_child (FORWARD) != null) {
-                    leaflet.remove (leaflet.get_adjacent_child (FORWARD));
-                }
-            }
-        }
     }
 
     private void load_keyboard_view () {
-        var keyboard_layout_view = new KeyboardLayoutView ();
+        keyboard_layout_view = new KeyboardLayoutView ();
         try_install_view = new TryInstallView ();
 
-        leaflet.append (keyboard_layout_view);
-        leaflet.append (try_install_view);
+        navigation_view.push (keyboard_layout_view);
 
-        leaflet.visible_child = keyboard_layout_view;
+        keyboard_layout_view.next_step.connect (() => {
+            navigation_view.push (try_install_view);
+        });
 
         try_install_view.custom_step.connect (() => {
-            load_check_view ();
-            load_partitioning_view ();
-            load_drivers_view ();
-            leaflet.navigate (FORWARD);
+            var check_view = load_check_view ();
+            if (check_view == null) {
+                load_partitioning_view ();
+            } else {
+                check_view.next_step.connect (() => {
+                    load_partitioning_view ();
+                });
+            };
         });
 
         try_install_view.next_step.connect (() => {
-            load_check_view ();
-            load_disk_view ();
-            load_encrypt_view ();
-            load_drivers_view ();
-            leaflet.navigate (FORWARD);
+            var check_view = load_check_view ();
+            if (check_view == null) {
+                load_disk_view ();
+            } else {
+                check_view.next_step.connect (() => {
+                    load_disk_view ();
+                });
+            };
         });
     }
 
     private void load_disk_view () {
         var disk_view = new DiskView ();
-        leaflet.append (disk_view);
+        navigation_view.push (disk_view);
 
         disk_view.load.begin (MINIMUM_SPACE);
-        disk_view.cancel.connect (() => leaflet.navigate (BACK));
+        disk_view.next_step.connect (() => load_encrypt_view ());
     }
 
-    private void load_check_view () {
+    private Installer.CheckView? load_check_view () {
         if (check_ignored) {
-            return;
+            return null;
         }
 
         var check_view = new Installer.CheckView ();
         if (check_view.has_messages) {
-            leaflet.append (check_view);
+            check_view.next_step.connect (() => {
+                check_ignored = true;
+            });
+
+            navigation_view.push (check_view);
+
+            return check_view;
         }
 
-        check_view.cancel.connect (() => leaflet.navigate (BACK));
-
-        check_view.next_step.connect (() => {
-            check_ignored = true;
-            leaflet.navigate (FORWARD);
-        });
+        return null;
     }
 
     private void load_encrypt_view () {
         var encrypt_view = new EncryptView ();
-        leaflet.append (encrypt_view);
+        encrypt_view.next_step.connect (load_drivers_view);
 
-        encrypt_view.cancel.connect (() => {
-            leaflet.visible_child = try_install_view;
-        });
+        navigation_view.push (encrypt_view);
     }
 
     private void load_partitioning_view () {
         var partitioning_view = new PartitioningView (MINIMUM_SPACE);
-        leaflet.append (partitioning_view);
+        navigation_view.push (partitioning_view);
 
         partitioning_view.next_step.connect (() => {
             unowned Configuration config = Configuration.get_default ();
             config.luks = (owned) partitioning_view.luks;
             config.mounts = (owned) partitioning_view.mounts;
-            leaflet.navigate (FORWARD);
+            load_drivers_view ();
         });
     }
 
     private void load_drivers_view () {
         var drivers_view = new DriversView ();
-        leaflet.append (drivers_view);
-
         drivers_view.next_step.connect (() => load_progress_view ());
+
+        navigation_view.push (drivers_view);
     }
 
     private void load_progress_view () {
         var progress_view = new ProgressView ();
 
-        leaflet.append (progress_view);
-        leaflet.visible_child = progress_view;
-        leaflet.can_navigate_back = false;
+        progress_view.on_success.connect (() => {
+            var success_view = new SuccessView ();
+            navigation_view.push (success_view);
 
-        progress_view.on_success.connect (() => load_success_view ());
+            success_view.shown.connect (() => {
+                 navigation_view.replace ({ success_view });
+            });
+        });
 
         progress_view.on_error.connect (() => {
             load_error_view (progress_view.get_log ());
         });
-        progress_view.start_installation ();
-    }
 
-    private void load_success_view () {
-        var success_view = new SuccessView ();
-        leaflet.append (success_view);
-        leaflet.visible_child = success_view;
+        progress_view.shown.connect (() => {
+            navigation_view.replace ({ progress_view });
+        });
+
+        navigation_view.push (progress_view);
+        progress_view.start_installation ();
     }
 
     private void load_error_view (string log) {
         var error_view = new ErrorView (log);
-        leaflet.append (error_view);
-        leaflet.visible_child = error_view;
 
         error_view.retry_install.connect (() => {
-            leaflet.visible_child = try_install_view;
-            leaflet.can_navigate_back = true;
+            navigation_view.replace ({
+                language_view,
+                keyboard_layout_view,
+                try_install_view,
+                error_view
+            });
+            navigation_view.pop ();
         });
+
+        error_view.shown.connect (() => {
+             navigation_view.replace ({ error_view });
+        });
+
+        navigation_view.push (error_view);
     }
 
     private void set_infobar_string () {

@@ -25,8 +25,6 @@ public class Installer.CheckView : AbstractInstallerView {
     // Minimum 1GB
     public const uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
-    public signal void next_step ();
-
     private Gtk.Box message_box;
     public bool has_messages {
         get {

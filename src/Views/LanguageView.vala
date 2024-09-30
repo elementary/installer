@@ -27,8 +27,6 @@ public class Installer.LanguageView : AbstractInstallerView {
 
     private VariantWidget lang_variant_widget;
 
-    public signal void next_step ();
-
     public LanguageView () {
         lang_timeout = GLib.Timeout.add_seconds (3, timeout);
     }

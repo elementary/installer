@@ -19,8 +19,6 @@
  */
 
 public class Installer.PartitioningView : AbstractInstallerView {
-    public signal void next_step ();
-
     private Gtk.Button next_button;
     private Gtk.Button modify_partitions_button;
     private Gtk.Box disk_list;
@@ -140,7 +138,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
         modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
         modify_partitions_button.clicked.connect (() => open_partition_editor ());
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
+        var back_button = new Gtk.Button.with_label (_("Back")) {
+            action_name = "win.back"
+        };
 
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
@@ -150,7 +150,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
         action_box_end.append (back_button);
         action_box_end.append (next_button);
 
-        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
         next_button.clicked.connect (() => next_step ());
     }
 
