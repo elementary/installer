@@ -6,8 +6,6 @@
  */
 
 public class Installer.PartitionBlock : Adw.Bin {
-    public signal void decrypted (InstallerDaemon.LuksCredentials credential);
-
     public Icon? icon { get; set; default = null; }
 
     private Gtk.Popover _menu;
