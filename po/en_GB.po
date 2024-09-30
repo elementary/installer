@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-11 22:12+0000\n"
-"PO-Revision-Date: 2024-05-28 23:13+0000\n"
+"PO-Revision-Date: 2024-09-29 02:16+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "installer/installer/en_GB/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/Application.vala:44
@@ -167,16 +167,12 @@ msgstr ""
 "An Internet connection is required to install NVIDIA® graphics drivers."
 
 #: src/Views/DriversView.vala:50
-#, fuzzy
-#| msgid ""
-#| "Proprietary drivers can be installed later through AppCenter, but an "
-#| "Internet connection will be required for all drivers."
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
 msgstr ""
-"Proprietary drivers can be installed later through AppCenter, but an "
-"Internet connection will be required for all drivers."
+"Proprietary drivers can be installed later through System Settings → System, "
+"but an Internet connection will be required for all drivers."
 
 #: src/Views/DriversView.vala:55
 msgid ""
@@ -392,10 +388,8 @@ msgid "Show log"
 msgstr "Show log"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Before Installing"
 msgid "Installing"
-msgstr "Before Installing"
+msgstr "Installing"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
