@@ -252,6 +252,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     private void check_values (SetMount set_mount) {
         if (!use_partition.active) {
             partition_bar.icon = null;
+            partition_bar.tooltip_text = null;
             return;
         }
 
@@ -271,7 +272,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 mount,
                 partition_bar.get_partition_size (),
                 (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0)
-                + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
+                    + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
                 filesystem,
                 this
             ));
