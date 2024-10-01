@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 22:12+0000\n"
+"POT-Creation-Date: 2024-10-01 17:57+0000\n"
 "PO-Revision-Date: 2021-06-05 23:54+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/installer/"
@@ -26,11 +26,11 @@ msgstr "Installer %s"
 msgid "operating system is being installed"
 msgstr "%s er blevet installeret"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 msgid "Connect to a Power Source"
 msgstr "Forbind til en strømkilde"
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -59,66 +59,66 @@ msgstr "%s…"
 msgid "Default"
 msgstr "Standard"
 
-#: src/Views/AbstractInstallerView.vala:51
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Demo Tilstand"
 
-#: src/Views/AbstractInstallerView.vala:60
+#: src/Views/AbstractInstallerView.vala:64
 msgid "Cancel Installation"
 msgstr "Annullér Installation"
 
-#: src/Views/CheckView.vala:50
+#: src/Views/CheckView.vala:48
 #, fuzzy
 #| msgid "Try Installing Again"
 msgid "Before Installing"
 msgstr "Prøv at installere igen"
 
-#: src/Views/CheckView.vala:57
+#: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
 msgstr ""
 
-#: src/Views/CheckView.vala:58
+#: src/Views/CheckView.vala:56
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
 
-#: src/Views/CheckView.vala:63
+#: src/Views/CheckView.vala:61
 msgid "Virtual Machine"
 msgstr ""
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:62
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 
-#: src/Views/CheckView.vala:69
+#: src/Views/CheckView.vala:67
 msgid "Your Device May Be Too Slow"
 msgstr "Din Enhed Kan Være For Langsom"
 
-#: src/Views/CheckView.vala:70
+#: src/Views/CheckView.vala:68
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:85
+#: src/Views/CheckView.vala:83
 #, fuzzy
 #| msgid "Install %s"
 msgid "Install Anyway"
 msgstr "Installer %s"
 
-#: src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:203
 msgid "Recommended:"
 msgstr "Anbefalet:"
 
-#: src/Views/CheckView.vala:214
+#: src/Views/CheckView.vala:209
 msgid "Your Device:"
 msgstr "Din Enhed:"
 
-#: src/Views/CheckView.vala:220 src/Views/CheckView.vala:224
+#: src/Views/CheckView.vala:215 src/Views/CheckView.vala:219
 msgid "Processor:"
 msgstr "Processor:"
 
-#: src/Views/CheckView.vala:236 src/Views/CheckView.vala:240
+#: src/Views/CheckView.vala:231 src/Views/CheckView.vala:235
 msgid "Memory:"
 msgstr "Hukommelse:"
 
@@ -134,57 +134,57 @@ msgstr ""
 "Dette vil slette alt data på det valgte drev. Hvis du ikke har backup af din "
 "data, kan du annullere installationen og bruge Demo Tilstand."
 
-#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
+#: src/Views/DiskView.vala:71 src/Views/PartitioningView.vala:112
 msgid "Getting the current configuration…"
 msgstr "Henter nuværende konfiguration…"
 
-#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
-#: src/Views/TryInstallView.vala:82
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:145
+#: src/Views/TryInstallView.vala:83
 msgid "Next"
 msgstr "Næste"
 
-#: src/Views/DriversView.vala:26
+#: src/Views/DriversView.vala:24
 #, fuzzy
 #| msgid "Partitioning Drive"
 msgid "Additional Drivers"
 msgstr "Partitionerer drev"
 
-#: src/Views/DriversView.vala:30
+#: src/Views/DriversView.vala:28
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
 
-#: src/Views/DriversView.vala:38
+#: src/Views/DriversView.vala:35
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
 
-#: src/Views/DriversView.vala:44
+#: src/Views/DriversView.vala:41
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
 
-#: src/Views/DriversView.vala:50
+#: src/Views/DriversView.vala:47
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
 msgstr ""
 
-#: src/Views/DriversView.vala:55
+#: src/Views/DriversView.vala:52
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
 
-#: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
-#: src/Views/TryInstallView.vala:80
+#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Tilbage"
 
-#: src/Views/DriversView.vala:81
+#: src/Views/DriversView.vala:79
 msgid "Erase and Install"
 msgstr "Slet og installer"
 
@@ -204,7 +204,7 @@ msgid ""
 "you understand:"
 msgstr ""
 
-#: src/Views/EncryptView.vala:63
+#: src/Views/EncryptView.vala:61
 #, fuzzy
 #| msgid ""
 #| "Data will be protected from others with physical access to this device."
@@ -215,7 +215,7 @@ msgstr ""
 "Kryptering af dette drev beskytter data mod at blive læst af andre med "
 "fysisk adgang til denne enhed."
 
-#: src/Views/EncryptView.vala:69
+#: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -223,7 +223,7 @@ msgstr ""
 "Krypteringsadgangskoden kræves hver gang du tænder denne enhed. Gem "
 "adgangskoden et sikkert sted."
 
-#: src/Views/EncryptView.vala:75
+#: src/Views/EncryptView.vala:73
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -231,7 +231,7 @@ msgstr ""
 "Et indbygget eller USB keyboard vil være krævet for at indtaste krypterings "
 "kodeordet hvergang denne enhed starter."
 
-#: src/Views/EncryptView.vala:89
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -241,25 +241,25 @@ msgstr ""
 "tabte data.</b> Dette er et unikt kodeord for denne enhed, ikke adgangskoden "
 "til din brugerkonto."
 
-#: src/Views/EncryptView.vala:99
+#: src/Views/EncryptView.vala:95
 msgid "Choose Encryption Password"
 msgstr "Vælg Krypteringskode"
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Bekræft Adgangskode"
 
-#: src/Views/EncryptView.vala:149
+#: src/Views/EncryptView.vala:145
 msgid "Choose Password"
 msgstr "Vælg Adgangskode"
 
-#: src/Views/EncryptView.vala:172
+#: src/Views/EncryptView.vala:168
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
 msgstr "Vælg Krypteringskode"
 
-#: src/Views/EncryptView.vala:240
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "Adgangskoderne er ikke ens"
 
@@ -276,31 +276,31 @@ msgstr ""
 "Installering af %s mislykkedes, muligvis på grund af en hardwarefejl. "
 "Enheden vil muligvis ikke starte korrekt. Du kan prøve følgende:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:45
 msgid "Try the installation again"
 msgstr "Prøv installationen igen"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:55
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Brug Demo Tilstand og prøv manuelt at gendanne"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:64
 msgid "Restart the device and boot from another drive"
 msgstr "Genstart din enhed for at starte fra et andet drev"
 
-#: src/Views/ErrorView.vala:73
+#: src/Views/ErrorView.vala:69
 msgid "Details"
 msgstr "Detaljer"
 
-#: src/Views/ErrorView.vala:118 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
 msgid "Restart Device"
 msgstr "Genstart Enhed"
 
-#: src/Views/ErrorView.vala:120 src/Views/TryInstallView.vala:37
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:36
 msgid "Try Demo Mode"
 msgstr "Prøv Demo Tilstand"
 
-#: src/Views/ErrorView.vala:122
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Prøv at installere igen"
 
@@ -316,7 +316,7 @@ msgstr "Skriv for at teste dit layout"
 msgid "Show keyboard layout"
 msgstr "Vis tastatur layout"
 
-#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
+#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:112
 msgid "Select"
 msgstr "Vælg"
 
@@ -324,25 +324,25 @@ msgstr "Vælg"
 msgid "Input Language"
 msgstr "Indtastningssprog"
 
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:255
 msgid "Languages"
 msgstr "Sprog"
 
-#: src/Views/LanguageView.vala:272
+#: src/Views/LanguageView.vala:270
 msgid "Select a Language"
 msgstr "Vælg et Sprog"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
 msgid "Currently active language"
 msgstr "Nuværende aktivt sprog"
 
-#: src/Views/PartitioningView.vala:53
+#: src/Views/PartitioningView.vala:51
 #, fuzzy
 #| msgid "Use partition:"
 msgid "Select Partitions"
 msgstr "Brug partition:"
 
-#: src/Views/PartitioningView.vala:58
+#: src/Views/PartitioningView.vala:56
 #, fuzzy
 #| msgid ""
 #| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
@@ -354,12 +354,12 @@ msgstr ""
 "vælger \"Format\", slettes ALT data på den valgte partition.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:67
+#: src/Views/PartitioningView.vala:65
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Du skal mindst vælge en <b>Root (/)</b> partition."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:71
+#: src/Views/PartitioningView.vala:69
 #, fuzzy
 #| msgid ""
 #| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
@@ -371,27 +371,27 @@ msgstr ""
 "Du skal mindst vælge en <b>Root (/)</b> partition og en <b>Boot (/boot/efi)</"
 "b> partition."
 
-#: src/Views/PartitioningView.vala:82
+#: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Det anbefales også at vælge en <b>Swap</b> partition."
 
-#: src/Views/PartitioningView.vala:140
+#: src/Views/PartitioningView.vala:138
 msgid "Modify Partitions…"
 msgstr "Tilpas Partitioner…"
 
-#: src/Views/PartitioningView.vala:290
+#: src/Views/PartitioningView.vala:281
 msgid "EFI partition has the wrong file system"
 msgstr "EFI-partitionen har det forkerte filsystem"
 
-#: src/Views/PartitioningView.vala:292
+#: src/Views/PartitioningView.vala:283
 msgid "EFI partition is too small"
 msgstr "EFI-partitionen er for lille"
 
-#: src/Views/PartitioningView.vala:295
+#: src/Views/PartitioningView.vala:286
 msgid "Invalid file system for root"
 msgstr "Ugyldigt filsystem til root"
 
-#: src/Views/PartitioningView.vala:297
+#: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for home"
 msgstr "Ugyldigt filsystem til home"
 
@@ -429,11 +429,11 @@ msgstr "Konfigurerer systemet"
 msgid "Finishing the Installation"
 msgstr "Færdiggører Installationen"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:26
 msgid "Try or Install"
 msgstr "Prøv eller Installer"
 
-#: src/Views/TryInstallView.vala:39
+#: src/Views/TryInstallView.vala:38
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -442,20 +442,20 @@ msgstr ""
 "operativsystem forbliver uændret. Ydeevne og funktioner afspejler muligvis "
 "ikke den installerede oplevelse."
 
-#: src/Views/TryInstallView.vala:45
+#: src/Views/TryInstallView.vala:44
 msgid "Erase Disk and Install"
 msgstr "Slet Disk og Installer"
 
-#: src/Views/TryInstallView.vala:47
+#: src/Views/TryInstallView.vala:46
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Slet alt og installer en frisk kopi af %s."
 
-#: src/Views/TryInstallView.vala:53
+#: src/Views/TryInstallView.vala:52
 msgid "Custom Install (Advanced)"
 msgstr "Brugerdefineret Installering (Avanceret)"
 
-#: src/Views/TryInstallView.vala:55
+#: src/Views/TryInstallView.vala:54
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -463,7 +463,7 @@ msgstr ""
 "Opret, tilpas størrelsen eller på anden vis administrere partitioner "
 "manuelt. Denne metode kan føre til tab af data."
 
-#: src/Views/TryInstallView.vala:108
+#: src/Views/TryInstallView.vala:107
 msgid "Custom Install"
 msgstr "Brugerdefineret Installering"
 
@@ -476,18 +476,18 @@ msgstr "Forsæt Opsætning"
 msgid "%s has been installed"
 msgstr "%s er blevet installeret"
 
-#: src/Views/SuccessView.vala:60
+#: src/Views/SuccessView.vala:57
 msgid "Shut Down"
 msgstr "Sluk"
 
-#: src/Views/SuccessView.vala:92
+#: src/Views/SuccessView.vala:89
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "Din enhed genstarter automatisk om %i sekund."
 msgstr[1] "Din enhed genstarter automatisk om %i sekunder."
 
-#: src/Views/SuccessView.vala:96
+#: src/Views/SuccessView.vala:93
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -507,28 +507,28 @@ msgstr ""
 "Indtast partitionens krypteringsadgangskode og angiv et enhedsnavn for den "
 "dekrypterede partition."
 
-#: src/Widgets/DecryptMenu.vala:83
+#: src/Widgets/DecryptMenu.vala:82
 msgid "Password:"
 msgstr "Adgangskode:"
 
-#: src/Widgets/DecryptMenu.vala:96
+#: src/Widgets/DecryptMenu.vala:95
 msgid "Device name:"
 msgstr "Enhedsnavn:"
 
-#: src/Widgets/DecryptMenu.vala:109
+#: src/Widgets/DecryptMenu.vala:108
 msgid "Decrypt"
 msgstr "Dekrypter"
 
-#: src/Widgets/DecryptMenu.vala:183
+#: src/Widgets/DecryptMenu.vala:182
 msgid "LUKS volume was decrypted"
 msgstr "LUKS-volumen blev dekrypteret"
 
-#: src/Widgets/DiskBar.vala:82
+#: src/Widgets/DiskBar.vala:228
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:83
+#: src/Widgets/DiskBar.vala:229
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
@@ -585,6 +585,10 @@ msgstr "Filsystem:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Standard (ext4)"
+
+#: src/Widgets/PartitionMenu.vala:261
+msgid "Custom value must begin with /"
+msgstr ""
 
 #~ msgid "Ignore"
 #~ msgstr "Ignorér"

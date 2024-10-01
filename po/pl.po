@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 22:12+0000\n"
+"POT-Creation-Date: 2024-10-01 17:57+0000\n"
 "PO-Revision-Date: 2024-09-12 22:16+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/"
@@ -25,11 +25,11 @@ msgstr "Zainstaluj %s"
 msgid "operating system is being installed"
 msgstr "system operacyjny jest instalowany"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 msgid "Connect to a Power Source"
 msgstr "Podłącz do źródła zasilania"
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -58,23 +58,23 @@ msgstr "%s…"
 msgid "Default"
 msgstr "Domyślny"
 
-#: src/Views/AbstractInstallerView.vala:51
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Tryb testowy"
 
-#: src/Views/AbstractInstallerView.vala:60
+#: src/Views/AbstractInstallerView.vala:64
 msgid "Cancel Installation"
 msgstr "Anuluj instalację"
 
-#: src/Views/CheckView.vala:50
+#: src/Views/CheckView.vala:48
 msgid "Before Installing"
 msgstr "Przed instalacją"
 
-#: src/Views/CheckView.vala:57
+#: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
 msgstr "Preliminarna Wersja"
 
-#: src/Views/CheckView.vala:58
+#: src/Views/CheckView.vala:56
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
@@ -82,42 +82,42 @@ msgstr ""
 "Instaluj ją tylko na urządzeniach przeznaczonych do rozwoju. <b>Nie będziesz "
 "w stanie zaktualizować jej do wersji stabilnej</b>."
 
-#: src/Views/CheckView.vala:63
+#: src/Views/CheckView.vala:61
 msgid "Virtual Machine"
 msgstr "Maszyna wirtualna"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:62
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
 "Niektóre funkcje %s mogą działać wolno, zacinać się lub nie działać "
 "poprawnie."
 
-#: src/Views/CheckView.vala:69
+#: src/Views/CheckView.vala:67
 msgid "Your Device May Be Too Slow"
 msgstr "Twoje urządzenie może być zbyt wolne"
 
-#: src/Views/CheckView.vala:70
+#: src/Views/CheckView.vala:68
 msgid "This may cause it to run slowly or freeze."
 msgstr "To może spowodować wolne działanie oraz przycięcia."
 
-#: src/Views/CheckView.vala:85
+#: src/Views/CheckView.vala:83
 msgid "Install Anyway"
 msgstr "Zainstaluj mimo to"
 
-#: src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:203
 msgid "Recommended:"
 msgstr "Polecane:"
 
-#: src/Views/CheckView.vala:214
+#: src/Views/CheckView.vala:209
 msgid "Your Device:"
 msgstr "Twoje urządzenie:"
 
-#: src/Views/CheckView.vala:220 src/Views/CheckView.vala:224
+#: src/Views/CheckView.vala:215 src/Views/CheckView.vala:219
 msgid "Processor:"
 msgstr "Procesor:"
 
-#: src/Views/CheckView.vala:236 src/Views/CheckView.vala:240
+#: src/Views/CheckView.vala:231 src/Views/CheckView.vala:235
 msgid "Memory:"
 msgstr "Pamięć:"
 
@@ -134,20 +134,20 @@ msgstr ""
 "wykonałeś kopii zapasowej swoich danych, możesz anulować instalację i użyć "
 "trybu demonstracyjnego."
 
-#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
+#: src/Views/DiskView.vala:71 src/Views/PartitioningView.vala:112
 msgid "Getting the current configuration…"
 msgstr "Pobieranie bieżącej konfiguracji…"
 
-#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
-#: src/Views/TryInstallView.vala:82
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:145
+#: src/Views/TryInstallView.vala:83
 msgid "Next"
 msgstr "Dalej"
 
-#: src/Views/DriversView.vala:26
+#: src/Views/DriversView.vala:24
 msgid "Additional Drivers"
 msgstr "Dodatkowe sterowniki"
 
-#: src/Views/DriversView.vala:30
+#: src/Views/DriversView.vala:28
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
@@ -157,7 +157,7 @@ msgstr ""
 "wirtualne nie działać poprawnie bez własnościowych sterowników. Większość "
 "urządzeń nie potrzebuje dodatkowych sterowników."
 
-#: src/Views/DriversView.vala:38
+#: src/Views/DriversView.vala:35
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
@@ -166,13 +166,13 @@ msgstr ""
 "zweryfikować. Aktualizacje dotyczące bezpieczeństwa oraz innych aspektów "
 "urządzenia są uzależnione od producenta sterowników."
 
-#: src/Views/DriversView.vala:44
+#: src/Views/DriversView.vala:41
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
 "Połączenie internetowe jest wymagane do zainstalowania sterowników "
 "graficznych kart NVIDIA®."
 
-#: src/Views/DriversView.vala:50
+#: src/Views/DriversView.vala:47
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
@@ -181,7 +181,7 @@ msgstr ""
 "System, ale w przypadku wszystkich sterowników wymagane będzie połączenie z "
 "Internetem."
 
-#: src/Views/DriversView.vala:55
+#: src/Views/DriversView.vala:52
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
@@ -189,13 +189,13 @@ msgstr ""
 "Dołącz własnościowe sterowniki stron trzecich podczas instalacji. Akceptuję "
 "ich odpowiednie licencje oraz warunki użytkowania."
 
-#: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
-#: src/Views/TryInstallView.vala:80
+#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Cofnij"
 
-#: src/Views/DriversView.vala:81
+#: src/Views/DriversView.vala:79
 msgid "Erase and Install"
 msgstr "Wyczyść i zainstaluj"
 
@@ -215,7 +215,7 @@ msgstr ""
 "W razie potrzeby zaszyfruj dysk tego urządzenia w celu zapewnienia "
 "dodatkowej ochrony, ale upewnij się, że to rozumiesz:"
 
-#: src/Views/EncryptView.vala:63
+#: src/Views/EncryptView.vala:61
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -223,7 +223,7 @@ msgstr ""
 "Dane będą tylko chronione przed innymi z fizycznym dostępem do urządzenia, "
 "kiedy jest wyłączone."
 
-#: src/Views/EncryptView.vala:69
+#: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -231,7 +231,7 @@ msgstr ""
 "Hasło szyfrowania danych będzie wymagane zawsze, kiedy urządzenie będzie "
 "uruchamiane. Zachowaj je w bezpiecznym miejscu."
 
-#: src/Views/EncryptView.vala:75
+#: src/Views/EncryptView.vala:73
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -239,7 +239,7 @@ msgstr ""
 "Klawiatura wbudowana lub klawiatura USB będzie wymagana do wpisania hasła "
 "szyfrowania za każdym razem, gdy to urządzenie będzie włączane."
 
-#: src/Views/EncryptView.vala:89
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -249,23 +249,23 @@ msgstr ""
 "danych.</b> Jest to unikalne hasło dla tego urządzenia, nie hasło do konta "
 "użytkownika."
 
-#: src/Views/EncryptView.vala:99
+#: src/Views/EncryptView.vala:95
 msgid "Choose Encryption Password"
 msgstr "Wybierz hasło szyfrowania"
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Potwierdź hasło"
 
-#: src/Views/EncryptView.vala:149
+#: src/Views/EncryptView.vala:145
 msgid "Choose Password"
 msgstr "Wybierz hasło"
 
-#: src/Views/EncryptView.vala:172
+#: src/Views/EncryptView.vala:168
 msgid "Set Encryption Password"
 msgstr "Ustaw hasło szyfrowania"
 
-#: src/Views/EncryptView.vala:240
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "Hasła do siebie nie pasują"
 
@@ -283,31 +283,31 @@ msgstr ""
 "Urządzenie może nie uruchomić się ponownie. Możesz spróbować wykonać jedną z "
 "następujących czynności:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:45
 msgid "Try the installation again"
 msgstr "Ponów instalację"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:55
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Użyj trybu demonstracyjnego, aby ręcznie rozwiązać problem"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:64
 msgid "Restart the device and boot from another drive"
 msgstr "Uruchom urządzenie ponownie z innego dysku"
 
-#: src/Views/ErrorView.vala:73
+#: src/Views/ErrorView.vala:69
 msgid "Details"
 msgstr "Szczegóły"
 
-#: src/Views/ErrorView.vala:118 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
 msgid "Restart Device"
 msgstr "Uruchom urządzenie ponownie"
 
-#: src/Views/ErrorView.vala:120 src/Views/TryInstallView.vala:37
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:36
 msgid "Try Demo Mode"
 msgstr "Wypróbuj tryb demonstracyjny"
 
-#: src/Views/ErrorView.vala:122
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Ponów instalację"
 
@@ -323,7 +323,7 @@ msgstr "Napisz, aby wypróbować swój układ"
 msgid "Show keyboard layout"
 msgstr "Pokaż układ klawiatury"
 
-#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
+#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:112
 msgid "Select"
 msgstr "Wybierz"
 
@@ -331,23 +331,23 @@ msgstr "Wybierz"
 msgid "Input Language"
 msgstr "Wpisz język"
 
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:255
 msgid "Languages"
 msgstr "Języki"
 
-#: src/Views/LanguageView.vala:272
+#: src/Views/LanguageView.vala:270
 msgid "Select a Language"
 msgstr "Wybierz język"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
 msgid "Currently active language"
 msgstr "Aktywny język"
 
-#: src/Views/PartitioningView.vala:53
+#: src/Views/PartitioningView.vala:51
 msgid "Select Partitions"
 msgstr "Wybierz partycje"
 
-#: src/Views/PartitioningView.vala:58
+#: src/Views/PartitioningView.vala:56
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
@@ -355,12 +355,12 @@ msgstr ""
 "wybranej partycji."
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:67
+#: src/Views/PartitioningView.vala:65
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Musisz wskazać przynajmniej partycję <b>Główną (/)</b>."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:71
+#: src/Views/PartitioningView.vala:69
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
@@ -368,27 +368,27 @@ msgstr ""
 "Musisz wskazać przynajmniej partycję <b>Główną (/)</b> i opcjonalną "
 "partycję<b>Rozruchową (/boot/efi)</b>."
 
-#: src/Views/PartitioningView.vala:82
+#: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "Jest również polecane wybranie partycji <b>Wymiany (Swap)</b>."
 
-#: src/Views/PartitioningView.vala:140
+#: src/Views/PartitioningView.vala:138
 msgid "Modify Partitions…"
 msgstr "Modyfikacja partycji…"
 
-#: src/Views/PartitioningView.vala:290
+#: src/Views/PartitioningView.vala:281
 msgid "EFI partition has the wrong file system"
 msgstr "Partycja EFI posiada błędny system plików"
 
-#: src/Views/PartitioningView.vala:292
+#: src/Views/PartitioningView.vala:283
 msgid "EFI partition is too small"
 msgstr "Partycja EFI jest zbyt mała"
 
-#: src/Views/PartitioningView.vala:295
+#: src/Views/PartitioningView.vala:286
 msgid "Invalid file system for root"
 msgstr "Błędny system plików dla przestrzeni root"
 
-#: src/Views/PartitioningView.vala:297
+#: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for home"
 msgstr "Błędny system plików dla przestrzeni domowej"
 
@@ -424,11 +424,11 @@ msgstr "Konfigurowanie systemu"
 msgid "Finishing the Installation"
 msgstr "Kończenie instalacji"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:26
 msgid "Try or Install"
 msgstr "Wypróbuj lub zainstaluj"
 
-#: src/Views/TryInstallView.vala:39
+#: src/Views/TryInstallView.vala:38
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -437,20 +437,20 @@ msgstr ""
 "pozostaną niezmienione. Wydajność i funkcje mogą nie odzwierciedlać "
 "doświadczeń, które są po zainstalowaniu systemu."
 
-#: src/Views/TryInstallView.vala:45
+#: src/Views/TryInstallView.vala:44
 msgid "Erase Disk and Install"
 msgstr "Wyczyść dysk i zainstaluj"
 
-#: src/Views/TryInstallView.vala:47
+#: src/Views/TryInstallView.vala:46
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Wyczyść wszystko i zainstaluj świeżą kopię %s."
 
-#: src/Views/TryInstallView.vala:53
+#: src/Views/TryInstallView.vala:52
 msgid "Custom Install (Advanced)"
 msgstr "Własna instalacja (zaawansowana)"
 
-#: src/Views/TryInstallView.vala:55
+#: src/Views/TryInstallView.vala:54
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -458,7 +458,7 @@ msgstr ""
 "Ręcznie twórz, zmieniaj rozmiar i dokonuj wszelkich operacji na partycjach. "
 "Ta metoda może spowodować utratę danych."
 
-#: src/Views/TryInstallView.vala:108
+#: src/Views/TryInstallView.vala:107
 msgid "Custom Install"
 msgstr "Własna instalacja"
 
@@ -471,11 +471,11 @@ msgstr "Kontynuuj ustawianie"
 msgid "%s has been installed"
 msgstr "%s został zainstalowany"
 
-#: src/Views/SuccessView.vala:60
+#: src/Views/SuccessView.vala:57
 msgid "Shut Down"
 msgstr "Wyłącz komputer"
 
-#: src/Views/SuccessView.vala:92
+#: src/Views/SuccessView.vala:89
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
@@ -486,7 +486,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Twoje urządzenie zostanie uruchomione ponownie automatycznie za %i sekund."
 
-#: src/Views/SuccessView.vala:96
+#: src/Views/SuccessView.vala:93
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -506,28 +506,28 @@ msgstr ""
 "Wprowadź hasło szyfrowania partycji i ustaw nazwę urządzenia dla "
 "odszyfrowanej partycji."
 
-#: src/Widgets/DecryptMenu.vala:83
+#: src/Widgets/DecryptMenu.vala:82
 msgid "Password:"
 msgstr "Hasło:"
 
-#: src/Widgets/DecryptMenu.vala:96
+#: src/Widgets/DecryptMenu.vala:95
 msgid "Device name:"
 msgstr "Nazwa urządzenia:"
 
-#: src/Widgets/DecryptMenu.vala:109
+#: src/Widgets/DecryptMenu.vala:108
 msgid "Decrypt"
 msgstr "Odszyfruj"
 
-#: src/Widgets/DecryptMenu.vala:183
+#: src/Widgets/DecryptMenu.vala:182
 msgid "LUKS volume was decrypted"
 msgstr "Wolumin LUKS został odszyfrowany"
 
-#: src/Widgets/DiskBar.vala:82
+#: src/Widgets/DiskBar.vala:228
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:83
+#: src/Widgets/DiskBar.vala:229
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
@@ -580,6 +580,10 @@ msgstr "System plików:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Domyślny (ext4)"
+
+#: src/Widgets/PartitionMenu.vala:261
+msgid "Custom value must begin with /"
+msgstr ""
 
 #~ msgid ""
 #~ "Proprietary drivers are subject to their own license terms. By "
