@@ -212,8 +212,15 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private DiskBar get_disk_bar (InstallerDaemon.Disk disk, bool lvm) {
         var partitions = new Gee.ArrayList<PartitionBlock> ();
         foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-            var partition = new PartitionBlock (part, disk.device_path, disk.sector_size, lvm, this.set_mount, this.unset_mount, this.mount_is_set);
-            partition.decrypted.connect (on_partition_decrypted);
+            var partition = new PartitionBlock (part);
+
+            if (part.filesystem == LUKS) {
+                partition.menu = new DecryptMenu (part.device_path);
+                ((DecryptMenu) partition.menu).decrypted.connect (on_partition_decrypted);
+            } else {
+                partition.menu = new PartitionMenu (part.device_path, disk.device_path, part.filesystem, lvm, this.set_mount, this.unset_mount, this.mount_is_set, partition);
+            }
+
             partitions.add (partition);
         }
 
