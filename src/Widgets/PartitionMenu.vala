@@ -278,6 +278,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
             ));
 
             partition_bar.icon = new ThemedIcon ("process-completed-symbolic");
+            partition_bar.tooltip_text = null;
         } catch (GLib.Error e) {
             partition_bar.icon = new ThemedIcon ("dialog-warning-symbolic");
             partition_bar.tooltip_text = e.message;
