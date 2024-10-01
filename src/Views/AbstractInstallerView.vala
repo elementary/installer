@@ -6,7 +6,7 @@
 public abstract class AbstractInstallerView : Adw.NavigationPage {
     public bool cancellable { get; construct; }
 
-    public signal void cancel ();
+    public signal void next_step ();
 
     protected Gtk.Box title_area;
     protected Gtk.Box content_area;
@@ -61,10 +61,9 @@ public abstract class AbstractInstallerView : Adw.NavigationPage {
         action_area.append (action_box_end);
 
         if (cancellable) {
-            var cancel_button = new Gtk.Button.with_label (_("Cancel Installation"));
-            cancel_button.clicked.connect (() => {
-                cancel ();
-            });
+            var cancel_button = new Gtk.Button.with_label (_("Cancel Installation")) {
+                action_name = "win.back"
+            };
 
             action_box_end.append (cancel_button);
         }

@@ -16,8 +16,6 @@
  */
 
  public class DriversView : AbstractInstallerView {
-    public signal void next_step ();
-
     construct {
         var image = new Gtk.Image.from_icon_name ("application-x-firmware") {
             pixel_size = 128
@@ -74,8 +72,9 @@
 
         content_area.append (message_box);
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
-        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
+        var back_button = new Gtk.Button.with_label (_("Back")) {
+            action_name = "win.back"
+        };
 
         var next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
