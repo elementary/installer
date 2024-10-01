@@ -1,5 +1,6 @@
 vala_files = [
     'Application.vala',
+    'HostnameValidator.vala',
     'MainWindow.vala',
     'Utils.vala',
     'Helpers/InstallerDaemon.vala',
