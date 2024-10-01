@@ -221,7 +221,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                     }
                 }
                 use_as.set_active (select);
-                update_values (set_mount);
+                check_values (set_mount);
             } else {
                 unset_mount (partition_path);
                 partition_bar.icon = null;
@@ -250,18 +250,21 @@ public class Installer.PartitionMenu : Gtk.Popover {
     }
 
     private void check_values (SetMount set_mount) {
-        if (values_ready ()) {
-            update_values (set_mount);
+        if (!use_partition.active) {
+            partition_bar.icon = null;
+            partition_bar.tooltip_text = null;
+            return;
         }
-    }
 
-    private void update_values (SetMount set_mount) {
+        if (use_as.active == 4 && !custom.text.has_prefix ("/")) {
+            partition_bar.icon = new ThemedIcon ("dialog-warning-symbolic");
+            partition_bar.tooltip_text = _("Custom value must begin with /");
+            return;
+        }
+
         var mount = get_mount ();
-        var filesystem = mount == "swap"
-            ? InstallerDaemon.FileSystem.SWAP
-            : get_file_system ();
+        var filesystem = mount == "swap" ? InstallerDaemon.FileSystem.SWAP : get_file_system ();
 
-        string? error = null;
         try {
             set_mount (new Installer.Mount (
                 partition_path,
@@ -273,16 +276,12 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 filesystem,
                 this
             ));
-        } catch (GLib.Error why) {
-            error = why.message;
-        }
 
-        partition_bar.icon = new ThemedIcon (
-            error == null ? "process-completed-symbolic" : "dialog-warning-symbolic"
-        );
-
-        if (error != null) {
-            partition_bar.tooltip_text = error;
+            partition_bar.icon = new ThemedIcon ("process-completed-symbolic");
+            partition_bar.tooltip_text = null;
+        } catch (GLib.Error e) {
+            partition_bar.icon = new ThemedIcon ("dialog-warning-symbolic");
+            partition_bar.tooltip_text = e.message;
         }
     }
 
@@ -326,17 +325,5 @@ public class Installer.PartitionMenu : Gtk.Popover {
             default:
                 return custom.get_text ();
         }
-    }
-
-    private bool values_ready () {
-        return use_partition.active && (!custom_set () || custom_valid ());
-    }
-
-    private bool custom_set () {
-        return use_as.get_active () == 4;
-    }
-
-    private bool custom_valid () {
-        return custom.get_text ().has_prefix ("/");
     }
  }
