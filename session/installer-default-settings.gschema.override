@@ -1,16 +1,16 @@
-[org.freedesktop.ibus.general.hotkey:Installer]
+[org.freedesktop.ibus.general.hotkey:X-Installer]
 triggers=['<Control>space']
 
-[org.freedesktop.ibus.panel:Installer]
+[org.freedesktop.ibus.panel:X-Installer]
 show=1
 
-[org.gnome.desktop.datetime:Installer]
+[org.gnome.desktop.datetime:X-Installer]
 automatic-timezone=true
 
-[org.gnome.desktop.input-sources:Installer]
+[org.gnome.desktop.input-sources:X-Installer]
 xkb-options=['grp:alt_shift_toggle']
 
-[org.gnome.desktop.interface:Installer]
+[org.gnome.desktop.interface:X-Installer]
 cursor-theme='elementary'
 document-font-name='Open Sans 10'
 font-name='Inter 9'
@@ -18,36 +18,36 @@ gtk-theme='io.elementary.stylesheet.blueberry'
 icon-theme='elementary'
 monospace-font-name='Roboto Mono 10'
 
-[org.gnome.desktop.peripherals.touchpad:Installer]
+[org.gnome.desktop.peripherals.touchpad:X-Installer]
 natural-scroll=true
 tap-to-click=true
 
-[org.gnome.desktop.sound:Installer]
+[org.gnome.desktop.sound:X-Installer]
 theme-name='elementary'
 
-[org.gnome.desktop.wm.preferences:Installer]
+[org.gnome.desktop.wm.preferences:X-Installer]
 button-layout='close:maximize'
 mouse-button-modifier='<Super>'
 resize-with-right-button=true
 
-[org.gnome.nm-applet:Installer]
+[org.gnome.nm-applet:X-Installer]
 disable-connected-notifications=true
 show-applet=false
 
-[org.gnome.settings-daemon.peripherals.touchpad:Installer]
+[org.gnome.settings-daemon.peripherals.touchpad:X-Installer]
 horiz-scroll-enabled=true
 natural-scroll=true
 scroll-method='two-finger-scrolling'
 
-[org.gnome.settings-daemon.plugins.screensaver-proxy:Installer]
+[org.gnome.settings-daemon.plugins.screensaver-proxy:X-Installer]
 # Allows light-locker to accept DBus
 active=false
 
-[org.gnome.settings-daemon.plugins.xsettings:Installer]
+[org.gnome.settings-daemon.plugins.xsettings:X-Installer]
 overrides={'Gtk/DialogsUseHeader': <0>, 'Gtk/EnablePrimaryPaste': <0>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'close:menu,maximize'>}
 
-[org.gtk.Settings.FileChooser:Installer]
+[org.gtk.Settings.FileChooser:X-Installer]
 sort-directories-first=true
 
-[org.onboard:Installer]
+[org.onboard:X-Installer]
 theme='/usr/share/onboard/themes/Nightshade.theme'
