@@ -14,6 +14,8 @@ You'll need the following dependencies:
  - meson
  - desktop-file-utils
  - gettext
+ - gnome-settings-daemon
+ - gnome-settings-daemon-dev
  - gparted
  - libgnomekbd-dev
  - libgranite-7-dev >=7.4.0
