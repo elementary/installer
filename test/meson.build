@@ -1,13 +1,9 @@
-test_dependencies = [
-    glib_dep,
-]
-
-tests = executable(
-    meson.project_name() + '-tests',
+hostname_validator_test = executable(
+    'HostnameValidatorTest',
     'HostnameValidatorTest.vala',
-    'Test.vala',
-    meson.project_source_root() + '/src/HostnameValidator.vala',
-    dependencies: test_dependencies
+    meson.project_source_root() / 'src' / 'HostnameValidator.vala',
+    dependencies: glib_dep,
+    install: false
 )
 
-test('Test', tests)
+test('HostnameValidator Test', hostname_validator_test)
