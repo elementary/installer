@@ -2,5 +2,6 @@
 Name=Installer
 Comment=This session provides elementary experience
 Exec=gnome-session --session=installer
-DesktopNames=Installer
+TryExec=io.elementary.wingpanel
+DesktopNames=X-Installer
 Type=Application

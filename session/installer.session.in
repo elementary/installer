@@ -1,0 +1,4 @@
+[GNOME Session]
+Name=Installer
+RequiredComponents=@SESSION_COMPONENTS@
+DesktopName=Installer
