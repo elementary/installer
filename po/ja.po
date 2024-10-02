@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-01 17:57+0000\n"
-"PO-Revision-Date: 2024-09-12 22:16+0000\n"
+"PO-Revision-Date: 2024-10-02 18:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -574,7 +574,7 @@ msgstr "デフォルト (ext4)"
 
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
-msgstr ""
+msgstr "カスタム値は / で始める必要があります"
 
 #~ msgid ""
 #~ "Proprietary drivers are subject to their own license terms. By "
