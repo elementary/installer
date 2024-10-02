@@ -3,9 +3,10 @@
  * SPDX-FileCopyrightText: 2024 elementary, Inc. (https://elementary.io)
  */
 
-
 // Validate a hostname according to [IETF RFC 1123](https://tools.ietf.org/html/rfc1123)
-void add_hostname_validator_tests () {
+private void main (string[] args) {
+    Test.init (ref args);
+
     Test.add_func ("/valid", () => {
         assert (Utils.hostname_is_valid ("VaLiD-HoStNaMe"));
         assert (Utils.hostname_is_valid ("50-name"));
@@ -43,10 +44,6 @@ void add_hostname_validator_tests () {
         // Its labels are 63 or fewer characters.
         assert (!Utils.hostname_is_valid ("foo.label-is-way-to-longgggggggggggggggggggggggggggggggggggggggggggg.org"));
     });
-}
 
-void main (string[] args) {
-    Test.init (ref args);
-    add_hostname_validator_tests ();
     Test.run ();
 }
