@@ -1,6 +1,5 @@
 autostartdir = get_option('sysconfdir') / 'xdg' / 'autostart'
 desktop_file_install = find_program('desktop-file-install')
-gsd_dir = gsd_dep.get_variable(pkgconfig : 'prefix')
 schemadir = get_option('datadir') / 'glib-2.0' / 'schemas'
 
 gsd_components = [

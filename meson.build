@@ -2,7 +2,8 @@ project(
     'io.elementary.installer',
     'vala', 'c',
     meson_version : '>= 0.56.0',
-    version: '8.0.0'
+    version: '8.0.0',
+    default_options: 'sysconfdir=/etc'
 )
 
 add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', language:'c')
