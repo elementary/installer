@@ -19,9 +19,7 @@
 
 namespace Utils {
     private bool hostname_is_valid_char (char c) {
-        return ((c >= 'a' && c <= 'z') ||
-                (c >= 'A' && c <= 'Z') ||
-                (c >= '0' && c <= '9') ||
+        return (c.isalnum () ||
                 c == '-' ||
                 c == '.');
     }
