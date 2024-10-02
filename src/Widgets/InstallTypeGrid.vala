@@ -44,7 +44,6 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
         title_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var subtitle_label = new Gtk.Label (subtitle) {
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };

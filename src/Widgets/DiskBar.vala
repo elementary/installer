@@ -6,19 +6,13 @@
  */
 
 public class Installer.DiskBar: Gtk.Box {
-    public string disk_name { get; construct; }
-    public string disk_path { get; construct; }
-    public uint64 size { get; construct; }
-    public Gee.ArrayList<PartitionBar> partitions { get; construct; }
+    public InstallerDaemon.Disk disk { get; construct; }
+    public Gee.ArrayList<PartitionBlock> partitions { get; construct; }
 
-    private Gtk.Box legend_box;
-
-    public DiskBar (string disk_name, string disk_path, uint64 size, Gee.ArrayList<PartitionBar> partitions) {
+    public DiskBar (InstallerDaemon.Disk disk, Gee.ArrayList<PartitionBlock> partitions) {
         Object (
-            disk_name: disk_name,
-            disk_path: disk_path,
-            partitions: partitions,
-            size: size
+            disk: disk,
+            partitions: partitions
         );
     }
 
@@ -27,34 +21,37 @@ public class Installer.DiskBar: Gtk.Box {
     }
 
     construct {
-        var name_label = new Granite.HeaderLabel (disk_name) {
-            secondary_text = "%s %s".printf (disk_path, GLib.format_size (size))
+        var size = disk.sectors * disk.sector_size;
+
+        var name_label = new Granite.HeaderLabel (disk.name) {
+            secondary_text = "%s %s".printf (disk.device_path, GLib.format_size (size))
         };
 
         var bar = new PartitionContainer (size, partitions);
 
-        legend_box = new Gtk.Box (VERTICAL, 6) {
+        var legend_box = new Gtk.Box (VERTICAL, 6) {
             halign = START
         };
 
-        foreach (PartitionBar p in partitions) {
-            add_legend (
-                p.partition.device_path,
-                p.get_partition_size () * 512,
-                Distinst.strfilesys (p.partition.filesystem),
-                p.volume_group,
-                p.menu
-            );
+        foreach (PartitionBlock partition_block in partitions) {
+            var legend = new Legend (partition_block.partition);
+            legend_box.append (legend);
+
+            var click_gesture = new Gtk.GestureClick ();
+            click_gesture.released.connect (partition_block.menu.popup);
+
+            legend.add_controller (click_gesture);
         }
 
         uint64 used = 0;
-        foreach (PartitionBar partition in partitions) {
+        foreach (PartitionBlock partition in partitions) {
             used += partition.get_partition_size ();
         }
 
         var unused = size - (used * 512);
         if (size / 100 < unused) {
-            add_legend ("unused", unused, "unused", null, null);
+            var legend = new Legend.unused (unused);
+            legend_box.append (legend);
         }
 
         orientation = VERTICAL;
@@ -68,52 +65,11 @@ public class Installer.DiskBar: Gtk.Box {
         css_classes = {"horizontal"};
     }
 
-    private void add_legend (string ppath, uint64 size, string fs, string? vg, Gtk.Popover? menu) {
-        var fill_round = new Block () {
-            valign = CENTER
-        };
-        fill_round.add_css_class ("legend");
-        fill_round.add_css_class (fs);
-
-        var format_size = GLib.format_size (size);
-
-        var info = new Gtk.Label (
-            (vg == null)
-                ? _("%s (%s)").printf (format_size, fs)
-                : _("%s (%s: <b>%s</b>)").printf (format_size, fs, vg)
-        ) {
-            halign = START,
-        };
-        info.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-        info.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
-        info.use_markup = true;
-
-        var path = new Gtk.Label (ppath) {
-            halign = START
-        };
-
-        var legend = new Gtk.Grid () {
-            column_spacing = 12
-        };
-        legend.attach (fill_round, 0, 0, 1, 2);
-        legend.attach (path, 1, 0);
-        legend.attach (info, 1, 1);
-
-        if (menu != null) {
-            var click_gesture = new Gtk.GestureClick ();
-            click_gesture.released.connect (menu.popup);
-
-            legend.add_controller (click_gesture);
-        }
-
-        legend_box.append (legend);
-    }
-
     private class PartitionContainer : Gtk.Widget {
-        public Gee.ArrayList<PartitionBar> partitions { get; construct; }
+        public Gee.ArrayList<PartitionBlock> partitions { get; construct; }
         public uint64 size { get; construct; }
 
-        public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBar> partitions) {
+        public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBlock> partitions) {
             Object (
                 partitions: partitions,
                 size: size
@@ -232,6 +188,60 @@ public class Installer.DiskBar: Gtk.Box {
                     )
                 );
             }
+        }
+    }
+
+    private class Legend : Gtk.Grid {
+        public string ppath { get; construct; }
+        public uint64 size { get; construct; }
+        public string fs { get; construct; }
+        public string? vg { get; construct; default = null; }
+
+        public Legend (InstallerDaemon.Partition partition) {
+            Object (
+                ppath: partition.device_path,
+                size: (partition.end_sector - partition.start_sector) * 512,
+                fs: partition.filesystem.to_string (),
+                vg: partition.filesystem == LVM ? partition.current_lvm_volume_group : null
+            );
+        }
+
+        public Legend.unused (uint64 size) {
+            Object (
+                ppath: "unused",
+                size: size,
+                fs: "unused"
+            );
+        }
+
+        construct {
+            var fill_round = new Block () {
+                valign = CENTER
+            };
+            fill_round.add_css_class ("legend");
+            fill_round.add_css_class (fs);
+
+            var format_size = GLib.format_size (size);
+
+            var info = new Gtk.Label (
+                (vg == null)
+                    ? _("%s (%s)").printf (format_size, fs)
+                    : _("%s (%s: <b>%s</b>)").printf (format_size, fs, vg)
+            ) {
+                halign = START,
+            };
+            info.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+            info.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            info.use_markup = true;
+
+            var path = new Gtk.Label (ppath) {
+                halign = START
+            };
+
+            column_spacing = 12;
+            attach (fill_round, 0, 0, 1, 2);
+            attach (path, 1, 0);
+            attach (info, 1, 1);
         }
     }
 

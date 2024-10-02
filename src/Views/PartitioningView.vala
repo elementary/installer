@@ -19,8 +19,6 @@
  */
 
 public class Installer.PartitioningView : AbstractInstallerView {
-    public signal void next_step ();
-
     private Gtk.Button next_button;
     private Gtk.Button modify_partitions_button;
     private Gtk.Box disk_list;
@@ -140,7 +138,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
         modify_partitions_button = new Gtk.Button.with_label (_("Modify Partitions…"));
         modify_partitions_button.clicked.connect (() => open_partition_editor ());
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
+        var back_button = new Gtk.Button.with_label (_("Back")) {
+            action_name = "win.back"
+        };
 
         next_button = new Gtk.Button.with_label (_("Next"));
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
@@ -150,7 +150,6 @@ public class Installer.PartitioningView : AbstractInstallerView {
         action_box_end.append (back_button);
         action_box_end.append (next_button);
 
-        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
         next_button.clicked.connect (() => next_step ());
     }
 
@@ -159,7 +158,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         InstallerDaemon.DiskInfo? disks = null;
         try {
-            disks = yield Daemon.get_default ().get_disks (true);
+            if (!Installer.App.test_mode) {
+                disks = yield Daemon.get_default ().get_disks (true);
+            } else {
+                disks = get_test_diskinfo ();
+            }
         } catch (Error e) {
             critical ("Unable to get disks: %s", e.message);
             load_stack.set_visible_child_name ("disk");
@@ -167,24 +170,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
         }
 
         foreach (unowned InstallerDaemon.Disk disk in disks.physical_disks) {
-            var sector_size = disk.sector_size;
-            var size = disk.sectors * sector_size;
-
-            unowned string path = disk.device_path;
-
-            var partitions = new Gee.ArrayList<PartitionBar> ();
-            foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-                var partition = new PartitionBar (part, path, sector_size, false, this.set_mount, this.unset_mount, this.mount_is_set);
-                partition.decrypted.connect (on_partition_decrypted);
-                partitions.add (partition);
-            }
-
-            var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-            disk_list.append (disk_bar);
+            disk_list.append (get_disk_bar (disk, false));
         }
 
         foreach (unowned InstallerDaemon.Disk disk in disks.logical_disks) {
-            add_logical_disk (disk);
+            disk_list.append (get_disk_bar (disk, true));
         }
 
         load_stack.set_visible_child_name ("disk");
@@ -219,21 +209,22 @@ public class Installer.PartitioningView : AbstractInstallerView {
         load_disks.begin ();
     }
 
-    private void add_logical_disk (InstallerDaemon.Disk disk) {
-        var sector_size = disk.sector_size;
-        var size = disk.sectors * sector_size;
-
-        unowned string path = disk.device_path;
-
-        var partitions = new Gee.ArrayList<PartitionBar> ();
+    private DiskBar get_disk_bar (InstallerDaemon.Disk disk, bool lvm) {
+        var partitions = new Gee.ArrayList<PartitionBlock> ();
         foreach (unowned InstallerDaemon.Partition part in disk.partitions) {
-            var partition = new PartitionBar (part, path, sector_size, true, this.set_mount, this.unset_mount, this.mount_is_set);
-            partition.decrypted.connect (on_partition_decrypted);
+            var partition = new PartitionBlock (part);
+
+            if (part.filesystem == LUKS) {
+                partition.menu = new DecryptMenu (part.device_path);
+                ((DecryptMenu) partition.menu).decrypted.connect (on_partition_decrypted);
+            } else {
+                partition.menu = new PartitionMenu (part.device_path, disk.device_path, part.filesystem, lvm, this.set_mount, this.unset_mount, this.mount_is_set, partition);
+            }
+
             partitions.add (partition);
         }
 
-        var disk_bar = new DiskBar (disk.name, path, size, (owned) partitions);
-        disk_list.append (disk_bar);
+        return new DiskBar (disk, (owned) partitions);
     }
 
     private void validate_status () {
@@ -255,7 +246,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 m.parent_disk,
                 m.partition_path,
                 m.mount_point,
-                Distinst.strfilesys (m.filesystem),
+                m.filesystem.to_string (),
                 m.should_format () ? "true" : "false"
             );
 
@@ -275,7 +266,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         Daemon.get_default ().get_logical_device.begin (credentials.pv, (obj, res) => {
             try {
                 var disk = ((Daemon)obj).get_logical_device.end (res);
-                add_logical_disk (disk);
+                disk_list.append (get_disk_bar (disk, true));
             } catch (Error e) {
                 critical ("Unable to get logical device: %s", e.message);
             }
@@ -342,5 +333,55 @@ public class Installer.PartitioningView : AbstractInstallerView {
     private Mount swap_remove_mount (Gee.ArrayList<Mount> array, int index) {
         array[index] = array[array.size - 1];
         return array.remove_at (array.size - 1);
+    }
+
+    private InstallerDaemon.DiskInfo get_test_diskinfo () {
+        InstallerDaemon.Disk[] physical_disks = {};
+        InstallerDaemon.Disk[] logical_disks = {};
+
+        InstallerDaemon.Partition[] partitions = {};
+
+        var usage_1 = Distinst.PartitionUsage () {
+            tag = 1,
+            value = 30312
+        };
+
+        partitions += InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n1p1",
+            filesystem = InstallerDaemon.FileSystem.FAT32,
+            start_sector = 4096,
+            end_sector = 542966,
+            sectors_used = usage_1,
+            current_lvm_volume_group = ""
+        };
+
+        var usage_2 = Distinst.PartitionUsage () {
+            tag = 0,
+            value = 0
+        };
+
+        partitions += InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n1p2",
+            filesystem = InstallerDaemon.FileSystem.LVM,
+            start_sector = 542968,
+            end_sector = 976769070,
+            sectors_used = usage_2,
+            current_lvm_volume_group = "data"
+        };
+
+        physical_disks += InstallerDaemon.Disk () {
+            name = "Samsung SSD 970 EVO 500GB",
+            device_path = "/dev/nvme0n1",
+            sectors = 976773168,
+            sector_size = 512,
+            rotational = false,
+            removable = false,
+            partitions = partitions
+        };
+
+        return InstallerDaemon.DiskInfo () {
+            physical_disks = physical_disks,
+            logical_disks = logical_disks
+        };
     }
 }

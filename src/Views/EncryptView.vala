@@ -52,8 +52,6 @@ public class EncryptView : AbstractInstallerView {
         var title_label = new Gtk.Label (title);
 
         var details_label = new Gtk.Label (_("Encrypt this device's drive if required for added protection, but be sure you understand:")) {
-            hexpand = true,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
@@ -88,9 +86,7 @@ public class EncryptView : AbstractInstallerView {
         var description = new Gtk.Label (
             _("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account.")
         ) {
-            hexpand = true,
             margin_bottom = 12,
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             use_markup = true,
             wrap = true,
             xalign = 0
@@ -182,7 +178,7 @@ public class EncryptView : AbstractInstallerView {
                 Configuration.get_default ().encryption_password = pw_entry.text;
             }
 
-            ((Adw.Leaflet) get_parent ()).navigate (FORWARD);
+            next_step ();
         });
 
         pw_entry.changed.connect (() => {
@@ -278,9 +274,8 @@ public class EncryptView : AbstractInstallerView {
 
         construct {
             label_widget = new Gtk.Label (label) {
-                halign = END,
+                hexpand = true,
                 justify = RIGHT,
-                max_width_chars = 55,
                 use_markup = true,
                 wrap = true,
                 xalign = 1

@@ -28,7 +28,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     private bool is_lvm;
     private string parent_disk;
     private string partition_path;
-    private Distinst.FileSystem original_filesystem;
+    private InstallerDaemon.FileSystem original_filesystem;
 
     private Granite.SwitchModelButton format_partition;
     private Granite.SwitchModelButton use_partition;
@@ -38,11 +38,11 @@ public class Installer.PartitionMenu : Gtk.Popover {
     private Gtk.Label custom_label;
     private Gtk.Label type_label;
     // A reference to the parent which owns this menu.
-    private PartitionBar partition_bar;
+    private PartitionBlock partition_bar;
 
-    public PartitionMenu (string path, string parent, Distinst.FileSystem fs,
+    public PartitionMenu (string path, string parent, InstallerDaemon.FileSystem fs,
                           bool lvm, SetMount set_mount, UnsetMount unset_mount,
-                          MountSetFn mount_set, PartitionBar partition_bar) {
+                          MountSetFn mount_set, PartitionBlock partition_bar) {
         this.partition_bar = partition_bar;
         original_filesystem = fs;
         is_lvm = lvm;
@@ -205,13 +205,13 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 disable_signals = false;
 
                 int select = 0;
-                if (fs == Distinst.FileSystem.FAT16 || fs == Distinst.FileSystem.FAT32) {
+                if (fs == InstallerDaemon.FileSystem.FAT16 || fs == InstallerDaemon.FileSystem.FAT32) {
                     if (mount_set (boot_partition)) {
                         select = 4;
                     } else {
                         select = 2;
                     }
-                } else if (fs == Distinst.FileSystem.SWAP) {
+                } else if (fs == InstallerDaemon.FileSystem.SWAP) {
                     select = 3;
                 } else if (mount_set ("/")) {
                     if (mount_set ("/home" )) {
@@ -221,7 +221,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                     }
                 }
                 use_as.set_active (select);
-                update_values (set_mount);
+                check_values (set_mount);
             } else {
                 unset_mount (partition_path);
                 partition_bar.icon = null;
@@ -250,18 +250,21 @@ public class Installer.PartitionMenu : Gtk.Popover {
     }
 
     private void check_values (SetMount set_mount) {
-        if (values_ready ()) {
-            update_values (set_mount);
+        if (!use_partition.active) {
+            partition_bar.icon = null;
+            partition_bar.tooltip_text = null;
+            return;
         }
-    }
 
-    private void update_values (SetMount set_mount) {
+        if (use_as.active == 4 && !custom.text.has_prefix ("/")) {
+            partition_bar.icon = new ThemedIcon ("dialog-warning-symbolic");
+            partition_bar.tooltip_text = _("Custom value must begin with /");
+            return;
+        }
+
         var mount = get_mount ();
-        var filesystem = mount == "swap"
-            ? Distinst.FileSystem.SWAP
-            : get_file_system ();
+        var filesystem = mount == "swap" ? InstallerDaemon.FileSystem.SWAP : get_file_system ();
 
-        string? error = null;
         try {
             set_mount (new Installer.Mount (
                 partition_path,
@@ -273,16 +276,12 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 filesystem,
                 this
             ));
-        } catch (GLib.Error why) {
-            error = why.message;
-        }
 
-        partition_bar.icon = new ThemedIcon (
-            error == null ? "process-completed-symbolic" : "dialog-warning-symbolic"
-        );
-
-        if (error != null) {
-            partition_bar.tooltip_text = error;
+            partition_bar.icon = new ThemedIcon ("process-completed-symbolic");
+            partition_bar.tooltip_text = null;
+        } catch (GLib.Error e) {
+            partition_bar.icon = new ThemedIcon ("dialog-warning-symbolic");
+            partition_bar.tooltip_text = e.message;
         }
     }
 
@@ -290,22 +289,22 @@ public class Installer.PartitionMenu : Gtk.Popover {
         return original_filesystem == get_file_system ();
     }
 
-    private Distinst.FileSystem get_file_system () {
+    private InstallerDaemon.FileSystem get_file_system () {
         switch (type.active) {
             case 0:
-                return Distinst.FileSystem.EXT4;
+                return InstallerDaemon.FileSystem.EXT4;
             case 1:
-                return Distinst.FileSystem.FAT16;
+                return InstallerDaemon.FileSystem.FAT16;
             case 2:
-                return Distinst.FileSystem.FAT32;
+                return InstallerDaemon.FileSystem.FAT32;
             case 3:
-                return Distinst.FileSystem.BTRFS;
+                return InstallerDaemon.FileSystem.BTRFS;
             case 4:
-                return Distinst.FileSystem.XFS;
+                return InstallerDaemon.FileSystem.XFS;
             case 5:
-                return Distinst.FileSystem.NTFS;
+                return InstallerDaemon.FileSystem.NTFS;
             default:
-                return Distinst.FileSystem.NONE;
+                return InstallerDaemon.FileSystem.NONE;
         }
     }
 
@@ -326,17 +325,5 @@ public class Installer.PartitionMenu : Gtk.Popover {
             default:
                 return custom.get_text ();
         }
-    }
-
-    private bool values_ready () {
-        return use_partition.active && (!custom_set () || custom_valid ());
-    }
-
-    private bool custom_set () {
-        return use_as.get_active () == 4;
-    }
-
-    private bool custom_valid () {
-        return custom.get_text ().has_prefix ("/");
     }
  }

@@ -16,8 +16,6 @@
  */
 
  public class DriversView : AbstractInstallerView {
-    public signal void next_step ();
-
     construct {
         var image = new Gtk.Image.from_icon_name ("application-x-firmware") {
             pixel_size = 128
@@ -28,7 +26,6 @@
         var title_label = new Gtk.Label (title);
 
         var description_label = new Gtk.Label (_("Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may not function properly without additional drivers. Most devices do not require additional drivers.")) {
-            max_width_chars = 1, // Make Gtk wrap, but not expand the window
             wrap = true,
             xalign = 0
         };
@@ -48,8 +45,8 @@
 
         var install_later_row = new DescriptionRow (
             _("Proprietary drivers can be installed later through System Settings → System, but an Internet connection will be required for all drivers."),
-            "system-software-install-symbolic",
-            "purple"
+            "io.elementary.settings-symbolic",
+            "slate"
         );
 
         var checkbutton_label = new Gtk.Label (_("Include third-party proprietary drivers when installing. I agree to their respective licenses and terms of use.")) {
@@ -75,8 +72,9 @@
 
         content_area.append (message_box);
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
-        back_button.clicked.connect (() => ((Adw.Leaflet) get_parent ()).navigate (BACK));
+        var back_button = new Gtk.Button.with_label (_("Back")) {
+            action_name = "win.back"
+        };
 
         var next_button = new Gtk.Button.with_label (_("Erase and Install"));
         next_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);

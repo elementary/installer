@@ -23,6 +23,6 @@ src/Widgets/DecryptMenu.vala
 src/Widgets/DiskBar.vala
 src/Widgets/DiskGrid.vala
 src/Widgets/InstallTypeGrid.vala
-src/Widgets/PartitionBar.vala
+src/Widgets/PartitionBlock.vala
 src/Widgets/PartitionMenu.vala
 src/Widgets/VariantWidget.vala

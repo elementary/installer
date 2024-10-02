@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 22:12+0000\n"
+"POT-Creation-Date: 2024-10-01 17:57+0000\n"
 "PO-Revision-Date: 2023-09-04 08:08+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
@@ -24,11 +24,11 @@ msgstr "Asenna %s"
 msgid "operating system is being installed"
 msgstr "käyttöjärjestelmää asennetaan"
 
-#: src/MainWindow.vala:265
+#: src/MainWindow.vala:269
 msgid "Connect to a Power Source"
 msgstr "Yhdistä virtalähteeseen"
 
-#: src/MainWindow.vala:266
+#: src/MainWindow.vala:270
 msgid ""
 "Your device is running on battery power. It's recommended to be plugged in "
 "while installing."
@@ -57,23 +57,23 @@ msgstr "%s…"
 msgid "Default"
 msgstr "Oletus"
 
-#: src/Views/AbstractInstallerView.vala:51
+#: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
 msgstr "Testitila"
 
-#: src/Views/AbstractInstallerView.vala:60
+#: src/Views/AbstractInstallerView.vala:64
 msgid "Cancel Installation"
 msgstr "Peru asennus"
 
-#: src/Views/CheckView.vala:50
+#: src/Views/CheckView.vala:48
 msgid "Before Installing"
 msgstr "Ennen asennusta"
 
-#: src/Views/CheckView.vala:57
+#: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
 msgstr "Esijulkaisuversio"
 
-#: src/Views/CheckView.vala:58
+#: src/Views/CheckView.vala:56
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
@@ -81,40 +81,40 @@ msgstr ""
 "Asenna vain kehitykseen tarkoitettuihin laitteisiin. <b>Päivitys vakaaseen "
 "versioon ei ole mahdollista</b>."
 
-#: src/Views/CheckView.vala:63
+#: src/Views/CheckView.vala:61
 msgid "Virtual Machine"
 msgstr "Virtuaalikone"
 
-#: src/Views/CheckView.vala:64
+#: src/Views/CheckView.vala:62
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr "Jotkin %s:n osat voivat toimia hitaasti tai epätäydellisesti."
 
-#: src/Views/CheckView.vala:69
+#: src/Views/CheckView.vala:67
 msgid "Your Device May Be Too Slow"
 msgstr "Laitteesi saattaa olla liian hidas"
 
-#: src/Views/CheckView.vala:70
+#: src/Views/CheckView.vala:68
 msgid "This may cause it to run slowly or freeze."
 msgstr "Tämän vuoksi toiminta saattaa olla hidasta tai takkuilevaa."
 
-#: src/Views/CheckView.vala:85
+#: src/Views/CheckView.vala:83
 msgid "Install Anyway"
 msgstr "Asenna silti"
 
-#: src/Views/CheckView.vala:208
+#: src/Views/CheckView.vala:203
 msgid "Recommended:"
 msgstr "Suositeltu:"
 
-#: src/Views/CheckView.vala:214
+#: src/Views/CheckView.vala:209
 msgid "Your Device:"
 msgstr "Laitteesi:"
 
-#: src/Views/CheckView.vala:220 src/Views/CheckView.vala:224
+#: src/Views/CheckView.vala:215 src/Views/CheckView.vala:219
 msgid "Processor:"
 msgstr "Suoritin:"
 
-#: src/Views/CheckView.vala:236 src/Views/CheckView.vala:240
+#: src/Views/CheckView.vala:231 src/Views/CheckView.vala:235
 msgid "Memory:"
 msgstr "Muisti:"
 
@@ -130,20 +130,20 @@ msgstr ""
 "Tämä poistaa kaikki valitulla asemalla olevat tiedot. Jos et ole "
 "varmuuskopioinut tietojasi, voit perua asennuksen ja käyttää demotilaa."
 
-#: src/Views/DiskView.vala:72 src/Views/PartitioningView.vala:114
+#: src/Views/DiskView.vala:71 src/Views/PartitioningView.vala:112
 msgid "Getting the current configuration…"
 msgstr "Haetaan nykyisiä määrityksiä…"
 
-#: src/Views/DiskView.vala:98 src/Views/PartitioningView.vala:145
-#: src/Views/TryInstallView.vala:82
+#: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:145
+#: src/Views/TryInstallView.vala:83
 msgid "Next"
 msgstr "Seuraava"
 
-#: src/Views/DriversView.vala:26
+#: src/Views/DriversView.vala:24
 msgid "Additional Drivers"
 msgstr "Lisäajurit"
 
-#: src/Views/DriversView.vala:30
+#: src/Views/DriversView.vala:28
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
@@ -153,7 +153,7 @@ msgstr ""
 "eivät välttämättä toimi kunnolla ilman lisäajureita. Useimmat laitteet eivät "
 "vaadi lisäajureita."
 
-#: src/Views/DriversView.vala:38
+#: src/Views/DriversView.vala:35
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
@@ -162,11 +162,11 @@ msgstr ""
 "katselmoida. Päivitykset, mukaan lukien tietoturvapäivitykset, ovat "
 "riippuvaisia ajurin valmistajasta."
 
-#: src/Views/DriversView.vala:44
+#: src/Views/DriversView.vala:41
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr "NVIDIA®-grafiikka-ajureiden asennus vaatii internetyhteyden."
 
-#: src/Views/DriversView.vala:50
+#: src/Views/DriversView.vala:47
 #, fuzzy
 #| msgid ""
 #| "Proprietary drivers can be installed later through AppCenter, but an "
@@ -178,7 +178,7 @@ msgstr ""
 "Sovelluskeskuksesta on mahdollista asentaa suljettuja ajureita, mutta se "
 "vaatii toimivan Internet-yhteyden."
 
-#: src/Views/DriversView.vala:55
+#: src/Views/DriversView.vala:52
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
@@ -186,13 +186,13 @@ msgstr ""
 "Sisällytä kolmannen osapuolen suljetut ajurit asentamisen yhteydessä. "
 "Hyväksyn niiden lisenssit ja käyttöehdot."
 
-#: src/Views/DriversView.vala:78 src/Views/EncryptView.vala:147
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:143
-#: src/Views/TryInstallView.vala:80
+#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
+#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Takaisin"
 
-#: src/Views/DriversView.vala:81
+#: src/Views/DriversView.vala:79
 msgid "Erase and Install"
 msgstr "Tyhjennä ja asenna"
 
@@ -212,7 +212,7 @@ msgstr ""
 "Salaa tämän laitteen asema jos lisäturvaa tarvitaan, mutta varmista että "
 "ymmärrät:"
 
-#: src/Views/EncryptView.vala:63
+#: src/Views/EncryptView.vala:61
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -220,7 +220,7 @@ msgstr ""
 "Tiedot suojataan muilta, joilla on fyysinen pääsy tälle laitteelle, mutta "
 "vain kun laite on sammutettu."
 
-#: src/Views/EncryptView.vala:69
+#: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
@@ -228,7 +228,7 @@ msgstr ""
 "Salauksen salasana vaaditaan joka kerta, kun tämä laite käynnistetään. "
 "Talleta se jonnekin turvallisesti."
 
-#: src/Views/EncryptView.vala:75
+#: src/Views/EncryptView.vala:73
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -236,7 +236,7 @@ msgstr ""
 "Sisäänrakennettu tai USB-väylässä oleva näppäimistö vaaditaan salauksen "
 "salasanan kirjoittamiseksi joka kerta, kun laite käynnistetään."
 
-#: src/Views/EncryptView.vala:89
+#: src/Views/EncryptView.vala:87
 msgid ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
@@ -246,23 +246,23 @@ msgstr ""
 "</b> Kyseessä on ainutlaatuinen salasana tälle laitteelle, ei "
 "käyttäjätililläsi käytettävä salasana."
 
-#: src/Views/EncryptView.vala:99
+#: src/Views/EncryptView.vala:95
 msgid "Choose Encryption Password"
 msgstr "Valitse salauksen salasana"
 
-#: src/Views/EncryptView.vala:113
+#: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
 msgstr "Vahvista salasana"
 
-#: src/Views/EncryptView.vala:149
+#: src/Views/EncryptView.vala:145
 msgid "Choose Password"
 msgstr "Valitse salasana"
 
-#: src/Views/EncryptView.vala:172
+#: src/Views/EncryptView.vala:168
 msgid "Set Encryption Password"
 msgstr "Aseta salauksen salasana"
 
-#: src/Views/EncryptView.vala:240
+#: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
 msgstr "Salasanat eivät täsmää"
 
@@ -279,31 +279,31 @@ msgstr ""
 "\"%s\"-asennus epäonnistui mahdollisesti laitteistovirheen vuoksi. Laite ei "
 "välttämättä käynnisty uudelleen kunnolla. Voit kokeilla jotain seuraavista:"
 
-#: src/Views/ErrorView.vala:46
+#: src/Views/ErrorView.vala:45
 msgid "Try the installation again"
 msgstr "Yrittää asennusta uudelleen"
 
-#: src/Views/ErrorView.vala:57
+#: src/Views/ErrorView.vala:55
 msgid "Use Demo Mode and try to manually recover"
 msgstr "Käyttää demotilaa ja yrittää palautusta käsin"
 
-#: src/Views/ErrorView.vala:67
+#: src/Views/ErrorView.vala:64
 msgid "Restart the device and boot from another drive"
 msgstr "Käynnistää laite uudelleen ja käynnistää laite toiselta asemalta"
 
-#: src/Views/ErrorView.vala:73
+#: src/Views/ErrorView.vala:69
 msgid "Details"
 msgstr "Tiedot"
 
-#: src/Views/ErrorView.vala:118 src/Views/SuccessView.vala:63
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
 msgid "Restart Device"
 msgstr "Käynnistä laite uudelleen"
 
-#: src/Views/ErrorView.vala:120 src/Views/TryInstallView.vala:37
+#: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:36
 msgid "Try Demo Mode"
 msgstr "Kokeile demotilaa"
 
-#: src/Views/ErrorView.vala:122
+#: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
 msgstr "Yritä asennusta uudelleen"
 
@@ -319,7 +319,7 @@ msgstr "Kirjoita testataksesi näppäimistön asettelua"
 msgid "Show keyboard layout"
 msgstr "Näytä näppäimistön asettelu"
 
-#: src/Views/KeyboardLayoutView.vala:57 src/Views/LanguageView.vala:114
+#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:112
 msgid "Select"
 msgstr "Valitse"
 
@@ -327,25 +327,25 @@ msgstr "Valitse"
 msgid "Input Language"
 msgstr "Syötekieli"
 
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:255
 msgid "Languages"
 msgstr "Kielet"
 
-#: src/Views/LanguageView.vala:272
+#: src/Views/LanguageView.vala:270
 msgid "Select a Language"
 msgstr "Valitse kieli"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:344
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
 msgid "Currently active language"
 msgstr "Parhaillaan aktiivinen kieli"
 
-#: src/Views/PartitioningView.vala:53
+#: src/Views/PartitioningView.vala:51
 #, fuzzy
 #| msgid "Use Partition"
 msgid "Select Partitions"
 msgstr "Käytä osiota"
 
-#: src/Views/PartitioningView.vala:58
+#: src/Views/PartitioningView.vala:56
 #, fuzzy
 #| msgid ""
 #| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
@@ -357,12 +357,12 @@ msgstr ""
 "KAIKKI valitun osion tiedot poistetaan.</b>"
 
 #. Device is in BIOS mode, so we just require a root partition
-#: src/Views/PartitioningView.vala:67
+#: src/Views/PartitioningView.vala:65
 msgid "You must at least select a <b>Root (/)</b> partition."
 msgstr "Sinun pitää ainakin valita <b>Juuri</b>-osio (/)."
 
 #. Device is in EFI mode, so we also require a boot partition
-#: src/Views/PartitioningView.vala:71
+#: src/Views/PartitioningView.vala:69
 #, fuzzy
 #| msgid ""
 #| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
@@ -374,27 +374,27 @@ msgstr ""
 "Sinun pitää ainakin valita <b>Juuri</b>- osio(/) ja <b>Käynnistys</b>-osio (/"
 "boot/efi)."
 
-#: src/Views/PartitioningView.vala:82
+#: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
 msgstr "On myös suositeltavaa valita <b>Swap</b>-osio."
 
-#: src/Views/PartitioningView.vala:140
+#: src/Views/PartitioningView.vala:138
 msgid "Modify Partitions…"
 msgstr "Muokkaa osioita…"
 
-#: src/Views/PartitioningView.vala:290
+#: src/Views/PartitioningView.vala:281
 msgid "EFI partition has the wrong file system"
 msgstr "EFI-osiolla on väärä tiedostojärjestelmä"
 
-#: src/Views/PartitioningView.vala:292
+#: src/Views/PartitioningView.vala:283
 msgid "EFI partition is too small"
 msgstr "EFI-osio on liian pieni"
 
-#: src/Views/PartitioningView.vala:295
+#: src/Views/PartitioningView.vala:286
 msgid "Invalid file system for root"
 msgstr "Väärä tiedostojärjestelmä juurelle"
 
-#: src/Views/PartitioningView.vala:297
+#: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for home"
 msgstr "Väärä tiedostojärjestelmä kotihakemistolle"
 
@@ -432,11 +432,11 @@ msgstr "Määritetään järjestelmää"
 msgid "Finishing the Installation"
 msgstr "Valmistellaan asennusta"
 
-#: src/Views/TryInstallView.vala:27
+#: src/Views/TryInstallView.vala:26
 msgid "Try or Install"
 msgstr "Kokeile tai asenna"
 
-#: src/Views/TryInstallView.vala:39
+#: src/Views/TryInstallView.vala:38
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
@@ -445,20 +445,20 @@ msgstr ""
 "käyttöjärjestelmästäsi ei muuteta. Suorituskyky ja ominaisuudet eivät "
 "välttämättä vastaa asennetun ympäristön kokemusta."
 
-#: src/Views/TryInstallView.vala:45
+#: src/Views/TryInstallView.vala:44
 msgid "Erase Disk and Install"
 msgstr "Tyhjennä levy ja asenna"
 
-#: src/Views/TryInstallView.vala:47
+#: src/Views/TryInstallView.vala:46
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
 msgstr "Poista kaikki ja asenna %s."
 
-#: src/Views/TryInstallView.vala:53
+#: src/Views/TryInstallView.vala:52
 msgid "Custom Install (Advanced)"
 msgstr "Mukautettu asennus (lisäasetukset)"
 
-#: src/Views/TryInstallView.vala:55
+#: src/Views/TryInstallView.vala:54
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
@@ -466,7 +466,7 @@ msgstr ""
 "Luo osioita, muuta niiden kokoa ja hallitse niitä käsin. Tämä tapa saattaa "
 "johtaa tietojen katoamiseen."
 
-#: src/Views/TryInstallView.vala:108
+#: src/Views/TryInstallView.vala:107
 msgid "Custom Install"
 msgstr "Mukautettu asennus"
 
@@ -479,18 +479,18 @@ msgstr "Jatka asentamista"
 msgid "%s has been installed"
 msgstr "%s on asennettu"
 
-#: src/Views/SuccessView.vala:60
+#: src/Views/SuccessView.vala:57
 msgid "Shut Down"
 msgstr "Sammuta"
 
-#: src/Views/SuccessView.vala:92
+#: src/Views/SuccessView.vala:89
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
 msgstr[0] "Laitteesi käynnistyy uudelleen automaattisesti %i sekunnissa."
 msgstr[1] "Laitteesi käynnistyy uudelleen automaattisesti %i sekunnissa."
 
-#: src/Views/SuccessView.vala:96
+#: src/Views/SuccessView.vala:93
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
@@ -509,28 +509,28 @@ msgid ""
 msgstr ""
 "Anna osion salauksen salasana, ja aseta laitenimi salaamattomalle osiolle."
 
-#: src/Widgets/DecryptMenu.vala:83
+#: src/Widgets/DecryptMenu.vala:82
 msgid "Password:"
 msgstr "Salasana:"
 
-#: src/Widgets/DecryptMenu.vala:96
+#: src/Widgets/DecryptMenu.vala:95
 msgid "Device name:"
 msgstr "Laitteen nimi:"
 
-#: src/Widgets/DecryptMenu.vala:109
+#: src/Widgets/DecryptMenu.vala:108
 msgid "Decrypt"
 msgstr "Pura salaus"
 
-#: src/Widgets/DecryptMenu.vala:183
+#: src/Widgets/DecryptMenu.vala:182
 msgid "LUKS volume was decrypted"
 msgstr "LUKS-taltion salaus avattiin"
 
-#: src/Widgets/DiskBar.vala:82
+#: src/Widgets/DiskBar.vala:228
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:83
+#: src/Widgets/DiskBar.vala:229
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
@@ -583,6 +583,10 @@ msgstr "Tiedostojärjestelmä:"
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
 msgstr "Oletus (ext4)"
+
+#: src/Widgets/PartitionMenu.vala:261
+msgid "Custom value must begin with /"
+msgstr ""
 
 #~ msgid ""
 #~ "Proprietary drivers are subject to their own license terms. By "

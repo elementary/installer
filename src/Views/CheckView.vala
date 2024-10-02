@@ -25,8 +25,6 @@ public class Installer.CheckView : AbstractInstallerView {
     // Minimum 1GB
     public const uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
-    public signal void next_step ();
-
     private Gtk.Box message_box;
     public bool has_messages {
         get {
@@ -105,18 +103,18 @@ public class Installer.CheckView : AbstractInstallerView {
             var @is = apt_sources.read ();
             var dis = new DataInputStream (@is);
 
-            if ("daily" in dis.read_line ()) {
+            if ("daily" in dis.read_line () || Installer.App.test_mode) {
                 message_box.append (beta_view);
             }
         } catch (Error e) {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        if (get_vm ()) {
+        if (get_vm () || Installer.App.test_mode) {
             message_box.append (vm_view);
         }
 
-        if (!minimum_specs) {
+        if (!minimum_specs || Installer.App.test_mode) {
             message_box.append (specs_view);
         }
     }
@@ -182,15 +180,12 @@ public class Installer.CheckView : AbstractInstallerView {
             };
 
             var title_label = new Gtk.Label (title) {
-                hexpand = true,
-                max_width_chars = 1,
                 wrap = true,
                 xalign = 0
             };
             title_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var description_label = new Gtk.Label (description) {
-                max_width_chars = 1, // Make Gtk wrap, but not expand the window
                 use_markup = true,
                 wrap = true,
                 xalign = 0
