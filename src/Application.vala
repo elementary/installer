@@ -59,7 +59,7 @@ public class Installer.App : Gtk.Application {
         var notification = new GLib.Notification (_("Connect to a Power Source"));
         notification.set_body (_("Your device is running on battery power. It's recommended to be plugged in while installing."));
         notification.set_icon (new ThemedIcon ("battery-ac-adapter"));
-        notification.set_priority (NotificationPriority.HIGH);
+        notification.set_priority (NotificationPriority.CRITICAL);
 
         send_notification ("on-battery", notification);
     }
