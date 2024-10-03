@@ -69,6 +69,8 @@ public class Installer.DiskBar: Gtk.Box {
         public Gee.ArrayList<PartitionBlock> partitions { get; construct; }
         public uint64 size { get; construct; }
 
+        private Gtk.ConstraintGuide guide;
+
         public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBlock> partitions) {
             Object (
                 partitions: partitions,
@@ -81,6 +83,28 @@ public class Installer.DiskBar: Gtk.Box {
         }
 
         construct {
+            guide = new Gtk.ConstraintGuide () {
+                max_width = 300,
+                min_width = 300,
+                nat_width = 600
+            };
+
+            var layout_manager = ((Gtk.ConstraintLayout) get_layout_manager ());
+            layout_manager.add_guide (guide);
+
+            layout_manager.add_constraint (
+                new Gtk.Constraint (
+                    guide,
+                    HEIGHT,
+                    EQ,
+                    this,
+                    HEIGHT,
+                    1.0,
+                    0.0,
+                    Gtk.ConstraintStrength.REQUIRED
+                )
+            );
+
             uint64 used = 0;
             var disk_sectors = size / 512;
             foreach (var partition in partitions) {
@@ -100,17 +124,16 @@ public class Installer.DiskBar: Gtk.Box {
                 var unused_bar = new Block ();
                 unused_bar.add_css_class ("unused");
 
-                append_partition (unused_bar, unused / size);
+                append_partition (unused_bar, (double) unused / size);
             }
 
-            var layout_manager = ((Gtk.ConstraintLayout) get_layout_manager ());
             // Position last child at end
             layout_manager.add_constraint (
                 new Gtk.Constraint (
-                    get_last_child (),
+                    null,
                     END,
                     EQ,
-                    this,
+                    get_last_child (),
                     END,
                     1.0,
                     0.0,
@@ -136,7 +159,7 @@ public class Installer.DiskBar: Gtk.Box {
                     widget,
                     HEIGHT,
                     EQ,
-                    this,
+                    guide,
                     HEIGHT,
                     1.0,
                     0.0,
@@ -146,11 +169,14 @@ public class Installer.DiskBar: Gtk.Box {
 
             // Fill width based on partition size
             layout_manager.add_constraint (
-                new Gtk.Constraint.const (
+                new Gtk.Constraint (
                     widget,
                     WIDTH,
-                    LE,
-                    percentage * get_width (),
+                    EQ,
+                    guide,
+                    WIDTH,
+                    percentage,
+                    0,
                     Gtk.ConstraintStrength.STRONG
                 )
             );
@@ -160,10 +186,10 @@ public class Installer.DiskBar: Gtk.Box {
                 // Position at start
                 layout_manager.add_constraint (
                     new Gtk.Constraint (
-                        widget,
+                        null,
                         START,
                         EQ,
-                        this,
+                        widget,
                         START,
                         1.0,
                         0.0,
@@ -179,8 +205,8 @@ public class Installer.DiskBar: Gtk.Box {
                         EQ,
                         previous_child,
                         END,
-                        1.0,
-                        0.0,
+                        1,
+                        0,
                         Gtk.ConstraintStrength.REQUIRED
                     )
                 );
