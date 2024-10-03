@@ -57,7 +57,6 @@ config_file = configure_file(
 )
 
 gui_dependencies = [
-    distinst_dep,
     gee_dep,
     glib_dep,
     gobject_dep,
