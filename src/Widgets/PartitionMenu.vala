@@ -49,7 +49,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
         partition_path = path;
         parent_disk = parent;
 
-        string boot_partition = (Daemon.get_default ().bootloader_detect () == Distinst.PartitionTable.GPT)
+        string boot_partition = (Daemon.get_default ().bootloader_detect () == InstallerDaemon.PartitionTable.GPT)
             ? "/boot/efi"
             : "/boot";
 
@@ -158,7 +158,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
             custom.visible = visible;
 
             if (active == 2) {
-                if (Daemon.get_default ().bootloader_detect () == Distinst.PartitionTable.GPT) {
+                if (Daemon.get_default ().bootloader_detect () == InstallerDaemon.PartitionTable.GPT) {
                     type.active = 2;
                 } else {
                     type.active = 0;
@@ -315,7 +315,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
             case 1:
                 return "/home";
             case 2:
-                if (Daemon.get_default ().bootloader_detect () == Distinst.PartitionTable.GPT) {
+                if (Daemon.get_default ().bootloader_detect () == InstallerDaemon.PartitionTable.GPT) {
                     return "/boot/efi";
                 } else {
                     return "/boot";

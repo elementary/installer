@@ -36,12 +36,6 @@ install_data(
     rename: meson.project_name() + '.compositor.desktop'
 )
 
-install_data(
-    'wingpanel-autostart.desktop',
-    install_dir: autostartdir,
-    rename: meson.project_name() + '.panel.desktop'
-)
-
 install_subdir(
     'gsd',
     install_dir: autostartdir,
