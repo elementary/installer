@@ -28,7 +28,7 @@ jobs:
       env:
         DESTDIR: out
       run: |
-        meson setup build
+        meson setup build --prefix=/usr
         ninja -C build install
 
   lint:
