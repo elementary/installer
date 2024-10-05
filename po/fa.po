@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-01 17:57+0000\n"
-"PO-Revision-Date: 2024-09-30 16:16+0000\n"
+"PO-Revision-Date: 2024-10-03 21:16+0000\n"
 "Last-Translator: Hossein <hossein17@duck.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/installer/"
 "installer/fa/>\n"
@@ -160,22 +160,28 @@ msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"درایورهای اختصاصی حاوی کد خصوصی هستند که قابل بررسی نیستند. امنیت و سایر به "
+"روز رسانی ها به فروشنده درایور بستگی دارد."
 
 #: src/Views/DriversView.vala:41
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
-msgstr ""
+msgstr "برای نصب درایورهای گرافیک NVIDIA® به اتصال اینترنت نیاز است."
 
 #: src/Views/DriversView.vala:47
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
 msgstr ""
+"درایورهای اختصاصی را می توان بعداً از طریق تنظیمات سیستم > سیستم نصب کرد، "
+"اما اتصال اینترنت برای همه درایورها لازم است."
 
 #: src/Views/DriversView.vala:52
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
+"هنگام نصب، درایورهای اختصاصی شخص ثالث را درج شده. من با مجوزها و شرایط "
+"استفاده مربوطه آنها موافقم."
 
 #: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
 #: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
@@ -189,35 +195,43 @@ msgstr "پاک کردن و نصب"
 
 #: src/Views/EncryptView.vala:26
 msgid "Don’t Encrypt"
-msgstr ""
+msgstr "رمزگذاری نشده"
 
 #: src/Views/EncryptView.vala:50
 msgid "Enable Drive Encryption"
-msgstr ""
+msgstr "رمزگذاری درایو را فعال کنید"
 
 #: src/Views/EncryptView.vala:54
 msgid ""
 "Encrypt this device's drive if required for added protection, but be sure "
 "you understand:"
 msgstr ""
+"در صورت نیاز برای محافظت بیشتر، درایو این دستگاه را رمزگذاری کنید، اما مطمئن "
+"شوید که متوجه می‌شوید:"
 
 #: src/Views/EncryptView.vala:61
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
+"داده‌ها فقط در صورت خاموش شدن این دستگاه در مقابل سایر افراد با دسترسی "
+"فیزیکی به این دستگاه محافظت می‌شوند."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "Store it somewhere safe."
 msgstr ""
+"هر بار که این دستگاه روشن می شود، رمز رمزگذاری مورد نیاز خواهد بود. آن را در "
+"جایی امن نگهداری کنید."
 
 #: src/Views/EncryptView.vala:73
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"برای تایپ رمز رمزگذاری هر بار که این دستگاه روشن می شود، به یک صفحه کلید "
+"داخلی یا USB نیاز است."
 
 #: src/Views/EncryptView.vala:87
 msgid ""
@@ -225,10 +239,13 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
+"اگر رمز عبور رمزگذاری را فراموش کردید، <b>نمی‌توانید داده‌ها را بازیابی "
+"کنید.</b> این رمز عبور منحصربه‌فرد برای این دستگاه است، نه رمز عبور حساب "
+"کاربری شما."
 
 #: src/Views/EncryptView.vala:95
 msgid "Choose Encryption Password"
-msgstr ""
+msgstr "رمز عبور رمزگذاری را انتخاب کنید"
 
 #: src/Views/EncryptView.vala:109
 msgid "Confirm Password"
@@ -236,15 +253,15 @@ msgstr "تایید کلمه عبور"
 
 #: src/Views/EncryptView.vala:145
 msgid "Choose Password"
-msgstr ""
+msgstr "رمز عبور را انتخاب کنید"
 
 #: src/Views/EncryptView.vala:168
 msgid "Set Encryption Password"
-msgstr ""
+msgstr "رمز عبور رمزگذاری را تنظیم کنید"
 
 #: src/Views/EncryptView.vala:236
 msgid "Passwords do not match"
-msgstr ""
+msgstr "رمزهای عبور مطابقت ندارند"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
@@ -264,8 +281,6 @@ msgid "Try the installation again"
 msgstr "مجدد نصب را امتحان کنید"
 
 #: src/Views/ErrorView.vala:55
-#, fuzzy
-#| msgid "• Use Demo Mode and try to manually recover"
 msgid "Use Demo Mode and try to manually recover"
 msgstr "از حالت دمو استفاده کنید و بصورت دستی بازیابی را انجام دهید"
 
@@ -322,20 +337,18 @@ msgid "Currently active language"
 msgstr "زبان فعال کنونی"
 
 #: src/Views/PartitioningView.vala:51
-#, fuzzy
-#| msgid "Use Partition"
 msgid "Select Partitions"
-msgstr "استفاده از پارتیشن"
+msgstr "انتخاب پارتیشن"
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
-msgstr ""
+msgstr "با انتخاب\"فرمت\" <i>همه</i> اطلاعات در پارتیشن انتخابی پاک می شود."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:65
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "حداقل باید یک پارتیشن <b>Root (/)</b> انتخاب کنید."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:69
@@ -343,10 +356,12 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
 msgstr ""
+"شما باید حداقل یک پارتیشن <b>Root (/)</b> و یک پارتیشن <b>Boot (/boot/efi)</"
+"b> اختیاری را انتخاب کنید."
 
 #: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "همچنین توصیه می شود یک پارتیشن <b>Swap</b> را انتخاب کنید."
 
 #: src/Views/PartitioningView.vala:138
 msgid "Modify Partitions…"
@@ -354,29 +369,27 @@ msgstr "اصلاح پارتیشن ها…"
 
 #: src/Views/PartitioningView.vala:281
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "پارتیشن EFI سیستم فایل اشتباهی دارد"
 
 #: src/Views/PartitioningView.vala:283
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "پارتیشن EFI خیلی کوچک است"
 
 #: src/Views/PartitioningView.vala:286
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "سیستم فایل برای root نامعتبر است"
 
 #: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "سیستم فایل برای home نامعتبر است"
 
 #: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
 msgstr "نمایش گزارش"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Installing"
-msgstr "مجددا تلاش برای نصب کنید"
+msgstr "در حال نصب"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
@@ -421,7 +434,7 @@ msgstr "پاک کردن دیسک و نصب"
 #: src/Views/TryInstallView.vala:46
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "همه چیز را پاک کنید و یک نسخه جدید از %s را نصب کنید."
 
 #: src/Views/TryInstallView.vala:52
 msgid "Custom Install (Advanced)"
@@ -432,6 +445,8 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"پارتیشن ها را به صورت دستی ایجاد، تغییر اندازه یا مدیریت کنید. این روش ممکن "
+"است منجر به از دست دادن اطلاعات شود."
 
 #: src/Views/TryInstallView.vala:107
 msgid "Custom Install"
@@ -444,7 +459,7 @@ msgstr "ادامه ی راه اندازی"
 #: src/Views/SuccessView.vala:32
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s نصب شده است"
 
 #: src/Views/SuccessView.vala:57
 msgid "Shut Down"
@@ -467,13 +482,15 @@ msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:66
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "رمزگشایی این پارتیشن"
 
 #: src/Widgets/DecryptMenu.vala:70
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"رمز عبور رمزگذاری پارتیشن را وارد کنید و نام دستگاه را برای پارتیشن رمزگشایی "
+"تعیین کنید."
 
 #: src/Widgets/DecryptMenu.vala:82
 msgid "Password:"
@@ -489,17 +506,17 @@ msgstr "رمزگشایی"
 
 #: src/Widgets/DecryptMenu.vala:182
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "حجم LUKS رمزگشایی شد"
 
 #: src/Widgets/DiskBar.vala:228
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:229
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
 msgid "Use Partition"
@@ -507,44 +524,44 @@ msgstr "استفاده از پارتیشن"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Format"
-msgstr ""
+msgstr "فرمت"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "تمام داده ها را حذف کنید و یک سیستم فایل جدید راه اندازی کنید"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr ""
+msgstr "استفاده به عنوان:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
-msgstr ""
+msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
-msgstr ""
+msgstr "Home (/home)"
 
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "بوت(%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr ""
+msgstr "سفارشی"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
-msgstr ""
+msgstr "سفارشی:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
-msgstr ""
+msgstr "سیستم فایل:"
 
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
@@ -552,7 +569,7 @@ msgstr "پیشفرض (ext4)"
 
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
-msgstr ""
+msgstr "مقدار سفارشی باید با / شروع شود"
 
 #~ msgid "Ignore"
 #~ msgstr "نادیده بگیر"
