@@ -267,7 +267,7 @@ namespace Utils {
         // If the automatic hostname logic fails in some way, it's possible we may generate an invalid
         // hostname. We could fix this by trimming traling/leading hyphens or other invalid characters.
         // But it's probably a bad hostname anyway, so just fallback
-        if (!Distinst.validate_hostname (hostname)) {
+        if (!hostname_is_valid (hostname)) {
             hostname = "elementary-os";
         }
 

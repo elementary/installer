@@ -109,10 +109,10 @@ public class ProgressView : Adw.NavigationPage {
     public void start_installation () {
         if (Installer.App.test_mode) {
             new Thread<void*> (null, () => {
-                fake_status (Distinst.Step.PARTITION);
-                fake_status (Distinst.Step.EXTRACT);
-                fake_status (Distinst.Step.CONFIGURE);
-                fake_status (Distinst.Step.BOOTLOADER);
+                fake_status (InstallerDaemon.Step.PARTITION);
+                fake_status (InstallerDaemon.Step.EXTRACT);
+                fake_status (InstallerDaemon.Step.CONFIGURE);
+                fake_status (InstallerDaemon.Step.BOOTLOADER);
                 return null;
             });
         } else {
@@ -130,9 +130,9 @@ public class ProgressView : Adw.NavigationPage {
         unowned Configuration current_config = Configuration.get_default ();
 
         var config = InstallerDaemon.InstallConfig ();
-        config.flags = Distinst.MODIFY_BOOT_ORDER;
+        config.modify_boot_order = true;
         if (current_config.install_drivers) {
-            config.flags |= Distinst.RUN_UBUNTU_DRIVERS;
+            config.install_drivers = true;
         }
         config.hostname = Utils.get_hostname ();
         config.lang = "en_US.UTF-8";
@@ -164,7 +164,7 @@ public class ProgressView : Adw.NavigationPage {
                     current_config.encryption_password ?? ""
                 );
             } catch (Error e) {
-                log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
+                log_helper.log_func (InstallerDaemon.LogLevel.ERROR, e.message);
                 on_error ();
             }
         } else {
@@ -190,17 +190,17 @@ public class ProgressView : Adw.NavigationPage {
             try {
                 yield daemon.install_with_custom_disk_layout (config, mounts, creds);
             } catch (Error e) {
-                log_helper.log_func (Distinst.LogLevel.ERROR, e.message);
+                log_helper.log_func (InstallerDaemon.LogLevel.ERROR, e.message);
                 on_error ();
             }
         }
     }
 
-    private void fake_status (Distinst.Step step) {
+    private void fake_status (InstallerDaemon.Step step) {
         unowned var log_helper = LogHelper.get_default ();
         for (var percent = 0; percent <= 100; percent++) {
             log_helper.log_func (INFO, "I'm faking it!");
-            Distinst.Status status = Distinst.Status () {
+            InstallerDaemon.Status status = InstallerDaemon.Status () {
                 step = step,
                 percent = percent
             };
@@ -209,9 +209,9 @@ public class ProgressView : Adw.NavigationPage {
         }
     }
 
-    private void installation_status_callback (Distinst.Status status) {
+    private void installation_status_callback (InstallerDaemon.Status status) {
         Idle.add (() => {
-            if (status.percent == 100 && status.step == Distinst.Step.BOOTLOADER) {
+            if (status.percent == 100 && status.step == InstallerDaemon.Step.BOOTLOADER) {
                 on_success ();
                 return GLib.Source.REMOVE;
             }
@@ -219,21 +219,21 @@ public class ProgressView : Adw.NavigationPage {
             string step_string = "";
             double fraction = ((double) status.percent) / (100.0 * NUM_STEP);
             switch (status.step) {
-                case Distinst.Step.PARTITION:
+                case PARTITION:
                     ///TRANSLATORS: The current step of the installer back-end
                     step_string = _("Partitioning Drive");
                     break;
-                case Distinst.Step.EXTRACT:
+                case EXTRACT:
                     fraction += 2 * (1.0 / NUM_STEP);
                     ///TRANSLATORS: The current step of the installer back-end
                     step_string = _("Extracting Files");
                     break;
-                case Distinst.Step.CONFIGURE:
+                case CONFIGURE:
                     fraction += 3 * (1.0 / NUM_STEP);
                     ///TRANSLATORS: The current step of the installer back-end
                     step_string = _("Configuring the System");
                     break;
-                case Distinst.Step.BOOTLOADER:
+                case BOOTLOADER:
                     fraction += 4 * (1.0 / NUM_STEP);
                     ///TRANSLATORS: The current step of the installer back-end
                     step_string = _("Finishing the Installation");
@@ -246,7 +246,7 @@ public class ProgressView : Adw.NavigationPage {
         });
     }
 
-    private void installation_error_callback (Distinst.Error error) {
+    private void installation_error_callback (InstallerDaemon.Error error) {
         Idle.add (() => {
             on_error ();
             return GLib.Source.REMOVE;
