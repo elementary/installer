@@ -56,7 +56,7 @@ foreach component : gsd_components
     original_filename = component + '.desktop'
     original_autostart_file = autostartdir / original_filename
 
-    patched_filename = 'installer-' + component + '.desktop'
+    patched_filename = 'pantheon-' + component + '.desktop'
 
     custom_target('create-gsd-autostart' + patched_filename,
         input: original_autostart_file,
