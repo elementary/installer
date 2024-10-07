@@ -4,6 +4,8 @@ Maintainer: Cody Garver <cody@elementary.io>
 Build-Depends: debhelper (>= 9),
                desktop-file-utils,
                gettext,
+               gnome-settings-daemon,
+               gnome-settings-daemon-dev,
                libadwaita-1-dev,
                libdistinst-dev,
                libgee-0.8-dev,
@@ -25,8 +27,6 @@ Priority: extra
 Depends: distinst,
          espeak,
          gparted,
-         io.elementary.greeter,
-         wingpanel,
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: io.elementary.installer-session, io.elementary.onboarding
@@ -36,7 +36,10 @@ Description: Distribution installer
 Package: io.elementary.installer-session
 Architecture: amd64
 Priority: extra
-Depends: io.elementary.installer, lightdm
+Depends: io.elementary.greeter,
+         io.elementary.installer,
+         lightdm,
+         wingpanel
 Recommends: elementary-default-settings
 Description: Dedicated installer session
  Launches io.elementary.installer in a dedicated session.
