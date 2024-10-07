@@ -52,7 +52,8 @@ install_data(
     install_dir: schemadir
 )
 
-vendor_prefix = 'pantheon'
+vendor_prefix = 'installer'
+
 foreach component : gsd_components
     original_filename = component + '.desktop'
     original_autostart_file = autostartdir / original_filename
