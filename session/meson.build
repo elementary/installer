@@ -52,11 +52,12 @@ install_data(
     install_dir: schemadir
 )
 
+vendor_prefix = 'pantheon'
 foreach component : gsd_components
     original_filename = component + '.desktop'
     original_autostart_file = autostartdir / original_filename
 
-    patched_filename = 'installer-' + component + '.desktop'
+    patched_filename = vendor_prefix + '-' + component + '.desktop'
 
     custom_target('create-gsd-autostart' + patched_filename,
         input: original_autostart_file,
@@ -65,7 +66,7 @@ foreach component : gsd_components
             desktop_file_install,
             '--set-key=OnlyShowIn',
             '--set-value=X-Installer',
-            '--vendor=pantheon',
+            '--vendor=' + vendor_prefix,
             '--dir=@OUTDIR@',
             '@INPUT@',
         ],
