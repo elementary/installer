@@ -45,8 +45,11 @@ namespace LocaleHelper {
     }
 
     private static Gee.HashMap<string, LangEntry?> lang_entries;
+    private static GLib.Mutex lang_mutex;
+
     public static Gee.HashMap<string, LangEntry?> get_lang_entries () {
         if (lang_entries == null) {
+            lang_mutex = Mutex ();
             lang_entries = new Gee.HashMap<string, LangEntry?> ();
             var langs = Build.LANG_LIST.split (";");
 
@@ -112,25 +115,16 @@ namespace LocaleHelper {
             }
 
             // Now translate the labels in their original language.
-            var current_lang = Environment.get_variable ("LANGUAGE");
             foreach (var lang_entry in lang_entries.values) {
                 var lang_code = lang_entry.get_code ();
-                Environment.set_variable ("LANGUAGE", lang_code, true);
-                lang_entry.name = dgettext ("iso_639_3", lang_entry.name);
+                lang_entry.name = lang_gettext (lang_entry.name, lang_code, "iso_639_3");
                 if (lang_entry.countries.length > 0) {
                     lang_entry.name = _("%s…").printf (lang_entry.name);
                 }
 
                 foreach (var country in lang_entry.countries) {
-                    Environment.set_variable ("LANGUAGE", lang_code + "_" + country.alpha_2, true);
-                    country.name = dgettext ("iso_3166", country.name);
+                    country.name = lang_gettext (country.name, lang_code + "_" + country.alpha_2, "iso_3166");
                 }
-            }
-
-            if (current_lang != null) {
-                Environment.set_variable ("LANGUAGE", current_lang, true);
-            } else {
-                Environment.unset_variable ("LANGUAGE");
             }
         }
 
@@ -218,5 +212,34 @@ namespace LocaleHelper {
         }
 
         return null;
+    }
+
+    /*
+     * Always use this function to translate into another language to make sure
+     * that no race occurs when switchbing the environment variable.
+     */
+    public unowned string lang_gettext (string source, string lang, string? domain = null) {
+        lang_mutex.lock ();
+        unowned string translation;
+        var current_lang = GLib.Environment.get_variable ("LANGUAGE");
+        GLib.Environment.set_variable ("LANGUAGE", lang, true);
+
+        if (domain == null) {
+            Intl.textdomain (Build.GETTEXT_PACKAGE);
+            translation = _(source);
+        } else {
+            translation = dgettext (domain, source);
+        }
+
+        if (current_lang != null) {
+            GLib.Environment.set_variable ("LANGUAGE", current_lang, true);
+        } else {
+            GLib.Environment.unset_variable ("LANGUAGE");
+        }
+
+        Intl.textdomain (Build.GETTEXT_PACKAGE);
+        lang_mutex.unlock ();
+
+        return translation;
     }
 }

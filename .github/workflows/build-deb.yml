@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/elementary/docker:horus-unstable
+      image: ghcr.io/elementary/docker:development-target
 
     steps:
       - name: Install dependencies
@@ -40,7 +40,7 @@ jobs:
           cp ../*.deb output/
 
       - name: Save .deb package
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deb-files
           path: output/*.deb

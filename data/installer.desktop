@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Installer
 Comment=This session provides elementary experience
-Exec=gnome-session --builtin --session=installer
+Exec=gnome-session --session=installer
 DesktopNames=Installer
 Type=Application

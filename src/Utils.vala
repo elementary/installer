@@ -264,6 +264,13 @@ namespace Utils {
         string hostname = get_ubiquity_compatible_hostname () ?? ("elementary-os" + "-" + get_chassis ());
         hostname += "-" + get_machine_id ().substring (0, 8);
 
+        // If the automatic hostname logic fails in some way, it's possible we may generate an invalid
+        // hostname. We could fix this by trimming traling/leading hyphens or other invalid characters.
+        // But it's probably a bad hostname anyway, so just fallback
+        if (!hostname_is_valid (hostname)) {
+            hostname = "elementary-os";
+        }
+
         return hostname;
     }
 }

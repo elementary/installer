@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-24 17:42+0000\n"
-"PO-Revision-Date: 2023-08-03 16:08+0000\n"
+"POT-Creation-Date: 2024-10-01 17:57+0000\n"
+"PO-Revision-Date: 2024-05-28 23:13+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "installer/extra/en_GB/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5\n"
 
 #: data/installer.metainfo.xml.in:9
 msgid "Installer"
@@ -25,53 +25,56 @@ msgstr "Install elementary OS"
 msgid "Step by step installer for elementary OS itself."
 msgstr "Step by step installer for elementary OS itself."
 
-#: data/installer.metainfo.xml.in:52
+#: data/installer.metainfo.xml.in:53
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:59 data/installer.metainfo.xml.in:73
-#: data/installer.metainfo.xml.in:87 data/installer.metainfo.xml.in:98
-#: data/installer.metainfo.xml.in:113
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:74
+#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:116 data/installer.metainfo.xml.in:127
 msgid "Improvements:"
 msgstr "Improvements:"
 
-#: data/installer.metainfo.xml.in:61
-msgid "Swipe to navigate back"
-msgstr "Swipe to navigate back"
-
-#: data/installer.metainfo.xml.in:62 data/installer.metainfo.xml.in:75
-#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:103
-#: data/installer.metainfo.xml.in:116
+#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:77
+#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:104
+#: data/installer.metainfo.xml.in:120 data/installer.metainfo.xml.in:132
 msgid "Updated translations"
 msgstr "Updated translations"
 
-#: data/installer.metainfo.xml.in:89
+#: data/installer.metainfo.xml.in:76
+msgid "Keyboard layout preview is now in a resizable window"
+msgstr "Keyboard layout preview is now in a resizeable window"
+
+#: data/installer.metainfo.xml.in:90
+msgid "Swipe to navigate back"
+msgstr "Swipe to navigate back"
+
+#: data/installer.metainfo.xml.in:118
 msgid "Use large icons in views"
 msgstr "Use large icons in views"
 
-#: data/installer.metainfo.xml.in:90
+#: data/installer.metainfo.xml.in:119
 msgid "Add a custom icon for Before Installing view"
 msgstr "Add a custom icon for Before Installing view"
 
-#: data/installer.metainfo.xml.in:100
+#: data/installer.metainfo.xml.in:129
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr "Show an infobar on battery instead of switching to a different page"
 
-#: data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:130
 msgid "Show all system requirements warnings on a single page"
 msgstr "Show all system requirements warnings on a single page"
 
-#: data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:131
 msgid "Warn about installing developer builds"
 msgstr "Warn about installing developer builds"
-
-#: data/installer.metainfo.xml.in:115
-msgid "Double the boot partition size for encrypted installs"
-msgstr "Double the boot partition size for encrypted installs"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
 msgstr "Install the System"
+
+#~ msgid "Double the boot partition size for encrypted installs"
+#~ msgstr "Double the boot partition size for encrypted installs"
 
 #~ msgid "Warn about installing in a VM"
 #~ msgstr "Warn about installing in a VM"

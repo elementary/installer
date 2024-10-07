@@ -17,7 +17,6 @@ font-name='Inter 9'
 gtk-theme='io.elementary.stylesheet.blueberry'
 icon-theme='elementary'
 monospace-font-name='Roboto Mono 10'
-show-unicode-menu=false
 
 [org.gnome.desktop.peripherals.touchpad:Installer]
 natural-scroll=true
@@ -45,8 +44,6 @@ scroll-method='two-finger-scrolling'
 active=false
 
 [org.gnome.settings-daemon.plugins.xsettings:Installer]
-antialiasing='grayscale'
-hinting='slight'
 overrides={'Gtk/DialogsUseHeader': <0>, 'Gtk/EnablePrimaryPaste': <0>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'close:menu,maximize'>}
 
 [org.gtk.Settings.FileChooser:Installer]

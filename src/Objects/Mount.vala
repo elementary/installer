@@ -40,14 +40,14 @@ public class Installer.Mount {
     }
 
     public bool is_valid_boot_mount () {
-        return filesystem == InstallerDaemon.FileSystem.FAT16
-            || filesystem == InstallerDaemon.FileSystem.FAT32;
+        return filesystem == FAT16
+            || filesystem == FAT32;
     }
 
     public bool is_valid_root_mount () {
-        return filesystem != InstallerDaemon.FileSystem.FAT16
-            && filesystem != InstallerDaemon.FileSystem.FAT32
-            && filesystem != InstallerDaemon.FileSystem.NTFS;
+        return filesystem != FAT16
+            && filesystem != FAT32
+            && filesystem != NTFS;
     }
 
     public bool is_lvm () {
