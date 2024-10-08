@@ -60,11 +60,11 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
-            case Distinst.PartitionTable.MSDOS:
+            case MSDOS:
                 // Device is in BIOS mode, so we just require a root partition
                 required_description = _("You must at least select a <b>Root (/)</b> partition.");
                 break;
-            case Distinst.PartitionTable.GPT:
+            case GPT:
                 // Device is in EFI mode, so we also require a boot partition
                 required_description = _("You must at least select a <b>Root (/)</b> partition and an optional <b>Boot (/boot/efi)</b> partition.");
                 break;
@@ -233,9 +233,9 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         var bootloader = Daemon.get_default ().bootloader_detect ();
         switch (bootloader) {
-            case Distinst.PartitionTable.MSDOS:
+            case MSDOS:
                 break;
-            case Distinst.PartitionTable.GPT:
+            case GPT:
                 break;
         }
 
@@ -341,7 +341,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
 
         InstallerDaemon.Partition[] partitions = {};
 
-        var usage_1 = Distinst.PartitionUsage () {
+        var usage_1 = InstallerDaemon.PartitionUsage () {
             tag = 1,
             value = 30312
         };
@@ -355,7 +355,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             current_lvm_volume_group = ""
         };
 
-        var usage_2 = Distinst.PartitionUsage () {
+        var usage_2 = InstallerDaemon.PartitionUsage () {
             tag = 0,
             value = 0
         };
