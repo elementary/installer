@@ -33,6 +33,35 @@ public class Installer.App : Gtk.Application {
         base.startup ();
 
         Granite.init ();
+
+        try {
+            UPower upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
+
+            send_withdraw_battery_notification (upower.on_battery);
+
+            ((DBusProxy) upower).g_properties_changed.connect ((changed, invalid) => {
+                var _on_battery = changed.lookup_value ("OnBattery", GLib.VariantType.BOOLEAN);
+                if (_on_battery != null) {
+                    send_withdraw_battery_notification (upower.on_battery);
+                }
+            });
+        } catch (Error e) {
+            critical ("Can't connect to UPower; unable to send battery notifications: %s", e.message);
+        }
+    }
+
+    private void send_withdraw_battery_notification (bool on_battery) {
+        if (!on_battery) {
+            withdraw_notification ("on-battery");
+            return;
+        }
+
+        var notification = new GLib.Notification (_("Connect to a Power Source"));
+        notification.set_body (_("Installation will not succeed if this device loses power."));
+        notification.set_icon (new ThemedIcon ("battery-ac-adapter"));
+        notification.set_priority (NotificationPriority.URGENT);
+
+        send_notification ("on-battery", notification);
     }
 
     public override void activate () {
