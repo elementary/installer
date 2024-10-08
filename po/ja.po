@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-08 16:51+0000\n"
-"PO-Revision-Date: 2024-10-02 18:16+0000\n"
+"PO-Revision-Date: 2024-10-09 18:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -21,7 +21,7 @@ msgstr "電源に接続してください"
 
 #: src/Application.vala:60
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "デバイスの電源が落ちると、インストールは成功しません。"
 
 #: src/Application.vala:73
 #, c-format
