@@ -18,13 +18,12 @@
  */
 
 public class Installer.LanguageView : AbstractInstallerView {
-    Gtk.Label select_label;
-    Gtk.Stack select_stack;
-    Gtk.Button next_button;
-    int select_number = 0;
-    Gee.LinkedList<string> preferred_langs;
+    private Gtk.Button next_button;
+    private Gtk.Label select_label;
+    private Gtk.Stack select_stack;
+    private int select_number = 0;
+    private static Gee.LinkedList<string> preferred_langs;
     private uint lang_timeout = 0U;
-
     private VariantWidget lang_variant_widget;
 
     public LanguageView () {
@@ -37,24 +36,26 @@ public class Installer.LanguageView : AbstractInstallerView {
         }
     }
 
-    construct {
+    static construct {
         preferred_langs = new Gee.LinkedList<string> ();
-        foreach (var lang in Build.PREFERRED_LANG_LIST.split (";")) {
-            preferred_langs.add (lang);
-        }
+        preferred_langs.add_all_array (Build.PREFERRED_LANG_LIST.split (";"));
+    }
 
+    construct {
         var image = new Gtk.Image.from_icon_name ("preferences-desktop-locale") {
             pixel_size = 128,
             valign = Gtk.Align.END
         };
 
-        select_label = new Gtk.Label (null);
-        select_label.halign = Gtk.Align.CENTER;
-        select_label.wrap = true;
+        select_label = new Gtk.Label (null) {
+            halign = CENTER,
+            valign = START,
+            wrap = true
+        };
 
-        select_stack = new Gtk.Stack ();
-        select_stack.valign = Gtk.Align.START;
-        select_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        select_stack = new Gtk.Stack () {
+            transition_type = Gtk.StackTransitionType.CROSSFADE
+        };
         select_stack.add_child (select_label);
 
         select_stack.notify["transition-running"].connect (() => {
@@ -65,23 +66,13 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         lang_variant_widget = new VariantWidget ();
 
+        lang_variant_widget.variant_listbox.set_sort_func ((Gtk.ListBoxSortFunc) CountryRow.compare);
+
         lang_variant_widget.variant_listbox.row_activated.connect (() => {
             next_button.activate ();
         });
 
-        lang_variant_widget.main_listbox.set_sort_func ((row1, row2) => {
-            var langrow1 = (LangRow) row1;
-            var langrow2 = (LangRow) row2;
-            if (langrow1.preferred_row && langrow2.preferred_row == false) {
-                return -1;
-            } else if (langrow2.preferred_row && langrow1.preferred_row == false) {
-                return 1;
-            } else if (langrow1.preferred_row && langrow2.preferred_row) {
-                return preferred_langs.index_of (langrow1.lang_entry.get_code ()) - preferred_langs.index_of (langrow2.lang_entry.get_code ());
-            }
-
-            return langrow1.lang_entry.name.collate (langrow2.lang_entry.name);
-        });
+        lang_variant_widget.main_listbox.set_sort_func ((Gtk.ListBoxSortFunc) LangRow.compare);
 
         lang_variant_widget.main_listbox.set_header_func ((row, before) => {
             row.set_header (null);
@@ -93,6 +84,7 @@ public class Installer.LanguageView : AbstractInstallerView {
                         margin_bottom = 3,
                         margin_start = 6
                     };
+
                     row.set_header (separator);
                 }
             }
@@ -109,8 +101,9 @@ public class Installer.LanguageView : AbstractInstallerView {
             lang_variant_widget.main_listbox.append (langrow);
         }
 
-        next_button = new Gtk.Button.with_label (_("Select"));
-        next_button.sensitive = false;
+        next_button = new Gtk.Button.with_label (_("Select")) {
+            sensitive = false
+        };
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
         action_box_end.append (next_button);
@@ -304,9 +297,10 @@ public class Installer.LanguageView : AbstractInstallerView {
         public LangRow (LocaleHelper.LangEntry lang_entry) {
             this.lang_entry = lang_entry;
 
-            image = new Gtk.Image ();
-            image.hexpand = true;
-            image.halign = Gtk.Align.END;
+            image = new Gtk.Image () {
+                halign = Gtk.Align.END,
+                hexpand = true
+            };
 
             var label = new Gtk.Label (lang_entry.name) {
                 ellipsize = Pango.EllipsizeMode.END,
@@ -324,6 +318,18 @@ public class Installer.LanguageView : AbstractInstallerView {
             box.append (image);
 
             child = box;
+        }
+
+        public static int compare (LangRow langrow1, LangRow langrow2) {
+            if (langrow1.preferred_row && langrow2.preferred_row == false) {
+                return -1;
+            } else if (langrow2.preferred_row && langrow1.preferred_row == false) {
+                return 1;
+            } else if (langrow1.preferred_row && langrow2.preferred_row) {
+                return preferred_langs.index_of (langrow1.lang_entry.get_code ()) - preferred_langs.index_of (langrow2.lang_entry.get_code ());
+            }
+
+            return langrow1.lang_entry.name.collate (langrow2.lang_entry.name);
         }
     }
 
@@ -350,13 +356,17 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         public CountryRow (LocaleHelper.CountryEntry country_entry) {
             this.country_entry = country_entry;
-            image = new Gtk.Image ();
-            image.hexpand = true;
-            image.halign = Gtk.Align.END;
 
-            var label = new Gtk.Label (country_entry.name);
+            image = new Gtk.Image () {
+                halign = END,
+                hexpand = true
+            };
+
+            var label = new Gtk.Label (country_entry.name) {
+                ellipsize = END,
+                xalign = 0
+            };
             label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-            label.xalign = 0;
 
             var box = new Gtk.Box (HORIZONTAL, 6) {
                 margin_top = 6,
@@ -368,6 +378,10 @@ public class Installer.LanguageView : AbstractInstallerView {
             box.append (image);
 
             child = box;
+        }
+
+        public static int compare (CountryRow countryrow1, CountryRow countryrow2) {
+            return countryrow1.country_entry.name.collate (countryrow2.country_entry.name);
         }
     }
 }
