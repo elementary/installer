@@ -246,17 +246,6 @@ public class Installer.KeyboardLayout : GLib.Object {
         return a.display_name.collate (b.display_name);
     }
 
-    private const string XKB_RULES_FILE = "base.xml";
-
-    private static string get_xml_rules_file_path () {
-        unowned string? base_path = GLib.Environment.get_variable ("XKB_CONFIG_ROOT");
-        if (base_path == null) {
-            base_path = Build.XKB_BASE;
-        }
-
-        return Path.build_filename (base_path, "rules", XKB_RULES_FILE);
-    }
-
     public static GLib.ListStore get_all () {
         var layout_store = new GLib.ListStore (typeof (KeyboardLayout));
 
@@ -283,17 +272,5 @@ public class Installer.KeyboardLayout : GLib.Object {
         }
 
         return layout_store;
-    }
-
-    private static unowned Xml.Node* get_xml_node_by_name (Xml.Node* root, string name) {
-        for (unowned Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-            if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                if (iter->name == name) {
-                    return iter;
-                }
-            }
-        }
-
-        return null;
     }
 }
