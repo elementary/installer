@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-08 16:51+0000\n"
-"PO-Revision-Date: 2024-10-07 08:07+0000\n"
+"PO-Revision-Date: 2024-10-10 22:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -21,7 +21,7 @@ msgstr "נא לחבר למקור חשמל"
 
 #: src/Application.vala:60
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "ההתקנה לא תצליח אם ההתקן הזה ינותק מחשמל."
 
 #: src/Application.vala:73
 #, c-format
