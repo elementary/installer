@@ -65,6 +65,7 @@ gui_dependencies = [
     adw_dep,
     json_glib_dep,
     pwquality_dep,
+    xkbregistry_dep,
     xml2_dep
 ]
 

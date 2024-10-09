@@ -259,54 +259,29 @@ public class Installer.KeyboardLayout : GLib.Object {
 
     public static GLib.ListStore get_all () {
         var layout_store = new GLib.ListStore (typeof (KeyboardLayout));
-        unowned Xml.Doc* doc = Xml.Parser.read_file (get_xml_rules_file_path ());
 
-        Xml.XPath.Context cntx = new Xml.XPath.Context (doc);
-        unowned Xml.XPath.Object* res = cntx.eval_expression ("/xkbConfigRegistry/layoutList/layout");
-        if (res == null) {
-            delete doc;
-            critical ("Unable to parse 'base.xml'");
-            return layout_store;
-        }
+        var xkb_context = new Rxkb.Context (NO_FLAGS);
+        xkb_context.parse_default_ruleset ();
 
-        if (res->type != Xml.XPath.ObjectType.NODESET || res->nodesetval == null) {
-            delete res;
-            delete doc;
-            critical ("No layouts found in 'base.xml'");
-            return layout_store;
-        }
-
-        for (int i = 0; i < res->nodesetval->length (); i++) {
-            unowned Xml.Node* layout_node = res->nodesetval->item (i);
-            unowned Xml.Node* config_node = get_xml_node_by_name (layout_node, "configItem");
-            unowned Xml.Node* variant_node = get_xml_node_by_name (layout_node, "variantList");
-            unowned Xml.Node* description_node = get_xml_node_by_name (config_node, "description");
-            unowned Xml.Node* name_node = get_xml_node_by_name (config_node, "name");
-            if (name_node == null || description_node == null) {
+        var xkb_layout = xkb_context.get_first_layout ();
+        while (xkb_layout != null) {
+            if (xkb_layout.get_variant () != null) {
                 continue;
             }
 
-            var layout = new KeyboardLayout (name_node->children->content, description_node->children->content);
+            var layout = new KeyboardLayout (xkb_layout.get_name (), xkb_layout.get_description ());
             layout_store.insert_sorted (layout, (GLib.CompareDataFunc<GLib.Object>) KeyboardLayout.compare);
 
-            if (variant_node != null) {
-                for (unowned Xml.Node* variant_iter = variant_node->children; variant_iter != null; variant_iter = variant_iter->next) {
-                    if (variant_iter->name == "variant") {
-                        unowned Xml.Node* variant_config_node = get_xml_node_by_name (variant_iter, "configItem");
-                        if (variant_config_node != null) {
-                            unowned Xml.Node* variant_description_node = get_xml_node_by_name (variant_config_node, "description");
-                            unowned Xml.Node* variant_name_node = get_xml_node_by_name (variant_config_node, "name");
-                            if (variant_description_node != null && variant_name_node != null) {
-                                layout.add_variant (variant_name_node->children->content, variant_description_node->children->content);
-                            }
-                        }
-                    }
-                }
+            var next_layout = xkb_layout.next ();
+            while (next_layout != null && next_layout.get_variant () != null) {
+                layout.add_variant (next_layout.get_variant (), next_layout.get_description ());
+
+                next_layout = next_layout.next ();
             }
+
+            xkb_layout = next_layout;
         }
 
-        delete res;
-        delete doc;
         return layout_store;
     }
 
