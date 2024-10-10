@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-08 16:51+0000\n"
-"PO-Revision-Date: 2024-10-02 18:16+0000\n"
+"PO-Revision-Date: 2024-10-09 18:16+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -22,7 +22,7 @@ msgstr "Під'єднайте джерело живлення"
 
 #: src/Application.vala:60
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "Якщо пристрій вимкнеться, встановлення не буде успішним."
 
 #: src/Application.vala:73
 #, c-format
