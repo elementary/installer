@@ -254,10 +254,6 @@ public class Installer.KeyboardLayout : GLib.Object {
 
         var xkb_layout = xkb_context.get_first_layout ();
         while (xkb_layout != null) {
-            if (xkb_layout.get_variant () != null) {
-                continue;
-            }
-
             var layout = new KeyboardLayout (xkb_layout.get_name (), xkb_layout.get_description ());
             layout_store.insert_sorted (layout, (GLib.CompareDataFunc<GLib.Object>) KeyboardLayout.compare);
 
