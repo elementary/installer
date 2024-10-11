@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-08 16:51+0000\n"
-"PO-Revision-Date: 2024-10-02 18:16+0000\n"
+"PO-Revision-Date: 2024-10-10 22:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
 "installer/ca/>\n"
@@ -21,7 +21,7 @@ msgstr "Connecteu una font d'energia"
 
 #: src/Application.vala:60
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "La instal·lació no tindrà èxit si aquest dispositiu perd energia."
 
 #: src/Application.vala:73
 #, c-format
