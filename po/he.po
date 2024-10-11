@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
-"PO-Revision-Date: 2024-09-12 22:16+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"PO-Revision-Date: 2024-10-10 22:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -15,24 +15,22 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "נא לחבר למקור חשמל"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr "ההתקנה לא תצליח אם ההתקן הזה ינותק מחשמל."
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "התקנת %s"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr "מערכת ההפעלה מותקנת"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "נא לחבר למקור חשמל"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr "ההתקן שלך פועל על גבי סוללה. מומלץ לחבר אותו לחשמל בזמן ההתקנה."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -558,7 +556,12 @@ msgstr "בררת מחדל (ext4)"
 
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
-msgstr ""
+msgstr "ערך מותאם אישית חייב להתחיל ב־/"
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr "ההתקן שלך פועל על גבי סוללה. מומלץ לחבר אותו לחשמל בזמן ההתקנה."
 
 #~ msgid ""
 #~ "Proprietary drivers are subject to their own license terms. By "

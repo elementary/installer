@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
 "PO-Revision-Date: 2021-09-04 16:04+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
@@ -16,27 +16,24 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:39+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "قم بوصل الجهاز بمصدر للطاقة"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr ""
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "ثبت %s"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
 msgstr "تم تثبيت %s"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "قم بوصل الجهاز بمصدر للطاقة"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"جهازك يعمل الآن على البطارية. من الأفضل أن توصله بمنفذ كهرباء خلال التثبيت."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -584,6 +581,13 @@ msgstr "الافتراضي (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr ""
+#~ "جهازك يعمل الآن على البطارية. من الأفضل أن توصله بمنفذ كهرباء خلال "
+#~ "التثبيت."
 
 #~ msgid "Ignore"
 #~ msgstr "تجاهل"

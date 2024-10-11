@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
 "PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
@@ -19,28 +19,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "ਕਿਸੇ ਊਰਜਾ ਸਰੋਤ ਨਾਲ਼ ਜੋੜੋ"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr ""
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
 msgstr "%s ਸਥਾਪਤ ਹੋ ਚੁੱਕਿਐ"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "ਕਿਸੇ ਊਰਜਾ ਸਰੋਤ ਨਾਲ਼ ਜੋੜੋ"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਬੈਟਰੀ ਊਰਜਾ ਤੇ ਚੱਲ ਰਹੀ ਹੈ। ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਸਥਾਪਨ ਦੇ ਦੌਰਾਨ ਚਾਰਜਰ "
-"'ਤੇ ਲਾ ਕੇ ਰੱਖੋ।"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -579,6 +575,13 @@ msgstr "ਡਿਫ਼ਾਲਟ (ਈ.ਐਕਸ.ਟੀ4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr ""
+#~ "ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਬੈਟਰੀ ਊਰਜਾ ਤੇ ਚੱਲ ਰਹੀ ਹੈ। ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਸਥਾਪਨ ਦੇ ਦੌਰਾਨ "
+#~ "ਚਾਰਜਰ 'ਤੇ ਲਾ ਕੇ ਰੱਖੋ।"
 
 #~ msgid "Ignore"
 #~ msgstr "ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ"
