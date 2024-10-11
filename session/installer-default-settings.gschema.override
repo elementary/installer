@@ -1,3 +1,6 @@
+[io.elementary.dock]
+launchers=['gala-multitaskingview.desktop', 'io.elementary.files.desktop', 'org.gnome.Epiphany.desktop', 'io.elementary.mail.desktop', 'io.elementary.tasks.desktop', 'io.elementary.calendar.desktop', 'io.elementary.music.desktop', 'io.elementary.videos.desktop', 'io.elementary.photos.desktop', 'io.elementary.settings.desktop', 'io.elementary.appcenter.desktop', 'io.elementary.installer.desktop']
+
 [org.freedesktop.ibus.general.hotkey:Installer]
 triggers=['<Control>space']
 
