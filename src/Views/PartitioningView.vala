@@ -364,7 +364,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             device_path = "/dev/nvme0n1p2",
             filesystem = InstallerDaemon.FileSystem.LVM,
             start_sector = 542968,
-            end_sector = 376769070,
+            end_sector = 976769070,
             sectors_used = usage_2,
             current_lvm_volume_group = "data"
         };
