@@ -65,6 +65,8 @@ public class Installer.LanguageView : AbstractInstallerView {
 
         lang_variant_widget = new VariantWidget ();
 
+        lang_variant_widget.variant_listbox.set_sort_func ((Gtk.ListBoxSortFunc) CountryRow.compare);
+
         lang_variant_widget.variant_listbox.row_activated.connect (() => {
             next_button.activate ();
         });
@@ -130,8 +132,8 @@ public class Installer.LanguageView : AbstractInstallerView {
 
                 unowned Gtk.ListBoxRow crow = lang_variant_widget.variant_listbox.get_selected_row ();
                 if (crow != null) {
-                    string country = ((CountryRow) crow).country_entry.alpha_2;
-                    configuration.country = country;
+                    LocaleHelper.CountryEntry country = ((CountryRow) crow).country_entry;
+                    configuration.country = country.get_code ();
                 } else if (lang_entry.countries.length == 0) {
                     configuration.country = null;
                 } else {
@@ -241,16 +243,25 @@ public class Installer.LanguageView : AbstractInstallerView {
                 return;
             }
 
+            var lang_code = lang_entry.get_code ();
+            string? main_country = LocaleHelper.get_main_country (lang_code);
+
             lang_variant_widget.variant_listbox.row_selected.disconnect (variant_row_selected);
             lang_variant_widget.clear_variants ();
             lang_variant_widget.variant_listbox.row_selected.connect (variant_row_selected);
             foreach (var country in countries) {
-                lang_variant_widget.variant_listbox.append (new CountryRow (country));
+                var country_row = new CountryRow (country);
+                lang_variant_widget.variant_listbox.append (country_row);
+                if (country.get_code () == main_country) {
+                    lang_variant_widget.variant_listbox.select_row (country_row);
+                }
             }
 
-            lang_variant_widget.variant_listbox.select_row (lang_variant_widget.variant_listbox.get_row_at_index (0));
+            if (main_country == null || lang_variant_widget.variant_listbox.get_selected_row () == null) {
+                lang_variant_widget.variant_listbox.select_row (lang_variant_widget.variant_listbox.get_row_at_index (0));
+            }
 
-            Environment.set_variable ("LANGUAGE", lang_entry.get_code (), true);
+            Environment.set_variable ("LANGUAGE", lang_code, true);
             Intl.textdomain (Build.GETTEXT_PACKAGE);
             lang_variant_widget.show_variants (_("Languages"), lang_entry.name);
     }
@@ -368,6 +379,10 @@ public class Installer.LanguageView : AbstractInstallerView {
             box.append (image);
 
             child = box;
+        }
+
+        public static int compare (CountryRow countryrow1, CountryRow countryrow2) {
+            return countryrow1.country_entry.name.collate (countryrow2.country_entry.name);
         }
     }
 }
