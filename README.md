@@ -22,8 +22,7 @@ You'll need the following dependencies:
  - libadwaita-1-dev >=1.4.0
  - libjson-glib-dev
  - libpwquality-dev
- - libxml2-dev
- - libxml2-utils
+ - libxkbregistry-dev
  - [distinst](https://github.com/pop-os/distinst/)
  - valac
 
