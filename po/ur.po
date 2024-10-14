@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
 "PO-Revision-Date: 2018-02-04 22:34+0000\n"
 "Last-Translator: Yasir Rehman <HazardDroidOfficial@gmail.com>\n"
 "Language-Team: Urdu <https://weblate.elementary.io/projects/installer/"
@@ -15,26 +15,22 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "کسی پاور سورس سےکونیکٹ کریں"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr ""
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "انسٹال %s 1"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr ""
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "کسی پاور سورس سےکونیکٹ کریں"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"آپ کا ڈیواءیس بیٹری پر چل رہا ہے. انسٹالیشن کرنے کے دوران پلگ ان کرنے کی "
-"سفارش کی جاتی ہے."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -547,6 +543,13 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr ""
+#~ "آپ کا ڈیواءیس بیٹری پر چل رہا ہے. انسٹالیشن کرنے کے دوران پلگ ان کرنے کی "
+#~ "سفارش کی جاتی ہے."
 
 #~ msgid "Ignore"
 #~ msgstr "ایگنور"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
 "PO-Revision-Date: 2024-10-03 21:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
@@ -15,26 +15,22 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "Csatlakozzon az elektromos hálózatra"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr ""
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "%s telepítése"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr "operációs rendszer telepítés alatt áll"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "Csatlakozzon az elektromos hálózatra"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"A készülék akkumulátorról üzemel. Ajánlott csatlakoztatni, mielőtt elkezdi a "
-"telepítést."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -576,6 +572,13 @@ msgstr "Alapértelmezett (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr "Az egyéni értéknek /-rel kezdődnie"
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr ""
+#~ "A készülék akkumulátorról üzemel. Ajánlott csatlakoztatni, mielőtt "
+#~ "elkezdi a telepítést."
 
 #~ msgid ""
 #~ "Proprietary drivers are subject to their own license terms. By "
