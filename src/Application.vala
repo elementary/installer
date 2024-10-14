@@ -21,11 +21,6 @@ public class Installer.App : Gtk.Application {
     }
 
     construct {
-        GLib.Intl.setlocale (LocaleCategory.ALL, "");
-        GLib.Intl.bindtextdomain (application_id, Build.LOCALEDIR);
-        GLib.Intl.bind_textdomain_codeset (application_id, "UTF-8");
-        GLib.Intl.textdomain (application_id);
-
         add_main_option_entries (INSTALLER_OPTIONS);
     }
 
@@ -84,5 +79,10 @@ public class Installer.App : Gtk.Application {
 }
 
 public static int main (string[] args) {
+    GLib.Intl.setlocale (LocaleCategory.ALL, "");
+    GLib.Intl.bindtextdomain (Build.GETTEXT_PACKAGE, Build.LOCALEDIR);
+    GLib.Intl.bind_textdomain_codeset (Build.GETTEXT_PACKAGE, "UTF-8");
+    GLib.Intl.textdomain (Build.GETTEXT_PACKAGE);
+
     return new Installer.App ().run (args);
 }
