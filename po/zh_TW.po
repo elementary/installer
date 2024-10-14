@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-08 16:51+0000\n"
-"PO-Revision-Date: 2024-10-07 08:07+0000\n"
+"PO-Revision-Date: 2024-10-14 16:04+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hant/>\n"
@@ -21,7 +21,7 @@ msgstr "請連接電源"
 
 #: src/Application.vala:60
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "裝置若是沒電會無法完成安裝。"
 
 #: src/Application.vala:73
 #, c-format
