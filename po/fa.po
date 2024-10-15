@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
 "PO-Revision-Date: 2024-10-03 21:16+0000\n"
 "Last-Translator: Hossein <hossein17@duck.com>\n"
 "Language-Team: Persian <https://l10n.elementary.io/projects/installer/"
@@ -15,26 +15,22 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "به برق وصل کنید"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr ""
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "%s نصب"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr "سیستم عامل در حال نصب است"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "به برق وصل کنید"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"دستگاه شما در حالت استفاده از باطری است. پیشنهاد میشود در حال نصب به برق وصل "
-"شود."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -172,8 +168,8 @@ msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
 msgstr ""
-"درایورهای اختصاصی را می توان بعداً از طریق تنظیمات سیستم > سیستم نصب کرد، "
-"اما اتصال اینترنت برای همه درایورها لازم است."
+"درایورهای اختصاصی را می توان بعداً از طریق تنظیمات سیستم > سیستم نصب کرد، اما "
+"اتصال اینترنت برای همه درایورها لازم است."
 
 #: src/Views/DriversView.vala:52
 msgid ""
@@ -214,8 +210,8 @@ msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
-"داده‌ها فقط در صورت خاموش شدن این دستگاه در مقابل سایر افراد با دسترسی "
-"فیزیکی به این دستگاه محافظت می‌شوند."
+"داده‌ها فقط در صورت خاموش شدن این دستگاه در مقابل سایر افراد با دسترسی فیزیکی "
+"به این دستگاه محافظت می‌شوند."
 
 #: src/Views/EncryptView.vala:67
 msgid ""
@@ -239,9 +235,8 @@ msgid ""
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 msgstr ""
-"اگر رمز عبور رمزگذاری را فراموش کردید، <b>نمی‌توانید داده‌ها را بازیابی "
-"کنید.</b> این رمز عبور منحصربه‌فرد برای این دستگاه است، نه رمز عبور حساب "
-"کاربری شما."
+"اگر رمز عبور رمزگذاری را فراموش کردید، <b>نمی‌توانید داده‌ها را بازیابی کنید.</"
+"b> این رمز عبور منحصربه‌فرد برای این دستگاه است، نه رمز عبور حساب کاربری شما."
 
 #: src/Views/EncryptView.vala:95
 msgid "Choose Encryption Password"
@@ -570,6 +565,13 @@ msgstr "پیشفرض (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr "مقدار سفارشی باید با / شروع شود"
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr ""
+#~ "دستگاه شما در حالت استفاده از باطری است. پیشنهاد میشود در حال نصب به برق "
+#~ "وصل شود."
 
 #~ msgid "Ignore"
 #~ msgstr "نادیده بگیر"

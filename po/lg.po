@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
 "PO-Revision-Date: 2018-01-21 00:04+0000\n"
 "Last-Translator: Laurence Bahiirwa <laurence@mediauganda.com>\n"
 "Language-Team: Ganda <https://weblate.elementary.io/projects/installer/"
@@ -15,24 +15,22 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "Teka masini ku masanyalaze"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr ""
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "Tekkako %s"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr ""
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "Teka masini ku masanyalaze"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr "Masini yo eri kolera ku lyanda. Giteke ku masanyalaze."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -549,6 +547,11 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr "Masini yo eri kolera ku lyanda. Giteke ku masanyalaze."
 
 #~ msgid "Ignore"
 #~ msgstr "Kireke"

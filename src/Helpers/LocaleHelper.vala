@@ -42,6 +42,10 @@ namespace LocaleHelper {
         public string alpha_2;
         public string alpha_3;
         public string name;
+
+        public unowned string get_code () {
+            return alpha_2 ?? alpha_3;
+        }
     }
 
     private static Gee.HashMap<string, LangEntry?> lang_entries;

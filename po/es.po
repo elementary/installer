@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
-"PO-Revision-Date: 2024-10-02 18:16+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"PO-Revision-Date: 2024-10-14 17:11+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
@@ -15,26 +15,22 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "Conéctese a una fuente de alimentación"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr "La instalación no será exitosa si el equipo se queda sin energía."
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "Instalar %s"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr "se está instalando el sistema operativo"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "Conéctese a una fuente de alimentación"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"Su equipo funciona con batería. Se recomienda conectarlo a una fuente de "
-"alimentación durante la instalación."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -456,7 +452,7 @@ msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
-"Cree, redimensione o gestione manualmente las particiones. Este método puede "
+"Cree, redimensione o gestione particiones manualmente. Este método puede "
 "provocar la pérdida de datos."
 
 #: src/Views/TryInstallView.vala:107
@@ -581,6 +577,13 @@ msgstr "Predeterminado (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr "El valor personalizado debe comenzar con /"
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr ""
+#~ "Su equipo funciona con batería. Se recomienda conectarlo a una fuente de "
+#~ "alimentación durante la instalación."
 
 #~ msgid "Ignore"
 #~ msgstr "Ignorar"

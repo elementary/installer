@@ -21,7 +21,7 @@ granite_dep = dependency('granite-7', version: '>=7.4.0')
 gsd_dep = dependency('gnome-settings-daemon', version: '>= 3.36.0')
 adw_dep = dependency('libadwaita-1', version: '>=1.4.0')
 json_glib_dep = dependency('json-glib-1.0')
-xml2_dep = dependency('libxml-2.0')
+xkbregistry_dep = dependency('xkbregistry')
 pwquality_dep = dependency('pwquality')
 systemd_dep = dependency('systemd')
 
