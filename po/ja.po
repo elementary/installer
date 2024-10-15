@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-08 16:51+0000\n"
-"PO-Revision-Date: 2024-10-09 18:16+0000\n"
+"PO-Revision-Date: 2024-10-12 12:00+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -334,7 +334,7 @@ msgstr "言語を選択"
 
 #: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
 msgid "Currently active language"
-msgstr "現在使用可能な言語"
+msgstr "現在の選択言語"
 
 #: src/Views/PartitioningView.vala:51
 msgid "Select Partitions"

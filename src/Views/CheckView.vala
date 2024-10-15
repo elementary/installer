@@ -28,7 +28,7 @@ public class Installer.CheckView : AbstractInstallerView {
     private Gtk.Box message_box;
     public bool has_messages {
         get {
-            return message_box.get_first_child != null;
+            return message_box.get_first_child () != null;
         }
     }
 
