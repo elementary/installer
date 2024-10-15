@@ -307,7 +307,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             this.lang_entry = lang_entry;
 
             image = new Gtk.Image () {
-                halign = Gtk.Align.END,
+                halign = END,
                 hexpand = true
             };
 
