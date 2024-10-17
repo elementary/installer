@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Install elementary OS
 Comment=Install the system
-Exec=dbus-send --session --dest=org.gnome.SessionManager --print-reply /org/gnome/SessionManager org.gnome.SessionManager.Logout uint32:0
+Exec=gnome-session-quit --no-prompt
 Icon=io.elementary.installer
 Terminal=false
 Type=Application
