@@ -90,7 +90,6 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
 
         child.realize.connect (() => {
             connect_to_shell ();
-            set_keep_above ();
             make_centered ();
         });
     }
