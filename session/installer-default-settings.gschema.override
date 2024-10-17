@@ -4,6 +4,11 @@ triggers=['<Control>space']
 [org.freedesktop.ibus.panel:Installer]
 show=1
 
+[org.gnome.desktop.background:Installer]
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/elementaryos-default'
+primary-color='#000000'
+
 [org.gnome.desktop.datetime:Installer]
 automatic-timezone=true
 
@@ -32,6 +37,7 @@ resize-with-right-button=true
 
 [org.gnome.nm-applet:Installer]
 disable-connected-notifications=true
+disable-disconnected-notifications=true
 show-applet=false
 
 [org.gnome.settings-daemon.peripherals.touchpad:Installer]
