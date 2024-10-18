@@ -23,12 +23,12 @@ jobs:
     - name: Install Dependencies
       run: |
         apt update
-        apt install -y desktop-file-utils gettext libadwaita-1-dev libdistinst-dev libgee-0.8-dev libgranite-7-dev libgtk-4-dev libxkbregistry-dev libjson-glib-dev libpwquality-dev meson valac
+        apt install -y desktop-file-utils gettext gnome-settings-daemon gnome-settings-daemon-dev libadwaita-1-dev libdistinst-dev libgee-0.8-dev libgranite-7-dev libgtk-4-dev libxkbregistry-dev libjson-glib-dev libpwquality-dev meson valac
     - name: Build and Test
       env:
         DESTDIR: out
       run: |
-        meson setup build
+        meson setup build --prefix=/usr
         ninja -C build install
         ninja -C build test
 
