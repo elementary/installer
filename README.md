@@ -15,7 +15,7 @@ You'll need the following dependencies:
  - desktop-file-utils
  - gettext
  - gnome-settings-daemon
- - gnome-settings-daemon-dev
+ - gnome-settings-daemon-dev >= 3.36.0
  - gparted
  - libgnomekbd-dev
  - libgranite-7-dev >=7.4.0
