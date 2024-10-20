@@ -79,6 +79,14 @@ public class Installer.App : Gtk.Application {
 }
 
 public static int main (string[] args) {
+    // When the installer starts on a live iso session, LANG is set to C.UTF-8, which causes gettext to ignore the
+    // LANGUAGE variable. To enable runtime language switching, we need to set LANG to something other than C.UTF-8. See:
+    // https://github.com/autotools-mirror/gettext/blob/8f089a25a48a2855e2ca9c700984f4dc514cfcb6/gettext-runtime/intl/dcigettext.c#L1509-L1525
+    var current_lang = Environment.get_variable ("LANG");
+    if (current_lang == null || current_lang.has_prefix ("C.")) {
+        Environment.set_variable ("LANG", "en_US.UTF-8", true);
+    }
+
     GLib.Intl.setlocale (LocaleCategory.ALL, "");
     GLib.Intl.bindtextdomain (Build.GETTEXT_PACKAGE, Build.LOCALEDIR);
     GLib.Intl.bind_textdomain_codeset (Build.GETTEXT_PACKAGE, "UTF-8");
