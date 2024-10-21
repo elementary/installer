@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-08 16:51+0000\n"
-"PO-Revision-Date: 2024-09-14 09:16+0000\n"
+"PO-Revision-Date: 2024-10-21 12:28+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -22,6 +22,8 @@ msgstr "Verbinding met een voedingsbron maken"
 #: src/Application.vala:60
 msgid "Installation will not succeed if this device loses power."
 msgstr ""
+"De installatie zal niet afgerond kunnen worden als dit apparaat toegang tot "
+"stroom verliest."
 
 #: src/Application.vala:73
 #, c-format
