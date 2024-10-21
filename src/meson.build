@@ -60,6 +60,7 @@ gui_dependencies = [
     gtk_dep,
     adw_dep,
     json_glib_dep,
+    pantheon_wayland_dep,
     pwquality_dep,
     xkbregistry_dep
 ]
