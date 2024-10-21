@@ -8,4 +8,4 @@ X-GNOME-AutoRestart=true
 X-GNOME-Autostart-enabled=true
 X-GNOME-Autostart-Phase=WindowManager
 X-GNOME-Provides=windowmanager
-OnlyShowIn=Installer;
+OnlyShowIn=X-Installer;
