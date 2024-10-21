@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"POT-Creation-Date: 2024-10-21 17:06+0000\n"
 "PO-Revision-Date: 2021-08-02 05:31+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/installer/"
@@ -19,20 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:59
+#: src/Application.vala:54
 msgid "Connect to a Power Source"
 msgstr "ਕਿਸੇ ਊਰਜਾ ਸਰੋਤ ਨਾਲ਼ ਜੋੜੋ"
 
-#: src/Application.vala:60
+#: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
 msgstr ""
 
-#: src/Application.vala:73
+#: src/Application.vala:68
 #, c-format
 msgid "Install %s"
 msgstr "%s ਨੂੰ ਸਥਾਪਤ ਕਰੋ"
 
-#: src/Application.vala:81
+#: src/Application.vala:76
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
@@ -50,7 +50,7 @@ msgstr "ਟੈਸਟ ਮੋਡ ਰੀਬੂਟ"
 msgid "Test mode switch user"
 msgstr "ਟੈਸਟ ਮੋਡ ਵਰਤੋਂਕਾਰ ਬਦਲੋ"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -309,7 +309,7 @@ msgstr "ਲੇਆਊਟ ਟੈਸਟ ਕਰਨ ਲਈ ਟਾਈਪ ਕਰੋ"
 msgid "Show keyboard layout"
 msgstr "ਕੀਬੋਰਡ ਲੇਆਊਟ ਵਿਖਾਓ"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:112
+#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "ਚੁਣੋ"
 
@@ -317,15 +317,15 @@ msgstr "ਚੁਣੋ"
 msgid "Input Language"
 msgstr "ਟਾਈਪਿੰਗ ਲਈ ਭਾਸ਼ਾ"
 
-#: src/Views/LanguageView.vala:255
+#: src/Views/LanguageView.vala:257
 msgid "Languages"
 msgstr "ਭਾਸ਼ਾਵਾਂ"
 
-#: src/Views/LanguageView.vala:270
+#: src/Views/LanguageView.vala:272
 msgid "Select a Language"
 msgstr "ਕੋਈ ਭਾਸ਼ਾ ਚੁਣੋ"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
 msgid "Currently active language"
 msgstr "ਮੌਜੂਦਾ ਚੁਣੀ ਹੋਈ ਭਾਸ਼ਾ"
 
@@ -513,12 +513,12 @@ msgstr "ਡੀਕ੍ਰਿਪਟ ਕਰੋ"
 msgid "LUKS volume was decrypted"
 msgstr "ਐੱਲਯੂਕੇਐੱਸ ਵੰਡ ਡੀਕ੍ਰਿਪਟ ਹੋ ਗਈ"
 
-#: src/Widgets/DiskBar.vala:228
+#: src/Widgets/DiskBar.vala:251
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:229
+#: src/Widgets/DiskBar.vala:252
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

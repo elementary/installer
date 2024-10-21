@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"POT-Creation-Date: 2024-10-21 17:06+0000\n"
 "PO-Revision-Date: 2024-10-21 12:28+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
@@ -15,22 +15,22 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:59
+#: src/Application.vala:54
 msgid "Connect to a Power Source"
 msgstr "Verbinding met een voedingsbron maken"
 
-#: src/Application.vala:60
+#: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
 msgstr ""
 "De installatie zal niet afgerond kunnen worden als dit apparaat toegang tot "
 "stroom verliest."
 
-#: src/Application.vala:73
+#: src/Application.vala:68
 #, c-format
 msgid "Install %s"
 msgstr "Installeer %s"
 
-#: src/Application.vala:81
+#: src/Application.vala:76
 msgid "operating system is being installed"
 msgstr "besturingssysteem wordt geïnstalleerd"
 
@@ -46,7 +46,7 @@ msgstr "Opnieuw opstarten in testmodus"
 msgid "Test mode switch user"
 msgstr "Testmodus wissel gebruiker"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -320,7 +320,7 @@ msgstr "Typ om uw indeling uit te proberen"
 msgid "Show keyboard layout"
 msgstr "Toon toetsenbordindeling"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:112
+#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "Selecteer"
 
@@ -328,15 +328,15 @@ msgstr "Selecteer"
 msgid "Input Language"
 msgstr "Invoertaal"
 
-#: src/Views/LanguageView.vala:255
+#: src/Views/LanguageView.vala:257
 msgid "Languages"
 msgstr "Talen"
 
-#: src/Views/LanguageView.vala:270
+#: src/Views/LanguageView.vala:272
 msgid "Select a Language"
 msgstr "Selecteer een taal"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
 msgid "Currently active language"
 msgstr "Momenteel actieve taal"
 
@@ -518,12 +518,12 @@ msgstr "Ontsleutel"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS-volume is ontsleuteld"
 
-#: src/Widgets/DiskBar.vala:228
+#: src/Widgets/DiskBar.vala:251
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:229
+#: src/Widgets/DiskBar.vala:252
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"POT-Creation-Date: 2024-10-21 17:06+0000\n"
 "PO-Revision-Date: 2021-11-01 08:19+0000\n"
 "Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/installer/"
@@ -19,20 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Application.vala:59
+#: src/Application.vala:54
 msgid "Connect to a Power Source"
 msgstr "接入电源"
 
-#: src/Application.vala:60
+#: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
 msgstr ""
 
-#: src/Application.vala:73
+#: src/Application.vala:68
 #, c-format
 msgid "Install %s"
 msgstr "安装 %s"
 
-#: src/Application.vala:81
+#: src/Application.vala:76
 #, fuzzy
 #| msgid "%s has been installed"
 msgid "operating system is being installed"
@@ -50,7 +50,7 @@ msgstr "测试模式重启"
 msgid "Test mode switch user"
 msgstr "测试模式切换用户"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -303,7 +303,7 @@ msgstr "输入以测试您的布局"
 msgid "Show keyboard layout"
 msgstr "显示键盘布局"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:112
+#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "选择"
 
@@ -311,15 +311,15 @@ msgstr "选择"
 msgid "Input Language"
 msgstr "输入语言"
 
-#: src/Views/LanguageView.vala:255
+#: src/Views/LanguageView.vala:257
 msgid "Languages"
 msgstr "语言"
 
-#: src/Views/LanguageView.vala:270
+#: src/Views/LanguageView.vala:272
 msgid "Select a Language"
 msgstr "选择语言"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
 msgid "Currently active language"
 msgstr "当前激活的语言"
 
@@ -501,12 +501,12 @@ msgstr "解锁"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS 卷已解锁"
 
-#: src/Widgets/DiskBar.vala:228
+#: src/Widgets/DiskBar.vala:251
 #, c-format
 msgid "%s (%s)"
 msgstr "%s（%s）"
 
-#: src/Widgets/DiskBar.vala:229
+#: src/Widgets/DiskBar.vala:252
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s（%s: <b>%s</b>）"

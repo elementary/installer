@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"POT-Creation-Date: 2024-10-21 17:06+0000\n"
 "PO-Revision-Date: 2024-10-09 18:16+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/"
@@ -16,21 +16,21 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
-#: src/Application.vala:59
+#: src/Application.vala:54
 msgid "Connect to a Power Source"
 msgstr "Подключитесь к источнику питания"
 
-#: src/Application.vala:60
+#: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
 msgstr ""
 "Установка не будет завершена, если это устройство отключится от питания."
 
-#: src/Application.vala:73
+#: src/Application.vala:68
 #, c-format
 msgid "Install %s"
 msgstr "Установка %s"
 
-#: src/Application.vala:81
+#: src/Application.vala:76
 msgid "operating system is being installed"
 msgstr "операционная система устанавливается"
 
@@ -46,7 +46,7 @@ msgstr "Перезагрузить тестовый режим"
 msgid "Test mode switch user"
 msgstr "Сменить пользователя в тестовом режиме"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -316,7 +316,7 @@ msgstr "Введите что-то для проверки раскладки"
 msgid "Show keyboard layout"
 msgstr "Показать раскладку клавиатуры"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:112
+#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "Выбрать"
 
@@ -324,15 +324,15 @@ msgstr "Выбрать"
 msgid "Input Language"
 msgstr "Язык ввода"
 
-#: src/Views/LanguageView.vala:255
+#: src/Views/LanguageView.vala:257
 msgid "Languages"
 msgstr "Языки"
 
-#: src/Views/LanguageView.vala:270
+#: src/Views/LanguageView.vala:272
 msgid "Select a Language"
 msgstr "Выберите язык"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
 msgid "Currently active language"
 msgstr "Текущий язык"
 
@@ -512,12 +512,12 @@ msgstr "Расшифровать"
 msgid "LUKS volume was decrypted"
 msgstr "Том LUKS был расшифрован"
 
-#: src/Widgets/DiskBar.vala:228
+#: src/Widgets/DiskBar.vala:251
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:229
+#: src/Widgets/DiskBar.vala:252
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
