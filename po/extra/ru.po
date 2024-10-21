@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"POT-Creation-Date: 2024-10-21 17:06+0000\n"
 "PO-Revision-Date: 2024-05-21 23:13+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/extra/"
@@ -37,45 +37,67 @@ msgstr "Пошаговый установщик для самой elementary OS.
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:74
-#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:102
-#: data/installer.metainfo.xml.in:116 data/installer.metainfo.xml.in:127
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:85
+#: data/installer.metainfo.xml.in:99 data/installer.metainfo.xml.in:113
+#: data/installer.metainfo.xml.in:127 data/installer.metainfo.xml.in:138
 msgid "Improvements:"
 msgstr "Улучшения:"
 
-#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:77
-#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:104
-#: data/installer.metainfo.xml.in:120 data/installer.metainfo.xml.in:132
+#: data/installer.metainfo.xml.in:63
+msgid ""
+"Sort language variants alphabetically and automatically select main variant "
+"by default"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:64
+msgid "Provide more feedback for invalid values when doing a custom install"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:65
+msgid "Battery warning is sent as a notification instead of an infobar"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:66
+msgid "Update post-install driver installation instructions"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:67
+msgid "Improve screen reader support"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:88
+#: data/installer.metainfo.xml.in:102 data/installer.metainfo.xml.in:115
+#: data/installer.metainfo.xml.in:131 data/installer.metainfo.xml.in:143
 msgid "Updated translations"
 msgstr "Обновлены переводы"
 
-#: data/installer.metainfo.xml.in:76
+#: data/installer.metainfo.xml.in:87
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr "Предпросмотр раскладки клавиатуры теперь в окне с изменяемым размером"
 
-#: data/installer.metainfo.xml.in:90
+#: data/installer.metainfo.xml.in:101
 msgid "Swipe to navigate back"
 msgstr "Переход назад по проведению"
 
-#: data/installer.metainfo.xml.in:118
+#: data/installer.metainfo.xml.in:129
 msgid "Use large icons in views"
 msgstr "Крупные значки в представлениях"
 
-#: data/installer.metainfo.xml.in:119
+#: data/installer.metainfo.xml.in:130
 msgid "Add a custom icon for Before Installing view"
 msgstr "Новый особый значок для представления «Перед установкой»"
 
-#: data/installer.metainfo.xml.in:129
+#: data/installer.metainfo.xml.in:140
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Отображение небольшой панели при работе от батареи вместо переключения на "
 "другую страницу"
 
-#: data/installer.metainfo.xml.in:130
+#: data/installer.metainfo.xml.in:141
 msgid "Show all system requirements warnings on a single page"
 msgstr "Показывать все предупрждения о системных требованиях на одной странице"
 
-#: data/installer.metainfo.xml.in:131
+#: data/installer.metainfo.xml.in:142
 msgid "Warn about installing developer builds"
 msgstr "Теперь есть предупреждение об установке версии для разработчиков"
 
