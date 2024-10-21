@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
-"PO-Revision-Date: 2024-10-02 18:16+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"PO-Revision-Date: 2024-10-09 18:16+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/installer/"
 "installer/de/>\n"
@@ -20,26 +20,24 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "Stromversorgung anschließen"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr ""
+"Die Installation würde scheitern, wenn die Energieversorgung des Geräts "
+"versagt."
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "%s installieren"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr "Betriebssystem wurde installiert"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "Stromversorgung anschließen"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"Ihr Gerät läuft im Akkubetrieb. Es wird empfohlen, die Stromversorgung "
-"während der Installation anzuschließen."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -585,6 +583,13 @@ msgstr "Standard (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr "Eigene Werte müssen mit »/« beginnen"
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr ""
+#~ "Ihr Gerät läuft im Akkubetrieb. Es wird empfohlen, die Stromversorgung "
+#~ "während der Installation anzuschließen."
 
 #~ msgid ""
 #~ "Proprietary drivers are subject to their own license terms. By "

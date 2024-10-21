@@ -28,7 +28,6 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
     // Minimum 15 GB
     private const uint64 MINIMUM_SPACE = 15 * ONE_GB;
 
-    private Gtk.Label infobar_label;
     private Adw.NavigationView navigation_view;
     private LanguageView language_view;
     private TryInstallView try_install_view;
@@ -42,29 +41,7 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
         navigation_view = new Adw.NavigationView ();
         navigation_view.add (language_view);
 
-        infobar_label = new Gtk.Label ("") {
-            use_markup = true
-        };
-        set_infobar_string ();
-
-        var battery_infobar = new Gtk.InfoBar () {
-            message_type = Gtk.MessageType.WARNING,
-            margin_end = 7,
-            margin_bottom = 7,
-            margin_start = 7,
-            show_close_button = true,
-            halign = Gtk.Align.START, // Can't cover action area; need to select language
-            valign = Gtk.Align.END
-        };
-        battery_infobar.add_child (infobar_label);
-        battery_infobar.add_css_class (Granite.STYLE_CLASS_FRAME);
-
-        var overlay = new Gtk.Overlay () {
-            child = navigation_view
-        };
-        overlay.add_overlay (battery_infobar);
-
-        child = overlay;
+        child = navigation_view;
         titlebar = new Gtk.Grid () { visible = false };
 
         var back_action = new SimpleAction ("back", null);
@@ -80,29 +57,7 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
                 Source.remove (orca_timeout_id);
             }
 
-            // Reset when language selection changes
-            set_infobar_string ();
             load_keyboard_view ();
-        });
-
-        try {
-            UPower upower = Bus.get_proxy_sync (BusType.SYSTEM, "org.freedesktop.UPower", "/org/freedesktop/UPower", GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
-
-            battery_infobar.revealed = upower.on_battery;
-
-            ((DBusProxy) upower).g_properties_changed.connect ((changed, invalid) => {
-                var _on_battery = changed.lookup_value ("OnBattery", GLib.VariantType.BOOLEAN);
-                if (_on_battery != null) {
-                    battery_infobar.revealed = upower.on_battery;
-                }
-            });
-        } catch (Error e) {
-            warning (e.message);
-            battery_infobar.revealed = false;
-        }
-
-        battery_infobar.response.connect (() => {
-            battery_infobar.revealed = false;
         });
 
         var mediakeys_settings = new Settings ("org.gnome.settings-daemon.plugins.media-keys");
@@ -262,14 +217,5 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
         });
 
         navigation_view.push (error_view);
-    }
-
-    private void set_infobar_string () {
-        var infobar_string = "%s\n%s".printf (
-            _("Connect to a Power Source"),
-            Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (_("Your device is running on battery power. It's recommended to be plugged in while installing."))
-        );
-
-        infobar_label.label = infobar_string;
     }
 }

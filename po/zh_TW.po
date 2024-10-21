@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
-"PO-Revision-Date: 2024-09-13 00:58+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"PO-Revision-Date: 2024-10-14 16:04+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "installer/installer/zh_Hant/>\n"
@@ -15,24 +15,22 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "請連接電源"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr "裝置若是沒電會無法完成安裝。"
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "安裝 %s"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr "作業系統正在安裝"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "請連接電源"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr "您的裝置正由電池供電，建議在安裝時插入電源。"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -545,7 +543,12 @@ msgstr "預設 (ext4)"
 
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
-msgstr ""
+msgstr "自訂值必須以 / 開頭"
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr "您的裝置正由電池供電，建議在安裝時插入電源。"
 
 #~ msgid "Ignore"
 #~ msgstr "忽略"

@@ -60,12 +60,23 @@
       <description>
         <p>Improvements:</p>
         <ul>
+          <li>Sort language variants alphabetically and automatically select main variant by default</li>
+          <li>Provide more feedback for invalid values when doing a custom install</li>
+          <li>Battery warning is sent as a notification instead of an infobar</li>
+          <li>Update post-install driver installation instructions</li>
+          <li>Improve screen reader support</li>
           <li>Updated translations</li>
         </ul>
       </description>
       <issues>
         <issue url="https://github.com/elementary/installer/issues/538">Screen Reader ignores each view’s title text</issue>
         <issue url="https://github.com/elementary/installer/issues/539">Second step of VariantWidget not focused</issue>
+        <issue url="https://github.com/elementary/installer/issues/628">Port Installer to GTK4</issue>
+        <issue url="https://github.com/elementary/installer/issues/652">Use libxkbregistry</issue>
+        <issue url="https://github.com/elementary/installer/issues/692">No partitions visible when running without daemon</issue>
+        <issue url="https://github.com/elementary/installer/issues/775">Installer is not localized</issue>
+        <issue url="https://github.com/elementary/installer/issues/793">Clicking a partition in the custom install glitches the installer window</issue>
+        <issue url="https://github.com/elementary/installer/issues/806">Installer doesn't launch from Applications menu in Circe daily</issue>
       </issues>
     </release>
 

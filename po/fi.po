@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
 "PO-Revision-Date: 2023-09-04 08:08+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
@@ -15,26 +15,22 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "Yhdistä virtalähteeseen"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr ""
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "Asenna %s"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr "käyttöjärjestelmää asennetaan"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "Yhdistä virtalähteeseen"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"Laitteesi toimii akkuvirralla. On suositeltavaa yhdistää laite verkkovirtaan "
-"asennuksen ajaksi."
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -587,6 +583,13 @@ msgstr "Oletus (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr ""
+#~ "Laitteesi toimii akkuvirralla. On suositeltavaa yhdistää laite "
+#~ "verkkovirtaan asennuksen ajaksi."
 
 #~ msgid ""
 #~ "Proprietary drivers are subject to their own license terms. By "

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-01 17:57+0000\n"
-"PO-Revision-Date: 2024-10-02 18:16+0000\n"
+"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"PO-Revision-Date: 2024-10-12 12:00+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -15,26 +15,22 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:44
+#: src/Application.vala:59
+msgid "Connect to a Power Source"
+msgstr "電源に接続してください"
+
+#: src/Application.vala:60
+msgid "Installation will not succeed if this device loses power."
+msgstr "デバイスの電源が落ちると、インストールは成功しません。"
+
+#: src/Application.vala:73
 #, c-format
 msgid "Install %s"
 msgstr "%s をインストール"
 
-#: src/Application.vala:52
+#: src/Application.vala:81
 msgid "operating system is being installed"
 msgstr "オペレーティングシステムをインストール中"
-
-#: src/MainWindow.vala:269
-msgid "Connect to a Power Source"
-msgstr "電源に接続してください"
-
-#: src/MainWindow.vala:270
-msgid ""
-"Your device is running on battery power. It's recommended to be plugged in "
-"while installing."
-msgstr ""
-"お使いのデバイスはバッテリーの電力で動作しています。インストール中は電源に接"
-"続することを推奨します。"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -338,7 +334,7 @@ msgstr "言語を選択"
 
 #: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
 msgid "Currently active language"
-msgstr "現在使用可能な言語"
+msgstr "現在の選択言語"
 
 #: src/Views/PartitioningView.vala:51
 msgid "Select Partitions"
@@ -575,6 +571,13 @@ msgstr "デフォルト (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr "カスタム値は / で始める必要があります"
+
+#~ msgid ""
+#~ "Your device is running on battery power. It's recommended to be plugged "
+#~ "in while installing."
+#~ msgstr ""
+#~ "お使いのデバイスはバッテリーの電力で動作しています。インストール中は電源に"
+#~ "接続することを推奨します。"
 
 #~ msgid ""
 #~ "Proprietary drivers are subject to their own license terms. By "
