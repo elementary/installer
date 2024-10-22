@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-21 17:06+0000\n"
-"PO-Revision-Date: 2024-09-12 22:16+0000\n"
+"PO-Revision-Date: 2024-10-22 05:04+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/installer/"
 "installer/ka/>\n"
@@ -21,7 +21,7 @@ msgstr "შეაერთეთ კვების წყაროსთან"
 
 #: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "დაყენება წარმატებული არ იქნება, თუ ეს მოწყობილობა კვებას დაკარგავს."
 
 #: src/Application.vala:68
 #, c-format
