@@ -4,15 +4,20 @@
  */
 
 public class VariantWidget : Gtk.Frame {
+    public string main_title { get; construct; }
+
     public Gtk.ListBox main_listbox { get; private set; }
     public Gtk.ListBox variant_listbox { get; private set; }
 
     public signal void going_to_main ();
 
-    private Gtk.Button back_button;
     private Gtk.Box variant_box;
-    private Gtk.Label variant_title;
-    private Adw.Leaflet leaflet;
+    private Adw.NavigationView navigation_view;
+    private Adw.NavigationPage variant_page;
+
+    public VariantWidget (string main_title) {
+        Object (main_title: main_title);
+    }
 
     construct {
         main_listbox = new Gtk.ListBox ();
@@ -21,6 +26,8 @@ public class VariantWidget : Gtk.Frame {
             child = main_listbox,
             hscrollbar_policy = NEVER
         };
+
+        var main_page = new Adw.NavigationPage (main_scrolled, main_title);
 
         variant_listbox = new Gtk.ListBox ();
         variant_listbox.activate_on_single_click = false;
@@ -31,7 +38,7 @@ public class VariantWidget : Gtk.Frame {
             vexpand = true
         };
 
-        back_button = new Gtk.Button () {
+        var back_button = new Gtk.Button.with_label (main_page.title) {
             halign = START,
             margin_top = 6,
             margin_end = 6,
@@ -40,7 +47,7 @@ public class VariantWidget : Gtk.Frame {
         };
         back_button.add_css_class (Granite.STYLE_CLASS_BACK_BUTTON);
 
-        variant_title = new Gtk.Label ("") {
+        var variant_title = new Gtk.Label ("") {
             hexpand = true,
             justify = CENTER,
             margin_end = 6,
@@ -62,26 +69,26 @@ public class VariantWidget : Gtk.Frame {
         variant_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         variant_box.append (variant_scrolled);
 
-        leaflet = new Adw.Leaflet () {
-            can_navigate_back = true,
-            can_unfold = false
-        };
-        leaflet.append (main_scrolled);
-        leaflet.append (variant_box);
+        variant_page = new Adw.NavigationPage (variant_box, "");
 
-        child = leaflet;
+        navigation_view = new Adw.NavigationView ();
+        navigation_view.add (main_page);
+
+        child = navigation_view;
         vexpand = true;
 
         back_button.clicked.connect (() => {
             going_to_main ();
-            leaflet.navigate (BACK);
+            navigation_view.pop ();
         });
+
+        variant_page.bind_property ("title", variant_title, "label");
     }
 
-    public void show_variants (string back_button_label, string variant_title_label) {
-        back_button.label = back_button_label;
-        variant_title.label = variant_title_label;
-        leaflet.visible_child = variant_box;
+    public void show_variants (string variant_title_label) {
+        variant_page.title = variant_title_label;
+        navigation_view.push (variant_page);
+
         variant_listbox.get_selected_row ().grab_focus ();
     }
 
