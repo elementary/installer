@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-21 17:06+0000\n"
-"PO-Revision-Date: 2024-05-21 23:13+0000\n"
+"PO-Revision-Date: 2024-10-22 11:30+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/extra/"
 "ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -46,23 +46,25 @@ msgstr "改善点:"
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
-msgstr ""
+msgstr "言語変種がアルファベット順にソートされ、メインの変種がデフォルトで自動的に選"
+"択されるように修正"
 
 #: data/installer.metainfo.xml.in:64
 msgid "Provide more feedback for invalid values when doing a custom install"
-msgstr ""
+msgstr "カスタムインストール時に、無効な指定値に対してより詳細なメッセージを表示する"
+"ように修正"
 
 #: data/installer.metainfo.xml.in:65
 msgid "Battery warning is sent as a notification instead of an infobar"
-msgstr ""
+msgstr "バッテリーに関する警告を情報バーではなく通知で表示するように修正"
 
 #: data/installer.metainfo.xml.in:66
 msgid "Update post-install driver installation instructions"
-msgstr ""
+msgstr "OS インストール後にドライバーをインストールする場合についての説明文を更新"
 
 #: data/installer.metainfo.xml.in:67
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "スクリーンリーダーへの対応を改善"
 
 #: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:88
 #: data/installer.metainfo.xml.in:102 data/installer.metainfo.xml.in:115
