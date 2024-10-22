@@ -59,7 +59,7 @@ public class EncryptView : AbstractInstallerView {
         );
 
         var restart_row = new DescriptionRow (
-            _("The encryption password will be required each time this device is turned on. If you forget the encryption password, <b>you will not be able to recover data.</b>"),
+            _("The encryption password will be required each time this device is turned on. If you forget it, <b>you will not be able to recover data.</b>"),
             "system-reboot-symbolic",
             "blue"
         );
@@ -70,8 +70,8 @@ public class EncryptView : AbstractInstallerView {
             "slate"
         );
 
-        var pw_label = new Granite.HeaderLabel (_("Choose Encryption Password")) {
-            secondary_text = _("This is a unique password for this device, not the password for your user account.")
+        var pw_label = new Granite.HeaderLabel (_("Encryption Password")) {
+            secondary_text = _("A unique password for this device; not the password for your user account.")
         };
 
         pw_error_revealer = new ErrorRevealer (".");
@@ -95,7 +95,7 @@ public class EncryptView : AbstractInstallerView {
         confirm_entry_revealer = new ErrorRevealer (".");
         confirm_entry_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_ERROR);
 
-        var password_box = new Gtk.Box (VERTICAL, 3);
+        var password_box = new Gtk.Box (VERTICAL, 6);
         password_box.append (pw_label);
         password_box.append (pw_entry);
         password_box.append (pw_levelbar);
@@ -113,7 +113,7 @@ public class EncryptView : AbstractInstallerView {
         content_area.append (keyboard_row);
         content_area.append (password_box);
 
-        encrypt_button = new Gtk.Button.with_label (_("Set Password")) {
+        encrypt_button = new Gtk.Button.with_label (_("Set Encryption Password")) {
             sensitive = false
         };
 
