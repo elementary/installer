@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 17:06+0000\n"
+"POT-Creation-Date: 2024-10-23 21:47+0000\n"
 "PO-Revision-Date: 2024-10-22 05:04+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
@@ -37,9 +37,9 @@ msgstr "Покроковий встановлювач самої elementary OS."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:85
-#: data/installer.metainfo.xml.in:99 data/installer.metainfo.xml.in:113
-#: data/installer.metainfo.xml.in:127 data/installer.metainfo.xml.in:138
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:86
+#: data/installer.metainfo.xml.in:100 data/installer.metainfo.xml.in:114
+#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:139
 msgid "Improvements:"
 msgstr "Удосконалення:"
 
@@ -71,39 +71,39 @@ msgstr "Оновлення інструкцій після встановлен�
 msgid "Improve screen reader support"
 msgstr "Поліпшення підтримки зчитування з екрана"
 
-#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:88
-#: data/installer.metainfo.xml.in:102 data/installer.metainfo.xml.in:115
-#: data/installer.metainfo.xml.in:131 data/installer.metainfo.xml.in:143
+#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
+#: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
+#: data/installer.metainfo.xml.in:132 data/installer.metainfo.xml.in:144
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/installer.metainfo.xml.in:87
+#: data/installer.metainfo.xml.in:88
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr ""
 "Попередній перегляд розкладки клавіатури тепер у вікні зі змінним розміром"
 
-#: data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:102
 msgid "Swipe to navigate back"
 msgstr "Перехід назад посуванням"
 
-#: data/installer.metainfo.xml.in:129
+#: data/installer.metainfo.xml.in:130
 msgid "Use large icons in views"
 msgstr "Додано великі піктограми у поданнях"
 
-#: data/installer.metainfo.xml.in:130
+#: data/installer.metainfo.xml.in:131
 msgid "Add a custom icon for Before Installing view"
 msgstr "Додано користувацьку піктограму для подання перед встановленням"
 
-#: data/installer.metainfo.xml.in:140
+#: data/installer.metainfo.xml.in:141
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Показ інфопанелі про заряд акумулятора замість переходу на іншу сторінку"
 
-#: data/installer.metainfo.xml.in:141
+#: data/installer.metainfo.xml.in:142
 msgid "Show all system requirements warnings on a single page"
 msgstr "Показ всіх попереджень про системні вимоги на одній сторінці"
 
-#: data/installer.metainfo.xml.in:142
+#: data/installer.metainfo.xml.in:143
 msgid "Warn about installing developer builds"
 msgstr "Попередження про встановлення збірок розробника"
 

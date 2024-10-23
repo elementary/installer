@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 17:06+0000\n"
+"POT-Creation-Date: 2024-10-23 21:47+0000\n"
 "PO-Revision-Date: 2024-09-09 12:16+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -36,9 +36,9 @@ msgstr "elementary OS 本身用的逐步安裝器。"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:85
-#: data/installer.metainfo.xml.in:99 data/installer.metainfo.xml.in:113
-#: data/installer.metainfo.xml.in:127 data/installer.metainfo.xml.in:138
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:86
+#: data/installer.metainfo.xml.in:100 data/installer.metainfo.xml.in:114
+#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:139
 msgid "Improvements:"
 msgstr "改善項目："
 
@@ -64,37 +64,37 @@ msgstr ""
 msgid "Improve screen reader support"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:88
-#: data/installer.metainfo.xml.in:102 data/installer.metainfo.xml.in:115
-#: data/installer.metainfo.xml.in:131 data/installer.metainfo.xml.in:143
+#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
+#: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
+#: data/installer.metainfo.xml.in:132 data/installer.metainfo.xml.in:144
 msgid "Updated translations"
 msgstr "翻譯更新"
 
-#: data/installer.metainfo.xml.in:87
+#: data/installer.metainfo.xml.in:88
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr "用可調整大小的視窗顯示鍵盤配置預覽"
 
-#: data/installer.metainfo.xml.in:101
+#: data/installer.metainfo.xml.in:102
 msgid "Swipe to navigate back"
 msgstr "滑動來返回到上一個畫面"
 
-#: data/installer.metainfo.xml.in:129
+#: data/installer.metainfo.xml.in:130
 msgid "Use large icons in views"
 msgstr "在各畫面中使用更大的圖示"
 
-#: data/installer.metainfo.xml.in:130
+#: data/installer.metainfo.xml.in:131
 msgid "Add a custom icon for Before Installing view"
 msgstr "在「安裝之前」畫面中加入自訂圖示"
 
-#: data/installer.metainfo.xml.in:140
+#: data/installer.metainfo.xml.in:141
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr "用資訊列而非獨立頁面來顯示電池警告"
 
-#: data/installer.metainfo.xml.in:141
+#: data/installer.metainfo.xml.in:142
 msgid "Show all system requirements warnings on a single page"
 msgstr "在單一個頁面上顯示所有系統要求警告"
 
-#: data/installer.metainfo.xml.in:142
+#: data/installer.metainfo.xml.in:143
 msgid "Warn about installing developer builds"
 msgstr "安裝開發版時顯示警告"
 
