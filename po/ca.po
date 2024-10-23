@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"POT-Creation-Date: 2024-10-23 21:47+0000\n"
 "PO-Revision-Date: 2024-10-10 22:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/"
@@ -15,20 +15,20 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
-#: src/Application.vala:59
+#: src/Application.vala:54
 msgid "Connect to a Power Source"
 msgstr "Connecteu una font d'energia"
 
-#: src/Application.vala:60
+#: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
 msgstr "La instal·lació no tindrà èxit si aquest dispositiu perd energia."
 
-#: src/Application.vala:73
+#: src/Application.vala:68
 #, c-format
 msgid "Install %s"
 msgstr "Instal·la %s"
 
-#: src/Application.vala:81
+#: src/Application.vala:76
 msgid "operating system is being installed"
 msgstr "s'instal·la el sistema operatiu"
 
@@ -44,7 +44,7 @@ msgstr "Reinici del mode de prova"
 msgid "Test mode switch user"
 msgstr "Canvi d'usuari del mode de prova"
 
-#: src/Helpers/LocaleHelper.vala:122 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -184,7 +184,7 @@ msgstr ""
 "N'accepto les respectives llicències i condicions d'ús."
 
 #: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
 #: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Enrere"
@@ -304,35 +304,35 @@ msgstr "Proveu el mode Demo"
 msgid "Try Installing Again"
 msgstr "Intenta tornar a fer una instal·lació"
 
+#: src/Views/KeyboardLayoutView.vala:30
+msgid "Input Language"
+msgstr "Llengua d'entrada"
+
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "Seleccioneu la disposició del teclat"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Teclegeu per provar la disposició del teclat."
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Mostra la disposició del teclat"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:112
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "Selecciona"
 
-#: src/Views/KeyboardLayoutView.vala:110
-msgid "Input Language"
-msgstr "Llengua d'entrada"
-
-#: src/Views/LanguageView.vala:255
+#: src/Views/LanguageView.vala:67
 msgid "Languages"
 msgstr "Llengües"
 
-#: src/Views/LanguageView.vala:270
+#: src/Views/LanguageView.vala:272
 msgid "Select a Language"
 msgstr "Seleccioneu una llengua"
 
-#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:342
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
 msgstr "Llengua activa actual"
 
@@ -511,12 +511,12 @@ msgstr "Desencripta"
 msgid "LUKS volume was decrypted"
 msgstr "S'ha desencriptat el volum LUKS"
 
-#: src/Widgets/DiskBar.vala:228
+#: src/Widgets/DiskBar.vala:251
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:229
+#: src/Widgets/DiskBar.vala:252
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

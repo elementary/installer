@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 16:51+0000\n"
-"PO-Revision-Date: 2024-05-21 23:13+0000\n"
+"POT-Creation-Date: 2024-10-23 21:47+0000\n"
+"PO-Revision-Date: 2024-10-22 05:04+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/installer/extra/"
 "ru/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -37,45 +37,73 @@ msgstr "Пошаговый установщик для самой elementary OS.
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:74
-#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:102
-#: data/installer.metainfo.xml.in:116 data/installer.metainfo.xml.in:127
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:86
+#: data/installer.metainfo.xml.in:100 data/installer.metainfo.xml.in:114
+#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:139
 msgid "Improvements:"
 msgstr "Улучшения:"
 
-#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:77
-#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:104
-#: data/installer.metainfo.xml.in:120 data/installer.metainfo.xml.in:132
+#: data/installer.metainfo.xml.in:63
+msgid ""
+"Sort language variants alphabetically and automatically select main variant "
+"by default"
+msgstr ""
+"Сортировка языковых вариантов по алфавиту и автоматический выбор основного "
+"по умолчанию"
+
+#: data/installer.metainfo.xml.in:64
+msgid "Provide more feedback for invalid values when doing a custom install"
+msgstr ""
+"Больше обратной связи о неверных значениях при выполнении пользовательской "
+"установки"
+
+#: data/installer.metainfo.xml.in:65
+msgid "Battery warning is sent as a notification instead of an infobar"
+msgstr ""
+"Предупреждение об уровне заряда теперь отправляется как уведомление вместо "
+"информационной панели"
+
+#: data/installer.metainfo.xml.in:66
+msgid "Update post-install driver installation instructions"
+msgstr "Обновлены инструкции по установке драйверов после установки системы"
+
+#: data/installer.metainfo.xml.in:67
+msgid "Improve screen reader support"
+msgstr "Улучшена поддержка экранного диктора"
+
+#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
+#: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
+#: data/installer.metainfo.xml.in:132 data/installer.metainfo.xml.in:144
 msgid "Updated translations"
 msgstr "Обновлены переводы"
 
-#: data/installer.metainfo.xml.in:76
+#: data/installer.metainfo.xml.in:88
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr "Предпросмотр раскладки клавиатуры теперь в окне с изменяемым размером"
 
-#: data/installer.metainfo.xml.in:90
+#: data/installer.metainfo.xml.in:102
 msgid "Swipe to navigate back"
 msgstr "Переход назад по проведению"
 
-#: data/installer.metainfo.xml.in:118
+#: data/installer.metainfo.xml.in:130
 msgid "Use large icons in views"
 msgstr "Крупные значки в представлениях"
 
-#: data/installer.metainfo.xml.in:119
+#: data/installer.metainfo.xml.in:131
 msgid "Add a custom icon for Before Installing view"
 msgstr "Новый особый значок для представления «Перед установкой»"
 
-#: data/installer.metainfo.xml.in:129
+#: data/installer.metainfo.xml.in:141
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Отображение небольшой панели при работе от батареи вместо переключения на "
 "другую страницу"
 
-#: data/installer.metainfo.xml.in:130
+#: data/installer.metainfo.xml.in:142
 msgid "Show all system requirements warnings on a single page"
 msgstr "Показывать все предупрждения о системных требованиях на одной странице"
 
-#: data/installer.metainfo.xml.in:131
+#: data/installer.metainfo.xml.in:143
 msgid "Warn about installing developer builds"
 msgstr "Теперь есть предупреждение об установке версии для разработчиков"
 

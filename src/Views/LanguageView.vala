@@ -64,7 +64,7 @@ public class Installer.LanguageView : AbstractInstallerView {
             }
         });
 
-        lang_variant_widget = new VariantWidget ();
+        lang_variant_widget = new VariantWidget (_("Languages"));
 
         lang_variant_widget.variant_listbox.set_sort_func ((Gtk.ListBoxSortFunc) CountryRow.compare);
 
@@ -254,7 +254,7 @@ public class Installer.LanguageView : AbstractInstallerView {
 
             Environment.set_variable ("LANGUAGE", lang_code, true);
             Intl.textdomain (Build.GETTEXT_PACKAGE);
-            lang_variant_widget.show_variants (_("Languages"), lang_entry.name);
+            lang_variant_widget.show_variants (lang_entry.name);
     }
 
     private bool timeout () {
@@ -274,8 +274,6 @@ public class Installer.LanguageView : AbstractInstallerView {
         select_label = new Gtk.Label (label_text);
         select_stack.add_child (select_label);
         select_stack.set_visible_child (select_label);
-
-        lang_variant_widget.main_listbox.update_property (Gtk.AccessibleProperty.LABEL, label_text, -1);
 
         select_number++;
         return GLib.Source.CONTINUE;
