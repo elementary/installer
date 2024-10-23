@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-21 17:06+0000\n"
-"PO-Revision-Date: 2024-05-23 07:13+0000\n"
+"PO-Revision-Date: 2024-10-23 08:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/installer/extra/"
 "ca/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/installer.metainfo.xml.in:9
 msgid "Installer"
@@ -40,22 +40,29 @@ msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
+"Ordena les variants d'idioma alfabèticament i selecciona automàticament la "
+"variant principal per defecte"
 
 #: data/installer.metainfo.xml.in:64
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
+"Proporció de més comentaris sobre valors no vàlids quan feu una instal·lació "
+"personalitzada"
 
 #: data/installer.metainfo.xml.in:65
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
+"L'avís de bateria s'envia com a notificació en lloc d'una barra d'informació."
 
 #: data/installer.metainfo.xml.in:66
 msgid "Update post-install driver installation instructions"
 msgstr ""
+"Actualització de les instruccions d'instal·lació del controlador després de "
+"la instal·lació"
 
 #: data/installer.metainfo.xml.in:67
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "Millora del suport del lector de pantalla"
 
 #: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:88
 #: data/installer.metainfo.xml.in:102 data/installer.metainfo.xml.in:115
