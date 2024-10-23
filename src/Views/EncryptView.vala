@@ -19,6 +19,7 @@ public class EncryptView : AbstractInstallerView {
     private ErrorRevealer confirm_entry_revealer;
     private ErrorRevealer pw_error_revealer;
     private Gtk.Button next_button;
+    private Gtk.Button encrypt_button;
     private Granite.ValidatedEntry confirm_entry;
     private ValidatedEntry pw_entry;
     private Gtk.LevelBar pw_levelbar;
@@ -51,12 +52,6 @@ public class EncryptView : AbstractInstallerView {
 
         var title_label = new Gtk.Label (title);
 
-        var details_label = new Gtk.Label (_("Encrypt this device's drive if required for added protection, but be sure you understand:")) {
-            wrap = true,
-            xalign = 0
-        };
-        details_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-
         var protect_row = new DescriptionRow (
             _("Data will only be protected from others with physical access to this device when it is shut down."),
             "security-high-symbolic",
@@ -64,7 +59,7 @@ public class EncryptView : AbstractInstallerView {
         );
 
         var restart_row = new DescriptionRow (
-            _("The encryption password will be required each time this device is turned on. Store it somewhere safe."),
+            _("The encryption password will be required each time this device is turned on. If you forget it, <b>you will not be able to recover data.</b>"),
             "system-reboot-symbolic",
             "blue"
         );
@@ -75,30 +70,14 @@ public class EncryptView : AbstractInstallerView {
             "slate"
         );
 
-        var description_box = new Gtk.Box (VERTICAL, 32) {
-            valign = CENTER
+        var pw_label = new Granite.HeaderLabel (_("Encryption Password")) {
+            secondary_text = _("A unique password for this device; not the password for your user account.")
         };
-        description_box.append (details_label);
-        description_box.append (protect_row);
-        description_box.append (restart_row);
-        description_box.append (keyboard_row);
-
-        var description = new Gtk.Label (
-            _("If you forget the encryption password, <b>you will not be able to recover data.</b> This is a unique password for this device, not the password for your user account.")
-        ) {
-            margin_bottom = 12,
-            use_markup = true,
-            wrap = true,
-            xalign = 0
-        };
-
-        var pw_label = new Granite.HeaderLabel (_("Choose Encryption Password"));
 
         pw_error_revealer = new ErrorRevealer (".");
         pw_error_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_WARNING);
 
         pw_entry = new ValidatedEntry ();
-        pw_entry.visibility = false;
 
         pw_levelbar = new Gtk.LevelBar.for_interval (0.0, 100.0);
         pw_levelbar.set_mode (Gtk.LevelBarMode.CONTINUOUS);
@@ -116,10 +95,7 @@ public class EncryptView : AbstractInstallerView {
         confirm_entry_revealer = new ErrorRevealer (".");
         confirm_entry_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_ERROR);
 
-        var password_box = new Gtk.Box (VERTICAL, 3) {
-            valign = CENTER
-        };
-        password_box.append (description);
+        var password_box = new Gtk.Box (VERTICAL, 6);
         password_box.append (pw_label);
         password_box.append (pw_entry);
         password_box.append (pw_levelbar);
@@ -128,56 +104,37 @@ public class EncryptView : AbstractInstallerView {
         password_box.append (confirm_entry);
         password_box.append (confirm_entry_revealer);
 
-        var stack = new Gtk.Stack () {
-            transition_type = SLIDE_LEFT_RIGHT,
-            vexpand = true
-        };
-        stack.add_child (description_box);
-        stack.add_child (password_box);
-
         title_area.append (overlay);
         title_area.append (title_label);
 
-        content_area.append (stack);
+        content_area.valign = CENTER;
+        content_area.append (protect_row);
+        content_area.append (restart_row);
+        content_area.append (keyboard_row);
+        content_area.append (password_box);
 
-        var back_button = new Gtk.Button.with_label (_("Back"));
-
-        var encrypt_button = new Gtk.Button.with_label (_("Choose Password"));
+        encrypt_button = new Gtk.Button.with_label (_("Set Encryption Password")) {
+            sensitive = false
+        };
 
         next_button = new Gtk.Button.with_label (_(SKIP_STRING)) {
             receives_default = true
         };
         next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
 
-        action_box_end.append (back_button);
         action_box_end.append (encrypt_button);
         action_box_end.append (next_button);
 
-        next_button.grab_focus ();
-
-        back_button.clicked.connect (() => {
-            stack.visible_child = description_box;
-            next_button.label = _(SKIP_STRING);
-            next_button.sensitive = true;
-            back_button.hide ();
-            encrypt_button.show ();
+        shown.connect (() => {
+            ((Gtk.Window) get_root ()).default_widget = encrypt_button;
         });
 
         encrypt_button.clicked.connect (() => {
-            stack.visible_child = password_box;
-            next_button.label = _("Set Encryption Password");
-            update_next_button ();
-            back_button.show ();
-            encrypt_button.hide ();
-
-            pw_entry.grab_focus ();
+            Configuration.get_default ().encryption_password = pw_entry.text;
+            next_step ();
         });
 
         next_button.clicked.connect (() => {
-            if (stack.visible_child == password_box) {
-                Configuration.get_default ().encryption_password = pw_entry.text;
-            }
-
             next_step ();
         });
 
@@ -191,8 +148,6 @@ public class EncryptView : AbstractInstallerView {
             confirm_entry.is_valid = confirm_password ();
             update_next_button ();
         });
-
-        back_button.hide ();
     }
 
     private bool check_password () {
@@ -248,10 +203,9 @@ public class EncryptView : AbstractInstallerView {
 
     private void update_next_button () {
         if (pw_entry.is_valid && confirm_entry.is_valid) {
-            next_button.sensitive = true;
-            ((Gtk.Window) get_root ()).default_widget = next_button;
+            encrypt_button.sensitive = true;
         } else {
-            next_button.sensitive = false;
+            encrypt_button.sensitive = false;
         }
     }
 
@@ -260,6 +214,7 @@ public class EncryptView : AbstractInstallerView {
 
         construct {
             activates_default = true;
+            visibility = false;
         }
     }
 
