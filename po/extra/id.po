@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 16:51+0000\n"
+"POT-Creation-Date: 2024-10-23 21:47+0000\n"
 "PO-Revision-Date: 2023-05-12 16:06+0000\n"
 "Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
 "io>\n"
@@ -30,44 +30,66 @@ msgstr "Langkah demi langkah pemasang untuk elementary OS itu sendiri."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:74
-#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:102
-#: data/installer.metainfo.xml.in:116 data/installer.metainfo.xml.in:127
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:86
+#: data/installer.metainfo.xml.in:100 data/installer.metainfo.xml.in:114
+#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:139
 msgid "Improvements:"
 msgstr "Peningkatan:"
 
-#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:77
-#: data/installer.metainfo.xml.in:91 data/installer.metainfo.xml.in:104
-#: data/installer.metainfo.xml.in:120 data/installer.metainfo.xml.in:132
+#: data/installer.metainfo.xml.in:63
+msgid ""
+"Sort language variants alphabetically and automatically select main variant "
+"by default"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:64
+msgid "Provide more feedback for invalid values when doing a custom install"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:65
+msgid "Battery warning is sent as a notification instead of an infobar"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:66
+msgid "Update post-install driver installation instructions"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:67
+msgid "Improve screen reader support"
+msgstr ""
+
+#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
+#: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
+#: data/installer.metainfo.xml.in:132 data/installer.metainfo.xml.in:144
 msgid "Updated translations"
 msgstr "Terjemahan yang diperbarui"
 
-#: data/installer.metainfo.xml.in:76
+#: data/installer.metainfo.xml.in:88
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:90
+#: data/installer.metainfo.xml.in:102
 msgid "Swipe to navigate back"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:118
+#: data/installer.metainfo.xml.in:130
 msgid "Use large icons in views"
 msgstr "Menggunakan ikon besar dalam tampilan"
 
-#: data/installer.metainfo.xml.in:119
+#: data/installer.metainfo.xml.in:131
 msgid "Add a custom icon for Before Installing view"
 msgstr "Tambahkan ikon kustom untuk tampilan Sebelum Memasang"
 
-#: data/installer.metainfo.xml.in:129
+#: data/installer.metainfo.xml.in:141
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Perlihatkan bilah info tentang baterai daripada beralih ke halaman lain"
 
-#: data/installer.metainfo.xml.in:130
+#: data/installer.metainfo.xml.in:142
 msgid "Show all system requirements warnings on a single page"
 msgstr "Menampilkan semua peringatan persyaratan sistem pada satu halaman"
 
-#: data/installer.metainfo.xml.in:131
+#: data/installer.metainfo.xml.in:143
 msgid "Warn about installing developer builds"
 msgstr "Memperingatkan tentang memasang build developer"
 
