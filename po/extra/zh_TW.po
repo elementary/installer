@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-23 21:47+0000\n"
-"PO-Revision-Date: 2024-09-09 12:16+0000\n"
+"PO-Revision-Date: 2024-11-06 11:19+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "installer/extra/zh_Hant/>\n"
@@ -46,23 +46,23 @@ msgstr "改善項目："
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
-msgstr ""
+msgstr "以字母順序排序語言變種，並自動預設選擇主要的變種"
 
 #: data/installer.metainfo.xml.in:64
 msgid "Provide more feedback for invalid values when doing a custom install"
-msgstr ""
+msgstr "進行自訂安裝時，對於無效數值提供更詳細的回饋資訊"
 
 #: data/installer.metainfo.xml.in:65
 msgid "Battery warning is sent as a notification instead of an infobar"
-msgstr ""
+msgstr "用通知而非資訊列 (infobar) 元件來顯示電池電量警告"
 
 #: data/installer.metainfo.xml.in:66
 msgid "Update post-install driver installation instructions"
-msgstr ""
+msgstr "更新系統安裝後的驅動程式安裝說明"
 
 #: data/installer.metainfo.xml.in:67
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "改善對螢幕閱讀器的支援"
 
 #: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
 #: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
