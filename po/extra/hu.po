@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 21:47+0000\n"
+"POT-Creation-Date: 2024-11-10 21:48+0000\n"
 "PO-Revision-Date: 2024-05-21 23:13+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
@@ -36,67 +36,69 @@ msgstr "Telepítő az Elementary OS-hez lépésről-lépésre."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:86
-#: data/installer.metainfo.xml.in:100 data/installer.metainfo.xml.in:114
-#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:139
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:98 data/installer.metainfo.xml.in:112
+#: data/installer.metainfo.xml.in:126 data/installer.metainfo.xml.in:140
+#: data/installer.metainfo.xml.in:151
 msgid "Improvements:"
 msgstr "Fejlesztések:"
 
-#: data/installer.metainfo.xml.in:63
+#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:80
+#: data/installer.metainfo.xml.in:101 data/installer.metainfo.xml.in:115
+#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:144
+#: data/installer.metainfo.xml.in:156
+msgid "Updated translations"
+msgstr "Frissített fordítások"
+
+#: data/installer.metainfo.xml.in:75
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:64
+#: data/installer.metainfo.xml.in:76
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:65
+#: data/installer.metainfo.xml.in:77
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:66
+#: data/installer.metainfo.xml.in:78
 msgid "Update post-install driver installation instructions"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:67
+#: data/installer.metainfo.xml.in:79
 msgid "Improve screen reader support"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
-#: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
-#: data/installer.metainfo.xml.in:132 data/installer.metainfo.xml.in:144
-msgid "Updated translations"
-msgstr "Frissített fordítások"
-
-#: data/installer.metainfo.xml.in:88
+#: data/installer.metainfo.xml.in:100
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr "A billentyűzetkiosztás előnézete átméretezhető ablak"
 
-#: data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:114
 msgid "Swipe to navigate back"
 msgstr "Visszalépés csúsztatással"
 
-#: data/installer.metainfo.xml.in:130
+#: data/installer.metainfo.xml.in:142
 msgid "Use large icons in views"
 msgstr "Nagyobb ikonok használata a nézetekben"
 
-#: data/installer.metainfo.xml.in:131
+#: data/installer.metainfo.xml.in:143
 msgid "Add a custom icon for Before Installing view"
 msgstr "Egyedi ikon hozzáadva a Telepítés előtt nézethez"
 
-#: data/installer.metainfo.xml.in:141
+#: data/installer.metainfo.xml.in:153
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Egy információs sáv kijelzése az akkumulátorral kapcsolatban új lapra lépés "
 "helyett"
 
-#: data/installer.metainfo.xml.in:142
+#: data/installer.metainfo.xml.in:154
 msgid "Show all system requirements warnings on a single page"
 msgstr "Minden rendszerkövetelmény-figyelmeztetés kijelzése egy lapon"
 
-#: data/installer.metainfo.xml.in:143
+#: data/installer.metainfo.xml.in:155
 msgid "Warn about installing developer builds"
 msgstr "Figyelmeztetés fejlesztői verziók telepítéséről"
 
