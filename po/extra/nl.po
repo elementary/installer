@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-23 21:47+0000\n"
-"PO-Revision-Date: 2023-02-28 04:25+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
+"PO-Revision-Date: 2024-10-29 11:50+0000\n"
+"Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/extra/nl/"
 ">\n"
 "Language: nl\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/installer.metainfo.xml.in:9
 msgid "Installer"
@@ -40,14 +40,20 @@ msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
+"Sorteer taalvarianten op automatisch op alfabetische volgorde en selecteerde "
+"hoofdvariant standaard"
 
 #: data/installer.metainfo.xml.in:64
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
+"Geef meer terugkoppeling voor ongeldige waarden bij het uitvoeren van een "
+"aangepaste installatie"
 
 #: data/installer.metainfo.xml.in:65
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
+"Batterijwaarschuwing is verstuurd als een notificatie in plaats van een "
+"infobalk"
 
 #: data/installer.metainfo.xml.in:66
 msgid "Update post-install driver installation instructions"
@@ -55,7 +61,7 @@ msgstr ""
 
 #: data/installer.metainfo.xml.in:67
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "Verbeter schermlezer-ondersteuning"
 
 #: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
 #: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
@@ -73,7 +79,7 @@ msgstr ""
 
 #: data/installer.metainfo.xml.in:130
 msgid "Use large icons in views"
-msgstr ""
+msgstr "Gebruik grote iconen in weergaven"
 
 #: data/installer.metainfo.xml.in:131
 msgid "Add a custom icon for Before Installing view"

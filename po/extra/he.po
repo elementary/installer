@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-23 21:47+0000\n"
-"PO-Revision-Date: 2024-05-23 07:13+0000\n"
+"PO-Revision-Date: 2024-10-27 14:01+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/extra/"
 "he/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/installer.metainfo.xml.in:9
 msgid "Installer"
@@ -39,23 +39,23 @@ msgstr "שיפורים:"
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
-msgstr ""
+msgstr "סידור הגווני השפות לפי האלפבית ולבחור את ההגוון העיקרי כברירת מחדל"
 
 #: data/installer.metainfo.xml.in:64
 msgid "Provide more feedback for invalid values when doing a custom install"
-msgstr ""
+msgstr "נא לספק משוב נוסף על ערכים מסוימים בעת ביצוע התקנה מותאמת אישית"
 
 #: data/installer.metainfo.xml.in:65
 msgid "Battery warning is sent as a notification instead of an infobar"
-msgstr ""
+msgstr "אזהרת סוללה נשלחת כהתראה במקום סרגל מידע"
 
 #: data/installer.metainfo.xml.in:66
 msgid "Update post-install driver installation instructions"
-msgstr ""
+msgstr "עודכנו הנחיות מנהל התקן לאחר ההתקנה"
 
 #: data/installer.metainfo.xml.in:67
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "שיפור התמיכה במקריא המסך"
 
 #: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
 #: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
