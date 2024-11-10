@@ -1,3 +1,9 @@
+io.elementary.installer (8.1.0) jammy; urgency=medium
+
+  * Release 8.1.0 (#801)
+
+ -- Cody Garver <cody@elementary.io>  Wed, 23 Oct 2024 22:05:45 +0000
+
 io.elementary.installer (8.0.0) jammy; urgency=medium
 
   * Release 8 (#774)
