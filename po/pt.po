@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-10 21:48+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
 "PO-Revision-Date: 2024-03-26 22:13+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
@@ -187,9 +187,8 @@ msgstr ""
 "Incluir controladores proprietários de terceiros aquando da instalação. "
 "Aceito as respetivas licenças e termos de utilização."
 
-#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
-#: src/Views/TryInstallView.vala:79
+#: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Voltar"
 
@@ -197,23 +196,15 @@ msgstr "Voltar"
 msgid "Erase and Install"
 msgstr "Apagar e Instalar"
 
-#: src/Views/EncryptView.vala:26
+#: src/Views/EncryptView.vala:27
 msgid "Don’t Encrypt"
 msgstr "Não encriptar"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "Ativar encriptação do disco"
 
-#: src/Views/EncryptView.vala:54
-msgid ""
-"Encrypt this device's drive if required for added protection, but be sure "
-"you understand:"
-msgstr ""
-"Encriptar a unidade deste dispositivo, se necessário para protecção "
-"adicional, mas certifique-se de que compreende:"
-
-#: src/Views/EncryptView.vala:61
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -221,15 +212,19 @@ msgstr ""
 "Os dados apenas serão protegidos de outros com acesso físico a este "
 "dispositivo quando o mesmo for desligado."
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time this device is turned "
+#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
-"Store it somewhere safe."
+"If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "A palavra-passe de encriptação será necessária sempre que este dispositivo "
 "for ligado. Guarde-a num lugar seguro."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:68
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -237,33 +232,34 @@ msgstr ""
 "Será necessário um teclado integrado ou USB para digitar a palavra-passe de "
 "encriptação cada vez que este dispositivo for ligado."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:73
+#, fuzzy
+#| msgid "Set Encryption Password"
+msgid "Encryption Password"
+msgstr "Definir a palavra-passe de encriptação"
+
+#: src/Views/EncryptView.vala:74
+#, fuzzy
+#| msgid ""
+#| "If you forget the encryption password, <b>you will not be able to recover "
+#| "data.</b> This is a unique password for this device, not the password for "
+#| "your user account."
 msgid ""
-"If you forget the encryption password, <b>you will not be able to recover "
-"data.</b> This is a unique password for this device, not the password for "
-"your user account."
+"A unique password for this device; not the password for your user account."
 msgstr ""
 "Se te esqueceres da palavra-passe de encriptação, <b>não poderás recuperar "
 "os dados.</b> Esta é uma palavra-passe única para este dispositivo, não é a "
 "palavra-passe da tua conta de utilizador."
 
-#: src/Views/EncryptView.vala:95
-msgid "Choose Encryption Password"
-msgstr "Escolha a palavra-passe de encriptação"
-
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
 msgstr "Confirmar palavra-passe"
 
-#: src/Views/EncryptView.vala:145
-msgid "Choose Password"
-msgstr "Escolher palavra-passe"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:116
 msgid "Set Encryption Password"
 msgstr "Definir a palavra-passe de encriptação"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:191
 msgid "Passwords do not match"
 msgstr "As palavras-passe não coincidem"
 
@@ -589,6 +585,19 @@ msgstr "Padrão (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Encrypt this device's drive if required for added protection, but be sure "
+#~ "you understand:"
+#~ msgstr ""
+#~ "Encriptar a unidade deste dispositivo, se necessário para protecção "
+#~ "adicional, mas certifique-se de que compreende:"
+
+#~ msgid "Choose Encryption Password"
+#~ msgstr "Escolha a palavra-passe de encriptação"
+
+#~ msgid "Choose Password"
+#~ msgstr "Escolher palavra-passe"
 
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-10 21:48+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
 "PO-Revision-Date: 2023-09-04 08:08+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/"
@@ -182,9 +182,8 @@ msgstr ""
 "Sisällytä kolmannen osapuolen suljetut ajurit asentamisen yhteydessä. "
 "Hyväksyn niiden lisenssit ja käyttöehdot."
 
-#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
-#: src/Views/TryInstallView.vala:79
+#: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Takaisin"
 
@@ -192,23 +191,15 @@ msgstr "Takaisin"
 msgid "Erase and Install"
 msgstr "Tyhjennä ja asenna"
 
-#: src/Views/EncryptView.vala:26
+#: src/Views/EncryptView.vala:27
 msgid "Don’t Encrypt"
 msgstr "Älä salaa"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "Ota levyn salaus käyttöön"
 
-#: src/Views/EncryptView.vala:54
-msgid ""
-"Encrypt this device's drive if required for added protection, but be sure "
-"you understand:"
-msgstr ""
-"Salaa tämän laitteen asema jos lisäturvaa tarvitaan, mutta varmista että "
-"ymmärrät:"
-
-#: src/Views/EncryptView.vala:61
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -216,15 +207,19 @@ msgstr ""
 "Tiedot suojataan muilta, joilla on fyysinen pääsy tälle laitteelle, mutta "
 "vain kun laite on sammutettu."
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time this device is turned "
+#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
-"Store it somewhere safe."
+"If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "Salauksen salasana vaaditaan joka kerta, kun tämä laite käynnistetään. "
 "Talleta se jonnekin turvallisesti."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:68
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -232,33 +227,34 @@ msgstr ""
 "Sisäänrakennettu tai USB-väylässä oleva näppäimistö vaaditaan salauksen "
 "salasanan kirjoittamiseksi joka kerta, kun laite käynnistetään."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:73
+#, fuzzy
+#| msgid "Set Encryption Password"
+msgid "Encryption Password"
+msgstr "Aseta salauksen salasana"
+
+#: src/Views/EncryptView.vala:74
+#, fuzzy
+#| msgid ""
+#| "If you forget the encryption password, <b>you will not be able to recover "
+#| "data.</b> This is a unique password for this device, not the password for "
+#| "your user account."
 msgid ""
-"If you forget the encryption password, <b>you will not be able to recover "
-"data.</b> This is a unique password for this device, not the password for "
-"your user account."
+"A unique password for this device; not the password for your user account."
 msgstr ""
 "Jos unohdat salauksen salasanan, <b>levyllä olevia tietoja ei voi palauttaa."
 "</b> Kyseessä on ainutlaatuinen salasana tälle laitteelle, ei "
 "käyttäjätililläsi käytettävä salasana."
 
-#: src/Views/EncryptView.vala:95
-msgid "Choose Encryption Password"
-msgstr "Valitse salauksen salasana"
-
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
 msgstr "Vahvista salasana"
 
-#: src/Views/EncryptView.vala:145
-msgid "Choose Password"
-msgstr "Valitse salasana"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:116
 msgid "Set Encryption Password"
 msgstr "Aseta salauksen salasana"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:191
 msgid "Passwords do not match"
 msgstr "Salasanat eivät täsmää"
 
@@ -583,6 +579,19 @@ msgstr "Oletus (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Encrypt this device's drive if required for added protection, but be sure "
+#~ "you understand:"
+#~ msgstr ""
+#~ "Salaa tämän laitteen asema jos lisäturvaa tarvitaan, mutta varmista että "
+#~ "ymmärrät:"
+
+#~ msgid "Choose Encryption Password"
+#~ msgstr "Valitse salauksen salasana"
+
+#~ msgid "Choose Password"
+#~ msgstr "Valitse salasana"
 
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "

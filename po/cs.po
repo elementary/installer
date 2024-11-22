@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-10 21:48+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
 "PO-Revision-Date: 2024-09-19 07:21+0000\n"
 "Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/installer/"
@@ -181,9 +181,8 @@ msgstr ""
 "Zahrnout proprietární ovladače třetích stran při instalaci. Souhlasím s "
 "jejich licencemi a podmínkami použití."
 
-#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
-#: src/Views/TryInstallView.vala:79
+#: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Zpět"
 
@@ -191,23 +190,15 @@ msgstr "Zpět"
 msgid "Erase and Install"
 msgstr "Vymazat a nainstalovat"
 
-#: src/Views/EncryptView.vala:26
+#: src/Views/EncryptView.vala:27
 msgid "Don’t Encrypt"
 msgstr "Nešifrovat"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "Šifrovat jednotku"
 
-#: src/Views/EncryptView.vala:54
-msgid ""
-"Encrypt this device's drive if required for added protection, but be sure "
-"you understand:"
-msgstr ""
-"Pokud potřebujete vyšší zabezpečení, zapněte šifrování úložiště. Nejprve se "
-"ale ujistěte, že rozumíte následujícímu:"
-
-#: src/Views/EncryptView.vala:61
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -215,15 +206,19 @@ msgstr ""
 "Data budou chráněna před ostatními, kteří mají k tomuto počítači fyzický "
 "přístup, pouze pokud je zařízení vypnuté."
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time this device is turned "
+#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
-"Store it somewhere safe."
+"If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "Šifrovací heslo bude vyžadováno pokaždé, když tento počítač zapnete. Uložte "
 "si ho někde bezpečně."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:68
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -231,33 +226,34 @@ msgstr ""
 "Vestavěná nebo USB klávesnice bude potřeba pro zadání šifrovacího hesla při "
 "každém zapnutí počítače."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:73
+#, fuzzy
+#| msgid "Set Encryption Password"
+msgid "Encryption Password"
+msgstr "Nastavte šifrovací heslo"
+
+#: src/Views/EncryptView.vala:74
+#, fuzzy
+#| msgid ""
+#| "If you forget the encryption password, <b>you will not be able to recover "
+#| "data.</b> This is a unique password for this device, not the password for "
+#| "your user account."
 msgid ""
-"If you forget the encryption password, <b>you will not be able to recover "
-"data.</b> This is a unique password for this device, not the password for "
-"your user account."
+"A unique password for this device; not the password for your user account."
 msgstr ""
 "Pokud šifrovací heslo zapomenete, <b>data už nebude možné obnovit.</b> Jedná "
 "se o samostatné heslo k celému počítači, ne heslo k vašemu uživatelskému "
 "účtu."
 
-#: src/Views/EncryptView.vala:95
-msgid "Choose Encryption Password"
-msgstr "Zvolte šifrovací heslo"
-
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
 msgstr "Potvrďte heslo"
 
-#: src/Views/EncryptView.vala:145
-msgid "Choose Password"
-msgstr "Zvolte si heslo"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:116
 msgid "Set Encryption Password"
 msgstr "Nastavte šifrovací heslo"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:191
 msgid "Passwords do not match"
 msgstr "Zadání hesla se neshodují"
 
@@ -569,6 +565,19 @@ msgstr "Výchozí (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Encrypt this device's drive if required for added protection, but be sure "
+#~ "you understand:"
+#~ msgstr ""
+#~ "Pokud potřebujete vyšší zabezpečení, zapněte šifrování úložiště. Nejprve "
+#~ "se ale ujistěte, že rozumíte následujícímu:"
+
+#~ msgid "Choose Encryption Password"
+#~ msgstr "Zvolte šifrovací heslo"
+
+#~ msgid "Choose Password"
+#~ msgstr "Zvolte si heslo"
 
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "
