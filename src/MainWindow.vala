@@ -22,7 +22,7 @@ public interface UPower : GLib.Object {
     public abstract bool on_battery { owned get; set; }
 }
 
-public class Installer.MainWindow : Gtk.ApplicationWindow {
+public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.ExtendedBehavior {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     private const uint64 ONE_GB = 1000 * 1000 * 1000;
     // Minimum 15 GB
@@ -86,6 +86,11 @@ public class Installer.MainWindow : Gtk.ApplicationWindow {
             }
 
             return Source.REMOVE;
+        });
+
+        child.realize.connect (() => {
+            connect_to_shell ();
+            make_centered ();
         });
     }
 

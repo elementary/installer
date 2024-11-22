@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 17:06+0000\n"
+"POT-Creation-Date: 2024-11-10 21:48+0000\n"
 "PO-Revision-Date: 2022-04-20 09:24+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/installer/"
@@ -44,7 +44,7 @@ msgstr "Рестарт на тестов режим"
 msgid "Test mode switch user"
 msgstr "Смяна на потребител в тестов режим"
 
-#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
 msgid "%s…"
 msgstr "%s …"
@@ -174,7 +174,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
 #: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Назад"
@@ -292,29 +292,29 @@ msgstr "Опитайте ДЕМО режим"
 msgid "Try Installing Again"
 msgstr "Опитайте да инсталирате отново"
 
+#: src/Views/KeyboardLayoutView.vala:30
+msgid "Input Language"
+msgstr "Език за въвеждане"
+
 #: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Клавиатурна подредба"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Пишете, за да изпробване подредбата"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Покажи клавиатурната подредба"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "Избери"
 
-#: src/Views/KeyboardLayoutView.vala:110
-msgid "Input Language"
-msgstr "Език за въвеждане"
-
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:67
 msgid "Languages"
 msgstr "Езици"
 
@@ -322,7 +322,7 @@ msgstr "Езици"
 msgid "Select a Language"
 msgstr "Изберете език"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
 msgstr "Активен език"
 

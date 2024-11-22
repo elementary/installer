@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 17:06+0000\n"
+"POT-Creation-Date: 2024-11-10 21:48+0000\n"
 "PO-Revision-Date: 2023-02-07 09:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -46,7 +46,7 @@ msgstr "Testmodus-omstart"
 msgid "Test mode switch user"
 msgstr "Testmodus-brukarbyte"
 
-#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -176,7 +176,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
 #: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Tilbake"
@@ -296,27 +296,27 @@ msgstr "Prøv demo-modus"
 msgid "Try Installing Again"
 msgstr "Prøv å installere igjen"
 
+#: src/Views/KeyboardLayoutView.vala:30
+msgid "Input Language"
+msgstr "Inndataspråk"
+
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "Vel tastaturoppsett"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Skriv for å teste oppsettet ditt"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Vis tastaturoppsett"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "Vel"
 
-#: src/Views/KeyboardLayoutView.vala:110
-msgid "Input Language"
-msgstr "Inndataspråk"
-
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:67
 msgid "Languages"
 msgstr "Språk"
 
@@ -324,7 +324,7 @@ msgstr "Språk"
 msgid "Select a Language"
 msgstr "Vel eit språk"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
 msgstr "Noverande språk"
 

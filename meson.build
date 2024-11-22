@@ -2,7 +2,7 @@ project(
     'io.elementary.installer',
     'vala', 'c',
     meson_version : '>= 0.56.0',
-    version: '8.0.0'
+    version: '8.1.0'
 )
 
 add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', language:'c')
@@ -22,6 +22,7 @@ adw_dep = dependency('libadwaita-1', version: '>=1.4.0')
 json_glib_dep = dependency('json-glib-1.0')
 xkbregistry_dep = dependency('xkbregistry')
 pwquality_dep = dependency('pwquality')
+pantheon_wayland_dep = dependency('pantheon-wayland-1')
 systemd_dep = dependency('systemd')
 
 installer_backend = get_option('installer_backend')

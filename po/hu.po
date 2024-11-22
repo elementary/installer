@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 17:06+0000\n"
+"POT-Creation-Date: 2024-11-10 21:48+0000\n"
 "PO-Revision-Date: 2024-10-22 00:17+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
@@ -44,7 +44,7 @@ msgstr "Tesztmód újraindítása"
 msgid "Test mode switch user"
 msgstr "Tesztmód felhasználóváltása"
 
-#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -182,7 +182,7 @@ msgstr ""
 "elfogadom a licenceiket és felhasználási feltételeiket."
 
 #: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
 #: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Vissza"
@@ -303,27 +303,27 @@ msgstr "Demómód kipróbálása"
 msgid "Try Installing Again"
 msgstr "Próbálja újra telepíteni"
 
+#: src/Views/KeyboardLayoutView.vala:30
+msgid "Input Language"
+msgstr "Beviteli nyelv"
+
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "Billentyűzetkiosztás választása"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Írjon ide, hogy tesztelje a kiosztást"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Billentyűzetkiosztás megjelenítése"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "Kiválasztás"
 
-#: src/Views/KeyboardLayoutView.vala:110
-msgid "Input Language"
-msgstr "Beviteli nyelv"
-
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:67
 msgid "Languages"
 msgstr "Nyelvek"
 
@@ -331,7 +331,7 @@ msgstr "Nyelvek"
 msgid "Select a Language"
 msgstr "Nyelv kiválasztása"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
 msgstr "Jelenlegi nyelv"
 

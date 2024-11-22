@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 17:06+0000\n"
+"POT-Creation-Date: 2024-11-10 21:48+0000\n"
 "PO-Revision-Date: 2022-04-20 09:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (Canada) <https://l10n.elementary.io/projects/"
@@ -44,7 +44,7 @@ msgstr "Test mode reboot"
 msgid "Test mode switch user"
 msgstr "Test mode switch user"
 
-#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -173,7 +173,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
 #: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Back"
@@ -312,29 +312,29 @@ msgstr "Try Demo Mode"
 msgid "Try Installing Again"
 msgstr "Try Installing Again"
 
+#: src/Views/KeyboardLayoutView.vala:30
+msgid "Input Language"
+msgstr "Input Language"
+
 #: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Keyboard Layout"
 msgid "Select Keyboard Layout"
 msgstr "Keyboard Layout"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "Type to test your layout"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "Show keyboard layout"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "Select"
 
-#: src/Views/KeyboardLayoutView.vala:110
-msgid "Input Language"
-msgstr "Input Language"
-
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:67
 msgid "Languages"
 msgstr "Languages"
 
@@ -342,7 +342,7 @@ msgstr "Languages"
 msgid "Select a Language"
 msgstr "Select a Language"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
 msgstr "Currently active language"
 

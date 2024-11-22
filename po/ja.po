@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 17:06+0000\n"
+"POT-Creation-Date: 2024-11-10 21:48+0000\n"
 "PO-Revision-Date: 2024-10-12 12:00+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
@@ -44,7 +44,7 @@ msgstr "テストモードの再起動"
 msgid "Test mode switch user"
 msgstr "テストモードのユーザー切り替え"
 
-#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -185,7 +185,7 @@ msgstr ""
 "各ライセンスおよび利用規約に合意します。"
 
 #: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
 #: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "戻る"
@@ -304,27 +304,27 @@ msgstr "デモモードを試す"
 msgid "Try Installing Again"
 msgstr "もう一度インストールしてみる"
 
+#: src/Views/KeyboardLayoutView.vala:30
+msgid "Input Language"
+msgstr "入力言語"
+
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "キーボードレイアウトを選択"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "入力してレイアウトを確認"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "キーボードレイアウトを表示"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "選択"
 
-#: src/Views/KeyboardLayoutView.vala:110
-msgid "Input Language"
-msgstr "入力言語"
-
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:67
 msgid "Languages"
 msgstr "言語"
 
@@ -332,7 +332,7 @@ msgstr "言語"
 msgid "Select a Language"
 msgstr "言語を選択"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
 msgstr "現在の選択言語"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 17:06+0000\n"
+"POT-Creation-Date: 2024-11-10 21:48+0000\n"
 "PO-Revision-Date: 2016-10-12 01:29+0200\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: \n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Test mode switch user"
 msgstr ""
 
-#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
 msgid "%s…"
 msgstr ""
@@ -164,7 +164,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
 #: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr ""
@@ -271,30 +271,30 @@ msgstr ""
 msgid "Try Installing Again"
 msgstr ""
 
+#: src/Views/KeyboardLayoutView.vala:30
+#, fuzzy
+msgid "Input Language"
+msgstr "Kies 'n taal"
+
 #: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
 #| msgid "Select a Language"
 msgid "Select Keyboard Layout"
 msgstr "Kies 'n taal"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr ""
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr ""
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr ""
 
-#: src/Views/KeyboardLayoutView.vala:110
-#, fuzzy
-msgid "Input Language"
-msgstr "Kies 'n taal"
-
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:67
 #, fuzzy
 msgid "Languages"
 msgstr "Kies 'n taal"
@@ -303,7 +303,7 @@ msgstr "Kies 'n taal"
 msgid "Select a Language"
 msgstr "Kies 'n taal"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
 msgstr ""
 

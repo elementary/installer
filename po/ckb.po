@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 17:06+0000\n"
+"POT-Creation-Date: 2024-11-10 21:48+0000\n"
 "PO-Revision-Date: 2022-09-10 12:23+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -46,7 +46,7 @@ msgstr "پێکردنەوەی دۆخی تاقیکردنەوە"
 msgid "Test mode switch user"
 msgstr "گۆڕینی بەکارهێنەر لە دۆخی تاقیکردنەوەدا"
 
-#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:201
+#: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
 msgid "%s…"
 msgstr "%s…"
@@ -175,7 +175,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:55 src/Views/PartitioningView.vala:141
+#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
 #: src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "گەڕانەوە"
@@ -295,27 +295,27 @@ msgstr "تاقیکردنەوەی دۆخی تاقیکردنەوە"
 msgid "Try Installing Again"
 msgstr "دوبارە هەوڵی دامەزراندن بدەوە"
 
+#: src/Views/KeyboardLayoutView.vala:30
+msgid "Input Language"
+msgstr "زمانی بەکارهێنان"
+
 #: src/Views/KeyboardLayoutView.vala:32
 msgid "Select Keyboard Layout"
 msgstr "ڕووکاری تەختەکلیل دیاریبکە"
 
-#: src/Views/KeyboardLayoutView.vala:40
+#: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
 msgstr "لێرە بنووسە بۆ تاقیکردنەوەی ڕووکاری تەختەکلیلەکەت"
 
-#: src/Views/KeyboardLayoutView.vala:43
+#: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
 msgstr "پشاندانی ڕووکاری تەختەکلیل"
 
-#: src/Views/KeyboardLayoutView.vala:59 src/Views/LanguageView.vala:104
+#: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
 msgstr "دیاریکردن"
 
-#: src/Views/KeyboardLayoutView.vala:110
-msgid "Input Language"
-msgstr "زمانی بەکارهێنان"
-
-#: src/Views/LanguageView.vala:257
+#: src/Views/LanguageView.vala:67
 msgid "Languages"
 msgstr "زمانەکان"
 
@@ -323,7 +323,7 @@ msgstr "زمانەکان"
 msgid "Select a Language"
 msgstr "زمانێک دیاریکە"
 
-#: src/Views/LanguageView.vala:297 src/Views/LanguageView.vala:357
+#: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
 msgstr "زمانی کارای ئێستا"
 
