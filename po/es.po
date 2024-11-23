@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-10-14 17:11+0000\n"
+"PO-Revision-Date: 2024-11-24 07:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/installer/"
 "installer/es/>\n"
@@ -209,16 +209,13 @@ msgstr ""
 "dispositivo cuando se apague."
 
 #: src/Views/EncryptView.vala:62
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time this device is turned "
-#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "Se solicitará la contraseña de cifrado cada vez que se encienda el "
-"dispositivo. Almacénela en un sitio seguro."
+"dispositivo. Si olvida la contraseña, <b>no podrá recuperar su "
+"información.</b>"
 
 #: src/Views/EncryptView.vala:68
 msgid ""
@@ -229,23 +226,13 @@ msgstr ""
 "cifrado cada vez que se encienda este equipo."
 
 #: src/Views/EncryptView.vala:73
-#, fuzzy
-#| msgid "Set Encryption Password"
 msgid "Encryption Password"
-msgstr "Establecer contraseña de cifrado"
+msgstr "Contraseña de cifrado"
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "If you forget the encryption password, <b>you will not be able to recover "
-#| "data.</b> This is a unique password for this device, not the password for "
-#| "your user account."
 msgid ""
 "A unique password for this device; not the password for your user account."
-msgstr ""
-"Si olvida la contraseña de cifrado, <b>no podrá recuperar su información.</"
-"b> Esta es una contraseña única para este equipo, no para su cuenta de "
-"usuario."
+msgstr "Una contraseña única para este equipo, no para su cuenta de usuario."
 
 #: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
