@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-10-09 18:16+0000\n"
+"PO-Revision-Date: 2024-11-27 01:16+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
 "installer/uk/>\n"
@@ -208,16 +208,12 @@ msgstr ""
 "коли його вимкнено."
 
 #: src/Views/EncryptView.vala:62
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time this device is turned "
-#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
-"Пароль шифрування буде потрібен за кожного ввімкнення цього пристрою. "
-"Зберігайте його в безпечному місці."
+"Пароль шифрування буде потрібен за кожного ввімкнення цього пристрою. Якщо "
+"ви забудете його, <b>ви не зможете відновити дані.</b>"
 
 #: src/Views/EncryptView.vala:68
 msgid ""
@@ -228,23 +224,15 @@ msgstr ""
 "знадобиться вбудована або USB-клавіатура."
 
 #: src/Views/EncryptView.vala:73
-#, fuzzy
-#| msgid "Set Encryption Password"
 msgid "Encryption Password"
-msgstr "Встановити пароль шифрування"
+msgstr "Пароль шифрування"
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "If you forget the encryption password, <b>you will not be able to recover "
-#| "data.</b> This is a unique password for this device, not the password for "
-#| "your user account."
 msgid ""
 "A unique password for this device; not the password for your user account."
 msgstr ""
-"Якщо ви забудете пароль шифрування, <b>ви не зможете відновити дані.</b> Це "
-"унікальний пароль для цього пристрою, а не пароль для вашого облікового "
-"запису користувача."
+"Унікальний пароль для цього пристрою; не пароль для вашого облікового запису "
+"користувача."
 
 #: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
