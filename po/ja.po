@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-10-12 12:00+0000\n"
+"PO-Revision-Date: 2024-11-28 12:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
 "installer/ja/>\n"
@@ -210,16 +210,11 @@ msgstr ""
 "してのみ有効です。"
 
 #: src/Views/EncryptView.vala:62
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time this device is turned "
-#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
-msgstr ""
-"このデバイスを起動する度に、暗号化パスワードが要求されます。安全な場所に保管"
-"してください。"
+msgstr "このデバイスを起動する度に、暗号化パスワードが要求されます。パスワードを忘れ"
+"ると、<b>データを復旧できなくなります。</b>"
 
 #: src/Views/EncryptView.vala:68
 msgid ""
@@ -230,22 +225,14 @@ msgstr ""
 "キーボードが必要になります。"
 
 #: src/Views/EncryptView.vala:73
-#, fuzzy
-#| msgid "Set Encryption Password"
 msgid "Encryption Password"
-msgstr "暗号化パスワードを設定"
+msgstr "暗号化パスワード"
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "If you forget the encryption password, <b>you will not be able to recover "
-#| "data.</b> This is a unique password for this device, not the password for "
-#| "your user account."
 msgid ""
 "A unique password for this device; not the password for your user account."
-msgstr ""
-"暗号化パスワードを忘れた場合、<b>データは回復できません。</b>これはこのデバイ"
-"ス専用のパスワードであり、ユーザーアカウント用のパスワードではありません。"
+msgstr "このデバイスで一意のパスワードです。ユーザーアカウント用のパスワードではあり"
+"ません。"
 
 #: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
