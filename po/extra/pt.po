@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2021-07-18 21:55+0000\n"
+"PO-Revision-Date: 2024-11-28 12:16+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
 "extra/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -41,28 +41,34 @@ msgstr "elementary, Inc."
 #: data/installer.metainfo.xml.in:126 data/installer.metainfo.xml.in:140
 #: data/installer.metainfo.xml.in:151
 msgid "Improvements:"
-msgstr ""
+msgstr "Melhorias:"
 
 #: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:80
 #: data/installer.metainfo.xml.in:101 data/installer.metainfo.xml.in:115
 #: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:144
 #: data/installer.metainfo.xml.in:156
 msgid "Updated translations"
-msgstr ""
+msgstr "Traduções atualizadas"
 
 #: data/installer.metainfo.xml.in:75
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
+"Ordena as variantes de idioma por ordem alfabética e seleciona "
+"automaticamente a variante principal por predefinição"
 
 #: data/installer.metainfo.xml.in:76
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
+"Fornece mais comentários sobre valores inválidos ao fazer uma instalação "
+"personalizada"
 
 #: data/installer.metainfo.xml.in:77
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
+"O aviso de bateria é enviado como uma notificação em vez de uma barra de "
+"informação"
 
 #: data/installer.metainfo.xml.in:78
 msgid "Update post-install driver installation instructions"
