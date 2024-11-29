@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-10-26 17:56+0000\n"
-"Last-Translator: Diogo Pessoa <diogopessoabr@gmail.com>\n"
+"PO-Revision-Date: 2024-11-30 02:16+0000\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "installer/installer/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -178,7 +178,7 @@ msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
-"Incluir gráficos proprietários de terceiros na instalação. Concordo com suas "
+"Incluir drivers proprietários de terceiros na instalação. Concordo com suas "
 "respectivas licenças e termos de uso."
 
 #: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
@@ -207,16 +207,12 @@ msgstr ""
 "dispositivo quando ele estiver desligado."
 
 #: src/Views/EncryptView.vala:62
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time this device is turned "
-#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "A senha de criptografia será necessária sempre que este dispositivo for "
-"ligado. Guarde em algum lugar seguro."
+"ligado. Se você esquecer, <b>não será possível recuperar os dados.</b>"
 
 #: src/Views/EncryptView.vala:68
 msgid ""
@@ -227,23 +223,15 @@ msgstr ""
 "encriptação toda vez que este dispositivo for ligado."
 
 #: src/Views/EncryptView.vala:73
-#, fuzzy
-#| msgid "Set Encryption Password"
 msgid "Encryption Password"
-msgstr "Definir a senha de encriptação"
+msgstr "Senha de Encriptação"
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "If you forget the encryption password, <b>you will not be able to recover "
-#| "data.</b> This is a unique password for this device, not the password for "
-#| "your user account."
 msgid ""
 "A unique password for this device; not the password for your user account."
 msgstr ""
-"Se você esquecer a senha de encriptação, <b>não poderá recuperar seus dados."
-"</b> Esta é uma senha única para esse dispositivo, não é a senha da sua "
-"conta de usuário."
+"Uma senha exclusiva para este dispositivo; não a senha da sua conta de "
+"usuário."
 
 #: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
