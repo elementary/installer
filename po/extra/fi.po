@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2023-01-26 09:25+0000\n"
+"PO-Revision-Date: 2024-12-02 02:00+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/installer/extra/"
 "fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -48,7 +48,7 @@ msgstr "Parannukset:"
 #: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:144
 #: data/installer.metainfo.xml.in:156
 msgid "Updated translations"
-msgstr ""
+msgstr "Päivitetyt käännökset"
 
 #: data/installer.metainfo.xml.in:75
 msgid ""
