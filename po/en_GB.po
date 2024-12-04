@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-10-13 05:38+0000\n"
+"PO-Revision-Date: 2024-12-05 01:16+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "installer/installer/en_GB/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/Application.vala:54
@@ -204,16 +204,12 @@ msgstr ""
 "when it is shut down."
 
 #: src/Views/EncryptView.vala:62
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time this device is turned "
-#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "The encryption password will be required each time this device is turned on. "
-"Store it somewhere safe."
+"If you forget it, <b>you will not be able to recover data.</b>"
 
 #: src/Views/EncryptView.vala:68
 msgid ""
@@ -224,23 +220,14 @@ msgstr ""
 "each time this device is turned on."
 
 #: src/Views/EncryptView.vala:73
-#, fuzzy
-#| msgid "Set Encryption Password"
 msgid "Encryption Password"
-msgstr "Set Encryption Password"
+msgstr "Encryption Password"
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "If you forget the encryption password, <b>you will not be able to recover "
-#| "data.</b> This is a unique password for this device, not the password for "
-#| "your user account."
 msgid ""
 "A unique password for this device; not the password for your user account."
 msgstr ""
-"If you forget the encryption password, <b>you will not be able to recover "
-"data.</b> This is a unique password for this device, not the password for "
-"your user account."
+"A unique password for this device; not the password for your user account."
 
 #: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
