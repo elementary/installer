@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-10-14 16:04+0000\n"
+"PO-Revision-Date: 2024-12-09 11:10+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
-"installer/installer/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
+"projects/installer/installer/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/Application.vala:54
@@ -196,14 +196,11 @@ msgid ""
 msgstr "磁碟加密只能在關機時防止他人以物理方式存取此裝置的資料。"
 
 #: src/Views/EncryptView.vala:62
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time this device is turned "
-#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
-msgstr "此裝置每次開機時都會需要輸入加密密碼。請將它保管在安全的地方。"
+msgstr "這台裝置每次開機時都將會需要輸入加密密碼。如果您忘記加密密碼，<b>您的資料就會"
+"無法復原。</b>"
 
 #: src/Views/EncryptView.vala:68
 msgid ""
@@ -212,22 +209,13 @@ msgid ""
 msgstr "此裝置每次開機時都需要使用內建或插入 USB 鍵盤來輸入加密密碼。"
 
 #: src/Views/EncryptView.vala:73
-#, fuzzy
-#| msgid "Set Encryption Password"
 msgid "Encryption Password"
-msgstr "設定加密密碼"
+msgstr "加密密碼"
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "If you forget the encryption password, <b>you will not be able to recover "
-#| "data.</b> This is a unique password for this device, not the password for "
-#| "your user account."
 msgid ""
 "A unique password for this device; not the password for your user account."
-msgstr ""
-"如果您忘記加密密嗎，<b>您將無法將資料復原。</b>此密碼有別於您帳戶所使用的密"
-"碼，只用於此裝置上。"
+msgstr "這是這台裝置的獨特密碼；這不是您的使用者帳號的密碼。"
 
 #: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
