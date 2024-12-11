@@ -231,7 +231,7 @@ public class Installer.DiskBar: Gtk.Box {
         public Legend.unused (uint64 size_in_bytes) {
             Object (
                 ppath: "unused",
-                size: size,
+                size: size_in_bytes,
                 fs: "unused"
             );
         }
