@@ -411,7 +411,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             device_path = "/dev/sdc2",
             filesystem = InstallerDaemon.FileSystem.LVM,
             start_sector = 542968,
-            end_sector = 1562820270,
+            end_sector = 1062820270,
             sectors_used = InstallerDaemon.PartitionUsage () {
                 tag = 0,
                 value = 0
