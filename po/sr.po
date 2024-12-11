@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 21:47+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
 "PO-Revision-Date: 2021-03-12 08:51+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/installer/"
@@ -175,9 +175,8 @@ msgid ""
 "respective licenses and terms of use."
 msgstr ""
 
-#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
-#: src/Views/TryInstallView.vala:79
+#: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "Назад"
 
@@ -185,25 +184,19 @@ msgstr "Назад"
 msgid "Erase and Install"
 msgstr "Обриши и инсталирај"
 
-#: src/Views/EncryptView.vala:26
+#: src/Views/EncryptView.vala:27
 #, fuzzy
 #| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "Не шифруј"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "Шифровање диска"
 
-#: src/Views/EncryptView.vala:54
-msgid ""
-"Encrypt this device's drive if required for added protection, but be sure "
-"you understand:"
-msgstr ""
-
-#: src/Views/EncryptView.vala:61
+#: src/Views/EncryptView.vala:56
 #, fuzzy
 #| msgid ""
 #| "Data will be protected from others with physical access to this device."
@@ -212,15 +205,19 @@ msgid ""
 "when it is shut down."
 msgstr "Подаци ће бити заштићени од других са физичким приступом овом уређају."
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time this device is turned "
+#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
-"Store it somewhere safe."
+"If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "Лозинка шифровања ће бити затражена при сваком укључивању овог уређаја. "
 "Забележите је на неком безбедном месту."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:68
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -228,35 +225,36 @@ msgstr ""
 "Уграђена или УСБ тастатура биће затражена за уписивање лозинке шифровања "
 "сваког пута када се овај уређај укључи."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:73
+#, fuzzy
+#| msgid "Choose Encryption Password"
+msgid "Encryption Password"
+msgstr "Изабери лозинку шифровања"
+
+#: src/Views/EncryptView.vala:74
+#, fuzzy
+#| msgid ""
+#| "If you forget the encryption password, <b>you will not be able to recover "
+#| "data.</b> This is a unique password for this device, not the password for "
+#| "your user account."
 msgid ""
-"If you forget the encryption password, <b>you will not be able to recover "
-"data.</b> This is a unique password for this device, not the password for "
-"your user account."
+"A unique password for this device; not the password for your user account."
 msgstr ""
 "Ако заборавите лозинку шифровања, <b>нећете бити у могућности да повратите "
 "податке.</b> Ово је јединствена лозинка за овај уређај, а не лозинка за ваш "
 "кориснички налог."
 
-#: src/Views/EncryptView.vala:95
-msgid "Choose Encryption Password"
-msgstr "Изабери лозинку шифровања"
-
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
 msgstr "Потврди лозинку"
 
-#: src/Views/EncryptView.vala:145
-msgid "Choose Password"
-msgstr "Изабери лозинку"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:116
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
 msgstr "Изабери лозинку шифровања"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:191
 msgid "Passwords do not match"
 msgstr "Лозинке се не поклапају"
 
@@ -604,6 +602,12 @@ msgstr "Основни (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid "Choose Encryption Password"
+#~ msgstr "Изабери лозинку шифровања"
+
+#~ msgid "Choose Password"
+#~ msgstr "Изабери лозинку"
 
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 21:47+0000\n"
-"PO-Revision-Date: 2024-10-10 22:16+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
+"PO-Revision-Date: 2024-11-24 07:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
 "installer/he/>\n"
@@ -177,9 +177,8 @@ msgstr ""
 "לכלול מנהלי התקנים קנייניים מגופי צד־שלישי בעת ההתקנה. הרישיונות ותנאי "
 "השימוש שלהם מוסכמים עלי באשר הם."
 
-#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
-#: src/Views/TryInstallView.vala:79
+#: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "חזרה"
 
@@ -187,34 +186,29 @@ msgstr "חזרה"
 msgid "Erase and Install"
 msgstr "למחוק ולהתקין"
 
-#: src/Views/EncryptView.vala:26
+#: src/Views/EncryptView.vala:27
 msgid "Don’t Encrypt"
 msgstr "לא להצפין"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "הפעלת הצפנת כונן"
 
-#: src/Views/EncryptView.vala:54
-msgid ""
-"Encrypt this device's drive if required for added protection, but be sure "
-"you understand:"
-msgstr ""
-"ניתן להצפין את כונן המכשיר הזה אם זה נחוץ לשיפור האבטחה, אך חשוב להבין:"
-
-#: src/Views/EncryptView.vala:61
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr "הנתונים יהיו מוגנים רק מפני זרים עם גישה פיזית למכשיר הזה כשהוא כבוי."
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 msgid ""
 "The encryption password will be required each time this device is turned on. "
-"Store it somewhere safe."
-msgstr "ססמת ההצפנה תידרש עם כל הפעלה של מכשיר זה. יש לאחסן אותה במקום בטוח."
+"If you forget it, <b>you will not be able to recover data.</b>"
+msgstr ""
+"ססמת ההצפנה תידרש עם כל הפעלה של מכשיר זה. אובדן הסיסמה <b>ימנע ממך לשחזר "
+"מידע.</b>"
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:68
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -222,34 +216,26 @@ msgstr ""
 "נדרשת מקלדת מובנית או ב־USB כדי להקליד את ססמת ההצפנה עם כל הפעלה של המכשיר "
 "הזה."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:73
+msgid "Encryption Password"
+msgstr "סיסמת הצפנה"
+
+#: src/Views/EncryptView.vala:74
 msgid ""
-"If you forget the encryption password, <b>you will not be able to recover "
-"data.</b> This is a unique password for this device, not the password for "
-"your user account."
-msgstr ""
-"<b>לא תהיה אפשרות לשחזר את הנתונים.</b> במקרה שססמת ההצפנה שלך אבדה. ססמה זו "
-"היא ייחודית להתקן, זאת אינה הססמה של חשבון המשתמש שלך."
+"A unique password for this device; not the password for your user account."
+msgstr "זאת סיסמה ייחודית להתקן, זאת אינה הסיסמה של חשבון המשתמש שלך."
 
-#: src/Views/EncryptView.vala:95
-msgid "Choose Encryption Password"
-msgstr "נא לבחור ססמת הצפנה"
-
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
-msgstr "אימות ססמה"
+msgstr "אימות סיסמה"
 
-#: src/Views/EncryptView.vala:145
-msgid "Choose Password"
-msgstr "נא לבחור ססמה"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:116
 msgid "Set Encryption Password"
-msgstr "הגדרת ססמת הצפנה"
+msgstr "הגדרת סיסמת הצפנה"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:191
 msgid "Passwords do not match"
-msgstr "הססמאות אינן תואמות"
+msgstr "הסיסמאות אינן תואמות"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
@@ -557,6 +543,18 @@ msgstr "בררת מחדל (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr "ערך מותאם אישית חייב להתחיל ב־/"
+
+#~ msgid ""
+#~ "Encrypt this device's drive if required for added protection, but be sure "
+#~ "you understand:"
+#~ msgstr ""
+#~ "ניתן להצפין את כונן המכשיר הזה אם זה נחוץ לשיפור האבטחה, אך חשוב להבין:"
+
+#~ msgid "Choose Encryption Password"
+#~ msgstr "נא לבחור ססמת הצפנה"
+
+#~ msgid "Choose Password"
+#~ msgstr "נא לבחור ססמה"
 
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "

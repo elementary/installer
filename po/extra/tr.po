@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 21:47+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
 "PO-Revision-Date: 2024-09-21 10:16+0000\n"
 "Last-Translator: Sinan Decron <sinanveyasinan@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/installer/extra/"
@@ -36,66 +36,68 @@ msgstr "elementary OS için adım adım yükleyici."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:86
-#: data/installer.metainfo.xml.in:100 data/installer.metainfo.xml.in:114
-#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:139
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:98 data/installer.metainfo.xml.in:112
+#: data/installer.metainfo.xml.in:126 data/installer.metainfo.xml.in:140
+#: data/installer.metainfo.xml.in:151
 msgid "Improvements:"
 msgstr "İyileştirmeler:"
 
-#: data/installer.metainfo.xml.in:63
+#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:80
+#: data/installer.metainfo.xml.in:101 data/installer.metainfo.xml.in:115
+#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:144
+#: data/installer.metainfo.xml.in:156
+msgid "Updated translations"
+msgstr "Güncellenmiş çeviriler"
+
+#: data/installer.metainfo.xml.in:75
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:64
+#: data/installer.metainfo.xml.in:76
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:65
+#: data/installer.metainfo.xml.in:77
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:66
+#: data/installer.metainfo.xml.in:78
 msgid "Update post-install driver installation instructions"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:67
+#: data/installer.metainfo.xml.in:79
 msgid "Improve screen reader support"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
-#: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
-#: data/installer.metainfo.xml.in:132 data/installer.metainfo.xml.in:144
-msgid "Updated translations"
-msgstr "Güncellenmiş çeviriler"
-
-#: data/installer.metainfo.xml.in:88
+#: data/installer.metainfo.xml.in:100
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr ""
 "Klavye düzeni önizlemesi artık yeniden boyutlandırılabilir bir pencerede"
 
-#: data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:114
 msgid "Swipe to navigate back"
 msgstr "Geri gitmek için kaydırın"
 
-#: data/installer.metainfo.xml.in:130
+#: data/installer.metainfo.xml.in:142
 msgid "Use large icons in views"
 msgstr "Görünümlerde büyük simgeler kullanın"
 
-#: data/installer.metainfo.xml.in:131
+#: data/installer.metainfo.xml.in:143
 msgid "Add a custom icon for Before Installing view"
 msgstr "Yüklemeden Önce görünümü için özel bir simge ekle"
 
-#: data/installer.metainfo.xml.in:141
+#: data/installer.metainfo.xml.in:153
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr "Farklı bir sayfaya geçmek yerine pil hakkında bir bilgi çubuğu göster"
 
-#: data/installer.metainfo.xml.in:142
+#: data/installer.metainfo.xml.in:154
 msgid "Show all system requirements warnings on a single page"
 msgstr "Tüm sistem gereksinimleri uyarılarını tek bir sayfada göster"
 
-#: data/installer.metainfo.xml.in:143
+#: data/installer.metainfo.xml.in:155
 msgid "Warn about installing developer builds"
 msgstr "Geliştirici yapılarını yükleme konusunda uyar"
 

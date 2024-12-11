@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 21:47+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
 "PO-Revision-Date: 2021-03-04 15:31+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/installer/"
@@ -172,9 +172,8 @@ msgid ""
 "respective licenses and terms of use."
 msgstr ""
 
-#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
-#: src/Views/TryInstallView.vala:79
+#: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "ආපසු"
 
@@ -182,25 +181,19 @@ msgstr "ආපසු"
 msgid "Erase and Install"
 msgstr "මකා ස්ථාපනය කරන්න"
 
-#: src/Views/EncryptView.vala:26
+#: src/Views/EncryptView.vala:27
 #, fuzzy
 #| msgid "Don't Encrypt"
 msgid "Don’t Encrypt"
 msgstr "ගුප්තකේතනය නොකරන්න"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "ධාවක ගුප්තකේතනය"
 
-#: src/Views/EncryptView.vala:54
-msgid ""
-"Encrypt this device's drive if required for added protection, but be sure "
-"you understand:"
-msgstr ""
-
-#: src/Views/EncryptView.vala:61
+#: src/Views/EncryptView.vala:56
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -211,52 +204,53 @@ msgid ""
 msgstr ""
 "දාවකය ගුප්තකේතනය කිරීමෙන් මෙම උපාංගයට භෞතික ප්රවේශයකින් දත්ත කියවීමට ලබානොදී ආරක්ෂා කරයි."
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
 #| "device or restart."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
-"Store it somewhere safe."
+"If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "මෙම උපකරණය නැවත ආරම්භ වන විට හෝ නැවත ආරම්භ කිරීම සඳහා සෑම විටම ගුප්තකේතන මුරපදයක් අවශ්ය "
 "වේ."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:68
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:73
+#, fuzzy
+#| msgid "Choose Encryption Password"
+msgid "Encryption Password"
+msgstr "ගුප්තකේතන මුරපදය තෝරන්න"
+
+#: src/Views/EncryptView.vala:74
+#, fuzzy
+#| msgid ""
+#| "If you forget the encryption password, <b>you will not be able to recover "
+#| "data.</b> This is a unique password for this device, not the password for "
+#| "your user account."
 msgid ""
-"If you forget the encryption password, <b>you will not be able to recover "
-"data.</b> This is a unique password for this device, not the password for "
-"your user account."
+"A unique password for this device; not the password for your user account."
 msgstr ""
 "ඔබ ගුප්තකේතන මුරපදය අමතක නම්, <b> ඔබට දත්ත ආපසු ලබාගැනීමට නොහැකි වනු ඇත. </b> මෙම "
 "උපාංගය සඳහා මෙම සුවිශේෂී මුරපදය වන අතර, ඔබගේ පරිශීලක ගිණුම සඳහා රහස් පදය නොවේ."
 
-#: src/Views/EncryptView.vala:95
-msgid "Choose Encryption Password"
-msgstr "ගුප්තකේතන මුරපදය තෝරන්න"
-
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
 msgstr "මුරපදය තහවුරු කරන්න"
 
-#: src/Views/EncryptView.vala:145
-msgid "Choose Password"
-msgstr "මුර පදයක් තෝරන්න"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:116
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
 msgstr "ගුප්තකේතන මුරපදය තෝරන්න"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:191
 msgid "Passwords do not match"
 msgstr "මුර පද ගැලපෙන්නේ නැත"
 
@@ -590,6 +584,12 @@ msgstr ""
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid "Choose Encryption Password"
+#~ msgstr "ගුප්තකේතන මුරපදය තෝරන්න"
+
+#~ msgid "Choose Password"
+#~ msgstr "මුර පදයක් තෝරන්න"
 
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "

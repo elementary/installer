@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 21:47+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
 "PO-Revision-Date: 2022-12-09 22:25+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -174,9 +174,8 @@ msgid ""
 "respective licenses and terms of use."
 msgstr ""
 
-#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
-#: src/Views/TryInstallView.vala:79
+#: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "返回"
 
@@ -184,65 +183,64 @@ msgstr "返回"
 msgid "Erase and Install"
 msgstr "抹掉并安装"
 
-#: src/Views/EncryptView.vala:26
+#: src/Views/EncryptView.vala:27
 msgid "Don’t Encrypt"
 msgstr "不加密"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "启用硬盘加密"
 
-#: src/Views/EncryptView.vala:54
-msgid ""
-"Encrypt this device's drive if required for added protection, but be sure "
-"you understand:"
-msgstr "如需要额外保护，您可以加密这台设备的硬盘，但请务必知晓："
-
-#: src/Views/EncryptView.vala:61
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr "数据将受到保护，无法被他人以物理方式获取，但仅限于设备已关机时。"
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time this device is turned "
+#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
-"Store it somewhere safe."
+"If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "每次启动该设备，都将需要输入解密密码。请务必在某个安全的地方保存好密码。"
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:68
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr "每次启动设备时需要使用内置或 USB 外接的键盘来输入解密密码。"
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:73
+#, fuzzy
+#| msgid "Set Encryption Password"
+msgid "Encryption Password"
+msgstr "设置加密密码"
+
+#: src/Views/EncryptView.vala:74
+#, fuzzy
+#| msgid ""
+#| "If you forget the encryption password, <b>you will not be able to recover "
+#| "data.</b> This is a unique password for this device, not the password for "
+#| "your user account."
 msgid ""
-"If you forget the encryption password, <b>you will not be able to recover "
-"data.</b> This is a unique password for this device, not the password for "
-"your user account."
+"A unique password for this device; not the password for your user account."
 msgstr ""
 "如果您忘记了加密密码， <b>您将无法恢复数据</b>。 加密密码是针对该设备的密码，"
 "而非账户密码。"
 
-#: src/Views/EncryptView.vala:95
-msgid "Choose Encryption Password"
-msgstr "选择加密密码"
-
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
 msgstr "确认密码"
 
-#: src/Views/EncryptView.vala:145
-msgid "Choose Password"
-msgstr "选择密码"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:116
 msgid "Set Encryption Password"
 msgstr "设置加密密码"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:191
 msgid "Passwords do not match"
 msgstr "密码不匹配"
 
@@ -559,6 +557,17 @@ msgstr "默认（ext4）"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Encrypt this device's drive if required for added protection, but be sure "
+#~ "you understand:"
+#~ msgstr "如需要额外保护，您可以加密这台设备的硬盘，但请务必知晓："
+
+#~ msgid "Choose Encryption Password"
+#~ msgstr "选择加密密码"
+
+#~ msgid "Choose Password"
+#~ msgstr "选择密码"
 
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "

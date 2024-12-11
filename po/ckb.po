@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 21:47+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
 "PO-Revision-Date: 2022-09-10 12:23+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -174,9 +174,8 @@ msgid ""
 "respective licenses and terms of use."
 msgstr ""
 
-#: src/Views/DriversView.vala:75 src/Views/EncryptView.vala:143
-#: src/Views/KeyboardLayoutView.vala:54 src/Views/PartitioningView.vala:141
-#: src/Views/TryInstallView.vala:79
+#: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
+#: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
 msgstr "گەڕانەوە"
 
@@ -184,23 +183,15 @@ msgstr "گەڕانەوە"
 msgid "Erase and Install"
 msgstr "سڕینەوە و دامەزراندن"
 
-#: src/Views/EncryptView.vala:26
+#: src/Views/EncryptView.vala:27
 msgid "Don’t Encrypt"
 msgstr "شفرەی مەکە"
 
-#: src/Views/EncryptView.vala:50
+#: src/Views/EncryptView.vala:51
 msgid "Enable Drive Encryption"
 msgstr "کاراکردنی کۆدکردنی درایڤ"
 
-#: src/Views/EncryptView.vala:54
-msgid ""
-"Encrypt this device's drive if required for added protection, but be sure "
-"you understand:"
-msgstr ""
-"ئەگەر پێویست بوو بۆ پاراستنی زیاتر، درایڤی ئەم ئامێرە کۆد بکە، بەڵام دڵنیابە "
-"کە تێدەگەیت:"
-
-#: src/Views/EncryptView.vala:61
+#: src/Views/EncryptView.vala:56
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -208,15 +199,19 @@ msgstr ""
 "داتاکان پارێزراو دەبن تەنها لەوانەی کە دەستگەیشتنی فیزیکییان هەیە بۆ ئەم "
 "ئامێرە کاتێک کۆمپیتەرەکە کوژاوەتەوە."
 
-#: src/Views/EncryptView.vala:67
+#: src/Views/EncryptView.vala:62
+#, fuzzy
+#| msgid ""
+#| "The encryption password will be required each time this device is turned "
+#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
-"Store it somewhere safe."
+"If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "تێپەڕەوشەی کۆدکردن پێویست دەبێت هەر کاتێک ئەم ئامێرە پێ بکەیت، بۆیە لە "
 "شوێنێکی سەلامەت بیپارێزە."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:68
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -224,33 +219,34 @@ msgstr ""
 "تەختەکلیلێکی ناوخۆیی یان پەیوەستکراو بەهۆی USB ییەوە پێویست دەبێت بۆ نووسینی "
 "تێپەڕەوشەکە هەر کاتێک ئامێرەکە پێ بکەیت."
 
-#: src/Views/EncryptView.vala:87
+#: src/Views/EncryptView.vala:73
+#, fuzzy
+#| msgid "Set Encryption Password"
+msgid "Encryption Password"
+msgstr "دانانی تێپەڕەوشەی کۆدکردن"
+
+#: src/Views/EncryptView.vala:74
+#, fuzzy
+#| msgid ""
+#| "If you forget the encryption password, <b>you will not be able to recover "
+#| "data.</b> This is a unique password for this device, not the password for "
+#| "your user account."
 msgid ""
-"If you forget the encryption password, <b>you will not be able to recover "
-"data.</b> This is a unique password for this device, not the password for "
-"your user account."
+"A unique password for this device; not the password for your user account."
 msgstr ""
 "ئەگەر تێپەڕەوشەی کۆدکردنت بیربچێتەوە، <b>ئەوا داتاکانت لەدەست دەچێت و "
 "ناتوانیت بیان گەڕێنیتەوە.</b> ئەمە تێپەڕەوشەیەکی بێهاوتایە بۆ ئەم ئامێرە، "
 "نەک تێپەڕەوشەی هەژماری بەکارهێنەر."
 
-#: src/Views/EncryptView.vala:95
-msgid "Choose Encryption Password"
-msgstr "تێپەڕەوشەیەک بۆ کۆدکردن بنووسە"
-
-#: src/Views/EncryptView.vala:109
+#: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
 msgstr "دووبارە تێپەڕەوشەکە بنووسەوە بۆ دڵنیابوونەوە"
 
-#: src/Views/EncryptView.vala:145
-msgid "Choose Password"
-msgstr "تێپەڕەوشە بنووسە"
-
-#: src/Views/EncryptView.vala:168
+#: src/Views/EncryptView.vala:116
 msgid "Set Encryption Password"
 msgstr "دانانی تێپەڕەوشەی کۆدکردن"
 
-#: src/Views/EncryptView.vala:236
+#: src/Views/EncryptView.vala:191
 msgid "Passwords do not match"
 msgstr "تێپەڕەوشەکان هاوتا نین"
 
@@ -576,6 +572,19 @@ msgstr "بنەڕەت (ext4)"
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
 msgstr ""
+
+#~ msgid ""
+#~ "Encrypt this device's drive if required for added protection, but be sure "
+#~ "you understand:"
+#~ msgstr ""
+#~ "ئەگەر پێویست بوو بۆ پاراستنی زیاتر، درایڤی ئەم ئامێرە کۆد بکە، بەڵام "
+#~ "دڵنیابە کە تێدەگەیت:"
+
+#~ msgid "Choose Encryption Password"
+#~ msgstr "تێپەڕەوشەیەک بۆ کۆدکردن بنووسە"
+
+#~ msgid "Choose Password"
+#~ msgstr "تێپەڕەوشە بنووسە"
 
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "

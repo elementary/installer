@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 21:47+0000\n"
+"POT-Creation-Date: 2024-11-22 18:11+0000\n"
 "PO-Revision-Date: 2023-02-07 09:25+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -31,65 +31,67 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:86
-#: data/installer.metainfo.xml.in:100 data/installer.metainfo.xml.in:114
-#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:139
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:98 data/installer.metainfo.xml.in:112
+#: data/installer.metainfo.xml.in:126 data/installer.metainfo.xml.in:140
+#: data/installer.metainfo.xml.in:151
 msgid "Improvements:"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:63
+#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:80
+#: data/installer.metainfo.xml.in:101 data/installer.metainfo.xml.in:115
+#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:144
+#: data/installer.metainfo.xml.in:156
+msgid "Updated translations"
+msgstr "Oppdaterte oversetningar"
+
+#: data/installer.metainfo.xml.in:75
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:64
+#: data/installer.metainfo.xml.in:76
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:65
+#: data/installer.metainfo.xml.in:77
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:66
+#: data/installer.metainfo.xml.in:78
 msgid "Update post-install driver installation instructions"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:67
+#: data/installer.metainfo.xml.in:79
 msgid "Improve screen reader support"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:68 data/installer.metainfo.xml.in:89
-#: data/installer.metainfo.xml.in:103 data/installer.metainfo.xml.in:116
-#: data/installer.metainfo.xml.in:132 data/installer.metainfo.xml.in:144
-msgid "Updated translations"
-msgstr "Oppdaterte oversetningar"
-
-#: data/installer.metainfo.xml.in:88
+#: data/installer.metainfo.xml.in:100
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:102
+#: data/installer.metainfo.xml.in:114
 msgid "Swipe to navigate back"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:130
+#: data/installer.metainfo.xml.in:142
 msgid "Use large icons in views"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:131
+#: data/installer.metainfo.xml.in:143
 msgid "Add a custom icon for Before Installing view"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:141
+#: data/installer.metainfo.xml.in:153
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:142
+#: data/installer.metainfo.xml.in:154
 msgid "Show all system requirements warnings on a single page"
 msgstr ""
 
-#: data/installer.metainfo.xml.in:143
+#: data/installer.metainfo.xml.in:155
 msgid "Warn about installing developer builds"
 msgstr ""
 

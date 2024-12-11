@@ -22,6 +22,7 @@ adw_dep = dependency('libadwaita-1', version: '>=1.4.0')
 json_glib_dep = dependency('json-glib-1.0')
 xkbregistry_dep = dependency('xkbregistry')
 pwquality_dep = dependency('pwquality')
+pantheon_wayland_dep = dependency('pantheon-wayland-1')
 systemd_dep = dependency('systemd')
 
 installer_backend = get_option('installer_backend')
