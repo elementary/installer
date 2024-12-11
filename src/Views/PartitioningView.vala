@@ -339,44 +339,186 @@ public class Installer.PartitioningView : AbstractInstallerView {
         InstallerDaemon.Disk[] physical_disks = {};
         InstallerDaemon.Disk[] logical_disks = {};
 
-        InstallerDaemon.Partition[] partitions = {};
-
-        var usage_1 = InstallerDaemon.PartitionUsage () {
-            tag = 1,
-            value = 30312
-        };
-
-        partitions += InstallerDaemon.Partition () {
-            device_path = "/dev/nvme0n1p1",
-            filesystem = InstallerDaemon.FileSystem.FAT32,
-            start_sector = 4096,
-            end_sector = 542966,
-            sectors_used = usage_1,
+        var partitions_0 = InstallerDaemon.Partition () {
+            device_path = "/dev/sda1",
+            filesystem = InstallerDaemon.FileSystem.NONE,
+            start_sector = 34,
+            end_sector = 32767,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 0,
+                value = 0
+            },
             current_lvm_volume_group = ""
         };
 
-        var usage_2 = InstallerDaemon.PartitionUsage () {
-            tag = 0,
-            value = 0
+        var partitions_1 = InstallerDaemon.Partition () {
+            device_path = "/dev/sda2",
+            filesystem = InstallerDaemon.FileSystem.NTFS,
+            start_sector = 32768,
+            end_sector = 3907026943,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 73486552
+            },
+            current_lvm_volume_group = ""
         };
 
-        partitions += InstallerDaemon.Partition () {
-            device_path = "/dev/nvme0n1p2",
+        physical_disks += InstallerDaemon.Disk () {
+            name = "ATA ST2000DM008-2FR1",
+            device_path = "/dev/sda",
+            sectors = 3907029168,
+            sector_size = 512,
+            rotational = true,
+            removable = false,
+            partitions = {partitions_0, partitions_1}
+        };
+
+        var partitions_2 = InstallerDaemon.Partition () {
+            device_path = "/dev/sdb1",
+            filesystem = InstallerDaemon.FileSystem.NTFS,
+            start_sector = 8192,
+            end_sector = 1953524143,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 14657872
+            },
+            current_lvm_volume_group = ""
+        };
+
+        physical_disks += InstallerDaemon.Disk () {
+            name = "ATA SAMSUNG HD103SJ",
+            device_path = "/dev/sdb",
+            sectors = 1953525168,
+            sector_size = 512,
+            rotational = true,
+            removable = false,
+            partitions = {partitions_2}
+        };
+
+        var partitions_3 = InstallerDaemon.Partition () {
+            device_path = "/dev/sdc1",
+            filesystem = InstallerDaemon.FileSystem.FAT32,
+            start_sector = 4096,
+            end_sector = 542966,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 30328
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_4 = InstallerDaemon.Partition () {
+            device_path = "/dev/sdc2",
             filesystem = InstallerDaemon.FileSystem.LVM,
             start_sector = 542968,
-            end_sector = 976769070,
-            sectors_used = usage_2,
+            end_sector = 1562820270,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 0,
+                value = 0
+            },
             current_lvm_volume_group = "data"
         };
 
         physical_disks += InstallerDaemon.Disk () {
-            name = "Samsung SSD 970 EVO 500GB",
+            name = "ATA INTEL SSDSC2BX80",
+            device_path = "/dev/sdc",
+            sectors = 1562824368,
+            sector_size = 4096,
+            rotational = false,
+            removable = false,
+            partitions = {partitions_3, partitions_4}
+        };
+
+        var partitions_5 = InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n1p1",
+            filesystem = InstallerDaemon.FileSystem.FAT32,
+            start_sector = 2048,
+            end_sector = 1023999,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 58488
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_6 = InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n1p2",
+            filesystem = InstallerDaemon.FileSystem.NONE,
+            start_sector = 1024000,
+            end_sector = 1286143,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 0,
+                value = 0
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_7 = InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n1p3",
+            filesystem = InstallerDaemon.FileSystem.NTFS,
+            start_sector = 1286144,
+            end_sector = 1952003975,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 1624133504
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_8 = InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n1p4",
+            filesystem = InstallerDaemon.FileSystem.NTFS,
+            start_sector = 1952004096,
+            end_sector = 1953519615,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 1305608
+            },
+            current_lvm_volume_group = ""
+        };
+
+        physical_disks += InstallerDaemon.Disk () {
+            name = "WDC WDS100T2B0C-00PXH0",
             device_path = "/dev/nvme0n1",
-            sectors = 976773168,
+            sectors = 1953525168,
             sector_size = 512,
             rotational = false,
             removable = false,
-            partitions = partitions
+            partitions = {partitions_5, partitions_6, partitions_7, partitions_8}
+        };
+
+        var partitions_9 = InstallerDaemon.Partition () {
+            device_path = "/dev/dm-0",
+            filesystem = InstallerDaemon.FileSystem.EXT4,
+            start_sector = 0,
+            end_sector = 1554268160,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 136999784
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_10 = InstallerDaemon.Partition () {
+            device_path = "/dev/dm-1",
+            filesystem = InstallerDaemon.FileSystem.SWAP,
+            start_sector = 1554268161,
+            end_sector = 1562271745,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 0,
+                value = 0
+            },
+            current_lvm_volume_group = ""
+        };
+
+        logical_disks += InstallerDaemon.Disk () {
+            name = "LVM data",
+            device_path = "/dev/mapper/data",
+            sectors = 1562277302,
+            sector_size = 512,
+            rotational = false,
+            removable = false,
+            partitions = {partitions_9, partitions_10}
         };
 
         return InstallerDaemon.DiskInfo () {

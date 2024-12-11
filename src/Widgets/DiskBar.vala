@@ -21,20 +21,19 @@ public class Installer.DiskBar: Gtk.Box {
     }
 
     construct {
-        var size = disk.sectors * disk.sector_size;
-
         var name_label = new Granite.HeaderLabel (disk.name) {
-            secondary_text = "%s %s".printf (disk.device_path, GLib.format_size (size))
+            // Calculate the actual size of the disk in bytes for the label
+            secondary_text = "%s %s".printf (disk.device_path, GLib.format_size (disk.sectors * disk.sector_size))
         };
 
-        var bar = new PartitionContainer (size, partitions);
+        var bar = new PartitionContainer (disk.sectors, partitions);
 
         var legend_box = new Gtk.Box (VERTICAL, 6) {
             halign = START
         };
 
         foreach (PartitionBlock partition_block in partitions) {
-            var legend = new Legend (partition_block.partition);
+            var legend = new Legend (partition_block.partition, disk.sector_size);
             legend_box.append (legend);
 
             var click_gesture = new Gtk.GestureClick ();
@@ -43,14 +42,14 @@ public class Installer.DiskBar: Gtk.Box {
             legend.add_controller (click_gesture);
         }
 
-        uint64 used = 0;
+        uint64 used_sectors = 0;
         foreach (PartitionBlock partition in partitions) {
-            used += partition.get_partition_size ();
+            used_sectors += partition.get_partition_size_in_sectors ();
         }
 
-        var unused = size - (used * 512);
-        if (size / 100 < unused) {
-            var legend = new Legend.unused (unused);
+        // If more than 1% of the disk is unused, show a legend for the unused space
+        if ((double)(disk.sectors - used_sectors) / disk.sectors > 0.01) {
+            var legend = new Legend.unused ((disk.sectors - used_sectors) * disk.sector_size);
             legend_box.append (legend);
         }
 
@@ -67,14 +66,14 @@ public class Installer.DiskBar: Gtk.Box {
 
     private class PartitionContainer : Gtk.Widget {
         public Gee.ArrayList<PartitionBlock> partitions { get; construct; }
-        public uint64 size { get; construct; }
+        public uint64 total_disk_sectors { get; construct; }
 
         private Gtk.ConstraintGuide guide;
 
-        public PartitionContainer (uint64 size, Gee.ArrayList<PartitionBlock> partitions) {
+        public PartitionContainer (uint64 total_disk_sectors, Gee.ArrayList<PartitionBlock> partitions) {
             Object (
-                partitions: partitions,
-                size: size
+                total_disk_sectors: total_disk_sectors,
+                partitions: partitions
             );
         }
 
@@ -105,13 +104,11 @@ public class Installer.DiskBar: Gtk.Box {
                 )
             );
 
-            uint64 used = 0;
-            var disk_sectors = size / 512;
+            uint64 used_sectors = 0;
             foreach (var partition in partitions) {
-                double percent_requested = (double) partition.get_partition_size () / disk_sectors;
-                percent_requested = percent_requested.clamp (0.01, 0.99);
+                double percent_requested = (double) partition.get_partition_size_in_sectors () / total_disk_sectors;
 
-                used += partition.get_partition_size ();
+                used_sectors += partition.get_partition_size_in_sectors ();
 
                 append_partition (
                     partition,
@@ -119,12 +116,13 @@ public class Installer.DiskBar: Gtk.Box {
                 );
             }
 
-            var unused = size - (used * 512);
-            if (size / 100 < unused) {
+            // If more than 1% of the disk is unused, show a block for the unused space
+            var unused_sectors = total_disk_sectors - used_sectors;
+            if ((double) unused_sectors / total_disk_sectors > 0.01) {
                 var unused_bar = new Block ();
                 unused_bar.add_css_class ("unused");
 
-                append_partition (unused_bar, (double) unused / size);
+                append_partition (unused_bar, (double) unused_sectors / total_disk_sectors);
             }
 
             // Position last child at end
@@ -220,16 +218,17 @@ public class Installer.DiskBar: Gtk.Box {
         public string fs { get; construct; }
         public string? vg { get; construct; default = null; }
 
-        public Legend (InstallerDaemon.Partition partition) {
+        public Legend (InstallerDaemon.Partition partition, uint64 sector_size) {
             Object (
                 ppath: partition.device_path,
-                size: (partition.end_sector - partition.start_sector) * 512,
+                // Calculate the actual size of the partition in bytes for the label
+                size: (partition.end_sector - partition.start_sector) * sector_size,
                 fs: partition.filesystem.to_string (),
                 vg: partition.filesystem == LVM ? partition.current_lvm_volume_group : null
             );
         }
 
-        public Legend.unused (uint64 size) {
+        public Legend.unused (uint64 size_in_bytes) {
             Object (
                 ppath: "unused",
                 size: size,
