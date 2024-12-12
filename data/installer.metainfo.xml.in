@@ -64,7 +64,9 @@
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/installer/issues/272">Inconsistent navigation</issue>
         <issue url="https://github.com/elementary/installer/issues/758">Installer UI is not centered</issue>
+        <issue url="https://github.com/elementary/installer/issues/848">Installer crashes when navigating to the custom installation view with a system storage with custom partition setup</issue>
       </issues>
     </release>
 
