@@ -147,6 +147,9 @@ public class Installer.DiskBar: Gtk.Box {
         }
 
         private void append_partition (Gtk.Widget widget, double percentage) {
+            // Truncate to 2 decimal places (round down), to ensure we don't go over 100% because of rounding errors
+            percentage = (int)(percentage * 100) / 100.0;
+
             widget.set_parent (this);
 
             var layout_manager = ((Gtk.ConstraintLayout) get_layout_manager ());

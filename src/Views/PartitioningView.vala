@@ -521,6 +521,74 @@ public class Installer.PartitioningView : AbstractInstallerView {
             partitions = {partitions_9, partitions_10}
         };
 
+        var partitions_11 = InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n1p1",
+            filesystem = InstallerDaemon.FileSystem.FAT32,
+            start_sector = 4096,
+            end_sector = 542966,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 30312
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_12 = InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n1p2",
+            filesystem = InstallerDaemon.FileSystem.LVM,
+            start_sector = 542968,
+            end_sector = 976769070,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 0,
+                value = 0
+            },
+            current_lvm_volume_group = "data"
+        };
+
+        physical_disks += InstallerDaemon.Disk () {
+            name = "Samsung SSD 970 EVO 500GB",
+            device_path = "/dev/nvme0n1",
+            sectors = 976773168,
+            sector_size = 512,
+            rotational = false,
+            removable = false,
+            partitions = {partitions_11, partitions_12}
+        };
+
+        var partitions_13 = InstallerDaemon.Partition () {
+            device_path = "/dev/dm-0",
+            filesystem = InstallerDaemon.FileSystem.EXT4,
+            start_sector = 0,
+            end_sector = 968220672,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 534569520
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_14 = InstallerDaemon.Partition () {
+            device_path = "/dev/dm-1",
+            filesystem = InstallerDaemon.FileSystem.SWAP,
+            start_sector = 968220673,
+            end_sector = 976216065,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 0,
+                value = 0
+            },
+            current_lvm_volume_group = ""
+        };
+
+        logical_disks += InstallerDaemon.Disk () {
+            name = "LVM data",
+            device_path = "/dev/mapper/data",
+            sectors = 976226102,
+            sector_size = 512,
+            rotational = false,
+            removable = false,
+            partitions = {partitions_13, partitions_14}
+        };
+
         return InstallerDaemon.DiskInfo () {
             physical_disks = physical_disks,
             logical_disks = logical_disks
