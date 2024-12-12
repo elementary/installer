@@ -50,7 +50,7 @@ public class Installer.PartitionBlock : Adw.Bin {
         bind_property ("icon", image, "gicon", SYNC_CREATE);
     }
 
-    public uint64 get_partition_size () {
+    public uint64 get_partition_size_in_sectors () {
         return partition.end_sector - partition.start_sector;
     }
 }
