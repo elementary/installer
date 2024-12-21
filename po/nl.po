@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-10-21 12:28+0000\n"
+"PO-Revision-Date: 2024-12-21 14:40+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/installer/"
 "installer/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:54
@@ -212,16 +212,12 @@ msgstr ""
 "apparaat wanneer het is uitgeschakeld."
 
 #: src/Views/EncryptView.vala:62
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time this device is turned "
-#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
-"Het sleutelwachtwoord is vereist telkens wanneer u dit apparaat inschakelt. "
-"Bewaar dit wachtwoord op een veilige plek."
+"Het encryptie-wachtwoord is elke keer tijdens het opstarten vereist. Als je "
+"dit wachtwoord vergeet is het niet mogelijk data te herstellen."
 
 #: src/Views/EncryptView.vala:68
 msgid ""
@@ -232,23 +228,15 @@ msgstr ""
 "sleutelwachtwoord in te kunnen voeren wanneer u de computer opstart."
 
 #: src/Views/EncryptView.vala:73
-#, fuzzy
-#| msgid "Set Encryption Password"
 msgid "Encryption Password"
-msgstr "Stel sleutelwachtwoord in"
+msgstr "Stel encryptie-wachtwoord in"
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "If you forget the encryption password, <b>you will not be able to recover "
-#| "data.</b> This is a unique password for this device, not the password for "
-#| "your user account."
 msgid ""
 "A unique password for this device; not the password for your user account."
 msgstr ""
-"Als u het versleutelwachtwoord vergeet, <b>zult u de verloren data niet meer "
-"kunnen herstellen.</b> Dit wachtwoord is specifiek voor dit apparaat, niet "
-"het wachtwoord van uw gebruikersaccount."
+"Een uniek wachtwoord voor dit apparaat; niet het wachtwoord voor je "
+"gebruikersaccount."
 
 #: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
@@ -575,7 +563,7 @@ msgstr "Standaard (ext4)"
 
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
-msgstr ""
+msgstr "Aangepaste waarde moet beginnen met /"
 
 #~ msgid ""
 #~ "Encrypt this device's drive if required for added protection, but be sure "
