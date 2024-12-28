@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-05-24 15:16+0000\n"
+"PO-Revision-Date: 2024-12-28 12:50+0000\n"
 "Last-Translator: Arno <arnoant21@gmail.com>\n"
 "Language-Team: Luxembourgish <https://l10n.elementary.io/projects/installer/"
 "installer/lb/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:54
@@ -21,7 +21,7 @@ msgstr "Energieversuergung verbannen"
 
 #: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "D'Installatioun wäert net geléngen wann dësen Apparat Stroum verléiert."
 
 #: src/Application.vala:68
 #, c-format
@@ -51,7 +51,7 @@ msgstr "%s…"
 
 #: src/Objects/KeyboardVariant.vala:27
 msgid "Default"
-msgstr ""
+msgstr "Standard—"
 
 #: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
@@ -130,7 +130,7 @@ msgstr ""
 
 #: src/Views/DiskView.vala:71 src/Views/PartitioningView.vala:112
 msgid "Getting the current configuration…"
-msgstr "Kritt déi aktuell Konfiguratioun …"
+msgstr "Aktuell Konfiguratioun gëtt geluenden …"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:83
