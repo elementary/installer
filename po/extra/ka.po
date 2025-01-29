@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-06-19 05:16+0000\n"
+"PO-Revision-Date: 2025-01-30 21:16+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/installer/extra/"
 "ka/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/installer.metainfo.xml.in:9
 msgid "Installer"
@@ -48,22 +48,25 @@ msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
+"ენის ვარიანტების ანბანის მიხედვით დალაგება და ნაგულისხმევად მთავარი "
+"ვარიანტის მონისვნა"
 
 #: data/installer.metainfo.xml.in:76
 msgid "Provide more feedback for invalid values when doing a custom install"
-msgstr ""
+msgstr "შეიყვანეთ მეტი უკუკავშირი არასწორი მნიშვნელობისთვის, როცა ხელით აყენებთ"
 
 #: data/installer.metainfo.xml.in:77
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
+"ელემენტის გაფრთხილება შეტყობინებებშია გაგზავნილი ინფორმაციის პანელის მაგიერ"
 
 #: data/installer.metainfo.xml.in:78
 msgid "Update post-install driver installation instructions"
-msgstr ""
+msgstr "განახლდა დაყენებისშემდგომი დრაივერის დაყენების ინსტრუქციები"
 
 #: data/installer.metainfo.xml.in:79
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "გაუმჯობესდა ეკრანის წამკითხველის მხარდაჭერა"
 
 #: data/installer.metainfo.xml.in:100
 msgid "Keyboard layout preview is now in a resizable window"
