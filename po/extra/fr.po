@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-05-24 15:16+0000\n"
+"PO-Revision-Date: 2025-02-06 21:12+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/extra/"
 "fr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.9.2\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: data/installer.metainfo.xml.in:9
@@ -55,22 +55,29 @@ msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
+"Tri des langues par ordre alphabétique et sélection automatique de la "
+"variante principale par défaut"
 
 #: data/installer.metainfo.xml.in:76
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
+"Meilleur retour d'information sur les valeurs invalides lors d'une "
+"installation personnalisée"
 
 #: data/installer.metainfo.xml.in:77
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
+"L'avertissement concernant la batterie est envoyé sous forme de notification "
+"au lieu d'une barre d'information"
 
 #: data/installer.metainfo.xml.in:78
 msgid "Update post-install driver installation instructions"
 msgstr ""
+"Mise à jour des instructions d'installation des pilotes après l'installation"
 
 #: data/installer.metainfo.xml.in:79
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "Amélioration de la prise en charge des lecteurs d'écran"
 
 #: data/installer.metainfo.xml.in:100
 msgid "Keyboard layout preview is now in a resizable window"
