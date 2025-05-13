@@ -9,5 +9,6 @@
     <file alias="io.elementary.installer.emblem-downloads.svg" compressed="true" preprocess="xml-stripblanks">emblem-downloads.svg</file>
     <file alias="24x24/categories/io.elementary.settings-symbolic.svg" compressed="true" preprocess="xml-stripblanks">io.elementary.settings.svg</file>
     <file alias="24x24@2/categories/io.elementary.settings-symbolic.svg" compressed="true" preprocess="xml-stripblanks">io.elementary.settings.svg</file>
+    <file alias="scalable/devices/media-memory-symbolic.svg" compressed="true" preprocess="xml-stripblanks">media-memory-symbolic.svg</file>
   </gresource>
 </gresources>
