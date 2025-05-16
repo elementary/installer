@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2025-05-16 18:10+0000\n"
-"Last-Translator: Diogo Pessoa <diogopessoabr@gmail.com>\n"
+"PO-Revision-Date: 2025-05-17 18:55+0000\n"
+"Last-Translator: Leonardo Lemos <leonardolemos@live.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "installer/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -30,7 +30,7 @@ msgstr "Instalar o elementary OS"
 
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
-msgstr "Instalador passo a passo para o  elementary OS."
+msgstr "Instalador passo a passo para o elementary OS."
 
 #: data/installer.metainfo.xml.in:53
 msgid "elementary, Inc."
