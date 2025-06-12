@@ -3,25 +3,25 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-22 18:11+0000\n"
-"PO-Revision-Date: 2024-10-03 21:16+0000\n"
-"Last-Translator: Hossein <hossein17@duck.com>\n"
-"Language-Team: Persian <https://l10n.elementary.io/projects/installer/"
+"PO-Revision-Date: 2025-06-13 09:55+0000\n"
+"Last-Translator: Muhammad-Noraeii <Muhammad.Noraeii@gmail.com>\n"
+"Language-Team: Persian <https://l10n.elementaryos.org/projects/installer/"
 "installer/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:54
 msgid "Connect to a Power Source"
-msgstr "به برق وصل کنید"
+msgstr "اتصال به منبع انرژی"
 
 #: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "نصب موفق نخواهد بود اگر این دستگاه انرژی خود را از دست بدهد."
 
 #: src/Application.vala:68
 #, c-format
@@ -205,16 +205,12 @@ msgstr ""
 "به این دستگاه محافظت می‌شوند."
 
 #: src/Views/EncryptView.vala:62
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time this device is turned "
-#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
-"هر بار که این دستگاه روشن می شود، رمز رمزگذاری مورد نیاز خواهد بود. آن را در "
-"جایی امن نگهداری کنید."
+"هر بار که این دستگاه روشن شود، رمز عبور رمزگذاری لازم خواهد بود. اگر آن را "
+"فراموش کنید، <b>نمی‌توانید داده‌ها را بازیابی کنید.</b>"
 
 #: src/Views/EncryptView.vala:68
 msgid ""
@@ -225,22 +221,13 @@ msgstr ""
 "داخلی یا USB نیاز است."
 
 #: src/Views/EncryptView.vala:73
-#, fuzzy
-#| msgid "Set Encryption Password"
 msgid "Encryption Password"
-msgstr "رمز عبور رمزگذاری را تنظیم کنید"
+msgstr "رمز عبور رمزگذاری"
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "If you forget the encryption password, <b>you will not be able to recover "
-#| "data.</b> This is a unique password for this device, not the password for "
-#| "your user account."
 msgid ""
 "A unique password for this device; not the password for your user account."
-msgstr ""
-"اگر رمز عبور رمزگذاری را فراموش کردید، <b>نمی‌توانید داده‌ها را بازیابی کنید.</"
-"b> این رمز عبور منحصربه‌فرد برای این دستگاه است، نه رمز عبور حساب کاربری شما."
+msgstr "رمز عبور یکتا برای این دستگاه؛ نه رمز عبور حساب کاربری شما."
 
 #: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
