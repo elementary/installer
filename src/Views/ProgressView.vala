@@ -66,7 +66,6 @@ public class ProgressView : Adw.NavigationPage {
         terminal_button.add_css_class (Granite.STYLE_CLASS_FLAT);
 
         progressbar_label = new Gtk.Label (null) {
-            use_markup = true,
             xalign = 0
         };
         progressbar_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
