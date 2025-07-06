@@ -124,6 +124,24 @@
     }
 }
 
+list.background row {
+    border-radius: 0.5em;
+    transition: background 200ms ease-in-out;
+}
+
+list.background row + row {
+    margin-top: 1em;
+}
+
+list.background row:focus {
+    background: transparent;
+    color: inherit;
+}
+
+list.background row:focus-visible {
+    background: alpha(@text_color, 0.1);
+}
+
 navigation-view-page.partition levelbar block {
     border-radius: 0.333em;
 }
