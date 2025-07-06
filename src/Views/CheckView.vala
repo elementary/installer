@@ -197,7 +197,6 @@ public class Installer.CheckView : AbstractInstallerView {
             };
 
             var title_label = new Gtk.Label (title) {
-                mnemonic_widget = this,
                 wrap = true,
                 xalign = 0
             };
