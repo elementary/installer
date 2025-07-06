@@ -70,6 +70,8 @@ public class ProgressView : Adw.NavigationPage {
             xalign = 0
         };
         progressbar_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
+        // FIXME: use granite constant when Granite 7.7.0 is released
+        progressbar_label.add_css_class ("numeric");
 
         progressbar = new Gtk.ProgressBar () {
             hexpand = true
@@ -240,7 +242,7 @@ public class ProgressView : Adw.NavigationPage {
                     break;
             }
 
-            progressbar_label.label = "<span font-features='tnum'>%s (%d%%)</span>".printf (step_string, status.percent);
+            progressbar_label.label = "%s (%d%%)".printf (step_string, status.percent);
             progressbar.fraction = fraction;
             return GLib.Source.REMOVE;
         });
