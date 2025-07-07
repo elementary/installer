@@ -38,7 +38,7 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
         add_css_class ("image-button");
 
         var image = new Gtk.Image.from_icon_name (icon_name) {
-            icon_size = LARGE
+            pixel_size = 48
         };
 
         var title_label = new Gtk.Label (title) {
@@ -51,11 +51,10 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
             wrap = true,
             xalign = 0
         };
-        subtitle_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var grid = new Gtk.Grid () {
-            column_spacing = 12,
-            margin_top = 3,
+            column_spacing = 3,
+            row_spacing = 6,
             margin_end = 3,
             margin_bottom = 3,
             margin_start = 3
