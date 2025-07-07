@@ -25,10 +25,10 @@ public class Installer.CheckView : AbstractInstallerView {
     // Minimum 1GB
     public const uint64 MINIMUM_MEMORY = 1 * ONE_GB;
 
-    private Gtk.Box message_box;
+    private Gtk.ListBox message_box;
     public bool has_messages {
         get {
-            return message_box.get_first_child () != null;
+            return message_box.get_row_at_index (0) != null;
         }
     }
 
@@ -70,10 +70,13 @@ public class Installer.CheckView : AbstractInstallerView {
         );
         specs_view.attach (get_comparison_grid (), 1, 2);
 
-        message_box = new Gtk.Box (VERTICAL, 32) {
+        message_box = new Gtk.ListBox () {
+            selection_mode = BROWSE,
             valign = CENTER,
             vexpand = true
         };
+        message_box.add_css_class (Granite.STYLE_CLASS_RICH_LIST);
+        message_box.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
 
         title_area.append (image);
         title_area.append (title_label);
@@ -173,10 +176,24 @@ public class Installer.CheckView : AbstractInstallerView {
     }
 
     private class CheckView : Gtk.Grid {
+        public string title { get; construct; }
+        public string description { get; construct; }
+        public string icon_name { get; construct; }
+
+        private Gtk.Grid grid;
+
         public CheckView (string title, string description, string icon_name) {
+            Object (
+                title: title,
+                description: description,
+                icon_name: icon_name
+            );
+        }
+
+        construct {
             var image = new Gtk.Image.from_icon_name (icon_name) {
                 icon_size = LARGE,
-                valign = Gtk.Align.START
+                valign = START
             };
 
             var title_label = new Gtk.Label (title) {
@@ -192,10 +209,22 @@ public class Installer.CheckView : AbstractInstallerView {
             };
 
             column_spacing = 12;
-
             attach (image, 0, 0, 1, 2);
             attach (title_label, 1, 0);
             attach (description_label, 1, 1);
+
+            // prevent reading all descriptions immediately
+            title_label.set_accessible_role (PRESENTATION);
+            description_label.set_accessible_role (PRESENTATION);
+
+            // prevent titles from being skipped
+            map.connect (() => {
+                parent.update_property (
+                    Gtk.AccessibleProperty.LABEL, title,
+                    Gtk.AccessibleProperty.DESCRIPTION, description,
+                    -1
+                );
+            });
         }
     }
 
