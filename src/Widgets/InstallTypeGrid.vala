@@ -30,11 +30,15 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
         );
     }
 
+    class construct {
+        set_accessible_role (RADIO);
+    }
+
     construct {
         add_css_class ("image-button");
 
         var image = new Gtk.Image.from_icon_name (icon_name) {
-            pixel_size = 48
+            icon_size = LARGE
         };
 
         var title_label = new Gtk.Label (title) {
@@ -47,10 +51,10 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
             wrap = true,
             xalign = 0
         };
+        subtitle_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
 
         var grid = new Gtk.Grid () {
-            column_spacing = 3,
-            row_spacing = 6,
+            column_spacing = 12,
             margin_top = 3,
             margin_end = 3,
             margin_bottom = 3,
@@ -61,5 +65,11 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
         grid.attach (subtitle_label, 1, 1);
 
         child = grid;
+
+        update_property (
+            Gtk.AccessibleProperty.LABEL, title,
+            Gtk.AccessibleProperty.DESCRIPTION, subtitle,
+            -1
+        );
     }
 }
