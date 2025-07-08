@@ -58,11 +58,14 @@ gui_dependencies = [
     gobject_dep,
     granite_dep,
     gtk_dep,
+    gtk_wayland_dep,
+    gtk_x11_dep,
     adw_dep,
     json_glib_dep,
     pantheon_wayland_dep,
     pwquality_dep,
-    xkbregistry_dep
+    xkbregistry_dep,
+    x11_dep
 ]
 
 executable(meson.project_name(), vala_files, config_file,
