@@ -32,6 +32,10 @@ public class Installer.DiskButton : Gtk.CheckButton {
         );
     }
 
+    class construct {
+        set_accessible_role (RADIO);
+    }
+
     construct {
         add_css_class ("image-button");
 
@@ -72,5 +76,11 @@ public class Installer.DiskButton : Gtk.CheckButton {
                 config.disk = disk_path;
             }
         });
+
+        update_property (
+            Gtk.AccessibleProperty.LABEL, disk_name,
+            Gtk.AccessibleProperty.DESCRIPTION, size_label.label,
+            -1
+        );
     }
 }

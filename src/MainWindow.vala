@@ -89,6 +89,11 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
         });
 
         child.realize.connect (() => {
+            // Can't access Inspector
+            if (Installer.App.test_mode) {
+                return;
+            }
+
             connect_to_shell ();
             if (display is Gdk.Wayland.Display) {
                 make_centered ();
