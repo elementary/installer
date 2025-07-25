@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-22 18:11+0000\n"
+"POT-Creation-Date: 2025-07-25 18:01+0000\n"
 "PO-Revision-Date: 2022-04-20 09:24+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/installer/"
@@ -92,25 +92,25 @@ msgstr "Dispozitivul dvs. poate fi prea lent"
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:83
+#: src/Views/CheckView.vala:86
 #, fuzzy
 #| msgid "Install %s"
 msgid "Install Anyway"
 msgstr "Instalați %s 1"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:232
 msgid "Recommended:"
 msgstr "Recomandat:"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:238
 msgid "Your Device:"
 msgstr "Dispozitivul tău:"
 
-#: src/Views/CheckView.vala:215 src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
 msgid "Processor:"
 msgstr "Procesador:"
 
-#: src/Views/CheckView.vala:231 src/Views/CheckView.vala:235
+#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
 msgid "Memory:"
 msgstr "Memorie:"
 
@@ -530,12 +530,12 @@ msgstr "Decriptaţi"
 msgid "LUKS volume was decrypted"
 msgstr "Volumul LUKS a fost decriptat"
 
-#: src/Widgets/DiskBar.vala:251
+#: src/Widgets/DiskBar.vala:253
 #, c-format
 msgid "%s (%s)"
 msgstr "%s 1(%s 2)"
 
-#: src/Widgets/DiskBar.vala:252
+#: src/Widgets/DiskBar.vala:254
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s 1(%s 2: <b>3 %s 4</b>5)"

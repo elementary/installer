@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-22 18:11+0000\n"
+"POT-Creation-Date: 2025-07-25 18:01+0000\n"
 "PO-Revision-Date: 2025-03-02 15:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
@@ -96,23 +96,23 @@ msgstr "デバイスが遅すぎる可能性があります"
 msgid "This may cause it to run slowly or freeze."
 msgstr "動作が遅くなったりフリーズしたりすることがあります。"
 
-#: src/Views/CheckView.vala:83
+#: src/Views/CheckView.vala:86
 msgid "Install Anyway"
 msgstr "了解してインストール"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:232
 msgid "Recommended:"
 msgstr "推奨要件:"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:238
 msgid "Your Device:"
 msgstr "お使いのデバイス:"
 
-#: src/Views/CheckView.vala:215 src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
 msgid "Processor:"
 msgstr "プロセッサー:"
 
-#: src/Views/CheckView.vala:231 src/Views/CheckView.vala:235
+#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
 msgid "Memory:"
 msgstr "メモリー:"
 
@@ -157,9 +157,9 @@ msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
-"プロプライエタリードライバーには、検査不能な非公開のコードが含まれます。セキ"
-"ュリティアップデートやその他のアップデートは、ドライバーの開発元に左右されま"
-"す。"
+"プロプライエタリードライバーには、検査不能な非公開のコードが含まれます。セ"
+"キュリティアップデートやその他のアップデートは、ドライバーの開発元に左右され"
+"ます。"
 
 #: src/Views/DriversView.vala:41
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
@@ -213,7 +213,8 @@ msgstr ""
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
-msgstr "このデバイスを起動する度に、暗号化パスワードが要求されます。パスワードを忘れ"
+msgstr ""
+"このデバイスを起動する度に、暗号化パスワードが要求されます。パスワードを忘れ"
 "ると、<b>データを復旧できなくなります。</b>"
 
 #: src/Views/EncryptView.vala:68
@@ -231,7 +232,8 @@ msgstr "暗号化パスワード"
 #: src/Views/EncryptView.vala:74
 msgid ""
 "A unique password for this device; not the password for your user account."
-msgstr "このデバイスで一意のパスワードです。ユーザーアカウント用のパスワードではあり"
+msgstr ""
+"このデバイスで一意のパスワードです。ユーザーアカウント用のパスワードではあり"
 "ません。"
 
 #: src/Views/EncryptView.vala:88
@@ -492,12 +494,12 @@ msgstr "復号"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS ボリュームが復号されました"
 
-#: src/Widgets/DiskBar.vala:251
+#: src/Widgets/DiskBar.vala:253
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:252
+#: src/Widgets/DiskBar.vala:254
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
