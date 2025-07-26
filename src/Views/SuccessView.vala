@@ -36,10 +36,11 @@ public class SuccessView : AbstractInstallerView {
         primary_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         secondary_label = new Gtk.Label (null) {
-            use_markup = true,
             wrap = true,
             xalign = 0
         };
+        // FIXME: use granite constant when Granite 7.7.0 is released
+        secondary_label.add_css_class ("numeric");
 
         var message_grid = new Gtk.Grid () {
             row_spacing = 6,
@@ -84,13 +85,11 @@ public class SuccessView : AbstractInstallerView {
     }
 
     private void update_secondary_label () {
-        secondary_label.label = "<span font-features='tnum'>%s</span>".printf (
-            ngettext (
-                "Your device will automatically restart in %i second.",
-                "Your device will automatically restart in %i seconds.",
-                seconds_remaining
-            ).printf (seconds_remaining) + " " +
-            _("After restarting you can set up a new user, or you can shut down now and set up a new user later.")
-        );
+        secondary_label.label = ngettext (
+            "Your device will automatically restart in %i second.",
+            "Your device will automatically restart in %i seconds.",
+            seconds_remaining
+        ).printf (seconds_remaining) + " " +
+        _("After restarting you can set up a new user, or you can shut down now and set up a new user later.");
     }
 }
