@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-22 18:11+0000\n"
+"POT-Creation-Date: 2025-07-25 18:01+0000\n"
 "PO-Revision-Date: 2024-12-09 11:10+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
@@ -92,23 +92,23 @@ msgstr "您的裝置可能過慢"
 msgid "This may cause it to run slowly or freeze."
 msgstr "運作可能會很慢或是時不時卡住。"
 
-#: src/Views/CheckView.vala:83
+#: src/Views/CheckView.vala:86
 msgid "Install Anyway"
 msgstr "還是要安裝"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:232
 msgid "Recommended:"
 msgstr "建議："
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:238
 msgid "Your Device:"
 msgstr "您的裝置："
 
-#: src/Views/CheckView.vala:215 src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
 msgid "Processor:"
 msgstr "處理器："
 
-#: src/Views/CheckView.vala:231 src/Views/CheckView.vala:235
+#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
 msgid "Memory:"
 msgstr "記憶體："
 
@@ -199,7 +199,8 @@ msgstr "磁碟加密只能在關機時防止他人以物理方式存取此裝置
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
-msgstr "這台裝置每次開機時都將會需要輸入加密密碼。如果您忘記加密密碼，<b>您的資料就會"
+msgstr ""
+"這台裝置每次開機時都將會需要輸入加密密碼。如果您忘記加密密碼，<b>您的資料就會"
 "無法復原。</b>"
 
 #: src/Views/EncryptView.vala:68
@@ -468,12 +469,12 @@ msgstr "解密"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS 分割區已解密完成"
 
-#: src/Widgets/DiskBar.vala:251
+#: src/Widgets/DiskBar.vala:253
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:252
+#: src/Widgets/DiskBar.vala:254
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s：<b>%s</b>)"

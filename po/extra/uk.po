@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-22 18:11+0000\n"
+"POT-Creation-Date: 2025-07-25 18:01+0000\n"
 "PO-Revision-Date: 2024-10-22 05:04+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
@@ -37,21 +37,25 @@ msgstr "Покроковий встановлювач самої elementary OS."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
-#: data/installer.metainfo.xml.in:98 data/installer.metainfo.xml.in:112
-#: data/installer.metainfo.xml.in:126 data/installer.metainfo.xml.in:140
-#: data/installer.metainfo.xml.in:151
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:71
+#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:110
+#: data/installer.metainfo.xml.in:124 data/installer.metainfo.xml.in:138
+#: data/installer.metainfo.xml.in:152 data/installer.metainfo.xml.in:163
 msgid "Improvements:"
 msgstr "Удосконалення:"
 
-#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:80
-#: data/installer.metainfo.xml.in:101 data/installer.metainfo.xml.in:115
-#: data/installer.metainfo.xml.in:128 data/installer.metainfo.xml.in:144
-#: data/installer.metainfo.xml.in:156
+#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:91
+msgid "Improve screen reader support"
+msgstr "Поліпшення підтримки зчитування з екрана"
+
+#: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:92 data/installer.metainfo.xml.in:113
+#: data/installer.metainfo.xml.in:127 data/installer.metainfo.xml.in:140
+#: data/installer.metainfo.xml.in:156 data/installer.metainfo.xml.in:168
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/installer.metainfo.xml.in:75
+#: data/installer.metainfo.xml.in:87
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
@@ -59,53 +63,49 @@ msgstr ""
 "Сортування мовних варіантів за абеткою та автоматичний вибір основного "
 "усталеного варіанту"
 
-#: data/installer.metainfo.xml.in:76
+#: data/installer.metainfo.xml.in:88
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
 "Надання зворотного зв'язку для недійсних значень під час кастомного "
 "встановлення"
 
-#: data/installer.metainfo.xml.in:77
+#: data/installer.metainfo.xml.in:89
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
 "Попередження про заряд акумулятора надсилається у вигляді сповіщення замість "
 "інформаційної панелі"
 
-#: data/installer.metainfo.xml.in:78
+#: data/installer.metainfo.xml.in:90
 msgid "Update post-install driver installation instructions"
 msgstr "Оновлення інструкцій після встановлення драйверів"
 
-#: data/installer.metainfo.xml.in:79
-msgid "Improve screen reader support"
-msgstr "Поліпшення підтримки зчитування з екрана"
-
-#: data/installer.metainfo.xml.in:100
+#: data/installer.metainfo.xml.in:112
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr ""
 "Попередній перегляд розкладки клавіатури тепер у вікні зі змінним розміром"
 
-#: data/installer.metainfo.xml.in:114
+#: data/installer.metainfo.xml.in:126
 msgid "Swipe to navigate back"
 msgstr "Перехід назад посуванням"
 
-#: data/installer.metainfo.xml.in:142
+#: data/installer.metainfo.xml.in:154
 msgid "Use large icons in views"
 msgstr "Додано великі піктограми у поданнях"
 
-#: data/installer.metainfo.xml.in:143
+#: data/installer.metainfo.xml.in:155
 msgid "Add a custom icon for Before Installing view"
 msgstr "Додано користувацьку піктограму для подання перед встановленням"
 
-#: data/installer.metainfo.xml.in:153
+#: data/installer.metainfo.xml.in:165
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Показ інфопанелі про заряд акумулятора замість переходу на іншу сторінку"
 
-#: data/installer.metainfo.xml.in:154
+#: data/installer.metainfo.xml.in:166
 msgid "Show all system requirements warnings on a single page"
 msgstr "Показ всіх попереджень про системні вимоги на одній сторінці"
 
-#: data/installer.metainfo.xml.in:155
+#: data/installer.metainfo.xml.in:167
 msgid "Warn about installing developer builds"
 msgstr "Попередження про встановлення збірок розробника"
 
