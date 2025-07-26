@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-22 18:11+0000\n"
+"POT-Creation-Date: 2025-07-25 18:01+0000\n"
 "PO-Revision-Date: 2024-12-03 18:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/"
@@ -98,23 +98,23 @@ msgstr "Twoje urządzenie może być zbyt wolne"
 msgid "This may cause it to run slowly or freeze."
 msgstr "To może spowodować wolne działanie oraz przycięcia."
 
-#: src/Views/CheckView.vala:83
+#: src/Views/CheckView.vala:86
 msgid "Install Anyway"
 msgstr "Zainstaluj mimo to"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:232
 msgid "Recommended:"
 msgstr "Polecane:"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:238
 msgid "Your Device:"
 msgstr "Twoje urządzenie:"
 
-#: src/Views/CheckView.vala:215 src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
 msgid "Processor:"
 msgstr "Procesor:"
 
-#: src/Views/CheckView.vala:231 src/Views/CheckView.vala:235
+#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
 msgid "Memory:"
 msgstr "Pamięć:"
 
@@ -502,12 +502,12 @@ msgstr "Odszyfruj"
 msgid "LUKS volume was decrypted"
 msgstr "Wolumin LUKS został odszyfrowany"
 
-#: src/Widgets/DiskBar.vala:251
+#: src/Widgets/DiskBar.vala:253
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:252
+#: src/Widgets/DiskBar.vala:254
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

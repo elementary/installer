@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-22 18:11+0000\n"
+"POT-Creation-Date: 2025-07-25 18:01+0000\n"
 "PO-Revision-Date: 2024-03-26 22:13+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/installer/"
@@ -96,23 +96,23 @@ msgstr "O seu dispositivo poderá ser demasiado lento"
 msgid "This may cause it to run slowly or freeze."
 msgstr "Isto pode causar o seu funcionamento lento ou o seu congelamento."
 
-#: src/Views/CheckView.vala:83
+#: src/Views/CheckView.vala:86
 msgid "Install Anyway"
 msgstr "Instalar mesmo assim"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:232
 msgid "Recommended:"
 msgstr "Recomendado:"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:238
 msgid "Your Device:"
 msgstr "O seu dispositivo:"
 
-#: src/Views/CheckView.vala:215 src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
 msgid "Processor:"
 msgstr "Processador:"
 
-#: src/Views/CheckView.vala:231 src/Views/CheckView.vala:235
+#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
 msgid "Memory:"
 msgstr "Memória:"
 
@@ -523,12 +523,12 @@ msgstr "Desencriptar"
 msgid "LUKS volume was decrypted"
 msgstr "O volume LUKS foi desencriptado"
 
-#: src/Widgets/DiskBar.vala:251
+#: src/Widgets/DiskBar.vala:253
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:252
+#: src/Widgets/DiskBar.vala:254
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

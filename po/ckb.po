@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-22 18:11+0000\n"
+"POT-Creation-Date: 2025-07-25 18:01+0000\n"
 "PO-Revision-Date: 2022-09-10 12:23+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -96,25 +96,25 @@ msgstr "لەوانەیە ئامێرەکەت زۆر خاو بێت"
 msgid "This may cause it to run slowly or freeze."
 msgstr ""
 
-#: src/Views/CheckView.vala:83
+#: src/Views/CheckView.vala:86
 #, fuzzy
 #| msgid "Install %s"
 msgid "Install Anyway"
 msgstr "دامەزراندن %s"
 
-#: src/Views/CheckView.vala:203
+#: src/Views/CheckView.vala:232
 msgid "Recommended:"
 msgstr "داواکراو:"
 
-#: src/Views/CheckView.vala:209
+#: src/Views/CheckView.vala:238
 msgid "Your Device:"
 msgstr "ئامێرەکەت:"
 
-#: src/Views/CheckView.vala:215 src/Views/CheckView.vala:219
+#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
 msgid "Processor:"
 msgstr "پرۆسێسەر:"
 
-#: src/Views/CheckView.vala:231 src/Views/CheckView.vala:235
+#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
 msgid "Memory:"
 msgstr "میمۆری:"
 
@@ -510,12 +510,12 @@ msgstr "کردنەوەی کۆد"
 msgid "LUKS volume was decrypted"
 msgstr "کۆدی ڤۆلیومی LUKS کرایەوە"
 
-#: src/Widgets/DiskBar.vala:251
+#: src/Widgets/DiskBar.vala:253
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:252
+#: src/Widgets/DiskBar.vala:254
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

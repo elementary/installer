@@ -89,9 +89,33 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
         });
 
         child.realize.connect (() => {
+            // Can't access Inspector
+            if (Installer.App.test_mode) {
+                return;
+            }
+
             connect_to_shell ();
-            make_centered ();
+            if (display is Gdk.Wayland.Display) {
+                make_centered ();
+            } else {
+                make_centered_x11 ();
+            }
         });
+    }
+
+    private void make_centered_x11 () {
+        var display = Gdk.Display.get_default ();
+        if (display is Gdk.X11.Display) {
+            unowned var xdisplay = ((Gdk.X11.Display) display).get_xdisplay ();
+
+            var window = ((Gdk.X11.Surface) get_surface ()).get_xid ();
+
+            var prop = xdisplay.intern_atom ("_MUTTER_HINTS", false);
+
+            var value = "centered=1";
+
+            xdisplay.change_property (window, prop, X.XA_STRING, 8, 0, (uchar[]) value, value.length);
+        }
     }
 
     private void load_keyboard_view () {
