@@ -112,7 +112,7 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
 
             var prop = xdisplay.intern_atom ("_MUTTER_HINTS", false);
 
-            var value = "centered=1:restore-previous-region=0";
+            var value = "centered=1";
 
             xdisplay.change_property (window, prop, X.XA_STRING, 8, 0, (uchar[]) value, value.length);
         }
