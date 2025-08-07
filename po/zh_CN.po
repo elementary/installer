@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-25 18:01+0000\n"
-"PO-Revision-Date: 2022-12-09 22:25+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"installer/installer/zh_Hans/>\n"
+"PO-Revision-Date: 2025-08-03 11:55+0000\n"
+"Last-Translator: JieXu <xujie0739@qq.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"l10n.elementaryos.org/projects/installer/installer/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:42+0000\n"
 
 #: src/Application.vala:54
@@ -21,7 +21,7 @@ msgstr "接入电源"
 
 #: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "安装过程中没电将导致安装失败。"
 
 #: src/Application.vala:68
 #, c-format
@@ -29,10 +29,8 @@ msgid "Install %s"
 msgstr "安装 %s"
 
 #: src/Application.vala:76
-#, fuzzy
-#| msgid "%s has been installed"
 msgid "operating system is being installed"
-msgstr "%s 已安装"
+msgstr "操作系统正在安装"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
@@ -64,10 +62,8 @@ msgid "Cancel Installation"
 msgstr "取消安装"
 
 #: src/Views/CheckView.vala:48
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Before Installing"
-msgstr "尝试重新安装"
+msgstr "安装之前"
 
 #: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
@@ -97,10 +93,8 @@ msgid "This may cause it to run slowly or freeze."
 msgstr "这可能会导致设备运行缓慢或卡住。"
 
 #: src/Views/CheckView.vala:86
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "安装 %s"
+msgstr "还是要安装"
 
 #: src/Views/CheckView.vala:232
 msgid "Recommended:"
@@ -140,39 +134,41 @@ msgid "Next"
 msgstr "继续"
 
 #: src/Views/DriversView.vala:24
-#, fuzzy
-#| msgid "Partitioning Drive"
 msgid "Additional Drivers"
-msgstr "正在分区硬盘"
+msgstr "额外驱动程序"
 
 #: src/Views/DriversView.vala:28
 msgid ""
 "Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may "
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
-msgstr ""
+msgstr "Broadcom® Wi-Fi 适配器、NVIDIA® "
+"显卡和一些虚拟机可能需要安装额外驱动程序才能正常运作。大部分装置不会需要额外"
+"驱动程式。"
 
 #: src/Views/DriversView.vala:35
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
-msgstr ""
+msgstr "专有驱动程式包含没有人可以审核的专用代码，安全性更新和其他更新皆依赖驱动程序"
+"制造商的支持。"
 
 #: src/Views/DriversView.vala:41
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
-msgstr ""
+msgstr "需要互联网连接才能安装 NVIDIA® 显卡驱动程序。"
 
 #: src/Views/DriversView.vala:47
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
-msgstr ""
+msgstr "专有驱动程序可以之后到「系统设置」→「系统」进行安装，但所有驱动程序在安装时都"
+"需要互联网连接。"
 
 #: src/Views/DriversView.vala:52
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
-msgstr ""
+msgstr "安装时包含第三方的专有驱动程式。我同意它们各自的许可协议与使用条款。"
 
 #: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
@@ -198,15 +194,11 @@ msgid ""
 msgstr "数据将受到保护，无法被他人以物理方式获取，但仅限于设备已关机时。"
 
 #: src/Views/EncryptView.vala:62
-#, fuzzy
-#| msgid ""
-#| "The encryption password will be required each time this device is turned "
-#| "on. Store it somewhere safe."
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
-msgstr ""
-"每次启动该设备，都将需要输入解密密码。请务必在某个安全的地方保存好密码。"
+msgstr "这台设备每次开机时都将会需要输入加密密码。如果您忘记加密密码，<b>您的数据就会"
+"无法复原。</b>"
 
 #: src/Views/EncryptView.vala:68
 msgid ""
@@ -215,22 +207,13 @@ msgid ""
 msgstr "每次启动设备时需要使用内置或 USB 外接的键盘来输入解密密码。"
 
 #: src/Views/EncryptView.vala:73
-#, fuzzy
-#| msgid "Set Encryption Password"
 msgid "Encryption Password"
-msgstr "设置加密密码"
+msgstr "加密密码"
 
 #: src/Views/EncryptView.vala:74
-#, fuzzy
-#| msgid ""
-#| "If you forget the encryption password, <b>you will not be able to recover "
-#| "data.</b> This is a unique password for this device, not the password for "
-#| "your user account."
 msgid ""
 "A unique password for this device; not the password for your user account."
-msgstr ""
-"如果您忘记了加密密码， <b>您将无法恢复数据</b>。 加密密码是针对该设备的密码，"
-"而非账户密码。"
+msgstr "这是这台设备专用的密码，不是您的用户账户密码。"
 
 #: src/Views/EncryptView.vala:88
 msgid "Confirm Password"
@@ -318,20 +301,13 @@ msgid "Currently active language"
 msgstr "当前激活的语言"
 
 #: src/Views/PartitioningView.vala:51
-#, fuzzy
-#| msgid "Use Partition"
 msgid "Select Partitions"
-msgstr "使用分区"
+msgstr "选择分区"
 
 #: src/Views/PartitioningView.vala:56
-#, fuzzy
-#| msgid ""
-#| "Select which partitions to use across all drives. <b>Selecting \"Format\" "
-#| "will erase ALL data on the selected partition.</b>"
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
-msgstr ""
-"选择您要使用的硬盘分区。<b>选择“格式化”将会抹掉选中分区内的所有数据。</b>"
+msgstr "选择「格式化」将会抹除所选分区内的<i>所有数据</i>。"
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:65
@@ -340,15 +316,11 @@ msgstr "您需要选择至少一个 <b>根（/）</b> 分区。"
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:69
-#, fuzzy
-#| msgid ""
-#| "You must at least select a <b>Root (/)</b> partition and a <b>Boot (/boot/"
-#| "efi)</b> partition."
 msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
-msgstr ""
-"您需要选择至少一个 <b>根（/）</b> 分区和一个 <b>启动（/boot/efi）</b> 分区。"
+msgstr "您至少必须选择一个<b>根目录 (/)</b>所在的分区和一个<b>开机 (/boot/efi)</b> "
+"分区。"
 
 #: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
@@ -379,10 +351,8 @@ msgid "Show log"
 msgstr "显示日志"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Try Installing Again"
 msgid "Installing"
-msgstr "尝试重新安装"
+msgstr "安装中"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
@@ -556,7 +526,7 @@ msgstr "默认（ext4）"
 
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
-msgstr ""
+msgstr "自定义值必须以 / 开头"
 
 #~ msgid ""
 #~ "Encrypt this device's drive if required for added protection, but be sure "
