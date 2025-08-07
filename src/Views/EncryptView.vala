@@ -70,6 +70,15 @@ public class EncryptView : AbstractInstallerView {
             "slate"
         );
 
+        var message_box = new Gtk.ListBox () {
+            selection_mode = BROWSE
+        };
+        message_box.add_css_class (Granite.STYLE_CLASS_RICH_LIST);
+        message_box.add_css_class (Granite.STYLE_CLASS_BACKGROUND);
+        message_box.append (protect_row);
+        message_box.append (restart_row);
+        message_box.append (keyboard_row);
+
         var pw_label = new Granite.HeaderLabel (_("Encryption Password")) {
             secondary_text = _("A unique password for this device; not the password for your user account.")
         };
@@ -108,9 +117,7 @@ public class EncryptView : AbstractInstallerView {
         title_area.append (title_label);
 
         content_area.valign = CENTER;
-        content_area.append (protect_row);
-        content_area.append (restart_row);
-        content_area.append (keyboard_row);
+        content_area.append (message_box);
         content_area.append (password_box);
 
         encrypt_button = new Gtk.Button.with_label (_("Set Encryption Password")) {
@@ -148,6 +155,21 @@ public class EncryptView : AbstractInstallerView {
             confirm_entry.is_valid = confirm_password ();
             update_next_button ();
         });
+
+        // Forward keys so we can type immediate when list is focused
+        var key_controller = new Gtk.EventControllerKey ();
+        key_controller.key_pressed.connect ((keyval, keycode, state) => {
+            if (keyval <= 65000) {
+                key_controller.forward (pw_entry.get_delegate ());
+                pw_entry.grab_focus ();
+                pw_entry.select_region (-1, -1);
+                return Gdk.EVENT_STOP;
+            }
+
+            return Gdk.EVENT_PROPAGATE;
+        });
+
+        message_box.add_controller (key_controller);
     }
 
     private bool check_password () {

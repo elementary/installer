@@ -34,5 +34,13 @@ public class DescriptionRow : Gtk.Box {
         spacing = 12;
         append (image);
         append (description_label);
+
+        // prevent titles from being skipped
+        map.connect (() => {
+            parent.update_property (
+                Gtk.AccessibleProperty.LABEL, description,
+                -1
+            );
+        });
     }
 }
