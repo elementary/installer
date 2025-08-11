@@ -159,7 +159,7 @@ public class EncryptView : AbstractInstallerView {
         // Forward keys so we can type immediate when list is focused
         var key_controller = new Gtk.EventControllerKey ();
         key_controller.key_pressed.connect ((keyval, keycode, state) => {
-            if (keyval <= 65000) {
+            if (Gdk.keyval_to_unicode (keyval) != 0) {
                 key_controller.forward (pw_entry.get_delegate ());
                 pw_entry.grab_focus ();
                 pw_entry.select_region (-1, -1);
