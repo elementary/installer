@@ -26,6 +26,8 @@ public class EncryptView : AbstractInstallerView {
 
     private const string SKIP_STRING = _("Don’t Encrypt");
 
+    private uint announce_timeout_id;
+
     public EncryptView () {
         Object (cancellable: true);
     }
@@ -70,14 +72,15 @@ public class EncryptView : AbstractInstallerView {
             "slate"
         );
 
-        var pw_label = new Granite.HeaderLabel (_("Encryption Password")) {
-            secondary_text = _("A unique password for this device; not the password for your user account.")
-        };
-
         pw_error_revealer = new ErrorRevealer (".");
         pw_error_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_WARNING);
 
         pw_entry = new ValidatedEntry ();
+
+        var pw_label = new Granite.HeaderLabel (_("Encryption Password")) {
+            mnemonic_widget = pw_entry,
+            secondary_text = _("A unique password for this device, not the password for your user account.")
+        };
 
         pw_levelbar = new Gtk.LevelBar.for_interval (0.0, 100.0);
         pw_levelbar.set_mode (Gtk.LevelBarMode.CONTINUOUS);
@@ -85,11 +88,14 @@ public class EncryptView : AbstractInstallerView {
         pw_levelbar.add_offset_value ("high", 75.0);
         pw_levelbar.add_offset_value ("middle", 75.0);
 
-        var confirm_label = new Granite.HeaderLabel (_("Confirm Password"));
-
         confirm_entry = new Granite.ValidatedEntry () {
             sensitive = false,
             visibility = false
+        };
+        confirm_entry.update_property (Gtk.AccessibleProperty.REQUIRED, true, -1);
+
+        var confirm_label = new Granite.HeaderLabel (_("Confirm Password")) {
+            mnemonic_widget = confirm_entry
         };
 
         confirm_entry_revealer = new ErrorRevealer (".");
@@ -171,6 +177,14 @@ public class EncryptView : AbstractInstallerView {
                 pw_error_revealer.reveal_child = false;
 
                 pw_levelbar.value = quality;
+
+                if (quality <= 50) {
+                    queue_announce (pw_entry, _("Acceptable password"));
+                } else if (quality <= 75) {
+                    queue_announce (pw_entry, _("Good password"));
+                } else {
+                    queue_announce (pw_entry, _("Great password"));
+                }
             } else {
                 pw_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "dialog-warning-symbolic");
 
@@ -178,6 +192,8 @@ public class EncryptView : AbstractInstallerView {
                 pw_error_revealer.label = ((PasswordQuality.Error) quality).to_string (error);
 
                 pw_levelbar.value = 0;
+
+                queue_announce (pw_entry, pw_error_revealer.label);
             }
             return true;
         }
@@ -190,8 +206,11 @@ public class EncryptView : AbstractInstallerView {
             if (pw_entry.text != confirm_entry.text) {
                 confirm_entry_revealer.label = _("Passwords do not match");
                 confirm_entry_revealer.reveal_child = true;
+
+                queue_announce (confirm_entry, confirm_entry_revealer.label);
             } else {
                 confirm_entry_revealer.reveal_child = false;
+                queue_announce (confirm_entry, _("Passwords match"));
                 return true;
             }
         } else {
@@ -199,6 +218,19 @@ public class EncryptView : AbstractInstallerView {
         }
 
         return false;
+    }
+
+    private void queue_announce (Gtk.Entry entry, string announcement) {
+        if (announce_timeout_id != 0) {
+            Source.remove (announce_timeout_id);
+            announce_timeout_id = 0;
+        }
+
+        announce_timeout_id = Timeout.add (500, () => {
+            entry.announce (announcement, MEDIUM);
+            announce_timeout_id = 0;
+            return GLib.Source.REMOVE;
+        });
     }
 
     private void update_next_button () {
