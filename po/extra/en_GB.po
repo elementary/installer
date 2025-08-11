@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:01+0000\n"
+"POT-Creation-Date: 2025-08-11 18:07+0000\n"
 "PO-Revision-Date: 2024-11-06 05:08+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -29,25 +29,25 @@ msgstr "Step by step installer for elementary OS itself."
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:71
-#: data/installer.metainfo.xml.in:85 data/installer.metainfo.xml.in:110
-#: data/installer.metainfo.xml.in:124 data/installer.metainfo.xml.in:138
-#: data/installer.metainfo.xml.in:152 data/installer.metainfo.xml.in:163
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:74
+#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:113
+#: data/installer.metainfo.xml.in:127 data/installer.metainfo.xml.in:141
+#: data/installer.metainfo.xml.in:155 data/installer.metainfo.xml.in:166
 msgid "Improvements:"
 msgstr "Improvements:"
 
-#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:91
+#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:94
 msgid "Improve screen reader support"
 msgstr "Improve screen reader support"
 
-#: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:73
-#: data/installer.metainfo.xml.in:92 data/installer.metainfo.xml.in:113
-#: data/installer.metainfo.xml.in:127 data/installer.metainfo.xml.in:140
-#: data/installer.metainfo.xml.in:156 data/installer.metainfo.xml.in:168
+#: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:76
+#: data/installer.metainfo.xml.in:95 data/installer.metainfo.xml.in:116
+#: data/installer.metainfo.xml.in:130 data/installer.metainfo.xml.in:143
+#: data/installer.metainfo.xml.in:159 data/installer.metainfo.xml.in:171
 msgid "Updated translations"
 msgstr "Updated translations"
 
-#: data/installer.metainfo.xml.in:87
+#: data/installer.metainfo.xml.in:90
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
@@ -55,43 +55,43 @@ msgstr ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 
-#: data/installer.metainfo.xml.in:88
+#: data/installer.metainfo.xml.in:91
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr "Provide more feedback for invalid values when doing a custom install"
 
-#: data/installer.metainfo.xml.in:89
+#: data/installer.metainfo.xml.in:92
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr "Battery warning is sent as a notification instead of an infobar"
 
-#: data/installer.metainfo.xml.in:90
+#: data/installer.metainfo.xml.in:93
 msgid "Update post-install driver installation instructions"
 msgstr "Update post-install driver installation instructions"
 
-#: data/installer.metainfo.xml.in:112
+#: data/installer.metainfo.xml.in:115
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr "Keyboard layout preview is now in a resizeable window"
 
-#: data/installer.metainfo.xml.in:126
+#: data/installer.metainfo.xml.in:129
 msgid "Swipe to navigate back"
 msgstr "Swipe to navigate back"
 
-#: data/installer.metainfo.xml.in:154
+#: data/installer.metainfo.xml.in:157
 msgid "Use large icons in views"
 msgstr "Use large icons in views"
 
-#: data/installer.metainfo.xml.in:155
+#: data/installer.metainfo.xml.in:158
 msgid "Add a custom icon for Before Installing view"
 msgstr "Add a custom icon for Before Installing view"
 
-#: data/installer.metainfo.xml.in:165
+#: data/installer.metainfo.xml.in:168
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr "Show an infobar on battery instead of switching to a different page"
 
-#: data/installer.metainfo.xml.in:166
+#: data/installer.metainfo.xml.in:169
 msgid "Show all system requirements warnings on a single page"
 msgstr "Show all system requirements warnings on a single page"
 
-#: data/installer.metainfo.xml.in:167
+#: data/installer.metainfo.xml.in:170
 msgid "Warn about installing developer builds"
 msgstr "Warn about installing developer builds"
 

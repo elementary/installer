@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:01+0000\n"
+"POT-Creation-Date: 2025-08-11 18:07+0000\n"
 "PO-Revision-Date: 2024-12-09 00:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
@@ -194,11 +194,11 @@ msgstr "Törlés és telepítés"
 msgid "Don’t Encrypt"
 msgstr "Ne titkosítsa"
 
-#: src/Views/EncryptView.vala:51
+#: src/Views/EncryptView.vala:53
 msgid "Enable Drive Encryption"
 msgstr "Meghajtó titkosításának engedélyezése"
 
-#: src/Views/EncryptView.vala:56
+#: src/Views/EncryptView.vala:58
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -206,7 +206,7 @@ msgstr ""
 "A meghajtó titkosítása csak akkor óvja meg az adatait, ha mások fizikailag "
 "hozzáférnének az eszközhöz."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:64
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
@@ -215,7 +215,7 @@ msgstr ""
 "kell adni. Tárolja biztonságos helyen. Ha elfelejti, <b>nem fogja tudni "
 "visszaállítani adatait.</b>"
 
-#: src/Views/EncryptView.vala:68
+#: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -223,25 +223,52 @@ msgstr ""
 "Egy beépített vagy USB-s billentyűzet lesz szükséges minden bekapcsoláskor a "
 "titkosítás feloldásához."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:80
 msgid "Encryption Password"
 msgstr "Titkosítási jelszó"
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:82
+#, fuzzy
+#| msgid ""
+#| "A unique password for this device; not the password for your user account."
 msgid ""
-"A unique password for this device; not the password for your user account."
+"A unique password for this device, not the password for your user account."
 msgstr "Az eszköz egyedi jelszava, nem a felhasználói fiókhoz tartozó jelszó."
 
-#: src/Views/EncryptView.vala:88
+#: src/Views/EncryptView.vala:97
 msgid "Confirm Password"
 msgstr "Jelszó megerősítése"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:122
 msgid "Set Encryption Password"
 msgstr "Állítson be titkosítási jelszót"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:182
+#, fuzzy
+#| msgid "Set Password"
+msgid "Acceptable password"
+msgstr "Állítson be jelszót"
+
+#: src/Views/EncryptView.vala:184
+#, fuzzy
+#| msgid "Choose Password"
+msgid "Good password"
+msgstr "Válasszon jelszót"
+
+#: src/Views/EncryptView.vala:186
+#, fuzzy
+#| msgid "Set Password"
+msgid "Great password"
+msgstr "Állítson be jelszót"
+
+#: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
+msgstr "A jelszavak nem egyeznek"
+
+#: src/Views/EncryptView.vala:213
+#, fuzzy
+#| msgid "Passwords do not match"
+msgid "Passwords match"
 msgstr "A jelszavak nem egyeznek"
 
 #: src/Views/ErrorView.vala:31
@@ -274,7 +301,7 @@ msgstr "Indítsa újra a készüléket egy másik meghajtóról történő indí
 msgid "Details"
 msgstr "Részletek"
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
 msgstr "Készülék újraindítása"
 
@@ -367,35 +394,35 @@ msgstr "Érvénytelen gyökérfájlrendszer"
 msgid "Invalid file system for home"
 msgstr "Érvénytelen home fájlrendszer"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr "Naplózás megjelenítése"
 
-#: src/Views/ProgressView.vala:90
+#: src/Views/ProgressView.vala:91
 msgid "Installing"
 msgstr "Telepítés"
 
-#: src/Views/ProgressView.vala:95
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr "Naplózás elrejtése"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:224
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Meghajtó partícionálása"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:229
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Fájlok kibontása"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:234
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "A rendszer konfigurálása"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:239
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "A telepítés befejezése"
 
@@ -446,7 +473,7 @@ msgstr "Beállítás folytatása"
 msgid "%s has been installed"
 msgstr "%s telepítésre került"
 
-#: src/Views/SuccessView.vala:57
+#: src/Views/SuccessView.vala:58
 msgid "Shut Down"
 msgstr "Kikapcsolás"
 
@@ -566,9 +593,6 @@ msgstr "Az egyéni értéknek /-rel kezdődnie"
 #~ msgid "Choose Encryption Password"
 #~ msgstr "Válasszon titkosítási jelszót"
 
-#~ msgid "Choose Password"
-#~ msgstr "Válasszon jelszót"
-
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "
 #~ "in while installing."
@@ -618,9 +642,6 @@ msgstr "Az egyéni értéknek /-rel kezdődnie"
 #~ "Úgy tűnik, ön egy virtuális gépre telepít. Az %s néhány része lassan "
 #~ "futhat, fagyhat, vagy pedig nem működik megfelelően virtuális gépen. "
 #~ "Ajánlott valódi hardverre telepíteni."
-
-#~ msgid "Set Password"
-#~ msgstr "Állítson be jelszót"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

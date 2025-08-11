@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:01+0000\n"
+"POT-Creation-Date: 2025-08-11 18:07+0000\n"
 "PO-Revision-Date: 2025-03-02 15:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/installer/"
@@ -197,11 +197,11 @@ msgstr "削除してインストール"
 msgid "Don’t Encrypt"
 msgstr "暗号化しない"
 
-#: src/Views/EncryptView.vala:51
+#: src/Views/EncryptView.vala:53
 msgid "Enable Drive Encryption"
 msgstr "ドライブの暗号化を有効にする"
 
-#: src/Views/EncryptView.vala:56
+#: src/Views/EncryptView.vala:58
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -209,7 +209,7 @@ msgstr ""
 "データの保護は、電源がオフの場合に、デバイスに物理的にアクセス可能な他人に対"
 "してのみ有効です。"
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:64
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
@@ -217,7 +217,7 @@ msgstr ""
 "このデバイスを起動する度に、暗号化パスワードが要求されます。パスワードを忘れ"
 "ると、<b>データを復旧できなくなります。</b>"
 
-#: src/Views/EncryptView.vala:68
+#: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -225,27 +225,54 @@ msgstr ""
 "このデバイスを起動する度に、暗号化パスワードを入力するための内蔵または USB "
 "キーボードが必要になります。"
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:80
 msgid "Encryption Password"
 msgstr "暗号化パスワード"
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:82
+#, fuzzy
+#| msgid ""
+#| "A unique password for this device; not the password for your user account."
 msgid ""
-"A unique password for this device; not the password for your user account."
+"A unique password for this device, not the password for your user account."
 msgstr ""
 "このデバイスで一意のパスワードです。ユーザーアカウント用のパスワードではあり"
 "ません。"
 
-#: src/Views/EncryptView.vala:88
+#: src/Views/EncryptView.vala:97
 msgid "Confirm Password"
 msgstr "パスワードを確認"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:122
 msgid "Set Encryption Password"
 msgstr "暗号化パスワードを設定"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:182
+#, fuzzy
+#| msgid "Set Password"
+msgid "Acceptable password"
+msgstr "パスワードを設定"
+
+#: src/Views/EncryptView.vala:184
+#, fuzzy
+#| msgid "Choose Password"
+msgid "Good password"
+msgstr "パスワードを選択"
+
+#: src/Views/EncryptView.vala:186
+#, fuzzy
+#| msgid "Set Password"
+msgid "Great password"
+msgstr "パスワードを設定"
+
+#: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
+msgstr "パスワードが一致しません"
+
+#: src/Views/EncryptView.vala:213
+#, fuzzy
+#| msgid "Passwords do not match"
+msgid "Passwords match"
 msgstr "パスワードが一致しません"
 
 #: src/Views/ErrorView.vala:31
@@ -277,7 +304,7 @@ msgstr "デバイスを再起動して別のドライブから起動"
 msgid "Details"
 msgstr "詳細"
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
 msgstr "デバイスを再起動"
 
@@ -370,35 +397,35 @@ msgstr "ルートディレクトリのファイルシステムが無効です"
 msgid "Invalid file system for home"
 msgstr "ホームディレクトリのファイルシステムが無効です"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr "ログを表示"
 
-#: src/Views/ProgressView.vala:90
+#: src/Views/ProgressView.vala:91
 msgid "Installing"
 msgstr "インストールしています"
 
-#: src/Views/ProgressView.vala:95
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr "ログを非表示"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:224
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "ドライブのパーティションを作成しています"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:229
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "ファイルを展開しています"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:234
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "システムを設定しています"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:239
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "インストールを終了しています"
 
@@ -448,7 +475,7 @@ msgstr "セットアップを続行"
 msgid "%s has been installed"
 msgstr "%s のインストールが完了しました"
 
-#: src/Views/SuccessView.vala:57
+#: src/Views/SuccessView.vala:58
 msgid "Shut Down"
 msgstr "シャットダウン"
 
@@ -567,9 +594,6 @@ msgstr "カスタム値は / で始める必要があります"
 #~ msgid "Choose Encryption Password"
 #~ msgstr "暗号化パスワードを選択"
 
-#~ msgid "Choose Password"
-#~ msgstr "パスワードを選択"
-
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "
 #~ "in while installing."
@@ -619,9 +643,6 @@ msgstr "カスタム値は / で始める必要があります"
 #~ "仮想マシンにインストールしようとしているようです。仮想マシンでは、%s の一"
 #~ "部の機能の動作が遅くなったり、フリーズしたり、適切に動作しなかったりする恐"
 #~ "れがあります。実機へのインストールを推奨します。"
-
-#~ msgid "Set Password"
-#~ msgstr "パスワードを設定"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "
