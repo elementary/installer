@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:01+0000\n"
+"POT-Creation-Date: 2025-08-11 18:07+0000\n"
 "PO-Revision-Date: 2022-04-20 09:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/installer/"
@@ -189,13 +189,13 @@ msgstr "Izbriši i instaliraj"
 msgid "Don’t Encrypt"
 msgstr "Ne šifriraj"
 
-#: src/Views/EncryptView.vala:51
+#: src/Views/EncryptView.vala:53
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "Šifriranje pogona"
 
-#: src/Views/EncryptView.vala:56
+#: src/Views/EncryptView.vala:58
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -207,7 +207,7 @@ msgstr ""
 "Šifriranje ovog pogona će spriječiti druge koji imaju fizički pristup ovom "
 "uređaju da čitaju podatke na njemu."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:64
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -219,43 +219,67 @@ msgstr ""
 "Lozinka šifriranja će biti potrebna svaki put kada uključite ovaj uređaj ili "
 "ga ponovo pokrenete."
 
-#: src/Views/EncryptView.vala:68
+#: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:80
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Encryption Password"
 msgstr "Odaberite lozinku šifriranja"
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:82
 #, fuzzy
 #| msgid ""
 #| "If you forget the encryption password, <b>you will not be able to recover "
 #| "data.</b> This is a unique password for this device, not the password for "
 #| "your user account."
 msgid ""
-"A unique password for this device; not the password for your user account."
+"A unique password for this device, not the password for your user account."
 msgstr ""
 "Ako zaboravite lozinku šifriranja, <b>nećete moći pristupiti svojim podacima."
 "</b> To je jedinstvena lozinka za ovaj uređaj, a ne lozinka za Vaš "
 "korisnički račun."
 
-#: src/Views/EncryptView.vala:88
+#: src/Views/EncryptView.vala:97
 msgid "Confirm Password"
 msgstr "Potvrdite lozinku"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:122
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
 msgstr "Odaberite lozinku šifriranja"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:182
+#, fuzzy
+#| msgid "Set Password"
+msgid "Acceptable password"
+msgstr "Podesite lozinku"
+
+#: src/Views/EncryptView.vala:184
+#, fuzzy
+#| msgid "Choose Password"
+msgid "Good password"
+msgstr "Odaberite lozinku"
+
+#: src/Views/EncryptView.vala:186
+#, fuzzy
+#| msgid "Set Password"
+msgid "Great password"
+msgstr "Podesite lozinku"
+
+#: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
+msgstr "Lozinke se ne podudaraju"
+
+#: src/Views/EncryptView.vala:213
+#, fuzzy
+#| msgid "Passwords do not match"
+msgid "Passwords match"
 msgstr "Lozinke se ne podudaraju"
 
 #: src/Views/ErrorView.vala:31
@@ -296,7 +320,7 @@ msgstr "• Pokrenite svoj uređaj ponovo s drugog pogona"
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
 msgstr "Ponovo pokretanje"
 
@@ -401,37 +425,37 @@ msgstr "Nevažeći sistem datoteka za korijen (root)"
 msgid "Invalid file system for home"
 msgstr "Nevažeći sistem datoteka za dom (home)"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:90
+#: src/Views/ProgressView.vala:91
 #, fuzzy
 #| msgid "Try Installing Again"
 msgid "Installing"
 msgstr "Pokušajte instalirati opet"
 
-#: src/Views/ProgressView.vala:95
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:224
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Kreiranje particija"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:229
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Otpakiranje datoteka"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:234
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Konfiguriranje sistema"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:239
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Završavanje instalacije"
 
@@ -488,7 +512,7 @@ msgstr "Nastavi s podešavanjem"
 msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:57
+#: src/Views/SuccessView.vala:58
 msgid "Shut Down"
 msgstr "Isključenje"
 
@@ -606,9 +630,6 @@ msgstr ""
 #~ msgid "Choose Encryption Password"
 #~ msgstr "Odaberite lozinku šifriranja"
 
-#~ msgid "Choose Password"
-#~ msgstr "Odaberite lozinku"
-
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "
 #~ "in while installing."
@@ -635,9 +656,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Vaš uređaj ne zadovoljava preporučene hardverske standarde. Ovo može biti "
 #~ "uzrok da radi polako ili se zamrzne."
-
-#~ msgid "Set Password"
-#~ msgstr "Podesite lozinku"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

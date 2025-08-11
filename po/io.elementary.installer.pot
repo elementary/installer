@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:01+0000\n"
+"POT-Creation-Date: 2025-08-11 18:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -180,47 +180,63 @@ msgstr ""
 msgid "Don’t Encrypt"
 msgstr ""
 
-#: src/Views/EncryptView.vala:51
+#: src/Views/EncryptView.vala:53
 msgid "Enable Drive Encryption"
 msgstr ""
 
-#: src/Views/EncryptView.vala:56
+#: src/Views/EncryptView.vala:58
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:64
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 
-#: src/Views/EncryptView.vala:68
+#: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:80
 msgid "Encryption Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:82
 msgid ""
-"A unique password for this device; not the password for your user account."
+"A unique password for this device, not the password for your user account."
 msgstr ""
 
-#: src/Views/EncryptView.vala:88
+#: src/Views/EncryptView.vala:97
 msgid "Confirm Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:122
 msgid "Set Encryption Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:182
+msgid "Acceptable password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:184
+msgid "Good password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:186
+msgid "Great password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
+msgstr ""
+
+#: src/Views/EncryptView.vala:213
+msgid "Passwords match"
 msgstr ""
 
 #: src/Views/ErrorView.vala:31
@@ -250,7 +266,7 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
 msgstr ""
 
@@ -339,35 +355,35 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:90
+#: src/Views/ProgressView.vala:91
 msgid "Installing"
 msgstr ""
 
-#: src/Views/ProgressView.vala:95
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:224
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:229
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:234
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:239
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr ""
 
@@ -413,7 +429,7 @@ msgstr ""
 msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:57
+#: src/Views/SuccessView.vala:58
 msgid "Shut Down"
 msgstr ""
 

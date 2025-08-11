@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:01+0000\n"
+"POT-Creation-Date: 2025-08-11 18:07+0000\n"
 "PO-Revision-Date: 2022-09-10 12:23+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -187,11 +187,11 @@ msgstr "سڕینەوە و دامەزراندن"
 msgid "Don’t Encrypt"
 msgstr "شفرەی مەکە"
 
-#: src/Views/EncryptView.vala:51
+#: src/Views/EncryptView.vala:53
 msgid "Enable Drive Encryption"
 msgstr "کاراکردنی کۆدکردنی درایڤ"
 
-#: src/Views/EncryptView.vala:56
+#: src/Views/EncryptView.vala:58
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -199,7 +199,7 @@ msgstr ""
 "داتاکان پارێزراو دەبن تەنها لەوانەی کە دەستگەیشتنی فیزیکییان هەیە بۆ ئەم "
 "ئامێرە کاتێک کۆمپیتەرەکە کوژاوەتەوە."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:64
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time this device is turned "
@@ -211,7 +211,7 @@ msgstr ""
 "تێپەڕەوشەی کۆدکردن پێویست دەبێت هەر کاتێک ئەم ئامێرە پێ بکەیت، بۆیە لە "
 "شوێنێکی سەلامەت بیپارێزە."
 
-#: src/Views/EncryptView.vala:68
+#: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -219,35 +219,57 @@ msgstr ""
 "تەختەکلیلێکی ناوخۆیی یان پەیوەستکراو بەهۆی USB ییەوە پێویست دەبێت بۆ نووسینی "
 "تێپەڕەوشەکە هەر کاتێک ئامێرەکە پێ بکەیت."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:80
 #, fuzzy
 #| msgid "Set Encryption Password"
 msgid "Encryption Password"
 msgstr "دانانی تێپەڕەوشەی کۆدکردن"
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:82
 #, fuzzy
 #| msgid ""
 #| "If you forget the encryption password, <b>you will not be able to recover "
 #| "data.</b> This is a unique password for this device, not the password for "
 #| "your user account."
 msgid ""
-"A unique password for this device; not the password for your user account."
+"A unique password for this device, not the password for your user account."
 msgstr ""
 "ئەگەر تێپەڕەوشەی کۆدکردنت بیربچێتەوە، <b>ئەوا داتاکانت لەدەست دەچێت و "
 "ناتوانیت بیان گەڕێنیتەوە.</b> ئەمە تێپەڕەوشەیەکی بێهاوتایە بۆ ئەم ئامێرە، "
 "نەک تێپەڕەوشەی هەژماری بەکارهێنەر."
 
-#: src/Views/EncryptView.vala:88
+#: src/Views/EncryptView.vala:97
 msgid "Confirm Password"
 msgstr "دووبارە تێپەڕەوشەکە بنووسەوە بۆ دڵنیابوونەوە"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:122
 msgid "Set Encryption Password"
 msgstr "دانانی تێپەڕەوشەی کۆدکردن"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:182
+msgid "Acceptable password"
+msgstr ""
+
+#: src/Views/EncryptView.vala:184
+#, fuzzy
+#| msgid "Choose Password"
+msgid "Good password"
+msgstr "تێپەڕەوشە بنووسە"
+
+#: src/Views/EncryptView.vala:186
+#, fuzzy
+#| msgid "Choose Password"
+msgid "Great password"
+msgstr "تێپەڕەوشە بنووسە"
+
+#: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
+msgstr "تێپەڕەوشەکان هاوتا نین"
+
+#: src/Views/EncryptView.vala:213
+#, fuzzy
+#| msgid "Passwords do not match"
+msgid "Passwords match"
 msgstr "تێپەڕەوشەکان هاوتا نین"
 
 #: src/Views/ErrorView.vala:31
@@ -279,7 +301,7 @@ msgstr "ئامێرەکە پێبکەوە و لە درایڤێکی ترەوە بو
 msgid "Details"
 msgstr "وردەکارییەکان"
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
 msgstr "پێکردنەوەی ئامێر"
 
@@ -382,37 +404,37 @@ msgstr "فایل سیستەمێکی هەڵە بۆ ڕووت"
 msgid "Invalid file system for home"
 msgstr "فایل سیستەمێکی بۆ هۆم"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr "پشاندانی تۆمار"
 
-#: src/Views/ProgressView.vala:90
+#: src/Views/ProgressView.vala:91
 #, fuzzy
 #| msgid "Try Installing Again"
 msgid "Installing"
 msgstr "دوبارە هەوڵی دامەزراندن بدەوە"
 
-#: src/Views/ProgressView.vala:95
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr "شاردنەوەی تۆمار"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:224
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "پارتێشنکردنی درایڤ"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:229
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "دەرکردنی پەڕگەکان"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:234
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "ڕێکخستنی سیستەمەکە"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:239
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "تەواوکردنی دامەزراندنەکە"
 
@@ -463,7 +485,7 @@ msgstr "بەردەوامبوون لە ئامادەکردن"
 msgid "%s has been installed"
 msgstr "%s دامەزراوە"
 
-#: src/Views/SuccessView.vala:57
+#: src/Views/SuccessView.vala:58
 msgid "Shut Down"
 msgstr "کوژاندنەوە"
 
@@ -582,9 +604,6 @@ msgstr ""
 
 #~ msgid "Choose Encryption Password"
 #~ msgstr "تێپەڕەوشەیەک بۆ کۆدکردن بنووسە"
-
-#~ msgid "Choose Password"
-#~ msgstr "تێپەڕەوشە بنووسە"
 
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "
