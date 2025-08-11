@@ -79,7 +79,7 @@ public class EncryptView : AbstractInstallerView {
 
         var pw_label = new Granite.HeaderLabel (_("Encryption Password")) {
             mnemonic_widget = pw_entry,
-            secondary_text = _("A unique password for this device; not the password for your user account.")
+            secondary_text = _("A unique password for this device, not the password for your user account.")
         };
 
         pw_levelbar = new Gtk.LevelBar.for_interval (0.0, 100.0);
