@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:01+0000\n"
+"POT-Creation-Date: 2025-08-11 18:07+0000\n"
 "PO-Revision-Date: 2022-04-20 09:20+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (Canada) <https://l10n.elementary.io/projects/"
@@ -187,13 +187,13 @@ msgstr "Erase and Install"
 msgid "Don’t Encrypt"
 msgstr "Don't Encrypt"
 
-#: src/Views/EncryptView.vala:51
+#: src/Views/EncryptView.vala:53
 #, fuzzy
 #| msgid "Drive Encryption"
 msgid "Enable Drive Encryption"
 msgstr "Drive Encryption"
 
-#: src/Views/EncryptView.vala:56
+#: src/Views/EncryptView.vala:58
 #, fuzzy
 #| msgid ""
 #| "Encrypting this drive protects data from being read by others with "
@@ -205,7 +205,7 @@ msgstr ""
 "Encrypting this drive protects data from being read by others with physical "
 "access to this device."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:64
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time you turn on this "
@@ -217,43 +217,67 @@ msgstr ""
 "The encryption password will be required each time you turn on this device "
 "or restart."
 
-#: src/Views/EncryptView.vala:68
+#: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:80
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Encryption Password"
 msgstr "Choose Encryption Password"
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:82
 #, fuzzy
 #| msgid ""
 #| "If you forget the encryption password, <b>you will not be able to recover "
 #| "data.</b> This is a unique password for this device, not the password for "
 #| "your user account."
 msgid ""
-"A unique password for this device; not the password for your user account."
+"A unique password for this device, not the password for your user account."
 msgstr ""
 "If you forget the encryption password, <b>you will not be able to recover "
 "data.</b> This is a unique password for this device, not the password for "
 "your user account."
 
-#: src/Views/EncryptView.vala:88
+#: src/Views/EncryptView.vala:97
 msgid "Confirm Password"
 msgstr "Confirm Password"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:122
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
 msgstr "Choose Encryption Password"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:182
+#, fuzzy
+#| msgid "Set Password"
+msgid "Acceptable password"
+msgstr "Set Password"
+
+#: src/Views/EncryptView.vala:184
+#, fuzzy
+#| msgid "Choose Password"
+msgid "Good password"
+msgstr "Choose Password"
+
+#: src/Views/EncryptView.vala:186
+#, fuzzy
+#| msgid "Set Password"
+msgid "Great password"
+msgstr "Set Password"
+
+#: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
+msgstr "Passwords do not match"
+
+#: src/Views/EncryptView.vala:213
+#, fuzzy
+#| msgid "Passwords do not match"
+msgid "Passwords match"
 msgstr "Passwords do not match"
 
 #: src/Views/ErrorView.vala:31
@@ -294,7 +318,7 @@ msgstr "• Restart your device to boot from another drive"
 msgid "Details"
 msgstr ""
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
 msgstr "Restart Device"
 
@@ -399,37 +423,37 @@ msgstr ""
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:90
+#: src/Views/ProgressView.vala:91
 #, fuzzy
 #| msgid "Try Installing Again"
 msgid "Installing"
 msgstr "Try Installing Again"
 
-#: src/Views/ProgressView.vala:95
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:224
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Partitioning Drive"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:229
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Extracting Files"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:234
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Configuring the System"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:239
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Finishing the Installation"
 
@@ -484,7 +508,7 @@ msgstr "Continue Setting Up"
 msgid "%s has been installed"
 msgstr ""
 
-#: src/Views/SuccessView.vala:57
+#: src/Views/SuccessView.vala:58
 msgid "Shut Down"
 msgstr "Shut Down"
 
@@ -600,9 +624,6 @@ msgstr ""
 #~ msgid "Choose Encryption Password"
 #~ msgstr "Choose Encryption Password"
 
-#~ msgid "Choose Password"
-#~ msgstr "Choose Password"
-
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "
 #~ "in while installing."
@@ -629,9 +650,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Your device doesn't meet the recommended hardware requirements. This may "
 #~ "cause it to run slowly or freeze."
-
-#~ msgid "Set Password"
-#~ msgstr "Set Password"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

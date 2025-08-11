@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:01+0000\n"
+"POT-Creation-Date: 2025-08-11 18:07+0000\n"
 "PO-Revision-Date: 2021-09-04 16:04+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/installer/"
@@ -189,11 +189,11 @@ msgstr "امسح وثبت"
 msgid "Don’t Encrypt"
 msgstr "لا تشفر"
 
-#: src/Views/EncryptView.vala:51
+#: src/Views/EncryptView.vala:53
 msgid "Enable Drive Encryption"
 msgstr "قم بتشفير وسيط التخزين"
 
-#: src/Views/EncryptView.vala:56
+#: src/Views/EncryptView.vala:58
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -201,7 +201,7 @@ msgstr ""
 "البيانات ستكون محمية فقط من الآخرين الذين لديهم وصول مادي للجهاز عندما يكون "
 "مطفئاً."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:64
 #, fuzzy
 #| msgid ""
 #| "The encryption password will be required each time this device is turned "
@@ -213,7 +213,7 @@ msgstr ""
 "كلمة مرور التشفير ستكون مطلوبة في كل مرة تقوم بفتح الجهاز. احفظها في مكان "
 "آمن."
 
-#: src/Views/EncryptView.vala:68
+#: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -221,34 +221,58 @@ msgstr ""
 "سيكون من المطلوب وجود لوحة مفاتيح مدمجة أو موصولة بواسطة USB للتمكن من كتابة "
 "كلمة مرور التشفير في كل مرة يتم تشغيل هذا الجهاز."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:80
 #, fuzzy
 #| msgid "Set Encryption Password"
 msgid "Encryption Password"
 msgstr "اضبط كلمة مرور التشفير"
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:82
 #, fuzzy
 #| msgid ""
 #| "If you forget the encryption password, <b>you will not be able to recover "
 #| "data.</b> This is a unique password for this device, not the password for "
 #| "your user account."
 msgid ""
-"A unique password for this device; not the password for your user account."
+"A unique password for this device, not the password for your user account."
 msgstr ""
 "إذا نسيت كلمة مرور التشفير، <b>لن تكون قادراً على استعادة البيانات.</b> هذه "
 "كلمة مرور مميزة لوسيط التخزين الخاص بك، وليست كلمة المرور الخاصة بحسابك."
 
-#: src/Views/EncryptView.vala:88
+#: src/Views/EncryptView.vala:97
 msgid "Confirm Password"
 msgstr "قم بتأكيد كلمة المرور"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:122
 msgid "Set Encryption Password"
 msgstr "اضبط كلمة مرور التشفير"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:182
+#, fuzzy
+#| msgid "Set Password"
+msgid "Acceptable password"
+msgstr "حدد كلمة السر"
+
+#: src/Views/EncryptView.vala:184
+#, fuzzy
+#| msgid "Choose Password"
+msgid "Good password"
+msgstr "اختر كلمة مرور"
+
+#: src/Views/EncryptView.vala:186
+#, fuzzy
+#| msgid "Set Password"
+msgid "Great password"
+msgstr "حدد كلمة السر"
+
+#: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
+msgstr "كلمتا المرور غير متطابقتين"
+
+#: src/Views/EncryptView.vala:213
+#, fuzzy
+#| msgid "Passwords do not match"
+msgid "Passwords match"
 msgstr "كلمتا المرور غير متطابقتين"
 
 #: src/Views/ErrorView.vala:31
@@ -280,7 +304,7 @@ msgstr "أعد تشغيل الجهاز للإقلاع من وسيط تخزين �
 msgid "Details"
 msgstr "التفاصيل"
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
 msgstr "أعد تشغيل الجهاز"
 
@@ -384,37 +408,37 @@ msgstr "نظام ملفات غير صالح للجذر (root)"
 msgid "Invalid file system for home"
 msgstr "نظام ملفات غير صالح لمجلد المنزل (home)"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr "أظهر التسجيلات"
 
-#: src/Views/ProgressView.vala:90
+#: src/Views/ProgressView.vala:91
 #, fuzzy
 #| msgid "Try Installing Again"
 msgid "Installing"
 msgstr "جرب إعادة التثبيت"
 
-#: src/Views/ProgressView.vala:95
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr "أخف التسجيلات"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:224
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "قيد تقسيم وسيط التخزين"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:229
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "قيد استخراج الملفات"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:234
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "قيد إعداد النظام"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:239
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "قيد الانتهاء من التثبيت"
 
@@ -464,7 +488,7 @@ msgstr "أكمل الإعداد"
 msgid "%s has been installed"
 msgstr "تم تثبيت %s"
 
-#: src/Views/SuccessView.vala:57
+#: src/Views/SuccessView.vala:58
 msgid "Shut Down"
 msgstr "أوقف التشغيل"
 
@@ -588,9 +612,6 @@ msgstr ""
 #~ msgid "Choose Encryption Password"
 #~ msgstr "اختر كلمة مرور للتشفير"
 
-#~ msgid "Choose Password"
-#~ msgstr "اختر كلمة مرور"
-
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "
 #~ "in while installing."
@@ -616,9 +637,6 @@ msgstr ""
 #~ msgstr ""
 #~ "جهازك لا يطابق المواصفات المقترحة. قد يسبب هذا بطئاً في الجهاز أو توقف "
 #~ "حركته."
-
-#~ msgid "Set Password"
-#~ msgstr "حدد كلمة السر"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "

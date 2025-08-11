@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-25 18:01+0000\n"
+"POT-Creation-Date: 2025-08-11 18:07+0000\n"
 "PO-Revision-Date: 2024-12-03 18:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/installer/"
@@ -199,11 +199,11 @@ msgstr "Wyczyść i zainstaluj"
 msgid "Don’t Encrypt"
 msgstr "Nie szyfruj"
 
-#: src/Views/EncryptView.vala:51
+#: src/Views/EncryptView.vala:53
 msgid "Enable Drive Encryption"
 msgstr "Włącz szyfrowanie napędu"
 
-#: src/Views/EncryptView.vala:56
+#: src/Views/EncryptView.vala:58
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
@@ -211,7 +211,7 @@ msgstr ""
 "Dane będą tylko chronione przed innymi z fizycznym dostępem do urządzenia, "
 "kiedy jest wyłączone."
 
-#: src/Views/EncryptView.vala:62
+#: src/Views/EncryptView.vala:64
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
@@ -220,7 +220,7 @@ msgstr ""
 "uruchamiane. Jeśli je zapomnisz to <b>nie będziesz w stanie odzyskać swoich "
 "danych.</b>"
 
-#: src/Views/EncryptView.vala:68
+#: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
@@ -228,25 +228,52 @@ msgstr ""
 "Klawiatura wbudowana lub klawiatura USB będzie wymagana do wpisania hasła "
 "szyfrowania za każdym razem, gdy to urządzenie będzie włączane."
 
-#: src/Views/EncryptView.vala:73
+#: src/Views/EncryptView.vala:80
 msgid "Encryption Password"
 msgstr "Hasło szyfrowania"
 
-#: src/Views/EncryptView.vala:74
+#: src/Views/EncryptView.vala:82
+#, fuzzy
+#| msgid ""
+#| "A unique password for this device; not the password for your user account."
 msgid ""
-"A unique password for this device; not the password for your user account."
+"A unique password for this device, not the password for your user account."
 msgstr "Unikalne hasło dla tego urządzenia; to nie hasło do konta użytkownika."
 
-#: src/Views/EncryptView.vala:88
+#: src/Views/EncryptView.vala:97
 msgid "Confirm Password"
 msgstr "Potwierdź hasło"
 
-#: src/Views/EncryptView.vala:116
+#: src/Views/EncryptView.vala:122
 msgid "Set Encryption Password"
 msgstr "Ustaw hasło szyfrowania"
 
-#: src/Views/EncryptView.vala:191
+#: src/Views/EncryptView.vala:182
+#, fuzzy
+#| msgid "Set Password"
+msgid "Acceptable password"
+msgstr "Ustaw hasło"
+
+#: src/Views/EncryptView.vala:184
+#, fuzzy
+#| msgid "Choose Password"
+msgid "Good password"
+msgstr "Wybierz hasło"
+
+#: src/Views/EncryptView.vala:186
+#, fuzzy
+#| msgid "Set Password"
+msgid "Great password"
+msgstr "Ustaw hasło"
+
+#: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
+msgstr "Hasła do siebie nie pasują"
+
+#: src/Views/EncryptView.vala:213
+#, fuzzy
+#| msgid "Passwords do not match"
+msgid "Passwords match"
 msgstr "Hasła do siebie nie pasują"
 
 #: src/Views/ErrorView.vala:31
@@ -279,7 +306,7 @@ msgstr "Uruchom urządzenie ponownie z innego dysku"
 msgid "Details"
 msgstr "Szczegóły"
 
-#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:60
+#: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
 msgstr "Uruchom urządzenie ponownie"
 
@@ -372,35 +399,35 @@ msgstr "Błędny system plików dla przestrzeni root"
 msgid "Invalid file system for home"
 msgstr "Błędny system plików dla przestrzeni domowej"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
 msgid "Show log"
 msgstr "Pokaż dziennik"
 
-#: src/Views/ProgressView.vala:90
+#: src/Views/ProgressView.vala:91
 msgid "Installing"
 msgstr "Instalowanie"
 
-#: src/Views/ProgressView.vala:95
+#: src/Views/ProgressView.vala:96
 msgid "Hide log"
 msgstr "Ukryj dziennik"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:224
+#: src/Views/ProgressView.vala:225
 msgid "Partitioning Drive"
 msgstr "Partycjonowanie napędu"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:229
+#: src/Views/ProgressView.vala:230
 msgid "Extracting Files"
 msgstr "Rozpakowywanie plików"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:234
+#: src/Views/ProgressView.vala:235
 msgid "Configuring the System"
 msgstr "Konfigurowanie systemu"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:239
+#: src/Views/ProgressView.vala:240
 msgid "Finishing the Installation"
 msgstr "Kończenie instalacji"
 
@@ -451,7 +478,7 @@ msgstr "Kontynuuj ustawianie"
 msgid "%s has been installed"
 msgstr "%s został zainstalowany"
 
-#: src/Views/SuccessView.vala:57
+#: src/Views/SuccessView.vala:58
 msgid "Shut Down"
 msgstr "Wyłącz komputer"
 
@@ -575,9 +602,6 @@ msgstr "Niestandardowa wartość musi zaczynać się od /"
 #~ msgid "Choose Encryption Password"
 #~ msgstr "Wybierz hasło szyfrowania"
 
-#~ msgid "Choose Password"
-#~ msgstr "Wybierz hasło"
-
 #~ msgid ""
 #~ "Your device is running on battery power. It's recommended to be plugged "
 #~ "in while installing."
@@ -627,9 +651,6 @@ msgstr "Niestandardowa wartość musi zaczynać się od /"
 #~ "Wygląda na to, że instalujesz na maszynie wirtualnej. Niektóre części %s "
 #~ "mogą działać wolno, wieszać się, lub nie działać poprawnie na maszynie "
 #~ "wirtualnej. Zalecane jest by instalować na prawdziwym sprzęcie."
-
-#~ msgid "Set Password"
-#~ msgstr "Ustaw hasło"
 
 #~ msgid ""
 #~ "You can install %s on this device now, or try Demo Mode without "
