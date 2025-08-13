@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-11 18:07+0000\n"
-"PO-Revision-Date: 2025-08-03 11:55+0000\n"
+"PO-Revision-Date: 2025-08-14 08:55+0000\n"
 "Last-Translator: JieXu <xujie0739@qq.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "l10n.elementaryos.org/projects/installer/installer/zh_Hans/>\n"
@@ -214,12 +214,9 @@ msgid "Encryption Password"
 msgstr "加密密码"
 
 #: src/Views/EncryptView.vala:82
-#, fuzzy
-#| msgid ""
-#| "A unique password for this device; not the password for your user account."
 msgid ""
 "A unique password for this device, not the password for your user account."
-msgstr "这是这台设备专用的密码，不是您的用户账户密码。"
+msgstr "这是这台设备的专用密码，不是您用户账户密码。"
 
 #: src/Views/EncryptView.vala:97
 msgid "Confirm Password"
@@ -230,32 +227,24 @@ msgid "Set Encryption Password"
 msgstr "设置加密密码"
 
 #: src/Views/EncryptView.vala:182
-#, fuzzy
-#| msgid "Set Password"
 msgid "Acceptable password"
-msgstr "设置密码"
+msgstr "符合要求的密码"
 
 #: src/Views/EncryptView.vala:184
-#, fuzzy
-#| msgid "Choose Password"
 msgid "Good password"
-msgstr "选择密码"
+msgstr "良好的密码"
 
 #: src/Views/EncryptView.vala:186
-#, fuzzy
-#| msgid "Set Password"
 msgid "Great password"
-msgstr "设置密码"
+msgstr "很棒的密码"
 
 #: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
 msgstr "密码不匹配"
 
 #: src/Views/EncryptView.vala:213
-#, fuzzy
-#| msgid "Passwords do not match"
 msgid "Passwords match"
-msgstr "密码不匹配"
+msgstr "密码一致"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
