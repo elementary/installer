@@ -154,7 +154,7 @@ public class Installer.DiskBar: Gtk.Box {
             // Also make sure percentage is never 0, otherwise we can assertion error:
             // gtk_constraint_expression_new_subject: assertion failed: (!G_APPROX_VALUE (term->coefficient, 0.0, 0.001)) 
             // Also we assume partitions.size is less than 100
-            percentage = ((int) (percentage * 100) / 100.0).clamp (0.001, 1.0 - partitions.size / 100.0);
+            percentage = ((int) (percentage * 100) / 100.0).clamp (0.01, 1.0 - partitions.size / 100.0);
 
             widget.set_parent (this);
 
