@@ -116,6 +116,9 @@ public class Installer.DiskBar: Gtk.Box {
                 );
             }
 
+            // make sure if somehow used_sectors > total_disk_sectors, we clamp it to total_disk_sectors
+            used_sectors = uint64.min (used_sectors, total_disk_sectors);
+
             // If more than 1% of the disk is unused, show a block for the unused space
             var unused_sectors = total_disk_sectors - used_sectors;
             if ((double) unused_sectors / total_disk_sectors > 0.01) {
@@ -147,8 +150,11 @@ public class Installer.DiskBar: Gtk.Box {
         }
 
         private void append_partition (Gtk.Widget widget, double percentage) {
-            // Truncate to 2 decimal places (round down), to ensure we don't go over 100% because of rounding errors
-            percentage = (int)(percentage * 100) / 100.0;
+            // Truncate to 2 decimal places (round down), to ensure we don't go over 100% because of rounding errors.
+            // Also make sure percentage is never 0, otherwise we can assertion error:
+            // gtk_constraint_expression_new_subject: assertion failed: (!G_APPROX_VALUE (term->coefficient, 0.0, 0.001)) 
+            // Also we assume partitions.size is less than 100
+            percentage = ((int) (percentage * 100) / 100.0).clamp (0.01, 1.0 - partitions.size / 100.0);
 
             widget.set_parent (this);
 
