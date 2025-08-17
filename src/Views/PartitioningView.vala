@@ -589,6 +589,74 @@ public class Installer.PartitioningView : AbstractInstallerView {
             partitions = {partitions_13, partitions_14}
         };
 
+        var partitions_15 = InstallerDaemon.Partition () {
+            device_path = "/dev/vda1",
+            filesystem = InstallerDaemon.FileSystem.FAT32,
+            start_sector = 4096,
+            end_sector = 542966,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 35160
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_16 = InstallerDaemon.Partition () {
+            device_path = "/dev/vda2",
+            filesystem = InstallerDaemon.FileSystem.LVM,
+            start_sector = 542968,
+            end_sector = 13421363,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 0,
+                value = 0
+            },
+            current_lvm_volume_group = "data"
+        };
+
+        physical_disks += InstallerDaemon.Disk () {
+            name = "Virtio Block Device",
+            device_path = "/dev/vda",
+            sectors = 134217728,
+            sector_size = 512,
+            rotational = true,
+            removable = false,
+            partitions = {partitions_15, partitions_16}
+        };
+
+        var partitions_17 = InstallerDaemon.Partition () {
+            device_path = "/dev/dm-0",
+            filesystem = InstallerDaemon.FileSystem.EXT4,
+            start_sector = 0,
+            end_sector = 125665280,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 21085648
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_18 = InstallerDaemon.Partition () {
+            device_path = "/dev/dm-1",
+            filesystem = InstallerDaemon.FileSystem.SWAP,
+            start_sector = 12566528,
+            end_sector = 133660673,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 0,
+                value = 0
+            },
+            current_lvm_volume_group = ""
+        };
+
+        logical_disks += InstallerDaemon.Disk () {
+            name = "LVM data",
+            device_path = "/dev/mapper/data",
+            sectors = 133670662,
+            sector_size = 512,
+            rotational = false,
+            removable = false,
+            partitions = {partitions_13, partitions_14}
+        };
+
         return InstallerDaemon.DiskInfo () {
             physical_disks = physical_disks,
             logical_disks = logical_disks
