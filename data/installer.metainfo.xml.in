@@ -14,25 +14,25 @@
 
   <screenshots>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/8.1.1/data/screenshot-language.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.1.2/data/screenshot-language.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/8.1.1/data/screenshot-keyboard.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.1.2/data/screenshot-keyboard.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/8.1.1/data/screenshot-try-install.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.1.2/data/screenshot-try-install.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/8.1.1/data/screenshot-custom.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.1.2/data/screenshot-custom.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/8.1.1/data/screenshot-encrypt.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.1.2/data/screenshot-encrypt.png</image>
     </screenshot>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/installer/8.1.1/data/screenshot-progress.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.1.2/data/screenshot-progress.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/installer/8.1.1/data/screenshot-success.png</image>
+      <image>https://raw.githubusercontent.com/elementary/installer/8.1.2/data/screenshot-success.png</image>
     </screenshot>
   </screenshots>
 
@@ -56,7 +56,7 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
-    <release version="8.1.2" date="2027-07-25" urgency="medium">
+    <release version="8.1.2" date="2025-09-01" urgency="medium">
       <description>
         <p>Improvements:</p>
         <ul>
