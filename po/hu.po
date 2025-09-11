@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-11 18:07+0000\n"
-"PO-Revision-Date: 2024-12-09 00:16+0000\n"
+"PO-Revision-Date: 2025-09-12 11:55+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/installer/"
+"Language-Team: Hungarian <https://l10n.elementaryos.org/projects/installer/"
 "installer/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:54
@@ -228,9 +228,6 @@ msgid "Encryption Password"
 msgstr "Titkosítási jelszó"
 
 #: src/Views/EncryptView.vala:82
-#, fuzzy
-#| msgid ""
-#| "A unique password for this device; not the password for your user account."
 msgid ""
 "A unique password for this device, not the password for your user account."
 msgstr "Az eszköz egyedi jelszava, nem a felhasználói fiókhoz tartozó jelszó."
@@ -244,32 +241,24 @@ msgid "Set Encryption Password"
 msgstr "Állítson be titkosítási jelszót"
 
 #: src/Views/EncryptView.vala:182
-#, fuzzy
-#| msgid "Set Password"
 msgid "Acceptable password"
-msgstr "Állítson be jelszót"
+msgstr "Elfogadható jelszó"
 
 #: src/Views/EncryptView.vala:184
-#, fuzzy
-#| msgid "Choose Password"
 msgid "Good password"
-msgstr "Válasszon jelszót"
+msgstr "Jó jelszó"
 
 #: src/Views/EncryptView.vala:186
-#, fuzzy
-#| msgid "Set Password"
 msgid "Great password"
-msgstr "Állítson be jelszót"
+msgstr "Nagyszerű jelszó"
 
 #: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
 msgstr "A jelszavak nem egyeznek"
 
 #: src/Views/EncryptView.vala:213
-#, fuzzy
-#| msgid "Passwords do not match"
 msgid "Passwords match"
-msgstr "A jelszavak nem egyeznek"
+msgstr "A jelszavak egyeznek"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
