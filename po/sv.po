@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-11 18:07+0000\n"
-"PO-Revision-Date: 2025-10-22 08:07+0000\n"
+"PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/installer/"
 "installer/sv/>\n"
@@ -68,7 +68,7 @@ msgstr "Före installation"
 
 #: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
-msgstr "Version före lansering"
+msgstr "Förutgåva"
 
 #: src/Views/CheckView.vala:56
 msgid ""
@@ -130,7 +130,7 @@ msgstr ""
 
 #: src/Views/DiskView.vala:71 src/Views/PartitioningView.vala:112
 msgid "Getting the current configuration…"
-msgstr "Hämtar nuvarande konfiguration…"
+msgstr "Hämtar aktuell konfiguration…"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:83
@@ -170,7 +170,7 @@ msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
 msgstr ""
-"Egenutvecklade drivrutiner kan installeras senare via Systeminställningar → "
+"Proprietära drivrutiner kan installeras senare via Systeminställningar → "
 "System, men en Internetanslutning krävs för alla drivrutiner."
 
 #: src/Views/DriversView.vala:52
@@ -178,8 +178,8 @@ msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
-"Inkludera egenutvecklade drivrutiner från tredje part när du installerar. "
-"Jag samtycker till deras respektive licenser och användarvillkor."
+"Inkludera proprietära drivrutiner från tredje part när du installerar. Jag "
+"samtycker till deras respektive licenser och användarvillkor."
 
 #: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
@@ -196,7 +196,7 @@ msgstr "Kryptera inte"
 
 #: src/Views/EncryptView.vala:53
 msgid "Enable Drive Encryption"
-msgstr "Aktivera kryptering av hårddisk"
+msgstr "Aktivera diskkryptering"
 
 #: src/Views/EncryptView.vala:58
 msgid ""
@@ -251,7 +251,7 @@ msgstr "Bra lösenord"
 
 #: src/Views/EncryptView.vala:186
 msgid "Great password"
-msgstr "Bra lösenord"
+msgstr "Mycket bra lösenord"
 
 #: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
@@ -271,12 +271,12 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
-"Installationen %s misslyckades, möjligen på grund av ett maskinvarufel. "
+"Installationen av %s misslyckades, möjligen på grund av ett maskinvarufel. "
 "Enheten kanske inte startar om ordentligt. Du kan försöka med följande:"
 
 #: src/Views/ErrorView.vala:45
 msgid "Try the installation again"
-msgstr "Prova installationen igen"
+msgstr "Försök att installera igen"
 
 #: src/Views/ErrorView.vala:55
 msgid "Use Demo Mode and try to manually recover"
@@ -288,7 +288,7 @@ msgstr "Starta om enheten och starta från en annan hårddisk"
 
 #: src/Views/ErrorView.vala:69
 msgid "Details"
-msgstr "Detaljer"
+msgstr "Information"
 
 #: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
@@ -312,11 +312,11 @@ msgstr "Välj tangentbordslayout"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
-msgstr "Skriv för att kontrollera din uppsättning"
+msgstr "Skriv för att testa din layout"
 
 #: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
-msgstr "Visa tangentbordsuppsättning"
+msgstr "Visa tangentbordslayout"
 
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
@@ -342,7 +342,7 @@ msgstr "Välj partitioner"
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
-"Om du väljer \"Format\" raderas <i>alla</i> data på den valda partitionen."
+"Om du väljer \"Formatera\" raderas <i>alla</i> data på den valda partitionen."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:65
@@ -355,14 +355,12 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
 msgstr ""
-"Du måste åtminstone välja en <b>Root (/)</b> -partition och en <b>Boot (/"
-"boot/efi</b> )-partition som tillval."
+"Du måste åtminstone välja en <b>Rot (/)</b> -partition och en <b>Boot (/boot/"
+"efi</b> )-partition som tillval."
 
 #: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
-"Det är också rekommenderat att välja en partition för <b>växlingsfil</b> "
-"(<b>Swap</b>-partition)."
+msgstr "Det är också rekommenderat att välja en <b>växling</b>-partition."
 
 #: src/Views/PartitioningView.vala:138
 msgid "Modify Partitions…"
@@ -378,7 +376,7 @@ msgstr "EFI-partitionen är för liten"
 
 #: src/Views/PartitioningView.vala:286
 msgid "Invalid file system for root"
-msgstr "Ogiltigt filsystem för root"
+msgstr "Ogiltigt filsystem för rot"
 
 #: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for home"
@@ -471,8 +469,8 @@ msgstr "Stäng av"
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Din enhet kommer om %i sekund att automatiskt starta om."
+msgstr[1] "Din enhet kommer om %i sekunder att automatiskt starta om."
 
 #: src/Views/SuccessView.vala:93
 msgid ""
@@ -484,7 +482,7 @@ msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:66
 msgid "Decrypt This Partition"
-msgstr "Dekryptera den här partitionen"
+msgstr "Avkryptera denna partition"
 
 #: src/Widgets/DecryptMenu.vala:70
 msgid ""
@@ -492,7 +490,7 @@ msgid ""
 "decrypted partition."
 msgstr ""
 "Ange partitionens krypteringslösenord och ange ett enhetsnamn för den "
-"dekrypterade partitionen."
+"avkrypterade partitionen."
 
 #: src/Widgets/DecryptMenu.vala:82
 msgid "Password:"
@@ -504,11 +502,11 @@ msgstr "Enhetens namn:"
 
 #: src/Widgets/DecryptMenu.vala:108
 msgid "Decrypt"
-msgstr "Dekryptera"
+msgstr "Avkryptera"
 
 #: src/Widgets/DecryptMenu.vala:182
 msgid "LUKS volume was decrypted"
-msgstr "LUKS-volymen har dekrypterats"
+msgstr "LUKS-volymen har avkrypterats"
 
 #: src/Widgets/DiskBar.vala:253
 #, c-format
@@ -526,7 +524,7 @@ msgstr "Använd partition"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Format"
-msgstr "Format"
+msgstr "Formatera"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
@@ -547,11 +545,11 @@ msgstr "Hem (/home)"
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
-msgstr "Stövel (%s)"
+msgstr "Boot (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr "Byt"
+msgstr "Växling"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
@@ -567,7 +565,7 @@ msgstr "Filsystem:"
 
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
-msgstr "Förval (etx4)"
+msgstr "Standard (etx4)"
 
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
