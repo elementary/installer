@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-11 18:07+0000\n"
-"PO-Revision-Date: 2025-02-06 21:12+0000\n"
+"PO-Revision-Date: 2025-08-21 13:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/installer/"
+"Language-Team: French <https://l10n.elementaryos.org/projects/installer/"
 "installer/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:54
@@ -232,9 +232,6 @@ msgid "Encryption Password"
 msgstr "Mot de passe de chiffrement"
 
 #: src/Views/EncryptView.vala:82
-#, fuzzy
-#| msgid ""
-#| "A unique password for this device; not the password for your user account."
 msgid ""
 "A unique password for this device, not the password for your user account."
 msgstr ""
@@ -250,32 +247,24 @@ msgid "Set Encryption Password"
 msgstr "Définissez le mot de passe de chiffrement"
 
 #: src/Views/EncryptView.vala:182
-#, fuzzy
-#| msgid "Set Password"
 msgid "Acceptable password"
-msgstr "Définir le mot de passe"
+msgstr "Mot de passe acceptable"
 
 #: src/Views/EncryptView.vala:184
-#, fuzzy
-#| msgid "Choose Password"
 msgid "Good password"
-msgstr "Choisissez votre mot de passe"
+msgstr "Bon mot de passe"
 
 #: src/Views/EncryptView.vala:186
-#, fuzzy
-#| msgid "Set Password"
 msgid "Great password"
-msgstr "Définir le mot de passe"
+msgstr "Excellent mot de passe"
 
 #: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
 msgstr "Les mots de passe ne correspondent pas"
 
 #: src/Views/EncryptView.vala:213
-#, fuzzy
-#| msgid "Passwords do not match"
 msgid "Passwords match"
-msgstr "Les mots de passe ne correspondent pas"
+msgstr "Les mots de passe correspondent"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"

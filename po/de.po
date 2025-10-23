@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-11 18:07+0000\n"
-"PO-Revision-Date: 2024-12-18 14:19+0000\n"
+"PO-Revision-Date: 2025-09-19 20:55+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/installer/"
+"Language-Team: German <https://l10n.elementaryos.org/projects/installer/"
 "installer/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:54
@@ -237,9 +237,6 @@ msgid "Encryption Password"
 msgstr "Verschlüsselungspasswort"
 
 #: src/Views/EncryptView.vala:82
-#, fuzzy
-#| msgid ""
-#| "A unique password for this device; not the password for your user account."
 msgid ""
 "A unique password for this device, not the password for your user account."
 msgstr ""
@@ -255,32 +252,24 @@ msgid "Set Encryption Password"
 msgstr "Verschlüsselungspasswort wählen"
 
 #: src/Views/EncryptView.vala:182
-#, fuzzy
-#| msgid "Set Password"
 msgid "Acceptable password"
-msgstr "Passwort setzen"
+msgstr "Akzeptables Passwort"
 
 #: src/Views/EncryptView.vala:184
-#, fuzzy
-#| msgid "Choose Password"
 msgid "Good password"
-msgstr "Passwort wählen"
+msgstr "Gutes Passwort"
 
 #: src/Views/EncryptView.vala:186
-#, fuzzy
-#| msgid "Set Password"
 msgid "Great password"
-msgstr "Passwort setzen"
+msgstr "Ausgezeichnetes Passwort"
 
 #: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
 msgstr "Die Passwörter stimmen nicht überein"
 
 #: src/Views/EncryptView.vala:213
-#, fuzzy
-#| msgid "Passwords do not match"
 msgid "Passwords match"
-msgstr "Die Passwörter stimmen nicht überein"
+msgstr "Die Passwörter stimmen überein"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"

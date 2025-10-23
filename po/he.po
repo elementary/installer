@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-11 18:07+0000\n"
-"PO-Revision-Date: 2024-11-24 07:16+0000\n"
+"PO-Revision-Date: 2025-10-06 12:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/installer/"
+"Language-Team: Hebrew <https://l10n.elementaryos.org/projects/installer/"
 "installer/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
 
 #: src/Application.vala:54
@@ -221,9 +221,6 @@ msgid "Encryption Password"
 msgstr "סיסמת הצפנה"
 
 #: src/Views/EncryptView.vala:82
-#, fuzzy
-#| msgid ""
-#| "A unique password for this device; not the password for your user account."
 msgid ""
 "A unique password for this device, not the password for your user account."
 msgstr "זאת סיסמה ייחודית להתקן, זאת אינה הסיסמה של חשבון המשתמש שלך."
@@ -237,32 +234,24 @@ msgid "Set Encryption Password"
 msgstr "הגדרת סיסמת הצפנה"
 
 #: src/Views/EncryptView.vala:182
-#, fuzzy
-#| msgid "Set Password"
 msgid "Acceptable password"
-msgstr "הגדרת ססמה"
+msgstr "סיסמה מקובלת"
 
 #: src/Views/EncryptView.vala:184
-#, fuzzy
-#| msgid "Choose Password"
 msgid "Good password"
-msgstr "נא לבחור ססמה"
+msgstr "סיסמה טובה"
 
 #: src/Views/EncryptView.vala:186
-#, fuzzy
-#| msgid "Set Password"
 msgid "Great password"
-msgstr "הגדרת ססמה"
+msgstr "סיסמה מעולה"
 
 #: src/Views/EncryptView.vala:207
 msgid "Passwords do not match"
 msgstr "הסיסמאות אינן תואמות"
 
 #: src/Views/EncryptView.vala:213
-#, fuzzy
-#| msgid "Passwords do not match"
 msgid "Passwords match"
-msgstr "הסיסמאות אינן תואמות"
+msgstr "הסיסמאות תואמות"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
