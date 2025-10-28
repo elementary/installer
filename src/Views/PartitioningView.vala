@@ -591,6 +591,52 @@ public class Installer.PartitioningView : AbstractInstallerView {
             partitions = {partitions_13, partitions_14}
         };
 
+        var partitions_15 = InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n2p1",
+            filesystem = InstallerDaemon.FileSystem.FAT32,
+            start_sector = 4096,
+            end_sector = 542966,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 35376
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_16 = InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n2p2",
+            filesystem = InstallerDaemon.FileSystem.EXT4,
+            start_sector = 544768,
+            end_sector = 537415679,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 10641584
+            },
+            current_lvm_volume_group = ""
+        };
+
+        var partitions_17 = InstallerDaemon.Partition () {
+            device_path = "/dev/nvme0n2p3",
+            filesystem = InstallerDaemon.FileSystem.EXT4,
+            start_sector = 537415680,
+            end_sector = 1611156503,
+            sectors_used = InstallerDaemon.PartitionUsage () {
+                tag = 1,
+                value = 19087560
+            },
+            current_lvm_volume_group = ""
+        };
+
+        physical_disks += InstallerDaemon.Disk () {
+            name = "WDC PC SN5000S SDEPNSJ-1T00-1032",
+            device_path = "/dev/nvme0n2",
+            sectors = 2000409264,
+            sector_size = 512,
+            rotational = false,
+            removable = false,
+            partitions = {partitions_15, partitions_16, partitions_17}
+        };
+
         return InstallerDaemon.DiskInfo () {
             physical_disks = physical_disks,
             logical_disks = logical_disks
