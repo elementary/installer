@@ -261,8 +261,8 @@ public class Installer.DiskBar: Gtk.Box {
             ) {
                 halign = START,
             };
-            info.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-            info.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            info.add_css_class (Granite.CssClass.DIM);
+            info.add_css_class (Granite.CssClass.SMALL);
             info.use_markup = true;
 
             var path = new Gtk.Label (ppath) {

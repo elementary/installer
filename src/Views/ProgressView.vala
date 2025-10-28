@@ -68,9 +68,8 @@ public class ProgressView : Adw.NavigationPage {
         progressbar_label = new Gtk.Label (null) {
             xalign = 0
         };
-        progressbar_label.add_css_class (Granite.STYLE_CLASS_DIM_LABEL);
-        // FIXME: use granite constant when Granite 7.7.0 is released
-        progressbar_label.add_css_class ("numeric");
+        progressbar_label.add_css_class (Granite.CssClass.DIM);
+        progressbar_label.add_css_class (Granite.CssClass.NUMERIC);
 
         progressbar = new Gtk.ProgressBar () {
             hexpand = true
@@ -238,6 +237,8 @@ public class ProgressView : Adw.NavigationPage {
                     fraction += 4 * (1.0 / NUM_STEP);
                     ///TRANSLATORS: The current step of the installer back-end
                     step_string = _("Finishing the Installation");
+                    break;
+                default:
                     break;
             }
 

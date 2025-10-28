@@ -59,7 +59,7 @@ public class SuccessView : AbstractInstallerView {
         shutdown_button.clicked.connect (Utils.shutdown);
 
         var restart_button = new Gtk.Button.with_label (_("Restart Device"));
-        restart_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        restart_button.add_css_class (Granite.CssClass.SUGGESTED);
         restart_button.clicked.connect (Utils.restart);
 
         action_box_end.append (shutdown_button);

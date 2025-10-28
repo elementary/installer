@@ -83,7 +83,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         var next_button = new Gtk.Button.with_label (_("Next")) {
             sensitive = false
         };
-        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.CssClass.SUGGESTED);
 
         action_box_end.append (back_button);
         action_box_end.append (next_button);

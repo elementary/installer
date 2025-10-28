@@ -84,7 +84,7 @@ public class Installer.CheckView : AbstractInstallerView {
         content_area.append (message_box);
 
         var ignore_button = new Gtk.Button.with_label (_("Install Anyway"));
-        ignore_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        ignore_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
         ignore_button.clicked.connect (() => next_step ());
 
         action_box_end.append (ignore_button);
@@ -179,8 +179,6 @@ public class Installer.CheckView : AbstractInstallerView {
         public string title { get; construct; }
         public string description { get; construct; }
         public string icon_name { get; construct; }
-
-        private Gtk.Grid grid;
 
         public CheckView (string title, string description, string icon_name) {
             Object (

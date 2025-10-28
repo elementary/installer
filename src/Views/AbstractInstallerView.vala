@@ -53,7 +53,7 @@ public abstract class AbstractInstallerView : Adw.NavigationPage {
 
         if (Installer.App.test_mode) {
             var test_label = new Gtk.Label (_("Test Mode"));
-            test_label.add_css_class (Granite.STYLE_CLASS_ERROR);
+            test_label.add_css_class (Granite.CssClass.ERROR);
 
             action_area.append (test_label);
         }

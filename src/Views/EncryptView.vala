@@ -82,7 +82,7 @@ public class EncryptView : AbstractInstallerView {
         message_box.append (keyboard_row);
 
         pw_error_revealer = new ErrorRevealer (".");
-        pw_error_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_WARNING);
+        pw_error_revealer.label_widget.add_css_class (Granite.CssClass.WARNING);
 
         pw_entry = new ValidatedEntry ();
 
@@ -108,7 +108,7 @@ public class EncryptView : AbstractInstallerView {
         };
 
         confirm_entry_revealer = new ErrorRevealer (".");
-        confirm_entry_revealer.label_widget.add_css_class (Granite.STYLE_CLASS_ERROR);
+        confirm_entry_revealer.label_widget.add_css_class (Granite.CssClass.ERROR);
 
         var password_box = new Gtk.Box (VERTICAL, 6);
         password_box.append (pw_label);
@@ -133,7 +133,7 @@ public class EncryptView : AbstractInstallerView {
         next_button = new Gtk.Button.with_label (_(SKIP_STRING)) {
             receives_default = true
         };
-        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.CssClass.SUGGESTED);
 
         action_box_end.append (encrypt_button);
         action_box_end.append (next_button);
@@ -289,7 +289,7 @@ public class EncryptView : AbstractInstallerView {
                 wrap = true,
                 xalign = 1
             };
-            label_widget.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            label_widget.add_css_class (Granite.CssClass.SMALL);
 
             var revealer = new Gtk.Revealer () {
                 child = label_widget,

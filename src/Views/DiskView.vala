@@ -97,7 +97,7 @@ public class Installer.DiskView : AbstractInstallerView {
             // Make sure we can skip this view in Test Mode
             sensitive = Installer.App.test_mode
         };
-        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.CssClass.SUGGESTED);
         next_button.clicked.connect (() => next_step ());
 
         action_box_end.append (next_button);
