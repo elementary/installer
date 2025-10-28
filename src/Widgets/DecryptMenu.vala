@@ -108,7 +108,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
         decrypt_button = new Gtk.Button.with_label (_("Decrypt"));
         decrypt_button.halign = Gtk.Align.END;
         decrypt_button.sensitive = false;
-        decrypt_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        decrypt_button.add_css_class (Granite.CssClass.SUGGESTED);
         decrypt_button.clicked.connect (() => {
             decrypt.begin (pv_entry.get_text ());
         });

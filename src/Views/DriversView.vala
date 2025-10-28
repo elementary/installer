@@ -77,7 +77,7 @@
         };
 
         var next_button = new Gtk.Button.with_label (_("Erase and Install"));
-        next_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        next_button.add_css_class (Granite.CssClass.DESTRUCTIVE);
         next_button.clicked.connect (() => next_step ());
 
         action_box_end.append (back_button);

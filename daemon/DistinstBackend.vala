@@ -377,6 +377,8 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
                 }
 
                 break;
+            case Distinst.PartitionTable.NONE:
+                break;
         }
 
         end = disk.get_sector (ref end_sector);

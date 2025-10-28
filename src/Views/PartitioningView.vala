@@ -143,7 +143,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         };
 
         next_button = new Gtk.Button.with_label (_("Next"));
-        next_button.add_css_class (Granite.STYLE_CLASS_SUGGESTED_ACTION);
+        next_button.add_css_class (Granite.CssClass.SUGGESTED);
         next_button.sensitive = false;
 
         action_box_start.append (modify_partitions_button);
@@ -236,6 +236,8 @@ public class Installer.PartitioningView : AbstractInstallerView {
             case MSDOS:
                 break;
             case GPT:
+                break;
+            case NONE:
                 break;
         }
 
