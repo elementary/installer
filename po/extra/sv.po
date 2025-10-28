@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-11 18:07+0000\n"
-"PO-Revision-Date: 2025-10-22 08:07+0000\n"
+"PO-Revision-Date: 2025-10-23 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/installer/"
 "extra/sv/>\n"
@@ -30,7 +30,7 @@ msgstr "Installera elementary OS"
 
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
-msgstr "Steg för steg installationsprogram för elementära OS själv."
+msgstr "Steg för steg-installerare för själva elementary OS."
 
 #: data/installer.metainfo.xml.in:53
 msgid "elementary, Inc."
@@ -69,7 +69,7 @@ msgstr ""
 
 #: data/installer.metainfo.xml.in:92
 msgid "Battery warning is sent as a notification instead of an infobar"
-msgstr "Batterivarning skickas som ett meddelande istället för en infobar"
+msgstr "Batterivarning skickas som ett meddelande istället för en inforad"
 
 #: data/installer.metainfo.xml.in:93
 msgid "Update post-install driver installation instructions"
@@ -92,19 +92,19 @@ msgstr "Använd stora ikoner i vyerna"
 
 #: data/installer.metainfo.xml.in:158
 msgid "Add a custom icon for Before Installing view"
-msgstr "Lägg till en anpassad ikon för vyn Before Installing"
+msgstr "Lägg till en anpassad ikon för vyn Före installation"
 
 #: data/installer.metainfo.xml.in:168
 msgid "Show an infobar on battery instead of switching to a different page"
-msgstr "Visa en infobar på batteriet istället för att växla till en annan sida"
+msgstr "Visa en inforad för batteriet istället för att växla till en annan sida"
 
 #: data/installer.metainfo.xml.in:169
 msgid "Show all system requirements warnings on a single page"
-msgstr "Visa alla systemkravsvarningar på en enda sida"
+msgstr "Visa alla varningar för systemkrav på en enda sida"
 
 #: data/installer.metainfo.xml.in:170
 msgid "Warn about installing developer builds"
-msgstr "Varning om installation av utvecklarversioner"
+msgstr "Varna om installation av utvecklarversioner"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
