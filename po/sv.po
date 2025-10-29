@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-11 18:07+0000\n"
-"PO-Revision-Date: 2025-10-23 09:55+0000\n"
+"PO-Revision-Date: 2025-10-30 19:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/installer/"
 "installer/sv/>\n"
@@ -68,7 +68,7 @@ msgstr "Före installation"
 
 #: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
-msgstr "Förutgåva"
+msgstr "Förhandsversion"
 
 #: src/Views/CheckView.vala:56
 msgid ""
@@ -117,7 +117,7 @@ msgstr "Minne:"
 
 #: src/Views/DiskView.vala:46
 msgid "Select a Drive"
-msgstr "Välj en diskenhet"
+msgstr "Välj en enhet"
 
 #: src/Views/DiskView.vala:51
 msgid ""
@@ -212,7 +212,7 @@ msgid ""
 "If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
 "Krypteringslösenordet kommer att krävas varje gång enheten slås på. Om du "
-"glömmer det kommer du inte att <b>kunna återställa data.</b>"
+"glömmer det <b>kommer du inte att kunna återställa data.</b>"
 
 #: src/Views/EncryptView.vala:70
 msgid ""
