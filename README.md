@@ -14,7 +14,7 @@ You'll need the following dependencies:
  - gettext
  - gparted
  - libgnomekbd-dev
- - libgranite-7-dev >=7.4.0
+ - libgranite-7-dev >=7.7.0
  - libgtk-4-dev >=4.14
  - libgee-0.8-dev
  - libadwaita-1-dev >=1.4.0
