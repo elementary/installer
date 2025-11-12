@@ -654,7 +654,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             sector_size = 512,
             rotational = false,
             removable = false,
-            partitions = {partitions_13, partitions_14}
+            partitions = {partitions_17, partitions_18}
         };
 
         return InstallerDaemon.DiskInfo () {
