@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-calculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 18:07+0000\n"
+"POT-Creation-Date: 2025-11-19 19:03+0000\n"
 "PO-Revision-Date: 2025-02-06 21:12+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/installer/extra/"
@@ -36,25 +36,27 @@ msgstr "Assistant d'installation étape par étape pour installer elementary OS.
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:74
-#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:113
+#: data/installer.metainfo.xml.in:61 data/installer.metainfo.xml.in:73
+#: data/installer.metainfo.xml.in:88 data/installer.metainfo.xml.in:102
 #: data/installer.metainfo.xml.in:127 data/installer.metainfo.xml.in:141
-#: data/installer.metainfo.xml.in:155 data/installer.metainfo.xml.in:166
+#: data/installer.metainfo.xml.in:155 data/installer.metainfo.xml.in:169
+#: data/installer.metainfo.xml.in:180
 msgid "Improvements:"
 msgstr "Améliorations :"
 
-#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:94
-msgid "Improve screen reader support"
-msgstr "Amélioration de la prise en charge des lecteurs d'écran"
-
-#: data/installer.metainfo.xml.in:64 data/installer.metainfo.xml.in:76
-#: data/installer.metainfo.xml.in:95 data/installer.metainfo.xml.in:116
-#: data/installer.metainfo.xml.in:130 data/installer.metainfo.xml.in:143
-#: data/installer.metainfo.xml.in:159 data/installer.metainfo.xml.in:171
+#: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:76
+#: data/installer.metainfo.xml.in:90 data/installer.metainfo.xml.in:109
+#: data/installer.metainfo.xml.in:130 data/installer.metainfo.xml.in:144
+#: data/installer.metainfo.xml.in:157 data/installer.metainfo.xml.in:173
+#: data/installer.metainfo.xml.in:185
 msgid "Updated translations"
 msgstr "Mise à jour des traductions"
 
-#: data/installer.metainfo.xml.in:90
+#: data/installer.metainfo.xml.in:75 data/installer.metainfo.xml.in:108
+msgid "Improve screen reader support"
+msgstr "Amélioration de la prise en charge des lecteurs d'écran"
+
+#: data/installer.metainfo.xml.in:104
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
@@ -62,54 +64,54 @@ msgstr ""
 "Tri des langues par ordre alphabétique et sélection automatique de la "
 "variante principale par défaut"
 
-#: data/installer.metainfo.xml.in:91
+#: data/installer.metainfo.xml.in:105
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
 "Meilleur retour d'information sur les valeurs invalides lors d'une "
 "installation personnalisée"
 
-#: data/installer.metainfo.xml.in:92
+#: data/installer.metainfo.xml.in:106
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
 "L'avertissement concernant la batterie est envoyé sous forme de notification "
 "au lieu d'une barre d'information"
 
-#: data/installer.metainfo.xml.in:93
+#: data/installer.metainfo.xml.in:107
 msgid "Update post-install driver installation instructions"
 msgstr ""
 "Mise à jour des instructions d'installation des pilotes après l'installation"
 
-#: data/installer.metainfo.xml.in:115
+#: data/installer.metainfo.xml.in:129
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr ""
 "La fenêtre d'aperçu de la disposition du clavier peut désormais être "
 "redimensionnée"
 
-#: data/installer.metainfo.xml.in:129
+#: data/installer.metainfo.xml.in:143
 msgid "Swipe to navigate back"
 msgstr "Balayez pour revenir en arrière"
 
-#: data/installer.metainfo.xml.in:157
+#: data/installer.metainfo.xml.in:171
 msgid "Use large icons in views"
 msgstr "Utilisation de grandes icônes dans la page"
 
-#: data/installer.metainfo.xml.in:158
+#: data/installer.metainfo.xml.in:172
 msgid "Add a custom icon for Before Installing view"
 msgstr "Ajout d'une icône personnalisée avant la page d'installation"
 
-#: data/installer.metainfo.xml.in:168
+#: data/installer.metainfo.xml.in:182
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
 "Affichage d'une barre d'information sur la batterie plutôt que de passer à "
 "une autre page"
 
-#: data/installer.metainfo.xml.in:169
+#: data/installer.metainfo.xml.in:183
 msgid "Show all system requirements warnings on a single page"
 msgstr ""
 "Affichage de tous les avertissements relatifs à la configuration requise sur "
 "une seule page"
 
-#: data/installer.metainfo.xml.in:170
+#: data/installer.metainfo.xml.in:184
 msgid "Warn about installing developer builds"
 msgstr "Avertissement sur l'installation des versions pour les développeurs"
 
