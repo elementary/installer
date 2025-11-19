@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 18:07+0000\n"
+"POT-Creation-Date: 2025-11-19 19:03+0000\n"
 "PO-Revision-Date: 2017-04-01 19:21+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: ak (generated) <http://weblate.elementary.io/projects/desktop/"
@@ -96,19 +96,19 @@ msgstr ""
 msgid "Install Anyway"
 msgstr ""
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid "Recommended:"
 msgstr ""
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:236
 msgid "Your Device:"
 msgstr ""
 
-#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:242 src/Views/CheckView.vala:246
 msgid "Processor:"
 msgstr ""
 
-#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
+#: src/Views/CheckView.vala:258 src/Views/CheckView.vala:262
 msgid "Memory:"
 msgstr ""
 
@@ -200,40 +200,40 @@ msgid ""
 "each time this device is turned on."
 msgstr ""
 
-#: src/Views/EncryptView.vala:80
+#: src/Views/EncryptView.vala:89
 msgid "Encryption Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:82
+#: src/Views/EncryptView.vala:91
 msgid ""
 "A unique password for this device, not the password for your user account."
 msgstr ""
 
-#: src/Views/EncryptView.vala:97
+#: src/Views/EncryptView.vala:106
 msgid "Confirm Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:122
+#: src/Views/EncryptView.vala:129
 msgid "Set Encryption Password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:182
+#: src/Views/EncryptView.vala:204
 msgid "Acceptable password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:184
+#: src/Views/EncryptView.vala:206
 msgid "Good password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:186
+#: src/Views/EncryptView.vala:208
 msgid "Great password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:207
+#: src/Views/EncryptView.vala:229
 msgid "Passwords do not match"
 msgstr ""
 
-#: src/Views/EncryptView.vala:213
+#: src/Views/EncryptView.vala:235
 msgid "Passwords match"
 msgstr ""
 
@@ -342,51 +342,51 @@ msgstr ""
 msgid "Modify Partitions…"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:283
 msgid "EFI partition has the wrong file system"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:285
 msgid "EFI partition is too small"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:286
+#: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for root"
 msgstr ""
 
-#: src/Views/PartitioningView.vala:288
+#: src/Views/PartitioningView.vala:290
 msgid "Invalid file system for home"
 msgstr ""
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
 msgstr ""
 
-#: src/Views/ProgressView.vala:91
+#: src/Views/ProgressView.vala:90
 msgid "Installing"
 msgstr ""
 
-#: src/Views/ProgressView.vala:96
+#: src/Views/ProgressView.vala:95
 msgid "Hide log"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:225
+#: src/Views/ProgressView.vala:224
 msgid "Partitioning Drive"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:230
+#: src/Views/ProgressView.vala:229
 msgid "Extracting Files"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:235
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr ""
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:240
+#: src/Views/ProgressView.vala:239
 msgid "Finishing the Installation"
 msgstr ""
 
@@ -475,12 +475,12 @@ msgstr ""
 msgid "LUKS volume was decrypted"
 msgstr ""
 
-#: src/Widgets/DiskBar.vala:253
+#: src/Widgets/DiskBar.vala:259
 #, c-format
 msgid "%s (%s)"
 msgstr ""
 
-#: src/Widgets/DiskBar.vala:254
+#: src/Widgets/DiskBar.vala:260
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr ""

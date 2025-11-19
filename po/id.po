@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 18:07+0000\n"
+"POT-Creation-Date: 2025-11-19 19:03+0000\n"
 "PO-Revision-Date: 2023-05-20 18:06+0000\n"
 "Last-Translator: Faisal Rachmadin "
 "<frachmadin@users.noreply.l10n.elementary.io>\n"
@@ -101,19 +101,19 @@ msgstr "Hal ini dapat menyebabkannya berjalan lambat atau membeku."
 msgid "Install Anyway"
 msgstr "Tetap Pasang"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid "Recommended:"
 msgstr "Direkomendasikan:"
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:236
 msgid "Your Device:"
 msgstr "Perangkat Anda:"
 
-#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:242 src/Views/CheckView.vala:246
 msgid "Processor:"
 msgstr "Prosesor:"
 
-#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
+#: src/Views/CheckView.vala:258 src/Views/CheckView.vala:262
 msgid "Memory:"
 msgstr "Memori:"
 
@@ -219,13 +219,13 @@ msgstr ""
 "Sebuah keyboard akan dibutuhkan untuk mengetik kata sandi enkripsi setiap "
 "perangkat ini dihidupkan."
 
-#: src/Views/EncryptView.vala:80
+#: src/Views/EncryptView.vala:89
 #, fuzzy
 #| msgid "Set Encryption Password"
 msgid "Encryption Password"
 msgstr "Tetapkan Kata Sandi Enkripsi"
 
-#: src/Views/EncryptView.vala:82
+#: src/Views/EncryptView.vala:91
 #, fuzzy
 #| msgid ""
 #| "If you forget the encryption password, <b>you will not be able to recover "
@@ -238,37 +238,37 @@ msgstr ""
 "</b> Ini adalah kata sandi unik untuk perangkat ini, bukan kata sandi untuk "
 "akun pengguna Anda."
 
-#: src/Views/EncryptView.vala:97
+#: src/Views/EncryptView.vala:106
 msgid "Confirm Password"
 msgstr "Konfirmasi Kata Sandi"
 
-#: src/Views/EncryptView.vala:122
+#: src/Views/EncryptView.vala:129
 msgid "Set Encryption Password"
 msgstr "Tetapkan Kata Sandi Enkripsi"
 
-#: src/Views/EncryptView.vala:182
+#: src/Views/EncryptView.vala:204
 #, fuzzy
 #| msgid "Set Password"
 msgid "Acceptable password"
 msgstr "Atur Kata Sandi"
 
-#: src/Views/EncryptView.vala:184
+#: src/Views/EncryptView.vala:206
 #, fuzzy
 #| msgid "Choose Password"
 msgid "Good password"
 msgstr "Pilih Kata Sandi"
 
-#: src/Views/EncryptView.vala:186
+#: src/Views/EncryptView.vala:208
 #, fuzzy
 #| msgid "Set Password"
 msgid "Great password"
 msgstr "Atur Kata Sandi"
 
-#: src/Views/EncryptView.vala:207
+#: src/Views/EncryptView.vala:229
 msgid "Passwords do not match"
 msgstr "Kata sandi tidak cocok"
 
-#: src/Views/EncryptView.vala:213
+#: src/Views/EncryptView.vala:235
 #, fuzzy
 #| msgid "Passwords do not match"
 msgid "Passwords match"
@@ -391,53 +391,53 @@ msgstr "Direkomendasikan juga untuk memilih sebuah partisi <b>Swap</b>."
 msgid "Modify Partitions…"
 msgstr "Memodifikasi Partisi…"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:283
 msgid "EFI partition has the wrong file system"
 msgstr "Partisi EFI memiliki sistem berkas yang salah"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:285
 msgid "EFI partition is too small"
 msgstr "Partisi EFI terlalu kecil"
 
-#: src/Views/PartitioningView.vala:286
+#: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for root"
 msgstr "Sistem berkas untuk root tidak valid"
 
-#: src/Views/PartitioningView.vala:288
+#: src/Views/PartitioningView.vala:290
 msgid "Invalid file system for home"
 msgstr "Sistem berkas untuk beranda tidak valid"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
 msgstr "Tampilkan log"
 
-#: src/Views/ProgressView.vala:91
+#: src/Views/ProgressView.vala:90
 #, fuzzy
 #| msgid "Before Installing"
 msgid "Installing"
 msgstr "Sebelum Memasang"
 
-#: src/Views/ProgressView.vala:96
+#: src/Views/ProgressView.vala:95
 msgid "Hide log"
 msgstr "Sembuyikan log"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:225
+#: src/Views/ProgressView.vala:224
 msgid "Partitioning Drive"
 msgstr "Mempartisi Drive"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:230
+#: src/Views/ProgressView.vala:229
 msgid "Extracting Files"
 msgstr "Mengekstrak Berkas"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:235
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Mengkonfigurasi Sistem"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:240
+#: src/Views/ProgressView.vala:239
 msgid "Finishing the Installation"
 msgstr "Menyelesaikan Pemasangan"
 
@@ -534,12 +534,12 @@ msgstr "Dekripsi"
 msgid "LUKS volume was decrypted"
 msgstr "Volume LUKS didekripsi"
 
-#: src/Widgets/DiskBar.vala:253
+#: src/Widgets/DiskBar.vala:259
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:254
+#: src/Widgets/DiskBar.vala:260
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

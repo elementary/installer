@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 18:07+0000\n"
+"POT-Creation-Date: 2025-11-19 19:03+0000\n"
 "PO-Revision-Date: 2021-06-05 23:54+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/installer/"
@@ -102,19 +102,19 @@ msgstr ""
 msgid "Install Anyway"
 msgstr "Installer %s"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid "Recommended:"
 msgstr "Anbefalet:"
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:236
 msgid "Your Device:"
 msgstr "Din Enhed:"
 
-#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:242 src/Views/CheckView.vala:246
 msgid "Processor:"
 msgstr "Processor:"
 
-#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
+#: src/Views/CheckView.vala:258 src/Views/CheckView.vala:262
 msgid "Memory:"
 msgstr "Hukommelse:"
 
@@ -224,13 +224,13 @@ msgstr ""
 "Et indbygget eller USB keyboard vil være krævet for at indtaste krypterings "
 "kodeordet hvergang denne enhed starter."
 
-#: src/Views/EncryptView.vala:80
+#: src/Views/EncryptView.vala:89
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Encryption Password"
 msgstr "Vælg Krypteringskode"
 
-#: src/Views/EncryptView.vala:82
+#: src/Views/EncryptView.vala:91
 #, fuzzy
 #| msgid ""
 #| "If you forget the encryption password, <b>you will not be able to recover "
@@ -243,39 +243,39 @@ msgstr ""
 "tabte data.</b> Dette er et unikt kodeord for denne enhed, ikke adgangskoden "
 "til din brugerkonto."
 
-#: src/Views/EncryptView.vala:97
+#: src/Views/EncryptView.vala:106
 msgid "Confirm Password"
 msgstr "Bekræft Adgangskode"
 
-#: src/Views/EncryptView.vala:122
+#: src/Views/EncryptView.vala:129
 #, fuzzy
 #| msgid "Choose Encryption Password"
 msgid "Set Encryption Password"
 msgstr "Vælg Krypteringskode"
 
-#: src/Views/EncryptView.vala:182
+#: src/Views/EncryptView.vala:204
 #, fuzzy
 #| msgid "Set Password"
 msgid "Acceptable password"
 msgstr "Sæt Adgangskode"
 
-#: src/Views/EncryptView.vala:184
+#: src/Views/EncryptView.vala:206
 #, fuzzy
 #| msgid "Choose Password"
 msgid "Good password"
 msgstr "Vælg Adgangskode"
 
-#: src/Views/EncryptView.vala:186
+#: src/Views/EncryptView.vala:208
 #, fuzzy
 #| msgid "Set Password"
 msgid "Great password"
 msgstr "Sæt Adgangskode"
 
-#: src/Views/EncryptView.vala:207
+#: src/Views/EncryptView.vala:229
 msgid "Passwords do not match"
 msgstr "Adgangskoderne er ikke ens"
 
-#: src/Views/EncryptView.vala:213
+#: src/Views/EncryptView.vala:235
 #, fuzzy
 #| msgid "Passwords do not match"
 msgid "Passwords match"
@@ -397,53 +397,53 @@ msgstr "Det anbefales også at vælge en <b>Swap</b> partition."
 msgid "Modify Partitions…"
 msgstr "Tilpas Partitioner…"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:283
 msgid "EFI partition has the wrong file system"
 msgstr "EFI-partitionen har det forkerte filsystem"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:285
 msgid "EFI partition is too small"
 msgstr "EFI-partitionen er for lille"
 
-#: src/Views/PartitioningView.vala:286
+#: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for root"
 msgstr "Ugyldigt filsystem til root"
 
-#: src/Views/PartitioningView.vala:288
+#: src/Views/PartitioningView.vala:290
 msgid "Invalid file system for home"
 msgstr "Ugyldigt filsystem til home"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
 msgstr "Vis log"
 
-#: src/Views/ProgressView.vala:91
+#: src/Views/ProgressView.vala:90
 #, fuzzy
 #| msgid "Try Installing Again"
 msgid "Installing"
 msgstr "Prøv at installere igen"
 
-#: src/Views/ProgressView.vala:96
+#: src/Views/ProgressView.vala:95
 msgid "Hide log"
 msgstr "Skjul log"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:225
+#: src/Views/ProgressView.vala:224
 msgid "Partitioning Drive"
 msgstr "Partitionerer drev"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:230
+#: src/Views/ProgressView.vala:229
 msgid "Extracting Files"
 msgstr "Udpakker filer"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:235
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Konfigurerer systemet"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:240
+#: src/Views/ProgressView.vala:239
 msgid "Finishing the Installation"
 msgstr "Færdiggører Installationen"
 
@@ -541,12 +541,12 @@ msgstr "Dekrypter"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS-volumen blev dekrypteret"
 
-#: src/Widgets/DiskBar.vala:253
+#: src/Widgets/DiskBar.vala:259
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:254
+#: src/Widgets/DiskBar.vala:260
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"
