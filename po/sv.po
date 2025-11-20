@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 18:07+0000\n"
+"POT-Creation-Date: 2025-11-19 19:03+0000\n"
 "PO-Revision-Date: 2025-10-30 19:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/installer/"
@@ -99,19 +99,19 @@ msgstr "Detta kan leda till att den går långsamt eller fryser."
 msgid "Install Anyway"
 msgstr "Installera ändå"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid "Recommended:"
 msgstr "Rekommenderat:"
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:236
 msgid "Your Device:"
 msgstr "Din enhet:"
 
-#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:242 src/Views/CheckView.vala:246
 msgid "Processor:"
 msgstr "Processor:"
 
-#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
+#: src/Views/CheckView.vala:258 src/Views/CheckView.vala:262
 msgid "Memory:"
 msgstr "Minne:"
 
@@ -222,42 +222,42 @@ msgstr ""
 "Ett inbyggt tangentbord eller ett USB-tangentbord krävs för att skriva in "
 "krypteringslösenordet varje gång enheten slås på."
 
-#: src/Views/EncryptView.vala:80
+#: src/Views/EncryptView.vala:89
 msgid "Encryption Password"
 msgstr "Lösenord för kryptering"
 
-#: src/Views/EncryptView.vala:82
+#: src/Views/EncryptView.vala:91
 msgid ""
 "A unique password for this device, not the password for your user account."
 msgstr ""
 "Ett unikt lösenord för den här enheten, inte lösenordet för ditt "
 "användarkonto."
 
-#: src/Views/EncryptView.vala:97
+#: src/Views/EncryptView.vala:106
 msgid "Confirm Password"
 msgstr "Bekräfta lösenord"
 
-#: src/Views/EncryptView.vala:122
+#: src/Views/EncryptView.vala:129
 msgid "Set Encryption Password"
 msgstr "Ange lösenord för kryptering"
 
-#: src/Views/EncryptView.vala:182
+#: src/Views/EncryptView.vala:204
 msgid "Acceptable password"
 msgstr "Acceptabelt lösenord"
 
-#: src/Views/EncryptView.vala:184
+#: src/Views/EncryptView.vala:206
 msgid "Good password"
 msgstr "Bra lösenord"
 
-#: src/Views/EncryptView.vala:186
+#: src/Views/EncryptView.vala:208
 msgid "Great password"
 msgstr "Mycket bra lösenord"
 
-#: src/Views/EncryptView.vala:207
+#: src/Views/EncryptView.vala:229
 msgid "Passwords do not match"
 msgstr "Lösenorden stämmer inte överens med varandra"
 
-#: src/Views/EncryptView.vala:213
+#: src/Views/EncryptView.vala:235
 msgid "Passwords match"
 msgstr "Lösenorden stämmer överens"
 
@@ -366,51 +366,51 @@ msgstr "Det är också rekommenderat att välja en <b>växling</b>-partition."
 msgid "Modify Partitions…"
 msgstr "Ändra partitioner…"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:283
 msgid "EFI partition has the wrong file system"
 msgstr "EFI-partition har fel filsystem"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:285
 msgid "EFI partition is too small"
 msgstr "EFI-partitionen är för liten"
 
-#: src/Views/PartitioningView.vala:286
+#: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for root"
 msgstr "Ogiltigt filsystem för rot"
 
-#: src/Views/PartitioningView.vala:288
+#: src/Views/PartitioningView.vala:290
 msgid "Invalid file system for home"
 msgstr "Ogiltigt filsystem för hem"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
 msgstr "Visa logg"
 
-#: src/Views/ProgressView.vala:91
+#: src/Views/ProgressView.vala:90
 msgid "Installing"
 msgstr "Installerar"
 
-#: src/Views/ProgressView.vala:96
+#: src/Views/ProgressView.vala:95
 msgid "Hide log"
 msgstr "Dölj logg"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:225
+#: src/Views/ProgressView.vala:224
 msgid "Partitioning Drive"
 msgstr "Partitionerar disk"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:230
+#: src/Views/ProgressView.vala:229
 msgid "Extracting Files"
 msgstr "Extraherar filer"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:235
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "Konfigurerar systemet"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:240
+#: src/Views/ProgressView.vala:239
 msgid "Finishing the Installation"
 msgstr "Slutför installationen"
 
@@ -508,12 +508,12 @@ msgstr "Avkryptera"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS-volymen har avkrypterats"
 
-#: src/Widgets/DiskBar.vala:253
+#: src/Widgets/DiskBar.vala:259
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/Widgets/DiskBar.vala:254
+#: src/Widgets/DiskBar.vala:260
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s (%s: <b>%s</b>)"

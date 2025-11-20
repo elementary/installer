@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.installer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 18:07+0000\n"
+"POT-Creation-Date: 2025-11-19 19:03+0000\n"
 "PO-Revision-Date: 2021-11-01 08:19+0000\n"
 "Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/installer/"
@@ -106,19 +106,19 @@ msgstr ""
 msgid "Install Anyway"
 msgstr "安装 %s"
 
-#: src/Views/CheckView.vala:232
+#: src/Views/CheckView.vala:230
 msgid "Recommended:"
 msgstr "推荐："
 
-#: src/Views/CheckView.vala:238
+#: src/Views/CheckView.vala:236
 msgid "Your Device:"
 msgstr "您的设备："
 
-#: src/Views/CheckView.vala:244 src/Views/CheckView.vala:248
+#: src/Views/CheckView.vala:242 src/Views/CheckView.vala:246
 msgid "Processor:"
 msgstr "处理器："
 
-#: src/Views/CheckView.vala:260 src/Views/CheckView.vala:264
+#: src/Views/CheckView.vala:258 src/Views/CheckView.vala:262
 msgid "Memory:"
 msgstr "内存："
 
@@ -218,13 +218,13 @@ msgid ""
 "each time this device is turned on."
 msgstr "每次启动设备时需要使用内置或 USB 外接的键盘来输入解密密码。"
 
-#: src/Views/EncryptView.vala:80
+#: src/Views/EncryptView.vala:89
 #, fuzzy
 #| msgid "Set Encryption Password"
 msgid "Encryption Password"
 msgstr "设置加密密码"
 
-#: src/Views/EncryptView.vala:82
+#: src/Views/EncryptView.vala:91
 #, fuzzy
 #| msgid ""
 #| "If you forget the encryption password, <b>you will not be able to recover "
@@ -236,35 +236,35 @@ msgstr ""
 "如果您忘记了加密密码， <b>您将无法恢复数据</b>。 加密密码是针对该设备的密码，"
 "而非账户密码。"
 
-#: src/Views/EncryptView.vala:97
+#: src/Views/EncryptView.vala:106
 msgid "Confirm Password"
 msgstr "确认密码"
 
-#: src/Views/EncryptView.vala:122
+#: src/Views/EncryptView.vala:129
 msgid "Set Encryption Password"
 msgstr "设置加密密码"
 
-#: src/Views/EncryptView.vala:182
+#: src/Views/EncryptView.vala:204
 msgid "Acceptable password"
 msgstr ""
 
-#: src/Views/EncryptView.vala:184
+#: src/Views/EncryptView.vala:206
 #, fuzzy
 #| msgid "Choose Password"
 msgid "Good password"
 msgstr "选择密码"
 
-#: src/Views/EncryptView.vala:186
+#: src/Views/EncryptView.vala:208
 #, fuzzy
 #| msgid "Choose Password"
 msgid "Great password"
 msgstr "选择密码"
 
-#: src/Views/EncryptView.vala:207
+#: src/Views/EncryptView.vala:229
 msgid "Passwords do not match"
 msgstr "密码不匹配"
 
-#: src/Views/EncryptView.vala:213
+#: src/Views/EncryptView.vala:235
 #, fuzzy
 #| msgid "Passwords do not match"
 msgid "Passwords match"
@@ -384,53 +384,53 @@ msgstr "同时建议您选择一个 <b>交换（Swap）</b> 分区。"
 msgid "Modify Partitions…"
 msgstr "修改分区…"
 
-#: src/Views/PartitioningView.vala:281
+#: src/Views/PartitioningView.vala:283
 msgid "EFI partition has the wrong file system"
 msgstr "EFI 分区文件系统有误"
 
-#: src/Views/PartitioningView.vala:283
+#: src/Views/PartitioningView.vala:285
 msgid "EFI partition is too small"
 msgstr "EFI 分区空间过小"
 
-#: src/Views/PartitioningView.vala:286
+#: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for root"
 msgstr "Root 文件系统不可用"
 
-#: src/Views/PartitioningView.vala:288
+#: src/Views/PartitioningView.vala:290
 msgid "Invalid file system for home"
 msgstr "主目录（Home）文件系统不可用"
 
-#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:100
+#: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
 msgstr "显示日志"
 
-#: src/Views/ProgressView.vala:91
+#: src/Views/ProgressView.vala:90
 #, fuzzy
 #| msgid "Try Installing Again"
 msgid "Installing"
 msgstr "尝试重新安装"
 
-#: src/Views/ProgressView.vala:96
+#: src/Views/ProgressView.vala:95
 msgid "Hide log"
 msgstr "隐藏日志"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:225
+#: src/Views/ProgressView.vala:224
 msgid "Partitioning Drive"
 msgstr "正在分区硬盘"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:230
+#: src/Views/ProgressView.vala:229
 msgid "Extracting Files"
 msgstr "正在解压文件"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:235
+#: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
 msgstr "正在配置系统"
 
 #. /TRANSLATORS: The current step of the installer back-end
-#: src/Views/ProgressView.vala:240
+#: src/Views/ProgressView.vala:239
 msgid "Finishing the Installation"
 msgstr "正在完成安装"
 
@@ -521,12 +521,12 @@ msgstr "解锁"
 msgid "LUKS volume was decrypted"
 msgstr "LUKS 卷已解锁"
 
-#: src/Widgets/DiskBar.vala:253
+#: src/Widgets/DiskBar.vala:259
 #, c-format
 msgid "%s (%s)"
 msgstr "%s（%s）"
 
-#: src/Widgets/DiskBar.vala:254
+#: src/Widgets/DiskBar.vala:260
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
 msgstr "%s（%s: <b>%s</b>）"
