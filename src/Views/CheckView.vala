@@ -57,6 +57,12 @@ public class Installer.CheckView : AbstractInstallerView {
             "applications-development"
         );
 
+        var mseries_view = new CheckView (
+            _("Limited Hardware Support"),
+            _("Installing in a virtual machine is recommended for Apple M-series devices."),
+            "computer-fail"
+        );
+
         var vm_view = new CheckView (
             _("Virtual Machine"),
             _("Some parts of %s may run slowly, freeze, or not function properly.").printf (Utils.get_pretty_name ()),
@@ -113,8 +119,20 @@ public class Installer.CheckView : AbstractInstallerView {
             critical ("Couldn't read apt sources: %s", e.message);
         }
 
-        if (get_vm () || Installer.App.test_mode) {
-            message_box.append (vm_view);
+        try {
+            bool is_vm;
+            bool is_mseries;
+            get_cpu_info (out is_vm, out is_mseries);
+
+            if ((is_mseries && !is_vm) || Installer.App.test_mode) {
+                message_box.append (mseries_view);
+            }
+
+            if ((is_vm && !is_mseries) || Installer.App.test_mode) {
+                message_box.append (vm_view);
+            }
+        } catch (Error e) {
+            critical (e.message);
         }
 
         if (!minimum_specs || Installer.App.test_mode) {
@@ -158,21 +176,22 @@ public class Installer.CheckView : AbstractInstallerView {
         return 0;
     }
 
-    private static bool get_vm () {
-        File file = File.new_for_path ("/proc/cpuinfo");
-        try {
-            DataInputStream dis = new DataInputStream (file.read ());
-            string? line;
-            while ((line = dis.read_line (null, null)) != null) {
-                if (line.has_prefix ("flags") && line.contains ("hypervisor")) {
-                    return true;
-                }
-            }
-        } catch (Error e) {
-            critical (e.message);
-        }
+    private void get_cpu_info (out bool is_vm, out bool is_mseries) throws Error {
+        is_mseries = false;
+        is_vm = false;
 
-        return false;
+        var file = File.new_for_path ("/proc/cpuinfo");
+        var dis = new DataInputStream (file.read ());
+        string? line;
+        while ((line = dis.read_line (null, null)) != null) {
+            if (line.has_prefix ("vendor_id") && line.contains ("Apple")) {
+                is_mseries = true;
+            }
+
+            if (line.has_prefix ("flags") && line.contains ("hypervisor")) {
+                is_vm = true;
+            }
+        }
     }
 
     private class CheckView : Gtk.Grid {
