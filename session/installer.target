@@ -7,4 +7,3 @@ PartOf=gnome-session-initialized.target
 Before=gnome-session-initialized.target
 
 Wants=io.elementary.installer-compositor.service
-Wants=io.elementary.installer.service
