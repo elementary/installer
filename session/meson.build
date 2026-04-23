@@ -38,5 +38,5 @@ configure_file(
     output: 'io.elementary.installer.service',
     configuration: service_config,
     install: true,
-    install_dir: systemduserunitdir
+    install_dir: systemdunitdir
 )
