@@ -20,6 +20,8 @@ else
     error('No supported installer backend provided')
 endif
 
+systemdunitdir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')
+
 install_data(
     'io.elementary.InstallerDaemon.service',
     install_dir: systemdunitdir
