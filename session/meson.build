@@ -2,12 +2,6 @@ autostartdir = get_option('sysconfdir') / 'xdg' / 'autostart'
 schemadir = get_option('datadir') / 'glib-2.0' / 'schemas'
 
 install_data(
-    'autostart.desktop',
-    install_dir: autostartdir,
-    rename: meson.project_name() + '.desktop'
-)
-
-install_data(
     'compositor-autostart.desktop',
     install_dir: autostartdir,
     rename: meson.project_name() + '.compositor.desktop'
@@ -32,4 +26,17 @@ install_subdir(
     'gsd',
     install_dir: autostartdir,
     strip_directory: true
+)
+
+systemduserunitdir = get_option('systemduserunitdir')
+if systemduserunitdir == ''
+    systemduserunitdir = systemd_dep.get_variable('systemduserunitdir', pkgconfig_define: [ 'prefix', prefix ])
+endif
+
+configure_file(
+    input: 'installer.service.in',
+    output: 'io.elementary.installer.service',
+    configuration: conf_data,
+    install: true,
+    install_dir: systemduserunitdir
 )

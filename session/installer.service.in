@@ -1,0 +1,12 @@
+[Unit]
+Description=Installer
+After=gnome-session-initialized.target
+
+[Install]
+WantedBy=gnome-session-initialized.target
+
+[Service]
+Type=exec
+ExecStart=@bindir@/io.elementary.installer
+Restart=on-failure
+Slice=session.slice
