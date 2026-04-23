@@ -2,14 +2,8 @@ autostartdir = get_option('sysconfdir') / 'xdg' / 'autostart'
 schemadir = get_option('datadir') / 'glib-2.0' / 'schemas'
 
 install_data(
-    'compositor-autostart.desktop',
-    install_dir: autostartdir,
-    rename: meson.project_name() + '.compositor.desktop'
-)
-
-install_data(
     'installer.desktop',
-    install_dir: get_option('datadir') / 'xsessions'
+    install_dir: get_option('datadir') / 'wayland-sessions'
 )
 
 install_data(
@@ -34,6 +28,20 @@ systemduserunitdir = systemd_dep.get_pkgconfig_variable('systemduserunitdir')
 
 service_config = configuration_data()
 service_config.set('bindir', prefix / get_option('bindir'))
+
+configure_file(
+    input: 'compositor.service.in',
+    output: 'io.elementary.installer-compositor.service',
+    install: true,
+    install_dir: systemd_userunitdir,
+    configuration: service_config
+)
+
+install_data(
+    'installer.target',
+    rename: 'io.elementary.installer.target',
+    install_dir: systemd_userunitdir
+)
 
 configure_file(
     input: 'installer.service.in',

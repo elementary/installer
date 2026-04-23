@@ -3,7 +3,8 @@ Description=Installer
 After=gnome-session-initialized.target
 
 [Install]
-WantedBy=gnome-session-initialized.target
+WantedBy=io.elementary.installer.target
+
 
 [Service]
 Type=exec
