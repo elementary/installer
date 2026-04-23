@@ -1,8 +1,8 @@
 [Unit]
 Description=Greeter Compositor
-# On wayland, force a session shutdown
-OnFailure=gnome-session-shutdown.target
-OnFailureJobMode=replace-irreversibly
+# On X11, try to show the GNOME Session Failed screen
+OnFailure=gnome-session-failed.target
+OnFailureJobMode=replace
 CollectMode=inactive-or-failed
 RefuseManualStart=on
 RefuseManualStop=on
@@ -16,19 +16,25 @@ Before=gnome-session-initialized.target
 #NOTE: ConditionEnvironment works with systemd >= 246
 ConditionEnvironment=XDG_SESSION_TYPE=%I
 
+# Limit startup frequency more than the default
+StartLimitIntervalSec=15s
+StartLimitBurst=3
+
 [Service]
 Slice=session.slice
 Type=notify
 ExecStart=@bindir@/io.elementary.greeter-compositor
 
-# unset some environment variables that were set by the compositor and won't work now that the compositor is gone
-ExecStopPost=-/bin/sh -c 'test "$SERVICE_RESULT" != "exec-condition" && systemctl --user unset-environment GNOME_SETUP_DISPLAY WAYLAND_DISPLAY DISPLAY XAUTHORITY && rm -f "$XDG_RUNTIME_DIR/wayland-0" "$XDG_RUNTIME_DIR/wayland-0.lock"'
+# On X11 we do not need to unset any variables
 
-# On wayland we cannot restart
-Restart=no
+# On X11 we want to restart on-success (Alt+F2 + r) and on-failure.
+Restart=always
+# Do not wait before restarting the shell
+RestartSec=0ms
 # Kill any stubborn child processes after this long
 TimeoutStopSec=5
 
-# Lower down Gala's OOM score to avoid being killed by OOM-killer too early
+# Lower down gnome-shell's OOM score to avoid being killed by OOM-killer too early
 OOMScoreAdjust=-1000
+
 
