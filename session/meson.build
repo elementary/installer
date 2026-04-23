@@ -30,7 +30,7 @@ install_subdir(
 
 prefix = get_option('prefix')
 
-systemduserunitdirunitdir = systemd_dep.get_pkgconfig_variable('systemduserunitdir')
+systemduserunitdir = systemd_dep.get_pkgconfig_variable('systemduserunitdir')
 
 service_config = configuration_data()
 service_config.set('bindir', prefix / get_option('bindir'))
