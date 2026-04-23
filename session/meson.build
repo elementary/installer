@@ -24,7 +24,7 @@ install_subdir(
 
 prefix = get_option('prefix')
 
-systemduserunitdir = systemd_dep.get_pkgconfig_variable('systemduserunitdir')
+systemd_userunitdir = systemd_dep.get_pkgconfig_variable('systemduserunitdir')
 
 service_config = configuration_data()
 service_config.set('bindir', prefix / get_option('bindir'))
@@ -48,5 +48,5 @@ configure_file(
     output: 'io.elementary.installer.service',
     configuration: service_config,
     install: true,
-    install_dir: systemduserunitdir
+    install_dir: systemd_userunitdir
 )
