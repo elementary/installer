@@ -21,6 +21,7 @@ You'll need the following dependencies:
  - libjson-glib-dev
  - libpantheon-wayland-1-dev
  - libpwquality-dev
+ - libsystemd-dev
  - libxkbregistry-dev
  - [distinst](https://github.com/pop-os/distinst/)
  - valac

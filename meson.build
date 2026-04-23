@@ -35,6 +35,8 @@ else
     error('No supported installer backend provided')
 endif
 
+systemdunitdir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')
+
 asresources = gnome.compile_resources(
     'as-resources', 'data/' + meson.project_name() + '.gresource.xml',
     source_dir: 'data',

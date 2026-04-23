@@ -30,11 +30,6 @@ install_subdir(
 
 prefix = get_option('prefix')
 
-systemduserunitdir = get_option('systemduserunitdir')
-if systemduserunitdir == ''
-    systemduserunitdir = systemd_dep.get_variable('systemduserunitdir', pkgconfig_define: [ 'prefix', prefix ])
-endif
-
 service_config = configuration_data()
 service_config.set('bindir', prefix / get_option('bindir'))
 
