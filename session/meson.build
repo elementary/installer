@@ -3,7 +3,7 @@ schemadir = get_option('datadir') / 'glib-2.0' / 'schemas'
 
 install_data(
     'installer.desktop',
-    install_dir: get_option('datadir') / 'x11sessions'
+    install_dir: get_option('datadir') / 'xsessions'
 )
 
 install_data(
