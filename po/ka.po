@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2026-02-06 11:55+0000\n"
+"PO-Revision-Date: 2026-04-19 04:55+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementaryos.org/projects/installer/"
 "installer/ka/>\n"
@@ -223,7 +223,7 @@ msgstr "დაშიფვრის პაროლის დაყენებ�
 
 #: src/Views/EncryptView.vala:204
 msgid "Acceptable password"
-msgstr ""
+msgstr "მისაღები პაროლი"
 
 #: src/Views/EncryptView.vala:206
 msgid "Good password"
