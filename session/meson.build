@@ -15,7 +15,7 @@ install_data(
 
 install_data(
     'installer.desktop',
-    install_dir: get_option('datadir') / 'xsessions'
+    install_dir: get_option('datadir') / 'wayland-sessions'
 )
 
 install_data(
