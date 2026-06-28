@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2016-10-12 01:34+0200\n"
-"Last-Translator: Maxwell Barvian <Unknown>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2026-06-28 20:30+0000\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
+"Language-Team: Greek <https://l10n.elementaryos.org/projects/installer/"
+"installer/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:40+0000\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
 #: src/Application.vala:54
 msgid "Connect to a Power Source"
@@ -45,7 +47,7 @@ msgstr ""
 #: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
 msgid "%s…"
-msgstr ""
+msgstr "%s…"
 
 #: src/Objects/KeyboardVariant.vala:27
 msgid "Default"
@@ -104,11 +106,11 @@ msgstr ""
 
 #: src/Views/CheckView.vala:242 src/Views/CheckView.vala:246
 msgid "Processor:"
-msgstr ""
+msgstr "Επεξεργαστής:"
 
 #: src/Views/CheckView.vala:258 src/Views/CheckView.vala:262
 msgid "Memory:"
-msgstr ""
+msgstr "Μνήμη:"
 
 #: src/Views/DiskView.vala:46
 #, fuzzy
@@ -260,11 +262,11 @@ msgstr ""
 
 #: src/Views/ErrorView.vala:69
 msgid "Details"
-msgstr ""
+msgstr "Λεπτομέρειες"
 
 #: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
-msgstr ""
+msgstr "Επανεκκίνηση συσκευής"
 
 #: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:36
 msgid "Try Demo Mode"
@@ -298,9 +300,8 @@ msgid "Select"
 msgstr ""
 
 #: src/Views/LanguageView.vala:67
-#, fuzzy
 msgid "Languages"
-msgstr "Επιλέξτε μια γλώσσα"
+msgstr "Γλώσσες"
 
 #: src/Views/LanguageView.vala:272
 msgid "Select a Language"
