@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2026-06-28 20:30+0000\n"
+"PO-Revision-Date: 2026-06-29 23:56+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/installer/"
 "installer/el/>\n"
@@ -51,7 +51,7 @@ msgstr "%s…"
 
 #: src/Objects/KeyboardVariant.vala:27
 msgid "Default"
-msgstr ""
+msgstr "Προεπιλογή"
 
 #: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
@@ -130,7 +130,7 @@ msgstr ""
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:83
 msgid "Next"
-msgstr ""
+msgstr "Επόμενο"
 
 #: src/Views/DriversView.vala:24
 msgid "Additional Drivers"
@@ -297,7 +297,7 @@ msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
-msgstr ""
+msgstr "Επιλογή"
 
 #: src/Views/LanguageView.vala:67
 msgid "Languages"
@@ -460,7 +460,7 @@ msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:82
 msgid "Password:"
-msgstr ""
+msgstr "Κωδικός πρόσβασης:"
 
 #: src/Widgets/DecryptMenu.vala:95
 msgid "Device name:"
@@ -468,7 +468,7 @@ msgstr ""
 
 #: src/Widgets/DecryptMenu.vala:108
 msgid "Decrypt"
-msgstr ""
+msgstr "Αποκρυπτογράφηση"
 
 #: src/Widgets/DecryptMenu.vala:182
 msgid "LUKS volume was decrypted"
@@ -477,12 +477,12 @@ msgstr ""
 #: src/Widgets/DiskBar.vala:259
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:260
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
 msgid "Use Partition"
@@ -498,7 +498,7 @@ msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr ""
+msgstr "Χρήση ως:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
@@ -515,7 +515,7 @@ msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
@@ -527,11 +527,11 @@ msgstr ""
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
-msgstr ""
+msgstr "Σύστημα αρχείων:"
 
 #: src/Widgets/PartitionMenu.vala:98
 msgid "Default (ext4)"
-msgstr ""
+msgstr "Προεπιλογή (ext4)"
 
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
