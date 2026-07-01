@@ -31,6 +31,7 @@ x11_dep = dependency('x11')
 installer_backend = get_option('installer_backend')
 if installer_backend == 'distinst'
     distinst_dep = dependency('distinst')
+elif installer_backend == 'anaconda'
 else
     error('No supported installer backend provided')
 endif
