@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2026-06-29 23:56+0000\n"
+"PO-Revision-Date: 2026-07-10 12:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/installer/"
 "installer/el/>\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: src/Application.vala:68
 #, c-format
 msgid "Install %s"
-msgstr ""
+msgstr "Εγκατάσταση του %s"
 
 #: src/Application.vala:76
 msgid "operating system is being installed"
@@ -55,19 +55,19 @@ msgstr "Προεπιλογή"
 
 #: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
-msgstr ""
+msgstr "Δοκιμαστική λειτουργία"
 
 #: src/Views/AbstractInstallerView.vala:64
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Ακύρωση εγκατάστασης"
 
 #: src/Views/CheckView.vala:48
 msgid "Before Installing"
-msgstr ""
+msgstr "Πριν από την εγκατάσταση"
 
 #: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Πρώιμη έκδοση"
 
 #: src/Views/CheckView.vala:56
 msgid ""
@@ -77,16 +77,18 @@ msgstr ""
 
 #: src/Views/CheckView.vala:61
 msgid "Virtual Machine"
-msgstr ""
+msgstr "Εικονική μηχανή"
 
 #: src/Views/CheckView.vala:62
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Ορισμένα τμήματα του %s ενδέχεται να αποκρίνονται με καθυστέρηση, να «"
+"παγώνουν» ή να μην λειτουργούν σωστά."
 
 #: src/Views/CheckView.vala:67
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Η συσκευή σας ενδέχεται να λειτουργεί πολύ αργά"
 
 #: src/Views/CheckView.vala:68
 msgid "This may cause it to run slowly or freeze."
@@ -102,7 +104,7 @@ msgstr ""
 
 #: src/Views/CheckView.vala:236
 msgid "Your Device:"
-msgstr ""
+msgstr "Η συσκευή σας:"
 
 #: src/Views/CheckView.vala:242 src/Views/CheckView.vala:246
 msgid "Processor:"
@@ -134,7 +136,7 @@ msgstr "Επόμενο"
 
 #: src/Views/DriversView.vala:24
 msgid "Additional Drivers"
-msgstr ""
+msgstr "Πρόσθετα προγράμματα οδήγησης"
 
 #: src/Views/DriversView.vala:28
 msgid ""
@@ -202,7 +204,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:89
 msgid "Encryption Password"
-msgstr ""
+msgstr "Κωδικός πρόσβασης κρυπτογράφησης"
 
 #: src/Views/EncryptView.vala:91
 msgid ""
@@ -211,7 +213,7 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:106
 msgid "Confirm Password"
-msgstr ""
+msgstr "Επιβεβαίωση κωδικού πρόσβασης"
 
 #: src/Views/EncryptView.vala:129
 msgid "Set Encryption Password"
@@ -219,15 +221,15 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:204
 msgid "Acceptable password"
-msgstr ""
+msgstr "Αποδεκτός κωδικός πρόσβασης"
 
 #: src/Views/EncryptView.vala:206
 msgid "Good password"
-msgstr ""
+msgstr "Καλός κωδικός πρόσβασης"
 
 #: src/Views/EncryptView.vala:208
 msgid "Great password"
-msgstr ""
+msgstr "Εξαιρετικός κωδικός πρόσβασης"
 
 #: src/Views/EncryptView.vala:229
 msgid "Passwords do not match"
@@ -277,9 +279,8 @@ msgid "Try Installing Again"
 msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:30
-#, fuzzy
 msgid "Input Language"
-msgstr "Επιλέξτε μια γλώσσα"
+msgstr "Γλώσσα εισόδου"
 
 #: src/Views/KeyboardLayoutView.vala:32
 #, fuzzy
@@ -339,7 +340,7 @@ msgstr ""
 
 #: src/Views/PartitioningView.vala:138
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Τροποποίηση διαμερισμάτων…"
 
 #: src/Views/PartitioningView.vala:283
 msgid "EFI partition has the wrong file system"
@@ -464,7 +465,7 @@ msgstr "Κωδικός πρόσβασης:"
 
 #: src/Widgets/DecryptMenu.vala:95
 msgid "Device name:"
-msgstr ""
+msgstr "Όνομα συσκευής:"
 
 #: src/Widgets/DecryptMenu.vala:108
 msgid "Decrypt"
@@ -486,7 +487,7 @@ msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
 msgid "Use Partition"
-msgstr ""
+msgstr "Χρήση διαμερίσματος"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Format"
@@ -502,16 +503,16 @@ msgstr "Χρήση ως:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
-msgstr ""
+msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
-msgstr ""
+msgstr "Προσωπικός φάκελος (/home)"
 
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Εκκίνηση (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
