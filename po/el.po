@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2026-07-10 12:01+0000\n"
+"PO-Revision-Date: 2026-07-25 20:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/installer/"
 "installer/el/>\n"
@@ -96,11 +96,11 @@ msgstr ""
 
 #: src/Views/CheckView.vala:86
 msgid "Install Anyway"
-msgstr ""
+msgstr "Εγκατάσταση ούτως ή άλλως"
 
 #: src/Views/CheckView.vala:230
 msgid "Recommended:"
-msgstr ""
+msgstr "Προτείνεται:"
 
 #: src/Views/CheckView.vala:236
 msgid "Your Device:"
@@ -170,7 +170,7 @@ msgstr ""
 #: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
-msgstr ""
+msgstr "Πίσω"
 
 #: src/Views/DriversView.vala:79
 msgid "Erase and Install"
@@ -178,11 +178,11 @@ msgstr ""
 
 #: src/Views/EncryptView.vala:27
 msgid "Don’t Encrypt"
-msgstr ""
+msgstr "Χωρίς κρυπτογράφηση"
 
 #: src/Views/EncryptView.vala:53
 msgid "Enable Drive Encryption"
-msgstr ""
+msgstr "Ενεργοποίηση κρυπτογράφησης μονάδας"
 
 #: src/Views/EncryptView.vala:58
 msgid ""
@@ -217,7 +217,7 @@ msgstr "Επιβεβαίωση κωδικού πρόσβασης"
 
 #: src/Views/EncryptView.vala:129
 msgid "Set Encryption Password"
-msgstr ""
+msgstr "Ορισμός κωδικού πρόσβασης κρυπτογράφησης"
 
 #: src/Views/EncryptView.vala:204
 msgid "Acceptable password"
@@ -283,10 +283,8 @@ msgid "Input Language"
 msgstr "Γλώσσα εισόδου"
 
 #: src/Views/KeyboardLayoutView.vala:32
-#, fuzzy
-#| msgid "Select a Language"
 msgid "Select Keyboard Layout"
-msgstr "Επιλέξτε μια γλώσσα"
+msgstr "Επιλογή διάταξης πληκτρολογίου"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
@@ -294,7 +292,7 @@ msgstr ""
 
 #: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Εμφάνιση διάταξης πληκτρολογίου"
 
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
@@ -310,7 +308,7 @@ msgstr "Επιλέξτε μια γλώσσα"
 
 #: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
-msgstr ""
+msgstr "Τρέχουσα ενεργή γλώσσα"
 
 #: src/Views/PartitioningView.vala:51
 #, fuzzy
@@ -360,15 +358,15 @@ msgstr ""
 
 #: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
-msgstr ""
+msgstr "Εμφάνιση αρχείου καταγραφής"
 
 #: src/Views/ProgressView.vala:90
 msgid "Installing"
-msgstr ""
+msgstr "Εγκατάσταση"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
-msgstr ""
+msgstr "Απόκρυψη αρχείου καταγραφής"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:224
@@ -378,21 +376,21 @@ msgstr ""
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:229
 msgid "Extracting Files"
-msgstr ""
+msgstr "Εξαγωγή αρχείων"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
-msgstr ""
+msgstr "Διαμόρφωση του συστήματος"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:239
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Ολοκλήρωση της εγκατάστασης"
 
 #: src/Views/TryInstallView.vala:26
 msgid "Try or Install"
-msgstr ""
+msgstr "Δοκιμή ή εγκατάσταση"
 
 #: src/Views/TryInstallView.vala:38
 msgid ""
@@ -411,7 +409,7 @@ msgstr ""
 
 #: src/Views/TryInstallView.vala:52
 msgid "Custom Install (Advanced)"
-msgstr ""
+msgstr "Προσαρμοσμένη εγκατάσταση (σύνθετο)"
 
 #: src/Views/TryInstallView.vala:54
 msgid ""
@@ -421,7 +419,7 @@ msgstr ""
 
 #: src/Views/TryInstallView.vala:107
 msgid "Custom Install"
-msgstr ""
+msgstr "Προσαρμοσμένη εγκατάσταση"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
@@ -520,11 +518,11 @@ msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr ""
+msgstr "Προσαρμογή"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
-msgstr ""
+msgstr "Προσαρμογή:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
