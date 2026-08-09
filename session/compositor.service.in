@@ -23,7 +23,7 @@ StartLimitBurst=3
 [Service]
 Slice=session.slice
 Type=notify
-ExecStart=@bindir@/io.elementary.greeter-compositor
+ExecStart=env GALA_SESSION_TYPE=installer XDG_CURRENT_DESKTOP=Pantheon gala --wayland
 
 # On X11 we do not need to unset any variables
 
