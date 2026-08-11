@@ -45,6 +45,9 @@ horiz-scroll-enabled=true
 natural-scroll=true
 scroll-method='two-finger-scrolling'
 
+[org.gnome.settings-daemon.plugins.housekeeping:Installer]
+donation-reminder-enabled=false
+
 [org.gnome.settings-daemon.plugins.screensaver-proxy:Installer]
 # Allows light-locker to accept DBus
 active=false
