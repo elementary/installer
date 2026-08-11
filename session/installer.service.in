@@ -2,9 +2,6 @@
 Description=Installer
 After=gnome-session-initialized.target
 
-[Install]
-WantedBy=io.elementary.installer.target
-
 [Service]
 Type=exec
 ExecStart=@bindir@/io.elementary.installer
