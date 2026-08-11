@@ -1,5 +1,5 @@
 [Unit]
-Description=Greeter Compositor
+Description=Installer Compositor
 # On wayland, force a session shutdown
 OnFailure=gnome-session-shutdown.target
 OnFailureJobMode=replace-irreversibly
