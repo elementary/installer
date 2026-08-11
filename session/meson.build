@@ -50,3 +50,8 @@ configure_file(
     install: true,
     install_dir: systemd_userunitdir
 )
+
+install_data(
+    'session.conf',
+    install_dir: systemd_userunitdir / 'gnome-session@installer.target.d',
+)
