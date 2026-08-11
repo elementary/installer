@@ -30,8 +30,8 @@ service_config = configuration_data()
 service_config.set('bindir', prefix / get_option('bindir'))
 
 configure_file(
-    input: 'compositor.service.in',
-    output: 'io.elementary.installer.compositor.service',
+    input: 'compositor@wayland.service.in',
+    output: 'io.elementary.installer.compositor@wayland.service',
     install: true,
     install_dir: systemd_userunitdir,
     configuration: service_config
