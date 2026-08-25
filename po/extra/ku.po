@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2026-08-23 11:02+0000\n"
+"PO-Revision-Date: 2026-08-26 02:06+0000\n"
 "Last-Translator: Cyax <fakecyax@gmail.com>\n"
 "Language-Team: Kurdish <https://l10n.elementaryos.org/projects/installer/"
 "extra/ku/>\n"
@@ -47,17 +47,20 @@ msgstr "Wergerên rojanekirî"
 
 #: data/installer.metainfo.xml.in:75 data/installer.metainfo.xml.in:108
 msgid "Improve screen reader support"
-msgstr ""
+msgstr "Piştgiriya xwînera dîmenderê baştir bike"
 
 #: data/installer.metainfo.xml.in:104
 msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
+"Guhertoyên ziman bi rêza alfabetîk rêz bike û bi berdesî guhertoya sereke "
+"xweber hilbijêre"
 
 #: data/installer.metainfo.xml.in:105
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
+"Dema sazkirinek kesane tê kirin, ji bo nirxên nederbasdar bêtir zanyarî bide"
 
 #: data/installer.metainfo.xml.in:106
 msgid "Battery warning is sent as a notification instead of an infobar"
