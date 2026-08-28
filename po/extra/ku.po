@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2026-08-26 02:06+0000\n"
+"PO-Revision-Date: 2026-08-29 02:01+0000\n"
 "Last-Translator: Cyax <fakecyax@gmail.com>\n"
 "Language-Team: Kurdish <https://l10n.elementaryos.org/projects/installer/"
 "extra/ku/>\n"
@@ -65,6 +65,7 @@ msgstr ""
 #: data/installer.metainfo.xml.in:106
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
+"Hişyariya batariyayê wekî agahdarkirin li şûna bendeke agahdariyê tê şandin"
 
 #: data/installer.metainfo.xml.in:107
 msgid "Update post-install driver installation instructions"
