@@ -155,6 +155,7 @@ public struct InstallerDaemon.Mount {
     string parent_disk;
     string mount_point;
     uint64 sectors;
+    uint64 sector_size;
     FileSystem filesystem;
     MountFlags flags;
 

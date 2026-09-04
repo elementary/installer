@@ -172,9 +172,10 @@ public class ProgressView : Adw.NavigationPage {
             foreach (Installer.Mount m in current_config.mounts) {
                 mounts += InstallerDaemon.Mount () {
                     partition_path = m.partition_path,
-                    parent_disk = m.parent_disk.device_path,
+                    parent_disk = m.parent_disk,
                     mount_point = m.mount_point,
                     sectors = m.sectors,
+                    sector_size = m.sector_size,
                     filesystem = m.filesystem,
                     flags = m.flags
                 };
