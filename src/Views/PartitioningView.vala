@@ -41,7 +41,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         EFI
     }
 
-    const uint64 REQUIRED_EFI_SECTORS = 524288;
+    const uint64 REQUIRED_ESP_SIZE = 256 * 1024 * 1024;
 
     construct {
         mounts = new Gee.ArrayList<Installer.Mount> ();
@@ -218,7 +218,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 partition.menu = new DecryptMenu (part.device_path);
                 ((DecryptMenu) partition.menu).decrypted.connect (on_partition_decrypted);
             } else {
-                partition.menu = new PartitionMenu (part.device_path, disk.device_path, part.filesystem, lvm, this.set_mount, this.unset_mount, this.mount_is_set, partition);
+                partition.menu = new PartitionMenu (part.device_path, disk, part.filesystem, lvm, this.set_mount, this.unset_mount, this.mount_is_set, partition);
             }
 
             partitions.add (partition);
@@ -245,7 +245,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         foreach (Mount m in mounts) {
             layout_debug +=
                 "  %s : %s : %s : %s: format? %s\n".printf (
-                m.parent_disk,
+                m.parent_disk.device_path,
                 m.partition_path,
                 m.mount_point,
                 m.filesystem.to_string (),
@@ -281,7 +281,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         if (mount.mount_point == "/boot/efi") {
             if (!mount.is_valid_boot_mount ()) {
                 throw new GLib.IOError.FAILED (_("EFI partition has the wrong file system"));
-            } else if (mount.sectors < REQUIRED_EFI_SECTORS) {
+            } else if ((mount.sectors * mount.parent_disk.sector_size) < REQUIRED_ESP_SIZE) {
                 throw new GLib.IOError.FAILED (_("EFI partition is too small"));
             }
         } else if (mount.mount_point == "/" && !mount.is_valid_root_mount ()) {

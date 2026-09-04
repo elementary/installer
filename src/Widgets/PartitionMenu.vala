@@ -26,7 +26,7 @@ public delegate bool MountSetFn (string mount_point);
 public class Installer.PartitionMenu : Gtk.Popover {
     private bool disable_signals;
     private bool is_lvm;
-    private string parent_disk;
+    private InstallerDaemon.Disk parent_disk;
     private string partition_path;
     private InstallerDaemon.FileSystem original_filesystem;
 
@@ -40,7 +40,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     // A reference to the parent which owns this menu.
     private PartitionBlock partition_bar;
 
-    public PartitionMenu (string path, string parent, InstallerDaemon.FileSystem fs,
+    public PartitionMenu (string path, InstallerDaemon.Disk parent, InstallerDaemon.FileSystem fs,
                           bool lvm, SetMount set_mount, UnsetMount unset_mount,
                           MountSetFn mount_set, PartitionBlock partition_bar) {
         this.partition_bar = partition_bar;
