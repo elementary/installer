@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2024-11-27 01:16+0000\n"
+"PO-Revision-Date: 2025-12-19 00:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/installer/"
+"Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/installer/"
 "installer/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-09-27 06:41+0000\n"
 
 #: src/Application.vala:54
@@ -228,13 +228,10 @@ msgid "Encryption Password"
 msgstr "Пароль шифрування"
 
 #: src/Views/EncryptView.vala:91
-#, fuzzy
-#| msgid ""
-#| "A unique password for this device; not the password for your user account."
 msgid ""
 "A unique password for this device, not the password for your user account."
 msgstr ""
-"Унікальний пароль для цього пристрою; не пароль для вашого облікового запису "
+"Унікальний пароль для цього пристрою, не пароль для вашого облікового запису "
 "користувача."
 
 #: src/Views/EncryptView.vala:106
@@ -246,32 +243,24 @@ msgid "Set Encryption Password"
 msgstr "Встановити пароль шифрування"
 
 #: src/Views/EncryptView.vala:204
-#, fuzzy
-#| msgid "Set Password"
 msgid "Acceptable password"
-msgstr "Призначити пароль"
+msgstr "Прийнятний пароль"
 
 #: src/Views/EncryptView.vala:206
-#, fuzzy
-#| msgid "Choose Password"
 msgid "Good password"
-msgstr "Оберіть пароль"
+msgstr "Хороший пароль"
 
 #: src/Views/EncryptView.vala:208
-#, fuzzy
-#| msgid "Set Password"
 msgid "Great password"
-msgstr "Призначити пароль"
+msgstr "Чудовий пароль"
 
 #: src/Views/EncryptView.vala:229
 msgid "Passwords do not match"
 msgstr "Паролі не збігаються"
 
 #: src/Views/EncryptView.vala:235
-#, fuzzy
-#| msgid "Passwords do not match"
 msgid "Passwords match"
-msgstr "Паролі не збігаються"
+msgstr "Паролі збігаються"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"

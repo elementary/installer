@@ -20,7 +20,7 @@ jobs:
           apt install -y git
 
       - name: Checkout main
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -40,7 +40,7 @@ jobs:
           cp ../*.deb output/
 
       - name: Save .deb package
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: deb-files
           path: output/*.deb
