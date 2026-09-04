@@ -218,7 +218,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
                 partition.menu = new DecryptMenu (part.device_path);
                 ((DecryptMenu) partition.menu).decrypted.connect (on_partition_decrypted);
             } else {
-                partition.menu = new PartitionMenu (part.device_path, disk.device_path, part.filesystem, lvm, this.set_mount, this.unset_mount, this.mount_is_set, partition);
+                partition.menu = new PartitionMenu (part.device_path, disk, part.filesystem, lvm, this.set_mount, this.unset_mount, this.mount_is_set, partition);
             }
 
             partitions.add (partition);
@@ -245,7 +245,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
         foreach (Mount m in mounts) {
             layout_debug +=
                 "  %s : %s : %s : %s: format? %s\n".printf (
-                m.parent_disk,
+                m.parent_disk.device_path,
                 m.partition_path,
                 m.mount_point,
                 m.filesystem.to_string (),
