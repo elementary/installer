@@ -51,6 +51,6 @@ public class Installer.PartitionBlock : Adw.Bin {
     }
 
     public uint64 get_partition_size_in_sectors () {
-        return partition.end_sector - partition.start_sector;
+        return (partition.end_sector - partition.start_sector) + 1;
     }
 }
