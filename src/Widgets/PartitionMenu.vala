@@ -28,6 +28,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
     private bool is_lvm;
     private string parent_disk;
     private string partition_path;
+    private uint64 sector_size;
     private InstallerDaemon.FileSystem original_filesystem;
 
     private Granite.SwitchModelButton format_partition;
@@ -42,8 +43,9 @@ public class Installer.PartitionMenu : Gtk.Popover {
 
     public PartitionMenu (string path, string parent, InstallerDaemon.FileSystem fs,
                           bool lvm, SetMount set_mount, UnsetMount unset_mount,
-                          MountSetFn mount_set, PartitionBlock partition_bar) {
+                          MountSetFn mount_set, PartitionBlock partition_bar, uint64 sector_size) {
         this.partition_bar = partition_bar;
+        this.sector_size = sector_size;
         original_filesystem = fs;
         is_lvm = lvm;
         partition_path = path;
@@ -271,6 +273,7 @@ public class Installer.PartitionMenu : Gtk.Popover {
                 parent_disk,
                 mount,
                 partition_bar.get_partition_size_in_sectors (),
+                sector_size,
                 (format_partition.active ? InstallerDaemon.MountFlags.FORMAT : 0)
                     + (is_lvm ? InstallerDaemon.MountFlags.LVM : 0),
                 filesystem,

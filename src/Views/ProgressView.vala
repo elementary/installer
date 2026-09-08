@@ -175,6 +175,7 @@ public class ProgressView : Adw.NavigationPage {
                     parent_disk = m.parent_disk,
                     mount_point = m.mount_point,
                     sectors = m.sectors,
+                    sector_size = m.sector_size,
                     filesystem = m.filesystem,
                     flags = m.flags
                 };
