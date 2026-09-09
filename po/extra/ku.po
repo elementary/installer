@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2026-08-29 02:01+0000\n"
+"PO-Revision-Date: 2026-09-10 11:54+0000\n"
 "Last-Translator: Cyax <fakecyax@gmail.com>\n"
 "Language-Team: Kurdish <https://l10n.elementaryos.org/projects/installer/"
 "extra/ku/>\n"
@@ -19,11 +19,11 @@ msgstr "Sazkar"
 
 #: data/installer.metainfo.xml.in:10 data/io.elementary.installer.desktop.in:3
 msgid "Install elementary OS"
-msgstr "elementary OS Saz bike"
+msgstr "elementary OS saz bike"
 
 #: data/installer.metainfo.xml.in:12
 msgid "Step by step installer for elementary OS itself."
-msgstr "Sazkara gav bi gav ji bo elementary OS bi xwe."
+msgstr "Sazkara gav bi gav ji bo elementary OS."
 
 #: data/installer.metainfo.xml.in:53
 msgid "elementary, Inc."
@@ -35,7 +35,7 @@ msgstr "elementary, Inc."
 #: data/installer.metainfo.xml.in:155 data/installer.metainfo.xml.in:169
 #: data/installer.metainfo.xml.in:180
 msgid "Improvements:"
-msgstr "Pêşxistin:"
+msgstr "Pêşvexistin:"
 
 #: data/installer.metainfo.xml.in:63 data/installer.metainfo.xml.in:76
 #: data/installer.metainfo.xml.in:90 data/installer.metainfo.xml.in:109
@@ -54,54 +54,58 @@ msgid ""
 "Sort language variants alphabetically and automatically select main variant "
 "by default"
 msgstr ""
-"Guhertoyên ziman bi rêza alfabetîk rêz bike û bi berdesî guhertoya sereke "
+"Guhertoyên ziman li gorî alfabetê rêz bike û bi berdestî guhertoya sereke "
 "xweber hilbijêre"
 
 #: data/installer.metainfo.xml.in:105
 msgid "Provide more feedback for invalid values when doing a custom install"
 msgstr ""
-"Dema sazkirinek kesane tê kirin, ji bo nirxên nederbasdar bêtir zanyarî bide"
+"Dema sazkirineke taybet tê kirin, ji bo nirxên nederbasdar zanyarî bêtir bide"
 
 #: data/installer.metainfo.xml.in:106
 msgid "Battery warning is sent as a notification instead of an infobar"
 msgstr ""
-"Hişyariya batariyayê wekî agahdarkirin li şûna bendeke agahdariyê tê şandin"
+"Hişyariya betariyayê li şûna bendeke agahdariyê wekî agahdarkirinekê tê "
+"şandin"
 
 #: data/installer.metainfo.xml.in:107
 msgid "Update post-install driver installation instructions"
-msgstr ""
+msgstr "Rêberên sazkirina ajokaran a piştî sazkirinê rojane bike"
 
 #: data/installer.metainfo.xml.in:129
 msgid "Keyboard layout preview is now in a resizable window"
 msgstr ""
+"Pêşdîtina şêwaza kilîtdankê niha di çarçoveyeke ku mezinahiya wê tê guhertin "
+"de ye"
 
 #: data/installer.metainfo.xml.in:143
 msgid "Swipe to navigate back"
-msgstr ""
+msgstr "Ji bo vegerê bişemtîne"
 
 #: data/installer.metainfo.xml.in:171
 msgid "Use large icons in views"
-msgstr ""
+msgstr "Di dîtinan de îkonên mezin bi kar bîne"
 
 #: data/installer.metainfo.xml.in:172
 msgid "Add a custom icon for Before Installing view"
-msgstr ""
+msgstr "Ji bo dîtina beriya sazkirinê îkoneke kesane tevlî bike"
 
 #: data/installer.metainfo.xml.in:182
 msgid "Show an infobar on battery instead of switching to a different page"
 msgstr ""
+"Li ser bataryayê li şûna ku derbasî rûpelekî din bibe bendeke agahdariyê"
 
 #: data/installer.metainfo.xml.in:183
 msgid "Show all system requirements warnings on a single page"
-msgstr ""
+msgstr "Hemû hişyariyên pêdiviyên pergalê li ser rûpelekê nîşan bide"
 
 #: data/installer.metainfo.xml.in:184
 msgid "Warn about installing developer builds"
-msgstr ""
+msgstr "Di derbarê sazkirina avakirinên pêşvebirinê de hişyar bike"
 
 #: data/io.elementary.installer.desktop.in:4
 msgid "Install the system"
-msgstr "Sîstem Saz bike"
+msgstr "Pergalê saz bike"
 
 #~ msgid "system-os-installer"
 #~ msgstr "system-os-installer"
