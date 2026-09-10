@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-19 19:03+0000\n"
-"PO-Revision-Date: 2026-08-14 05:01+0000\n"
+"PO-Revision-Date: 2026-09-10 11:54+0000\n"
 "Last-Translator: Cyax <fakecyax@gmail.com>\n"
 "Language-Team: Kurdish <https://l10n.elementaryos.org/projects/installer/"
 "installer/ku/>\n"
@@ -17,32 +17,32 @@ msgstr ""
 
 #: src/Application.vala:54
 msgid "Connect to a Power Source"
-msgstr ""
+msgstr "Bi çavkaniyeke ceryanê ve girê bide"
 
 #: src/Application.vala:55
 msgid "Installation will not succeed if this device loses power."
-msgstr ""
+msgstr "Ku ev amûr ceryanê winda bike, wê sazkirin têk biçe."
 
 #: src/Application.vala:68
 #, c-format
 msgid "Install %s"
-msgstr "%s Saz bike"
+msgstr "%s saz bike"
 
 #: src/Application.vala:76
 msgid "operating system is being installed"
-msgstr ""
+msgstr "pergala xebatê tê sazkirin"
 
 #: src/Utils.vala:34
 msgid "Test mode shutdown"
-msgstr ""
+msgstr "Girtina moda ceribandinê"
 
 #: src/Utils.vala:48
 msgid "Test mode reboot"
-msgstr ""
+msgstr "Ji nû ve destpêkirina moda testkirinê"
 
 #: src/Utils.vala:74
 msgid "Test mode switch user"
-msgstr ""
+msgstr "Guhertina bikarhêner a awaya testkirinê"
 
 #: src/Helpers/LocaleHelper.vala:126 src/Views/KeyboardLayoutView.vala:200
 #, c-format
@@ -51,54 +51,54 @@ msgstr "%s…"
 
 #: src/Objects/KeyboardVariant.vala:27
 msgid "Default"
-msgstr "Wekî erkên destpêkê"
+msgstr "Berdest"
 
 #: src/Views/AbstractInstallerView.vala:55
 msgid "Test Mode"
-msgstr ""
+msgstr "Moda ceribandinê"
 
 #: src/Views/AbstractInstallerView.vala:64
 msgid "Cancel Installation"
-msgstr "Saz kirin betal bike"
+msgstr "Sazkirinê têk bibe"
 
 #: src/Views/CheckView.vala:48
-#, fuzzy
-#| msgid "Cancel Installation"
 msgid "Before Installing"
-msgstr "Saz kirin betal bike"
+msgstr "Berî sazkirinê"
 
 #: src/Views/CheckView.vala:55
 msgid "Pre-Release Version"
-msgstr ""
+msgstr "Guhertoya berî belavkirinê"
 
 #: src/Views/CheckView.vala:56
 msgid ""
 "Only install on devices dedicated for development. <b>You will not be able "
 "to upgrade to a stable release</b>."
 msgstr ""
+"Tenê li ser amûrên ku ji bo pêşvebirinê hatine veqetandin saz bike. <b>Tu yê "
+"nikaribî derbasî guhertoyeke aram bibî</b>."
 
 #: src/Views/CheckView.vala:61
 msgid "Virtual Machine"
-msgstr ""
+msgstr "Makîneya vîrtûel"
 
 #: src/Views/CheckView.vala:62
 #, c-format
 msgid "Some parts of %s may run slowly, freeze, or not function properly."
 msgstr ""
+"Hinek beşên %s dibe ku hêdî bixebitin, bicemidin an jî bi rengekî rast "
+"nexebitin."
 
 #: src/Views/CheckView.vala:67
 msgid "Your Device May Be Too Slow"
-msgstr ""
+msgstr "Amûra te dibe ku pir hêdî be"
 
 #: src/Views/CheckView.vala:68
 msgid "This may cause it to run slowly or freeze."
-msgstr ""
+msgstr "Ev yek dikare bibe sedem ku ew hêdî bixebite yan jî bicemide."
 
 #: src/Views/CheckView.vala:86
-#, fuzzy
-#| msgid "Install %s"
 msgid "Install Anyway"
-msgstr "%s Saz bike"
+msgstr "Bi her awayî saz bike"
 
 #: src/Views/CheckView.vala:230
 msgid "Recommended:"
@@ -106,39 +106,40 @@ msgstr "Pêşniyarkirî:"
 
 #: src/Views/CheckView.vala:236
 msgid "Your Device:"
-msgstr ""
+msgstr "Amûra te:"
 
 #: src/Views/CheckView.vala:242 src/Views/CheckView.vala:246
 msgid "Processor:"
-msgstr ""
+msgstr "Pêvajokar:"
 
 #: src/Views/CheckView.vala:258 src/Views/CheckView.vala:262
 msgid "Memory:"
-msgstr ""
+msgstr "Bîr:"
 
 #: src/Views/DiskView.vala:46
-#, fuzzy
 msgid "Select a Drive"
-msgstr "Ziman bijartin"
+msgstr "Ajokarekî hilbijêre"
 
 #: src/Views/DiskView.vala:51
 msgid ""
 "This will erase all data on the selected drive. If you have not backed your "
 "data up, you can cancel the installation and use Demo Mode."
 msgstr ""
+"Ev ê hemû daneyên li ser ajokera hilbijartî jê bibe. Ku te hilanîna danayên "
+"xwe nekribe, tu dikarî sazkirinê rawestînî û awaya demoyê bi kar bînî."
 
 #: src/Views/DiskView.vala:71 src/Views/PartitioningView.vala:112
 msgid "Getting the current configuration…"
-msgstr ""
+msgstr "Sazkariyên niha têne wergirtin…"
 
 #: src/Views/DiskView.vala:96 src/Views/PartitioningView.vala:145
 #: src/Views/TryInstallView.vala:83
 msgid "Next"
-msgstr ""
+msgstr "Pêş"
 
 #: src/Views/DriversView.vala:24
 msgid "Additional Drivers"
-msgstr ""
+msgstr "Ajokarên vebijêrkî"
 
 #: src/Views/DriversView.vala:28
 msgid ""
@@ -146,105 +147,122 @@ msgid ""
 "not function properly without additional drivers. Most devices do not "
 "require additional drivers."
 msgstr ""
+"Adapterên Wi-Fi yên Broadcom®, grafîkên NVIDIA®, û hin makîneyên vîrtûel "
+"dibe ku bê ajokarên vebijêrkî bi rengekî rast nexebitin. Piraniya amûran ne "
+"pêwistî ajokarên vebijêrkî ne."
 
 #: src/Views/DriversView.vala:35
 msgid ""
 "Proprietary drivers contain private code that can't be reviewed. Security "
 "and other updates are dependent on the driver vendor."
 msgstr ""
+"Ajokarên xwedîtiyê kodên taybet dihewînin ku nayên vekolîn. Ewlehî û "
+"rojanekirinên din bi firoşkarê ajokar ve girêdayî ne."
 
 #: src/Views/DriversView.vala:41
 msgid "An Internet connection is required to install NVIDIA® graphics drivers."
 msgstr ""
+"Ji bo sazkirina ajokarên grafîkê yên NVIDIA® girêdaneke înternetê pêwîst e."
 
 #: src/Views/DriversView.vala:47
 msgid ""
 "Proprietary drivers can be installed later through System Settings → System, "
 "but an Internet connection will be required for all drivers."
 msgstr ""
+"Ajokarên xwedîtiyê dikarin paşê bi riya Sazkariyên pergalê → Pergal werin "
+"sazkirin, lê ji bo hemû ajokaran girêdaneke înternetê wê pêwîst be."
 
 #: src/Views/DriversView.vala:52
 msgid ""
 "Include third-party proprietary drivers when installing. I agree to their "
 "respective licenses and terms of use."
 msgstr ""
+"Di dema sazkirinê de ajokarên xwedîtiyê yên aliyekî sêyem têxe navê. Ez "
+"lîsans û mercên wan ên bikaranînê me dipejirînim."
 
 #: src/Views/DriversView.vala:75 src/Views/KeyboardLayoutView.vala:54
 #: src/Views/PartitioningView.vala:141 src/Views/TryInstallView.vala:79
 msgid "Back"
-msgstr "Paşve"
+msgstr "Vegere"
 
 #: src/Views/DriversView.vala:79
-#, fuzzy
 msgid "Erase and Install"
-msgstr "Saz kirin betal bike"
+msgstr "Jê bibe û saz bike"
 
 #: src/Views/EncryptView.vala:27
 msgid "Don’t Encrypt"
-msgstr ""
+msgstr "Şîfre neke"
 
 #: src/Views/EncryptView.vala:53
 msgid "Enable Drive Encryption"
-msgstr ""
+msgstr "Şîfrekirina ajokerê çalak bike"
 
 #: src/Views/EncryptView.vala:58
 msgid ""
 "Data will only be protected from others with physical access to this device "
 "when it is shut down."
 msgstr ""
+"Dane wê tenê dema ku ev amûr girtî be ji kesên ku gihîştina fizîkî ya wan bi "
+"vê amûrê re heye werin parastin."
 
 #: src/Views/EncryptView.vala:64
 msgid ""
 "The encryption password will be required each time this device is turned on. "
 "If you forget it, <b>you will not be able to recover data.</b>"
 msgstr ""
+"Her carê ku ev amûr tê vêxisitn, wê borînpeyva şîfrekirinê were xwestin. Ku "
+"tu wê bîr bikî, <b>tu yê nikaribî daneyan vegerînî.</b>"
 
 #: src/Views/EncryptView.vala:70
 msgid ""
 "A built-in or USB keyboard will be required to type the encryption password "
 "each time this device is turned on."
 msgstr ""
+"Ji bo nivîsandina borînpeyva şîfrekirinê her carê ku ev amûr tê vêxistin, "
+"kilîtdankeke hundirîn an ya USB wê pêwîst be."
 
 #: src/Views/EncryptView.vala:89
 msgid "Encryption Password"
-msgstr ""
+msgstr "Borînpeyva şîfrekirinê"
 
 #: src/Views/EncryptView.vala:91
 msgid ""
 "A unique password for this device, not the password for your user account."
 msgstr ""
+"Borînpeyveke taybet ji bo vê amûrê, ne borînpeyva ji bo jimara bikarhêner a "
+"te."
 
 #: src/Views/EncryptView.vala:106
 msgid "Confirm Password"
-msgstr ""
+msgstr "Borînpeyvê piştrast bike"
 
 #: src/Views/EncryptView.vala:129
 msgid "Set Encryption Password"
-msgstr ""
+msgstr "Borînpeyva şîfrekirinê saz bike"
 
 #: src/Views/EncryptView.vala:204
 msgid "Acceptable password"
-msgstr ""
+msgstr "Borînpeyv guncav e"
 
 #: src/Views/EncryptView.vala:206
 msgid "Good password"
-msgstr ""
+msgstr "Borînpeyv baş e"
 
 #: src/Views/EncryptView.vala:208
 msgid "Great password"
-msgstr ""
+msgstr "Borînpeyv gelekî baş e"
 
 #: src/Views/EncryptView.vala:229
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Borînpeyv ne wek hev in"
 
 #: src/Views/EncryptView.vala:235
 msgid "Passwords match"
-msgstr ""
+msgstr "Borînpeyv wek hev in"
 
 #: src/Views/ErrorView.vala:31
 msgid "Could Not Install"
-msgstr ""
+msgstr "ŞêwazaŞêwaza"
 
 #: src/Views/ErrorView.vala:35
 #, c-format
@@ -252,58 +270,56 @@ msgid ""
 "Installing %s failed, possibly due to a hardware error. The device may not "
 "restart properly. You can try the following:"
 msgstr ""
+"Sazkirina %s têk çû, dibe ku ji ber şaşetiyeke alavê be. Dibe ku amûr bi "
+"rengekî rast ji nû ve dest pê neke. Tu dikarî van tiştan hewl bidî:"
 
 #: src/Views/ErrorView.vala:45
-#, fuzzy
-#| msgid "Starting installation"
 msgid "Try the installation again"
-msgstr "Saz kirine dest pê bike"
+msgstr "Sazkirinê dîsa hewl bide"
 
 #: src/Views/ErrorView.vala:55
 msgid "Use Demo Mode and try to manually recover"
-msgstr ""
+msgstr "Awaya demoyê bi kar bîne û hewl bide ku bi destan vegerînî"
 
 #: src/Views/ErrorView.vala:64
 msgid "Restart the device and boot from another drive"
-msgstr ""
+msgstr "Amûrê ji nû ve bide destpêkirin û ji ajokereke din bar bike"
 
 #: src/Views/ErrorView.vala:69
 msgid "Details"
-msgstr ""
+msgstr "Hûrgilî"
 
 #: src/Views/ErrorView.vala:114 src/Views/SuccessView.vala:61
 msgid "Restart Device"
-msgstr ""
+msgstr "Amûrê ji nû ve bide destpêkirin"
 
 #: src/Views/ErrorView.vala:116 src/Views/TryInstallView.vala:36
 msgid "Try Demo Mode"
-msgstr ""
+msgstr "Awaya demoyê hewl bide"
 
 #: src/Views/ErrorView.vala:118
 msgid "Try Installing Again"
-msgstr ""
+msgstr "Sazkirinê dîsa hewl bide"
 
 #: src/Views/KeyboardLayoutView.vala:30
 msgid "Input Language"
-msgstr "Zimane têxistin"
+msgstr "Zimanê ketanê"
 
 #: src/Views/KeyboardLayoutView.vala:32
-#, fuzzy
-#| msgid "Select a Language"
 msgid "Select Keyboard Layout"
-msgstr "Ziman bijartin"
+msgstr "Şêwaza kilîtdankê hilbijêre"
 
 #: src/Views/KeyboardLayoutView.vala:39
 msgid "Type to test your layout"
-msgstr ""
+msgstr "Binivîse da ku şêwaza kilîtdanka xwe test bikî"
 
 #: src/Views/KeyboardLayoutView.vala:42
 msgid "Show keyboard layout"
-msgstr ""
+msgstr "Şêwaza kilîtdankê nîşan bide"
 
 #: src/Views/KeyboardLayoutView.vala:58 src/Views/LanguageView.vala:104
 msgid "Select"
-msgstr "Bijartin"
+msgstr "Hilbijêre"
 
 #: src/Views/LanguageView.vala:67
 msgid "Languages"
@@ -311,26 +327,27 @@ msgstr "Ziman"
 
 #: src/Views/LanguageView.vala:272
 msgid "Select a Language"
-msgstr "Ziman bijartin"
+msgstr "Zimanekî hilbijêre"
 
 #: src/Views/LanguageView.vala:295 src/Views/LanguageView.vala:355
 msgid "Currently active language"
-msgstr "Zimane niha Sazkirî"
+msgstr "Zimanê niha çalak"
 
 #: src/Views/PartitioningView.vala:51
-#, fuzzy
 msgid "Select Partitions"
-msgstr "Ziman bijartin"
+msgstr "Beşkirinan hilbijêre"
 
 #: src/Views/PartitioningView.vala:56
 msgid ""
 "Selecting “Format” will erase <i>all</i> data on the selected partition."
 msgstr ""
+"Hilbijartina \"Format bike\" wê <i>hemû</i> daneyên li ser beşkirinê "
+"hilbijartî jê bibe."
 
 #. Device is in BIOS mode, so we just require a root partition
 #: src/Views/PartitioningView.vala:65
 msgid "You must at least select a <b>Root (/)</b> partition."
-msgstr ""
+msgstr "Divê tu herî kêm beşkirineke <b>Root (/)</b> hilbijêrî."
 
 #. Device is in EFI mode, so we also require a boot partition
 #: src/Views/PartitioningView.vala:69
@@ -338,215 +355,221 @@ msgid ""
 "You must at least select a <b>Root (/)</b> partition and an optional <b>Boot "
 "(/boot/efi)</b> partition."
 msgstr ""
+"Divê tu herî kêm beşkirineke <b>Root (/)</b> û beşkirineke vebijêrkî ya <b>"
+"Boot (/boot/efi)</b> hilbijêrî."
 
 #: src/Views/PartitioningView.vala:80
 msgid "It is also recommended to select a <b>Swap</b> partition."
-msgstr ""
+msgstr "Her wiha tê pêşniyarkirin ku tu beşkirineke <b>Swap</b> hilbijêrî."
 
 #: src/Views/PartitioningView.vala:138
 msgid "Modify Partitions…"
-msgstr ""
+msgstr "Beşkirinê biguhêrîne…"
 
 #: src/Views/PartitioningView.vala:283
 msgid "EFI partition has the wrong file system"
-msgstr ""
+msgstr "Pergala pelê ya beşkirinê EFI şaş e"
 
 #: src/Views/PartitioningView.vala:285
 msgid "EFI partition is too small"
-msgstr ""
+msgstr "Beşkirina EFI pir piçûk e"
 
 #: src/Views/PartitioningView.vala:288
 msgid "Invalid file system for root"
-msgstr ""
+msgstr "Pergala pelê ya ji bo root nederbasdar e"
 
 #: src/Views/PartitioningView.vala:290
 msgid "Invalid file system for home"
-msgstr ""
+msgstr "Pergala pelê ya ji bo home nederbasdar e"
 
 #: src/Views/ProgressView.vala:64 src/Views/ProgressView.vala:99
 msgid "Show log"
-msgstr ""
+msgstr "Tomarê nîşan bide"
 
 #: src/Views/ProgressView.vala:90
-#, fuzzy
-#| msgid "Cancel Installation"
 msgid "Installing"
-msgstr "Saz kirin betal bike"
+msgstr "Tê sazkirin"
 
 #: src/Views/ProgressView.vala:95
 msgid "Hide log"
-msgstr ""
+msgstr "Tomarê veşêre"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:224
 msgid "Partitioning Drive"
-msgstr ""
+msgstr "Ajoker tê beşkirin"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:229
 msgid "Extracting Files"
-msgstr ""
+msgstr "Pel têne derxistin"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:234
 msgid "Configuring the System"
-msgstr ""
+msgstr "Pergal tê sazkirin"
 
 #. /TRANSLATORS: The current step of the installer back-end
 #: src/Views/ProgressView.vala:239
 msgid "Finishing the Installation"
-msgstr ""
+msgstr "Sazkirin tê qedandin"
 
 #: src/Views/TryInstallView.vala:26
 msgid "Try or Install"
-msgstr ""
+msgstr "Test bike yan jî saz bike"
 
 #: src/Views/TryInstallView.vala:38
 msgid ""
 "Changes will not be saved, and data from your previous OS will be unchanged. "
 "Performance and features may not reflect the installed experience."
 msgstr ""
+"Guhertin nayên tomarkirin, û daneyên ji pergala xebatê ya te ya berê wê "
+"neguhertî bimînin. Performans û taybetmendî dibe ku ezmûna sazkirî nîşan "
+"nedin."
 
 #: src/Views/TryInstallView.vala:44
-#, fuzzy
 msgid "Erase Disk and Install"
-msgstr "Saz kirin betal bike"
+msgstr "Dîskê jê bibe û saz bike"
 
 #: src/Views/TryInstallView.vala:46
 #, c-format
 msgid "Erase everything and install a fresh copy of %s."
-msgstr ""
+msgstr "Her tiştî jê bibe û jêgirtineke nû ya %s saz bike."
 
 #: src/Views/TryInstallView.vala:52
 msgid "Custom Install (Advanced)"
-msgstr ""
+msgstr "Sazkirina kesane (pêşketî)"
 
 #: src/Views/TryInstallView.vala:54
 msgid ""
 "Create, resize, or otherwise manage partitions manually. This method may "
 "lead to data loss."
 msgstr ""
+"Beşkirinê bi destan biafirîne, mezinahiya wan biguhêrîne yan jî bi awayekî "
+"din bi rê ve bibe. Ev rêbaz dikare bibe sedema windabûna daneyan."
 
 #: src/Views/TryInstallView.vala:107
-#, fuzzy
 msgid "Custom Install"
-msgstr "Saz kirin betal bike"
+msgstr "Sazkirina kesane"
 
 #: src/Views/SuccessView.vala:28
 msgid "Continue Setting Up"
-msgstr ""
+msgstr "Sazkirinê bidomîne"
 
 #: src/Views/SuccessView.vala:32
 #, c-format
 msgid "%s has been installed"
-msgstr ""
+msgstr "%s hate sazkirin"
 
 #: src/Views/SuccessView.vala:58
 msgid "Shut Down"
-msgstr ""
+msgstr "Vemrîne"
 
 #: src/Views/SuccessView.vala:89
 #, c-format
 msgid "Your device will automatically restart in %i second."
 msgid_plural "Your device will automatically restart in %i seconds."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Amûra te dê di nav %i çirke de xweber ji nû ve dest pê bike."
+msgstr[1] "Amûra te dê di nav %i çirkeyan de xweber ji nû ve dest pê bike."
 
 #: src/Views/SuccessView.vala:93
 msgid ""
 "After restarting you can set up a new user, or you can shut down now and set "
 "up a new user later."
 msgstr ""
+"Piştî ji nû ve destpêkirinê tu dikarî bikarhênerekî nû saz bikî, an jî tu "
+"dikarî niha bigirî û paşê bikarhênerekî nû saz bikî."
 
 #: src/Widgets/DecryptMenu.vala:66
 msgid "Decrypt This Partition"
-msgstr ""
+msgstr "Şîfrekirina vê beşkirinê veke"
 
 #: src/Widgets/DecryptMenu.vala:70
 msgid ""
 "Enter the partition's encryption password and set a device name for the "
 "decrypted partition."
 msgstr ""
+"Borînpeyva şîfrekirinê ya beşkirinê binivîse û ji bo beşkirinê hatiye "
+"şîfrekirin navekî amûrê diyar bike."
 
 #: src/Widgets/DecryptMenu.vala:82
 msgid "Password:"
-msgstr ""
+msgstr "Borînpeyv:"
 
 #: src/Widgets/DecryptMenu.vala:95
 msgid "Device name:"
-msgstr ""
+msgstr "Navê amûrê:"
 
 #: src/Widgets/DecryptMenu.vala:108
 msgid "Decrypt"
-msgstr ""
+msgstr "Şîfrekirinê veke"
 
 #: src/Widgets/DecryptMenu.vala:182
 msgid "LUKS volume was decrypted"
-msgstr ""
+msgstr "Jimara LUKS hate vekirin"
 
 #: src/Widgets/DiskBar.vala:259
 #, c-format
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #: src/Widgets/DiskBar.vala:260
 #, c-format
 msgid "%s (%s: <b>%s</b>)"
-msgstr ""
+msgstr "%s (%s: <b>%s</b>)"
 
 #: src/Widgets/PartitionMenu.vala:56
 msgid "Use Partition"
-msgstr ""
+msgstr "Beşkirinê bi kar bîne"
 
 #: src/Widgets/PartitionMenu.vala:60
 msgid "Format"
-msgstr ""
+msgstr "Format bike"
 
 #: src/Widgets/PartitionMenu.vala:61
 msgid "Delete all data and set up a new file system"
-msgstr ""
+msgstr "Hemû daneyan jê bibe û pergaleke pelan a nû saz bike"
 
 #: src/Widgets/PartitionMenu.vala:64
 msgid "Use as:"
-msgstr ""
+msgstr "Bi kar bîne wekî:"
 
 #: src/Widgets/PartitionMenu.vala:71
 msgid "Root (/)"
-msgstr ""
+msgstr "Root (/)"
 
 #: src/Widgets/PartitionMenu.vala:72
 msgid "Home (/home)"
-msgstr ""
+msgstr "Rûpela sereke (/home)"
 
 #: src/Widgets/PartitionMenu.vala:73
 #, c-format
 msgid "Boot (%s)"
-msgstr ""
+msgstr "Boot (%s)"
 
 #: src/Widgets/PartitionMenu.vala:74
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: src/Widgets/PartitionMenu.vala:75
 msgid "Custom"
-msgstr ""
+msgstr "Kesane"
 
 #: src/Widgets/PartitionMenu.vala:79
 msgid "Custom:"
-msgstr ""
+msgstr "Kesane:"
 
 #: src/Widgets/PartitionMenu.vala:86
 msgid "Filesystem:"
-msgstr ""
+msgstr "Pergala pelê:"
 
 #: src/Widgets/PartitionMenu.vala:98
-#, fuzzy
 msgid "Default (ext4)"
-msgstr "Wekî erkên destpêkê"
+msgstr "Berdest (ext4)"
 
 #: src/Widgets/PartitionMenu.vala:261
 msgid "Custom value must begin with /"
-msgstr ""
+msgstr "Nirxê kesane divê bi / dest pê bike"
 
 #~ msgid "Ignore"
 #~ msgstr "Ihmal bike"
