@@ -31,6 +31,10 @@ jobs:
         meson setup build
         ninja -C build install
         ninja -C build test
+    - name: Build (Anaconda Backend)
+      run: |
+        meson configure -Dinstaller_backend=anaconda build
+        ninja -C build
 
   lint:
     runs-on: ubuntu-latest

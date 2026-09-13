@@ -107,6 +107,35 @@ public class ProgressView : Adw.NavigationPage {
     }
 
     public void start_installation () {
+        unowned Configuration current_config = Configuration.get_default ();
+
+        stdout.printf ("###################################\n");
+        stdout.printf ("lang: %s\n", current_config.lang);
+        stdout.printf ("country: %s\n", current_config.country);
+        stdout.printf ("keyboard_layout: %s\n", current_config.keyboard_layout);
+        stdout.printf ("keyboard_variant: %s\n", current_config.keyboard_variant);
+        stdout.printf ("encryption_password: %s\n", current_config.encryption_password);
+        stdout.printf ("disk: %s\n", current_config.disk);
+        stdout.printf ("mounts:\n");
+        foreach (var mount in current_config.mounts) {
+            stdout.printf ("- partition_path: %s\n", mount.partition_path);
+            stdout.printf ("  parent_disk: %s\n", mount.parent_disk);
+            stdout.printf ("  mount_point: %s\n", mount.mount_point);
+            stdout.printf ("  sectors: %llu\n", mount.sectors);
+            stdout.printf ("  filesystem: %s\n", mount.filesystem.to_string ());
+            stdout.printf ("  flags: %u\n", mount.flags);
+        }
+        stdout.printf ("luks:\n");
+        foreach (var luks in current_config.luks) {
+            if (luks != null) {
+                stdout.printf ("- device: %s\n", luks.device);
+                stdout.printf ("  pv: %s\n", luks.pv);
+                stdout.printf ("  password: %s\n", luks.password);
+            }
+        }
+        stdout.printf ("install_drivers: %s\n", current_config.install_drivers ? "true" : "false");
+        stdout.printf ("###################################\n");
+
         if (Installer.App.test_mode) {
             new Thread<void*> (null, () => {
                 fake_status (InstallerDaemon.Step.PARTITION);
