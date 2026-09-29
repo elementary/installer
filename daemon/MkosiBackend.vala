@@ -30,56 +30,6 @@ public class InstallerDaemon.MkosiBackend : InstallerDaemon.DistinstBackend {
         return 0;
     }
 
-    private string run_capture (string[] argv) throws GLib.Error {
-        var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_SILENCE);
-        string stdout_buf;
-        string stderr_buf;
-        process.communicate_utf8 (null, null, out stdout_buf, out stderr_buf);
-        if (!process.get_successful ()) {
-            throw new IOError.FAILED ("Command failed: %s", argv[0]);
-        }
-        return stdout_buf.strip ();
-    }
-
-    private string? find_first_file (string directory, string suffix) {
-        try {
-            var dir = File.new_for_path (directory);
-            var enumerator = dir.enumerate_children (
-                FileAttribute.STANDARD_NAME + "," +
-                FileAttribute.STANDARD_TYPE,
-                FileQueryInfoFlags.NONE
-            );
-            FileInfo? info;
-            while ((info = enumerator.next_file ()) != null) {
-                if (info.get_file_type () != FileType.REGULAR) {
-                    continue;
-                }
-                var name = info.get_name ();
-                if (name.has_suffix (suffix)) {
-                    return Path.build_filename (directory, name);
-                }
-            }
-        } catch (GLib.Error e) {
-            warning ("%s", e.message);
-        }
-        return null;
-    }
-
-    private string? find_install_medium () {
-        try {
-            var output = run_capture ({"findmnt", "-rn", "-t", "iso9660,udf", "-o", "TARGET"});
-            foreach (var line in output.split ("\n")) {
-                var target = line.strip ();
-                if (target != "") {
-                    return target;
-                }
-            }
-        } catch (GLib.Error e) {
-            warning ("Could not locate installation medium: %s", e.message);
-        }
-        return null;
-    }
-
     private bool has_tpm2 () {
         try {
             var output = run_capture ({"systemd-analyze", "has-tpm2"});

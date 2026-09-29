@@ -17,28 +17,71 @@
 
 [DBus (name = "io.elementary.InstallerDaemon")]
 public class InstallerDaemon.Backend : GLib.Object {
-    protected static string? casper_dir () {
-        const string CDROM = "/cdrom";
+    protected static string? find_first_file (string directory, string suffix) {
         try {
-            var cdrom_dir = File.new_for_path (CDROM);
-            var iter = cdrom_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
-            FileInfo info;
-            while ((info = iter.next_file ()) != null) {
-                unowned string name = info.get_name ();
-                if (name.has_prefix ("casper")) {
-                    return GLib.Path.build_filename (CDROM, name);
+            var dir = File.new_for_path (directory);
+            var enumerator = dir.enumerate_children (
+                FileAttribute.STANDARD_NAME + "," +
+                FileAttribute.STANDARD_TYPE,
+                FileQueryInfoFlags.NONE
+            );
+            FileInfo? info;
+            while ((info = enumerator.next_file ()) != null) {
+                if (info.get_file_type () != FileType.REGULAR) {
+                    continue;
+                }
+                var name = info.get_name ();
+                if (name.has_suffix (suffix)) {
+                    return Path.build_filename (directory, name);
                 }
             }
         } catch (GLib.Error e) {
-            critical ("failed to find casper dir automatically: %s\n", e.message);
-            return null;
+            warning ("%s", e.message);
         }
         return null;
     }
 
+    protected static string? find_install_medium () {
+        try {
+            var output = run_capture ({"findmnt", "-rn", "-t", "iso9660,udf", "-o", "TARGET"});
+            foreach (var line in output.split ("\n")) {
+                var target = line.strip ();
+                if (target != "") {
+                    return target;
+                }
+            }
+        } catch (GLib.Error e) {
+            warning ("Could not locate installation medium: %s", e.message);
+        }
+        return null;
+    }
+
+    protected static string run_capture (string[] argv) throws GLib.Error {
+        var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_SILENCE);
+        string stdout_buf;
+        string stderr_buf;
+        process.communicate_utf8 (null, null, out stdout_buf, out stderr_buf);
+        if (!process.get_successful ()) {
+            throw new IOError.FAILED ("Command failed: %s", argv[0]);
+        }
+        return stdout_buf.strip ();
+    }
+
+    protected static bool is_mkosi_build () {
+        var medium = find_install_medium ();
+        if (medium == null) {
+            return false;
+        }
+        var extra = Path.build_filename (medium, "extra");
+        var raw_squashfs = find_first_file (extra, ".raw.squashfs");
+        if (raw_squashfs == null) {
+            return false;
+        }
+        return true;
+    }
+
     public static DistinstBackend get_backend () {
-        var casper_dir = casper_dir ();
-        if (casper_dir == null) {
+        if (is_mkosi_build ()) {
             return new InstallerDaemon.MkosiBackend ();
         }
         return new InstallerDaemon.DistinstBackend ();
