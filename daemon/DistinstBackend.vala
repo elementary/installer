@@ -31,6 +31,12 @@ public class InstallerDaemon.DistinstBackend : InstallerDaemon.Backend {
         });
     }
 
+    public bool detected_mkosi_build {
+        get {
+            return is_mkosi_build ();
+        }
+    }
+
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
         return to_common_usage_bootloader (Distinst.bootloader_detect ());
     }

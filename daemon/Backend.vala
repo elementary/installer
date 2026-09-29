@@ -41,13 +41,18 @@ public class InstallerDaemon.Backend : GLib.Object {
         return null;
     }
 
-    protected static string? find_install_medium () {
+    protected static string? find_install_squashfs () {
         try {
             var output = run_capture ({"findmnt", "-rn", "-t", "iso9660,udf", "-o", "TARGET"});
             foreach (var line in output.split ("\n")) {
                 var target = line.strip ();
-                if (target != "") {
-                    return target;
+                if (target == "") {
+                    continue;
+                }
+                var extra = Path.build_filename (target, "extra");
+                var raw_squashfs = find_first_file (extra, ".raw.squashfs");
+                if (raw_squashfs != null) {
+                    return raw_squashfs;
                 }
             }
         } catch (GLib.Error e) {
@@ -57,33 +62,18 @@ public class InstallerDaemon.Backend : GLib.Object {
     }
 
     protected static string run_capture (string[] argv) throws GLib.Error {
-        var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_SILENCE);
+        var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_PIPE);
         string stdout_buf;
         string stderr_buf;
         process.communicate_utf8 (null, null, out stdout_buf, out stderr_buf);
         if (!process.get_successful ()) {
-            throw new IOError.FAILED ("Command failed: %s", argv[0]);
+            throw new IOError.FAILED ("Command failed: %s: %s", string.joinv (" ", argv), stderr_buf.strip ());
         }
         return stdout_buf.strip ();
     }
 
-    public bool detected_mkosi_build {
-        get {
-            return is_mkosi_build ();
-        }
-    }
-
     protected static bool is_mkosi_build () {
-        var medium = find_install_medium ();
-        if (medium == null) {
-            return false;
-        }
-        var extra = Path.build_filename (medium, "extra");
-        var raw_squashfs = find_first_file (extra, ".raw.squashfs");
-        if (raw_squashfs == null) {
-            return false;
-        }
-        return true;
+        return find_install_squashfs () != null;
     }
 
     public static DistinstBackend get_backend () {
