@@ -53,6 +53,11 @@ public abstract class AbstractInstallerView : Adw.NavigationPage {
 
         if (Installer.App.test_mode) {
             var test_label = new Gtk.Label (_("Test Mode"));
+            if (Installer.Daemon.get_default ().is_mkosi_build ()) {
+                test_label.label = _("Test Mode (newfangled mkosi build)");
+            } else {
+                test_label.label = _("Test Mode (ye old build)");
+            }
             test_label.add_css_class (Granite.CssClass.ERROR);
 
             action_area.append (test_label);
