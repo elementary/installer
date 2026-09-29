@@ -16,7 +16,7 @@
  */
 
 [DBus (name = "io.elementary.InstallerDaemon")]
-public class InstallerDaemon.DistinstBackend : GLib.Object {
+public class InstallerDaemon.DistinstBackend : InstallerDaemon.Backend {
     public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
     public signal void on_status (InstallerDaemon.Status status);
     public signal void on_error (InstallerDaemon.Error error);
@@ -164,21 +164,21 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
         };
     }
 
-    public void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
+    public virtual void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
         var disks = new Distinst.Disks ();
         default_disk_configuration (disks, disk, encrypt ? encryption_password : null);
 
         install (config, (owned) disks);
     }
 
-    public void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
+    public virtual void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
         var disks = new Distinst.Disks ();
         custom_disk_configuration (disks, disk_config, credentials);
 
         install (config, (owned) disks);
     }
 
-    protected virtual void install (InstallConfig config, owned Distinst.Disks disks) {
+    private void install (InstallConfig config, owned Distinst.Disks disks) {
         var installer = new Distinst.Installer ();
         installer.on_error ((error) => on_error (to_common_error (error)));
         installer.on_status ((status) => on_status (to_common_status (status)));
@@ -232,27 +232,6 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
                 throw e;
             }
         }
-    }
-
-    private string casper_dir () {
-        const string CDROM = "/cdrom";
-
-        try {
-            var cdrom_dir = File.new_for_path (CDROM);
-            var iter = cdrom_dir.enumerate_children (FileAttribute.STANDARD_NAME, 0);
-
-            FileInfo info;
-            while ((info = iter.next_file ()) != null) {
-                unowned string name = info.get_name ();
-                if (name.has_prefix ("casper")) {
-                    return GLib.Path.build_filename (CDROM, name);
-                }
-            }
-        } catch (GLib.Error e) {
-            critical ("failed to find casper dir automatically: %s\n", e.message);
-        }
-
-        return GLib.Path.build_filename (CDROM, "casper");
     }
 
     private void default_disk_configuration (Distinst.Disks disks, string disk_path, string? encryption_password) throws GLib.IOError {

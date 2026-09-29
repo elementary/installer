@@ -1,5 +1,6 @@
 vala_files = [
     'Daemon.vala',
+    'Backend.vala',
     'DistinstBackend.vala',
     'MkosiBackend.vala',
     common_files
@@ -24,4 +25,5 @@ install_data('io.elementary.InstallerDaemon.conf', install_dir : get_option('dat
 
 executable(meson.project_name() + '-daemon', vala_files,
            dependencies : daemon_dependencies,
+           vala_args: ['--pkg=posix'],
            install: true)
