@@ -88,8 +88,10 @@ public class InstallerDaemon.Backend : GLib.Object {
 
     public static DistinstBackend get_backend () {
         if (is_mkosi_build ()) {
+            message ("Using MKOSI backend");
             return new InstallerDaemon.MkosiBackend ();
         }
+        message ("Using DISTINST backend");
         return new InstallerDaemon.DistinstBackend ();
     }
 }

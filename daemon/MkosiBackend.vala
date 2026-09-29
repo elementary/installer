@@ -51,10 +51,13 @@ public class InstallerDaemon.MkosiBackend : InstallerDaemon.DistinstBackend {
 
     private void configure_encryption (string password, GenericArray<string> repart_args) throws GLib.Error {
         if (password == null) {
+            message ("No encryption");
             set_repart_encryption ("off");
         } else if (has_tpm2 ()) {
+            message ("TPM2 encryption");
             set_repart_encryption ("tpm2");
         } else {
+            message ("Password encryption");
             set_repart_encryption ("key-file");
             int fd = FileUtils.open_tmp ("elementary-key-file-XXXXXX", out keyfile);
             if (fd < 0) {
@@ -73,6 +76,7 @@ public class InstallerDaemon.MkosiBackend : InstallerDaemon.DistinstBackend {
     }
 
     private void cleanup () {
+        message ("Cleanup");
         if (squash_mounted) {
             try {
                 run ({"umount", SQUASH_MOUNT});
@@ -90,10 +94,12 @@ public class InstallerDaemon.MkosiBackend : InstallerDaemon.DistinstBackend {
     }
 
     public override void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
+        message ("Clean install");
         install (disk, encrypt ? encryption_password : null);
     }
 
     public override void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
+        message ("Custom install");
         throw new IOError.FAILED ("Custom installations unsupported");
     }
 
@@ -101,21 +107,25 @@ public class InstallerDaemon.MkosiBackend : InstallerDaemon.DistinstBackend {
         try {
             var medium = find_install_medium ();
             if (medium == null) {
+                message ("Could not locate installation medium.");
                 throw new IOError.FAILED ("Could not locate installation medium.");
             }
             var extra = Path.build_filename (medium, "extra");
             var raw_squashfs = find_first_file (extra, ".raw.squashfs");
             if (raw_squashfs == null) {
+                message ("No .raw.squashfs file found.");
                 throw new IOError.FAILED ("No .raw.squashfs file found.");
             }
             var repart_args = new GenericArray<string> ();
             configure_encryption (encryption_password, repart_args);
+            message ("Wiping destination device: %s", dest_dev);
             run ({"/usr/sbin/wipefs", "-a", dest_dev});
             DirUtils.create_with_parents (SQUASH_MOUNT, 0755);
             run ({"mount", "-t", "squashfs", "-o", "loop,ro", raw_squashfs, SQUASH_MOUNT});
             squash_mounted = true;
             var raw_src = find_first_file (SQUASH_MOUNT, ".raw");
             if (raw_src == null) {
+                message ("Could not locate raw image inside squashfs");
                 throw new IOError.NOT_FOUND ("Could not locate raw image inside squashfs");
             }
             var repart_command = new GenericArray<string> ();
