@@ -178,7 +178,7 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
         install (config, (owned) disks);
     }
 
-    private void install (InstallConfig config, owned Distinst.Disks disks) {
+    protected virtual void install (InstallConfig config, owned Distinst.Disks disks) {
         var installer = new Distinst.Installer ();
         installer.on_error ((error) => on_error (to_common_error (error)));
         installer.on_status ((status) => on_status (to_common_status (status)));

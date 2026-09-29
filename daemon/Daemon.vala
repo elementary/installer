@@ -19,9 +19,7 @@ private static GLib.MainLoop loop;
 
 private void on_bus_acquired (GLib.DBusConnection connection, string name) {
     try {
-#if DISTINST_BACKEND
         connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.DistinstBackend ());
-#endif
     } catch (GLib.Error e) {
         critical ("Unable to register the object: %s", e.message);
     }
