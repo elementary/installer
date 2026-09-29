@@ -73,7 +73,7 @@ public class InstallerDaemon.Backend : GLib.Object {
         }
     }
 
-    public static bool is_mkosi_build () {
+    protected static bool is_mkosi_build () {
         var medium = find_install_medium ();
         if (medium == null) {
             return false;
