@@ -116,8 +116,8 @@ public class InstallerDaemon.MkosiBackend : InstallerDaemon.DistinstBackend {
 
     private void install (string dest_dev, bool encrypt, string encryption_password) {
         InstallerDaemon.Status status = new InstallerDaemon.Status ();
-        status.percent = 90;
         status.step = InstallerDaemon.Step.INIT;
+        status.percent = 0;
         on_status (status);
         InstallerDaemon.LogLevel level = InstallerDaemon.LogLevel.INFO;
         on_log_message (level, "Starting installation!");
@@ -131,6 +131,7 @@ public class InstallerDaemon.MkosiBackend : InstallerDaemon.DistinstBackend {
             var repart_args = new GenericArray<string> ();
             configure_encryption (encrypt, encryption_password, repart_args);
             status.step = InstallerDaemon.Step.PARTITION;
+            status.percent = 10;
             on_status (status);
             on_log_message (level, "Wiping destination device");
             run ({"/usr/sbin/wipefs", "-a", dest_dev});
@@ -156,11 +157,16 @@ public class InstallerDaemon.MkosiBackend : InstallerDaemon.DistinstBackend {
             }
             repart_command.add (dest_dev);
             status.step = InstallerDaemon.Step.EXTRACT;
+            status.percent = 20;
             on_status (status);
             on_log_message (level, "Running systemd-repart");
             run_capture (repart_command.data);
+            status.percent = 80;
+            on_status (status);
             on_log_message (level, "Running partprobe");
             run ({"partprobe", dest_dev});
+            status.percent = 90;
+            on_status (status);
             on_log_message (level, "Running udevadm settle");
             run ({"udevadm", "settle"});
             on_log_message (level, "Completed!");
