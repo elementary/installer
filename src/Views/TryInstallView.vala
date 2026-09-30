@@ -63,7 +63,7 @@ public class Installer.TryInstallView : AbstractInstallerView {
         type_box.append (demo_button);
         type_box.append (clean_install_button);
         type_box.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        if (!Installer.Daemon.get_default ().is_mkosi_build ()) {
+        if (!Installer.Daemon.get_default ().has_repart_image ()) {
             // Currenlty unsupported
             type_box.append (custom_button);
         }

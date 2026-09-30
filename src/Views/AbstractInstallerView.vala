@@ -59,7 +59,7 @@ public abstract class AbstractInstallerView : Adw.NavigationPage {
         }
 
         var build_label = new Gtk.Label (_("(this is ye OLD CLASSIC build)"));
-        if (Installer.Daemon.get_default ().is_mkosi_build ()) {
+        if (Installer.Daemon.get_default ().has_repart_image ()) {
             build_label.label = _("(this is the newfangled MKOSI build)");
         }
         action_area.append (build_label);

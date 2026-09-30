@@ -2,7 +2,7 @@ vala_files = [
     'Daemon.vala',
     'Backend.vala',
     'DistinstBackend.vala',
-    'MkosiBackend.vala',
+    'RepartBackend.vala',
     common_files
 ]
 

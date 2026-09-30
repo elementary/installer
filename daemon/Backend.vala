@@ -72,14 +72,14 @@ public class InstallerDaemon.Backend : GLib.Object {
         return stdout_buf.strip ();
     }
 
-    protected static bool is_mkosi_build () {
+    protected static bool has_repart_image () {
         return find_install_squashfs () != null;
     }
 
     public static DistinstBackend get_backend () {
-        if (is_mkosi_build ()) {
-            message ("Using MKOSI backend");
-            return new InstallerDaemon.MkosiBackend ();
+        if (has_repart_image ()) {
+            message ("Using REPART backend");
+            return new InstallerDaemon.RepartBackend ();
         }
         message ("Using DISTINST backend");
         return new InstallerDaemon.DistinstBackend ();

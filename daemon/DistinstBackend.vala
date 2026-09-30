@@ -31,9 +31,9 @@ public class InstallerDaemon.DistinstBackend : InstallerDaemon.Backend {
         });
     }
 
-    public bool detected_mkosi_build {
+    public bool found_repart_image {
         get {
-            return is_mkosi_build ();
+            return has_repart_image ();
         }
     }
 

@@ -16,7 +16,7 @@
  */
 
 [DBus (name = "io.elementary.InstallerDaemon")]
-public class InstallerDaemon.MkosiBackend : InstallerDaemon.DistinstBackend {
+public class InstallerDaemon.RepartBackend : InstallerDaemon.DistinstBackend {
     private const string REPART_SRC = "/opt/repart-target";
     private const string SQUASH_MOUNT = "/mnt/source-image";
 

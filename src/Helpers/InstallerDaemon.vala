@@ -29,7 +29,7 @@ public class Installer.Daemon {
 
         public abstract InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error;
 
-        public abstract bool detected_mkosi_build { get; }
+        public abstract bool found_repart_image { get; }
 
         public async abstract InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error;
         public async abstract int decrypt_partition (string path, string pv, string password) throws GLib.Error;
@@ -73,11 +73,11 @@ public class Installer.Daemon {
         }
     }
 
-    public bool is_mkosi_build () {
+    public bool has_repart_image () {
         if (daemon == null) {
             throw new GLib.IOError.FAILED ("Not connected to installer daemon");
         }
-        return daemon.detected_mkosi_build;
+        return daemon.found_repart_image;
     }
 
     private InstallerDaemon.PartitionTable fallback_bootloader_detect () {
