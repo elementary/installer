@@ -148,13 +148,14 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
             return;
         }
 
-        message ("Password encryption");
+        log_message (InstallerDaemon.LogLevel.INFO, "Password encryption");
 
         set_repart_encryption ("key-file");
 
         int fd = FileUtils.open_tmp ("elementary-key-file-XXXXXX", out keyfile);
         if (fd < 0) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Could not create encryption key file");
+            return;
         }
 
         Posix.fchmod (fd, 0600);
@@ -162,7 +163,8 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         var stream = FileStream.fdopen (fd, "w");
         if (stream == null) {
             Posix.close (fd);
-            error ("Could not open encryption key file");
+            log_message (InstallerDaemon.LogLevel.ERROR, "Could not open encryption key file");
+            return;
         }
 
         stream.puts (password);
@@ -201,7 +203,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
     public void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
         log_message (InstallerDaemon.LogLevel.ERROR, "Custom installations unsupported");
-        error ("Custom installations unsupported");
     }
 
     private void install (string dest_dev, bool encrypt, string? encryption_password) {
@@ -217,7 +218,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
             var raw_squashfs = find_install_squashfs ();
             if (raw_squashfs == null) {
                 log_message (InstallerDaemon.LogLevel.ERROR, "No .raw.squashfs file found.");
-                error ("No .raw.squashfs file found.");
+                return;
             }
 
             var repart_args = new GenericArray<string> ();
@@ -246,8 +247,8 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
             var raw_src = find_first_file (SQUASH_MOUNT, ".raw");
             if (raw_src == null) {
-                log_message (InstallerDaemon.LogLevel.INFO, "Could not locate raw image inside squashfs");
-                throw new IOError.NOT_FOUND ("Could not locate raw image inside squashfs");
+                log_message (InstallerDaemon.LogLevel.ERROR, "Could not locate raw image inside squashfs");
+                return;
             }
 
             var repart_command = new GenericArray<string> ();
