@@ -361,7 +361,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                 removable_file.load_contents (null, out contents, null);
                 bool.try_parse (((string) contents).strip (), out removable);
 
-                Disk disk = Disk () {
+                physical_disks += Disk () {
                     name = name,
                     partitions = {},
                     sectors = size * 512 / sector_size,
@@ -370,8 +370,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                     removable = removable,
                     device_path = Path.build_filename ("/dev", name)
                 };
-
-                physical_disks += disk;
             }
         } catch (GLib.Error e) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Failed to enumerate physical disks: %s", e.message);
