@@ -4,13 +4,9 @@
  */
 
 [DBus (name = "io.elementary.InstallerDaemon")]
-public class InstallerDaemon.RepartBackend : GLib.Object {
+public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
     private const string REPART_SRC = "/opt/repart-target";
     private const string SQUASH_MOUNT = "/mnt/source-image";
-
-    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
-    public signal void on_status (InstallerDaemon.Status status);
-    public signal void on_error (InstallerDaemon.Error error);
 
     private void log_message (InstallerDaemon.LogLevel level, string format, ...) {
         var msg= format.vprintf (va_list ());
