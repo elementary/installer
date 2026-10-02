@@ -15,6 +15,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+[DBus (name = "io.elementary.InstallerDaemon")]
+protected interface InstallerDaemon.InstallerInterface : GLib.Object {
+    public signal void on_error (InstallerDaemon.Error error);
+    public signal void on_status (InstallerDaemon.Status status);
+    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
+
+    public abstract InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error;
+
+    public abstract InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error;
+    public abstract int decrypt_partition (string path, string pv, string password) throws GLib.Error;
+    public abstract InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error;
+    public abstract void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error;
+    public abstract void install_with_custom_disk_layout (InstallerDaemon.InstallConfig config, InstallerDaemon.Mount[] disk_config, InstallerDaemon.LuksCredentials[] luks) throws GLib.Error;
+    public abstract void set_demo_mode_locale (string locale) throws GLib.Error;
+    public abstract void trigger_demo_mode () throws GLib.Error;
+}
+
 private static GLib.MainLoop loop;
 
 private void on_bus_acquired (GLib.DBusConnection connection, string name) {
