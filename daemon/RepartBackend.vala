@@ -293,6 +293,12 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         }
     }
 
+    private string get_contents (File file) {
+        uint8[] contents;
+        file.load_contents (null, out contents, null);
+        return (string) contents;
+    }
+
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
         log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
         throw new GLib.IOError.FAILED ("Not implemented");
@@ -322,8 +328,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
             while ((info = enumerator.next_file ()) != null) {
                 var name = info.get_name ();
 
-                uint8[] contents;
-
                 // We only want physical disks
                 if (!sys_block.get_child (name).get_child ("device").query_exists () || name.has_prefix ("sr")) {
                     continue;
@@ -334,19 +338,33 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                 bool rotational;
                 bool removable;
 
-                var size_file = sys_block.get_child (name).get_child ("size");
-                var sector_size_file = sys_block.get_child (name).get_child ("queue").get_child ("logical_block_size");
-                var rotational_file = sys_block.get_child (name).get_child ("queue").get_child ("rotational");
-                var removable_file = sys_block.get_child (name).get_child ("removable");
+                uint64.try_parse (
+                    get_contents (
+                        sys_block.get_child (name).get_child ("size")
+                    ).strip (),
+                    out size
+                );
 
-                size_file.load_contents (null, out contents, null);
-                uint64.try_parse (((string) contents).strip (), out size);
-                sector_size_file.load_contents (null, out contents, null);
-                uint64.try_parse (((string) contents).strip (), out sector_size);
-                rotational_file.load_contents (null, out contents, null);
-                bool.try_parse (((string) contents).strip (), out rotational);
-                removable_file.load_contents (null, out contents, null);
-                bool.try_parse (((string) contents).strip (), out removable);
+                uint64.try_parse (
+                    get_contents (
+                        sys_block.get_child (name).get_child ("queue").get_child ("logical_block_size")
+                    ).strip (),
+                    out sector_size
+                );
+
+                bool.try_parse (
+                    get_contents (
+                        sys_block.get_child (name).get_child ("queue").get_child ("rotational")
+                    ).strip (),
+                    out rotational
+                );
+
+                bool.try_parse (
+                    get_contents (
+                        sys_block.get_child (name).get_child ("removable")
+                    ).strip (),
+                    out removable
+                );
 
                 physical_disks += Disk () {
                     name = name,
