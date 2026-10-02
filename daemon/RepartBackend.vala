@@ -35,7 +35,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                 break;
             case ERROR:
                 error (msg);
-                break;
             default:
                 message (msg);
                 break;
