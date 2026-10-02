@@ -68,25 +68,22 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         return null;
     }
 
-    private string? find_install_squashfs () {
-        try {
-            var output = run_capture ({"findmnt", "-rn", "-t", "iso9660,udf", "-o", "TARGET"});
-            foreach (var line in output.split ("\n")) {
-                var target = line.strip ();
-                if (target == "") {
-                    continue;
-                }
-
-                var extra = Path.build_filename (target, "extra");
-                var raw_squashfs = find_first_file (extra, ".raw.squashfs");
-                if (raw_squashfs != null) {
-                    return raw_squashfs;
-                }
+    private string? find_install_squashfs throws GLib.Error () {
+        var output = run_capture ({"findmnt", "-rn", "-t", "iso9660,udf", "-o", "TARGET"});
+        foreach (var line in output.split ("\n")) {
+            var target = line.strip ();
+            if (target == "") {
+                continue;
             }
-        } catch (GLib.Error e) {
-            log_message (InstallerDaemon.LogLevel.WARN, "Could not find install squashfs medium: %s", e.message);
+
+            var extra = Path.build_filename (target, "extra");
+            var raw_squashfs = find_first_file (extra, ".raw.squashfs");
+            if (raw_squashfs != null) {
+                return raw_squashfs;
+            }
         }
-        return null;
+
+        throw new GLib.IOError.FAILED ("No .raw.squashfs file found.");
     }
 
     private string run_capture (string[] argv) throws GLib.Error {
@@ -217,10 +214,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
         try {
             var raw_squashfs = find_install_squashfs ();
-            if (raw_squashfs == null) {
-                log_message (InstallerDaemon.LogLevel.ERROR, "No .raw.squashfs file found.");
-                return;
-            }
 
             var repart_args = new GenericArray<string> ();
 
