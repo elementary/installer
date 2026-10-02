@@ -68,7 +68,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         return null;
     }
 
-    private string? find_install_squashfs throws GLib.Error () {
+    private string find_install_squashfs () throws GLib.Error  {
         var output = run_capture ({"findmnt", "-rn", "-t", "iso9660,udf", "-o", "TARGET"});
         foreach (var line in output.split ("\n")) {
             var target = line.strip ();
