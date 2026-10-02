@@ -80,7 +80,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
     }
 
     private string run_capture (string[] argv) throws GLib.Error {
-        var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_PIPE);
+        var process = new Subprocess (STDOUT_PIPE | STDERR_PIPE, argv);
         string stdout_buf = "";
         string stderr_buf = "";
 
@@ -90,7 +90,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             throw new GLib.IOError.FAILED (
                 "Run command failed: %s: %s: %s",
                 string.joinv (" ", argv),
-                stderr_buf.strip (),
+                stdout_buf.strip (),
                 stderr_buf.strip ()
             );
         }
@@ -100,8 +100,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
 
     private void run (string[] argv) throws GLib.Error {
         try {
-            var launcher = new SubprocessLauncher (NONE);
-            var process = launcher.spawnv (argv);
+            var process = new Subprocess (NONE, argv);
             process.wait_check ();
         } catch (GLib.Error e) {
             throw new GLib.IOError.FAILED ("Run command failed: %s: %s", string.joinv (" ", argv), e.message);
@@ -130,7 +129,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         FileUtils.set_contents (path, contents);
     }
 
-    private void configure_encryption (bool encrypt, string password, GenericArray<string> repart_args, ref string keyfile) throws GLib.Error {
+    private void configure_encryption (bool encrypt, string password, ref string[] repart_args, ref string keyfile) throws GLib.Error {
         if (!encrypt) {
             log_message (InstallerDaemon.LogLevel.INFO, "No encryption");
             set_repart_encryption ("off");
@@ -163,7 +162,9 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         stream.puts (password);
         stream.flush ();
 
-        repart_args.add ("--key-file=" + keyfile);
+        var args = repart_args;
+        args += "--key-file=" + keyfile;
+        repart_args = args;
     }
 
     private void cleanup (string keyfile) throws GLib.Error {
@@ -212,9 +213,9 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         try {
             var raw_squashfs = find_install_squashfs ();
 
-            var repart_args = new GenericArray<string> ();
+            string[] repart_args = {};
 
-            configure_encryption (encrypt, encryption_password, repart_args, ref keyfile);
+            configure_encryption (encrypt, encryption_password, ref repart_args, ref keyfile);
 
             status.step = InstallerDaemon.Step.PARTITION;
             status.percent = 10;
@@ -239,19 +240,19 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
                 throw new GLib.IOError.FAILED ("Could not locate raw image inside squashfs");
             }
 
-            var repart_command = new GenericArray<string> ();
+            string[] repart_command = {
+                "systemd-repart",
+                "--copy-from=" + raw_src,
+                "--definitions=" + REPART_SRC,
+                "--dry-run=no",
+                "--empty=force"
+            };
 
-            repart_command.add ("systemd-repart");
-            repart_command.add ("--copy-from=" + raw_src);
-            repart_command.add ("--definitions=" + REPART_SRC);
-            repart_command.add ("--dry-run=no");
-            repart_command.add ("--empty=force");
-
-            for (var i = 0; i < repart_args.length; i++) {
-                repart_command.add (repart_args[i]);
+            foreach (var repart_arg in repart_args) {
+                repart_command += repart_arg;
             }
 
-            repart_command.add (dest_dev);
+            repart_command += dest_dev;
 
             status.step = InstallerDaemon.Step.EXTRACT;
             status.percent = 20;
@@ -259,7 +260,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
 
             log_message (InstallerDaemon.LogLevel.INFO, "Running systemd-repart");
 
-            run_capture (repart_command.data);
+            run_capture (repart_command);
 
             status.percent = 80;
             on_status (status);
@@ -289,7 +290,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         }
     }
 
-    private string get_contents (File file) {
+    private string get_contents (File file) throws GLib.Error {
         uint8[] contents;
         file.load_contents (null, out contents, null);
         return (string) contents;
