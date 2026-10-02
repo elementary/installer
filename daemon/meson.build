@@ -10,12 +10,16 @@ daemon_dependencies = [
     gobject_dep,
 ]
 
-args = ''
+args = []
 
 if installer_backend == 'distinst'
     vala_files += ['DistinstBackend.vala']
     daemon_dependencies += [distinst_dep]
     args += '--define=DISTINST_BACKEND'
+elif installer_backend == 'repart'
+    vala_files += ['RepartBackend.vala']
+    args += '--define=REPART_BACKEND'
+    args += '--pkg=posix'
 else
     error('No supported installer backend provided')
 endif

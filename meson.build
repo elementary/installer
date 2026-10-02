@@ -31,7 +31,7 @@ x11_dep = dependency('x11')
 installer_backend = get_option('installer_backend')
 if installer_backend == 'distinst'
     distinst_dep = dependency('distinst')
-else
+elif installer_backend != 'repart'
     error('No supported installer backend provided')
 endif
 
