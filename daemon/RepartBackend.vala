@@ -206,9 +206,10 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
     }
 
     private void install (string dest_dev, bool encrypt, string? encryption_password) {
-        InstallerDaemon.Status status = new InstallerDaemon.Status ();
-        status.step = InstallerDaemon.Step.INIT;
-        status.percent = 0;
+        var status = new InstallerDaemon.Status () {
+            step = INIT,
+            percent = 0
+        };
 
         on_status (status);
 
