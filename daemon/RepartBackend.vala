@@ -93,13 +93,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         process.communicate_utf8 (null, null, out stdout_buf, out stderr_buf);
 
         if (!process.get_successful ()) {
-            log_message (
-                InstallerDaemon.LogLevel.ERROR,
-                "Run command failed: %s: %s: %s",
-                string.joinv (" ", argv),
-                stderr_buf.strip (),
-                stderr_buf.strip ()
-            );
             throw new GLib.IOError.FAILED (
                 "Run command failed: %s: %s: %s",
                 string.joinv (" ", argv),
@@ -117,7 +110,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
             var process = launcher.spawnv (argv);
             process.wait_check ();
         } catch (GLib.Error e) {
-            log_message (InstallerDaemon.LogLevel.ERROR, "Run command failed: %s: %s", string.joinv (" ", argv), e.message);
             throw new GLib.IOError.FAILED ("Run command failed: %s: %s", string.joinv (" ", argv), e.message);
         }
     }
