@@ -252,7 +252,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
             var raw_src = find_first_file (SQUASH_MOUNT, ".raw");
             if (raw_src == null) {
-                log_message (InstallerDaemon.LogLevel.ERROR, "Could not locate raw image inside squashfs");
                 throw new GLib.IOError.FAILED ("Could not locate raw image inside squashfs");
             }
 
