@@ -17,7 +17,9 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
     private void log_message (InstallerDaemon.LogLevel level, string format, ...) {
         var msg= format.vprintf (va_list ());
+
         on_log_message (level, msg);
+
         switch (level) {
             case TRACE:
                 debug (msg);
@@ -48,11 +50,13 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                 FileAttribute.STANDARD_TYPE,
                 FileQueryInfoFlags.NONE
             );
+
             FileInfo? info;
             while ((info = enumerator.next_file ()) != null) {
                 if (info.get_file_type () != FileType.REGULAR) {
                     continue;
                 }
+
                 var name = info.get_name ();
                 if (name.has_suffix (suffix)) {
                     return Path.build_filename (directory, name);
@@ -72,6 +76,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                 if (target == "") {
                     continue;
                 }
+
                 var extra = Path.build_filename (target, "extra");
                 var raw_squashfs = find_first_file (extra, ".raw.squashfs");
                 if (raw_squashfs != null) {
@@ -88,10 +93,13 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_PIPE);
         string stdout_buf;
         string stderr_buf;
+
         process.communicate_utf8 (null, null, out stdout_buf, out stderr_buf);
+
         if (!process.get_successful ()) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Run command failed: %s: %s", string.joinv (" ", argv), stderr_buf.strip ());
         }
+
         return stdout_buf.strip ();
     }
 
@@ -118,9 +126,12 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
     private void set_repart_encryption (string value) throws GLib.Error {
         var path = Path.build_filename (REPART_SRC, "40-root.conf");
         string contents;
+
         FileUtils.get_contents (path, out contents);
+
         var regex = new Regex ("^Encrypt=.*$", MULTILINE);
         contents = regex.replace (contents, contents.length, 0, "Encrypt=" + value);
+
         FileUtils.set_contents (path, contents);
     }
 
@@ -138,24 +149,31 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         }
 
         message ("Password encryption");
+
         set_repart_encryption ("key-file");
+
         int fd = FileUtils.open_tmp ("elementary-key-file-XXXXXX", out keyfile);
         if (fd < 0) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Could not create encryption key file");
         }
+
         Posix.fchmod (fd, 0600);
+
         var stream = FileStream.fdopen (fd, "w");
         if (stream == null) {
             Posix.close (fd);
             error ("Could not open encryption key file");
         }
+
         stream.puts (password);
         stream.flush ();
+
         repart_args.add ("--key-file=" + keyfile);
     }
 
     private void cleanup () {
         log_message (InstallerDaemon.LogLevel.INFO, "Cleanup");
+
         if (squash_mounted) {
             try {
                 run ({"umount", SQUASH_MOUNT});
@@ -163,7 +181,9 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                 log_message (InstallerDaemon.LogLevel.WARN, "Cleanup failed: %s", e.message);
             }
         }
+
         Posix.rmdir (SQUASH_MOUNT);
+
         if (keyfile != null) {
             try {
                 run ({"shred", "-u", keyfile});
@@ -188,7 +208,9 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         InstallerDaemon.Status status = new InstallerDaemon.Status ();
         status.step = InstallerDaemon.Step.INIT;
         status.percent = 0;
+
         on_status (status);
+
         log_message (InstallerDaemon.LogLevel.INFO, "Starting installation");
 
         try {
@@ -197,49 +219,76 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                 log_message (InstallerDaemon.LogLevel.ERROR, "No .raw.squashfs file found.");
                 error ("No .raw.squashfs file found.");
             }
+
             var repart_args = new GenericArray<string> ();
+
             configure_encryption (encrypt, encryption_password, repart_args);
+
             status.step = InstallerDaemon.Step.PARTITION;
             status.percent = 10;
             on_status (status);
+
             log_message (InstallerDaemon.LogLevel.INFO, "Wiping destination device");
+
             run ({"/usr/sbin/wipefs", "-a", dest_dev});
+
             on_log_message (InstallerDaemon.LogLevel.INFO, "Mounting squashfs: " + raw_squashfs);
+
             DirUtils.create_with_parents (SQUASH_MOUNT, 0755);
+
             log_message (InstallerDaemon.LogLevel.INFO, "Created squashfs mountpoint");
+
             run ({"mount", "-t", "squashfs", "-o", "loop,ro", raw_squashfs, SQUASH_MOUNT});
+
             log_message (InstallerDaemon.LogLevel.INFO, "Mounted squashfs");
+
             squash_mounted = true;
+
             var raw_src = find_first_file (SQUASH_MOUNT, ".raw");
             if (raw_src == null) {
                 log_message (InstallerDaemon.LogLevel.INFO, "Could not locate raw image inside squashfs");
                 throw new IOError.NOT_FOUND ("Could not locate raw image inside squashfs");
             }
+
             var repart_command = new GenericArray<string> ();
+
             repart_command.add ("systemd-repart");
             repart_command.add ("--copy-from=" + raw_src);
             repart_command.add ("--definitions=" + REPART_SRC);
             repart_command.add ("--dry-run=no");
             repart_command.add ("--empty=force");
+
             for (var i = 0; i < repart_args.length; i++) {
                 repart_command.add (repart_args[i]);
             }
+
             repart_command.add (dest_dev);
+
             status.step = InstallerDaemon.Step.EXTRACT;
             status.percent = 20;
             on_status (status);
+
             log_message (InstallerDaemon.LogLevel.INFO, "Running systemd-repart");
+
             run_capture (repart_command.data);
+
             status.percent = 80;
             on_status (status);
+
             log_message (InstallerDaemon.LogLevel.INFO, "Running partprobe");
             run ({"partprobe", dest_dev});
+
             status.percent = 90;
             on_status (status);
+
             log_message (InstallerDaemon.LogLevel.INFO, "Running udevadm settle");
+
             run ({"udevadm", "settle"});
+
             log_message (InstallerDaemon.LogLevel.INFO, "Completed!");
+
             cleanup ();
+
             status.step = InstallerDaemon.Step.BOOTLOADER;
             status.percent = 100;
             on_status (status);
