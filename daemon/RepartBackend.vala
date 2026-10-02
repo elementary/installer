@@ -12,9 +12,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
     public signal void on_status (InstallerDaemon.Status status);
     public signal void on_error (InstallerDaemon.Error error);
 
-    private string? keyfile = null;
-    private bool squash_mounted = false;
-
     private void log_message (InstallerDaemon.LogLevel level, string format, ...) {
         var msg= format.vprintf (va_list ());
 
@@ -34,14 +31,15 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                 warning (msg);
                 break;
             case ERROR:
-                error (msg);
+                critical (msg);
+                break;
             default:
                 message (msg);
                 break;
         }
     }
 
-    private string? find_first_file (string directory, string suffix) {
+    private string? find_first_file (string directory, string suffix) throws GLib.Error {
         try {
             var dir = File.new_for_path (directory);
             var enumerator = dir.enumerate_children (
@@ -82,18 +80,32 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
             }
         }
 
+        log_message (InstallerDaemon.LogLevel.ERROR, "No .raw.squashfs file found.");
+
         throw new GLib.IOError.FAILED ("No .raw.squashfs file found.");
     }
 
     private string run_capture (string[] argv) throws GLib.Error {
         var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_PIPE);
-        string stdout_buf;
-        string stderr_buf;
+        string stdout_buf = "";
+        string stderr_buf = "";
 
         process.communicate_utf8 (null, null, out stdout_buf, out stderr_buf);
 
         if (!process.get_successful ()) {
-            log_message (InstallerDaemon.LogLevel.ERROR, "Run command failed: %s: %s", string.joinv (" ", argv), stderr_buf.strip ());
+            log_message (
+                InstallerDaemon.LogLevel.ERROR,
+                "Run command failed: %s: %s: %s",
+                string.joinv (" ", argv),
+                stderr_buf.strip (),
+                stderr_buf.strip ()
+            );
+            throw new GLib.IOError.FAILED (
+                "Run command failed: %s: %s: %s",
+                string.joinv (" ", argv),
+                stderr_buf.strip (),
+                stderr_buf.strip ()
+            );
         }
 
         return stdout_buf.strip ();
@@ -106,6 +118,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
             process.wait_check ();
         } catch (GLib.Error e) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Run command failed: %s: %s", string.joinv (" ", argv), e.message);
+            throw new GLib.IOError.FAILED ("Run command failed: %s: %s", string.joinv (" ", argv), e.message);
         }
     }
 
@@ -121,7 +134,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
     private void set_repart_encryption (string value) throws GLib.Error {
         var path = Path.build_filename (REPART_SRC, "40-root.conf");
-        string contents;
+        string contents = "";
 
         FileUtils.get_contents (path, out contents);
 
@@ -131,14 +144,14 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         FileUtils.set_contents (path, contents);
     }
 
-    private void configure_encryption (bool encrypt, string? password, GenericArray<string> repart_args) throws GLib.Error {
+    private void configure_encryption (bool encrypt, string password, GenericArray<string> repart_args, ref string keyfile) throws GLib.Error {
         if (!encrypt) {
             log_message (InstallerDaemon.LogLevel.INFO, "No encryption");
             set_repart_encryption ("off");
             return;
         }
 
-        if (has_tpm2 () && (password == null || password.length == 0)) {
+        if (has_tpm2 () && password.length == 0) {
             log_message (InstallerDaemon.LogLevel.INFO, "TPM2 encryption");
             set_repart_encryption ("tpm2");
             return;
@@ -151,7 +164,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         int fd = FileUtils.open_tmp ("elementary-key-file-XXXXXX", out keyfile);
         if (fd < 0) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Could not create encryption key file");
-            return;
+            throw new GLib.IOError.FAILED ("Could not create encryption key file");
         }
 
         Posix.fchmod (fd, 0600);
@@ -160,7 +173,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         if (stream == null) {
             Posix.close (fd);
             log_message (InstallerDaemon.LogLevel.ERROR, "Could not open encryption key file");
-            return;
+            throw new GLib.IOError.FAILED ("Could not create encryption key file");
         }
 
         stream.puts (password);
@@ -169,24 +182,22 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         repart_args.add ("--key-file=" + keyfile);
     }
 
-    private void cleanup () {
+    private void cleanup (string keyfile) throws GLib.Error {
         log_message (InstallerDaemon.LogLevel.INFO, "Cleanup");
 
-        if (squash_mounted) {
-            try {
-                run ({"umount", SQUASH_MOUNT});
-            } catch (GLib.Error e) {
-                log_message (InstallerDaemon.LogLevel.WARN, "Cleanup failed: %s", e.message);
-            }
+        try {
+            run ({"umount", SQUASH_MOUNT});
+        } catch (GLib.Error e) {
+            log_message (InstallerDaemon.LogLevel.WARN, "Cleanup unmount %s failed: %s", SQUASH_MOUNT, e.message);
         }
 
         Posix.rmdir (SQUASH_MOUNT);
 
-        if (keyfile != null) {
+        if (keyfile.length > 0) {
             try {
                 run ({"shred", "-u", keyfile});
             } catch (GLib.Error e) {
-                log_message (InstallerDaemon.LogLevel.WARN, "Cleanup failed: %s", e.message);
+                log_message (InstallerDaemon.LogLevel.WARN, "Cleanup keyfile failed: %s", e.message);
                 FileUtils.unlink (keyfile);
             }
         }
@@ -202,7 +213,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         throw new GLib.IOError.FAILED ("Custom installations unsupported");
     }
 
-    private void install (string dest_dev, bool encrypt, string? encryption_password) {
+    private void install (string dest_dev, bool encrypt, string encryption_password) throws GLib.Error {
         var status = InstallerDaemon.Status () {
             step = INIT,
             percent = 0
@@ -212,12 +223,14 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
         log_message (InstallerDaemon.LogLevel.INFO, "Starting installation");
 
+        var keyfile = "";
+
         try {
             var raw_squashfs = find_install_squashfs ();
 
             var repart_args = new GenericArray<string> ();
 
-            configure_encryption (encrypt, encryption_password, repart_args);
+            configure_encryption (encrypt, encryption_password, repart_args, ref keyfile);
 
             status.step = InstallerDaemon.Step.PARTITION;
             status.percent = 10;
@@ -237,12 +250,10 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
             log_message (InstallerDaemon.LogLevel.INFO, "Mounted squashfs");
 
-            squash_mounted = true;
-
             var raw_src = find_first_file (SQUASH_MOUNT, ".raw");
             if (raw_src == null) {
                 log_message (InstallerDaemon.LogLevel.ERROR, "Could not locate raw image inside squashfs");
-                return;
+                throw new GLib.IOError.FAILED ("Could not locate raw image inside squashfs");
             }
 
             var repart_command = new GenericArray<string> ();
@@ -271,6 +282,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
             on_status (status);
 
             log_message (InstallerDaemon.LogLevel.INFO, "Running partprobe");
+
             run ({"partprobe", dest_dev});
 
             status.percent = 90;
@@ -282,14 +294,15 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
             log_message (InstallerDaemon.LogLevel.INFO, "Completed!");
 
-            cleanup ();
+            cleanup (keyfile);
 
             status.step = InstallerDaemon.Step.BOOTLOADER;
             status.percent = 100;
             on_status (status);
         } catch (GLib.Error e) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Installation aborted: " + e.message);
-            cleanup ();
+            cleanup (keyfile);
+            throw new GLib.IOError.FAILED ("Installation aborted: " + e.message);
         }
     }
 
@@ -299,8 +312,75 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
     }
 
     public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
-        log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
-        throw new GLib.IOError.FAILED ("Not implemented");
+        if (get_partitions) {
+            log_message (InstallerDaemon.LogLevel.ERROR, "Get partitions not implemented");
+            throw new GLib.IOError.FAILED ("Get partitions not implemented");
+        }
+
+        DiskInfo disk_info = DiskInfo () {
+            physical_disks = {},
+            logical_disks = {}
+        };
+
+        Disk[] physical_disks = {};
+
+        try {
+            var sys_block = File.new_for_path ("/sys/block");
+            var enumerator = sys_block.enumerate_children (
+                FileAttribute.STANDARD_NAME,
+                FileQueryInfoFlags.NONE
+            );
+
+            FileInfo info;
+            while ((info = enumerator.next_file ()) != null) {
+                var name = info.get_name ();
+
+                uint8[] contents;
+
+                // We only want physical disks
+                if (!sys_block.get_child (name).get_child ("device").query_exists () || name.has_prefix ("sr")) {
+                    continue;
+                }
+
+                uint64 size;
+                uint64 sector_size;
+                bool rotational;
+                bool removable;
+
+                var size_file = sys_block.get_child (name).get_child ("size");
+                var sector_size_file = sys_block.get_child (name).get_child ("queue").get_child ("logical_block_size");
+                var rotational_file = sys_block.get_child (name).get_child ("queue").get_child ("rotational");
+                var removable_file = sys_block.get_child (name).get_child ("removable");
+
+                size_file.load_contents (null, out contents, null);
+                uint64.try_parse (((string) contents).strip (), out size);
+                sector_size_file.load_contents (null, out contents, null);
+                uint64.try_parse (((string) contents).strip (), out sector_size);
+                rotational_file.load_contents (null, out contents, null);
+                bool.try_parse (((string) contents).strip (), out rotational);
+                removable_file.load_contents (null, out contents, null);
+                bool.try_parse (((string) contents).strip (), out removable);
+
+                Disk disk = Disk () {
+                    name = name,
+                    partitions = {},
+                    sectors = size * 512 / sector_size,
+                    sector_size = sector_size,
+                    rotational = rotational,
+                    removable = removable,
+                    device_path = Path.build_filename ("/dev", name)
+                };
+
+                physical_disks += disk;
+            }
+        } catch (GLib.Error e) {
+            log_message (InstallerDaemon.LogLevel.ERROR, "Failed to enumerate physical disks: %s", e.message);
+            throw new GLib.IOError.FAILED ("Failed to enumerate physical disks: %s", e.message);
+        }
+
+        disk_info.physical_disks = physical_disks;
+
+        return disk_info;
     }
 
     public int decrypt_partition (string path, string pv, string password) throws GLib.Error {
@@ -314,12 +394,17 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
     }
 
     public void set_demo_mode_locale (string locale) throws GLib.Error {
-        log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
-        throw new GLib.IOError.FAILED ("Not implemented");
+        GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
     }
 
     public void trigger_demo_mode () throws GLib.Error {
-        log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
-        throw new GLib.IOError.FAILED ("Not implemented");
+        var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
+        try {
+            demo_mode_file.create (GLib.FileCreateFlags.NONE);
+        } catch (GLib.Error e) {
+            if (!(e is GLib.IOError.EXISTS)) {
+                throw e;
+            }
+        }
     }
 }
