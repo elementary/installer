@@ -199,6 +199,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
     public void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
         log_message (InstallerDaemon.LogLevel.ERROR, "Custom installations unsupported");
+        throw new GLib.IOError.FAILED ("Custom installations unsupported");
     }
 
     private void install (string dest_dev, bool encrypt, string? encryption_password) {
@@ -290,5 +291,35 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
             log_message (InstallerDaemon.LogLevel.ERROR, "Installation aborted: " + e.message);
             cleanup ();
         }
+    }
+
+    public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
+        log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
+        throw new GLib.IOError.FAILED ("Not implemented");
+    }
+
+    public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
+        log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
+        throw new GLib.IOError.FAILED ("Not implemented");
+    }
+
+    public int decrypt_partition (string path, string pv, string password) throws GLib.Error {
+        log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
+        throw new GLib.IOError.FAILED ("Not implemented");
+    }
+
+    public Disk get_logical_device (string pv) throws GLib.Error {
+        log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
+        throw new GLib.IOError.FAILED ("Not implemented");
+    }
+
+    public void set_demo_mode_locale (string locale) throws GLib.Error {
+        log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
+        throw new GLib.IOError.FAILED ("Not implemented");
+    }
+
+    public void trigger_demo_mode () throws GLib.Error {
+        log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
+        throw new GLib.IOError.FAILED ("Not implemented");
     }
 }
