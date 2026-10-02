@@ -80,8 +80,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
             }
         }
 
-        log_message (InstallerDaemon.LogLevel.ERROR, "No .raw.squashfs file found.");
-
         throw new GLib.IOError.FAILED ("No .raw.squashfs file found.");
     }
 
@@ -155,7 +153,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
 
         int fd = FileUtils.open_tmp ("elementary-key-file-XXXXXX", out keyfile);
         if (fd < 0) {
-            log_message (InstallerDaemon.LogLevel.ERROR, "Could not create encryption key file");
             throw new GLib.IOError.FAILED ("Could not create encryption key file");
         }
 
@@ -164,7 +161,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
         var stream = FileStream.fdopen (fd, "w");
         if (stream == null) {
             Posix.close (fd);
-            log_message (InstallerDaemon.LogLevel.ERROR, "Could not open encryption key file");
             throw new GLib.IOError.FAILED ("Could not create encryption key file");
         }
 
