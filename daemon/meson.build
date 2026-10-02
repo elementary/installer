@@ -18,8 +18,8 @@ if installer_backend == 'distinst'
     args += '--define=DISTINST_BACKEND'
 elif installer_backend == 'repart'
     vala_files += ['RepartBackend.vala']
+    daemon_dependencies += meson.get_compiler('vala').find_library('posix')
     args += '--define=REPART_BACKEND'
-    args += '--pkg=posix'
 else
     error('No supported installer backend provided')
 endif
