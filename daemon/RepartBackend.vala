@@ -35,7 +35,6 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
                 break;
             case ERROR:
                 error (msg);
-                break;
             default:
                 message (msg);
                 break;
@@ -203,7 +202,7 @@ public class InstallerDaemon.RepartBackend : GLib.Object {
     }
 
     private void install (string dest_dev, bool encrypt, string? encryption_password) {
-        var status = new InstallerDaemon.Status () {
+        var status = InstallerDaemon.Status () {
             step = INIT,
             percent = 0
         };
