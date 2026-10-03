@@ -5,7 +5,6 @@
 
 public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
     private const string REPART_SRC = "/opt/repart-target";
-    private const string SQUASH_MOUNT = "/mnt/source-image";
 
     private void log_message (InstallerDaemon.LogLevel level, string format, ...) {
         var msg= format.vprintf (va_list ());
@@ -34,34 +33,37 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         }
     }
 
-    private string? find_first_file (string directory, string suffix) throws GLib.Error {
+    private string? find_unique_file (string directory, string suffix) throws GLib.Error {
+        string? result = null;
         try {
             var dir = File.new_for_path (directory);
             var enumerator = dir.enumerate_children (
                 FileAttribute.STANDARD_NAME + "," +
                 FileAttribute.STANDARD_TYPE,
-                FileQueryInfoFlags.NONE
+                FileQueryInfoFlags.NOFOLLOW_SYMLINKS
             );
 
             FileInfo? info;
             while ((info = enumerator.next_file ()) != null) {
-                if (info.get_file_type () != FileType.REGULAR) {
-                    continue;
-                }
-
                 var name = info.get_name ();
                 if (name.has_suffix (suffix)) {
-                    return Path.build_filename (directory, name);
+                    if (info.get_file_type () != FileType.REGULAR || result != null) {
+                        throw new GLib.IOError.FAILED ("Expected a single regular %s file in %s", suffix, directory);
+                    }
+                    result = Path.build_filename (directory, name);
                 }
             }
         } catch (GLib.Error e) {
-            log_message (InstallerDaemon.LogLevel.WARN, "Could not find first file in directory %s with suffix %s: %s", directory, suffix, e.message);
+            if (!(e is GLib.IOError.NOT_FOUND)) {
+                throw e;
+            }
         }
-        return null;
+        return result;
     }
 
     private string find_install_squashfs () throws GLib.Error {
         var output = run_capture ({"findmnt", "-rn", "-t", "iso9660,udf", "-o", "TARGET"});
+        string? result = null;
         foreach (var line in output.split ("\n")) {
             var target = line.strip ();
             if (target == "") {
@@ -69,13 +71,19 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             }
 
             var extra = Path.build_filename (target, "extra");
-            var raw_squashfs = find_first_file (extra, ".raw.squashfs");
+            var raw_squashfs = find_unique_file (extra, ".raw.squashfs");
             if (raw_squashfs != null) {
-                return raw_squashfs;
+                if (result != null) {
+                    throw new GLib.IOError.FAILED ("Multiple installation images found");
+                }
+                result = raw_squashfs;
             }
         }
 
-        throw new GLib.IOError.FAILED ("No .raw.squashfs file found.");
+        if (result == null) {
+            throw new GLib.IOError.FAILED ("No .raw.squashfs file found.");
+        }
+        return result;
     }
 
     private string run_capture (string[] argv) throws GLib.Error {
@@ -112,78 +120,127 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         }
     }
 
-    private void set_repart_encryption (string value) throws GLib.Error {
-        var path = Path.build_filename (REPART_SRC, "40-root.conf");
-        var keyfile = new KeyFile ();
-        keyfile.load_from_file (path, NONE);
-        keyfile.set_string ("Partition", "Encrypt", value);
-        keyfile.save_to_file (path);
-        log_message (InstallerDaemon.LogLevel.INFO, "Encryption mode: %s", value);
+    private void set_repart_encryption (string definitions, string value) throws GLib.Error {
+        var path = Path.build_filename (definitions, "40-root.conf");
+        var info = File.new_for_path (path).query_info (
+            FileAttribute.STANDARD_TYPE, FileQueryInfoFlags.NOFOLLOW_SYMLINKS
+        );
+        if (info.get_file_type () != FileType.REGULAR) {
+            throw new GLib.IOError.FAILED ("Expected a regular root definition in %s", path);
+        }
+        string contents = "";
+
+        FileUtils.get_contents (path, out contents);
+
+        var regex = new Regex ("^Encrypt=.*$", MULTILINE);
+        MatchInfo match;
+        if (!regex.match (contents, 0, out match) || match.next ()) {
+            throw new GLib.IOError.FAILED ("Expected exactly one Encrypt setting in %s", path);
+        }
+        contents = regex.replace (contents, contents.length, 0, "Encrypt=" + value);
+
+        FileUtils.set_contents (path, contents);
     }
 
-    private void configure_encryption (bool encrypt, string password, ref string[] repart_args, ref string keyfile) throws GLib.Error {
+    private void configure_encryption (string work, string definitions, bool encrypt, string password, ref string[] repart_args, ref string keyfile) throws GLib.Error {
         if (!encrypt) {
-            set_repart_encryption ("off");
+            log_message (InstallerDaemon.LogLevel.INFO, "No encryption");
+            set_repart_encryption (definitions, "off");
             return;
         }
 
-        if (password.length == 0 && has_tpm2 ()) {
-            set_repart_encryption ("tpm2");
+        // The existing D-Bus API uses an empty password to request TPM-only encryption.
+        if (password.length == 0) {
+            if (!has_tpm2 ()) {
+                throw new GLib.IOError.FAILED ("TPM2 encryption requested but no usable TPM2 is available");
+            }
+            log_message (InstallerDaemon.LogLevel.INFO, "TPM2 encryption");
+            set_repart_encryption (definitions, "tpm2");
             return;
         }
 
-        set_repart_encryption ("key-file");
+        log_message (InstallerDaemon.LogLevel.INFO, "Password encryption");
 
-        int fd = FileUtils.open_tmp ("elementary-key-file-XXXXXX", out keyfile);
-        if (fd < 0) {
-            throw new GLib.IOError.FAILED ("Could not create encryption key file");
+        set_repart_encryption (definitions, "key-file");
+
+        keyfile = Path.build_filename (work, "root.key");
+        var stream = File.new_for_path (keyfile).create (FileCreateFlags.PRIVATE);
+        GLib.Error? write_error = null;
+        try {
+            size_t written;
+            stream.write_all (password.data, out written);
+            stream.flush ();
+        } catch (GLib.Error e) {
+            write_error = e;
         }
-
-        FileUtils.chmod (keyfile, 0600);
-
-        var stream = FileStream.fdopen (fd, "w");
-        if (stream == null) {
-            FileUtils.close (fd);
-            throw new GLib.IOError.FAILED ("Could not create encryption key file");
+        try {
+            stream.close ();
+        } catch (GLib.Error e) {
+            if (write_error == null) {
+                write_error = e;
+            }
         }
-
-        stream.puts (password);
-        stream.flush ();
+        if (write_error != null) {
+            throw write_error;
+        }
 
         var args = repart_args;
         args += "--key-file=" + keyfile;
         repart_args = args;
     }
 
-    private void cleanup (bool squashfs_mounted, string keyfile) throws GLib.Error {
-        if (squashfs_mounted) {
-            var file = File.new_for_path (SQUASH_MOUNT);
-            file.unmount_mountable_with_operation.begin (FORCE, null, null, (obj, res) => {
-                try {
-                    file.unmount_mountable_with_operation.end (res);
-                    log_message (InstallerDaemon.LogLevel.INFO, "Unmounted squashfs");
-                } catch (GLib.Error e) {
-                    log_message (InstallerDaemon.LogLevel.WARN, "Cleanup unmount %s failed: %s", SQUASH_MOUNT, e.message);
-                }
-            });
-            FileUtils.remove (SQUASH_MOUNT);
-            log_message (InstallerDaemon.LogLevel.INFO, "Removed squashfs mount point");
-        }
+    private void cleanup (string work, string squash_mount, bool mounted, string keyfile) throws GLib.Error {
+        log_message (InstallerDaemon.LogLevel.INFO, "Cleanup");
+        GLib.Error? key_error = null;
 
-        // Is shred even necessary in a live ISO session?
-
-        /*
         if (keyfile.length > 0) {
             try {
-                run ({"shred", "-u", keyfile});
+                File.new_for_path (keyfile).delete ();
             } catch (GLib.Error e) {
-                log_message (InstallerDaemon.LogLevel.WARN, "Cleanup keyfile failed: %s", e.message);
-                FileUtils.unlink (keyfile);
+                if (!(e is GLib.IOError.NOT_FOUND)) {
+                    key_error = e;
+                }
             }
         }
-        */
 
-        log_message (InstallerDaemon.LogLevel.INFO, "Cleanup done");
+        try {
+            if (mounted) {
+                // Never traverse the source mount if unmounting it failed.
+                run ({"umount", squash_mount});
+            }
+            var definitions = File.new_for_path (Path.build_filename (work, "repart"));
+            try {
+                var enumerator = definitions.enumerate_children (
+                    FileAttribute.STANDARD_NAME, FileQueryInfoFlags.NOFOLLOW_SYMLINKS
+                );
+                FileInfo? info;
+                while ((info = enumerator.next_file ()) != null) {
+                    definitions.get_child (info.get_name ()).delete ();
+                }
+                enumerator.close ();
+                definitions.delete ();
+            } catch (GLib.Error e) {
+                if (!(e is GLib.IOError.NOT_FOUND)) {
+                    throw e;
+                }
+            }
+            try {
+                File.new_for_path (squash_mount).delete ();
+            } catch (GLib.Error e) {
+                if (!(e is GLib.IOError.NOT_FOUND)) {
+                    throw e;
+                }
+            }
+            File.new_for_path (work).delete ();
+        } catch (GLib.Error e) {
+            if (key_error != null) {
+                log_message (InstallerDaemon.LogLevel.WARN, "Cleanup keyfile failed: %s", key_error.message);
+            }
+            throw e;
+        }
+        if (key_error != null) {
+            throw key_error;
+        }
     }
 
     public void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
@@ -204,41 +261,52 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
 
         on_status (status);
 
-        var squashfs_mounted = false;
+        log_message (InstallerDaemon.LogLevel.INFO, "Starting installation");
+
         var keyfile = "";
+        var work = DirUtils.mkdtemp ("/run/elementary-installer-XXXXXX");
+        if (work == null) {
+            throw new GLib.IOError.FAILED ("Could not create private installation directory");
+        }
+        var squash_mount = Path.build_filename (work, "source");
+        var definitions = Path.build_filename (work, "repart");
+        bool mounted = false;
 
         try {
             var raw_squashfs = find_install_squashfs ();
 
-            log_message (InstallerDaemon.LogLevel.INFO, "Found squashfs %s", raw_squashfs);
+            File.new_for_path (squash_mount).make_directory ();
+            File.new_for_path (definitions).make_directory ();
+            // Repart definitions are a flat directory of files (including masks).
+            var source_definitions = File.new_for_path (REPART_SRC);
+            var enumerator = source_definitions.enumerate_children (
+                FileAttribute.STANDARD_NAME + "," + FileAttribute.STANDARD_TYPE,
+                FileQueryInfoFlags.NOFOLLOW_SYMLINKS
+            );
+            FileInfo? info;
+            while ((info = enumerator.next_file ()) != null) {
+                if (info.get_file_type () != FileType.REGULAR && info.get_file_type () != FileType.SYMBOLIC_LINK) {
+                    throw new GLib.IOError.FAILED ("Unsupported repart definition: %s", info.get_name ());
+                }
+                source_definitions.get_child (info.get_name ()).copy (
+                    File.new_for_path (Path.build_filename (definitions, info.get_name ())),
+                    FileCopyFlags.NOFOLLOW_SYMLINKS
+                );
+            }
+            enumerator.close ();
 
             string[] repart_args = {};
 
-            configure_encryption (encrypt, encryption_password, ref repart_args, ref keyfile);
+            configure_encryption (work, definitions, encrypt, encryption_password, ref repart_args, ref keyfile);
 
-            status.step = InstallerDaemon.Step.PARTITION;
-            status.percent = 10;
-            on_status (status);
+            on_log_message (InstallerDaemon.LogLevel.INFO, "Mounting squashfs: " + raw_squashfs);
 
-            /*
-            run ({"/usr/sbin/wipefs", "-a", dest_dev});
+            run ({"mount", "-t", "squashfs", "-o", "loop,ro", raw_squashfs, squash_mount});
+            mounted = true;
 
-            log_message (InstallerDaemon.LogLevel.INFO, "Wiped destination device %s", dest_dev);
-            */
+            log_message (InstallerDaemon.LogLevel.INFO, "Mounted squashfs");
 
-
-            DirUtils.create_with_parents (SQUASH_MOUNT, 0755);
-
-            log_message (InstallerDaemon.LogLevel.INFO, "Created squashfs mount point %s", SQUASH_MOUNT);
-
-            // At least one other installer (Calamares) also uses mount terminal command
-            run ({"mount", "-t", "squashfs", "-o", "loop,ro", raw_squashfs, SQUASH_MOUNT});
-
-            squashfs_mounted = true;
-
-            log_message (InstallerDaemon.LogLevel.INFO, "Mounted squashfs %s", raw_squashfs);
-
-            var raw_src = find_first_file (SQUASH_MOUNT, ".raw");
+            var raw_src = find_unique_file (squash_mount, ".raw");
             if (raw_src == null) {
                 throw new GLib.IOError.FAILED ("Could not locate raw image inside squashfs");
             }
@@ -246,8 +314,8 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             string[] repart_command = {
                 "systemd-repart",
                 "--copy-from=" + raw_src,
-                "--definitions=" + REPART_SRC,
-                "--dry-run=no",
+                "--definitions=" + definitions,
+                "--dry-run=yes",
                 "--empty=force"
             };
 
@@ -256,6 +324,17 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             }
 
             repart_command += dest_dev;
+
+            log_message (InstallerDaemon.LogLevel.INFO, "Validating systemd-repart plan");
+            run_capture (repart_command);
+
+            status.step = InstallerDaemon.Step.PARTITION;
+            status.percent = 10;
+            on_status (status);
+
+            log_message (InstallerDaemon.LogLevel.INFO, "Wiping destination device");
+            run ({"/usr/sbin/wipefs", "-a", dest_dev});
+            repart_command[3] = "--dry-run=no";
 
             status.step = InstallerDaemon.Step.EXTRACT;
             status.percent = 20;
@@ -268,29 +347,31 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             status.percent = 80;
             on_status (status);
 
-            run ({"partprobe", dest_dev});
+            log_message (InstallerDaemon.LogLevel.INFO, "Running partprobe");
 
-            log_message (InstallerDaemon.LogLevel.INFO, "Completed partprobe");
+            run ({"partprobe", dest_dev});
 
             status.percent = 90;
             on_status (status);
 
+            log_message (InstallerDaemon.LogLevel.INFO, "Running udevadm settle");
+
             run ({"udevadm", "settle"});
-
-            log_message (InstallerDaemon.LogLevel.INFO, "Completed udevadm settle");
-
-            log_message (InstallerDaemon.LogLevel.INFO, "Completed installation");
-
-            cleanup (squashfs_mounted, keyfile);
-
-            status.step = InstallerDaemon.Step.BOOTLOADER;
-            status.percent = 100;
-            on_status (status);
         } catch (GLib.Error e) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Installation aborted: " + e.message);
-            cleanup (squashfs_mounted, keyfile);
+            try {
+                cleanup (work, squash_mount, mounted, keyfile);
+            } catch (GLib.Error cleanup_error) {
+                log_message (InstallerDaemon.LogLevel.WARN, "Cleanup failed: %s", cleanup_error.message);
+            }
             throw new GLib.IOError.FAILED ("Installation aborted: " + e.message);
         }
+
+        cleanup (work, squash_mount, mounted, keyfile);
+        log_message (InstallerDaemon.LogLevel.INFO, "Completed!");
+        status.step = InstallerDaemon.Step.BOOTLOADER;
+        status.percent = 100;
+        on_status (status);
     }
 
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
