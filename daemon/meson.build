@@ -1,5 +1,7 @@
 vala_files = [
     'Daemon.vala',
+    'DistinstBackend.vala',
+    'RepartBackend.vala',
     common_files
 ]
 
@@ -8,21 +10,9 @@ daemon_dependencies = [
     glib_dep,
     gio_dep,
     gobject_dep,
+    distinst_dep,
+    meson.get_compiler('vala').find_library('posix')
 ]
-
-args = []
-
-if installer_backend == 'distinst'
-    vala_files += ['DistinstBackend.vala']
-    daemon_dependencies += [distinst_dep]
-    args += '--define=DISTINST_BACKEND'
-elif installer_backend == 'repart'
-    vala_files += ['RepartBackend.vala']
-    daemon_dependencies += meson.get_compiler('vala').find_library('posix')
-    args += '--define=REPART_BACKEND'
-else
-    error('No supported installer backend provided')
-endif
 
 systemdunitdir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')
 
@@ -35,5 +25,4 @@ install_data('io.elementary.InstallerDaemon.conf', install_dir : get_option('dat
 
 executable(meson.project_name() + '-daemon', vala_files,
            dependencies : daemon_dependencies,
-           vala_args : args,
            install: true)

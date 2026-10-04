@@ -32,6 +32,20 @@ protected interface InstallerDaemon.InstallerInterface : GLib.Object {
     public abstract void trigger_demo_mode () throws GLib.Error;
 }
 
+public static InstallerDaemon.Backend backend = InstallerDaemon.Backend.UNKNOWN;
+
+private static InstallerDaemon.InstallerInterface get_backend () throws GLib.Error {
+    switch (backend) {
+        case InstallerDaemon.Backend.DISTINST:
+            return new InstallerDaemon.DistinstBackend ();
+        case InstallerDaemon.Backend.REPART:
+            return new InstallerDaemon.RepartBackend ();
+        default:
+            critical ("Unknown backend");
+            throw new GLib.IOError.FAILED ("Unknown backend");
+    }
+}
+
 private static GLib.MainLoop loop;
 
 private void on_bus_acquired (GLib.DBusConnection connection, string name) {
@@ -40,10 +54,6 @@ private void on_bus_acquired (GLib.DBusConnection connection, string name) {
     } catch (GLib.Error e) {
         critical ("Unable to register the object: %s", e.message);
     }
-}
-
-public static InstallerDaemon.InstallerInterface get_backend () {
-    return new InstallerDaemon.RepartBackend ();
 }
 
 public static int main (string[] args) {
