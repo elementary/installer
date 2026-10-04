@@ -54,7 +54,7 @@ public class Installer.ChoiceView : AbstractInstallerView {
         foreach (var backend in get_backends ()) {
             var backend_button = new InstallTypeButton (
                 backend.get_title (),
-                "dialog-question",
+                Application.get_default ().application_id,
                 backend.get_description ()
             ) {
                 group = no_selection
