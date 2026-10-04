@@ -79,30 +79,34 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         throw new GLib.IOError.FAILED ("No .raw.squashfs file found.");
     }
 
+    private static string string_from_utf8 (uint8[] input) {
+        var builder = new GLib.StringBuilder.sized (input.length);
+        builder.append_len ((string) input, input.length);
+        return ((owned) builder.str); //.make_valid ();
+    }
+
     private string run_capture (string[] argv) throws GLib.Error {
-        var process = new Subprocess (STDOUT_PIPE | STDERR_PIPE, argv);
-        string stdout_buf = "";
-        string stderr_buf = "";
+        var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_PIPE);
+        string? stdout_buf;
+        string? stderr_buf;
 
         process.communicate_utf8 (null, null, out stdout_buf, out stderr_buf);
 
         if (!process.get_successful ()) {
-            throw new GLib.IOError.FAILED (
-                "Run command failed: %s: %s: %s",
-                string.joinv (" ", argv),
-                stdout_buf.strip (),
-                stderr_buf.strip ()
-            );
+            log_message (InstallerDaemon.LogLevel.ERROR, "Run command failed: %s", string.joinv (" ", argv));
+            throw new GLib.IOError.FAILED ("Run command failed: %s", string.joinv (" ", argv));
         }
 
-        return stdout_buf.strip ();
+        return stdout_buf/*.make_valid ()*/.strip ();
     }
 
     private void run (string[] argv) throws GLib.Error {
         try {
-            var process = new Subprocess (NONE, argv);
+            var launcher = new SubprocessLauncher (NONE);
+            var process = launcher.spawnv (argv);
             process.wait_check ();
         } catch (GLib.Error e) {
+            log_message (InstallerDaemon.LogLevel.ERROR, "Run command failed: %s: %s", string.joinv (" ", argv), e.message);
             throw new GLib.IOError.FAILED ("Run command failed: %s: %s", string.joinv (" ", argv), e.message);
         }
     }
@@ -113,6 +117,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             var lines = output.split ("\n");
             return lines.length > 0 && lines[0].strip () == "yes";
         } catch (GLib.Error e) {
+            log_message (InstallerDaemon.LogLevel.WARN, "TPM2 check failed: %s", e.message);
             return false;
         }
     }
@@ -167,16 +172,18 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         repart_args = args;
     }
 
-    private void cleanup (string keyfile) throws GLib.Error {
+    private void cleanup (bool squashfs_mounted, string keyfile) throws GLib.Error {
         log_message (InstallerDaemon.LogLevel.INFO, "Cleanup");
 
-        try {
-            run ({"umount", SQUASH_MOUNT});
-        } catch (GLib.Error e) {
-            log_message (InstallerDaemon.LogLevel.WARN, "Cleanup unmount %s failed: %s", SQUASH_MOUNT, e.message);
-        }
+        if (squashfs_mounted) {
+            try {
+                run ({"umount", SQUASH_MOUNT});
+            } catch (GLib.Error e) {
+                log_message (InstallerDaemon.LogLevel.WARN, "Cleanup unmount %s failed: %s", SQUASH_MOUNT, e.message);
+            }
 
-        Posix.rmdir (SQUASH_MOUNT);
+            Posix.rmdir (SQUASH_MOUNT);
+        }
 
         if (keyfile.length > 0) {
             try {
@@ -208,10 +215,15 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
 
         log_message (InstallerDaemon.LogLevel.INFO, "Starting installation");
 
+        var squashfs_mounted = false;
         var keyfile = "";
 
         try {
+            log_message (InstallerDaemon.LogLevel.INFO, "Finding squashfs");
+
             var raw_squashfs = find_install_squashfs ();
+
+            log_message (InstallerDaemon.LogLevel.WARN, "Configuring encryption");
 
             string[] repart_args = {};
 
@@ -232,6 +244,8 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             log_message (InstallerDaemon.LogLevel.INFO, "Created squashfs mountpoint");
 
             run ({"mount", "-t", "squashfs", "-o", "loop,ro", raw_squashfs, SQUASH_MOUNT});
+
+            squashfs_mounted = true;
 
             log_message (InstallerDaemon.LogLevel.INFO, "Mounted squashfs");
 
@@ -278,14 +292,14 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
 
             log_message (InstallerDaemon.LogLevel.INFO, "Completed!");
 
-            cleanup (keyfile);
+            cleanup (squashfs_mounted, keyfile);
 
             status.step = InstallerDaemon.Step.BOOTLOADER;
             status.percent = 100;
             on_status (status);
         } catch (GLib.Error e) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Installation aborted: " + e.message);
-            cleanup (keyfile);
+            cleanup (squashfs_mounted, keyfile);
             throw new GLib.IOError.FAILED ("Installation aborted: " + e.message);
         }
     }
@@ -293,7 +307,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
     private string get_contents (File file) throws GLib.Error {
         uint8[] contents;
         file.load_contents (null, out contents, null);
-        return (string) contents;
+        return string_from_utf8 (contents);
     }
 
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
