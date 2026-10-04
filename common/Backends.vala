@@ -14,7 +14,33 @@ public enum InstallerDaemon.Backend {
                 return "Unknown";
         }
     }
+
+    public string get_title () {
+        switch (this) {
+            case DISTINST:
+                return "Classic Installation Mode (BOO!)";
+            case REPART:
+                return "Modern Installation Mode (YOLO!)";
+            case UNKNOWN:
+            default:
+                return "Unknown Installation Mode (OUCH!)";
+        }
+    }
+
+    public string get_description () {
+        switch (this) {
+            case DISTINST:
+                return "This is the classic (old and unloved) installation mode. You would be ill-advised to choose this.";
+            case REPART:
+                return "This is the modern (new fangled) installation mode. Here be dragons, you have been warned.";
+            case UNKNOWN:
+            default:
+                return "This is an unknown installation mode. WTF is going on here?!";
+        }
+    }
 }
+
+public static InstallerDaemon.Backend installation_backend = InstallerDaemon.Backend.UNKNOWN;
 
 public static InstallerDaemon.Backend[] get_backends () {
     return { InstallerDaemon.Backend.DISTINST, InstallerDaemon.Backend.REPART };

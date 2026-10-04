@@ -32,10 +32,8 @@ protected interface InstallerDaemon.InstallerInterface : GLib.Object {
     public abstract void trigger_demo_mode () throws GLib.Error;
 }
 
-public static InstallerDaemon.Backend backend = InstallerDaemon.Backend.UNKNOWN;
-
 private static InstallerDaemon.InstallerInterface get_backend () throws GLib.Error {
-    switch (backend) {
+    switch (installation_backend) {
         case InstallerDaemon.Backend.DISTINST:
             return new InstallerDaemon.DistinstBackend ();
         case InstallerDaemon.Backend.REPART:
