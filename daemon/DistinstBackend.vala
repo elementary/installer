@@ -16,11 +16,7 @@
  */
 
 [DBus (name = "io.elementary.InstallerDaemon")]
-public class InstallerDaemon.DistinstBackend : GLib.Object {
-    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
-    public signal void on_status (InstallerDaemon.Status status);
-    public signal void on_error (InstallerDaemon.Error error);
-
+public class InstallerDaemon.DistinstBackend : InstallerInterface, GLib.Object {
     private Distinst.Disks disks;
 
     construct {
