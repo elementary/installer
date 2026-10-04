@@ -28,8 +28,6 @@ protected interface InstallerDaemon.InstallerInterface : GLib.Object {
     public abstract InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error;
     public abstract void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error;
     public abstract void install_with_custom_disk_layout (InstallerDaemon.InstallConfig config, InstallerDaemon.Mount[] disk_config, InstallerDaemon.LuksCredentials[] luks) throws GLib.Error;
-    public abstract void set_demo_mode_locale (string locale) throws GLib.Error;
-    public abstract void trigger_demo_mode () throws GLib.Error;
 }
 
 private static InstallerDaemon.InstallerInterface get_backend () throws GLib.Error {

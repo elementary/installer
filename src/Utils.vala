@@ -75,14 +75,12 @@ namespace Utils {
         } else {
             // This touches the file `/var/lib/lightdm/demo-mode`, which signals to the greeter that the next session it launches
             // should be the live (demo) session. If this file doesn't exist, it just relaunches the installer session
-            Installer.Daemon.get_default ().trigger_demo_mode.begin ((obj, res) => {
-                try {
-                    ((Installer.Daemon)obj).trigger_demo_mode.end (res);
-                    logout ();
-                } catch (Error e) {
-                    warning ("Error triggering demo mode: %s", e.message);
-                }
-            });
+            try {
+                trigger_demo_mode ();
+                logout ();
+            } catch (Error e) {
+                warning ("Error triggering demo mode: %s", e.message);
+            }
         }
     }
 
@@ -272,5 +270,20 @@ namespace Utils {
         }
 
         return hostname;
+    }
+
+    public void set_demo_mode_locale (string locale) throws GLib.Error {
+        GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
+    }
+
+    private void trigger_demo_mode () throws GLib.Error {
+        var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
+        try {
+            demo_mode_file.create (GLib.FileCreateFlags.NONE);
+        } catch (GLib.Error e) {
+            if (!(e is GLib.IOError.EXISTS)) {
+                throw e;
+            }
+        }
     }
 }
