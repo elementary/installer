@@ -1,3 +1,8 @@
+/*
+ * Copyright 2026 elementary, Inc. (https://elementary.io)
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 public enum InstallerDaemon.Backend {
     DISTINST,
     REPART,
