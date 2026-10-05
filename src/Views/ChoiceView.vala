@@ -50,6 +50,8 @@ public class Installer.ChoiceView : AbstractInstallerView {
         action_box_end.append (next_button);
 
         next_button.clicked.connect (() => {
+                info ("Setting backend to: %s", choice.to_string ());
+
                 try {
                     if (!Installer.App.test_mode) {
                         Daemon.get_default ().set_backend (choice);
