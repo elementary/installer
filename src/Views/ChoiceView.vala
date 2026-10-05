@@ -16,6 +16,8 @@
  */
 
 public class Installer.ChoiceView : AbstractInstallerView {
+    private InstallerDaemon.Backend choice = InstallerDaemon.Backend.UNKNOWN;
+
     construct {
         var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id) {
             pixel_size = 128
@@ -48,6 +50,17 @@ public class Installer.ChoiceView : AbstractInstallerView {
         action_box_end.append (next_button);
 
         next_button.clicked.connect (() => {
+                try {
+                    if (!Installer.App.test_mode) {
+                        Daemon.get_default ().set_backend (choice);
+                    }
+                } catch (GLib.Error e) {
+                    critical ("Could not set backend to %s: %s", choice.to_string (), e.message);
+                    title = _("Error");
+                    sensitive = false;
+                    return;
+                }
+
                 next_step ();
         });
 
@@ -62,7 +75,7 @@ public class Installer.ChoiceView : AbstractInstallerView {
 
             backend_button.toggled.connect (() => {
                 if (backend_button.active) {
-                    installation_backend = backend;
+                    choice = backend;
                     next_button.label = backend_button.title;
                     next_button.sensitive = true;
                 }

@@ -27,6 +27,8 @@ public class Installer.Daemon {
         public signal void on_status (InstallerDaemon.Status status);
         public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
 
+        public abstract void set_backend (InstallerDaemon.Backend backend) throws GLib.Error;
+
         public abstract InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error;
 
         public async abstract InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error;
@@ -55,6 +57,14 @@ public class Installer.Daemon {
         daemon.on_error.connect ((error) => on_error (error));
         daemon.on_status.connect ((status) => on_status (status));
         daemon.on_log_message.connect ((level, message) => on_log_message (level, message));
+    }
+
+    public void set_backend (InstallerDaemon.Backend backend) throws GLib.Error {
+        if (daemon == null) {
+            throw new GLib.IOError.FAILED ("Not connected to installer daemon");
+        }
+
+        daemon.set_backend (backend);
     }
 
     public InstallerDaemon.PartitionTable bootloader_detect () {

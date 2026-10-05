@@ -45,8 +45,6 @@ public enum InstallerDaemon.Backend {
     }
 }
 
-public static InstallerDaemon.Backend installation_backend = InstallerDaemon.Backend.UNKNOWN;
-
 public static InstallerDaemon.Backend[] get_backends () {
     return { InstallerDaemon.Backend.DISTINST, InstallerDaemon.Backend.REPART };
 }
