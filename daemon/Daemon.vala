@@ -30,8 +30,12 @@ protected interface InstallerDaemon.InstallerInterface : GLib.Object {
 }
 
 [DBus (name = "io.elementary.InstallerDaemon")]
-public class InstallerDaemon.BackendProxy : InstallerDaemon.InstallerInterface, GLib.Object {
+public class InstallerDaemon.BackendProxy : GLib.Object {
     private InstallerDaemon.InstallerInterface backend_proxy = null;
+
+    public signal void on_error (InstallerDaemon.Error error);
+    public signal void on_status (InstallerDaemon.Status status);
+    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
 
     private void check () throws GLib.Error {
         if (backend_proxy == null) {
