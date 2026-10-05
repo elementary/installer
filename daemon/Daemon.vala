@@ -49,10 +49,6 @@ public class InstallerDaemon.BackendProxy : GLib.Object {
     }
 
     public void set_backend (InstallerDaemon.Backend backend) throws GLib.Error {
-        if (backend_proxy != null) {
-            throw new GLib.IOError.FAILED ("Backend already set");
-        }
-
         switch (backend) {
             case InstallerDaemon.Backend.DISTINST:
                 backend_proxy = new InstallerDaemon.DistinstBackend ();
