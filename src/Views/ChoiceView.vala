@@ -17,7 +17,7 @@
 
 public class Installer.ChoiceView : AbstractInstallerView {
     public InstallerDaemon.Backend choice { get; private set; default = InstallerDaemon.Backend.UNKNOWN; }
-    public bool has_tpm2 { get; private set; default = true; }
+    public bool has_tpm2 { get; private set; default = false; }
 
     construct {
         var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id) {
@@ -56,6 +56,7 @@ public class Installer.ChoiceView : AbstractInstallerView {
                 try {
                     if (!Installer.App.test_mode) {
                         Daemon.get_default ().set_backend (choice);
+                        has_tpm2 = Daemon.get_default ().has_tpm2 ();
                     }
                 } catch (GLib.Error e) {
                     critical ("Could not set backend to %s: %s", choice.to_string (), e.message);

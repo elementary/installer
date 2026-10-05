@@ -31,6 +31,8 @@ public class Installer.Daemon {
 
         public abstract InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error;
 
+        public abstract bool has_tpm2 () throws GLib.Error;
+
         public async abstract InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error;
         public async abstract int decrypt_partition (string path, string pv, string password) throws GLib.Error;
         public async abstract InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error;
@@ -77,6 +79,14 @@ public class Installer.Daemon {
         } catch (Error e) {
             return fallback_bootloader_detect ();
         }
+    }
+
+    public bool has_tpm2 () throws GLib.Error {
+        if (daemon == null) {
+            throw new GLib.IOError.FAILED ("Not connected to installer daemon");
+        }
+
+        return daemon.has_tpm2 ();
     }
 
     private InstallerDaemon.PartitionTable fallback_bootloader_detect () {

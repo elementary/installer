@@ -27,6 +27,11 @@ protected interface InstallerDaemon.InstallerInterface : GLib.Object {
     public abstract InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error;
     public abstract void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error;
     public abstract void install_with_custom_disk_layout (InstallerDaemon.InstallConfig config, InstallerDaemon.Mount[] disk_config, InstallerDaemon.LuksCredentials[] luks) throws GLib.Error;
+
+    public abstract bool has_tpm2 () throws GLib.Error;
+    protected bool default_has_tpm2 () {
+        return false;
+    }
 }
 
 [DBus (name = "io.elementary.InstallerDaemon")]
@@ -67,6 +72,11 @@ public class InstallerDaemon.BackendProxy : GLib.Object {
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
         check ();
         return backend_proxy.bootloader_detect ();
+    }
+
+    public bool has_tpm2 () throws GLib.Error {
+        check ();
+        return backend_proxy.has_tpm2 ();
     }
 
     public InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {

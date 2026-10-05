@@ -110,7 +110,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         }
     }
 
-    private bool has_tpm2 () {
+    public bool has_tpm2 () throws GLib.Error {
         try {
             var output = run_capture ({"systemd-analyze", "has-tpm2"});
             var lines = output.split ("\n");

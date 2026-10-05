@@ -30,6 +30,10 @@ public class InstallerDaemon.DistinstBackend : InstallerInterface, GLib.Object {
         return to_common_usage_bootloader (Distinst.bootloader_detect ());
     }
 
+    public bool has_tpm2 () throws GLib.Error {
+        return default_has_tpm2 ();
+    }
+
     public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
         disks = Distinst.Disks.probe ();
 
