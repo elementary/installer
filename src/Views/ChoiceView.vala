@@ -12,7 +12,7 @@ public class Installer.ChoiceView : AbstractInstallerView {
             pixel_size = 128
         };
 
-        title = _("Pick your poison");
+        title = _("Choose Install Mode");
 
         var type_label = new Gtk.Label (title);
 

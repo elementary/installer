@@ -23,24 +23,24 @@ public enum InstallerDaemon.Backend {
     public string get_title () {
         switch (this) {
             case DISTINST:
-                return "Classic Installation Mode (BOO!)";
+                return "Classic Installation Mode";
             case REPART:
-                return "Modern Installation Mode (YOLO!)";
+                return "Modern Installation Mode";
             case UNKNOWN:
             default:
-                return "Unknown Installation Mode (OUCH!)";
+                return "Unknown Installation Mode";
         }
     }
 
     public string get_description () {
         switch (this) {
             case DISTINST:
-                return "This is the classic (old and unloved) installation mode. You would be ill-advised to choose this.";
+                return "This is the classic installation mode.";
             case REPART:
-                return "This is the modern (new fangled) installation mode. Here be dragons, you have been warned.";
+                return "This is the modern installation mode.";
             case UNKNOWN:
             default:
-                return "This is an unknown installation mode. WTF is going on here?!";
+                return "This is an unknown installation mode.";
         }
     }
 }
