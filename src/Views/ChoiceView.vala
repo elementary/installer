@@ -58,7 +58,6 @@ public class Installer.ChoiceView : AbstractInstallerView {
                     }
                 } catch (GLib.Error e) {
                     critical ("Could not set backend to %s: %s", choice.to_string (), e.message);
-                    title = _("Error");
                     sensitive = false;
                     return;
                 }
@@ -78,7 +77,6 @@ public class Installer.ChoiceView : AbstractInstallerView {
             backend_button.toggled.connect (() => {
                 if (backend_button.active) {
                     choice = backend;
-                    next_button.label = backend_button.title;
                     next_button.sensitive = true;
                 }
             });
