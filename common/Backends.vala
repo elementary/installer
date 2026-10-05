@@ -46,5 +46,5 @@ public enum InstallerDaemon.Backend {
 }
 
 public static InstallerDaemon.Backend[] get_backends () {
-    return { InstallerDaemon.Backend.DISTINST, InstallerDaemon.Backend.REPART };
+    return { InstallerDaemon.Backend.REPART, InstallerDaemon.Backend.DISTINST };
 }
