@@ -132,7 +132,7 @@ public class EncryptView : AbstractInstallerView {
 
         content_area.valign = CENTER;
 
-        if (use_tpm) {
+        if (use_tpm || Installer.App.test_mode) {
             use_tpm_checkbutton = new Gtk.CheckButton.with_label (_("Use Trusted Platform Module.")) {
                 active = false
             };
