@@ -353,8 +353,20 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
                 bool.try_parse (get_contents (sys_block.get_child (name).get_child ("queue").get_child ("rotational")).strip (), out rotational);
                 bool.try_parse (get_contents (sys_block.get_child (name).get_child ("removable")).strip (), out removable);
 
+                var model = get_contents (sys_block.get_child (name).get_child ("device").get_child ("model")).strip ();
+
+                // TODO: Use udev to get better storage type like ATA instead of SCSI.
+
+                var protocol_path = sys_block.get_child (name).get_child ("device").get_child ("subsystem").get_path ();
+                var protocol = protocol_path == null ? null : Posix.realpath (protocol_path);
+                if (protocol == null || protocol.length == 0) {
+                    protocol = "(unknown) ";
+                } else {
+                    protocol = "%s ".printf (Path.get_basename (protocol));
+                }
+
                 physical_disks += Disk () {
-                    name = name,
+                    name = "%s%s".printf (protocol.up (), model),
                     partitions = {},
                     sectors = size * 512 / sector_size,
                     sector_size = sector_size,
