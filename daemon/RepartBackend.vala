@@ -303,15 +303,20 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         }
     }
 
-    private string get_contents (File file) throws GLib.Error {
-        uint8[] contents;
-        file.load_contents (null, out contents, null);
-        return string_from_utf8 (contents);
-    }
-
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
         log_message (InstallerDaemon.LogLevel.ERROR, "Not implemented");
         throw new GLib.IOError.FAILED ("Not implemented");
+    }
+
+    private string get_contents (string path, bool strip = true) throws GLib.Error {
+        string contents = "";
+        if (FileUtils.test (path, EXISTS)) {
+            FileUtils.get_contents (path, out contents);
+            if (strip) {
+                contents = contents.strip ();
+            }
+        }
+        return contents;
     }
 
     public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
@@ -338,8 +343,10 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             while ((info = enumerator.next_file ()) != null) {
                 var name = info.get_name ();
 
+                var name_path = "/sys/block/%s".printf (name);
+
                 // We only want physical disks
-                if (!sys_block.get_child (name).get_child ("device").query_exists () || name.has_prefix ("sr")) {
+                if (!FileUtils.test (name_path + "/device", EXISTS) || name.has_prefix ("sr")) {
                     continue;
                 }
 
@@ -348,21 +355,16 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
                 bool rotational;
                 bool removable;
 
-                uint64.try_parse (get_contents (sys_block.get_child (name).get_child ("size")).strip (), out size);
-                uint64.try_parse (get_contents (sys_block.get_child (name).get_child ("queue").get_child ("logical_block_size")).strip (), out sector_size);
-                bool.try_parse (get_contents (sys_block.get_child (name).get_child ("queue").get_child ("rotational")).strip (), out rotational);
-                bool.try_parse (get_contents (sys_block.get_child (name).get_child ("removable")).strip (), out removable);
+                uint64.try_parse (get_contents (name_path + "/size"), out size);
+                uint64.try_parse (get_contents (name_path + "/queue/logical_block_size"), out sector_size);
+                bool.try_parse (get_contents (name_path + "/queue/rotational"), out rotational);
+                bool.try_parse (get_contents (name_path + "/removable"), out removable);
 
-                var model = get_contents (sys_block.get_child (name).get_child ("device").get_child ("model")).strip ();
-                var vendor = "";
-                if (sys_block.get_child (name).get_child ("device").get_child ("vendor").query_exists ()) {
-                    vendor = "%s ".printf (get_contents (
-                        sys_block.get_child (name).get_child ("device").get_child ("vendor")
-                    ).strip ());
-                }
+                var vendor = get_contents (name_path + "/device/vendor");
+                var model = get_contents (name_path + "/device/model");
 
                 physical_disks += Disk () {
-                    name = "%s%s".printf (vendor, model),
+                    name = "%s%s%s".printf (vendor, vendor.length > 0 ? " " : "", model),
                     partitions = {},
                     sectors = size * 512 / sector_size,
                     sector_size = sector_size,
