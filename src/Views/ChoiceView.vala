@@ -51,13 +51,12 @@ public class Installer.ChoiceView : AbstractInstallerView {
         action_box_end.append (next_button);
 
         next_button.clicked.connect (() => {
-                info ("Setting backend to: %s", choice.to_string ());
-
                 try {
                     if (!Installer.App.test_mode) {
                         Daemon.get_default ().set_backend (choice);
                         has_tpm2 = Daemon.get_default ().has_tpm2 ();
                     }
+                    info ("Set backend to: %s with has_tpm2: %s", choice.to_string (), has_tpm2.to_string ());
                 } catch (GLib.Error e) {
                     critical ("Could not set backend to %s: %s", choice.to_string (), e.message);
                     sensitive = false;
