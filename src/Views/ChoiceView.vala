@@ -16,7 +16,8 @@
  */
 
 public class Installer.ChoiceView : AbstractInstallerView {
-    private InstallerDaemon.Backend choice = InstallerDaemon.Backend.UNKNOWN;
+    public InstallerDaemon.Backend choice { get; private set; default = InstallerDaemon.Backend.UNKNOWN; }
+    public bool has_tpm2 { get; private set; default = true; }
 
     construct {
         var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id) {

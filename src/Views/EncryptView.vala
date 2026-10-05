@@ -23,13 +23,21 @@ public class EncryptView : AbstractInstallerView {
     private Granite.ValidatedEntry confirm_entry;
     private ValidatedEntry pw_entry;
     private Gtk.LevelBar pw_levelbar;
+    private Gtk.CheckButton use_tpm_checkbutton;
 
     private const string SKIP_STRING = _("Don’t Encrypt");
+    private const string TPM_STRING = _("Encrypt Using TPM");
+    private const string PASSWORD_STRING = _("Encrypt Using Password");
 
     private uint announce_timeout_id;
 
-    public EncryptView () {
-        Object (cancellable: true);
+    public bool use_tpm { get; construct; }
+
+    public EncryptView (bool has_tpm2) {
+        Object (
+            use_tpm: has_tpm2,
+            cancellable: true
+        );
     }
 
     construct {
@@ -123,10 +131,26 @@ public class EncryptView : AbstractInstallerView {
         title_area.append (title_label);
 
         content_area.valign = CENTER;
+
+        if (use_tpm) {
+            use_tpm_checkbutton = new Gtk.CheckButton.with_label (_("Use Trusted Platform Module (TPM2) passwordless encryption")) {
+                active = false
+            };
+
+            use_tpm_checkbutton.toggled.connect (() => {
+                message_box.sensitive = !use_tpm_checkbutton.active;
+                password_box.sensitive = !use_tpm_checkbutton.active;
+                encrypt_button.label = use_tpm_checkbutton.active ? TPM_STRING : PASSWORD_STRING;
+                encrypt_button.sensitive = use_tpm_checkbutton.active || pw_entry.is_valid && confirm_entry.is_valid;
+            });
+
+            content_area.append (use_tpm_checkbutton);
+        }
+
         content_area.append (message_box);
         content_area.append (password_box);
 
-        encrypt_button = new Gtk.Button.with_label (_("Set Encryption Password")) {
+        encrypt_button = new Gtk.Button.with_label (PASSWORD_STRING) {
             sensitive = false
         };
 
@@ -143,7 +167,7 @@ public class EncryptView : AbstractInstallerView {
         });
 
         encrypt_button.clicked.connect (() => {
-            Configuration.get_default ().encryption_password = pw_entry.text;
+            Configuration.get_default ().encryption_password = use_tpm_checkbutton.active ? null : pw_entry.text;
             next_step ();
         });
 

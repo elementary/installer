@@ -185,7 +185,7 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
     }
 
     private void load_encrypt_view () {
-        var encrypt_view = new EncryptView ();
+        var encrypt_view = new EncryptView (choice_view.has_tpm2);
         encrypt_view.next_step.connect (load_drivers_view);
 
         navigation_view.push (encrypt_view);
