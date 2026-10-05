@@ -103,6 +103,21 @@ public class InstallerDaemon.BackendProxy : GLib.Object {
         check ();
         backend_proxy.install_with_custom_disk_layout (config, disk_config, luks);
     }
+
+    public void set_demo_mode_locale (string locale) throws GLib.Error {
+        GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
+    }
+
+    public void trigger_demo_mode () throws GLib.Error {
+        var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
+        try {
+            demo_mode_file.create (GLib.FileCreateFlags.NONE);
+        } catch (GLib.Error e) {
+            if (!(e is GLib.IOError.EXISTS)) {
+                throw e;
+            }
+        }
+    }
 }
 
 private static GLib.MainLoop loop;
