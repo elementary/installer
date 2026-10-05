@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-[DBus (name = "io.elementary.InstallerDaemon")]
 public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
     private const string REPART_SRC = "/opt/repart-target";
     private const string SQUASH_MOUNT = "/mnt/source-image";

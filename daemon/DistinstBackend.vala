@@ -15,7 +15,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-[DBus (name = "io.elementary.InstallerDaemon")]
 public class InstallerDaemon.DistinstBackend : InstallerInterface, GLib.Object {
     private Distinst.Disks disks;
 
