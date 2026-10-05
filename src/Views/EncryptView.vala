@@ -167,7 +167,7 @@ public class EncryptView : AbstractInstallerView {
         });
 
         encrypt_button.clicked.connect (() => {
-            Configuration.get_default ().encryption_password = use_tpm_checkbutton.active ? null : pw_entry.text;
+            Configuration.get_default ().encryption_password = use_tpm_checkbutton.active ? "" : pw_entry.text;
             next_step ();
         });
 
