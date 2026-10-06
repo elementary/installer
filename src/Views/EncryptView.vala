@@ -31,13 +31,8 @@ public class EncryptView : AbstractInstallerView {
 
     private uint announce_timeout_id;
 
-    public bool use_tpm { get; construct; }
-
-    public EncryptView (bool has_tpm2) {
-        Object (
-            use_tpm: has_tpm2,
-            cancellable: true
-        );
+    public EncryptView () {
+        Object (cancellable: true);
     }
 
     construct {
@@ -135,7 +130,14 @@ public class EncryptView : AbstractInstallerView {
         content_area.append (message_box);
         content_area.append (password_box);
 
-        if (use_tpm || Installer.App.test_mode) {
+        var show_tpm_option = false;
+        try {
+            show_tpm_option = Installer.App.test_mode || Installer.Daemon.get_default ().has_tpm2 ();
+        } catch (GLib.Error e) {
+            warning ("Could not check for TPM: %s", e.message);
+        }
+
+        if (show_tpm_option) {
             use_tpm_checkbutton = new Gtk.CheckButton.with_label (_("Use Trusted Platform Module.")) {
                 active = false
             };
