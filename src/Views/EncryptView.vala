@@ -132,6 +132,9 @@ public class EncryptView : AbstractInstallerView {
 
         content_area.valign = CENTER;
 
+        content_area.append (message_box);
+        content_area.append (password_box);
+
         if (use_tpm || Installer.App.test_mode) {
             use_tpm_checkbutton = new Gtk.CheckButton.with_label (_("Use Trusted Platform Module.")) {
                 active = false
@@ -146,9 +149,6 @@ public class EncryptView : AbstractInstallerView {
 
             content_area.append (use_tpm_checkbutton);
         }
-
-        content_area.append (message_box);
-        content_area.append (password_box);
 
         encrypt_button = new Gtk.Button.with_label (PASSWORD_STRING) {
             sensitive = false
