@@ -7,7 +7,7 @@ public class Installer.ChoiceView : AbstractInstallerView {
     public InstallerDaemon.Backend choice { get; private set; default = InstallerDaemon.Backend.UNKNOWN; }
 
     construct {
-        var type_image = new Gtk.Image.from_icon_name (Application.get_default ().application_id) {
+        var type_image = new Gtk.Image.from_icon_name ("dialog-question") {
             pixel_size = 128
         };
 
@@ -55,7 +55,7 @@ public class Installer.ChoiceView : AbstractInstallerView {
         foreach (var backend in get_backends ()) {
             var backend_button = new InstallTypeButton (
                 backend.get_title (),
-                Application.get_default ().application_id,
+                backend == REPART ? "security-high" : "security-low",
                 backend.get_description ()
             ) {
                 group = no_selection
