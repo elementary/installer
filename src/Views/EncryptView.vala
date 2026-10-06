@@ -141,7 +141,8 @@ public class EncryptView : AbstractInstallerView {
             };
 
             use_tpm_checkbutton.toggled.connect (() => {
-                message_box.sensitive = !use_tpm_checkbutton.active;
+                restart_row.sensitive = !use_tpm_checkbutton.active;
+                keyboard_row.sensitive = !use_tpm_checkbutton.active;
                 password_box.sensitive = !use_tpm_checkbutton.active;
                 encrypt_button.label = use_tpm_checkbutton.active ? TPM_STRING : PASSWORD_STRING;
                 encrypt_button.sensitive = use_tpm_checkbutton.active || pw_entry.is_valid && confirm_entry.is_valid;
