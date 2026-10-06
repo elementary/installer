@@ -147,6 +147,7 @@ public class EncryptView : AbstractInstallerView {
                 encrypt_button.sensitive = use_tpm_checkbutton.active || pw_entry.is_valid && confirm_entry.is_valid;
             });
 
+            content_area.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             content_area.append (use_tpm_checkbutton);
         }
 
