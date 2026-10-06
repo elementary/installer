@@ -58,6 +58,7 @@ public class Installer.ChoiceView : AbstractInstallerView {
                 backend == REPART ? "security-high" : "security-low",
                 backend.get_description ()
             ) {
+                active = backend == REPART,
                 group = no_selection
             };
 
