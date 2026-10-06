@@ -29,7 +29,6 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
     private const uint64 MINIMUM_SPACE = 15 * ONE_GB;
 
     private Adw.NavigationView navigation_view;
-    private ChoiceView choice_view;
     private LanguageView language_view;
     private TryInstallView try_install_view;
     private KeyboardLayoutView keyboard_layout_view;
@@ -121,16 +120,11 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
 
     private void load_keyboard_view () {
         keyboard_layout_view = new KeyboardLayoutView ();
-        choice_view = new ChoiceView ();
         try_install_view = new TryInstallView ();
 
         navigation_view.push (keyboard_layout_view);
 
         keyboard_layout_view.next_step.connect (() => {
-            navigation_view.push (choice_view);
-        });
-
-        choice_view.next_step.connect (() => {
             navigation_view.push (try_install_view);
         });
 
@@ -145,7 +139,12 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
             };
         });
 
-        try_install_view.next_step.connect (() => {
+        try_install_view.next_step.connect (() => load_choice_view ());
+    }
+
+    private void load_choice_view () {
+        var choice_view = new ChoiceView ();
+        choice_view.next_step.connect (() => {
             var check_view = load_check_view ();
             if (check_view == null) {
                 load_disk_view ();
@@ -155,6 +154,7 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
                 });
             };
         });
+        navigation_view.push (choice_view);
     }
 
     private void load_disk_view () {
