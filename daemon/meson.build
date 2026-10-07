@@ -11,7 +11,6 @@ daemon_dependencies = [
     gio_dep,
     gobject_dep,
     distinst_dep,
-    meson.get_compiler('vala').find_library('posix')
 ]
 
 systemdunitdir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')

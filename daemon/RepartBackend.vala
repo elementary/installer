@@ -150,11 +150,11 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             throw new GLib.IOError.FAILED ("Could not create encryption key file");
         }
 
-        Posix.fchmod (fd, 0600);
+        FileUtils.chmod (keyfile, 0600);
 
         var stream = FileStream.fdopen (fd, "w");
         if (stream == null) {
-            Posix.close (fd);
+            FileUtils.close (fd);
             throw new GLib.IOError.FAILED ("Could not create encryption key file");
         }
 
@@ -176,7 +176,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
                 log_message (InstallerDaemon.LogLevel.WARN, "Cleanup unmount %s failed: %s", SQUASH_MOUNT, e.message);
             }
 
-            Posix.rmdir (SQUASH_MOUNT);
+            FileUtils.remove (SQUASH_MOUNT);
         }
 
         if (keyfile.length > 0) {
