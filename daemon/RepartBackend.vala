@@ -123,6 +123,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         var keyfile = new KeyFile ();
         keyfile.load_from_file (path, NONE);
         keyfile.set_string ("Partition", "Encrypt", value);
+        keyfile.save_to_file (path);
     }
 
     private void configure_encryption (bool encrypt, string password, ref string[] repart_args, ref string keyfile) throws GLib.Error {
