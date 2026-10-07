@@ -124,22 +124,19 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         keyfile.load_from_file (path, NONE);
         keyfile.set_string ("Partition", "Encrypt", value);
         keyfile.save_to_file (path);
+        log_message (InstallerDaemon.LogLevel.INFO, "Encryption mode: %s", value);
     }
 
     private void configure_encryption (bool encrypt, string password, ref string[] repart_args, ref string keyfile) throws GLib.Error {
         if (!encrypt) {
-            log_message (InstallerDaemon.LogLevel.INFO, "No encryption");
             set_repart_encryption ("off");
             return;
         }
 
         if (password.length == 0 && has_tpm2 ()) {
-            log_message (InstallerDaemon.LogLevel.INFO, "TPM2 encryption");
             set_repart_encryption ("tpm2");
             return;
         }
-
-        log_message (InstallerDaemon.LogLevel.INFO, "Password encryption");
 
         set_repart_encryption ("key-file");
 
