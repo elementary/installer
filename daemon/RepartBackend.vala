@@ -123,14 +123,9 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
 
     private void set_repart_encryption (string value) throws GLib.Error {
         var path = Path.build_filename (REPART_SRC, "40-root.conf");
-        string contents = "";
-
-        FileUtils.get_contents (path, out contents);
-
-        var regex = new Regex ("^Encrypt=.*$", MULTILINE);
-        contents = regex.replace (contents, contents.length, 0, "Encrypt=" + value);
-
-        FileUtils.set_contents (path, contents);
+        var keyfile = new KeyFile ();
+        keyfile.load_from_file (path, NONE);
+        keyfile.set_string ("Partition", "Encrypt", value);
     }
 
     private void configure_encryption (bool encrypt, string password, ref string[] repart_args, ref string keyfile) throws GLib.Error {
