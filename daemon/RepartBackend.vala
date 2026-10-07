@@ -85,18 +85,15 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
     }
 
     private string run_capture (string[] argv) throws GLib.Error {
-        var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_PIPE);
+        var process = new Subprocess.newv (argv, STDOUT_PIPE | STDERR_MERGE);
         string? stdout_buf;
-        string? stderr_buf;
 
-        process.communicate_utf8 (null, null, out stdout_buf, out stderr_buf);
-
-        if (!process.get_successful ()) {
+        if (!process.communicate_utf8 (null, null, out stdout_buf, null)) {
             log_message (InstallerDaemon.LogLevel.ERROR, "Run command failed: %s", string.joinv (" ", argv));
             throw new GLib.IOError.FAILED ("Run command failed: %s", string.joinv (" ", argv));
         }
 
-        return stdout_buf/*.make_valid ()*/.strip ();
+        return stdout_buf.strip ();
     }
 
     private void run (string[] argv) throws GLib.Error {
