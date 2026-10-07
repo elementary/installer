@@ -58,7 +58,6 @@ public class Installer.ChoiceView : AbstractInstallerView {
                 backend == REPART ? "security-high" : "security-low",
                 backend.get_description ()
             ) {
-                active = backend == REPART,
                 group = no_selection
             };
 
@@ -68,6 +67,8 @@ public class Installer.ChoiceView : AbstractInstallerView {
                     next_button.sensitive = true;
                 }
             });
+
+            backend_button.active = backend == REPART;
 
             type_box.append (backend_button);
         }
