@@ -162,8 +162,6 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
     }
 
     private void cleanup (bool squashfs_mounted, string keyfile) throws GLib.Error {
-        log_message (InstallerDaemon.LogLevel.INFO, "Cleanup");
-
         if (squashfs_mounted) {
             try {
                 run ({"umount", SQUASH_MOUNT});
@@ -182,6 +180,8 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
                 FileUtils.unlink (keyfile);
             }
         }
+
+        log_message (InstallerDaemon.LogLevel.INFO, "Cleanup done");
     }
 
     public void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
@@ -202,17 +202,13 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
 
         on_status (status);
 
-        log_message (InstallerDaemon.LogLevel.INFO, "Starting installation");
-
         var squashfs_mounted = false;
         var keyfile = "";
 
         try {
-            log_message (InstallerDaemon.LogLevel.INFO, "Finding squashfs");
-
             var raw_squashfs = find_install_squashfs ();
 
-            log_message (InstallerDaemon.LogLevel.WARN, "Configuring encryption");
+            log_message (InstallerDaemon.LogLevel.INFO, "Found squashfs %s", raw_squashfs);
 
             string[] repart_args = {};
 
@@ -222,21 +218,20 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             status.percent = 10;
             on_status (status);
 
-            log_message (InstallerDaemon.LogLevel.INFO, "Wiping destination device");
-
             run ({"/usr/sbin/wipefs", "-a", dest_dev});
 
-            on_log_message (InstallerDaemon.LogLevel.INFO, "Mounting squashfs: " + raw_squashfs);
+            log_message (InstallerDaemon.LogLevel.INFO, "Wiped destination device %s", dest_dev);
+
 
             DirUtils.create_with_parents (SQUASH_MOUNT, 0755);
 
-            log_message (InstallerDaemon.LogLevel.INFO, "Created squashfs mountpoint");
+            log_message (InstallerDaemon.LogLevel.INFO, "Created squashfs mount point %s", SQUASH_MOUNT);
 
             run ({"mount", "-t", "squashfs", "-o", "loop,ro", raw_squashfs, SQUASH_MOUNT});
 
             squashfs_mounted = true;
 
-            log_message (InstallerDaemon.LogLevel.INFO, "Mounted squashfs");
+            log_message (InstallerDaemon.LogLevel.INFO, "Mounted squashfs %s", raw_squashfs);
 
             var raw_src = find_first_file (SQUASH_MOUNT, ".raw");
             if (raw_src == null) {
@@ -268,18 +263,18 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             status.percent = 80;
             on_status (status);
 
-            log_message (InstallerDaemon.LogLevel.INFO, "Running partprobe");
-
             run ({"partprobe", dest_dev});
+
+            log_message (InstallerDaemon.LogLevel.INFO, "Completed partprobe");
 
             status.percent = 90;
             on_status (status);
 
-            log_message (InstallerDaemon.LogLevel.INFO, "Running udevadm settle");
-
             run ({"udevadm", "settle"});
 
-            log_message (InstallerDaemon.LogLevel.INFO, "Completed!");
+            log_message (InstallerDaemon.LogLevel.INFO, "Completed udevadm settle");
+
+            log_message (InstallerDaemon.LogLevel.INFO, "Completed installation");
 
             cleanup (squashfs_mounted, keyfile);
 
