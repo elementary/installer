@@ -133,7 +133,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             return;
         }
 
-        if (has_tpm2 () && password.length == 0) {
+        if (password.length == 0 && has_tpm2 ()) {
             log_message (InstallerDaemon.LogLevel.INFO, "TPM2 encryption");
             set_repart_encryption ("tpm2");
             return;
