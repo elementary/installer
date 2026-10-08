@@ -28,6 +28,7 @@ public class Installer.Daemon {
         public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
 
         public abstract void set_backend (InstallerDaemon.Backend backend) throws GLib.Error;
+        public abstract InstallerDaemon.Backend get_backend ();
 
         public abstract InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error;
 
@@ -69,6 +70,14 @@ public class Installer.Daemon {
         }
 
         daemon.set_backend (backend);
+    }
+
+    public InstallerDaemon.Backend get_backend () {
+        if (daemon == null) {
+            throw new GLib.IOError.FAILED ("Not connected to installer daemon");
+        }
+
+        return daemon.get_backend ();
     }
 
     public InstallerDaemon.PartitionTable bootloader_detect () {

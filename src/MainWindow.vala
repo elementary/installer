@@ -27,6 +27,8 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
     private const uint64 ONE_GB = 1000 * 1000 * 1000;
     // Minimum 15 GB
     private const uint64 MINIMUM_SPACE = 15 * ONE_GB;
+    // Minimum 35 GB for the modern install image
+    private const uint64 MINIMUM_SPACE_MODERN = 35 * ONE_GB;
 
     private Adw.NavigationView navigation_view;
     private LanguageView language_view;
@@ -161,7 +163,7 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
         var disk_view = new DiskView ();
         navigation_view.push (disk_view);
 
-        disk_view.load.begin (MINIMUM_SPACE);
+        disk_view.load.begin (Daemon.get_default ().get_backend () == REPART ? MINIMUM_SPACE_MODERN : MINIMUM_SPACE);
         disk_view.next_step.connect (() => load_encrypt_view ());
     }
 
@@ -192,7 +194,7 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
     }
 
     private void load_partitioning_view () {
-        var partitioning_view = new PartitioningView (MINIMUM_SPACE);
+        var partitioning_view = new PartitioningView (Daemon.get_default ().get_backend () == REPART ? MINIMUM_SPACE_MODERN : MINIMUM_SPACE);
         navigation_view.push (partitioning_view);
 
         partitioning_view.next_step.connect (() => {

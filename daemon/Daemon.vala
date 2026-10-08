@@ -36,6 +36,7 @@ protected interface InstallerDaemon.InstallerInterface : GLib.Object {
 
 [DBus (name = "io.elementary.InstallerDaemon")]
 public class InstallerDaemon.BackendProxy : GLib.Object {
+    private InstallerDaemon.Backend backend = InstallerDaemon.Backend.UNKNOWN;
     private InstallerDaemon.InstallerInterface backend_proxy = null;
 
     public signal void on_error (InstallerDaemon.Error error);
@@ -49,6 +50,7 @@ public class InstallerDaemon.BackendProxy : GLib.Object {
     }
 
     public void set_backend (InstallerDaemon.Backend backend) throws GLib.Error {
+        this.backend = backend;
         switch (backend) {
             case InstallerDaemon.Backend.DISTINST:
                 backend_proxy = new InstallerDaemon.DistinstBackend ();
@@ -63,6 +65,10 @@ public class InstallerDaemon.BackendProxy : GLib.Object {
         backend_proxy.on_error.connect ((error) => on_error (error));
         backend_proxy.on_status.connect ((status) => on_status (status));
         backend_proxy.on_log_message.connect ((level, message) => on_log_message (level, message));
+    }
+
+    public InstallerDaemon.Backend get_backend () {
+        return backend;
     }
 
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
