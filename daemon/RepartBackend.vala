@@ -231,6 +231,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
 
             log_message (InstallerDaemon.LogLevel.INFO, "Created squashfs mount point %s", SQUASH_MOUNT);
 
+            // At least one other installer (Calamares) also uses mount terminal command
             run ({"mount", "-t", "squashfs", "-o", "loop,ro", raw_squashfs, SQUASH_MOUNT});
 
             squashfs_mounted = true;
