@@ -312,6 +312,9 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
         Disk[] physical_disks = {};
 
         try {
+            uint64 time_read;
+            var installer_device_path = new UnixMountEntry ("/cdrom", out time_read).get_device_path ();
+
             var sys_block = File.new_for_path ("/sys/block");
             var enumerator = sys_block.enumerate_children (
                 FileAttribute.STANDARD_NAME,
@@ -322,10 +325,14 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             while ((info = enumerator.next_file ()) != null) {
                 var name = info.get_name ();
 
-                var name_path = "/sys/block/%s".printf (name);
+                var name_path = Path.build_filename ("/sys/block", name);
 
-                // We only want physical disks
-                if (!FileUtils.test (name_path + "/device", EXISTS) || name.has_prefix ("sr")) {
+                var is_installer_device = installer_device_path.has_prefix (Path.build_filename ("/dev", name));
+
+                // We only want candidate disks for installation
+                if (!FileUtils.test (Path.build_filename (name_path, "device"), EXISTS) ||
+                    name.has_prefix ("sr") ||
+                    is_installer_device) {
                     continue;
                 }
 
@@ -334,13 +341,13 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
                 bool rotational;
                 bool removable;
 
-                uint64.try_parse (get_contents (name_path + "/size"), out size);
-                uint64.try_parse (get_contents (name_path + "/queue/logical_block_size"), out sector_size);
-                bool.try_parse (get_contents (name_path + "/queue/rotational"), out rotational);
-                bool.try_parse (get_contents (name_path + "/removable"), out removable);
+                uint64.try_parse (get_contents (Path.build_filename (name_path, "size")), out size);
+                uint64.try_parse (get_contents (Path.build_filename (name_path, "queue", "logical_block_size")), out sector_size);
+                bool.try_parse (get_contents (Path.build_filename (name_path, "queue", "rotational")), out rotational);
+                bool.try_parse (get_contents (Path.build_filename (name_path, "removable")), out removable);
 
-                var vendor = get_contents (name_path + "/device/vendor");
-                var model = get_contents (name_path + "/device/model");
+                var vendor = get_contents (Path.build_filename (name_path, "device", "vendor"));
+                var model = get_contents (Path.build_filename (name_path, "device", "model"));
 
                 physical_disks += Disk () {
                     name = "%s%s%s".printf (vendor, vendor.length > 0 ? " " : "", model),

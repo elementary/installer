@@ -9,6 +9,7 @@ daemon_dependencies = [
     gee_dep,
     glib_dep,
     gio_dep,
+    gio_unix_dep,
     gobject_dep,
     distinst_dep,
 ]
