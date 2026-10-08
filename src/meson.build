@@ -11,6 +11,7 @@ vala_files = [
     'Objects/KeyboardVariant.vala',
     'Objects/Mount.vala',
     'Views/AbstractInstallerView.vala',
+    'Views/ChoiceView.vala',
     'Views/CheckView.vala',
     'Views/DiskView.vala',
     'Views/DriversView.vala',

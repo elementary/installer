@@ -15,13 +15,118 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+protected interface InstallerDaemon.InstallerInterface : GLib.Object {
+    public signal void on_error (InstallerDaemon.Error error);
+    public signal void on_status (InstallerDaemon.Status status);
+    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
+
+    public abstract InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error;
+
+    public abstract InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error;
+    public abstract int decrypt_partition (string path, string pv, string password) throws GLib.Error;
+    public abstract InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error;
+    public abstract void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error;
+    public abstract void install_with_custom_disk_layout (InstallerDaemon.InstallConfig config, InstallerDaemon.Mount[] disk_config, InstallerDaemon.LuksCredentials[] luks) throws GLib.Error;
+
+    public abstract bool has_tpm2 () throws GLib.Error;
+    protected bool default_has_tpm2 () {
+        return false;
+    }
+}
+
+[DBus (name = "io.elementary.InstallerDaemon")]
+public class InstallerDaemon.BackendProxy : GLib.Object {
+    private InstallerDaemon.Backend backend = InstallerDaemon.Backend.UNKNOWN;
+    private InstallerDaemon.InstallerInterface backend_proxy = null;
+
+    public signal void on_error (InstallerDaemon.Error error);
+    public signal void on_status (InstallerDaemon.Status status);
+    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
+
+    private void check () throws GLib.Error {
+        if (backend_proxy == null) {
+            throw new GLib.IOError.FAILED ("Backend not set");
+        }
+    }
+
+    public void set_backend (InstallerDaemon.Backend backend) throws GLib.Error {
+        this.backend = backend;
+        switch (backend) {
+            case InstallerDaemon.Backend.DISTINST:
+                backend_proxy = new InstallerDaemon.DistinstBackend ();
+                break;
+            case InstallerDaemon.Backend.REPART:
+                backend_proxy = new InstallerDaemon.RepartBackend ();
+                break;
+            default:
+                throw new GLib.IOError.FAILED ("Unknown backend");
+        }
+
+        backend_proxy.on_error.connect ((error) => on_error (error));
+        backend_proxy.on_status.connect ((status) => on_status (status));
+        backend_proxy.on_log_message.connect ((level, message) => on_log_message (level, message));
+    }
+
+    public InstallerDaemon.Backend get_backend () {
+        return backend;
+    }
+
+    public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
+        check ();
+        return backend_proxy.bootloader_detect ();
+    }
+
+    public bool has_tpm2 () throws GLib.Error {
+        check ();
+        return backend_proxy.has_tpm2 ();
+    }
+
+    public InstallerDaemon.DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
+        check ();
+        return backend_proxy.get_disks (get_partitions);
+    }
+
+    public int decrypt_partition (string path, string pv, string password) throws GLib.Error {
+        check ();
+        return backend_proxy.decrypt_partition (path, pv, password);
+    }
+
+    public InstallerDaemon.Disk get_logical_device (string pv) throws GLib.Error {
+        check ();
+        return backend_proxy.get_logical_device (pv);
+    }
+
+    public void install_with_default_disk_layout (InstallerDaemon.InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
+        check ();
+        backend_proxy.install_with_default_disk_layout (config, disk, encrypt, encryption_password);
+    }
+
+    public void install_with_custom_disk_layout (InstallerDaemon.InstallConfig config, InstallerDaemon.Mount[] disk_config, InstallerDaemon.LuksCredentials[] luks) throws GLib.Error {
+        check ();
+        backend_proxy.install_with_custom_disk_layout (config, disk_config, luks);
+    }
+
+    public void set_demo_mode_locale (string locale) throws GLib.Error {
+        GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
+    }
+
+    public void trigger_demo_mode () throws GLib.Error {
+        var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
+        try {
+            demo_mode_file.create (GLib.FileCreateFlags.NONE);
+        } catch (GLib.Error e) {
+            if (!(e is GLib.IOError.EXISTS)) {
+                throw e;
+            }
+        }
+    }
+}
+
 private static GLib.MainLoop loop;
 
 private void on_bus_acquired (GLib.DBusConnection connection, string name) {
     try {
-#if DISTINST_BACKEND
-        connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.DistinstBackend ());
-#endif
+        connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.BackendProxy ());
     } catch (GLib.Error e) {
         critical ("Unable to register the object: %s", e.message);
     }
