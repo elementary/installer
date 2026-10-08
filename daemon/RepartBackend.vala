@@ -220,9 +220,11 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             status.percent = 10;
             on_status (status);
 
+            /*
             run ({"/usr/sbin/wipefs", "-a", dest_dev});
 
             log_message (InstallerDaemon.LogLevel.INFO, "Wiped destination device %s", dest_dev);
+            */
 
 
             DirUtils.create_with_parents (SQUASH_MOUNT, 0755);
