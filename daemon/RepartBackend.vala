@@ -170,6 +170,9 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
             log_message (InstallerDaemon.LogLevel.INFO, "Removed squashfs mount point");
         }
 
+        // Is shred even necessary in a live ISO session?
+
+        /*
         if (keyfile.length > 0) {
             try {
                 run ({"shred", "-u", keyfile});
@@ -178,6 +181,7 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
                 FileUtils.unlink (keyfile);
             }
         }
+        */
 
         log_message (InstallerDaemon.LogLevel.INFO, "Cleanup done");
     }
