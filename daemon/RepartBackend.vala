@@ -157,13 +157,17 @@ public class InstallerDaemon.RepartBackend : InstallerInterface, GLib.Object {
 
     private void cleanup (bool squashfs_mounted, string keyfile) throws GLib.Error {
         if (squashfs_mounted) {
-            try {
-                run ({"umount", SQUASH_MOUNT});
-            } catch (GLib.Error e) {
-                log_message (InstallerDaemon.LogLevel.WARN, "Cleanup unmount %s failed: %s", SQUASH_MOUNT, e.message);
-            }
-
+            var file = File.new_for_path (SQUASH_MOUNT);
+            file.unmount_mountable_with_operation.begin (FORCE, null, null, (obj, res) => {
+                try {
+                    file.unmount_mountable_with_operation.end (res);
+                    log_message (InstallerDaemon.LogLevel.INFO, "Unmounted squashfs");
+                } catch (GLib.Error e) {
+                    log_message (InstallerDaemon.LogLevel.WARN, "Cleanup unmount %s failed: %s", SQUASH_MOUNT, e.message);
+                }
+            });
             FileUtils.remove (SQUASH_MOUNT);
+            log_message (InstallerDaemon.LogLevel.INFO, "Removed squashfs mount point");
         }
 
         if (keyfile.length > 0) {
