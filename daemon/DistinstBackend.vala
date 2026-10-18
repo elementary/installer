@@ -16,7 +16,7 @@
  */
 
 [DBus (name = "io.elementary.InstallerDaemon")]
-public class InstallerDaemon.DistinstBackend : GLib.Object {
+public class InstallerDaemon.DistinstBackend : InstallerDaemon.Backend {
     public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
     public signal void on_status (InstallerDaemon.Status status);
     public signal void on_error (InstallerDaemon.Error error);
@@ -29,6 +29,12 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
                 on_log_message (to_common_log_level (level), message);
             });
         });
+    }
+
+    public bool found_repart_image {
+        get {
+            return has_repart_image ();
+        }
     }
 
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
@@ -164,14 +170,14 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
         };
     }
 
-    public void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
+    public virtual void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
         var disks = new Distinst.Disks ();
         default_disk_configuration (disks, disk, encrypt ? encryption_password : null);
 
         install (config, (owned) disks);
     }
 
-    public void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
+    public virtual void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
         var disks = new Distinst.Disks ();
         custom_disk_configuration (disks, disk_config, credentials);
 
