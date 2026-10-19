@@ -21,6 +21,9 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
     public signal void on_status (InstallerDaemon.Status status);
     public signal void on_error (InstallerDaemon.Error error);
 
+    // We have to do it step by step because the vala compiler has overflows with big numbers.
+    public const uint64 ONE_GB = 1000 * 1000 * 1000;
+
     private Distinst.Disks disks;
 
     construct {
@@ -33,6 +36,10 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
 
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
         return to_common_usage_bootloader (Distinst.bootloader_detect ());
+    }
+
+    public uint64 get_minimum_disk_size () {
+        return 15 * ONE_GB;
     }
 
     public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
