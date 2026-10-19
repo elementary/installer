@@ -15,6 +15,7 @@ public class InstallerDaemon.Application : GLib.Application {
         base.dbus_register (connection, object_path);
 
         try {
+            connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.CommonBackend ());
     #if DISTINST_BACKEND
             connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.DistinstBackend ());
     #endif

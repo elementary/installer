@@ -1,4 +1,5 @@
 vala_files = [
+    'CommonBackend.vala',
     'Daemon.vala',
     common_files
 ]
