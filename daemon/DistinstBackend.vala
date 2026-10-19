@@ -16,11 +16,7 @@
  */
 
 [DBus (name = "io.elementary.InstallerDaemon")]
-public class InstallerDaemon.DistinstBackend : GLib.Object {
-    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
-    public signal void on_status (InstallerDaemon.Status status);
-    public signal void on_error (InstallerDaemon.Error error);
-
+public class InstallerDaemon.DistinstBackend : InstallerInterface, GLib.DBusProxy {
     private Distinst.Disks disks;
 
     construct {
@@ -35,7 +31,7 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
         return to_common_usage_bootloader (Distinst.bootloader_detect ());
     }
 
-    public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
+    public async DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
         disks = Distinst.Disks.probe ();
 
         if (get_partitions) {
@@ -124,7 +120,7 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
         return result;
     }
 
-    public int decrypt_partition (string path, string pv, string password) throws GLib.Error {
+    public async int decrypt_partition (string path, string pv, string password) throws GLib.Error {
         return disks.decrypt_partition (path, Distinst.LvmEncryption () {
             physical_volume = pv,
             password = password,
@@ -132,7 +128,7 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
         });
     }
 
-    public Disk get_logical_device (string pv) throws GLib.Error {
+    public async Disk get_logical_device (string pv) throws GLib.Error {
         unowned Distinst.LvmDevice disk = disks.get_logical_device (pv);
         if (disk == null) {
             throw new GLib.IOError.NOT_FOUND ("Couldn't find a logical device with that name");
@@ -164,14 +160,14 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
         };
     }
 
-    public void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
+    public async void install_with_default_disk_layout (InstallConfig config, string disk, bool encrypt, string encryption_password) throws GLib.Error {
         var disks = new Distinst.Disks ();
         default_disk_configuration (disks, disk, encrypt ? encryption_password : null);
 
         install (config, (owned) disks);
     }
 
-    public void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
+    public async void install_with_custom_disk_layout (InstallConfig config, Mount[] disk_config, LuksCredentials[] credentials) throws GLib.Error {
         var disks = new Distinst.Disks ();
         custom_disk_configuration (disks, disk_config, credentials);
 
@@ -219,11 +215,11 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
         });
     }
 
-    public void set_demo_mode_locale (string locale) throws GLib.Error {
+    public async void set_demo_mode_locale (string locale) throws GLib.Error {
         GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
     }
 
-    public void trigger_demo_mode () throws GLib.Error {
+    public async void trigger_demo_mode () throws GLib.Error {
         var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
         try {
             demo_mode_file.create (GLib.FileCreateFlags.NONE);
