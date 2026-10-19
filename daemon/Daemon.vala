@@ -4,6 +4,9 @@
  */
 
 public class InstallerDaemon.Application : GLib.Application {
+    // We have to do it step by step because the vala compiler has overflows with big numbers.
+    public const uint64 ONE_GB = 1000 * 1000 * 1000;
+
     public Application () {
         Object (
             application_id: "io.elementary.InstallerDaemon",
