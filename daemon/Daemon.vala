@@ -1,47 +1,31 @@
 /*
- * Copyright 2021 elementary, Inc.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * Copyright 2021-2026 elementary, Inc. (https://elementary.io)
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-private static GLib.MainLoop loop;
-
-private void on_bus_acquired (GLib.DBusConnection connection, string name) {
-    try {
-#if DISTINST_BACKEND
-        connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.DistinstBackend ());
-#endif
-    } catch (GLib.Error e) {
-        critical ("Unable to register the object: %s", e.message);
+public class InstallerDaemon.Application : GLib.Application {
+    public Application () {
+        Object (
+            application_id: "io.elementary.InstallerDaemon",
+            flags: ApplicationFlags.IS_SERVICE | ApplicationFlags.ALLOW_REPLACEMENT
+        );
     }
-}
 
-public static int main (string[] args) {
-    loop = new GLib.MainLoop (null, false);
+    protected override bool dbus_register (DBusConnection connection, string object_path) throws GLib.Error {
+        base.dbus_register (connection, object_path);
 
-    var owner_id = GLib.Bus.own_name (
-        GLib.BusType.SYSTEM,
-        "io.elementary.InstallerDaemon",
-        GLib.BusNameOwnerFlags.NONE,
-        on_bus_acquired,
-        () => { },
-        () => { loop.quit (); }
-    );
+        try {
+    #if DISTINST_BACKEND
+            connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.DistinstBackend ());
+    #endif
+        } catch (GLib.Error e) {
+            critical ("Unable to register the object: %s", e.message);
+        }
 
-    loop.run ();
+        return true;
+    }
 
-    GLib.Bus.unown_name (owner_id);
-
-    return 0;
+    public static int main (string[] args) {
+        return new InstallerDaemon.Application ().run (args);
+    }
 }
