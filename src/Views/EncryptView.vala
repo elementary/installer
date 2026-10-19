@@ -23,8 +23,11 @@ public class EncryptView : AbstractInstallerView {
     private Granite.ValidatedEntry confirm_entry;
     private ValidatedEntry pw_entry;
     private Gtk.LevelBar pw_levelbar;
+    private Gtk.CheckButton use_tpm_checkbutton;
 
     private const string SKIP_STRING = _("Don’t Encrypt");
+    private const string TPM_STRING = _("Encrypt Using TPM");
+    private const string PASSWORD_STRING = _("Encrypt Using Password");
 
     private uint announce_timeout_id;
 
@@ -123,10 +126,35 @@ public class EncryptView : AbstractInstallerView {
         title_area.append (title_label);
 
         content_area.valign = CENTER;
+
         content_area.append (message_box);
         content_area.append (password_box);
 
-        encrypt_button = new Gtk.Button.with_label (_("Set Encryption Password")) {
+        var show_tpm_option = false;
+        try {
+            show_tpm_option = Installer.App.test_mode || Installer.Daemon.get_default ().has_tpm2 ();
+        } catch (GLib.Error e) {
+            warning ("Could not check for TPM: %s", e.message);
+        }
+
+        if (show_tpm_option) {
+            use_tpm_checkbutton = new Gtk.CheckButton.with_label (_("Use Trusted Platform Module.")) {
+                active = false
+            };
+
+            use_tpm_checkbutton.toggled.connect (() => {
+                restart_row.sensitive = !use_tpm_checkbutton.active;
+                keyboard_row.sensitive = !use_tpm_checkbutton.active;
+                password_box.sensitive = !use_tpm_checkbutton.active;
+                encrypt_button.label = use_tpm_checkbutton.active ? TPM_STRING : PASSWORD_STRING;
+                encrypt_button.sensitive = use_tpm_checkbutton.active || pw_entry.is_valid && confirm_entry.is_valid;
+            });
+
+            content_area.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+            content_area.append (use_tpm_checkbutton);
+        }
+
+        encrypt_button = new Gtk.Button.with_label (PASSWORD_STRING) {
             sensitive = false
         };
 
@@ -143,7 +171,7 @@ public class EncryptView : AbstractInstallerView {
         });
 
         encrypt_button.clicked.connect (() => {
-            Configuration.get_default ().encryption_password = pw_entry.text;
+            Configuration.get_default ().encryption_password = use_tpm_checkbutton.active ? "" : pw_entry.text;
             next_step ();
         });
 

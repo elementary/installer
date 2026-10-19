@@ -15,12 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-[DBus (name = "io.elementary.InstallerDaemon")]
-public class InstallerDaemon.DistinstBackend : GLib.Object {
-    public signal void on_log_message (InstallerDaemon.LogLevel level, string message);
-    public signal void on_status (InstallerDaemon.Status status);
-    public signal void on_error (InstallerDaemon.Error error);
-
+public class InstallerDaemon.DistinstBackend : InstallerInterface, GLib.Object {
     private Distinst.Disks disks;
 
     construct {
@@ -33,6 +28,10 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
 
     public InstallerDaemon.PartitionTable bootloader_detect () throws GLib.Error {
         return to_common_usage_bootloader (Distinst.bootloader_detect ());
+    }
+
+    public bool has_tpm2 () throws GLib.Error {
+        return default_has_tpm2 ();
     }
 
     public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
@@ -217,21 +216,6 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
 
             return null;
         });
-    }
-
-    public void set_demo_mode_locale (string locale) throws GLib.Error {
-        GLib.FileUtils.set_contents ("/etc/default/locale", "LANG=" + locale);
-    }
-
-    public void trigger_demo_mode () throws GLib.Error {
-        var demo_mode_file = GLib.File.new_for_path ("/var/lib/lightdm/demo-mode");
-        try {
-            demo_mode_file.create (GLib.FileCreateFlags.NONE);
-        } catch (GLib.Error e) {
-            if (!(e is GLib.IOError.EXISTS)) {
-                throw e;
-            }
-        }
     }
 
     private string casper_dir () {

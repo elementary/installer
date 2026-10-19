@@ -19,6 +19,7 @@ gtk_wayland_dep = dependency('gtk4-wayland')
 gtk_x11_dep = dependency('gtk4-x11')
 gee_dep = dependency('gee-0.8')
 gio_dep = dependency('gio-2.0')
+gio_unix_dep = dependency('gio-unix-2.0')
 granite_dep = dependency('granite-7', version: '>=7.7.0')
 adw_dep = dependency('libadwaita-1', version: '>=1.4.0')
 json_glib_dep = dependency('json-glib-1.0')
@@ -28,12 +29,7 @@ pantheon_wayland_dep = dependency('pantheon-wayland-1')
 systemd_dep = dependency('systemd')
 x11_dep = dependency('x11')
 
-installer_backend = get_option('installer_backend')
-if installer_backend == 'distinst'
-    distinst_dep = dependency('distinst')
-else
-    error('No supported installer backend provided')
-endif
+distinst_dep = dependency('distinst')
 
 asresources = gnome.compile_resources(
     'as-resources', 'data/' + meson.project_name() + '.gresource.xml',

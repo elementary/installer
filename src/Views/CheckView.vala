@@ -101,7 +101,7 @@ public class Installer.CheckView : AbstractInstallerView {
             minimum_specs = false;
         }
 
-        var apt_sources = File.new_for_path ("/etc/apt/sources.list.d/elementary.list");
+        var apt_sources = File.new_for_path ("/etc/apt/sources.list.d/elementary.sources");
         try {
             var @is = apt_sources.read ();
             var dis = new DataInputStream (@is);
