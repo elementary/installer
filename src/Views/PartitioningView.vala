@@ -28,10 +28,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
     public Gee.ArrayList<Installer.Mount> mounts;
     public Gee.ArrayList<InstallerDaemon.LuksCredentials?> luks;
 
-    public static uint64 minimum_disk_size;
-
-    public PartitioningView (uint64 size) {
-        minimum_disk_size = size;
+    public PartitioningView () {
         Object (cancellable: false);
     }
 

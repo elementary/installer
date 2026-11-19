@@ -35,6 +35,10 @@ public class InstallerDaemon.DistinstBackend : GLib.Object {
         return to_common_usage_bootloader (Distinst.bootloader_detect ());
     }
 
+    public uint64 get_minimum_disk_size () throws GLib.Error {
+        return 15 * Application.ONE_GB;
+    }
+
     public DiskInfo get_disks (bool get_partitions = false) throws GLib.Error {
         disks = Distinst.Disks.probe ();
 
