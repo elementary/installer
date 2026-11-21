@@ -25,7 +25,7 @@ Architecture: any
 Priority: extra
 Depends: distinst,
          espeak,
-         gnome-disks,
+         gnome-disk-utility,
          io.elementary.greeter,
          wingpanel,
          ${misc:Depends},
