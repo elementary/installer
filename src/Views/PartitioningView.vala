@@ -178,16 +178,21 @@ public class Installer.PartitioningView : AbstractInstallerView {
     }
 
     private void open_partition_editor () {
+        var editor = "gnome-disks";
+        if (Environment.find_program_in_path (editor) == null) {
+            editor = "gparted";
+        }
+
         try {
             /*
              * FIXME: GParted provides a .desktop file, so we should use
              * GLib.AppInfo. However, we need a better way to listen to
              * partition changes if we do that.
              */
-            var gparted = new GLib.Subprocess.newv ({"gparted"}, GLib.SubprocessFlags.NONE);
+            var gparted = new GLib.Subprocess.newv ({editor}, GLib.SubprocessFlags.NONE);
             gparted.wait ();
         } catch (GLib.Error error) {
-            critical ("could not execute gparted");
+            critical ("could not execute partition editor");
         }
 
         reset_view ();
