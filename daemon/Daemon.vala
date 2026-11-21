@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class InstallerDaemon.Application : GLib.Application {
+public class InstallerDaemon.Application : Gtk.Application {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     public const uint64 ONE_GB = 1000 * 1000 * 1000;
 

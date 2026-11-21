@@ -6,6 +6,7 @@ vala_files = [
 daemon_dependencies = [
     gee_dep,
     glib_dep,
+    gtk_dep,
     gio_dep,
     gobject_dep,
 ]
