@@ -14,6 +14,13 @@ public class InstallerDaemon.Application : GLib.Application {
         );
     }
 
+    protected override void startup () {
+        query_end.connect (() => release ());
+        base.startup ();
+
+        hold ();
+    }
+
     protected override bool dbus_register (DBusConnection connection, string object_path) throws GLib.Error {
         base.dbus_register (connection, object_path);
 
