@@ -189,7 +189,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
              * GLib.AppInfo. However, we need a better way to listen to
              * partition changes if we do that.
              */
-            var gparted = new GLib.Subprocess.newv ({editor}, GLib.SubprocessFlags.NONE);
+            var editor_process = new GLib.Subprocess.newv ({editor}, GLib.SubprocessFlags.NONE);
             gparted.wait ();
         } catch (GLib.Error error) {
             critical ("could not execute partition editor");
