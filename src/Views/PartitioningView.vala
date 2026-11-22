@@ -190,7 +190,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
              * partition changes if we do that.
              */
             var editor_process = new GLib.Subprocess.newv ({editor}, GLib.SubprocessFlags.NONE);
-            gparted.wait ();
+            editor_process.wait ();
         } catch (GLib.Error error) {
             critical ("could not execute partition editor");
         }
