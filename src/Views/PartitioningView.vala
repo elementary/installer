@@ -192,7 +192,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
             var editor_process = new GLib.Subprocess.newv ({editor}, GLib.SubprocessFlags.NONE);
             editor_process.wait ();
         } catch (GLib.Error error) {
-            critical ("could not execute partition editor");
+            critical ("could not execute partition editor %s", editor);
         }
 
         reset_view ();
