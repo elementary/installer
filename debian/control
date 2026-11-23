@@ -27,7 +27,7 @@ Depends: distinst,
          espeak,
          gnome-disk-utility,
          io.elementary.greeter,
-         wingpanel,
+         io.elementary.wingpanel,
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: io.elementary.installer-session, io.elementary.onboarding
