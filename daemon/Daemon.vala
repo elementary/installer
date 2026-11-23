@@ -3,32 +3,38 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class InstallerDaemon.Application : GLib.Application {
+namespace InstallerDaemon.Application {
     // We have to do it step by step because the vala compiler has overflows with big numbers.
     public const uint64 ONE_GB = 1000 * 1000 * 1000;
+}
 
-    public Application () {
-        Object (
-            application_id: "io.elementary.InstallerDaemon",
-            flags: ApplicationFlags.IS_SERVICE | ApplicationFlags.ALLOW_REPLACEMENT
-        );
+private static GLib.MainLoop loop;
+
+private void on_bus_acquired (GLib.DBusConnection connection, string name) {
+    try {
+#if DISTINST_BACKEND
+        connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.DistinstBackend ());
+#endif
+    } catch (GLib.Error e) {
+        critical ("Unable to register the object: %s", e.message);
     }
+}
 
-    protected override bool dbus_register (DBusConnection connection, string object_path) throws GLib.Error {
-        base.dbus_register (connection, object_path);
+public static int main (string[] args) {
+    loop = new GLib.MainLoop (null, false);
 
-        try {
-    #if DISTINST_BACKEND
-            connection.register_object ("/io/elementary/InstallerDaemon", new InstallerDaemon.DistinstBackend ());
-    #endif
-        } catch (GLib.Error e) {
-            critical ("Unable to register the object: %s", e.message);
-        }
+    var owner_id = GLib.Bus.own_name (
+        GLib.BusType.SYSTEM,
+        "io.elementary.InstallerDaemon",
+        GLib.BusNameOwnerFlags.NONE,
+        on_bus_acquired,
+        () => { },
+        () => { loop.quit (); }
+    );
 
-        return true;
-    }
+    loop.run ();
 
-    public static int main (string[] args) {
-        return new InstallerDaemon.Application ().run (args);
-    }
+    GLib.Bus.unown_name (owner_id);
+
+    return 0;
 }
