@@ -28,10 +28,7 @@ public class Installer.PartitioningView : AbstractInstallerView {
     public Gee.ArrayList<Installer.Mount> mounts;
     public Gee.ArrayList<InstallerDaemon.LuksCredentials?> luks;
 
-    public static uint64 minimum_disk_size;
-
-    public PartitioningView (uint64 size) {
-        minimum_disk_size = size;
+    public PartitioningView () {
         Object (cancellable: false);
     }
 
@@ -181,16 +178,21 @@ public class Installer.PartitioningView : AbstractInstallerView {
     }
 
     private void open_partition_editor () {
+        var editor = "gnome-disks";
+        if (Environment.find_program_in_path (editor) == null) {
+            editor = "gparted";
+        }
+
         try {
             /*
              * FIXME: GParted provides a .desktop file, so we should use
              * GLib.AppInfo. However, we need a better way to listen to
              * partition changes if we do that.
              */
-            var gparted = new GLib.Subprocess.newv ({"gparted"}, GLib.SubprocessFlags.NONE);
-            gparted.wait ();
+            var editor_process = new GLib.Subprocess.newv ({editor}, GLib.SubprocessFlags.NONE);
+            editor_process.wait ();
         } catch (GLib.Error error) {
-            critical ("could not execute gparted");
+            critical ("could not execute partition editor %s", editor);
         }
 
         reset_view ();

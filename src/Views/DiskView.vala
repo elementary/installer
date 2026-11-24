@@ -103,13 +103,15 @@ public class Installer.DiskView : AbstractInstallerView {
         action_box_end.append (next_button);
     }
 
-    public async void load (uint64 minimum_disk_size) {
+    public async void load () {
+        uint64 minimum_disk_size;
         DiskButton[] enabled_buttons = {};
         DiskButton[] disabled_buttons = {};
 
         InstallerDaemon.DiskInfo? disks;
         try {
             disks = yield Daemon.get_default ().get_disks ();
+            minimum_disk_size = yield Daemon.get_default ().get_minimum_disk_size ();
         } catch (Error e) {
             critical ("Unable to get disks list: %s", e.message);
             load_stack.set_visible_child_name ("disk");
