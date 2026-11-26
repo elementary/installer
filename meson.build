@@ -27,13 +27,7 @@ pwquality_dep = dependency('pwquality')
 pantheon_wayland_dep = dependency('pantheon-wayland-1')
 systemd_dep = dependency('systemd')
 x11_dep = dependency('x11')
-
-installer_backend = get_option('installer_backend')
-if installer_backend == 'distinst'
-    distinst_dep = dependency('distinst')
-else
-    error('No supported installer backend provided')
-endif
+distinst_dep = dependency('distinst')
 
 asresources = gnome.compile_resources(
     'as-resources', 'data/' + meson.project_name() + '.gresource.xml',

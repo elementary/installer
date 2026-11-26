@@ -31,6 +31,25 @@ public struct InstallerDaemon.Disk {
     Partition[] partitions;
 }
 
+private enum InstallerDaemon.Encryption {
+    OFF,
+    PASSPHRASE,
+    TPM2;
+
+    public unowned string to_string () {
+        switch (this) {
+            case OFF:
+                return "off";
+            case PASSPHRASE:
+                return "passphrase";
+            case TPM2:
+                return "tpm2";
+            default:
+                return "unknown";
+        }
+    }
+}
+
 public enum InstallerDaemon.FileSystem {
     NONE,
     BTRFS,
