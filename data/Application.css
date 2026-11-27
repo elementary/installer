@@ -29,6 +29,11 @@
     font-feature-settings: "tnum";
 }
 
+/*FIXME: Remove after Granite 9*/
+header {
+    margin: 0;
+}
+
 @keyframes rainbow-bg {
     from {
         background-image: linear-gradient(
