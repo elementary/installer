@@ -23,12 +23,6 @@
     -gtk-icon-style: symbolic;
 }
 
-
-/*FIXME: Remove after Granite 7.7.0*/
-.numeric {
-    font-feature-settings: "tnum";
-}
-
 /*FIXME: Remove after Granite 9*/
 header {
     margin: 0;

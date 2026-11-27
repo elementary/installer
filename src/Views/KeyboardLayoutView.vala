@@ -200,15 +200,14 @@ public class KeyboardLayoutView : AbstractInstallerView {
                 layout_description = _("%s…").printf (layout_description);
             }
 
-            var label = new Gtk.Label (layout_description) {
-                ellipsize = Pango.EllipsizeMode.END,
+            var label = new Granite.HeaderLabel (layout_description) {
+                ellipsize = END,
                 margin_top = 6,
                 margin_end = 6,
                 margin_bottom = 6,
                 margin_start = 6,
-                xalign = 0
+                size = H3
             };
-            label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             child = label;
         }
@@ -222,15 +221,14 @@ public class KeyboardLayoutView : AbstractInstallerView {
         }
 
         construct {
-            var label = new Gtk.Label (variant.display_name) {
-                ellipsize = Pango.EllipsizeMode.END,
+            var label = new Granite.HeaderLabel (variant.display_name) {
+                ellipsize = END,
                 margin_top = 6,
                 margin_end = 6,
                 margin_bottom = 6,
                 margin_start = 6,
-                xalign = 0
+                size = H3
             };
-            label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             child = label;
         }

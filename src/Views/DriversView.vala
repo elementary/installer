@@ -25,11 +25,9 @@
 
         var title_label = new Gtk.Label (title);
 
-        var description_label = new Gtk.Label (_("Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may not function properly without additional drivers. Most devices do not require additional drivers.")) {
-            wrap = true,
-            xalign = 0
+        var description_label = new Granite.HeaderLabel (_("Broadcom® Wi-Fi adapters, NVIDIA® graphics, and some virtual machines may not function properly without additional drivers. Most devices do not require additional drivers.")) {
+            size = H3
         };
-        description_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var warning_row = new DescriptionRow (
             _("Proprietary drivers contain private code that can't be reviewed. Security and other updates are dependent on the driver vendor."),
