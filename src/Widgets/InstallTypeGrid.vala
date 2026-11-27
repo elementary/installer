@@ -43,26 +43,18 @@ public class Installer.InstallTypeButton : Gtk.CheckButton {
 
         var title_label = new Granite.HeaderLabel (title) {
             secondary_text = subtitle,
-            hexpand = true,
+            mnemonic_widget = this,
             size = H3
         };
 
-        var grid = new Gtk.Grid () {
-            column_spacing = 3,
-            row_spacing = 6,
+        var box = new Granite.Box (HORIZONTAL) {
             margin_end = 3,
             margin_bottom = 3,
             margin_start = 3
         };
-        grid.attach (image, 0, 0);
-        grid.attach (title_label, 1, 0);
+        box.append (image);
+        box.append (title_label);
 
-        child = grid;
-
-        update_property (
-            Gtk.AccessibleProperty.LABEL, title,
-            Gtk.AccessibleProperty.DESCRIPTION, subtitle,
-            -1
-        );
+        child = box;
     }
 }
