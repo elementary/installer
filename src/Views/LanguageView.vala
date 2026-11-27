@@ -309,11 +309,10 @@ public class Installer.LanguageView : AbstractInstallerView {
                 hexpand = true
             };
 
-            var label = new Gtk.Label (lang_entry.name) {
-                ellipsize = Pango.EllipsizeMode.END,
-                xalign = 0
+            var label = new Granite.HeaderLabel (lang_entry.name) {
+                ellipsize = END,
+                size = H3
             };
-            label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var box = new Gtk.Box (HORIZONTAL, 6) {
                 margin_top = 6,
@@ -369,11 +368,10 @@ public class Installer.LanguageView : AbstractInstallerView {
                 hexpand = true
             };
 
-            var label = new Gtk.Label (country_entry.name) {
+            var label = new Granite.HeaderLabel (country_entry.name) {
                 ellipsize = END,
-                xalign = 0
+                size = H3
             };
-            label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var box = new Gtk.Box (HORIZONTAL, 6) {
                 margin_top = 6,

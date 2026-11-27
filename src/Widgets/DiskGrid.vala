@@ -44,17 +44,13 @@ public class Installer.DiskButton : Gtk.CheckButton {
             use_fallback = true
         };
 
-        var name_label = new Gtk.Label (disk_name) {
-            ellipsize = Pango.EllipsizeMode.MIDDLE,
-            halign = Gtk.Align.START,
-            valign = Gtk.Align.END
-        };
-        name_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-
-        var size_label = new Gtk.Label ("%s %s".printf (disk_path, GLib.format_size (size))) {
-            ellipsize = Pango.EllipsizeMode.MIDDLE,
-            halign = Gtk.Align.START,
-            valign = Gtk.Align.START
+        var name_label = new Granite.HeaderLabel (disk_name) {
+            secondary_text = "%s %s".printf (disk_path, GLib.format_size (size)),
+            mnemonic_widget = this,
+            ellipsize = MIDDLE,
+            halign = START,
+            valign = END,
+            size = H3
         };
 
         var grid = new Gtk.Grid () {
@@ -64,9 +60,8 @@ public class Installer.DiskButton : Gtk.CheckButton {
             margin_start = 3,
             hexpand = true
         };
-        grid.attach (disk_image, 0, 0, 1, 2);
+        grid.attach (disk_image, 0, 0);
         grid.attach (name_label, 1, 0);
-        grid.attach (size_label, 1, 1);
 
         child = grid;
 
@@ -76,11 +71,5 @@ public class Installer.DiskButton : Gtk.CheckButton {
                 config.disk = disk_path;
             }
         });
-
-        update_property (
-            Gtk.AccessibleProperty.LABEL, disk_name,
-            Gtk.AccessibleProperty.DESCRIPTION, size_label.label,
-            -1
-        );
     }
 }

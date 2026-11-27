@@ -194,26 +194,17 @@ public class Installer.CheckView : AbstractInstallerView {
                 valign = START
             };
 
-            var title_label = new Gtk.Label (title) {
-                wrap = true,
-                xalign = 0
-            };
-            title_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
-
-            var description_label = new Gtk.Label (description) {
-                use_markup = true,
-                wrap = true,
-                xalign = 0
+            var title_label = new Granite.HeaderLabel (title) {
+                secondary_text = description,
+                size = H3
             };
 
             column_spacing = 12;
-            attach (image, 0, 0, 1, 2);
+            attach (image, 0, 0);
             attach (title_label, 1, 0);
-            attach (description_label, 1, 1);
 
             // prevent reading all descriptions immediately
             title_label.set_accessible_role (PRESENTATION);
-            description_label.set_accessible_role (PRESENTATION);
 
             // prevent titles from being skipped
             map.connect (() => {
@@ -227,17 +218,13 @@ public class Installer.CheckView : AbstractInstallerView {
     }
 
     private Gtk.Grid get_comparison_grid () {
-        var recommended_label = new Gtk.Label (_("Recommended:")) {
-            hexpand = true,
-            xalign = 0
+        var recommended_label = new Granite.HeaderLabel (_("Recommended:")) {
+            hexpand = true
         };
-        recommended_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
-        var your_device_label = new Gtk.Label (_("Your Device:")) {
-            hexpand = true,
-            xalign = 0
+        var your_device_label = new Granite.HeaderLabel (_("Your Device:")) {
+            hexpand = true
         };
-        your_device_label.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var processor_1 = new Gtk.Label (_("Processor:")) {
             xalign = 1

@@ -68,10 +68,9 @@ public class Installer.DiskView : AbstractInstallerView {
         };
         load_spinner.start ();
 
-        var load_label = new Gtk.Label (_("Getting the current configuration…")) {
-            wrap = true
+        var load_label = new Granite.HeaderLabel (_("Getting the current configuration…")) {
+            size = H3
         };
-        load_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var load_box = new Gtk.Box (VERTICAL, 12) {
             halign = CENTER,

@@ -29,18 +29,15 @@ public class SuccessView : AbstractInstallerView {
 
         var title_label = new Gtk.Label (title);
 
-        var primary_label = new Gtk.Label (_("%s has been installed").printf (Utils.get_pretty_name ())) {
-            wrap = true,
-            xalign = 0
+        var primary_label = new Granite.HeaderLabel (_("%s has been installed").printf (Utils.get_pretty_name ())) {
+            size = H3
         };
-        primary_label.add_css_class (Granite.STYLE_CLASS_H3_LABEL);
 
         secondary_label = new Gtk.Label (null) {
             wrap = true,
             xalign = 0
         };
-        // FIXME: use granite constant when Granite 7.7.0 is released
-        secondary_label.add_css_class ("numeric");
+        secondary_label.add_css_class (Granite.CssClass.NUMERIC);
 
         var message_grid = new Gtk.Grid () {
             row_spacing = 6,
