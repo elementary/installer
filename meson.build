@@ -16,7 +16,6 @@ glib_dep = dependency('glib-2.0', version: '>=2.74')
 gobject_dep = dependency('gobject-2.0')
 gtk_dep = dependency('gtk4', version: '>=4.14') # Gtk.Accessible.announce
 gtk_wayland_dep = dependency('gtk4-wayland')
-gtk_x11_dep = dependency('gtk4-x11')
 gee_dep = dependency('gee-0.8')
 gio_dep = dependency('gio-2.0')
 granite_dep = dependency('granite-7', version: '>=7.7.0')
@@ -26,7 +25,6 @@ xkbregistry_dep = dependency('xkbregistry')
 pwquality_dep = dependency('pwquality')
 pantheon_wayland_dep = dependency('pantheon-wayland-1')
 systemd_dep = dependency('systemd')
-x11_dep = dependency('x11')
 
 installer_backend = get_option('installer_backend')
 if installer_backend == 'distinst'
