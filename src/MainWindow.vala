@@ -150,6 +150,7 @@ public class Installer.MainWindow : Gtk.ApplicationWindow, PantheonWayland.Exten
         var disk_view = new DiskView ();
         navigation_view.push (disk_view);
 
+        disk_view.load.begin ();
         disk_view.next_step.connect (() => load_encrypt_view ());
     }
 
